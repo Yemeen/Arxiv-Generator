@@ -1,9 +1,9 @@
 # Arxiv Generator
----
+
 Ever wanted to have a publish worthy paper without all the work? Well keep dreaming because that won't happen, but here's an attempt at that. Using papers published to Arxiv, I trained a TensorFlow RNN to generate new papers using [Arxiv.py](https://github.com/lukasschwab/arxiv.py) and [tensorflow-shakespeare-poem-generator](https://github.com/burliEnterprises/tensorflow-shakespeare-poem-generator).
 
 # Prerequisites
----
+
 Arxiv library
 ```
 pip install arxiv
@@ -11,7 +11,7 @@ pip install arxiv
 TensorFlow
 [Install guide](https://www.tensorflow.org/install/)
 # Usage
----
+
 ## Gather Data
 First edit gatherdata.py for your Arxiv needs. You can choose several different ways to select Arxiv papers, first you must pick how you want to search.
 
@@ -46,7 +46,9 @@ python gatherdata.py
 
 This should take a while as it must first query each paper and then download them.
 
-Then each paper must be converted a text file. This was done using a bash script.
+## Convert to text file
+
+Each paper must be converted a text file. This was done using a bash script.
 
 ```
 chmod +x ./PDFtoTEXT.sh
@@ -54,6 +56,8 @@ chmod +x ./PDFtoTEXT.sh
 ```
 
 This will convert the papers and then delete the pdf version. 
+
+## Training
 
 Next we will train our network. Make sure to have VirtualEnv activated.
 
@@ -68,6 +72,8 @@ tensorboard --logdir ./log/
 ```
 and then navigate your browser to `localhost:6006`
 
+## Generating Text
+
 when you feel that your network has had adequate training you can then run
 ```
 python3 rnn_play.py
@@ -76,7 +82,7 @@ Output will be visible in your terminal and in `generated_output.txt`
 
 
 # Generated Excerpts
----
+
 ```
 
                                                                                                     
@@ -323,7 +329,7 @@ the corresponding algebra of the symplectic groups of type Q
 
 
 # Problems with this method
----
+
 The network seems to latch on to the spacing and formatting of the paper rather than the words. Often it will output a ton of periods and 1's ad nauseam. Occasionally one will find a paragraph of gibberish. I hypothesize that having the actual .tex files of the papers might allow for a better training dataset.
 
 As for the pipeline, I would like to not have to use a bash script in the middle of the process, but current pdf to text python libraries destroy the content of the papers. 
