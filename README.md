@@ -72,6 +72,8 @@ tensorboard --logdir ./log/
 ```
 and then navigate your browser to `localhost:6006`
 
+[TensorBoard Preview](https://github.com/Yemeen/Arxiv-Generator/blob/master/tensorboard.png)
+
 ## Generating Text
 
 when you feel that your network has had adequate training you can then run
