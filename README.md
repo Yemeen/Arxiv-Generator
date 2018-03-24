@@ -8,7 +8,7 @@ Arxiv library
 ```
 pip install arxiv
 ```
-TensorFlow
+TensorFlow (Python3)
 
 [Install guide](https://www.tensorflow.org/install/)
 
@@ -331,7 +331,7 @@ the corresponding algebra of the symplectic groups of type Q
 ```
 
 
-## Problems with this method
+## Problems
 
 The network seems to latch on to the spacing and formatting of the paper rather than the words. Often it will output a ton of periods and 1's ad nauseam. Occasionally one will find a paragraph of gibberish. I hypothesize that having the actual .tex files of the papers might allow for a better training dataset.
 
