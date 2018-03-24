@@ -9,7 +9,9 @@ Arxiv library
 pip install arxiv
 ```
 TensorFlow
+
 [Install guide](https://www.tensorflow.org/install/)
+
 ## Usage
 
 ### Gather Data
@@ -26,7 +28,6 @@ First edit gatherdata.py for your Arxiv needs. You can choose several different 
 | Report Number     | rn             |
 | Id                | id             |
 | All of the above  | all            |
-|                   |                |
 
 I primarily used Subject Category.
 
