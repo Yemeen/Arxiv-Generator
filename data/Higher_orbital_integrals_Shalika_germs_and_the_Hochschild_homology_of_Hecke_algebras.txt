@@ -1,0 +1,1448 @@
+                                              HIGHER ORBITAL INTEGRALS, SHALIKA GERMS, AND THE
+                                                  HOCHSCHILD HOMOLOGY OF HECKE ALGEBRAS
+arXiv:math/0008133v1 [math.RT] 16 Aug 2000
+
+
+
+
+                                                                                  VICTOR NISTOR1
+
+                                                             Version: 3.0A; Revised: 8/16/2000; Run: September 8, 2017
+
+
+                                                      Abstract. We give a detailed calculation of the Hochschild and cyclic homol-
+                                                      ogy of the algebra Cc∞ (G) of locally constant, compactly supported functions
+                                                      on a reductive p–adic group G. We use these calculations to extend to arbi-
+                                                      trary elements the definition the higher orbital integrals introduced by Blanc
+                                                      and Brylinski for regular semisimple elements. Then we extend to higher or-
+                                                      bital integrals some results of Shalika. We also investigate the effect of the
+                                                      “induction morphism” on Hochschild homology.
+
+
+
+
+                                                                                      Contents
+                                                Introduction                                                                            1
+                                                1. Homology of Hecke algebras                                                           3
+                                                2. Higher orbital integrals and their Shalika germs                                    10
+                                                3. The cohomology of the unipotent variety                                             15
+                                                4. Induction and the unipotent variety                                                 17
+                                                5. Examples                                                                            23
+                                                References                                                                             26
+
+
+
+                                                                                   Introduction
+                                                Orbital integrals play an important role in the harmonic analysis of a reductive
+                                             p–adic group G; they are, for instance, one of the main ingredients in the Arthur–
+                                             Selberg trace formula. Orbital integrals on unimodular groups are a particular case
+                                             of invariant distribution, which have been used in [2] to prove the irreducibility of
+                                             certain induced representations of GLn over a p-adic field.
+                                                By definition, an invariant distribution on a unimodular group G gives rise to
+                                             a trace (i.e., a Hochschild cocycle of degree zero) on Cc∞ (G), the Hecke algebra of
+                                             compactly supported, locally constant, complex valued functions on G. It is inter-
+                                             esting then to try to analyse as completely as possible the Hochschild homology and
+                                             cohomology groups of the algebra Cc∞ (G) (denoted HH∗ (Cc∞ (G)) and HH∗ (Cc∞ (G)),
+                                             respectively).
+                                                In this paper, G will be the set of F-rational points of a linear algebraic group
+                                             G defined over a finite extension F of the field Qp of p-adic numbers, p being a
+                                             fixed prime number. The group G does not have to be reductive, although this is
+                                                1 partially supported by a NSF Young Investigator Award DMS-9457859 and a Sloan Research
+
+                                             Fellowship. Manuscripts are available from http://www.math.psu.edu/nistor/.
+                                                                                            1
+2                                    V. NISTOR
+
+
+certainly the most interesting case. When we shall assume G (or G, by abuse of
+language) to be reductive, we shall state this explicitely. For us, the most important
+topology to consider on G will be the locally compact topology induced from an
+embedding of G ⊂ GLn (F). Nevertheless, the Zariski topology on G will also play
+a role in our study.
+   To state the main result of this paper, we need to introduce first the concept of
+standard subgroup. For any set A ⊂ G, we shall denote
+                        C(A) := {g ∈ G, ga = ag, ∀a ∈ A}
+and Z(A) := A ∩ C(A). This latter notation will be used only when A is a sub-
+group of G. A commutative subgroup S of G is called standard if S = Z(C(s))
+for some semi-simple element s ∈ G. Our results will be stated in terms of stan-
+dard subgroups of G. We shall denote by Hu the set of unipotent elements of a
+subgroup H. Sometimes, the set C(S)u is also denoted by US , in order to avoid
+having to many paranthesis in our formulae. One of the main results of this paper
+(Theorem 1) identifies the groups HH∗ (Cc∞ (G)) in terms of the following data: the
+set Σ of (conjugacy classes of) standard subgroups S of G, the subset S reg ⊂ S of
+S-regular elements, the action of the Weyl group W (S) of S on Cc∞ (S), and the
+continuous cohomology of the C(S)–module
+                         Cc∞ (US )δ := Cc∞ (C(S)u ) ⊗ ∆C(S) ,
+where ∆C(S) denotes the modular function of the group C(S). More precisely, if G
+is a p-adic group defined over a field of characteristic zero, as before, then Theorem
+1 states the existence of an isomorphism
+                              M
+(1)           HHq (Cc∞ (G)) ≃      Cc∞ (S reg )W (S) ⊗ Hq (C(S), Cc∞ (US )δ ),
+                             S∈Σ
+which can be made natural by using a generalization of the Shalika germs.
+   It is important to relate this result with the periodic cyclic homology groups of
+Cc∞ (G). For the Hecke algebra Cc∞ (G), the periodic cyclic homology is related to
+Hochschild homology by
+(2)                 HPq (Cc∞ (G)) ≃ ⊕k∈Z HHq+2k (Cc∞ (G))comp ,
+that is, HP∗ (Cc∞ (G)) is the localization of Hochschild homology to the G-invariant
+subset of compact elements of G. This relation is implicit in [10]. Consequently, the
+results of this paper complement the results on the cyclic homology of p–adic groups
+in [10, 19]. It is interesting to remark that HP∗ (Cc∞ (G)) can also be described
+in terms of the admissible spectrum of G, see [12], and hence our results have
+significance for the representation theory of p-adic groups. See also [16] for similar
+results on (the groups of real points of) algebraic groups defined over R. These
+periodic cyclic cohomology groups are isomorphic to K∗ (Cr∗ (G)), by combining
+results from [1], [13], and [10].
+   Assume for the moment that G is reductive. Then, in order to better understand
+the role played by the groups HH∗ (Cc∞ (G)) and H∗ (G, Cc∞ (Gu )) in the representa-
+tion theory of G, we relate H∗ (G, Cc∞ (Gu )) to the analogous cohomology groups,
+H∗ (P, Cc∞ (Pu )δ ) and H∗ (M, Cc∞ (Mu )δ ), associated to parabolic subgroups P of G
+and to their Levi components M . In particular, we define morphisms between
+these Hochschild homology groups that are analogous to the induction and infla-
+tion morphisms that play such a prominent role in the representation theory of
+p–adic groups. These morphisms are induced by morphisms of algebras.
+                           HOMOLOGY OF p-ADIC GROUPS                                3
+
+
+   In [4], Blanc and Brylinski have introduced higher orbital integrals associated to
+regular semisimple elements by proving first that
+(3)                       HHq (Cc∞ (G)) ≃ Hq (G, Cc∞ (G)δ ),
+a result which they dubed “the MacLane isomorphism.” (Actually, they did not
+have to twist with the modular function, because they worked only with unimodular
+groups G, see Lemma 1 for the slightly more general version needed in this paper),
+after that we rely more on filtrations of the G-module Cc∞ (G), rather than on
+localization. This allows us to define higher orbital integrals at arbitrary elements.
+Then, we study the properties of these orbital integrals and we obtain in particular
+a proof of the existence of abstract Shalika germs for the higher orbital integrals.
+Actually, the existence of Shalika germs turns out to be a consequence of some
+general homological properties of the ring of invariant, locally constant functions
+on the group G. We also use the techniques developed in [16] in the framework of
+real algebraic groups. It would be interesting to relate the results of this paper to
+those of [11].
+   This is the revised version of an preprint that was first circulated in February
+1999. I would like to thank Paul Baum, David Kazhdan, Robert Langlands, George
+Lusztig, Roger Plymen, and Peter Schneider for useful comments and discussions.
+
+                       1. Homology of Hecke algebras
+   In this section we shall use several general results on Hochschild homology of
+algebras, on algebraic groups, and on the continuous cohomology of totally discon-
+nected groups. Good references are [5, 6, 15], for the general theory, and [12] for
+questions related to Hochschild homology.
+   If G is a group and A ⊂ G is a subset, we denote by C(A) the centralizer of A,
+that is, the set of elements of G that commute with every element of A, and by
+N (A) the normalizer of A, that is, the set of elements g ∈ G such that gAg −1 = A.
+By Z = Z(G) = C(G) we denote the center of G.
+   If X is a totally disconnected, locally compact, non-discrete space X, we denote
+by Cc∞ (X) the space of compactly supported, locally constant, complex valued
+functions on X. Recall that, if U ⊂ X is an open subset of X as above, then
+restriction defines an isomorphism
+(4)                        Cc∞ (X)/Cc∞ (U ) ≃ Cc∞ (X \ U ).
+   Let G be a linear algebraic group defined over a totally disconnected locally
+compact field F. Thus F is a finite algebraic extension of Qp , the field of p-adic
+numbers. The set G(F) of F-rational points of G is called a p–adic group and will
+be denoted simply by G. It is known [5] that G = G(F) identifies with a closed
+subgroup of GLn (F), and hence it has a natural locally compact topology that
+makes it a totally disconnected space. We fix a Haar measure dg on G.
+   Consider now the space Cc∞ (G) of compactly supported, locally constant func-
+tions on G. Fix a Haar measure dh on G. Then the convolution product, denoted
+∗, is defined by
+                                       Z
+                         f1 ∗ f2 (g) =   f1 (h)f2 (h−1 g)dh,
+                                        G
+makes Cc∞ (G) an algebra, the Hecke algebra of G. It is important in representa-
+tion theory to determine the (AdG –)invariant linear functionals on Cc∞ (G). If G is
+4                                                    V. NISTOR
+
+
+unimodular, the space of invariant linear functionals on Cc∞ (G) coincides with the
+space of traces on Cc∞ (G); moreover, since the space of traces of Cc∞ (G) identifies
+with HH0 (Cc∞ (G)), the first Hochschild cohomology group of Cc∞ (G), it is reason-
+able to ask what are the groups HHq (Cc∞ (G)), the Hochschild homology groups of
+Cc∞ (G), in general. Since HHq (Cc∞ (G)) is the algebraic dual of HHq (Cc∞ (G)), it is
+enough to concentrate on Hochschild homology. The computation of the groups
+HHq (Cc∞ (G)) is the main purpose of this paper.
+   We first recall the definition of HH∗ (Cc∞ (G)). Let
+
+                       Cc∞ (Gq+1 ) = Cc∞ (G) ⊗ Cc∞ (G) ⊗ . . . ⊗ Cc∞ (G),
+
+(q + 1)–times, be the usual (algebraic) tensor product of vector spaces. The Hoch-
+schild differential b : Cc∞ (Gq+2 ) → Cc∞ (Gq+1 ) is given by
+                                     q
+                                     X               Z
+                                                 j
+(5) (bf )(g0 , g1 , . . . , gq ) =         (−1)           f (g0 , . . . , gj−1 , γ, γ −1 gj , gj+1 , . . . , gq )dγ
+                                     j=0              G
+                                                                            Z
+                                                                      q+1
+                                                            + (−1)               f (γ −1 g0 , g1 , . . . , gq , γ)dγ.
+                                                                             G
+
+By definition, the q-th Hochschild homology group of Cc∞ (G), denoted HHq (Cc∞ (G)),
+is the q-th homology group of the complex (Cc∞ (Gq+1 ), b). Since Cc∞ (G) is an
+inductive limit of unital algebras, this definition coincides with the usual definition
+of Hochschild homology for non-unital algebras (using algebras with adjoint unit).
+   The group G acts by conjugation on Cc∞ (G), and we denote by Cc∞ (G)ad the
+G-module defined by this action. Also, let ∆G denote the modular function of G,
+which we recall, is defined by the relation
+                                  Z               Z
+                           ∆G (h)     f (gh)dg =     f (g)dg.
+                                             G                       G
+
+We shall be especially interested in the G–module Cc∞ (G)δ obtained from Cc∞ (G)ad
+by twisting it with the modular function. More precisely, let Cc∞ (G)δ = Cc∞ (G) as
+vector spaces, and let the action of G on functions be given by the formula
+
+(6)                    (γ · f )(g) = ∆G (γ)f (γ −1 gγ),                     f ∈ Cc∞ (G)δ .
+
+The reason for this twisting is that, for G non-unimodular, the traces of Cc∞ (G) are
+the G–invariant functionals on Cc∞ (G)δ , not on Cc∞ (G) (this is an immediate con-
+sequence of Lemma 1). More generally, our approach to the Hochschild homology
+of Cc∞ (G) is based on Lemma 1.
+   Before stating and proving Lemma 1, we need to introduce some notation. First,
+if M is an arbitrary G–module, we denote by M ⊗ ∆G the tensor product of the
+G–modules M and C, where the action on C is given by the multiplication with
+the modular function of G. (We sometimes write this as Cc∞ (G)δ = Cc∞ (G) ⊗ ∆G .)
+   If M is a right G–module and M ′ is a left G–module, then M ⊗G M ′ is defined
+as the quotient of M ⊗ M ′ by the submodule generated by mg ⊗ m′ − m ⊗ gm′. For
+example, if H ⊂ G is a closed subgroup and if X is a left H–space, then we have
+an isomorphism of G–spaces
+
+(7)                     Cc∞ (G) ⊗H (Cc∞ (X) ⊗ ∆H ) ≃ Cc∞ (G ×H X),
+                                 HOMOLOGY OF p-ADIC GROUPS                                                5
+
+
+where G × X is the quotient (G × X)/H for the action h(g, x) = (gh−1 , hx). This
+isomorphism is obtained by observing that the natural map
+  tX : Cc∞ (G) ⊗ Cc∞ (X) = Cc∞ (G × X) −→ Cc∞ (G ×H X),
+                                                                              Z
+                                                          tX (f )((g, x)) =        f (gh, h−1 x)dh,
+                                                                               H
+passes to the quotient to give the desired isomorphism. Sometimes it will be con-
+venient to regard a left G–module as a right G–module by replacing g with g −1 .
+   Also, recall that a G–module M is smooth if, and only if, the stabilizer of each
+element of M is open in G. Then one can define the continuous homology groups
+of G with coefficients in the smooth module M , denoted Hk (G, M ), using tensor
+products as follows. Let Bq (G) = Cc∞ (Gq+1 ), q = 0, 1, . . . , be the Bar complex of
+the group G, with differential
+                                        q+1
+                                        X         Z
+                                                j
+         (df )(g0 , g1 , . . . , gq ) =     (−1)    f (g0 , . . . , gj−1 , γ, gj , . . . , gq )dγ.
+                                      j=0          G
+
+Then the complex (Bq , d) gives a resolution of C with projective Cc∞ (G)–modules,
+and the complex
+(8)                                         Bq (G) ⊗G M
+computes Hq (G, M ). See [3, 6].
+  We shall need the following extension of a result from [4]:
+Lemma 1. Let Cc∞ (G)δ = Cc∞ (G) ⊗ ∆G be the G–module obtained by twisting the
+adjoint action of G on Cc∞ (G) by the modular function. Then we have a natural
+isomorphism
+(9)                             HHq (Cc∞ (G)) ≃ Hq (G, Cc∞ (G)δ ).
+Proof. Consider the complex (8), which computes the continuous cohomology of
+M = Cc∞ (G)δ , and let hG : Bq (G) ⊗ Cc∞ (G)δ ≃ Cc∞ (G) ⊗ Cc∞ (Gq+1 ) = Cc∞ (Gq+2 ) →
+Cc∞ (G)⊗q+1 be the map
+                                    Z
+   hG (f )(g0 , g1 , . . . , gq ) =   f (g −1 hg, g −1 g0 , g −1 g0 g1 , . . . , g −1 g0 g1 . . . gq )dg,
+                                  G
+                                                                                   h = g0 g1 . . . gq .
+  As in equation (7), the map hG descends to the quotient to induce an isomor-
+phism
+(10)            h̃G : Bq (G) ⊗G Cc∞ (G)δ ≃ Cc∞ (Gq+2 ) ⊗G C ≃ Cc∞ (G)⊗q+1
+of complexes, that is h̃G ◦ (d ⊗G 1) = b ◦ h̃G , which establishes the isomorphism
+Hq (G, Cc∞ (G)δ ) ≃ HHq (Cc∞ (G)), as desired.
+   To better justify the twisting of the module Cc∞ (G) by the modular function in
+the above lemma, note that the trivial representation    of G gives rise to an obvious
+morphism π0 : Cc∞ (G) → C, by π0 (f ) = G f (g)dg, which hence defines a trace on
+                                          R
+
+Cc∞ (G). However π0 is not G–invariant for the usual action of G, but is invariant
+if we twist the adjoint action of G by the modular function, as indicated.
+   We proceed now to a detailed study of the G-module Cc∞ (G)δ . First we define a
+natural AdG -invariant stratification of G, called the standard stratification of G.
+6                                      V. NISTOR
+
+
+    Let g be the Lie algebra of G in the sense of linear algebraic groups. Denote by
+ai (g) the coefficients of the polynomial det(t + 1 − Adg ),
+                                              m
+                                              X
+                        det(t + 1 − Adg ) =         ai (g)ti ∈ F[t].
+                                              i=0
+
+Let ar be the first non-zero coefficient ai , and define
+                       Vk = {ar = ar+1 = . . . = ar+k−1 = 0}.
+Thus V0 = G, by convention, and G \ V1 = G′ , the set of regular elements of G if
+G is reductive. Also, Vm+1 = ∅ because am = 1. We observe that the functions
+ai (g) are G-invariant polynomial functions on G, and that they depend only on the
+semisimple part of g.
+    The description of the Hochschild homology of Cc∞ (G) that we shall obtain is
+formulated in terms of certain commutative subgroups of G, called standard, that
+we now define.
+Definition 1. A commutative subgroup S ⊂ G is called standard if, and only if,
+there exists a semisimple element s0 ∈ G such that S is the center of C(s0 ), the
+centralizer of s0 in G.
+    If s0 and S are as in the definition above, then S is the set of F–rational points of
+a subgroup S of G and C(S) = C(s0 ). The element s0 in the above definition is not
+unique in general, and, for a standard subgroup S ⊂ G, we denote by S reg ⊂ S the
+set of semisimple elements s ∈ S such that C(S) = C(s). An element s ∈ S reg will
+be called S-regular. This set is not empty by the definition of a standard subgroup.
+Note that S reg depends on G also, and not only on S.
+    Standard subgroups exist. Indeed, if γ ∈ G is semisimple, then S(γ) := Z(C(γ)),
+the center of the centralizer of γ, is a standard subgroup of G. In particular, every
+semisimple element of G belongs to S reg , for some standard subgroup S of G. For
+all standard subgroups S, the set S reg is an open subset of S in the Zariski topology.
+    For any p–adic group H, we denote by Hu the set of unipotent elements of H,
+and call it the unipotent variety of H. In the particular case of H = C(S), where
+S ⊂ G is a standard subgroup, we also denote C(S)u = US .
+    In order to proceed further, recall that the Jordan decomposition of an element
+g ∈ G is g = gs gu , where gs is semisimple, gu is unipotent, and gs gu = gu gs . This
+decomposition is unique [5]. If g = gs gu is the Jordan decomposition of g ∈ G and
+if gs ∈ S reg , then gu ∈ US , by definition, and hence g ∈ S reg US .
+    Consider now a standard subgroup S ⊂ G and let
+                                FS = AdG (S reg ), and
+                                 FSu = AdG (S reg US )
+be the set of semisimple elements of G conjugated to an element of S reg and,
+respectively, the set of elements g ∈ G conjugated to an element of S reg US (i.e.,
+such that the semisimple part of g is in FS ). Also, let N (S) be the normalizer of
+S and W (S) = N (S)/C(S). Since N (S) leaves S reg invariant and is actually the
+normalizer of this set, it follows that the quotient W (S) can be identified with a set
+of automorphisms of Sss , the subgroup of semisimple elements of S. Since N (S)
+is the set of F–rational points of an algebraic group, the rigidity of tori ([5], page
+117) shows that W (S) is finite.
+                             HOMOLOGY OF p-ADIC GROUPS                                    7
+
+
+   The natural map (g, s) → gsg −1 descends to a map
+                    φS : (G × S reg )/N (S) ∋ (g, s) → gsg −1 ∈ FS .
+Similarly, we obtain a map
+                 φuS : (G × S reg US )/N (S) ∋ (g, su) → gsug −1 ∈ FSu .
+   In the following proposition we consider the locally compact (and Hausdorff)
+topology of G, and not the Zariski topology. Denote by Gss the set of semisimple
+elements of G.
+Proposition 1. Let S be a standard subgroup of G. Using the above notation, we
+have:
+   (i) The set FS is an analytic submanifold of G, and the maps φS and φuS are
+homeomorphisms.
+   (ii) For each k, the set Vk \ Vk+1 is a disjoint union of sets of the form FSu , and
+each FSu ⊂ Vk \ Vk+1 is an open subset of Vk . Moreover, the set Gss ∩ (Vk \ Vk+1 ) is
+a disjoint union of sets of the form FS , and each FS ⊂ Vk \ Vk+1 is an open subset
+of Gss ∩ Vk .
+Proof. (i) First we check that φS and φuS are injective. Indeed, assume that
+g1 s1 g1−1 = g2 s2 g2−1 , for some s1 , s2 ∈ S reg . Then, if g = g2−1 g1 , we have
+              gC(s1 )g −1 = C(s2 ) ⇒ gC(S)g −1 = C(S) ⇒ gSg −1 = S,
+and hence g ∈ N (S). Consequently, we have (g1 , s1 ) = (g2 g, g −1 s2 g) = g −1 (g2 , s2 ),
+with g ∈ N (S), as desired. The same argument shows that if FS and FS ′ have a
+point in common, then the standard subgroups S and S ′ are conjugated in G.
+    The injectivity of φuS follows from the injectivity of φS , indeed, if g1 (s1 u1 )g1−1 =
+g2 (s2 u2 )g2−1 , let g = g2−1 g1 as above, and conclude that gs1 g −1 = s2 , by the
+uniqueness of the Jordan decomposition. As above, this implies that g ∈ N (S).
+    Since the differential dφS is a linear isomorphism onto its image (i.e. it is injec-
+tive) and φS is injective, it follows that φS is a local homeomorphism onto its image
+(for the locally compact topologies), and that its image is an analytic submanifold
+([21], p. 38, Theorem (2.3)). The set Gss ∩ (Vk \ Vk+1 ) is an algebraic variety on
+which G acts with orbits of the same dimension, and hence φS is proper. This
+proves that φS is a homeomorphism. Using an inverse for φS , we obtain that φuS is
+also a homeomorphism.
+    To prove now (ii), consider a standard subgroup S ⊂ G, and let d be the dimen-
+sion of C(S). Then a0 = a1 = . . . = ad−1 = 0 on S, and S ∩ {ad 6= 0} contains
+S reg as an open component. It follows that, if s ∈ Gss ∩ (Vk \ Vk+1 ) ∩ S reg , then
+FS ⊂ Vk \ Vk+1 . This shows that Gss ∩ (Vk \ Vk+1 ) is a union of sets of the form FS .
+This must then be a disjoint union because the sets FS are either equal or disjoint,
+as proved above.
+    Now, if g ∈ Vk \ Vk+1 has semisimple part s, then s ∈ FS ⊂ Gs ∩ (Vk \ Vk+1 ),
+for some standard subgroup S, and hence g ∈ FSu ⊂ Vk \ Vk+1 . The sets FSu are
+open in the induced topology because the map Vk \ Vk+1 → Gs ∩ (Vk \ Vk+1 ) is
+continuous.
+
+   See also [24].
+   Let R∞ := R∞ (G) be the ring of locally constant AdG -invariant functions on G
+with the pointwise product, which we regard as a subset of the set of endomorphisms
+8                                           V. NISTOR
+
+
+of the G–module Cc∞ (G)δ = Cc∞ (G) ⊗ ∆G . For each k ≥ 1, denote by Ik ⊂ R∞ the
+ideal generated by functions f : G → C of the form
+                               f = φ(ar , ar+1 , . . . , ar+k−1 ),
+where φ is a locally constant function φ : Fk → C such that φ(0, 0, . . . , 0) =
+0. (Recall that each of the polynomials a0 , . . . , ar−1 is the 0 polynomial.) By
+convention, we set I0 = (0); also, it follows that Im+1 = R∞ .
+  Fix now k, and let pn ∈ Ik be the function φn (ar , ar+1 , . . . , ar+k−1 ), where
+φn : Fk → C is 1 on the set
+                        {ξ = (ξ0 , . . . , ξk−1 ) ∈ Fk , max |ξi | ≥ q −n }
+and vanishes outside this set. (Here q is the number of elements of the residual
+field of F, and the non-archimedean norm “| |” is normalized such that its range is
+{0}∪{q n , n ∈ Z}.) Then pn = p2n = pn pn+1 and Ik = ∪pn R∞ . For further reference,
+we state as a lemma a basic property of the constructions we have introduced.
+Lemma 2. If M is a R∞ –module, then Ik M = ∪pn M .
+
+    As a consequence of this above lemma, we obtain the following result.
+Corollary 1. Consider the G–module
+               Mk = (Ik+1 /Ik ) ⊗R∞ Cc∞ (G)δ ≃ Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ .
+Then, for each q ≥ 0, we have an isomorphism
+                                                   m
+                                                   M
+                             Hq (G, Cc∞ (G)δ ) ≃         Hq (G, Mk )
+                                                   k=0
+
+of vector spaces.
+Proof. There exists a (not natural) isomorphism
+                                  m
+                                  M
+            Hq (G, Cc∞ (G)δ ) ≃         Ik+1 Hq (G, Cc∞ (G)δ )/Ik Hq (G, Cc∞ (G)δ ),
+                                  k=0
+
+of vector spaces.
+   By the above lemma, the inclusion of Ik Cc∞ (G)δ → Cc∞ (G)δ of G-modules induces
+natural isomorphisms
+
+    Hq (G, Ik Cc∞ (G)δ ) ≃ Hq (G, lim pn Cc∞ (G)δ )
+                                   →
+                                         ≃ lim pn Hq (G, Cc∞ (G)δ ) ≃ Ik Hq (G, Cc∞ (G)δ ),
+                                             →
+
+because the functor Hq is compatible with inductive limits and with direct sums.
+  The naturality of these isomorphisms and the Five Lemma show that
+      Hq (G, Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ ) ≃ Ik+1 Hq (G, Cc∞ (G)δ )/Ik Hq (G, Cc∞ (G)δ ).
+This is enough to complete the proof.
+
+   We now study the homology of the subquotients Mk = Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ
+by identifying them with induced modules. Let Σk be a set of representative of con-
+jugacy classes of standard subgroups S such that FS ⊂ Vk \ Vk+1 (or, equivalently,
+FSu ⊂ Vk \ Vk+1 ).
+                            HOMOLOGY OF p-ADIC GROUPS                                    9
+
+
+Lemma 3. Using the above notation, we have Ik Cc∞ (G) = Cc∞ (G \ Vk ) and
+                                              M
+                 Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ ≃    Cc∞ (FSu ).
+                                                      S∈Σk
+
+Proof. It follows from the definition of Ik that, if f ∈ Ik Cc∞ (G)δ , then f vanishes
+in a neighborhood of Vk . Conversely, if f is in Cc∞ (G \ Vk ), then we can find some
+polynomial ai , with i ≤ r + k − 1, such that |ai | is bounded from below on the
+support of f by, say, q −n , then pn f = f . The second isomorphism follows from the
+first isomorphism using (4) and Lemma 2.
+
+   If H ⊂ G is a closed subgroup and M is a smooth (left) H–module (that is, the
+stabilizer of each m ∈ M is an open subgroup of M ), we denote
+(11)    indG         ∞             ∞
+           H (M ) = Cc (G) ⊗H M = Cc (G) ⊗ M/{f h ⊗ m − f ⊗ hm, h ∈ H}.
+
+Where the right H–module structure on Cc∞ (G) is (f h)(g) = f (gh−1 ). Then
+Shapiro’s lemma, see [7], states that
+(12)                     Hk (G, indG
+                                   H (M ) ⊗ ∆G ) ≃ Hk (H, M ).
+
+(A proof of Shapiro’s Lemma in our setting is contained in the proof of Theorem
+4.)
+    The basic examples of induced modules are obtained from H–spaces. If X is an
+H–space (we agree that H acts on X from the left), then
+            Cc∞ ((G × X)/H) ≃ indG   ∞                 G   ∞
+                                 H (Cc (X) ⊗ ∆H ) ≃ indH (Cc (X)δ )
+
+as G–modules, where H acts on G × X by h(g, x) = (gh−1 , hx). For example,
+Proposition 1 identifies Cc∞ (FSu ) with an induced module:
+       Cc∞ (FSu ) ≃ indG       ∞
+                       N (S) (Cc (S
+                                    reg
+                                        US ) ⊗ ∆N (S) ) = indG       ∞
+                                                             N (S) (Cc (S
+                                                                          reg
+                                                                              US )δ ).
+   Shapiro’s lemma is an easy consequence of the Serre–Hochschild spectral se-
+quence, see [7], which states the following. Let M be a smooth G–module and
+H ⊂ G be a normal subgroup. Then the action of G on Hq (H, M ) descends to an ac-
+                                                        2
+tion of G/H, and there exists a spectral sequence with Ep,q = Hp (G/H, Hq (H, M )),
+convergent to Hp+q (G, M ).
+   Let Mk = Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ , as before.
+Proposition 2. Using the above notation, we have a natural
+                         M
+           Hq (G, Mk ) ≃      Cc∞ (S reg )W (S) ⊗ Hq (C(S), Cc∞ (US )δ )
+                             hSi∈Σk
+                   ∞
+isomorphism of R –modules
+Proof. Let S be a standard subgroup of G. Recall first that W (S) = N (S)/C(S) is
+a finite group that acts freely on S reg , which gives a N (S)–equivariant isomorphism
+                        Cc∞ (S reg US )δ = Cc∞ (US )δ ⊗ Cc∞ (S reg ).
+   Let M be a smooth N (S)–module. The Hochschild–Serre spectral sequence
+applied to the module M and the normal subgroup C(S) ⊂ N (S) gives natural
+isomorphisms
+          Hq (N (S), M ) ≃ H0 (W (S), Hq (C(S), M )) ≃ Hq (C(S), M )W (S) .
+10                                       V. NISTOR
+
+
+     Combining these two isomorphisms, we obtain
+
+ Hk (G, Cc∞ (FSu )δ ) ≃ Hk (G, indG       ∞
+                                  N (S) (Cc (S
+                                               reg
+                                                   US )δ )δ ) ≃ Hk (N (S), Cc∞ (S reg US )δ )
+                                        W (S)
+≃ Hk (C(S), Cc∞ (US )δ )⊗Cc∞ (S reg )         ≃ Cc∞ (S reg )W (S) ⊗Hk (C(S), Cc∞ (US )δ ).
+                                      
+
+The result then follows from Lemma 3, which implies directly that
+                                  Mk ≃ ⊕S∈Σk Cc∞ (FSu )δ .
+The proof is now complete.
+
+   Combining this proposition with Corollary 1, we obtain the main result of this
+section. Recall that a p–adic group G = G(F) is the set of F–rational points of
+a linear algebraic group G defined over a non-archemedean, non-discrete, locally
+compact field F of characteristic zero. Also, recall that US is the set of unipotent
+elements commuting with the standard subgroup S, and that the action of C(S) on
+Cc∞ (US ) is twisted by the modular function of C(S), yielding the module Cc∞ (US )δ =
+Cc∞ (US ) ⊗ ∆C(S) .
+Theorem 1. Let G be a p–adic group. Let Σ be a set of representative of conjugacy
+classes of standard subgroups of S ⊂ G and W (S) = N (S)/C(S), then we have an
+isomorphism
+                              M
+              HHq (Cc∞ (G)) ≃    Cc∞ (S reg )W (S) ⊗ Hq (C(S), Cc∞ (US )δ ).
+                                S∈Σ
+
+  Remark. The isomorphism of the above theorem is not natural. A more natural
+description of HHq (Cc∞ (G)) will be obtained in one of the following sections by
+considering higher orbital integrals and their Shalika germs
+
+            2. Higher orbital integrals and their Shalika germs
+   Proposition 2 of the previous section allows us to determine the structure of the
+localized cohomology groups HH∗ (Cc∞ (G))m , where m is a maximal ideal of R∞ (G).
+This will lead to an extension of the higher orbital integrals introduced by Blanc
+and Brylinski in [4], and to a generalization of some results of Shalika [22] to higher
+orbital integrals. In this way, we shall also obtain a more natural description of
+HHq (Cc∞ (G)).
+   First recall the following result.
+Proposition 3. Let G be a reductive p–adic group over a field of characteristic 0,
+S ⊂ G be a standard subgroup, and γ ∈ S reg (that is, γ is a semisimple element
+such that C(S) = C(γ)). Then there exists a N (S)–invariant closed and open
+neighborhood of γ in C(S) such that
+                              G × U ∈ (g, h) → ghg −1 ∈ G
+defines a homeomorphism of (G × U )/N (S) onto a G–invariant, closed and open
+subset V ⊂ G containing γ.
+Proof. The result follows from Luna’s Lemma. For p-adic groups, Luna’s Lemma
+is proved in [17], page 109, Properties “C” and “D.”
+
+     From this proposition we obtain the following consequences for the ring R∞ (G).
+                           HOMOLOGY OF p-ADIC GROUPS                                      11
+
+
+Corollary 2. Let U and V be as in Proposition 3 above.
+   (i) The ring R∞ (G) decomposes as the direct sum C ∞ (V )G ⊕ C ∞ (V c )G , and
+C (V )G ≃ C ∞ (U )N (S) ⊂ C ∞ (C(S))N (S) = R∞ (C(S))W (S) . (Here V c is the com-
+ ∞
+
+plement of V in G.)
+   (ii) For any two semisimple elements γ, γ ′ ∈ G, if φ(γ) = φ(γ ′ ) for all φ ∈
+R (G), then γ and γ ′ are conjugated in G.
+  ∞
+
+   (iii) Let m ∈ R∞ (G) be the maximal ideal consisting of functions that vanish
+at a semisimple element γ ∈ G. Then p is generated by an increasing sequence of
+projections, and Mm ≃ M/mM , for any R∞ (G)–module M .
+Proof. (i) is an immediate consequence of Proposition 3. (ii) follows from [17],
+Proposition 2.5.
+   To prove (iii), observe that the maximal ideal m is generated by a sequence of
+projections pn , that is, m = ∪pn R∞ (G), with p2n = pn .
+   We know from [17], Proposition 2.5, that R∞ (G) is isomorphic to C ∞ , for some
+locally compact, totally disconnected topological space X. Moreover, if M is a
+C ∞ (X)–module and m is the maximal ideal of functions vanishing at x0 , for some
+fixed point x0 ∈ X, then C ∞ (X)m ≃ C ∞ (X)/mC ∞ (X), and hence
+      Mm = M ⊗C ∞ (X) C ∞ (X)m ≃ M ⊗C ∞ (X) C ∞ (X)/mC ∞ (X) ≃ M/mM.
+Since X is metrizable, we can choose a basis Vn of compact open neighborhoods
+of x0 in X. Then, if we let pn to be the characteristic function of Vnc , then pn are
+projections generating m. By choosing Vn to be decreasing, we obtain a decreasing
+sequence pn .
+  We now consider for each maximal ideal m ⊂ R∞ = R∞ (G) the localization
+HHq (Cc∞ (G))m .
+Proposition 4. Let m be a maximal ideal of R∞ (G). If m consists of the functions
+that vanish at the semisimple element γ ∈ G and S ⊂ G is a standard subgroup
+such that γ ∈ S reg , then
+                       HHq (Cc∞ (G))m ≃ Hq (C(S), Cc∞ (US )δ ).
+For all other maximal ideals m ⊂ R∞ (G), we have HHq (Cc∞ (G))m = 0.
+  Note that Hq (C(S), Cc∞ (US )) ≃ Hq (C(γ), Cc∞ (C(γ)u )).
+Proof. The vanishing of HH∗ (Cc∞ (G))m in the second half of the proposition follows
+because Cc∞ (G)m = 0 in that case.
+   Assume now that m consists of functions vanishing at γ, a semisimple element
+of G. The localization functor V → Vm is exact by standard homological algebra.
+The sequence of ideals (Ik )m is an increasing sequence satisfying (I0 )m ≃ 0 and
+(Im+1 )m ≃ C. Choose k such that (Ik )m ≃ 0 and (Ik+1 )m ≃ C. (This happens if,
+and only if, γ ∈ Vk \ Vk+1 .) It follows that
+               Hq (G, Cc∞ (G)δ )m ≃ Hq (G, Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ )m .
+   Since all the isomorphisms of Proposition 2 are compatible with this the local-
+ization functor, we obtain that
+  HHq (Cc∞ (G))m ≃ Hq (G, Cc∞ (G)δ )m
+                  M
+                       Hq (C(S), Cc∞ (US )δ ) ⊗ Cc∞ (S reg )W (S) /mCc∞ (S reg )W (S) .
+                                                                                     
+               ≃
+                  hSi∈Σk
+12                                        V. NISTOR
+
+
+The only quotient Cc∞ (S reg )W (S) /mCc∞ (S reg )W (S) that does not vanish is the one
+containing (a conjugate of) γ, and then it is isomorphic to C. This completes the
+proof.
+
+     An alternative proof can be obtained by writing
+          Hq (G, Cc∞ (G)δ )m ≃ Hq (G, Cc∞ (G)δm ) ≃ Hq (G, Cc∞ (G)δ /mCc∞ (G)δ ),
+and then observing that Cc∞ (G)δ /mCc∞ (G)δ ≃ Cc∞ (US ), by Corollary 2 (iii). How-
+ever the above proof is more convenient when dealing with orbital integrals. See
+also [16], first circulated in 1990 as a preprint of the Mathematical Institute of the
+Romanian Academy (INCREST) Nr. 18, March 1990, and where the localization
+techniques were first introduced.
+   We now extend the definition of higher orbital integrals introduced by Blanc and
+Brylinski to cover non–regular semisimple elements also. Fix a standard subgroup
+S ⊂ G, and let k be such that S reg ⊂ Vk \ Vk+1 . As in the above proof, Proposition
+2 gives a natural R∞ (G)–linear, degree preserving, surjective morphism
+
+       H∗ (G, Ik+1 Cc∞ (G)δ /Ik Cc∞ (G)δ ) −→ Cc∞ (S reg )W (S) ⊗ H∗ (C(S), Cc∞ (US )δ ),
+and hence a linear map
+(13)
+Ik+1 HH∗ (Cc∞ (G)) = H∗ (G, Ik+1 Cc∞ (G)δ ) −→ Cc∞ (S reg )W (S) ⊗ H∗ (C(S), Cc∞ (US )δ ).
+
+     Fix c ∈ Hq (C(S), Cc∞ (US )δ ) and γ ∈ S reg , and let
+                                  S
+                          Oγ,c = Oγ,c : Ik+1 HHq (Cc∞ (G)) −→ C
+be the evaluation of the map at γ and c in (13). We obtain, in particular, that
+for any f ∈ Ik+1 HHq (Cc∞ (G)), the function γ → Oγ,c (f ) is a locally constant,
+compactly supported function on S reg . The function Oγ,c can then be extended to
+the whole group HHq (Cc∞ (G)) using a simple observation. For any γ ∈ S reg there
+exists a locally constant function φ ∈ Ik+1 such that φ(γ) = 1. Then let
+                                    Oγ,c (f ) := Oγ,c (φf ),
+which is independent of φ. It follows from definition of Oγ,c that, for any f ∈
+HHq (Cc∞ (G)), the function γ → Oγ,c (f ), obtained as above, is a locally constant
+function on S reg , but not necessarily compactly supported. We thus obtain the
+following result.
+Proposition 5. Let S ⊂ G be a standard subgroup. Then there exists a degree-
+preserving, R∞ (G)–linear map
+
+              OS : HH∗ (Cc∞ (G)) −→ C ∞ (S reg )W (S) ⊗ H∗ (C(S), Cc∞ (US )δ ),
+which is an isomorphism when localized at each maximal ideal m ⊂ R∞ (G) consist-
+ing of functions vanishing at an element γ ∈ S reg .
+  We call the maps OS and Oγ,c = Oγ,c     S
+                                             “higher orbital integrals” because they
+generalize the usual notion of orbital integral. (If c is a cocycle of dimension q,
+we call Oγ,c a q-higher orbital integral.) Indeed, assume that G and C(S) are uni-
+modular, following thorough the identifications in the previous section, we obtain,
+                             HOMOLOGY OF p-ADIC GROUPS                                 13
+
+
+for c0 = 1 ∈ H0 (C(S), Cc∞ (US )δ ) the evaluation at the identity element e ∈ G, and
+f ∈ Cc∞ (G) = HH0 (Cc∞ (G)), that
+                                             Z
+                    Oγ,c0 (f ) = Oγ,1 (f ) =         f (gγg −1 )dg,
+                                               G/C(S)
+
+where dg is the induced measure on G/C(S).
+  If γ ∈ G is a semisimple element and S is a standard subgroup of G such that
+C(γ) = C(S), (i.e., γ ∈ S reg ), then restriction at γ defines a map
+                  Oγ = OγS : HH∗ (Cc∞ (G)) → H∗ (C(S), Cc∞ (US )δ )
+such that c(Oγ (f )) = Oγ,c (f ), for all c ∈ Hq (C(S), Cc∞ (US )δ ).
+                                                   S
+   A word on notation, whenever we write Oγ,c         or OγS , we assume that γ ∈ S reg ,
+which actually determines S. This means that we can omit S from notation. How-
+                                            S
+ever, if we want to write that Oγ,c = Oγ,c     is obtained by specializing
+             OS : HH∗ (Cc∞ (G)) → C ∞ (S reg )W (S) ⊗ H∗ (C(S), Cc∞ (US )δ )
+to a point γ ∈ S reg and then by evaluating at c, that is that
+                                S
+                               Oγ,c (f ) = hOS (f )(γ), ci,
+then it is obviously more convenient to include S in the notation.
+   Let γ ∈ G be a semisimple element. We want now to investigate the behavior
+of the orbital integrals Og,c with g in a small neighborhood of γ. Fix a standard
+subgroup S ⊂ G such that γ is in the closure of AdG (S reg ), but is not in AdG (S reg ),
+and a class c ∈ Hq (C(S), Cc∞ (US )). More precisely, we want to study the germ of
+the function g → Og,c (f ) at an element γ, where f ∈ HHq (Cc∞ (G)) is arbitrary.
+The germ of a function h at γ will be denoted hγ .
+   The following theorem extends one of the basic properties of Shalika germs from
+usual orbital integrals to higher orbital integrals.
+Theorem 2. Let S ∈ G be a standard subgroup γ ∈ S an element in the closure of
+S reg , but γ 6∈ S reg . Then there exists a degree preserving linear map
+       σγS : H∗ (C(γ), Cc∞ (C(γ)u )δ ) → C ∞ (S reg )W
+                                                     γ
+                                                       (S)
+                                                           ⊗ H∗ (C(S), Cc∞ (US )δ ),
+such that
+                                 OS (f )γ = σγS (Oγ (f )),
+for all f ∈ HH∗ (Cc∞ (G)).
+  Note that, in the notation for the maps σγS , the standard subgroup S is no longer
+determined by γ.
+Proof. By the definition of the localization of a module, the map
+             OS : HH∗ (Cc∞ (G)) → C ∞ (S reg )W
+                                              γ
+                                                (S)
+                                                    ⊗ H∗ (C(S), Cc∞ (US )δ )
+factors through a map
+            F : HH∗ (Cc∞ (G))γ → C ∞ (S reg )W
+                                             γ
+                                               (S)
+                                                   ⊗ H∗ (C(S), Cc∞ (US )δ ).
+Since Oγ : HH∗ (Cc∞ (G))γ → H∗ (C(γ), Cc∞ (C(γ)u )δ ) is an isomorphism by Proposi-
+tion 4, we may define
+                                 σγS = F ◦ Oγ−1 ,
+and all desired properties for σγS will be satisfied.
+14                                      V. NISTOR
+
+
+   Let γ ∈ S \ S reg be such that γ is in the closure of S reg , as above, and also let
+c ∈ Hq (C(S), Cc∞ (US )δ ). Then a consequence of the above theorem, Theorem 2, is
+                                                      S
+that the germ at γ of the higher orbital integrals Og,c  depends only on Oγ . More
+                   reg             ∞                         S
+precisely, if g ∈ S , f ∈ HHq (Cc (G)), and we regard Og,c      (f ) as a function of g,
+                                S
+then its germ at γ, denoted Og,c (f )γ , is given by
+                               S
+(14)                          Og,c (f )γ = hσγS (Oγ (f )), ci.
+   This observation allows us to relate Theorem 2 with results of Shalika [22] and Vi-
+gneras [24]. So assume now that G is reductive and let ξi ∈ H0 (C(γ), Cc∞ (C(γ)u )δ )
+be the basis dual to the basis of H0 (C(γ), Cc∞ (C(γ)u )δ ) given by the orbital inte-
+grals over the orbits of γu, for u nilpotent in C(γ). If we let Fi = σγ (ξi ), then we
+recover the usual definition of Shalika germs. Due to this fact, we shall call the
+maps σγS introduced in Theorem 2 the higher Shalika germs.
+   We can now characterize the range of the higher orbital integrals. Combining
+all higher orbital integrals for S ⊂ G ranging through a set Σ of representatives of
+standard subgroups of G, we obtain a map
+                                  M
+            O : HH∗ (Cc∞ (G)) →       C ∞ (S reg )W (S) ⊗ H∗ (C(S), Cc∞ (US )).
+                                  S∈Σ
+
+
+Theorem 3. Let Σ be a set of representatives of standard subgroups of G and σγS
+be the maps introduced in Theorem 2 for γ ∈ S reg \ S reg . Also, let
+                         M
+                    F⊂       C ∞ (S reg ) ⊗ H∗ (C(S), Cc∞ (US )δ ),
+                           S∈Σ
+
+be the space of sections ξ satisfying ξγ = σγS (ξ(γ)). Then O establishes a R∞ (G)–
+linear isomorphism
+                              O : HH∗ (Cc∞ (G)) −→ F .
+Proof. Note first that the map O is well defined, that is, that its range is contained
+in F , by Theorem 2.
+   To prove that O is an isomorphism, filter both HH∗ (Cc∞ (G)) and F by the
+subgroups Ik HH∗ (Cc∞ (G)) and, respectively, by Ik F , using the ideals Ik introduced
+in Section 1. Since O is R∞ (G)–linear, it preserves this filtration and induces maps
+                  Ik+1 HH∗ (Cc∞ (G))/Ik HH∗ (Cc∞ (G)) → Ik+1 F /Ik F .
+These maps are, by construction, exactly the isomorphisms of Proposition 2. Stan-
+dard homological algebra then implies that O itself is an isomorphism, as de-
+sired.
+     A consequence of the above result the following “density” corollary.
+Corollary 3. Let a ∈ HHq (Cc∞ (G)). If all q-higher orbital integrals of a vanish,
+then a = 0.
+   We shall also need certain specific cocycles below. Let τ0 be the trace τ0 (f ) =
+f (e) on Cc∞ (G), G unimodular, obtained by evaluating f at the identity e of G. Let
+G0 be the kernel of all unramified characters of G. Then G/G0 ≃ Zr , where r is
+the rank of a split component of G. Let pj : G → Z be the morphisms obtained by
+considering the jth component of Zr . Then
+                                 δj (f )(g) = pj (g)f (g)
+                            HOMOLOGY OF p-ADIC GROUPS                                   15
+
+
+defines a derivation of Cc∞ (G). Moreover, we can identify H∗ (G) with Λ∗ Cr , the
+exterior algebra with generators δ1 , . . . , δr . Fix c ∈ H∗ (G). We can assume that
+c = δ1 ∧ . . . ∧ δq , and then we define the map Dc : Cc∞ (G)⊗q+1 → Cc∞ (G) by the
+formula
+                                         X
+(15)      Dc (f0 , . . . , fq ) = (q!)−1   ǫ(σ)f0 δσ(1) (f1 )δσ(2) (f2 ) . . . δσ(q) (fq )
+                                    σ∈Sq
+
+Then τc = τ0 ◦ Dc (f0 , . . . , fq ) defines a Hochschild q cocycle on Cc∞ (G), and
+(16)                                   τc = Oe,c ,
+if we naturally identify c with an element of the cohomology group H∗ (G, Cc∞ (Gu )).
+
+               3. The cohomology of the unipotent variety
+   It follows from the main result of the first section, Theorem 1, that, in order to
+obtain a more precise description of the Hochschild homology of Cc∞ (G), we need
+to understand the continuous cohomology of the H–module Cc∞ (Hu )δ , where H
+ranges through the set of centralizers of standard subgroups of G and Hu is the
+variety of unipotent elements in H. (We call the variety Hu the unipotent variety of
+H.) Since the cohomology groups Hk (H, Cc∞ (Hu )δ ) depend only on H, it is enough
+to consider the case H = G. In this section we gather some results on the groups
+Hq (G, Cc∞ (Gu )δ ).
+   We first need to recall the computation of the groups H∗ (G) = H∗ (G, C), [6].
+More generally, we also need to compute H∗ (G, Cχ ), where χ : G → C∗ is a charac-
+ter of G and Cχ = C as a vector space, but with G–action given by the character
+χ.
+   Assume first that G = S is a commutative p–adic group, and let S0 be the union
+of all compact-open subgroups of S. Then S0 is a subgroup of S and S/S0 is a free
+abelian subgroup, whose rank we denote by rk(S). For this group we then have
+                          Hk (S) ≃ Hk (S/S0 , C) ≃ Λk C rk(S) .
+    For an arbitrary p–adic group G, we may identify the cohomology groups Hq (G)
+with those of a commutative p–adic group. Indeed, if G0 is the connected com-
+ponent of G (in the sense of algebraic groups) then G/G0 is finite, and hence
+Hq (G) ≃ Hq (G0 ), by the Hochschild–Serre spectral sequence. This tells us that
+we may assume G to be connected as an algebraic group. Choose then a Levi
+decomposition G = M N , where N is the unipotent radical of G, M is a reduc-
+tive subgroup, uniquely determined up to conjugation, and the product M N is a
+semidirect product. Since Hq (N ) = 0 for q > 0, it follows that Hq (G) ≃ Hq (M ).
+Let M1 ⊂ M be the commutator subgroup of M , which is also a p–adic group, see
+[5]. The cohomology groups Hq (M1 ) were computed in [4], Proposition 6.1, page
+316, and [6] and they also vanish for q > 0 (because the fundamental domain of the
+building of G is a simplex). All in all, we obtain that
+                             Hq (G) ≃ Hq (M ) ≃ Hq (M ab ),
+where M ab = M/M1 is the abelianization of M .
+  We summarize the above discussion in the following well known statement.
+Lemma 4. Let G be a p–adic group, not necessarily reductive, and let r be the rank
+of a split component of the reductive quotient of G. Then
+                              Hq (G) = Hq (G, C) ≃ Λq Cr ,
+16                                         V. NISTOR
+
+
+and Hq (G, Cχ ) = 0, if χ is a nontrivial character of G.
+     We continue with a few elementary remarks on Hk (G, Cc∞ (Gu )δ ).
+Remark 1. If G1 → G is a surjective morphism with finite kernel F , then there
+exists a natural homeomorphism G1u ≃ Gu of the unipotent varieties of the two
+groups. Since the kernel F acts trivially on G1u , using the Hochschild-Serre spectral
+sequence we obtain an isomorphism
+(17)          Hk (G1 , Cc∞ (G1 u )δ ) ≃ Hk (G1 , Cc∞ (Gu )) ≃ Hk (G, Cc∞ (Gu )δ ).
+
+Remark 2. If G ⊂ G1 is a normal p–adic subgroup with F ≃ G1 /G finite, then we
+again have a natural homeomorphism G1u = Gu . This gives
+(18)        Hk (G1 , Cc∞ (G1 u )δ ) ≃ Hk (G1 , Cc∞ (Gu )δ ) ≃ Hk (G, Cc∞ (Gu )δ )F ,
+using once again the Hochschild-Serre spectral sequence. In particular, if the char-
+acteristic morphism F → Aut(G)/ Inn(G) is trivial, then we get a natural isomor-
+phism Hk (G, Cc∞ (Gu )δ ) ≃ Hk (G1 , Cc∞ (G1 u )δ ).
+
+Remark 3. If G = G′ × G′′ , then Gu = G′u × G′′u naturally, and hence Cc∞ (Gu ) ≃
+Cc∞ (G′u ) ⊗ Cc∞ (G′′u ). This gives
+                                     M
+(19)         Hk (G, Cc∞ (Gu )δ ) ≃     Hi (G′ , Cc∞ (G′u )) ⊗ Hj (G′′ , Cc∞ (G′′u )).
+                                   i+j=k
+
+
+Remark 4. If Z is a commutative p–adic group of split rank r, then
+                           Hk (Z, Cc∞ (Zu )δ ) ≃ Cc∞ (Zu ) ⊗ Λk Cr .
+
+Remark 5. The above isomorphisms reduce the computation of Hk (G, Cc∞ (Gu )δ )
+for G reductive, to the computation of the cohomology groups corresponding to its
+semisimple quotient H := G/Z(G):
+                                                   M
+(20)     Hk (G, Cc∞ (Gu )δ ) = Hk (G, Cc∞ (Gu )) ≃   Hi (H, Cc∞ (Hu )δ ) ⊗ Λj Cr ,
+                                                       i+j=k
+
+where r is the rank of a split component of G.
+  Let τ0 be the trace obtained by evaluating at the identity. Using τ0 , we obtain
+an injection H j (G) ∋ c → τ0 ⊗ c ∈ H j (G, Cc∞ (Gu )).
+   In order to obtain more precise results on H∗ (G, Cc∞ (Gu )δ ), we need to take
+a closer look at the structure of Cc∞ (Gu ) as a G–module. For a G–space X, we
+denote by hXi the quotient space X/G with the induced topology, which may be
+non-Hausdorff. Thus hGu i is the set of unipotent conjugacy classes of G.
+   Assume now that hGu i is a finite set. (This happens for example if G is reductive,
+because the ground field F has characteristic zero.) Then the space Gu can be
+written as an increasing union of open G–invariant sets Ul ⊂ Gu , U−1 = ∅, such
+that each difference set Ul \ Ul−1 is a disjoint union of open and closed G–orbits,
+(21)                                 Ul \ Ul−1 = ∪Xl,j .
+A filtration Ul with these properties will be called “nice.” There may be several
+nice filtrations of Gu .
+   A nice filtration of Gu , as above, gives rise, by standard arguments, to a spectral
+sequence converging to Hk (G, Cc∞ (Gu )δ ), as follows. First, let hgi ∈ hGu i be the
+                             HOMOLOGY OF p-ADIC GROUPS                                17
+
+
+orbit through an element g ∈ Gu . Also, let C(g) denote the centralizer of g ∈ Gu
+and rg denote the rank of a split component of C(g) if C(g) is unimodular, rg = 0
+otherwise. This definition of rg is justified by Hk (C(g), ∆C(g) ) ≃ Λk Crg .
+Proposition 6. Let G be a p–adic group with finitely many unipotent orbits (i.e.,
+hGu i is finite). Then, for any nice filtration (Ul ) of Gu by open G–invariant subsets,
+there exists a natural spectral sequence with
+                                           M
+                              2
+                             Ep,q =                 Λp+q Cru ,
+                                         hui∈hUp \Up−1 i
+
+convergent to   Hp+q (G, Cc∞ (Gu )δ ).
+Proof. The argument is standard and goes as follows. Recall first that any filtration
+0 = F0 ⊂ F1 ⊂ . . . ⊂ FN = Cc∞ (Gu )δ by G–submodules gives rise to a spectral
+                  1
+sequence with Ep,q   = Hp+q (G, Fp /Fp−1 ), convergent to Hp+q (G, Cc∞ (Gu )δ ).
+    Now, associated to the open sets Ul of a nice filtration, there exists an increasing
+filtration Fl = Cc∞ (Ul )δ ⊂ Cc∞ (Gu )δ by G–submodules such that
+                                                    M
+                         Cc∞ (Ul )δ /Cc∞ (Ul−1 )δ ≃   Cc∞ (Xl,j )δ ,
+                                                           j
+
+where each Xl,j is the orbit of a unipotent element, and Ul \ Ul−1 has the topology
+given by the disjoint union of the orbits Xl,j . Fix l and j, and let u be a unipotent
+element in Xl,j (so that then Xl,j is the orbit through u), which implies that
+Cc∞ (Xl,j ) ≃ indG
+                 C(u) (∆C(u) ). Finally, from Shapiro’s lemma we obtain that
+
+                    Hk (G, Cc∞ (Xl,j )δ ) ≃ Hk (C(u), ∆C(u) ) ≃ Λk Cru ,
+and this completes the proof.
+   We expect this spectral sequence to converge for G reductive. This is the case,
+for example for G = GLn (F) and for SLn (F). See Section 5. The convergence
+of the spectral sequence implies, in particular, the convergence of the orbital in-
+tegrals of unipotent elements in reductive groups (which is a well known fact due
+to Deligne and Rao [18]). In general, the convergence of the spectral sequence of
+the above proposition can be interpreted to represent the convergence of “higher
+orbital integrals.”
+
+                    4. Induction and the unipotent variety
+   We assume from now on that G is reductive, and we fix a parabolic subgroup
+P ⊂ G, P 6= G, and a Levi subgroup M ⊂ P , so that P = M N , where N is the
+unipotent radical of P , and the product is a semidirect product. In this section, we
+relate H∗ (G, Cc∞ (Gu )δ ) to the groups, H∗ (P, Cc∞ (Pu )δ ) and H∗ (M, Cc∞ (Mu )δ ). He
+have considered non-unimodular subgroups in the previous sections in order to be
+able to handle subgroups like P .
+   Let K be a “good” maximal compact subgroup of G (see [9], Theorem 5), so
+that G = KP . This decomposition shows that the map
+                              K × P ∋ (k, p) → kpk −1 ∈ G
+is proper, and hence the map G ×P P := (G × P )/P ∋ (g, p) → gpg −1 ∈ G is also
+proper. This gives a map
+    Cc∞ (G)δ = Cc∞ (G) → Cc∞ (G ×P P ) ≃ indG   ∞                  G ∞
+                                            P (Cc (P ) ⊗ ∆P ) = indP (Cc (P )δ )
+18                                         V. NISTOR
+
+
+of G-modules. This map of G–modules and the standard identification of Hoch-
+schild homology with continuous cohomology, equation (9), then give a morphism
+(22)                     indG         ∞               ∞
+                            P : HH∗ (Cc (G)) −→ HH∗ (Cc (P )),
+
+defined as the composition of the following sequence of morphisms
+
+     HH∗ (Cc∞ (G)) ≃ H∗ (G, Cc∞ (G)δ ) −→ H∗ (G, indG   ∞
+                                                    P (Cc (P )δ ) ⊗ ∆G )
+                                                       ≃ Hk (P, Cc∞ (P )δ ) ≃ HH∗ (Cc∞ (P ))
+of Hochschild homology groups. The main result of this section states that indG
+                                                                              P is
+induced by a morphism of algebras, which we now proceed to define.
+   Let dk be the normalized Haar measure on the maximal compact subgroup K,
+normalized such that K has volume 1. The composition of kernels
+                                       Z
+                    T1 T2 (k1 , k2 ) =   T1 (k1 , k)T2 (k, k2 )dk
+                                           G/P
+               ∞
+defines on C (K × K) an algebra structure. Let
+(23)                     φG    ∞         ∞           ∞
+                          P : Cc (G) −→ C (K × K) ⊗ Cc (P ),
+                                               −1
+be defined by φG P (f )(k1 , k2 , p) = f (k1 pk2 ).
+   Recall [9] that the push-forward of the product dpdk of Haar measure on P × K,
+via the multiplication map P × K ∋ (p, k) → pk ∈ G, is a left invariant measure
+on G, and hence a multiple λdg of the Haar measure dg on G. Suppose that the
+measure dk of K is the restriction of dg to K, and has total mass 1. Then the
+Haar measures on G and P will be called compatible if λ = 1. We shall need the
+following result of Harish Chandra (implicitly stated in [23]):
+Lemma 5. Suppose the Haar measures on G and P are compatible. Then the
+linear map φG
+            P , defined above in equation (23), is a morphism of algebras.
+
+Proof. The product on C ∞ (K × K) ⊗ Cc∞ (P ) = Cc∞ (K × K × P ) is given by the
+formula                            Z Z
+           (h1 h2 )(k1 , k2 , p) =     h1 (k1 , k, q)h2 (k, k2 , q −1 p)dqdk.
+                                      K    P
+Let ∗ denote the multiplication (i.e., convolution product) on Cc∞ (G). Thus, we
+need to prove that
+                                   Z Z
+             f1 ∗ f2 (k1 pk2−1 ) =     f1 (k1 qk −1 )f2 (kq −1 pk2−1 )dqdk,
+                                      K    P
+
+for all f1 , f2 ∈  Cc∞ (G).  Consider the map P × K ∋ (q, k) → g := qk −1 ∈ G, and
+let dµ be the push-forward of the measure dqdk. Then the right-hand side of the
+above formula becomes
+         Z Z                                         Z
+                 f1 (k1 qk −1 )f2 (kq −1 pk2 )dqdk =   f1 (k1 g)f2 (g −1 pk2−1 )dµ(g).
+           K   P                                       G
+
+We know that dµ = dg, by assumptions (see the discussion before the statement of
+this lemma), and then
+  Z                                    Z
+      f1 (k1 g)f2 (g −1 pk2−1 )dµ(g) =   f1 (g)f2 (g −1 k1 pk2−1 )dµ(g) = f1 ∗ f2 (k1 pk2−1 ),
+     G                                 G
+by the invariance of the Haar measure. The lemma is proved.
+                                    HOMOLOGY OF p-ADIC GROUPS                                                     19
+
+
+   The trace C ∞ (K × K) → C induces an isomorphism
+                       τ : HH∗ (C ∞ (K × K) ⊗ Cc∞ (P )) ≃ HH∗ (Cc∞ (P )).
+Explicitly, this isomorphism is given at the level of chains by
+   τ (f0 ⊗ f1 ⊗ . . . ⊗ fq )(p0 , p1 , . . . , pq )
+                          Z
+                       :=          f0 (k0 , k1 , p0 )f1 (k1 , k2 , p1 ) . . . fq (kq , k0 , pq )dk0 . . . dkq .
+                               K q+1
+
+This isomorphism combines with φG
+                                P to give a morphism
+
+(24)                         (φG            ∞               ∞
+                               P )∗ : HH∗ (Cc (G)) −→ HH∗ (Cc (P )).
+
+Theorem 4. Let P be a parabolic subgroup of a reductive p–adic group G. Consider
+                             G
+the morphisms (φG                       ∞                  ∞
+                 P )∗ and indP : HH∗ (Cc (G)) −→ HH∗ (Cc (P )), defined above
+                                  G         G
+(Equations (24) and (22)). Then (φP )∗ = indP .
+Proof. Let M1 and M2 be two left G–modules. We can regard M1 as a right module,
+and then the tensor product M1 ⊗G M2 is the quotient of M1 ⊗ M2 by the group
+generated by the elements gm1 ⊗ gm2 − m1 ⊗ m2 , as before. Alternatively, we can
+think of M1 ⊗G M2 as (M1 ⊗ M2 ) ⊗G C. This justifies the notation f ⊗G 1 for a
+morphism M1 ⊗G M2 → M1′ ⊗G M2′ induced by a morphism
+                               f = f1 ⊗ f2 : M1 ⊗ M2 → M1′ ⊗ M2′ .
+   We shall prove the theorem by an explicit computation. To this end, we shall
+use the results and notation (hG and h̃G = hG ⊗G 1) of Lemma 1.
+   By direct computation, we see that the morphism
+                                τ ◦ φG    ∞
+                                     P : Cc (G)
+                                               ⊗q+1
+                                                    → Cc∞ (P )⊗q+1
+between Hochschild complexes, is given by the formula
+(25) τ ◦ φG
+          P (f )(p0 , p1 , . . . , pq ) =
+                                Z
+                                        f (k0 p0 k1−1 , k1 p1 k2−1 , . . . , kq pq k0−1 )dk0 dk1 . . . dkq .
+                                     K q+1
+
+   We now want to realize the map indG              ∞                  ∞
+                                         P : HH∗ (Cc (G)) −→ HH∗ (Cc (P )), at the
+level of complexes. In the process, it will be convenient to identify the smooth G-
+module Cc∞ ((G × P )/P ) ≃ indG   ∞
+                              P (Cc (P )δ ) with a subspace of the space of functions
+on G × P , using the projection G × P → (G × P )/P .
+   Consider the G–morphism
+                         l : Bq (G) ⊗ Cc∞ (G) → Bq (G) ⊗ indG   ∞
+                                                            P (Cc (P )δ )
+
+induced by the morphism
+                             Cc∞ (G) → indG   ∞            ∞
+                                          P (Cc (P )δ ) ⊂ C (G × P ).
+
+Explicitly,
+                l(f )(g0 , g1 , . . . , gq , g, p) = f (g0 , g1 , . . . , gq , gpg −1 ).
+Then the resulting morphism
+          l ⊗G 1 : Hq (G, Cc∞ (G)δ ) = Hq (G, Cc∞ (G)δ ) → Hq (G, indG   ∞
+                                                                     P (Cc (P )δ ))
+
+is the morphism Hq (G, Cc∞ (G)δ ) → Hq (G, indG   ∞
+                                              P (Cc (P )δ )) on homology correspond-
+                          ∞           G ∞
+ing to the G–morphism Cc (G) → indP (Cc (P )δ ).
+20                                                V. NISTOR
+
+
+     The G–morphism
+
+(26) r : Bq (G) ⊗ indG   ∞              G             ∞
+                     P (Cc (P )δ ) → indP (Bq (P ) ⊗ Cc (P )δ )
+
+                                       = Cc∞ (G) ⊗P (Bq (P ) ⊗ Cc∞ (P )δ ) ⊂ Cc∞ (G × P q+2 ),
+given by the formula
+                                              Z
+       r(f )(g, p0 , p1 , . . . , pq , p) =           f (gp0 k1−1 , gp1 k2−1 , . . . , gpn k0−1 , g, p)dk,
+                                              K q+1
+
+(dk = dk0 . . . dkq ) is well defined and induces an isomorphism in homology, because
+the only nonzero homology groups are in dimension 0, and they are both isomorphic
+to indG   ∞
+      P (Cc (P )δ ). We have an isomorphism
+
+             χ : indG             ∞                            ∞
+                    P (Bq (P ) ⊗ Cc (P )δ ) ⊗G C → (Bq (P ) ⊗ Cc (P )δ ) ⊗P C,
+
+of complexes. This shows that the homology of the second complex in (26) is
+isomorphic to Hq (P, Cc∞ (P )δ ), and that the map induced on homology, that is
+                    χ(r ⊗G 1) : Hq (G, indG   ∞                    ∞
+                                          P (Cc (P )δ )) → Hq (P, Cc (P )δ ),
+
+is the Shapiro isomorphism.
+    Recall now that the isomorphism Hq (G, Cc∞ (G)δ ) ≃ HHq (Cc∞ (G)) is induced
+by the morphism of complexes h̃q defined in Lemma 1, Equation (9). From the
+definition of the morphism indG          ∞                ∞
+                               P : HH∗ (Cc (G)) → HH∗ (Cc (P )) and the above dis-
+cussion, we obtain the equality of the morphisms Hq (G, Cc (G)δ ) → Hq (P, Cc∞ (P )δ )
+                                                         ∞
+                                      G
+induced by χ(rl ⊗G 1) and h̃−1P ◦ indP ◦h̃G . Thus, in order to complete the proof,
+it would be enough to check that h̃P ◦ χ(rl ⊗G 1) = τ ◦ φG   P ◦ h̃G at the level of
+complexes. Let
+                  t : Bq (G) ⊗ indG   ∞                        G ∞
+                                  P (Cc (P )δ ) → Bq (G) ⊗G indP (Cc (P )δ )
+
+be the projection. Since hG is surjective, it is also enough to check that h̃P χ(r ⊗G
+1)tl = τ φG  P hG .
+    Let
+                                     Z
+ r′ (f )(p0 , p1 , . . . , pq , p) =   f ( k ′ p0 k1−1 , k ′ p1 k2−1 , . . . , k ′ pn k0−1 , k ′ , p)dk ′ dk,
+                                    K×K q+1
+
+where dk = dk0 . . . dkq , as before. Then r′ induces a morphism
+                       r′ : Bq (G) ⊗ indG   ∞                      ∞
+                                        P (Cc (P )δ ) → Bq (P ) ⊗ Cc (P )δ
+
+of complexes satisfying hP ◦ r′ = h̃P χ(r ⊗G 1)t. Directly from the definitions we
+obtain then that hP ◦ r′ ◦ l = τ ◦ φG
+                                    P ◦ hG . This completes the proof.
+
+   For simplicity, we have stated and proved the above result only for G reductive,
+however, it extends to general G and P such that G/P is compact, by including
+the modular function of G, where appropriate.
+   In order to better understand the effect of the morphism
+                       indG     G            ∞               ∞
+                          P = (φP )∗ : HH∗ (Cc (G)) −→ HH∗ (Cc (P )),
+
+it is sometimes useful to look at its action on the geometric fibers of the group
+HH∗ (Cc∞ (G)). This is especially useful because the action on the geometric fibers
+also recovers the classical results on the characters of induced representations.
+                            HOMOLOGY OF p-ADIC GROUPS                                            21
+
+
+   First we observe that restriction defines a morphism ρG    ∞          ∞
+                                                         P : R (G) → R (P ). In
+case the group G is reductive and M is a Levi component of the parabolic subgroup
+P , we also have R∞ (P ) ≃ R∞ (M ).
+Lemma 6. Let P be a parabolic subgroup of a reductive p–adic group G, and let
+ρG    ∞         ∞
+ P : R (G) → R (P ) be the morphism induced by restriction, used to define a
+R (G)–module structure on HH∗ (Cc∞ (P )). Then
+ ∞
+
+                        indG         ∞               ∞
+                           P : HH∗ (Cc (G)) −→ HH∗ (Cc (P ))
+
+is R∞ (G)–linear, in the sense that indG          G         G                   ∞
+                                       P (f ξ) = ρP (f ) indP (ξ), for all f ∈ R (G)
+                  ∞
+and all ξ ∈ HH∗ (Cc (G)).
+Proof. The result of the lemma follows from the fact that the map
+                               Cc∞ (G) → indG   ∞
+                                            P (Cc (P )δ )
+is R∞ (G)–linear and the isomorphism of Shapiro’s Lemma,
+                       Hq (G, indG   ∞                   ∞
+                                 P (Cc (P )δ ) ≃ Hq (P, Cc (P )δ ),
+is natural.
+   Alternatively, one can use the explicit formula of equation (25).
+   If m = mγ ⊂ R∞ (G) is the maximal ideal of functions vanishing at a semisimple
+element γ ∈ G, then its image (ρG               G     ∞         ∞         ∞
+                                   P )∗ (m) := ρP (m)R (P ) ⊂ R (P ) = R (M ) is
+the ideal of functions vanishing at all g ∈ M that are conjugated to γ in G. If γ
+is elliptic, then m = R∞ (P ). If γ ∈ M , then m need not, in general, be maximal.
+Nevertheless, we obtain a morphism
+         (ρG           ∞        ∞         ∞       G
+           P )γ : C ≃ R (G)γ = R (G)/m → R (M )/(ρP )∗ (m) ≃ C
+                                                               #hγi
+                                                                    ,
+where #hγi = l is the set of conjugacy classes in M that consist of elements that are
+conjugated to γ in the bigger group G. Let γ1 , γ2 , . . . , γl ∈ M be representatives
+of the conjugacy classes of element in M that are conjugated to γ in G.
+   We are ready now to study the morphisms
+  (indG            ∞               ∞              ∞
+      P )γ : HHq (Cc (G))γ = HHq (Cc (G))/m HHq (Cc (G))
+                                                                     l
+                                                                     M
+                                 −→ HHq (Cc∞ (P ))/(ρG
+                                                     P )∗ (m) ≃             HHq (Cc∞ (P ))γj .
+                                                                     j=1
+
+   Let CP (γj ) be the centralizer of γj in P and CG (γj ) ≃ CG (γ) be the centralizer
+of γj in G. Then CP (γj )u identifies with a subspace of CG (γ)u , which gives rise to a
+continuous proper map CG (γ) ×CP (γ) CP (γ)u → CG (γ)u , and hence to a morphism
+                                            C (γ)
+                      Cc∞ (CG (γ)u ) → indCG
+                                           P (γj )
+                                                   (Cc∞ (CP (γj )u )δ )
+of CG (γ)–modules. Passing to cohomology, we obtain using Shapiro’s Lemma a
+morphism
+           ιγγj : Hq (CG (γ), Cc∞ (CG (γ)u )) −→ Hq (CP (γ), Cc∞ (CP (γj )u )δ ).
+  Recall that Proposition 4 gives isomorphisms
+                     HHq (Cc∞ (G))γ ≃ Hq (CG (γ)), Cc∞ (CG (γ)u ))
+and
+                   HHq (Cc∞ (P ))γj ≃ Hq (CP (γj )), Cc∞ (CP (γj )u )δ ).
+22                                          V. NISTOR
+
+
+Proposition 7. Let γ ∈ G be a semisimple element and M ⊂ P be as above. If
+the conjugacy class of γ does not intersect M , then HH∗ (Cc∞ (P ))γ = 0, and hence
+(indG
+    P )γ = 0. Otherwise, using the notation above, we have
+
+                   (indG       l    γ          ∞               ∞
+                       P )γ = ⊕j=1 ιγj : HH∗ (Cc (G))γ → HH∗ (Cc (P ))γ .
+
+Proof. This follows from definitions if we observe that in the sequence of maps
+
+     G ×P P ×CP (γi ) (γi CP (γi )u ) ≃ G ×CG (γi ) CG (γi ) ×CP (γi ) (γi CP (γi )u )
+                                                                  → G ×CG (γi ) (γi CG (γi )u )
+the second map is induced by CG (γi ) ×CP (γi ) CP (γi )u → CG (γi )u and their com-
+position induces on homology the direct summand ιγγj of the map (indG   P )γ .
+
+   Another morphism that is likely to play an important role is the “inflation,”
+which we now define. Let N ⊂ P be the unipotent radical of an algebraic p–adic
+group, and let M = P/N be its reductive quotient. Then integration over N defines
+an algebra morphism
+                                                       Z
+                P
+               ψM : Cc∞ (P ) → Cc∞ (M ) , ψM
+                                           P
+                                             (f )(m) =   f (mn)dn.
+                                                                   N
+
+Integration over N also defines a G-morphism Cc∞ (P )δ → Cc∞ (M ), and, since N is
+a union of compact subgroups, we finally obtain morphisms
+                   Hk (P, Cc∞ (P )δ ) → Hk (P, Cc∞ (M )) ≃ Hk (M, Cc∞ (M )),
+whose composition we denote inf P
+                                M.
+
+Theorem 5. If M is a Levi component of a p-adic group P over a field of char-
+acteristic zero, as above. Then we have
+                        P
+                      (ψM )∗ = inf P         ∞               ∞
+                                   M : HH∗ (Cc (P )) → HH∗ (Cc (M )).
+
+Proof. Integration over N defines a morphism
+                           f : B(P ) ⊗ Cc∞ (P )δ → B(M ) ⊗ Cc∞ (M ),
+which commutes with the action of P . Then f ⊗P 1 coincides with the morphism
+                           P
+of complexes induced by ψM   .
+                                                                         P
+   Consider now the maps hG defined in the proof of Lemma 1. Then ψM       ◦ hP =
+                    P
+hM ◦ f , and hence ψM ◦ h̃P = h̃M ◦ (f ⊗P 1), from which the result follows.
+
+   We now want to proceed by analogy and establish the explicit form of the action
+of inf P
+       M on the geometric fibers. Fix γ ∈ M . Again, integration over the nilpotent
+radical of CP (γ), the centralizer of γ in P , induces a morphism
+                 Cc∞ (CP (γ)u )δ = Cc∞ (CP (γ)u ) ⊗ ∆CP (γ) → Cc∞ (CM (γ)u ),
+of P -modules. Let
+
+     jγ : HH∗ (Cc∞ (P ))γ = H∗ (CP (γ), Cc∞ (CP (γ)u )δ )
+                                        −→ H∗ (CM (γ), Cc∞ (CM (γ)u )) = HH∗ (Cc∞ (M ))γ
+be the induced morphism.
+                           HOMOLOGY OF p-ADIC GROUPS                                23
+
+
+Proposition 8. Let γ be a semisimple element of a Levi component M of the
+group P . Let d(γ) be the determinant of Ad−1
+                                            γ − 1 acting on Lie(N )/ ker(Adγ − 1).
+Then, using localization at the maximal ideal defined by γ in R∞ (G) = R∞ (P ) and
+the above notation,
+             (inf P
+                  M )γ = |d(γ)|
+                                −1
+                                   jγ : HH∗ (Cc∞ (P ))γ → HH∗ (Cc∞ (M ))γ .
+Proof. Fix γ ∈ G, not necessarily semisimple and let Nγ be the subgroup of
+elements of N commuting with γ. We choose a complement Vγ of Lie(Nγ ) in
+Lie(N ) and we use the exponential map to identify Vγ with a subset of N . Then
+the Jacobian of the map
+                  Vγ × Nγ ∋ (n, n′ ) → γ −1 nγn−1 n′ ∈ N = Vγ Nγ
+is d(γ), and from this the result follows.
+   This result is compatible with the results of van Dijk on characters of induced
+representations, see [8].
+
+                                   5. Examples
+   Our results can be used to obtain some very explicit results in certain particular
+cases.
+   Example 1. Let Z be a commutative p-adic group of split rank r (so that
+Hq (Z) ≃ Λq Cr , for all q ≥ 0). Then
+(27)                      HHq (Cc∞ (Z)) ≃ Cc∞ (Z) ⊗ Λq Cr .
+
+  Example 2. Let P be the (parabolic) subgroup of upper triangular matrices in
+SL2 (F), and A ⊂ P be the subgroup of diagonal matrices. Then inflation defines a
+morphism
+              inf P         ∞               ∞         ∞        ∗
+                  A : HH∗ (Cc (P )) → HH∗ (Cc (A)) = Cc (A) ⊗ Λ C
+whose range is Cc∞ (A) ⊕ Cc∞ (A \ {±I}), with I the identity matrix of SL2 (F). (We
+see this by localizing at each γ.) To describe the kernel of inf P
+                                                                 A , let
+                                               
+                                          1 b
+(28)                               ub =           .
+                                          0 1
+Then, if we choose b to range through Σu , a set of representative of F∗ /F∗2 , the
+set of elements ub forms a set of representatives of the set of nontrivial conjugacy
+classes of unipotent elements of P . Recall that F has characteristic zero, so Σu is a
+discrete set. Let Ob,+ be the orbital integral associated to ub , and let Ob,− be the
+orbital integral associated to −ub , then
+                           F± = ⊕b Ob,± : Cc∞ (G) → CΣu
+identify the kernel of inf P                                         P
+                            A as follows. The map F+ ⊕ F− : ker(inf A ) → C
+                                                                             ±Σu
+                                                                                 is
+injective, and the range of each of F± is the set of elements with zero sum.
+   All in all, let us consider the map Φ = inf P
+                                               A ⊕F+ ⊕ F− ,
+
+          Φ : HH∗ (Cc∞ (P )) → (Cc∞ (A) ⊕ C±Σu )(0) ⊕ (Cc∞ (A \ {±I}))(1) ,
+where the lower index (i) represents the degree. Then Φ is surjective in degree
+                                                   ∞
+           ∗  ∗2
+                             P of (f, λb,ǫ ), f ∈ Cc (A), λ ∈ C, for ǫ ∈ {±1} and
+1, and, in degree 0, it consists
+b ∈ Σu ≃ F /F , such that b λb,ǫ = f (ǫI), for ǫ = ±1.
+24                                     V. NISTOR
+
+
+   Note that evaluation at ±I does not define a trace on Cc∞ (P ). Actually, in the
+spectral sequence of Proposition 6, the obstruction to extend the evaluation at I to
+a trace is responsible for “killing” the 1 cohomology supported at I (which explains
+our claim on the range of inf P A above).
+
+   Example 3. Consider now the group G = SL2 (F), where F is a p-adic field
+of characteristic zero such that the characteristic of the residual field is not 2, for
+simplicity. Let Fq be the residual field of F (thus q = pn , for some n ∈ N and some
+prime p, denotes the number of elements of Fq . We choose ǫ in the valuation ring
+of F, whose image in Fq is not a square. Also, let τ be a generator of the (unique)
+maximal ideal of the valuation ring of F. We shall use the notation of [20] and
+thus let θ range through the set {ǫ, τ, ǫτ } and let Tθ Tθ# be the elliptic tori defined
+there. (Recall that Tθ = {[aij ], a11 = a22 , a21 = θa12 } and Tθ# = {[aij ], a11 =
+a22 , a21 = θ# a12 }, where θ# = θa2 , for some a ∈ F2 not in the image of the norm
+map N : F[θ]∗ → F∗ .) We distinguish two cases, first the case where −1 is a square
+and then the case where it is not a square. If −1 is a square, then the Weyl group
+of each of the tori T = Tθ , Tθ# has order 2. Otherwise W (T ) = {1}, for each T = Tθ
+or T = Tθ# , but Tθ and Tθ# are conjugate for each fixed θ.
+   Let X = ∪θ Tθ /S2 ∪ ∪θ Tθ# /S2 , if −1 is a square, and X = ∪θ Tθ otherwise, with
+the induced topology. Then X \ {±} identifies with the set of elliptic conjugacy
+classes of SL2 (F).
+   Denote by A ⊂ SL2 (F) the set of diagonal matrices in SL2 (F). Let W (A) = S2
+act on Cc∞ (A) ⊗ Λ∗ C by conjugation on Cc∞ (A) and act by the nontrivial character
+on C. Then we have the following. Recall that there are 10 conjugacy classes of
+unipotent elements in SL2 (F), if p 6= 2.
+Proposition 9. The composition
+           φ := inf P      G         ∞                         ∞        ∗
+                    A ◦ indP : HH∗ (Cc (SL2 (F))) → HH∗ (A) = Cc (A) ⊗ Λ C
+
+has range consisting of W (A) invariant elements, and the kernel of φ is isomorphic
+to Cc∞ (X \ {±I}) ⊕ C10 , via orbital integrals with respect to elliptic and unipotent
+elements.
+Proof. First of all, it is clear that the composition φ = inf P      G
+                                                              A ◦ indP is invariant with
+respect to the Weyl group W (A), and hence its range consists of W (A)-invariant
+elements.
+   The localization of φ at a regular, diagonal conjugacy class γ is onto by Proposi-
+tion 4. Next, we know that every orbital integral extends to Cc∞ (SL2 (F)), and this
+implies directly that the spectral sequence of Proposition 6 collapses at the E 2 term.
+This proves that the localization of φ at γ = 1 is also onto, and hence φ is onto.
+The rest of the proposition follows also from Proposition 6 by localization.
+
+     This example is also discussed in [4], but from a different perspective.
+     Example 4. We end this section with a description of the ingredients entering
+in the formula (1) for the of the Hochschild homology of Cc∞ (G), if G = GLn (F).
+Let γ ∈ G be a semisimple element. The minimal polynomial Qγ of γ decomposes
+as Qγ = p1 p2 . . . pr into irreducible polynomials with coefficients in F. (We assume,
+for simplicity, that each polynomial pj is a monic polynomial.) Also, let Pγ =
+pl11 pl22 . . . plrr be the characteristic polynomial of γ. Then the algebra generated by
+                           HOMOLOGY OF p-ADIC GROUPS                              25
+
+
+γ is
+                               F[γ] ≃ K1 ⊕ . . . ⊕ Kr ,
+where Ki = F[t]/(pi (t)) are not necessarily distinct fields. The commutant {γ}′ of
+γ in Mn (F) is the commutant of this algebra, and hence
+                   {γ}′ ≃ Ml1 (K1 ) ⊕ Ml2 (K2 ) ⊕ · · · ⊕ Mlr (Kr ),
+                           r
+                           Y                                   r
+                                                               Y
+                  C(γ) ≃         GLli (Ki ) , S := Z(C(γ)) ≃         K∗i ,
+                           i=1                                 i=1
+and
+S reg = {(xi ) ∈ S, xi generates Ki and the minimal polynomials of xi are distinct}.
+   By the Skolem–Noether theorem, the Weyl group W (S) = N (S)/C(S) coincides
+with the group of algebra automorphisms of {γ}′. This group has as quotient a
+group isomorphic to the subgroup Π ⊂ N (S) which permutes the algebras Mli (Ki )
+Then Π ∼= Sm1 × . . . × Smt , that is, Π is a product of symmetric
+                                                               Qr groups. We denote
+the kernel of this morphism by W0 (S). It is isomorphic to i=1 AutF (Ki ) (again
+by the Skolem–Noether theorem). The group W (S) is then the semidirect product
+of W0 (S) by Π. We hence obtain exact sequences
+                       1 −→ N0 (S) −→ N (S) −→ Π −→ 1
+and
+                       1 −→ C(S) −→ N0 (S) −→ W0 (S) −→ 1 .
+    According to (1), the only other ingredients necessary to compute HH∗ (Cc∞ (G))
+are the groups H∗ (C(S), Cc∞ (US )).
+    Now, the unipotent variety of C(S) is the product of the unipotent varieties of
+GLli (Ki ), i = 1, r, and the subgroup C(S) preserves this product decomposition.
+We see then that in order to prove that the spectral sequence of Proposition 6
+collapses (for any choice of open subsets Ui ), it is enough to check this for the
+spectral sequence converging to the cohomology of Cc∞ (GLn (K)u ), for an arbitrary
+characteristic zero p-adic field K.
+    Fix a unipotent element γ ∈ GLn (K). Define then V0 = 0, Vl = ker(γ −1)l ⊂ Kn ,
+if l > 0. Also, choose Wl such that Vl = Vl−1 ⊕ Wl , and define
+                        P = {γ ∈ GLn (K), γVl ⊂ Vl }, and
+                        M = {γ ∈ GLn (K), γWl = Wl }.
+Then P is a parabolic subgroup with unipotent radical
+                      N = {γ ∈ GLn (K), (γ − 1)Vl ⊂ Vl−1 },
+and M is a Levi component of P . It is easy to check, from definition, that the
+P –orbit of u in N is dense. The centralizer of u is then contained in P and has
+split rank ≤ the split rank of P . Fix a maximal split torus A in the centralizer of
+u. We can assume that this split torus is contained in M . From the definition and
+by direct inspection, the map H∗ (A) → H∗ (M ) is injective, and hence the map
+(29)                       H∗ (M ) −→ H∗ (A) = H∗ (C(u))
+is surjective.
+   Fix now a cohomology class c0 ∈ Hq (C(γ)) ≃ Hq (A) and choose a cohomology
+class c ∈ Hq (M ) that maps to c0 under the above restriction map. Also, let τ be
+26                                             V. NISTOR
+
+
+the trace on τ0 (f ) = f (e) on Cc∞ (M ) (obtained by evaluation at the identity e).
+Then the formula
+(30)                         φ0 (f0 , . . . , fq ) = τ0 (Dc (f0 , . . . , fq ))
+defines a Hochschild cyclic cocycle on Cc∞ (M ). Consequently,
+                                      φ = φ0 ◦ inf P        G
+                                                   A ◦ ◦ indP
+
+defines a Hochschild cocycle on Cc∞ (G). For any filtration Ui of Gu by open, in-
+variant open sets, such that each Ul \ Ul−1 consists of a single orbit. Suppose that
+the orbit Ul \ Ul−1 is the orbit of γ ∈ GLn (F) considered above. Then the cocycle
+φ will vanish on Cc∞ (Ul ) and represent the cohomology class
+                           c ∈ Hq (C(γ)) ≃ Hq (G, Cc∞ (Ul \ Ul−1 )).
+From this it follows that the spectral sequence of Proposition 6 degenerates at E 2 .
+  It is very likely that the above argument extends to arbitrary reductive G by
+choosing M and P as in [18].
+
+                                            References
+ [1] P. Baum, N. Higson, and R. Plymen, Equivarian homology for SLs of a p-adic field, in Index
+     theory and operator algebas (Boulder, CO, 1991), 1–18, Contemp. Math. 148, Amer. Math.
+     Soc., Providence, R.I., 1993.
+ [2] J. N. Bernstein, P -invariant distributions on GL(N ) and the classification of unitary repre-
+     sentations of GL(N ), in Lie Group Representations II, (Herb and all. ed.), Lecture Notes in
+     Mathematics, Springer Verlag, 1041, (1984), 51-102.
+ [3] P. Blanc, (Co)homologie différentiable et changement de groupes, Astérisque 124-125 (1985),
+     13–30.
+ [4] P. Blanc and J. L. Brylinski, Cyclic Homology and the Selberg Principle, J. Funct. Anal. 109
+     (1992), 289–330.
+ [5] A. Borel, Linear Algebraic Groups, second edition, Springer Verlag, Graduate Texts in Math-
+     ematics, vol 126.
+ [6] A. Borel and N. Wallach, Continuous Cohomology, Discrete Subgroups, and Representations
+     of Reductive Groups, Ann. of Math. Studies, Princeton University Press, no. 94, 1980.
+ [7] W. Casselman and D. Wigner, Continuous cohomology and a conjecture of Serre’s, Invent.
+     Math. 25 (1974), 199–211.
+ [8] G. van Dijk, Computation of Certain Induced Characters of p-Adic Groups, Math. Ann.,
+     199 (1972), 229–240.
+ [9] Harish-Chandra, Harmonic Analysis on Reductive p-adic Groups, Notes by G. van Dijk,
+     Springer Lecture Notes in Mathematics, 162, 1970.
+[10] N. Higson and V. Nistor, Cyclic cohomology of groups acting on buildings, J. Funct.Anal.
+     141 (1996), 466–495.
+[11] D. Kazhdan, Cuspidal geometry of p-adic groups, J. Analyse Math. 47 (1986), 1–36.
+[12] D. Kazhdan, V. Nistor, and P. Schneider, Hochschild and cyclic homology of finite type
+     algebras, to appear in Selecta.
+[13] V. Lafforgue, Une démonstration de la Conjecture de Baum-Connes pour les groupes réductifs
+     sur un corps p-adique et pour certains groupes discrets possédant la propriété (T), C. R. Acad.
+     Sci. Paris Sér. I Math 327 (1998), 439–444.
+[14] R. Langlands, Base change for GL2 , Institute for Advanced Study, 1975.
+[15] S. Mac Lane, Homology, Springer-Verlag, Berlin-Heidelberg-New York, 1995.
+[16] V. Nistor, Cyclic cohomology of crossed products by algebraic groups, Invent. Math. 112
+     (1993), 615–638.
+[17] C. Rader and S. Rallis, Spherical characters on p-adic symmetric spaces, Am. J. Math. 118
+     (1996), 91–178.
+[18] R. Ranga Rao, Orbital integrals in reductive groups, Annals of Math., 96 (1972), 505–510.
+[19] P. Schneider, The cyclic homology of p-adic reductive groups, J. Reine Angew. Math. 475
+     (1996), 39–54.
+                               HOMOLOGY OF p-ADIC GROUPS                                         27
+
+
+[20] P. J. Sally, Jr and J. A. Shalika, The Fourier transform of orbital integrals on SL2 over a p-
+     adic field, in Lie Group Representations II, (Herb and all. ed.), Lecture Notes in Mathematics,
+     Springer Verlag, 1041 (1984), 303–340.
+[21] W. H. Schikhof, Differentiation in non-archimedean valued fields, Indagationes Math. 32
+     (1970), 35–44.
+[22] J. A. Shalika, A theorem on semisimple p-adic groups, Annals of Math. 95 (1972), 226–242.
+[23] A. J. Silberger, Introduction to Harmonic Analysis on reductive p-adic groups, Mathematical
+     Notes, Princeton University Press, 1979.
+[24] M.-F. Vigneras, Caractérisationdes intégrales orbitales sur un group reductif p-adique, J.
+     Fac. Sci. Univ. Tokyo Sect IA Math. 28 (1981), 945–961.
+
+   Pennsylvania State University, Math. Dept., University Park, PA 16802, USA
+   E-mail address: nistor@math.psu.edu
+

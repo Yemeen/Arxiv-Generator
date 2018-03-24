@@ -1,0 +1,528 @@
+                                             TAME–WILD DICHOTOMY FOR DERIVED CATEGORIES
+
+                                                               VIKTOR I. BEKKERT AND YURIY A. DROZD
+
+
+                                                     Abstract. We prove that every finite dimensional algebra over an al-
+arXiv:math/0310352v1 [math.RT] 22 Oct 2003
+
+
+
+
+                                                     gebraically closed field is either derived tame or derived wild. The proof
+                                                     is based on the technique of boxes and reduction algorithm. It implies,
+                                                     in particular, that any degeneration of a derived wild algebra is derived
+                                                     wild; respectively, any deformation of a derived tame algebra is derived
+                                                     tame.
+
+
+
+
+                                                                                Introduction
+                                                The notions of tame and wild problems is now rather poplar in various
+                                             branches of representation theory and related topics, especially because of
+                                             the so-called tame-wild dichotomy (cf. e.g. [3, 7] and other papers). Namely,
+                                             in most cases it so happens that either indecomposable representations de-
+                                             pend on at most one parameter or their description becomes in some sense
+                                             “universal,” i.e. containing a classification of representations of all finitely
+                                             generated algebras. Last time these notions have also been studied for de-
+                                             rived categories, and tame-wild dichotomy has been proved in some cases
+                                             (though rather restrictive ones), cf. [9, 1, 8]. In this paper we shall prove
+                                             such a dichotomy for derived categories of arbitrary finite dimensional alge-
+                                             bras over an algebraically closed field. The used technique, just as in [3, 7]
+                                             (see also the survey [4]), is that of “matrix problems,” more precisely, boxes
+                                             and reduction algorithm. There are some new features: we have to consider
+                                             such boxes that the underlying category is no more free. Fortunately, the
+                                             arising relations are of rather special nature, which leads to the notion of
+                                             sliced boxes. Actually, the tame-wild dichotomy is proved for such boxes,
+                                             wherefrom the result for derived categories is obtained almost in the same
+                                             way as the tame-wild dichotomy for representations of algebras has been ob-
+                                             tained from that for free boxes. As it is rather usual, we formulate the result
+                                             for locally finite dimensional categories. If such a category only has finitely
+                                             many indecomposable objects, this language is equivalent to that of finite
+                                             dimensional algebras, though a bit more convenient. But categories with in-
+                                             finitely many indecomposables naturally arise in representation theory (for
+                                             instance, when we consider coverings), so we prefer to use this language,
+                                             especially as this generality does not imply the proofs.
+
+
+                                                2000 Mathematics Subject Classification. Primary: 16G60, secondary: 15A21, 16D90,
+                                             16E05.
+                                                The first author was supported by FAPESP (Grant N 98/14538-0) and CNPq (Grant
+                                             301183/00-7).
+                                                                                         1
+2                  VIKTOR I. BEKKERT AND YURIY A. DROZD
+
+
+                          1. Derived categories
+   We consider categories and algebras over a fixed algebraically closed field
+k. A k-category A is called locally finite dimensional (shortly lofd) if the
+following conditions hold:
+    1. All spaces A(x, y) are finite dimensional for all objects x, y.
+    2. A is fully additive, i.e. it is additive and all idempotents in it split.
+       Conditions 1,2 imply that the category A is Krull–Schmidt, i.e. each
+       object uniquely decomposes into a direct sum of indecomposable ob-
+       jects; moreover, it is local, i.e. for each indecomposable object x the
+       algebra A(x, x) is local. We denote by ind A a set of representatives
+       of isomorphism classes of indecomposable objects from A.
+    3. For each object x the set { y ∈ ind A | A(x, y) 6= 0 or A(y, x) 6= 0 } is
+       finite.
+We denote by vec the category of finite dimensional vector spaces over k
+and by A-mod the category of finite dimensional A-modules, i.e. functors
+M : A → vec such that { x ∈ ind A | M x 6= 0 } is finite. We also denote by
+D(A) the derived category of the category A-mod and by D b (A) its full
+subcategory consisting of bounded complexes. The latter is again a lofd
+category.
+   For an arbitrary category C we denote by add C the minimal fully additive
+category containing C. For instance, one can consider add C as the category
+of finitely generated projective C-modules; especially, add k = vec. We de-
+note by Rep(A, C) the category of functors Fun(A, add C) and call them
+representations of the category A in a category C. Obviously, Rep(A, C) ≃
+Rep(add A, C). If the category A is lofd, we denote by rep(A, C) the full sub-
+category of Rep(A, C) consisting of the representations M with finite support
+supp M = { x ∈ ind A | M x 6= 0 }. In particular, rep(A, k) = A-mod.
+   We denote by D(A) (respectively, D − (A), D b (A) ) the derived category
+(respectively, right bounded and (two-sided) bounded derived category) of
+the category A-mod, where A is a lofd category. Recall that A embeds as
+a full subcategory into A-mod. Namely, each object x corresponds to the
+functor Ax = A(x, ). These functors are projective in the category A-mod;
+if A is fully additive, these are all projectives (up to isomorphism). On
+the other hand, A-mod embeds as a full subcategory into D b (A): a mod-
+ule M is treated as a complex only having a unique nonzero component
+equal M at the 0-th position. It is also known that D − (A) can be identified
+with the category K− (A) whose objects are right bounded complexes of pro-
+jective modules and morphisms are homomorphisms of complexes modulo
+homotopy [10]. If gl.dim A < ∞, every bounded complex has a bounded
+projective resolution, hence D b (A) can identified with Kb (A), the category
+of bounded projective complexes modulo homotopy, but it is no more the
+case if gl.dim A = ∞. Moreover, if A is lofd, we can confine the considered
+complexes by minimal ones, i.e. always suppose that Im dn ⊆ rad Pn−1 for
+all n. We denote by J the radical of the category A, i.e. the set of mor-
+phisms having no invertible components with respect to some (hence, any)
+decomposition of its source and target into direct sums of indecomposables.
+Then rad M = JM for each M ∈ A-mod.
+             TAME–WILD DICHOTOMY FOR DERIVED CATEGORIES                               3
+
+
+  Even if gl.dim A = ∞, one easily shows [5] that D b (A) can be identified
+with a direct limit limN QN (A) of the categories QN (A) defined as follows.
+                    −→
+   1. Objects of QN (A) are right bounded complexes (P• , d• ) of projective
+      modules from A-mod with Pn = 0 for n > N .
+   2. Morphisms of QN (A) are homomorphisms of complexes modulo quasi-
+      homotopy, where two homomorphisms f, g : (P• , d• ) → (P•′ , d′• ) are
+      said to be quasi-homotopic if there are homomorphisms of modules
+                   ′
+      sn : Pn → Pn+1   such that fn − gn = d′n+1 sn + sn−1 dn for all n < N .
+   3. The functor QN (A) → QN +1 (A) maps a complex (P• , d• ) to a com-
+      plex
+                           h
+                0 → P̂n+1 −→ Pn → Pn−1 → · · · → Pm → 0,
+      where h maps P̂n+1 onto Ker dn . (Such a complex is defined up to an
+      isomorphism inside QN +1 (A).)
+Note that these functors are full embeddings; thus all functors QN (A) →
+D  b                                                 b
+S (A)Nare full embeddings too, so we may treat D (A) as a sort of union
+   N Q (A). Especially, in all classification problems, we may replace the
+study of the category D b (A) by that of the categories QN (A). If A is lofd,
+any complex from QN (A) is isomorphic (in this category) to a minimal
+complex P• such that Ker dN ⊆ rad PN . We denote by QN       0 (A) the full
+subcategory of Q (A) only consisting of such complexes. Thus D b (A) ≃
+                   N
+
+limN QN0 (A).
+−→
+Proposition 1.1. Two complexes from QN                                 N
+                                            0 (A) are isomorphic in Q (A)
+if and only if they are isomorphic as complexes.
+Proof. If two complexes P• , P•′ from QN                        N
+                                       0 (A) are isomorphic in Q (A), there
+is a diagram
+                          dN                      dN−1
+              PO N                / PN −1                   / PN −2          / ...
+                                      O                         O
+            ψN       φN         ψN−1       φN−1           ψN−2       φN−2
+                         d′N                    d′N−1          
+              PN′                 / P′                      / P′            / ... ,
+                                     N −1                      N −2
+
+where all upgoing and downgoing squares commute. Moreover, all products
+ψn φn (n < N ) are of the form 1 + σn−1 dn + dn+1 σn , thus isomorphisms, as
+well as all products φn ψn (n < N ). Hence all φn , ψn (n < N ) are isomor-
+phisms. As φN −1 (Im dN ) ⊆ Im d′N and ψN −1 (Im d′N ) ⊆ Im dN , it implies
+that Im dN ≃ Im d′N . Since Ker dN ⊆ rad PN , the latter is a projective
+cover of Im dN , and PN′ is a projective cover of Im d′N . Therefore PN ≃ PN′ .
+Moreover, φN d′N = φN −1 dN : PN → Im d′N −1 is an epimorphism, hence
+Im φN + Ker d′N = PN′ , so φN is an epimorphism, thus an isomorphism. 
+   We introduce the notions of derived tame and derived wild lofd categories
+in the following way, which do not formally coincide with those of some
+earlier papers, such as [1, 8, 9], but is equivalent to them. Due to the
+preceding considerations, it is more convenient to deal with.
+4                   VIKTOR I. BEKKERT AND YURIY A. DROZD
+
+
+Definition 1.2. Let A be a lofd category.
+    1. The rank of an object x ∈ A (or of the corresponding projective            mod-
+       ule Ax ) is the function r(x) : ind A → Z such that x ≃ y∈ind A r(x)(y)y.
+                                                                       L
+
+       The vector rank r• (P• ) of a bounded complex of projective A-modules
+       is the sequence (. . . , r(Pn ), r(Pn−1 ), . . . ) (actually it only has finitely
+       many nonzero entries).
+    2. We call a rational family of bounded minimal complexes over A
+       a bounded complex (P• , d• ) of finitely generated projective A ⊗ R-
+       modules, where R is a rational algebra, i.e. R = k[t, f (t)−1 ] for a
+       nonzero polynomial f (t), and Im dn ⊆ JPn−1 For such a complex
+       we define P• (m, λ), where m ∈ N, λ ∈ k, f (λ) 6= 0, the complex
+       (P• ⊗R R/(t − λ)m , d• ⊗ 1). It is indeed a complex of projective A-
+       modules. We put r• (P• ) = r• (P• (1, λ)) (this vector rank does not
+       depend on λ).
+    3. We call a lofd category A derived tame if there is a set P of rational
+       families of bounded complexes over A such that:
+        (a) For each vector rank r• the set P(r• ) = { P• ∈ P | r• (P• ) = r }
+             is finite.
+        (b) For each vector rank r• all indecomposable complexes (P• , d• )
+             of projective A-modules of this vector rank, except finitely many
+             isomorphism classes, are isomorphic to P• (m, λ) for some P• ∈ P
+             and some m, λ.
+       The set P is called a parameterising set of A-complexes.
+    4. We call a lofd category A derived wild if there is a bounded complex
+       P• of projective modules over A ⊗ Σ, where Σ is the free k-algebra in
+       2 variables, such that, for every finite dimensional Σ-modules L, L′ ,
+        (a) P• ⊗Σ L ≃ P• ⊗Σ L′ if and only if L ≃ L′ .
+        (b) P• ⊗Σ L is indecomposable if and only if so is L.
+       (It is well-known that then an analogous complex of A ⊗ Γ-modules
+       exists for every finitely generated k-algebra Γ.)
+   Note that, according to these definitions, every derived discrete (in partic-
+ular, derived finite) lofd category [12] is derived tame (with the empty set P).
+Simple geometric considerations, like in [2], show that neither lofd category
+can be both derived tame and derived wild. We are going to demonstrate
+the following result.
+Theorem 1.3 (Main Theorem). Every lofd category over an algebraically
+closed field is either derived tame or derived wild.
+  This theorem will be proved in Section 3. Note that, in particular, it
+makes valid the following corollaries, which have been proved in [5] under
+supposition that every finite dimensional algebra is either derived tame or
+derived wild.
+Corollary 1.4. Let A be a flat family of finite dimensional algebras based
+on an algebraic variety X. Then the set { x ∈ X | A(x) is derived wild } is
+a union of a countable sequence of closed subsets.
+Corollary 1.5. Suppose that a finite dimensional algebra A degenerates to
+another algebra B (or, the same, B deforms to A), i.e. there is a flat family
+             TAME–WILD DICHOTOMY FOR DERIVED CATEGORIES                       5
+
+
+of algebras A based on a variety X such that A(x) ≃ A for all x from a
+dense open subset U ⊆ X and there is a point y ∈ X such that A(y) ≃ B.
+If A is derived wild, so is B; respectively, if B is derived tame, so is A.
+
+   If the families are not assumed flat, these assertions are no more true [1]
+(see [5, 6] for further comments).
+
+                             2. Related boxes
+   Recall [3, 4] that a box is a pair A = (A, V) consisting of a category A and
+an A-coalgebra V. We denote by µ the comultiplication in V, by ε its counit
+and by V = Ker ε its kernel. We always suppose that A is normal, i.e. there
+is a section ω : x 7→ ωx (x ∈ ob A) such that ε(ωx ) = 1x and µ(ωx ) = ωx ⊗ωx
+for all x. A category A is called free if it is isomorphic to a path category
+kΓ of an oriented graph (quiver) Γ, and semi-free if A = kΓ[L−1 ], where L
+is a set of loops, i.e. arrows a : x → x from Γ. The arrows a : x → y with
+x 6= y will be called edges. If Γ contains no arrows at all, the category A is
+called trivial; if Γ only has loops, and at most one loop at every vertex x, A
+is called minimal. A normal box A = (A, V) is called free (semi-free) if so
+is the category A, while the kernel V is a free A-bimodule. If we fix a set of
+free generators ∆ of V, we call the elements from ∆ dashed arrows of the box
+A, while the arrows of Γ are called solid arrows. The union Arr A = Γ ∪ ∆
+is called a set of free (or semi-free) generators of the free (semi-free) box
+A. We also call the objects of A the vertices of A, denote by Ver A the set
+of vertices, and write Arr0 A = Γ, Arr1 A = ∆. Note that a choice of free
+(semi-free) generators is usually not unique, and most of proofs related to
+boxes use a change of free (semi-free) generators.
+   Recall that the differential of a normal box A = (A, V) is the pair ∂ =
+(∂0 , ∂1 ) of mappings, ∂0 : A → V, ∂1 : V → V ⊗A V, namely
+              ∂0 a = aωx − ωy a    for a ∈ A(x, y),
+              ∂1 v = µ(v) − v ⊗ ωx − ωy ⊗ v     for v ∈ V(x, y).
+Usually we omit the index and write both ∂a and ∂v. A set of arrows Arr A
+of semi-free box is said to be triangular, if there is a function h : Arr A → N
+(called height) such that, for any a ∈ Arr A (either solid or dashed) ∂a
+belongs to the sub-box generated by the arrows b ∈ Arr A with ∂b < ∂a,
+especially, ∂a = 0 if h(a) = 0. If such a set of arrows exists, we call the box
+A triangular.
+   A normal box A such that the category A is trivial, is called so-trivial
+(trivial with respect to solid arrows). If A is a minimal category and ∂a = 0
+for each solid loop, we call the box A so-minimal.
+   In what follows we also use boxes, which are not free (or semi-free), but
+are their factors. Namely, let A = (A, V) be a semi-free box, I ⊆ A be an
+ideal of the category A such that ∂a ∈ IV + VI for all a ∈ I. Denote by
+A/I the box (Ã, Ṽ), where Ã = A/I and Ṽ = V/(IV + VI), with natural
+comultiplication and counit. Note that in this case the kernel of the box
+A/I is a free Ã-bimodule, namely, it is isomorphic to V/(IV + VI). If A is a
+triangular semi-free box and the ideal I is contained in the ideal generated
+6                  VIKTOR I. BEKKERT AND YURIY A. DROZD
+
+
+by all products ab, where a, b are solid arrows, we call Ã = A/I a convenient
+box. The vertices and arrows of Ã are, by definitions, those of A. Especially,
+the notions of triangular set of arrows and triangular box are transmitted
+to convenient boxes. Actually, we need a rather specific kind of convenient
+boxes, defined as follows.
+Definition 2.1.      1. A free box A is called sliced if there is a function
+      s : Ver A → Z such that
+       (a) s(y) < s(x) for every solid arrow a : x → y; we set s(a) = s(x);
+       (b) s(x) = s(y) for every dashed arrow γ : x 99K y; we set s(γ) =
+           s(x) = s(y).
+   2. A box Ã = A/I, where A = (A, V) is a free box and I ⊂ A is an ideal
+      in A such that ∂a ∈ IV + VI for all a ∈ I, is called sliced if so is the
+      box A.
+ We call the function s a slicing of the box A or Ã.
+
+   Note that if a free box A is sliced, there are neither loops nor oriented
+cycles in it. Therefore, if an ideal I is not contained in the ideal generated
+by the paths of length 2, we are able just drop an arrow that occur in an
+element of I. Hence sliced boxes are always convenient.
+   A representation of a box A = (A, V) over a category C is defined as a
+functor M : A → add C. A morphism of such representations f : M → N is
+defined as a homomorphisms of A-modules V ⊗A M → N . If g : N → L is
+another morphism, there product is defined as the composition
+                    µ⊗1                     1⊗f                    g
+        V ⊗A M −−−−→ V ⊗A V ⊗A M −−−−→ V ⊗A N −−−−→ L.
+Thus we obtain the category of representations Rep(A, C). If A is a free (or
+a convenient) box, we denote by rep(A, C) the full subcategory of Rep(A, C)
+consisting of representations with finite support supp M = { x ∈ Ver A | M x 6= 0 }.
+If C = vec, we write Rep(A) and rep(A).
+   Given a lofd A, we are going to construct a sliced box B = B(A) = (B, W)
+such that its representations classify the objects of the derived category
+D b (A).
+   We denote by S the trivial category with the set of objects
+                     ob S = { (x, n) | x ∈ ind A, n ∈ Z }
+and consider the S-bimodule J such that
+                                  (
+                                  0              if m 6= n − 1,
+               J (x, n), (y, m) =
+                                   J(x, y)∗       if m = n − 1,
+where J is the radical of A and V ∗ denotes the dual vector space to V . Let
+B̃ = S[J ] be the tensor category of this bimodule; equivalently, it is the free
+category having the same set of objects as S and the union of bases of all
+J (x, n), (y, m) as a set of free generators. Denote by U the S-bimodule
+such that                             (
+                                       0         if n 6= m,
+                  U (x, n), (y, m) =           ∗
+                                        A(x, y) if n = m
+              TAME–WILD DICHOTOMY FOR DERIVED CATEGORIES                            7
+
+
+and set Ũ = B̃ ⊗S U ⊗S B̃. Dualizing the multiplication A(y, z) ⊗ A(x, y) →
+A(x, z), we get homomorphisms
+
+                               λr : B̃ −→ B̃ ⊗S Ũ ,
+                                λl : B̃ −→ Ũ ⊗S B̃,
+                                µ̃ : Ũ −→ Ũ ⊗S Ũ .
+
+In particular, µ̃ defines on Ũ a structure of B̃-coalgebra. Moreover, the
+sub-bimodule U0 generated by Im(λr − λl ) is a coideal in Ũ , i.e. µ̃(U0 ) ⊆
+U0 ⊗B̃ Ũ ⊕ Ũ ⊗B̃ U0 . Therefore, W̃ = Ũ /U0 is also a B̃-coalgebra, so we get a
+box B̃ = (B̃, W̃). One easily checks, like in [3], that it is free and triangular.
+  Dualizing multiplication also gives a mapping
+                                       M
+(1)                  ν : J(x, y)∗ −→        J(z, y)∗ ⊗ J(x, z)∗ .
+                                        z
+
+Namely, if we choose bases { α } , { β } { γ } in the spaces, respectively, J(x, y),
+J(z, y), J(x, z), and dual bases { α∗ } , { β ∗ } , { γ ∗ } in their duals, then β ∗ ⊗
+γ ∗ occurs in ν(α∗ ) with the same coefficient as α occurs in βγ. Note         that
+the right-hand space in (1) coincide with each B̃ (x, n), (y, n − 2) . Let
+I be the ideal in B̃ generated by the images of ν in all these spaces and
+B = B̃/I = (B, W), where B = B̃/I, W = W̃/(IW̃ + W̃I). One easily checks
+that ∂I ⊆ IW̃ + W̃I, so it is a convenient box. If necessary, we write B(A)
+to emphasise that this box has been constructed from a given algebra A.
+Certainly, B is a sliced triangular box, and the following result holds.
+
+Theorem 2.2. The category of finite dimensional representations rep(B(A))
+                               b (A) of bounded minimal projective A-
+is equivalent to the category Pmin
+complexes.
+
+Proof. We denote Jx = J(x, ) = rad Ax . Then HomA (Ax , Jy ) ≃ J(x, y).
+A representation M ∈ rep(B) is given by vector spaces M (x, n) and linear
+mappings
+
+ Mxy (n) : J(x, y)∗ = A (x, n), (y, n − 1) → Hom M (x, n), M (y, n − 1) ,
+                                                                      
+
+
+where x, y ∈ ind A, n ∈ Z, subject to the relations
+                    X                            
+(2)                       m Mzy (n) ⊗ Mxz (n + 1) ν(α) = 0
+                      z
+
+for all x, y, n and all α ∈ Jxy , where m denotes the multiplication of map-
+pings
+                                                        
+  Hom M (z, n), M (y, n − 1) ⊗ Hom M (x, n + 1), M (z, n) →
+                                                                            
+                                            → Hom M (x, n + 1), M (y, n − 1) .
+8                  VIKTOR I. BEKKERT AND YURIY A. DROZD
+                                     L x
+For
+L such    a representation, set Pn =  x A ⊗ M (x, n). Then rad Pn =
+    J x ⊗ M (x, n) and
+  x
+                       M
+                           Hom Ax ⊗ M (x, n), Jy ⊗ M (y, n − 1) ≃
+                                                               
+ Hom(Pn , rad Pn−1 ) ≃
+    A                            A
+                          x,y
+                          M
+                                Hom M (x, n), Hom Ax , Jy ⊗ M (y, n − 1) ≃
+                                                                        
+                      ≃
+                                                 A
+                          x,y
+                          M
+                      ≃         M (x, n)∗ ⊗ J(x, y) ⊗ M (y, n − 1) ≃
+                          x,y
+                          M
+                                Hom J∗ (x, y), Hom M (x, n), M (y, n − 1) .
+                                                                         
+                      ≃
+                          x,y
+
+Thus the set { Mxy (n) | x, y ∈ ind A } defines a homomorphism dn : Pn →
+Pn−1 and vice versa. Moreover, one easily verifies that the condition (2) is
+equivalent to the relation
+                       L dn dn+1 = 0. Since every projective A-module can
+be given in the form x Ax ⊗ Vx for some uniquely defined vector spaces
+Vx , we get a one-to-one correspondence between finite dimensional represen-
+tations of B and bounded minimal complexes of projective A-modules. In
+the same way one also establishes one-to-one correspondence between mor-
+phisms of representations and of the corresponding complexes, compatible
+with their multiplication, which accomplishes the proof.                  
+
+   Note that we can pick up subcategories of rep(B) that describe each of
+QN (A). Namely, denote by repN (B) the full subcategory of rep(B) con-
+sisting of all representations M such that M (x, n) = 0 for n > N . Let TN
+be the ideal of repN (B) generated by the identity morphisms of trivial rep-
+resentations Sx,N , where Sx,N (x, N ) = k, Sx,N (y, n) = 0 if (y, n) 6= (x, N ).
+Obviously, the equivalence of the categories rep(B) and Pmin b (A) maps rep-
+                       N
+resentations from rep (B) onto the complexes P• with Pn = 0 for n > N .
+Moreover, it maps Sx,N to the complex T•x,N with TNx,N = Ax , Tnx,N = 0 for
+n 6= N . Note that a morphism of complexes from QN (A) is quasi-homotopic
+to zero if and only if it factorises through a direct sum of complexes T•x,N .
+It gives the following
+Corollary 2.3. The category QN (A) is equivalent to the factor category
+repN (B)/TN .
+
+Evidently, ind repN (B)/TN = ind repN (B) \ { Sx,N | x ∈ Ver A }.
+                                          
+
+Corollary 2.4. An algebra A is derived tame (derived wild) if so is the box
+B(A).
+
+                    3. Proof of the Main Theorem
+   Now we are able to prove the main theorem. Namely, according to Corol-
+lary 2.4, it follows from the analogous result for sliced boxes.
+Theorem 3.1. Every sliced triangular box is either tame or wild.
+
+   Actually, just as in [3] (see also [4]), we shall prove this theorem in the
+following form.
+             TAME–WILD DICHOTOMY FOR DERIVED CATEGORIES                         9
+
+
+Theorem 3.1a. Suppose that a sliced triangular box A = (A, V) is not
+wild. For every dimension d of its representations there is a functor Fd :
+A → add M, where M is a minimal category, such that every representation
+M : A → vec of A of dimension dim(M ) ≤ d is isomorphic to the inverse
+image F ∗ N = N ◦ F for some functor N : M → vec. Moreover, F can be
+chosen strict, which means that F ∗ N ≃ F ∗ N ′ implies N ≃ N ′ and F ∗ N is
+indecomposable if so is N .
+Remark. We can consider the induced box AF = (M, M⊗A V ⊗A M). It is a
+so-minimal box, and F ∗ defines a full and faithful functor rep(AF ) → rep(A).
+Its image consists of all representations M : A → vec that factorise through
+F.
+Proof. As we only consider finite dimensional representations, we may as-
+sume that the set of objects is finite. Then we may assume that all values
+of a slicing s : Ver A → Z belong to N, and there are finitely many of them.
+Let m = max { s(x) | x ∈ Ver A }. We use induction on m. If m = 1, A is
+free, and our claim has been proved in [3]. So we may suppose that the
+theorem is true for smaller values of m, especially, it is true for the restric-
+tion A′ = (A′ , V ′ ) of the box A onto the subset V = { x ∈ Ver A | s(x) < m }.
+Thus there is a strict functor F ′ : A′ → add M, where M is a minimal
+category, such that every representation of A′ of dimension smaller than d
+is of the form F ′ ∗ N for N : M → vec. Consider now the amalgamation
+         F ′
+B = A A M and the box B = (B, W), where W = B ⊗A V ⊗A B. The
+functor F ′ extends to a functor F : A → B and induces a homomorphism of
+A-bimodules V → W; so it defines a functor F ∗ : rep(B) → rep(A), which is
+full and faithful. Moreover, every representation of A of dimension smaller
+than d is isomorphic to F ∗ N for some N , and all possible dimensions of
+such N are restricted by some vector b. Therefore, it is enough to prove the
+claim of the theorem for the box B.
+   Note that the category B is generated by the loops from M and the
+images of arrows from A(a, b) with s(a) = m (we call them new arrows). It
+implies
+P        that all possible relations between these morphisms are of the form
+   α gα (β)α = 0, where β ∈ B(b, b) is a loop (necessarily minimal, i.e. with
+∂β = 0), gα are some polynomials, and α runs through the set of new arrows
+from a to b for some a P     with s(a) = m. Consider all of these relations for
+a fixed a; let them    be    α gα,k (β)α = 0. Their coefficients form a matrix
+ gα,k (β) . Using transformations of the set { β } and of the set of relations,
+we can make this matrix diagonal, i.e. make all relations being fα (β)α = 0
+for some polynomials fα . If one of fα is zero, the box B has a sub-box
+                                     α
+                             a              /bd   β   ,
+
+with ∂α = ∂β = 0, which is wild; hence B and A are also wild. Otherwise,
+let f (β) 6= 0 be a common multiple of all fα (β), Λ = { λ1 , λ2 , . . . , λr } be
+the set of roots of f (β). If N ∈ rep(B) is such that N (β) has no eigenvalues
+from Λ, then f (N (β)) is invertible; thus N (α) = 0 for all α : a → b. So
+we can apply the reduction of the loop β with respect to the set Λ and the
+dimension d(a), as in [3, Propositions 3,4] or [4, Theorem 6.4]. It gives a new
+box that has the same number of loops as B, but the loop corresponding
+10                   VIKTOR I. BEKKERT AND YURIY A. DROZD
+
+
+to β is “isolated,” i.e. there are no more arrows starting or ending at the
+same vertex. In the same way we are able to isolate all loops, obtaining a
+semi-free triangular box C and a morphism G : B → C such that G∗ is full
+and faithful and all representations of B of dimensions smaller than b are
+of the form G∗ L. As the theorem is true for semi-free boxes, it accomplishes
+the proof.                                                                 
+
+                                    References
+ [1] Th. Brüstle. Tree Algebras and Quadratic Forms. Habilitation Thesis. Universität
+     Bielefeld, 2002.
+ [2] Yu. A. Drozd. On tame and wild matrix problems. Matrix Problems. Institute of
+     Mathematics, Kiev, 1977, 104–114.
+ [3] Yu. A. Drozd. Tame and wild matrix problems. Representations and quadratic forms.
+     Institute of Mathematics, Kiev, 1979, 39–74. (English translation: Amer. Math. Soc.
+     Translations 128 (1986) 31–55.)
+ [4] Yu. A. Drozd. Reduction algorithm and representations of boxes and algebras.
+     Comptes Rendues Math. Acad. Sci. Canada 23 (2001), 97-125.
+ [5] Yu. A. Drozd. Semi-continuity for derived categories. arXiv:math.RT/0212015 (to
+     appear in Algebras and Representation Theory).
+ [6] Yu. A. Drozd. Derived tame and derived wild algebras. arXiv:math.RT/0310171 (to
+     appear in Algebra and Discrete Mathematics).
+ [7] Yu. A. Drozd and G.-M. Greuel. Tame-wild dichotomy for Cohen–Macaulay modules.
+     Math. Ann. 294 (1992), 387–394.
+ [8] Ch. Geiß. Derived tame algebras and Euler-forms. Math. Z. 239 (2002), 829–862.
+ [9] Ch. Geiß and H. Krause. On the notion of derived tameness. J. Algebra Appl. 1
+     (2002), 133–157.
+[10] S. I. Gelfand and Yu. I. Manin. Methods of Homological Algebra. Springer–Verlag,
+     1996.
+[11] D. Happel. Triangulated Categories in the Representation Theory of Finite Dimen-
+     sional Algebras. London Mathematical Society Lecture Notes Series, 119, Cambridge
+     University Press, Cambridge, 1988.
+[12] D. Vossieck, The algebras with discrete derived category. J. Algebra 243 (2001),
+     168–176.
+
+  Departamento de Matemática, ICEx, Universidade Federal de Minas Gerais,
+Av. Antônio Carlos, 6627, CP 702, CEP 30123-970, Belo Horizonte-MG, Brasil
+  E-mail address: bekkert@mat.ufmg.br
+
+  Department of Mechanics and Mathematics, Kyiv Taras Shevchenko Uni-
+versity, 01033 Kyiv, Ukraine
+  E-mail address: yuriy@drozd.org
+  URL: http://drozd.org/~yuriy
+

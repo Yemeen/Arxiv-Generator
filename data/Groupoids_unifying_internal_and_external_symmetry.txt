@@ -1,0 +1,654 @@
+                                           Groupoids: Unifying Internal and
+                                                External Symmetry
+arXiv:math.RT/9602220 4 Feb 1996
+
+
+
+
+                                                          A Tour Through Some Examples
+                                                                  Alan Weinstein
+                                                             Department of Mathematics
+                                                               University of California
+                                                              Berkeley, CA 94720 USA
+                                                                (alanw@math.berkeley.edu)
+                                                                    January 23, 1996
+
+
+                                   1 Introduction
+                                   Mathematicians tend to think of the notion of symmetry as being virtually
+                                   synonymous with the theory of groups and their actions, perhaps largely
+                                   because of the well known Erlanger program F. Klein and the related work
+                                   of S. Lie, which virtually dened geometric structures by their groups of au-
+                                   tomorphisms. (See, for example, Yaglom's account in [21].) In fact, though
+                                   groups are indeed sucient to characterize homogeneous structures, there
+                                   are plenty of objects which exhibit what we clearly recognize as symmetry,
+                                   but which admit few or no nontrivial automorphisms. It turns out that the
+                                   symmetry, and hence much of the structure, of such objects can be charac-
+                                   terized algebraically if we use groupoids and not just groups.
+                                       Research partially supported by NSF Grant DMS-93-09653. This article is based on
+                                   a talk given rst at UCB (the University of California at Berkeley) in April 1995, during
+                                   Mathematics Awareness Week, the theme of which was Mathematics and Symmetry. I
+                                   would like to thank the Department of Mathematics of another UCB (the University of
+                                   Colorado at Boulder) for an invitation to Boulder in November 1995, where a similar talk
+                                   was most recently given, and where the rst draft of this manuscript was largely written
+                                   in the downtown cafes. Thanks should also be given to a third UCB (Universite Claude-
+                                   Bernard, Lyon), where I started my intensive work on groupoids in the summer of 1986.
+                                   Finally, I would like to thank Paul Brown for preparing the gures.
+
+                                                                              1
+   The aim of this paper is to explain, mostly through examples, what
+groupoids are and how they describe symmetry. We will begin with ele-
+mentary examples, with discrete symmetry, and end with examples in the
+dierentiable setting which involve Lie groupoids and their corresponding
+innitesimal objects, Lie algebroids.
+1.1 Some history
+The following historical remarks are not intended to be complete but merely
+to indicate the breadth of areas where groupoids have been used. An ex-
+tensive survey of groupoids as of 1986 can be found in R. Brown's article
+[2].
+     Groupoids were introduced (and named) by H. Brandt [1] in a 1926 paper
+on the composition of quadratic forms in four variables. C. Ehresmann [5]
+added further structures (topological and dierentiable as well as algebraic)
+to groupoids, thereby introducing them as a tool in dierentiable topology
+and geometry.
+     In algebraic geometry, A. Grothendieck used groupoids extensively and,
+in particular, showed how they could be used to tame the unruly equivalence
+relations which arise in the construction of moduli spaces. As the role of
+moduli spaces expands in physics as well as mathematics, groupoids continue
+to play an essential role.
+     In analysis, G. Mackey [11] used groupoids under the name of virtual
+groups to allow the treatment of ergodic actions of groups, \as if" they were
+transitive, while it was observed that the convolution operation, extended
+from groups to groupoids, made possible the construction of a multitude
+of interesting noncommutative algebras. (See [16] for a survey.) In this
+context, the use of groupoid convolution algebras as a substitute for the
+algebras of functions on badly behaved quotient spaces is a central theme
+in the noncommutative geometry of A. Connes [4]. The book just cited also
+shows the extent to which groupoids provide a framework for a unied study
+of operator algebras, foliations, and index theory.
+     In algebraic topology, the fundamental groupoid of a topological space
+has been exploited by P. Higgins, R. Brown, and others (see Brown's text-
+book [3]) where the use of a xed base point as imposed by the usual
+fundamental group would be too restrictive. Groupoid methods are thus
+well adapted to disconnected spaces (which arise frequently when connected
+spaces are cut into pieces for study) and to spaces with xed-point-free group
+
+                                      2
+                                      :::
+:::                                                                         :::
+
+
+
+
+                                      :::
+
+
+             Figure 1: Tiling of the plane by 2  1 rectangles.
+
+actions.
+    The extension of Lie theory from dierentiable groups to groupoids was
+carried out for the most part by J. Pradines, as described in a series of notes
+ending with [15]. An exposition of this work, together with a detailed study
+of the role of groupoids and Lie algebroids in dierential geometry, can be
+found in the book of K. Mackenzie [8].
+    Finally, the author's own interest in groupoids arose from the discovery
+[18][19], made independently at around the same time by Karasev [6] and
+Zakrzewski [22], that a groupoid with compatible symplectic structure is
+the appropriate geometric model for a family of noncommutative algebras
+obtained by deformation from the algebra of functions on a manifold with
+a Poisson bracket structure.
+
+2 Global and local symmetry groupoids
+We begin our exposition with a simple example which will lead to the de-
+nition of a groupoid. Consider a tiling of the euclidean plane R2 by identical
+2  1 rectangles, specied by the set X (idealized as 1-dimensional) where the
+grout between the tiles lies: X = H [ V , where H = R  Zand V = 2Z R:
+(See Figure 1.) We will call each connected component of R2 n X a tile.
+    The symmetry of this tiling is traditionally described by the group
+consisting of those rigid motions of R2 which leave X invariant. It consists
+
+                                       3
+of the normal subgroup of translations by elements of the lattice  = H \V =
+2Z Z(corresponding to corner points of the tiles), together with reections
+through each of the points in 12  = Z 21 Z and across the horizontal and
+vertical lines through those points.
+    Now consider what is lost when we pass from X to .
+        The same symmetry group would arise if we had replaced X by the
+         lattice  of corner points, even though  looks quite dierent from X .
+         (Of course, there are reasons why this loss of detail in passing from X
+         to is welcome, as is the case for many mathematical abstractions,
+         but read on.)
+        The group retains no information about the local structure of the
+         tiled plane, such as the fact that neighborhoods of all the points inside
+         the tiles look identical if the tiles are uniform, while they may look
+         dierent if the tiles are painted with a design (which could still be
+         invariant under ).
+        If, as is the case on real bathroom oors, the tiling is restricted to a
+         nite part of the plane, such as B = [0; 2m][0; n]; the symmetry group
+         shrinks drastically. The subgroup of leaving X \ B invariant contains
+         just 4 elements, even though a repetitive pattern on the bathroom oor
+         is clearly visible.
+    Our rst groupoid will enable us to describe the symmetry of the nite
+tiled rectangle. We rst dene the transformation groupoid of the action of
+   on R2 to be the set1
+             G( ; R2) = f(x; ; y )jx 2 R2; y 2 R2;  2 ; and x = y g
+with the binary operation
+                            (x; ; y )(y; ; z ) = (x; ; z ):
+This operation has the following properties.
+   1. It is dened only for certain pairs of elements: gh is dened only
+      when  (g ) = (h) for certain maps  and  from onto R2; here
+       : (x; ; y ) 7! x and  : (x; ; y ) 7! y .
+   1
+    As a set, G( ; R2) is isomorphic to  R2, but we prefer the following more symmetric
+description, which makes the composition law more transparent.
+
+                                            4
+                                      gh
+
+
+
+
+                     g                                    h
+(g) = (gh)                     ( g ) =  ( h)                   (h) =  (gh)
+
+                     Figure 2: Multiplication in a groupoid.
+
+   2. It is associative: if either of the products (gh)k or g (hk) is dened,
+      then so is the other, and they are equal.
+   3. For each g in G, there are left and right identity elements g and g
+      such that g g = g = gg :
+   4. Each g in G has an inverse g           1     for which gg 1 = g and g 1g = g :
+    More generally, a groupoid with base B is a set B with mappings  and 
+from G onto B and a binary operation (g; h) 7! gh satisfying the conditions
+1-4 above. We may think of each element g of G as an arrow pointing from
+(g ) to (g ) in B; arrows are multiplied by placing them head to tail, as in
+Figure 2.
+    Many properties of groupoids suggested by this picture are easily proven.
+for instance, (g 1) =  (g ) (since gg 1 is dened), and (gh) = (g ) (since
+(g g )h = g (gh) implies that g (gh) is dened). One also shows easily
+that (g ) and g (or  (g ) and g ) determine one another, thus producing
+a bijective mapping  from the base B to the subset G(0)  G consisting of
+the identity elements. The reader familiar with categories will probably have
+realized by now that a groupoid is just a category in which every morphism
+has an inverse.2
+    Now we return to our transformation groupoid G( ; R2) and form its
+restriction to B = [0; 2m]  [0; n] (or any other subset B of R2) by dening
+          G( ; R2)jB = fg 2 G( ; R2)j(g ) and (g ) belong to Bg:
+The following concepts from groupoid theory, applied to this example, now
+show that G( ; R2)jB indeed captures the symmetry which we see in the
+tiled oor.
+   2
+     Actually, not quite. The elements of a category can constitute a class rather than a
+set, so a groupoid is a small category with every morphism invertible.
+
+                                                 5
+                4     5
+
+                          2                1
+                          3
+
+
+
+
+Figure 3: The point labeled by j belongs to the orbit Oj of the groupoid
+G( ; R2)jB .
+
+    An orbit of the groupoid G over B is an equivalence class for the
+     relation
+          x G y if and only if there is a groupoid element g with
+          (g ) = x and (g ) = y .
+     In the example, two points are in the same orbit if they are similarly
+     placed within their tiles or within the grout pattern. (We are allowed
+     to turn the tiles over, as well as to translate them or rotate them by
+     180.)
+    The isotropy group of x 2 B consists of those g in G with (g) =
+     x = (g ): In the example, the isotropy group is trivial for every point
+     except those in 12  \ B , for which it is Z2  Z2.
+    We can describe local symmetries of our tiling by introducing another
+groupoid. Consider the plane R2 as the disjoint union of P1 = B \ X (the
+grout), P2 = B n P1 (the tiles), and P3 = R2 n B (the exterior of the tiled
+room). Now dene the local symmetry groupoid Gloc as the set of triples
+(x; ; y ) in B   B for which x = y , and for which y has a neighborhood
+U in R2 such that  (U \ Pi)  Pi for i = 1; 2; 3: The composition is given
+by the same formula as for G( ; R2):
+    For this groupoid, there are only a nite number of orbits (see Figure
+3).
+    O1 = interior points of tiles
+    O2 = interior edge points
+
+                                     6
+  6               5            5             5             5            6
+
+  5               3            3             3             3            5
+
+  5               3            3             3             3            5
+
+  5               3            3             3             3            5
+
+  6               5            5             5             5            6
+
+          Figure 4: Orbit decomposition of the nite groupoid GlocjL .
+
+      O3 = interior crossing points
+      O4 = boundary edge points
+      O5 = boundary \T" points
+      O6 = boundary corner points
+    The isotropy group of a point in O1 is now isomorphic to the entire
+rotation group O(2); it is Z2  Z2 for O2 , the 8 element dihedral group D4
+for O3 , and Z2 for O4, O5 , and O6 .
+    Now we can create a completely nite object by restricting Gloc to the
+nite set L = O3 [ O5 [ O6 of tile corner points. GlocjL now has just three
+orbits, with isotropy groups isomorphic to D4 , Z2, and Z2 as before. (See
+Figure 4.) At this point, we have something like the smile which remains
+after the Cheshire Cat has disappeared. The set L has no structure at all
+except for that provided by the groupoid GlocjL , which is a sort of relic
+of the symmetry structure which was given by the original decomposition
+into grout, tiles, and and exterior. We could say that the points of L have
+\internal symmetry" specied by the isotropy groups of GlocjL , and that the
+\types" of these points are classied by the orbit structure of the groupoid.
+This internal symmetry and type classication can be viewed either as a
+relic of the original tiling, or simply as a \geometric structure" on L.
+    The situation here is similar to that in gauge theory, where the points of
+space-time are equipped with internal symmetry groups whose representa-
+tions correspond to physical particles. But gauge groups and gauge trans-
+formations are applicable only because all the points of space time look
+alike. To describe non-homogeneous structures like the tiled oor requires
+groupoids rather than groups.3
+  3
+      Actually, groupoids are useful even in the realm of gauge theory. (See [9].)
+
+                                              7
+    A notable feature of the groupoid GlocjL is that it can be entirely de-
+composed into its restrictions to the orbits O3 , O5 , and O6 . In other words,
+the groupoid contains no information about the relation of the orbits to one
+another. This situation is typical for discrete groupoids. Only the pres-
+ence of a topology on a groupoid and its base can interfere with such a
+decomposition.
+
+3 Groupoids and equivalence relations
+If B is any set, the product B  B is a groupoid over B with (x; y ) = x,
+(x; y ) = y , and (x; y )(y; z) = (x; z). The identities are the (x; x), and
+(x; y ) 1 = (y; x): We call this the pair groupoid of B .4 Note that a sub-
+groupoid of B  B , i.e. a subset closed under product and inversion, and
+containing all the identity elements,5 is nothing but an equivalence relation
+on B . The orbits are the equivalence classes, and the isotropy subgroups
+are all trivial.
+    If G is any groupoid over B , the map (;  ) : G ! B  B is a morphism
+from G to the pair groupoid of B . (We leave it to the reader to formulate
+the precise denition of groupoid morphism.) The image of (;  ) is the
+orbit equivalence relation G , and the kernel is the union of the isotropy
+groups.
+    The morphism (;  ) suggests another way of looking at groupoids. Until
+now, we have been describing them as generalized groups, but now we want
+to think of groupoids as generalized equivalence relations as well. From this
+point of view, a groupoid over B tells us not only which elements of B are
+equivalent to one another (or \isomorphic"), but it also parametrizes the
+dierent ways (\isomorphisms") in which two elements can be equivalent.
+This leads us to the following guiding principle of Grothendieck, Mackey,
+Connes, Deligne, : : : .
+       Almost every interesting equivalence relation on a space B arises
+       in a natural way as the orbit equivalence relation of some group-
+       oid G over B . Instead of dealing directly with the orbit space
+       B=G as an object in the category Smap of sets and mappings, one
+   4
+     Other authors use the terms coarse groupoid or banal groupoid for this object.
+   5
+     One often omits this last condition from the denition of a subgroupoid. To emphasize
+it, we can refer to a wide subgroupoid.
+
+
+                                            8
+     should consider instead the groupoid G itself as an object in the
+     category Ghtp of groupoids and homotopy classes of morphisms.
+   Here we will provide a denition. If
+                                        fGi    - G0
+                               G
+
+                                             0  0
+                              ??        fBi      ??
+                               B               - B0
+are morphisms of groupoids for i = 1; 2, a homotopy (or natural transforma-
+tion in the language of categories) from f 1 to f 2 is a map h : B ! G0 with
+the following properties.
+    For each x 2 B, 0(h(x)) = fB1 (x) and 0(h(x)) = fB2 (x).
+    For each g 2 G, h((g))fG2 (g) = fG1 (g)h((g)).
+   An isomorphism in Ghtp between the groupoids G and G0 (sometimes
+called an equivalence of groupoids) gives a bijection between the orbit spaces
+B=G and B=G0, as well as group isomorphisms between corresponding iso-
+tropy subgroups in G and G0 . In the absence of further structure on the
+groupoids, an equivalence is essentially no more than this, but when the
+groupoids (and their bases) have measurable, topological, dierentiable, al-
+gebraic, or symplectic (and Poisson) structures, the quotient spaces can be
+rather nasty objects, outside the category originally under consideration,
+and it is essential to focus attention on the groupoids themselves. One tool
+which makes this focus eective is an algebra associated to the groupoid G
+over B which is a useful substitute for the space of functions on B=G when
+the quotient is a \bad" space. We describe this algebra in the next section.
+
+4 Groupoid algebras
+The convolution of two complex valued functions on a group G is dened as
+the sum
+                        (a  b)(g ) =
+                                        X a(k)b(k 1g);
+                                        k 2G
+
+                                         9
+at least when the support of each function (i.e. the set where it is not zero)
+is nite. When the supports are innite, the sum may still be dened if the
+functions are absolutely summable. One obtains in this way, for instance,
+the rules for multiplying Fourier series as functions on the additive group Z.
+    To extend the denition of convolution from groups to groupoids, one re-
+places the domain G of the sum (or integral) by the -bre Gg =  1 ((g )):
+Alternatively, one may use the more symmetric formula for convolution:
+                         (a  b)(g ) =
+                                                X            a(k)b(`):
+                                          f(k;`)jk`=gg
+    For instance, if G = B  B is the pair groupoid over B = f1; 2; : : : ; ng,
+the convolution operation (dened on all functions) is
+                     (a  b)(i; j ) =
+                                              X              a(i; k)b(i; j);
+                                        (i;k)(k;j )=(i;j )
+and if we write aij for a(i; j ) we get
+
+                               (a  b)ij =
+                                                Xa b
+                                                   n
+                                                       ik kj ;
+                                                k=1
+which exhibits F (f1; 2; : : : ; ng  f1; 2; : : : ; ng) as the algebra of n  n ma-
+trices.
+    This may look like a peculiar way of viewing the algebra of matrices,
+but Connes ([4] pp. 33-39, and elsewhere) has made the point that it was
+precisely as a groupoid algebra that Heisenberg constructed his original for-
+mulation of quantum mechanics. (The elements of the groupoid were tran-
+sitions between excited states of an atom. Only later were the elements of
+the groupoid algebra identied as matrices.) The noncommutativity of the
+algebra of observables in quantum mechanics is then seen to be a direct
+consequence of the noncommutativity of the pair groupoid B  B , as com-
+pared with the commutativity of the group Zunderlying the Fourier series
+representation of oscillatory motion in classical mechanics.
+    When G is a topological group(oid)6 it is natural to look at continuous
+functions. Unless the -bres of G are discrete, though, there are no con-
+tinuous functions which are summable along the bres, and it necessary to
+replace the sums in the denition of convolution by integrals. For instance,
+   G is a topological groupoid over B if G and B are topological spaces, and ,  , and
+   6
+
+multiplication are continuous maps.
+
+                                              10
+if G = Rn  Rn, we can dene a convolution operation on the space Cc (G) of
+continuous functions with proper support (i.e. the projection of the closure
+of f(x; y )ja(x; y ) 6= 0g onto each factor Rn is a proper map). Multiplication
+in Cc (G) is given by the integral formula
+                         (a  b)(x; y ) =
+                                             Z        a(x; z)b(z; y ) dz;                 (1)
+                                                 Rn
+where dz is Lebesgue measure.7
+   This is precisely the composition law which we obtain by thinking of
+each a 2 Cc (G) as the (Schwartz) kernel of an operator a~ on L2 (Rn):
+                             (~a )(x) =
+                                             Z
+                                       a(x; y ) (y )dy:
+                                    Rn
+Not every operator (not even the identity) is realized by a continuous kernel,
+but all operators (including unbounded ones) satisfying reasonable continu-
+ity properties can be realized by kernels which are distributions, or general-
+ized functions on Rn  Rn.
+    To dene convolution operations on functions on a general locally com-
+pact topological groupoid, we need to start with a family fx g of measures
+along the -bres, which will ll the role played by the measure dz in (1)
+above. Convolution is then dened8 by
+                         (a  b)(g ) =
+                                         Z       a(k)b(k 1g )dg (k):
+                                         Gg
+This operation is associative if the measures g satisfy a suitable left-invari-
+ance property.
+    From continuous functions on G, on can pass by various processes of
+completion and localization to larger groupoid algebras, which play the role
+of continuous functions, measurable functions, or even distributions on the
+orbit space of G. We refer to the books [4], [14], and [16] for more details.
+    A more intrinsic construction of groupoid algebras, free of the choice of
+measures, can also be given. It includes as special cases the convolution
+of measures on a group G and the multiplication of half-density kernels on
+Rn  Rn. The denition can be found on p. 101 of [4] for the case of
+   7
+      Dirac's notation hxjajyi for a(x; y) emphasizes the idea that the values of a are \tran-
+sition amplitudes" between \states" and so ts nicely with the groupoid interpretation of
+(1).
+    8
+      This denition seems to be due to J. Westman [20].
+
+                                                 11
+Lie groupoids (see Section 5 below). A construction related to Mackey's
+intrinsic Hilbert spaces [10] should extend this idea to a general locally
+compact groupoid with a prescribed family of measure classes along the
+-bres.
+
+5 Lie groupoids and Lie algebroids
+A groupoid G over B is a Lie groupoid if G and B are dierentiable mani-
+folds, and ,  , and multiplication are dierentiable maps.9 For example, the
+pair groupoid M  M over any dierentiable manifold M is a Lie groupoid,
+and any Lie group is a Lie groupoid over a single point.
+    The innitesimal object associated with a Lie groupoid is a Lie algebroid.
+A Lie algebroid over a manifold B is dened to be a vector bundle A over B
+with a Lie algebra structure [ ; ] on its space of smooth sections, together
+with a bundle map  : A ! TB (called the anchor of the Lie algebroid)
+satisfying the conditions:
+   1. [(X ); (Y )] = ([X; Y ]);
+    2. [X; 'Y ] = '[X; Y ] + ((X )  ')Y:
+Here, X and Y are smooth sections of A, ' is a smooth function on B , and
+the bracket on the left hand side of the rst condition is the usual Jacobi-Lie
+bracket of vector elds. For example, the tangent bundle TB with the usual
+bracket, and the identity map as anchor, is a Lie algebroid over B , while
+any Lie algebra is a Lie algebra over a single point.
+     The Lie algebroid of a Lie groupoid is dened via left-invariant vector
+elds, just as it is in the case of Lie groups. Since the left translation by
+a groupoid element g maps only from G (g) to G(g), we must rst restrict
+the values of our vector elds to lie in the subbundle T G = ker(T) of
+TG. For every x in B and every g in the -bre  1 (x), the bre Tg G
+can be identied with T(x)G via left translation by g . Thus, the space of
+left-invariant sections of T G along  1 (x) can be identied with the single
+space Ax G = T(x)G, and T gives a well dened map x : Ax G ! TxB .
+The (disjoint) union of these objects for all x in B forms a vector bundle
+AG over B with a bundle map  : AG ! TB. (See Figure 5.) Identifying
+   9
+    A further technical condition is included in the denition to insure that the domain of
+multiplication is a smooth submanifold of G  G; the derivatives of  and  are required
+to have maximal rank everywhere.
+
+                                            12
+                                           image under 
+
+
+
+                                                                        G(0)
+
+
+
+
+                            -bres              -bres
+
+ Figure 5: The groupoid G with an element of A and its image under .
+
+the sections of AG with left-invariant sections of T G  TG and using the
+usual bracket on sections of TG denes a bracket of sections on AG making
+it into a Lie algebroid with anchor .
+     For instance, the Lie algebroid of B  B is TB , and by extension of
+a well-known idea from Lie group theory, one may think of the Jacobi-
+Lie bracket on sections of TB as being the innitesimal remnant of the
+noncommutativity of the composition law (x; y )(y; z ) = (x; z ).
+     The local versions of Lie's three fundamental theorems all extend from
+groups to groupoids, but there are some interesting dierences at the global
+level. For instance, although every subalgebroid A0 of AG is indeed AG0 for
+a Lie groupoid G0, there may be no such G0 for which the induced morphism
+G0 ! G is globally one-to-one. More seriously (and contrary to an incorrect
+assertion in [15]), there exist Lie algebroids which are \non-integrable" in
+the sense that they are not the Lie algebroid of any global Lie groupoid
+at all. (There is a local Lie groupoid corresponding to any Lie algebroid,
+though.) We refer to Chapter V of [8] for a discussion of all this, together
+with further references.
+
+
+
+
+                                      13
+6 Boundary Lie algebroids
+In this section, we will explain how Lie algebroids provide a natural setting
+for understanding some recent work by R. Melrose [12] [13] on the anal-
+ysis of (pseudo)dierential operators on manifolds with boundary. (Some
+prior knowledge about such operators on manifolds without boundary will
+be assumed here.)
+     The space X (M; @M ) of vector elds which are tangent to the boundary
+@M of a manifold M forms a Lie algebra over R and a module over C 1 (M ),
+and the condition [X; 'Y ] = '[X; Y ] + (X  ')Y is satised (since it is
+satised for all vector elds and functions). Remarkably, there is a vector
+bundle b TM over M whose sections are in one-to-one correspondence with
+the elements of X (M; @M ) via a bundle map  : b TM ! TM which is an
+isomorphism over the interior of M , and whose image over a boundary point
+is the tangent space to @M at that point. These structures make b TM into
+a Lie algebroid. We refer to [12] for a precise denition of b TM , mentioning
+here only that, when (y1 ; : : : ; yn 1 ; x) are local coordinates for M dened
+on an open subset of the half space x  0, a local basis over C 1 (M ) for the
+sections of b TM is given by ( @y@ 1 ; : : : ; @yn@ 1 ; x @x
+                                                          @ ):
+     Melrose develops analysis on M by regarding the b-tangent bundle b TM
+as the \correct" tangent bundle for this manifold with boundary. Thus, the
+algebra of b-dierential operators is the algebra of operators on C 1 (M ) gen-
+erated by the sections of b TM (acting on functions via ) and C 1 (M ) (acting
+on itself by multiplication).10 The principal symbols of these operators are
+homogeneous functions on the dual, or b-cotangent bundle b T M: Inverting
+(modulo smoothing operators) elliptic b-dierential operators leads to the
+notion of b-pseudodierential operators, whose symbols are again functions
+on the b-cotangent bundle.
+     Since the b-pseudodierential operators act on C 1 (M ), their Schwartz
+kernels are distributions on M  M , which is a manifold with corners. Analy-
+sis of these kernels is facilitated, though, by lifting them to a certain manifold
+with boundary, b (M  M ), obtained from M  M by a blowing-up operation
+along the corners. The case where M is a half-open interval is illustrated in
+Figure 6. The general case is locally the product of this one with a manifold
+without boundary.
+     It turns out that b (M M ) is a groupoid whose Lie algebroid is b TM , and
+  10
+    Such a \universal enveloping algebra" was already dened for general Lie algebroids
+by Rinehart [17].
+
+                                          14
+       G                                           b
+                                                       G
+
+
+
+
+                         G(0)                                     b
+                                                                      G(0)
+
+                                 isotropy groupoid of 0
+
+Figure 6: The groupoids G = M  M and b G = b (M  M ), where M = [0; 1).
+
+that the composition law for b-kernels ([12], Equation (5.66)) is precisely the
+convolution operation in the groupoid algebra of b (M  M ). Thus, we can
+think of the groupoid b (M M ) and its Lie algebroid b TM as providing a new
+\internal symmetry structure" appropriate to our manifold with boundary.
+    It is therefore interesting to understand the structure of the groupoid
+b (M  M ). In fact, it decomposes algebraically (though not topologically)
+as the disjoint union of the pair groupoid over the interior of M and the
+groupoid G over @M for which (;  ) 1(x; y ) consists of the orientation
+preserving linear isomorphisms between the normal lines Ty M=Ty (@M ) and
+Tx M=Tx(@M ). Thus, with the \geometric structure" on M provided by the
+enlarged pair groupoid b (M  M ), each point of the boundary @M has the
+internal symmetries are those of an oriented 1-dimensional vector space. We
+should think of the vectors in this space as being points \innitesimally far"
+from the boundary, so that the boundary of M becomes an \innitesimal
+boundary layer." The section x @x @ of b TM can now be seen as pointing into
+this layer in a non trivial way along @M ; that is why it is not zero there.
+    At this point, our use of Lie algebroids and Lie groupoids adds only
+a geometric picture to Melrose's analysis. It does, however, suggest the
+possibility of extending the theory of pseudodierential operators to algebras
+of operators associated with other Lie algebroids. In fact, the theory of
+longitudinal operators on foliated manifolds (see Section I.5. ) of [4] is an
+example of such an extension, but the class of Lie algebroids which can be
+treated in this way remains to be determined. An interesting test case should
+be the Lie algebroids associated with the Bruhat-Poisson structures on ag
+manifolds [7], since the corresponding orbit decomposition on a ag manifold
+is the Bruhat decomposition, which plays a central role in representation
+
+                                      15
+theory.
+
+7 Conclusion
+This article has presented a small sample of the applications of groupoids in
+analysis, algebra, and topology. R. Brown has reported in [2] the suggestion
+of F.W. Lawvere that groupoids should perhaps be renamed \groups", and
+those special groupoids with just one base point given a new name to reect
+their singular nature. Even if this is too far to go, I hope to have convinced
+the reader that groupoids are worth knowing about, and worth looking out
+for.11
+
+References
+ [1] Brandt, W., U ber eine Verallgemeinerung des Gruppenbegries, Math.
+     Ann. 96 (1926), 360-366.
+ [2] Brown, R., From groups to groupoids: a brief survey, Bull. London
+     Math. Soc. 19 (1987), 113-134.
+ [3] Brown, R., Topology: a geometric account of general topology, homotopy
+     types, and the fundamental groupoid, Halsted Press, New York, 1988.
+ [4] Connes, A., Noncommutative Geometry, Academic Press, San Diego,
+     1994.
+ [5] Ehresmann, C., Oeuvres completes et commentees, ed. A.C. Ehres-
+     mann, Suppl. Cahiers Top. Geom. Di., Amiens, 1980-1984.
+ [6] Karasev, M.V., Analogues of objects of Lie group theory for nonlinear
+     Poisson brackets, Math. USSR Izvestia 28, (1987), 497-527.
+ [7] Lu, J.-H., and Weinstein, A., Poisson Lie groups, dressing transforma-
+     tions, and the Bruhat decomposition, J. Di. Geom. 31 (1990), 501-
+     526.
+  11
+       Any reader stimulated to look further may wish to consult the Groupoid Home Page,
+http://amath-www.colorado.edu:80/math/department/groupoids/groupoids.shtml
+(under construction in January 1996).
+
+
+
+                                            16
+ [8] Mackenzie, K., Lie Groupoids and Lie Algebroids in Dierential Geom-
+     etry, LMS Lecture Notes Series, 124, Cambridge Univ. Press, 1987.
+ [9] Mackenzie, K., Classication of principal bundles and Lie groupoids
+     with prescribed gauge group bundle, J. Pure Appl. Algebra 58 (1989),
+     181-208.
+[10] Mackey, G.W., The Mathematical Foundations of Quantum Mechanics,
+     W.A. Benjamin, New York, 1963.
+[11] Mackey, G.W., Ergodic theory and virtual groups, Math. Ann. 166
+     (1966), 187-207.
+[12] Melrose, R.B., The Atiyah-Patodi-Singer Index Theorem, A.K. Peters,
+     Wellesley, 1993.
+[13] Melrose, R.B., Geometric Scattering Theory, Cambridge Univ. Press,
+     Cambridge, 1995.
+[14] Moore, C.C. and Schochet, C., Global Analysis on Foliated Spaces,
+     MSRI Publications 9, Springer-Verlag, New York (1988).
+[15] Pradines, J., Troisieme theoreme de Lie sur les groupodes dier-
+     entiables, C. R. Acad. Sc. Paris, 267 (1968), 21 - 23.
+[16] Renault, J., A groupoid approach to C  algebras, Lecture Notes in
+     Math. 793 (1980).
+[17] Rinehart, G.S., Dierential forms on general commutative algebras,
+     Trans. Amer. Math. Soc. 108, 195-222.
+[18] Weinstein, A., Symplectic groupoids and Poisson manifolds, Bull.
+     Amer. Math. Soc. 16, (1987), 101-104.
+[19] Weinstein, A., Noncommutative geometry and geometric quantization,
+     Symplectic Geometry and Mathematical Physics: actes du colloque en
+     l'honneur de Jean-Marie Souriau, P. Donato et al eds., Birkhauser,
+     Boston, 1991, pp. 446-461.
+[20] Westman, J., Harmonic analysis on groupoids, Pacic J. Math. 27
+     (1968), 621-632.
+
+
+                                    17
+[21] Yaglom, I. M., Felix Klein and Sophus Lie: evolution of the idea of
+     symmetry in the Nineteenth Century, Birkhauser, Boston, 1988.
+[22] Zakrzewski, S., Quantum and classical pseudogroups, I and II, Comm.
+     Math. Phys. 134 (1990), 347-370, 371-395.
+
+
+
+
+                                  18
+

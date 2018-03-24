@@ -1,0 +1,1518 @@
+                                                        QUIVERS OF TYPE A, FLAG VARIETIES AND
+                                                               REPRESENTATION THEORY
+
+                                                                             OLIVIER SCHIFFMANN
+arXiv:math/0301128v3 [math.RT] 21 Apr 2003
+
+
+
+
+                                             Introduction. In this survey, we describe and relate various occurences of quivers
+                                             of type A (both finite and affine) and their canonical bases in combinatorics, in
+                                             algebraic geometry and in representation theory. The ubiquity of these quivers
+                                             makes them especially important to study : they are pervasive in very classical
+                                             topics (such as the theory of symmetric functions) as well as in some of the most
+                                             recent and exciting areas of representation theory (such as representation theory of
+                                             quantum affine algebras, affine Hecke algebras or Cherednik algebras).
+
+                                             . There is a vast litterature on the subject and we have been forced to make a
+                                             choice in the selection of the results presented here. We believe that one of the
+                                             main reasons for the omnipresence of quivers of type A is the fact that they are
+                                             related (in more than one way) to classical and fundamental objects in geomet-
+                                             ric representation theory of type A such as (partial) flag varieties and nilpotent
+                                             orbits. This is the point we tried to emphasize in this survey. For that reason,
+                                             many interesting and important results are only alluded to or sketched here and we
+                                             apologize to all those whose work we did not mention through a lack of space and
+                                             competence. Also, we do not give complete proofs of all results presented here and
+                                             refer to the original papers whenever possible. Rather, we have tried to convey the
+                                             fundamental ideas in a nontechnical way as much as possible.
+
+                                             . This survey is organized as follows. In Section 1 we describe some basic geometric
+                                             properties of quivers of type A and their representation spaces. Section 2 is a brief
+                                             reminder on Ringel-Hall algebras and their canonical bases, and in Sections 3 and 4
+                                             we describe the Ringel-Hall algebras of the categories of representations of quivers
+                                                        (1)                 (1)
+                                             of type A1 and type An , An respectively. This makes a link with combinatorics
+                                             (symmetric functions, [Mac]) and with quantum group theory ([Ri1], [S1]). In Sec-
+                                             tion 5 we recall some classical geometric constructions in type A such as (partial,
+                                             affine) flag varieties, nilpotent orbits, Hecke algebras and various convolution alge-
+                                             bras. In Section 6, we give a first link between quivers of type A and (partial, affine)
+                                             Schubert varieties; one important consequence is that the coefficients of the canon-
+                                             ical basis of the Hall algebras of quivers of type A are given by Kazhdan-Lusztig
+                                             polynomials ([Lu1], [Z1]). Section 7 gives the geometric realization of Schur-Weyl
+                                             duality and its affine and quantum cousins. This gives a conceptual explanation for
+                                             some of the results in Section 4. We totally change perspective in Section 8 and,
+                                             following [LLT], [A] and [VV1], we present a surprising and beautiful application
+                                             of the theory of canonical bases and quivers of type A to character forumlae for
+                                             quantum affine algebras and affine Hecke algebras (at roots of unity). Finally, we
+                                             gather a few more interesting occurences of quivers of type A in relation to geome-
+                                             try (Nakajima quiver varieties, parabolic structures on curves and surfaces) in the
+                                             last Section.
+                                                                                        1
+2                                  OLIVIER SCHIFFMANN
+
+
+                                  1. Quivers of type A
+1.1. We will denote by ∆n the (equioriented) quiver of type An , with vertex set
+In = {1, . . . , n} and with edge set {(i, i + 1) | i = 1, . . . , n − 1}. Similarly, we
+     (1)                                                             (1)
+let ∆n stand for the (equioriented) affine quiver of type An−1 , with vertex set
+Z/nZ and edge set {(i, i + 1) |i ∈ Z/nZ} (note that this also makes sense for
+                                                                                     (1)
+n = 1). Let k be any field. Recall that a representation
+                                                 L                 of ∆n (resp. of ∆n )
+over k consists of a pair (V, φ) where VL=         i Vi is an In -graded (resp. Z/nZ-
+graded) k-vector space and φ = (φi ) ∈        i Hom(V  i , Vi+1 ). We let M odk (∆n ) be
+                                                                                   (1)
+the abelian category of representations of ∆n over k. In the case of ∆n we will
+                                                                             (1)
+impose an additional nilpotency condition; namely, we denote by M odk (∆n ) the
+                                                  (1)
+abelian category of representations (V, φ) of ∆n such that φN · · · φ2 φ1 = 0 for
+N ≫ 0. This restriction may seem artificial from the strict point of view of quivers,
+but it will appear naturally later in the context of flag varieties.
+
+                                   (1)
+1.2. Let ∆ be either ∆n or ∆n . The simple objects in M odk (∆) are naturally
+in bijection with the vertices of ∆, and we will denote by Si the simple module
+with V = Vi = k. Indecomposable objects of M odk (∆n ) are parametrized by
+pairs (i; l) with i ∈ In and 1 ≤ l ≤ n + 1 − i : to (i; l) corresponds the unique
+indecomposable object Si,l with top Si and length l. Similarly, indecomposable
+                     (1)
+objects of M odk (∆n ) are parametrized by pairs (i; l) with i ∈ Z/nZ and l ≥ 1,
+and we use the same notation Si,l for the unique indecomposable with top Si and
+length l. In particular, in both cases, the set of isomorphism classes of objects in
+M odk (∆) is in bijection with a set of n-multipartitions (or n-multisegments)
+                                           XX          (i)
+                            m = (λ(i) )i =        (i; λt )
+                                                    i         t
+
+         (i)
+where λt ≤ n + 1 − i if ∆ = ∆n .
+
+                                                        (1)
+1.3. Let ∆ again stand for either ∆n or ∆n . Let us fix a dimension Q
+                                                                    vector d =
+(di )i ∈ NI with I = In or I = Z/nZ according to ∆. The group Gd = i GLk (di )
+acts naturally by conjugation on the space
+                                         n−1
+                                         M
+                             E(d) =              Hom(k di , k di+1 )
+                                           i=1
+
+if ∆ = ∆n and on the space
+                                   M
+    E(d) = Enilp (d) = {(φi ) ∈            Hom(k di , k di+1 ) |φN · · · φ2 φ1 = 0 for N ≫ 0}
+                                  i∈Z/nZ
+
+          (1)
+if ∆ = ∆n . Moreover, the set of Gd -orbits is (by definition) in bijection with the
+set of isomorphism classes of objects in M odk (∆) of dimension d. We will denote
+by Om the Gd -orbit (in the appropriate space) corresponding to a multipartition
+m.
+   Since there are only finitely many multipartitions of a given dimension d the
+group Gd acts on E(d) with only finitely many orbits. It follows that there is
+a (unique) dense orbit (the “generic representation of dimension d”); it is also
+easy to see that there is a unique closed orbit (the semisimple representation of
+                                                                              (1)
+dimension d, in which all maps φi are zero). Observe that when ∆ = ∆1 we
+recover the classical situation of the group GL(d) acting on the nilpotent cone
+N = {x ∈ gld |xN = 0 for N ≫ 0}.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                  3
+
+
+1.4. We use the same notation as in 1.3. Let m be a multisegment of dimension
+d. The Zariski closure Om is a union of Gd -orbits. This induces a partial order
+≤ on the set of orbits, which can be explicitly described. More important for us
+will be the geometric properties of the singular variety Om . The first result in this
+direction is the following.
+Theorem 1.1 ([ADK],[LM]). The variety Om is normal.
+   This theorem has been generalized to quivers of type A and D with arbitrary ori-
+entations by Bobinski-Zwara ([BZ1], [BZ2]), and is conjectured to hold for arbitrary
+quivers (in the case of the nilpotent cone this is a well-known result of Kostant).
+In the same spirit, Abeasis, Del Fra and Kraft constructed in [ADK] an explicit
+desingularization of Om as follows :
+. We first introduce some notation. Let dP= (d(1) , . . . , d(r) ) be a sequence of di-
+mension vectors for ∆ and let us set d = t d(t) . We denote by Fd the variety of
+flags
+                                                    M
+                         0 = L0 ⊂ L1 ⊂ · · · ⊂ Lr =      k di
+                                                       i
+                                                      (t)
+of I-graded vector spaces such that dim Lt /Lt−1 = d . This is a smooth projective
+variety. Now consider
+                  Xd = {((Lt ), x) ∈ Fd × E(d) | x(Li ) ⊂ Li−1 }.
+                                          P P         (s) (t)
+This is a vector bundle over Fd of rank     i    s<t di di−1 . In particular, it is
+a smooth (quasi-projective) variety. On the other hand, the second projection
+π : Xd → E(d) is a projective morphism.
+Proposition 1.1. Let m be a multipartition and let x ∈ Om . Set
+(1.1)                     d(t) = dim Ker (xt )/Ker (xt−1 ).
+Then π(Xd ) = Om and π : Xd → Om is a resolution of singularities.
+Proof. Since π is projective and Gd -equivariant, its image is a closed Gd -stable
+subvariety. Moreover, since Xd is irreducible, so is π(Xd ). Therefore π(Xd ) = O
+for some orbit O. Now let x ∈ π(Xd ). By definition, the points of the fiber of π
+over x are the flags (Lt ) ∈ Fd which are compatible with x. It is easy to see that
+such a flag is unique if and only if x ∈ Om . On the other hand, if (Lt ) is a flag
+compatible with x and if (Lt ) ∈ π −1 (y) with y ∈ Om then x + uy ∈ Om for u in a
+dense subset of C∗ . Thus x ∈ Om . The Proposition follows.                      ♦
+
+                              (1)
+. Observe that when ∆ = ∆1 and Om is the regular nilpotent orbit then Xd =
+T ∗ B where B is the flag variety of GLd and the above resolution is just the Springer
+resolution of the nilpotent cone. This construction of desingularizations of orbit
+closures has been generalized to arbitrary finite type quivers by Reineke ([Re]).
+Corollary 1.1. The dimension of the orbit Om is
+                               X X (s) (t)       (t)
+                    dim Om =           di (di + di−1 ).
+                                     i   s<t
+
+                                                                                     ♦
+
+                    2. Hall algebras and canonical bases
+                                                      (1)
+  In this section we let ∆ stand for either ∆n or ∆n .
+4                                      OLIVIER SCHIFFMANN
+
+
+2.1. We briefly recall the definition of Ringel-Hall algebras. Let k = Fq be a finite
+field with q elements and let C = M odk (∆). It is known that C satisfies the following
+conditions
+     i) dim Exti (M, N ) < ∞ for any M, N ∈ C, i = 0, 1,
+    ii) Exti (M, N ) = 0 for any i > 1 and M, N ∈ C.
+Introduce two bilinear forms on K0 (C) ≃ ZI by the formulas
+                    hM, N i = dim Hom(M, N ) − dim Ext1 (M, N ),
+
+                                    (M, N ) = hM, N i + hN, M i.
+Let us consider a C-vector space UC (or simply U) with a basis {[M ]} indexed by
+the isomorphism classes of objects in C. Let us choose v ∈ C such that v −2 = q.
+Finally let us denote by d(M ) ∈ NI the dimension of a representation M .
+. We define an algebra structure on U by setting
+                                                      X
+(2.1)                [M ] · [N ] = v d(M)·d(N )−hN,Mi    P
+                                                        FM,N [P ]
+                                                           [P ]
+
+where
+                                                                   X
+                  d1 · d2 = dim (Gd1 +d2 /Gd1 × Gd2 ) = 2              d1,i d2,i ,
+                                                                   i
+
+                          P
+                         FM,N = #{Q ⊂ P | Q ≃ M, P/Q ≃ N }.
+                                                                             e be
+In order to define a bialgebra structure, we need to slightly enlarge U. Let U
+the algebra generated by U and elements KM , M ∈ K0 (C) subject to the relations
+KM KN = KM+N and KM [P ] = v −(M,P ) [P ]KM . We define a bialgebra structure
+on Ue by putting
+                                       ∆(KM ) = KM ⊗ KM ,
+
+                   X                               |Aut(M )| · |Aut(N )| P
+(2.2) ∆([P ]) =              v −d(M)·d(N )−hN,Mi                        FM,N [M ]KN ⊗ [N ].
+                                                        |Aut(P )|
+                  [M],[N ]
+
+                                    e by the formula
+Finally, define a scalar product on U
+                                                                   (1 − v 2 )|d(M)|
+             h[M ]KI , [N ]KJ iG = v −(I,J)−d(M)·d(N ) δM,N
+                                                                     |Aut(M )|
+                      P
+where we set |d| =       i   di .
+                      e ·, ∆) is a bialgebra and h , iG is a nondegenerate Hopf
+Theorem 2.1 ([Gre]). (U,
+pairing, i.e
+                                    hxy, ziG = hx ⊗ y, ∆(z)iG .
+
+Remarks. i) The algebra U is clearly K0 (C) = ZI -graded. The same holds for U     e
+where the elements KN are put in degree 0.
+ii) Our conventions differ slightly from the usual ones regarding Ringel-Hall alge-
+bras. The standard basis ({M }) of U is related to ours by the change of variables
+                 1
+[M ] = v |d(M)|− 2 d(M)·d(M) {M }, and we renormalized the scalar product h , iG by
+the factor (1 − v 2 )|d(M)| . This will make the relation to symmetric functions more
+transparent.
+       QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                    5
+
+
+2.2. Recall that the set of isomorphism classes of objects in M odk (∆) is in bijection
+with a set of multipartitions.
+Proposition 2.1 ([Mac], [Ri2]). Let m, n, l be arbitrary multipartitions. There
+                     l
+exists a polynomial Pm,n ∈ Z[t] such that for any finite field k with q elements we
+        l      l
+have Fm,n = Pm,n (q).
+   The nice consequence of the above Proposition is that we now may (and we
+now will) consider the Hall algebras UC and Ue C for a generic q, i.e as C[v, v −1 ]-
+                        (1)
+algebras. When ∆ = ∆1 then the isomorphism classes of objects are labelled by
+usual partitions and the above polynomials are the Hall polynomials (see [Mac]).
+
+2.3. Let us denote by CGd [E(d)] the set of Gd -invariant functions on E(d). Observe
+that we have a natural identification of vector spaces
+                            M
+                       U≃       CGd [E(d)],       [m] 7→ 1Om .
+                                 d
+
+In this context, Lusztig gave in [Lu0] a geometric construction of the generic Hall
+algebra U, in which one works over the algebraically closed field Fq and where
+Gd -invariant functions are replaced by (complexes of) Gd -equivariant constructible
+sheaves (see Saito’s paper in this volume). Observe that in our case there are only
+finitely many Gd -orbits and these induce an algebraic stratification of E(d). In
+particular, for every orbit Om ⊂ E(d), let ICOm be the simple Gd -equivariant
+perverse sheaf associated to the constant sheaf COm . We set
+                                     fm = v dim Om 1Om ,
+                       X
+               bm =           v −i+dim Om −dim Om′ dim HO
+                                                        i
+                                                          m′
+                                                             (ICOm )fm′ ,
+                       i,m′
+         i
+where HO   m′
+              (ICOm ) is the stalk over any point of Om′ of the ith cohomology sheaf of
+ICOm ). The bases {fm }m and {bm }m are called the PBW basis and the canonical
+basis respectively. Observe that Green’s scalar product restricts to a nondegenerate
+                                                                               ∗
+form on U. It will be important for us to consider the dual PBW basis {fm        } and
+                               ∗                                        ∗
+the dual canonical basis {bm } with respect to h , iG . Note that fm and fm only
+differ by a scalar in C[v, v −1 ]. For d ∈ NI we simply denote by fd (= bd ) the basis
+element associated to the unique closed (=semisimple) orbit.
+
+2.4. Finally, we note the following well-known recursive procedure to compute the
+canonical basis {bm } of U. The Verdier duality functor on the (derived) category
+of constructible Gd -sheaves on E(d) descends to a semilinear involution u 7→ u on
+U. This involution can be computed :
+Proposition 2.2. The involution u 7→ u is the unique ring homomorphism U → U
+such that v = v −1 and fd = fd for all d ∈ NI .
+Proof. It is standard that the involution u 7→ u has the above properties. Let
+U′ ⊂ U be the subalgebra generated fd for d ∈ NI . It is enough to prove that
+U′ = U. We argue by induction on the (partial) degeneration order on the set of
+orbits. Let m be a multipartition and assume that fm′ ∈ U′ for all m′ 6= m such
+that Om′ ⊂ Om . Pick x ∈ Om and define dimension vectors d(t) , t = 1, . . . , r as in
+(1.1). Then from Proposition 1.1. we have
+                                                M
+                     f dr · · · f d1 ∈ v Z fm ⊕   C[v, v −1 ]fm′
+                                               m′ <m
+                   ′
+and hence fm ∈ U .                                                                   ♦
+6                                         OLIVIER SCHIFFMANN
+
+
+    The properties of simple perverse sheaves now translate as follows.
+
+Proposition 2.3. The canonical basis element bm is characterized by the two
+conditions
+      i) bm = bm , L
+     ii) bm ∈ fm ⊕ m′ <m vC[v]fm′ .
+
+                                                                                                   ♦
+
+
+                  3. Hall algebras and symmetric functions
+                                                         (1)                    (1)
+3.1. In this section we assume that ∆ = ∆1 and set U1 = UModk (∆) . In that
+case, the set of isomorphism classes of objects in M odk (∆) is in natural bijection
+with the set Π of all partitions, and we will denote by the same letter λ the isoclass
+corresponding to a partition λ.
+
+3.2. Let Γ = C[x1 , x2 , . . .]S∞ be Macdonald’s ring of symmetric polynomials in
+infinitely many variables. This ring is equipped with various bases. Following
+classical notations, we denote by pλ the power-sum symmetric function, by eλ the
+elementary symmetric function, and by sλ the Schur function.
+
+Theorem 3.1 ([Hal]). The assignement f(1r ) 7→ er extends to an isomorphism of
+               (1) ∼
+algebras φ : U1 → Γ ⊗C C[v, v −1 ]. Moreover, φ(fλ ) = Pλ (v 2 ) where Pλ is the
+Hall-Littlewood polynomial.
+
+  Now let us consider the scalar product h , iG . From the above theorem one can
+deduce by direct computation :
+
+Proposition 3.1. The scalar product h , i = φ∗ h , iG coincides with the Hall-
+Littlewood scalar product :
+                                                                  1
+                                    hpλ , pµ i = δλ,µ zλ Q                  ,
+                                                             i (1 − v 2λi )
+                          Q
+where z(1m1 2m2 ··· ) =       i   mi !imi .
+
+                                                                                            (1)
+   Observe that the form h , i on K0 (C) vanishes here. It follows that U1                        can
+itself be equipped with a coproduct by the formula
+                          X                        |Aut(M )| · |Aut(N )| P
+         ∆0 ([P ]) =               v −d(M)·d(N )                        FM,N [M ] ⊗ [N ].
+                                                        |Aut(P )|
+                       [M],[N ]
+
+From Green’s theorem (Theorem 2.1) and the above proposition we see that φ :
+  (1) ∼
+U1 → Γ ⊗C C[v, v −1 ] is an isomorphism of bialgebras, where Γ ⊗C C[v, v −1 ] is
+equipped with Zelevinsky’s coproduct (see [Z2]).
+  Finally, the canonical basis also admits a nice interpretation in terms of sym-
+metric functions :
+
+Proposition 3.2 ([Lu1]). We have φ(bλ ) = sλ . Hence φ(b∗λ ) = Sλ (v) where Sλ (v)
+is the dual Schur function.
+
+    We will give a geometric interpretation of the above theorem in Section 7.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                                              7
+
+
+                      4. Hall algebras and quantum groups
+4.1. Let A = (aij )i=1,...,r be a symmetric generalized Cartan matrix. Associated to
+A is a complex Kac-Moody algebra g with a Cartan decomposition g = n− ⊕ h⊕ n+ .
+The quantized enveloping algebra Uv (g) of g is the C(v)-algebra generated by
+elements Ei , Fi , Ki±1 for i = 1, . . . , r satisfying the relations
+                       Ki Ki−1 = Ki−1 Ki = 1,                Ki Kj = Kj Ki ,
+                                                                                        Ki − Ki−1
+      Ki Ej = v aij Ej Ki ,      Ki Fj = v −aij Fj Ki ,              [Ei , Fj ] = δij             ,
+                                                                                         v − v −1
+   1−aij                                  1−aij
+    X              (k)   (1−aij −k)
+                                          X                  (k)      (1−aij −k)
+              k
+           (−1)   Ei Ej Ei            =           (−1)k Fi Fj Fi                   =0             if i 6= j,
+    k=0                                   k=0
+where as usual
+            v k − v −k                                         (k)       Eik            (k)       Fik
+      [k] =            ,       [k]! = [1] · · · [k],         Ei      =        ,    Fi         =        .
+             v − v −1                                                    [k]!                     [k]!
+                                                                                                     (k)       (k)
+The Lusztig integral form UA (g) is the C[v, v −1 ]-subalgebra generated by Ei , Fj
+and Ki±1 for i = 1, . . . , r and k ≥ 1. The above algebras are equipped with a Hopf
+algebra structure with a coproduct
+∆(Ki ) = Ki ⊗ Ki ,         ∆(Ei ) = Ei ⊗ Ki + 1 ⊗ Ei ,                   ∆(Fi ) = Fi ⊗ 1 + Ki−1 ⊗ Fi .
+                                                                                    (k)
+We will denote by U−
+                   A (g) ⊂ UA (g) the subalgebra generated by Fi                          for i = 1, . . . , r
+and k ≥ 1.
+. To an arbitrary quiver Q with vertex set I and edge set Ω is associated a Cartan
+matrix A as above : we put r = |I| and let aij be the number of (unoriented) edges
+                                                                                (1)
+between i and j. In particular, ∆n corresponds to the Lie algebra sln+1 while ∆n
+                                      b n (for n > 1).
+corresponds to the affine Lie algebra sl
+
+4.2. Let us first assume that ∆ = ∆n and set Un = UModk (∆n ) . In that case we
+have the following theorem of Ringel :
+                                                       (k)
+Theorem 4.1 ([Ri1]). The assignment Fi 7→ [Si⊕k ] for i = 1, . . . , n and k ≥ 1
+                                                      ∼
+extends to an isomorphism of algebras φ : U−
+                                           A (sln+1 ) → Un .
+
+
+                                                                     (1)            (1)
+4.3. For the rest of this section we assume that ∆ = ∆n and set Un = UMod (∆(1) ) .
+                                                                                k    n
+
+The map φ defined above gives rise to an embedding U−      ( b n ) → U(1)
+                                                            sl        n   but it  is no
+                                                         A
+longer surjective (this can easily be checked by comparing graded dimensions). Let
+                        (1)
+us denote by Cn ⊂ Un the image of φ. We first give a description of Cn .
+. Recall that the set of isomorphism classes of objects in C is indexed by (ordered)
+n-tuples of partitions m = (λ(1) , . . . , λ(n) ). Call such a multipartition aperiodic if,
+for every k > 0 there exists a least one i such that k is not a part of λ(i) . Let
+us denote by M the set of all multipartitions and by Map the subset of aperiodic
+multipartitions.
+Theorem 4.2 ([Lu4]). We have
+                                           M
+                                Cn =               C[v, v −1 ]bm .
+                                          m∈Map
+8                               OLIVIER SCHIFFMANN
+
+
+4.4. Let us call a multipartition m = (λ(1) , . . . , λ(n) ) completely periodic if we
+have λ(1) = . . . = λ(n) , and let Mper ⊂ M be the set of all such multipartitions.
+Consider the space
+                                     M
+                               K=         C[v, v −1 ]b∗m .
+                                   m∈Mper
+
+Observe that K has nonzero terms only in periodic degrees d = (d, . . . , d) (and
+hence it is in fact Z-graded).
+Theorem 4.3 ([S1]). The following holds :
+                                        (1)
+     i) K is a central subalgebra of Un ,
+    ii) The multiplication map induces an isomorphism of algebras
+                               K ⊗C[v,v−1 ] Cn → U(1)
+                                                  n ,
+
+    iii) The algebra K is stable under the involution u 7→ u and, as a Z-graded
+         algebra, K ≃ C[v, v −1 ][z1 , z2 , . . .] where deg (zl ) = l for l ≥ 1.
+                                                            (1)
+   Observe that if n = 1 then Cn is not defined and U1 = K. Part iii) of the
+above theorem can then be deduced from Theorem 3.1 and the well-known fact
+that Γ ≃ C[z1 , z2 , . . .] as a Z-graded algebra. However, we will see that, as in the
+case n = 1, there is for every n a geometrically defined canonical identification
+K ≃ Γ ⊗ C[v, v −1 ].
+                                                                  (1)
+                                                                   b
+Remarks. i) Theorem 4.3 can be reinterpreted as follows : Un ≃ U−
+                                                                A (gln ) where
+b
+gln is defined as the (universal) central extension
+                                   b → gl [z, z −1] → 0.
+                          0 → Cc → gln   n
+
+The algebra K is then the quantum analogue of the algebra generated by xz k for
+k ≥ 1, where x ∈ Z(gln ).
+                                                                  (1)
+    ii) The algebra K admits another description. Let e′i ∈ End(Un ) be the adjoint
+(under h , iG ) of the left multiplication by Fi (the Kashiwara operator familiar in
+crystal graph theory, see e.g. [HK]). Then K = ∩i Ker e′i . In particular, K
+                                                                           (1)
+corresponds to the “highest weight” subspace (of the crystal graph of Un ) with
+respect to the action of the quantum group UA (sl    b n ). The above results are in
+accordance with (and were partly motivated by) [LTV] where the crystal graph of
+   (1)
+Un was completely described, and found to be a disjoint union of copies of the
+crystal graph of U−      b
+                     A (sln ) indexed by partitions.
+                                                (1)
+    iii) In the limit n → ∞ the diagrams An and An tend to the common limit
+A∞∞ (i.e. the quiver with vertex set I + Z and edge set Ω = {(i, i + 1)}). In that
+              (1)
+situation, U∞ = U∞ = C∞ = U−         A (sl∞ ).
+    iv) Ringel also studied a “degenerate” version of the Hall algebra where one
+considers representations of the given quiver over C and uses an Euler characteristic
+analogue of the convolution product (2.1). This yields a construction of the Lie
+algebra of sln or glb n rather than of the quantum group (see [Ri3]).
+
+                    5. Flag varieties and Hecke algebras
+   In this section we (brielfly) introduce and fix some notation for the more classical
+geometric objects in type A representation theory such as (partial, affine) flag
+varieties, (affine) Hecke algebras and some related algebras. Good references for
+these are [G3] or [CG].
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                           9
+
+
+5.1. Let Sr denote the symmetric group on r letters. We denote by s1 , . . . , sr−1
+the simple reflections, so that Sr may be presented as the group generated by
+si , i = 1, . . . , r − 1 with relations
+(5.1)                     s2i = 1,        si sj = sj si for i 6= j ± 1,
+
+
+(5.2)                                si si+1 si = si+1 si si+1 .
+The extended affine symmetric group is S      b r = Sr ⋉Zr . It is isomorphic to the group
+generated by si for i ∈ Z/rZ and τ subject to the relations (5.1), (5.2), τ r = 1 and
+τ si = si+1 τ .
+As usual we will denote by l : Sr → N and l : S        b r → N the length functions. By
+definition, we have l(si ) = 1 and l(τ ) = 0.
+                                                 P
+. Now fix d = (d1 , . . . , dn ) ∈ Nn such that i di = r. Associated to d are parabolic
+subgroups Sd ⊂ Sr and S          bd ⊂ Sb r generated by si for i 6∈ {d1 , d1 + d2 , · · · , d1 +
+                               b
+· · · + dn }. Observe that Sd is always finite.
+
+5.2. Let k be either Fq or Fq Let L be an r-dimensional k-vector space. We denote
+by B the variety of all complete flags
+                       0 = L0 ⊂ L1 · · · ⊂ Lr = L,             dim Li = i
+(a smooth projective variety). The group GL(L) acts transitively on B. The set of
+GL(L)-orbits on B × B is in bijection with the symmetric group Sr . For w ∈ Sr
+we denote by Ow the corresponding orbit.
+. Alternatively, we may fix one flag (Li )i ∈ B and denote by B ⊂ GL(L) its
+stabilizer (a Borel subgroup). This provides us with an identification B ≃ GL(L)/B.
+The set of B-orbits on B is also in natural bijection with Sr and we denote by Bw
+the orbit corresponding to w (a Schubert cell). It is known that dim Bw = l(w).
+                                                             P
+. Now let n ∈ N and fix d = (d1 , . . . , dn ) ∈ Nn such that i di = r. Let Fd be the
+variety of n-step partial flags
+                 0 = L0 ⊂ L1 ⊂ · · · ⊂ Ln = L,              dim Li /Li−1 = di .
+This is again a smooth projective variety. As above, let (Li )i be a fixed flag in Fd
+and let P ⊂ GL(L) be its stabilizer (a parabolic subgroup). This identifies Fd with
+GL(L)/P . The P -orbits on Fd are now parametrized by double cosets Sd \Sr /Sd .
+We again denote by Fd,w the orbit corresponding to w ∈ Sd \Sr /Sd (a generalized
+Schubert cell).
+. The Zariski closures Bw or Fd,w of Schubert cells are called Schubert varieties.
+
+5.3. We consider an affine analogue of the above notions. Set L = k r ((z)). By
+definition, a lattice in L is a free k[[z]]-submodule L ⊂ L of rank r. Let G denote
+the variety of all lattices. This infinite-dimensional space is a countable union of
+(finite-dimensional) smooth projective varieties ( indeed, let us fix one lattice L0 ;
+then for every l ∈ N let Xl ⊂ G be the smooth projective, finite-dimensional variety
+of lattices L with z l L0 ⊂ L ⊂ z −l L0 ; we have Xl ⊂ Xl+1 and G = ∪l Xl .).
+. Now let X be the variety of all infinite flags of lattices · · · ⊂ Li ⊂ Li+1 ⊂ · · · such
+that dimk Li+1 /Li = 1 and which satisfy the periodicity condition Li+r = z −1 Li .
+This is again a union of finite-dimensional smooth projective varieties. The map
+X → G, (Li ) 7→ L0 is a smooth locally trivial B-fibration. The group GLk((z)) (L)
+acts transitively on X and the set of GLk((z)) (L)-orbits on X × X is in natural
+10                                    OLIVIER SCHIFFMANN
+
+
+bijection with S  b r : for j ∈ Z/rZ, sj corresponds to the orbit consisting of pairs
+((Li ), (Li )) such that Li = L′i for all i 6≡ j (mod r); the orbit {((Li ), (L′i )) |Li =
+          ′
+
+L′i+1 ∀ i} corresponds to τ . For any w ∈ S     b r we will write Ow for the associated
+orbit in X × X .
+   As in Section 5.2, we may also fix a flag (Li ) ∈ X and denote by I ⊂ GLk((z)) (L)
+its stabilizer (an Iwahori subgroup). This identifies X with GLk((z)) (L)/I. The set
+of I-orbits on X is also in natural bijection with S   b r and we will denote by Xw the
+                                    b
+orbits corresponding to w ∈ Sr (an affine Schubert cell). As in the finite type case,
+we have dim Xw = l(w).
+                                                       P
+. Finally, let d = (d1 , . . . , dn ) ∈ Nn be such that i di = r. We set
+        Yd = {(Li ) |Li ⊂ Li+1 ,        dimk Li /Li−1 = di mod n ,     Li+n = z −1 Li }.
+As before, there is a (noncanonical) indentification Yd ≃ GLk((z)) (L)/P for some
+(parahoric) subgroup P ; the P -orbits Yw on Yd are indexed by elements w ∈
+b d \S
+S    b r /S
+          b d (see [Lu3] for a formula for dim Yw ).
+
+                                                                 b r ) as the unital
+5.4. Define the Hecke algebra Hr (resp. the affine Hecke algebra H
+      −1                                                        b
+C[v, v ]-algebra generated by elements Tw , w ∈ Sr (resp. w ∈ Sr ) satisfying the
+following relations
+                        Tw Tw′ = Tww′         if l(ww′ ) = l(w) + l(w′ ),
+                          (Tsi + 1)(Tsi − v −2 ) = 0, for all i.
+We set T̃w = v   l(w)                               b
+                  Tw for every w ∈ Sr (resp. w ∈ Sr ).
+  In the case of an affine Hecke algebra, there is another very useful presentation,
+due to Bernstein.
+Theorem 5.1 (see [Lu5]). The algebra H      b r is isomorphic to the algebra generated
+     ±1                           ±1
+by Ti , i = 1, . . . , r − 1 and Xj , j = 1, . . . , r with relations
+            Ti Ti−1 = 1 = Ti−1 Ti ,                  (Ti + 1)(Ti − v −2 ) = 0,
+            Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,              |i − j| > 1 ⇒ Ti Tj = Tj Ti ,
+            Xi Xi−1     =1=   Xi−1   Xi ,            Xi Xj = Xj Xi ,
+            Ti Xi Ti = v −2 Xi+1 ,                   j 6= i, i + 1 ⇒ Xj Ti = Ti Xj .
+    The isomorphism between the two presentations is such that Tsi →                7    Ti and
+T̃λ−1 7→ X1λ1 · · · Xrλr if λ = (λ1 , . . . , λr ) ∈ Zr is dominant, i.e if λ1 ≥ λ2 ≥ · · · ≥ λr .
+The center of H   b r is Z(H b r ) = C[v, v −1 ][X ±1 , . . . , Xr±1 ]Sr .
+                                                     1
+
+
+. The relevance of Hecke algebras for us and the link with the previous paragraphs
+comes from the following geometric construction. Let us assume that k = Fq . Let
+us set G = GLk((z)) (L) and denote by CG [X × X ] the space of G-invariant functions
+whose supports lie on a finite union of orbits. We equip CG [X × X ] with the algebra
+structure given by the convolution product
+                                f ⋆ g = p13! (p∗12 (f ) · p∗23 (g))
+where pij : X × X × X → X × X is the projection on the ith and jth components.
+Observe that this product is well-defined since for any two orbits Ow , Ow′ , the
+projection p13 : (Ow × X ) ∩ (X × Ow′ ) → X × X is proper.
+
+     In the next theorem, we specialize the Hecke algebra by setting v −2 = q.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                        11
+
+
+Theorem 5.2 ([IM]). The assignement Tw 7→ 1Ow defines an isomorphism of
+         b r ≃ CG [X × X ].
+algebras H
+
+
+. It follows from the above Theorem that the structure constants for the convolution
+algebra CG [X × X ] are polynomials in q. Hence we may (and we will) consider the
+convolution algebra as a C[v, v −1 ]-algebra.
+  Naturally, the same result holds in the case of the usual flag variety B, and we
+obtain in this way a geometric construction of the finite Hecke algebra Hr .
+
+5.5. Let us now consider parabolic analogues of the constructions in the previous
+paragraph. We again assume that k = Fq . Let us set
+                                          Y = ⊔d Yd ,
+                                                                                 P
+where in the sum d runs over all sequences (d1 , . . . , dn ) ∈ Nn satisfying         di = r.
+   The group G = GLk((z)) (L) acts on Y × Y. It is easy to check that the G-orbits
+                           b d \S
+in Yd × Yd′ are indexed by S    b r /S
+                                     b d′ . Without risk of confusion, we denote by
+Ow ⊂ Yd × Yd the orbit corresponding to w.
+              ′
+
+
+
+
+. For w ∈ S b d \S    b d′ , we set Tw = P
+                 b r /S                                        b ′    b
+                                             δ∈w Tδ and we let Hdd ⊂ Hr be the
+      −1                                             b b  b           P
+C[v, v ]-linear span of the elements Tw for w ∈ Sd \Sr /Sd′ . Set ed = δ∈S
+                                                                         b d Tδ .
+      b           b
+Then Hdd′ = ed Hr ed′ . Put                 M
+                                    b n,r =
+                                    S         Hb dd′ .
+                                              d,d′
+We equip this space with the multiplication
+                                                      b dc′
+         ed hed′ • ec h′ ec′ = δd′ c ed hed′ h′ ec′ ∈ H                        b r.
+                                                              f or all h, h′ ∈ H
+
+                                            b r by Sr , we obtain the definition of
+. Of course, replacing everwhere Y by F and S
+the algebra Sn,r .
+
+  In the next theorem, we specialize the Hecke algebra by setting v −2 = q.
+Theorem 5.3 ([VV1]). The linear map S   b n,r → CG [Y × Y] such that Tw 7→ 1Ow is
+an algebra isomorphism.
+  Again a similar result holds in the finite type case. Finally, as in Section 5.4, we
+deduce from the above Theorem that CG [Y × Y] is naturally a C[v, v −1 ]-algebra.
+
+5.6. As for Hall algebras, there is a construction of the Hecke algebras involving
+(complexes of) equivariant constructible sheaves, rather than G-invariant functions.
+We will not need such a construction and refer to e.g. [G3] or [V2] for details.
+A consequence of this construction is the existence of canonical bases for these
+algebras, which we now define.
+          b r . We put
+  Let w ∈ S
+                              X
+                       cw =         v −i+l(w)−l(x) dim HX
+                                                        i
+                                                          x
+                                                            (ICXw )T̃x
+                              i,x
+
+where ICXw denotes the intersection cohomology complex associated to CXw and
+where Hi stands for local cohomology. The elements {cw | w ∈ S  b r } form the
+                                     −1          b r.
+canonical (or Kazhdan-Lusztig) C[v, v ]-basis of H
+12                                     OLIVIER SCHIFFMANN
+
+
+. Similarly, fix d, d′ and let w ∈ Sb d \S
+                                         b r /S
+                                              b d′ . Let Ld be any point in Yd and denote
+by Yw,d the fiber above Ld of the projection of Ow → Yd on the first component.
+This is an algebraic variety of dimension y(w), say (an explicit formula for y(w)
+can be found in [Lu3]). For every w ∈ S      b d \S
+                                                  b r /S
+                                                       b d′ set
+                           X
+                     cw =      v −i+y(w)−y(x) dim HY    i
+                                                          x,d
+                                                              (ICYw,d )T̃x .
+                              i,x
+                     F                b d \S
+                                           b r /S
+                                                b d′ } form the canonical basis of S
+                                                                                   b n,r .
+     The elements       d,d′ {cw   |w∈S
+
+. In addition, as for Hall algebras, there is a purely algebraic characterization of
+the elements of the canonical bases of the algebras Hr and Sn,r .
+                                                               b r defined by Tw = T −1
+     Let us first consider the semilinear involution u 7→ u of H                    w −1 .
+                                         b r the element cw ∈ H
+Theorem 5.4 ([KL1], [KL2]). For each w ∈ S                      b r is uniquely
+determined by
+                                     X
+       i) cw = cw ,   ii) cw = T̃w +   Px,w (v)T̃x , Px,w (v) ∈ vC[v].
+                                                x<w
+
+   The polynomial Px,w (v) is the affine Kazhdan-Lusztig polynomial of type Ãr−1
+associated to w and x
+   Similarly, define a semilinear involution τ : H   b dd′ → H  b dd′ by τ (u) = v −2l(wd′ ) u
+where wd′ ∈ S    b d′ is the longest element. The previous theorem generalizes as
+follows.
+Theorem 5.5. For each w ∈ S        b d \S
+                                        b r /S
+                                             b d′ the element cw is uniquely determined
+by the properties :
+                                             X
+      i) τ (cw ) = cw ,     ii) cw = T̃w +        Qx,w (v)T̃x ,     Qx,w (v) ∈ vC[v].
+                                                x<w
+
+
+. Again, we have given the results in the affine case but they are all valid in the
+finite type case as well.
+
+               6. Canonical bases and Kazhdan-Lusztig polynomials
+   We now give the fundamental constructions (due to Lusztig and Zelevinsky)
+relating representations of quivers of type A to flag varieties. In particular, this
+will identify the coefficients of the transition matrix between the canonical basis
+{bm } and the PBW basis {fm } with Kazhdan-Lusztig polynomials. The strategy
+is as follows : we construct a compactification of an orbit closure Om which is a
+(generalized) Schubert variety, in such a way that the stratification by Schubert
+cells restricts on Om to the stratification by Gd -orbits and use Theorem 5.4. In
+this section, k = C or k = Fq .
+
+                                                                          n
+                        P finite type case. Let d = (d1 , . . . , dn ) ∈ N be a dimension
+6.1. Let us first treat the
+vector, and let us set     di = r and
+                                          M                  M
+                      Vi = k di ,   Vi =     Vj ,    L=            Vi .
+                                                j≤i                  i
+           i
+Then (V ) is a partial flag belonging to Fd . Let us denote by P ⊂ GL(L) its
+stabilizer. We construct a map ι : E(d) → Fd as follows. To a representation
+(φi ) ∈ E(d) we associate the flag defined by
+               Ui = {(x1 , . . . , xn ) ∈ V1 ⊕ · · · ⊕ Vn |xj+1 = φj (xj ) for j ≥ i}.
+       QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                   13
+
+
+Proposition 6.1 ([Z1]). The map ι is an embedding of E(d) as a dense open subset
+of the (generalized) Schubert variety
+                        Fw0 := {(Ui ) | Ui ⊃ V i−1       for all i}.
+Moreover, each Gd -orbit Om ⊂ E(d) embeds as a dense open subset of a P -orbit
+Fw(m) for some w(m) ∈ Sd \Sr /Sd .
+Proof. It is clear that ι(E(d)) ⊂ Fw0 . Conversely,
+                                        L           it is easy to see that (Ui ) ∈ Fw0
+belongs to ι(E(d)) if and only if Ui ∩ j>i Vj = 0 for all i (an open condition).
+Finally note that Gd embeds as a Levi subgroup of P and that ι is Gd -equivariant.
+♦
+
+Remark. Let U ⊂ Fw0 be any P -orbit and pick (Ui ) ∈ U. Then
+                     (Ui /V i−1 , φi = Id : Ui /V i−1 → Ui+1 /V i )
+defines a representation of ∆n . Let m be the multipartition describing this rep-
+resentation. It is easy to check that ι(Om ) ⊂ U. In particular, the assignement
+m 7→ w(m) is a bijection between the set of Gd -orbits in E(d) and the set of
+P -orbits (or Schubert cells) in Fw0 .
+
+. Now let us fix Om ⊂ E(d). By the previous Proposition, the simple perverse sheaf
+ICOm is the restriction to Om of the simple perverse sheaf ICFw . In particular,
+                                                                              0
+for any On ⊂ Om we have
+                          i                  i
+                     dim HO n
+                              (ICOm ) = dim HF w(n)
+                                                    (ICFw(m) ).
+Next, consider the natural map π : B ≃ G/B → G/P ≃ Fd given by
+           (0 = U0 ⊂ U1 · · · ⊂ Ur = L) 7→ (Ud1 ⊂ Ud1 +d2 ⊂ · · · Ur = L).
+This is a locally trivial fibration with smooth projective fiber P/B. Thus, for any
+w1 , w2 ∈ Sd \Sr /Sd there holds
+                      i
+                 dim HF w1
+                           (ICFw2 ) = dim Hπi −1 (Fw ) (ICπ−1 (Fw2 ) ).
+                                                         1
+
+Finally, π −1 (Fw ) = ⊔y∈w By (a finite union of B-orbits). Since Fw is irreducible,
+there exists a unique open B-orbit Byw in π −1 (Fw ) (corresponding to the longest
+element y(w) ∈ w). Thus we obtain
+
+                     i
+                dim HO n
+                         (ICOm ) =dim Hπi −1 (Fw(n) ) (ICπ−1 (Fw(m) ) )
+                                          i
+                                    =dim HB y(w(n))
+                                                    (ICBy(w(m)) ).
+Corollary 6.1. The coefficients of the transition matrix between the canonical
+basis {bm } and the PBW basis {fm } of Un are Kazhdan-Lusztig polynomials (of
+type AP di −1 ), where d is determined by m via Ø(m) ⊂ Ed .
+
+
+6.2. Let us now briefly describe the affine analogue of the above
+                                                                Pconstruction, which
+is due to Lusztig. Let d = (d1 , . . . , dn ) ∈ Nn and set r =     di . For clarity,
+                                                                            L        we
+denote by i ∈ Z/nZ the class of an integer i ∈ Z. Set Vi = k di , L = i Vi and
+L = L((z)). Let · · · ⊂ L0 ⊂ L1 ⊂ · · · be the n-periodic flag of lattices defined by
+                                      L0 = L[[z]],
+                 Li = L0 ⊕ z −1 V1 ⊕ · · · ⊕ z −1 Vi         for 1 ≤ i ≤ n,
+                                         −1
+                              Lj+n = z        Lj   for all j.
+14                                       OLIVIER SCHIFFMANN
+
+
+Let P ⊂ GLk((z)) (L) be its stabilizer. We construct a map E(d) → Yd as follows :
+let 0 ≤ i < n be the residue of i modulo n and set l(j) = (j − j)/n; let (φi ) ∈ E(d)
+and set                              (
+                                       φi    if i 6= 0
+                               φ̃i =    −1
+                                       z φi if i = 0,
+and φh (xi ) = φ̃i+h · · · φ̃i+1 φ̃i (xi ) if xi ∈ Vi . Note that for any fixed xi , φh (xi ) = 0
+for h big enough. Now we put ι((φi )) = (Nj ) where Nj = Lj−1 ⊕ z −l(j−1)−1 Uj−1
+and                                       X h                   	
+                                  Uj =           φ (xj ) |xj ∈ Vj .
+                                            h≥0
+
+. Just as in the finite type case, one may prove :
+Proposition 6.2 ([Lu3]). The map ι is an embedding of E(d) as a dense open
+subset of the (generalized) affine Schubert variety
+                          Yw0 := {(Ni ) | Ni ⊃ Li−1         for all i}.
+Moreover, each Gd -orbit Om ⊂ E(d) embeds as a dense open subset of a P -orbit
+Yw(m) for some w(m) ∈ S  b d \S
+                              b r /S
+                                   b d.
+
+Corollary 6.2. The coefficients of the transition matrix between the canonical basis
+                                     (1)
+{bm } and the PBW basis {fm } of Un are affine Kazhdan-Lusztig polynomials (of
+      (1)
+type AP di −1 ).
+
+
+Remark. Nakajima constructed in [N3] a similar compactification of E(d) for an
+arbitrary quiver. However, it is only in type A that the coefficients of the canon-
+ical basis are given by Kazhdan-Lusztig polynomials (see, however [BZ2] for some
+descriptions of singularities of orbit closures in type D in terms of products of
+Grassmanians).
+
+              7. Schur-Weyl duality in the geometric setting
+7.1. Let us first briefly recall the usual Schur-Weyl duality. Let V be an n-
+dimensional C-vector space. There are two commuting group actions on V ⊗r :
+GL(V ) acts diagonally while Sr acts by permutation of the factors. Moreover we
+have
+                       C[Sr ] = EndGL(V ) (V ⊗r ) if n ≥ r,
+                             U (gl(V )) ։ EndSr (V ⊗r )
+                         ⊗r
+The algebra EndSr (V ) is called the Schur algebra. There are affine and quantum
+                                                                             bn =
+versions of this duality. The affine version is obtained by replacing gln by gl
+         −1                                    b
+gln [z, z ] ⊕ Cc, the symmetric group Sr by Sr and V by V [z, z ].−1
+
+
+. In the quantum version, we replace gln by the quantum group Uv (gln ). Recall
+that this is the C(v)-Hopf algebra generated by elements Ei , Fi , i = 1, . . . , n − 1
+and Hi±1 , i = 1, . . . , n satisfying relations
+                       Hi Hi−1 = Hi−1 Hi = 1,            Hi Hj = Hj Hi ,
+                                    aij
+                       Hi Ej = v          Ej Hi ,   Hi Fj = v −aij Fj Hi ,
+                                                   −1
+                                             Hi Hi+1  − Hi−1 Hi+1
+                              [Ei , Fj ] = δij                     ,
+                                                    v − v −1
+                          [Ei , Ej ] = [Fi , Fj ] = 0 if |i − j| > 1,
+      (2)                          (2)       (2)                    (2)
+     Ei Ej − Ei Ej Ei + Ej Ei            = Fi Fj − Fi Fj Fi + Fj Fi       = 0 if |i − j| = 1.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                         15
+
+
+where (aij ) is the Cartan matrix of type An−1 . The coproduct is defined as in
+Section 4.1.
+   The standard representation Cn of gln admits a quantization Vq (the “vector”
+representation). Using the coproduct ∆ we define an action of Uv (gln ) on Vq⊗r .
+It is well-known that Uv (gln ) is a quasitriangular Hopf algebra, i.e there exists an
+element R ∈ Uv (gln ) ⊗ Uv (gln ) satisfying the relation R∆ = ∆op R. From this
+we construct an action of the Artin braid group on r strands Br on Vq⊗r by the
+formula
+              σi (v1 ⊗ · · · ⊗ vr ) = v1 ⊗ · · · ⊗ P R(vi ⊗ vi+1 ) ⊗ · · · ⊗ vr ,
+where σi is the ith standard generator of Br and P : u⊗v 7→ v⊗u is the permutation
+(see e.g [ES] for more details on quasitriangular Hopf algebras). One shows that the
+action of Br factorizes through the Hecke algebra Hr , and that, as in the classical
+case, we have
+
+                         Hr = EndUv (gln ) (Vq⊗r )      if n ≥ r,
+                                Uv (gln ) ։   EndHr (Vq⊗r )
+The algebra   EndHr (Vq⊗r )   is called the q-Schur algebra.
+. Finally, the quantum affine version is now obtained by replacing Uv (gln ) by
+     b ), the space Vq by its affine version Vq [z, z −1 ], and Hr by H
+Uv (gl                                                                     b r . However,
+       n
+there is a subtle point here: Uv (glb n ) is the quantization of gln [z, z ] ⊕ Cc rather
+                                                                          −1
+
+than the quantization of the Kac-Moody algebra sl       b n or the quantization of the
+                          b ′             L       l
+slightly bigger algebra gln := gln ⊕ l∈Z∗ z sln ⊕ Cc (unfortunately, this latter
+                               b n in the litterature). In particular, the Hopf algebra
+algebra is often also denoted gl
+     b
+Uv (gln ) is best defined through the Drinfeld new realization (see [D]) rather than
+through quantum Serre-type relations. We refer to [GV] for the precise definition.
+
+Remark. In the affine versions of the Schur-Weyl duality, the modules V [z, z −1 ]
+and Vq [z, z −1 ] are of level zero, i.e the central element c (or its quantum analog)
+act trivially. Thus, for the purposes of Schur-Weyl duality it is enough to consider
+the loop algebra Lgln = gln [z, z −1] or its quantization.
+
+7.2. Following Beilinson-Lusztig-MacPherson in the finite-type case and Ginzburg-
+Vasserot and Lusztig in the affine case, we will now give a geometric construction
+of the (quantum) Schur-Weyl dualities. We assume here that k = Fq .
+
+. Recall the notations of Section 5 : L is a fixed r-dimensional k-vector space, B
+the flag variety and F = ⊔d Fd the n-step partial flag variety. For any i = 1, . . . , n
+we consider the subvarieties of F × F
+        Oi+ = {((Lj ), (L′j )) |Lj = L′j if j 6= i and L′i ⊂ Li , dim Li /L′i = 1},
+
+        Oi− = {((Lj ), (L′j )) |Lj = L′j if j 6= i and Li ⊂ L′i , dim L′i /Li = 1},
+and for any d we set Od0 = ∆Fd ⊂ Fd × Fd .
+                                                                               P
+Theorem 7.1 ([BLM]). The assignement Ei 7→ 1O+ , Fi 7→ 1O+ , Hi 7→                d   q di 1Od0
+                                                 i       i
+extends to a surjective homomorphism of algebras
+                        Uv (gln ) ։ CG [F × F] ⊗C[v,v−1 ] C(v).
+16                                        OLIVIER SCHIFFMANN
+
+
+. Next we consider the affine case. Thus dim L = r, L = L((z)), X is the affine flag
+variety and Y is the affine n-step partial flag variety. Again we set
+        Oi+ = {((Lj ), (L′j )) |Lj = L′j if j 6= i and L′i ⊂ Li , dimk Li /L′i = 1},
+        Oi− = {((Lj ), (L′j )) |Lj = L′j if j 6= i and Li ⊂ L′i , dimk L′i /Li = 1},
+and Od0 = ∆Yd ⊂ Yd × Yd .
+Theorem 7.2 ([GV], [Lu4]). There exists a surjective algebra homomorphism
+                              b ) → CG [Y × Y] ⊗C[v,v−1 ] C(v).
+                          Uv (gln
+
+                      b ′ ) it is given by Ei 7→ 1 + , Fi 7→ 1 + , Hi 7→ P q di 1O0 .
+On the subalgebra Uv (gln                         O           O   i       d   i   d
+
+
+
+
+. We are now ready to give the geometric version of Schur-Weyl duality. The con-
+volution product defines a left action of CG [F × F] on CG [F × B] and a right action
+of CG [B × B] on CG [F × B]. Moreover, it is clear that these two actions commute.
+Recall the algebra Sn,r = CG [F × F] defined in Section 5.
+Theorem 7.3 ([GV]). There exists an isomorphism of algebras
+                                          Sn,r ≃ EndHr (Vq⊗r )
+and an isomorphism of Sn,r − Hr -bimodules CG [F × B] ≃ Vq⊗r such that the fol-
+lowing diagram commutes
+(7.1)           Sn,r = CG [F × F] /o /o /o / CG [F × B] o o/ o/ o/ CG [B × B]
+                          ∼                             ∼                     ∼
+                                                                                
+                   EndHr (Vq⊗r ) /o /o /o /o /o /o / Vq⊗r o o/ o/ o/ o/ o/ o/ /o Hr
+
+(here A /o /o o/ / B denotes an action of an algebra A on B).
+
+
+. In a similar way, we have
+Theorem 7.4 ([VV1]). There exists an isomorphism of algebras
+                                    b n,r ≃ End b (Vq [z, z −1 ])⊗r )
+                                    S          Hr
+
+and an isomorphism of S b n,r − H
+                                b r -bimodules CG [Y × X ] ≃ (Vq [z, z −1 ])⊗r such that
+the following diagram commutes
+(7.2)         b n,r = CG [Y × Y] /o /o /o /o o/ / CG [Y × X ] o o/ o/ o/ /o CG [X × X ]
+              S
+                      ∼                                     ∼                     ∼
+                                                                                 
+                             −1 ⊗r
+           EndH
+              b r ((Vq [z, z   ]) ) /o /o o/ / (Vq [z, z −1 ])⊗r o o/ o/ o/ o/ /o H
+                                                                                  br
+
+
+7.3. Using a combination of the constructions in Sections 6 and 7, we can give a
+conceptual interpretation of Theorem 4.3. Put
+                   O− = {((Li ), (L′i )) |L′i ⊂ Li              for all i} ⊂ Y × Y.
+Observe that to a point           ((Li ), (L′i ))   −
+                                       ∈ O we may associate the representation of
+  (1)    L               ′
+∆n on              L
+            i∈Z/nZ i  /L i using  the natural  maps φi : Li /L′i → Li+1 /L′i+1 (as in
+Section 6). Note that such a representation is always nilpotent by the periodicty
+condition for affine flags. For a multipartition m we denote by Zm ⊂ O− the set of
+         QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                         17
+
+                                                               (1)
+all points whose associated representation of ∆n is of type m. Let us also denote
+by Sb − the convolution algebra CG [O− ].
+      n,r
+
+                                             (1) b−
+Proposition 7.1 ([VV1]). The linear map ϕ : Un → Sn,r such that ϕ(1Om ) =
+1Zm is a surjective algebra homomorphism.
+Proof. This follows directly from the definitions of the Hall product and of the
+convolution product.                                                          ♦
+. To sum up, we have the following diagram of geometric constructions of algebras
+:
+                             
+     Un
+       (1)    / / CG [O− ]    / CG [Y × Y] /o /o /o / CG [Y × X ] o o/ o/ o/ CG [X × X ]
+
+On the other hand, the bicommutant Theorem 7.4 gives us a canonical embedding
+  b r) ⊂ S
+Z(H      b n,r . Recall that by Bernstein’s theorem,
+                             b r ) = C[v, v −1 ][X ±1 , . . . , X ±1 ]Sr .
+                           Z(H                    1              r
+                b r ) = C[v, v −1 ][X −1 , · · · , X −1 ]Sr .
+Let us set Z − (H                    1              r
+
+Proposition 7.2 ([S1]). The morphism ϕ restricts to a surjective algebra homo-
+morphism ir : K → Z − (H     b r ). Moreover, the maps ir are compatible with the
+                             − b           b r−1 ) and yield in the projective limit an
+natural projective system Z (Hr ) → Z − (H
+isomorphism
+                                 ∼    b ∞ ) ≃ Γ ⊗ C[v, v −1 ].
+                         i : K → Z − (H
+. In particular, this map gives rise, for each n, to two new natural families of
+                                                                               (1)
+symmetric polynomials, namely i(b∗(λ,··· ,λ) ) and i(π(bλ,··· ,λ )) where π : Un → K
+is the orthogonal projection. When n = 1 these families are the dual Schur functions
+and the Schur functions respectively.
+. In the same spirit, we make the following conjecture :
+Conjecture. The restriction of Green’s scalar product h , iG to K ≃ Γ ⊗ C[v, v −1 ]
+is given by the formula
+                                                                        l(λ)
+                                                                        Y 1 − q nλi
+                                          (n−1)|λ|            −1 n|λ|
+                  (pλ , pµ ) = δλµ zλ q              (1 − q     )                        .
+                                                                        i=1
+                                                                            (1 − q λi )2
+
+   This can be viewed as a generalization of the Hall-Littlewood scalar product.
+
+Remarks. i) All the spaces in diagrams (7.1) and (7.2) are equipped with canonical
+bases. One can show that all the maps are (in some suitable sense) compatible with
+these bases (see [VV1], [SV]).
+                          ∼       b ∞ ) and its compatibility with canonical bases it
+ii) Using the map i : K → Z − (H
+is possible to give some explicit (but very complicated) expressions for the central
+elements of Hb r in terms of the Kazhdan-Lusztig basis (see [S2]).
+
+   8. Representation theory of Hecke algebras and quantum affine
+                 algebras and graded nilpotent orbits
+. This survey would be very incomplete without mentioning a totally different aspect
+of quivers of type A and their canonical bases, namely their interpretations as
+Grothendieck rings of finite-dimensional modules for an affine Hecke algebra and
+for an affine q-Schur algebra.
+18                                 OLIVIER SCHIFFMANN
+
+
+8.1. We will first deal with Hecke algebras. We make a few preliminary defi-
+nitions and remarks. Since Z(H    b r ) = C[v, v −1 ][X ±1 , . . . , X ±1 ]Sr , any character
+                                                          1            r
+θ : Z(H b r ) → C is given by an r + 1-tuple (s1 , . . . , sr ; ǫ) such that θ(xi ) = si and
+                 ∗
+
+θ(v) = ǫ. It is convenient to view such an r + 1-tuple as a pair (s, ǫ) ∈ T × C∗ where
+T ⊂ GLr (C) is the subgroup of diagonal matrices. Note that θ determines s only
+up to conjugation (i.e permutation). By Schur’s lemma, Z(H           b r ) acts by a character
+in any simple finite-dimensional module. Let us denote by Repθ (H            b r ) the category
+of finite-dimensional Hb r -modules of central character θ.
+                                            b r and quivers of type A stems from
+. The link between representation theory of H
+the following fundamental theorem.
+Theorem 8.1 ([KL3],[G1]). Fix θ = (s, ǫ) and assume that ǫ is not a root of unity.
+Set Gs = StabGLr (C) s. There is a bijection between the set of simple modules in
+     b r and the set of Gs -orbits in
+Repθ H
+                      Nθ = {x ∈ glr , x nilpotent, sxs−1 = ǫ−2 x}.
+. The proof of the above theorem (the so-called Deligne-Langlands conjecture for
+Hb r ) is based on a geometric realization of H
+                                              b r completely different from the one
+given in Section 5, as the Grothendieck group of (equivariant) coherent sheaves on
+a certain variety Z ⊂ T ∗ B × T ∗ B (see [CG],[KL3]). As a part of this realization,
+two types of modules are constructed for each triple (s, ǫ, x) : the simple module
+Lθ,x and the so-called standard module Mθ,x , whose character is easy to compute.
+The determination of the characters of the simple modules is now a consequence of
+the following result.
+Theorem 8.2. Let θ = (s, ǫ) and assume that ǫ is not a root of unity. For each
+x ∈ Nθ we set Ox = Gs · x. Then for any two x, y ∈ Nθ the multiplicity of Lθ,x in
+Mθ,y is
+                                      X
+                                              k
+                     [Mθ,x : Lθ,y ] =   dim HO  y
+                                                  (ICOx ).
+                                             k
+
+
+
+. Let us reinterpret the above Theorems in terms of quivers Am . Let us fix ǫ (the
+value of the deformation parameter v). For simplicity, let us denote by Repǫ H      br
+the category of all finite-dimensional modules ofLcentral charge θ = (s, ǫ) with
+Spec(s) ⊂ ǫ2Z . For any such s, write Cr =         i∈Z Vǫ2i for the corresponding
+eigenspace decomposition of Cr . Now observe that x(Vǫ2i ) ⊂ Vǫ2i−2 , i.e x is nothing
+but a representation on the space Cr of the quiver A∞ ∞ . Let m(s, x) be the type
+of this representation. Altogether, Theorems 8.1 and 8.2 are nicely summarized as
+follows.
+Corollary 8.1 ([A]). Assume that ǫ is not a root of unity. There exists a linear
+isomorphism
+                            M               ∼
+                       Θ∞ :            b r) →
+                                Rep∗ǫ (H      U∞,|v=1
+                                     r
+such that Θ∞ ([Mθ,x ]∗ ) = fm(s,x) and Θ∞ ([Lθ,x]∗ ) = bm(s,x) .
+
+
+Remark. The above Theorem together with the results of Section 6 shows that,
+in particular, the multiplicities [Mθ,x : Lθ,y ] are equal to evaluation at 1 of some
+Kazhdan-Lusztig polynomials of type A.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                   19
+
+
+. The case when ǫ2 is a primitive nth root of unity is more subtle. In that situation,
+Theorem 8.2 remains true while in Theorem 8.1 only a certain subset of Gs -orbits in
+Nθ is relevant. Observe that now if Spec(s) ⊂ ǫ2Z then to a pair (s, x) is associated
+                                         (1)
+a representation of the cyclic quiver An rather than A∞     ∞ . The classification of
+simple modules is best described by the next theorem.
+Corollary 8.2 ([A],[Gro]). Assume that ǫ2 is a primitive nth root of unity. There
+exists a linear isomorphism
+                          M            ∼              (1)
+                     Θn :         b r) →
+                            Rep∗ (H      Cn,|v=1 ⊂ U
+                                       ǫ                      n,|v=1
+                              r
+
+such that Θ∞ ([Lθ,x ]∗ ) = bm(s,x) .
+                                        b r ) are indexed by aperiodic multiparti-
+. In particular, simple modules in Repǫ(H
+tions of total dimension r.
+Remark. i) Ariki proved much more than the results stated above : he endowed
+           L         ∗ b
+the space       r Repǫ (Hr ) with an algebra structure (using the restriction functor
+Repǫ (Hb r+r′ ) → Repǫ (Hb r ) ⊗ Repǫ (H
+                                       b r′ )) and showed that the map Θ is actually an
+algebra homomorphism.
+ii) A consequence of the above Theorem and of the results in Section 6 is that the
+multiplicities [Mθ,x : Lθ,y ] are now given by evaluation at 1 of affine Kazhdan-
+Lysztig polynomials of type A.
+iii) Recently, Vasserot succeeded in extending some of the above results to the case
+of a double affine Hecke algebra, or Cherednik algebra [V3].
+
+8.2. Let us now turn to the case of the quantum affine algebra Uv (slb k ). It is known
+                                                   b
+that any finite-dimensional representation of Uv (slk ) factors through S b k,r for some
+r ≫ 0. Hence, by Schur-Weyl duality we expect a very similar classification result
+                                               b k,r in the same spirit as [G1], [KL3]
+as in Section 8.1. A geometric construction of S
+was given in [GV].
+Theorem 8.3 ([GV]). Let ǫ ∈ C∗ . There is a bijection between the simple finite-
+                           b ) and the set of pairs
+dimensional modules of Uǫ (gl k
+
+              {(s, x) |s ∈ T, x ∈ glr , xk = 0, sxs−1 = ǫ−2 x}/GLr (C).
+To each such pair is associated a simple module Ls,x and a standard module Ms,x ,
+and we have                                   X
+                                                     l
+                     [Ms,x : Ls′ ,y ] = δs,s′   dim HO y
+                                                         (ICOx )
+                                               l
+where Oz is the Gs -orbit containing z.
+. In particular, the classification of simple modules can again be interpreted in terms
+of quivers of type A. However, observe that, as opposed to Section 8.1., there are
+no additional restrictions when ǫ is a root of unity. Let Repǫ (Uv (sl     b k )) denote
+the category of all finite-dimensional modules with a composition series involving
+only simple modules Ls,x with Spec(s) ⊂ ǫ2Z . For notational convenience, we set
+  (1)
+A∞ = A∞   ∞ in what follows.
+
+Corollary 8.3 ([VV1]). Let n ∈ N ∪ {∞} be the order of ǫ2 . There exists a linear
+isomorphism                M                    ∼
+                                         b k )) →  (1)
+                      Ξn :    Rep∗ǫ (Uv (sl       Un,|v=1
+                                  k
+such that Ξn ([Mθ,x ]∗ ) = fm(s,x) and Ξn ([Lθ,x ]∗ ) = bm(s,x) .
+20                                   OLIVIER SCHIFFMANN
+
+
+Remark. i) Again, the standard modules Ms,x can be explicitly described and
+their characters computed (see [V1]). Also, as for Hecke algebras, the multiplicities
+[Mθ,x : Lθ,y ] are evaluation at 1 of some Kazhdan-Lusztig polynomials (affine if ǫ
+is a root of unity).
+
+. One may ask for a similar interpretation for Grothendieck groups of categories of
+representations of Uǫ (slk ) or Hr . Although no geometric constructions similar to
+those in [KL3] or [GV] exist for the finite type quantum group or Hecke algebra,
+there exist evaluation maps ev : Uv (sl b k ) → Uv (slk ), ev : H
+                                                                b r → Hr . These in
+                      ∗         ∗     b
+turn induce maps ev : Repǫ (Uv (slk )) → Repǫ (Uv (slk )) and ev ∗ Rep∗ǫ (H
+                                                  ∗                         b r) →
+     ∗
+Repǫ (Hr ). In fact these maps nicely fit in the previous picture, as shown by the
+following theorems.
+Theorem 8.4 ([A],[VV1]). Let n ∈ N ∪ {∞} be the order of ǫ2 . There is a com-
+mutative diagram
+                 L     ∗ b         ∼    / Cn,v=1 ⊂ U(1)
+                  r Repǫ (Hr )     Θ         n
+                                                     n|v=1
+
+                       ev ∗                                      γ
+
+                   L                                        
+                          ∗                 ∼
+                    r Repǫ (Hr )
+                                                          / VΛ0
+                                            θn
+
+where VΛ0 is the highest-weight integrable representation of Cn ≃ U−  b
+                                                                   v (sln ), and γ
+is the action on the highest weight vector.
+Theorem 8.5 ([VV1]). Let n ∈ N∪{∞} be the order of ǫ2 . There is a commutative
+diagram
+                 L        ∗      b      ∼       / U(1)
+                     k Repǫ (Uv (slk )) Ξ         n
+                                                   n|v=1
+
+                              ev ∗                                       γ
+
+                      L                                             
+                            ∗                    ∼        / Λ∞|v=1
+                       k Repǫ (Uv (slk ))        ξn
+
+where Λ∞ is the Fock space representation of Un constructed in [Hay], [VV1], and
+γ is the action on the vacuum vector of Λ∞ .
+. In addition, the spaces VΛ0 and Λ∞ are again equipped with two bases: a “canon-
+ical basis” and a “PBW basis”. These correspond, under the isomorphisms θn
+and ξn to the (dual) bases of simple modules and standard modules respectively.
+Finally, the map γ is compatible with these canonical bases.
+. This beautiful interpretation of character formulae in terms of canonical bases
+of Hall algebras and Fock spaces or highest weight representations was first con-
+jectured by Lascoux-Leclerc-Thibon in [LLT]. It was proved by Ariki for Hecke
+algebras (in the more general framework of cyclotomic Hecke algebras, which in-
+clude in particular Hecke algebras of type B) and by Varagnolo and Vasserot for
+quantum affine algebras. One nice consequence of this construction for quantum
+affine algebras is that it gives a new proof of Lusztig’s conjecture for the characters
+of simple Uǫ (slk )-modules when ǫ is a root of unity.
+
+                 9. Some further geometric constructions
+. To conclude this survey, we briefly mention some other interesting occurences of
+quivers of type A in geometry.
+       QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                  21
+
+
+9.1.Nakajima quiver varieties. Nakajima recently introduced a new class of
+algebraic varieties and convolution algebras which play an increasingly important
+role in geometric representation theory (see [Nak1],[Nak3]). These varieties are
+defined for an arbitrary quiver, but they have a special interpretation for affine (or
+finite) Dynkin diagrams as moduli spaces of sheaves on complex surfaces.
+. Let us consider the action of the cyclic group Γ = Z/nZ on C2 via the embedding
+                                Z/nZ → SL(2, C)
+                                               
+                                        ζ     0
+                                   1 7→ n
+                                         0 ζn−1
+where ζn is a primitive nth root of unity. This action extends to a natural ac-
+tion on P2 (C), leaving the projective line at infinity l∞ invariant. The McKay
+correspondence gives a bijection between the set of irreducible Γ-modules and the
+                                                         (1)
+set of simple roots (vertices) of the Dynkin diagram An−1 . Hence, we may iden-
+tify the Grothendieck (semi)group K0 (Rep Γ) with the set of dimension vectors
+      (1)
+of ∆n . Now let v, w be two such dimension vectors, and let V , W be corre-
+sponding Γ-modules. The (smooth) Nakajima quiver variety M(v, w) associated
+      (1)
+to ∆n is the moduli space of pairs (E, φ) where E is a Γ-equivariant torsion-
+                                                                      ∼
+free sheaf on P2 (C) such that H 1 (P2 , E(−l∞ )) ≃ V and φ : E∞ → Ol∞ ⊗ W is
+a Γ-invariant isomorphism. Let Mvec (v, w) ⊂ M(v, w) be the subvariety con-
+sisiting of pairs (E, φ) where E is a vector bundle. The singular Nakajima vari-
+ety is defined as M0 (v, w) = Mvec (v, w) × (SC2 )Γ . There is a projective map
+π : M(v, w) → M0 (v, w) given by (E, φ) 7→ (E ⋆⋆ , φ, supp(E ⋆⋆ /E)).
+. In the McKay correspondence, the extending vertex of the affine Dynkin diagram
+is associated to the trivial representation ρ0 . The quiver varieties M(v, w) and
+M0 (v, w) for ∆n−1 are defined just as in the affine case with the added condition
+that V and W do not contain ρ0 .
+
+. Remarkably, the above geometrically defined varieties also admit a very concrete
+                                                                             (1)
+realization in terms of quivers (for arbitrary type). We give it for type An−1 , the
+finite type being (as above) obtained from it as a particular case. Let us consider
+                       (1)
+the double quiver of ∆n , where each arrow is replaced by a pair of arrows going in
+opposite directions. Let H be the set of oriented edges of this graph. For any h ∈ H
+we denote by o(h) and i(h) the outgoing and incoming edges of h respectively. Let
+(v, w) ∈ Nn ×Nn withL  v = (va )a∈Z/nZLand w = (wa )a∈Z/nZ . Fix some Z/nZ-graded
+C-vector spaces V =      Va and W =      Wa such that dim V = v and dim W = w.
+Set                                   M
+                           E(V, V ) =     Hom(Vo(h) , Vi(h) ),
+                                     h∈H
+                       M                                     M
+          L(V, W ) =       Hom(Vk , Wk ),       L(W, V ) =       Hom(Wk , Vk )
+                       k                                     k
+and
+                  M(v, w) = E(V, V ) ⊕ L(W, V ) ⊕ L(V, W ).
+An element of M(v, w) will usually be denoted by its components (B, i, j).
+
+. Let ǫ : H → {1, −1} be any function satisfying ǫ(h) + ǫ(h) = 0, where h is the
+edge h with opposite orientation. Consider the subvariety
+                                         X
+      M0 (v, w) = {(B, i, j) ∈ M(v, w) |     ǫ(h)Bh Bh + ik jk = 0 for all k}.
+                                            o(h)=k
+22                                OLIVIER SCHIFFMANN
+
+                   Q
+The group GV = k GL(Vk ) acts on M0 (v, w) by conjugation. The quiver varieties
+are obtained as quotients of the variety by GV . According to the Geometric Invari-
+ant Theory philosophy, there are essentially two ways of doing this. Define an ele-
+ment (B, i, j) to be semistable
+                       L        if the following condition holds : the only B-invariant,
+graded subspace S ⊂       Vk contained in Ker j is {0}. Let M0,ss (v, w) ⊂ M0 (v, w)
+denote the open subvariety of semistable points.
+Theorem 9.1 ([N1], [VV2]). We have M0 (v, w) = M0 (v, w)//GV (categorical
+quotient) and M(v, w) = M0,ss (v, w)/GV (geometric quotient).
+
+
+. Quite remarkably, in type A the quiver varieties are again related to partial flag
+varieties. Let us consider the case of the quiver ∆n . Let v, w be n-tuples of positive
+integers, and define another n-tuple a as follows :
+                     a1 = w1 + · · · + wn−1 − v1 ,      an = vn−1 ,
+
+             ai = wi + · · · + wn−1 − vi + vi−1 ,     for i = 2, . . . , n − 1.
+Behold the partial flag variety
+          Fa = {U1 ⊂ U2 ⊂ · · · ⊂ Un−1 ⊂ Cr | dim Ui /Ui−1 = ai },
+         P
+where r = i ai . The cotangent bundle T ∗ (Fa ) can be identified with the variety
+of pairs
+                        {((Ui ), x) |x(Ui ) ⊂ Ui+1 } ⊂ Fa × N ,
+where N ⊂ glr denotes the set of nilpotent elements. It is known that the image
+of the natural projection p : T ∗ Fa → N is the Zariski closure of one orbit, say Oa .
+. Now let y ∈ N be a nilpotent element with wi Jordan blocks of length i and let
+z, h ∈ glr be such that (y, h, z) is an sl2 -triple. The Slodowy slice at y is defined as
+                            Sy = {u ∈ N |[u − y, z] = 0}.
+The variety Sy is transverse to all nilpotent orbits containing y in their closure, and
+plays an important role in the Brieskorn-Slodowy approach to Kleinian singularities.
+The following was conjectured by Nakajima and proved by Maffei [M].
+Theorem 9.2. We have
+                                  M0 (v, w) ≃ Sy ∩ Oa
+and
+                         M(v, w) ≃ p−1 (Sy ∩ Oa ) ⊂ T ∗ Fa .
+
+
+. We note that a similar link between quiver varieties and transversal slices to nilpo-
+tent orbits appears in [MV], and is related there to some infinite Grassmannians.
+
+9.2.Parabolic structures. Let k be an algebraically closed field and let X be
+a curve defined over k. If x ∈ X is a smooth point then the category of torsion
+sheaves (or skyscraper sheaves) on X supported at x is equivalent to the category of
+finite-dimensional representations of the local ring Ox at x. Since this is a discrete
+                                                        (1)
+valuation ring, this category is equivalent to M odk (∆1 ). In particular, the Hall
+algebra of the category of coherent sheaves on X (over Fq ) contains a copy of
+   (1)
+U1 ≃ Γ ⊗ C[v, v −1 ] at each (smooth) point.
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                           23
+
+
+. Now let us assume in addition that X is endowed with an action of the cyclic
+group G = Z/nZ, and that x is an isolated fixed point for this action. Hence G
+acts on Ox as i · f = ζni f , where ζn = e2iπ/n . In that situation, the category of
+                                                                        (1)
+G-equivariant torsion sheaves supported at x is equivalent to M odk (∆n ).
+. Finally, let us consider the case of a finite group G acting on X, and let π : X →
+X/G ≃ Y denote the quotient map. Assume that this map is ramified at points
+y1 , . . . , yr with ramification indices p1 , . . . , pr . Then, locally over each yi we are
+in the situation just described with G = Z/di Z. In particular, the category of G-
+                                                                          (1)
+equivariant coherent sheaves on X contains a copy of M odk (∆di ) for each i. This
+has applications in [S3] to the study of Hall algebras of such categories (see also
+[GL]).
+
+. Closely related to the above is the notion of parabolic structure. Let X be a curve
+and let x ∈ X be a smooth point. A p-parabolic structure at x on a coherent sheaf
+F on X is a flag of coherent sheaves
+                               F = F0 ⊂ · · · ⊂ Fp = F (−x).
+Note that if F is locally free at x then we have an induced filtration
+                           (F /F0 )|x ⊂ · · · ⊂ (Fp /F0 )|x ≃ F|x ,
+i.e a parabolic flag in the fiber of F at x. This notion can be seen as some global-
+ization of the concept of an affine flag as in Section 5. In [FK] the authors consider
+a similar situation in the case of a surface : using a variant of the Hall algebra, they
+construct an action of glb on the cohomology of certain moduli spaces of coherent
+                          p
+sheaves on surfaces with p-parabolic structure along a rational curve.
+
+                                         References
+[ADK] Abeasis S., Del Fra A., Kraft H.,The geometry of representations of Am ., Math. Ann.
+     256, no. 3, 401-418, (1981).
+[A] Ariki S., On the decomposition numbers of the Hecke algebra of G(m, 1, n)., J. Math. Kyoto
+     Univ. 36, no. 4, 789-808, (1996).
+[BLM] Beı̆linson A., Lusztig G., MacPherson R., A geometric setting for the quantum deformation
+     of GLn ., Duke Math. J. 61, no. 2, 655-677, (1990).
+[BZ1] Bobiński G., Zwara G., Normality of orbit closures for Dynkin quivers of type An .,
+     Manuscripta Math. 105, no. 1, 103-109, (2001).
+[BZ2] Bobiński G., Zwara G.,Schubert varieties and representations of Dynkin quivers, preprint.
+[CG] Chriss N., Ginzburg V., Representation theory and complex geometry., Birkhuser Boston,
+     Inc., Boston, MA, (1997).
+[D] Drinfeld V., A new realization of Yangians and of quantum affine algebras. (Russian) Dokl.
+     Akad. Nauk SSSR 296, no. 1, 13-17 (1987); translation in Soviet Math. Dokl. 36, no. 2,
+     212-216, (1988).
+[ES] Etingof P., Schiffmann O., Lectures on quantum groups, Lectures in Mathematical Physics.
+     International Press, Boston, MA, (1998).
+[FK] Finkelberg M., Kuznetsov A., Parabolic sheaves on surfaces and affine Lie algebra gl b ., J.
+                                                                                            n
+     Reine Angew. Math. 529, 155-203, (2000).
+[GL] Geigle W., Lenzing H., A class of weighted projective curves arising in the representation
+     theory of finite-dimensional algebras, Singularities, representations of algebras and vector
+     bundles, Springer LNM 1273, 265-297, (1987).
+[G1] Ginzburg V., Deligne-Langlands conjecture and representations of affine Hecke algebras,
+     preprint Moscow (1985).
+[G2] Ginzburg V.,       Perverse sheaves on a Loop group and Langlands’ duality, preprint
+     alg-geom/9511007 (1995).
+[G3] Ginzburg, V., Geometric methods in the representation theory of Hecke algebras and quan-
+     tum groups (notes by Vladimir Baranovsky), NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci.,
+     514, Representation theories and algebraic geometry (Montreal, PQ, 1997), 127-183, (1998).
+24                                   OLIVIER SCHIFFMANN
+
+
+[Gro] Grojnowski I., Representations of affine Hecke algebras (and affine quantum GLn ) at roots
+     of unity., Internat. Math. Res. Notices, no. 5, (1994).
+[GV] Ginzburg V., Vasserot E., Langlands reciprocity for affine quantum groups of type An .,
+     Internat. Math. Res. Notices no. 3, 67-85, (1993).
+[Gre] Green J. A., Hall algebras, hereditary algebras and quantum groups., Invent. Math. 120,
+     no. 2, 361-377, (1995).
+[Hal] Hall P., The algebra of partitions, Proc. 4th Canadian Math. Congress, 147-159, (1959).
+[Hay] Hayashi T., q-analogues of Clifford and Weyl algebras-spionr and oscillator representations
+     of quantum enveloping algebras, Comm. Math. Phys. 127, 129-144, (1990).
+[HK] Hong J., Kang S.-J., Quantum groups and crystal bases, Graduate Studies in Mathematics
+     42. AMS (2002).
+[IM] Iwahori N., Matsumoto H., On some Bruhat decomposition and the structure of the Hecke
+     rings of p-adic Chevalley groups., Inst. Hautes Etudes Sci. Publ. Math. No. 25, 5-48, (1965).
+[KL1] Kazhdan D., Lusztig G., Representations of Coxeter groups and Hecke algebras., Invent.
+     Math. 53, no. 2, 165-184, (1979).
+[KL2] Kazhdan D., Lusztig G., Schubert varieties and Poincar duality. Geometry of the Laplace
+     operator (Proc. Sympos. Pure Math., Univ. Hawaii, Honolulu, Hawaii, 1979), pp. 185-203,
+     Proc. Sympos. Pure Math., XXXVI, Amer. Math. Soc., Providence, R.I., (1980).
+[KL3] Kazhdan D., Lusztig G., Proof of the Deligne-Langlands conjecture for Hecke algebras.,
+     Invent. Math. 87, no. 1, 153–215, (1987).
+[LLT] Lascoux A., Leclerc B., Thibon J-Y., Hecke algebras at roots of unity and crystal bases of
+     quantum affine algebras., Comm. Math. Phys. 181, no. 1, 205-263, (1996).
+[LM] Lakshmibai V., Magyar P., Degeneracy schemes, quiver schemes, and Schubert varieties.,
+     Internat. Math. Res. Notices, no. 12, 627-640, (1998).
+[LTV] Leclerc B., Thibon J-Y., Vasserot E., Zelevinsky’s involution at roots of unity. J. Reine
+     Angew. Math. 513, 33-51, (1999).
+[Lu0] Lusztig G., Introduction to quantum groups, Progress in Mathematics, 110. Birkhauser,
+     (1993).
+[Lu1] Lusztig G., Green polynomials and singularities of unipotent classes., Adv. in Math. 42,
+     no. 2, 169-178, (1981).
+[Lu2] Lusztig G., Singularities, character formulas, and a q-analog of weight multiplicities., Anal-
+     ysis and topology on singular spaces, II, III (Luminy, 1981), 208-229, Astérisque, 101-102,
+     Soc. Math. France, Paris, (1983).
+[Lu3] Lusztig G.,Quivers, perverse sheaves, and quantized enveloping algebras., J. Amer. Math.
+     Soc. 4, no. 2, 365-421, (1991).
+[Lu4] Lusztig G., Aperiodicity in quantum affine gln , Sir Michael Atiyah: a great mathematician
+     of the twentieth century. Asian J. Math. 3, no. 1, 147-177, (1999).
+[Lu5] Lusztig G., Transfer maps for quantum affine gln ., Representations and quantizations
+     (Shanghai, 1998), 341-356, China High. Educ. Press, Beijing, (2000).
+[Mac] Macdonald I., Symmetric functions and Hall polynomials, Oxford press (1979).
+[M] Maffei A., Quiver varieties of type A, preprint AG/9812142, (1998).
+[MV] Mirkovic I., Vybornov M., On quiver varieties and affine Grassmannians of type A, preprint
+     math/AG0206084 (2002).
+[N1] Nakajima H., Instantons on ALE spaces, quiver varieties, and Kac-Moody algebras., Duke
+     Math. J. 76, no. 2, 365-416, (1994).
+[N2] Nakajima, H., Quiver varieties and Kac-Moody algebras., Duke Math. J. 91, no. 3, 515-560,
+     (1998).
+[N3] Nakajima H., Varieties associated with quivers., Representation theory of algebras and re-
+     lated topics (Mexico City, 1994), 139-157, CMS Conf. Proc., 19, (1996).
+[N4] Nakajima H., Quiver varieties and finite-dimensional representations of quantum affine al-
+     gebras., J. Amer. Math. Soc. 14, no. 1, 145-238, (2001).
+[Re] Reineke M., Quivers, desingularizations and canonical bases, to appear in Studies in memory
+     of Issai Schur, Birkhäuser.
+[Ri1] Ringel C., Hall algebras and quantum groups, Invent. Math. 101 no. 3, 583-591, (1990).
+[Ri2] Ringel C., Hall algebras, Topics in algebra, Part 1 (Warsaw 1988), PWN, Warsaw, 433-447,
+     (1990).
+[Ri3] Ringel C., From representations of quivers via Hall and Loewy algebras to quantum groups.
+     Proceedings of the International Conference on Algebra, Part 2 (Novosibirsk, 1989), 381-401,
+     Contemp. Math., 131, Part 2, Amer. Math. Soc., Providence, RI, (1992).
+[S1] Schiffmann O., The Hall algebra of a cyclic quiver and canonical bases of Fock spaces.,
+     Internat. Math. Res. Notices, no. 8, 413-440, (2000).
+[S2] Schiffmann O., On the center of affine Hecke algebras of type A., J. Algebra 253, no. 2,
+     392-416, (2002).
+        QUIVERS OF TYPE A, FLAG VARIETIES AND REPRESENTATION THEORY                           25
+
+
+[S3] Schiffmann O., Noncommutative smooth projective curves and quantum loop algebras,
+     preprint QA/0205267 (2002).
+[SV] Schiffmann O., Vasserot E., Geometric construction of the global base of the quantum mod-
+                      b ., Transform. Groups 5, no. 4, 351-360, (2000).
+     ified algebra of gln
+[V1] Vasserot E., Affine quantum groups and equivariant K-theory., Transform. Groups 3, no. 3,
+     269-299, (1998).
+[V2] Vasserot E., On the action of the dual group on the cohomology of perverse sheaves on the
+     affine Grassmannian., Compositio Math. 131, no. 1, 51-60, (2002).
+[V3] Vasserot E.,      Induced and simple modules of double affine Hecke algebras, preprint
+     RT/0207127 (2002).
+[VV1] Varagnolo M., Vasserot E., On the decomposition matrices of the quantized Schur algebra.,
+     Duke Math. J. 100, no. 2, 267-297, (1999).
+[VV2] Varagnolo M., Vasserot E., On the K-theory of the cyclic quiver variety. Internat. Math.
+     Res. Notices, no. 18, 1005-1028, (1999).
+[Z1] Zelevinsky A., Two remarks on graded nilpotent classes. Uspekhi Mat. Nauk 40, no. 1 (241),
+     199-200, (1985).
+[Z2] Zelevinsky A., Representations of finite classical groups. A Hopf algebra approach., Lecture
+     Notes in Mathematics, 869, (1981).
+
+
+  Olivier Schiffmann,schiffma@dma.ens.fr,
+DMA, École Normale Supérieure, 45 rue d’Ulm, 75230 Paris Cedex 05-FRANCE
+

@@ -1,0 +1,821 @@
+                                                       PERIODIC MODULES AND QUANTUM GROUPS
+arXiv:math/0211437v3 [math.RT] 15 Sep 2003
+
+
+
+
+                                                                               Michela Varagnolo
+
+                                                   Abstract. We prove that the elements A≤ defined by Lusztig in a completion of the
+                                                   periodic module actually live in the periodic module (in the type A case). In order
+                                                   to prove this, we compare, using the Schur duality, these elements with Kashiwara
+                                                   canonical basis of an integrable module.
+
+
+
+
+                                                                                 0. Introduction
+                                                Fix two positive integers d and p. Let V ′ ⊃ R ⊃ R+ ⊃ I = {α1 , ...αd−1 } be a
+                                             R-vector space of dimension d − 1, a root system of type Ad−1 , a system of positive
+                                             roots and the corresponding set of simple roots. Fix a partition c = (c1 , ...cℓ ) of d
+                                             and set Ic = {αi | i 6= c1 + · · · ca , ∀a}. Let F be the set of all reflection hyperplanes
+                                             Fα∨ ,n = {v ∈ V ′ | (α∨ : v) = np}, where α ∈ R+ and n ∈ Z. Set Fc = {Fα∨ ,n | α ∈
+                                             R+ ∩ Ic } ⊂ F . We call alcoves the connected components of V ′ \ ∪F ∈F F. Let A′+
+                                             be the only alcove contained in the dominant Weyl chamber having 0 in its closure.
+                                             Let Ac be the set of alcoves contained in the connected component of V ′ \ ∪F ∈Fc F
+                                             which contains A′+ . Finally, let Mc be the Z[q, q −1 ]-span of the alcoves in Ac . It is
+                                             a H′ × R′c -module, where H′ is the affine Hecke algebra associated to R, and R′c
+                                             is a Laurent polynomial algebra over ℓ variables. In [L5, 9.17(a)] Lusztig defines,
+                                             for any A ∈ Ac , some element A≤ in a completion of Mc and he conjectures in
+                                             [L5, 12.7] that A≤ ∈ Mc (the conjecture is stated for all types). If c = (1d ), the
+                                             conjecture follows from results in [L1]. In this paper we prove it for all c in Theorem
+                                             5.5.
+                                                In [L5, 17.3] two conjectural multiplicity formulas for modules of a simple Lie
+                                             algebra over an algebraically closed field of characteristic p are given. They are
+                                             formulated via some element A≥ and it involves polynomials πAB , the coefficients
+                                             of the expansion of A≥ in the basis of the alcoves, [L5, 9.17(c),(d)]. Using Theorem
+                                             5.5 and [L5, Proposition 12.9] we get that for all A, there exist only finitely many
+                                             non-zero polynomials πAB .
+                                                The main tools of the proof are the Schur duality (in its quantum affine version)
+                                             and a theorem of Kashiwara yielding a canonical basis for some integrable module
+                                             N of the quantum affine loop algebra of glp (here p > d). More precisely we write
+                                             down a H′ × R′c -isomorphism which sends a H′ × R′c -cyclic submodule of Mc into
+                                             a weight space of N and takes {A≤ } into Kashiwara’s canonical basis.
+                                                This work is motivated by [VV3]. In loc.cit. the authors give a geometric
+                                             construction, via quiver varieties, of the (signed) canonical basis of the module
+                                             N(λc ). This construction is very similar to Lusztig’s conjectural construction of
+
+                                                2000 Mathematics Subject Classification. Primary 17B37, Secondary 17B10.
+
+                                                                                                                      Typeset by AMS-TEX
+                                                                                           1
+2                                MICHELA VARAGNOLO
+
+the (signed) canonical basis in the K-theory of the Springer fiber (see [L4, L5],
+where it is also explained the link between this K-theory object and the periodic
+module). It is known that, for type A, the Springer fibers are quiver varieties.
+Probably it is possible to check that both signed bases coincide via their geometric
+characterization. In this paper we give an elementary algebraic proof.
+   Aknowledgements. The idea to compare the elements A≤ with the Kashiwara’s
+canonical basis is due to E. Vasserot. I thank him to share it with me. This work
+started during my stay at the M.S.R.I. in March 2002. I thank the organizers of
+the program ”Infinite-dimensional algebras and Mathematical Physics” for inviting
+me.
+
+                                      1. Notations
+1.1. Let T ⊂ GLd be a maximal torus. Let X = X(T) be the caracter group of T,
+and let R(T) be its representation ring. The dual group of one parameter subgroups
+of T is denoted by X∨ . Set ( : ) equal to the canonical pairing X × X∨ → Z. Set
+R ⊂ X equal to the set of root of gld with respect to T. Choose a positive system
+R+ ⊂ R. Let I ⊂ R+ be the set of simple roots and let Q ⊂ X be the root lattice.
+We fix basis elements ε1 , ..., εd ∈ X such that I = {αi = εi −εi+1 | i = 1, 2, ..., d −1}.
+For i = 1, ..., d set ωi = ε1 + · · · + εi ∈ X with i = 1, ..., d. Let {ωi∨ }, {ε∨      ∨
+                                                                                 i } ⊂ X be
+the dual bases. Put θ ∨ = α∨               ∨         ∨      ∨     ∨
+                               1 +· · ·+αd−1 , and αi = εi −εi+1 with i = 1, 2, ..., d −1.
+                                                                                  Pd−1
+Let ≤ be the partial order on X such that µ ≤ ν if and only if ν − µ ∈ i=1 N αi .
+1.2. Let Wf be the Weyl group of gld . Let W = Wf ⋉ X, W′ = Wf ⋉ Q, be the
+extended affine Weyl group and the affine Weyl group. For any w ∈ Wf , λ ∈ X we
+use the following notations : w = (w, 0), τλ = (0, λ).
+   APcomposition of d is a ℓ-uple of non-negative integers f = (f1 , f2 , ...fℓ ) such
+that i fi = d, for some ℓ. It is a partition if and only if f1 ≥ f2 ≥ · · · ≥ fℓ ≥ 0.
+For any composition f of d, set If = {αi ∈ I | i 6= f1 + f2 + · · · + fa , ∀a}. Let
+Wf be the corresponding parabolic subgroup of Wf , i.e. Wf = hsi | αi ∈ If i. Put
+Wf′ = Wf ⋉ ZIf . Let Wf (resp. f W)⊂ Wf be the set of all elements w having a
+minimal length in the coset wWf (resp. Wf w). Let wd , wf be the longest elements
+of Wf , Wf . Set νd = ℓ(wd ), νf = ℓ(wf ).
+   Let s1 , s2 , ..., sd be the simple affine reflections in W′ such that si = sα∨i if i 6= d
+and sd = τθ sθ∨ , where for any root α ∈ R, sα∨ is the corresponding reflection.
+Let π denote the element τω1 s1 s2 · · · sd−1 . The cyclic group of infinite order hπi is
+isomorphic to X/Q and W is isomorphic to a semi-direct product hπi ⋉ W′ .
+1.3. Fix a positive number, say p. Set V = X ⊗Z R,
+                      A+ = {γ ∈ V | p > (γ : α∨ ) > 0, ∀α ∈ R+ },
+                     Xp = {γ ∈ X | p ≥ (γ : ε∨
+                                             i ) > 0, ∀i = 1, ...d}.
+The group W acts on X as follows
+                     γ · si = γ − (γ : α∨
+                                        i ) αi    if i = 1, 2, ..., d − 1,
+                     γ · τν = γ − pν              if ν ∈ X.
+Note that
+    - the set Ā+ ∩ Xp is a fundamental domain for the right action of W on X (Ā+
+is the closure of A+ in V ),
+    - for all µ ∈ Ā+ ∩ Xp , We is the isotropy group of µ, if e is associated to µ as in
+(1.4.1).
+                     PERIODIC MODULES AND QUANTUM GROUPS                                                   3
+
+1.4. Conventions.
+   (1) In the future we will use both weights of glp and gld . The fundamental
+weights and the simple roots of glp are denoted by Λi , i = 1, ..., p and βi = ǫi − ǫi+1 ,
+i = 1, ..., p − 1, respectively. The affine simple roots of glp are β1 , ..., βp . Set
+                                                     Pp
+               δ = β1 + · · · + βp ,          X̃ =     a=1   Zǫa ,         X̃a = Zδ ⊕ X̃.
+                                Pp
+   (2) From now on,Pλ̃ = a=1 da ǫa will be a fixed (dominant) weight with d1 ≥
+                           p
+d2 ≥ · · · ≥ dp ≥ 0, a=1 di = d. Set d = (dp , ..., d1 ) and let c = (c1 , c2 , ..., cℓ ) be
+the partition dual to d, that is ci = |{j |Pdj ≥ i}|. Then c = (pℓp ...2ℓ2 1ℓ1 ), for some
+                                              p
+positive integers ℓ1 , ..., ℓp such that ℓ = a=1 ℓa . We have
+                                         Pp                Pℓ
+                                  λ̃ =     a=1 ℓa Λa   =       a=1 Λca .
+
+                    Pd
+   (3) Given µ =        i=1 bi εi   ∈ Xp , we set
+                   Pp
+(1.4.1)     µ̃ =    a=1 ea ǫa    ∈ X̃ with ea = |{i | bi = a}|,                e = (ep , ..., e2 , e1 ).
+
+Set
+          Pp                                  P                       Pp
+  Ω={      a=1 ea ǫa    ∈ X̃ | ea ≥ 0, d =       a ea }, Ωsm    ={       a=1 ea ǫa   ∈ Ω | e is small},
+
+where e is as in (1.4.1). The composition e is said small if ea = 0, 1 for all a. The
+map µ 7→ µ̃ restricts to a bijection Ā+ ∩ Xp → Ω which takes A+ ∩ Xp onto Ωsm .
+From now on if µ̃ ∈ Ω (resp. Ωsm ), then µ denotes the unique preimage in Ā+ ∩ Xp
+(resp. A+ ∩ Xp ).
+
+                                          2. q-Notations
+                         −1
+2.1. Put A = Q[q, q           ], K = Q(q), A0 = {f ∈ K |f is without pole at q = 0}. Set
+
+ R = Z[X] ⊗ A,          Rc = Z[X/ZIc ] ⊗ A,            R′ = Z[Q] ⊗ A,          R′c = Z[Q/ZIc ] ⊗ A.
+
+We identify R with the polynomial ring A[x±1      1 ,xP
+                                                       ±1        ±1
+                                                       2 , ..., xd ], via the A-algebra
+                                                                                Q
+isomorphism which takes εi ⊗ 1 to xi . For all γ = i mi εi ∈ X, put xγ = i xm        i .
+                                                                                       i
+
+
+Then Rc is identified with the quotient of R by the ideal generated by the relations
+xαi = 1, for all αi ∈ Ic , and R′ with the sub-A-algebra of R generated by {x±1   | αi ∈
+                                                                         Pci αi
+I}. We denote by xγ+ZIc the image of xγ in Rc . Set α(ci ) =                  (c
+                                                                           k=1 i +   1−
+                                Pℓ
+2k)εc1+···+ci−1 +k , and αc = i=1 α(ci ) ∈ Q. Define an A-algebra homomorphism
+ψ : R → Rc by the formula ψ(xγ ) = q (γ:αc ) xγ+ZIc . The map ψ restricts to ψ :
+R′ → R′c , cf. [L5, 8.3]. We have
+
+(2.1.1)                          ψ(xαi ) = q 2         for all αi ∈ Ic .
+
+2.2. The quantum loop algebra of glp is the K-algebra UK generated by elements
+ea , fa , la±1 , a = 1, 2, ..., p, modulo the following defining relations
+
+                                 la la−1 = 1 = la−1 la ,     la lb = lb la ,
+
+            lb ea lb−1 = q δ(a=b)−δ(a+1≡b) ea ,        lb fa lb−1 = q δ(a+1≡b)−δ(a=b) fa ,
+4                                        MICHELA VARAGNOLO
+
+                                                        ka − ka−1
+                                        [ea , fb ] = δ(a, b)      ,
+                                                         q − q −1
+               m
+               X                                   m
+                                                     X         
+                            p       m p m−p                 p   m p
+                     (−1)               ea eb ea   =   (−1)         fa fb fam−p = 0.
+                                    p                           p
+               p=0                                    p=0
+
+In the last identity a 6= b, m = 2 if a − b = ±1 and 1 else. We have set [n] =
+q 1−n + q 3−n + ... + q n−1 if n ≥ 0, [n]! = [n][n − 1]...[2], and
+                                   
+                                    m            [m]!
+                                         =               .
+                                    p       [p]![m − p]!
+                          −1
+We have also set ka = la la+1 , for all a = 1, 2, ..., p − 1 and kp = lp l1−1 . Finally a ≡ b
+means a − b ∈ pZ. Let ∆ be the coproduct of UK , defined as follows
+
+     ∆(ea ) = 1 ⊗ ea + ea ⊗ ka−1 ,             ∆(fa ) = ka ⊗ fa + fa ⊗ 1,        ∆(la ) = la ⊗ la .
+
+    The algebra UK has also a presentation in terms of Drinfeld generators x±                  ± ±1
+                                                                                         ir , his , la ,
+where r ∈ Z, s ∈ Z \ {0}, i = 1, 2, ..., p − 1, a = 1, 2, ..., p. We normalize these gener-
+                                     ′′
+ators as in [B] (with Ti = Ti,1 in the notations of [L2]). The presentation depends
+on a choice of a function o : {1, ...p − 1} → {±1} such that o(i ± 1) = −o(i).
+    Let U̇K be the modified algebra of UK . It is a K-algebra without unity generated
+by πi ea , πi fa , πi , i ∈ Np , a = 1, 2, ...p, with πi πj = δij πi , see [L2, 23.1] for a precise
+definition. Let U, U̇ be the A-forms of UK , U̇K . Then U is the A-subalgebra of
+                           (n)   (n)
+UK generated by ea , fa , la±1 , and U̇ is the A-subalgebra of U̇K generated by
+    (n)       (n)
+πi ea , πi fa .
+    Let x 7→ x be the ring homomorphism of U such that q̄ = q −1 , ēa = ea ,
+f¯a = fa , ¯la = la−1 . We will still denote by x 7→ x the involution on U̇ which is also
+characterized by πi = πi .
+Remark. Kashiwara’s canonical bases are defined for the quantum loop algebra
+of slp . In this paper we will use the glp -version. It is irrelevant since an integrable
+U-module is a module for the quantum loop algebra of slp together with an extra
+grading coming from the action of the la ’s.
+2.3. Let H be the affine Hecke algebra of GLd . Recall that H is the unital asso-
+ciative A-algebra generated by elements t1 ,...td−1 , x±1     ±1
+                                                       1 ,...xd , modulo the relations
+
+                     (ti + q −1 )(ti − q) = 0,
+                     ti ti+1 ti = ti+1 ti ti+1 ,       |i − j| ≥ 2 ⇒ ti tj = tj ti ,
+                     xi x−1
+                          i   = 1 = x−1i xi ,          xi xj = xj xi ,
+                     ti xi ti = xi+1 ,                 j 6= i, i + 1 ⇒ ti xj = xj ti .
+
+For any w ∈ W let tw be the corresponding element in H. To simplify we set
+π = tπ (= x1 t1 t2 · · · td−1 ). Set also td = πtd−1 π −1 . Let H′ , Hf ⊂ H be the A-
+subalgebras generated by t1 , ...td and t1 , ...td−1 respectively. We will identify, in
+the obvious way, R with the sub-A-algebra of H generated by the x±1         i ’s. Note
+         ′                                                                ′
+that H is the sub-A-algebra of H generated by t1 , ...td−1 and by R . For future
+references, we point out that xα is equal to the element θ−α in Lusztig’s papers.
+   Let t 7→ t̄ be the ring homomorphism of H such that q̄ = q −1 , t̄i = t−1 i , π̄ = π,
+i = 1, ..., d.
+                      PERIODIC MODULES AND QUANTUM GROUPS                                               5
+
+2.4. For any composition f of d, let Hf ⊆ Hf be the subalgebra generated by the
+elements ti with αi ∈ If . Similarly, let H′f ⊆ H′ be the subalgebra generated by Hf
+and the elements x±1
+                   αi with i ∈ If . Set also
+                             X                        X
+                     ρf =        q ℓ(w) tw ,   mf =        q 2ℓ(w) .
+                                w∈Wf                           w∈Wf
+
+We get ρ2f = mf ρf and ρf = q −2νf ρf .
+2.5. Set A− equal to the unique left representation of H′ on A taking the elements
+ti to −q −1 Id , for all i = 1, ...d. Note that, in particular,
+
+(2.5.1).                        xαi · 1 = q 2 · 1      for all αi ∈ I
+
+2.6. For any pair of compositions f , f ′ of d with at most p parts, let Hf ,f ′ be the
+                                            P      ℓ(w)
+      L span of the elements tm = w∈m q
+A-linear                                                  tw , where m ∈ Wf \W/Wf ′ . Let
+Sd = f ,f ′ Hf ,f the q-affine Schur algebra. The product in Sd is defined by setting
+                  ′
+
+tm ⋆ tn = δ(f ′ , g)m−1  f ′ tm tn for all m ∈ Wf \W/Wf , n ∈ Wg \W/Wg . Consider
+                                                              ′                  ′
+
+the algebra homomorphism χd : U̇ → Sd , defined in [SV, Proposition 2.4]. In
+particular it takes πi to ρi♯ , if i♯ is a composition of d, and πi 7→ 0 otherwise.
+Here i♯ = (i1 , i2 , ...) and ir = |i−1 (r)|. Let χf ,f ′ : U̇ → Hf ,f ′ be the composition
+of χd with the canonical projection Sd → Hf ,f ′ . The A-module Sd has a basis,
+B = {bs | s ∈ Ad }, where Ad is the following subset of the set of Z × Z matrices
+with entries in N,
+                                                                 p
+                                                                XX
+                  Ad = {s = (sij )i,j∈Z | si+p,j+p = sij ,                 sij = d},
+                                                                 i∈Z j=1
+
+see [SV, 3.2]. Then [L6, Theorem 8.2] states that B ap = {bs | s ∈ Aap
+                                                                    d } is a A-basis
+of Im (χd ), with
+
+                  Aap
+                   d = {s ∈ Ad | ∀j ∈ Z \ {0}, ∃i ∈ Z and si,i+j = 0}.
+
+For a future use let us mention the following.
+Claim. If p > d and f is small, the map χf ,f ′ is surjective for all f ′ . If p = d and
+f , f ′ are small, then B ∩ Hf ,f ′ = (B ap ∩ Hf ,f ′ ) ∪ {ρf π r | r ∈ Z}.
+Proof. Set f = (f1 , ..., fp ), f ′ = (f1′ , ..., fp′ ). Then
+                                                X                X
+  bs ∈ Hf ,f ′ ⇔ s ∈ Af ,f ′ = {s ∈ Ad |              sij = fi ,   sij = fj′ , ∀i, j ∈ {1, 2, ...p}}.
+                                              j∈Z             i∈Z
+
+Suppose that p ≥ d. If f is small, a direct computation gives
+
+                       Af ,f ′ ∩ Aap            ′
+                                  d 6= Af ,f ⇔ f is small and p = d.
+                                            ′
+
+
+
+This proves the first part of the claim. If p = d and f , f ′ are both small, we have
+
+                         Af ,f ′ \ (Af ,f ′ ∩ Aap
+                                               d ) = {s(r) | r ∈ Z \ {0}},
+
+with s(r) = (sij )i,j∈Z such that sij 6= 0 ⇔ j − i = r. Moreover bs(r) = ρf π r , see
+[SV, 3.2].                                                                         ⊓⊔
+6                              MICHELA VARAGNOLO
+
+                             3. Kashiwara modules
+3.1. Let V be any integrable U-module and let z be a formal variable. Set
+U[z ±1 ] = U ⊗A A[z ±1 ]. We denote by V{z} be the representation of U on the
+space V ⊗A A[z ±1 ] such that x±              ±    r    ±      ±     r
+                                ir acts as xir ⊗ z and kir as kir ⊗ z (in particular
+                  δap                  −δap
+ea acts as ea ⊗ z     and fa as fb ⊗ z      ). Define
+
+              V⊗d {z1 , z2 ...zd } = V{z1 } ⊗A V{z2 } ⊗A · · · ⊗A V{zd }.
+
+The element Λ ∈ X̃ is a weight of V if the Λ-weight subspace
+
+                   VΛ = {v ∈ V | la · v = q (Λ:ǫa ) v, ∀a = 1, ..., p}
+
+is non-zero. If v ∈ VΛ we set wt(v) = Λ.
+3.2. Let W(Λa ), V(Λa ) be the A-form of the fundamental UK -module and of
+Kashiwara’s maximal integrable UK -module, respectively, with highest weight Λa ,
+see [K1], [K2]. Fix highest weight vectors wΛa ∈ W(Λa ), vΛa ∈ V(Λa ). By [K2,
+Theorem 5.15(viii)] there exists a U-automorphism z of V(Λa ) and an isomorphism
+of U[z ±1 ]-modules
+                                         ∼
+(3.2.1)                          V(Λa ) → W(Λa )[z]
+
+such that vΛa 7→ wΛa ⊗ 1. In particular we have the U[z1±1 , ..., zd±1 ]-isomorphism
+
+                        V(Λ1 )⊗d ≃ W(Λ1 )⊗d {z1 , z2 , ..., zd }.
+
+Both modules V(Λa ), W(Λa ) have canonical bases B(Λa ), Bf (Λa ), see [K1, Propo-
+sition 8.2.2] and [K2, Theorem 5.15(ii)]. There is a unique U-semilinear (with
+respect to x 7→ x) and Q[z ±1 ]-linear involution on V(Λa ) which fixes vΛa . The
+elements in B(Λa ) are fixed by this involution. Via (3.2.1), we have
+                                        G
+(3.2.2)                      B(Λa ) =         Bf (Λa ) ⊗ z n .
+                                        n∈Z
+
+
+Let L(Λa ) be the A0 -lattice spanned by B(Λa ).
+3.3. Let V be the vectorial representation of U, i.e. V is the U[z ±1 ]-module with
+A-basis {um | m ∈ Z} such that um−pℓ = um · z ℓ for all m, ℓ ∈ Z, and such that U
+acts as follows (a = 1, 2, ..., p)
+
+ea (um ) = δ(m ≡ a + 1)um−1 ,     fa (um ) = δ(m ≡ a)um+1 ,         la (um ) = q δ(m≡a) um .
+
+Here again we write a ≡ b for a − b ∈ pZ. The U-module V has a X̃a -graduation
+such that wta (um−pl ) = ǫm + lδ, for all m = 1, 2, ..., p.
+Lemma.
+  (1) In V we have h1,1 (u1 ) = o(1)(−1)1−p q −p u1 · z.
+  (2) There is a unique isomorphism of U[z ±1 ]-modules V(Λ1 ) → V such that
+      vΛ1 7→ u1 .
+  (3) B(Λ1 ) = {um | m ∈ Z}.
+                    PERIODIC MODULES AND QUANTUM GROUPS                                7
+
+Proof. For Claim 1, recall that h1,1 = k1−1 [x+  1,1 , f1 ]. Then use a computation as
+in [VV1, Theorem 3.3] (but note that we use a different coproduct and different
+Drinfeld generators). Claim (2) follows from Claim (1) and from [N, Proposition
+3.1]. Claim (3) follows from (3.2.2) and standard properties of canonical bases. ⊓  ⊔
+                                                                            P
+   From now on we identify V(Λ1 ) with V. For v = ⊗i vi ∈ V⊗d and γ = i mi εi ∈
+X, put v · zγ = ⊗i (vi · z mi ). Let {uγ | γ ∈ X} be the unique A-basis of V⊗d such
+that                               Nd
+                       uγ−pν = ( i=1 umi ) · zν ,        γ, ν ∈ X.
+Note that, if γ ∈ Xp , ν ∈ X, then wt(uγ−pν ) = γ̃. The set of weights of V⊗d is
+                                                                         Pd
+exactly Ω. We have a X̃a -graduation on V⊗d such that wta (uγ−pν ) = γ̃ + i=1 ni δ
+      Pd
+if ν = i=1 ni εi .
+3.4. Consider the right representation of the A-algebra H on V⊗d such that for all
+i = 1, 2, ...d − 1,γ ∈ Xp , κ, ν ∈ X,
+                                
+                                 quγ                   if γ · si = γ
+(3.4.1)              uγ ⋄ ti = uγ·si                    if γ · si < γ ,
+                                
+                                  uγ·si + (q − q −1 )uγ if γ · si > γ
+                                      uν ⋄ xκ = uν·τκ .
+                                                                                   L
+This action commutes with the U-action, see [VV2] for instance. Set Td = g ρg H
+where g runs into the set of the compositions of d with at most p parts. It is a left
+Sd -module such that t ⋆ h = δ(f ′ , g)m−1  g th ∈ ρf H for all t ∈ Hf ,f ′ and h ∈ ρg H.
+Define an involution ιS on Sd by setting ιS (a) = q 2νf ′ a, for all a ∈ Hf ,f ′ .
+Lemma.
+  (1) There is a unique isomorphism of right H-modules
+                            ∼
+                    φ : V⊗d → Td ,    uµ 7→ ρe ,              ∀ µ ∈ Ā+ ∩ Xp .
+          In particular
+                                                   ∼
+(3.4.2)                              V⊗d       µ̃
+                                                    → ρe H.
+
+   (2) There exists a unique A-algebra homomorphism Φd : U̇ → Sd such that
+       φ(uv) = Φd (u) ⋆ φ(v), for all u ∈ U̇, v ∈ V⊗d . We have ιS (Φd (u)) = Φd (u).
+   (3) uµ ⋄ tw = uµ·w for all µ ∈ Ā+ ∩ X and w ∈ e W.
+Proof. For Claims (1) and (2) use [VV2, Lemmas 8.3 and 8.4]. Note that the
+coproduct in loc.cit. is different from our.
+    Claim (3) is standard, we prove it by induction on the lenght of w. Set w = si .
+Since µ ∈ Ā+ , we have (µ : α∨ i ) ≥ 0, and the equality holds if and only if si ∈ We .
+Then µ · si < µ and uµ ⋄ ti = uµ·si . Suppose now that ℓ(w) = k > 1 and write w =
+w′ si with ℓ(w′ ) = k − 1. Then w′ ∈ e W. Otherwise there exists σ ∈ We such that
+ℓ(σw′ ) < ℓ(w′ ) and then ℓ(w) < ℓ(σw) = ℓ(σw′ ) ± 1 ≤ ℓ(w′ ), which is impossible,
+because w ∈ e W. So, by induction, uµ ⋄ tw = uµ·w′ ⋄ ti . Since w′ (αi ) ∈ R+ , we have
+(µ · w′ : α∨             ′  ∨                  ′   ∨
+           i ) = (µ : w (αi )) ≥ 0. If (µ · w : αi ) = 0, then sw ′ (αi ) ∈ We . Thus
+w = sw′ (αi ) w is an element of We w such that ℓ(w′ ) < ℓ(w) which is impossible by
+  ′
+
+assumption.                                                                           ⊓
+                                                                                      ⊔
+   Note that the map Φd defined in the lemma above is a renormalization of the
+map χd in 2.6. It is easy to check that the Claim in section 2.6 still hold for Φf ,f ′ ,
+the composition of Φd with the canonical projection Sd → Hf ,f ′ .
+8                                        MICHELA VARAGNOLO
+
+3.5. Taking d = 1 in (3.4.1) we get vΛ1 ⋄ x1 = vΛ1 · z, because vΛ1 = u1 . So x1
+acts as Kashiwara’s operator z on V. The module W(Λ1 ) is identified with the
+subspace of V spanned by u1 , ..., up . Then, formulas (3.4.1) endow W(Λ1 ) with a
+right Hf -action, such that, if p > d, W(Λ1 )⊗d ⊗Hf A− is a simple module of the
+quantum enveloping algebra of glp with highest weight Λd . Set
+
+                 V[d] = W(Λ1 )⊗d {(−q)1−d z1 , (−q)3−d , · · · , (−q)d−1 zd }.
+
+Take c = (d), then Rc = A[ψ(x1 )]. We can endow V[d] ⊗H′ A− with a (right)-Rc -
+action by setting
+                         (v ⊗ 1) · ψ(x1 ) = (v ⋄ x1 ) ⊗ 1,
+for all v ∈ V[d] . It is well defined by (2.1.1), (2.5.1).
+Proposition. Assume that p > d and let λ̃ = Λd . Then c = (d), ρd = 1. Set
+x = ψ((−q)1−d x1 ).
+    (1) There is a unique isomorphism of U-modules
+                  ∼
+(3.5.1) V(Λd ) → V[d] ⊗H′ A−              s.t.     vΛd · z i 7→ (ud ⊗ · · · u2 ⊗ u1 ⊗ 1) · xi ,    ∀i ∈ Z.
+
+    (2) The set of the weights of V(Λd ) is Ωsm . Fix µ̃ ∈ Ωsm . The map (3.5.1) takes
+        B(Λd )µ̃ to {(uµ ⊗ 1) · xi | i ∈ Z}.
+
+Proof. Claim (1). There exists α ∈ A× such that (W(Λ1 )⊗d ⊗Hf A− ){αz} ≃
+V(Λd ), because W(Λ1 )⊗d ⊗Hf A− and W(Λd ) are both integral A-forms of simple
+UK -modules which are simple and of highest weight Λd as modules for the quantum
+enveloping algebra of glp . By (2.1.1) we have Rc = A[x±1 ]. Consider the U-module
+W(Λ1 )⊗d {αz1 , q 2 αz2 , ...q 2(d−1) αzd } ⊗H′ A− . The element fp ∈ U acts as
+
+        d
+        X                                                         d
+                                                                  X
+                                      2(i−1)
+                                                                                       
+               kpi−1   ⊗ fp ⋄ xi αq                ⊗1   d−i
+                                                              =         kpi−1 ⊗ fp ⋄ αx1 ⊗ 1d−i ,
+         i=1                                                      i=1
+
+
+by formula (2.5.1). A similar formula holds for ep . We need to compute α. Set
+A = o(d)(−1)1−p q −p . Using a computation as in [VV1, Theorem 3.3] we get
+
+               hd,1 (ud ⊗ · · · ⊗ u1 ⊗ 1) = (−q)d−1 Aud ⊗ · · · ⊗ u1 ⋄ x1 ⊗ 1.
+
+Then use [N, Proposition 3.1] to get α = (−q)1−d .
+   Claim (2). If µ ∈ (Ā+ \ A+ ) ∩ Xp , then the element uµ ⊗ 1 ∈ V[d] ⊗H′ A− is zero
+since quµ ⊗1 = uµ ⋄ti ⊗1 = uµ ⊗(ti ·1) = −q −1 uµ ⊗1, for any i ∈ {1, 2, ...d−1} such
+that µi = µi+1 . Thus Ωsm is the set of weights of V(Λd ). Since fa2 acts trivially on
+V(Λd ), Kashiwara’s operator f˜a coincide with fa , for all a. Hence B(Λd )+qL(Λd ) ∋
+fa1 · · · far (vΛd ) = uµ or 0 with µ ∈ A+ ∩ Xp , for any a1 , ..., ar 6= p. We are done by
+(3.2.2).                                                                                  ⊓
+                                                                                          ⊔
+3.6. Set
+                       ℓ
+                       O                 ℓ
+                                         O
+           Vc =              V(Λci ) ≃         W(Λci ){zi },              vc = ⊗ℓi=1 vΛci ∈ Vc .
+                       i=1               i=1
+                       PERIODIC MODULES AND QUANTUM GROUPS                                         9
+
+   It is convenient to identify the ring A[z1 , ..., zℓ ] with the quotient of the poly-
+nomial algebra A[z1 , ..., zd ] by the ideal generated by the relations zαi = 1, for all
+αi ∈ Ic . Let zγ+ZIc be the image of zγ in this quotient. Using Proposition 3.5 we
+get a morphism of U-modules
+                ℓ
+                O                                                          ⊗ℓb
+(3.6.1)                V[ci ] → Vc ,     such that        ⊗1b=p ⊗1a=b ua               7→ vc .
+                 i=1
+                                                               Nℓ
+   Define a right action of the A-algebra Rc on                  i=1   V[ci ] ⊗H′c A− by setting
+
+                                (v ⊗ 1) · ψ(xγ ) = (v ⋄ xγ ) ⊗ 1,
+             N [ci ]
+for all v ∈     V , γ ∈ X. It is well defined by (2.1.1), (2.5.1). Via (3.4.2), we get
+also, for all e, a right action of Rc on ρe H ⊗H′c A− .
+Corollary. Assume that p > d.
+  (1) The map (3.6.1) induces an isomorphism of U-modules
+                                              ℓ
+                                              O
+                                          ∼
+(3.6.2)                            Vc →             V[ci ] ⊗H′c A− ,
+                                              i=1
+                                                 ⊗ℓ
+       such that vc · zγ+ZIc 7→ (⊗1b=p ⊗1a=b ua b ⊗ 1) · ψ((−q)−(γ:αc ) xγ ).
+   (2) By composing (3.6.2) with (3.4.2) we get, for any µ̃, a unique isomorphism
+       of Rc -modules
+                                          ∼
+                              sµ̃ : Vc,µ̃ → ρe H ⊗H′c A− .
+          such that sµ̃ (u v) = Φe,f (u) ⋆ sν̃ (v) if v ∈ Vc,ν̃ , u ∈ U̇, uv ∈ Vc,µ̃ , and f is
+          the partition associated to ν as in (1.4.1).
+
+3.7. Let N(λ̃) ⊂ Vc be the smallest U × Rc -submodule containing the element
+vc . For any composition f of d, let f Wc be the set of elements w ∈ Wc having a
+maximal length in Wf w. The set d Wc contains only one element, denoted by σc ,
+see [L5, 13.11(a)].
+    For any µ ∈ Ā+ ∩ Xp consider the morphism of H × Rc -modules
+                                                       ℓ
+                                                       O                      
+                          aµ̃ : ρe H ⊗H′c A− →               V[ci ] ⊗H′c A−       µ̃
+                                                       i=1
+
+such that (ρe h ⊗ 1) · ψ(xγ ) 7→ (uµ ⋄ h ⊗ 1) · ψ(xγ ).
+Proposition. Assume that p > d.
+  (1) For any weight µ̃ we have the following commutative square of Rc -modules
+                             He,d tσc Rc ⊗ 1         ֒→      ρe H ⊗H′c A−
+                                    ↓                              ↓
+                                N(λ̃)µ̃              ֒→          Vc,µ̃
+
+          The vertical maps are aµ̃ and its restriction. If µ̃ = λ̃ then
+
+                                       aλ̃ (q νd ρd tσc ⊗ 1) = vc .
+   (2) If µ̃ ∈ Ωsm , the left vertical map is an isomorphism.
+10                                MICHELA VARAGNOLO
+
+                                       N1      ⊗da
+Proof. Claim (1). Take µ̃ = λ̃, then      a=p ua   = uλ . Set σc = wd σ, where
+    d
+σ ∈ W. Then tσc = twd tσ . Using (3.4.1) and Lemma 3.4(3) we get
+
+                    aλ̃ (q νd ρd tσc ⊗ 1) =            uλ ⋄ (q −νd tσc ) ⊗ 1)
+                                          =                uλ ⋄ tσ ⊗ 1
+                                                                     ⊗ℓ
+                                          =           ⊗b=p ⊗1a=b ua b ⊗ 1.
+                                                       1
+
+
+Moreover                                              sµ̃
+                  N(λ̃)µ̃ = (U ⊗ Rc )vλ̃         µ̃
+                                                      −→ Φe,d (U̇) ⋆ sλ̃ (vc )Rc .
+
+If µ̃ is small, we have Φe,d (U̇) = He,d = Hρd , by Claim 2.6 and the equality
+ρe = 1. Claim (2) easily follows.                                            ⊓
+                                                                             ⊔
+
+                                 4. Periodic modules
+4.1. Set V ′ := Q ⊗Z R, Fα∨ ,n = {γ ∈ V ′ | (α∨S: γ) = np} for all α ∈ R+ , n ∈ Z.
+The connected components of the open set V ′ \ α∈R+ ,n∈Z Fα∨ ,n are called alcoves.
+                                                  S
+The connected components of the open set V ′ \ i<d,n∈Z Fα∨i ,n are called boxes.
+We denote by A the set of alcoves. Consider the restriction to V ′ of the right action
+of W′ ⊂ W on V. It induces a right W′ -action on A, denoted by A 7→ A · w, which
+is simply transitive. Let A′+ be the unique alcove contained in the dominant Weyl
+chamber having 0 in its closure. Thus, A′+ = A+ ∩ V ′ . We define a left W′ -action
+on A by
+                       w · (A′+ · v) = A′+ · wv,  ∀v, w ∈ W′ .
+We denote by ≤ the partial order on A defined in [L1, 1.5].
+4.2. We now consider the parabolic case.   S Fix c as in Convention 1.4. The con-
+nected components of the open set V ′ \ α∈R+ ∩Ic ,n∈Z Fα∨ ,n are called Ic -alcoves.
+Let Sc be the unique Ic -alcove containing A′+ . Set Ac ⊆ A equal to the set of
+alcoves contained in Sc .
+   Let Mc be the free A-module on Ac . There is a unique left action of H′ on Mc
+such that
+                     −1
+                     −q A                    if si · A ∈
+                                                        / Ac
+           ti · A = s i · A                   if si · A > A, si · A ∈ Ac
+                    
+                      si · A + (q − q −1 )A   if si · A < A, si · A ∈ Ac ,
+
+for all A ∈ Ac , i = 1, 2, ...d, see [L5, 9.3.(b)].
+   By [L5, Lemma 9.6(b)] we have A′+ · w = tw · A′+ , for all w ∈ Wc . For any γ ∈ Q
+there is a unique element wγ ∈ Wc′ such that Sc − pγ = Sc · wγ , because Wc′ acts
+simply transitively on the set of Ic -alcoves. Thus the map A 7→ (A − pγ) · wγ−1
+permutes the alcoves in Ac . Let gγ : Mc → Mc be corresponding A-linear map.
+Then
+
+       gγ (A′+ ) = (−q)−(γ:αc ) xγ · A′+ ,   gγ (h′ A′+ ) = h′ gγ (A′+ ),            ∀h′ ∈ H′ ,
+
+see [L5, 9.2 and Lemma 9.5]. Consider the unique right R′c -action on Mc such that
+
+                  A · xγ+ZIc = (−1)(γ:αc ) gγ (A),            ∀A ∈ A′c , ∀γ ∈ Q
+
+see [L5, 9.7].
+                   PERIODIC MODULES AND QUANTUM GROUPS                                   11
+
+4.3. The element                       P
+                          mc = q −νd       w∈Wd   q ℓ(w)A′+ · wσc ,
+belongs to Mc because Wd σc ⊂ Wc , see [L5, Lemma 13.9.(b)]. Let M′c ⊂ Mc be the
+H′ ⊗ R′c -submodule generated by mc . Since, for all w ∈ Wd , ℓ(σc ) = ℓ(wσc ) + ℓ(w)
+we get                       X
+                mc = q −νd       q ℓ(w) t̄wσc A′+ = q −νd ρd t̄σc · A′+ .
+                              w∈Wd
+
+The right Rc -action on H ⊗H′c A− defined in 3.6 restricts to a right R′c -action on
+H′ ⊗H′c A− .
+Lemma.
+  (1) {gγ (A′+ · w) | γ ∈ Q, w ∈ Wc } = Ac .
+  (2) The linear map
+
+      b : Mc → H′ ⊗H′c A−          (A′+ · w) · xγ+ZIc 7→ (tw ⊗ 1) · ψ(q −(γ:αc ) xγ ),
+
+       where w ∈ Wc , γ ∈ Q, is a morphism of H′ ×R′c -modules such that b(mc ) =
+       q −νd ρd t̄σc ⊗ 1.
+   (3) The map b yields a commutative square of H′ ⊗ R′c -modules
+
+                          H′ ρd t̄σc R′c ⊗ 1   ֒→    H′ ⊗H′c A−
+                                   ↑                     ↑
+                                 M′c           ֒→       Mc
+
+       with invertible vertical maps.
+
+Proof. Claim (1) follows from [L3, 2.12(f ), 4.9(c)] and the identity wd Wc wc = Wc .
+As for Claims (2) and (3), use [L5, 9.7(b) and Proposition 8.5, Lemma 10.2].      ⊓
+                                                                                  ⊔
+
+                          5. Comparing canonical bases
+                                                                  P∞
+5.1. Let Mc,≤ be the set of formal A-linear combinations m = A∈Ac mA A such
+that the set {A | mA 6= 0} is bounded above under ≤, i.e. there exists B ∈ Ac such
+that A < B for all A such that mA 6= 0. The H′ × R′c -action on Mc extends in an
+obvious way to Mc,≤ .
+   There is a unique continuous (in the sense of [L3, 4.13]) involution ιM : Mc,≤ →
+Mc,≤ such that, for all m ∈ Mc,≤ , h ∈ H′ , xγ+ZIc ∈ R′c ,
+
+(5.1.1) ιM (mc ) = mc ,   ιM (hm) = h ιM (m),         ιM (m · xγ+ZIc ) = ιM (m) · xγ+ZIc ,
+
+see [L5, Lemmas 9.16.(a) and 13.12].            P∞
+   For all A ∈ Ac there is a unique element A≤ = BA π̃BA B ∈ Mc,≤ such that
+
+        ιM (A≤ ) = A≤ ,       π̃AA = 1 and π̃BA ∈ q −1 Z[q −1 ] for all B < A,
+
+see [L5,9.17(a),(b)]. We have mc = (A′+ · wd σc )≤ by [L5, Theorem 13.13(a)]. Set
+BM = {A≤ | A ∈ Ac }.
+Conjecture [L5, 12.7]. BM ⊂ Mc .
+  For a future use let us recall the following standard fact.
+12                                          MICHELA VARAGNOLO
+
+                                   P
+Lemma. Let A♯ = A +                      A′ 6=A   mA′ A′ ∈ Mc , with mA′ ∈ q −1 Q[q −1 ]. If ιM (A♯ ) =
+A♯ , then A♯ ∈ BM .
+                                           P∞            ′
+Proof. For all B ∈ Ac we have B = B≤ + B ′ <B cB ′ B≤        in Mc,≤ , with cB ′ ∈
+ −1    −1          ♯
+                      P  ∞                       −1     −1
+q Q[q ]. Thus A =          n
+                         B B ≤B  , with n B  ∈ q    Q[q    ]  for all B 6= A, and
+          −1    −1           ♯      ♯
+nA ∈ 1 + q Q[q ]. Since ιM (A ) = A , we get nB = nB for all B. Thus A♯ = A≤ .
+⊓
+⊔
+5.2. Following [K2, Theorem 8.5, Proposition 8.6], the A-module N(λ̃) is endowed
+with a canonical basis. More precisely, define
+                           Nc,≤ = Vc ⊗Q[zαi +ZIc |αi ∈I] Q[[zαi +ZIc |αi ∈ I]],
+                                ℓ
+                                O              
+                     Lc,≤ =             L(Λci ) ⊗Q[zαi +ZIc |αi ∈I] Q[[zαi +ZIc |αi ∈ I]],
+                                 i=1
+There is a unique involution ιN : Nc,≤ → Nc,≤ such that, for all v ∈ Nc,≤ , u ∈
+U, f ∈ Q[[zαi +ZIc |αi ∈ I]][zγ |γ ∈ X],
+(5.2.1)     ιN (vc ) = vc , ιN (uv) = u ιN (v), ιN (v · f ) = ιN (v) · f.
+           N
+For any t ∈ i B(Λci ) there is a unique element F (t) ∈ Nc,≤ such that
+                             ιN (F (t)) = F (t),              F (t) = t mod qLc,≤ .
+The A-module V(Λci ) has a X̃ -graduation induced by the X̃a -graduation of V⊗d ,
+                                             a
+
+using Proposition 3.5. Let wta (v) ∈ X̃a N
+                                         be the degree of the element v ∈ V(Λci ).
+There is a unique partial order, ≤c , on i B(Λci ) such that t′ = t′1 ⊗ · · · ⊗ t′ℓ <c
+t = t1 ⊗ · · · tℓ if and only if
+ℓ
+X                    ℓ
+                     X                    m
+                                          X
+      wta (t′i ) =         wta (ti ),       (wta (t′i ) − wta (ti )) ∈ Q̃a+ \ {0},    ∀m = 1, ..., ℓ − 1,
+i=1                  i=1                  i=1
+                     Pp
+where     Q̃a+   =    a=1   Nβa . Then
+                                                         P
+(5.2.2)                                   F (t) − t ∈         t′ <c t   qQ[q]t′ .
+The U × Rc -submodule N(λ̃) of Nc,≤ is stable by ιN . Furthermore F (t) ∈ N(λ̃).
+                             N
+The family BN = {F (t) | t ∈ i B(Λci )} is the canonical basis of N(λ̃).
+                Nℓ                                                    Lℓ
+5.3. The basis i=1 B(Λci ) of Vc is identified with its image in i=1 V[ci ] ⊗H′c A−
+by (3.6.2).
+            Nℓ                                                             c
+Claim 1.      i=1 B(Λci ) = {(uµ·w ⊗ 1) · zγ+ZIc | µ ∈ A+ ∩ Xp , w ∈ W , γ ∈ X}.
+                                                      Pd
+Proof. Given µ ∈ A+ ∩ Xp , w ∈ Wf , write µ · w = j=1 aj εj . Then w ∈ Wc if and
+only if p > ak − al > 0 for all c1 + · · · + ci ≥ k > l ≥ c1 + · · · ci−1 + 1. The claim
+follows from Proposition 3.5(2).                                                       ⊓
+                                                                                       ⊔
+   Assume that p > d, then Ωsm 6= ∅. Take µ̃ ∈ Ωsm . The map dµ̃ = aµ̃ ◦ b gives an
+injective morphism of H′ × R′c -modules
+                                                       1
+                                                       O
+                                        dµ̃ : Mc →            V[ci ] ⊗H′c A− ,
+                                                        i=ℓ
+
+                      (A′+   · w) · xγ+ZIc 7→ (−1)(γ:αc ) (uµ ⋄ tw ⊗ 1) · zγ+ZIc ,
+for all w ∈ Wc , γ ∈ Q. Moreover dµ̃ maps M′c into N(λ̃)µ̃ by Lemma 4.3(3) and
+Proposition 3.7(1).
+                     PERIODIC MODULES AND QUANTUM GROUPS                                     13
+
+                        Nℓ
+Claim 2. dµ̃ (Ac ) ⊂       i=1   B(Λci ).
+Proof. By Lemma 4.3(1) any alcove in Ac is of the type A = gγ (A′+ · w) for some
+γ ∈ Q, w ∈ Wc . Thus dµ̃ (A) = (uµ ⋄ tw ⊗ 1) · zγ+ZIc and Claim 2 follows from
+Claim 1 and Lemma 3.4(3) (remember that µ ∈ A+ ∩ Xp ).                         ⊓
+                                                                               ⊔
+5.4. Set X′ = (Ā+ ∩ Xp ) · W′ .
+                                   ′                                ′
+Lemma. There exists a family BN       ⊂ BN such that the A-span of BN is equal to
+                                                            ′
+the intersection of N(λ̃) with the A-span of {uγ ⊗ 1 | γ ∈ X }.
+Proof. First of all, wta (uγ1 ) = wta (uγ2 ) iff γ1 ∈ γ2 · W′ , for any γ1 , γ2 ∈ X. Namely,
+write γi = νi − pµi with νi ∈ Xp , µi ∈ X. Then wta (uγ1 ) = wta (uγ2 ) iff µ1 − µ2 ∈ Q
+and ν̃1 = ν̃2 i.e. ν1 = ν2 · w for some w ∈ Wf , hence iff γ1 = γ2 · wτµ1 −µ2 ·w and
+µ1 − µ2 · w ∈ Q.
+                                                       Nℓ
+   Given ν, γ ∈ X such that uν ⊗ 1, uγ ⊗ 1 ∈ q Z i=1 B(Λci ), we write uν ⊗ 1 <c
+                                          Nℓ
+uγ ⊗1 if the corresponding elements in i=1 B(Λci ) satisfy the same relation. Then
+uν ⊗ 1 <c uγ ⊗ 1 implies wta (uν ) = wta (uγ ), hence ν ∈ γ · W′ . For any γ ∈ X,
+                        n             n
+                                                     Nℓ
+L F (uγ ⊗ 1) = F (q uγ ⊗ 1) if q uγ ⊗ 1 ∈
+set                                                   i=1 B(Λci ). We have F (uγ ⊗ 1) ∈
+   w∈W ′ Au γ·w ⊗  1 by  (5.2.2). Thus, for  all  γ,
+                          M                     M
+                                 Auγ·w ⊗ 1 =          AF (uγ·w ⊗ 1).
+                         w∈W′                  w∈W′
+
+                                                                  Nℓ
+  Since N(λ̃) is spanned by the elements F (t) with t ∈              i=1   B(Λci ) we are done
+because X′ · W′ ⊆ X′ .                                                                       ⊓
+                                                                                             ⊔
+                                    ′       ′
+   Fix p > d and µ̃ ∈ Ωsm . Set BN,µ̃   = BN  ∩ N(λ̃)µ̃ , and let N′ (λ̃)µ̃ be the A-span
+                                                                    L
+of BN,µ̃ . The A-span of {uµ | µ ∈ X } in V⊗d is identified to g ρg H′ , see (3.4.1)
+     ′                                ′
+
+and Lemma 3.4(1). We have aµ̃−1 (N′ (λ̃)µ̃ ) = H′ ρd tσc R′c ⊗ 1 since aµ̃−1 (N′ (λ̃)µ̃ ) =
+(ρe H′ ⊗H′c A− ) ∩ (Hρd tσc Rc ⊗1). Hence N′ (λ̃)µ̃ is a right R′c -module by the lemma
+above and (3.4.1), and a left H′ -module. We have dµ̃ (M′c ) = aµ̃ (H′ ρd tσc R′c ⊗ 1) =
+N′ (λ̃)µ̃ . Let cµ̃ be the inverse map cµ̃ : N′ (λ̃)µ̃ → M′c . It is an isomorphism of
+H′ ⊗ R′c -modules.
+5.5. We can now prove Conjecture 5.1.
+Theorem. BM is a A-basis of M′c for all p > d.
+Proof. Let µ̃ ∈ Ωsm . Set h = q −νd ρd tσc . We consider h as an element of ρe H ⊂ Td .
+Define vc,µ̃ = aµ̃ (h ⊗ 1). Then
+
+             vc,µ̃ = uµ ⋄ h ⊗ 1 = uµ ⋄ q −νd ρd tσc ⊗ 1 = dµ̃ (mc ) ∈ N′ (λ̃)µ̃ .
+
+The element vc = aλ̃ (q νd ρd tσc ⊗ 1) = uλ ⋄ q −νd tσc ⊗ 1 ∈ N′ (λ̃)λ̃ is fixed by ιN .
+Hence ιN (vc,µ̃ ) = vc,µ̃ , because vc,µ̃ = ρd ⋆ vc and ιS (ρd ) = ρd .
+   For any v ∈ N′ (λ̃)µ̃ there exists u ∈ U̇ and r ∈ R′c such that v = uvc,µ̃ · r,
+since Φe,d (U̇) ⋆ (q −νd ρd tσc ⊗ 1) ⊆ Φe,e (U̇) ⋆ (h ⊗ 1), by Claim 2.6. We want to
+prove that cµ̃ is compatible with the involutions ιN , ιM . By (5.1.1), (5.2.1) and the
+R′c -linearity of cµ̃ , we can forget r. We have cµ̃ (uvc,µ̃ ) = Φe,e (u) · mc . Namely, set
+t = Φe,e (u). Then aµ̃ (uvc,µ̃ ) = aµ̃ (t ⋆ (uµ ⋄ h ⊗ 1)) = aµ̃ (uµ ⋄ th ⊗ 1) = th = b(t · mc ).
+14                                  MICHELA VARAGNOLO
+
+      Using 5.1.1, 5.2.1, and Lemma 3.4(2) we get
+                           cµ̃ (ιN (uvc,µ̃ ))   =     cµ̃ (uvc,µ̃ )
+                                                =   Φe,e (u) · mc
+                                                = ιS (Φe,e (u)) · mc
+                                                =   Φe,e (u) · mc
+                                                = ιM (Φe,e (u) · mc )
+                                                = ιM (cµ̃ (uvc,µ̃ )).
+                                  ′
+      Hence any element in cµ̃ (BN,µ̃ ) is fixed by ιM . Claim 2 in 5.3 gives
+                                                    X
+                         cµ̃ (N′ (λ̃)µ̃ ∩ Lc,≤ ) ⊆       Q[q −1 ]A.
+                                                      A∈Ac
+                          ′
+Thus, by Lemma 5.1, cµ̃ (BN,µ̃ ) ⊆ BM . We are done since cµ̃ is invertible .                 ⊓
+                                                                                              ⊔
+Remarks.
+  (1) As a corollary of Theorem 5.5 and [L5, 15.13], the set B±     Be in [L5, 5.11] is a
+      signed basis of the K-theory of the Springer fiber.
+  (2) Even in the A2 case the two orders are not comparable via dµ̃ . Fix d = 3, p >
+      3, c = (13 ), and µ = 3ε1 + 2ε2 + ε3 . Then dµ̃ (A′+ ) = uµ , dµ̃ (A′+ · w) = uµ·w ,
+      for any w ∈ Wf .
+          - If w = s2 , we have that A′+ · w < A′+ , but uµ 6<c uµ·w .
+          - If w = sθ∨ τ−α1 −2α2 , we have uµ <c uµ·w but A′+ 6< A′+ · w, since A′+ · w
+      is not in the Weyl chamber.
+
+
+
+                                          References
+[B]   Beck, J., Braid group action and quantum affine algebras, Comm. Math. Phys. 165 (1994),
+      555-568.
+[K1] Kashiwara, M., Crystal bases of the modified quantized enveloping algebra, Duke Math. J.
+      73 (1994), 383-413.
+[K2] Kashiwara, M., On level zero representations of quantized affine algebras., Duke Math. J.
+      112 (2002), 117-175.
+[L1]  Lusztig, G., Hecke algebras and Jantzen’s generic decomposition patterns, Adv. in Math.
+      37 (1980), 121-164.
+[L2]  Lusztig, G., Introduction to quantum groups, Birkhäuser, Boston-Basel-Berlin, 1994.
+[L3]  Lusztig, G., Periodic W-graphs, Represent. Theory 1 (1997), 207-279.
+[L4]  Lusztig, G., Bases in equivariant K-theory, Represent. Theory 2 (1998), 298-369.
+[L5]  Lusztig, G., Bases in equivariant K-theory, II, Represent. Theory 3 (1999), 281-353.
+[L6]  Lusztig, G., Aperiodicity in quantum affine gln , Asian J. Math. 3 (1999), 147-177.
+[N]   Nakajima, H., Extremal weight modules of quantum affine algebras, math.QA/0204183.
+[SV] Schiffmann, O., Vasserot, E., Geometric construction of the global base of quantum modi-
+                      cn , Thansform. Groups 5 (2000), 351-360.
+      fied algebra of gl
+[VV1] Varagnolo, M., Vasserot, E., Schur duality in the toroidal setting, Commun. Math. Phys.
+      182 (1996), 469-484.
+[VV2] Varagnolo, M., Vasserot, E., On the decomposition matrices of the quantized Schur algebra,
+      Duke Math. J. 100 (1999), 267-297.
+[VV3] Varagnolo, M., Vasserot, E., Canonical bases and quiver varieties, Represent. Theory 7
+      (2003), 227-258.
+
+  D épartement de Mathématique, Université de Cergy-Pontoise, 2 av. A. Chauvin,
+BP 222, 95302 Cergy-Pontoise cedex, France
+  E-mail address: michela.varagnolo@math.u-cergy.fr
+

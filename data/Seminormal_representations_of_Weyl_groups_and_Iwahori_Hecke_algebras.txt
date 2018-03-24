@@ -1,0 +1,1909 @@
+        Seminormal representations of Weyl groups
+               and Iwahori-Hecke algebras
+                               Arun Ram*
+                       Department of Mathematics
+                          University of Sydney
+                          NSW 2006 Australia
+
+                                Abstract
+     The purpose of this paper is to describe a general procedure for com-
+puting analogues of Young's seminormal representations of the symmetric
+groups. The method is to generalize the Jucys-Murphy elements in the group
+algebras of the symmetric groups to arbitrary Weyl groups and Iwahori-Hecke
+algebras. The combinatorics of these elements allows one to compute irre-
+ducible representations explicitly and often very easily. In this paper we
+do these computations for Weyl groups and Iwahori-Hecke algebras of types
+An, Bn, Dn, G2 . Although these computations are in reach for types F4,
+E6, and E7, we shall, in view of the length of the current paper, postpone
+this to another work.
+
+                            0. Introduction
+    This paper is an attempt to simplify, unify, review, and expand the
+theory of seminormal representations of the symmetric groups. It is my
+hope that the material in this paper will be clear enough and general enough
+to dispel some of the mystique of this subject. I would suggest that the
+reader begin with section 3, the symmetric group case, and go back and pick
+up the generalities from sections 1 and 2 as they are needed. This will make
+  * Research supported in part by a National Science Foundation grant
+DMS-9300523 at the University of Wisconsin.
+    1991 Mathematics Subject Classication. Primary 20F55, 20C15 Sec-
+ondary 20C30, 20G05.
+    Key words: Weyl groups, Hecke algebras, representations.
+2                                                                  Arun Ram
+the motivation for the material in the earlier sections much more clear and
+the further examples in the later sections very easy.
+     In such a subject, where the credit for the discoveries has been tradi-
+tionally complicated and mixed up, it is dicult to claim credit for much
+of anything. I believe that my general approach to seminormal representa-
+tions of Weyl groups and Iwahori-Hecke algebras given in sections 1 and 2
+of this paper is new, at least nobody explained it to me before. If this was
+the structure motivating the work of Hoefsmit [H], then he certainly didn't
+give any hint of it, he produced the seminormal representations out of thin
+air and then proved that they were correct. I believe that my realization
+that the Jucys-Murphy elements are coming from the very natural central
+elements in (2.1) and Proposition (2.4) is new. I also think that before this
+paper nobody has realized that there is a simple concrete connection (Propo-
+sition (2.8)) between Jucys-Murphy type elements in Iwahori-Hecke algebras
+and Jucys-Murphy elements in group algebras of Weyl groups (even for the
+special cases). I know that the analogues of the Jucys-Murphy elements in
+Weyl groups of types B and D will be new to some of the experts and known
+to others. These Jucys-Murphy elements for types B and D are not new,
+similar elements appear in the paper of Cherednik [Ch], but I was not able
+to recognize them there until they were pointed out to me by M.L. Nazarov.
+I extend my thanks to him for this. Some people were asking me for Jucys-
+Murphy elements in type G2 as late as June of 1995. In July 1995 I was
+told that it was unknown how to quantize the elements of Cherednik, i.e.
+nd analogues of them in the Iwahori-Hecke algebras of types B and D. Of
+course, this has been done already in 1974, by Hoefsmit.
+     The idea behind my approach to seminormal representations is as old
+as representation theory, it is the same method that gives us Gelfand-Tsetlin
+bases, and that is often used to nd the representations of centralizer algebras
+and operator algebras.
+     I would also like to point out that there is a theory of seminormal rep-
+resentations and Jucys-Murphy elements for centralizer algebras as well. In
+the case of the Brauer centralizer algebra the analogues of the Jucys-Murphy
+elements are due to M.L. Nazarov [Na], and in the case of the Birman-Wenzl
+algebra to N. Reshetikhin [Re] and R. Leduc and the author [LR]. In the
+theory of centralizer algebras the Jucys-Murphy elements \come from" the
+Casimir element of the centralizing Lie algebra or quantum group.
+The mystique
+    Unfortunately, the theory of seminormal representations of the sym-
+metric group is a theory which, over the years, has developed quite a bit
+Seminormal representations                                                   3
+of mystique. I suppose that this began with the fact that Alfred Young's
+original work was hard to read and because he was somewhat \in the wrong
+place at the right time" in that his work was competing with the work of
+Frobenius. Today there are very few people that have carefully read Young's
+work and even those people complain about the writing, the notation, and
+the general mysteriousness. The second major complicating factor was that
+Hoefsmit's thesis was never published. The result of this was that several
+people rediscovered parts of his work and giving credit for who did what
+when became very dicult.
+     Jucys, and later Murphy, introduced some very special elements that
+had the chance of making everything in theory of seminormal representations
+much more simple and clear. This was not to be. The original work of
+Jucys ([Ju1-3] 1966, 1971, 1974) was published mostly in Lithuanian physics
+journals and was not read by many in the western mathematical community.
+Hoefsmit ([H] 1974), unknowingly, had analogues of these elements in the
+Iwahori-Hecke algebras of type B but his thesis was never published and these
+elements remained largely unknown. Only, when the work of Murphy ([M1-
+2] 1981, 1983) appeared did these elements begin to receive wider attention.
+Somehow though, the mechanism of seminormal representations and Jucys-
+Murphy elements still seemed complex and specic to the symmetric group.
+     After this, people began to try to generalize this picture to other types.
+Cherednik [Ch] gave analogues of the Jucys-Murphy elements for the Weyl
+groups of types B and D, but his paper was read by almost noone in the
+seminormal representations camp since his paper was written from the point
+of view of constructing monodromy representations. In the period 1985-1995,
+Dipper, James, and Murphy ([DJ1-3] 1986, 1987, 1992, [M1],[M4] 1992, 1995,
+[DJM] 1995)) have done a lot of work on representations of Iwahori-Hecke
+algebras and have produced analogues of the Jucys-Murphy elements for
+Iwahori-Hecke algebras of types A and B. Their version of these elements in
+type A was written in such a way that it was not clear to anybody that they
+were the same as the elements that were in Hoefsmit's thesis!
+History
+     Alfred Young [Y] wrote down several ways of producing irreducible rep-
+resentations and minimal idempotents in the group algebra of the symmetric
+group. This material seems to have been challenging to read from the be-
+ginning and it is my impression that today there only a few experts on what
+Young actually wrote. More recent updates of the theory of Young are given
+in the books by Rutherford [Ru] and James and Kerber [JK].
+     Although I have not read Young's work myself, it is generally accepted
+4                                                               Arun Ram
+that Young extended most parts of his work on the symmetric group to
+the cases of the Weyl groups of types B and D. Other treatments of the
+representation theory of these groups is in the literature but is sparse and
+scattered.
+     In the late 1960's, Jucys [Ju], and later in the early 1980's, Murphy
+[Mu] inserted a new and beautiful feature in this theory by writing down
+elements in the group algebra of the symmetric group, which, in Young's
+irreducible seminormal representations of the symmetric group, are always
+diagonal matrices. Even better, the diagonal entries of these matrices have
+an easy combinatorial description. They showed that Young's seminormal
+representations could be reconstructed from the knowledge of these special
+elements. Analogues of the Jucys-Murphy elements for Weyl groups of types
+B and D seem to be rst in the work of Cherednik [Ch].
+     In 1974, Hoefsmit [H] completed a fantastic Ph.D. thesis in which he
+wrote down irreducible seminormal representations for the Iwahori-Hecke
+algebras of types A, B, and D. In fact, Hoefsmit had, at least for the type B
+case, analogues of the Jucys-Murphy elements for Iwahori-Hecke algebras.
+     More recently, there have been new \Hecke algebras" which have been
+discovered by Ariki [Ar], Ariki-Koike [AK], and Broue-Malle [BM], which are
+similar to the Iwahori-Hecke algebras of types B and D. Ariki-Koike [AK]
+and Ariki [Ar] have shown that Hoefsmit's constructions can be extended
+to give seminormal representations of these algebras as well. Ariki, Koike,
+and Broue and Malle have given essentially the same analogues of the Jucys-
+Murphy elements as Hoefsmit had.
+Acknowledgements
+     I would like to thank especially Curtis Greene and Persi Diaconis for
+asking me questions, many helpful conversations and their encouragement of
+this work. R. Stanley and P. Diaconis tried to get me interested in analogues
+of Jucys-Murphy elements in Iwahori-Hecke algebras in 1992 and 1993. They
+had asked me at that time whether I knew analogues of these in any other
+cases outside of Iwahori-Hecke algebras of Type A and the symmetric group.
+I only really got excited about Jucys-Murphy elements after Curtis Greene
+explained the story to me in summer 1994. At that time it still seemed to
+us that analogues of these elements were unknown for Weyl groups of types
+B and D.
+     I would like to thank Rob Leduc for pushing and wanting to nd explicit
+representations of the Brauer and Birman-Wenzl algebras in early 1994. It
+was while we were doing this work [LR] that we rst saw analogues of Jucys-
+Murphy elements coming out of quantum groups. I would like to thank
+Seminormal representations                                                  5
+G. Benkart, L. Solomon, and A.N. Kirillov for their interest and for many
+conversations during which many parts of this work and this subject solidied
+for me. I would like to thank P. Orlik and H. Terao for introducing and
+explaining the work of Brieskorn-Saito and Deligne on braid groups.
+    I would like to thank National Science Foundation for continuing support
+of my work, rst with a posdoctoral fellowship and then under the grant
+DMS-9300523 at the University of Wisconsin. I would also like thank G.
+Lehrer for many interesting discussions and his hospitality and the Australian
+Research Council for support under a fellowship at University of Sydney
+where this paper was written.
+6                                                                     Arun Ram
+              1. What is a seminormal representation?
+    For convenience and simplicity we shall work over the eld C of complex
+numbers. Let f1g = G0  G1      Gn = G be a chain of nite groups.
+Let V  be an irreducible module for G. Upon restriction to the group Gn 1
+the module V  decomposes as a direct sum
+                             V 
+                                = V       V k
+                                        1
+
+
+
+
+of irreducible modules for Gn 1. Similarly each of these summands decom-
+poses into irreducible on restriction to Gn 2, and so on.
+     A seminormal basis of V  is a basis B = fvL g of V  that explicitly
+realizes these decompositions, i.e. there is a partition of B into subsets
+B ; : : : ; Bk such that if V i = C -span(Bi ) then
+    1
+
+
+
+
+                             V  = V       V k
+                                        1
+
+
+
+
+as Gn 1 modules (note that here there is an = sign rather than only         =).
+Further, we require that each of the subsets Bi partitions into subsets which
+realize the decomposition upon restricting to Gn 2, and so on all the way
+down the chain. Thus, to specify a seminormal basis one must give, not only
+the basis of V  but also the series of partitions. The resulting representation
+                     : G ! Md (C );           d = dim(V );
+of G which is specied by V  and the basis B is a seminormal representation
+of G with respect to the chain G0      Gn = G.
+       The concepts of seminormal bases and seminormal representations apply
+equally well to any chain of split semisimple algebras C   = H0  H1 
+   Hn = H .
+The graph
+    Let G^ i be an index set for the irreducible representations of Gi. Dene
+nonnegative integers c,  2 G^ i 1,  2 G^ i , by the restriction rule from Gi
+to Gi 1 ,                     ?          M  
+                          V yGGii 1
+                                     =           c V ;
+                                            2G^ i   1
+
+
+In other words, upon restriction from Gi to Gi 1 the irreducible module V  ,
+ 2 G^ i 1 , appears in the irreducible Gi -module V ,  2 G^ i , with multiplicity
+c.
+Seminormal representations                                                   7
+    Dene a graph with
+     vertices labeled by the elements of the sets G^ i , and such that
+                                                                          (1:1)
+      2 G^ i 1 and  2 G^ i are connected by c edges.
+The graph encodes the restriction rules for the chain f1g = G0     
+Gn = G. We shall assume that the unique element in G^ 0 is denoted ;.
+    Let  2 G^r and  2 G^s where r < s. A path from  to  is a sequence
+of s r edges connecting  to ,
+               r (r+1)er!    es!(s) = ); such that (i) 2 G
+L = ( = (r) e!          +1        1
+                                                                ^ i ; r  i  s:
+We distinguish paths which \travel" from (i) to (i+1) along dierent edges.
+Make the following notations:
+         L( ! ) is the set of paths from  to ;
+         L() is the set of paths from ; to ;
+         L( ! s) is the set of paths from  to any element  2 G^s ;
+         L(m) is the set of paths from ; to any element  2 G^ m ;
+         L = L(n), where n is the total number of groups in the chain
+         G0      Gn;
+         
+() is the set of pairs (S; T ) of paths such that S; T 2 L();
+         
+(m) is the set of pairs (S; T ) of paths such that S; T 2 L() for
+         some  2 G^ m .
+In general, by \a path in " we shall mean an element L = ((0) !    !
+(n)) 2 L.
+Path algebras
+    For each 0  m  n dene a path algebra Pm over              C   with basis
+EST ; (S; T ) 2 
+(m) and multiplication given by
+                               EST EPQ = TP ESQ :                        (1:2)
+Note that P0 ' C . Each of the algebras Pm is isomorphic to a direct sum of
+matrix algebras                    M
+                           Pm '        Md (C );
+                                     2P^m
+8                                                                     Arun Ram
+where Md(C ) denotes the algebra of d  d matrices with entries from C and
+d = Card(L()). For each  2 G^ m dene an Pm -module by dening
+              V  = C -spanfvL j L 2 L()g and EST vL = TLvS ;            (1:3)
+for all paths S; T; L 2 L(). The Am -modules V ,  2 G^ m , realize all of the
+irreducible Pm-modules.
+       Given a path T = ( !    ! ) from  to  and a path S = ( !
+   !  ) from  to  dene
+                      T  S = ( !    !  !    !  )
+to be the concatenation of the two paths. Let r < s and for each  2 G^ r and
+each pair (P; Q) 2 
+() view the element EPQ 2 Pr as an element of Ps by
+the formula                        X
+                        EPQ =             EP T;QT :                    (1:4)
+                                   T 2L(!s)
+This denes, in particular, an inclusion of Pm 1 into Pm for every m > 0.
+Let  2 G^ m and let V  be the irreducible representation of Pm corresponding
+to  as given in (1.3). Then the restriction of V  to Pm 1 decomposes as
+                               ?           M
+                            V yPPmm '             V ;
+                                            e!
+                                      1
+
+
+
+
+where sum is over all edges  e! that connect an element  2 G^ m 1 to the
+ 2 G^m . The basis vectors vL form a seminormal basis of the Pm -module
+V .
+Constructing seminormal representations of C G
+     As above, let
+                          f1g = G0      Gn = G                    (1:5)
+be a chain of nite groups, let be the graph which describes the re-
+strictions rules for the inclusions in (1.5) and let Pm , 0  m  n denote
+the corresponding path algebras. By construction, the path algebras Pn
+have natural seminormal representations (1.3) with respect to the inclusions
+P0  P1      Pn. Thus, we should try to nd an isomorphism
+             :    Pn ' C G               such that (Pi ) = C Gi ;        (1:6)
+                  EML 7! eML
+Seminormal representations                                                            9
+for all 0  i  n. Given such an isomorphism, irreducible seminormal
+representations are given by the modules V  in (1.3) where the action of an
+element g 2 C G is given by
+                                    gvL = (g)vL ;                                 (1:7)
+for all g 2 G.
+     Suppose that, for each 1  k  n,
+                                Zk = fzk;j g1jrk                                 (1:8)
+is a set of central elements in the group algebra C Gk .
+Lemma 1.9. Let zk;j be a central element in CkGk . Let L = ( !    !     (0)
+
+(n)) 2 L(n) be a path in the graph and let  be the irreducible charac-
+                                                      ( )
+
+
+ter of Gk indexed by the element (k) 2 G^ k . For any choice of isomorphism
+ between the path algebra Pn and C G as in (1.6),
+
+        zk;j vL = ck;j ( k )vL ;
+                         ( )
+                                         where    ck;j ( k ) =
+                                                            ( )    k (zk;j ) :
+                                                                     ( )
+
+
+
+                                                                    k (1)
+                                                                      ( )
+
+
+
+
+Proof. By Schur's lemma any central element zk;j 2 C Gk must act by a scalar
+multiple of the identity in every irreducible representation of Gk . Specically,
+zk;j acts by the scalar ck;j () in the irreducible Gk -module indexed by .
+Each of the basis vectors vL , L = ((0) !    ! (n)) is in an irreducible
+Pk -module which is isomorphic to the irreducible Pk -module V ( k ) indexed
+                                                                            ( )
+
+
+by (k) 2 G^k . It follows that, for any choice of the isomorphism : C G ! Pn
+in (1.6), we must have that
+                    zk;j vL = (zk;j )vL = ck;j ((k))vL :
+                                     S
+Remark 1.10. The set Z = nk=0 Zk is a set of elements of the group
+algebra C G that all commute with each other. They generate a commutative
+subalgebra T of C G. The subalgebra T acts diagonally on the basis vL , i.e.
+for each t 2 T and each L 2 L,
+                                    tvL = c(t; L)vL
+for some constant c(t; L) 2 C .
+10                                                                          Arun Ram
+   For each  2 G^ k let ck () be the ordered rk -tuple ck () = (c(zk;j ; ))1jrk .
+Dene the weight of a path L = ((0); : : : ; (n)) in to be the n-tuple
+                       wt(L) = c0((0));    ; cn((n)) :
+                                                                               (1:11)
+The following proposition shows that in many cases the isomorphism  in
+(1.6) can be determined more or less explicitly.
+Proposition 1.12. The choice of an isomorphism  as in (1.6) is deter-
+mined by the choice of elements
+                               (EML ) = eML 2 C G
+for each pair of paths L; M in . Assume that each path in is distinguished
+by its weight, i.e., if L and M are paths in and L 6= M , then wt(L) 6=
+wt(M ).
+      (a) For each path L in the element eLL is determined uniquely by the
+          elements zk;j 2 Zk and the constants ck;j (),  2 G^ k , 0  k  n.
+      (b) If M and L are paths in such that M 6= L then eML is determined
+          up to a constant by the elements zk;j 2 Zk and the constants ck;j (),
+           2 G^ k , 0  k  n.
+Proof. Let L = ((0; : : : ; (n)) be a path in . For each 0  k  n and each
+1  j  rk , let
+                                       Y                zk;j ck;j ()
+               pk;j ((k)) =
+                               ck;j ()6=ck;j ( k ) ck;j ( ) ck;j ()
+                                                            (k )
+                                               ( )
+
+
+
+
+where the product is over all ck;j (),  2 G^ k such that ck;j () 6= ck;j ((k)).
+There may be elements  2 G^ k such that  6= (k) but such that ck;j () =
+ck;j ((k)). These  2 G^k are not included in the product. It follows from
+Lemma (1.9) that if M = ((0) !    ! (n)) is a path in then, for any
+isomorphism  as in (1.6),
+                                   
+             (pk;j ( k ))vM =
+                      ( )              vM ; if ck;j ((k)) = ck;j ((k)),
+                                       0; otherwise.
+Dene                                   Y
+                                eLL =         pk;j ((k)):
+                                        k;j
+Seminormal representations                                                  11
+If M = ((0) !    ! (n)) is a path in then
+                      (eLL )vM = LM vM = ELL vM ;
+since, if L 6= M then wt(L) 6= wt(M ). The result follows since  is injective.
+     (b) Assume that M and L are paths in such that M 6= L. Let
+a 2 C G such that eMM aeLL 6= 0. Then eML must be a constant times the
+element eMM aeLL 2 C G. Since the elements eLL and eMM are completely
+determined by the elements zk;j and the constants ck;j () it follows that the
+elements eML are determined (up to a constant) by them.
+
+Remark 1.13. Suppose that
+          :   Pn ! C G          and      0 : Pn ! C G
+              EML 7! eML                       EML 7! e0ML
+are two isomorphisms between the path algebra Pn and C G. Let ML 2 C
+be such that eML = MLe0ML . The constants ML must satisfy the relations
+                MLLM = 1;        and      ML LN = MN ;
+for all choices of paths M; L; N 2 L. These relations follow from the relations
+eML ePS = LP eMS in (1.2).
+Example 1.14. Suppose that f1g = G0      Gn = G is a chain of
+nite groups such that, for each 1  i  n, the restriction rules describing
+the decomposition of irreducible Gi -representations into irreducible Gi 1-
+representations are multiplicity free. For each 1  i  n, let Zi be the set of
+sums of elements in each conjugacy class of Gi. Clearly Zi is a set of central
+elements in C Gi . This is an example of a situation in which the paths in the
+graph are distinguished by their weights.
+
+           2. Weyl groups and Iwahori-Hecke algebras
+    The branching rules for the chains of Weyl groups
+                        S1  S2      Sn;
+                        WB2  WB3      WBn;
+                        WB2  WB3  WF4;
+                        WD5  WE6  WE7;
+12                                                                                Arun Ram
+are all multiplicity free. Thus, the Weyl groups Sn, WBn, WF4 , WE6,
+WE7, all fall into the situation of example (1.14) and one can use the sets Zk
+consisting of all conjugacy class sums and Proposition (1.12) to compute all
+the irreducible representations of these Weyl groups and their corresponding
+Iwahori-Hecke algebras (In the WE7  WE8 case the branching rule has
+multiplicities  2 and could be treated in a similar fashion to Example 1.14
+except that one would have to also use some additional elements from the
+centralizer of the WE7 action on irreducible WE8 representations.) We
+shall show in the remainder of this paper that one can use much smaller sets
+for the Zk and obtain the same results in a quicker way. We shall obtain
+\seminormal" representations of the Weyl groups and Iwahori-Hecke algebras
+of type Dn by using the representation theory for type Bn, see section 5.
+Weyl groups
+   Let ; = R0      Rn = R be a chain of root systems and let
+                              f1g = W      Wn
+                                           0
+
+
+be the corresponding chain of Weyl groups. Let R+k denote the set of positive
+roots in the root system Rk and, for each  2 R+k let s denote the element
+of Wk which is the reection in the hyperplane perpendicular to .
+  (2.1a) If all roots in Rk are the same length then the set of elements
+          fs j  2 R+k g, is a conjugacy class in Wk . It follows that
+                                                    X
+                                           zk;` =           s
+                                                    2R+k
+
+         is a central element of C Wk . (The index ` here simply denotes that
+         this is a sum over the \long" roots in R+k .)
+  (2.1b) If the roots in Rk are not all the same length then there are two
+         lengths of roots. Let R+k;s be the set of short positive roots and let
+         R+k;` be the set of long positive roots in Rk . The sets fs j  2 R+k;sg
+         and fs j  2 R+k;`g are conjugacy classes in W and the elements
+                               X                                       X
+                     zk;s =             s ;    and          zk;` =             s ;
+                              2R+k;s                                 2R+k;`
+
+         are central elements in C Wk .
+Seminormal representations                                                  13
+  (2.1c) If the longest element wk;0 in the Weyl group Wk acts as 1 in the
+         reection representation of Wk then the element
+                                          zk;0 = wk;0
+         is central in Wk .
+For each 0  k  n, let Zk denote the set of central elements in C Wk
+which are determined by (2.1). Depending on which cases apply, the set Zk
+contains either 1, 2, or 3 elements. In view of Lemma (1.9), we dene, for
+each irreducible character  of the Weyl group Wk and each zk;j 2 Zk , a
+constant
+                              ck;j () = (z(1)
+                                              k;j ) :                (2:2)
+We shall use the central elements in the sets Zk (with some slight modication
+in the Dn case) to compute seminormal representations for the Weyl groups
+of types An 1 , Bn, Dn, G2.
+Remark 2.3. In my view, the central elements in (2.1) are the appropri-
+ate generalization of Jucys-Murphy elements to arbitrary Weyl groups (or
+Coxeter groups). Remarks (3.5) and (4.6) illustrate this idea in special cases.
+
+Iwahori-Hecke algebras
+     Let  be a Dynkin diagram of a nite Weyl group, let R be the cor-
+responding root system, and let W be the corresponding Weyl group. Let
+fi j i 2 g be the set of simple roots in R, indexed by the nodes in the
+Dynkin diagram . The Iwahori-Hecke algebra H (p2 ; q2 ) corresponding to
+the Weyl group W is the algebra over C (p; q ) generated by elements Ti ,
+i 2 , and relations
+     (a) Ti Tj Ti Tj    = Tj TiTj Ti   ;
+         | {z } | {z }
+          mij   factors   mij   factors
+
+          where mij is the order of the element si sj in the Weyl group W ,
+                 (p p 1 )T + 1; if  is a short root,
+      (b) Ti = (q q 1)T i + 1; if i is a long root.
+            2
+                            i           i
+If all roots in R are the same length then we make the convention, for the
+purposes of the denition of the Iwahori-Hecke algebra, that all roots in R
+are long and we simply dene the Iwahori-Hecke algebra as an algebra H (q2 )
+over C (q).
+14                                                               Arun Ram
+    It is a standard fact ([Bou] Chap. IV x2 Ex. 23-24 or [CR]) that the
+Iwahori-Hecke algebra H (q2 ) corresponding to a Weyl group W is split-
+semisimple and its irreducible representations can be indexed by the same set
+W^ that indexes the irreducible representations of W . Following the standard
+notation, if w 2 W then Tw = Ti    Tip where w = si    sip is a reduced
+expression for w 2 W . The element Tw 2 H is well dened and does not
+                                           1                 1
+
+
+
+depend on the choice of the reduced expression for w.
+     Let ; = 0  1      n =  be a chain of Dynkin diagrams
+of nite Weyl groups. These Dynkin diagrams correspond to a chain of
+root systems R0  R1      Rn = R and to a chain of Weyl groups
+W0  W1      Wn = W such that, for each 1  i  n, the group Wi 1 is
+a parabolic subgroup of Wi . Let
+                          C       = H      Hn = H
+                                       0
+
+
+be the corresponding chain of Iwahori-Hecke algebras.
+Proposition 2.4. Let Hk be the Iwahori-Hecke algebra corresponding to
+a nite Weyl group Wk . Let wk;0 denote the longest element in the Weyl
+group Wk .
+    (a) The element Tw2k; is central in Hk (p2 ; q2). If  is an irreducible
+                           0
+representation of Hk (p2 ; q2) corresponding to the irreducible character  of
+the Weyl group Wk , then
+                       (Tw2k; ) = p2ck;s ()q2ck;` ()Id;
+                                   0
+
+
+where ck;s() and ck;`() are the constants given in (2.2).
+     (b) If wk;0 = 1 in the reection representation of Wk , then Twk;       0
+is a central element in Hk (p2 ; q2). If  is an irreducible representation of
+Hk (p2 ; q2) corresponding to the irreducible character  of the Weyl group
+Wk , then
+                      (Twk; ) = ck;0()pck;s ()qck;` ()Id;
+                              0
+
+
+where ck;s(), ck;`(), and ck;0() are the constants given in (2.2).
+Proof. (a) By a theorem of Breiskorn-Saito [BS] and Deligne [De], the el-
+ement Tw2k; is central in the generalized braid group. Thus Tw2k; is cen-
+             0                                                       0
+tral in Hk (p2 ; q2) and it follows that Tw2k; acts by a constant in every ir-
+reducible representation. The constant is computed by writing Twk; as a
+                                                   0
+
+                                                                         0
+product of generators and taking the determinant of both sides of the equa-
+tion Tw2k; = (Ti    TiN )2 = pc qc Id. It remains only to note that the
+         0       1
+                                           1   2
+Seminormal representations                                                  15
+number of short (resp. long) roots in Rk is the same as the number of fac-
+tors Tij in the product Twk; = Ti    TiN such that ij is a short (resp.
+                             0       1
+long) root in Rk .
+     (b) The result of Brieskorn-Saito and Deligne says that Twk; is central in
+                                                                  0
+the braid group when wk;0 = 1 in the reection representation of the Weyl
+group Wk . It follows that Twk; is central in Hk (p2 ; q2). The eigenvalues
+                                 0
+of Twk; must be square roots of the eigenvalues of Tw2k; and they must
+       0
+specialize to the eigenvalues of wk;0 when p = q = 1. The result now follows
+                                                            0
+
+
+from (a), (2.1)(c), and the denition of the constant ck;0().
+
+
+Remark 2.5. The above proposition is somewhat folklore in the subject of
+Iwahori-Hecke algebras. The argument given here appears in Propositions
+26 and 27 of Kilmoyer's thesis [Ki] and also appears in complete detail in the
+recent paper of Geck and Michel [GM].
+     Let wk;0 be the longest element in the Weyl group Wk and dene Zk =
+fzk g where
+
+  zk = Twk; ;
+            0     if wk;0 = 1 in the reection representation of Wi , and
+  zk = Tw2k; ;
+            0
+                  otherwise.
+                                                                       (2:6)
+We shall use these central elements (with some slight modication in the Dn
+case) to compute seminormal representations for the Iwahori-Hecke algebras
+of types An 1 , Bn, Dn, G2. The cases F4, E6 and E7 will be treated in a
+future work.
+Remark 2.7. In my view, the central elements in Proposition (2.4) are
+the analogues of the Jucys-Murphy elements for the Iwahori-Hecke algebras.
+Remarks (3.16) and (4.22) illustrate this idea in special cases.
+    The following proposition describes concretely the connection between
+the central elements of Hk (p2 ; q2 ) in Proposition (2.4) and the central ele-
+ments in C Wk given in (2.1).
+
+Proposition 2.8. If x 2 Hk (p ; q ) use the notation [x]q to denote the
+                                 2   2
+                                                             =1
+16                                                                                                     Arun Ram
+value of x when q is specialized to 1. Then
+                 ([Tw ]p=1)2 1            X
+                       k;            0
+                                         =    s = zk;s ;
+                       q q 1          q=1 2R                                   +
+                                                                                k;s
+                       ([Tw                                 1              X
+                                 k;0 ]q=1 )
+                                                 2
+
+                                 p p             1
+                                                                        =             s = zk;`;
+                                                                p=1         2R+k;`
+                             [Twk; ]p=q=1 = wk;0 = zk;0; 0
+
+
+where zk;s, zk;`, and zk;0 are the central elements of C Wk given in (2.1).
+Proof. Let us assume, for convenience, that all roots in Rk are the same
+length. In this case we have only one indeterminate q and we are working in
+the Iwahori-Hecke algebra Hk (q2 ). The proof is similar in the general case.
+     If Ti    TiN is a reduced expression for Twk; then so is TiN    Ti . We
+             1                                                                        0                    1
+can expand (Twk; )2 by using the relation Ti2 = (q q 1)Ti + 1 to obtain
+                      0
+
+
+     Tw2k; = Ti    TiN TiN    Ti
+         0       1                                1
+
+                                     X
+                                     N
+             = 1 + (q q )        1
+                                                Ti    Tij Tij Tij    Ti
+                                                     1              1           1         1
+                                         j =1
+
+                                                                        + terms divisible by (q q 1 )2.
+
+It follows that
+                     "T   2
+                                     1
+                                         #               X
+                                                         N
+                          wk;0
+                      q q        1
+                                                     =            si    sij sij sij    si :
+                                                                    1           1         1        1
+
+                                           q=1           j =1
+The result now follows from [Bou] Chapt. VI x1, Cor 2.
+Remark 2.9. In Proposition (2.8) we have been carefree about the process
+of specializing p and q to 1. Of course this really should be done properly.
+One must dene a Z-form of the Iwahori-Hecke algebra Hk (p2 ; q2) as an al-
+gebra over A = Z[q; q 1; p; p 1 ] and only specialize, by an appropriate tensor
+product Z
+A Hk (p2; q2 ), elements x which are in the Z-form of Hk (p2 ; q2 ).
+This is standard and it is clear that the elements (Tw2k; 1)=(q q 1) in                       0
+(the proof of) Proposition (2.8) are elements in the Z-form of Hk (q2 ).
+Seminormal representations                                                      17
+                3. Type An 1 , the symmetric group Sn
+
+The Weyl group
+    The Weyl group of the root system An 1 is the symmetric group Sn of
+permutations of f1; 2 : : : ; ng. The simple transpositions
+                         si = (i 1; i);            2  i  n;
+generate Sn and these elements satisfy the relations
+                        si sj = sj si ; ji j j > 1;
+                   si si+1 si = si+1si si+1 ; 2  i  n 1;                   (3:1)
+                           s2i = 1; 2  i  n:
+
+Partitions and Standard Tableaux
+     As in [Mac], we shall identify each partition  with its Ferrers diagram
+and say that a box b in  is in position (i; j ) in  if b is in row i and column j
+of . The rows and columns of  are labeled in the same way as for matrices.
+We shall write jj = n if  is a partition with n boxes. We shall often refer
+to partitions as shapes.
+     A standard tableau L of shape  is a lling of the Ferrers diagram of
+ with the numbers 1; 2; : : : ; n such that the numbers are increasing left to
+right across the rows of L and increasing down the columns of L. For any
+shape , let L() denote the set of standard tableaux of shape  and, for
+each standard tableau L, let L(k) denote the box containing k in L. For
+example,
+                                       1   2   4
+                                       3   5   6
+                                       7   8
+
+                                  Figure (3.2)
+is a standard tableau of shape (332).
+The chain A0  A1      An     1
+18                                                              Arun Ram
+     The chain of root systems A0  A1      An 1 corresponds to the
+chain of Weyl groups
+                             S1  S2      Sn;
+where Sk denotes the symmetric group of permutations of 1; 2; : : : ; k. The
+irreducible representations of the symmetric group Sk are indexed by the
+partitions  such that jj = k. The restriction rule from Sk to Sk 1 is given
+by                             ?         M 
+                            V ySSkk 
+                                   1
+                                     =         V ;
+                                         2
+where the sum is over all partitions  of k 1 that are gotten from  by
+removing one box. For the chain S1  S2      Sn, the graph dened
+in (1.1) is the Young lattice. For n = 5, is as in Figure (3.3). A path
+((0) !    ! (n)) in is naturally identied with the standard tableau
+L of shape (n) which has i in the box which is added to obtain (i) from
+(i 1).
+
+
+
+
+                          ;
+Seminormal representations                                                                    19
+of the Weyl group Sk does not act by 1 in the reection representation.
+For each 1  k  n, the set Zk contains a single element zk;`, which is the
+central element of C Sk given by
+                                X                     X
+                      zk;` =               s =              (i; j ) :                   (3:4)
+                               2A+k   1
+                                                  1i<j k
+(The ` here is spurious, as in (2.1a) it only indicates the fact that in the
+root system Ak 1 all roots are long). Since the elements zk;`, 1  k  n all
+commute with each other in C Sn , it follows that the elements
+                                           X
+                                           k
+              mk = zk;` zk      1;` =            (i 1; k);        2  k  n;             (3:5)
+                                           i=2
+all commute with each other in C Sn .
+Remark 3.6. The elements mk , 2  k  n, are the elements dened by
+Jucys [Ju1-3] and Murphy [Mu1-3].
+
+Weights
+    The content of a box b in a shape  is given by
+                ct(b) = j i;           if b is in position (i; j ) in .                 (3:7)
+It follows immediately from [Mac] I x7 Ex. 7 and [Mac] I x1 Ex.3 that, for
+each 1  k  n and for each partition  such that jj = k,
+                                                           X
+                     ck;`() =  (zk;` )= (1) =               ct(b);                  (3:8)
+                                                           b2
+where  denotes the character of the irreducible representation of the sym-
+metric group Sk labeled by the partition . Following (1.11), the weight of
+a standard tableau L = ((1) !    ! (n)), where j(k)j = k, is
+                      wt(L) = c1;`((1)); : : : ; cn;`((n)) :
+                                                                    
+Note that wt(L) is completely determined by the n-tuple
+                                                                           X
+                                                                            k
+   wft(L) = ct(L(1)); : : : ; ct(L(n)) ;              since ck;`((k) ) =         ct(L(i)):
+                                                                            i=1
+20                                                                    Arun Ram
+Proposition 3.9. Each standard tableau L = ( !    !  n ) is
+                                                           (1)              ( )
+
+determined uniquely by its weight.
+Proof. Two boxes b and b0 in a partition  have the same content only if they
+lie on the same diagonal. It follows easily that, if (i) is a partition, then each
+of the boxes b that can be added to (i) to get a new partition has a dierent
+content ct(b). Thus, the shape (i+1) in a standard tableau L is completely
+determined by the previous shape (i) and the content ct(b) of the added
+box b. It follows that a standard tableau L is completely determined wft(L)
+and therefore by its weight wt(L).
+     Proposition (1.12) and Proposition (3.9) together show that the semi-
+normal representations of Sn corresponding to the chain of groups f1g =
+S0      Sn are essentially determined by the elements zk;` in (3.4) and
+the constants ck;`() in (3.8). It follows that we should be able to determine
+seminormal representations of the group Sn from the elements mk and the
+constants ct(b). This is done in Theorems (3.12) and (3.14) below.
+Seminormal representations
+     Let P1  P2      Pn be the path algebras, dened in (1.2), which
+are associated to the diagram which describes the restriction rules for the
+chain S1      Sn. For each partition  of size n, let
+                        V  = C -spanfvL j L 2 L()g;                       (3:10)
+so that the vectors vL , indexed by standard tableaux L of shape , form a
+seminormal basis of the Pn -module V . It follows from Lemma (1.9), that
+for any choice of an isomorphism  between the path algebra Pn and C Sn
+such that (Pk ) = C Sk  C Sn for all 1  k  n, we have that
+                             zk;`vL = ck;`((k))vL ;
+if L = ((1) !    ! (n)). If mk is as in (3.5), then
+                              mk vL = ct(L(k))vL ;
+for a standard tableau L = ((1) !    ! (n)).
+     For each 2  k  n and each standard tableau L of size n, dene
+                     (sk )LL = ct(L(k)) 1ct(L(k 1))                  (3:11)
+Seminormal representations                                                  21
+     In the interests of space we shall not give the proof of the following
+theorems here. The proofs are essentially the same as the proofs which are
+given for Theorem (4.15) and Theorem (4.18).
+Theorem 3.12. (Young [Y]) Let  be a partition such that jj = n.
+Dene an action of each generator s2 ; : : : ; sn of the symmetric group Sn on
+V  by dening
+            si vL = (si )LL vL + (1 + (si )LL )vsi L; 2  i  n;         (3:13)
+where si L is the same standard tableau as L except that the positions of i
+and i 1 are switched in si L. If si L is not standard, then we dene vsi L = 0.
+This action extends to a well dened action of Sn on V  .
+Theorem 3.14. (Young [Y]) The Sn modules V  dened in Theorem
+(3.12), where  runs over all partitions such that jj = n, form a complete
+set of nonisomorphic irreducible modules for the symmetric group Sn and,
+for each , the basis fvL j L 2 L()g is a seminormal basis of the Sn-module
+V .
+Iwahori-Hecke algebras HAn (q )      1
+                                         2
+
+
+     Let q be an indeterminate. The Iwahori-Hecke algebra HAk 1 (q2 ) cor-
+responding to the root system Ak 1 is the associative algebra with 1 over
+the eld C (q) given by generators T2; T3 ; : : : ; Tk and relations
+                     Ti Tj = Tj Ti; ji j j > 1;
+                 TiTi+1 Ti = Ti+1TiTi+1 ; 2  i  k 1;                  (3:15)
+                       Ti2 = (q q 1)Ti + 1; 2  i  k:
+
+Analogues of Jucys-Murphy elements
+    For each 2  k  n, dene
+                        Mk = Tk    T3T2 T2T3    Tk :          (3:16)
+In type Ak 1 the longest element wk;0 of the group Sk does not act by 1
+in the reection representation. Following (2.4), we dene sets Zk = fzk g,
+2  k  n, where zk is the central element of HAk 1 (q2) given by
+                       zk = Tw2k; = Mk Mk 1    M2 :
+                                 0
+22                                                                               Arun Ram
+Since the elements zk , 2  k  n, all commute in HAn 1 (q2 ) it follows that
+the elements Mk , 2  k  n all commute with each other.
+Remark 3.17. Using the relation Ti2 = (q q 1 )Ti +1, an easy computation
+shows that
+                            Mk 1 = X    k
+                                          T(i 1;k);                    (3:18)
+                            q q 1             i=2
+where T(i 1;k) = Tk Tk 1    Ti+1Ti Ti+1    Tk . The elements in (3.18) are
+elements used by Dipper, James, and Murphy in their work on Iwahori-
+Hecke algebras of type A, see [DJ1-2], [M1], [M4]. It is clear that (3.18)
+gives a q-analogue of the Jucys-Murphy elements in (3.5).
+
+Seminormal representations
+      Let P1  P2      Pn be the path algebras (over the eld C (q) instead
+of C ), dened in (1.2), which are associated to the diagram which describes
+the restriction rules for the chain S1      Sn. For each partition  of size
+n, let
+                       V  = C (q) -spanfvL j L 2 L()g;                   (3:19)
+so that the vectors vL , indexed by standard tableaux L of shape , form a
+seminormal basis of the Pn-module V . It follows from Lemma (1.9), that for
+any choice of an isomorphism  between the path algebra Pn and HAn 1 (q2 )
+such that (Pk ) = HAk 1 (q2 )  HAn 1 (q2 ) for all 1  k  n, we have that
+                          zk vL = Tw2k; vL = qck;` ( k ) vL ;
+                                        0
+                                                        ( )
+
+
+
+
+if L = ((1)      (n)) and ck;`((k)) is as given in (3.8). Thus,
+     Mk vL = Tk    T3T2T2 T3    Tk vL = Tw2k; Twk2
+                                                    0          ;
+                                                              1 0
+                                                                    = q2ct(L(k))vL ;   (3:20)
+if L = ((1) !    ! (n)) is a standard tableau. For each 2  k  n and
+each standard tableau L of size n, dene
+
+         (Tk )LL =       q q     1
+                                            where CT(b) = q2ct(L(k));                  (3:21)
+                     1        Lk
+                          CT( (  1))
+                               Lk
+                           CT( ( ))
+
+
+In the interests of space we shall not give the proof of the following theorems
+here. The proofs are essentially the same as the proofs which are given for
+Theorem (4.26) and Theorem (4.28).
+Seminormal representations                                                  23
+Theorem 3.22. (Hoefsmit [H]) Let  be a partition such that jj = n.
+Dene an action of each generator T2; : : : ; Tn of the Iwahori-Hecke algebra
+HAn 1 (q2 ) on V  by dening
+          Ti vL = (Ti )LL vL + (q 1 + (Ti )LL )vsi L ;    2  i  n;
+where si L is the same standard tableau as L except that the positions of i
+and i 1 are switched in si L. If si L is not standard, then we dene vsi L = 0.
+This action extends to a well dened action of HAn 1 (q2 ) on V .
+Theorem 3.23. (Hoefsmit [H]) The HAn (q ) modules V  dened in
+                                                  1
+                                                      2
+
+Theorem (3.22), where  runs over all partitions such that jj = n, form
+a complete set of nonisomorphic irreducible modules for the Iwahori-Hecke
+algebra HAn 1 (q2) and, for each , the basis fvL j L 2 L()g is a seminormal
+basis of the HAn 1 (q2)-module V .
+24                                                                  Arun Ram
+                              4. Type Bn , n  2
+
+The Weyl group
+     The Weyl group WBn of type Bn is the group of signed permuta-
+tions of 1; 2; : : : ; n. More specically, WBn consists of all permutations
+ of f n; : : : ; 1; 1; : : : ; ng such that ( k) = (k) for all 1  k 
+n. We represent elements of WBn in cycle notation as permutations of
+f n; : : : ; 1; 1; : : : ; ng. The elements
+     s1 = (1; 1);      and        si = (i 1; i)( (i 1); i); 2  i  n;
+generate WBn and satisfy the relations
+                       si sj = sj si; ji j j > 1;
+                   sisi+1 si = si+1 sisi+1 ; 2  i  n 1;
+                                                                           (4:1)
+                  s1 s2s1 s2 = s2 s1 s2s1 ;
+                          s2i = 1; 2  i  n:
+
+Double Partitions and Standard Tableaux
+     A double partition of size n,  = (;  ), is an ordered pair of partitions
+ and  such that jj + j j = n. We shall often refer to double partitions as
+shapes. A standard tableau L = (L ; L ) of shape  = (;  ) is a lling of the
+Ferrers diagram of  with the numbers 1; 2; : : : ; n such that the numbers are
+increasing left to right across the rows of L and L and increasing down the
+columns of L and L . For any shape , let L() denote the set of standard
+tableaux of shape  and, for each standard tableau L, let L(k) denote the
+box containing k in L. For example,
+                                              2   3   4
+                                              7 11 13
+                                              8 12
+
+                          1   5   6 10
+                          9
+                         14
+
+                                   Figure (4.2)
+Seminormal representations                                                  25
+is a standard tableau of shape ((332); (411)).
+The chain B0  B1      Bn
+      By convention we let B0 = ; be the empty root system and B1 = A1 .
+The chain of root systems B0  B1      Bn corresponds to the chain of
+Weyl groups
+                     f1g  WB1  WB2      WBn;                   (4:3)
+where WBk denotes the hyperoctahedral group of signed permutations of
+1; 2; : : : ; k.
+      The irreducible representations of the symmetric group WBk are in-
+dexed by double partitions  = (;  ) such that jj = jj + j j = k. The
+restriction rule from WBk to WBk 1 is given by
+                            ? k           M
+                     V (;)yWB
+                             WBk = 1
+                                                       V (;)
+                                       (; )2(; )
+where the sum is over all double partitions (;  ) of size k 1 that are gotten
+from (;  ) by removing one box. If we dene the graph as in (1.1) for the
+chain in (4.3), then a path ((0) !    ! (n)) in is naturally identied
+with the standard tableau L of shape (n) which has i in the box which
+is added to obtain (i) from (i 1). The graph for the case of the chain
+f1g  WB1  WB2  WB3, is displayed in Figure (4.4).
+            26                                                                                             Arun Ram
+
+                                                       (ο , ο)
+
+
+                                      (ο , )                               ( , ο)
+
+
+
+
+           (ο ,      )           (ο , )                ( , )                   ( , ο)               (    ,ο )
+
+
+
+
+(ο ,   )      (ο ,       )   (ο , )    ( , ) ( , ) ( , ) (                      , ) ( , ο)      (       ,ο )    (   ,ο )
+                                                          Figure (4.4)
+
+            Analogues of Jucys-Murphy elements
+                 Following (2.1), let us compute the sets Zk for this case. In the root
+            system Bk , k  2, we have both long and short roots and the longest element
+            wk;0 = (1; 1)(2; 2)    (k; k) of the Weyl group WBk acts by 1 in the
+            reection representation. For each 1  k  n, let
+
+                                                  Zk = fzk;s; zk;`; zk;0 g;
+            where
+                                            X                X
+                                                             k
+                                zk;s =                s =         (i; i);
+                                          2(Bk )s           i=1
+                                            X                     X
+                                                 +
+
+
+                                zk;` =                s =                 (i; j ) + (i; j )( i; j );               (4:5)
+                                          2(Bk )+`          1   i<j k
+                                zk;0 = wk;0 = (1; 1)(2; 2)    (k; k):
+            In (4.5) the set (Bk )+s (resp. (Bk )+` ) is the set of short (resp. long) positive
+            roots in the root system Bk . Since the elements zk;j , j 2 fs; `; 0g, 1  k  n
+Seminormal representations                                                     27
+all commute with each other in C W Bn , it follows that the elements
+mk;s = zk;s zk     1;s = (k; k ); 1  k  n;
+                         Xk
+mk;` = zk;`     zk 1;` = (i 1; k) + (i 1;          k)( (i 1); k); 2  k  n;
+                         i=2
+all commute with each other in C W Bn .
+Remark 4.6. The elements mk;s and mk;` are the appropriate Bn-analogues
+of the Jucys-Murphy elements (3.5) for the symmetric group. Cherednik [Ch]
+has used a linear combination of mk;s and mk;` as an analogue of the Jucys-
+Murphy element.
+Weights
+     The sign and the content of a box b in a shape (;  ) are given respec-
+tively by
+                 1;if b 2 ,
+     sgn(b) =    1; if b 2  ,                                               (4:7)
+       ct(b) = j i;    if b is in position (i; j ) (in either  or  ).
+
+Proposition 4.8. Fix 1  k  n and let zk;s , zk;`, and zk; be the central
+                                                                        0
+elements in C WBk given in (4.5). Let (;  ) be a double partition such that
+jj + j j = k. Let (;) be the character of the irreducible representation
+of WBk indexed by the double partition (;  ). Then, in the notation of
+Lemma (1.9) and (4.7),
+                                                         X
+              ck;s(;  ) = (;)(zk;s)=(;) (1) =              sgn(b);
+                                                        b2(; )
+                                                         X
+              ck;`(;  ) = (;)(zk;`)=(;) (1) =              ct(b);
+                                                        b2(; )
+                                                          Y
+              ck;0(;  ) = (;)(zk;0)=(;) (1) =              sgn(b):
+                                                        b2(; )
+
+Proof. Fix k and a double partition (;  ) such that jj + j j = k. Let a = jj
+and b = j j. Let WBa be the subgroup of WBk of signed permutations of
+f1; 2; : : : ; ag and let WBb be the subgroup of WBk of signed permutations
+28                                                                     Arun Ram
+of fa + 1; : : : ; kg. Let Sa and Sb be the symmetric groups of permutations
+of f1; : : : ; ag and fa + 1; : : : ; kg respectively.
+      Let V  be the irreducible module for the symmetric group Sa which is
+labeled by the partition . Extend this module to the group WBa by letting
+the signs, i.e. the element (1; 1) act trivially. Let V  be the irreducible
+module for the symmetric group Sb which is labeled by  . Extend this
+module to group WBb by letting the element (a + 1; (a + 1)) act by 1 on
+V  . Then V  and V  are irreducible modules for the groups WBa and WBb
+respectively, they are the modules that are ordinarily denoted by V (;;) and
+V (;;) respectively. It follows from this construction of V (;;) and V (;;) that
+
+     (;;)((1; 2)) =  ((1; 2));
+     (;;)((1; 1)) = (1);
+     (;;)((1; 1)(2; 2)    (a; a)) =  (1);
+                                                                             (4:9)
+     (;;)((a + 1; a + 2)) =  ((a + 1; a + 2));
+     (;;)((a + 1; (a + 1)) =  (1));
+     (;;)((a + 1; (a + 1)(a + 2; (a + 2))    (k; k)) = ( 1)b (1));
+
+where  and  denote the irreducible characters of the symmetric groups
+Sa and Sb labeled by  and  , respectively.
+    It is well known that the induced module
+                                       x
+                      V (;;) 
+ V (;;)?WB k      (;)
+                                        WBa WBb = V
+
+is a realization of the irreducible WBk -module indexed by the double parti-
+tion (;  ). (I believe that this fact is originally due to Specht [Spe].) Given
+this realization we can write down its character (;) explicitly by using the
+standard formula for induced characters.
+                           X
+      (;)(w) =                      (;;)(gi 1wgi )(;;)(gi 1 wgi);    (4:10)
+                    gi wgi 2WBa WBb
+                      1
+
+
+
+
+where the sum is over coset representatives gi of WBk =(WBa  WBb) such
+that gi 1wgi 2 WBa  WBb.
+Seminormal representations                                                 29
+      Using (4.9) and (4.10),
+         P           
+ ;)
+  (
+         2(Bk )+` s
+      (;)(1)
+           (;)((1; 2))
+ = k(k 1)(;
+            k(1)2 (;;)                                                  
+               )
+                                                 
+   k(k 1) a 2  ((1; 2))(;;) (1) + k a 2 (;;)(1)(;;) ((a + 1; a + 2))
+ =                              k(;;) (1)(;; ) (1)
+            a(a 1)  ((1; 2))a b(b 1)  ((a + 1; a + 2)) 
+ = k(k 1) k(k 1) (1) + k(k 1)                        (1)
+    0  P                    
+                               P + s
+                                               1
+            2Aa 1   s          2Ab 1
+ = 2@                                           A:
+                  +
+
+               
+              (1)         +       (1)
+The value for ck;`(;  ) is obtained from this last equation and (3.8). A
+similar calculation gives
+         P           
+ ;)
+  (
+           2(Bk )s s
+                  +
+
+
+      (;)(1)
+     (; )
+ = k (;((1)(1)
+                ; 1))
+                                                                          
+   k ka 11 (;;)((1; 1))(;;) (1) + k a 1 (;;)(1)(;;) ((a + 1; (a + 1))
+ =                            k(;;) (1)(;; ) (1)
+                              a
+                      
+ = a ((1 ; 1)) + b ((a + 1; (a + 1))
+         (1)              (1)
+ = a b:
+Since sgn(b) = 1 for all boxes b 2 , sgn(b) = 1 for all boxes b 2  ,
+and jj = a and j j = b the formula for ck;s(;  ) follows. The formula for
+ck;0(;  ) is obtained in a similar fashion.
+     Following (1.11), the weight of a standard tableau L = ((1) !    !
+(n)), where j(k)j = k, is
+                                                         
+                       wt(L) = c1((1)); : : : ; cn((n)) ;
+30                                                                         Arun Ram
+where, for a double partition (;  ), ck (;  ) is the triple
+                  ck (;  ) = (ck;s(;  ); ck;`(;  ); ck;0 (;  ));
+determined by Proposition (4.8). Note that wt(L) is completely determined
+by the n-tuples
+                                      
+wft1 (L) = ct(L(1)); : : : ; ct(L(n)) ; and wft2(L) = sgn(L(1)); : : : ; sgn(L(n)) ;
+                                                                                    
+since c     ( (k )
+                    ) =
+                        Pk sgn(L(i)), ck;`((k)) = Pk ct(L(i)), and ck;0((k)) =
+Qk sgn(L(i)). i=1
+        k;s                                         i=1
+  i=1
+Proposition 4.11. Each standard tableau L = ( !    !  n ) is (1)         ( )
+
+determined uniquely by its weight.
+Proof. Suppose that the weight wt(L) of a standard tableau L is given but
+that we don't know L. The vector wt(L) uniquely determines the vectors
+wft1 (L) and wft2 (L). We want to show that the tableau L can be reconstructed
+from wft1(L) and wft2(L). Assume that we have reconstructed L up to the
+ith step, i.e., assume that we know (0); : : : ; (i), but that we don't yet know
+(i+1). Suppose that (i) is the double partition ((i);  (i)).
+      We need to gure out from wft1(L) and wft2 (L) where to add the box
+to get (i+1) = ((i+1);  (i+1)). The entry sgn(L(i + 1)) in wft2(L) tells us
+whether we must add the box to the partition (i) or to the partition  (i). As
+in the proof of Proposition (3.9), the entry ct(L(i +1)) from wft1 (L) indicates
+the position where this box must be added. It follows that (i+1) is uniquely
+determined. Thus L is completely determined by wt(L).
+     Proposition (1.12) and Proposition (4.11) together show that the semi-
+normal representations of WBn corresponding to the chain of groups f1g =
+WB0      WBn are essentially determined by the elements zk;j in (4.5)
+and the constants ck;j () in Proposition (4.8). It follows that we should be
+able to determine seminormal representations of the group WBn from the
+elements mk;j and the constants ct(b) and sgn(b). This is done in Theorems
+(4.15) and (4.18) below.
+Seminormal representations
+    Let P1  P2      Pn be the path algebras, dened in (1.2), which are
+associated to the diagram which describes the restriction rules for the chain
+Seminormal representations                                                         31
+WB1      WBn. For each double partition (;  ) such that jj + j j = n,
+let
+                     V (;) = C -spanfvL j L 2 L(;  )g;              (4:12)
+so that the vectors vL , indexed by standard tableaux L of shape (;  ), form
+a seminormal basis of the Pn-module V (;). It follows from Lemma (1.9),
+that for any choice of an isomorphism  between the path algebra Pn and
+C WBn such that (Pk ) = C WBk  C WBn for all 1  k  n,
+
+   zk;svL = ck;s((k))vL ; zk;`vL = ck;`((k))vL ; zk;0 vL = ck;0((k))vL ;
+if L = ((1) !    ! (n)). Thus, by Proposition (4.8),
+         mk;svL = sgn(L(k))vL ; and mk;`vL = ct(L(k))vL ;                  (4:13)
+if L = ((1) !    ! (n)).
+     For each 2  k  n and each standard tableau L of length n, dene
+
+                    (sk )LL = 1 +ct(sgn( L(k))sgn(L(k 1))                  (4:14)
+                                     L(k)) ct(L(k 1))
+
+Theorem 4.15. (Young [Y]) Let (;  ) be a double partition such that
+jj + j j = n. Dene an action of each generator s ; : : : ; sn of WBn on V
+                                                      1
+                                                                  ;          (    )
+
+by dening
+         s1vL = sgn(L(1))vL ;
+                                                                           (4:16)
+         si vL = (si )LL vL + (1 + (si )LL )vsi L ;       2  i  n;
+where si L is the same standard tableau as L except that the positions of i
+and i 1 are switched in si L. If si L is not standard, then we dene vsi L = 0.
+This action extends to a well dened action of WBn on V (;).
+Proof. We shall show that the action of si , 1  i  n, on V (;) is essentially
+forced by the formulas in (4.13). We shall prove this for i = n. The proof
+for i < n is similar. Note that the formula for the action of s1 follows
+immediately from the formula for the action of m1;s in (4.13).
+     For any two standard tableaux M and L of shape (;  ) let (sn )ML be
+the coecient of vM in sn vL.
+32                                                                        Arun Ram
+Step 1. Let L = ((0 !    ! (n)) be a standard tableau of shape (;  ).
+For each 0  k  n and each j 2 fs; `; 0g 1  j  rk , let
+                                         Y              zk;j ck;j () ;
+               pk;j ((k)) =                         c ((k)) ck;j ()
+                                ck;j ()6=ck;j ( k ) k;j
+                                                ( )
+
+
+
+as in the proof of Proposition (1.12). Dene
+                                         nY2    Y
+                        pL[n      2] =                    pk;j ((k)):          ()
+                                         k=1 j 2fs;`;0g
+
+If M = ((0) !    ! (n)) is another standard tableau of shape (;  ) then
+                            
+           pL[n 2] vM = v0M ; if (k) = (k), for 1  k  n 2,
+                          ; otherwise.
+Note that since (n 2) and (n) = (;  ) only dier by two boxes there are
+only two tableaux M such that (k) = (k) for all 1  k  n 2. These two
+tableaux are snL and L itself. It follows that
+                                v ;           if M = snL or M = L,
+                pL[n   2]   vM = M   0;        otherwise.
+    Since each of the elements zk;s, zk;`, zk;0 appearing the product (*) is an
+element of WBn 2 it follows that pL[n 2] commutes with sn in WBn. Thus
+      (sn )LL vL + (sn )snL;L vsn L = pL[n 2] sn vL = snpL[n 2] vL = snvL :
+It follows that (sn )ML = 0 unless M = snL or M = L.
+Step 2. A direct computation shows that
+                    sn mn     1 ;` = mn;` sn          1 mn;smn 1;s:
+Let both sides act on vL and take the coecient of vL in the result. Then,
+using (4.13), we have
+     (sn )LL ct(L(n 1)) = ct(L(n))(sn )LL 1 sgn(L(n))sgn(L(n 1)):
+It follows that (sn )LL is as given in (4.14).
+Seminormal representations                                                             33
+Step 3. Consider the equation s2n = 1. Let both sides act on vL and take the
+coecient of vL in the result. We get the equation (sn )2LL +(sn )LM (sn)ML =
+1; where M = snL. It follows that
+                 (sn )LM (sn )ML = (1 + (sn )LL )(1 (sn )LL ):        (4:17)
+By Proposition (1.12)(b), the values of (sn)LM and (sn )ML are determined
+only up to a constant and we may choose them to be anything such that the
+equation in (4.17) holds. Note that this is consistent with the denition of
+the action in the statement of the theorem since 1 (sn)sn L;snL = 1+(sn)LL .
+
+
+Theorem 4.18. (Young [Y]) The WBn modules V                          (; ) dened in The-
+orem (4.15), where (;  ) runs over all ordered pairs of partitions such that
+jj + j j = n, form a complete set of nonisomorphic irreducible modules for
+the Weyl group WBn and, for each (;  ), the basis fvL j L 2 L(;  )g is a
+seminormal basis of the WBn-module V (;).
+Proof. This now follows immediately by induction on n. Indeed, V (;) is
+the unique WBn-module such that
+ (1) The equations for the action of zn;s, zn;`, zn;0 are as in (4.13), and
+ (2) On restriction to WBn 1 we have that
+                                ? n                      M
+                         V (;)yWB
+                                 WBn =    1
+                                                                 V (;)
+                                                  ; )2(; )
+                                                  (
+
+
+    where the sum is over all double partitions (;  ) of size n 1 that are
+    gotten from (;  ) by removing one box.
+Iwahori-Hecke algebras HBn(p ; q )    2       2
+
+
+     Let p and q be indeterminates. The Iwahori-Hecke algebra HBk (p2 ; q2 )
+corresponding to the root system WBk is the associative algebra with 1 over
+the eld C (p; q ) given by generators T1; T2 ; : : : ; Tk and relations
+                        Tsi Tsj = Tsj Tsi ; ji j j > 1;
+                  Tsi Tsi Tsi = Tsi Tsi Tsi ; 2  i  n 1;
+                        +1       +1               +1
+
+               Ts Ts Ts Ts = Ts Ts Ts Ts ;
+                1   2    1   2   2    1       2       1                  (4:19)
+                            Ts = (p p )T1 + 1;
+                             1
+                              2            1
+
+
+                            Ts2i = (q q 1 )Tsi + 1; 1  i  n:
+34                                                                       Arun Ram
+Analogues of Jucys-Murphy elements
+    For each 1  k  n, dene
+                           Mk = Tk    T2T1T2    Tk :                   (4:20)
+The longest element wk;0 in the Weyl group WBk acts by 1 in the reection
+representation. Following (1.8) and Proposition (2.4), we dene sets Zk =
+fzk g, 1  k  n, where zk is the central element of HBk (p2 ; q2) given by
+                       zk = Twk; = Mk Mk 1    M2M1 :
+                                 0                                           (4:21)
+Since the elements zk , 1  k  n, all commute in HBn(p2 ; q2) it follows that
+the elements Mk , 1  k  n all commute with each other.
+Remark 4.22. The elements Mk appear in Hoefsmit [H] Proposition 3.3.3
+and also in work of Ariki-Koike [AK], Ariki [Ar], Broue-Malle [BM], and
+Dipper-James [DJ3]. These elements can be viewed as the quantized versions
+of the elements in (4.13).
+
+Seminormal representations
+     Let P1  P2      Pn be the path algebras (over C (p; q) instead of C ),
+dened in (1.2), which are associated to the diagram which describes the
+restriction rules for the chain WB1      WBn. For each double partition
+(;  ) such that jj + j j = n, let
+                  V (;) = C (p; q) -spanfvL j L 2 L(;  )g;               (4:23)
+so that the vectors vL , indexed by standard tableaux L of shape (;  ),
+form a seminormal basis of the Pn-module V (;). It follows from Lemma
+(1.9), that for any choice of an isomorphism  between the path algebra
+Pn and HBn (p2; q2 ) such that (Pk ) = HBk (p2 ; q2 )  HBn(p2 ; q2 ) for all
+1  k  n,
+              zk vL = Twk; vL = ck;0((k))pck;s ( k )qck;` ( k ) vL;
+                           0
+                                                     ( )       ( )
+
+
+
+
+if L = ((1) !    ! (n)). Thus, by Proposition (4.8),
+         Mk vL = Tk 1    T2 T1T2    Tk 1 vL = Twk; Twk1 ; vL
+                                                           0   1 0
+                                                                             (4:24)
+               = sgn(L(k))psgn(L(k))q2ct(L(k))vL ;
+Seminormal representations                                                     35
+if L = ((1) !    ! (n)) is a standard tableau. For each 2  k  n and
+each standard tableau L of size n, dene
+  (Tk )LL = qCT(qL(k 1)) where CT(b) = sgn(L(k))psgn(L(k))q2ct(L(k));
+                       1
+
+             1 CT(L(k))
+                                                                     (4:25)
+if b is a box in a shape  = (;  ).
+Theorem 4.26. Let (;  ) be a double partition such that jj + j;j = n.
+Dene an action of each generator T1; : : : ; Tn of HBn (p2 ; q2) on V ( ) by
+dening
+       T1vL = CT(L(1))vL ;
+                                                                         (4:27)
+       TivL = (Ti )LL vL + (q 1 + (Ti )LL )vsi L ; 2  i  n;
+where si L is the same standard tableau as L except that the positions of i
+and i 1 are switched in si L. If si L is not standard, then we dene vsi L = 0.
+This action extends to a well dened action of HBn(p2 ; q2 ) on V (;).
+Proof. The proof is similar to the proof of Theorem (4.15), in all essential
+aspects. We shall only give the details for step 2.
+Step 2. It is immediate from the denition of Mk in (4.20) that Mn =
+TnMn 1 Tn, which can be rewritten as
+                             Tn 1 = Mn 1 Tn Mn 1:
+Rewrite Tn 1 as Tn (q q 1 ), let both sides act on vL and take the coecient
+of vL in the result. Using (4.24), we get
+           (Tn)LL (q q 1 ) = CT(L(n)) 1 (Tn )LL CT(L(n 1)):
+It follows that (Tn )LL is as given in (4.25).
+     As in the case of Weyl group WBn, Theorem (4.18), the following result
+follows easily.
+Theorem
+ ;
+        4.28. (Hoefsmit [H], Thm. 2.2.14) The HBn(p ; q )-modules 2   2
+
+V ( ) dened in Theorem (4.26), where (;  ) runs over all ordered pairs
+of partitions such that jj + j j = n, form a complete set of nonisomorphic
+irreducible modules for the Iwahori-Hecke algebra HBn (p2 ; q2). For each
+(;  ), the basis fvL j L 2 L(;  )g is a seminormal basis of the HBn (p2 ; q2)-
+module V (;).
+36                                                                  Arun Ram
+                              5. Type Dn ; n  4
+
+The Weyl group
+     The Weyl group WDn of type Dn is the group of signed permutations of
+f1; 2; : : : ; ng with an even number of signs. More specically, WDn consists
+of all permutations  of f n; : : : ; 1; 1; : : : ; ng such that ( k) = (k) for
+all 1  k  n, and an even number of the elements of f(1); (2); : : : ; (n)g
+are negative. We represent elements of WDn in cycle notation as permuta-
+tions of f n; : : : ; 1; 1; : : : ; ng.
+     The elements
+ s~1 = (1; 2)(2; 1);         and    s~i = (i 1; i)( (i 1); i); 2  i  n;
+generate WDn and satisfy the relations
+                    s~i s~j = s~j s~i ; ji j j > 1; and i; j > 1;
+                   s~1s~j = s~j s~1; if j 6= 3;
+               s~1s~3 s~1 = s~3 s~1 s~3;                          (5:1)
+            s~is~i+1 s~i = s~i+1 s~i s~i+1; 2  i  n 1;
+                        s~2i = 1; 1  i  n:
+The Weyl group WDn can be realized as a normal subgroup of the Weyl
+group WBn of index 2 by dening
+                s~1 = s1 s2 s1;    and     s~i = si ; 2  i  n;           (5:2)
+where si , 1  i  n, are as in (4.1).
+Double Partitions and Standard Tableaux
+    We shall use the same notations for partitions, double partitions, shapes,
+and tableaux as in section 4. For each standard tableau L = (L; L ) of
+shape (;  ) dene L to be the standard tableau of shape (; ) given by
+L = (L ; L),
+                       : L(;  ) ! L(; )                             (5:3)
+                           (L ; L ) 7! (L ; L):
+The map  is an involution on the set of standard tableaux whose shape is
+a double partition.
+Which chain?
+Seminormal representations                                                    37
+     One nds that it is more natural to use the representation theory of the
+Weyl groups WBn and the fact that WDn is a normal subgroup of index 2
+in WBn rather than to try to choose an appropriate chain of root systems
+leading up to Dn . The reason for this is that one wants to have an approach
+that treats all of the groups WDn, n  4, uniformly. Otherwise one must
+distinguish the cases when n is even and when n is odd. In the end we shall
+nd a set of commuting elements in the group algebra of WDn , analogues of
+the Jucys-Murphy elements, which determine a complete set of irreducible
+representations.
+Representations
+      We shall retain the notations from section 4 for the sign and the content
+of a box in a double partition. Let  = (;  ) be a double partition such
+that jj + j j = n. As in (4.12), let
+                          V (;) = C -spanfvL j L 2 L(;  )g              (5:4)
+so that the vectors vL form a basis of the vector space V (;) indexed by
+standard tableaux L of shape (;  ).
+      For each standard tableau L, dene
+          (sk )LL = 1 +ct(sgn( L(k))sgn(L(k 1)) ; for 2  k  n,            (5:5)
+                           L(k)) ct(L(k 1))
+as in (4.14). Recall, Theorem (4.15), that there is an action of WBn on the
+vector space V (;). Restricting this action to WDn gives
+     s~1 vL = s1 s2 s1vL = (s2 )LL vL (1 + (s2 )LL )vs L;
+                                                     2
+                                                                            (5:6)
+            s~i vL = si vL = (si )LL vL + (1 + (si )LL )vsi L ; 2  i  n;
+for each L 2 L(;  ), where, as in the case of type Bn, we dene vsi L = 0 if
+si L is not standard. In deriving the rst formula of (5.6) it is helpful to note
+that sgn(L(1)) = 1, and sgn(s2 L(1)) = sgn(L(1)) if s2 L is standard.
+      Now suppose n is even, and let  be a partition such that 2jj = n.
+Dene
+                V (;) = C -spanfvL + vL j L 2 L(; )g  V (;);
+                  +
+
+                                                                            (5:7)
+                V (;) = C -spanfvL vL j L 2 L(; )g  V (;):
+The following results (well known) follow easily from Cliord theory [CR]
+since WDn is a subgroup of index 2 in WBn and  commutes with the
+action of WDn on the vectors vL , L 2 L.
+38                                                                   Arun Ram
+Proposition 5.8.
+(a) For each pair of partitions (;  ) such that jj + j j = n, V (;) and
+    V (;) are isomorphic WDn -modules.
+(b) For each partition  such that 2jj = n, the subspaces V (;) are
+    WDn-submodules of V (;), and
+                          V (;) 
+                                  = V (;)  V (;) ;
+                                             +
+
+
+
+    as WDn-modules.
+
+Theorem 5.9. (Young [Y]) The modules V           ; ), where (;  ) runs over all
+                                                 (
+
+unordered pairs of partitions such that  6=  and jj + j j = n and, when n
+is even, the modules V (;) and V (;) , where  runs over all partitions
+                            +
+
+
+such that 2jj = n, form a complete set of nonisomorphic irreducible modules
+for WDn .
+Remark 5.10. The involution  on standard tableaux in (5.3) is a realization
+of the module isomorphism between the WDn-modules V (;) and V (;),
+which, in turn, comes from the automorphism of the Dynkin diagram of type
+Dn.
+     Instead of dening V (;) as in (5.7), let us dene them as the quotient
+spaces
+                        (;)                            (;)
+        V (;) = hv V = v i and V (;) = hv V= v i ;
+              +
+                                                                         (5:11)
+                     L      L                         L      L
+where  is the involution given in (5.3) and hvL = vL i and hvL = vL i
+denote the subspaces spanned the the vectors vL vL and by vL + vL
+respectively. Clearly the two denitions   of the modules V (;) are equiva-
+                             (;)
+lent, the rst represents V         as subspaces of V (;), and the second as
+quotient spaces of V (;). The only dierence is that for some computations
+the quotient module approach is easier, one may compute the action as in
+the formulas in (5.6) and then apply the relations vL = vL .
+Analogues of Jucys-Murphy elements
+Theorem 5.12. Dene elements mk , 2  k  n, in the group algebra of
+the Weyl group WDn by
+                                       X
+                                       k
+m~ k;1 = (1; 1)(k; k) and m~ k;2 =           (i 1; k) + (i 1; k)( (i 1); k);
+                                       i=2
+Seminormal representations                                                        39
+where elements of WDn are written in cycle notation as permutations of
+f n; : : : ; 1; 1; : : : ; ng. Then the elements m~ k;1 and m~ k;2 all commute with
+each other in C WDn and they act in the representations V (;) and V (;)
+from (5.6) and (5.7) by
+ m~ k;1vL = sgn(L(1))sgn(L(k))vL ; for all standard tableaux L, and
+m~ k;1vL = sgn(L(1))sgn(L(k))vL ; for all standard tableaux L of shape (; ),
+ m~ k;2vL = ct(L(k))vL ; for all standard tableaux L, and
+m~ k;2vL = ct(L(k))vL ; for all standard tableaux L of shape (; ).
+
+Proof. This follows immediately from (4.13) once one notices that m~ k;1 =
+m1;smk;s and m~ k;2 = mk;`; where mk;s and mk;` are as in (4.5).
+
+Weights
+    If L is a standard tableau of shape (;  ) dene
+                                                   
+               wft1 (L) = ct(L(1)); : : : ; ct(L(n)) ; and
+                                                                  
+               wft02 (L) = sgn(L(1))2 ; : : : ; sgn(L(1))sgn(L(n)) ;
+where sgn and ct are as given in (4.7).
+Lemma 5.13. If L is a standard tableau then there is0 only one other
+standard tableau L0 such that wft (L0 ) = wft (L) and wft (L0 ) = wft0 (L).
+                                      1            1
+This standard tableau is L0 = L; where  is the involution dened in (5.3).
+                                                                 2            2
+
+
+
+
+Proof. Let wft1 and wft2 be as dened in Proposition (4.11). It follows from
+Proposition (4.11) that wft1 (L) and wft2(L) uniquely determine L. Since
+wft02(L) is always either +1 or 1 times every entry in the sequence wft2(L)
+it follows that there can be at most two standard
+                                            0      tableaux
+                                                        0    L and L0 with
+the same weights wft1(L ) = wft1(L) and wft2(L ) = wft2 (L). On the other
+                          0                    0
+hand it is immediate that one always has that wft02(L) = wft02(L) since
+sgn(L(k)) = sgn(L(k)) for all k.
+
+Iwahori-Hecke algebras HDn (q )       2
+40                                                                   Arun Ram
+       Let q be an indeterminate. The Iwahori-Hecke algebra HDn (q2 ) of type
+Dn is the associative algebra with 1 over the eld C (q ) given by generators
+T~1; T~2 ; : : : ; T~n and relations
+                                T~iT~j = T~j T~i ; ji j j > 1; i; j > 1;
+                               T~1T~j = T~j T~1 ; if j 6= 3;
+                          T~1 T~3T~1 = T~3 T~1T~3;                       (5:14)
+                        T~i T~i+1T~i = T~i+1T~i T~i+1; 2  i  n 1;
+                                   T~i2 = (q q 1 )T~i + 1; 1  i  n:
+Let HBn (1; q2) be the algebra over C (q) dened by generators T1; : : : ; Tn
+and relations as in (4.19) except with p = 1. Dene
+             T~1 = T1T2 T1; and T~i = Ti ; 2  i  n:                (5:15)
+Then one checks that with these denitions the T~i satisfy the relations in
+(5.14). The elements T~i , 1  i  n, generate a subalgebra of the algebra
+HBn(1; q2 ) which is isomorphic to the algebra HDn (q2 ).
+Representations
+     One derives the representation theory of the Iwahori-Hecke algebra HDn (q2 )
+using the results from section 4 and the fact that HDn (q2 ) is a subalgebra of
+the Iwahori-Hecke algebra HBn(1; q2 ). The procedure is exactly as for the
+case (5.4-5.9) of the Weyl groups WDn  WBn.
+     Let V (;) be as in (4.23). As in (4.25), for 2  k  n and each standard
+tableau L, dene
+ (T~k )LL = (Tk )LL =         q q    1
+                                           where CT(b) = sgn(L(k))q2ct(L(k));
+                          1      Lk
+                              CT( (  1))
+                                  Lk
+                               CT( ( ))
+                                                                             (5:16)
+for a box b in a shape  = (;  ). Restricting the action (4.27) of HBn (1; q2 )
+to HDn (q2) gives
+   T~s vL = Ts Ts Ts vL = (T~s )LL vL (q 1 + (T~s )LL )vs L ;
+     1        1   2   1          2                   2       2
+
+           T~si vL = Tsi vL = (T~si )LL vL + (q 1 + (T~si )LL )vsi L ; 2  i  n;
+                                                                             (5:17)
+for each L 2 L(;  ), where, as in the case of type Bn, we dene vsi L = 0
+if si L is not standard. In deriving the rst formula of (5.17) it is helpful to
+note that CT (L(1)) = 1, and CT (s2 L(1)) = CT (L(1)) if s2 L is standard.
+Seminormal representations                                                       41
+     If n is even, and  is a partition such that 2jj = n, dene V (;) as
+in (5.7) except over the eld C (q). The following results can be proved by
+\setting q = 1" and then using Proposition (5.8) and Theorem (5.9).
+Proposition 5.18. (Hoefsmit [H], Lemmas 2.3.3 and 2.3.5)
+(a) For each pair of partitions (;  ) such that jj + j j = n, V (;) and
+    V (;) are isomorphic HDn (q2 )-modules.
+(b) For each partition  such that 2jj = n, the subspaces V (;) are
+    HDn(q2 )-submodules of V (;), and
+                                V (;) 
+                                        = V (;)  V (;) ;
+                                                    +
+
+
+
+
+     as HDn (q2)-modules.
+
+Theorem 5.19. (Hoefsmit [H], Thm. 2.3.9) The modules V                (; ), where
+(;  ) runs over all unordered pairs of partitions such that  6=  and jj +
+j j = n and, when n is even, the modules V (;) and V (;) , where  runs
+                                                            +
+
+
+over all partitions such that 2jj = n, form a complete set of nonisomorphic
+irreducible modules for HDn (q2 ).
+
+Analogues of Jucys-Murphy elements
+    Dene
+  M~ 1 = 1; M~ 2 = T~s T~s ; and
+                        2       1
+                                                                              (5:20)
+  M~ k = T~sk T~sk    T~s T~s T~s T~s T~s    T~sk T~sk ; for 3  k  n.
+                  1         3       2   1   3   4       1
+
+
+
+If w0 is the longest element of the Weyl group WDn, then T~w = M~ n M~ n 1    M~ 1
+                                                                 0
+is the corresponding element in the Iwahori-Hecke algebra HDn (q2 ).
+Theorem 5.21. The action of the element M~ k in the irreducible represen-
+tations given by Theorem (5.19) is
+ M~ k vL = CT (L(1))CT (L(k))vL ; for all standard tableaux L, and
+ M~ k vL = CT (L(1))CT (L(k))vL ; for all standard tableaux L of shape (; ).
+
+Proof. LetMk be the elements of HBn(1; q2 ) given by (4.20), and use the
+imbedding of HDn (q2 ) into HBn(1; q2 ). The case k = 1 is trivial, since
+42                                                                                         Arun Ram
+CT (L(1)) = 1. For k = 2, observe that M~ 2 = T~s T~s = Ts Ts Ts Ts =
+M2 M1. For 3  k  n, note that Ts commutes with Ts ; Ts ; : : : in
+                                                                       2   1           2       1       2   1
+
+                                                           1                               3       4
+HBn(1; q2 ), and thus
+      M~ k = T~sk T~sk    T~s T~s T~s T~s T~s    T~sk T~sk
+                    1      3   2   1       3       4               1
+
+           = Tsk Tsk    Ts Ts (Ts Ts Ts )Ts Ts    Tsk Tsk
+                    1      3   2       1       2       1       3   4           1
+
+           = Tsk Tsk    Ts Ts Ts Ts Ts Ts    Tsk Tsk Ts = Mk M1 :
+                    1      3   2   1       2       3       4           1           1
+
+
+
+The result now follows from the denition of the action of HBn (1; q2) and
+of HDn (q2) on irreducible modules and (4.24).
+Seminormal representations                                                                   43
+                                     6. Type G2
+
+The chain A0  A1  G2
+    The Weyl group WG2 is the dihedral group of order 12. The group
+WG2 can be presented by generators s1 ; s2 and relations
+          s1 s2 s1s2 s1 s2 = s2 s1s2 s1 s2s1 ; and s2i = 1; for i = 1; 2.
+The irreducible representations of the dihedral group WG2 can be indexed
+by the labels
+                   G^ 2 = f1;0; 1;6; 01;3; 001;3; 2;1; 2;2g
+and the character table of the group WG2 is given by
+               1       s1       s2      s1 s2           s1 s2s1 s2        s1 s2 s1s2 s1 s2
+     1;0      1       1        1         1                  1                   1
+     1;6      1        1        1        1                  1                   1
+     01;3     1       1         1         1                 1                    1
+     001;3    1        1       1          1                 1                    1
+     2;1      2       0        0         1                   1                   2
+     2;2      2       0        0          1                  1                  2
+     The chain of root systems A0  A1  G2 corresponds to the chain of
+Weyl groups S1  S2  WG2, where S1 and S2 are symmetric groups. The
+graph , as dened in (1.1), corresponding to the inclusion S1  S2  WG2
+is given by
+                   (1,0)    (1,3)'   (2,1)      (2,2)      (1,3)' '   (1,6)
+
+
+
+
+                                     Figure (6.1)
+We have indexed the representations of the symmetric groups S1 and S2 by
+partitions as in section 3.
+44                                                                          Arun Ram
+Analogues of Jucys-Murphy elements
+     Following (1.8) and (2.1), let us compute the sets Zk for this case. In
+the root system A1 all roots are the same length and the longest element
+w1;0 in the Weyl group S2 acts by 1 in the reection representation. In the
+root system G2 we have both long and short roots and the longest element
+w2;0 = s1 s2 s1 s2s1 s2 of the Weyl group WG2 acts by 1 in the reection
+representation. Let
+                  Z1 = fz1;0g; and Z2 = fz2;s; z2;`; z2;0g;
+where
+                z1;0 = w1;0 = s1 ;
+                        X
+                z2;s =         s = s1 + s2 s1 s2 + s1 s2 s1s2 s1 ;
+                         2(G2 )+s
+                            X                                                   (6:2)
+                z2;` =               s = s2 + s1 s2 s1 + s2 s1 s2s1 s2 ;
+                         2(G2 )+`
+                z2;0 = w2;0 = s1 s2s1 s2 s1 s2:
+In (6.2) the set (G2 )+s (resp. (G2 )+` ) is the set of short (resp. long) positive
+roots in the root system G2. The elements zk;j in (6.2) are the appropriate
+G2 -analogues of the Jucys-Murphy elements in (3.5).
+Weights
+    Following Lemma (1.9) and (2.2), we use the character table of WG2 to
+compute
+         c2;s(1;0) = 3, c2;`(1;0 ) = 3, c2;0(1;0) = 1,
+         c2;s(1;6) = 3, c2;`(1;6 ) = 3, c2;0(1;6) = 1,
+         c2;s(01;3) = 3,       c2;`(01;3 ) = 3, c2;0(01;3) = 1,
+         c2;s(001;3) = 3, c2;`(001;3 ) = 3,           c2;0(001;3) = 1,
+         c2;s(2;1) = 0,        c2;`(2;1 ) = 0,        c2;0(2;1) = 1,
+         c2;s(2;2) = 0,        c2;`(2;2 ) = 0,        c2;0(2;2) = 1,
+         c1;0((2)) = 1,         c1;0((12 )) = 1,
+Seminormal representations                                                 45
+so that ck;j () = (zk;j )= (1) where  denotes the irreducible character
+labeled by . The weight of a path L = ( ! (1) ! (2)) in the graph is
+                                                                  
+            wt(L) = c1;0((1)); c2;s((2)); c2;`((2)); c2;0((2)) :     (6:3)
+
+Proposition 6.4. Each path L = ( !  !  ) in is distinguished
+                                                (1)    (2)
+
+by its weight, i.e., if L and M are paths in and L 6= M then wt(L) 6= wt(M ).
+Proof. This follows easily by a direct check.
+    Proposition (1.12) and Proposition (6.4) together show that the semi-
+normal representations of WG2 corresponding to the chain of groups f1g 
+S2  WG2 are essentially determined by the elements zk;j in (6.2) and the
+constants ck;j () which appear in (6.3). These representations are given in
+Theorem (6.7) below.
+Seminormal representations
+     Let P1  P2 be the path algebras, dened in section 1, which are asso-
+ciated to the diagram in (6.1). For each  2 G^ 2, let
+                       V  = C -spanfvL j L 2 L()g;                     (6:5)
+so that the vectors vL , indexed by the paths L = ( ! (1) ! (2) = ) in
+which end at , form a seminormal basis of the irreducible P2-module V . It
+follows from Lemma (1.9), that for any choice of an isomorphism  between
+the path algebra P2 and the C WG2 such that (P1 ) = C S2  C WG2 ,
+              z1;0vL = c1;0((1))vL ;     z2;svL = c2;s((2))vL ;
+                                                                         (6:6)
+              z2;0vL = c2;0((2))vL ;     z2;`vL = c2;`((2))vL ;
+if L = ( ! (1) ! (2)) is a path in .
+Theorem 6.7. Irreducible seminormal representations of the Weyl group
+WG2 with respect to the chain S1  S2  WG2 can be given by
+ 1;0(s1 ) = (1); 1;6(s1 ) = ( 1); 01;3(s1 ) = (1); 001;3(s1 ) = ( 1);
+ 1;0(s2 ) = (1); 1;6(s2 ) = ( 1); 01;3(s2 ) = ( 1); 001;3(s2 ) = (1);
+46                                                                     Arun Ram
+                        1                          1       
+            2;1(s1 ) = 0 01              2;2(s1 ) = 0 01
+                       0   1   1
+                                    1                0    1   3
+                                                                  1
+             ; (s ) = @            A      ; (s ) = @            A:
+                           2   2                          2   2
+              21   2                       22   2
+                           3    1                         1   1
+                           2    2                         2   2
+
+
+Proof. For any two paths M and L in the graph which end at the same label
+. Let (sk )ML denote the coecient of vM in sk vL . The constant (sk )ML is
+a matrix entry in the matrix for sk in the irreducible representation labeled
+by . It follows from Proposition (1.12)(a) and Proposition (6.4) that the
+diagonal entries of these matrices must be determined by the equations in
+(6.6) and that the o diagonal entries are determined up to a constant.
+     The matrices giving the one-dimensional representations are easily got-
+ten from the relations in (6.6). Let us explain how one derives the matrices
+for the two dimensional case.
+(a) The matrices for s1 are determined by (6.6).
+(b) From the denitions (6.2), one gets easily that z2;` = s2 + z1;`s2 z1;` +
+z2;0z1;`: Let both sides of this equation act on vL and take the coecient of
+vL to get, via (6.6), the equation
+     c2;`((2)) = (s2 )LL + c1;`((1))(s2 )LL c1;`((1)) + c2;0((2))c1;`((1)):
+It follows that
+                    (s2 )LL = c2;`( 1) + cc2;0(((1)))c21;0( ) :
+                                     (2)           (2)         (1)
+
+                                            1;0
+
+All of the diagonal entries in the matrices for s2 are determined by this
+formula and the values in (6.3).
+(c) Let both sides of the equation s22 = 1 act on the vector vL and take the
+coecient of vL in the result. One gets the equation
+                           (s2 )LM (s2 )ML + (s2 )2LL = 1;
+where M is the path to  in which is not L. It follows that
+                   (s2 )LM (s2 )ML = (1 + (s2 )LL )(1 (s2 )LL ):
+Because of the freedom in the choice of the o diagonal entries, Proposition
+(1.12)(b), it follows that we may choose (s2 )ML = 1 + (s2 )LL = 1 (s2 )MM .
+Seminormal representations                                                            47
+The Iwahori-Hecke algebra HG (p ; q )    2
+                                             2   2
+
+
+    Let p; q be indeterminates. The Iwahori-Hecke algebra HG2 (p2; q2 ) of
+type G2 is the associative algebra with 1 over the eld C (p; q) given by
+generators T1 ; T2 and relations
+           T1T2 T1T2 T1T2 = T2T1 T2T1 T2T1 ;
+                                                                                  (6:8)
+           T12 = (p p 1)T1 + 1; and T22 = (q q 1 )T2 + 1:
+
+Analogues of Jucys-Murphy elements
+     If w1;0 is the longest element of the Weyl group S2 = WA1 and w2;0 is
+the longest element of the Weyl group WG2, then the corresponding elements
+in the Iwahori-Hecke algebras HA1 (p2 ) and HG2 (p2; q2 ) are given by
+         z1 = Tw ; = T1 ;
+                   1 0             and       z2 = Tw ; = T1T2 T1T2 T1T2 :
+                                                     2 0
+
+
+
+Following (1.8) and Proposition (2.4), dene sets Zk = fzk g, k = 1; 2.
+
+Seminormal representations
+     Let P1  P2 be the path algebras over the eld C (p; q ) which are asso-
+ciated to the diagram in (6.1). For each  2 G^ 2, let
+                         V  = C (p; q ) -spanfvL j L 2 L()g;                    (6:9)
+so that the vectors vL , indexed by the paths L = ( ! (1) ! (2) = ) in
+  which end at , form a seminormal basis of the irreducible P2-module V .
+It follows from Lemma (1.9), that for any choice of an isomorphism  be-
+tween the path algebra P2 and HG2 (p2 ; q2) such that (P1) = C HA1 (p2 ) 
+HG2 (p2 ; q2),
+
+  z1 vL = pc ; ( )vL ;
+            1 0
+                  (1)
+                                  z2vL = c2;0((2))pc ;s ( )qc ;`( )vL ;
+                                and                         2
+                                                                 (2)
+                                                                       2
+                                                                            (2)
+
+
+                                                                      (6:10)
+if L = ( ! (1) ! (2)) is a path in .
+
+Theorem 6.11. Irreducible seminormal representations of HG (p ; q )         2
+                                                                                  2   2
+48                                                                    Arun Ram
+are given explicitly by
+              1;0(T1) = (p);                 1;0(T2 ) = (q);
+
+              1;6(T1) = ( p 1 );             1;6(T2 ) = ( q 1 );
+
+              01;3(T1) = (p);                01;3(T2 ) = ( q 1 );
+
+              001;3(T1) = ( p 1 );           001;3(T2 ) = (q);
+                          p      0
+                                                          a b 
+              2;1(T1) = 0        p   1       2;1(T2 ) = c d
+
+                          p      0
+                                                        x y 
+              2;2(T1) = 0        p   1        ; (T ) =
+                                               22    2
+                                                              z w
+where
+        a = 1 + pp +(qp 1 q ) ;                 x = 1 + pp + (pq 1 q ) ;
+                   1        1                                1       1
+
+
+
+        b = q a;                      and       y = q x;
+        c = q 1 + a;                            z = q 1 + x;
+        d = (q q 1 ) a;                         w = (q q 1 ) x:
+Proof. The proof is entirely similar to the proof of Theorem (6.7). Let us
+only explain how to get the entries in the matrices 2;1(T2 ) and 2;2(T2 ).
+Let  = (2; 1) or  = (2; 2) and suppose that L and M are the two paths to
+ in . From the denition of the element z2 we get
+                            T1 1T2 1 T1 1z2 = T2 T1T2:
+By rewriting T2 1 as T2 (q q 1 ) we have
+                   T1 1 T2T1 1 z2 (q q 1 )T1 2 z2 = T2T1 T2:
+Taking the (L; M ) entry of each side of the above equation gives
+ (T1)LL1 (T2 )LM (T1)MM1
+                          c2;0() 0
+                           = (T2 )LL (T1)LL (T2 )LM + (T2)LM (T1 )MM (T2 )MM :
+Seminormal representations                                                49
+Since these representations are irreducible it follows that (T2 )LM 6= 0. Di-
+viding by (T2 )LM and using the fact that (T1)LL = p and (T1 )MM = p 1,
+we get the equation
+                      c2;0() = p(T2 )LL p 1(T2 )MM :                     (i)
+Now, the equation T22 = (q q 1 )T2 + 1 forces that the trace of the matrix
+of T2 is q q 1, and so
+                       (T2 )LL + (T2 )MM = q q 1 :                       (ii)
+The values for x and a in the statement of the theorem now follow easily
+from (i) and (ii). The values of the o diagonal entries are determined (up
+to a constant, see Proposition (1.12)(a)) by the equation
+              (T2 )LM (T2 )ML = (q 1 + (T2)LL )(q (T2)MM ):
+This equation is obtained by taking the (L; L) entry in the equation T22 =
+(q q 1 )T2 + 1.
+  50                                                                 Arun Ram
+                                 6. References
+
+    [Ar] S. Ariki, Representation theory of a Hecke algebra of G(r; p; n), J. of
+         Algebra 177 (1995), 164-185.
+  [AK] S. Ariki and K. Koike, A Hecke algebra of (Z=rZ) o Sn and construction
+         of its irreducible representations, Adv. in Math. 106 (1994), 216-243.
+ [Bou] N. Bourbaki, Groupes et algebres de Lie, Chap. IV, V, VI, Hermann,
+         Paris, 1968.
+  [BM] M. Broue and G. Malle, Zyklotomische Heckealgebren, Asterisque 212
+         (1993), 119-189.
+    [BS] E. Brieskorn and K. Saito, Artin-gruppen und Coxeter-gruppen, Invent.
+         Math. 17, 245-271 (1972).
+    [Ch] I. Cherednik, Computation of monodromy of certain W -invariant local
+         systems of types B, C and D, Funct. Anal. Appl. 23 (1989), 91-92.
+   [CR] C.W. Curtis and I. Reiner, Methods of representation theory, Vol. I, II,
+         Wiley 1987.
+    [De] P. Deligne, Les immeubles des groupes de tresses generalises, Invent.
+         Math 17, 273-302.
+ [DJ1] R. Dipper and G.D. James, Representations of Hecke algebras of general
+         linear groups, Proc. London Math. Soc. 52, No. 3 (1986), 20-52.
+ [DJ2] R. Dipper and G.D. James, Blocks and idempotents of Hecke algebras
+         of general linear groups, Proc. London Math. Soc. 54, No. 3 (1987),
+         57-82.
+ [DJ3] R. Dipper and G.D. James, Representations of Hecke algebras of type
+         Bn, J. Algebra 146 (1992) 454-481.
+[DJM] R. Dipper, G.D. James and G.E. Murphy, Hecke algebras of type Bn at
+         roots of unity, Proc. London Math. Soc. 70 (1995) 505-528.
+ [GM] M. Geck and J. Michel, \Good" elements in conjugacy classes of Coxeter
+         groups, and an application{ computation of the character table of the
+         Iwahori-Hecke algebra of type E8, preprint 1995.
+     [H] P. N. Hoefsmit, Representations of Hecke algebras of nite groups with
+         BN-pairs of classical type, Thesis, University of British Columbia, 1974.
+  Seminormal representations                                               51
+   [JK] G. James and A. Kerber, The representation theory of the symmetric
+         group, Encyclopedia of Mathematics and it Applications 16, Addison
+         Wesley, Reading, Mass. 1981.
+ [Ju1] A.A. Jucys, On the Young operators of symmetric groups, Lithuanian
+         Physics Journal 6 (1966), 163-180.
+ [Ju2] A.A. Jucys, Factorisation of Young's projection operators of symmetric
+         groups, Lithuanian Physics Journal 11 (1971), 1-10.
+ [Ju3] A.A. Jucys, Symmetric polynomials and the center of the symmetric
+         group ring, Reports on Math. Physics 5 (1974), 107-112.
+    [Ki] R. Kilmoyer, Some irreducible representations of a nite group with a
+         BN pair, Ph.D. Thesis, MIT, 1969.
+  [LR] R. Leduc and A. Ram, A ribbon Hopf algebra approach to the irreducible
+         representations of centralizer algebras, The Brauer, Birman-Wenzl, and
+         Type A Iwahori-Hecke algebras, to appear in Adv. in Math.
+[Mac] I.G. Macdonald, Symmetric Functions and Hall Polynomials, Second
+         Edition, Oxford Univ. Press, Oxford, 1995.
+  [M1] G.E. Murphy, On the representation theory of the symmetric groups
+         and associated Hecke algebras, J. of Algebra 106 (1992), 492-513.
+  [M2] G.E. Murphy, A new construction of Young's seminormal representation
+         of the symmetric groups, J. of Algebra 69 (1981), 287-297.
+  [M3] G.E. Murphy, On the idempotents of the symmetric group and Nakayama's
+         conjecture, J. of Algebra 81 (1983), 258-264.
+  [M4] G.E. Murphy, The representations of Hecke algebras of Type An , J.
+         Algebra 173 (1995), 97-121.
+   [Na] M. Nazarov, Young's orthogonal form for Brauer's centralizer algebra,
+         preprint (1995).
+   [Re] N. Reshetikhin, Quantized universal enveloping algebras, the Yang-Baxter
+         equation and invariants of links I, LOMI Preprint no. E-4-87, (1987).
+   [Ru] D.E. Rutherford, Substitutional Analysis, Edinburgh Univ. Press, 1948.
+ [Spe] W. Specht, Eine Verallgemeinerung der symmetrischen Gruppe, Schriften
+         Math. Seminar (Berlin) 1 (1932), 1-32.
+     [Y] A. Young, Quantitative substitutional analysis I-IX, Proc. London Math.
+         Soc. (1901-1952).
+

@@ -1,0 +1,1469 @@
+                                                Manuscripta DOI: 10.1007/s00229-008-0184-9
+                                                                  STRICT POLYNOMIAL FUNCTORS
+                                                                    AND COHERENT FUNCTORS
+
+                                                                VINCENT FRANJOU∗ AND TEIMURAZ PIRASHVILI
+arXiv:math/0507384v5 [math.RT] 19 May 2008
+
+
+
+
+                                                      Abstract. We build an explicit link between coherent functors in the sense
+                                                      of Auslander [1] and strict polynomial functors in the sense of Friedlander and
+                                                      Suslin [7]. Applications to functor cohomology are discussed.
+
+
+
+
+                                                                                  1. Introduction
+                                                Since the foundational work of Schur [15], the representation theory of general
+                                             linear groups has been closely related to the representation theory of symmetric
+                                             groups. Especially fruitful has been the study, for all integers n, of tensor products
+                                             T n (V ) := V ⊗n of a vector space V , endowed with the commuting actions of the
+                                             general linear group GL(V ) (diagonally on each factor by linear substitution) and
+                                             of the symmetric group Sn (by permutation of the factors). For many purposes,
+                                             the mysterious group ring of the general linear group can thus be replaced by the
+                                             more manageable Schur algebra of Sn -equivariant linear maps of V ⊗n .
+                                                The use of functors in representation theory, maybe ﬁrst promoted by Auslander,
+                                             is practical and eﬃcient for formalizing the relations between symmetric groups
+                                             and general linear groups. The classical work of Green [8] on representations of
+                                             the Schur algebras pushes these ideas quite far and in great generality. In the
+                                             example of interest to us, Green associates to every additive functor f , deﬁned on
+                                             representations of the symmetric group, the representation over the Schur algebra
+                                             given by f (V ⊗n ). The main problem of constructing reverse correspondences is
+                                             solved naturally by Green. It is one of the purpose of this paper to shed new light
+                                             on these correspondences.
+                                                 A few years later, Friedlander and Suslin [7] introduced strict polynomial func-
+                                             tors, which are equivalent to representations of the Schur algebra when the dimen-
+                                             sion of V is at least n. This new formalization is aimed at cohomology computations
+                                             in positive characteristic, and it has numerous applications, including a proof of ﬁ-
+                                             nite generation of the cohomology of ﬁnite group schemes in the same paper [7].
+                                             The pleasing properties of the category P of strict polynomial functors lead to im-
+                                             pressive cohomological computations [6], following the fundamental computation of
+                                             ExtP (Id(r) , Id(r) ) given in [7] (the decoration (r) indicates Frobenius twists, that
+                                             is extension of scalars through the r-th power of the Frobenius isomorphism). More
+                                             recently, Chalupnik proves [2] elegant formulae computing functor cohomology, for
+                                             various fundamental functors F of the form
+                                                                            f T n : V 7→ F (V ) = f (V ⊗n ).
+                                             He succeeds in comparing the groups ExtP (G(r) , F (r) ) = ExtP (f T n(r) , gT n(r) )
+                                             with f g (ExtP (T n(r) , T n(r) )) for many important families of functors F and G.
+                                             [When the functors f and g are given by idempotents in the group ring of the
+                                             symmetric group, the two terms are easily seen to be isomorphic. However, this is
+                                             rarely the case in positive characteristic smaller than n.] To this end, Chalupnik
+                                             considers for each strict polynomial functor F certain adequate choices of functors
+                                                ∗ The ﬁrst author is partially supported by the LMJL - Laboratoire de Mathématiques Jean
+
+                                             Leray, CNRS: Université de Nantes, École Centrale de Nantes, and acknowledges the hospitality
+                                             and support of CRM Barcelona where the ﬁnal corrections on this paper were implemented.
+                                                                                            1
+2                          V. FRANJOU AND T. PIRASHVILI
+
+
+f , deﬁned on representations of the symmetric group Sn , such that f (V ⊗n ) = F (V ),
+thus informally rediscovering the correspondences set up by Green. These methods
+motivated and inspired the present work.
+    Green’s correspondences are best expressed in terms of adjoint functors and rec-
+ollements of categories. The category P thus appears as a quotient category of
+the category of all additive functors deﬁned on representations of the symmetric
+groups. Unfortunately, the latter is very large and stays quite mysterious. Repre-
+sentable functors, such as the functor H0 (Sn , −) taking invariants, are examples of
+functors obtained through the reverse correspondences of Green, but they are many
+more. However, all strict polynomial functors arise from coherent functors, which
+are functors that are presented by representable functors (see Deﬁnition 2.2.1).
+The resulting category, if still quite rich, is much better behaved. For instance, the
+global dimension of the category of coherent functors is two. This comes in sharp
+contrast with the rich functor cohomology obtained through homological algebra in
+the category of strict polynomial functors.
+    We revisit in this setting some of the properties of functors which make the cat-
+egory P much more tractable than coarse representations: tensor product, compo-
+sition (or plethysm), linearization etc. and we try and ﬁnd corresponding construc-
+tions for coherent functors. We also apply our insight to functor cohomology, and
+obtain Chalupnik’s constructions in a natural way.
+   Section 2 develops the general properties of coherent functors. Although we do
+not claim much originality, it contains a few results which we could not ﬁnd in
+the literature. We believe Section 2.7 to be new. In Section 3.1, we present strict
+polynomial functors to ﬁt our purpose. Section 3.2 contains our main results. It
+compares coherent functors and strict polynomial functors. Since the comparison is
+best stated in terms of recollements of abelian categories, we recall in an appendix
+A.1 what is needed from this theory. Section 3.3 lifts the tensor product of polyno-
+mial functors to the level of coherent functors. For later use, the ﬁnal section A.2
+does the same for the composition of polynomial functors. Section 4 applies this new
+setting to functor cohomology and obtains natural versions of Chalupnik’s results.
+Section 4 enjoys its own introduction, which hopefully makes clear the implications
+of our results for [2], and further developpements.
+   Notations. We ﬁx a ﬁeld K of positive characteristic p. All vector spaces are
+considered over K, and Hom and ⊗ are taken over K, unless otherwise decorated.
+Let V be the category of ﬁnite-dimensional vector spaces. For a ﬁnite group G, we
+let G V denote the category of ﬁnite dimensional G-modules.
+
+                             2. Coherent functors
+  Most results in this section are known to experts. A good reference for the ﬁrst
+subsections is a recent survey by Harsthorne [9].
+2.1. Finite-dimensional representations as functors. In this section, we ﬁx a
+ﬁnite group G. Let G V be the category of all ﬁnite dimensional G-modules and let
+A (G) be the category of all covariant K-linear functors from G V to the category
+V of ﬁnite dimensional vector spaces. Any M in G V yields a functor tM deﬁned
+by:
+                                  tM = M ⊗G (−) .
+For instance, the functor tK[G] is the forgetful functor to V . Dually, let hM be the
+functor represented by M :
+                                hM = HomG (M, −).
+Note that the functor tK[G] is (isomorphic to) the forgetful functor as well. We shall
+use that hM (K[G]) is isomorphic to the K-dual vector space M ∨ . This isomorphism
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                        3
+
+
+is precisely deﬁned as follows. Let τ be the element of K[G]∨ given by
+                            τ (g) = 0, if g 6= 1     and τ (1) = 1.
+By the Yoneda lemma, the function τ yields a natural morphism
+                               τX : HomG (X, K[G]) → X ∨
+                                                     f 7→ τ ◦ f.
+The homomorphism τX is an isomorphism when X = K[G]. Since K[G] is a self-
+injective algebra, HomG (−, K[G]) is an exact functor, and τ is a natural transfor-
+mation between exact functors. It results that τX is an isomorphism for all X in
+G V . We shall use this fact without further reference.
+   The category A (G) is an abelian category. We state below its elementary prop-
+erties.
+Proposition 2.1.1. For all object f of the category A (G), let D(f ) be the object of
+A (G) defined by
+                              (Df )(M ) = (f (M ∨ ))∨ .
+The resulting functor D is a duality in A (G).
+Proposition 2.1.2. For any M in G V , the Yoneda lemma yields a natural iso-
+morphism
+                             HomA (G) (hM , f ) ∼
+                                                = f (M ).
+Thus the functor hM is a projective object in the category A (G). Moreover, for all
+M, N in G V , there is a natural isomorphism:
+                                            ∼ HomG (N, M ).
+                        HomA (G) (hM , hN ) =
+Proposition 2.1.3. For all M in G V , there is a natural isomorphism: D(hM ) ∼ =
+tM . Hence the functor tM is an injective object in the category A (G). Moreover,
+for all f in A (G), there is a natural isomorphism
+                             HomA (G) (f , tM ) ∼
+                                                = Df (M ).
+In particular, there is a natural isomorphism:
+                            HomC (G) (tN , tM ) = HomG (N, M ).
+Proof. For X in V we deﬁne
+                            θX : HomG (M, X) → (X ∨ ⊗G M )∨
+by: θX (α) = {ξ ⊗ m 7→ ξ(α(m))}.
+   It deﬁnes a natural transformation θ: hM → D(tM ). Since θK[G] is an iso-
+morphism and both hM and D(tM ) are left exact functors, it follows that θ is an
+isomorphism. The rest follows because D is a duality.                          
+2.2. Coherent functors. An object f in A (G) is finitely generated if it is a
+quotient of hM for some M in G V . Among ﬁnitely generated functors, coherent
+functors are deﬁned by further requiring ﬁniteness of the relations.
+Definition 2.2.1. An object f in A (G) is coherent [9], or finitely presented [8, p.
+251][1, p. 204], if it ﬁts in an exact sequence
+(1)                                  hN → hM → f → 0
+for some M, N in   GV   .
+   By the Yoneda lemma, the morphism hN → hM is of the form hα for a uniquely
+deﬁned α : M → N . It follows that, for every coherent functor f , there is an exact
+sequence:
+                                                hα
+(2)            0        / hCoker α       / hN         / hM         /f   /0.
+4                           V. FRANJOU AND T. PIRASHVILI
+
+
+We let C (G) be the category of all coherent functors and natural transformations
+between them. It is a classical fact due to Auslander [1] that the category C (G)
+is an abelian category with enough projective and injective objects. Moreover the
+inclusion C (G) ⊂ A (G) is an exact functor.
+   We now give examples of coherent functors.
+Proposition 2.2.2.           (i) For any M in G V , the functor tM = D(hM ) is an
+         injective object in C (G);
+    (ii) If f is a coherent functor, then Df is also a coherent functor;
+   (iii) For any integer i ≥ 0, the homology and cohomology functors Hi (G, −),
+         Hi (G, −) are coherent on G V ;
+   (iv) For any integer i ≥ 0, the Tate homology and cohomology functors Ĥi (G, −)
+         and Ĥi (G, −) are coherent on G V .
+Proof. Examples (i) to (iii) are also in [9, §2].
+      (i) If M is free and ﬁnite dimensional, there is a natural isomorphism: hM ∨ ∼ =
+          tM . For a general M , choose a presentation K → N → M → 0 in the
+          category F V , with free and ﬁnite dimensional K and N . Then tM is the
+          cokernel of tK → tN and hence it is coherent. It is injective in C (G)
+          because it is so even in a A (G) by Proposition 2.1.3.
+     (ii) Assume f is a coherent functor. By deﬁnition, it is a cokernel of a morphism
+          hN → hM . Then Df is the kernel of the dual morphism tM → tN , hence
+          it is also a coherent functor.
+    (iii) Since
+                         H0 (G, −) = hK and H0 (G, −) = tK ,
+         they are coherent. For a general i, choose a projective resolution P∗ of K
+         with ﬁnite dimensional Pi , i ≥ 0. Then Hi (G, −) is the i-th homology of
+         the cochain complex hP∗ of coherent functors, therefore it is also a coherent
+         functor.
+    (iv) The functors Ĥ0 (G, −) and Ĥ−1 (G, −) are respectively the cokernel and
+         the kernel of the norm homomorphism H0 (G, −) → H0 (G, −), so they are
+         also coherent. We then proceed as for (iii).
+                                                                                    
+
+2.3. Homological dimension. For any M in G V , the functor hM ∈ C (G) is
+projective, because it is projective even in A (G). The exact sequence (2) shows
+that the category C (G) has global dimension at most 2. In fact the global dimension
+is never 1, it is either 2 or 0. The last possibility happens if, and only if, G V is
+semi-simple [1] i.e. when the order of G is invertible in K.
+   The following result characterizes objects of projective or injective dimension
+smaller than two.
+Proposition 2.3.1. Let f be a coherent functor.
+      (i) The following are equivalent:
+           (a) f is projective;
+           (b) The functor f is left exact;
+           (c) f is of the form hM for some M .
+     (ii) The following are equivalent:
+           (a) f is injective;
+           (b) The functor f is right exact;
+           (c) f is of the form tM for some M .
+    (iii) pd(f ) ≤ 1 if, and only if, f respect monomorphisms.
+    (iv) id(f ) ≤ 1 if, and only if, f respect epimorphisms.
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                           5
+
+
+Proof. We prove only (ii) and (iii). The rest follows by duality. Statement (i) is
+also proved in [9, Proposition 3.12 & 4.9].
+    If f is an injective object, then D(f ) is projective, hence it is a direct summand
+of an object of the form hM . It follows that f is a direct summand of tM for some
+M . The corresponding projector of tM has the form tα , where α is a projector of
+M . Thus f ∼  = tIm(α) . In particular any injective object is a right exact functor.
+    Conversely, assume that f is right exact. The G-module M = f (K[G]) is ﬁnitely
+generated and therefore one can consider the functor tM . There is a well-deﬁned
+transformation α : tM → f given by: αX (m ⊗ x) = f (x̂)(m), where, for x in X,
+x̂ : K[G] → X is the G-homomorphism deﬁned by x̂(1) = x. By construction this
+map is an isomorphism when X = K[G]. Since f is right exact αX is an isomorphism
+for all X in G V . Hence f is injective in C (G).
+    Suppose that f respects monomorphisms. Consider an exact sequence of functors
+
+
+                                0 → f ′ → hM → f → 0.
+
+
+We want to show that f ′ is projective. By (i), we need to prove that f ′ is left exact.
+For any short exact sequence in G V
+
+
+                                0 → A → B → C → 0,
+
+
+there is a commutative diagram with exact columns:
+
+
+                         0               0             0                  .
+
+                                                        
+                      f ′ (A)        / f ′ (B)     / f ′ (C)
+
+
+                                                     
+             0       / hM (A)        / hM (B)     / hM (C)
+
+
+                                                       
+                                 α    / f (B)       / f (C)
+                       f (A)
+
+                                                      
+                         0               0             0
+
+In this diagram the middle row is also exact and a diagram chase shows that α is
+a monomorphism. It follows that f ′ is left exact and hence projective. This shows
+that pd(f ) ≤ 1.
+   Conversely, suppose that the projective dimension of f is ≤ 1. There is a short
+exact sequence of functors
+
+
+                                0 → hN → hM → f → 0.
+
+
+If
+
+                                 0→A→B→C →0
+6                                V. FRANJOU AND T. PIRASHVILI
+
+
+is a short exact sequence in G V , there is a commutative diagram with exact columns:
+                            0                       0                    0
+
+                                                                      
+              0         / hN (A)               / hN (B)            / hN (C)
+
+
+                                                                      
+              0         / hM (A)               / hM (B)            / hM (C)
+
+
+                                                                       
+                                        α       / f (B)             / f (C)
+                          f (A)
+
+                                                                       
+                            0                       0                    0
+  The ﬁrst two rows in this diagram are also exact, and α is a monomorphism.
+This shows that f respects monomorphisms.                                 
+2.4. Coherent functors and recollement. Following Auslander [1, 8], we relate
+the category of coherent functors C (G) with the category G V . The best way to
+formulate the result is to use the language of recollement of categories (see [10], [3],
+or Appendix A).
+   One considers the functors
+            t∗ : C (G) →    GV    ,     t∗ :    GV       → C (G)        and t! :   GV   → C (G)
+given respectively by
+                  t∗ (f ) = f (K[G]),          t∗ (M ) = hM ∨ and t! (M ) := tM .
+Proposition 2.4.1.          (i) The functor t! is left adjoint to t∗ and, for all M in
+                               ∗
+        G V , the G-module t t! (M ) is naturally isomorphic to M .
+   (ii) The functor t∗ is right adjoint to t∗ and, for all M in G V , the G-module
+        t∗ t∗ (M ) is naturally isomorphic to M .
+Proof.       (i) For any coherent functor f , the functor Df is also coherent, so one
+          can assume as in (2) that Df = Coker(hα : hN → hM ), for some linear
+          map α: M → N . Applying D, we get an exact sequence:
+                                                                   tα
+(3)                              0             /f          / tM          / tN .
+
+          It shows that: t∗ (f ) = f (K[G]) = Ker(α). Moreover, there are natural
+          isomorphisms:
+                        HomC (G) (tM , f ) = HomC (G) (tM , Ker(tα ))
+                                                    = Ker(HomC (G) (tM , tα ))
+                                                    = Ker(HomG (M, α))
+                                                    = HomG (M, Ker α)
+                                                    = HomG (M, t∗ (f )).
+            From this follows the ﬁrst statement of (i). The second one follows from
+            the natural isomorphism: t∗ t! (M ) = tM (K[G]) ∼
+                                                            = M.
+       (ii) We use the duality: HomG (M, K[G]) ∼   = M ∨ . Take f as in the exact se-
+            quence (2): f = Coker hα for some linear map α. Because K[G] is a
+            self-injective algebra, it follows:
+    t (f ) = f (K[G]) = Coker(HomG (α, K[G])) ∼
+     ∗
+                                                 = HomG (Ker(α), K[G]) ∼
+                                                                       = (Ker α)∨ .
+             STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                           7
+
+
+          Moreover, there are natural isomorphisms:
+                         HomC (f , hX ∨ ) = Ker(hX ∨ (α))
+                                                  = Ker(HomG (X ∨ , α))
+                                                  = HomG (X ∨ , Ker α)
+                                                  ∼
+                                                  = HomG ((Ker α)∨ , X)
+                                                  ∼
+                                                  = HomG (t∗ (f ), X)
+          Finally, for M in G V : t∗ t∗ (M ) = t∗ (hM ∨ ) = HomG (M ∨ , K[G]) ∼
+                                                                              = M.
+                                                                                        
+
+   We let C 0 (G) be the full subcategory of C (G) whose objects f are such that:
+t (f ) = 0. Thus the category C 0 (G) consists exactly of coherent functors which
+∗
+
+vanish on projective objects. Since t∗ is exact, the subcategory C 0 (G) is abelian.
+Indeed, it is a Serre subcategory of C (G). We let
+                                           r∗ : C 0 (G) → C (G)
+be the inclusion. It is an exact functor. It is a consequence of Proposition A.1.2
+that the functors r∗ , t∗ , t∗ , t! are part of a recollement situation
+                                           r∗                        t!
+                                u                            u
+                      C 0 (G)               r∗     / C (G)
+                                                                 i
+                                                                     t∗   / GV .
+                                    i
+                                            r!                       t∗
+
+
+where r∗ and r! , left and right adjoint to r∗ , are deﬁned by the following exact
+sequences:
+             0 → r∗ r! (f ) → f → t∗ t∗ (f ),        t! t∗ (M ) → M → r∗ r∗ (f ) → 0.
+The following Proposition gives another description of r∗ and r! .
+Proposition 2.4.2.       (i) For a functor f : G V → V , let τ : L0 f → f be
+       the natural transformation from the 0-th left derived functor. There is an
+       isomorphism
+                                       ∼ Coker(τ ).
+                               r∗ (f ) =
+      (ii) For M in G V , let ΣM be a finitely generated G-module which fits in a
+           short exact sequence
+(4)                                     0 → M → P → ΣM → 0
+          where P is a projective G-module. There is an isomorphism
+                                         r! (tM ) ∼
+                                                  = TorG
+                                                       1 (−, ΣM ).
+
+      (iii) For a functor f : G V → V , write f = Ker(tα ) for some linear map
+            α : M → N , as in the exact sequence (3). There is an isomorphism
+
+                                        r! (f ) ∼
+                                                = Ker(TorG
+                                                         1 (−, Σα)).
+
+Proof.       (i) Let us consider a natural transformation
+                                                 ξ:f →g
+          where f is a coherent functor and g is in C 0 (G). We have to prove that ξ
+          factors trough Coker(τ ). In other words we have to show that the compos-
+          ite ξ ◦ τ : L0 f → g is zero. To this end, for an object M in G V choose an
+8                            V. FRANJOU AND T. PIRASHVILI
+
+
+         exact sequence 0 → N → P → M → 0 with projective P . The following
+         commutative diagram with exact top row implies the result:
+                             L0 f (P )        / L0 f (M )             /0.
+
+                               ∼
+                               =
+                                                      
+                              f (P )              / f (M )
+
+
+                                                     
+                            0 = g(P )             / g(M )
+
+    (ii) The long exact sequence for Tor-groups on 0 → M → P → ΣM → 0 yields
+         an exact sequence
+                     0 → TorG
+                            1 (−, ΣM ) → tM → tP → tΣM → 0.
+
+         Let ψ : tM → hM ∨ be the natural transformation deﬁned by:
+                         ψX : X ⊗G M         → HomG (M ∨ , X)
+                                   x⊗m       7→         (ξ 7→ ξ(m)x).
+         It is an isomorphism when M is a projective object in                        GV   . There is a
+         commutative diagram with exact rows
+                        0                / hM ∨              / hP ∨         / hΣM ∨
+                                             O                   O              O
+                                                                 ∼
+                                                                 =
+
+         0      / TorG (−, ΣM )           / tM                / tP          / tΣM           / 0.
+                     1
+
+         It follows that there is an exact sequence
+                            0 → TorG
+                                   1 (−, ΣM ) → tM → hM ∨ .
+
+         The result follows from the comparison with the exact sequence
+                0 → r∗ r! (tM ) → tM → t∗ t∗ (tM )) = t∗ (M ) ∼
+                                                              = hM ∨ .
+    (iii) Apply r! to the exact sequence (3). Because the functor r! is left exact:
+                            r! (f ) = r! (Ker(tα ) = Ker(r! (tα )),
+         and the result follows from (ii).
+                                                                                                     
+2.5. Induction and restriction for coherent functors. Let H be a subgroup
+of the ﬁnite group G. The induction functor IndG H : H V → G V is left and right
+                                      G
+adjoint to the restriction functor ResH : G V → H V . Both functors are exact. By
+pre-composition, we obtain exact functors
+                  ↑G                      G
+                   H : A (H) → A (G) and ↓H : A (G) → A (H)
+
+which are given by
+                               G                               G
+             (↑G                             G
+               H g)(M ) = g(ResH (M )) and (↓H f )(N ) = f (IndH (N ))
+
+for M ∈ G V , N ∈ H V , f ∈ A (G) and g ∈ A (H). From the adjunction of
+induction and restriction, it is formal that ↓G
+                                              H is left and right adjoint to the functor
+↑G
+ H .
+Proposition 2.5.1. If f is coherent in C (G), then ↓G    H (f ) is coherent in C (H).
+If g is coherent in C (H), then ↑G H  (g) is coherent in C (G). Thus, induction and
+restriction define adjoint pairs of functors
+                   ↑G                      G
+                    H : C (H) → C (G) and ↓H : C (G) → C (H).
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                            9
+
+
+Proof. Take M ∈     GV   and N ∈      HV   . Since Ind is left adjoint to Res we have
+                                      ↑G       ∼
+                                       H (hN ) = hIndG
+                                                     H N
+
+
+Similarly, since Ind is also right adjoint to Res:
+                                   ↓G
+                                    H (hM ) = hResG
+                                                  H M
+                                                      .
+
+The rest follows from the exactness of ↑ and ↓ and the exact sequence (1).              
+
+2.6. Universal property of the category of coherent functors. The following
+elementary proposition stresses the relevance of the category of coherent functors.
+Proposition 2.6.1. Let E be an abelian category and assume additive functors
+U : G V → E and V : (G V )op → E are given. Then
+      (i) There exists a left exact functor U c : C (G) → E , unique up to an isomor-
+          phism, such that U c (tα ) = U (α) for all α in C (G). Moreover U c is exact
+          when U is right exact.
+     (ii) There exists a right exact functor V c : C (G) → E , unique up to an iso-
+          morphism such that V c (hα ) = V (α) for all α in C (G). Moreover V c is
+          exact when V is left exact.
+    (iii) Suppose that U is right exact, that V is left exact and suppose that natural
+          isomorphisms αP : U (P ) → V (P ∨ ) are given for all projective objects P of
+          the category G V . Then there exists an isomorphism of functors αc : U c →
+          V c such that for any projective object P ∈ G V the morphism αc (tP ) is the
+          same as the following composite:
+                   U c (tP ) = U (P ) → V (P ∨ ) = V c (hP ∨ ) ∼
+                                                               = V c (tP ),
+         where the last isomorphism is induced by the isomorphism tP ∼
+                                                                     = hP ∨ .
+Proof. Deriving the additive functor provides the desired extension. The details are
+as follows.
+   i) Let f be a coherent functor. Write f = Ker tα as in (3) to get an injective
+resolution of f :
+                                           tα
+               0         /f       / tM          / tN    / tCoker(α)       /0.
+
+Thus U c (f ) is necessarily the kernel of U (α) : U (M ) → U (N ). Not only this proves
+the uniqueness of the functor U c , but it also gives the construction of U c as the
+0-th right derived functor of the restriction of U c on injective objects. If U is right
+exact then
+                   0 → U c (f ) → U (M ) → U (N ) → U (Coker(α)) → 0
+is an exact sequence. Thus the right 1-st (and therefore any higher) derived functor
+vanishes and hence U c is an exact functor. Similarly for ii).
+   iii) For M ∈ G V choose a free presentation, an exact sequence
+                                      K →L→M →0
+with free K and L in     GV   . This gives an exact sequence of coherent functors
+                                   tK → tL → tM → 0.
+Since both functors U and V are exact, there exists a unique morphism αc (tM )
+                         c        c
+
+which ﬁts in a commutative diagram with αc (tK ) and αc (tL ). Since any coherent
+functor f has a resolution 0 → f → tM → tN and U c , V c are exact functors, there
+exists a unique morphism αc (f ) which ﬁts in a commutative diagram with αc (tM )
+and αc (tN ). The claim follows.                                                
+10                            V. FRANJOU AND T. PIRASHVILI
+
+
+2.7. External tensor products of coherent functors. Let G and H be ﬁnite
+groups. For M in G V and N in H V , let M ⊠ N denote the vector space M ⊗ N
+with G × H-action. It yields an exact bifunctor
+
+                                ⊠:   GV   ×H V →    G×H V   .
+
+We wish to extend this bifunctor to coherent functors.
+   We ﬁrst discuss a concrete elementary way of extending the product, inspired
+by [2, p. 781]. Note that for X in G×H V and g in A (H), the vector space
+      G×H
+g(Res1×H   (X)) has a natural G-structure, because G × 1 commutes with 1 × H in
+                                                    G×H
+G × H. Thus, for f in A (G), the evaluation f (g(Res1×H X)) makes sense. Denote
+it by (f ⊙ g)(X). We have thus deﬁned an additive bifunctor
+
+                             ⊙ : A (G) × A (H) → A (G × H).
+
+Proposition 2.7.1. Let G and H be finite groups.
+      (i) For all coherent f in C (G) and g in C (H), the functor f ⊙ g is coherent
+          in C (G × H). This defines a bifunctor
+
+                             ⊙ : C (G) × C (H) → C (G × H).
+
+     (ii) For all M in   GV    and N in   HV   , there are natural isomorphisms:
+
+                               = hM⊠N , tM ⊙ tN ∼
+                       hM ⊙ hN ∼                = tM⊠N .
+     (iii) The bifunctor ⊙ is exact with respect to the first argument.
+     (iv) The bifunctor ⊙ commutes with duality.
+
+Proof. The last two points are easy. We prove the ﬁrst two.
+     (ii) For X in   G×H V   , one has:
+                     hM⊠N (X) = HomG×H (M ⊠ N, X)
+                                                        G×H
+                                 = HomG (M, HomH (N, Res1×H X)
+                                 = hM ⊙ hN (X).
+
+          and the other isomorphism follows by duality (or directly as easily).
+      (i) By (iii), it is enough to prove that hM ⊙ g is coherent for all g in A (H)
+          and M in G V . Taking a free presentation of M reduces further to the case
+          when M is free. Because hM ⊙ g is then exact in g, the case g = hN is
+          enough. This is (ii).
+                                                                                   
+
+Example 2.7.2. Note that: f ⊙ hK (X) = f (X H ) but: hK ⊙ f (X) = f (X)H , so that
+hK ⊙ f is not even right exact in f , even for H = S2 .
+
+  As a direct application of the method of Proposition 2.6.1, we obtain symmetric
+exact alternatives to this extension of the external tensor.
+
+Proposition 2.7.3. There is a right exact (in each argument) functor:
+
+                             ⊠
+                             ℓ
+                               : C (G) × C (H) → C (G × H),
+
+unique up to isomorphism, such that:
+
+                                     hM ⊠
+                                        ℓ
+                                          hN = hM⊠N
+
+for all M in   GV    and N in   HV   . This bifunctor is symmetric and balanced.
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                          11
+
+
+Proof. For M in VH×G , let M ♭ be the G × H-module with same underlying vector
+space and action given by: (g, h).♭ m = (h, g).m. Symmetry means that the following
+diagram commutes up to natural isomorphism:
+                                              ⊠       / C (G × H)
+                           C (G) × C (H)
+                                     tw                        Tw
+                                                          
+                           C (H) × C (G)              / C (H × G)
+                                              ⊠
+
+where tw is twisting of factors, while T w is given by T w(f )(M ) = f (M ♭ ), for f in
+C (G × H). To prove this property, it suﬃces to note that both functors T w ◦ ⊠       ℓ
+and ⊠ ℓ
+        ◦tw are right exact and take isomorphic values on projective generators; for
+projective generators, it reduces to the symmetry of the external tensor product.
+   To prove that the bifunctor is balanced, it is enough, by symmetry, to prove that
+−⊠ ℓ
+     hN is exact for each N in H V . This functor is the extension to C (G) of the
+left exact functor M 7→ hM⊠N . It is therefore exact by Proposition 2.6.1(ii).       
+
+  We now compare these constructions.
+Proposition 2.7.4. There is a natural transformation:
+                                      f⊠
+                                       ℓ
+                                         g →f ⊙g
+for all f in C (G) and g in C (H), which is an isomorphism when g is projective.
+Proof. Since both sides are right exact on f , the isomorphism for a projective gen-
+erator g = hN follows from the case of projective generators f = hM .             
+
+Example 2.7.5. Note that the two products do not always coincide. For instance,
+using Example 2.7.2 for G = H, hK ⊠ℓ
+                                     f ∼
+                                       =f⊠ℓ
+                                            hK ∼
+                                               = f ⊙ hK is not always equal to
+hK ⊙ f .
+Proposition 2.7.6. There is a left exact (in each argument) functor:
+                           r
+                          ⊠ : C (G) × C (H) → C (G × H),
+unique up to isomorphism, such that:
+                                          r
+                                    tM ⊠ tN = tM⊠N
+for all M in   GV   and N in   HV   . This bifunctor is symmetric and balanced.
+Proposition 2.7.7. There is a natural transformation:
+                                                  r
+                                      f ⊙g → f ⊠g
+for all f in C (G) and g in C (H), which is an isomorphism when g is injective.
+  These can be deduced from the natural isomorphism:
+                                                      r
+                                   D(f ⊠
+                                       ℓ
+                                         g) ∼
+                                            = Df ⊠ Dg.
+                               r
+Remark 2.7.8. Indeed, the ⊠-product coincide with Chalupnik’s mysterious (−, −)
+construction [2, p. 785]. For, choose an embedding of f in some f ′ and of g in some
+                     r                          r                 r
+g′ . Because the ⊠-product is left exact, f ⊠ g embeds in f ′ ⊠ g′ . More precisely,
+                                             r                           r          r
+it is contained both in the image of f ′ ⊠ g and in the image of f ⊠ g′ in f ′ ⊠ g′ .
+                                           r
+A simple diagram chase shows that f ⊠ g indeed equals the intersection of these
+              r
+images in f ′ ⊠ g′ . Choosing f ′ and g′ to be injectives gives a description in term of
+the more expicit ⊙-product and recovers Chalupnik’s deﬁnition of (f , g) as well as
+                    r
+the deﬁnition of ⊠ as a 0-th right derived functor of ⊙.
+12                         V. FRANJOU AND T. PIRASHVILI
+
+
+2.8. Extension of the domain of coherent functors. In this section, we show
+that a coherent functor f in C (G) can be evaluated on any object in an abelian
+category which is equipped with a G-action.
+   Let E be a K-linear abelian category. There exists a unique (up to a unique
+isomorphism) exact bifunctor
+                                  ⊗:V ×E →E
+such that K ⊗ (−) : E → E is isomorphic to the identity functor IdE : E → E . It
+is obtained as follows. On the full subcategory of V with objects Kn , n ≥ 0, it is
+deﬁned by: Kn ⊗ E := E n , naturally in E. We are left with deﬁning the functor
+(−) ⊗ E : V → E on morphisms, for a ﬁxed object E. For a matrix (kij ), kij ∈ K,
+the corresponding morphism E n → E m is given by the same matrix, but where kij
+is considered as an elements of EndE (E) via the K-linear structure on E .
+   Putting
+                              Hom(V, A) := V ∨ ⊗ A
+deﬁnes an exact bifunctor
+                               Hom : (V )op × E → E
+such that Hom(K, −) : E → E is isomorphic to the identity functor IdE : E → E .
+It is clear that one has a natural isomorphism
+                        Hom(V, W ⊗ A) ∼  = W ⊗ Hom(V, A),
+for V, W in V and A in E . Thus E is tensored and co-tensored over V .
+Remark 2.8.1. More generally, for any K-linear functor T : E → E ′ between K-
+linear categories, there are natural isomorphisms: V ⊗ T (A) ∼    = T (V ⊗ A) and
+Hom(V, T A) ∼ = T (Hom(V, A)) for V in V and A in E . Indeed, the second isomor-
+phism is a consequence of the ﬁrst one, while the ﬁrst one is obvious for V = K and
+follows from the additivity of T for all V ’s.
+   We are now ready to deﬁne invariants and co-invariants of a ﬁnite group G in
+an abelian category E . A left G-object in E is a pair (A, α), where A is in E
+and α : G → AutE (A) is a group homomorphism. Equivalently it is an object
+A equipped with a map λ : K[G] ⊗ A → A satisfying obvious properties. We let
+Rep(G, E ) be the abelian category of left G-objects in E . If A is a G-object, its
+structural map K[G] ⊗ A → A has an adjoint A → Hom(K[G], A). One deﬁnes:
+                      H0 (G, A) := Ker(A → Hom(K[G], A)).
+If M is a G-module, one deﬁnes HomG (M, A) to be H0 (G, Hom(M, A)).
+   Similarly, the reader will deﬁne M ⊗G A as a coequalizer of two canonical maps
+M ⊗ K[G] ⊗ A → M ⊗ A. We also put: H0 (G, A) := K ⊗G A.
+Proposition 2.8.2. There exists a bifunctor
+                        < −, − > : C (G) × Rep(G, E ) → E
+unique up to an isomorphism, such that the functor < −, A >: C (G) → E is exact
+for any G-object A and
+                            < tM , A > = M ⊗G A
+for any M ∈ G V . Moreover, one has a natural isomorphism
+                                    ∼ HomG (M, A).
+                         < hM , A > =
+Proof. Fix a G-object A. Put R(M ) = M ⊗G A in Proposition 2.6.1 to get the
+existence and uniqueness of the pairing. To show the last assertion, observe that
+both sides of the isomorphism are left exact additive functors on M and therefore it
+suﬃces to prove the isomorphism for M = K[G]. Since hK[G] ∼   = tK[G] is the forgetful
+functor, both sides in this case are isomorphic to A.                               
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                            13
+
+
+  It is clear that for E = G V this pairing is just evaluation: < f , M >= f (M ).
+The pairing allows to evaluate a coherent functor on graded G-objects, for instance.
+
+               3. Application to strict polynomial functors
+3.1. The category of strict polynomial functors. Strict polynomial functors
+were introduced by Friedlander and Suslin [7, §2]. We now explain what they are
+in a given degree, in a way suitable for our purpose (see also [14, §4]).
+   Let us ﬁx a positive integer n. We start with the n-th divided power of a vector
+space V , deﬁned by:
+                        Γn (V ) := H0 (Sn , V ⊗n ) = (V ⊗n )Sn ,
+where the symmetric group on n-letters Sn acts on V ⊗n by permuting the factors.
+For any x in some vector space X, we let γ(x) be the element x⊗n in Γn (X). This
+deﬁnes a natural set map γX : X → Γn (X). Reordering the factors
+                             A⊗n ⊗ B ⊗n → (A ⊗ B)⊗n
+induces a K-linear natural transformation
+                           Γn (A) ⊗ Γn (B) → Γn (A ⊗ B)
+sending γA (a) ⊗ γB (b) to γA⊗B (a ⊗ b). Together with the composition law in V ,
+these maps deﬁne a composition map:
+Γn (Hom(V, W ))⊗Γn (Hom(U, V )) → Γn (Hom(V, W )⊗Hom(U, V )) → Γn (Hom(U, W )).
+This deﬁnes a category Γn V , with the same objects as V , and with morphisms
+                        HomΓn V (V, W ) := Γn (Hom(V, W )).
+The following Lemma describes the category Γn V as a full subcategory of     Sn V   .
+Lemma 3.1.1. For a positive integer n, the functor
+                                      i : Γn V →       Sn V
+
+                                                 V 7→ V ⊗n
+is a full embedding.
+Proof. This follows from the natural isomorphism:
+HomSn (V ⊗n , W ⊗n ) = (Hom(V ⊗n , W ⊗n ))Sn ∼
+                                             = (Hom(V, W )⊗n )Sn = HomΓn V (V, W ).
+                                                                                        
+    Reformulating [7, §2], a homogeneous strict polynomial functor of degree n deﬁned
+on V is a K-linear functor Γn V → V . We let Pn be the category of homogeneous
+strict polynomial functors of degree n. It is known [7, §3] that the category Pn
+is equivalent to the category of ﬁnite dimensional modules over the Schur algebra
+S(n, n).
+    The collection of maps γX : X → Γn (X) yields a (nonlinear) functor γ : V →
+  n
+Γ V . Pre-composition with γ associates to any strict polynomial functor deﬁned on
+V an usual functor on V ; it is called the underlying functor of the strict polynomial
+functor. It is usual to denote by the same letter a strict polynomial functor and its
+underlying functor. For example, the composite
+                                  i                   H 0 (Sn ,−)
+                         Γn V              /   Sn V
+                                                                    /V
+
+is denoted by Γn , since its underlying functor is the n-th divided power functor,
+and S n denotes the composite
+                                  i                   H0 (Sn ,−)
+                         Γn V          /       Sn V
+                                                                    /V ,
+14                                V. FRANJOU AND T. PIRASHVILI
+
+
+because its underlying functor is the n-th symmetric power. Similarly the composite
+
+                                           i                     forget
+                          Γn V                  /   Sn V
+                                                                          /V
+
+is denoted by T n , because the underlying functor is the n-th tensor power. We now
+recall from [7, §3] the basic properties of the category Pn .
+   There is a well-deﬁned tensor product of strict polynomial functors which corre-
+sponds to the usual tensor product of underlying functors, and it yields a bifunctor
+
+                                  − ⊗ − : Pn × Pm → Pn+m .
+
+For example: T n = T 1 ⊗ · · · ⊗ T 1 (n-factors).
+  There is also a duality in Pn . For an object F in Pn , we let DF be the
+homogeneous strict polynomial functor given by
+
+                                     (DF )(V ) = (F (V ∨ ))∨
+
+where W ∨ denotes the dual vector space of W . Since the values of any homogeneous
+strict polynomial functor are ﬁnite dimensional, D is an involution and deﬁnes an
+equivalence of categories D : Pnop → Pn . The functor DF is called the dual of F .
+    The category Pn has enough projective and injective objects. A set of generators
+is indexed by partitions of n, that is decreasing sequences of positive integers adding
+up to n. For a partition λ = (n1 ≥ n2 ≥ · · · ≥ nk ), put
+
+                                     Γλ := Γn1 ⊗ · · · ⊗ Γnk .
+
+The functors Γλ , when λ runs through all partitions of the integer n, form a set of
+projective generators. Indeed, HomPn (Γλ , F ) is the evaluation on the base ﬁeld of
+the cross-eﬀect of the functor F of homogeneous multidegree λ (i.e. the component
+of weight λ under the action of Gkm on the cross-eﬀect of F ). Dually, the functors
+
+                                     S λ := S n1 ⊗ · · · ⊗ S nk
+
+form a set of injective cogenerators. In particular, the functor T n is projective and
+injective in Pn . Moreover, the action of Sn by permuting factors yields an exact
+functor
+                             c∗ : Pn → Sn V
+                                               F 7→ HomPn (T n , F ).
+The representation c∗ (F ) is often called the linearization of the functor F ; we use
+the letter c for cross-eﬀect. The functor c∗ has both a left and a right adjoint functor
+given respectively by
+
+              (c! (M ))(V ) = (M ⊗ V ⊗n )Sn , c∗ (M ) = (M ⊗ V ⊗n )Sn .
+
+Let Pn0 be the full subcategory of Pn whose objects are the strict polynomial
+functors F such that c∗ (F ) = 0. This condition means that the underlying functor
+has degree less than n in the additive sense of Eilenberg and MacLane. Let d∗ :
+Pn0 → Pn be the inclusion and let d∗ and d! be the left and right adjoint of d∗ . By
+Proposition A.1.2, this deﬁnes a recollement situation:
+
+                                      d∗                             c!
+                              v                              w
+                     Pn 0 h           d∗            / Pn
+                                                         g           c∗   /   Sn V   .
+                                      d!                             c∗
+
+
+More on this recollement can be found in [11].
+              STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                             15
+
+
+3.2. The relation between strict polynomial and coherent functors. For
+simplicity, we write An and Cn instead of A (Sn ) and C (Sn ). For an object f in
+An , the composite
+                                          i              f
+                                Γn V          /   Sn V
+                                                                /V
+deﬁnes a strict polynomial functor, which is denoted by j ∗ (f ). This construction
+deﬁnes a functor
+                               j ∗ : An → Pn
+                                    j ∗ (f )(V ) = f (V ⊗d ).
+The same functor was constructed, in terms of Schur algebras, by Green [8, §5, pp
+275–276]. The functor j ∗ was also considered by Chalupnik [2, §3] in his work on
+functor cohomology.
+Lemma 3.2.1. The functor j ∗ respects duality: D ◦ j ∗ ∼
+                                                       = j ∗ ◦ D.
+Proof. Dj ∗ (f )(V ) = (j ∗ (f )(V ∨ ))∨ = (f (V ∨⊗n ))∨ ∼
+                                                         = (Df )(V ⊗n ) = j ∗ D(f )(V ).   
+
+Proposition 3.2.2. The functor j ∗ : An → Pn has a right adjoint functor defined
+by:
+      j∗ (F )(M ) = HomPn (j ∗ (hM ), F ) = HomPn (HomSn (M, (−)⊗n ), F )
+where M is representation of Sn . It has also a left adjoint functor defined by:
+                                    j! (F ) = D(j∗ (DF )).
+In other words:
+                       (j! F )(M )∨ = HomPn (F, (−)⊗n ⊗Sn M ∨ ).
+Proof. Since hom’s in the category Pn are ﬁnite dimensional vector spaces, we see
+that j∗ (F ) belongs to An . The fact that it is right adjoint of j ∗ follows from the
+Yoneda lemma. The dual formula is formal:
+                               = HomAn (Df , j∗ (DF )) ∼
+       HomAn (D(j∗ (DF )), f ) ∼                       = HomPn (j ∗ (Df ), DF )
+                      ∼
+                      = HomPn (Dj ∗ (f ), DF ) ∼
+                                               = HomPn (F, j ∗ (f )).
+To check the last formula, observe that:
+          j∗ (DF )(M ∨ ) = HomPn (j ∗ (hM ∨ ), DF ) ∼
+                                                    = HomPn (F, j ∗ (DhM ∨ ))
+and
+                         j ∗ (DhM ∨ ) ∼
+                                      = j ∗ tM ∨ = (−)⊗n ⊗Sn M ∨ .
+                                                                                           
+
+Remark 3.2.3. In particular j∗ and j! are a functorial choice of, respectively, an
+injective and projective symmetrization of [2, Section 3].
+Remark 3.2.4. The existence of adjoints of a precomposition functor is quite a
+general phenomenon, see Example A.1.4.
+  We now study these adjoint functors. For a partition λ of a positive integer n,
+we let Sλ be the corresponding Young subgroup of Sn .
+Lemma 3.2.5. Let λ be a partition of n there are natural isomorphisms:
+                            j∗ (S λ ) ∼
+                                      = H0 (Sλ , −) = tK[Sn /Sλ ] ,
+
+                            j! (Γλ ) ∼
+                                     = H0 (Sλ , −) = hK[Sn /Sλ ] .
+In particular
+       HomPn (S λ , S µ ) = HomSn (K[Sn /Sλ ], K[Sn /Sµ ]) = HomPn (Γµ , Γλ ).
+16                              V. FRANJOU AND T. PIRASHVILI
+
+
+Proof.
+                   j∗ (S λ )(M ) = HomPn (HomSn (M, (−)⊗n ), S λ )
+                                 ∼
+                                 = HomP (Γλ , D(HomS (M, (−)⊗n )))
+                                             n                   n
+
+                             ∼
+                             = HomPn (Γλ , (−)⊗n ⊗Sn M ).
+The ﬁrst isomorphism follows from [7, Corollary 2.12]. The second follows by dual-
+ity. The last statement follows from the fact that j! is full and faithful.     
+Proposition 3.2.6. [8, 2.14] The values of the functors j∗ and j! are coherent
+functors.
+Proof. By duality, it is enough to consider the functor j∗ . By Lemma 3.2.5, the
+statement is true for injective cogenerators of Pn . Since j∗ is left exact the result
+follows by a resolution argument.                                                   
+Proposition 3.2.7. The unit IdPn → j ∗ j! and the counit j ∗ j∗ → IdPn are iso-
+morphisms.
+Proof. We prove only the second isomorphism, the ﬁrst one follows by duality. It is
+clear that j ∗ (H0 (Sλ , −)) ∼
+                             = S λ . Thus Lemma 3.2.5 shows that the statement is true
+for injective cogenerators of Pn . Since j ∗ is exact and j∗ is left exact, the result
+follows by taking resolutions.                                                      
+Remark 3.2.8. Since the functor j∗ is a full embedding, this gives a new proof of [2,
+Lemma 3.4].
+Proposition 3.2.9. Let CnY be the full subcategory of Cn whose objects are the
+coherent functors f such that, for all partitions λ of n:
+                                       f (K[Sn /Sλ ]) = 0.
+               ∗
+The functors j and its adjoints j∗ , j! are part of a recollement of abelian categories:
+                                       i∗                   j!
+                                   w                  w
+                           CnY g       i∗        / Cn
+                                                      g     j∗       / Pn
+
+                                       i!                   j∗
+
+Proof. According to Proposition A.1.2, the functor j ∗ and its adjoints give rise to a
+recollement situation. To determine the kernel category, it is enough to notice that
+every Young-permutation representation K[Sn /Sλ ] occurs as a direct factor in the
+tensor product V ⊗n as soon as the dimension of V is n.                             
+Example 3.2.10. CnY = 0 if p > n. Moreover CnY = 0 for p = 2 and n = 2 or 3.
+Proposition 3.2.11. The counit j! j ∗ (f ) → f is an isomorphism when f = tM .
+Dually, the unit f → j∗ j ∗ (f ) is an isomorphism when f = hM .
+Proof. We prove only the ﬁrst assertion. Since both j! j ∗ (tM ) and tM are right
+exact functors of M , it is enough to consider the case when M = K[Sn ]. In this
+case tM is the forgetful functor. Therefore: j ∗ (tM ) = ⊗n = Γ11···1 and
+                   j! j ∗ (tK[Sn ] ) = j! (Γ11···1 ) = H0 (S11···1 , −) = tK[Sn ] .
+                                                                                      
+Proposition 3.2.12. The norm transformation (see Appendix A.1) for the previous
+recollement situation is an isomorphism on projective and injective objects.
+Proof. By Lemma 3.2.5 we have j! (Γλ ) = hM , for M = K[Sn /Sλ ]. By Proposition
+3.2.11 we have also j∗ (Γλ ) = j∗ j ∗ (hM ) = hM , thus the norm is an isomorphism on
+projective objects. By duality it is also an isomorphism on injective objects.      
+                    STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                                                        17
+
+
+   The following examples gather some other known values of the adjoints j! , j∗ .
+Example 3.2.13. The relations of Proposition 3.2.11:
+                                        = tM ∼
+                           j∗ (j ∗ tM ) ∼    = j! (j ∗ tM )
+apply in particular when M is the signature, or when M is induced from the sig-
+nature of a Young subgroup Sµ . This shows that, when p is odd, the norm is an
+isomorphism on a tensor product of exterior powers Λµ .
+Example 3.2.14. Let Id(1) be the Frobenius twist in Pp , that is extension of scalars
+through the Frobenius [7, p. 212]. It is related to the norm N by an exact sequence:
+                                    / Id(1)          / Sp      N       / Γp              / Id(1)            /0
+                       0
+It follows that there are exact sequences:
+                                 0 → j∗ (Id(1) ) → H0 (Sp , −) → H0 (Sp , −)
+                                 H0 (Sp , −) → H0 (Sp , −) → j! (Id(1) ) → 0.
+Thus j∗ (Id(1) ) = Ĥ−1 (Sp , −) and j! (Id(1) ) = Ĥ0 (Sp , −) (where as usual Ĥ denotes
+Tate cohomology).
+Example 3.2.15. Assume p = 2. Let S be a set with n elements. For each 0 ≤ k ≤ n
+we let Bk be the vector space spanned on the set of all subsets of S with exactly
+k-elements. Deﬁne d : Bk → Bk+1 by
+                                        X
+                              d(X) =            Y
+                                                              X⊂Y ∈Bk+1
+       2
+Then d = 0 and B∗ is a cochain complex of Sn -modules. One checks that it is
+acyclic. For an integer m ≥ 1 and n = 2m+1 , the explicit injective resolution of
+   m
+S 2 (1) of [5, §2] and [7, §8] allows to compute:
+                                          m
+(5)                             R∗ j∗ (S 2 (1) ) ∼
+                                                 = H∗ (tB ).                         ∗
+
+                           2m (1)
+In particular, j∗ (S ) is the kernel of the obvious map H0 (Sn , −) → H0 (Sn−1,1 , −).
+                                                      m
+Another consequence of (5) is the fact that Rk j∗ (S 2 (1) ) = 0 when k ≥ m.
+   We now show the compatibility of the diﬀerent recollement situations.
+Proposition 3.2.16. There are commutative diagrams of categories and functors:
+                                      CnY             / C0                 / P0
+                                                         n                    n
+
+                                                     r∗                             d∗
+                                                                                                            j!
+                                                i∗                j   ∗                          CO n o        PO n
+                                      CnY             / Cn                 / Pn
+                                                                                               t!                c!
+                      j∗
+           CO n o            PO n                    t∗                    c∗
+                                                                                             Sn V              Sn V   .
+        t∗                  c∗                       Sn V                  Sn V
+
+
+       Sn V                 Sn V
+
+Proof. To show that c∗ ◦ j ∗ = t∗ , note that the three functors involved are exact.
+It is therefore enough to check that they coincide on hM for each M in Sn V . This
+means that we need to show that:
+                      HomP (T n , HomS (M, (−)⊗n )) ∼
+                                            n           = M∨   n
+
+        n
+Since T is projective, the left hand side of the expected isomorphism is left exact
+as a functor of M . So it suﬃces to consider the case when M is injective, and it
+reduces to the case when M = K[Sn ]. In this case it is a well-known isomorphism:
+                            HomP (T n , T n ) ∼
+                                              = K[Sn ].
+                                                     n
+18                           V. FRANJOU AND T. PIRASHVILI
+
+
+   To show that j! c! = t!, note that both sides are right exact. It is therefore enough
+to check that they coincide on K[Sn ]. In this case, j! c! (K[Sn ]) = j! (T n ) has already
+been seen (see the proof of Proposition 3.2.11) to be the forgetful functor tK[Sn ] .
+   The rest is quite similar.                                                             
+3.3. Tensor products of coherent functors. The aim of this section is to lift
+the bifunctor ⊗ : Pn × Pm → Pn+m given by (F ⊗ G)(V ) = F (V ) ⊗ G(V ) at the
+level of coherent functors. Not surprisingly, it involves the induction functors
+                                S
+                              m+n
+                          IndSm ×Sn :        Sm ×Sn V    →   Sn+m V   .
+For M in Sm V and N in Sn V , we let M ⊠ N denote the vector space M ⊗ N with
+                                                           Sm+n
+Sm × Sn -action, and simply denote by M ⊗ N the module IndSm     (M ⊠ N ). The
+                                                              ×SnL
+operation ⊗ yields a symmetric monoidal structure on the category n≥0 Sn V .
+  Using Section 2.7, one deﬁnes biadditive functors Cm × Cn → Cm+n by:
+                            S                                  S
+                f ⊗ g = IndSnm+n
+                              ×Sm (f ⊠
+                                     ℓ
+                                       g)           f . g = IndSnm+n
+                                                                  ×Sm (f ⊙ g).
+                  ℓ
+
+Theorem 3.3.1.     (i) For all M in Sm V and N in                         Sn V   , there are natural
+      isomorphisms
+                      hM ⊗ hN ∼= hM⊗N = hM . hN .
+                                    ℓ
+
+     (ii) For all f in Cm and all g in Cn , there is a natural transformation:
+                                            f ⊗g → f .g
+                                             ℓ
+
+           which is an isomorphism when g is projective.
+                                                       L
+     (iii) The bifunctor ⊗ equips the category d≥0 Cd with a symmetric monoidal
+                           ℓ
+           structure.
+     (iv) The bifunctor ⊗ is right exact (in each argument) and balanced.
+                          ℓ
+      (v) For all f in Cm and g in Cn , there are natural isomorphisms
+                          j ∗ (f ) ⊗ j ∗ (g) ∼
+                                             = j ∗ (f ⊗ g) ∼
+                                                           = j ∗ (f . g);
+                                                     ℓ
+
+     (vi) For all F in Pm and G in Pn , there is a natural isomorphism
+                            j! (F ) ⊗ j! (G) ∼
+                                             = j! (F ⊗ G)
+                                        ℓ
+
+Proof. Right exactness of ⊗ and (i) follow from Proposition 2.7.4. As in Proposition
+                           ℓ
+2.6.1, these properties characterize ⊗ up to isomorphism, and (iii) follows. We next
+                                     ℓ
+show the ﬁrst isomorphism in (v). Since j ∗ and ⊗ are right exact functors, it is
+                                                    ℓ
+enough to consider the case when f = hM and g = hN . We need to prove that
+                     hM (V ⊗m ) ⊗ hN (V ⊗n ) ∼
+                                             = hM⊗N (V ⊗m+n ).
+This follows from the isomorphisms:
+HomSm (M, V ⊗m ) ⊗ HomSn (N, V ⊗n ) = HomSm ×Sn (M ⊠ N, V ⊗m ⊠ V ⊗n )
+                                                                         m+n       S
+                                                                                 ⊗m+n
+                                                 = HomSm ×Sn (M ⊠ N, ResSm ×Sn V      )
+                                                 = HomSm+n (M ⊗ N, V ⊗m+n ).
+To show the second isomorphism in (v), one observes that for all W ∈ V and
+N ∈ Sn V , there is a natural isomorphism (as in Remark 2.8.1):
+                             g(W ⊗ N ) ∼= W ⊗ g(N ),
+where Sn acts on the second factor of W ⊗ N . Now: V ⊗m+n = V ⊗m ⊗ V ⊗n as
+Sn -modules, with trivial action on the ﬁrst factor, so:
+                             S       ⊗m+n
+                       g(Res1mm+n
+                               ×Sn V      ) = V ⊗m ⊗ g(V ⊗n ).
+Similarly, the group Sm acts trivially on g(V ⊗n ), and we obtain:
+                                                    )) ∼
+                                      S
+            j ∗ (f . g)(V ) = f (g(Res1mm+n
+                                         ×Sn V
+                                               ⊗m+n
+                                                       = f (V ⊗m ) ⊗ g(V ⊗n ).
+            STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                        19
+
+
+Finally, we show the isomorphism in (vi). Let us denote by λ ∪ µ the concatenation
+of two partitions λ and µ. There is an isomorphism:
+                                                         S
+(6)                      IndS         Sn         m+m
+                            Sλ K ⊗ IndSµ K = IndSλ∪µ K.
+                             m
+
+
+
+Now to (vi). It is enough to assume that F and G are projective generators: F = Γλ
+and G = Γµ . By Lemma 3.2.5, we have
+        j! (Γλ ) = H0 (Sλ , −) = hK[Sm /Sλ ] = hIndSm K , j! (Γµ ) = hIndSn K .
+                                                       Sλ                      Sµ
+
+
+So the isomorphism (vi) in this case follows from the isomorphism (6).              
+
+  We leave to the reader the statement dual to Theorem 3.3.1.
+
+                   4. Application to functor cohomology
+4.1. Introduction. The ﬁrst computation of Ext-groups between strict polynomial
+functors in [7] states that the graded vector space Ar = Ext∗Ppr (Id(r) , Id(r) ) is
+one-dimensional in even degrees smaller than 2pr and zero else. A lot more basic
+computations were carried out in [6, §4 - 5]. Based on these results, M. Chalupnik
+[2, §4 - 5] has succeeded in extending them to include a lot more basic functors.
+His calculations eventually rely on the very special form of the fundamental but
+elementary computation of Ext∗Pnpr (Id(r)⊗n , Id(r)⊗n ) as Br = A⊗d   r   ⊗ K[Sd ], a
+Sop
+  n  ×  S n -permutation graded  module.
+   The present paper’s setting allows to better formulate the tools Chalupnik used
+and the results he obtained. This includes his notion of symmetrization [2, §3], which
+we proved in Section 3.2 to be functorial, or his (−, −)-product [2, Theorem 4.4, p.
+                                r
+785], which coincide with our ⊠-product of Section 2.7 by Remark 2.7.8. We thus
+explain key results showing exactness and symmetry in the contravariant/covariant
+variables, for example. We apply our insight to prove naturality of [2, Theorem
+5.3], a result which does not follow from the methods in [2], and we further extend
+Chalupnik’s results. It has to be noted however, that the results in [2] do not follow
+formally from our considerations, but they rather are the elementary calculations
+to build on from.
+
+4.2. Cohomology of Frobenius twists. We start (as does Chalupnik [2]) by
+recalling [6, Theorem 4.5].                     L
+   Let us observe that in the category P :=       d≥0 Pd , a tensor product of two
+projectives is projective. This allows a Künneth morphism:
+               Ext∗P (A, B) ⊗ Ext∗P (C, D) → Ext∗P (A ⊗ C, B ⊗ D).
+There is thus a natural map:
+                         Ext∗P (A, B)⊗d → Ext∗P (A⊗d , B ⊗d )
+which deﬁnes a natural homomorphism
+                     S d (Ext∗P (A, B)) → Ext∗P (Γd ◦ A, S d ◦ B).
+Taking A = B = Id(r) , the r-th Frobenius twist of the identity functor, we get the
+map
+(7)              S d (Ext∗Ppr (Id(r) , Id(r) )) → Ext∗Pdpr (Γd(r) , S d(r) )
+which, by a special case of Theorem 4.5 in [6], is an isomorphism.
+  From this, Chalupnik [2, Theorem 4.3] deduces that, when G = Γµ , there is a
+natural in G isomorphism:
+(8)                 Ext∗P (G(r) , F (r) ) ∼
+                                          = < j∗ F ⊙ j∗ DG, Br > .
+20                              V. FRANJOU AND T. PIRASHVILI
+
+
+Our reformulation shows naturality in F as well. Note that: j∗ DG = tK[Sd /Sµ ] , so
+by Proposition 2.7.7:
+                                                               r
+(9)                                 j∗ F ⊙ j∗ DG = j∗ F ⊠ j∗ DG.
+On the latter formulation, left exactness in both F and G, as well as symmetry,
+become transparent.
+  We apply the formula for G = Γd , knowing the Sd -bimodule structure on Br .
+We readily obtain the following natural version of [2, Theorem 5.3]:
+Proposition 4.2.1. For all F in Pd , there is a natural isomorphism:
+                ExtP (Γd(i) , F (i) ) ∼
+                          dpi
+                                      = F (ExtP (Id(i) , Id(i) )). pi
+
+
+     More generally:
+Proposition 4.2.2. Let F and G be strict polynomial functors of degree d. There
+exists a natural spectral sequence:
+                  E2i,∗ = < Ri T (G, F ), Br > ⇒ Exti+∗
+                                                    P (G
+                                                        (r)
+                                                            , F (r) ),
+where Ri T denotes the i-th right derived functor of the left exact functor
+                             T : Pdop × Pd → C (Sop
+                                                 d × Sd )
+                                                                        r
+                                              (G, F ) 7→ j∗ DG ⊠ j∗ F.
+Proof. First consider the special case when G is projective. In this case we have to
+show that
+                              r
+                     < j∗ DG ⊠ j∗ F, Br > ∼
+                                          = Ext∗P (G(r) , F (r) )
+Since both sides are additive in G, it is enough to check the isomorphism when
+G = Γµ . This case results from (8) and (9).
+   For the general case, we take a projective resolution of G• of G. After twisting,
+                                         (r)
+we obtain a (non-projective) resolution G• of G(r) . The hypercohomology spectral
+                                                      (r)
+sequence obtained by applying HomP (−, F (r) ) to G• has the form
+                                          (r)
+                    E1i,j = ExtjP (Gi , F (r) ) ⇒ Exti+j
+                                                     P (G
+                                                         (r)
+                                                             , F (r) ).
+Since Gi is projective we can apply the previous computation to obtain:
+                                                           r
+                                    E1i,∗ = < j∗ DG ⊠ j∗ Fi , Br >
+                                                                                     r
+and the E2 -term has the expected form. Left exactness of the ⊠-product ensures
+that in the ﬁrst column appears R0 T = T .                                   
+
+                                              Appendix A.
+A.1. Recollement of abelian categories. To reveal the relationship between the
+diﬀerent abelian categories, we use the language of recollements (see [10] and [3]).
+A recollement of abelian categories consists of a diagram of abelian categories and
+additive functors
+                                         i∗                        j!
+                                w                      x
+                         A′ g            i∗        /A              j∗       / A ′′
+                                                      f
+                                         i!                        j∗
+
+satisfying the following conditions:
+      (i) the functor j! is left adjoint to j ∗ and the functor j ∗ is left adjoint of j∗ ;
+     (ii) the unit IdA ′′ → j ∗ j! and the counit j ∗ j∗ → IdA ′′ are isomorphisms;
+    (iii) the functor i∗ is left adjoint of i∗ and i∗ is left adjoint of i! ;
+    (iv) the unit IdA ′ → i! i∗ and the counit i∗ i∗ → IdA ′ are isomorphisms;
+     (v) the functor i∗ : A ′ → Ker(j ∗ ) is an equivalence of categories.
+             STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                            21
+
+
+Example A.1.1. The following example is the paradigm of a recollement situation.
+Let X be a space, C is a closed subset in X and U = X \ C its open complement.
+Extension and restriction yield a recollement of sheaves categories:
+                                    i∗                     j!
+                            u                      u
+                    Sh(C)           i∗   / Sh(X)           j∗   / Sh(U ) .
+                                i                      i
+                                    i!                     j∗
+
+   The list of properties (i)-(v) can be somewhat shortened.
+Proposition A.1.2. Let j ∗ : A → A ′′ be an exact functor which satisfies (i) and
+(ii): it admits both a left adjoint j! and a right adjoint j∗ , and the unit IdA ′′ → j ∗ j!
+and counit j ∗ j∗ → IdA ′′ are isomorphisms. Let A ′ be the full subcategory of A
+with objects those A such that j ∗ A = 0. Then the full embedding i∗ : A ′ → A
+has adjoint functors (i∗ , i! ) and the unit IdA ′ → i! i∗ and counit i∗ i∗ → IdA ′ are
+isomorphisms. In other words we have a recollement situation.
+Proof. Let A in A and let ǫA : j! j ∗ A → A be the counit of the adjoint pair (j! , j ∗ ).
+Because IdA ′′ → j ∗ j! is an isomorphism, we have j ∗ (Coker ǫA ) = 0. It follows that
+Coker(ǫA ) lies in the subcategory A ′ . So there is a well-deﬁned functor i∗ : A → A ′
+such that Coker(ǫA ) = i∗ i∗ A. The rest follows, using the short exact sequence of
+natural transformations:
+                                        ǫ
+                                 j! j ∗ → IdA → i∗ i∗ → 0
+and the dual study of the unit of adjunction η which sums up in the following exact
+sequence:
+                                                  η
+                                0 → i∗ i! → IdA → j∗ j ∗ .
+                                                                                       
+Remark A.1.3. Actually, if A is a category of modules over a ring (or, more gen-
+erally, if A is a Grothendieck category), then it is enough to assume that j ∗ is an
+exact functor which has a left adjoint functor j! such that the unit of adjunction:
+IdA ′′ → j ∗ j! is an isomorphism. The existence of j∗ follows from [13, Proposition
+2.2].
+Example A.1.4. Recollements arise naturally when relating functor categories through
+precomposition. Indeed, starting with a functor i : A → B, precomposition is an
+exact functor:
+                                j∗ : V B → V A
+                                           F 7→ F ◦ i.
+A classic result of D. Kan tells that it always admits adjoint functors, called the left
+and the right Kan extension. By [12, §X.3, Corollary 3], the unit and the counit of
+adjunction are isomorphisms when the functor i is a full embedding. A recollement
+situation then arises by Proposition A.1.2.
+   In the case when i is a full embedding of K-linear categories, the functor j ∗
+and its adjoints restrict to the subcategories of K-linear functors. Proposition 3.2.9
+describes the resulting recollement when the functor i is the full embedding of
+Lemma 3.1.1.
+   Another useful functor arises from a recollement: the functor j!∗ : A ′′ → A is
+the image of the norm N : j! → j∗ , the natural transformation which corresponds
+to 1X , under the isomorphism
+                               = HomA ′′ (X, j ∗ j∗ X) ∼
+             HomA (j! X, j∗ X) ∼                       = HomA ′′ (X, X).
+The functor j!∗ preserves simple objects, and every simple object in A is either the
+image of a simple in A ′ by the functor i∗ , or the image of a simple in A ′′ by the
+functor j!∗ .
+22                           V. FRANJOU AND T. PIRASHVILI
+
+
+   We close with an immediate consequence of the Grothendieck spectral sequence
+for a composite functor.
+Proposition A.1.5. Assume in a recollement situation all abelian categories have
+enough projective objects. For X in A ′′ and B in A , there are spectral sequences:
+                   Epq     p                      p+q       ∗
+                    2 = ExtA (Lq j! (X), B) =⇒ ExtA ′′ (X, j B)
+
+and
+                   Epq     p      q              p+q ∗
+                    2 = ExtA (B, R j∗ (X)) =⇒ ExtA ′′ (j B, X).
+
+A.2. Composition and coherent functors. The composite of two strict polyno-
+mial functors is a strict polynomial functor [7]. For completness we lift the resulting
+bifunctor:
+                                ◦ : Pn × Pm → Pnm
+                                               (F, G) 7→ F ◦ G
+at the level of coherent functors.
+   Composition of functors is exact with respect to the ﬁrst variable. Although the
+functor G 7→ F ◦ G is not additive for n > 1, it still has some exactness properties.
+Definition A.2.1. Let A and B be abelian categories. For any short exact sequence
+                                          α             β
+(10)                    0         / A1           /A          / A2           /0
+
+in A, deﬁne δ1 , δ2 : A ⊕ A1 → A by
+                       δ1 (a, a1 ) = a + α(a1 ) ,           δ2 (a, a1 ) = a .
+A covariant functor T : A → B preserves reflective coequalizers if for every short
+exact sequence (10), the following sequence is exact:
+                             T (δ1 )−T (δ2 )                    T (β)
+(11)         T (A ⊕ A1 )                              / T (A)           / T (A2 )   /0.
+
+   Observe that when T is additive, then it preserves reﬂective coequalizers if, and
+only if, T is right exact. Let us observe also that if the exact sequence (10) splits
+then the sequence (11) is exact for any functor T . If A has enough projective
+objects, then any (possibly nonadditive) functor, from the category of projective
+objects in A to the category B, has a unique (up to unique isomorphism) extension
+to a functor A → B which preserves reﬂective coequalizers.
+Lemma A.2.2. For any F in Pn , the functor
+                                         Pm →Pnm
+                                               G 7→F ◦ G
+preserves reflective coequalizers and coreflective equalizers.
+Proof. Take any short exact sequence in Pm :
+                                          α             β
+                       0         / G1           /G           / G2          /0.
+
+After evaluating at V ∈ V , the corresponding sequence
+                           0 → G1 (V ) → G(V ) → G2 (V ) → 0
+splits. Therefore for any F , the sequence
+                 F (G(V ) ⊕ G1 (V )) → F (G(V )) → F (G2 (V )) → 0
+is exact. This shows that F ◦ (−) respects reﬂective coequalizers. Similarly for
+coreﬂective equalizers.                                                       
+             STRICT POLYNOMIAL FUNCTORS AND COHERENT FUNCTORS                          23
+
+
+   For a natural number m and a group G, let Sm ≀ G be the wreath product, which
+by deﬁnition is the semi-direct product Gm ⋉ Sm . For M in Sm V and N in G V ,
+it acts on M ⊗ N ⊗m . In particular, for G = Sn , let
+                           M • N := IndS
+                                       Sm ≀Sn (M ⊗ N
+                                        mn           ⊗m
+                                                        )
+It deﬁnes a functor:
+                              • : Sm V ×     Sn V   →   Smn V
+
+Proposition A.2.3. There is a unique (up to isomorphism) bifunctor
+                                  ⋄ : Cm × Cn → Cmn
+with the following properties
+      (i) The functor ⋄ is exact with respect of the first variable and preserves re-
+          flective coequalizers with respect to the second variable;
+     (ii) hM ⋄ hN = hM•N .
+  We deﬁne another bifunctor
+                                 ¯
+                                 ◦ : Cm × Cn → Cmn .
+Because ⊗ is a symmetric monoidal structure on ⊕d≥0 Cd , the functor g⊗m has a
+natural action of Sm for g in Cn . We put (compare with [4]):
+                                 f ¯◦ g :=< f , g⊗m > .
+Proposition A.2.4. For all f in Cm and N in Sn V , there is a natural isomor-
+phism:
+                              f ⋄ hN ∼
+                                     = f ¯◦ hN .
+Proof. Since f ⋄ g and f ¯◦ g are exact on f , it is enough to consider the case f = hM .
+Then:
+            hM•N (X) = HomSmn (IndS       Sn ≀Sm (M ⊗ N
+                                            mn             ⊗m
+                                                              ), X)
+                        = HomSn ≀Sm (M ⊗ N ⊗m , ResS
+                                                   Sn ≀Sm (X))
+                                                    mn
+
+
+
+                        = HomSm (M, Hom(Sn )m (N ⊗m , ResS
+                                                         (Sn )m (X)))
+                                                           mn
+
+
+
+                        = hM (hN ⊗m )(X)
+                        = (hm ¯◦ hN )(X).
+                                                                                       
+Proposition A.2.5.           (i) For all f in Cm and g in Cn , there is a natural iso-
+       morphism
+                               j ∗ (f ) ◦ j ∗ (g) ∼
+                                                  = j ∗ (f ⋄ g).
+    (ii) For all F in Pm and G in Pn , there is a natural isomorphism
+                           j! (F ) ⋄ j! (G) ∼
+                                            = j! (F ◦ G).
+    (iii) for all F in Pm and G in Pn , there is a natural isomorphism
+                                             ∼ j∗ (F ◦ G),
+                            j∗ (F ) ⋄ j∗ (G) =
+    (iv) tM ⋄ tN = tM•N ;
+Proof.        (i) Since j ∗ is right exact and ⋄ respects reﬂective coequalizers, it suf-
+         ﬁces to consider the case when f = hM and g = hN . Then we have:
+         j ∗ (f ) ◦ j ∗ (g) ∼
+                            = HomS (M, (Homes (N, V ⊗n ))⊗m )
+                                 m                  n
+
+                        = HomSm (M, Hom(Sn )m (N ⊗m , ResS
+                                                         (Sn )m (V
+                                                           mn      ⊗mn
+                                                                       )))
+         By the previous computation the last group is isomorphic to hM•N (V ⊗mn ).
+24                             V. FRANJOU AND T. PIRASHVILI
+
+
+     (ii) It is enough to assume that F and G are projective generators: F = Γµ ,
+          G = Γν . We set M = K[Sm /Sµ ] and N = K[Sn /Sν ]. Then we have
+          j! (F ) = hM and j! (T ) = hN . Therefore j! (F ) ⋄ j! (G) ∼
+                                                                     = hM•N . On the
+          other hand
+        F ◦ G(V ) = Γm u(Γν (V )) HomSm (M, (HomSn (N, V ⊗n ))⊗m )
+                                                                  K[S    ]
+                    = HomSm (M, HomSn ×···×Sn (N ⊗m ResSn ×···×S
+                                                          mn
+                                                                n
+                                                                  (V ⊗mn )))
+                                                       K[S    ]
+                    = HomSm ≀Sn (M ⊗ N ⊗m , Resesm ≀S
+                                                   mn
+                                                     n
+                                                       (V mn ))
+                    = HomSmn (N • M, V ⊗mn )
+          It follows that: j! (F ◦ G) = hM•N .
+                                                                                               
+
+                                         References
+ [1] M. Auslander. Coherent functors. Proc. Conf. Categorical Algebra (La Jolla, Calif., 1965)
+     Springer (1966), 189–231.
+ [2] M. Chalupnik. Extensions of strict polynomial functors. Ann. Sci. École Norm. Sup. (4) 38
+     (2005), no. 5, 773–792.
+ [3] V. Franjou & T. Pirashvili. Comparison of abelian categories recollements. Doc. Math. 9
+     (2004), 41–56.
+ [4] B. Fresse. On the homotopy of simplicial algebras over an operad. Trans. Amer. Math. Soc.
+     352 (2000), no. 9, 4113–4141.
+ [5] V. Franjou, J. Lannes & L. Schwartz. Autour de la cohomologie de MacLane des corps finis.
+     Invent. Math. 115 (1994), no. 3, 513–538.
+ [6] V. Franjou, E. Friedlander, A. Scorichenko & A. Suslin. General linear and functor cohomol-
+     ogy over finite fields. Ann. of Math. (2) 150 (1999), 663–728.
+ [7] E. Friedlander & A. Suslin.Cohomology of finite group schemes over a field. Invent. Math.
+     127 (1997), no. 2, 209–270.
+ [8] J.A. Green. On three functors of M. Auslander’s. Comm. Algebra 15 (1987), 241–277.
+ [9] R. Harsthorne. Coherent functors. Adv. in Math. 140 (1998), no. 1, 44–94.
+[10] N. J. Kuhn. Generic representations of the finite general linear groups and the Steenrod
+     algebra. II. K-Theory 8 (1994), no. 4, 395–428.
+[11] N. J. Kuhn. A stratification of generic representation theory and generalized Schur algebras.
+     K-Theory 26 (2002), no. 1, 15–49.
+[12] S. MacLane. Categories for the Working Mathematician. Graduate Texts in Mathematics 5,
+     Springer, New York-Berlin, 1971. ix+262 pp.
+[13] C. Nastasescu & B. Torrecillas. Colocalization on Grothendieck categories with applications
+     to coalgebras. J. Algebra, 185 (1996), 108–124.
+[14] T. Pirashvili. Introduction to functor cohomology. In Rational Representations, the Steenrod
+     Algebra, and Functor Homology, Panor. Synthèses 16, Soc. Math. France, Paris, 2003.
+[15] I. Schur. Thesis (1903). In Gesammelte Abhandlungen, Band I, 5-76. Springer, 1973.
+
+  Laboratoire Jean Leray, Faculté des Sciences et Techniques, BP 92208, F-44322
+Nantes Cedex 3
+  E-mail address: First.Lastname@univ-nantes.fr
+
+  Department of Mathematics, University of Leicester, University Road, Leicester,
+LE1 7RH, UK
+  E-mail address: tp59-at-le.ac.uk
+

@@ -1,0 +1,1821 @@
+                                                     LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM
+arXiv:math/0308135v1 [math.RT] 14 Aug 2003
+
+
+
+
+                                                                            A. ALEKSEEV AND E. MEINRENKEN
+
+
+                                                  Abstract. Let P → B be a principal G-bundle. For any connection θ on P , the Chern-Weil
+                                                  construction of characteristic classes defines an algebra homomorphism from the Weil algebra
+                                                  W g = Sg∗ ⊗ ∧g∗ into the algebra of differential forms A = Ω(P ). Invariant polynomials
+                                                  (Sg∗ )inv ⊂ W g map to cocycles, and the induced map in cohomology (Sg∗ )inv → H(Abasic ) is
+                                                  independent of the choice of θ. The algebra Ω(P ) is an example of a commutative g-differential
+                                                  algebra with connection, as introduced by H. Cartan in 1950. As observed by Cartan, the
+                                                  Chern-Weil construction generalizes to all such algebras.
+                                                      In this paper, we introduce a canonical Chern-Weil map W g → A for possibly non-
+                                                  commutative g-differential algebras with connection. Our main observation is that the gener-
+                                                  alized Chern-Weil map is an algebra homomorphism “up to g-homotopy”. Hence, the induced
+                                                  map (Sg∗ )inv → Hbasic (A) is an algebra homomorphism. As in the standard Chern-Weil
+                                                  theory, this map is independent of the choice of connection.
+                                                      Applications of our results include: a conceptually easy proof of the Duflo theorem for
+                                                  quadratic Lie algebras, a short proof of a conjecture of Vogan on Dirac cohomology, generalized
+                                                  Harish-Chandra projections for quadratic Lie algebras, an extension of Rouvière’s theorem for
+                                                  symmetric pairs, and a new construction of universal characteristic forms in the Bott-Shulman
+                                                  complex.
+
+
+
+
+                                                                                          Contents
+                                             1. Introduction                                                                                         2
+                                             2. Non-commutative differential algebras                                                                5
+                                             3. The Chern-Weil homomorphism                                                                          9
+                                             4. The Weil algebra Wg.                                                                                13
+                                             5. Duflo isomorphism                                                                                   17
+                                             6. Vogan conjecture                                                                                    20
+                                             7. Harish-Chandra isomorphism                                                                          22
+                                             8. Rouvière isomorphism                                                                               26
+                                             9. Universal characteristic forms                                                                      32
+                                             Appendix A. Proof of Theorem 3.7                                                                       34
+                                             References                                                                                             36
+
+
+
+
+                                             Date: August 1, 2003.
+                                                                                                1
+2                              A. ALEKSEEV AND E. MEINRENKEN
+
+                                      1. Introduction
+    In an influential paper from 1950, H. Cartan [9] presented an algebraic framework for the
+Chern-Weil [10, 43] construction of characteristic classes in terms of differential forms. In
+Cartan’s approach, the de Rham complex Ω(P ) of differential forms on a principal G-bundle
+P is generalized to a differential algebra A, together with algebraic counterparts of the Lie
+derivative and contraction operations for the action of the Lie algebra g of G. We will refer to
+any such A as a g-differential algebra. Cartan introduced the notion of an algebraic connection
+on A; g-differential algebras admitting connections are called locally free and are viewed as
+algebraic counterparts of principal bundles. A counterpart of the base of the principal bundle
+is the basic subcomplex Abasic . The Weil algebra W g = Sg∗ ⊗∧g∗ replaces the classifying bundle
+EG → BG. The generators of ∧g∗ are viewed as “universal connections”, the generators of Sg∗
+as “universal curvatures”. Cartan shows that if A is any (graded) commutative g-differential
+algebra with connection θ, there is a characteristic homomorphism
+(1)                                      cθ : W g → A
+sending the generators of ∧g∗ to the connection variables of A and the generators of Sg∗ to
+the curvature variables of A. Passing to the cohomology of the basic subcomplex, this gives a
+homomorphism
+(2)                          (Sg∗ )inv = H((W g)basic ) → H(Abasic )
+from the algebra of invariant polynomials on the Lie algebra g into the cohomology algebra
+of the basic subcomplex of A. As in the usual Chern-Weil theory, this homomorphism is
+independent of the choice of θ.
+   The main theme of this paper is a generalization of Cartan’s algebraic Chern-Weil construc-
+tion to possibly non-commutative g-differential algebras. The idea in the general case is to
+define cθ by a suitable ordering prescription. Recall that any linear map E → A from a vector
+space to an associative algebra A extends to a linear map S(E) → A from the symmetric
+algebra, by symmetrization. This also holds for Z2 -graded vector spaces and algebras, using
+super symmetrization (i.e. taking signs into account). The Weil algebra may be viewed as the
+(super) symmetric algebra S(E) over the space E spanned by the generators µ ∈ g∗ of ∧g∗
+and their differentials µ = dµ, and a connection θ on a g-differential algebra A defines a linear
+map E → A. With cθ : W g → A defined by symmetrization, we prove:
+
+Theorem A. For any g-differential algebra A with connection θ, the map cθ : W g → A is
+a homomorphism of g-differential spaces. The induced homomorphism in basic cohomology
+(Sg∗ )inv → H(Abasic ) is independent of θ, and is an algebra homomorphism.
+
+   In fact, we will show that any two homomorphisms of g-differential spaces W g → A induce
+the same map in basic cohomology, provided they agree on the unit element of W g. Note that
+the Weil algebra could also be viewed as a super symmetric algebra over the subspace E ′ ⊂ W g
+spanned by the universal connections and curvatures. However, the resulting symmetrization
+map W g = S(E ′ ) → A would not be a chain map, in general.
+   Our first application of Theorem A gives a new perspective on the proof of [1] of the Duflo
+isomorphism for quadratic Lie algebras. Recall that a Lie algebra g is called quadratic if it
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                         3
+
+comes equipped with an invariant scalar product B. Let Wg be the non-commutative super
+algebra generated by odd elements ξ and even elements ξ for ξ ∈ g, subject to relations
+                  ξ̄ ξ̄ ′ − ξ¯′ ξ̄ = [ξ, ξ ′ ]g, ξ̄ξ ′ − ξ ′ ξ¯ = [ξ, ξ ′ ]g, ξξ ′ + ξ ′ ξ = B(ξ, ξ ′ ).
+Using B to identify g∗ and g, we obtain a symmetrization map W g → Wg. The following is a
+fairly easy consequence of Theorem A:
+
+Theorem B. There is a commutative diagram
+                                                   WO g         / Wg
+                                                                   O
+
+
+                                                   Sg            / Ug
+
+in which the vertical maps are injective algebra homomorphisms and the horizontal maps are
+vector space isomorphisms. The lower map restricts an algebra isomorphism on invariants.
+
+   Recall that the Poincaré-Birkhoff-Witt symmetrization Sg → U g does not restrict to an
+algebra homomorphism on invariants, in general. On the other hand, it was shown by Duflo
+that the PBW map does have this property if it is pre-composed with a certain infinite order
+differential operator known as the “Duflo factor”.
+
+Theorem C. The lower horizontal map in the commutative diagram of Theorem B coincides
+with the Duflo map [13].
+
+   That is, while the Duflo map is not a symmetrization map for U g, it may be viewed as
+the restriction of a symmetrization map of a super algebra containing U g! We stress that our
+theory only covers the case of quadratic Lie algebras – it remains a mystery how the general
+situation might fit into this picture.
+   Suppose k ⊂ g is a quadratic subalgebra of g, i.e. that the restriction of B|k is non-degenerate.
+Let p denote the orthogonal complement to k in p, and Cl(p) its Clifford algebra. In [25], Kostant
+introduced a canonical element Dg,k of the algebra (U g ⊗ Cl(p))k−inv which he called the cubic
+Dirac operator. He showed that Dg,k squares to an element of the center of this algebra, so that
+the graded commutator [Dg,k, ·] is a differential. The cohomology of this differential features in
+a conjecture of Vogan. Generalizing results of Huang-Pandzic [20] and Kostant [26] we prove:
+
+Theorem D. There is a natural algebra homomorphism (U k)k−inv → (U g ⊗ Cl(p))k−inv , tak-
+ing values in cocycles and inducing an isomorphism in cohomology. The map (U g)g−inv →
+(U k)k−inv taking z ∈ (U g)g−inv to the cohomology class of z ⊗ 1 coincides with the restriction
+map (Sg)g−inv → (Sk)k−inv under the Duflo isomorphisms for g and k.
+
+  Our next result is a Harish-Chandra map for a quadratic Lie algebra g with a decomposition
+g = n− ⊕ k ⊕ n+ , where k is a quadratic Lie subalgebra of g and n± are k-invariant isotropic
+subalgebras (that is, the restriction of B to n± vanishes). By the Poincaré-Birkhoff-Witt
+theorem, the splitting of g gives rise to a decomposition of the enveloping algebra U g, hence
+4                               A. ALEKSEEV AND E. MEINRENKEN
+
+to a projection κU : U g → U k. As for the usual Harish-Chandra projection, it is convenient to
+compose κU with a certain automorphism τ of U k (the “ρ-shift”).
+
+Theorem E. Under the Duflo isomorphisms for g, k, the composition τ ◦ κU : (U g)g−inv →
+(U k)k−inv coincides with the projection (Sg)g−inv → (Sk)k−inv . In particular, it is an algebra
+homomorphism.
+
+   We obtain Theorem E by studying the Harish-Chandra projection κW : Wg → Wk, and
+comparing to the natural projection κW : W g → W k. It turns out that κW directly restricts
+to τ ◦ κU : That is, the shift τ emerges from the theory in a very natural way and need not be
+put in ’by hand’.
+   Let (g, k) be a symmetric pair, that is, k is the fixed point set of an involutive automorphism
+ǫ on g. Let p be its complement given as the eigenspace of ǫ for the eigenvalue −1. By
+results of Lichnerowicz [30] and Duflo [14], the algebra (U g/U gkf )k−inv (where kf ֒→ U g a
+suitable “twisted” inclusion of k) is commutative. Rouvière in his paper [37] introduced a map
+(Sp)k−inv → (U g/U gkf )k−inv generalizing the Duflo isomorphism, and described conditions
+under which this map is an algebra isomorphism. We prove a similar result for the following
+new class of examples:
+
+Theorem F. Suppose g carries an invariant scalar product B that changes sign under ǫ. Then
+the Duflo-Rouvière map (Sp)k−inv → (U g/U gkf )k−inv is an algebra isomorphism.
+
+   Anti-invariance of B under the involution ǫ implies that B vanishes on both k and p, and
+gives a non-degenerate pairing between the two subspaces. In line with our general strategy,
+we prove this result by identifying the Duflo-Rouvière map as a Chern-Weil map, using the
+isomorphism (Sp)k−inv = (Sk∗ )k−inv given by the pairing. We also describe a generalization to
+isotropic subalgebras k ⊂ g of quadratic Lie algebras.
+   Our final result is a new construction of universal characteristic forms in the Bott-Shulman
+complex. For any Lie group G, Bott and Shulman considered a double complex Ωq (Gp ) as a
+model for differential forms on the classifying space BG, and showed how to associate to any
+invariant polynomial on g a cocycle forL  the total differential on this double complex. In our
+alternative approach, we observe that            q  p
+                                            p,q Ω (G ) carries a non-commutative product, and
+obtain:
+
+Theorem G. The generalized Chern-Weil construction defines a linear map
+                                           M
+                               (Sg∗ )inv →   Ωq (Gp )
+                                                 p,q
+
+taking values in cocycles for the total differential. The image of a polynomial of degree r under
+this map has non-vanishing components only in bidegree p + q = 2r with p ≤ r. The map
+induces an algebra homomorphism in cohomology, and in fact an algebra isomorphism if G is
+compact.
+Acknowledgments. We are grateful to A. Beilinson, V. Drinfeld, M. Duflo, E. Getzler, V.
+Ginzburg, B. Kostant, S. Kumar, N. Markarian, J. Roberts, P. Severa, V. Turaev and M.
+                         LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                        5
+
+Vergne for their interest in our work and for useful comments. This work was supported in
+part by NSERC, by the Swiss National Science Foundation and by the Erwin Schrödinger
+Institute for Mathematical Physics.
+
+                         2. Non-commutative differential algebras
+   In this Section we review some material on symmetrization maps for super vector spaces and
+g-differential spaces. Our conventions for super spaces will follow [12]; in particular we take
+the categorical point of view that super vector spaces form a tensor category where the super
+sign convention is built into the isomorphism E ⊗ E ′ → E ′ ⊗ E. The concept of g-differential
+spaces is due to Cartan [9], a detailed treatment can be found in the book [18].
+
+2.1. Conventions and notation. Throughout, we will work over a field F of characteristic
+0. A super vector space is a vector space over F with a Z2 -grading E = E 0̄ ⊕ E 1̄ . Super
+vector spaces form an F-linear tensor category; algebra objects in this tensor category are
+called super algebras, Lie algebra objects are called super Lie algebras. If E, E ′ are super
+vector spaces, we denote by L(E, E ′ ) the super space of all linear maps A : E → E ′ , and
+by End(E) = L(E, E) the super algebra of endomorphisms of E. By contrast, the space of
+homomorphisms Hom(E, E ′ ) = L(E, E ′ )0̄ consists of only the even linear maps.
+
+2.2. Symmetrization L∞ maps.    Let E = E 0̄ ⊕E 1̄ be a super vector space. TheL            (super) symmet-
+ric algebra S(E) = k=0 S (E) is the quotient of the tensor algebra T (E) = ∞
+                            k
+                                                                                              k=0 E
+                                                                                                    ⊗k by the
+
+two-sided ideal generated by all elements of the form v ⊗ w − (−1)         |v||w| w ⊗ v, for homogeneous
+elements v, w ∈ E of Z2 -degree |v|, |w|. Both T (E) and S(E) are super algebras, in such a way
+that the inclusion of E is a homomorphism of super vector spaces. The tensor algebra T (E) is
+characterized by the universal property that any homomorphism of super vector spaces E → A
+into a super algebra A extends uniquely to a homomorphism of super algebras T (E) → A; the
+symmetric algebra has a similar universal property for commutative super algebras.
+   Given a super algebra A, any homomorphism of super vector spaces φ : E → A extends to
+S(E) by symmetrization
+                                            1 X
+        sym(φ) : S(E) → A, v1 · · · vk 7→          (−1)Nσ (v1 ,...,vk ) φ(vσ−1 (1) ) · · · φ(vσ−1 (k) ).
+                                           k!
+                                                  σ∈Sk
+
+Here Sk is the symmetric group, and Nσ (v1 , . . . , vk ) is the number of pairs i < j such that
+vi , vj are odd elements and σ −1 (i) > σ −1 (j).
+    Equivalently, the symmetrization map S(E) → A may be characterized as the inclusion
+S(E) → T (E) as “symmetric tensors”, followed by the algebra homomorphism T (E) → A
+given by the universal property of T (E).
+
+2.3. Poincaré-Birkhoff-Witt symmetrization. If (E, [·, ·]E ) is a super Lie algebra, one
+defines the enveloping algebra U (E) as the quotient of T (E) by the relations v1 ⊗ v2 −
+(−1)|v1 ||v2 | v2 ⊗ v1 − [v1 , v2 ]E . By the Poincaré-Birkhoff-Witt theorem for super Lie algebras
+(Corwin-Neeman-Sternberg [11], see also [12]) the symmetrization map S(E) → U (E) is a
+linear isomorphism.
+   Similarly, if E is a super vector space with a skew-symmetric bi-linear form ω ∈ Hom(E ⊗
+E, F) (i.e. ω(v, w) = −(−1)|v||w| ω(w, v)), one defines the Weyl algebra Weyl(E) as the quotient
+6                                   A. ALEKSEEV AND E. MEINRENKEN
+
+of the tensor algebra by the ideal generated by elements v ⊗ w − (−1)|v||w| w ⊗ v − ω(v, w).
+The corresponding symmetrization map S(E) → Weyl(E) is an isomorphism of super vector
+spaces, known as the quantization map for the Weyl algebra. 1 In the purely odd case E 0̄ = 0,
+ω is a symmetric bilinear form B on V = E 1̄ (viewed as an ungraded vector space), the Weyl
+algebra is the Clifford algebra of (V, B), and the symmetrization map reduces to the Chevalley
+quantization map q : ∧V → Cl(V ).
+2.4. Derivations. Given a super algebra A we denote by Der(A) ⊂ End(A) the super Lie
+algebra of derivations of A. Similarly, if E is a super Lie algebra we denote by Der(E) ⊂ End(E)
+the super Lie algebra of derivations of E. For any super vector space E there is a unique
+homomorphism of super Lie algebras
+                                                                       T (E)
+                                  End(E) → Der(T (E)), A 7→ DA
+              T (E)                                                              S(E)
+such that DA (v) = Av for v ∈ E ⊂ T (E). Similarly one defines DA         ∈ Der(S(E)) and, if
+                                                 U (E)
+A is a derivation for a super Lie bracket on E, DA     ∈ Der(U (E)). We will need the following
+elementary fact.
+Lemma 2.1. Let E be a super vector space, A a super algebra, and φ ∈ Hom(E, A) a homomor-
+phism of super vector spaces. Suppose we are given a linear map A ∈ End(E) and a derivation
+D ∈ Der(A), and that φ intertwines A and D. Then the extended map sym(φ) : S(E) → A
+                                         S(E)
+obtained by symmetrization intertwines DA ∈ Der(S(E)) and D.
+Proof. Recall that sym(φ) factors through the symmetrization map for the tensor algebra
+                                                      T (E)
+T (E). Since the map T (E) → A intertwines DA                with D, it suffices to prove the Lemma
+                         T (E)                  T (E)
+for A = T (E), D = D           . The action of DA      on E ⊗k commutes with the action of Sk , as
+                                                          T (E)
+one easily checks for transpositions. In particular DA          preserves the Sk -invariant subspace.
+                             S(E)
+It therefore restricts to DA      on S(E) ⊂ T (E).                                                 
+2.5. Differential algebras. A differential space (ds) is a super vector space E, together with
+a differential, i.e. an odd endomorphism d ∈ End(E)1̄ satisfying d ◦ d = 0. Morphisms in the
+category of differential spaces will be called chain maps or ds homomorphisms. The tensor
+product E ⊗ E ′ of two differential spaces is a differential space, with d(v ⊗ v ′ ) = dv ⊗ v ′ +
+(−1)|v| v ⊗ dv ′ . Algebra objects in this tensor category are called differential algebras (da), Lie
+algebra objects are called differential Lie algebras (dl). The discussion from Section 2.4 shows:
+Lemma 2.2. Let A be a differential algebra, and φ : E → A a ds homomorphism. Then the
+symmetrized map S(E) → A is a ds homomorphism.
+   For any differential algebra (A, d), the unit i : F ֒→ A (i.e. the inclusion of F as multiples
+of the unit element) is a da homomorphism. By an augmentation map for (A, d), we mean
+a da homomorphism π : A → F such that π ◦ i is the identity map. For the tensor algebra,
+the natural projections onto F = E ⊗0 is an augmentation map; this descends to augmentation
+maps for S(E) and (in the case of a super Lie algebra) U (E).
+    1The fact that q is an isomorphism may be deduced from the PBW isomorphism for the Heisenberg Lie
+algebra E ⊕ Fc, i.e. the central extension with bracket [v, v ′ ] = ω(v, v ′ )c. Indeed, the symmetrization map
+S(E ⊕ Fc) → U (E ⊕ Fc) restricts to an isomorphism between the ideals generated by c − 1, and so the claim
+follows by taking quotients by these ideals.
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                 7
+
+
+2.6. Koszul algebra. For any vector space V over F, let EV be the ds with EV0̄ = V and
+EV1̄ = V , with differential d equal to 0 on even elements and given by the natural isomorphism
+EV1̄ → EV0̄ on odd elements. For v ∈ V denote the corresponding even and odd elements in EV
+by v ∈ EV0̄ and v ∈ EV1̄ , respectively. Thus
+                                        dv = v, dv = 0.
+The symmetric algebra S(EV ) is known as the Koszul algebra over V . It is characterized
+by the universal property that if A is any commutative da, any vector space homomorphism
+V → A1̄ extends to a unique homomorphism of da’s S(EV ) → A. We will also encounter a
+non-commutative version of the Koszul algebra, T (EV ). It has a similar universal property, but
+in the category of not necessarily commutative da’s A. The non-commutative Koszul algebra
+appears in a paper of Gelfand-Smirnov [17].
+   For any Lie algebra g, we denote by e
+                                       g the super Lie algebra
+                                            e
+                                            g=g⋉g
+(semi-direct product) where the even part e   g0̄ = g acts on the odd part e
+                                                                           g1̄ = g by the adjoint
+representation. It is a differential Lie algebra under the identification e
+                                                                          g = Eg: that is, d is a
+derivation for the Lie bracket.
+2.7. g-differential spaces. A g-differential space (g−ds) is a differential space (E, d) together
+with a dl homomorphism, e g → End(E). That is, it consists of a representation of the super
+            g on E, where the operators ιξ , Lξ ∈ End(E) corresponding to ξ, ξ ∈ e
+Lie algebra e                                                                       g satisfy the
+relations
+(3)                                 [d, ιξ ] = Lξ , [d, Lξ ] = 0.
+The operators ιξ are called contractions, the operators Lξ are called Lie derivatives. The tensor
+product of any two g − ds, taking the tensor product of the e g-representations, is again a g − ds.
+Hence g − ds’s form an F-linear tensor category; the algebra objects in this tensor category
+are called g-differential algebras (g − da), the Lie algebra objects are called g-differential Lie
+algebras (g − dl). This simply means that the representation should act by derivations of the
+product respectively Lie bracket.                                 T
+   For any
+        T g − ds E, one defines the horizontal subspace Ehor = ker ιξ , the invariant subspace
+Einv = ker Lξ , and the basic subspace Ebasic = Ehor ∩ Einv . That is, Ebasic is the space of
+fixed vectors for e
+                  g. This subspace is stable under d, hence is a differential space. Any g − ds
+homomorphism φ : E → E ′ restricts to a chain map between basic subspaces.
+   An example of a g − dl is E = e   g with the adjoint action. Another example is obtained by
+adjoining d as an odd element, defining a semi-direct product
+(4)                                           Fd ⋉ e
+                                                   g
+where the action of d on eg is as the differential, dξ = ξ, dξ = 0. (Note that a g − ds can be
+defined equivalently as a module for the super Lie algebra (4); this is the point of view taken
+in the book [18].) The symmetric and tensor algebras over a g − ds E are g − da’s, and Lemma
+2.1 shows:
+Lemma 2.3. If A is a g − da, and φ : E → A is a g − ds homomorphism, then the sym-
+metrization sym(φ) : S(E) → A is a g − ds homomorphism.
+8                                A. ALEKSEEV AND E. MEINRENKEN
+
+2.8. Homotopy operators. The space L(E, E ′ ) of linear maps φ : E → E ′ between differ-
+ential spaces is itself a differential space, with differential d(φ) = d ◦ φ − (−1)|φ| φ ◦ d. Chain
+maps correspond to cocycles in L(E, E ′ )0̄ .
+   A homotopy operator between two chain maps φ0 , φ1 : E → E ′ is an odd linear map
+h ∈ L(E, E ′ )1̄ such that d(h) = φ0 − φ1 . A homotopy inverse to a chain map φ : E → E ′ is a
+chain map ψ : E ′ → E such that φ ◦ ψ and ψ ◦ φ are homotopic to the identity maps of E ′ , E.
+Lemma 2.4. Let (E, d) be a differential space, and suppose there exists s ∈ End(E)1̄ with
+[d, s] = idE . Then the inclusion i : F → T (E) and the augmentation map π : T (E) → F are
+homotopy inverses. Similarly for the symmetric algebra.
+Proof. The derivation extension of [d, s] to T (E) is the Euler operator on T (E), equal to k on
+E ⊗k . Hence [d, s] + i ◦ π ∈ End(E)0̄ is an invertible chain map, and the calculation
+                    I − i ◦ π = [d, s]([d, s] + i ◦ π)−1 = [d, s([d, s] + i ◦ π)−1 ]
+shows that h = s([d, s] + i ◦ π)−1 ∈ End(E)1̄ is a homotopy operator between I and i ◦ π. The
+proof for the symmetric algebra is similar.                                                
+   The Lemma shows that the Koszul algebra S(EV ) and its non-commutative version T (EV )
+have trivial cohomology, since s ∈ End(EV )1̄ given by s(v) = v and s(v) = 0 has the desired
+properties. We will refer to the corresponding h as the standard homotopy operator for the
+Koszul algebra.
+   More generally, if E, E ′ are g − ds then the space L(E, E ′ ) inherits the structure of a g − ds,
+with contractions ιξ (φ) = ιξ ◦ φ − (−1)|φ| φ ◦ ιξ and Lie derivatives Lξ (φ) = Lξ ◦ φ − φ ◦ Lξ .
+g − ds homomorphisms E → E ′ are exactly the cocycles in L(E, E ′ )0̄basic . A homotopy between
+two g − ds homomorphisms φ0 , φ1 : E → E ′ is called a g-homotopy if it is e    g-equivariant. Note
+                                                                   ′
+that any such h restricts to a homotopy of φ0 , φ1 : Ebasic → Ebasic   .
+2.9. Connection and curvature. A connection on a g − da A is a linear map θ : g∗ → A1̄
+with the properties,
+                           ιξ (θ(µ)) = µ(ξ), Lξ (θ(µ)) = −θ(ad∗ξ µ).
+A g − da admitting a connection is called locally free. The curvature of a connection θ is the
+linear map F θ : g∗ → A0̄ defined by
+                                         F θ = dθ + 21 [θ, θ].
+                                                     θ⊗θ
+Here [θ, θ] denotes the composition g∗ → g∗ ⊗ g∗ −→ A1̄ ⊗ A1̄ → A0̄ , where the first map is the
+map dual to the Lie bracket and the last map is algebra multiplication. The curvature map is
+equivariant and satisfies ιξ F θ = 0.
+  The following equivalent definition of a connection will be useful in what follows. Let Fc
+be the 1-dimensional space spanned by an even generator c, viewed as a differential space on
+which d acts trivially, and consider the direct sum Eg∗ ⊕ Fc with e
+                                                                  g-action given by
+(5)               Lξ µ = −ad∗ξ µ, Lξ µ = − ad∗ξ µ, ιξ µ = − ad∗ξ µ, ιξ µ = µ(ξ)c.
+Then, a connection on a g − da A is equivalent to a g − ds homomorphism
+(6)                                        Eg∗ ⊕ Fc → A
+taking c to the unit of A.
+                      LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                             9
+
+Remark 2.5. It may be verified that Eg∗ ⊕ Fc is the odd dual space of the super Lie algebra
+Fd ⋉ e
+     g, i.e. the dual space with the opposite Z2 -grading.
+
+                           3. The Chern-Weil homomorphism
+3.1. The Weil algebra. The Weil algebra W g is a commutative g − da with connection
+g∗ → W g, with the following universal property: For any commutative g−da A with connection
+θ : g∗ → A, there exists a unique g − da homomorphism cθ : W g → A such that the following
+diagram commutes:
+                                          WO g θ /> A
+                                                c   }}
+                                                 }}}
+                                                }
+                                              }} θ
+                                         g∗
+We will refer to cθ as the characteristic homomorphism for the connection θ. The Weil algebra
+is explicitly given as a quotient
+(7)                            W g = S(Eg∗ ⊕ Fc)/ < c − 1 >,
+where < c − 1 > denotes the two-sided ideal generated by c − 1. From the description (6) of
+connections, it is obvious that W g carries a “tautological” connection. If A is commutative,
+the homomorphism (6) extends, by the universal property of the symmetric algebra, to a g − da
+homomorphism
+(8)                                   S(Eg∗ ⊕ Fc) → A
+This homomorphism takes < c − 1 > to 0, and therefore descends to a g − da homomorphism
+cθ : W g → A. If A is a non-commutative g − da with connection θ, the map (8) is still
+well-defined, using symmetrization. Hence one obtains a canonical g − ds homomorphism
+(9)                                     cθ : W g → A
+even in the non-commutative case. Of course, (9) is no longer an algebra homomorphism in
+general. What we will show below is that (9) is an algebra homomorphism “up to g-homotopy”.
+  As a differential algebra, the Weil algebra is just the Koszul algebra W g = S(Eg∗ ). The
+g − da-structure is given on generators µ, µ by formulas similar to (5), with c replaced by 1,
+and the connection is the map sending µ ∈ g∗ to the corresponding odd generator of W g. The
+curvature map for this connection is given by
+                              F : g∗ → W g, µ 7→ µ
+                                                 b := µ − λ(µ)
+where
+                      λ : g∗ → ∧2 g∗ , ιξ λ(µ) = − ad∗ξ µ, ξ ∈ g, µ ∈ g∗
+is the map dual to the Lie bracket, and we identify ∧g∗ as the subalgebra of W g defined by
+                              b = 0 since the curvature of a connection is horizontal. The
+the odd generators. Recall ιξ µ
+curvature map extends to an algebra homomorphism Sg∗ → (W g)hor , which is easily seen to
+be an isomorphism. Thus
+(10)                                  W g = Sg∗ ⊗ ∧g∗ ,
+10                               A. ALEKSEEV AND E. MEINRENKEN
+
+where Sg∗ ∼                                                      b, and the exterior algebra
+           = (W g)hor is generated by the “curvature variables ” µ
+∧g∗ by the “connection variables” µ. The Weil differential vanishes on (W g)basic = (Sg∗ )inv ;
+hence the cohomology of the basic subcomplex coincides with (Sg∗ )inv .
+Remark 3.1. Let W̃ g be the non-commutative g − da, defined similar to (7) but with the tensor
+algebra in place of the symmetric algebra,
+                                 W̃ g = T (Eg∗ ⊕ Fc)/ < c − 1 > .
+Then W̃ g has a universal property similar to W g among non-commutative g − da’s with con-
+nection. As a differential algebra, W̃ g is the non-commutative Koszul algebra, W̃ g = T (Eg∗ ).
+In particular, it is acyclic, with a canonical homotopy operator.
+3.2. The rigidity property of the Weil algebra. The algebraic version of the Chern-Weil
+theorem asserts that if A is a commutative locally free g−da, the characteristic homomorphisms
+corresponding to any two connections on A are g-homotopic (see e.g. [18]). This then implies
+that the induced map (Sg∗ )inv → H(Abasic ) is independent of the choice of connection. The
+following result generalizes the Chern-Weil theorem to the non-commutative setting:
+Theorem 3.2 (Rigidity Property). Let A be a locally free g − da. Any two g − ds homomor-
+phisms c0 , c1 : W g → A that agree on the unit of W g are g-homotopic.
+  The proof will be given in Section 3.3. We stress that the maps ci need not be algebra
+homomorphism, and are not necessarily characteristic homomorphism for connections on A.
+The rigidity theorem implies the following surprising result.
+Corollary 3.3. Let A be a locally free g − da and c : W g → A be a g − ds homomorphism
+taking the unit of W g to the unit of A. Then the induced map in basic cohomology
+(11)                                   (Sg∗ )inv → H(Abasic )
+is an algebra homomorphism, independent of the choice of c.
+     In particular, Corollary 3.3 applies to characteristic homomorphisms cθ for connections θ on
+A.
+Proof. By Theorem 3.2, the map (11) is independent of c. Given w′ ∈ (W g)basic = (Sg∗ )inv ,
+the two g − ds homomorphisms
+                             W g → A, w 7→ c(ww′ ),    w 7→ c(w)c(w′ ).
+agree on the unit of W g, and are therefore g-homotopic. Hence [c(ww′ )] = [c(w)c(w′ )] =
+[c(w)] [c(w′ )] so that (11) is an algebra homomorphism.                                
+Remark 3.4. Theorem 3.2 becomes false, in general, if one drops the assumption that A is
+locally free. To construct a counter-example, let A0 and A1 be two Z-graded locally free
+g − da’s with characteristic maps ci for some choice of connections. Assume that there is an
+element p ∈ (S k g∗ )inv with k ≥ 2 such that c0 (p) 6= 0 while c1 (p) = 0. (For instance, one can
+choose A0 = W g, and A1 = ∧g∗ the quotient of W g by the ideal generated by the universal
+curvatures. Then the assumption holds for any element p of degree k ≥ 2, taking ci to be the
+characteristic maps for the canonical connections.) Let E = (A0 ⊕ A1 )/V , where V is the one
+dimensional subspace spanned by (1A0 − 1A1 ). View E as an algebra with zero product, and
+define a g − da A = F ⊕ E by adjoining a unit. The maps ci descend to g − ds homomorphisms
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                11
+
+c̃i : W g → E ⊂ A that agree on 1W g, while c̃0 (p) 6= 0 and c̃1 (p) = 0. Hence, c̃i are not
+g-homotopic.
+3.3. Proof of Theorem 3.2. The proof of Theorem 3.2 will be based on the following two
+observations.
+   (a) The Weil algebra W g fits into a family of g-differential algebras S(Eg∗ ⊕ Fc)/ < c − t >
+       for t ∈ F. As differential algebras, these are all identified with S(Eg∗ ). The formulas
+       for the Lie derivatives Lξ are the same as for W g, while the contraction operators for
+       the deformed algebras read
+                                    ιtξ µ = − ad∗ξ µ, ιtξ µ = thµ, ξi.
+       It is clear that the resulting g − da’s for t 6= 0 are all isomorphic to W g, by a simple
+       rescaling. However, for t = 0 one obtains a non-isomorphic g − da which may be identi-
+       fied with the symmetric algebra over the space Eg∗ with the co-adjoint representation
+       of e
+          g. The standard homotopy operator h for S(Eg∗ ) becomes a g-homotopy operator
+       exactly for t = 0.
+   (b) S(Eg∗ ) is a super Hopf algebra, with co-multiplication ∆ : S(Eg∗ ) → S(Eg∗ ) ⊗ S(Eg∗ )
+       induced by the diagonal embedding Eg∗ → Eg∗ ⊕ Eg∗ , and co-unit the augmentation
+       map π : S(Eg∗ ) → F. Both d and Lξ are co-derivations for this co-product. For the
+       contraction operators ιtξ one finds,
+                                ∆ ◦ ιtξ1 +t2 = (ιtξ1 ⊗ 1 + 1 ⊗ ιtξ2 ) ◦ ∆,
+       in particular, ιtξ is a co-derivation only for t = 0.
+Proof of Theorem 3.2. View the space L(W g, A) of linear maps as a g − ds, as in Section 2.8.
+We have to show that if c : W g → A is a g−ds homomorphism with c(1) = 0, then c = d(ψ) for
+a basic element ψ ∈ L(W g, A). Letting h be the standard homotopy operator for W g = S(Eg∗ ),
+the composition c ◦ h satisfies d(c ◦ h) = c, however, it is not basic since h is not a g-homotopy.
+   To get around this problem, we will exploit that the space L(W g, A) has an algebra structure,
+using the co-multiplication ∆ on W g and the co-unit π : W g → F. The product of two maps
+φ1 , φ2 : W g → A is given by the composition
+                                           ∆                  φ1 ⊗φ2
+                         φ1 · φ2 : W g −→ W g ⊗ W g −→ A ⊗ A → A,
+and the unit element in L(W g, A) is the composition
+                                       1L := iA ◦ π : W g → A,
+where iA : F → A is the unit for the algebra A. The deformed contraction operators ιtξ on W g
+induce deformations of the contraction operators for L(W g, A), denoted by the same symbol.
+The formula in (b) implies that
+(12)                    ιtξ1 +t2 (φ1 · φ2 ) = (ιtξ1 φ1 ) · φ2 + (−1)|φ1 | φ1 · ιtξ2 φ2 .
+The sum φ = 1L + c is a g − ds homomorphism taking the unit in W g to the unit in A.
+Since c ◦ iW g = 0, φ is anPinvertible element of the algebra L(W g, A), with inverse given as
+a geometric series φ−1 = N (−1)N cN . The series is well-defined, since c is locally nilpotent:
+Indeed, cN vanishes on S j (Eg∗ ) for N > j.
+12                                A. ALEKSEEV AND E. MEINRENKEN
+
+   Since ι1ξ (φ) = 0 the inverse satisfies ι−1  −1
+                                            ξ (φ ) = 0; this follows from (12) since the unit element
+1L ∈ L(W g, A) is annihilated by ι0ξ . Hence, the product c · φ−1 ∈ L(W g, A) is annihilated by
+d, Lξ , ι0ξ . We now set,
+                                   ψ := ((c · φ−1 ) ◦ h) · φ.
+Recall that h is a g-homotopy operator with respect to the contraction operators ι0ξ . Hence
+                     ι1ξ (ψ) = (ι0ξ ((c · φ−1 ) ◦ h)) · φ − ((c · φ−1 ) ◦ h) · ι1ξ φ = 0.
+On the other hand, using c ◦ iW g = 0 we have
+              d(((c · φ−1 ) ◦ h) = (c · φ−1 ) ◦ d(h) = (c · φ−1 ) ◦ (id −i ◦ π) = c · φ−1
+and therefore d(ψ) = c. Since obviously Lξ (ψ) = 0, the proof is complete.                         
+Remark 3.5. The homotopy ψ constructed above vanishes on the unit of W g. This property
+is implied by h(1) = 0 and ∆(1) = 1 ⊗ 1.
+3.4. g-differential algebras of Weil type. In this Section we will prove a more precise
+version of Corollary 3.3. In particular, we will describe a class of locally free g − da’s of Weil
+type for which the algebra homomorphism (11) is in fact an isomorphism. The results will not
+be needed for most of our applications, except in Sections 8.4 and 9.
+Definition 3.6. Let W be a locally free g − da, together with a ds homomorphism π : W → F
+such that π ◦ i = id, where i : F → W is the unit for W . Then W will be called of Weil type if
+there exists a homotopy operator h between i ◦ π and id, with h ◦ i = 0, such that [Lξ , h] = 0
+and such that h and all ιξ have degree < 0 with respect to some filtration
+                                    [
+                               W =     W (N ) , W (0) ⊂ W (1) ⊂ · · ·
+                                       N ≥0
+
+of W .
+   The definition is motivated by ideas from Guillemin-Sternberg L     [18, Section 4.3]. In most
+examples, the Z2 -grading on W is induced from a Z-grading W = n≥0 W n , F ⊂ W 0 , with d
+of degree +1, Lξ of degree 0 and and ιξ of degree −1. If a homotopy operator h with [Lξ , h] = 0
+exists, its part of degree −1 is still a homotopy operator, and has the required properties. (Note
+that compatibility of the grading with the algebra structure is not needed.) In particular, the
+Weil algebra W g and its non-commutative version W̃ g from Remark 3.1 are of Weil type. The
+tensor product of two g − da’s of Weil type is again of Weil type. In the following Sections we
+will encounter several other examples.
+Theorem 3.7. Suppose W, W ′ are g − da’s of Weil type. Then there exists a g − ds homo-
+morphism φ : W → W ′ taking the unit in W to the unit in W ′ . Moreover, any such φ is a
+g-homotopy equivalence.
+   It follows that all g − da’s of Weil type are g-homotopy equivalent. The proof of Theorem
+3.7 is somewhat technical, and is therefore deferred to the appendix.
+   By Theorem 3.7, many of the usual properties of W g extend to g − da’s of Weil type. For
+instance, since the basic cohomology of W g is (Sg∗ )inv , the same is true for any g − da of Weil
+type:
+                      LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                              13
+
+Corollary 3.8. If A = W is a g − da of Weil type the Chern-Weil map (Sg∗ )inv → H(Abasic )
+is an algebra isomorphism.
+Corollary 3.9. Let W be a g − da of Weil type and A be a locally free g − da.
+  (a) There is a g − ds homomorphism φ : W → A taking the unit in W to the unit in A.
+      The induced map in basic cohomology is an algebra homomorphism.
+  (b) Any two g − ds homomorphisms φ : W → A that agree on the unit element of W are
+      g-homotopic.
+Proof. Both facts have already been established for W = W g. Hence, by Theorem 3.7 they
+extend to arbitrary g − da’s of Weil type.                                           
+Corollary 3.10. The symmetrization map W g → W̃ g is a g-homotopy equivalence, with g-
+homotopy inverse the quotient map W̃ g → W g.
+Proof. The composition W̃ g → W g → W̃ g is a g − ds homomorphism taking units to units,
+hence is g-homotopic to the identity map.                                             
+Corollary 3.11. Let W be of Weil type, and A a locally free g − da. Let φ : W → A be
+a g − ds homomorphism taking units to units. Then φ induces an algebra homomorphism
+in basic cohomology. More precisely, it intertwines the products mW : W ⊗ W → W and
+mA : A ⊗ A → A up to g-chain homotopy.
+Proof. The assertion is that the two maps W ⊗ W → A given by mA ◦ (φ ⊗ φ) and φ ◦ mW are
+g-homotopic. But this follows because W ⊗ W is a g − da of Weil type, and each of the two
+maps are g − ds homomorphisms that agree on the unit.                                   
+Remark 3.12. The statement of Corollary 3.11 may be strengthened to the fact that φ is an
+A∞ -morphism ( see e.g. [32] for a precise definition). Thus φ = φ(1) is the first term in a
+            g-equivariant maps φ(n) : W ⊗n → A. The second term φ(2) = ψ is the g-homotopy
+sequence of e
+between the two maps W ⊗ W → A given by mA ⊗ (φ ⊗ φ) and φ ⊗ mW . To construct φ(3) ,
+note that the two maps W ⊗3 → A,
+                  mA ◦ (ψ ⊗ φ) + ψ ◦ (mW ⊗ 1),      mA (φ ⊗ ψ) + ψ(1 ⊗ mW )
+are g−ds-homomorphisms. Since ψ vanishes on the unit of W ⊗2 (cf. Remark 3.5), both of these
+maps vanish at the unit of W ⊗3 . It follows that there exists a g-homotopy φ(3) : W ⊗3 → A
+between these two maps, which again vanishes at the unit. Proceeding in this manner, one
+constructs the higher g-homotopies.
+
+                                4. The Weil algebra Wg.
+  In this Section we construct, for any quadratic Lie algebra g, an interesting non-commutative
+g − da of Weil type.
+4.1. Quadratic Lie algebras. We begin by recalling some examples and facts about quadratic
+Lie algebras. From now on, we will refer to any non-degenerate symmetric bilinear form on a
+vector space as a scalar product. A Lie algebra g with invariant scalar product B will be called
+a quadratic Lie algebra. First examples of quadratic Lie algebras are semi-simple Lie algebras,
+with B the Killing form. Here are some other examples:
+14                                 A. ALEKSEEV AND E. MEINRENKEN
+
+Examples 4.1.     (a) Let g be any Lie algebra, with given symmetric bilinear form. Then the
+      radical r of the bilinear form is an ideal, and the quotient g/r with induced bilinear
+      form is quadratic.
+  (b) Let F2n be equipped with the standard symplectic form, ω(e2i−1 , e2i ) = 1. Recall that
+      the Heisenberg Lie algebra Hn is the central extension
+                                        0 −→ F −→ Hn −→ F2n
+         of the Abelian Lie algebra F2n by F, with bracket defined by the cocycle ω. Let c denote
+         the basis vector for the center F ⊂ Hn . Let another copy of F, with basis vector r, act
+         on F2n by infinitesimal rotation in each e2i−1 –e2i -plane: r.e2i−1 = e2i , r.e2i = −e2i−1 .
+         This action lifts to derivations of Hn , and we may form the semi-direct product
+                                                g = F ⋉ Hn .
+         The Lie algebra g is quadratic, with bilinear form given by B(e2i−1 , e2i ) = B(c, r) = 1,
+         and all other scalar products between basis vectors equal to 0.
+     (c) Let s be any Lie algebra, acting on its dual by the co-adjoint action. Viewing s∗ as an
+         Abelian Lie algebra, form the semi-direct product g = s ⋉ s∗ . Then g is a quadratic
+         Lie algebra, with bilinear form B given by the natural pairing between s and s∗ . More
+         generally, given an invariant element C ∈ (∧3 s)s−inv , one obtains a quadratic Lie algebra
+         where the bracket between elements of s∗ is given by [µ, µ′ ]g = C(µ, µ′ , ·) ∈ s. See
+         Section 8.2 below.
+   From a given quadratic Lie algebra (a, Ba), new examples are obtained by the double exten-
+sion construction of Medina-Revoy [34]: Suppose a second Lie algebra s acts on a by derivations
+preserving the scalar product. Let ω be the following s∗ -valued cocycle on a,
+                             hω(a1 , a2 ), ξi = Ba(a1 , ξ.a2 ), ai ∈ a, ξ ∈ s
+and a ⊕ s∗ the central extension of a defined by this cocycle. The Lie algebra s acts on a ⊕ s∗
+by derivations, hence we may form the semi-direct product g = s ⋉ (a ⊕ s∗ ). The given scalar
+product on a, together with the scalar product on s ⋉ s∗ given by the pairing, define a scalar
+product on g, which is easily checked to be invariant. Notice that Example 4.1(b) is a special
+case of this construction.
+
+4.2. The algebra Wg. Consider the following example of the double extension construction
+(extended to super Lie algebras in the obvious way). Suppose g is any Lie algebra with a
+(possibly degenerate) symmetric bilinear form B. Then the super Lie algebra e
+                                                                            g inherits an odd
+(!) symmetric bilinear form,
+                                                                         ′
+                   Beg(ξ, ξ ′ ) = 0, Beg(ξ, ξ ′ ) = B(ξ, ξ ′ ), Beg(ξ, ξ ) = 0,   ξ, ξ ′ ∈ g.
+The action of s = Fd given by the differential on e
+                                                  g preserves Beg. The corresponding cocycle
+ω: eg⊗e g → F is given by B on the odd part eg1̄ = g and vanishes on the even part. Thus, we
+obtain a central extension e
+                           g ⊕ Fc by an even generator c dual to d; the new brackets between
+odd generators read,
+                                          [ζ, ζ ′ ]eg⊕Fc = B(ζ, ζ ′ )c
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                     15
+
+while the brackets between even generators or between even and odd generators are unchanged.
+The second step of the double extension constructs the super Lie algebra
+(13)                                         Fd ⋉ (e
+                                                   g ⊕ Fc),
+together with an odd symmetric bilinear form. The latter is non-degenerate if and only if B is
+non-degenerate.
+  The super Lie algebra (13) is a g − dl, where Fd ⋉ e  g acts by inner derivations. It contains
+the central extension e
+                      g ⊕ Fc as a g-differential Lie subalgebra. Explicitly, the g − ds structure
+on e
+   g ⊕ Fc is given by
+                   Lξ ζ = [ξ, ζ]g, Lξ ζ = [ξ, ζ]g, ιξ ζ = [ξ, ζ]g, ιξ ζ = B(ξ, ζ)c,
+while ιξ , Lξ vanish on c.
+Remark 4.2. It is instructive to compare the definition of the super Lie algebra (13) to the
+standard construction of affine Lie algebras. Let g be a Lie algebra with invariant symmetric
+bilinear form B. Tensoring with Laurent polynomials, define an infinite dimensional Lie algebra
+g[z, z −1 ] = g ⊗ F[z, z −1 ] with bilinear form B ′ (x1 ⊗ f1 , x2 ⊗ f2 ) = B(x1 , x2 ) Res(f1 f2 ) where
+the residue Res picks the coefficient of z −1 . The derivation ∂(x ⊗ f ) = x ⊗ ∂f /∂z preserves
+the bilinear form since Res(∂f /∂z) = 0. The double extension of g[z, z −1 ] with respect to the
+derivation ∂ is called an affine Lie algebra (at least if B is non-degenerate). In a similar fashion,
+letting u be an odd variable we may tensor with the algebra F[u] = {a + bu| a, b ∈ F} to define
+g[u] = g ⊗ F[u]. It carries an odd symmetric bilinear form, defined similar to B ′ but with Res
+replaced by the Berezin integral Ber(a + bu) = b. Again, the derivation d(x ⊗ f ) = x ⊗ ∂f /∂u
+preserves the inner product since Ber(∂f /∂u) = 0. Then g[u] ∼            = e
+                                                                            g, the derivation d is the
+Koszul differential, and the double extension yields (13).
+   The two constructions may be unified to define a super Lie algebra g[z, z −1 , u] known as
+super-affinization, see [21].
+  We define the g − da Wg as a quotient of the enveloping algebra,
+(14)                                         g ⊕ Fc)/ < c − 1 > .
+                                    Wg := U (e
+Note that Wg can be defined directly as a quotient of the tensor algebra T (e            g), in terms of
+                                            ′
+generators ξ, ξ (ξ ∈ g) with relations [ξ, ξ ] = [ξ, ξ ]g, [ξ, ξ ] = [ξ, ξ ]g and [ξ, ξ ] = B(ξ, ξ ′ ). In
+                                                      ′         ′         ′            ′
+
+particular there is a symmetrization map S(e   g) → Wg. Let S(e     g) carry the structure of a g − da,
+                                     g ⊕ Fc)/ < c − 1 >.
+induced by its identification with S(e
+Lemma 4.3. The symmetrization map
+(15)                                       Qg : S(e
+                                                  g) → Wg
+is a g − ds isomorphism.
+Proof. By Lemma 2.3, the PBW isomorphism S(e     g ⊕ Fc) → U (e
+                                                              g ⊕ Fc) is a g − ds isomorphism.
+After quotienting the ideal < c − 1 > on both sides, the Lemma follows.                     
+Proposition 4.4. If B = 0, the inclusion map F ֒→ Wg is a g-homotopy equivalence.
+Proof. It suffices to show that the inclusion F ֒→ S(e  g) is a g-homotopy equivalence. Since
+B = 0, e g (not just e
+                     g ⊕ Fc) is a g − ds, and the map s : e  g→e  g (cf. the end of Section 2.8)
+entering the definition of Koszul homotopy operator h : S(e     g) → S(e  g) commutes with Lie
+derivatives and contractions. It follows that h is a g-homotopy in this case.                 
+16                                A. ALEKSEEV AND E. MEINRENKEN
+
+4.3. The non-degenerate case. Let us now assume that g is a quadratic Lie algebra, i.e.
+that the bilinear B on g is non-degenerate. In this case, Wg becomes a g − da of Weil type.
+Indeed, the scalar product B defines an isomorphism B ♯ : g∗ → g, and hence Eg∗ ∼ = Eg = e  g.
+This isomorphism identifies the g − ds structures on Eg∗ ⊕ Fc and eg ⊕ Fc, hence it identifies
+S(eg) with the Weil algebra W g = S(Eg∗ ). That is, for any invariant scalar product B, (15)
+becomes a g − ds isomorphism
+(16)                                    Qg : W g → Wg.
+Since W g is of Weil type, so is Wg. We will refer to Qg as the quantization map.
+Remark 4.5. On the subalgebras ∧g ⊂ W g resp. Cl(g) ⊂ Wg generated by odd elements ζ,
+the quantization map restricts to the usual quantization map (Chevalley symmetrization map)
+                                         q : ∧g → Cl(g)
+for Clifford algebras, while on the subalgebras generated by even elements ζ it becomes the
+PBW symmetrization map Sg → U g.
+Remark 4.6. The Weil algebra Wg carries a connection g∗ ∼    = g → Wg, induced from the inclu-
+            g1̄ . By construction, the quantization map (16) is the characteristic homomorphism
+sion of g = e
+for this connection.
+   As mentioned above, the horizontal subalgebra (W g)hor of the Weil algebra W g is isomorphic
+to the symmetric algebra, and the differential d vanishes on (W g)basic = (Sg∗ )inv . We will now
+show that similarly, the horizontal subalgebra (Wg)hor is g-equivariantly isomorphic to the
+enveloping algebra U g. Let γ : g → Cl(g) be the map,
+                                               X
+                                    γ(ζ) = 12     [ζ, ea ]gea
+                                                 a
+where ea is a basis of g and ea the dual basis with respect to the given scalar product. It is a
+standard fact that the map γ is a Lie algebra homomorphism, and that Clifford commutator
+with γ(ζ) is the generator for the adjoint action of ζ on the Clifford algebra:
+                                                      Cl(g)
+                                         [γ(ζ), ·] = Lζ
+where the bracket denotes the super commutator in the Clifford algebra. Recall the definition
+of the map λ : g∗ → ∧2 g∗ by ιξ λ(µ) = − ad∗ξ µ. Identify g∗ ∼
+                                                             = g by means of the scalar product,
+and let q : ∧g → Cl(g) the quantization map (i.e. symmetrization map) for the Clifford algebra.
+Then
+                                        γ(ζ) = q(λ(ζ)).
+The curvature of the canonical connection on Wg is the map
+                               g → (Wg)hor , ζ 7→ ζb = ζ − γ(ζ).
+Theorem 4.7. The super algebra Wg is a tensor product
+(17)                                    Wg = U g ⊗ Cl(g)
+where U g is generated by the even variables ζb and the Clifford algebra Cl(g) is generated by the
+odd variables ζ. Under this identification, the map Qg : W g → Wg restricts to a vector space
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                 17
+
+isomorphism
+(18)                                 Sg = (W g)hor → U g = (Wg)hor .
+In fact, (18) is an algebra isomorphism on g-invariants.
+Proof. The elements ζb ∈ Wg are the images of the corresponding elements in W g (denoted
+by the same symbol) under the quantization map Qg. The commutator of two such elements
+b ζb′ ∈ Wg is given by
+ζ,
+                   [ζ,                                                               \
+                    b ζb′ ] = [ζ, ζ ′ ]g − Lζ γ(ζ ′ ) − Lζ ′ γ(ζ) + γ([ζ, ζ ′ ]g) = [ζ, ζ ′ ]g.
+Hence the variables ζb generate a copy of the enveloping algebra U g ⊂ Wg. On the other hand,
+the odd variables ζ generate a copy of the Clifford algebra. Since [ζ, ζb′ ] = 0 for ζ, ζ ′ ∈ g, the
+decomposition (17) follows. Since the map Qg : W g → Wg is a g − ds isomorphism, and
+the Weil differential d vanishes on basic elements in W g, it also vanishes on (Wg)basic . Hence
+H((Wg)basic ) = (Wg)basic = (U g)inv , and the last claim of the Theorem follows from Corollary
+3.3.                                                                                              
+
+                                        5. Duflo isomorphism
+   We will now show that the isomorphism (18) from Sg to U g is exactly the Duflo isomorphism,
+for the case of quadratic Lie algebras. Thus Theorem 4.7 proves Duflo’s theorem for this case.
+More generally, we will show that the map Qg : W g → Wg coincides with the quantization
+map introduced in [1].
+Proposition 5.1. Each of the derivations ιξ , d, Lξ of Wg is inner.
+Proof. By construction, ιξ = [ξ, ·] and Lξ = [ξ, ·]. To show that the differential
+                                                                             P     d is inner,
+choose a basis ea of g, and let ea be the dual basis with respect to B. Then a ea ea ∈ Wg is
+an invariant element, independent of the choice of basis. We have
+                           X                    X
+                          [    ea ea , ξ] = 0, [  ea ea , ξ] = ξ − 2γ(ξ).
+                                 a                        a
+Let                                         X     2X
+                                     D :=        ea ea − γ(ea )ea .
+                                        a         3    a
+                                                                               P
+Since D is invariant, [D, ξ] = −Lξ D = 0 = dξ. The element φ = 31 a γ(ea )ea satisfies
+                                                      P
+[φ, ξ] = γ(ξ). Therefore On the other hand, since [ 13 a γ(ea )ea , ξ] = γ(ξ), we have
+                                       X
+                          [D, ξ] = ξ +   adξ (ea )ea − 2γ(ξ) = ξ = dξ.
+                                             a
+                                                                                                  
+Remarks 5.2.     (a) The cubic element D may be interpreted as a quantized chain of trans-
+      gression. Indeed, it is easily checked that Qg(D) = D where
+                              X               X          2X
+                     D := h(      eba eba ) =    ea ea −     λ(ea )ea ∈ W g
+                               a
+                                               a         3 a
+                                                                                P
+      is the chain of transgression corresponding to the quadratic polynomial           ba
+                                                                                  a eba e ∈
+      (Sg)inv ⊂ W g. Here h is the standard homotopy operator for the Weil algebra.
+18                              A. ALEKSEEV AND E. MEINRENKEN
+
+   (b) The fact that the derivation d is inner may also be formulated in terms of the quadratic
+        super Lie algebra Fd ⋉ (eg ⊕ Fc). Indeed, it may be verified that the cubic element
+                                         X           2X
+                                 c2 d − c    ea ea +       γ(ea )ea
+                                           a         3   a
+        in the enveloping algebra of Fd ⋉ (e
+                                           g ⊕ Fc) is a central element. Specializing to c = 1 we
+        see that d − D is central in the quotient by < c − 1 >.
+                                                                         `
+   We now recall the definition of the Duflo map Sg → U g. Let Sg∗ = ∞           k ∗
+                                                                           k=0 S g be the com-
+pletion of the symmetric algebra, or equivalently the algebraic dual space to Sg. Informally, we
+will view Sg∗ as Taylor series expansions of functions on g. There is an algebra homomorphism
+                                     Sg∗ → End(Sg), F 7→ Fb
+extending the natural action of g∗ by derivations, that is, F̂ is an infinite order differential
+operator acting on polynomials. Let j(z) = sinh(z/2)
+                                              z/2    and define J ∈ Sg∗ by
+                                                                  
+                            J(ξ) = det(j(adξ )) = etr (ln j)(adξ ) .
+The square root of J is a well-defined element of Sg∗ . The Duflo map is the composition
+(19)                                 symU g ◦Jd
+                                              1/2 : Sg → U g.
+
+The quantization map in [1] is an extension of the Duflo map, for the case that g is quadratic.
+Write W g = Sg ⊗ ∧g, as in (10), and Wg = U g ⊗ Cl(g) as in (17). Let
+                                                   1    z 1
+                                      (ln j)′ (z) = coth −
+                                                   2    2 z
+be the logarithmic derivative of the function j, and let r ∈ Sg∗ ⊗ ∧2 g be given by r(ξ) =
+(ln j)′ (adξ ), where we identify skew-symmetric operators on g with elements in ∧2 g. Put
+                                     S(ξ) = J 1/2 (ξ) exp(r(ξ))
+         d ∈ End(W g) denote the corresponding operator, where the Sg∗ factor acts as
+and let ι(S)
+an infinite order differential operator on Sg, and the ∧g factor acts by contraction on ∧g.
+Let q : ∧g → Cl(g) be the Chevalley quantization map for the Clifford algebra. The tensor
+product of the PBW symmetrization map symU g : Sg → U g and the Chevalley quantization
+map q : ∧g → Cl(g) define a linear isomorphism symU g ⊗q : W g → Wg. Put differently, this
+                                                            b rather than the generators ξ, ξ
+is the symmetrization map with respect to the generators ξ, ξ,
+used in the definition of Qg.
+Theorem 5.3. Under the identification W g = Sg ⊗ ∧g and Wg = U g ⊗ Cl(g), the quantization
+map is given by the formula,
+                                                  d : W g → Wg.
+                             Qg = (symU g ⊗ q) ◦ ι(S)
+In particular, its restriction to the symmetric algebra Sg is the Duflo map.
+Proof. We use an alternative description of the symmetrization map S(e           g). Let ν a ∈ Eg1̄∗
+                                                                         g) → T (e
+and µa ∈ Eg0̄∗ be “parameters”. The symmetrizationP map is characterized by its property that
+for all p, the map id ⊗Qg takes the pth power of a (ν a ea + µa ea ) in the algebra S(Eg∗ ) ⊗ W g
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                19
+
+to the corresponding pth power in S(Eg∗ ) ⊗ Wg. These conditions may be combined into a
+single condition
+                               X                             X
+               id ⊗Qg : expW g(  (ν a ea + µa ea )) 7→ expWg(  (ν a ea + µa ea ));
+                                     a                               a
+
+here the exponentials are well-defined in completions S(Eg∗ ) ⊗ W g and S(Eg∗ ) ⊗ Wg, respec-
+tively.
+   We want to re-express the symmetrization map in terms of the new generators ea , eba =
+ea − λ(ea ) of W g and ea , eba = ea − γ(ea ) of Wg. Using that ea and eba commute in Wg, we
+may separate the Cl(g) and U g-variables in the exponential and obtain:
+                X                                    X                               X
+         expWg(        (ν a ea + µa ea )) = expCl(g)      (ν a ea + µa γ(ea ) expU g(      µa eba ).
+                     a                                  a                                a
+                     P                                     P
+The factor expU g( a µa eba ) is the image of expSg( a µa eba ) under the symmetrization map
+symU g : Sg → U g. The other factor is the exponential of a quadratic expression in the
+Clifford algebra. Using [3, Theorem 2.1] such exponentials may be expressed in terms of the
+corresponding exponentials in the exterior algebra:
+                     X                                            X                       
+            expCl(g)         ν a ea + µa γ(ea ) = q ι(S(µ)) exp∧g         ν a ea + µa λ(ea ) ,
+                        a                                            a
+where ι : ∧g → End(∧g) is contraction. This shows
+                     X
+               expWg      (ν a ea + µa ea )
+                        a
+                                                    X                              
+                 = (symU g ⊗q) ι(S(µ)) expW g             ν a ea + µa (eba + λ(ea ))
+                                                        a
+                                 X                              
+                                          a       a
+                 = Qg expW g            ν ea + µ (eba + λ(ea )
+                                     a
+                                 X                   
+                 = Qg expW g            ν a ea + µa ea .
+                                         a
+                                                                                                  
+  A different proof of Theorem 5.3 will be given in Section 8. Our result shows that while
+the Duflo map itself is not a symmetrization map, it may be viewed as the restriction of a
+symmetrization map for a larger algebra. Using Theorem 5.3, we obtain a very simple proof of
+the following result from [1, 25]:
+Proposition 5.4. The square of the cubic element D is given by
+                                        1       1
+(20)                               D 2 = Casg + trg(Casg)
+                                        2      48
+                P
+                      ba
+where Casg = a eba e ∈ (U g)inv ⊂ Wg is the quadratic Casimir element, and trg(Casg) its
+trace in the adjoint representation.
+Outline of proof. Write D = Qg(D) as in Remark 5.2 (a). Then
+                                                                    X
+                      D 2 = 21 [D, D] = 21 d(D) = 12 Qg(dD) = 21 Qg(  eba eba ).
+                                                                         a
+                                                                     P
+Using the explicit formula (19) for the Duflo map, one finds that Qg( a eba eba ) is equal to
+        1
+Casg + 24 trg(Casg).                                                                       
+20                                  A. ALEKSEEV AND E. MEINRENKEN
+
+Remarks 5.5.      (a) The algebra Wg carries a natural Z-filtration, where the odd generators
+      have degree 1 and the even generators have degree 2. Its associated graded algebra is
+      the Weil algebra W g, with its standard grading. The filtration on Wg is compatible
+      with the Z2 -grading in the sense of [27], and therefore induces the structure of a graded
+      Poisson algebra on W g. On generators, the formulas for the graded Poisson bracket are
+      given by {ξ, ζ} = B(ξ, ζ), {ξ, ζ} = adξ ζ, {ξ, ζ} = adξ ζ. The Weil differential may be
+      written as d = {D, ·} with D as in Remark 5.2 (a).
+  (b) It is possible to re-introduce a grading on Wg, by adding an extra parameter. Let ~ be
+      a variable of degree 2, and view S(F · ~) as a g − da with contractions, Lie derivatives
+      and differential all equal to zero. Define a g − da Wg[~] as the quotient of T (e
+                                                                                      g)⊗ S(F ·~)
+      by the relations,
+                      [ζ, ζ ′ ] = ~B(ζ, ζ ′ ), [ζ, ζ ′ ] = ~[ζ, ζ ′ ]g, [ζ, ζ ′ ] = ~[ζ, ζ ′ ]g
+         (on the left hand side, the bracket denotes super commutators). Note that the ideal
+         generated by these relations is graded. Hence Wg[~] is graded and the symmetrization
+         map W g[~] = W g ⊗ S(F · ~) → Wg[~] preserves degrees. The Weil algebra W g is
+         obtained by dividing out the ideal h~i, while Wg is obtained by dividing out h~ − 1i.
+         This clearly exhibits Wg as a deformation of the Weil algebra W g.
+     (c) Pavol Severa explained to us in the summer of 2001, that the quantization map from [1]
+         is closely related to the exponential map for a central extension of the super Lie group
+         T [1]G, as discussed in his paper [39]. Theorem 5.3 may be viewed as the algebraic
+         version of Severa’s observation.
+
+                                         6. Vogan conjecture
+   Suppose k ⊂ g is a Lie subalgebra admitting a k-invariant complement p. Thus g = k ⊕ p
+with
+                                      [k, k]g ⊂ k, [k, p]g ⊂ p.
+Any g−ds E becomes a k−ds by restricting the action to ek ⊂ e   g. If A is a g−da with connection
+     ∗     1̄                               ∗     ∗
+θ : g → A , then the restriction of θ to k ⊂ g defines a connection for A, viewed as a k − da.
+In particular, any g − da of Weil type becomes a k − da of Weil type. Theorem 3.7 shows that
+the projection map W g → W k induced by the projection is a k-homotopy equivalence, with
+homotopy inverse induced by the inclusion Ek∗ → Eg∗ . Suppose now that g is a quadratic
+Lie algebra, and that the restriction of the scalar product B to the subalgebra k is again non-
+degenerate. We will refer to k as a quadratic subalgebra. In this case, we may take p to be the
+orthogonal complement of k in g.
+Example 6.1. Let g be a semi-simple Lie algebra, with B the Killing form, and g = k ⊕ p
+a Cartan decomposition. Then k and p are orthogonal, and B is negative definite on k and
+positive definite on p. See [19, Chapter 3.7] or [24, Chapter VII.2].
+Example 6.2. Suppose F = C. For any ξ ∈ g, the generalized eigenspace for the 0 eigenvalue
+of adξ
+                              k = {ζ ∈ g| adN
+                                            ξ ζ = 0 for N >> 0}
+is a quadratic subalgebra, with p the direct sum of generalized eigenspaces for nonzero eigen-
+values. Indeed, given ζ1 ∈ k, ζ2 ∈ p, let N > 0 with adNξ ζ1 = 0. Since adξ is invertible on p,
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                21
+
+we have
+                                                            −N
+                           B(ζ1 , ζ2 ) = (−1)N B(adN
+                                                   ξ ζ1 , adξ  ζ2 ) = 0.
+This shows p = k⊥ .
+
+  The inclusion ek ⊕ Fc → e
+                          g ⊕ Fc is a k − dl homomorphism, hence it extends to a k − da
+homomorphism
+                                 U (ek ⊕ Fc) → U (e
+                                                  g ⊕ Fc).
+Taking quotients by the ideals generated by c−1, we obtain a k−da homomorphism Wk → Wg.
+We obtain a commutative diagram of k − ds homomorphisms,
+(21)                                        WO g        / Wg ,
+                                                   Qg      O
+
+
+                                            Wk     Qk
+                                                        / Wk
+
+in which all maps are k-homotopy equivalences, and the induced maps in basic cohomology
+are all algebra isomorphisms. We will now interpret these maps in terms of the isomorphism
+Wg = U g ⊗ Cl(g). We have
+                                 (Wg)k−hor = U g ⊗ Cl(p)
+and therefore (Wg)k−basic = (U g ⊗ Cl(p))k−inv . The Kostant cubic Dirac operator for the pair
+g, k is defined to as the difference of the Dirac operators for g and k:
+                                           Dg,k = Dg − Dk.
+The first two parts of the following Proposition were proved by Kostant in [25]. Let
+(22)                                    χ : U k ֒→ U g ⊗ Cl(p)
+be the map given by the inclusion (W k)k−hor ֒→ (Wg)k−hor .
+Proposition 6.3.     (a) The cubic Dirac operator Dg,k lies in the algebra (U g ⊗ Cl(p))k−inv .
+  (b) The square of Dg,k is given by the formula,
+                       2       1       1         1
+                      Dg,k =     Casg − χ(Cask) + (trg(Casg) − trk(Cask)).
+                               2       2         48
+   (c) The restriction of the differential on Wg to the subalgebra (U g ⊗ Cl(p))k−inv is a graded
+       commutator [Dg,k , ·].
+Proof. (a) It is clear that Dg,k is k-invariant. Furthermore, for ξ ∈ k, we have
+                               [Dg,k , ξ] = [Dg, ξ] − [Dk, ξ] = ξ − ξ = 0
+so Dg,k is k-basic. (b) Since ιξ = [ξ, ·] and Lξ = [ξ, ·], the basic subalgebra (Wg)k−basic is
+exactly the commutant of the subalgebra Wk ⊂ Wg. Hence Dg,k ∈ (Wg)k−basic and Dk ∈ Wk
+commute, and the formula follows from (20) by squaring the identity Dg = Dg,k + Dk. (c) On
+elements of (Wg)k−basic , [Dk, ·] vanishes since Dk ∈ Wk. Hence [Dg,k, ·] coincides with [Dg, ·] on
+(Wg)k−basic .                                                                                     
+22                             A. ALEKSEEV AND E. MEINRENKEN
+
+   The following theorem is a version of Vogan’s conjecture (as formulated in Huang-Pandzic
+[20]) for quadratic Lie algebras. It was first proved by Huang-Pandzic [20, Theorems 3.4, 5.5]
+for symmetric pairs, and by Kostant [26, Theorem 0.2] for reductive pairs. In a recent paper,
+Kumar [28] interpreted the Vogan conjecture in terms of induction maps in non-commutative
+equivariant cohomology.
+Theorem 6.4. The map χ : (U k)k−inv → (U g ⊗ Cl(p))k−inv takes values in cocycles for the
+differential [Dg,k, ·], and descends to an algebra isomorphism from (U k)k−inv to the cohomology
+of (U g ⊗ Cl(p))k−inv . The map (U g)g−inv → (U k)k−inv taking z ∈ (U g)g−inv to the cohomology
+class of z ⊗ 1 ∈ (U g ⊗ Cl(p))k−inv fits into a commutative diagram,
+                                   (Sg)g−inv      / (U g)g−inv
+
+
+                                                        
+                                   (Sk)k−inv      / (U k)k−inv
+
+where the horizontal maps are Duflo maps and the left vertical map is induced by the projection
+g → k.
+Proof. The commutative diagram (21) gives rise to a commutative diagram of k-basic subcom-
+plexes,
+                             (Sk)k−inv             / (U k)k−inv
+
+                                                          χ
+                                                          
+                             (Sg ⊗ ∧p)k−inv      / (U g ⊗ Cl p)k−inv
+
+As mentioned after (21), all of the maps in this diagram induce algebra isomorphisms in
+cohomology. This proves the first part of the theorem. The second part follows by combining
+this diagram with a commutative diagram
+                               (Sg)g−inv             / (U g)g−inv
+
+
+                                                          
+                             (Sg ⊗ ∧p)k−inv      / (U g ⊗ Cl p)k−inv
+
+given by the inclusion of g-basic subcomplexes of W g, Wg into the k-basic subcomplexes.      
+
+                             7. Harish-Chandra isomorphism
+   Let g be a quadratic Lie algebra, with scalar product B, and k ⊂ g a quadratic subalge-
+bra, with orthogonal complement p = k⊥ . In the previous Section, we obtained an algebra
+homomorphism (U g)g−inv → (U k)k−inv which under the Duflo isomorphism corresponds to the
+natural projection (Sg)g−inv → (Sk)k−inv . We will now describe an alternative construction of
+this map for enveloping algebras, generalizing the Harish-Chandra construction [24, Chapter
+V.5]
+   An extra ingredient for the Harish-Chandra map is a k-invariant splitting p = n− ⊕ n+ into
+Lie subalgebras of g which are isotropic, i.e. such that B vanishes on n± . Thus
+(23)                                    g = n− ⊕ k ⊕ n+
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                    23
+
+(direct sum of subspaces).
+
+Examples 7.1.      (a) In the standard setting of the Harish-Chandra theorem, g is a semi-
+       simple Lie algebra over F = C, with compact real form gR , k = tC is the complexification
+       of a maximal Abelian subalgebra of t ⊂ gR , and n± are nilpotent subalgebras given as
+       sums of root spaces for the positive/negative roots. More generally, one could take k
+       to be the centralizer of some element ξ ∈ t, and n+ (resp. n− ) the direct sum of the
+       positive (resp. negative) root spaces that are not contained in k.
+  (b) Suppose F = C. Consider the 2n + 2-dimensional nilpotent Lie algebra C ⋉ Hn from
+       Example 4.1(b). We obtain a decomposition (23) by letting   √ k be the Abelian subalgebra
+       spanned by r and c, and letting n± be the span of e2i ± −1e2i−1 .
+   (c) Both of these examples are special case of the following set-up. Suppose that gR is an
+       arbitrary quadratic Lie algebra over R, g its complexification, and ξ ∈ gR . Since adξ
+       preserves the quadratic form B, all eigenvalues of 1i adξ are real. Let gt ⊂ g denote the
+       generalized eigenspace for the eigenvalue t ∈ R. Then [gt , gt′ ]g ⊂ gt+t′ , andLB(gt , gt′ ) = 0
+       for      ′
+       L t + t 6= 0. A decomposition (23) is obtained by setting k = g0 , n− = t<0 gt , n+ =
+          t>0 gt .
+
+   By the Poincaré-Birkhoff-Witt theorem, the decomposition (23) of g yields a decomposition
+of the enveloping algebra U g,
+
+                                    U g = (n− U g + U g n+ ) ⊕ U k,
+
+hence a (generalized) Harish-Chandra projection
+
+                                           κU : U g → U k.
+
+The projection κU is k-invariant, and restricts to an algebra homomorphism on the subalgebra
+n− U g n+ ⊕ U k. Similar to κU , we define Harish-Chandra projections κCl : Cl(g) → Cl(k) using
+the decomposition
+                               Cl(g) = (n− Cl(g) + Cl(g) n+ ) ⊕ Cl(k)
+and κW : Wg → Wk using the decomposition
+
+(24)                                    n− Wg + Wg nf
+                                  Wg = (f           + ) ⊕ Wk.
+
+In Harish-Chandra’s construction for enveloping algebras, it is necessary to compose the pro-
+jection κU with a “shift”. Consider the infinitesimal character on k,
+
+                                            ζ 7→ Trn+ adζ .
+
+The map
+                                                          1
+                                  τ : k → U k, ζ 7→ ζ +   2   Trn+ adζ
+is a Lie algebra homomorphism, hence it extends to an algebra automorphism, τ : U k → U k.
+In the standard case where k is a Cartan subalgebra of a complex semi-simple Lie algebra, this
+is the “ρ-shift”. Remarkably, the shift is already built into the the projection κW :
+24                                      A. ALEKSEEV AND E. MEINRENKEN
+
+Proposition 7.2. The following diagram commutes:
+                                                 Wg         ∼
+                                                                / U g ⊗ Cl(g)
+                                                            =
+                                             κW                           (τ ◦κU )⊗κCl
+                                                                     
+                                                 Wk             / U k ⊗ Cl(k)
+                                                            ∼
+                                                            =
+
+Proof. Observe that the two projections κW and κU ⊗ κCl both vanish on En− Wg + WgEn+ .
+Hence it suffices to compare them on the subalgebra Wk ⊂ Wg. Elements in Wk may be
+written in the form ξi1 · · · ξir x where ξi1 , . . . , ξir ∈ k and x ∈ Cl(k) ⊂ Wk. For ξ ∈ k, we have
+ξ = ξb + γ(ξ), where γ(ξ) decomposes into parts γ k(ξ) ∈ Cl(k) and γ p(ξ) ∈ Cl(p). Let bi ∈ n−
+and cj ∈ n+ be dual bases, i.e. B(bi , cj ) = δij . We have,
+                                     X                               
+                    γ p(ξ) = 12          (adξ bj )cj + (adξ cj )bj
+                                             j
+                                             X                                  
+                                         1
+                                   =     2            (adξ bj )cj − bj (adξ cj ) − 12 trn+ (adξ ).
+                                             j
+                          P
+Here we have used j [bj , adξ cj ] = trn+ (adξ ), for all ξ ∈ k. Since (adξ bj )cj − bj (adξ cj ) ∈
+n− Cl(g)n+ , it follows that
+                                ξ = ξb − 21 trn+ (adξ ) + γ k(ξ) mod n− Cl(g)n+ .
+Hence,
+                                                                                                              
+       ξi1 · · · ξir x = (ξbi1 − 21 trn+ (adξi1 ) + γ k(ξi1 )) · · · (ξbir − 12 trn+ (adξir ) + γ k(ξir ))x       + ...
+where the terms . . . are in En− Wg + WgEn+ . The term in the large parentheses lies in the
+image of the tensor products of inclusions U k ֒→ U g, Cl(k) ֒→ Cl(g), and κU ⊗κCl is the identity
+map on this image. Comparing with
+                                ξi1 · · · ξir x = (ξbi1 + γ k(ξi1 )) · · · (ξbir + γ k(ξir ))x
+the result follows.                                                                                                       
+
+     It is now easy to verify the following properties of the Harish-Chandra map for Weil algebras.
+Theorem 7.3 (Harish-Chandra projection for Weil algebras). Suppose g is a quadratic Lie
+algebra, and g = n− ⊕ k ⊕ n+ a decomposition into subalgebras (direct sum of vector spaces)
+where k is quadratic and n± are k-invariant and isotropic.
+     (a) The maps κW : W g → W k and κW : Wg → Wk are k − ds homomorphisms.
+     (b) The diagram
+                                                         Wg           / Wg
+                                                                 Qg
+                                                       κW                      κW
+                                                                          
+                                                         Wk      Qk
+                                                                      / Wk
+
+          commutes up to k-chain homotopy.
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                25
+
+   (c) The above diagram contains a sub-diagram,
+
+                                               Sg   / Ug
+
+                                           κS             τ ◦κU
+                                                     
+                                               Sk   / Uk
+
+       where Sg is identified with (W g)g−hor , U g with (Wg)g−hor , and similarly for Sk and
+       U k. In this sub-diagram the upper and lower horizontal map are Duflo maps, the left
+       vertical map is κS , and the right vertical map is τ ◦ κU .
+
+Proof. It is clear that the decomposition (24) is ek-equivariant, and that each summand is pre-
+served by the differential. That is, (24) is a direct sum of k-differential subspaces, which proves
+(a). Part (b) is immediate from Theorem 3.2. We have already shown that the symmetrization
+maps for Weil algebras restrict to the Duflo maps, and it is clear that the left vertical map in
+(c) is just κS . The fact that the vertical map is τ ◦ κU follows from Proposition 7.2.          
+
+  Theorem 7.3 implies the following generalization of the Harish-Chandra homomorphism for
+enveloping algebras.
+Theorem 7.4. The following diagram commutes:
+
+                                    (Sg)g−inv       / (U g)g−inv
+
+                                      κS                          τ ◦κU
+                                                             
+                                    (Sk)k−inv        / (U k)k−inv
+
+Here the horizontal maps are the Duflo isomorphisms for g and k, respectively.
+Proof. By part (b) of the above Theorem, the diagram obtained by passing to k-basic coho-
+mology
+                              H((W g)k−basic )       / H((Wg)k−basic )
+
+
+                                                                 
+                                 (Sk)k−inv                 / (U k)k−inv
+
+commutes. (Moreover, all maps in this diagram are algebra isomorphisms.) On the other
+hand, the maps from g-basic cohomology to k-basic cohomology gives a commutative diagram
+of algebra homomorphisms,
+
+                                 (Sg)g−inv                 / (U g)g−inv
+
+
+                                                           
+                              H((W g)k−basic)        / H((Wg)k−basic )
+
+Placing these two diagrams on top of each other, it follows that the diagram in Theorem 7.4
+commutes.                                                                                
+26                             A. ALEKSEEV AND E. MEINRENKEN
+
+Proposition 7.5. Under the assumptions of Theorem 7.4, the image of the cubic Dirac oper-
+ator Dg under the Harish-Chandra projection is
+                                         κW (Dg) = Dk,
+the cubic Dirac operator Dk for the subalgebra.
+Proof. Recall that Dg = Dk + Dg,k, where Dg,k ∈ (U g ⊗ Cl(p))k−inv . The image of Dg,k under the
+Harish-Chandra projection vanishes since it is k-basic and odd. Hence, κW (Dg) = κW (Dk) =
+Dk.                                                                                           
+Remark 7.6. For semi-simple Lie algebras and k = h a Cartan subalgebra, the Harish-Chandra
+projection κCl for Clifford algebras was studied by Kostant. In particular Kostant showed that
+the image of a primitive generator of ∧g ∼ = Cl(g) is always linear, i.e. contained in h ⊂ Cl(h).
+He made a beautiful conjecture relating these projections to the adjoint representation of the
+principal TDS; this conjecture was recently proved by Y. Bazlov. It would be interesting to
+understand these results within our framework.
+
+                                 8. Rouvière isomorphism
+   In his 1986 paper [37], F. Rouvière described generalizations of Duflo’s isomorphism to
+a certain class of symmetric spaces G/K. In this Section, we will prove a Duflo-Rouvière
+isomorphism for quadratic Lie algebras g, with a scalar product that is anti-invariant under a
+given involution of g.
+8.1. Statement of the theorem. Let ǫ : g → g be an involutive automorphism of a Lie
+algebra g. Then g = k ⊕ p where k is the subalgebra fixed by ǫ, and p is the −1 eigenspace of
+ǫ. We will refer to (g, k) as a symmetric pair. For any Lie algebra homomorphism f : k → F,
+define a twisted inclusion of k in U k by
+                                     kf = {ξ + f (ξ)| ξ ∈ k}.
+Using the embedding U k ֒→ U g, we may view kf as a subspace of U g. The space
+(25)                                   (U g/U g · kf )k−inv
+inherits an algebra structure from the enveloping algebra U g: Indeed, U g · kf is a two-sided
+ideal in the subalgebra {z ∈ U g| Lξ z ∈ U g · kf for all ξ ∈ k} of U g, and (25) is the quotient
+algebra. The following was proved by Duflo, generalizing a result of Lichnerowicz [31]:
+Theorem 8.1 (Duflo [14]). Let (g, k) be a symmetric pair, and let f : k → F be the character
+f (ξ) = 12 trk(adξ ). Then the algebra (25) is commutative.
+   The geometric interpretation of the algebra (25) is as follows. Suppose F = R, and let G
+be the connected, simply connected Lie group having g as its Lie algebra. Assume that k ⊂ g
+is the Lie algebra of a closed, connected subgroup of K ⊂ G. Taking f = 0, a theorem of
+Lichnerowicz [30] shows that (25) is the algebra of G-invariant differential operators on the
+symmetric space G/K. The algebra (25) for f (ξ) = 21 trk(adξ ) is interpreted as the algebra of
+G-invariant differential operators on G/K, acting on sections of the half density bundle.
+   Returning to the general case, we relate the algebra (25) to invariants in the symmetric
+algebra Sp. Indeed, using a PBW basis one sees that the map
+                          Sp ⊕ U g · kf → U g, (x, z) 7→ symU g(x) + z
+                      LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                27
+
+is a k-module isomorphism. We therefore obtain an isomorphism of k-modules
+                                     Sym : Sp → U g/U g kf
+taking x ∈ Sp to the image of symU g(x) under the quotient map. Let Jp ∈ Sp∗ be defined by
+the function
+                                  Jp(ζ) = det(j(2 adζ )|p)
+with j(z) = sinh(z/2)
+                z/2   as in Section 5. This is well-defined: For ζ ∈ p, adζ takes k to p and vice
+versa; since j is an even function, it follows that j(2 adζ ) preserves both k and p. Let
+                                        d1/2
+                                        Jp : Sp → Sp
+denote the infinite order differential operator defined by the square root of the function Jp. In
+Section 8.3 we will show:
+Theorem 8.2. Let (g, k) be a symmetric pair, where k is the fixed point set of an involutive
+automorphism ǫ. Suppose g admits an invariant scalar product B with ǫ∗ B = −B. Then the
+composition
+                                d 1/2
+                          Sym ◦Jp : (Sp)k−inv → (U g/U g kf )k−inv
+(where p is the −1 eigenspace for ǫ) is an algebra isomorphism.
+Remark 8.3.      (a) A result similar to Theorem 8.2 was first proved by Rouvière [37] for
+      symmetric pairs (g, k) satisfying one of the following two conditions: (i) g is solvable,
+      or (ii) g satisfies the Kashiwara-Vergne conjecture [23] and (g, k) is very symmetric in
+      the sense that there is a linear isomorphism A : g → g, A(k) = p, A(p) = k such that
+      [A, adξ ] = 0 for all ξ ∈ g. At the time of this writing the Kashiwara-Vergne conjecture
+      is still open, but it has been established for solvable Lie algebras and for quadratic
+      Lie algebras [42] (see also [2]). (A major consequence of the conjecture, regarding
+      convolution of invariant distributions, was proved in the series of papers [7, 5, 6]. See
+      [41] for more information on the Kashiwara-Vergne method.)
+  (b) It is known that for general symmetric pairs, the statement of Theorem 8.2 becomes
+      false. A counter-example, examined in [15], is g = sl(2, R), with k = so(1) the subalgebra
+      of diagonal matrices, and p the subspace of matrices having 0 on the diagonal.
+8.2. Examples. Rouvières example K C /K is included in the setting of Theorem 8.2, as follows.
+Suppose (k, Bk) is a quadratic Lie algebra over F = R, and g = kC is its complexification. Using
+the extension of Bk to a complex-bilinear form on g, define a real-bilinear form
+                                   Bg(ξ, η) = 2 Im(BkC (ξ, η))
+on g, viewed as a real Lie algebra. Then B changes sign under the involution ǫ of g given √ by
+                                                          ∼   ∗                   ∗ ∼
+complex conjugation. The√bilinear form Bk identifies√k = k , while Bg identifies k = p = −1k.
+The resulting map k → −1k is given by ξ 7→ 21 −1ξ. The function Jp(ξ) turns into the
+following function
+                                                               sin(z/2)
+                            Jh (ξ) = det(jh (adξ )), jh (z) =           ,
+                                                                  z/2
+similar to the usual Duflo factor, but with a sin-function instead of a sinh-function. See [4] for
+a geometric interpretation of this example.
+28                                 A. ALEKSEEV AND E. MEINRENKEN
+
+   Suppose g is a quadratic Lie algebra, with involution ǫ changing the sign of the scalar product
+B. Then B vanishes on both k (the +1 eigenspace of ǫ) and p (the −1 eigenspace of ǫ), and
+hence defines a non-singular pairing between k and p. This identifies p and k∗ , and defines an
+element C ∈ (∧3 k)k−inv by
+                            B([µ, µ′ ]g, µ′′ ) = C(µ, µ′ , µ′′ ), µ, µ′ , µ′′ ∈ k∗ .
+Conversely, given a Lie algebra k and an invariant element C ∈ ∧3 k, the direct sum g = k ⊕ k∗
+carries a unique Lie bracket such that k is a Lie subalgebra, [ξ, µ]g = − ad∗ξ µ for ξ ∈ k, µ ∈ k∗ ,
+and
+                          [µ, µ′ ]g = C(µ, µ′ , ·) ∈ (k∗ )∗ = k, µ, µ′ ∈ k∗ .
+Furthermore, the symmetric bilinear form B given by the pairing between k and k∗ is g-invariant,
+and changes sign under the involution ǫ given by −1 on k∗ and by 1 on k. Hence all examples for
+Theorem 8.2 may be described in terms of a Lie algebra k with a given element C ∈ (∧3 k)k−inv .
+Examples 8.4.       (a) If C = 0, the Lie algebra g is just the semi-direct product g = k ⋉
+       k∗ . In this case, one finds that (U g/U g kf )k−inv = (Sk∗ )k−inv and the Duflo-Rouvière
+       isomorphism is just the identity map.
+  (b) Suppose (k, Bk) is a quadratic Lie algebra over F = R. Then C(ξ, ξ ′ , ξ ′′ ) = ±Bk([ξ, ξ ′ ]k, ξ ′′ )
+       defines an element C ∈ (∧3 k)k−inv (where we use Bk to identify k∗ with k). For the minus
+       sign, one obtains the example g = kC considered above. For the plus sign, one arrives
+       at g = k ⊕ k, with k embedded diagonally and p embedded anti-diagonally. In this case,
+       the Duflo-Rouvière isomorphism reduces to the usual Duflo isomorphism.
+   (c) Given n ≥ 3 let k be the nilpotent Lie algebra of strictly upper-triangular n×n-matrices,
+       and {Eij , i < j} its natural basis, where Eij is the matrix having 1 in the (i, j) position
+       and zeroes elsewhere. Then C = E1,n−1 ∧ E1,n ∧ E2,n lies in (∧3 k)k−inv . The resulting
+       quadratic Lie algebra g is solvable for n = 3, and nilpotent for n ≥ 4.
+  (d) There are non-trivial examples of C ∈ (∧3 k)k−inv such that the resulting symmetric pair
+       (g, k) is not very symmetric in Rouvière’s sense, and also g not solvable.
+           Indeed if (g, k) is a very symmetric pair with [k, k]k = k, then [p, p]g = k, or equivalently
+       ker(C) ≡ {µ ∈ k∗ | ιµ C = 0} = 0. Take k = a ⋉ a∗ with a semi-simple. Let C ∈ ∧3 a∗ ⊂
+       ∧3 k be defined by the Lie bracket and the Killing form on a. Since C has non-zero
+       kernel, (g, k) is not very symmetric. Furthermore, a ⊂ k ⊂ g is the Levi factor of g
+       which shows that g is not solvable.
+8.3. Proof of Theorem 8.2. View Wg as a k-differential algebra, with connection defined by
+the canonical g-connection and the splitting g = k ⊕ p.
+   Recall that the contraction operators on e    g ⊂ Wg are given by ιξ ζ = B(ξ, ζ), ιξ ζ = Lξ ζ.
+                                      e
+Since k is isotropic, it follows that k is a k-differential subspace of Wg, and so is the left ideal
+Wgek. The algebra structure on Wg does not descend to the k − ds Wg/(Wg ek), in general.
+However, there is an induced algebra structure on the basic subcomplex (Wg/(Wg ek))k−basic
+since its pre-image in Wg is a subalgebra containing Wg ek as a 2-sided ideal.
+Proposition 8.5. The characteristic homomorphism W k → Wg ∼
+                                                          = U g ⊗ Cl(g) descends to a
+k − ds isomorphism
+(26)                        = S(Ep) → Wg/(Wg ek) ∼
+                         Wk ∼                    = (U g/U g kf ) ⊗ ∧p,
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                            29
+
+an isomorphism of k-modules
+(27)                              = Sp → (Wg/(Wg ek))k−hor ∼
+                       (W k)k−hor ∼                        = U g/U g kf ,
+and an isomorphism of algebras
+(28)                     = (Sp)k−inv → (Wg/(Wg ek))k−basic ∼
+            (W k)k−basic ∼                                 = (U g/U g kf )k−inv .
+Proof. By a PBW argument, the map
+                             S(Ep) ⊕ Wg ek → Wg, (x, z) 7→ Qg(x) + z
+is a k − ds isomorphism. Thus, the quotient map W k ∼  = S(Ep) → Wg/Wgek is again a k − ds
+isomorphism, and its restriction to horizontal subspaces is a k-module isomorphism.
+   The map on basic subspaces is a composition
+                      (W k)k−basic → (Wg)k−basic → (Wg/(Wg ek))k−basic ,
+where the second map is an algebra homomorphism, and the first map induces an algebra homo-
+morphism in cohomology. Since the differential vanishes on (W k)k−basic and as a consequence
+vanishes on (Wg/(Wg ek))k−basic , it follows that (28) is an algebra isomorphism.
+   It remains to identify Wg/(Wg ek) and its horizontal and basic subspaces in terms of the
+isomorphism Wg = U g ⊗ Cl(g). Observe that Wg ek is the left ideal generated by elements ζ, ζ
+with ζ ∈ k. We will show that
+                          ζ = ζb + γ g(ζ) = ζb + 1 trk(ζ) mod Wg k.
+                                                       2
+
+To see this, choose bases ei of k and       of p such that B(ei , ej ) = δij . Then
+                                           ej
+                              X
+                γ g(ζ) = 21       (adζ (ei )ei + adζ (ei )ei )
+                                   i
+                                  X                                    X
+                         =    1
+                              2    (−ei adζ (ei ) + adζ (ei )ei ) + 12   B(adζ (ei ), ei ).
+                                   i                                    i
+                                                                    1
+The first sum lies in Wg k, while the second sum gives trk(adζ ) mod Wg k. This proves
+                                                                    2
+Wg/(Wg ek) = (U g/U g kf ) ⊗ ∧p, where the contractions ιξ are induced by the contractions
+on ∧p = ∧k∗ . Hence the k-horizontal subspace is (U g/U g kf ), and the k-basic subcomplex is
+(U g/U g kf )k−inv .                                                                       
+  To complete the proof of Theorem 8.2, we have to identify the isomorphism (27) from Sp
+                                 d1/2
+onto U g/U gkf with the map Sym ◦Jp . Our calculation will require the following Lemma.
+Lemma 8.6. Let V be a vector space, and suppose A : V → V ∗ and B : V ∗ → V are linear
+maps with A∗ = −A, B ∗ = −B. Let λ(A) ∈ ∧2 V ∗ and λ(B) ∈ ∧2 V be the skew-symmetric
+bilinear forms defined by A, B, i.e. in a basis ea of V , with dual basis ea of V ∗ ,
+                                 X                           X
+                       λ(A) = 12     A(ea ) ∧ ea , λ(B) = 21    B(ea ) ∧ ea .
+                                       a                            a
+          ∗
+Let ι : V → End(∧V ) denote contraction, and denote by the same letter its extension to the
+exterior algebra ∧V ∗ . Suppose I + AB is invertible. Then
+               ι(exp(λ(A)) exp(λ(B)) = det1/2 (1 + AB) exp(λ(B ◦ (I + AB)−1 ))
+30                                A. ALEKSEEV AND E. MEINRENKEN
+
+for a unique choice of square root of det(I + AB).
+     In particular, it follows that the map
+                          ∧2 V ∗ × ∧2 V → F, (λ(A), λ(B)) 7→ det(I + AB)
+admits a smooth square root, given by the degree zero part of ι(exp(λ(A)) exp(λ(B)).
+Proof. This may be proved by methods similar to [3, Section 5], to which we refer for more
+details. Let V ⊕ V ∗ be equipped with the symmetric bilinear form given by the pairing between
+V and V ∗ , and Spin(V ⊕ V ∗ ) → SO(V ⊕ V ∗ ) be the corresponding Spin group. One has the
+following factorization in SO(V ⊕ V ∗ ),
+                                                                    
+                    I 0       I B           I D       I 0        R      0
+                                       =
+                   A I        0 I           0 I       E I        0 (R−1 )∗
+where
+                             R = (I + BA)−1 , E = AR−1 , D = BR∗ .
+This factorization lifts to a factorization in Spin(V ⊕ V ∗ ). Consider now the spinor repre-
+                                                                                    
+sentation of Spin(V ⊕ V ∗ ) on ∧V ∗ . In this representation, the lift of R0 (R−1
+                                                                                0
+                                                                                  )∗
+                                                                                       acts as
+                                     I    0
+α 7→ det−1/2 (R) R.α, the lift of     E    I
+                                                acts by contraction with exp(λ(E)), and the lift of the
+          I   D
+factor     0   I
+                acts by exterior product with exp(λ(D)). The lemma follows by applying the
+factorization to the “vacuum vector” 1 ∈ ∧V ∗ .                                         
+Proposition 8.7. The k-module isomorphism Sp → U g/U g kf in (27) is equal to the map
+                                         d1/2
+                                    Sym ◦Jp : Sp → U g/U g kf .
+Proof. We write (27) as a composition of maps
+                    (i)                     (ii)                    (iii)    (iv)
+               Sp −→ W g = Sg∗ ⊗ ∧g∗ −→ Wg = U g ⊗ Cl(g) −→ U g −→ U g/U g kf
+Here (i) is the restriction of the characteristic map W k → W g to Sp = Sk∗ , (ii) is the quan-
+tization map, (iii) is the tensor product of the augmentation map for Cl(g) with the identity
+map for U g, and (iv) is the quotient map. In terms of the generators µb = µ − λk(µ) of Sk∗ ,
+                                         ∗
+and the corresponding generators of Sg , (i) is given by
+                                                       b + λp(µ)
+                                                  b 7→ µ
+                                          µ 7→ µ, µ
+where λp(µ) = λg(µ) − λk(µ) takes values in ∧2 p∗ . View λp as a ∧2 p∗ -valued function on
+g∗ , constant in p∗ -directions. Then exp(λp) defines an infinite order ∧p∗ -valued differential
+operator
+                                      \p) : W g → W g,
+                                     exp(λ
+                                                                 \p) ◦ i where i : W k =
+and the characteristic homomorphism W k → W g is a composition exp(λ
+  ∗     ∗              ∗   ∗                                            b 7→ µ
+Sk ⊗ ∧k → W g = Sg ⊗ ∧g is the inclusion given on generators by µ 7→ µ, µ    b. Note that
+               ∗                                                     ∗     ∗
+the image of Sk ⊂ W k under the composition lies in the subalgebra Sk ⊗ ∧p = Sp ⊗ ∧k of
+W g. Hence, when we apply the map (ii)
+                                                  b : W g → Wg,
+                                Qg = (sym ⊗q) ◦ ι(S)
+                        LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                   31
+
+
+                                                                             = g∗ to k∗ ∼
+we need only consider the “restriction” of S(ξ) = J 1/2 (ξ) exp(r(ξ)), ξ ∈ g ∼          = p. That
+is, we have to compute
+(29)                     J 1/2 (ξ)ι(exp(r(ξ))) exp(λp(ξ)) ∈ W g = Sg ⊗ ∧g
+for ξ ∈ p = k∗ . In fact, we are only interested in the component of (29) in Sg ⊗ ∧0 g, since all
+the other components will vanish under the projection (iii). Since k and p are dual k-modules,
+                        J(ξ) = detp(j(adξ ))detk(j(adξ )) = detp(j(adξ )2 ).
+Similarly, r(ξ) splits into a sum r ′ (ξ) + r ′′ (ξ) where r ′ (ξ) ∈ ∧2 p and r ′′ (ξ) ∈ ∧2 k. We may
+replace r(ξ) with r ′ (ξ) in (29) since the r ′′ (ξ) part will not contribute to the contraction. Thus,
+we may calculate (29) using Lemma 8.6, with
+                              V = p, A = (ln j)′ (adξ )|p, B = adξ |p∗ .
+Letting (·)[0] denote the ∧0 g component, the Lemma gives,
+                                                                 1/2
+                       J 1/2 (ξ) ι(exp(r(ξ))) exp(λp(ξ)) [0] = detp (h(adξ ))
+where
+                        h(z) = j(z)2 (1 + z(ln j)′ (z))
+                                    sinh(z/2) 2                             
+                               =                 1 + z( 12 coth(z/2) − z −1 )
+                                       z/2
+                                   sinh(z/2) cosh(z/2)
+                               =
+                                            z/2
+                                   sinh(z)
+                               =           .
+                                      z
+To summarize, the composition of the maps (i),(ii),(iii) is the map Sp → U g given by application
+                                            d1/2
+of an infinite-order differential operator Jp on Sp, followed by the PBW symmetrization map
+sym : Sp → U g . Since the map Sym : Sp → U g/U g kf is defined as PBW symmetrization
+followed by the quotient map (iv), the proof is complete.                                       
+
+8.4. Isotropic subalgebras. Theorem 8.2 may be generalized, as follows. Suppose g is a qua-
+dratic Lie algebra, and k ⊂ g an isotropic subalgebra with k-invariant complement p. Suppose
+p is co-isotropic, that is, the B-orthogonal subspace p⊥ is contained in p. Then B induces a
+non-singular pairing between k and p⊥ , and the restriction of B to
+                                             m = k⊥ ∩ p
+is non-singular. Since k is isotropic, ek ⊂ e
+                                            g ⊕ Fc is a k-differential subspace, and we may form
+the quotient k − ds, Wg/Wg ek. The proof of Proposition 8.5 carries over with no change, and
+shows that the map S(Ep) → Wg/Wg ek given by the inclusion S(Ep) ֒→ W g, followed by the
+quantization map and the quotient map, is a k − ds isomorphism.
+   Since the scalar product identifies p⊥ ∼= k∗ , the k − da S(Ep) is of Weil type, with connection
+k∗ → Ep given by the inclusion as p⊥ ⊂ p. It follows that the map in basic cohomology
+                                S(p⊥ )k−inv → H((Wg/Wg ek)k−basic )
+32                              A. ALEKSEEV AND E. MEINRENKEN
+
+is an algebra isomorphism. The algebra on the right hand side admits the following alternative
+description. Let γ m : k → Cl m be the map defined by the k-action on m. Then
+                            γ g(ζ) =   1
+                                       2   trk(adζ ) + γ m(ζ)   mod Wgek.
+
+Define a twisted inclusion k → U g ⊗ Cl(m) by ζ 7→ ζb + 21 trk(adζ ) + γ m(ζ) and let kf denote
+the image of this inclusion. As in the proof of Proposition 8.5, one finds that the algebra
+(Wg/Wg ek)k−basic is canonically isomorphic to the algebra
+                                     U g ⊗ Cl(m) 
+(30)                                                       .
+                                     (U g ⊗ Cl(m))kf k−inv
+One therefore arrives at the following result:
+Theorem 8.8. Let g be a quadratic Lie algebra, with isotropic subalgebra k and k-invariant
+co-isotropic complement p. Let m = k⊥ ∩ p. The algebra (30) carries a natural differential, with
+cohomology algebra canonically isomorphic to (Sk∗ )k−inv .
+  Suppose F = R, and that G is a connected Lie group and K a closed connected subgroup
+having g, k as their Lie algebras. Then (30) has the following geometric interpretation. For any
+K-module V , consider the algebra DO(G ×K V )G−inv of G-invariant differential operators on
+the associated bundle G ×K V . There is a canonical algebra isomorphism (cf. [30])
+                                                U g ⊗ End(V ) 
+                          DO(G ×K V )G−inv =
+                                                (U g ⊗ End(V )) k K−inv
+where k → U g ⊗ End(V ) is embedded diagonally. Thus, if S is any module for the Clifford
+algebra Cl(m), and if the action of the Lie algebra k (via k → Cl(m)) on S exponentiates to
+an action of the Lie group K, there is an algebra homomorphism from the algebra (30) to the
+algebra of invariant differential operators on G ×K S, twisted by the half density bundle. If
+the module S is faithful and irreducible, Cl(m) ∼= End(S) and this algebra homomorphism is
+an isomorphism.
+
+                            9. Universal characteristic forms
+   As a final application of our theory, we obtain a new construction of universal characteristic
+forms in the Bott-Shulman complex [8, 16, 35, 40]. We assume F = R, and let G be a connected
+Lie group with Lie algebra g. Recall that in the simplicial construction of the classifying bundle
+EG → BG [35, 38], one models the de Rham complex of differential forms on EG by a double
+complex C p,q = Ωq (Gp+1 ) with differentials d : C p,q →          p,q+1
+                                                              P C i (the de Rham∗ differential) and
+     p,q
+δ: C →C       p+1,q . Here δ is the alternating sum δ = (−1) δi where δi = ∂i is the pull-back
+under the map,
+                        ∂i : Gp+1 → Gp , (g0 , . . . , gp ) 7→ (g0 , . . . , gbi , . . . , gp )
+omitting the ith entry. View each Ep G = Gp+1 as a principal G-bundle over Bp G = Gp , with
+action the diagonal G-action from the right, and quotient map Ep G → Bp G, (g0 , . . . , gp ) 7→
+(g0 g1−1 , g1 g2−1 , . . .). Let
+                              ιξ : C p,q → C p,q−1 , Lξ : C p,q → C p,q
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                  33
+
+be the corresponding contraction operators and Lie derivatives. Then the total complex
+                                           ∞
+                                           M                  M
+                                 W =             W k, W k =             C p,q
+                                           k=0                p+q=k
+
+with differential D = d + (−1)q δ, contractions ιξ and Lie derivatives Lξ becomes a g − ds.
+                                   L                      L∞
+(The Z2 -grading is given by W 0̄ = ∞k=0 W
+                                            2k and W 1̄ =
+                                                             k=0 W
+                                                                   2k+1 .) By the simplicial de
+
+Rham theorem [35, Theorem 4.3], the total cohomology of the basic subcomplex computes the
+cohomology of the classifying space BG, with coefficients in R. Define a product structure on
+the double complex,
+                                   ′   ′            ′          ′   ′            ′   ′
+                         C p,q ⊗ C p ,q → C p+p ,q ⊗ C p+p ,q → C p+p ,q+q
+                                           ′
+where the first map is given by (−1)qp times the tensor products of pull-backs to the first p + 1,
+                                              ′
+respectively last p′ + 1, G-factors in Gp+p +1 , and the second map is wedge product. (This
+formula is motivated by the usual formula for cup products of the singular cochain complex.)
+It is straightforward to verify that D, ιξ , Lξ are derivations for the product structure, thus W
+becomes a g − da. It is locally free, with a natural connection
+                                       θ : g∗ → C 0,1 = Ω1 (G)
+given by the left-invariant Maurer-Cartan form on G. Hence, by symmetrization we obtain a
+g − ds homomorphism W g → W which restricts to a map of basic subcomplexes. The resulting
+map
+                                      M                   M
+(31)                      (Sg∗ )inv →   Ωq (Gp+1 )basic ∼
+                                                        =   Ωq (Gp )
+                                           p,q                         p,q
+
+takes an invariant polynomial of degree r to a D-cocycle of total degree 2r. By our general
+theory, the induced map in cohomology is a ring homomorphism. As in the usual Bott-Shulman
+construction we have the following vanishing phenomenon:
+Proposition 9.1. The image of an invariant polynomial of degree r under the map (31) has
+non-vanishing components only in bidegrees (p, q) with p + q = 2r and p ≤ r.
+Proof. The connection θ lives in bidegree (0, 1), and its total differential Dθ has non-vanishing
+components only in bi-degrees (0, 2) and (1, 1). Since the product structure is compatible with
+the bi-grading, it follows that the image of an element ξ i1 · · · ξ il ξj1 · · · ξjm ∈ W g under the
+symmetrization map only involves bi-degrees (p, q) with p + q = 2l + m and p ≤ l. Any element
+in S r g∗ ⊂ W g is a linear combination of such elements, with 2l + m = 2r.                        
+
+  Let W L ⊂ W denote the direct sum over the subspaces (C p,q )L = Ωq (Gp+1 )L of forms that
+are invariant under the left Gp+1 -action. Clearly, W L is a g-differential subalgebra of W . Since
+the connection is left-invariant, our Chern-Weil map takes values in the subalgebra Wbasic L .
+
+
+Theorem 9.2. W L is a g − da of Weil type. If G is compact and connected, the g − da W is
+of Weil type, with the inclusion W L ֒→ W a g-homotopy equivalence.
+  It follows that in this case, the map (31) gives an isomorphism in cohomology.
+34                                    A. ALEKSEEV AND E. MEINRENKEN
+
+Proof. We first recall the standard proof that W is acyclic. Let Π : W → W be the projection
+operator given on C p,q as pull-back under the map
+                               π : Gp+1 → Gp+1 , (g0 , . . . , gp ) 7→ (e, . . . , e).
+The projection Π is naturally chain homotopic to the identity: To construct a homotopy
+operator, let
+               sj : Gp+1 → Gp+2 , (g0 , . . . , gp ) 7→ (g0 , . . . , gj , e, . . . , e), i = 0, . . . , p
+               P
+and set s = pj=0 (−1)j s∗j : C p+1,q → C p,q . Note that on Gp+1 , ∂p+1 sp = id, ∂0 s0 = π. A
+                                                                                    L
+direct calculation (as in May [33]) shows that [δ, s] = Π − id on ∞                          q
+                                                                                        p=0 Ω (G
+                                                                                                 p+1 ), for any fixed
+
+q. Since [d, s] = 0, it follows that −(−1)q s : Ωq (Gp+1 ) → Ωq (Gp+2 ) gives the desired homotopy
+between the identity and Π.
+    The image Π(W ) ⊂ W is isomorphic to the singular cochain complex of a point. Hence,
+composing with the standard homotopy operator for this complex we see that the inclusion
+i : F ֒→ W is a homotopy equivalence. Let h : W → W denote the homotopy operator
+constructed in this way.
+    The map s does not commute with Lξ since the maps sj are not G-equivariant. However,
+on the left invariant subcomplex W L this problem disappears, since s∗j ◦ Lξ = Lξ ◦ s∗j on W L .
+It follows that h restricts to a homotopy operator on W L with [h, Lξ ] = 0. This shows that
+W L is of Weil type.
+    Suppose now that G is compact. Then there is a projection Π1 : W → W L , given on
+Ω (Gp+1 ) as the averaging operator for the left Gp+1 -action. It is well-known that the averaging
+  q
+
+operator is homotopic to the identity operator; the homotopy operator h1 may be chosen to
+commute with Lξ , by averaging under the right G-action. (In our case, one may directly
+construct h1 using the Hodge decomposition for the bi-invariant Riemannian metric on G.)
+It follows that Π|W L ◦ Π1 is homotopic to the identity map, by a homotopy operator that
+commutes with Lξ and lowers the total degree by 1.                                                                 
+Remark 9.3. For the classical groups, there is another model for differential forms on the
+classifying bundle, as an inverse limit of differential forms on Stiefel manifolds – e.g. for
+G = U(k), the inverse limit of Ω(St(k, n)) for n → ∞. The resulting g − da carries a natural
+“universal” connection (see Narasimhan-Ramanan [36]). The characteristic homomorphism for
+this case was studied by Kumar in [29].
+
+                                 Appendix A. Proof of Theorem 3.7
+                                                                                          S
+   Recall that a linear operator C on a vector space E is locally nilpotent if E = N ≥0 E (N )
+where E (N ) is the kernel of C N +1 . If C is locally nilpotent, the operator I +C has a well-defined
+inverse, since the geometric series I − C + C 2 − C 3 ± · · · is finite on each E (N ) .
+Lemma A.1. Suppose E is a g-differential space, and h ∈ End(E)1̄ an odd linear operator
+with the following properties:
+                                [ιξ , h] = 0, [Lξ , h] = 0, [d, h] = I − Π + C
+where Π is a projection operator, and C is locally nilpotent. Assume that h and C vanish on
+the range of Π. Then Π̃ = Π(I + C)−1 is a projection operator having the same range as Π.
+                       LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                  35
+
+
+Furthermore, it is a g − ds homomorphism, and h̃ = h(I + C)−1 is a g-homotopy between I
+and Π̃:
+                              [ιξ , h̃] = 0, [Lξ , h̃] = 0, [d, h̃] = I − Π̃.
+
+Proof. Since CΠ = 0, it is clear that Π̃ is a projection operator. We will check [d, h̃] = I − Π̃
+on any given v ∈ E. Choose N sufficiently large so that v ∈ E (N ) and dv ∈ E (N ) . On E (N ) ,
+the operator h̃ is a finite series
+
+                  h̃ = h(I − C + C 2 − · · · + (−1)N C N )
+                      = h(I − (C − Π) + (C − Π)2 + · · · + (−1)N (C − Π)N ),
+
+where we have used hΠ = 0 and CΠ = 0. The equation [d, h] = I − Π + C shows that C − Π
+commutes with d. Thus
+
+                [d, h̃] = [d, h](I − (C − Π) + (C − Π)2 + · · · + (−1)N (C − Π)N )
+
+on the subspace {v ∈ E (N ) | dv ∈ E (N ) }. But [d, h] = I − Π + C also shows [d, h]Π = 0. Hence
+we may replace C − Π by C again, and get
+
+                           [d, h̃]   = [d, h](I − C + C 2 + · · · )
+                                     = [d, h](I + C)−1
+                                     = (I − Π + C)(I + C)−1 = I − Π̃.
+
+By a similar argument, since [Lξ , C − Π] = [Lξ , [h, d]] = 0 and [ιξ , C − Π] = −[ιξ , [h, d]] =
+−[h, Lξ ] = 0, one proves [Lξ , h̃] = 0 and [ιξ , h̃] = 0.                                      
+
+Lemma A.2. Suppose E is a g-differential space, and E ′ ⊂ Ebasic a differential subspace.
+Suppose h : E → E is an odd linear operator with [Lξ , h] = 0 and [d, h] = I − Π, where Π
+     projection operator onto E ′ with hΠ = 0. Assume there exists an increasing filtration
+is a S
+E= ∞   N =0 E
+              (N ) , with E ′ ⊂ E (0) , such that each ι and h have negative filtration degree. Then,
+                                                        ξ
+for any locally free g-differential space B, the inclusion map
+
+                                           E′ ⊗ B → E ⊗ B
+
+is a g-homotopy equivalence, with a homotopy inverse E ⊗ B → E ′ ⊗ B that is equal to the
+identity on E ′ ⊗ B.
+
+Proof. The proof is inspired by an argument of Guillemin-Sternberg (see [18, Theorem 4.3.1]).
+If [ιE
+     ξ , h] = 0, the projection operator Π = Π⊗I is the desired homotopy inverse to the inclusion
+map, with homotopy h = h ⊗ 1. In the general case, we employ the Kalkman trick [22] to shift
+the contraction operators on E ⊗ B to the second factor. Let                                a
+                  ∗                           ∗
+                                                                Pea bea aEbasis of g, and e the
+dual basis of g . Choose a connection θ : g → B. Then ψ = a θ(e )ιea is an even, nilpotent
+operator on E ⊗ B, with [ψ, LE           B
+                                   ξ + Lξ ] = 0. Hence exp ψ is a well defined even, invertible
+operator on E ⊗ B, and it commutes with the g-action. Let
+
+       L̃ξ = Ad(exp ψ)(LE    B                     E    B                    E   B
+                        ξ + Lξ ), ι̃ξ = Ad(exp ψ)(ιξ + ιξ ), d̃ = Ad(exp ψ)(d + d )
+36                                     A. ALEKSEEV AND E. MEINRENKEN
+
+denote the transformed Lie derivatives,
+                              P          contractions an differential on E ⊗ B. A calculation
+using Ad(exp ψ) = exp(ad ψ) = ∞       1
+                                 n=0 n! (ad ψ)n shows
+                                        ι̃ξ = ιB
+                                               ξ
+                                       L̃ξ = LE    B
+                                              ξ + Lξ
+
+                                        d̃ = dE + dB + θ(ea )LE
+                                                              ea + R
+
+where the remainder term R is a polynomial in contractions ιE    ea , with coefficients in B (with
+no constant term). The operator h commutes with the contractions ι̃ξ and Lie derivatives L̃ξ ,
+and
+                         [d̃, h] = [dE , h] + [R, h] = I − Π + [R, h].
+Our assumptions imply that C = [R, h] has negative filtration degree, and in particular is locally
+nilpotent. Thus Lemma A.1 applies and shows that Π̃ = Π(I + C)−1 is a projection operator
+with the same range E ′ ⊗ B, and is homotopic to the identity by a homotopy h̃ = h(I + C)−1
+which commutes with all ι̃ξ , L̃ξ . Since ιE                ′
+                                           ξ vanishes on E , the operator exp ψ acts trivially on
+                     b = Π̃◦exp(ψ) is a projection onto E ′ ⊗B. The operator b
+E ′ ⊗B and therefore Π                                                       h = Ad(exp(−ψ))h̃
+                                         b
+gives the desired g-homotopy between Π and the identity.                                        
+Proof of Theorem 3.7. Let W, W ′ be g − da’s of Weil type. Lemma A.2 (for E = W ′ and
+B = W ) gives a g-homotopy equivalence W → W ′ ⊗ W, w 7→ 1 ⊗ w. Reversing the roles of
+W, W ′ , the Lemma also shows that there exists a g-homotopy equivalence W ⊗ W ′ → W ′ that
+restricts to the identity map on F ⊗ W ′ . By composition, we obtain a g-homotopy equivalence
+W → W ′ taking units to units.                                                             
+
+                                                   References
+ 1. A. Alekseev and E. Meinrenken, The non-commutative Weil algebra, Invent. Math. 139 (2000), 135–172.
+ 2.         , Poisson geometry and the Kashiwara-Vergne conjecture, C. R. Math. Acad. Sci. Paris 335 (2002),
+    no. 9, 723–728. MR 1 951 805
+ 3.         , Clifford algebras and the classical dynamical Yang-Baxter equation, Mathematical Research Letters
+    10 (2003), no. 2-3, 253–268.
+ 4. A. Alekseev, E. Meinrenken, and C. Woodward, Linearization of Poisson actions and singular values of
+    matrix products, Ann. Inst. Fourier (Grenoble) 51 (2001), no. 6, 1691–1717.
+ 5. M. Andler, A. Dvorsky, and S. Sahi, Deformation quantization and invariant distributions, C. R. Acad. Sci.
+    Paris Sér. I Math. 330 (2000), no. 2, 115–120, arXiv:math.QA/9905065. MR 2000k:53079
+ 6.         , Kontsevich quantization and invariant distributions on Lie groups, Ann. Sci. École Norm. Sup. (4)
+    35 (2002), no. 3, 371–390. MR 1 914 002
+ 7. M. Andler, S. Sahi, and C. Torossian, Convolution of invariant distributions: Proof of the Kashiwara-Vergne
+    conjecture, Preprint, 2001.
+ 8. R. Bott, Lectures on characteristic classes and foliations, Lectures on algebraic and differential topology
+    (Second Latin American School in Math., Mexico City, 1971), Springer, Berlin, 1972, Notes by Lawrence
+    Conlon, with two appendices by J. Stasheff, pp. 1–94. Lecture Notes in Math., Vol. 279. MR 50 #14777
+ 9. H. Cartan, Notions d’algèbre différentielle; application aux groupes de Lie et aux variétés où opère un groupe
+    de Lie., Colloque de topologie (espaces fibrés) (Bruxelles), Georges Thone, Liège, Masson et Cie., Paris,
+    1950.
+10. S. S. Chern, Characteristic classes of Hermitian manifolds, Ann. of Math. (2) 47 (1946), 85–121. MR 7,470b
+11. L. Corwin, Y. Ne’eman, and S. Sternberg, Graded Lie algebras in mathematics and physics (Bose-Fermi
+    symmetry), Rev. Modern Phys. 47 (1975), 573–603. MR 55 #11828
+                          LIE THEORY AND THE CHERN-WEIL HOMOMORPHISM                                            37
+
+12. P. Deligne and J. Morgan, Notes on supersymmetry (following Joseph Bernstein), Quantum fields and
+    strings: a course for mathematicians, Vol. 1, 2 (Princeton, NJ, 1996/1997), Amer. Math. Soc., Providence,
+    RI, 1999, pp. 41–97. MR 2001g:58007
+13. M. Duflo, Opérateurs différentiels bi-invariants sur un groupe de Lie, Ann. Sci. École Norm. Sup. 10 (1977),
+    265–288.
+14.         , Opérateurs différentiels invariants sur un espace symétrique, C. R. Acad. Sci. Paris Sér. A-B 289
+    (1979), no. 2, A135–A137. MR 82e:58104
+15. J. J. Duistermaat, On the similarity between the Iwasawa projection and the diagonal part, Mém. Soc. Math.
+    France (N.S.) (1984), no. 15, 129–138, Harmonic analysis on Lie groups and symmetric spaces (Kleebach,
+    1983). MR 86k:22035
+16. J. L. Dupont, Simplicial de Rham cohomology and characteristic classes of flat bundles, Topology 15 (1976),
+    no. 3, 233–245.
+17. I.M. Gelfand and M.M. Smirnov, The algebra of Chern-Simons classes, the Poisson bracket on it, and the
+    action of the gauge group, Lie theory and geometry, Progr. Math., vol. 123, Birkhäuser Boston, Boston, MA,
+    1994, pp. 261–288. MR 97e:58236
+18. V. Guillemin and S. Sternberg, Supersymmetry and equivariant de Rham theory, Springer Verlag, 1999.
+19. S. Helgason, Differential geometry, Lie groups, and symmetric spaces, Academic Press, 1978.
+20. J.-H. Huang and P. Pandzic, Dirac cohomology, unitary representations and a proof of a conjecture of Vogan,
+    J. Amer. Math. Soc. 15 (2002), no. 1, 185–202 (electronic). MR 2002h:22022
+21. V. Kac, Vertex algebras for beginners, second ed., University Lecture Series, vol. 10, American Mathematical
+    Society, Providence, RI, 1998. MR 99f:17033
+22. J. Kalkman, A BRST model applied to symplectic geometry, Ph.D. thesis, Universiteit Utrecht, 1993.
+23. M. Kashiwara and M. Vergne, The Campbell-Hausdorff formula and invariant hyperfunctions, Invent. Math.
+    47 (1978), 249–272.
+24. A.W. Knapp, Lie groups beyond an introduction, second ed., Progress in Mathematics, vol. 140, Birkhäuser
+    Boston Inc., Boston, MA, 2002. MR 2003c:22001
+25. B. Kostant, A cubic Dirac operator and the emergence of Euler number multiplets of representations for
+    equal rank subgroups, Duke Math. J. 100 (1999), no. 3, 447–501.
+26.         , Dirac cohomology for the cubic Dirac operator, Preprint, Massachusetts Institute of Technology,
+    2001.
+27. B. Kostant and S. Sternberg, Symplectic reduction, BRS cohomology, and infinite-dimensional Clifford al-
+    gebras, Ann. Phys. 176 (1987), 49–113.
+28. S. Kumar, Induction Functor in Non-commutative Equivariant Cohomology and Dirac Cohomology.
+29.         , A remark on universal connections, Math. Ann. 260 (1982), no. 4, 453–462. MR 84d:53028
+30. A. Lichnerowicz, Opérateurs différentiels invariants sur un espace symétrique., C. R. Acad. Sci. Paris 256
+    (1963), 3548–3550. MR 26 #6987
+31.         , Opérateurs différentiels invariants sur un espace homogène, Ann. Sci. École Norm. Sup. (3) 81
+    (1964), 341–385. MR 32 #4628
+32. M. Markl, Homotopy Algebras are Homotopy Algebras, Preprint, arXiv:math.AT/9907138.
+33. J. P. May, Simplicial objects in algebraic topology, Chicago Lectures in Mathematics, University of Chicago
+    Press, Chicago, IL, 1992, Reprint of the 1967 original. MR 93m:55025
+34. A. Medina and Ph. Revoy, Caractérisation des groupes de Lie ayant une pseudo-métrique bi-invariante.
+    Applications, South Rhone seminar on geometry, III (Lyon, 1983), Travaux en Cours, Hermann, Paris, 1984,
+    pp. 149–166. MR 85m:53077
+35. M. Mostow and J. Perchik, Notes on Gelfand-Fuks cohomology and characteristic classes (lectures delivered
+    by R. Bott), Proceedings of the eleventh annual holiday symposium, New Mexico State University, 1973,
+    pp. 1–126.
+36. M. S. Narasimhan and S. Ramanan, Existence of universal connections, Amer. J. Math. 83 (1961), 563–572.
+    MR 24 #A3597
+37. F. Rouvière, Espaces symétriques et méthode de Kashiwara-Vergne, Ann. Sci. École Norm. Sup. (4) 19
+    (1986), no. 4, 553–581.
+38                                   A. ALEKSEEV AND E. MEINRENKEN
+
+38. G. Segal, Classifying spaces and spectral sequences, Inst. Hautes Études Sci. Publ. Math. (1968), no. 34,
+    105–112.
+39. P. Severa, Some title containing the words ”homotopy” and ”symplectic”, e.g. this one,
+    arXiv:math.SG/0105080.
+40. H. Shulman, On characteristic classes, 1972, Ph.D. thesis, Berkeley.
+41. C. Torossian, Kashiwara-Vergne-Rouviere methods for symmetric spaces, arXiv:math.QA/0202217.
+42. M. Vergne, Le centre de l’algèbre enveloppante et la formule de Campbell-Hausdorff, C. R. Acad. Sci. Paris
+    Sér. I Math. 329 (1999), no. 9, 767–772.
+43. A. Weil, Géometrie différentielle des espaces fibrés, (Letters to Chevalley and Koszul), 1949, in: Oeuvres
+    scientifique, vol.1, Springer, 1979.
+
+     University of Geneva, Section of Mathematics, 2-4 rue du Lièvre, 1211 Genève 24, Switzerland
+     E-mail address: alekseev@math.unige.ch
+
+  University of Toronto, Department of Mathematics, 100 St George Street, Toronto, Ontario
+M5S3G3, Canada
+  E-mail address: mein@math.toronto.edu
+

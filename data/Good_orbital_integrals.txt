@@ -1,0 +1,2376 @@
+                                                                  GOOD ORBITAL INTEGRALS
+arXiv:math/0311353v2 [math.RT] 10 Sep 2004
+
+
+
+
+                                                             CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+
+                                                     Abstract. This paper concerns a class of orbital integrals in Lie alge-
+                                                     bras over p-adic fields. The values of these orbital integrals at the unit
+                                                     element in the Hecke algebra count points on varieties over finite fields.
+                                                     The construction, which is based on motivic integration, works both in
+                                                     characteristic zero and in positive characteristic. As an application, the
+                                                     Fundamental Lemma for this class of integrals is lifted from positive
+                                                     characteristic to characteristic zero. The results are based on a formula
+                                                     for orbital integrals as distributions inflated from orbits in the quotient
+                                                     spaces of the Moy-Prasad filtrations of the Lie algebra. This formula is
+                                                     established by Fourier analysis on these quotient spaces.
+
+
+
+
+                                                                                Introduction
+                                                It has been clear to researchers for many years that orbital integrals on
+                                             p-adic groups are geometrical objects. However, it has taken many years to
+                                             make this observation precise. When the local field has positive character-
+                                             istic, Kottwitz, Goresky, and MacPherson give a geometrical description of
+                                             the orbital integrals of the unit element in the Hecke algebra [17].
+                                                Another approach to this problem is suggested by motivic integration.
+                                             Motivic integration may be viewed as a geometrization of ordinary p-adic
+                                             integration. This is the path followed by this paper.
+                                                One advantage of this approach is that it works equally well in all char-
+                                             acteristics. This allows us to lift the beautiful recent work of Goresky, Kot-
+                                             twitz, Laumon, and MacPherson to characteristic zero – at least for the
+                                             special class of semi-simple elements that we consider.
+                                                A limitation of motivic integration is that the domain of integration is
+                                             restricted to a special algebra of sets, called definable sets (in the sense of
+                                             first order logic). The main problem we face is that p-adic orbits are not
+                                             definable sets. However, orbital integrals are locally constant functions. This
+                                             allows us to replace each orbital integral by an average of orbital integrals
+                                             over a neighborhood.
+                                                The key question is then whether orbital integrals are constant on de-
+                                             finable sets. This turns out to be the case, at least for the class of orbital
+                                             integrals that we study in this paper. In fact, the relation between definable
+                                               Date: 10 Sept 2004.
+                                               1991 Mathematics Subject Classification. 22E50, 14F42.
+                                               Key words and phrases. Orbital integrals, local constancy, motivic integration, Funda-
+                                             mental Lemma.
+                                                                                         1
+2               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+sets and the local constancy of orbital integrals is rather striking. What
+we find is that is the largest neighborhood of an element on which (we are
+able to show that) the orbital integrals are constant coincides precisely with
+the smallest neighborhood that is definable. In brief, we find that motivic
+integration is perfectly adapted to the study of orbital integrals.
+   The first section of this paper uses local Fourier analysis to determine a
+neighborhood of certain semi-simple elements on which orbital integrals are
+constant. The main results on the local constancy of orbital integrals are
+Theorem 1.26 and Corollary 1.30. The remainder of the paper shows that
+this neighborhood is definable and then applies the machinery of motivic
+integration to give a geometric interpretation of orbital integrals. This geo-
+metric interpretation of orbital integrals, Theorem 2.9, is the main result of
+the paper.
+   This paper carries this project through for a significant special case, al-
+though we assume the residual characteristic of the p-adic field is large. In
+Section 1 the local Fourier analysis is treated for all connected reductive
+groups, but with restrictions on the valuations of the roots of the semi-
+simple elements. (These are the good elements that appear in the title.)
+The remainder of this paper restricts further to classical groups, and places
+some further restrictions on the valuations of the roots.
+   As an application of Theorem 2.9, we observe in Corollary 2.12 that the
+Fundamental Lemma for this class of integrals is lifted from positive char-
+acteristic to characteristic zero.
+   It is our expectation that the results should generalize to all reductive
+groups and all semi-simple elements without restriction on the valuations of
+the roots; however, this has not yet been carried out.
+   Ju-Lee Kim has pointed out that the explicit local constancy of orbital
+integrals on the set of good semisimple elements can be deduced directly from
+the paper [22]. An appendix by Ju-Lee Kim indicates how to do this. Ju-Lee
+Kim has recently proved more general results about the local constancy of
+orbital integrals ([23, Theorem 9.2.2]).
+   After this paper was already submitted for publication, we received the
+preprint [34], which treats a similar topic as our paper. Corollary 2.12 is a
+special case of [34, thm7.2].
+   We are happy to acknowledge the assistance of Jeffrey Adler and to thank
+him for many helpful conversations. We would also like to thank François
+Loeser for his support of this project.
+
+
+                                 Contents
+    Introduction                                                            1
+    1. A Formula for Good Orbital Integrals                                 3
+    1.1. Preliminary remarks                                                3
+    1.2. The Fourier transform                                              5
+    1.3. Support and mesh                                                   7
+                          GOOD ORBITAL INTEGRALS                                3
+
+  1.4. Relative Fourier transform                                         8
+  1.5. Gauss integrals                                                   10
+  1.6. Good, regular, elliptic orbital integrals                         15
+  1.7. Descent                                                           17
+  1.8. Local constancy of good regular orbital integrals                 18
+  2. Statement of Results                                                19
+  2.1. Notation                                                          20
+  2.2. Lie algebras considered                                           20
+  2.3. Orbital Integrals                                                 22
+  2.4. The ring of values for motivic integration                        25
+  2.5. Relation to the geometric fundamental lemma                       25
+  3. Characteristic Polynomials                                          26
+  3.1. r-reduction                                                       26
+  3.2. Lifts of Polynomials                                              28
+  3.3. Even Polynomials                                                  29
+  4. Conjugacy in Classical Lie Algebras                                 30
+  4.1. Groups under consideration                                        30
+  4.2. The parameter space Sg,r                                          31
+  4.3. Pfaffians                                                         32
+  4.4. The map to Sg,r                                                   33
+  4.5. Stable Orbital Integrals                                          34
+  4.6. κ-orbital integrals                                               35
+  5. The first order language of rings and Pas’s language                37
+  5.1. Local Constancy                                                   38
+  6. Measures                                                            40
+  6.1. Normalization of Haar measures                                    40
+  6.2. Serre-Oesterlé measures                                          41
+  6.3. The measures in the fundamental lemma                             41
+  6.4. Weyl integration formula                                          41
+  6.5. Application                                                       42
+  7. Construction of Varieties                                           43
+  7.1. Reduction to covers                                               44
+  7.2. Reduction to weakly stable subassignments                         45
+  7.3. Reduction to special formulas                                     45
+  8. Appendix : local constancy of orbital integrals as a Corollary of [22][3.1.9], by Julee Kim 48
+  References                                                             49
+
+
+
+
+             1. A Formula for Good Orbital Integrals
+1.1. Preliminary remarks. Let F be a p-adic field with ring of integers
+OF , prime ideal pF and residue field Fq . Throughout the paper, there will
+be certain mild restrictions on p, the characteristic of the residue field of F ;
+these conditions are met my assuming that p is ‘sufficiently large’.
+4                CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+   Let |x| = |x|F be the normalized absolute value on F . (We also use |C|
+for the cardinality of a set C. If ξ = (ξ1 , . . . , ξm ) is an m-tuple of variables,
+then we write |ξ| for the length m of the tuple. The context will make it
+clear which is intended.)
+   Let G be the group of F -rational points on a connected reductive algebraic
+group G defined over F . Integration on G and its measurable subsets will
+always be taken with respect to the same Haar measure and the notation
+‘mes’ will refer to that measure. Let g denote Lie algebra of G. Every
+integral over g and its measurable subsets will be taken with respect to the
+same Haar measure and the notation ‘vol’ will refer to that measure.
+   The Bruhat-Tits building for G will be denoted B(G); we refer the reader
+to [5] for the definition. A torus T ⊆ G defined over F is tamely ramified
+if the splitting field for T over F has ramification index prime to p. In
+this case, using results of [24], we choose an embedding of the Bruhat-Tits
+building B(T ) for the group T of F -rational points on T into the Bruhat-
+Tits building B(G) for G by way of a toral map; as we use only the image of
+this embedding, which does not depend on the choice just made, all results
+in this paper are independent of the choice. We will also view the building
+B(L) for the group of F -rational points on a Levi subgroup L ⊂ G defined
+over F as a simplicial subcomplex of B(G).
+   The reader is referred to [27] for the definition of the subgroups Gx,r and
+Gx,r+ of G (resp. the lattices gx,r and gx,r+ of g) where x is any point in
+B(G) and r is any non-negative real number (resp. any real number). We
+also write gr for the union of the spaces gx,r , as x ranges over all B(G).
+   Let Cc∞ (g) denote the convolution C-algebra of locally constant complex-
+valued functions on g with compact support. For any lattice L in g, we
+write Cc∞ (L) for the space of functions in Cc∞ (g) supported by L; if L′ is a
+sublattice in L, then Cc∞ (L/L′ ) will denote the vector space of elements of
+Cc∞ (g) supported by L which are constant on the L′ -cosets in L.
+   For each x ∈ B(G), we let Gx be the parahoric subgroup associated
+to x by [5] and let Ḡx denote the quotient group Gx /Gx,0+ . We remark
+that Ḡx is the set of Fq -points of a reductive linear algebraic group. For
+each real number r (and any x ∈ B(G)) let ḡx,r denote gx,r /gx,r+ and let
+ρx,r : gx,r → ḡx,r be the projection map. We remark that the adjoint action
+of G on g restricts to an action of Gx on gx,r which in turn induces an action
+of Ḡx on ḡx,r .
+   Let dx (X) denote the supremum of the set of all r ∈ R such that X ∈ gx,r .
+This defines a function dx : g → R ∪ {+∞} which we refer to as the depth
+function at x. The depth d(X) of X in g is the supremum of the dx (X)
+as x ranges over the building B(G). The depth of a non-zero non-nilpotent
+element is always a rational number. The depth of X is infinite exactly
+when X is nilpotent.
+   We will make extensive use of the notion of good elements in g, as intro-
+duced in [1, 2.2.4]. Accordingly, we review that definition here. First, let
+T ⊆ G be a tamely ramified torus defined over F and let E be a splitting
+                                 GOOD ORBITAL INTEGRALS                                 5
+
+field for T. Let T (E) denote the group of E-rational points on T and let
+t ⊗ E denote the Lie algebra of T(E). Note that t ⊗ E is a split Lie algebra
+since it coincides with the Lie algebra of the group of E-rational points on
+the connected reductive algebraic group T ×Spec(F ) Spec(E), which is split
+over E by construction. For any Y ∈ t ⊗ E and any y ∈ B(T(E)) we define
+the depth of Y at y as above, and likewise define the depth of Y in t ⊗ E as
+above.
+Definition 1.1. An element X of g is good if X is semi-simple, X is con-
+tained in a Cartan subalgebra t = Lie(T ) which is tamely ramified with
+splitting field E/F , and for every root α of g relative to t, either α(X) is
+zero or the E-normalized valuation of α(X) equals the depth of X in t ⊗ E.
+Remark 1.2. It should be noted that the parameterization of the filtrations in
+[1] differs by a scalar multiple from that of [27]. In Definition 1.1, we use the
+depth only on a split Lie algebra t ⊗ E; and here the two parameterizations
+of the filtrations coincide. In this paper, we use the parameterization defined
+in [27], so all results culled from [1] are translated accordingly.
+   The existence of good elements, assuming p sufficiently large, is estab-
+lished in [3].
+
+1.2. The Fourier transform. This section fixes a Fourier transform Fg on
+the p-adic Lie algebra and recalls some well-known elementary properties of
+Fg. Throughout, x is an arbitrary element of B(G) and r is an arbitrary
+real number.
+   We fix a Killing form h·, ·i : g × g → F for g and a non-trivial additive
+character λ : F → C× with conductor OF (that is, λ is trivial on pF but
+not trivial on OF ). Let Λ (X, Y ) denote the image of hX, Y i under λ.
+Lemma 1.3. Let 1Z+gx,r : g → C be the characteristic function of Z + gx,r .
+For any x ∈ B(G), r ∈ R and Z ∈ g,
+(1.3.1)     Z
+   ∀X ∈ g,              Λ (X, Y ) 1Z+gx,r (Y ) dY = Λ (X, Z) vol(gx,r )1gx,(−r)+ (X).
+                    g
+
+Proof.
+         Z                                        Z
+                 Λ (X, Y ) 1Z+gx,r (Y ) dY    =             Λ (X, Y ) dY
+             g                                     Z+gx,r
+                                                  Z
+                                              =     Λ (X, Z + Y ) dY
+                                                   gx,r
+                                                         Z
+                                              = Λ (X, Z)    Λ (X, Y ) dY.
+                                                              gx,r
+
+For p sufficiently large (recall this assumption from section 1.1) it follows
+from the definition of the lattice gx,r and the fact that λ has conductor OF
+6                    CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+that the set of all X ∈ g for which Λ (X, Y ) = 1 for all Y ∈ gx,r is exactly
+gx,(−r)+ (ref: [1, § 4]). Thus, when X is an element of gx,(−r)+ we have
+                         Z
+              Λ (X, Z)       Λ (X, Y ) dY = Λ (X, Z) vol(gx,r );
+                             gx,r
+
+on the other hand, if X is not contained in gx,(−r)+ then the function Y 7→
+Λ (X, Y ) is non-trivial on the lattice gx,r , so
+                                Z
+                      Λ (X, Z)       Λ (X, Y ) dY = 0.
+                                      gx,r
+
+Therefore,
+              Z
+(1.3.2)            Λ (X, Y ) 1Z+gx,r (Y ) dY = Λ (X, Z) vol(gx,r )1gx,(−r)+ (X),
+              g
+
+as claimed.                                                                        
+Proposition 1.4. If f :Rg → C is locally constant with compact support,
+then the function X 7→ g Λ (X, Y ) f (Y ) dY is also locally constant with
+compact support.
+Proof. By hypothesis, f ∈ Cc∞ (g) (as defined in Section 1.1). Any element
+of Cc∞ (g) may be expressed as a finite linear combination of functions of the
+form 1Z+gx,r . Thus, it is sufficient toR prove the proposition when f = 1Z+gx,r .
+From Lemma 1.3 we see that X 7→ g Λ (X, Y ) 1Z+gx,r dY is locally constant
+and compactly supported, and therefore an element of Cc∞ (g).                  
+Definition 1.5. Define Fg : Cc∞ (g) → Cc∞ (g) by
+                                 Z
+(1.5.1)            (Fgf )(X) = Λ (Y, X) f (Y ) dY.
+                                             g
+
+We refer to Fg as the Fourier transform on g. When there is no ambiguity,
+we write fb for Fgf .
+Corollary 1.6. For any x ∈ B(G) and for any r, s ∈ R with s ≤ r, the
+Fourier transform induces an isomorphism of vector spaces
+(1.6.1)              Fg : Cc∞ (gx,s /gx,r+ ) → Cc∞ (gx,−r /gx,(−s)+ ).
+Proof. Any element of Cc∞ (gx,s /gx,r+ ) is a finite linear combination of func-
+tions of the form 1Z+gx,r+ with dx (Z) = s. Let r ′ be the largest real number
+such that gx,r′ = gx,r+ . (Thus, r ′ is the first ‘jump point’ greater than r.)
+We have seen in the proof of Proposition 1.4 (cf: Equation 1.3.1) that
+                  (Fg1Z+gx,r′ )(X) = Λ (X, Z) vol(gx,r′ )1gx,(−r′ )+ (X).
+Since gx,(−r′ )+ = gx,−r , we have
+                  (Fg1Z+gx,r+ )(X) = Λ (X, Z) vol(gx,r+ )1gx,−r (X),
+                               GOOD ORBITAL INTEGRALS                                   7
+
+so Fg maps Cc∞ (gx,s /gx,r+ ) into Cc∞ (gx,−r ). Suppose now that X ∈ gx,−r .
+If X ′ ∈ gx,(−s)+ then X ′ ∈ gx,−r so
+                                                 
+    (Fg1Z+gx,r+ )(X + X ′ ) = Λ X + X ′ , Z vol(gx,r+ )1gx,−r (X + X ′ )
+                                                    
+                              = Λ (X, Z)Λ X ′ , Z vol(gx,r+ )
+                              = Λ (X, Z) vol(gx,r+ ).
+Thus, Fg maps Cc∞ (gx,s /gx,r+ ) into Cc∞ (gx,−r /gx,(−s)+ ). Applying the same
+ideas we see that Fg ◦ Fg maps Cc∞ (gx,s /gx,r+ ) into Cc∞ (gx,s /gx,r+ ). To see
+that Fg is an isomorphism, let f = 1Z+gx,r+ and use Equation 1.3.1 again
+to see that (Fg(Fgf ))(X) is a scalar multiple (independent of X) of f (−X).
+Since functions of this form give a basis for Cc∞ (gx,s /gx,r+ ), the corollary is
+proved.                                                                         
+
+1.3. Support and mesh. Recall from Section 1.1 that we write gr for the
+union of the spaces gx,r , as x ranges over all B(G). Notice that r ≤ r ′ implies
+gr ⊇ gr ′ .
+Definition 1.7. For any pair of real numbers s ≤ r let Cc∞ (g)sr denote the
+space of f ∈ Cc∞ (g) such that the support of f is contained in gs and the
+support of fb is contained in g−r . We write Cc∞ (g)r for the union of the
+Cc∞ (g)sr with s ≤ r.
+Lemma 1.8. Fix r ∈ R. A compactly supported function f ∈ Cc∞ (g) is
+contained in Cc∞ (g)sr if and only if there is a finite set {yi | i ∈ I} ⊂ B(G)
+such that
+                      X
+(1.8.1)         f=        fi ,    with fi ∈ Cc∞ (gyi ,s /gyi ,r+ ).
+                         i∈I
+                            P
+Proof. Suppose f = i∈I fi for some finite set I, where fi is contained in
+Cc∞ (gyi ,s /gyi ,r+ ) for some yi ∈ B(G). Then, the support of f is contained in
+                                                                         P
+the union of the gyi ,s , which is contained in gs . Consider fb = i∈I fbi . Ap-
+plying Corollary 1.6, it follows that fbi is an element of Cc∞ (gyi ,−r /gy,(−s)+ ).
+In particular, it follows that the support of fbi is contained in gyi ,−r ⊂ g−r ,
+so the support of fb is contained in the union of the gyi ,−r , which is contained
+in g−r . It follows that f ∈ Cc∞ (g)sr .
+   Conversely, fix f ∈ Cc∞ (g)sr . Since the support of fb is compact, there is a
+finite set P{yi | i ∈ I} such that the support of fb is covered by {gyi ,−r | i ∈ I}.
+Let µ = i∈I µi be a partition of unity for ∪i∈I gyi ,−r ; thus, in particular,
+µi ∈ Cc∞ (gyi ,−r ) for each i ∈ I, and if j 6= i then µj and µi are supported
+by disjoint sets. Let fi = f µi and observe that fi ∈ Cc∞ (gyi ,−r ). Then fb =
+P      b            b                      b                   ∞
+   i∈I fi . Since fi is locally constant, fi is an element of Cc (gyi ,−r /gyi ,(−si )+ ),
+for some si ∈ R. Using Corollary 1.6 again, it follows that fi is an element of
+Cc∞ (gyi ,si /gyi ,r+ ). Since the support of f (and therefore fi ) is contained in gs
+by hypothesis, we have si ≤ s for each i ∈ I. Since Cc∞ (gyi ,−r /gyi ,(−si )+ ) ⊆
+8                 CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Cc∞ (gyi ,−r /gyi ,(−s)+ ), it follows that fi ∈ Cc∞ (gyi ,−r /gyi ,(−s)+ ), for each i ∈
+I.                                                                                      
+
+    As an immediate consequence we have the following.
+Proposition 1.9. For all s ≤ r, Cc∞ (g)sr is a vector space and the Fourier
+transform Fg induces an automorphism
+
+(1.9.1)                      Fg : Cc∞ (g)sr → Cc∞ (g)−r
+                                                     −s .
+                               ′
+  Notice also that Cc∞ (g)sr ⊇ Cc∞ (g)sr when s′ ≤ s ≤ r then and Cc∞ (g)sr ⊆
+Cc∞ (g)sr′ when s ≤ r ≤ r ′ . Thus, Cc∞ (g)r ⊆ Cc∞ (g)r′ when r ≤ r ′ .
+
+Remark 1.10. Note that 1g(OF ) is an element Cc∞ (g)00 and therefore an el-
+ement of Cc∞ (g)0 . It follows that 1g(OF ) is an element of Cc∞ (g)r for every
+r ≥ 0.
+1.4. Relative Fourier transform. This section considers a Fourier trans-
+form on the space of complex-valued functions on ḡx,r . The Fourier trans-
+form will then be related to the Fourier transform on the p-adic Lie algebra
+by inflation. Throughout this section, x is an arbitrary element of B(G) and
+r is an real number.
+   Define Λx,r : ḡx,r × ḡx,−r → C by
+(1.10.1)                       Λx,r (X , Y) = Λ (X, Y ),
+where X is any representative for X and Y is any representative for Y. If
+X1 and X2 are elements of gx,r with X1 − X2 ∈ gx,r+ and if Y1 and Y2 are
+elements of gx,−r with Y1 − Y2 ∈ gx,(−r)+ , then Λ (X1 , Y1 ) equals Λ (X2 , Y2 ),
+as we have seen in the proof of Proposition 1.4. Thus, Λx,r is well-defined.
+The function Λx,r defines a perfect pairing between ḡx,r and ḡx,−r . Note also
+that Λx,−r (Y, X ) = Λx,r (X , Y).
+Definition 1.11. Let C(ḡx,r ) denote the space of complex-valued functions
+on ḡx,r . Define Fx,r : C(ḡx,r ) → C(ḡx,−r ) by
+                                        X
+(1.11.1)              (Fx,r ϕ)(X ) =          Λx,r (Y, X )ϕ(Y).
+                                       Y∈ḡx,r
+
+We refer to Fx,r as the finite Fourier transform for the pair (x, r). When
+there is no ambiguity, we write ϕ̂ for Fx,r ϕ.
+    An elementary calculations shows that, for any ϕ ∈ C(ḡx,r ),
+(1.11.2)           ∀X ∈ ḡx,r ,      (Fx,−r (Fx,r ϕ))(X ) = |ḡx,r | ϕ(−X ).
+It is therefore common to define the finite Fourier transform by introducing
+the factor |ḡx,r |−1/2 ; as this does not simplify our main result Theorem 1.26,
+we have not followed that convention here.
+                                GOOD ORBITAL INTEGRALS                                 9
+
+Definition 1.12. For each ϕ in C(ḡx,r ), define ϕx,r ∈ Cc∞ (g) by
+                             (
+                              (ϕ ◦ ρx,r )(Y ), ∀Y ∈ gx,r
+(1.12.1)         ϕx,r (Y ) =
+                              0,               ∀Y 6∈ gx,r .
+The map taking ϕ to ϕx,r is commonly referred to as inflation from C(ḡx,r )
+to Cc∞ (g).
+Proposition 1.13. For any ϕ ∈ C(ḡx,r ),
+(1.13.1)                            d
+                                    ϕx,r = vol(gx,r + ) ϕ̂x,−r .
+
+Proof. We will show ϕ d x,r (Y ) = vol(gx,r + ) ϕ̂x,−r (Y ) for each Y ∈ g by con-
+sidering two cases. First, suppose Y ∈ gx,−r . Then,
+                                  Z
+(1.13.2)            d
+                    ϕ x,r (Y ) =      Λ (Z, Y ) ϕx,r (Z) dZ.
+                                          gx,r
+Recall that
+(1.13.3)             ∀Z ∈ gx,r ,          Λ (Z, Y ) = Λx,r (ρx,r (Z), ρx,−r (Y )).
+We now pick a set g̃x,r of representatives for ḡx,r and write Z = Zr + Z ′
+where Zr ∈ g̃x,r and Z ′ ∈ gx,r+ . Then ρx,r (Z) = ρx,r (Zr ) and Λ (Z, Y ) =
+Λ (Zr , Y ) Λ (Z ′ , Y ). Thus,
+(1.13.4)                 Λ (Z, Y ) = Λx,r (ρx,r (Zr ), ρx,−r (Y )).
+Combining this with Equation 1.13.2 we have
+              Z
+ d
+ ϕx,r (Y ) =        Λ (Z, Y ) ϕx,r (Z) dZ
+               gx,r
+                 Z        Z
+           =                  Λx,r (ρx,r (Zr ), ρx,−r (Y )) ϕ(ρx,r (Zr )) dZ ′ dZr ,
+                  gx,r /gx,r + gx,r +
+
+where dZr denotes the quotient measure on     R gx,r /gx,r+ . Notice that this
+integrand does not depend on Z ′ and that g + dZ ′ = vol(gx,r+ ). Thus,
+                                                 x,r
+              Z       Z
+                         Λx,r (ρx,r (Zr ), ρx,−r (Y )) ϕ(ρx,r (Zr )) dZ ′ dZr
+              gx,r /gx,r + gx,r +
+                              X
+           = vol(gx,r+ )              Λx,r (Z, ρx,−r (Y )) ϕ(Z)
+                            Z∈ḡx,r
+           = vol(gx,r+ ) ϕ̂x,−r (Y ).
+This proves the proposition in the first case.
+   Next, suppose Y 6∈ gx,−r and notice that it follows that ϕ̂x,−r (Y ) = 0.
+Let s = −dx (Y ) and note that s > r. As above, pick a set of representatives
+for gx,r /gx,s and, for each Z ∈ gx,r , write Z = Zr + Zs , where Zr is from
+that set of representatives and Zs ∈ gx,s . Then,
+(1.13.5)               Λ (Z, Y ) = Λx,s (ρx,s (Zs ), ρx,−s (Y )) Λ (Zr , Y ).
+10               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Thus,
+                             Z
+              d
+              ϕx,r (Y ) =                  Λ (X, Yr ) ϕ(ρx,r (Zr )) dZr
+                              gx,r /gx,s
+                                 Z
+                             ×          Λx,s (ρx,s (Zs ), ρx,−s (Y )) dZs .
+                                 gx,s
+
+                                                              d
+Since ρx,−s (Y ) 6= 0, the second integral is 0 and therefore ϕx,r (Y ) = 0. This
+proves the proposition in the second case, and therefore finishes the proof
+of Proposition 1.13.                                                           
+   Proposition 1.13 states that the Fourier transform commutes with infla-
+tion, up to a multiple.
+1.5. Gauss integrals. This section introduces our main technique for the
+study of regular semi-simple orbital integrals.
+Definition 1.14. For any point x in the building for G, define ix : g×g → C
+by
+                                Z
+(1.14.1)           ix (X, Y ) =     Λ (Ad(g)X, Y ) dg.
+                                        Gx
+We refer to ix (X, Y ) as a Gauss integral. We will sometimes write ix,X for
+the function Y 7→ ix (X, Y ).
+  We begin with three lemmas due to Jeffrey Adler. We write GX for the
+centralizer of X in G.
+Lemma 1.15. If X is a good regular element of g, and if x is in the building
+for GX in G, then
+(1.15.1)         ∀Y ∈ t⊥ ,       dx ([X, Y ]) = dx (X) + dx (Y ),
+where t⊥ denotes the subspace of g perpendicular to t = Lie GX with respect
+to the killing form on g.
+Proof. The result follows from [1, 2.3.1].                                     
+Lemma 1.16. Suppose x is a point in the building for a maximal torus T
+in G. For each t > 0 there is a diffeomorphism ex,t : gx,t → Gx,t such that
+if Z ∈ gx,t, then
+(1.16.1)       ∀Y ∈ g,       Ad(ex,t (Z))Y ∈ Y + ad(Z)Y + gx,2t+dx (Y ) .
+Proof. This homeomorphism is defined at the end of [1, § 1.5]. The prop-
+erties above follow from [1, 1.6.3] and [1, 1.6.4]. We have also used [1,
+1.6.6].                                                                
+Lemma 1.17. Suppose that X is tamely ramified and that x is a point in
+the building for GX in G. Let r = dx (X). Then X + gx,r+ contains no
+nilpotent elements.
+Proof. This is [1, 1.9.5].                                                     
+                              GOOD ORBITAL INTEGRALS                               11
+
+Lemma 1.18. Let X be any good regular element of g, let GX be the cen-
+tralizer of X in G and let x be an element of the building for GX in G. Set
+r = dx (X). Let ϕ be the normalized characteristic function of the Ḡx -orbit
+of ρx,r (X) in ḡx,r . Then
+
+(1.18.1)           ∀Y ∈ gx,−r ,           ix,X (Y ) = mes(Gx ) ϕ̂x,−r (Y ),
+
+where mes refers to the Haar measure appearing in the definition of ix . (See
+Definition 1.11 for ϕ̂ and Definition 1.12 for ϕ̂x,−r ).
+                                             R
+Proof. By Definition 1.14, ix,X (Y ) =           Gx   Λ (Y, Ad(g)X) dg. Let dk denote
+the quotient measure on Gx /Gx,0+ , so
+                         Z
+           ix,X (Y ) =        Λ (Y, Ad(g)X) dg
+                         Gx
+                              Z       Z
+                                                               
+                    =                      Λ Ad(k)−1 Y , Ad(h)X dh dk.
+                         Gx /Gx,0+ Gx,0+
+
+
+Consider the terms Ad(h)X and Ad(k)−1 Y . When ǫ > 0 is sufficiently
+small, Lemma 1.16 asserts the existence of a diffeomorphism ex,ǫ = ex,0+ :
+gx,0+ → Gx,0+ . Let Z be the unique element of gx,0+ such that ex,0+ (Z) = h.
+Then Ad(h)X is an element of the coset X + ad(Z)X + gx,r+ . Let t denote
+the Lie algebra of GX . From [1, 1.9.3], we have
+
+                               gx,s  = tx,s ⊕ t⊥
+                                               x,s
+(1.18.2)                                              ,
+                               gx,s+ = tx,s+ ⊕ t⊥x,s+
+
+
+where t⊥              ⊥     ⊥               ⊥
+        x,s = gx,s ∩ t and tx,s+ = gx,s+ ∩ t . Together with Lemma 1.15, it
+follows that the coset ad(Z)X + gx,r+ is contained in gx,r+ . Thus,
+
+(1.18.3)                  Ad(h)X ∈ X + gx,r+ ⊂ gx,r .
+
+Notice also that
+
+(1.18.4)                          Ad(k−1 )Y ∈ gx,−r ,
+
+since k ∈ Gx and Y ∈ gx,−r . Now argue as in the proof of Lemma 1.13.
+From Equations 1.18.3 and 1.18.4, it follows that
+                                                      
+(1.18.5)         Λ Ad(k)−1 Y , Ad(h)X = Λ Ad(k)−1 Y , X .
+12               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+     Now, return to ix,X as above equipped with Equation 1.18.5 and we have
+                            Z      Z
+                                                            
+           ix,X (Y ) =                 Λ Ad(k)−1 Y , Ad(h)X dh dk
+                        Gx /Gx,0+ Gx,0+
+                        Z                                       Z
+                    =                   Λ (Y, Ad(k)X) dk                    dh
+                            Gx /Gx,0+                               Gx,0+
+                                                 Z
+                                            −1
+                    = mes(Gx )|Ḡx |                          Λ (Y, Ad(k)X) dk
+                                                 Gx /Gx,0+
+                                            −1
+                                                     X
+                    = mes(Gx )|Ḡx |                      Λx,r (Ad(m)X , Y),
+                                                 m∈Ḡx
+
+where X = ρx,r (X). If O(X ) is the Ḡx -orbit of X in ḡx,r and if 1O(X ) denotes
+the characteristic function of O(X ), then
+                                −1
+                                    X
+                  mes(Gx )|Ḡx |          Λx,r (Ad(m)X , Y)
+                                        m∈Ḡx
+                         |Z (X )|              X
+               = mes(Gx ) Ḡx                           Λx,r (Z, Y) 1O(X ) (Z),
+                           |Ḡx |
+                                              Z∈ḡx,r
+
+where ZḠx (X ) is the centralizer of X in Ḡx . Recognize the sum above as a
+Fourier transform on ḡx,r , so
+                             |Z (X )| X
+                   mes(Gx ) Ḡx               Λx,r (Z, Y) 1O(X ) (Z)
+                                |Ḡx |
+                                              Z∈ḡx,r
+                                         −1
+               = mes(Gx ) |O(X )|             1\
+                                               O(X ) (Y).
+
+Since |O(X )|−1 1O(X ) is the function ϕ defined in the statement of the
+lemma, then we have
+                              mes(Gx ) |O(X )|−1 1\
+                                                  O(X ) (Y)
+                        = mes(Gx ) ϕ̂(ρx,−r (Y ))
+                        = mes(Gx ) ϕ̂x,−r (Y ).
+This proves Lemma 1.18.                                                           
+Lemma 1.19. Let X be any good regular element of g, let GX be the cen-
+tralizer of X in G and let x be an element of the building for GX in G. Set
+r = dx (X). If Y ∈ g−r and Y 6∈ gx,−r then ix,X (Y ) = 0.
+Proof. Let s = dx (Y ) and t = −(r + s)/2. Notice that s < −r since
+Y 6∈ gx,−r ; thus t > 0. Let Gx,t be a set of representatives for the Gx,t+ -
+cosets in Gx . Then,
+                              X Z
+(1.19.1)          ix,X (Y ) =            Λ (Ad(g)X, Ad(g0 )Y ) dg.
+                                g0 ∈ Gx,t   Gx,t+
+                          GOOD ORBITAL INTEGRALS                              13
+
+Fix g0 ∈ Gx,t and let Y0 = Ad(g0 )Y . Note that dx (Y0 ) = dx (Y ) = s, as Y0 is
+conjugate to Y by an element of Gx . Let t′ be the smallest jump point for
+x greater than t. Since t is positive and t′ > t we use Lemma 1.16 to define
+ex,t′ : gx,t′ → Gx,t′ , which we then use to pull-back the measure dg on Gx,t+
+to a measure dZ on gx,t+ . Thus,
+                Z                             Z
+(1.19.2)                 Λ (Ad(g)X, Y0 ) dg =      Λ (X, Ad(e(Z))Y0 ) dZ.
+               Gx,t+                         gx,t+
+
+From Lemma 1.16, we conclude that
+(1.19.3)            Ad(e(Z))Y0 ∈ Y0 + ad(Z)Y0 + gx,2t′ +s .
+Thus,
+(1.19.4)               Ad(e(Z))Y0 = Y0 + ad(Z)Y0 + W,
+for some W ∈ gx,2t′ +s . Since 2t + s + r = 0 (by the definition of t) and since
+t′ > t, it follows that 2t′ + s + r > 0. Thus, Λ (X, W ) = 1 and
+(1.19.5)            Λ (X, Ad(e(Z))Y0 ) = Λ (X, Y0 ) Λ (X, ad(Z)Y0 ).
+Now combine Equations 1.19.2, 1.19.4 and 1.19.5 to conclude that
+           Z                                  Z
+(1.19.6)      Λ (Ad(g)X, Y0 ) dg = Λ (X, Y0 )     Λ (X, ad(Z)Y0 ) dZ.
+            Gx,t+                                    gx,t+
+
+   For a contradiction, suppose now that ix,X (Y ) 6= 0. Fix Y0 = Ad(g0 )Y
+such that
+                        Z
+(1.19.7)                     Λ (Ad(g)X, Y0 ) dg 6= 0.
+                          Gx,t+
+
+By Equation 1.19.1, this implies
+                      Z
+(1.19.8)                    Λ (X, ad(Z)Y0 ) dZ 6= 0.
+                          gx,t+
+
+Now
+                    Λ (X, ad(Z)Y0 ) =    Λ (X, [Z, Y0 ])
+                                    =    −Λ (X, [Y0 , Z])
+                                    =    −Λ (X, ad(Y0 )Z)
+                                    =    Λ (ad(Y0 )X, Z)
+                                    =    Λ ([Y0 , X], Z)
+                                    =    −Λ ([X, Y0 ], Z)
+                                    =    −Λ (ad(X)Y0 , Z).
+Thus, equation 1.19.8 becomes
+                       Z
+(1.19.9)                   Λ (ad(X)Y0 , Z) dZ 6= 0.
+                          gx,t+
+14                CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+   Now Z 7→ Λ (ad(X)Y0 , Z) defines an additive character on gx,t+ , so the
+integral above is nonzero if and only if that character is trivial on gx,t+ .
+We may therefore assume that Λ (ad(X)Y0 , Z) = 1 for all Z ∈ gx,t+ , and it
+follows that ad(X)Y0 ∈ gx,−t . Equivalently, we conclude that
+
+(1.19.10)                      dx ([X, Y0 ]) + t ≥ 0.
+
+   To simplify notation, let t = Lie(GX ) and let t⊥ denote subspace of g
+perpendicular to t with respect to the killing form. Write Y0 = Y0′ + Y0⊥
+where Y0′ ∈ tx,s \ tx,s+ and Y0⊥ ∈ t⊥         ⊥
+                                       x,s \ tx,s+ , using Equations 1.18.2 again
+(cf:[1, 1.9.3]). Notice that Y0′ is semi-simple. Now study [X, Y0 ] = [X, Y0⊥ ].
+From Lemma 1.15, recall that dx ([X, Y0⊥ ]) = dx (X) + dx (Y0⊥ ). Thus, by
+Equation 1.19.10, t ≥ −r − dx (Y0⊥ ). This relation forces Y0⊥ deeper than
+Y0 , since dx (Y0⊥ ) ≥ −t − r = t + s > s (recall that t is strictly positive).
+Therefore, from Y0 = Y0′ + Y0⊥ , it follows that
+
+(1.19.11)                       Y0 ∈ Y0′ + gx,s+ .
+
+     We have not yet used the fact that Y ∈ g−r . By [2, 3.1.2, part 1],
+
+(1.19.12)                      g−r ⊆ gnil + gx,−r .
+
+So, we write
+
+(1.19.13)                         Y0 = N + Y0′′ ,
+
+where Y0′′ ∈ gx,−r and N ∈ gnil . Since s = dx (Y ) = dx (Y0 ) and since s < −r,
+it follows that Y0′′ ∈ gx,s+ . Thus,
+
+(1.19.14)                        Y0 ∈ N + gx,s+ .
+
+Combine Equations 1.19.13 and 1.19.14 to see that
+
+(1.19.15)                        N ∈ Y0′ + gx,s+ .
+
+However, by Lemma 1.17, the coset Y0′ +gx,s+ contains no nilpotent elements.
+This is the desired contradiction and proves Lemma 1.19.                  
+
+Proposition 1.20. Let X be any good regular element in g, let GX be the
+centralizer of X in G and let x be an element of the building for GX in G.
+Set r = dx (X). Then
+
+(1.20.1)          ∀Y ∈ g−r ,     ix,X (Y ) = mes(Gx ) ϕ̂x,−r (Y ),
+
+where ϕ is the normalized characteristic function of the Ḡx -orbit of ρx,r (X)
+in ḡx,r .
+
+Proof. If Y is not an element of gx,−r then ϕ̂x,−r (Y ) = 0. With this observa-
+tion, Proposition 1.20 follows immediately from Lemmas 1.18 and 1.19. 
+                                 GOOD ORBITAL INTEGRALS                                    15
+
+1.6. Good, regular, elliptic orbital integrals. This section uses Gauss
+integrals to produce an integral formula for good, regular, elliptic orbital
+integrals.
+Definition 1.21. For any f ∈ Cc∞ (g) and X ∈ g, define
+                               Z
+(1.21.1)          φG (X, f ) =       f (Ad(g−1 )X) dg.
+                                              GX \G
+
+We will refer to φG (X, f ) as the orbital integral of f at X. Here, dg refers
+to the quotient measure on GX \G.
+Proposition 1.22. Let X be a tamely ramified good regular elliptic element
+of g, let GX denote the centralizer of X in G and let x be an element
+of the building for GX in G. Set r = dx (X). Let ϕ ∈ C(ḡx,r ) be the
+normalized characteristic function of the Ḡx -orbit of ρx,r (X) in ḡx,r , as in
+Proposition 1.20. Then
+(1.22.1)                         Z      Z
+          ∞                                                  ϕx,r (Y )
+  ∀f ∈ Cc (g)r ,    φG (X, f ) =           f (Ad(g)−1 Y )              dY dg.
+                                   GX \G g                 vol(gx,r+ )
+Proof. Let AG be the split component of the center of G and let T denote
+GX . Notice that the function g 7→ f (Ad(g)−1 X) factors from T \G to a
+function on the left coset of G/AG by T /AG . Equip AG with a measure
+such that the compact set T /AG has measure 1 with respect to the quotient
+measure. Then,
+                                Z
+(1.22.2)           φG (X, f ) =      f (Ad(g)−1 X) d∗ g,
+                                              G/AG
+
+   Using Proposition 1.9 and Definition 1.7, let fˇ be the unique element of
+Cc∞ (g)−r such that fbˇ = f . Then
+(1.22.3)
+     Z                           Z    Z
+                                                          
+                   −1
+           f (Ad(g) X) d g =∗
+                                        Λ Y, Ad(g)−1 X fˇ(Y ) dY d∗ g.
+     G/AG                                     G/AG    g
+
+Pass from integration on G/AG to integration on (Gx \G/AG ) × Gx ; to sim-
+plify notation, write d∗x for the quotient measure on Gx \G/AG . Then
+                Z     Z
+                                          
+                          Λ Y, Ad(g)−1 X fˇ(Y ) dY d∗ g
+                 G/AG g
+                Z          Z Z
+                                                  
+           =                      Λ Ad(kg)−1 X, Y fˇ(Y ) dY dk d∗x g.
+                 Gx \G/AG        Gx       g
+A change of variables gives
+          Z          Z Z
+                                                              
+                                         Λ Ad(kg)−1 X, Y          fˇ(Y ) dY dk d∗x g
+             Gx \G/AG       Gx       g
+            Z           Z        Z
+                                                          
+       =                                 Λ Ad(k)−1 X, Y       fˇ(Ad(g)−1 Y )dY dk d∗x g.
+             Gx \G/AG       Gx       g
+16               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Since fˇ is supported by a compact set, the last two integrals may be ex-
+changed, giving
+            Z         Z Z
+                                            
+                            Λ Ad(k)−1 X, Y fˇ(Ad(g)−1 Y )dY dk d∗x g
+              Gx \G/AG Gx g
+               Z     Z Z
+        =                Λ (Ad(k)X, Y ) dk fˇ(Ad(g)−1 Y ) dY d∗x g.
+            Gx \G/AG g Gx
+
+The integral over Gx is ix (X, Y ), so we have shown
+                      Z      Z
+(1.22.4) φG (X, f ) =           ix (X, Y ) mes(Gx )−1 fˇ(Ad(g)−1 Y ) dY d∗ g.
+                           G/AG       g
+    Now we are in a position to make use of the results from Section 1.2;
+namely, since x is a point in the building for T in G, then by Proposition 1.20,
+ix (X, Y ) = mes(Gx ) ϕ̂x,−r (Y ), for any Y in g−r . Since the support of fˇ is
+contained in g−r , it follows that
+                Z       Z
+                           ix (X, Y ) mes(Gx )−1 fˇ(Ad(g)−1 Y ) dY d∗ g
+                  G/AG g
+                Z       Z
+            =              ϕ̂x,−r (Y ) fˇ(Ad(g)−1 Y ) dY d∗ g.
+                  G/AG     g
+Using Proposition 1.13, we have
+                    Z     Z
+                             ϕ̂x,−r (Y ) fˇ(Ad(g)−1 Y ) dY d∗ g
+                          G/AG    g
+                      Z          Z
+                              d
+                              ϕx,r (Y ) ˇ
+                  =                        f (Ad(g)−1 Y ) dY d∗ g
+                      G/AG g vol(g x,r + )
+                    Z     Z
+                              ϕx,r (Y ) b̌
+                  =                        f (Ad(g)−1 Y ) dY d∗ g.
+                      G/AG g vol(g x,r + )
+
+Since f = fbˇ, we have shown that
+                             Z     Z
+                                                      ϕx,r (Y )
+(1.22.5)        φG (X, f ) =          f (Ad(g)−1 Y )               dY d∗ g.
+                               G/AG g                vol(g x,r + )
+Recasting this result, observe that T /AG is represented by elements of Gx ,
+so
+                             Z     Z
+                                                      ϕx,r (Y )
+(1.22.6)        φG (X, f ) =          f (Ad(g)−1 Y )             dY dg,
+                               T \G g                vol(gx,r+ )
+where dg refers to the quotient measure on T \G suitable normalized. This
+proves Proposition 1.22.                                               
+Example 1.23. Suppose G = SL(2, F ) and f = 1g(OF ) ; let φg(X) denote
+φG (X, f ). We now illustrate Proposition 1.22 and foreshadow ideas pre-
+sented in Section 4. We fix a standard fundamental affine chamber in the
+building for G with polyvertices 0 and 1; the facets of this chamber will be
+                            GOOD ORBITAL INTEGRALS                                 17
+
+denoted (0), (1) and (01) with G(0) = SL(2, OF ). First, suppose X is an
+element of the Cartan subalgebra
+                                         
+                              0 a
+                                     |a∈F .
+                             εa 0
+where ε is a fixed quadratic residue in the group OF ∗ of units of OF . Then
+the image of B(GX ) ֒→ B(G) is (0); let x = (0). The depth of X is 0 if and
+only if a ∈ OF ∗ ; suppose that is the case and set r = 0. Now ḡx,r = sl(2, Fq )
+and this is equipped with the adjoint action of Ḡx = SL(2, Fq ). Then the
+             ¯ x (ρx,r (X)) of ρx,r (X) ∈ ḡx,r is the set of Fq -rational points on
+Ḡx -orbit OGF
+the smooth variety
+                                                       
+                             z x          2             2
+                                       | z + xy = εā ,
+                             y −z
+where ā is the image of a under OF → Fq . (Note that ā 6= 0.) In particular,
+as X varies in the set of depth 0 elements of this Cartan subalgebra, the
+value of φg(X) is determined by ā. Next, suppose Y is an element of the
+Cartan subalgebra
+                                          
+                                0 b
+                                      |b∈F .
+                               ̟b 0
+where ̟ is a fixed uniformizer of F . Let y ∈ B(G) be the barycenter of the
+maximal facet (01) of B(G). The depth of Y is 12 if and only if b ∈ OF ∗ ;
+suppose that is the case and set s = 12 . Then ḡy,s = A2 (Fq ) is equipped with
+the action of Ḡy = GL(1, F ) given by t ·(u, v) = (t2 u, t−2 v). Although we do
+not pursue this point of view here, we remark that the characteristic function
+of Ḡy -orbit OGF
+                ¯ y (ρy,s (Y )) of ρy,s (Y ) ∈ ḡy,s is the characteristic function of
+the Frobenius-stable Kummer local system (an ℓ-adic sheaf) corresponding
+to the trivial character of the component group of
+                                                     	
+                                   u, v | uv = b̄2 ,
+
+where b̄ is the image of b under OF → Fq . (Note that b̄ 6= 0.) In particular,
+as Y varies in the set of depth 21 elements of this Cartan subalgebra, the
+value of φg(Y ) is determined by b̄. The phenomena illustrated by these
+examples will be generalized considerably in Section 4.2 and Theorem 4.8.
+1.7. Descent. In this section we apply standard parabolic descent argu-
+ments to extend Proposition 1.22 to good, regular orbital integrals; the
+result is Theorem 1.26, which is the main result of Section 1, which will
+allow use to compare orbital integrals without evaluating them.
+   Here, K is a fixed maximal special parahoric subgroup of G.
+Definition 1.24. Let L be a Levi subgroup of G and let l denote the Lie
+algebra for L. Let P be any parabolic subgroup of G with Levi component
+L. Let U be the unipotent radical of P and let u denote the Lie algebra for
+18              CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+U . For any f ∈ Cc∞ (g) define fP ∈ Cc∞ (l) by
+                                      Z Z
+(1.24.1)      ∀Y ∈ l,       fP (Y ) =       f (Ad(k)−1 (Y + Z)) dk dZ.
+                                          u K
+Remark 1.25. The order of integration above is unimportant, as all relevant
+integrands have compact support.
+Theorem 1.26. Let X be a good regular element of g of depth r. Let L
+be a Levi subgroup of G containing GX as an elliptic Cartan subgroup. Let
+x denote the image of the building for GX in L. Let ϕ ∈ C(l̄x,r ) be the
+normalized characteristic function of the L̄x -orbit of the image of X under
+lx,r → lx,r /lx,r+ . Then, for all f ∈ Cc∞ (g)r ,
+                                    Z     Z
+                                                              ϕx,r (Y )
+               g,l
+(1.26.1) D (X) φG (X, f ) =                  fP (Ad(g)−1 Y )              dY dg,
+                                     GX \L l                 vol(lx,r + )
+
+where D g,l(X) = | det(ad(X)|g/l)|1/2
+                                  F
+                                      .
+Proof. It is important to notice that ϕx,r denotes a locally constant function
+on l supported by lx,r , since ϕ is an element of C(l̄x,r ).
+  From [21] we have
+(1.26.2)          ∀f ∈ Cc∞ (g),        D g,l(X) φG (X, f ) = φL (X, fP ),
+where X ∈ l is elliptic. From the definition of the depth function (cf: Section
+1.1) it follows that the depth r of X ∈ g equals the depth of X ∈ l relative
+to x ∈ B(L); thus, r = dx (X). We claim that fP ∈ Cc∞ (l)r . To see this, we
+must show that FlfP ∈ Cc∞ (l) is supported by l−r . From [21] we recall that
+the Fourier transform commutes with the operator f 7→ fP ; more precisely,
+for any f ∈ Cc∞ (g),
+(1.26.3)                         Fl(fP ) = (Fgf )P .
+Recall that f ∈  Cc∞ (g)r   if and only if Fgf ∈ Cc∞ (g−r ), by Definition 1.7.
+From Definition 1.24 we see that (Fgf )P ∈ Cc∞ (g−r ∩ l). By [2, 3.5.3],
+l−r = g−r ∩ l, which shows that fP ∈ Cc∞ (l)r . Now, by Proposition 1.22,
+                               Z     Z
+                                                         ϕx,r (Y )
+(1.26.4)       φL (Xl, fP ) =           fP (Ad(g)−1 Y )             dY dg.
+                                GX \L l                 vol(lx,r+ )
+Combining Equations 1.26.2 and 1.26.4 proves Theorem 1.26.                    
+1.8. Local constancy of good regular orbital integrals. In this section
+we use Theorem 1.26 to describe the local constancy of X 7→ φG (X, ·),
+where φG (X, ·) is restricted to spaces of functions which are relevant to the
+remainder of this paper.
+Definition 1.27. Let t = Lie(T ) be a tamely ramified Cartan subalgebra
+of g. Choose a point yT in the building for T in G. For each real number s
+and for each ḠyT -orbit O in ḡyT ,s , define
+(1.27.1)                    tO = t ∩ d−1        −1
+                                      yT (s) ∩ ρyT ,s (O).
+                            GOOD ORBITAL INTEGRALS                                    19
+
+Lemma 1.28. Let T , t and yT ∈ B(T ) be as in Definition 1.27. Then
+                                  {tO | O ⊂ ḡyT ,s }
+defines a partition of t, where s ranges over R and O ranges over all ḠyT -
+orbits in ḡyT ,s . By restriction, this defines a partition of the set ge of tamely
+ramified regular elliptic elements in g.
+Proof. t is filtered in s by ts = t∩ gyT ,s , so a partition of t is given by the sets
+t ∩ d−1
+      yT (s). This partition is refined according to the partition of ḡyT ,s into
+ḠyT -orbits. Since this is the partition above, Lemma 1.28 is proved.              
+Proposition 1.29. Let gg,e
+                       0 denote the set of good regular elliptic elements
+in g0 . The function
+                                gg,e
+                                 0   → Cc∞ (g)∗0
+                                 X 7→ φG (X, · )
+is constant on the partition of gg,e
+                                 0 defined by restricting the partition of g
+                                                                             e
+
+given in Lemma 1.28.
+Proof. Let O be an Ḡx -orbit in ḡx,r . For any X in tO , the function ϕ ∈
+C(ḡx,r ) appearing in Proposition 1.22 is the normalized characteristic func-
+tion of O. This proves Proposition 1.29.                                    
+Corollary 1.30. Let f be the characteristic function of g(OF ) in Cc∞ (g).
+Let X be a good regular element of g with non-negative depth r. Let L and
+x be as in Theorem 1.26. Write t for the Cartan subalgebra in g for GX , so
+X ∈ tx,r . If X ′ ∈ tx,r is regular and D g,l(X) = D g,l(X ′ ), then
+(1.30.1)       ρx,r (X) = ρx,r (X ′ )      =⇒           φG (X, f ) = φG (X ′ , f ).
+Proof. This follows from Theorem 1.26 and the following facts: f is an
+element of Cc∞ (g)r by Remark 1.10; the depth of X in l equals the depth of
+X in g, where l is the Lie algebra for L; X ′ is good; and for any parabolic
+P with Levi component L, fP is the characteristic function of l(OF ) which
+is an element of Cc∞ (l)0 and therefore of Cc∞ (l)r .                     
+
+                           2. Statement of Results
+   Proposition 1.29 and Corollary 1.30 give explicit results about the local
+constancy of orbital integrals. The rest of this paper draws some implications
+from this formula in the special case that g is a classical Lie algebra and the
+function f is the characteristic function of the integral-valued points of g.
+We assume for the rest of the paper that f is that function.
+   In this special case, arithmetic motivic integration presents the orbital
+integrals as the number of points on varieties over finite fields. This pre-
+sentation is independent of the underlying local field in a sense that we will
+make precise below.
+   From the field-independent description, we deduce that the fundamental
+lemma holds for a restricted set of elements for local fields in zero charac-
+teristic, if the corresponding statement is known in positive characteristic.
+20              CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+2.1. Notation. Recall that F is a p-adic field with ring of integers OF ,
+prime ideal pF , and residue field Fq , with q = qF . Let F̄ and F̄q be the
+algebraic closures of F and Fq . Let ̟ = ̟F be a uniformizer in F . We
+normalize the absolute value so that |̟F | = q −1 . We extend the normalized
+absolute value to an absolute value on F̄ . Let res : OF → Fq be the residue
+map. We let ord : F̄ → Q be the valuation, normalized so that
+(2.0.2)                           |x| = q − ord x .
+Let
+(2.0.3)                 F int = {x ∈ F̄ | ord(x) ∈ Z}.
+We let ac : F int → F̄×
+                      q be the angular component function given by
+
+(2.0.4)              ac(0) = 0,     ac(x) = res(x/̟ ord x ).
+It depends on a choice of uniformizer ̟. For i ∈ Z, we let resi : F → Fq be
+the map
+                                 (
+                                  ac x if ord(x) = i
+(2.0.5)               resi (x) =
+                                  0     otherwise.
+
+Definition 2.1. We say that a statement ψ F about local fields F holds
+when the residual characteristic is sufficiently large when there is a natural
+number M such that the statement holds whenever M is relatively prime to
+the characteristic of the residue field of F . That is,
+(2.1.1)                ∃M ∀F. (qF , M ) = 1 ⇒ ψ F .
+   Recall from Section 1.1 that we restrict F so that its residual character-
+istic is sufficiently large (for the various statements that we make). This
+assumption is mentioned in many of the lemmas and theorems, but even
+when it is not explicitly mentioned, the assumption remains in effect. The
+natural number M will depend on the Lie algebra g under consideration and
+a parameter r ∈ Q. For each g and r, the constant M will be effectively
+computable.
+
+2.2. Lie algebras considered.
+Definition 2.2. Let (g, h) be one of the following pairs of Lie algebras.
+          so(2c + 1), so(2a + 1) ⊕ so(2b + 1), with a + b = c,
+(2.2.1)   sp(2c), sp(2a) ⊕ so(2b), with a + b = c, (b =6 1)
+          so(2c), so(2a) ⊕ so(2b), with a + b = c, (a = 6 1, b 6= 1, c 6= 1)
+   We refer to these three cases as the odd orthogonal, symplectic, even
+orthogonal respectively. In each case, the Lie algebra h is a sum of two factors
+h1 ⊕h2 . We write (X, Y ) for an element in g⊕h, with Y = (Y1 , Y2 ) ∈ h1 ⊕h2 .
+Below, we will fix a concrete representation (the standard representation) of
+these algebras.
+                          GOOD ORBITAL INTEGRALS                               21
+
+  These pairs are considered in the paper [15]. In that paper, an additional
+family u(c), the Lie algebra of the unitary group, is considered. We make a
+few comments about the unitary case in Remark 7.8.
+Remark 2.3. The origin of this list of Lie algebras is the following. Let G
+be a classical split adjoint group over F and let H be an elliptic endoscopic
+group of G. Then the Lie algebras g, h listed above are the Lie algebras of
+G and H. The list is not exhaustive. In particular, it only includes split
+cases. We refer to h as an endoscopic algebra.
+  For a given g, if the residual characteristic of F is sufficiently large, every
+Cartan subalgebra of g ⊕ h splits over a tamely ramified extension of F . We
+confine our attention to local fields F for which this is the case.
+  Each of the lie algebras under consideration comes with a natural repre-
+sentation. We identify elements of g with the matrices that represent them.
+We take the eigenvalues λ(X) of a semi-simple element with respect to this
+representation.
+Definition 2.4. Let g be one of the semi-simple Lie algebras introduced in
+Definition 2.2. We say that an element X is restricted (of slope r ∈ Q) if it
+satisfies the following conditions.
+    (1) X is regular semi-simple.
+    (2) X is contained in a tamely ramified Cartan subalgebra t.
+    (3) |α(X)| = q −r for each (absolute) root of g relative to t.
+    (4) |λ(X)| = q −r , for each nonzero eigenvalue λ.
+    (5) The multiplicity of the eigenvalue λ = 0 is at most 1.
+Write g(r) for the set of restricted elements of slope r in the lie algebra g.
+When it becomes necessary to indicate the coefficient ring A of the matrices
+X, we write g(r, A) ⊂ g(A).
+   The first three conditions in the definition of restricted imply that every
+restricted element is good. On the set of regular elements in a Cartan
+subalgebra, the depth is equal to the slope up to a nonzero multiplicative
+factor that depends only on the Cartan subalgebra. Although it is possible
+to give a formula for this multiplicative factor, our proof does not rely on the
+value of this scalar. In the interest of simplicity, we do not give a formula.
+   In the symplectic and odd orthogonal algebras, the final two conditions
+follow from the first three, at least for fields of sufficiently large residual
+characteristic (which we assume). Finally, in the even orthogonal lie alge-
+bras, it is possible to satisfy the first three conditions without the last two
+conditions, because of a pair of eigenvalues ±λ(X) that have smaller abso-
+lute value than the rest. (For instance, a good element may have a pair of
+eigenvalues equal to zero.)
+Definition 2.5. We give an equivalence relation on the restricted elements
+of slope r. If the lie algebra is symplectic or odd orthogonal, we say that
+two restricted elements X and X ′ of slope r are equivalent if the eigenvalues
+22                   CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+λi (X) of X and λi (X ′ ) of X ′ can be indexed so that
+(2.5.1)                          |λi (X ′ ) − λi (X)| < q −r ,
+for all i. For the even orthogonal lie algebra, let J be the symmetric matrix
+that defines the algebra:
+                             so(2c) = {X | t XJ + JX = 0}.
+We say that X and X ′ are equivalent if the Inequality 2.5.1 holds and if the
+additional condition
+(2.5.2)                    | pfaff(JX) − pfaff(JX ′ )| < q −cr ,
+where pfaff is the pfaffian1 of a skew-symmetric matrix. If X is a restricted
+element of slope r, let [X]r be its equivalence class.
+Theorem 2.6. Let g be one of the lie algebras given in Definition 2.2.
+                                                          1
+There exists M > 0 and an affine variety Sg,r over Z[ M     ] that classifies the
+equivalence classes of restricted elements of slope r. The variety Sg,r depends
+on g and r, but is independent of the local field in the following sense. For
+all local fields F whose residual characteristic is prime to M , we have a
+natural bijection between
+(2.6.1)                              {[X]r | X ∈ g(r)}
+and Sg,r (Fq ), where Fq is the residue field of F .
+     The varieties Sg,r are described for each g and r in Section 4.2.
+
+Proof. This will be proved later as Theorem 4.4.                               
+
+2.3. Orbital Integrals. Langlands and Shelstad attach a κ-orbital integral
+to semi-simple elements in the endoscopic algebra whose image in g is reg-
+ular. The κ-orbital integral of f (the characteristic function of g(OF )) is
+defined in terms of a transfer factor defined in [25]. We write the κ-orbital
+integral – including the transfer factor – on the Lie algebra, rather than
+the group. We use the canonical normalization of transfer factors from [18].
+When Y ∈ h(r, OF ), write
+(2.6.2)                                    φg,h(Y )
+for the κ-orbital integral on g attached to Y over the characteristic function
+of g(OF ). It is a sum of orbital integrals in g, weighted by the Langlands-
+Shelstad transfer factor. We write the stable orbital integral of the char-
+acteristic function of h(OF ) on h as φh,h(Y ). If Y is a regular semi-simple
+element of h, then Langlands and Shelstad have defined a corresponding
+element X ∈ g, which they call the image of Y . The image of Y , which will
+be made explicit in Section 4.6, is well-defined up to stable conjugacy.
+     1Pfaffians are discussed further in Section 4.3.
+                           GOOD ORBITAL INTEGRALS                                23
+
+Conjecture 2.7 (The fundamental lemma). For each of the pairs g, h in
+Definition 2.2, and every regular semi-simple element Y in h, such that the
+image of Y in g is restricted of slope r, there is an equality of orbital integrals
+
+(2.7.1)                        φg,h(Y ) = φh,h(Y ).
+
+  The endoscopic lie algebras that we study are given as a sum
+(2.7.2)                           h = h1 ⊕ h2 .
+Each restricted element Y in h is an ordered pair (Y1 , Y2 ) of two restricted
+elements of the same slope. By Theorem 2.6, the equivalence classes of
+restricted elements of slope r in h are parameterized by Sh1 ,r × Sh2 ,r . We
+write this product of parameter spaces as Sh,r .
+   If Y and Y ′ are equivalent and are restricted of slope r in h, then the
+image of Y in g is restricted of slope r if and only if the image of Y ′ has
+the same property. There is a subvariety Sg,h,r of Sh,r that parameterizes
+equivalence classes of elements Y whose image in g is restricted of slope r.
+Theorem 2.8. Assume that the residual characteristic is sufficiently large.
+Let Y ∈ h. Assume that Y is a restricted element of slope r ≥ 0. The
+κ-orbital integral
+(2.8.1)                              φg,h(Y )
+depends only on the equivalence class of Y .
+Proof. This will be proved later as Theorem 4.8.                                 
+  Consequently, we may speak of the κ-orbital integral
+(2.8.2)                              φg,h(y)
+of a parameter y ∈ Sg,h,r (Fq ) when the characteristic of Fq is sufficiently
+large.
+   If U is a variety over any base variety S and x is a closed point of the base
+S with residue field k(x) = Fq , then we let |Ux (Fq )| be the number of points
+of the fiber of U over x. The following is the main result of the paper.
+Theorem 2.9. For every (g, h) in Definition 2.2 and r ∈ Q with r ≥ 0,
+there are a natural number M , a finite indexing set I, varieties Ui over
+Sg,h,r indexed by i ∈ I, constants bi ∈ Q indexed by i ∈ I, and a polynomial
+p(x) of the form
+                                      k    ′
+                                      Y
+                                      k
+(2.9.1)                      p(x) = x   (xki − 1),
+                                          i=1
+with the following property: For all finite fields of order relatively prime to
+M , we have
+                                             1 X
+(2.9.2)       ∀y ∈ Sg,h,r (Fq ), φg,h(y) =           bi |Ui,y (Fq )|.
+                                           p(q)
+                                                   i∈I
+24               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+The constant M , the indexing set I, the varieties Ui , and the constants bi ,
+and the polynomial p(x) are effectively computable.
+Proof. This will be proved later. It is a consequence of the fact that the
+integrals in question can be described as volumes of a family of locally con-
+stant definable sets (Lemma 5.5, Lemma 5.7, Lemma 6.2) and that families
+of volumes of locally constant definable sets have a representation of this
+form (Theorem 7.1).                                                        
+   The theorem asserts that the κ-orbital integrals of restricted elements of
+slope r count points on varieties Ui over finite fields. We emphasize that the
+varieties Ui and constants bi are independent of the local field F and the
+residue field Fq . These are universal varieties that calculate the κ-orbital
+integrals for all local fields with sufficiently large residual characteristic.
+Whenever it becomes necessary to indicate the dependence of the data I,
+Ui , bi , and p on the underlying parameters (g, h) and r, we write
+(2.9.3)                  I = I(g, h, r), Ui = U (g, h, r)i ,
+and so forth.
+Corollary 2.10. For local fields of sufficiently large residual characteristic,
+the fundamental lemma holds for restricted elements of slope r in (g, h) iff
+Equation 2.10.1 holds.
+                   ∀y ∈ Sg,h,r (F
+                                Pq ).
+                           1
+(2.10.1)                                         b(g, h, r)i |U (g, h, r)i,y (Fq )| =
+                      p(g,h,r)(q)
+                           1        Pi∈I(g,h,r)
+                      p(h,h,r)(q)     i∈I(h,h,r) b(h, h, r)i |U (h, h, r)i,y (Fq )|.
+
+Remark 2.11. The varieties on the left are geometrizations of the κ-orbital
+integrals. Those on the right are the geometrizations of the stable orbital
+integrals. The stable orbital integrals on h of the characteristic function of
+the unit lattice g(OF ) are products
+(2.11.1)               φh,h(Y ) = φh1 ,h1 (Y1 ) × φh2 ,h2 (Y2 ).
+Thus, we may apply the results of Theorem 2.9 twice, once for h1 and once for
+h2 to get a representation of the stable orbital integral on h as the number of
+Fq -points on a formal linear combination of varieties. It is this combination
+that appears on the right-hand side of the corollary.)
+  The representation of orbital integrals in Theorem 2.9 is independent of
+the field F . This observation leads to the following corollary.
+Corollary 2.12. If two local fields F , F ′ (of sufficiently large residual
+characteristic) have the same residue field Fq , if Y is restricted of slope
+r in h(r, F ) and Y ′ is restricted of slope r in h(r, F ′ ) and [Y ]r = [Y ′ ]r ∈
+Sg,h,r (Fq ), then the fundamental lemma (Equation 2.7.1) holds for Y iff it
+holds for Y ′ .
+Proof. The Equation 2.10.1 for the orbital integrals depends on the local
+field F only through the residue field Fq .                            
+                             GOOD ORBITAL INTEGRALS                                     25
+
+2.4. The ring of values for motivic integration. Motivic integration
+takes values in a ring K defined by Denef and Loeser [10]. We briefly recall
+its definition, and refer the reader to [10] and [11] for details. First of all,
+K0 (Vark ) is the Grothendieck ring of varieties over a field k of characteristic
+zero. It is generated by symbols [V ], for every variety V over k. We omit
+the relations. Let L = [A1k ] be the class of the affine line. K0mot (Vark )
+is a quotient of K0 (Vark ) that is obtained by killing all L-torsion and by
+identifying [V ] and [W ] whenever [V ] and [W ] are nonsingular projective
+varieties that become equal in the category of Chow motives. The ring
+K0mot (Vark )[L−1 ] ⊗ Q is then defined by inverting L and tensoring with Q.
+We write K = K0mot (Vark )[L−1 ] ⊗ Q for a field k that will be made explicit
+below. We use [·] both for elements of the Grothendieck ring K0 (Vark ) and
+for their images in K0mot (Vark )[L−1 ] ⊗ Q.
+   Denef and Loeser also construct a completion of K0mot (Vark )[L−1 ] ⊗ Q.
+This completion is necessary in general, because integration is defined as
+a limit. In the special setting that we consider, this completion will not
+be necessary. We will work exclusively with the motivic volumes of weakly
+stable subassignments.2 As the completion will not be needed, we skip the
+construction.
+   Let k be the field of rational functions on Sg,h,r . The generic fiber of
+each variety Ui gives a element [Ui ] ∈ K0mot (Vark )[L−1 ] ⊗ Q. It is natural to
+conjecture the following geometric form of the fundamental lemma. (Note
+that we have cross-multiplied by the denominators in Theorem 2.9, to avoid
+a localization of the ring K0mot (Vark )[L−1 ] ⊗ Q.)
+Conjecture 2.13 (Motivic fundamental lemma). For each (g, h) in Defini-
+tion 2.2 and each r ∈ Q, we have the identity (in the ring K):
+                                 P
+                    p(h, h, r)(L) i∈I(g,h,r) b(g, h, r)i [U (g, h, r)i ] =
+(2.13.1)                         P
+                    p(g, h, r)(L) i∈I(h,h,r) b(h, h, r)i [U (h, h, r)i ].
+2.5. Relation to the geometric fundamental lemma.
+Remark 2.14. Conjecture 2.13 is closely related to the geometric fundamen-
+tal lemma described in [17] and [26]. However, it is not clear whether our
+conjecture should be a consequence of the geometric fundamental lemma as
+they formulate it. Their identity depends on p-adic parameters γ and is an
+identity built on varieties over the residue field Fq . Our identity is a single
+universal identity (for each (g, h) and r) over the base field k, which is a
+finitely generated extension of the field of rational numbers.
+Remark 2.15. The geometric approach to the fundamental lemma intro-
+duced by Goresky, Kottwitz, and MacPherson assumes a local field of posi-
+tive characteristic. Laumon has produced a proof of the fundamental lemma
+    2Weakly stable subassignments will be defined in Definition 7.4. There is an unfortu-
+nate clash in terminology between ‘stable’ in the sense of stable conjugacy (stable orbital
+integrals, and so forth) and in the sense of stable subassignments. The context will make
+it clear when stability is meant in the sense of weakly stable subassignments.
+26                  CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+for unitary groups (under a purity hypothesis3) over local fields of positive
+characteristic [26]. The unitary analogue of Corollary 2.12 (cf. Remark 7.8)
+extends Laumon’s proof of the fundamental lemma to local fields of charac-
+teristic zero, at least for restricted elements.
+Remark 2.16. In our geometric formulation of the fundamental lemma, there
+is some loss of information when we pass from the ring Q[Sg,h,r ] to its field
+of fractions k. It should be viewed as asserting that the fundamental lemma
+holds generically. We are forced to pass to the field of fractions because the
+properties of the map [·] are based on the work of Gillet and Soulé, which
+requires a field k of characteristic zero.
+Remark 2.17. Although we have effective procedures for finding equations
+for the data M , I, bi , Ui , and p, it seems to be a difficult problem in
+general to determine whether elements of the ring K are equal. In particular,
+there is no known decision procedure to determine whether the identity of
+Conjecture 2.13 is valid for a given (g, h) and r.
+   The rest of this paper is devoted to the proofs of the results stated in this
+section.
+
+                         3. Characteristic Polynomials
+3.1. r-reduction. This section reviews some basic facts about polynomials
+and fields extensions. The proofs are elementary and are omitted.
+   Throughout the paper, we consider constants satisfying the relations:
+                     r ∈ Q, g, ℓ, n, L, N ∈ Z; N ≥ 1; g ≥ 1; r ≥ 0;
+(3.0.1)
+                     r = L/N ; g = gcd(L, N ); ℓ = L/g; n = N/g
+     Let
+(3.0.2)            P = λN + α1 λN −1 + · · · + αn λN −n + · · · + αng
+be a polynomial with coefficients in F whose roots λi in a fixed algebraic
+closure F̄ satisfy
+(3.0.3)                                 |λi | = q −r ,
+for i = 1, . . . , N . When Condition 3.0.3 holds, we say that P has slope r.
+   The coefficient αj is a symmetric polynomial in λi , which is homoge-
+neous of degree j. It follows from Condition 3.0.3 that the coefficients of a
+polynomial of slope r satisfy
+(3.0.4)                                 |αj | ≤ q −rj .
+In particular,
+(3.0.5)                               |αnj /̟ℓj | ≤ 1.
+Let aj be the image of the integer αnj /̟ ℓj in Fq .
+     3The purity hypothesis has been verified for equivalued elements in [16].
+                           GOOD ORBITAL INTEGRALS                                 27
+
+Definition 3.1. Set
+(3.1.1)    R(λ) = λg + a1 λg−1 + · · · + ag ∈ Fq [λ],     with aj = resℓj αnj .
+We call R the r-reduction of P . Let tr be the map from {x ∈ F̄ | ord(x) = r}
+to F̄q given by
+(3.1.2)                     tr (λ) = ac(λn /̟ℓ ) ∈ F̄×
+                                                     q.
+
+Lemma 3.2. Let P have slope r. If λ is a root of P , then tr (λ) is a root of
+R.
+Definition 3.3. We say that an integer in F̄ is topologically unipotent if its
+residue class is 1.
+Lemma 3.4. Let P have slope r. Assume p > n, where p is the character-
+istic of Fq . Assume that P has N distinct roots λ1 , . . . , λN . Assume that
+|λi − λj | = q −r for all i 6= j. Then the map λj 7→ tr (λj ) from roots of P to
+roots of R is an n to 1 mapping onto the set of roots of R.
+Corollary 3.5. The roots of R are distinct.
+  We have a partial converse.
+Lemma 3.6. Let r, L, N , g, ℓ be as in Definition 3.0.1. Assume that p > n,
+where p is the characteristic of Fq . Let
+(3.6.1)                  P = λN + α1 λN −1 + · · · + αng
+be any polynomial in F [x] such that |αj | ≤ q −rj . Define the r-reduction
+R ∈ Fq [λ] by Condition 3.1.1. Assume that 0 is not a root of R and that R
+has distinct roots. Then P has slope r and its roots λi satisfy |λi − λj | = q −r
+for all i 6= j.
+Proof. The inequality |αj | ≤ q −rj is strict when n does not divide j, because
+the left-hand side of the inequality is an integral power of q.
+  Let
+(3.6.2)                 P1 = λN + αn λN −n + · · · + αng
+be the polynomial obtained from P by setting the coefficients αi to zero
+when n does not divide i. Let
+(3.6.3)                  P̃ (λ) = ̟ −rN P (λ̟ r ) ∈ F̄ [λ]
+and similarly for P̃1 (λ). The coefficients of P̃ and P̃1 are integers and the
+constant term is congruent to R(0) 6= 0. It follows that the roots of P (and
+P1 ) have absolute value q −r . The resultant res(P̃ , P̃ ′ ) is congruent modulo
+̟ to the resultant res(P̃1 , P̃1′ ). Thus, the identity |λi − λj | = q −r follows if
+the resultant for P̃1 is a unit. But P̃1 has nonzero roots and it is of the form
+Ṙ(xn ) where Ṙ is a lift to F of R. Hence the resultant for P̃1 is a unit iff
+the resultant res(R, R′ ) is nonzero. This follows from the assumption that
+R has distinct roots.                                                            
+28                 CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+3.2. Lifts of Polynomials. Let the constants g, ℓ, n, . . . be related as in
+Equations 3.0.1. Let R be a monic polynomial in Fq [λ] of degree g ≥ 1 with
+distinct nonzero roots:
+(3.6.4)                     R(λ) = λg + a1 λg−1 + · · · + ag .
+     Let Ṙ be a lift to F .
+(3.6.5)                     Ṙ(λ) = λg + ȧ1 λg−1 + · · · + ȧg .
+Thus, ȧi is a representative in OF of ai in Fq .
+Lemma 3.7. If R is irreducible, then Ṙ is irreducible.
+Proof. Gauss’s lemma.                                                           
+   Assume that R is irreducible. Let Fgunr be the unramified extension of
+degree g in F̄ . The extension Fgunr is a splitting field of Ṙ over F . Let ζ̇ be
+a root of Ṙ. Every root in F̄ of the polynomial xn − ̟ ℓ ζ̇ generates a totally
+ramified extension of degree n. In particular, the polynomial is irreducible.
+Consider the extension
+(3.7.1)            F unr ((̟ ℓ ζ̇)1/n ) ∼
+                        g               = F unr [x]/(xn − ̟ℓ ζ̇).
+                                               g
+
+     Let ζ̇1 , . . . , ζ̇g be the roots of Ṙ. The polynomial of degree N
+                                           g
+                                           Y
+(3.7.2)                        Ṙ(r) (λ) =   (xn − ̟ ℓ ζ̇i )
+                                            i=1
+has coefficients in F . The polynomial is irreducible over F . The image of
+λn /̟ ℓ in the field extension
+(3.7.3)                              F [λ]/(Ṙ(r) (λ))
+is a root of Ṙ, which we use to identify Fgunr with a subfield of this extension.
+Lemma 3.8. For all ζ̇ ∈ {ζ̇1 , . . . , ζ̇g },
+(3.8.1)          F [λ]/(Ṙ(r) (λ)) ∼      = F unr ((̟ ℓ ζ̇)1/n ).
+                                                   g
+
+In particular, as ζ̇ varies, the fields
+(3.8.2)                              Fgunr ((̟ℓ ζ̇)1/n )
+are isomorphic.
+   Let R̈ be another lift of R to a degree g monic polynomial. Again, Fgunr
+is a splitting field of R̈. Form R̈(r) (λ) as above.
+Lemma 3.9. Assume p 6 | n. The fields
+(3.9.1)                  F [λ]/(R̈(r) (λ)) and F [λ]/(Ṙ(r) (λ))
+are isomorphic over Fgunr . The fields
+(3.9.2)                 Fgunr ((̟ℓ ζ̇)1/n ) and Fgunr ((̟ ℓ ζ̈)1/n )
+are isomorphic.
+                            GOOD ORBITAL INTEGRALS                                   29
+
+Lemma 3.10. Assume R is irreducible. Let P ∈ F [λ] be any monic polyno-
+mial of degree N with slope r and with r-reduction R. Then P is irreducible,
+and the isomorphism class of the field extension
+(3.10.1)                            F [λ]/(P (λ))
+depends only on R.
+Corollary 3.11. Let R ∈ Fq [λ] be an irreducible monic polynomial of degree
+g. Let P have r-reduction R. Assume that p is sufficiently large. The roots
+λj of P in an algebraic closure satisfy
+(3.11.1)                  |λj | = q −r and |λi − λj | = q −r ,
+for i 6= j.
+    Now drop the assumption that R is irreducible. For each irreducible
+factor Ri of R of degree gi , the preceding construction gives an unramified
+extension Fgunr
+              i
+                 of F of degree gi and a totally ramified extension of Fgunr
+                                                                          i
+                                                                             of
+degree n. By Lemma 3.10, these extensions of degree ngi are well-defined
+up to isomorphism. Each factor Ri has an “r-lift” Pi of degree ngi . (Each
+Pi is a monic polynomial with r-reduction Ri .) Let P be the product of the
+Pi . Its r-reduction is R.
+    Start with a polynomial P ∈ F [λ] that has slope r and with r-reduction
+R. Since Pi is irreducible if and only if Ri is, the factors of P are of degree
+ngi and the factors correspond in a 1-1 fashion with the factors of R.
+3.3. Even Polynomials. In this subsection, assume that N is even and
+that P (−λ) = P (λ). That is, assume P (λ) = P (2) (λ2 ) for some polynomial
+P (2) . The constants g, ℓ, n, . . . continue to be defined as in Definition 3.0.1.
+We show how to associate a quadratic extension of algebras Fi /Fi# to each
+irreducible factor of P (2) .
+   If n is also even then each pair (λ, −λ) of roots appear in the same fiber
+over the root tr (λ) of the r-reduction R. For each irreducible factor of R,
+there are totally ramified extension
+(3.11.2)                       Fi# = Fgunr
+                                        i
+                                           ((̟ ℓ ζ̇)2/n )
+of degree n/2 over Fgunr
+                      i
+                         . The extension Fi /Fi# , where
+(3.11.3)                       Fi = Fgunr
+                                       i
+                                          ((̟ ℓ ζ̇)1/n ),
+is a ramified quadratic extension.
+   If on the other hand, n is odd, then each pair of roots (−λ, λ) is split
+between two fibers:4
+(3.11.4)                     tr (λ) 6= −tr (λ) = tr (−λ).
+The r-reduction R is even. We write it as R(λ) = R(2) (λ2 ). There are two
+types of irreducible factors of R: those that are even polynomials and those
+   4As always, we assume that the residual characteristic is sufficiently large, so that
+p 6= 2.
+30               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+that are not. If Ri is an irreducible factor that is an even polynomial, then
+its degree gi is even. A lift Ri has splitting field Fgunr
+                                                        i
+                                                           , with subfield Fgunr
+                                                                              i /2
+                                                                                   .
+                           (2)       (2)
+The (2r)-reduction of Pi         is Ri . The field extension
+                                               (2)
+(3.11.5)                         Fi# = F [λ]/(Pi (λ))
+can be identified with a totally ramified extension of Fgunr
+                                                          i /2
+                                                               of degree n. The
+quadratic extension Fi /Fi# , where
+(3.11.6)                          Fi = F [λ]/(Pi (λ))
+is unramified.
+   If n is odd and the irreducible factor Ri is not an even polynomial, then
+there is a matching irreducible factor Rj with Ri (−λ) = Rj (λ). The exten-
+sion determined by Ri in Lemma 3.8 is isomorphic to the extension deter-
+mined by Rj . We associate the algebra
+(3.11.7)
+   Fi = Fgunr
+            i
+              ((̟ ℓ ζ̇)1/n ) ⊕ Fgunr
+                                  i
+                                     ((̟ ℓ (−ζ̇))1/n ) over Fi# = Fgunr
+                                                                     i
+                                                                        ((̟ℓ ζ̇)1/n )
+                                                                         (2)
+with the factors Ri and Rj . The product Ri Rj is of the form Rk (λ2 ) for
+                         (2)
+some irreducible factor Rk of R(2) .
+
+                4. Conjugacy in Classical Lie Algebras
+   The assumption remains in force that the characteristic of the residue
+field is sufficiently large. (In particular, p > 2, p > n, and p satisfies the
+restrictions of [33].)
+
+4.1. Groups under consideration. We consider symplectic and orthogo-
+nal groups.
+   In the symplectic case, we fix a nondegenerate skew form qV on a vector
+space V of even dimension N over F . We define Sp(qV ) to be the group
+preserving the form. Concretely, we assume that V = F N , with N even,
+and that qV is given by a skew symmetric matrix J on the standard basis
+{ei } of F N by
+                                
+                                
+                                −1 i + j = N + 1, i > j
+(4.0.8)          qV (ei , ej ) = 1    i + j = N + 1, i < j
+                                
+                                
+                                  0   otherwise.
+We let sp(N ) be the corresponding lie algebra.
+   In the orthogonal case, we fix a nondegenerate symmetric form qV on a
+vector space V of dimension d over F . We let d = N for even orthogonal lie
+algebras and d = N +1 for odd orthogonal lie algebras, where N is even. We
+define so(d) to be the lie algebra associated with the form. To make things
+concrete, we take the vector spaces to be F d and the symmetric forms to
+be defined by a matrix J with respect to the standard basis, where J is the
+                             GOOD ORBITAL INTEGRALS                            31
+
+matrix given in [33] and used in [15]. We let so(d) be the corresponding lie
+algebra. Its elements are d × d matrices that satisfy
+                                 t
+(4.0.9)                              XJ + JX = 0.
+
+4.2. The parameter space Sg,r . Assume that the constants N , r, g, . . .
+are related as in Equation 3.0.1. Assume N is even. Define equivalence
+as in Definition 2.5. We define the r-reduction g[r] of a Lie algebra g in a
+case-by-case manner. It is defined in the following context. Let
+(4.0.10)          N = ng even; g = sp(N ), so(N ), or so(N + 1).
+By Equation 4.0.9 we may take g to be defined over Z. The r-reduction is
+again a lie algebra over Z, defined as follows:
+                                    (
+                           [r]        sp(g) n odd
+(4.0.11)                 sp (N ) =
+                                      gl(g) n even.
+                                  (
+                       [r]         so(g + 1)          n odd
+(4.0.12)             so (N + 1) =
+                                   gl(g)              n even.
+                                      (
+                                       so(g)      n odd
+(4.0.13)                 so[r] (N ) =
+                                       gl(g)      n even.
+The r-reductions are taken over Z, but we also consider them over Q, Fq ,
+and so forth.
+Definition 4.1. In the symplectic and odd orthogonal cases, we take Sg,r /Q
+be the affine variety of regular semi-simple conjugacy classes in g[r] ; that is,
+the adjoint quotient of the algebra g[r] . In the even orthogonal case when
+n is odd, we take the subvariety of the adjoint quotient of g[r] on which
+the determinant (in the standard representation of g) is nonzero. In the
+even orthogonal case when n are even, our construction is a bit more exotic.
+We take Sg,r to be the affine variety of pairs (u, v) where u is a regular
+semi-simple conjugacy class in gl(g) with nonzero determinant, and v is an
+element of Gm such that v 2 = − det(u).
+Example 4.2. If g = sp(6) and r = 1/3, then n = 3, ℓ = 1, and g = 2. We
+have
+(4.2.1)                       g[1/3] = sp(2) = sl(2).
+The set of regular elements are those with nonzero determinant:
+(4.2.2)                              sl(2) ∩ GL(2).
+The conjugacy class (over Q̄) is determined by the determinant. The map
+X 7→ det(X) induces an isomorphism Sg,r ∼ = Gm over Q.
+32                CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+4.3. Pfaffians. In the case of even orthogonal Lie algebras, the stable con-
+jugacy class is not determined by the characteristic polynomial. Assume
+that P is the characteristic polynomial of a regular semi-simple element.
+Assume that P has slope r.
+   We use the pfaffian to specify the map from the restricted stable conjugacy
+classes of slope r of so(N ) (over the p-adic field) to stable conjugacy classes
+of so(g) (over the finite field). The even orthogonal Lie algebra can be
+identified with N by N matrices satisfying
+                                 t
+(4.2.3)                              XJ + JX = 0,
+where J is a symmetric matrix. Then JX is a skew symmetric matrix. Let
+pfaff(JX) be its pfaffian. (There is a general discussion of pfaffians in [14].)
+The stable conjugacy class is determined by the characteristic polynomial
+of X and by pfaff(JX). We claim that det(J) = −1. In fact, the explicit
+choice of J in [33] is a matrix with ±1 along the skew diagonal and zeroes
+elsewhere. Any symmetric matrix of this form has determinant −1 (recall
+that N is even).
+   Let x be an element in the r-reduction so[r] (N ) with characteristic poly-
+nomial R and let X be an element in so(N ) with characteristic polynomial
+P . Assume that the r-reduction of P is R. Hence,
+(4.2.4)         det(X) = P (0) = αN ,      det(x) = R(0) = ag = ac(αN ).
+   Assume that n is odd. The r-reduction g[r] is an even orthogonal algebra
+so(g). In this case, let j be the symmetric matrix defining so(g). Assume it
+has the same explicit form as J. The matrix j has determinant −1 for the
+same reasons as J. The square of the pfaffian is the determinant. It follows
+from Equation 4.2.4 that
+(4.2.5)                    ac pfaff(JX)2 = pfaff(jx)2 .
+If n is odd, then we take the matching conditions (X ↔ x) on stable conju-
+gacy classes to be
+(4.2.6)                     ac pfaff(JX) = pfaff(jx).
+     Assume that n is even. In this case, the r-reduction g[r] is the algebra
+(4.2.7)                                 gl(g).
+But the variety Sg,r consists of pairs x = (u, v) = (u(x), v(x)) where u is a
+regular semi-simple conjugacy class in gl(g) with nonzero determinant and
+v 2 = − det(u). We have
+(4.2.8)              ac pfaff(JX)2 = −ag = − det(u) = v 2 .
+We take the matching condition to be
+(4.2.9)                       ac pfaff(JX) = v(x).
+                           GOOD ORBITAL INTEGRALS                                33
+
+4.4. The map to Sg,r .
+Definition 4.3. Let f ∈ k[λ], where k is any field. Let m be the multiplicity
+of the root λ = 0 in f . We call the polynomial f /λm the nonzero part of f .
+   If X is a regular semi-simple element in the symplectic lie algebra, the
+nonzero part of its characteristic polynomial is the same as the characteristic
+polynomial. For odd orthogonal lie algebras, the multiplicity is one, and for
+even orthogonal lie algebras the multiplicity is zero or two.
+   Let F be a p-adic field with residue field Fq . We construct a map µ :
+g(r) → Sg,r (Fq ) when the residual characteristic is sufficiently large. Let
+X be a restricted element of slope r. Let P be the nonzero part of the
+characteristic polynomial. It has slope r. Let R be the r-reduction of P .
+The polynomial R is the nonzero part of the characteristic polynomial of an
+element in the reduced algebra g[r] . Its conjugacy class is an element of Sg,r .
+In the even orthogonal case, we add the additional condition Equation 4.2.6
+or 4.2.9. We use the same notation µ : h(r) → Sh,r (Fq ) for the corresponding
+map for h.
+   A stable conjugate of a restricted element of slope r is again restricted of
+slope r. The map we have constructed depends only on the stable conjugacy
+class of X, so that we may speak of the image of a conjugacy class in Sg,r (Fq ).
+Two elements X and X ′ are equivalent (in the sense of Definition 2.5.1) iff
+their stable conjugates are equivalent. Thus, we may speak of equivalent
+stable conjugacy classes. If two stable conjugacy classes are equivalent,
+then they define the same polynomial R (and in the even orthogonal case,
+the same pfaffian) and hence their images in Sg,r are the same.
+Theorem 4.4. When the residual characteristic is sufficiently large, the
+map µ induces a bijection between equivalence classes of stable conjugacy
+classes of elements in g(r) and elements of Sg,r (Fq ).
+Proof. We have already checked that µ induces a well-defined map from
+equivalence classes of stable conjugacy classes of elements in g(r) to Sg,r (Fq ).
+   To see that this is onto, take the nonzero part R of the characteristic poly-
+nomial of x ∈ Sg,r (Fq ). Lift it to an even polynomial P = P (2) (λ2 ) = Ṙ(r) (λ)
+as in Section 3.2. Associate with it a direct sum ⊕i∈I Fi of algebras, as in
+Section 3.3. These algebras embed as a Cartan subalgebra of g according to
+the procedure given by Waldspurger [33]. The polynomial P determines an
+element X of this Cartan subalgebra such that the nonzero part of its char-
+acteristic polynomial is P . The element X belongs to g(r) and maps under
+µ to x. (In the even orthogonal case, this is compatible with pfaffians).
+   To see that the map is 1-1, we check that this lift from x up to X is well-
+defined up to stable conjugacy and equivalence. The characteristic polyno-
+mial (together with the pfaffian in the even orthogonal case) P determines
+the stable conjugacy class in these classical groups. Also, the different lifts
+Ṙ(r) give equivalent elements (Lemma 3.10). Thus the theorem is estab-
+lished.                                                                          
+34                CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Corollary 4.5. If X, X ′ ∈ g(r) have the same image in Sg,r (Fq ), then their
+centralizers GX and GX ′ are stably conjugate.
+Proof. The reduction R determines the factorization of PX and PX ′ and
+hence the direct sum of algebras ⊕i∈I Fi appearing in the proof of Theo-
+rem 4.4. According to [33], this direct sum determines the stable conjugacy
+class of the Cartan subalgebra (except in the even orthogonal case, where
+the pfaffian must also be taken into account).                           
+4.5. Stable Orbital Integrals. Now comes the key result. It allows us to
+parameterize stable orbital integrals by the elements of Sg,r (Fq ). According
+to Corollary 4.5, if X and X ′ have the same image in Sg,r (Fq ), then their
+centralizers are stably conjugate. Hence we may normalize the orbital in-
+tegrals of X and X ′ by picking compatible measures on the centralizers of
+X and X ′ (that is, we assume that conjugation from GX to GX ′ preserves
+measures).
+Theorem 4.6. Let X, X ′ ∈ g(r). Assume that µ(X) = µ(X ′ ) in Sg,r (Fq ).
+Assume that the measures on GX and GX ′ are compatible in the sense just
+described. Then the stable orbital integral of X is equal to the stable orbital
+integral of X ′ .
+Proof. By Corollary 4.5, the Cartan subalgebras GX and G′X are stably
+conjugate. Replacing X ′ with a stable conjugate, we may assume that GX =
+GX ′ .
+   Waldspurger parameterizes semi-simple elements, up to conjugacy, by
+triples of data (I, (ai ), (ci )) (up to an equivalence relation) [33]. Let
+                          (I, (ai ), (ci )) and (I ′ , (a′i ), (c′i ))
+be the parameters attached to X and X ′ . Since GX = GX ′ , we may assume
+that I = I ′ , Fi′ = Fi , and ai , a′i ∈ Fi . Since X and X ′ give the same
+element µ(X) = µ(X ′ ) ∈ Sg,r (Fq ), there is a unique bijection ψ : I → I
+and isomorphisms ρi : Fi → Fψ(i) such that ρi (ai ) and a′ψi have the same
+valuation and angular components for each i. Passing to equivalent data, we
+may assume that ψ and ρi are identity maps. Passing to a stable conjugate
+of X ′ , we may assume that c′i = ci for all i ∈ I.
+   After passing to this stable conjugate, we may assume that X ′ ∈ GX .
+In fact, GX is determined by the data (I, (ai ), (ci )) and GX ′ by the data
+(I, (a′i ), (ci )). According to the criteria in [33], we can take GX = GX ′ if the
+element ǫ(ai , a′i ) = PX′ (ai )/PX′ ′ (a′i ) is a norm of Fi /Fi# for each i, where in
+general PY′ is the derivative of the characteristic polynomial of Y . However,
+X, X ′ ∈ g(r) with the same image in Sg,r . Moreover, each pair (ai , a′i ) has
+the same angular component and valuation, . This implies that ǫ(ai , a′i ) is
+topologically unipotent in Fi# and therefore a square whenever the residual
+characteristic is not 2 (which we assume). Thus we have X ′ ∈ GX .
+   We may diagonalize the two elements of GX simultaneously and compare
+the corresponding eigenvalues λi . Since ai and a′i have the same valuation
+                              GOOD ORBITAL INTEGRALS                                35
+
+and angular components, there exist topologically unipotent elements ui
+such that
+(4.6.1)                          λi (X) = ui λi (X ′ ).
+  Pick an element b in the building adapted to X as in Theorem 1.26.
+According to Adler and Roche [3, § 2], the Moy-Prasad filtration of a semi-
+simple Lie algebra takes the following form on GX :
+(4.6.2)           gb,r′ ∩ GX = {Y ∈ GX | ∀χ. |χ(Y )| ≤ q −r }
+and
+(4.6.3)         gb,r′ + ∩ GX = {Y ∈ GX | ∀χ. |χ(Y )| < q −r }.
+Here r ′ = cr for some positive scalar c that translates between the depth
+r ′ and the slope r. In these equations, χ runs over all differentials of char-
+acters of the torus T with Lie algebra GX . In the concrete symplectic and
+orthogonal algebras cases we consider, we can take χ to run over all in-
+teger linear combinations of the nonzero eigenvalues λ(Y ) in the standard
+representation.              P
+    Let Z = X ′ − X. If χ =    mi λi , then
+                       X                            X
+(4.6.4)        χ(Z) =     mi (λi (X ′ ) − λi (X)) =   mi λi (X)(ui − 1).
+                          i
+
+So |χ(Z)| < q −r . It follows that Z ∈ gb,r′ + .
+   We will show below in Equation 6.1.3 that the determinants D g,l(X) and
+D (X ′ ) in Corollary 1.30 are equal. Thus, by that corollary, the orbital
+  g,l
+
+integrals of X and X ′ = X + Z are equal.
+   We can extend this result to stable orbital integrals as follows. If X cor-
+responds to data (I, (ai ), (ci )); and X ′ corresponds to the data (I, (a′i ), (ci )).
+Write Xc and Xc′ to make the dependence on the parameters c = (ci ) ex-
+plicit. There is a bijection between the orbits in the stable conjugacy class
+of X and those in the stable conjugacy class of X ′ given by Xc ↔ Xc′ .
+Equation 4.6.2 gives slope r for Xc and Xc′ , which is independent of c. The
+argument given above for X and X ′ now applies for each c, to give that the
+orbital integrals of Xc and Xc′ are equal. Summing over c, we find that the
+stable orbital integrals of X and X ′ are equal.                                     
+
+4.6. κ-orbital integrals. Let (g, h) be one of the pairs of Definition 2.2.
+Let r ∈ Q. The affine variety Sh,r is a product Sh1 ,r × Sh2 ,r , corresponding
+to the factors h = h1 ⊕ h2 of h.
+   We have a map from stable conjugacy classes in h1 ⊕h2 to stable conjugacy
+classes in g that is defined as follows. Let Y = (Y1 , Y2 ) ∈ h1 ⊕ h2. Let P1
+and P2 be the nonzero parts of the characteristic polynomials of Y1 and Y2 .
+An image X of Y is an element whose characteristic polynomial has nonzero
+part P1 P2 . In the even orthogonal case, we also require that
+(4.6.5)                pfaff(JX) = pfaff(JY1 ) pfaff(JY2 )
+36               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+(where each occurrence of J is adapted to the appropriate size of matrix).
+X is said to be an image of Y .
+   Let Sg,h,r be the affine subvariety of Sh,r whose points are µ(Y ) such that
+Y has a regular semi-simple image X ∈ g. The map µ restricts to a map
+from the subset of G-regular elements of h(r) to Sg,h,r .
+   We have a morphism of varieties Sg,h,r → Sg,r that is defined as follows.
+If y = (y1 , y2 ) ∈ Sg,h,r , then there are corresponding nonzero parts of char-
+acteristic polynomials Ry1 and Ry2 . The element y is mapped to x ∈ Sg,r
+whose nonzero part of the characteristic polynomial is Ry1 Ry2 . In the even
+orthogonal case, we also add the condition that
+(4.6.6)               pfaff(xj) = pfaff(y1 j1 ) pfaff(y2 j2 )
+or
+(4.6.7)                        v(x) = v(y1 )v(y2 )
+as appropriate, where v is the parameter of Equation 4.2.9.
+Definition 4.7. We say that X is an image of y ∈ Sg,h,r (Fq ) if µ(X) is the
+image of y in Sg,r (Fq ).
+   As in Section 4.5, we pick compatible measures on X and X ′ when GX
+is stably conjugate to GX ′ .
+Theorem 4.8. For local fields of sufficiently large residual characteristic,
+the κ-orbital integral φg,h(Y ) of Y ∈ h(r) depends only on µ(Y ) ∈ Sg,h,r (Fq ).
+Proof. Consider Y and Y ′ that map to the same parameter y. The parameter
+y determines x ∈ Sg,r (Fq ). Two element X, X ′ ∈ g(r) mapping to x have
+stably conjugate centralizers GX and GX ′ . We assume that X is the image
+of Y and that X ′ is the image of Y ′ in g. Passing to a stable conjugate,
+we may assume (as in the proof of Theorem 4.6) that GX = GX ′ and that
+Waldspurger’s parameters defining X and X ′ have the form (I, (ai ), (ci ))
+and (I, (ui ai ), (ci )) for some topologically unipotent elements ui ∈ Fi . The
+constraints on the data actually force ui ∈ Fi# .
+   The element Y determines a partition of I into two subsets and the ele-
+ment Y ′ determines a partition into two subsets. This partition determines
+the κ. We claim that the partition is the same in both cases. In fact, the
+partition is determined by partitioning the even polynomial P (λ) = P (2) (λ2 )
+according to irreducible factors of P (2) (where P as usual is the nonzero part
+of the characteristic polynomial of X or X ′ ). The irreducible factors of P (2)
+are determined by the irreducible factors of its r-reduction R(2) (see Sec-
+tion 3.3), which is the same for both X and X ′ , since X and X ′ both map
+to x. Thus, the partition is the same in both cases.
+   We claim that for the chosen X, X ′ , we have ∆(X, Y ) = ∆(X ′ , Y ′ ),
+where ∆ is the Langlands-Shelstad transfer factor, as calculated by Wald-
+spurger in [33, Ch.X]. (In fact, if we index X and X ′ by the data (ci ) and
+write Xc , Xc′ , we have ∆(Xc , Y ) = ∆(Xc′ , Y ′ ) for all parameters c = (ci ).)
+                                GOOD ORBITAL INTEGRALS                                                  37
+
+For this, it suffices to examine the explicit formula for the transfer fac-
+tors that Waldspurger calculates. According to his calculations, the ratio
+∆(Xc , Y )/∆(Xc′ , Y ′ ) is given as product of characters of order 2 on the fol-
+lowing elements of Fi# :
+(4.8.1)                              PX′ (ai )/PX′ ′ (ui ai ),
+(where P ′ is the derivative of P ). We claim that these elements are topo-
+logically unipotent, so that the characters of order 2 all evaluate to 1 on
+these elements. In fact, each PX′ (ai ) is a product of factors λi (X) − ai and
+PX′ (ui ai ) has the corresponding form λi (X ′ ) − ui ai . It follows from the as-
+sumption that X and X ′ are restricted so that the quotient of these two
+factors is topologically unipotent. Hence the claim.
+   It follows as in the proof of Theorem 4.6, that the orbital integrals of Xc
+and Xc′ are equal for each c = (ci ). Since the transfer factor is also the same
+for both Xc and Xc′ , the κ-orbital integrals are equal.                         
+   As a result of the theorem, henceforth we write φg,h(y) for the κ-orbital
+integral of the unit element for any Y ∈ h(r) that maps to y ∈ Sg,h,r (Fq ).
+
+    5. The first order language of rings and Pas’s language
+   The first order language of rings is a formal language in the first order
+predicate calculus. The concepts of logic and model theory that we require
+in this paper can be found in Enderton [12] or Fried and Jarden, [13].
+   A language that is slightly more complicated language than the first order
+language of rings is Pas’s language. It is a formalization of a fragment of the
+theory of Henselian fields. It is described in [29], with additional comments
+in Denef and Loeser’s papers on motivic integration, particularly [9], and
+briefly in [19]. We briefly recall its most important characteristics. The
+language is three-sorted in the sense of [12]. That is, quantifiers range over
+three distinct objects that can be interpreted as a p-adic field F , its residue
+field Fq , and the additive group of values Z (or more correctly, Z ∪ {+∞}).
+The arithmetic of Z is restricted to the additive theory. For the additive
+theory of Z, there is a procedure of quantifier elimination due to Presburger
+[30]. The language has function symbols ac and ord that are interpreted
+in a p-adic field as the angular component map and the valuation function,
+respectively.
+   We recall the notion of a virtual set from [15]. It is a syntactic extension
+of the first-order language. Let L be a first order language (usually the first
+order language of rings, Pas’s language, or an extension of Pas’s language
+obtained by adjoining constants). Let ψ be a formula in L. We write
+(5.0.2)                        ‘y ∈ {x | ψ(x)}’ for ‘ψ(y).’
+The construct {x | ψ(x)} is called a virtual set (in the language L). Here, x
+is allowed to be a multi-variable symbol: x = (x1 , . . . , xn ), so that we have
+(5.0.3)   ‘(y1 , . . . , yn ) ∈ {(x1 , . . . , xn ) | ψ(x1 , . . . , xn )}’ for ‘ψ(y1 , . . . , yn )’
+38               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+When we write x ∈ A, it is to be understood that x is a vector of variable
+symbols, and that the length of that vector is the number of free variables
+in the defining formula of A. Intersections, unions, complements and other
+standard operations on sets can be applied to virtual sets.
+   For each of the split lie algebras considered in Definition 2.2, there is a
+virtual set (or virtual lie algebra) defined by
+(5.0.4)                      {X | t XJ + JX = 0}
+(viewed as a conjunction of equations in the free variables xij ).
+Lemma 5.1.
+(5.1.1)                               g(r)
+is a virtual set in Pas’s language.
+Proof. Let P = λN +α1 λN −1 +· · ·+αng be the nonzero part of the character-
+istic polynomial of X. For each characteristic polynomial, the multiplicity
+of zero is known in terms of the lie algebra g. Let R = λg + a1 λg−1 + · · · + ag
+be the r-reduction of P . By Definition 2.4, the restricted elements are those
+such that
+     (1) P is the nonzero part of the characteristic polynomial of X.
+     (2) The r-reduction of P is R.
+     (3) R has distinct roots.
+     (4) The multiplicity of 0 in the characteristic polynomial of X is 0 or 1.
+     (5) |αj | ≤ q −rj for all j.
+     (6) ag 6= 0.
+These conditions are all expressible in Pas’s language.                        
+5.1. Local Constancy. Let ψ(x, ξ) be a formula in Pas’s language, with
+free variables x = (x1 , . . . , xn ) of the valued field sort and free variables
+ξ = (ξ1 , . . . , ξm ) of the residue field sort. We set |x| = n and |ξ| = m to
+avoid a notational conflict with Definition 3.0.1.
+   Given a formula ψ(x, ξ), let fψ be the auxiliary formula
+(5.1.2)
+    ‘∀ξ x x′ . ord(xi − x′i ) ≥ M (for i = 1, . . . , n) ⇒ (ψ(x, ξ) ⇔ ψ(x′ , ξ))’.
+Definition 5.2. We say that ψ(x, ξ) is locally constant at level M if fψ (M )
+holds in all finite fields of sufficiently large characteristic.
+Remark 5.3. Let us explain what it means for a formula fψ (M ) in Pas’s
+language to hold in all finite fields of sufficiently large characteristic. When
+M ∈ N is substituted into fψ , we obtain a sentence in Pas’s language (with
+no free variables). By quantifier elimination of the variables of the valued
+field and value ring sort, we can find an equivalent sentence that contains
+only terms of the residue field sort. (This involves discarding finitely many
+primes as in [20].) The formula fψ holds in all finite field of sufficiently large
+characteristic, if this equivalent sentence in the language of rings has a true
+interpretation in all finite fields of sufficiently large characteristic.
+                            GOOD ORBITAL INTEGRALS                              39
+
+Lemma 5.4. Suppose there exists N , such that if for every F whose residue
+characteristic is prime to N , there is an MF (depending on F ) such that
+the sentence fψF (MF ) holds. Then ψ(x, ξ) is stable of some level M .
+Proof. Write
+(5.4.1)        ‘fψ′ (m)’ for ‘(∀m′ ≥ m. fψ (m′ )) ∧ (∀m′ < m.¬fψ (m′ ))’.
+It asserts that m is the least level for which ψ is stable of level M . When
+F is such that there exists MF for which fψF (MF ) holds, then there is a
+unique mF for which fψ′ (mF ) holds. Let F be the class of all p-adic fields of
+sufficiently large residual characteristic. Let FN be the subset of these p-adic
+fields whose residue characteristic is at least N . By [20, Thm.2], there exists
+N such that the set of natural numbers {mF | F ∈ FN } is bounded. Let M
+be an upper bound. Then fψF (M ) holds for all p-adic fields of sufficiently
+large residual characteristic.                                                
+   This lemma can be immediately applied to the situation at hand. For
+the classical groups we consider, the Langlands-Shelstad transfer factor ∆
+is real valued. We let sign : R → {−1, 0, 1} be the usual sign function on
+                                                 ǫ , be the formula
+the Reals. For each g, r ∈ Q, and ǫ ∈ {±1}, let ψg,r
+            ǫ (X, y)’ for
+          ‘ψg,r              ‘X ∈ g(r) ∧ µ(X) = x ∧ y ∈ Sg,r ∧
+(5.4.2)
+                               ∃Y. sign ∆(X, Y ) = ǫ ∧ µ(Y ) = y ∧ (y 7→ x)’.
+The expression y 7→ x indicates that x is an image of y.
+                        ǫ is expressible in Pas’s language.
+Lemma 5.5. The formula ψg,r
+Proof. The most difficult part of this claim is the assertion that
+                               sign ∆(X, Y ) = ǫ
+is given by a formula in Pas’s language. The main result of [15] shows that
+this part of the formula is actually given in the first order language of rings.
+For the relation y ∈ Sg,r we use free variables of the residue sort, constrained
+by the algebraic relations defining Sg,r as a subvariety of affine space. For
+g(r), we use Lemma 5.1. The condition X ∈ g becomes vacuous. (The
+parameter X is taken to be a set of dim g variables ranging over F , under
+an identification of g with F dim g.) The result follows.                      
+Definition 5.6. For y ∈ Sg,h,r , let g(r)y be the elements X of g(r) such
+that X maps to the image of y in Sg,r (Fq ). We define h(r)y similarly. Let
+g(r)ǫy be the subset of X ∈ g(r)y on which sign ∆(X, y) = ǫ.
+               ǫ (X, y) asserts that X ∈ g(r)ǫ .
+  The formula ψg,r                           y
+            ǫ is locally constant of some level M .
+Lemma 5.7. ψg,r
+Proof. By Lemma 5.4, it is sufficient to show that the interpretation of
+ ǫ (·, y), for each y ∈ S (F ) is locally constant as a function of X ∈ g(F ).
+ψg,r                     g,r q
+The local constancy follows from the local constancy (in X) of sign ∆(X, y),
+which has already been established (essentially) in the proof of Theorem 4.8.
+40              CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+In fact, X corresponds to Waldspurger’s parameters (I, (ai ), (ci )) and small
+perturbations of X leave I and the fields Fi unchanged. Perturbing, ai 7→
+ui ai where ui is topologically unipotent leaves the transfer factor unchanged.
+By the explicit formula for the transfer factor in [33], we have sign ∆(X, y) =
+sign ∆(Ad g X, y), and by Harish-Chandra’s submersion principle such con-
+jugates of GX fill out a neighborhood of the regular element X in g. The
+result follows.                                                               
+
+
+                                6. Measures
+   Each equivalence class of semi-simple orbits of slope r forms an open
+subset of the Lie algebra. As a result, we may use the Lie algebra form of
+the Weyl integration theorem to rewrite the orbital integral as an integral
+over an open subset of the Lie algebra (with the additive Haar measure).
+We can express the Lie algebra formulation of the fundamental lemma as
+an assertion about volumes of regions in g(OF ).
+   In the arguments that appear below, there are normalizations of mea-
+sures coming from three sources. The first is the canonical normalization of
+measures occurring in the theory of motivic integration. It is related to the
+Serre-Oesterlé measure that arises in the integration theory of p-adic sets
+[31], [28]. The second source of normalizations of measures comes from the
+Weyl integration theorem. The final source of normalizations on measures
+comes from the fundamental lemma. This section shows that these various
+normalizations are compatible, in the sense that the fundamental lemma
+takes on an appealing form when the Weyl integration is used to express the
+fundamental lemma as a statement involving the Serre-Oesterlé measures
+on the Lie algebra.
+
+6.1. Normalization of Haar measures. Let G be a reductive group with
+Lie algebra g. Assume that G and g are defined over OF . Normalize the
+additive Haar measure dX on g so that the lattice g(OF ) has volume 1. Let
+̟ be a uniformizer of F . The volume of the lattice ̟g(OF ) is
+
+(6.0.1)                           q − dim(g) .
+
+  Assume that the residue field characteristic is sufficiently large. Then
+there is a diffeomorphism between the lattice ̟g(OF ) and a neighborhood
+V of the origin in G(OF ) [35] as in Lemma 1.16; see also [4]. Explicitly, that
+neighborhood is the set of elements in G(OF ) with trivial image in G(Fq ).
+We normalize a Haar measure dg on G so that the diffeomorphism preserves
+the volume of ̟g(OF ) under the exponential map.
+  Thus,
+                vol(G(OF ), dg) = [G(OF ) : V ] vol(̟g(OF ), dX)
+(6.0.2)                                                          .
+                                = |G(Fq )|q − dim g
+                         GOOD ORBITAL INTEGRALS                              41
+
+6.2. Serre-Oesterlé measures. A general comparison theorem of Denef
+and Loeser [9], which will be discussed further below, gives p-adic orbital
+integrals as the trace of Frobenius on corresponding elements of the ring K.
+The normalization of p-adic orbital integrals in their theorem is the canonical
+Serre-Oesterlé measure [9, Sec.8.2], [31], [28], [32]. Our application will be
+to the integration of certain open subsets of g(OF ). By construction, the
+Serre-Oesterlé measure on g(OF ) is the additive Haar measure, normalized
+so that the volume of g(OF ) is 1.
+
+6.3. The measures in the fundamental lemma. Let G be unramified,
+and let K = G(OF ) be a maximal compact associated with a hyperspecial
+vertex. The assertion of the fundamental lemma requires a particular nor-
+malization of measures [18]. Let dg be a Haar measure on G (such as the
+measure given above), and let
+                                     char G(OF )
+(6.0.3)                     fG =                   .
+                                   vol(G(OF ), dg)
+Descent implies that for γ ∈ T (OF ) a regular semi-simple absolutely semi-
+simple element in a Cartan subgroup T , which is regular modulo ̟, we have
+[18, Lemma 13.2]
+                                                 1
+(6.0.4)                ΦκT,G (γ, fG ) =                    .
+                                          vol(T (OF ), dt)
+The κ-orbital integral ΦκT,G is computed with respect to the quotient measure
+dg/dt. The κ-orbital integral equals the stable orbital integral of the unit
+element on the endoscopic group if the corresponding normalizations are
+used.
+
+6.4. Weyl integration formula. Let C(G) be a set of representatives for
+the conjugacy classes of Cartan subgroups of G. For each Cartan subgroup
+T , let t be its Lie algebra. Let AT be the split component of T . Assume
+that X ∈ g has Jordan decomposition
+(6.0.5)                         X = Xs + Xn ,
+and let
+(6.0.6)                  D g(X) = det(ad X|g/gXs ).
+   If T is spit, normalize measures on T to have volume 1 on the maximal
+compact subgroup of T . Normalize measures on a general Cartan T by
+vol(T /AT ) = 1. Let the measures dX and dg be compatibly normalized as
+in Section 6.1. By [36, page46], the Weyl integration formula can be written
+as follows.
+                  R              P                     R
+                              = T ∈C(G) |W (G, T )|−1 t |D g(X)|×
+                    g f (X)dX R
+(6.0.7)
+                                G/AT f (Ad xX)dx dX.
+42              CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+6.5. Application. An element y ∈ Sg,h,r (Fq ) determines a Cartan subal-
+gebra GX , up to stable conjugacy. For any such Cartan subalgebra, we
+consider the volume
+                            vol(GX ∩ g(r))
+(6.0.8)                                    .
+                              |W (G, GX )|
+There is a corresponding volume in h(r).
+Lemma 6.1. For every y ∈ Sg,h,r , there is a constant ω(y) such that for
+every X ∈ g(r)y and every Y ∈ h(r)y , we have
+                          vol(GX ∩ g(r))   vol(GY ∩ h(r))
+(6.1.1)          ω(y) =                  =                .
+                           |W (G, GX )|     |W (H, GY )|
+Proof. We prove the statement for X ∈ g(r). The proof for Y ∈ h(r) is
+similar and is left to the reader. Fix a semi-simple element X ∈ GX that is
+an image of y. The element X has |W (G, GX )| conjugates in GX . The set
+GX ∩ g(r)y is a disjoint union of |W (G, GX )| subsets of GX indexed by the
+conjugates of X, consisting of elements ΩX ′ of GX ∩ g(r) closest to a given
+conjugate X ′ . (That is, take Voronoi cells with centers at the conjugates
+of X.) The volume of the set ΩX ′ depends only on the measure on the
+Cartan subalgebra GX . This volume is independent of the ambient group.
+In particular, it is the same for G and H.                                 
+   For the classical lie algebras in this paper, there is a rational number a(r)
+depending on r ∈ Q such that the nonzero values of the transfer factor on
+restricted elements of slope r have the form
+(6.1.2)                               ±q a(r) .
+From Lemma 5.7, we know that the sign ± is given by a formula in the first
+order language of rings [15].
+   On g(r) we have
+                              Y
+(6.1.3)          |D g(X)| = |   α(X)| = q −r(dim g−rank g) .
+                                  α
+Set δG = dim g − rank g and δH = dim h − rank h.
+   By the proof of Theorem 4.8, the transfer factor at ∆(X, Y ) depends only
+on the image of y in Sg,h,r (Fq ). We write ∆(X, y) when Y 7→ y. As above,
+let g(r)ǫy be the subset of g(r)y consisting of all X such that the transfer
+factor at (X, y) is ǫ.
+Lemma 6.2. Let (g, h) be one of the pairs of Definition 2.2. Assume r ≥ 0.
+Let
+        hGiq = |G(Fq )|q − dim(G) , hHiq = |H(Fq )|q − dim(H) .
+The fundamental lemma holds for y ∈ Sg,h,r (Fq ) iff
+                vol(g(r)+                 −
+                        y , dX) − vol(g(r)y , dX)       vol(h(r)y , dY )
+(6.2.1)                                             =                    .
+                           hGiq   q −rδG /2              hHiq q −rδH /2
+                         GOOD ORBITAL INTEGRALS                             43
+
+The measures are the Serre-Oesterlé measures dX and dY on g(OF ) and
+h(OF ) respectively.
+Proof. We use Lemma 6.1 to cancel the terms |W (G, T )| and |W (H, TH )|
+in the Weyl integration formula for the algebras g and h. By the local
+constancy of orbital integrals, the orbital integral equals the average of the
+orbital integral over a neighborhood of the orbit inside g(OF ). By the
+Weyl integration formula this average is equal to an integral in g(OF ) with
+the additive Haar measure on g(OF ). By tracking the normalization of
+measures, we obtain the result.                                             
+Example 6.3. There is a simple case of Equation 6.2.1 that can be verified
+by hand. This serves as a check on the correctness of the normalization
+factors in the equation. Assume X is a regular semi-simple element of g(OF )
+such that its image in g(Fq ) is also regular semi-simple with r = 0. A short
+calculation shows that both sides in Equation 6.2.1 equal 1/|T (Fq )|, where
+T is the centralizer of X in G (or H).
+
+                     7. Construction of Varieties
+   We would like to apply the theory of motivic integration, as developed
+in Denef and Loeser [9] to Equation 6.2.1 to conclude the main result of
+the paper (Theorem 2.9). Unfortunately, the results of [9] do not give the
+desired results when there is a parameterized family of integrals (in this
+case parameterized by y ∈ Sg,h,r (Fq )) rather than a single integral. The
+forthcoming work of Cluckers and Loeser promises to give a general theory of
+parameterized motivic integration [6]. However, until those results become
+available, we confine ourselves to the earlier papers of Denef and Loeser.
+   It is clear from an inspection of the proofs of [9] that the methods of
+that paper are not sufficient to show that general parameterized families
+of integrals are “motivic.” However, if we weaken the conclusions of their
+theorems slightly, the proofs of that paper can be adapted to parameterized
+integrals.
+   Their paper must be adapted as follows. Wherever they speak of an
+element of the ring of motives K, we speak instead of a formal linear combi-
+nation (with rational coefficients) of varieties U over S = Sg,h,r . Whenever
+they take the trace of Frobenius on an element of K, we count points instead
+on the fiber Uy over y ∈ Sg,h,r (Fq ). With these slight modifications, we can
+read through their proofs and check that the desired results go through.
+Note however, that they associate a canonically determined element of K to
+definable subassignments, but our representation as a linear combination of
+varieties is far from unique.
+   We give a few technical details in the paragraphs that follow about how
+specific arguments in their paper are to be adapted to the parameterized
+orbital integrals in this paper.
+   We make use of the following variant of one of the main results of [9].
+44                  CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Theorem 7.1. Let ψ(x, ξ) = ψ(x1 , . . . , xn , ξ1 , . . . , ξm ) be a formula in Pas’s
+language with free variables x = (x1 , . . . , xn ) of the valued-field sort, free
+variables ξ = (ξ1 , . . . , ξm ) of the residue field sort, and no other free vari-
+ables. Assume that ψ(x, ξ) is locally constant of some level. Let S ⊂ Am       /Z[1/M ]
+be an affine variety. Assume that ψ projects to S in the sense that the fol-
+lowing sentence in the first order language of rings holds for all finite fields
+of sufficiently large characteristic5 (in particular (q, ℓ) = 1):
+(7.1.1)                      ∀ξ.    (∃x. ψ(x, ξ)) ⇒ (ξ ∈ S)
+Then there exist a natural number M (with ℓ|M ), a finite indexing set I,
+constants bi ∈ Q for i ∈ I, varieties Ui over S, and a polynomial p(x) ∈ Q[x]
+of the form
+                                            ℓ   ′
+                                            Y
+                                           ℓ
+(7.1.2)                            p(x) = x   (xki − 1)
+                                               i=1
+with the following property.
+      • For all p-adic fields F and all residue fields Fq , such that (q, M ) = 1,
+        and for all y ∈ S(Fq ), we have
+                                                     1 X
+(7.1.3)          vol ({x ∈ OFn | ψ F (x, y)}, dx) =           |Ui,y (Fq )|,
+                                                    p(q)
+                                                                i∈I
+          where dx is the additive Haar measure on              OFn   normalized so that
+          vol (OFn ) = 1.
+Corollary 7.2. Under the same hypotheses, for all p-adic fields F , all
+residue fields Fq such that (q, M ) = 1, and for all y ∈ S(Fq ),
+                             vol ({x ∈ OFn | ψ F (x, y)}, dx)
+depends on F only through Fq .
+   We supply a sketch of the proof of the theorem, with references to [9] for
+details. Our argument relies on many of the ideas and constructions from
+[9]. The rest of this paper follows that paper closely; and our argument
+should be read with that paper at hand. Before turning to the proof, we
+give several reductions.
+7.1. Reduction to covers. First we note that there is no loss of generality
+in working with coordinate patches that cover a variety. In fact, if X/S is
+any variety with cover {Uj }j∈I (with each Ui → S), then
+                                         X
+(7.2.1)        ∀y ∈ S(Fq ). |Xy (Fq )| =    (−1)|J| | ∩j∈J Uj,y (Fq )|.
+                                                     J⊂I
+This equation can be used to combine the results obtained on separate co-
+ordinate patches.
+     5This is meant in the sense of Remark 5.3.
+                             GOOD ORBITAL INTEGRALS                                  45
+
+7.2. Reduction to weakly stable subassignments. If ψ(x, ξ) is any for-
+mula, let ψN (x, ξ) be the formula
+(7.2.2)           ∃x′ .   ord(xi − x′i ) ≥ N (for i = 1, . . . , n) ∧ ψ(x′ , ξ).
+The formula ψN is true at x whenever x is ‘close’ to x′ that satisfies ψ.
+Assume that ψ is locally constant of some level N . Then ψN is also locally
+constant of level N . If ψ satisfies Equation 7.1.1, then ψN does too, because
+
+(7.2.3)               ∀ξ. [(∃x. ψ(x, ξ)) ⇔ (∃x. ψN (x, ξ))].
+Moreover, for all p-adic fields F of sufficiently large residue characteristic,
+ψ F (x, ξ) ⇔ ψN
+              F (x, ξ). Thus, it is enough to prove Theorem 7.1 for ψ rather
+                                                                     N
+than ψ.
+Definition 7.3. Let h : C → Set be a functor into the category of sets. A
+subassignment of h is a function f from the objects of C such that f (C) ⊂
+h(C).
+  Let C be the category of fields of characteristic zero. For a fixed m, n, let
+h = hm,n : C → Set be given by
+                                  k 7→ k[[t]]m × kn .
+A formula ψ(x, ξ) defines a subassignment f of hm,n (with (m, n) = (|x|, |ξ|)
+by
+                 f (k) = {(x, ξ) ∈ k[[t]]m × kn | ψ k (x, ξ)}.
+Definition 7.4. A subassignment is definable if it is attached to a formula
+in this way. A definable subassignment (attached to ψ) is weakly stable of
+level N if for every field k of characteristic zero
+(7.4.1) ∀ξ ∈ kn . ∀x x′ . (∀i. ordk (xi − x′i ) ≥ N ) ⇒ [ψ k (x, ξ) ⇔ ψ k (x′ , ξ)].
+     This is well-defined: if a given subassignment is attached to both ψ and
+ψ ′ , it is weakly stable for ψ iff it is weakly stable for ψ ′ . For any ψ in Pas’s
+language, the subassignment of ψN is weakly stable of level N . Thus, we
+reduce to the case where ψN determines a weakly stable subassignment.
+7.3. Reduction to special formulas.
+Definition 7.5. ψ(x, ξ) is a special formula of bounded representation if it
+can be expressed as a boolean combination of formulas
+(7.5.1)
+ θ(ξ, ac f1 (x), . . . , ac fm′ (x)) ∧ (ord f1 (x) = N1 ) ∧ · · · ∧ (ord fm′ (x) = Nm′ )
+where each Ni 6= 0 and θ is a formula in theory of rings in the variables and
+constants of the residue field sort.
+   It is easy to see that each special formula of bounded representation de-
+termines a weakly stable subassignment. (This follows from the fact that the
+functions ord(f (x)) and ac(f (x)) are locally constant in x when ord(f (x))
+is a fixed, nonzero integer.) We have the following converse.
+46               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+Lemma 7.6. Every weakly stable subassignment is defined by a special for-
+mula of bounded representation.
+
+Proof. Assume that the weakly stable subassignment is defined by a formula
+ψ(x, ξ). Apply quantifier elimination (following Pas and Presburger) to
+eliminate all quantifiers of the valued field sort and the value group sort
+in the formula ψ(x, ξ). In Presburger quantifier elimination, the additive
+language of the integers is augmented by function symbols for congruences
+modulo n for each n. Each formula can be written in disjunctive normal
+form. Each disjunct is a conjunct of three formulas one for the valued field
+sort, one for the value group sort, and one for the residue field sort. The
+conjunct for the valued field sort can be eliminated, for example, by replacing
+f (x) = 0 with ac(f (x)) = 0 (as an extra condition in the conjunct of residue
+field sort). What results is a so-called special formula; that is, a formula
+that can be expressed as a boolean combination of formulas
+                           ord f1 (x) ≥ ord f2 (x) + a,
+(7.6.1)                    ord f1 (x) ≡ a mod b,
+                           θ(ξ, ac f1 (x), . . . , ac fm′ (x))
+If we show that each fi that appears can be assumed to satisfy a bound
+ord(fi (x)) < Ni for some Ni 6= 0, then the lemma follows, by breaking each
+special formula into a disjunction of finitely many cases, according to the
+possible values of ord(fi ). This result is essentially identical to a lemma
+of Denef and Loeser [8, Lemma 2.8]. (Denef and Loeser assume that θ
+contains no free variables ξ. However, it is trivial to check that their proof
+goes through without modification in this slightly more general setting.) 
+
+   Not only can we reduce to special formulas of bounded representation,
+but we can also reduce to a single formula like Formula 7.5.1. (That is, no
+boolean combinations are required.) First of all, if B(ψ1 , . . . , ψk ) is a given
+boolean polynomial, then we obtain the same subassignment if we replace
+each ψi (x, ξ) with ψi (x, ξ) ∧ φS (ξ), where φS (ξ) is the formula that asserts
+that ξ ∈ S. Thus, there is no loss in generality in taking the boolean oper-
+ations “relative to S”. Consider conjunction. A conjunction of formulas of
+the form (Formula 7.5.1) is again of the same form. If we have a disjunction
+ψ1 ∨ ψ2 of this form, and if we can prove Theorem 7.1 for ψ1 , ψ2 , ψ1 ∧ ψ2
+(with A1 , A2 , and A12 as the right-hand side of Equation 7.1.3), then we
+have Theorem 7.1 for ψ1 ∨ ψ2 (with A1 + A2 − A12 as the right-hand side of
+Equation 7.1.3). Finally, if we have the negation ¬ψ(x, ξ) (relative to S) of
+a special formula, we use
+                          (¬ψ ∧ φS ) ∨ (ψ ∧ φS ) = φS .
+to eliminate ¬ψ.
+   Now we are ready to move to the proof of the representation theorem for
+formulas.
+                           GOOD ORBITAL INTEGRALS                                47
+                                    Q
+Proof. (Theorem 7.1). Let F = fi , the product extending over the func-
+tions fi appearing in the representation of ψ in Formula 7.5.1. As in [9,
+Proof 7.1.1,Proof 8.3.1], take an embedded resolution of F = 0. This reso-
+lution is independent of ξ. It is good in the sense of [7] when the residual
+characteristic is sufficiently large.
+   The function F comes from an expression in the first order theory of
+rings. We may thus interpret it as a polynomial in Q[x], and the embedded
+resolution as a resolution of F = 0 over Q. In each suitably chosen coordinate
+patch W in the resolution, F = 0 defines a divisor with normal crossings. If
+F is given in local coordinates as αuk11 · · · uknn , we let for I ⊂ {1, . . . , n}
+(7.6.2)               EI = {(ui ) ∈ W | ui = 0 ⇔ i ∈ I}.
+On each coordinate patch W , for each I, we obtain a formula θI in the first
+order language of rings as follows. Pull back each fj to a function wj on
+the resolution. If wj is identically zero on EI , let wj′ = 0; otherwise, let
+wj′ = wj . Set
+(7.6.3)                 θI (w, ξ) = (w ∈ EI ) ∧ θ(w′ , ξ),
+where θ is formula in the first order theory of rings defining the special
+formula of bounded representation.
+   We construct a Galois stratification for the formula θI as in [9]. (See
+[13] for a review of Galois stratifications.) The particular version of Galois
+stratification that we use is that of Lemma 7.7 below. The varieties Ui are
+constructed from individual strata of the Galois stratifications of θI , then
+summing over all strata for all I.
+   Let (C/A, Con) be a colored Galois cover with Galois group G that arises
+in the Galois stratification of some θI . We assume that C and A are affine.
+By Artin induction, the central function of G given by
+                                   (
+                                     1 if hxi ∈ Con
+(7.6.4)                    α(x) =
+                                     0 otherwise.
+                                         P
+is a rational linear combination α =        nH IndG
+                                                  H 1H of characters induced
+from trivial characters on cyclic subgroups H of G. The formal linear com-
+bination of varieties that corresponds to this colored Galois cover is
+                                 X
+(7.6.5)                              nH [C/H].
+  The morphism Ui → S is the composite
+(7.6.6)              C/H → C/G = A → A|u|+|ξ| → A|ξ| .
+The last morphism is projection onto the last |ξ| factors. Recall that A is
+a stratum in some EI , which is a constructible subset of a coordinate patch
+W in the resolution. We use the coordinate functions ui of the coordinate
+patch as the free variables in the formula. We may take S be given as
+a affine variety in A|ξ| . The image of Ui in A|ξ| lies in S because of the
+assumption 7.1.1 in the statement of the theorem.
+48               CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+   For each (u, ξ) ∈ A|u|+|ξ|(Fq ), we have by [9, 3.3.2]
+                                             (
+                   X                           1 if θI (u, ξ)
+(7.6.7)               nH |(C/H)u,ξ (Fq )| =
+                                               0 otherwise.
+Summing over u, we find that
+                    X
+(7.6.8)       ∀ξ.      nH |(C/H)ξ (Fq )| = |{u | θI (u, ξ)}|.
+
+This expresses the number of solutions u ∈ Fq |u| of the formula θI for a given
+ξ as a linear combination of number of points on varieties, with varieties that
+are independent of the element ξ. This is the essential point of the proof.
+The rest of the argument is no different from that [9].                       
+   The following result, which was used in the proof of Theorem 7.1, is taken
+directly from Fried and Jarden.
+Lemma 7.7. ([13, Prop. 26.7]) Let k be a nonzero integer and let θ(Y ) be
+the Galois formula
+(7.7.1)          (Q1 X1 ) . . . (Qm Xm )[Ar(X, Y ) ⊆ Con(A(C))]
+with respect to a Galois stratification A(C) of Am+n over Z[1/k], where C is
+the family of all finite cyclic groups. Then we can effectively find a nonzero
+multiple ℓ of k, and a Galois stratification B(C) of An over Z[1/ℓ] such that
+the following holds: for each finite field M of characteristic not dividing ℓ,
+and for each b ∈ An (M ),
+(7.7.2)            M |= θ(b) ⇔ Ar(B, M, b) ⊆ Con(B(C)).
+Remark 7.8. We have accomplished our objective of showing that the orbital
+integrals of restricted elements in symplectic and orthogonal algebras count
+points on varieties over finite fields. There should be no significant difficulties
+in extending these results to non-split cases such as the unitary algebra g =
+u(c) and h = u(a) ⊕ u(b). The necessary analysis of the Langlands-Shelstad
+transfer factor has already been carried out in [15]. That paper describes
+how to extend Pas’s language by a function symbol whose interpretation
+is conjugation with respect to a separable quadratic extension E/F . It
+describes how to expand formulas in the extended language into formulas
+in Pas’s language. This trick can be used to treat algebras that split over a
+quadratic extension.
+
+     8. Appendix : local constancy of orbital integrals as a
+               Corollary of [22][3.1.9], by Julee Kim
+   In general, we will keep the notation from [22].
+   We assume the residue characterstic p of k is sufficiently large (for more
+precise condition, we refer to [22][1.4]). Let Γ be a good semisimple element
+of depth r, and let G′ = CG (Γ). Let O(Γ) P   be the set of G-orbits in g whose
+closures contain Γ. Denote the subspace x∈B(G,k) Cc (g/gx,r+ ) of Cc∞ (g)
+by Dr+ .
+                             GOOD ORBITAL INTEGRALS                                     49
+
+  Recall the following theorem in [22][3.1.9]:
+Theorem 8.1. Let J (Γ + g′r+ ) be the set of G-invariant distributions sup-
+ported on G (Γ + g′r+ ) and let JΓ be the span of orbital integrals associated
+to orbits in O(Γ). Then
+                               J (Γ + g′r+ ) ≡ JΓ
+on Dr+ .
+  From now on, we also assume that Γ is either regular or elliptic. Let
+x ∈ B(G′ , k), and let Γ′ ∈ Γ + gx,r+ be a good element. Since we have
+Γ + gx,r+ = Gx,0+ (Γ + g′x,r+ ) by [22][2.3.5], for the purpose of comparing
+the orbital integrals associated to Γ and Γ′ , we may assume Γ′ ∈ Γ + g′x,r+ .
+Then it follows from [22][2.3.6] that
+                               G′ = CG (Γ) = CG (Γ′ ).
+   Fix a Haar measure on G/G′ , and denote the orbital integrals associated
+to Γ and Γ′ by µΓ and µΓ′ respectively.
+Theorem 8.2. Let Γ and Γ′ be as above. Then µΓ (f ) = µΓ′ (f ) for any
+f ∈ Dr+ .
+Proof. Note that µΓ′ ∈ J (Γ + g′r+ ). Since O(Γ) has a single element G Γ, by
+the above theorem, µΓ′ ≡ c · µΓ on Dr+ for some constant c.
+   Let fΓ ∈ Dr+ be the characteristic function supported on Γ + gx,r+ =
+Γ′ + gx,r+ . Then, we have µΓ (fΓ ) = volG/G′ (Gx,0+ G′ /G′ ) = µΓ′ (fΓ ). Hence,
+c = 1 and µΓ = µΓ′ on Dr+ .                                                    
+
+                                     References
+ 1. J. Adler, Refined anisotropic K-types and supercuspidal representations, Pacific J.
+    Math., 185, No. 1 (1998), pp.1-32.
+ 2. J. Adler and S. DeBacker, Some applications of Bruhat-Tits theory to harmonic anal-
+    ysis on the Lie algebra of a reductive p-adic group, Michigan Journal of Mathematics,
+    2002.
+ 3. J. Adler and A. Roche, An intertwining result for p-adic groups, Canad. J. Math. 52
+    (2000), no. 3, 449–467.
+ 4. S. DeBacker, Homogeneity results for invariant distributions of a reductive p-adic
+    group. Ann. Sci. École Norm. Sup. (4) 35 (2002), no. 3, 391–422.
+ 5. François Bruhat et Jacques Tits, Groupes réductifs sur un corps local. II. Schémas
+    en groupes. Existence d’une donnée radicielle valuée, Inst. Hautes Études Sci. Publ.
+    Math. No. 60 (1984), 197–376.
+ 6. R. Cluckers and F. Loeser, Fonctions constructibles et intégration motivique I, in
+    preparation.
+ 7. J. Denef, On the degree of Igusa’s local zeta function, Amer. J. Math. 109 (1987),
+    991-1008.
+ 8. J. Denef and F. Loeser, Germs of arcs on singular algebraic varieties and motivic
+    integration, Inventiones Mathematicae 135, 201-232 (1999).
+ 9. J. Denef, F. Loeser, Definable sets, motives, and p-adic integrals, Journal of the AMS,
+    14, No. 2, 429-469 (2001).
+50                 CLIFTON CUNNINGHAM AND THOMAS C. HALES
+
+10. J. Denef, F. Loeser, Motivic Integration and the Grothendieck Group of Pseudo-Finite
+    Fields, Proc. of the Int. Congress of Math. 2002. Vol II, 13–23, Higher Ed. Press,
+    Beijing.
+11. J. Denef, F. Loeser, One some rational generating series occuring in arithmetic geom-
+    etry, preprint math.NT/0212202.
+12. H. B. Enderton, A mathematical introduction to logic. Second edition. Harcourt/
+    Academic Press, Burlington, MA, 2001.
+13. M. D. Fried, M. Jarden, Field arithmetic. Ergebnisse der Mathematik und ihrer Gren-
+    zgebiete (3) [Results in Mathematics and Related Areas (3)], 11. Springer-Verlag,
+    Berlin, 1986.
+14. R. Goodman, N. R. Wallach, Representations and Invariants of the Classical Groups,
+    Encyclopedia of mathematics and its applications, v. 68, Cambridge University Press,
+    1998.
+15. J. Gordon and T. Hales, Virtual Transfer Factors, math.RT/0209001.
+16. M. Goresky, R. Kottwitz, and R. MacPherson, Purity of equivalued affine Springer
+    fibers, math.RT/0305141.
+17. M. Goresky, R. Kottwitz, and R. MacPherson, Homology of affine Springer fibers in
+    the unramified case, math.RT/0305144.
+18. T. C. Hales, A Simple Definition of Transfer Factors for Unramified Groups, Contem-
+    porary Math., 145, (1993) 109-134.
+19. T. C. Hales, Can p-adic integrals be computed?, math.RT/0205207, to appear.
+20. T. C. Hales, Orbital Integrals are Motivic, math.RT/0212236.
+21. Harish-Chandra, with notes by G. van Dijk, Harmonic analysis on reductive p-adic
+    groups, Lecture Notes in Mathematics 162, Springer 1970.
+22. J. Kim and F. Murnaghan, Character expansions and unrefined minimal K-types,
+    Amer. J. Math. 125 (2003), 1199–1234.
+23. J. Kim and F. Murnaghan, K-types and Γ-asymptotic expansions, preprint.
+24. Erasmus Landvogt, Some functorial properties of the Bruhat-Tits building, J. Reine
+    Angew. Math. 518 (2000), pp. 213–241.
+25. R. P. Langlands and D. Shelstad, On the definition of transfer factors, Math. Ann.
+    278 (1987), 219-271.
+26. G. Laumon, Sur le lemme fondamental pour les groupes unitaires, math.AG/0212245
+27. A. Moy and G. Prasad, Unrefined minimal K-types for p-adic groups, Invent. math.
+    116 (1994), pp. 393-408.
+28. J. Oesterlé, Réduction modulo pn des sous-ensembles analytiques fermés de ZN   p , Inv.
+    Math. 66, (1982) 325–341.
+29. J. Pas, Uniform p-adic cell decomposition and local zeta functions. J. Reine Angew.
+    Math. 399 (1989), 137–172.
+30. M. Presburger, Über die Vollständigkeit eines gewissen Systems der Arithmetik ganzer
+    Zahlen, in welchem die Addition als einzige Operation hervortritt, Comptes-rendus
+    du I Congrès des Mathématiciens des Pays Slaves, Warsaw, 1929, pp 92-101, 395.
+31. J.-P. Serre, Quelques applications du théorème de densité de Chebotarev, Inst. Hautes
+    Études Sci. Publ. Math., 54 (1981) 323-401.
+32. W. Veys, Reduction modulo pn of p-adic subanalytic sets, Math. Proc. Camb. Phil.
+    Soc. (1992), 112, 483.
+33. J.-L. Waldspurger, Intégrales orbitales nilpotentes et endoscopie pour les groupes clas-
+    siques non ramifiés. Astérisque No. 269 (2001).
+34. J.-L. Waldspurger, Endoscopie et changement de caractéristique, preprint 2/2004.
+35. J.-L. Waldspurger, Homogénéité de certaines distributions sur les groupes p-adiques.
+    Inst. Hautes Études Sci. Publ. Math. No. 81 (1995), 25–72.
+36. J.-L. Waldspurger, Une formule des traces locale pour les algèbres de Lie p-adiques. J.
+    Reine Angew. Math. 465 (1995), 41–99.
+                           GOOD ORBITAL INTEGRALS                                  51
+
+
+
+
+  Department of Mathematics, University of Calgary, Alberta, Canada, T2N
+1N4
+  E-mail address: cunning@math.ucalgary.ca
+
+  Department of Mathematics, University of Pittsburgh, Pittsburgh, PA
+15260
+  E-mail address: hales@pitt.edu
+
+
+
+
+   The research of the second author was supported in part by the NSF.
+   Copyright 2003, Clifton Cunningham and Thomas C. Hales. This work is licensed
+under the Creative Commons Attribution License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/1.0/ or send a letter to Creative Commons, 559
+Nathan Abbott Way, Stanford, California 94305, USA.
+

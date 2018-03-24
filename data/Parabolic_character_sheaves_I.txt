@@ -1,0 +1,1532 @@
+                                                             PARABOLIC CHARACTER SHEAVES, I
+arXiv:math/0302151v1 [math.RT] 12 Feb 2003
+
+
+
+
+                                                                                    G. Lusztig
+                                                            Dedicated to Pierre Cartier on the occasion of his 70th birthday
+
+
+
+                                                                                  Introduction
+                                             0.1. Let G be a connected reductive algebraic group over an algebraically closed
+                                             field k. Let Z be the variety (of the same dimension as G) consisting of all
+                                             pairs (P, gUP ) where P runs through a fixed conjugacy class P of parabolics of
+                                             G and gUP ∈ G/UP (UP is the unipotent radical of P ). Now G acts on Z by
+                                             h : (P, gUP ) 7→ (hP h−1 , hgh−1 UhP h−1 ). In this paper we study a class of simple
+                                             G-equivariant perverse sheaves on Z which we call ”parabolic character sheaves”.
+                                             In the case where P = {G}, these are the character sheaves on Z = G, in the
+                                             sense of [L3]. In general, they have several common properties with the character
+                                             sheaves: they are defined in arbitrary characteristic, and in the case where k is an
+                                             algebraic closure of a finite field Fq and G, P are defined over Fq ,
+                                                 (a) the characteristic functions of the parabolic character sheaves that are defined
+                                             over Fq form a basis of the space of G(Fq )-invariant functions on Z(Fq )
+                                             (under a mild assumption on the characteristic of k).
+                                             0.2. We now review the contents of this paper in more detail.
+                                                In Section 1 we describe a partition of a partial flag manifold of G (defined over
+                                             Fq ) into pieces that are G(Fq )-stable, generalizing the partition [DL] of the full flag
+                                             manifold. This partition has been considered by the author in 1977 (unpublished);
+                                             the associated combinatorics has been developed by Bédard [B] (see Section 2).
+                                             Although this partition is not needed in our theory of parabolic character sheaves,
+                                             it serves as motivation for it. In Section 3 we define a partition of Z into pieces
+                                             which is governed by the same combinatorics as that in Section 2. In Section 4 we
+                                             define the ”parabolic character sheaves” on Z in two apparently different ways.
+                                             The first one uses the partition of Z mentioned above and the usual notion of
+                                             character sheaf on a connected component of a possibly disconnected reductive
+                                             group. The second one imitates the definition of character sheaves in [L3]. One of
+                                             our main results is that these two definitions coincide (4.13, 4.16). In Section 4, we
+                                             define a map from the set of parabolic character sheaves on Z to the set of ”tame”
+
+                                                Supported in part by the National Science Foundation
+
+                                                                                                                     Typeset by AMS-TEX
+                                                                                           1
+2                                       G. LUSZTIG
+
+local systems on a maximal torus of G modulo the action of a certain subgroup of
+the Weyl group (this extends a known property of character sheaves). In Section
+5 we prove property 0.1(a). The main result of Section 6 is Corollary 6.8. This
+has the following consequence. Assume that G and P (in 0.1) are defined over
+Fq . Let ρ be the character of an irreducible representation of G(Fq ) over Q̄l . By
+summing ρ over each fibre of G(Fq ) − → (G/UP )(Fq ) for P ∈ P(Fq ), we obtain a
+G(Fq )-invariant function Z(Fq ) −→ Q̄l . We would like to express this function as
+a linear combination of a small number of elements in a fixed basis of the space
+of all G(Fq )-invariant functions on Z(Fq ). (Here ”small” means ”bounded by a
+number independent of q”.) The basis formed by the characteristic functions of
+the G(Fq )-orbits on Z(Fq ) does not have this property. However, the basis 0.1(a)
+defined by the parabolic character sheaves does have the required property (under
+a mild assumption) as a consequence of Corollary 6.8.
+0.3. The theory of parabolic character sheaves on Z continues to make sense with
+only minor modifications when G and P (with G simply connected) are replaced
+by G(k((x))), x an indeterminate, and a class of parahoric subgroups. (There is no
+known theory of character sheaves on G(k((x))) itself.) I believe that this theory
+is a necessary ingredient for establishing the (conjectural) geometric interpretation
+of affine Hecke algebras with unequal parameters proposed in [L8].
+
+                                        Contents
+    1.   A partition of a partial flag manifold.
+    2.   Results of Bédard.
+    3.   The variety ZJ,δ and its partition.
+    4.   Parabolic character sheaves on ZJ,δ .
+    5.   Central character.
+                                ′
+    6.   The functors fJJ′ , eJJ .
+    7.   Characteristic functions.
+
+                    1. A partition of a partial flag manifold
+1.1. For any affine connected algebraic group H let UH be the unipotent radical
+of H. Let G be as in 0.1. If P, Q are parabolics of G then so is
+                                     P Q = (P ∩ Q)UP
+and we have
+                                   U(P Q ) = UP (P ∩ UQ ).
+1.2. Assume now that k is an algebraic closure of the finite field Fq and that we
+are given an Fq -rational structure on G; let F : G −   → G be the corresponding
+Frobenius map. Let P be a conjugacy class of parabolics in G. To any Q ∈ P we
+attach a sequence of parabolics 0 Q ⊃ 1 Q ⊃ 2 Q ⊃ . . . by
+                                                   −1 n−1
+                       0                             (
+                           Q = Q, n Q = (n−1 Q)F            Q)
+                                                                 for n ≥ 1.
+                          PARABOLIC CHARACTER SHEAVES, I                                      3
+
+We say that Q, Q′ ∈ P are equivalent if for any n ≥ 0 there exists an element of G
+that conjugates n Q to n Q′ and F (n Q) to F (n Q′ ). The equivalence classes form a
+partition of P into finitely many GF -stable subvarieties, or ”pieces”. (In the case
+where P is the variety of Borels, the pieces above are precisely the subvarieties
+X(w) (see [DL, 1.4]) of the flag manifold.) In the general case, using results in
+[DL],[L2] one can show that each piece has Euler characteristic in 1 + qZ. Hence
+   (a) the number of pieces in P is equal to the Euler characteristic of P
+(at least for q ≫ 0). Based on this observation, around 1979, I asked R. Bédard
+(my Ph.D. student at the time) to find a combinatorial explanation for the equality
+(a). Bédard’s solution of this problem is reviewed in Section 2.
+1.3. Let V be a vector space of dimension n ≥ 2 over k (as in 1.2) with a fixed
+Fq -rational structure with corresponding Frobenius map F : V −     → V . Then G =
+GL(V ) is as in 1.2. We identify parabolics in G with partial flags in V in the
+usual way. Following [DL, 2.3] we partition the set of lines in V into locally
+subvarieties X1 , X2 , . . . , Xn where Xj is the set of all lines L in V such that
+dim(L + F (L) + F 2 (L) + . . . ) = j. The pieces Xj are special cases of the pieces in
+1.2.
+1.4. Let V be a vector space of dimension 2n ≥ 4 over k (as in 1.2) with a given
+non-degenerate symplectic form h, i : V × V −                → k and with a fixed Fq -rational
+structure with corresponding Frobenius map F : V −               → V such that hF (x), F (y)i =
+      q
+hx, yi for all x, y ∈ V . Then the symplectic group G = Sp(V ) is as in 1.2.
+We identify parabolics in G with partial isotropic flags in V in the usual way.
+Following [L1] we partition the set of lines in V into locally closed subvarieties
+X1 , X2 , . . . , Xn , Xn′ , . . . , X2′ , X1′ where Xj is the set of all lines L in V such that
+L + F (L) + F 2 (L) + . . . is an isotropic subspace of dimension j and Xj′ is the set
+of all lines L in V such that
+         hL, F (L)i = hL, F 2 (L)i = · · · = hL, F j−1 (L)i = 0, hL, F j (L)i =
+                                                                              6 0.
+The pieces Xj , Xj′ are special cases of the pieces in 1.2.
+
+                                 2. Results of Bédard
+2.1. Let W be a Coxeter group, let I be the set of simple reflections and let
+                                                ∼
+l:W −  → N be the length function. Let ǫ : W −→ W be a group isomorphism.
+   In this section we reformulate results of Bédard [B] in a more general setting.
+(In [B] it is assumed that W is finite and ǫ(I) = I; we do not assume this.)
+   If A, A′ are subsets of a group and g is an element of that group we set g A =
+Ad(g)A = gAg −1 , NA (A′ ) = {h ∈ A′ ; h A = A}.
+   For a subset X of W we write x = min(X) if x ∈ X and l(x) < l(x′ ) for all
+ ′
+x ∈ X − {x}. For J ⊂ I let WJ be the subgroup of W generated by J. For
+J, K ⊂ I let
+        K
+            W = {w ∈ W ; w = min(WK w)}, W J = {w ∈ W ; w = min(wWJ )},
+        K
+            W J = KW ∩ W J .
+4                                    G. LUSZTIG
+
+We recall three known results.
+                      ′       ′     −1
+   (a) If x ∈ K W K , u ∈ K ∩Ad(x )K W, u ∈ WK ′ , then xu ∈ K W and l(xu) =
+l(x) + l(u).
+                       ′
+   (b) If x ∈ K W K , x′ ∈ WK xWK ′ , x′ ∈ K W , then x′ = xu where u ∈ WK ′ ,
+      ′      −1
+u ∈ K ∩Ad(x )K W .
+                                                    ′           ′
+   (c) If x ∈ W K , x′ ∈ WK , K ′ ⊂ K, then x′ ∈ W K ⇔ xx′ ∈ W K .
+2.2. Let J, J ′ ⊂ I be such that ǫ(J) = J ′ . Let T (J, ǫ) be the set of all sequences
+(Jn , wn )n≥0 where Jn ⊂ I and wn ∈ W are such that
+
+(a)                           J = J0 ⊃ J1 ⊃ J2 ⊃ . . . ,
+
+
+(b)                 Jn = Jn−1 ∩ ǫ−1 Ad(wn−1 )Jn−1 , for n ≥ 1,
+
+
+(c)                          wn ∈ ǫ(Jn ) W Jn , for n ≥ 0,
+
+
+(d)                     wn ∈ Wǫ(Jn ) wn−1 WJn−1 , for n ≥ 1.
+
+2.3. In the setup of 2.2, let S(J, ǫ) be the set of all sequences (Jn , Jn′ , un )n≥0
+where Jn , Jn′ are subsets of I and un are elements of W such that
+
+(a)                           J = J0 ⊃ J1 ⊃ J2 ⊃ . . . ,
+
+
+(b)            ǫ(Jn ) = ǫ(Jn−1 ) ∩ Ad(u0 u1 . . . un−1 )Jn−1 , for n ≥ 1,
+
+
+(c)       J0′ = J ′ , Jn′ = Jn−1 ∩ Ad(u0 u1 . . . un−1 )−1 ǫ(Jn−1 ), for n ≥ 1,
+
+
+(d)                            un ∈ WJn−1 , for n ≥ 1,
+
+
+                                      ′
+(e)                           un ∈ Jn W Jn , for n ≥ 0.
+
+From (b),(c) we see that
+
+(f)                  ǫ(Jn ) = Ad(u0 u1 . . . un−1 )Jn′ , for n ≥ 1.
+                             PARABOLIC CHARACTER SHEAVES, I                                    5
+
+                                                                       ∼
+Proposition 2.4. There is a unique bijection S(J, ǫ) −→ T (J, ǫ) such that
+(Jn , Jn′ , un )n≥0 7→ (Jn , u0 u1 . . . un )n≥0 .
+                                                                   −1
+   Let (Jn , wn )n≥0 ∈ T (J, ǫ). For n ≥ 1 we set Jn′ = Jn−1 ∩ Ad(wn−1 )ǫ(Jn−1 ).
+                                       ′
+         ′      ′                     J0  J0
+We set J0 = J , u0 = w0 . Then u0 ∈ W . Let n ≥ 1. We can find v ∈ Wǫ(Jn−1 )
+such that v −1 wn ∈ ǫ(Jn−1 ) W . We have
+
+                v −1 wn ∈ Wǫ(Jn−1 ) wn−1 WJn−1 , wn−1 ∈ ǫ(Jn−1 ) W Jn−1 .
+
+Hence, by 2.1(b) and 2.1(a) we have v −1 wn = wn−1 un with un ∈ WJn−1 , un ∈
+  ′
+Jn
+    W , l(wn−1 un ) = l(wn−1 ) + l(un ). From 2.2(d) we deduce that vwn−1 ∈
+Wǫ(Jn ) wn−1 WJn−1 . From 2.2(b) we have Wǫ(Jn ) wn−1 ⊂ wn−1 WJn−1 hence vwn−1 ∈
+                                     −1
+wn−1 WJn−1 and v ∈ wn−1 WJn−1 wn−1      ∩Wǫ(Jn−1 ) = Wǫ(Jn ) . From v ∈ Wǫ(Jn ) , wn ∈
+ǫ(Jn )     −1       ǫ(Jn )
+       W, v wn ∈           W , we deduce that v = 1. Hence wn = wn−1 un . Let
+v ′ ∈ WJn . Since wn ∈ W Jn , we have
+
+      l(wn v ′ ) = l(wn ) + l(v ′ ) = l(wn−1 un ) + l(v ′ ) = l(wn−1 ) + l(un ) + l(v ′ ).
+
+Since wn−1 ∈ W Jn−1 and un v ′ ∈ WJn−1 , we have l(wn v ′ ) = l(wn−1 un v ′ ) =
+l(wn−1 ) + l(un v ′ ). Thus, l(wn−1 ) + l(un ) + l(v ′ ) = l(wn−1 ) + l(un v ′ ) hence
+                                                                            ′
+l(un ) + l(v ′ ) = l(un v ′ ). We see that un ∈ W Jn . Thus, un ∈ Jn W Jn and
+(Jn′ , Jn , un )n≥0 ∈ S(J, ǫ). Thus, we have a map T (J, ǫ) −
+                                                            → S(J, ǫ), (Jn , wn )n≥0 7→
+                                             −1
+(Jn , Jn′ , un )n≥0 where u0 = w0 , un = wn−1   wn for n ≥ 1. We now construct an
+inverse of this map. Let (Jn , Jn′ , un )n≥0 ∈ S(J, ǫ).
+                                                          ′
+    (a) For any 0 ≤ k ≤ n we have uk uk+1 . . . un ∈ Jk W and l(uk uk+1 . . . un ) =
+l(uk ) + l(uk+1 ) + · · · + l(un ).
+We use descending induction on k ∈ [0, n]. For k = n, (a) is clear. Assume now
+that k < n and that (a) is true when k is replaced by k + 1. We have
+                         ′                         ′                  −1
+                                                                           )Jk′
+                 uk ∈ Jk W Jk , uk+1 . . . un ∈ Jk+1 W = Jk ∩Ad(uk                W,
+
+uk+1 . . . un ∈ WJk and l(uk+1 . . . un ) = l(uk+1 ) + · · · + l(un ). Using 2.1(a) we
+                           ′
+deduce uk uk+1 . . . un ∈ Jk W and
+
+     l(uk uk+1 . . . un ) = l(uk ) + l(uk+1 . . . un ) = l(uk ) + l(uk+1 ) + · · · + l(un ).
+
+(a) is proved.
+                                               ′
+   (b) For any n ≥ 0 we have u0 u1 . . . un ∈ J W .
+This is a special case of (a).
+   (c) For any n ≥ 0 we have u0 u1 . . . un ∈ W Jn .
+We use induction on n. For n = 0, (c) is clear. Assume now that n > 0 and that
+(c) is true when n is replaced by n − 1. We have
+
+             u0 u1 . . . un−1 ∈ W Jn−1 , un ∈ W Jn , un ∈ WJn−1 , Jn ⊂ Jn−1 .
+6                                       G. LUSZTIG
+
+Using 2.1(c) we deduce u0 u1 . . . un−1 un ∈ W Jn . This proves (c).
+                                                ′
+    (d) For any n ≥ 0 we have u0 u1 . . . un ∈ J W Jn .
+This follows from (b) and (c).
+   (e) For any n ≥ 0 we have u0 u1 . . . un ∈ ǫ(Jn ) W Jn .
+This follows from (d) since ǫ(Jn ) ⊂ J0′ .
+                             → T (J, ǫ) by (Jn , Jn′ , un )n≥0 7→ (Jn , u0 u1 . . . un )n≥0 .
+   Using (e), define S(J, ǫ) −
+Clearly, we have defined two inverse bijections between S(J, ǫ), T (J, ǫ). The propo-
+sition is proved.
+Proposition 2.5. (Jn , Jn′ , un )n≥0 7→ u0 u1 . . . um for m ≫ 0 is a well defined
+                         ′
+                      → J W.
+bijection φ : S(J, ǫ) −
+  Let (Jn , wn )n≥0 ∈ T (J, ǫ). There exists n0 ≥ 1 such that Jn−1 = Jn for n ≥ n0 .
+For such n we have
+
+              wn ∈ ǫ(Jn ) W Jn , wn−1 ∈ ǫ(Jn ) W Jn , wn ∈ Wǫ(Jn ) wn−1 WJn
+
+hence wn = wn−1 . Thus, if (Jn , Jn′ , un )n≥0 ∈ S(J, ǫ) then for n ≫ 0 we have
+un = 1. Hence there is a well defined element w ∈ W such that w = u0 u1 . . . un
+                                       ′
+for n ≫ 0. By 2.4(d), we have w ∈ J W . Hence φ is a well defined map.
+   (a) For any n ≥ 0 we have u0 u1 . . . un = min(WJ ′ wWJn ).
+                                       ′
+By 2.4(d), we have u0 u1 . . . un ∈ J W Jn . Hence it suffices to show that w ∈
+u0 u1 . . . un WJn . Take N > n such that u0 u1 . . . uN = w. Then
+
+                            w = (u0 . . . un )un+1 un+2 . . . uN
+
+and it suffices to show that un+1 un+2 . . . uN ∈ WJn . This follows from
+
+           un+1 ∈ WJn , un+2 ∈ WJn+1 ⊂ WJn , . . . , uN ∈ WJN −1 ⊂ WJn .
+
+This proves (a).
+  We show that φ is a bijection. Assume that the images w, w̃ of
+
+                (Jn , Jn′ , un )n≥0 ∈ S(J, ǫ),   (J˜n , J˜n′ , ũn )n≥0 ∈ S(J, ǫ)
+
+under φ satisfy w = w̃. We show by induction on n ≥ 0 that
+    (b) Jk′ = J˜k′ , Jk = J˜k , uk = ũk for k ∈ [0, n].
+For n = 0 this holds since J0 = J˜0 = J, J0′ = J˜0′ = J ′ and u0 = ũ0 =
+min(WJ0′ wWJ0 ) (see (a)). Assume now that n > 0 and that (b) holds when n
+is replaced by n − 1. From 2.3(b),(c) we deduce that Jn = J˜n , Jn′ = J˜n′ . From (a)
+we have
+
+u0 u1 . . . un = min(WJ0′ wWJn ) = min(WJ0′ wWJ˜n ) = ũ0 ũ1 . . . ũn = u0 u1 . . . un−1 ũn
+
+hence un = ũn . Thus (b) holds. We see that (Jn , Jn′ , un )n≥0 = (J˜n , J˜n′ , ũn )n≥0 .
+Thus, φ is injective.
+                          PARABOLIC CHARACTER SHEAVES, I                                    7
+
+                                                ′
+   We define an inverse to φ. Let w ∈ J W . We define by induction on n ≥ 0 a
+sequence (Jn , Jn′ , un )n≥0 as follows. We set J0 = J, J0′ = J ′ , u0 = min(WJ0′ wWJ0 ).
+Assume that n > 0 and that Jk′ , Jk , uk are defined for k ∈ [0, n − 1]. We define
+subsets Jn , Jn′ of Jn−1 by
+                       ǫ(Jn ) = ǫ(Jn−1 ) ∩ Ad(u0 u1 . . . un−1 )Jn−1 ,
+                       Jn′ = Jn−1 ∩ Ad(u0 u1 . . . un−1 )−1 ǫ(Jn−1 )
+and we define un by u0 u1 . . . un = min(WJ ′ wWJn ). This completes the inductive
+definition. Using ǫ(Jn−1 ) ⊂ J ′ , we see that
+(c)                      Jn′ ⊂ Ad(u0 u1 . . . un−1 )−1 J ′ for n ≥ 1.
+We show that
+(d)                               un ∈ WJn−1 for n ≥ 1.
+Now u0 u1 . . . un ∈ WJ ′ wWJn ⊂ WJ ′ wWJn−1 and u0 u1 . . . un−1 = min(WJ ′ wWJn−1 ).
+                            ′
+Moreover, u0 u1 . . . un ∈ J W . By 2.1(b) we have u0 u1 . . . un = (u0 u1 . . . un−1 )u
+with                                                           −1 ′
+                       u ∈ WJn−1 , u ∈ Jn−1 ∩Ad(u0 u1 ...un−1 ) J W.
+Thus u = un and (d) follows. We show by induction on n ≥ 0 that
+                                                ′
+(e)                                     un ∈ Jn W Jn .
+For n = 0 this is clear. Assume now that n > 0 and that (e) holds when
+n is replaced by n − 1. By the argument in the proof of (d) we have un ∈
+Jn−1 ∩Ad(u0 u1 ...un−1 )−1 J ′
+                               W . Since Jn′ ⊂ Jn−1 , we see from (c) that
+                           Jn′ ⊂ Jn−1 ∩ Ad(u0 u1 . . . un−1 )−1 J ′ .
+                ′
+Hence un ∈ Jn W . Now
+      u0 u1 . . . un−1 ∈ W Jn−1 , un ∈ WJn−1 , (u0 u1 . . . un−1 )un ∈ W Jn , Jn ⊂ Jn−1 .
+                                                                                   ′
+Using 2.1(c) we deduce that un ∈ W Jn . Combining this with un ∈ Jn W gives
+        ′
+un ∈ Jn W Jn . Thus (e) is established. We see that (Jn , Jn′ , un )n≥0 ∈ S(J, ǫ). We
+show that
+   (f) if n ≫ 0, then u0 u1 . . . un = w.
+                                                                          ′
+For any n ≥ 0 we have u0 u1 . . . un = min(WJ ′ wWJn ). Also, w ∈ J W . Using
+2.1(b) we have w = (u0 u1 . . . un )u with
+                                                            −1
+                                                                 J′
+                           u ∈ WJn , u ∈ Jn ∩Ad(u0 u1 ...un )         W.
+                                                                               ′
+                   ′
+By (c), we have Jn+1    ⊂ Jn ∩ Ad(u0 u1 . . . un )−1 J ′ . Hence u ∈ Jn+1 W . Now
+  ′
+Jn+1   ⊂ Jn . Assuming that n ≫ 0, we have Jn = Jn+1 . From 2.3(f) we see that
+    ′                    ′                                     ′
+♯Jn+1 = ♯Jn+1 , hence ♯Jn+1   = ♯Jn . Hence the inclusion Jn+1    ⊂ Jn must be an
+                           Jn
+equality. We see that u ∈ W . This, combined with u ∈ WJn implies u = 1 and
+                                       ′
+proves (f). Thus, we have defined ψ : J W − → S(J, ǫ) such that φψ = 1. Hence φ
+is bijective.
+8                                       G. LUSZTIG
+
+2.6. Let (Jn , Jn′ , un )n≥0 ∈ S(J, ǫ) and let w be its image under φ. For n ≫ 0 we
+have u0 u1 . . . un−1 = w hence Ad(w)Jn′ = ǫ(Jn ). By the proof of 2.5(f), for n ≫ 0
+we have also Jn = Jn′ = Jn+1 = Jn+1    ′
+                                           = . . . . Thus there is a well defined subset
+                              ′
+J∞ of J such that Jn = Jn = J∞ for n ≫ 0 and Ad(w)J∞ = ǫ(J∞ ).
+2.7. Let G be as in 0.1. Let B be the variety of Borel subgroups of G. Let W be
+the set of G-orbits on B × B (G acts by conjugation on both factors). Then W is
+naturally a finite Coxeter group; let I be the set of simple reflections (the G-orbits
+of dimension dim B + 1). For B, B ′ ∈ B, w ∈ W we write pos(B, B ′ ) = w if the
+G-orbit of (B, B ′ ) is w. If P is a parabolic of G, the set of all w ∈ W such that
+w = pos(B, B ′ ) for some B, B ′ ∈ B, B ⊂ P, B ′ ⊂ P , is of the form WJ (as in 2.1)
+for a well defined subset J ⊂ I. We then say that P has type J. For J ⊂ I, let
+PJ be the set of all parabolics of type J of G.
+   For P ∈ PJ , Q ∈ PK there is a well defined element u = pos(P, Q) ∈ J W K
+such that pos(B, B ′ ) ≥ u (standard partial order on W ) for any B, B ′ ∈ B, B ⊂
+P, B ′ ⊂ Q and pos(B1 , B1′ ) = u for some B1 , B1′ ∈ B, B1 ⊂ P, B1′ ⊂ Q; we then
+have B1 ⊂ P Q , B1′ ⊂ QP . We have
+
+(a)                                  P Q ∈ PJ∩Ad(u)K .
+
+Now (P, Q) 7→ u defines a bijection between the set of G-orbits on PJ × PK and
+J
+ W K.
+2.8. Let G, F be as in 1.2. Let W, I be as in 2.7. The bijection δ : W −  → W
+induced by F : G −→ G satisfies δ(I) = I. Let J ⊂ I. We show that the pieces of
+PJ defined in 1.2 are naturally indexed by T (J, δ).
+   Let Q ∈ PJ . To Q we associate a sequence (Jn , wn )n≥0 with Jn ⊂ I, wn ∈ W
+and a sequence (n Q)n≥0 with n Q ∈ PJn . We set
+                       0
+                           Q = Q, J0 = J, w0 = pos(F (0 Q), 0 Q).
+
+Assume that n ≥ 1, that m Q, Jm , wm are already defined for m < n and that
+wm = pos(F (m Q), m Q), m Q ∈ PJm for m < n. Let
+
+                             Jn = Jn−1 ∩ δ −1 Ad(wn−1 )Jn−1 ,
+                                                −1 n−1
+                             n                    (
+                                 Q = (n−1 Q)F            Q)
+                                                              ∈ PJn ,
+                           wn = pos(F (n Q), n Q) ∈ δ(Jn ) W Jn .
+This completes the inductive definition. From Lemma 3.2(c) (with P, P ′ , Z re-
+placed by n−1 Q, F (n−1 Q), n Q) we see that wn ∈ wn−1 WJn−1 for n ≥ 1. Thus,
+(Jn , wn )n≥0 ∈ T (J, δ). Thus, Q 7→ (Jn , wn )n≥0 is a map PJ −
+                                                               → T (J, δ). The fibre
+                                            t              t
+of this map at t ∈ T (J, δ) is denoted by PJ . Clearly, ( PJ )t∈T (J,δ) is a partition
+of PJ into locally closed subvarieties (the same as in 1.2). The GF -action on PJ
+given by h : Q 7→ h Q preserves each of the pieces t PJ .
+                       PARABOLIC CHARACTER SHEAVES, I                                 9
+
+                    3. The variety ZJ,δ and its partition
+3.1. Let G be as in 0.1. Let W, I be as in 2.7. Let Ĝ be a possibly disconnected
+reductive algebraic group over k with identity component G and let G1 be a fixed
+                                                                  ∼
+connected component of Ĝ. There is a unique isomorphism δ : W −→ W such that
+δ(I) = I and
+                        P ∈ PJ , g ∈ G1 =⇒ g P ∈ Pδ(J) .
+
+Let P ∈ PJ , Q ∈ PK , u = pos(P, Q). We say that P, Q are in good position if they
+have a common Levi or, equivalently, if Ad(u−1 )(J) = K. In this case we have
+P Q = P, QP = Q.
+   We fix J ⊂ I.
+Lemma 3.2. Let P ∈ PJ , P ′ ∈ PJ ′ , J ′ ⊂ I. Let a = pos(P ′ , P ). Let X =
+              ′
+P ′P , Y = P P and let Z be a parabolic subgroup of P . Let b = pos(Y, Z).
+   (a) Let Y ′ be a parabolic subgroup of P of the same type as Y such that X, Y ′
+are in good position and pos(X, Y ′ ) = a. Then Y ′ = Y = P X .
+   (b) X contains a Levi of Y ∩ Z.
+   (c) pos(X, Z) = ab.
+            Z
+   (d) X (Y ) = X Z .
+   We prove (a). Since X, Y ′ are in good position, for any Borel B ′ in Y ′ there
+exists a Borel B in X such that pos(B, B ′ ) = a. Since pos(X, P ) = a and B ′ ⊂ P
+we have B ′ ⊂ P X . Since Y ′ is the union of its Borels, we have Y ′ ⊂ P X . Now Y ′ is
+of type J∩Ad(a−1 )J ′ , and P X is of type J∩Ad(a−1 )(J ′ ∩Ad(a)J) = J∩Ad(a−1 )J ′ .
+Thus Y ′ , P X have the same type, hence Y ′ = P X . Replacing in this argument Y ′
+by Y we obtain Y = P X .
+                                                                                ′
+   We prove (b). Since Z ⊂ P we have UP ⊂ Z. Hence Y ∩ Z = P P ∩ Z =
+((P ∩ P ′ )UP ) ∩ Z = (P ∩ P ′ ∩ Z)UP . Now UP ⊂ UY ∩Z . Hence if L is a Levi of
+P ∩ P ′ ∩ Z then L is a Levi of Y ∩ Q. Now L ⊂ P ∩ P ′ ⊂ X.
+   We prove (c). Let ã = pos(X, Z). We have X ∈ PK with K = J ′ ∩ Ad(a)J.
+                 ′
+We have a ∈ J W J and K ⊂ J ′ hence a ∈ K W J . From the definition of ã we
+have ã ∈ K W . Since Z ⊂ P , we have ã ∈ WK aWJ . Using 2.1(c) with x, x′
+replaced by a, ã, we see that ã = av with v ∈ WJ . Let B, B ′ ∈ B be such that
+B ⊂ X, B ′ ⊂ Z, pos(B, B ′ ) = ã. Since a ∈ W J , we have l(av) = l(a) + l(v)
+and there is a unique B ′′ ∈ B such that pos(B, B ′′ ) = a, pos(B ′′ , B ′ ) = v. Since
+B ′ ⊂ P and pos(B ′′ , B) ∈ WJ , we have B ′′ ⊂ P . Since B ⊂ P ′ , B ′′ ⊂ P and
+                                                     ′
+pos(B, B ′′ ) = pos(P ′ , P ) = a, we have B ′′ ⊂ P P = Y . Since B ′′ ⊂ Y, B ′ ⊂ Z, we
+have v ≥ b. We can find B1 , B2 ∈ B such that B1 ⊂ Y , B2 ⊂ Z, pos(B1 , B2 ) = b.
+                                         ′
+Since pos(P ′ , P ) = a and B1 ⊂ P P , we can find B0 ∈ B such that B0 ⊂ P ′ ,
+pos(B0 , B1 ) = a. Since a ∈ W J , b ∈ WJ , we have pos(B0 , B2 ) = ab. We have
+B0 ⊂ P ′P = X, B2 ⊂ Z hence pos(B0 , B2 ) ≥ pos(X, Z), that is, ab ≥ ã = av.
+Thus, we have v ≥ b and ab ≥ av. Since a ∈ W J and b, v ∈ WJ we have b = v.
+Thus, ã = ab.
+10                                        G. LUSZTIG
+
+   We prove (d). Let B be a Borel in X Z . Using (c), we can find a Borel B ′ in Z
+such that pos(B, B ′ ) = ab. Let B ′′ be the unique Borel such that pos(B, B ′′ ) = a,
+pos(B ′′ , B ′ ) = b. Now B ′′ ⊂ P since B ′ ⊂ P and pos(B ′′ , B ′ ) = b ∈ WJ . Since
+pos(X, P ) = pos(B, B ′′ ) = a, we have B ′′ ⊂ P X hence B ′′ ⊂ Y (see (a)). Since
+pos(Y, Z) = pos(B ′′ , B ′ ) = b, we have B ′′ ⊂ Y Z . Since B ⊂ X, B ′′ ⊂ Y Z and
+pos(B, B ′′ ) = a = pos(P ′ , P ) where X ⊂ P ′ , Y Z ⊂ P , we have pos(B, B ′′ ) =
+                                       Z
+a = pos(X, Y Z ). Hence B ⊂ X (Y ) . Thus any Borel in X Z is contained in
+    Z                                                                 Z
+X (Y ) . Since X Z is the union of its Borels, we have X Z ⊂ X (Y ) . To show that
+                Z                                   Z
+X Z = X (Y ) , it suffices to show that X Z , X (Y ) have the same type, or that
+K ∩ Ad(ab)K ′′ = K ∩ Ad(a)(K ′ ∩ Ad(b)K ′′ ) (where X, Y, Z are of type K, K ′ , K ′′ )
+or that Ad(a)K ′ = K which follows from K = J ′ ∩ Ad(a)J, K ′ = J ∩ Ad(a−1 )J ′ .
+The lemma is proved.
+3.3. For (P, P ′ ) ∈ PJ × Pδ(J) ,
+
+                               A(P, P ′ ) = {g ∈ G1 ; g P = P ′ }
+
+is a single P -orbit (resp. P ′ -orbit) for right (resp. left) translation on G. Let ZJ,δ
+be the set of all triples (P, P ′ , g) where P ∈ PJ , P ′ ∈ Pδ(J) , g ∈ A(P, P ′ ).
+   Let (P, P ′ , g) ∈ ZJ,δ ; let z = pos(P ′ , P ). Let J1 = J ∩ δ −1 Ad(z)(J). We set
+
+                        P 1 = g −1 P ′P g ∈ PJ1 , P ′1 = P ′P ∈ Pδ(J1 ) .
+
+We write (P 1 , P ′1 ) = α′ (P, P ′ , g). We have (P 1 , P ′1 , g) ∈ ZJ1 ,δ . We have P 1 ⊂
+P, P ′1 ⊂ P ′ and, by Lemma 3.2(c) (with Z = P 1 ), we have pos(P ′1 , P 1 ) ∈ zWJ .
+Lemma 3.4. Let g, g ′ ∈ A(P, P ′ ), u′ ∈ UP ′ , u ∈ UP be such that g ′ = u′ gu. Then
+  (a) g ′ = u′1 gu1 where u′1 ∈ UP ′ 1 , u1 ∈ UP 1 ;
+  (b) we have α′ (P, P ′ , g ′ ) = (P 1 , P ′1 ).
+    To prove (a), we may assume that u′ = 1 (since UP ′ g = gUP ). Since P 1 ⊂ P ,
+we have UP ⊂ UP 1 hence g ′ ∈ gUP 1 . This proves (a). To prove (b), we may
+assume that u = 1 (since UP ′ g = gUP ). Since UP ′ ⊂ P ′P , we have u′ ∈ P ′P hence
+g ′−1            −1 ′ −1
+      (P ′P ) = g (u (P ′P )) = P 1 . The lemma is proved.
+Lemma 3.5. Let g, g ′ ∈ A(P, P ′ ). Assume that α′ (P, P ′ , g) = α′ (P, P ′ , g ′ ) =
+(P 1 , P ′1 ) and that g ′ ∈ UP ′1 g = gUP 1 . There exist x ∈ UP ∩ P ′ , w′ ∈ UP ′ such
+that g ′ = w′ xg.
+   We have g ′ = u′ g where u′ ∈ UP ′P . We have u′ = w′ x where w′ ∈ UP ′ ,
+x ∈ UP ∩ P ′ . Hence g ′ = w′ xg.
+Lemma 3.6. Let z ∈ δ(J) W J , J1 = J ∩ δ −1 Ad(z)(J). Let
+    ∗
+  ZJ,δ   = {(P, P ′ , g) ∈ ZJ,δ ; pos(P ′ , P ) = z},
+  ZJ†1 ,δ = {(Q, Q′ , g) ∈ ZJ1 ,δ ; pos(Q, Q′ ) ∈ zWJ }.
+            ∗
+Define f : ZJ,δ → ZJ†1 ,δ by (P, P ′ , g) 7→ (P 1 , P ′1 , g) where (P 1 , P ′1 ) = α′ (P, P ′ , g).
+                −
+Then f is an isomorphism.
+                        PARABOLIC CHARACTER SHEAVES, I                                11
+
+    We show only that f is bijective. For (P, P ′ , g) 7→ ZJ,δ  ∗
+                                                                  , P (resp. P ′ ) is the
+unique parabolic of type J (resp. δ(J)) that contains P 1 (resp. P ′1 ). Hence
+f is injective. We show that f is surjective. Let (Q, Q′ , g) ∈ ZJ†1 ,δ . Let P
+(resp. P ′ ) be the unique parabolic of type J (resp. δ(J)) that contains Q (resp.
+Q′ ). Clearly, pos(P ′ , P ) = z and g P = P ′ . It suffices to show that P ′P = Q′ .
+We have pos(Q′ , Q) = zu where u ∈ WJ . We can find B, B ′ ∈ B such that
+B ⊂ Q, B ′ ⊂ Q′ , pos(B ′ , B) = zu. Since l(zu) = l(z) + l(u), we can find B ′′ ∈ B
+such that pos(B ′ , B ′′ ) = z, pos(B ′′ , B) = u. Since u ∈ WJ and B ⊂ P , we have
+B ′′ ⊂ P . Since B ′ ⊂ P ′ , B ′′ ⊂ P , pos(B ′ , B ′′ ) = z, we have B ′ ⊂ P ′P . Since
+Q′ , P ′P are in Pδ(J1 ) and both contain B ′ , we have Q′ = P ′P . The lemma is
+proved.
+3.7. We fix z ∈ δ(J) W J . Let J1 = J ∩ δ −1 Ad(z)J. Let (Q, Q′ , γ1 ) ∈ ZJ1 ,δ be
+such that pos(Q′ , Q) ∈ zWJ . Let F be the set of all (P, P ′ , γ) ∈ ZJ,δ such that
+pos(P ′ , P ) = z, γ ⊂ γ1 and α′ (P, P ′ , g) = (Q, Q′ ) for some/any g ∈ γ (see 3.4).
+(Note that P, P ′ are uniquely determined by Q, Q′ .) By Lemma 3.6 we have F =   6 ∅.
+Lemma 3.8. Let (P, P ′ , γ) ∈ F . Let g ∈ γ. Then v 7→ (P, P ′ , UP ′ vgUP ) is a well
+defined, surjective map κ : UP ∩ P ′ −
+                                     → F,
+   Let (P, P ′ , γ ′ ) ∈ F . Let g ′ ∈ γ ′ . By Lemma 3.5 there exist v ∈ UP ∩ P ′ ,
+w′ ∈ UP ′ such that g ′ = w′ vg. Then γ ′ = UP ′ vgUP . The lemma is proved.
+Lemma 3.9. In the setup of Lemma 3.8, the following two conditions for v, v ′ in
+UP ∩ P ′ are equivalent:
+  (i) κ(v) = κ(v ′ );
+  (ii) v ′ = dv for some d ∈ UP ∩ UP ′ .
+   Assume that (i) holds. We have vg ∈ UP ′ v ′ gUP = UP ′ v ′ UP ′ g hence v ∈
+UP ′ v ′ UP ′ = UP ′ v ′ . Thus, v ′ = dv where d ∈ UP ′ and we have automatically
+d ∈ UP ∩ UP ′ . Thus, (ii) holds. The converse is immediate.
+                                                                     ∼
+3.10. We see that κ defines a bijection (UP ∩UP ′ )\(UP ∩P ′ ) −→ F . One can check
+that this is an isomorphism of algebraic varieties. Since UP ∩ P ′ is a connected
+unipotent group and UP ∩ UP ′ is a connected closed subgroup of it, we see that
+   (a) F is isomorphic to an affine space of dimension dim((UP ∩ UP ′ )\(UP ∩ P ′ )).
+3.11. To any (P, P ′ , g) ∈ ZJ,δ we associate a sequence (Jn , wn )n≥0 with Jn ⊂ I,
+wn ∈ W and a sequence (P n , P ′n , g)n≥0 with (P n , P ′n , g) ∈ ZJn ,δ . We set
+
+                    P 0 = P, P ′0 = P ′ , J0 = J, w0 = pos(P ′0 , P 0 ).
+
+Assume that n ≥ 1, that P m , P ′m , Jm , wm are already defined for m < n and that
+wm = pos(P ′m , P m ), P m ∈ PJm , P ′m = g P m for m < n. Let
+
+                          Jn = Jn−1 ∩ δ −1 Ad(wn−1 )(Jn−1 ),
+12                                              G. LUSZTIG
+
+                                       n−1                                   n−1
+           P n = g −1 (P ′n−1 )P             g ∈ PJn ,   P ′n = (P ′n−1 )P          ∈ Pδ(Jn ) ,
+                                  wn = pos(P ′n , P n ) ∈ δ(Jn ) W Jn .
+This completes the inductive definition. From Lemma 3.2(c) (with P, P ′ , Z re-
+placed by P n−1 , P ′n−1 , P n ) we see that wn ∈ wn−1 WJn−1 for n ≥ 1. Thus,
+(Jn , wn )n≥0 ∈ T (J, δ). We write (Jn , wn )n≥0 = β ′ (P, P ′ , g). For t ∈ T (J, δ) let
+                         t
+                             ZJ,δ = {(P, P ′ , g) ∈ ZJ,δ ; β ′ (P, P ′ , g) = t},
+           t
+               ZJ,δ = {(P, P ′ , γ) ∈ ZJ,d ; β ′ (P, P ′ , g) = t for some/any g ∈ γ}.
+(The equivalence of ”some/any” follows from Lemma 3.4.) Clearly, (t ZJ,δ )t∈T (J,δ)
+is a partition of ZJ,δ into locally closed subvarieties and (t ZJ,δ )t∈T (J,δ) is a par-
+tition of ZJ,δ into locally closed subvarieties. The G-action on ZJ,δ given by
+h : (P, P ′ , g) 7→ (h P, h P ′ , h γ) preserves each of the pieces t ZJ,δ . Similarly, the nat-
+ural action of G on ZJ,δ preserves each of the pieces t ZJ,δ . Clearly, (P, P ′ , g) 7→
+(P 1 , P ′1 , g) is a morphism ϑ′ : t ZJ,δ −      → t1 ZJ1 ,δ where for t = (Jn , wn )n≥0 ∈
+                     1
+T (J, δ) we set t = (Jn , wn )n≥1 ∈ T (J1 , δ); it induces a morphism
+                                          ϑ : t ZJ,δ −
+                                                     → t1 ZJ1 ,δ .
+Lemma 3.12. (a) The morphism ϑ′ : t ZJ,δ −      → t1 ZJ1 ,δ is an isomorphism.
+  (b) The morphism ϑ : t ZJ,δ −  → t1 ZJ1 ,δ is an affine space bundle with fibres of
+dimension dim((UP ∩ UP ′ )\(UP ∩ P ′ )) where (P, P ′ , γ) is any triple in t ZJ,δ .
+  (c) Consider the map ϑ̄ from the set of G-orbits on t ZJ,δ to the set of G-orbits
+on t1 ZJ1 ,δ induced by ϑ. Then ϑ̄ is a bijection.
+   (a) follows from Lemma 3.6. We prove (b). Now dim((UP ∩ UP ′ )\(UP ∩ P ′ )) in
+(b) is independent of the choice of (P, P ′ , γ); it depends only on pos(P, P ′ ) which
+is constant on t ZJ,δ . From 3.10(a) we see that each fibre of ϑ is an affine space of
+the indicated dimension. The verification of local triviality is omitted.
+   We prove (c). Since ϑ is surjective (see (b)) and G-equivariant, ϑ̄ is well defined
+and surjective. We show that ϑ̄ is injective. Let (P, P ′ , γ), (P̃ , P̃ ′ , γ̃) be two triples
+in t ZJ,δ whose images under ϑ are in the same G-orbit; we must show that these
+two triples are in the same G-orbit. Since ϑ is G-equivariant, we may assume that
+ϑ(P, P ′ , γ) = ϑ(P̃ , P̃ ′ , γ̃) = (Q, Q′ , γ1 ) ∈ t1 ZJ1 ,δ . Define F in terms of (Q, Q′ , γ1 )
+as in 3.7. Then (P, P ′ , γ) ∈ F , (P̃ , P̃ ′ , γ̃) ∈ F . Since P, P̃ are parabolics of
+the same type containing Q we have P = P̃ . Since P ′ , P̃ ′ are parabolics of the
+same type containing Q′ we have P ′ = P̃ ′ . Let g ∈ γ. By Lemma 3.8, we have
+γ̃ = UP ′ vgUP for some v ∈ UP ∩ P ′ . We have also P̃ = v P (since v ∈ P ), P̃ ′ = v P ′
+(since v ∈ P ′ ),
+                    γ̃ = UP ′ vgUP = vUP ′ gUP = vUP ′ gUP v −1 = vγv −1
+(since v normalizes UP ′ and v ∈ UP ). Thus, (P̃ , P̃ ′ , γ̃) is obtained by the action
+of v ∈ G on (P, P ′ , γ), hence (P̃ , P̃ ′ , γ̃) is in the G-orbit of (P, P ′ , γ). The lemma
+is proved.
+                           PARABOLIC CHARACTER SHEAVES, I                                 13
+
+Lemma 3.13. Let t = (Jn , wn )n≥0 ∈ T (J, δ). Then t ZJ,δ is an iterated affine
+space bundle over a fibre bundle over PJn with fibres isomorphic to P/UP where
+P ∈ PJn (n ≫ 0). In particular, t ZJ,δ 6= ∅.
+   Assume first that t is such that Jn = J for all n and wn = w for all n (here
+w ∈ W ). In this case, t ZJ,δ is the set of all (P, P ′ , γ) where P ∈ PJ , P ′ ∈ Pδ(J) ,
+pos(P ′ , P ) = w, P ′ , P are in good position, γ ∈ UP ′ A(P, P ′ )/UP . (The associated
+sequence P n , P ′n is in this case P n = P, P ′n = P ′ .) Thus, in this case, t ZJ,δ is a
+locally trivial fibration over PJ with fibres isomorphic to P/UP for P ∈ PJ so the
+lemma holds.
+   We now consider a general t. For any r ≥ 0 let
+
+                                  tr = (Jn , wn )n≥r ∈ T (Jr , δ).
+
+By 3.12(b) we have a sequence of affine space bundles
+                             t
+(a)                                   → t1 ZJ1 ,δ −
+                                 ZJ,δ −           → t2 ZJ2 ,δ −
+                                                              → ...
+                   tr
+where for r ≫ 0,        ZJr ,δ is as in the first part of the proof. The lemma follows.
+3.14. In the setup of 3.13, the maps in 3.13(a) induces bijections on the sets
+of G-orbits (see 3.12(c)). Thus we obtain a canonical bijection between the set
+of G-orbits on t ZJ,δ and the set of G-orbits on tr ZJr ,δ where r is chosen large
+enough so that Jr = Jr+1 = . . . , and wr = wr+1 = · · · = w. This last set of
+orbits is canonically the set of (P ∩ P ′ )-orbits on UP ′ \A(P, P ′ )/UP where P ∈
+PJr , P ′ ∈ Pδ(Jr ) and pos(P ′ , P ) = w (good position). Let Lt be a common
+Levi of P, P ′ . Then Ct = {g ∈ G1 ; g Lt = Lt , pos(g P, P ) = w} is a connected
+                                                              ∼
+component of NĜ (Lt ). Under the obvious bijection Ct −→ UP ′ \A(P, P )/UP , the
+conjugation action of Lt on Ct corresponds to the conjugation action of P ∩ P ′
+on UP ′ \A(P, P ′ )/UP . Thus we obtain a canonical bijection between the set of G-
+orbits on t ZJ,δ and the set of Lt -conjugacy classes in Ct (a connected component of
+an algebraic group with identity component Lt ). Putting together these bijections
+we obtain a bijection
+                               G\ZJ,δ ↔ ⊔t∈T (J,δ) Lt \Ct
+where G\ZJ,δ is the set of G-orbits on ZJ,δ and Lt \Ct is the set of Lt -orbits on
+Ct (for the conjugation action).
+
+                   4. Parabolic character sheaves on ZJ,δ
+4.1. Our notation for perverse sheaves follows [BBD]. For an algebraic variety X
+over k we write D(X) instead of Dcb (X, Q̄l ); l is a fixed prime number invertible
+in k. If f : X −
+               → Y is a smooth morphism with connected fibres of dimension d,
+and K is a perverse sheaf on Y , we set f˜(K) = f ∗ (K)[d], a perverse sheaf on X.
+If K ∈ D(X) and A is a simple perverse sheaf on X we write A ⊣ K instead of ”A
+is a composition factor of p H i (K) for some i ∈ Z”.
+14                                         G. LUSZTIG
+
+   We preserve the setup of 3.1. Let J ⊂ I. Let B ∗ be a Borel of G and let
+T be a maximal torus of B ∗ . Let N 1 = {n ∈ G1 ; nT n−1 = T }. The map
+                                                                     ∼
+N1 −→ W, n 7→ pos(B ∗ , n B ∗ ) induces a bijection T \N 1 = N 1 /T −→ W ; let Nx1 be
+the T -coset in N 1 corresponding to x ∈ W . We choose ẋ ∈ Nx1 . For x ∈ W we
+define a morphism of algebraic varieties αx : UB∗ Nx1 UB∗ −  → Nx1 by αx (unu′ ) = n
+        ′              1
+for u, u ∈ UB∗ , n ∈ Nx . Consider the diagram
+
+                                       φ       ρ      π
+                                 Nx1 ←
+                                     − Ŷx −
+                                           → Yx −
+                                                → ZJ,δ
+
+where
+                       Yx = {(B, B ′ , g) ∈ Z∅,δ ; pos(B, B ′ ) = x},
+
+               Ŷx = {(hUB∗ , g) ∈ G/UB∗ × G1 ; h−1 gh ∈ UB∗ Nx1 UB∗ },
+              ρ(hUB∗ , g) = (h B ∗ , gh B ∗ , g),   φ(hUB∗ , g) = αx (h−1 gh),
+                    π(B, B ′ , g) = (P, P ′ , UP ′ gUP ), B ⊂ P, B ′ ⊂ P ′ .
+Let S(T ) be the set of isomorphism classes of Q̄l -local systems L of rank 1 on T
+such that L⊗m ∼  = Q̄l for some integer m ≥ 1 invertible in k. For L ∈ S(T ) let
+WL = {x ∈ W ; Ad(ẋ∗ )L ∼
+   1
+                           = L}. (We have Ad(ẋ) : T −   → T .) Let L ∈ S(T ), x ∈ WL1 .
+The inverse image Lẋ of L under Nx −    1
+                                           → T, n 7→ ẋ−1 n, is a T -equivariant local
+system on Nx1 for the conjugation action of T on Nx1 . Now T acts on Ŷx by
+t : (x, g) 7→ (xt−1 , g) and on Yx , trivially. The T -actions are compatible with
+φ, ρ, π. Since Lẋ is T -equivariant, φ∗ Lẋ is a T -equivariant local system on Ŷx ; it
+is of the form ρ∗ L̃ for a well defined local system L̃ on Yx , since ρ is a principal
+T -bundle. We set
+                                 KxL = π! L̃ ∈ D(ZJ,δ ).
+Let L̂ be the simple perverse sheaf on Z∅,δ whose support is the closure of Yx and
+whose restriction to Yx is a shift of L̃. Let K̄xL = π̂! L̂ where π̂ : Z∅,δ −
+                                                                            → ZJ,δ is
+given by the same formula as π.
+   Occasionally we shall write ♠ for a local system of type L̃ (as above) on Yx or
+on a subvariety of Yx .
+4.2. Let x = (x1 , x2 , . . . , xr ) be a sequence in W , let x = x1 x2 . . . xr and let
+
+ Yx ={(B0 , B1 , . . . , Br , g) ∈ B × B × . . . × B × G1 ; pos(Bi−1 , Bi ) = xi , i ∈ [1, r],
+        Br = g B0 }.
+
+Define πx : Yx −→ ZJ,δ by (B0 , B1 , . . . , Br , g) 7→ (Q, Q′ , g) where Q ∈ PJ , Q′ ∈
+Pδ(J) are given by B0 ⊂ Q, Br ⊂ Q′ . Let
+
+     Ŷx = {(h0 UB∗ , h1 B ∗ , . . . , hr B ∗ , g) ∈ G/UB∗ × G/B ∗ × . . . × G/B ∗ × G1 ;
+        h−1        ∗    ∗                 −1            ∗
+         i−1 hi ∈ B xi B for i ∈ [1, r], hr gh0 ∈ NG1 (B )}.
+                           PARABOLIC CHARACTER SHEAVES, I                                            15
+
+Define ρx : Ŷx −               → Nx1 by
+                → Yx , φx : Ŷx −
+
+             ρx (h0 UB∗ , h1 B ∗ , . . . , hr B ∗ , g) = (h0 B ∗ , h1 B ∗ , . . . , hr B ∗ , g)
+             φx (h0 UB∗ , h1 B ∗ , . . . , hr B ∗ , g) = n1 n2 . . . nr n
+
+where ni ∈ NG (T ) is given by h−1                             1        ∗
+                                i−1 hi ∈ UB ∗ ni UB ∗ and n ∈ N ∩ NG1 (B ) is given
+by h−1
+    r gh0 ∈ UB ∗ n. Now φx is T -equivariant where T acts on Ŷx by
+
+
+         t : (h0 UB∗ , h1 B ∗ , . . . , hr B ∗ , g) 7→ (h0 t−1 UB∗ , h1 B ∗ , . . . , hr B ∗ , g).
+
+Hence, if L ∈ S(T ) and x ∈ WL1 then φ∗x (Lẋ ) is T -equivariant (see 4.1); it is of the
+form ρ∗x L̃ for a well defined local system L̃ on Yx , since ρx is a principal T -bundle.
+We set
+                                KxL = (πx )! L̃ ∈ D(ZJ,δ ).
+
+In the case where x reduces to a single element x, we have clearly KxL = KxL . In
+general, Yx is smooth and connected. An equivalent statement is that
+
+           {(h0 , h1 , . . . , hr , g) ∈ Gr+1 × G1 ; h−1        ∗    ∗
+                                                      i−1 hi ∈ B xi B (i ∈ [1, r]),
+                                                        h−1     ∗   ∗ −1
+                                                         r gh0 B = B hr gh0 }
+
+
+                                                           −1
+is smooth and connected. By the substitution n = h−1
+                                                  r gh0 , hi−1 hi = yi , i ∈ [1, r],
+we are reduced to the statement that
+
+           {(h0 , y1 , y2 , . . . , yr , n) ∈ Gr+1 × G1 ; n B ∗ = B ∗ , yi ∈ B ∗ xi B ∗ }
+
+is smooth and connected, which is clear.
+
+4.3. Let x = (x1 , x2 , . . . , xr ) be a sequence in I ⊔ {1} and let L ∈ S(T ) be such
+that x1 x2 . . . xr ∈ WL1 . Let
+
+                   Ȳx ={(B0 , B1 , . . . , Br , g) ∈ B × B × . . . × B × G1 ;
+                          pos(Bi−1 , Bi ) ∈ {xi , 1}, i ∈ [1, r], Br = g B0 }.
+
+Define π̄x : Ȳx −   → ZJ,δ by (B0 , B1 , . . . , Br , g) 7→ (Q, Q′ , g) where Q ∈ PJ , Q′ ∈
+Pδ(J) are given by B0 ⊂ Q, Br ⊂ Q′ . Now Yx (see 4.2) is an open dense subset of
+Ȳx . By 4.2, Yx carries a natural local system L̃ and the intersection cohomology
+complex IC(Ȳx , L̃) is a constructible sheaf L̄ on Ȳx (this is shown in [L3, 2.7,2.8]
+in the case where G1 = G; a similar proof holds in general). We set
+    K̄xL = (π̄x )! L̄ ∈ D(ZJ,δ ).
+16                                       G. LUSZTIG
+
+Proposition 4.4. Let L ∈ S(T ) and let A be a simple perverse sheaf on ZJ,δ .
+The following conditions on A are equivalent:
+  (i) A ⊣ KxL for some x ∈ WL1 .
+  (ii) A ⊣ KxL for some sequence x = (x1 , x2 , . . . , xr ) in W with x1 x2 . . . xr ∈ WL1 .
+  (iii) A ⊣ KxL for some sequence x = (x1 , x2 , . . . , xr ) in I ⊔{1} with x1 x2 . . . xr ∈
+  1
+WL .
+  (iv) A ⊣ K̄xL for some sequence x = (x1 , x2 , . . . , xr ) in I ⊔{1} with x1 x2 . . . xr ∈
+  1
+WL .
+  (v) A ⊣ K̄xL for some x ∈ WL1 .
+   In the case where G1 = G, the proof follows word by word that in [L3, 2.11-2.16],
+[L4, 12.7]. The general case can be treated in a similar way.
+            L
+4.5. Let CJ,δ  be the set of (isomorphism classes) of simple perverse sheaves on
+ZJ,δ which satisfy the equivalent conditions 4.4(i)-(v) with respect to L. The
+                                                     L
+simple perverse sheaves on ZJ,δ which belong to CJ,δ    for some L ∈ S(T ) are called
+parabolic character sheaves; they (or their isomorphism classes) form a set CJ,δ . In
+particular, the notion of parabolic character sheaf on ZI,δ = G1 is well defined;
+we thus recover the definition of character sheaves in [L3],[L6].
+   We describe the set C∅,δ . For any x, L as in 4.1, the simple perverse sheaf L̂x on
+Z∅,δ (see 4.1) is a shift of the inverse image under the obvious map Z∅,δ −   → Z∅,δ
+of a well defined simple perverse sheaf on Z∅,δ . These simple perverse sheaves on
+Z∅,δ constitute C∅,δ .
+4.6. Let t = (Jn , wn )n≥0 ∈ T (J, δ). For r ≫ 0 we have Jr = Jr+1 = . . . , and
+wr = wr+1 = · · · = w. For such r we define a class Ct′ r ,δ of simple perverse sheaves
+on tr ZJr ,δ . Let P ∈ PJr , P ′ ∈ Pδ(Jr ) and pos(P ′ , P ) = w (good position). Let L
+be a common Levi of P ′ , P . Then C = {g ∈ G1 ; g L = L, g P = P ′ } is a connected
+component of NĜ (L). Let X be a character sheaf on C (the definition in 4.5 is
+applicable since C is a connected component of an algebraic group with identity
+component L). Now X is L-equivariant for the conjugation action of L hence also
+P ∩ P ′ equivariant (P ∩ P ′ acts via its quotient (P ∩ P ′ )/UP ∩P ′ = L). Hence there
+is a well defined simple perverse sheaf X ′ on G ×P ∩P ′ C (here P ∩ P ′ acts on G
+by right translation) whose inverse image under G × C −        → G ×P ∩P ′ C is a shift of
+the inverse image of X under pr2 : G × C −      → C. We may regard X ′ as a simple
+perverse sheaf on tr ZJr ,δ via the isomorphism
+                              ∼
+               G ×P ∩P ′ C −→ tr ZJr ,δ , (g, c) 7→ (g P, g P ′ , gUP ′ cUP g −1 ).
+
+Now let ϑ : t ZJ,δ −
+                   → tr ZJr ,δ be a composition of maps in 3.13(a); thus ϑ is smooth
+with connected fibres. Then X̃ = ϑ̃(X ′ ) is a simple perverse sheaf on t ZJ,δ . Let X̂
+be the simple perverse sheaf on ZJ,δ whose support is the closure in ZJ,δ of suppX̃
+and whose restriction to t ZJ,δ is X̃.
+         ′
+   Let Ct,δ be the class of simple perverse sheaves on t ZJ,δ consisting of all X̃ as
+                                                    ′
+above. (It is independent of the choice of r.) Let CJ,δ be the class of simple perverse
+                         PARABOLIC CHARACTER SHEAVES, I                                        17
+
+sheaves on ZJ,δ consisting of all X̂ as above. The set of isomorphism classes of
+            ′
+objects in CJ,δ is in bijection with the set of pairs (t, X) where t ∈ T (J, δ) and X
+is a character sheaf on C (as above).
+4.7. We fix b ∈ W . Let V be a locally closed subvariety of Yb (see 4.1). For
+x, z ∈ W let
+
+            Xx,z ={(B̃, B, B̃ ′ , B ′ , g) ∈ B4 × G1 ; (B̃, B̃ ′ , g) ∈ V, g B = B ′ ,
+                    pos(B̃, B) = x, pos(B, B̃ ′ ) = z, pos(B̃ ′ , B ′ ) = δ(x)}.
+
+                → V by κ(B̃, B, B̃ ′ , B ′ , g) = (B̃, B̃ ′ , g). Let L ∈ S(T ) be such that
+Define κ : Xx,z −
+zδ(x) ∈ WL1 . The inverse image of the local system L̃ on Yz,δ(x) (see 4.2) under
+
+                 Xx,z −
+                      → Yz,δ(x) ,        (B̃, B, B̃ ′, B ′ , g) 7→ (B, B̃ ′ , B ′ , g)
+
+is denoted again by L̃.
+Lemma 4.8. Let m : V −       → Z be a morphism of varieties. Let A be a simple
+perverse sheaf on Z such that A ⊣ (mκ)! L̃. Then there exists L1 ∈ S(T ) such
+that b ∈ WL11 and such that A ⊣ m! L̃1 . (Here L̃1 is the local system on Yb (or its
+restriction to V ) defined as in 4.1 for b, L1 instead of x, L.)
+   We argue by induction on l(z). If l(z) = 0 then x = b, κ is an isomorphism and
+the result is obvious. Assume now that l(z) > 0. We can find s ∈ W such that
+l(s) = 1, l(z) > l(sz).
+   Assume first that l(xs) = l(x) + 1. Consider the isomorphism
+                        ∼
+             ι : Xx,z −→ Xxs,sz ,        (B̃, B, B̃ ′, B ′ , g) 7→ (B̃, B1 , B̃ ′ , B1′ , g)
+
+where B1 ∈ B is given by
+
+(a)                         pos(B, B1 ) = s, pos(B1 , B̃ ′ ) = sz
+
+and B1′ = g B1 . We have κ = κ′ ι where κ′ : Xxs,sz −
+                                                    → V is given by
+
+                             κ′ (B̃, B1 , B̃ ′ , B1′ , g) = (B̃, B̃ ′ , g).
+
+Now ι! L̃ is a local system of the same type as L̃ (relative to szδ(x)δ(s) instead of
+zδ(x)) and A ⊣ (mκ′ )! ι! L̃. Using the induction hypothesis for xs, sz, ι! L̃ instead
+of x, z, L̃, we get the conclusion of the lemma.
+                                                                             ′      ′′
+   Assume next that l(xs) = l(x)−1. Then we have a partition Xx,z = Xx,z        ⊔Xx,z
+           ′
+where Xx,z    is the open subset defined by pos(B̃, B1 ) = x (and B1 is given by (a))
+        ′′
+and Xx,z is the closed subset defined by pos(B̃, B1 ) = xs (and B1 is given by (a)).
+Let j ′ = κ|Xx,z
+               ′  , j ′′ = κ|Xx,z
+                              ′′ . By general principles, either
+18                                         G. LUSZTIG
+
+   (b) A ⊣ (mj ′ )! L̃, or
+   (c) A ⊣ (mj ′′ )! L̃;
+                                     ′        ′′
+here the restriction of L̃ to Xx,z       or Xx,z is denoted again by L̃.
+   Assume that (c) holds. We have j = κ′′ ι′′ where κ′′ : Xxs,sz −
+                                             ′′
+                                                                         → V is given by
+ ′            ′   ′               ′
+κ (B̃, B1 , B̃ , B1 , g) = (B̃, B̃ , g) and
+
+           ι′′ : Xx,z
+                  ′′
+                      −
+                      → Xxs,sz ,       (B̃, B, B̃ ′ , B ′ , B1′ , g) 7→ (B̃, B1 , B̃ ′ , B1′ , g)
+
+(where B1 , B1′ are as in a) is a line bundle; also ι′′! (L̃) is (up to shift) a local
+system L̃′′ of the same type as L̃ (relative to szδ(x)δ(s) instead of zδ(x)). Hence
+A ⊣ (mk ′′ )! L̃′′ . Using the induction hypothesis for xs, sz, L̃′′ instead of x, z, L̃, we
+get the conclusion of the lemma.
+   Assume now that (b) holds. We have j ′ = κ′ ι′ where κ′ : Xx,sz −        → V is given
+     ′              ′  ′             ′
+by κ (B̃, B1 , B̃ , B1 , g) = (B̃, B̃ , g) and
+
+           ι′ : Xx,z
+                 ′
+                     −
+                     → Xx,sz ,        (B̃, B, B̃ ′ , B ′ , B1′ , g) 7→ (B̃, B1 , B̃ ′ , B1′ , g)
+
+(with B1 , B1′ as in (a)) makes Xx,z    ′
+                                          into the complement of the zero section of a
+line bundle over Xx,sz . In the case where
+      (d) the inverse image of L under the coroot k∗ −      → T corresponding to s is Q̄l ,
+                       ′∗  ′          ′
+we have L̃|Xx,z  ′  = ι L̃ where L̃ is a local system on Xx,sz of the same type as L̃
+(relative to szδ(x) instead of zδ(x)) hence we have an exact triangle consisting of
+ι′! (L̃), L̃′ and a shift of L̃′ . Hence A ⊣ (mk ′ )! L̃′ . Using the induction hypothesis
+for x, sz, L̃′ instead of x, z, L̃, we get the conclusion of the lemma.
+      If (d) does not hold, the direct image ι′! (L̃) is 0 hence
+                          p
+                              H i ((mj ′ )! L̃) = p H i (m! k!′ ι′! L̃) = 0
+
+and we have a contradiction. The lemma is proved.
+4.9. Let t = (Jn , wn )n≥0 ∈ T (J, δ). Let Yt be the set of all (B, B ′ , g) ∈ Z∅,δ such
+that, if P ∈ PJ , P ′ ∈ Pδ(J) are given by B ⊂ P, B ′ ⊂ P ′ , then (P, P ′ , g) ∈ t ZJ,δ .
+Then (B, B ′ , g) 7→ (P, P ′ , g) is a morphism ξt : Yt −              → t ZJ,δ and
+(B, B ′ , g) 7→ (P, P ′ , UP ′ gUP ) is a morphism ξt′ : Yt −
+                                                            → t ZJ,δ .
+   For a ∈ W let Yt,a = {(B, B , g) ∈ Yt ; pos(B, B ′ ) = a}. Let ξt,a , ξt,a
+                                         ′                                    ′
+                                                                                 be the
+                       ′
+restrictions of ξt , ξt to Yt,a .
+Lemma 4.10. Let A′ be a simple perverse sheaf on t ZJ,δ with
+A′ ⊣ (ξt,a′
+             )! ♠. (Notation of 4.1.) Then A′ ⊣ ϑ∗ (ξt′ 1 ,b )! ♠ for some b ∈ W
+(ϑ : t ZJ,δ −
+            → t1 ZJ1 ,δ as in 3.12(b)).
+   It suffices to prove the following variant of the lemma.
+   (∗) Let A be a simple perverse sheaf on t ZJ,δ such that A ⊣ (ξt,a )! ♠. Then
+                                                                     ∼
+there exists b ∈ W such that A ⊣ ϑ′∗ (ξt1 ,b )! ♠ where ϑ′ : t ZJ,δ −→ t1 ZJ1 ,δ is as in
+3.12(a).
+                            PARABOLIC CHARACTER SHEAVES, I                                      19
+
+                                                      −1
+   Define f : Yt,a −  → Yt1 by f (B, B ′ , g) = (g (P̃ ′B ), P̃ ′B , g) where ξt,a (B, B ′ , g) =
+(P, P ′ , g) and P̃ ′ = P ′P . We have a partition Yt1 = ⊔b∈W Yt1 ,b . Setting Yt,a,b =
+f −1 (Yt1 ,b ) we get a partition Yt,a = ⊔b∈W Yt,a,b into locally closed subvarieties.
+Let ξt,a,b : Yt,a,b −  → t ZJ,δ be the restriction of ξt,a . If A is as in (∗) then, by
+general principles, A ⊣ (ξt,a,b )! ♠ for some b ∈ W . We have ϑ′ ξt,a = ξt1 f . Hence,
+if fb : Yt,a,b −  → Yt1 ,b is the restriction of f , we have ϑ′ ξt,a,b = ξt1 ,b fb hence
+ξt,a,b = ϑ′−1 ξt1 ,b fb . Thus, A ⊣ (ϑ′−1 )! (ξt1 ,b )! (fb )! ♠ and
+
+(a)                                  ϑ′! A ⊣ (ξt1 ,b )! (fb )! ♠.
+
+We can write uniquely a = a2 a1 where a1 ∈ Wδ(J) , a2 ∈ W δ(J) . We show that for
+(B̃, B̃ ′ , g) ∈ Yt1 ,b , we have
+
+      fb−1 (B̃, B̃ ′ , g)
+(b)
+      = {(B, B ′ , g); B, B ′ ∈ B, g B = B ′ , pos(B, B̃ ′ ) = a2 , pos(B̃, B) = δ −1 (a1 )}.
+
+Assume first that (B, B ′ , g) ∈ fb−1 (B̃, B̃ ′ , g). Define P ∈ PJ , P ′ ∈ Pδ(J) by B ⊂
+P, B ′ ⊂ P ′ . Set P̃ ′ = P ′P . We know that pos(B, B ′ ) = a, B̃ ′ = P̃ ′B . We
+have pos(P ′B , B ′ ) ∈ Wδ(J) (both B ′ , P ′B are contained in P ′ ) and pos(B, P ′B ) =
+pos(B, P ′ ) ∈ W δ(J) . We have automatically pos(P ′B , B ′ ) = a1 , pos(B, P ′B ) = a2 .
+                              −1
+It also follows that pos(g (P ′B ), B) = δ −1 (a1 ). We show that P ′B = P̃ ′B . We
+have P ′ ∩ B = P ′ ∩ P ∩ B ⊂ P ′P ∩ B = P̃ ′ ∩ B. Also UP ′ ⊂ UP̃ ′ (since P̃ ′ ⊂ P ′ ).
+Hence (P ′ ∩ B)UP ′ ⊂ (P̃ ′ ∩ B)UP̃ ′ , that is P ′B ⊂ P̃ ′B ; since P ′B , P̃ ′B are Borels,
+                                                                            −1
+we have P ′B = P̃ ′B = B̃ ′ . We see that pos(B, B̃ ′ ) = a2 , pos(g B̃ ′ , B) = δ −1 (a1 ).
+Thus, (B, B ′ , g) belongs to the right hand side of (b).
+   Conversely, assume that (B, B ′ , g) belongs to the right hand side of (b). Since
+l(a2 a1 ) = l(a2 ) + l(a1 ) we have pos(B, B ′ ) = a2 a1 = a. Define P ∈ PJ , P ′ ∈ Pδ(J)
+by B ⊂ P, B ′ ⊂ P ′ . Set P̃ ′ = P ′P . As in the earlier part of the proof we see
+that pos(P ′B , B ′ ) ∈ Wδ(J) , pos(B, P ′B ) ∈ W δ(J) and P ′B = P̃ ′B . This forces
+P ′B = B̃ ′ hence B̃ ′ = P̃ ′B . Thus, (B, B ′ , g) ∈ fb−1 (B̃, B̃ ′ , g), proving (b).
+   We see that we may identify Yt,a,b with Xδ−1 (a1 ),a2 defined as in 4.7 relative
+to V = Yt1 ,b . Moreover, fb may be identified with κ in 4.7. Now ϑ′! A (a simple
+perverse sheaf on t1 ZJ1 ,δ ) satisfies the hypothesis of Lemma 4.8 with Z = t1 ZJ1 ,δ
+and m = ξt1 ,b (see (a)). Applying Lemma 4.8, we see that there exists L1 ∈ S(T )
+such that b ∈ WL11 and such that ϑ′! A ⊣ (ξt1 ,b )! L̃1 (L̃1 as in 4.8). Since ϑ′ is
+an isomorphism, we see that A ⊣ ϑ′∗ (ξt1 ,b )! L̃1 and (∗) is proved. The lemma is
+proved.
+Lemma 4.11. Let L ∈ S(T ) and let a ∈ WL1 . Let t = (Jn , wn )n≥0 ∈ T (J, δ).
+     ′
+Let ξt,a        → t ZJ,δ be as in 4.9. Let L̃ be as in 4.1 (or its restriction to Yt,a ).
+         : Yt,a −
+                                             ′                    ′
+Then any composition factor of ⊕i p H i ((ξt,a )! L̃) belongs to Ct,δ .
+20                                       G. LUSZTIG
+
+    More generally we show that the lemma holds whenever J, t are replaced by
+Jn , tn , n ≥ 0. First we show:
+    (a) if the result is true for n = 1 then it is true for n = 0.
+Let A′ be a composition factor of ⊕i p H i ((ξt,a            ′
+                                                               )! L̃). By Lemma 4.10 there exists
+                            ′       ∗ ′
+b ∈ W such that A ⊣ ϑ (ξt1 ,b )! ♠ hence A ⊣ ϑ∗ ⊕i p H i ((ξt′ 1 ,b )! ♠). (Notation of
+                                                           ′
+
+4.1.) Since ϑ is an affine space bundle, there exists a composition factor A′′ of
+⊕i p H i ((ξt′ 1 ,b )! ♠) such that A′ = ϑ∗ A′′ . By our hypothesis we have A′′ ∈ Ct′ 1 ,δ .
+From the definitions we have ϑ∗ A′′ ∈ Ct,δ            ′
+                                                         . Thus, (a) holds.
+    Similarly, if the result holds for some n ≥ 1, then it holds for n − 1. (The proof
+is the same as for n = 1.) In this way we see that it suffices to prove the result for
+n ≫ 0. Thus, we may assume that J0 = J1 = · · · = J, and w0 = w1 = · · · = w. We
+can write uniquely a = a2 a1 where a1 ∈ Wδ(J) , a2 ∈ W δ(J) . We have w ∈ δ(J) W
+and a ∈ WJ w−1 Wδ(J) = w−1 Wδ(J) . Thus, a2 = w−1 .
+    Let P ∈ PJ , P ′ ∈ Pδ(J) be such that pos(P ′ , P ) = w. Let L be a common Levi
+of P ′ , P . Let C = {c ∈ G1 ; c L = L, c P = P ′ }. Let Y ′ be the set of all (β, β ′ , c)
+where β, β ′ are Borels of L such that pos(β, β ′ ) = a1 (position relative to L with
+Weyl group Wδ(J) ) and c ∈ C satisfies c β = β ′ . Then P ∩ P ′ acts on Y ′ × UP ′ by
+p : (β, β ′ , c, u) 7→ (l β, l β ′ , l c, p u) where l ∈ L, p ∈ lUP ∩P ′ . We have a commutative
+diagram
+                                                            ∼
+                                          G ×P ∩P ′ Y ′ −−−−→ Yt,a
+                                                                    
+                                                                 ′ 
+                                                y               ξt,a y
+                                                   ∼
+                                 G ×P ∩P ′ C −−−−→ t ZJ,δ
+where the upper horizontal map is (g, β, β ′ , c, u) 7→ (g B, g B ′ , g (cu)) with B ′ =
+                  −1
+β ′ UP ′ , B = c B ′ , the lower horizontal map is as in 4.6, the left vertical map is
+(g, β, β ′ , c, u) 7→ (g, c). This commutative diagram shows that any composition
+                        ′
+factor of ⊕i p H i ((ξt,a  )! L̃) is of the form X ′ where X is a character sheaf on C
+                                         ′
+(notation of 4.6); hence it is in Ct,δ     . The lemma is proved.
+Lemma 4.12. For A ∈ CJ,δ , t ∈ T (J, δ), we set t A = A|t ZJ,δ . Then any compo-
+                                            ′
+sition factor of ⊕i p H i (t A) belongs to Ct,δ .
+   We can find L ∈ S(T ) and x = (x1 , x2 , . . . , xr ) as in 4.3 such that x1 x2 . . . xr ∈
+WL1  and A ⊣ K̄xL (see 4.3, 4.5). By the decomposition theorem [BBD] applied to
+π̄x (see 4.3), we have K̄xL ∼
+                            = A[m] ⊕ K ′ for some K ′ ∈ D(ZJ,δ ) and some m ∈ Z.
+Hence K̄x | ZJ,δ ∼
+          L t
+                  = A[m] ⊕ K1′ for some K1′ ∈ D(t ZJ,δ ). It suffices to show that, if
+                    t
+
+A′ is a composition factor of ⊕i p H i (K̄xL |t ZJ,δ ), then A′ ∈ Ct,δ
+                                                                   ′
+                                                                       . As in [L3, 2.11-2.16]
+                                                1               ′     L t
+we see that there exists L ∈ S(T ), x ∈ WL such that A ⊣ Kx | ZJ,δ . Using 4.11 we
+have A′ ∈ Ct,δ′
+                . The lemma is proved.
+                                    ′
+Lemma 4.13. If A ∈ CJ,δ , then A ∈ CJ,δ .
+  Since ZJ,δ = ⊔J⊂I t ZJ,δ , we can find t ∈ T (J, δ) such that supp(A) ∩ t ZJ,δ is
+open dense in supp(A). Then t A = A|t ZJ,δ is a simple perverse sheaf on t ZJ,δ and
+                          PARABOLIC CHARACTER SHEAVES, I                                    21
+
+t     ′
+ A ∈ Ct,δ (Lemma 4.12). Now A, t A are related just as X̂, X̃ are related in 4.6.
+            ′
+Hence A ∈ CJ,δ . The lemma is proved.
+
+Lemma 4.14. Let t = (Jn , wn )n≥0 ∈ T (J, δ). Define a ∈ W δ(J) by a−1 = wn
+for n ≫ 0. Let b ∈ Wδ(J∞ ) . Let (B, B ′ , g) ∈ Yab . Define P ∈ PJ , P ′ ∈ Pδ(J) by
+B ⊂ P, B ′ ⊂ P ′ .
+   (a) We have (P, P ′ , g) ∈ t ZJ,δ .
+   (b) If b = 1, (B, B ′ , g) 7→ (P, P ′ , g) is a surjective map Yab −
+                                                                      → t ZJ,δ .
+   We prove (a). Recall that wn = min(Wδ(J) a−1 WJn ) = min(Wδ(J) b−1 a−1 WJn )
+for n ≥ 0. In particular, pos(P ′ , P ) = min(Wδ(J) b−1 a−1 WJ ) = w0 . Define P n , P ′n
+in terms of (P, P ′ , g) as in 3.11. We have P ′1 = P ′P ∈ Pδ(J1 ) , P 1 ∈ PJ1 . As in
+the proof of Lemma 4.10 we have ab = a2 a1 , pos((P ′1 )B , B ′ )) = a1 ∈ Wδ(J) ,
+a2 ∈ W δ(J) . Since a ∈ W δ(J) , we have a1 = b ∈ Wδ(J∞ ) . Thus, pos((P ′1 )B , B ′ ) ∈
+Wδ(J1 ) hence B ′ ⊂ P ′1 and B ⊂ P 1 . We have
+
+      pos(P ′1 , P 1 ) = min(Wδ(J1 ) pos(B ′ , B)WJ1 ) = min(Wδ(J1 ) b−1 a−1 WJ1 ) = w1 .
+
+By the same argument for B, B ′ , P 1 , P ′1 , g, t1 instead of B, B ′ , P, P ′ , g, t, we see
+that pos(P ′2 , P 2 ) = w2 and B ⊂ P 2 , B ′ ⊂ P ′2 . (We have a−1 ∈ δ(J1 ) W since
+δ(J1 ) ⊂ δ(J).) Continuing in this way, we find pos(P ′n , P n ) = wn and B ⊂
+P n , B ′ ⊂ P ′n for all n ≥ 0. In particular, (P, P ′ , g) ∈ t ZJ,δ . This proves (a).
+   We prove (b). Assume that (P, P ′ , g) ∈ t ZJ,δ . Define P n , P ′n in terms of
+(P, P ′ , g) as in 3.11. By assumption, if n ≫ 0 we have pos(P ′n , P n ) = a−1 (good
+position). Hence
+
+    pr1 : {(B, B ′ ) ∈ B × B; B ′ ⊂ P ′n , B ⊂ P n , pos(B, B ′ ) = a} −
+                                                                       → {B ∈ B; B ⊂ P n }
+
+is an isomorphism with inverse B 7→ (B, (P ′n )B ). The condition that (B, B ′ ) in
+                                                                          −1
+the domain of pr1 satisfies B ′ = g B is that B is fixed by the map B 7→ g ((P ′n )B )
+of the flag manifold of P n into itself. This map has at least one fixed point. Hence
+there exist Borels B ⊂ P n , B ′ ⊂ P ′n such that B ′ = g B and pos(B, B ′ ) = a. We
+then have B ⊂ P, B ′ ⊂ P ′ , proving (b).
+Lemma 4.15. Let t = (Jn , wn )n≥0 ∈ T (J, δ). Define a2 ∈ W δ(J) by wn = a−1          2
+for n ≫ 0. Let a1 ∈ Wδ(J∞ ) and let a = a2 a1 , a′ = δ −1 (a1 )a2 . Let A′ be a simple
+perverse sheaf on t1 ZJ1 ,δ such that A′ ⊣ (ξt′ 1 ,a′ )! ♠. Then ϑ̃A′ (a simple perverse
+                                                           ′
+sheaf on t ZJ,δ ) is a composition factor of ⊕i p H i ((ξt,a )! ♠).
+   It suffices to prove the following variant of the lemma.
+   (∗) Let t = (Jn , wn )n≥0 ∈ T (J, δ). Define a2 ∈ W δ(J) by wn = a−1 2 for n ≫ 0.
+                                           ′     −1
+Let a1 ∈ Wδ(J∞ ) and let a = a2 a1 , a = δ (a1 )a2 . Let A be a simple perverse
+sheaf on t1 ZJ1 ,δ such that A ⊣ (ξt1 ,a′ )! ♠. Then ϑ′∗ A (a simple perverse sheaf on
+t
+  ZJ,δ ) is a composition factor of ⊕i p H i ((ξt,a )! ♠).
+22                                         G. LUSZTIG
+
+   Define f : Yt,a −   → Yt1 as in the proof of Lemma 4.10. Assume that f (B, B ′ , g) =
+(B̃, B̃ ′ , g). As in the proof of 4.10 we have
+
+               pos(B̃, B) = δ −1 (a1 ), pos(B, B̃ ′ ) = a2 , pos(B̃ ′ , B ′ ) = a1 ;
+
+By 2.6 we have Ad(a2−1 )J∞ = δ(J∞ ) hence a−1      2 δ
+                                                       −1
+                                                          (a1 )a2 ∈ Wδ(J∞ ) and
+   −1 −1              −1                    δ(J)    δ(J∞ )
+l(a2 δ (a1 )a2 ) = l(δ (a1 )); since a2 ∈ W      ⊂W        , we have
+
+l(δ −1 (a1 )a2 ) = l(a2 (a−1
+                          2 δ
+                              −1
+                                 (a1 )a2 )) = l(a2 )+l(a−1
+                                                        2 δ
+                                                            −1
+                                                               (a1 )a2 ) = l(a2 )+l(δ −1 (a1 )).
+
+Hence pos(B̃, B̃ ′ ) = δ −1 (a1 )a2 = a′ . We see that f defines a map f ′ : Yt,a −        →
+                       ′′                              ′            ′
+Yt1 ,a′ . Define f : Yt1 ,a′ −   → Yt,a by f (B̃, B̃ , g) = (B, B , g) with B ∈ B given
+by pos(B̃, B) = δ (a1 ), pos(B, B̃ ′ ) = a2 and B ′ = g B. (From pos(B, B̃ ′ ) =
+                          −1
+
+a2 , pos(B̃ ′ , B ′ ) = a1 and l(a2 a1 ) = l(a2 )+l(a1 ) we deduce that pos(B, B ′ ) = a2 a1 .)
+From the proof of 4.10 we see that f ′′ is an inverse to f ′ . From the definitions we
+have a commutative diagram
+
+                                               f′
+                                     Yt,a −−−−→ Yt1 ,a′
+                                                      
+                                       
+                                  ξt,a y
+                                                       
+                                               ξt1 ,a′ y
+
+                                    t          ϑ′     t1
+                                        ZJ,δ −−−−→         ZJ1 ,δ
+
+This proves (∗) since f ′ and ϑ′ are isomorphisms. The lemma is proved.
+                    ′
+Lemma 4.16. If A ∈ CJ,δ , then A ∈ CJ,δ .
+
+    Let t = (Jn , wn )n≥0 , r, C, X, X ′, X̃, X̂ be as in 4.6. We may assume that A = X̂.
+Define a2 ∈ W δ(J) by a2−1 = wn for n ≫ 0. Now X ⊣ (pr3 )! ♠ where pr3 : Y ′ −             →C
+(notation of 4.11).
+    For r ′ ∈ [0, r] we denote by ϑr′ : tr′ ZJr′ ,δ −  → tr ZJr ,δ the appropriate composition
+of maps in 3.13(a). Consider the following statement.
+    Sr′ . The simple perverse sheaf ϑf             ′     t ′
+                                               r′ X on r ZJr′ ,δ is a composition factor of
+⊕i p H i ((ξt′ r′ ,a2 br′ )! ♠) for some br′ ∈ Wδ(J∞ ) .
+    Using the commutative diagram in 4.11 with t replaced by tr , we see that Sr
+holds. If 0 < r ′ ≤ r and if Sr′ holds then Sr′ −1 holds (we use Lemma 4.15 with
+t, t1 , J, J1 replaced by tr′ −1 , tr′ , Jr′ −1 , Jr′ ). Using this repeatedly, we see that
+S0 holds. Thus, X̃ (a simple perverse sheaf on t ZJ,δ ) is a composition factor of
+             ′
+⊕i p H i ((ξt,a     ) ♠) for some b ∈ Wδ(J∞ ) . Let π : Yx −
+                  2b !
+                                                                    → ZJ,δ be as in 4.1 (with
+x = a2 b). By Lemma 4.14, π factors through a map π ′ : Yx −             → t ZJ,δ and X̃ ⊣ π!′ ♠.
+Thus there exists a simple perverse sheaf on ZJ,δ whose support is the closure in
+ZJ,δ of suppX̃, whose restriction to t ZJ,δ is X̃ and which is a composition factor
+of ⊕i p H i (π! ♠); this is necessarily X̂. We see that X̂ ∈ CJ,δ . The lemma is proved.
+                        PARABOLIC CHARACTER SHEAVES, I                                      23
+
+                               5. Central character
+5.1. We preserve the setup of 3.1. Let J ⊂ I. The following result is similar to
+[L4, 11.3].
+Lemma 5.2. Let L, L′ ∈ S(T ), x ∈ WL1 , x′ ∈ WL1′ . Then x ∈ WL1−1 . Assume that
+L′ 6∼
+                                                     −1     ′
+    = Ad(w)∗ L for any w ∈ WJ . Then Hci (ZJ,δ , KxL ⊗ KxL′ ) = 0 for all i ∈ Z.
+Then
+                                                     g
+   An equivalent statement is ⊕i Hci (Yx ×ZJ,δ Yx′ , L −1 ⊠ L̃′ ) = 0 (notation of 4.1).
+
+Here the fibre product is taken with respect to the maps Yx −           → ZJ,δ ←  − Yx′ as
+                                                                      ′
+in 4.1. This fibre product is the set of all (B1 , B2 , B3 , B4 , g, g ) in B × G1 × G1
+                                                                             4
+                        ′
+such that g B1 = B2 , g B3 = B4 , pos(B1 , B2 ) = x, pos(B3 , B4 ) = x′ , B1 , B3 are
+contained in the same parabolic P of type J and g −1 g ′ ∈ UP . We partition this
+set into locally closed pieces Zw (w ∈ WJ ); here Zw is defined by the condition
+                                      g
+pos(B1 , B3 ) = w. The restriction of L −1 ⊠ L̃′ to a subvariety of the fibre product
+
+is denoted in the same way. It suffices to show that Hci (Zw , L    g −1 ⊠ L̃′ ) = 0 for all
+
+w ∈ WJ . For fixed w ∈ WJ , we have an obvious map ζ from Zw to
+
+   {(B1 , B2 , B3 , B4 ) ∈ B4 ;pos(B1 , B2 ) = x, pos(B3 , B4 ) = x′ , pos(B1 , B3 ) = w,
+                             pos(B2 , B4 ) = δ(w)}.
+
+Using the Leray spectral sequence of ζ we see that it suffices to show that Hci of
+any fibre of ζ with coefficient in the local system above is 0. Let
+
+                           Ψ = ζ −1 (g1 B ∗ , g2 B ∗ , g3 B ∗ , g4 B ∗ )
+
+where g1 , g2 , g3 , g4 ∈ G. We can find g0 ∈ G1 such that g0 g1 B ∗ = g2 B ∗ , g0 g3 B ∗ =
+g4 ∗
+  B . We can assume that g0 g1 = g2 , g0 g3 = g4 . A point in Ψ is completely
+determined by its (g, g ′)-component. Thus we may identify Ψ with the set of all
+                                                    ′
+(g, g ′) ∈ G1 × G1 such that gg1 B ∗ = g0 g1 B ∗ , g g3 B ∗ = g0 g3 B ∗ and g −1 g ′ ∈ UP
+where P ∈ PJ contains g1 B ∗ . Thus we may identify
+
+                    Ψ = {(g, u) ∈ G1 × UP ; g0−1 g ∈ g1 B ∗ ∩ g3 B ∗ }
+
+                                                                             −1
+where P is as above. Here g1 , g3 ∈ G are fixed such that pos(B ∗ , g1 g3 B ∗ ) = w.
+             → T by g1−1 g0−1 gg1 ∈ τ (g, u)UB∗ (an affine space bundle). One checks
+Define τ : Ψ −
+                      g
+that the local system L −1 ⊠ L̃′ on Ψ is τ ∗ (L−1 ⊗ Ad(w −1 )∗ L′ ). It then suffices to
+
+show that Hci (T, L−1 ⊗ Ad(w−1 )∗ L′ ) = 0 for all i. This follows from the fact that
+L−1 ⊗ Ad(w−1 )∗ L′ ∈ S(T ) is not isomorphic to Q̄l . The lemma is proved.
+5.3. From Lemma 5.2 we deduce as in [L4, p.268] that there is a well defined map
+                                                               L
+CJ,δ −
+     → {WJ -orbits in S(T )}, A 7→ (WJ -orbit of L) where A ∈ CJ,δ .
+24                                             G. LUSZTIG
+
+                                                                              ′
+                                     6. The functors fJJ′ , eJJ
+6.1. We preserve the setup of 3.1. Let J ⊂ J ′ ⊂ I. Let ZJ,J ′ ,δ be the set of
+all triples (P, P ′ , gUQ ) where (P, P ′ ) ∈ PJ × Pδ(J) , Q ∈ PJ ′ is given by P ⊂ Q
+and gUQ ∈ G1 /UQ is such that g P = P ′ (the last condition is well defined since
+UQ ⊂ UP ). Consider the diagram
+                                               c                d
+                                       ZJ,δ ←
+                                            − ZJ,J ′ ,δ −
+                                                        → ZJ ′ ,δ
+where c(P, P ′ , gUQ ) = (P, P ′ , gUP ) and d(P, P ′ , gUQ ) = (Q, Q′ , gUQ ) (with Q as
+above and Q′ = g Q). Define
+                                                            ′
+                   fJJ′ : D(ZJ,δ ) −
+                                   → D(ZJ ′ ,δ ), eJJ : D(ZJ ′ ,δ ) −
+                                                                    → D(ZJ,δ )
+                             ′
+by fJJ′ (A) = d! c∗ A, eJJ (A′ ) = c! d∗ (A′ ).
+                                                                      ′                ′   ′′    ′′
+Lemma 6.2. For J ⊂ J ′ ⊂ J ′′ ⊂ I we have fJJ′′ fJJ′ = fJJ′′ , eJJ eJJ ′ = eJJ .
+     We have a diagram
+                                 c            d            c′                     d′
+                        ZJ,δ ←           → ZJ ′ ,δ ←− ZJ ′ ,J ′′ ,δ −→ ZJ ′′ ,δ
+                             − ZJ,J ′ ,δ −
+where c, d are as in 6.1 and c′ , d′ are analogous to c, d. We have a cartesian diagram
+                                                     d′′
+                                      ZJ,J ′′ ,δ −−−−→ ZJ ′ ,J ′′ ,δ
+                                                          
+                                                          
+                                      c y
+                                       ′′
+                                                        cy
+                                                         ′
+
+
+                                                      d
+                                       ZJ,J ′ ,δ −−−−→              ZJ ′ ,δ
+where c′′ , d′′ are the obvious maps. Using the change of basis theorem we have
+                    ′
+                 fJJ′′ fJJ′ = d′! c′∗ d! c∗ = d′! d′′! c′′∗ c∗ = (d′ d′′ )! (cc′′ )∗ = fJJ′′ ,
+                    ′   ′′                                                                  ′′
+                 eJJ eJJ ′ = c! d∗ c′! d′∗ = c! c′′! d′′∗ d′∗ = (cc′′ )! (d′ d′′ )∗ = eJJ .
+The lemma is proved.
+6.3. For J ⊂ I, let D0 (ZJ,δ ) be the full subcategory of D(ZJ,δ ) whose objects are
+the A ∈ D(ZJ,δ ) such that any composition factor of ⊕i p H i (A) belongs to CJ,δ .
+Lemma 6.4. For J ⊂ J ′ ⊂ I and A ∈ D0 (ZJ,δ ), we have fJJ′ (A) ∈ D0 (ZJ ′ ,δ ).
+   We may assume that A ∈ CJ,δ . Then there exists A0 ∈ C∅,δ such that A ⊣
+         By the decomposition theorem [BBD], fJ∅ (A0 ) is a semisimple complex,
+fJ∅ (A0 ).
+hence some shift of A is a direct summand of fJ∅ (A0 ). Hence fJJ′ (A) is a direct
+summand of fJJ′ fJ∅ (A0 ) = fJ∅′ (A0 ). Using the definitions and the decomposition
+theorem, we see that fJ∅′ (A0 ) is a direct sum of shifts of objects in CJ ′ ,δ . In
+particular, fJ∅′ (A0 ) ∈ D0 (ZJ ′ ,δ ). Since fJJ′ (A) is a direct summand of fJ∅′ (A0 ), we
+must have fJJ′ (A) ∈ D0 (ZJ ′ ,δ ). The lemma is proved.
+                           PARABOLIC CHARACTER SHEAVES, I                               25
+
+Lemma 6.5. Let J ⊂ I. If A ∈ D0 (ZJ,δ ), then eJ∅ (A) ∈ D0 (Z∅,δ ).
+   We can assume that A = K̄xL where L, x are as in 4.1. Using the known
+relationship between K̄xL , KxL (compare [L4, 12.7]) we may assume that A = KxL .
+For simplicity we assume also that L = Q̄l . Thus, A = KxQ̄l where x ∈ W . Let
+              Z = {(B, B ′ , B1 , B1′ , g) ∈ B4 × G1 ; g B = B ′ , g B1 = B1′ ,
+                pos(B, B ′ ) = x, pos(B, B1) ∈ WJ }.
+Define φ : Z − → Z∅,δ by φ(B, B ′ , B1 , B1′ , g) = (B1 , B1′ , gUB1 ). It suffices to show
+that φ! Q̄l ∈ D0 (Z∅,δ ). For any z ∈ WJ let
+                      Z z = {(B, B ′ , B1 , B1′ , g) ∈ Z; pos(B, B1) = z}.
+Now (Z z )z∈WJ is a partition of Z into locally closed subvarieties. Let φz : Z z −
+                                                                                  →
+                                                         z
+Z∅,δ be the restriction of φ. It suffices to show that φ! Q̄l ∈ D0 (Z∅,δ ). Consider
+                             w
+the partition Z∅,δ = ⊔w∈W Z∅,δ   where
+                      w
+                     Z∅,δ = {(B1 , B1′ , gUB1 ) ∈ Z∅,δ ; pos(B1 , B1′ ) = w}.
+
+It suffices to show that for any w, the restriction of φz! Q̄l to Z∅,δ    w
+                                                                            has cohomology
+sheaves which are local systems with all composition factors isomorphic to Q̄l . Let
+us fix (B1 , B1′ ) ∈ B × B such that pos(B1 , B1′ ) = w. It suffices to show that the
+restriction of φz! Q̄l to {(B1 , B1′ , gUB1 ); g ∈ G1 , g B1 = B1′ } has cohomology sheaves
+which are local systems with all composition factors isomorphic to Q̄l . Let T1 be
+a maximal torus of B1 ∩ B1′ . We can find ζ ∈ G1 , h ∈ G such that
+                 ζ
+                     B1 = B1′ , ζ T1 = T1 ,   h
+                                                  T1 = T1 , pos(h B1 , B1 ) = z.
+Let
+        Z ′ = {(B, u, t) ∈ B × UB1 × T1 ; pos(B, ζtu B) = x, pos(B, B1 ) = z}.
+Consider the projection pr3′ : Z ′ −
+                                   → T1 . We must show that (pr3′ )! Q̄l ∈ D(T1 ) has
+cohomology sheaves which are local systems with all composition factors isomor-
+phic to Q̄l . Let
+            Z ′′ = {(v, u, t) ∈ UB1 × UB1 × T1 ; pos(vh B1 , ζtuvh B1 ) = x}.
+Define Z ′′ −
+            → Z ′ by (v, u, t) 7→ (vh B1 , u, t) (an affine space bundle). Consider
+the projection pr3′′ : Z ′′ −
+                            → T1 . It suffices to show that (pr3′′ )! Q̄l ∈ D(T1 ) has
+cohomology sheaves which are local systems that are direct sums of copies of Q̄l .
+We make the change of variable (v, u, t) 7→ (v, u′ , t) where u′ = tuvt−1 . Since
+th ∈ hB1 , Z ′′ becomes Z̃ × T1 where
+                                                                   ′
+                 Z̃ = {(v, u′ ) ∈ UB1 × UB1 ; pos(vh B1 , ζu h B1 ) = x}
+and pr3′′ becomes the second projection Z̃ × T1 −  → T1 . The desired conclusion
+                          ∼
+follows. The case where L =
+                          6 Q̄l is treated similarly (compare with [L7, 2.2].).
+26                                          G. LUSZTIG
+
+Lemma 6.6. Let J ⊂ I. If A ∈ D(ZJ,δ ), then some shift of A is a direct summand
+of fJ∅ eJ∅ (A).
+     The argument in this proof is inspired by one in [G, 8.5.1]. Let
+
+                           V = {(Q, hUQ ); Q∈ PJ , hUQ ∈ Q/UQ }.
+
+Define m : ZJ,δ ×PJ V −     → ZJ,δ by m((P, hUP ), (P, P ′ , gUP )) = (P, P ′ , ghUP ). For
+X ∈ D(ZJ,δ ), C ∈ D(V) we set X ◦ C = m! (X ⊠ C) ∈ D(ZJ,δ ).
+   Let V0 = {(Q, hUQ ) ∈ V; h ∈ UQ } and let j : V0 −  → V be the inclusion. Let Ṽ be
+the set of all pairs (B, hUQ ) where B ∈ B and hUQ ∈ UB /UQ (with Q ∈ PJ given
+by B ⊂ Q). Define π : Ṽ −      → V by π(B, hUQ ) = (Q, hUQ ). Clearly, the lemma is a
+consequence of (a),(b),(c) below.
+   (a) A ◦ (j! Q̄l ) = A,
+   (b) A ◦ (π! Q̄l ) = fJ∅ eJ∅ (A),
+   (c) j! Q̄l [n] is a direct summand of p! Q̄l for some n.
+Now (a) is obvious. We prove (b). We have fJ∅ eJ∅ (A) = d! c∗ c! d∗ (A) where
+
+                                             c          d
+                                           − Z∅,J,δ −
+                                      Z∅,δ ←        → ZJ,δ
+
+are defined by
+
+             c(B, B ′ , gUP ) = (B, B ′ , gUB ),     d(B, B ′ , gUP ) = (P, P ′ , gUP )
+
+(with P ∈ PJ , P ′ ∈ Pδ(J) given by B ⊂ P, B ′ ⊂ P ′ ). Let Z ′ be the set of all
+quadruples (B, B ′ , gUP , g ′ UP ) where (B, B ′ ) ∈ B × B, P ∈ PJ is given by B ⊂ P
+and gUP , g ′ UP ∈ G1 /UP are such that g B = B ′ and gUB = g ′ UB . Let b, b′ be the
+projections pr123 : Z ′ −
+                        → Z∅,J,δ , pr124 : Z ′ −
+                                               → Z∅,J,δ . Define a, a′ : Z ′ −
+                                                                             → ZJ,δ by
+
+     a(B, B ′ , gUP , g ′ UP ) = (P, P ′ , gUP ),   a′ (B, B ′ , gUP , g ′ UP ) = (P, P ′ , g ′ UP ),
+
+where P, P ′ are as above. Then a = db, a′ = db′ . By the change of basis theorem
+we have c∗ c! = b′! b∗ hence
+
+                   fJ∅ eJ∅ (A) = d! b′! b∗ d∗ (A) = (db′ )! (db)∗ (A) = a′! a∗ (A).
+
+Let Z ′′ be the set of all triples (B, gUP , hUP ) where B ∈ B, P ∈ PJ is given by
+B ⊂ P , gUP ∈ G1 /UP and h ∈ UB . Define ã, ã′ : Z ′′ −
+                                                        → ZJ,δ by
+
+         ã(B, gUP , hUP ) = (P, g P, gUP ),        ã′ (B, gUP , hUP ) = (P, g P, ghUP )
+
+with P as above. From the definitions we have A ◦ (π! Q̄l ) = ã′! ã∗ (A). The isomor-
+phism
+                       ∼
+             ι : Z ′′ −→ Z ′ , (B, gUP , hUP ) 7→ (B, g B, gUP , ghUP )
+                           PARABOLIC CHARACTER SHEAVES, I                                         27
+
+satisfies aι = ã, a′ ι = ã′ . Thus, ã′! ã∗ (A) = a′! ι! ι∗ a∗ (A) = a′! a∗ (A) and (b) is proved.
+   We prove (c). Let Q ∈ PJ . Let
+
+                  ^
+                  Q/U Q = {(B, hUQ ); B ∈ B, B ⊂ Q, hUQ ∈ UB /UQ }.
+
+
+            ^
+Let π ′ : Q/U    Q −→ Q/UQ be the second projection. It is known that π ′ is a
+semismall map onto its image (the set of unipotent elements in Q/UQ ) and that
+π!′ Q̄l contains as a direct summand a shift of the skyscraper sheaf of Q/UQ at the
+unit element of Q/UQ . Using G-equivariance, we see that a shift of j! Q̄l is a direct
+summand of π! Q̄l . This proves (c). The lemma is proved.
+Proposition 6.7. (a) Let J ⊂ I. Let A ∈ D(ZJ,δ ). We have A ∈ D0 (ZJ,δ ) if and
+only if eJ∅ (A) ∈ D0 (Z∅,δ ).
+                                                      ′
+   (b) Let J ⊂ J ′ ⊂ I. If A′ ∈ D0 (ZJ ′ ,δ ) then eJJ (A′ ) ∈ D0 (ZJ,δ ).
+    We prove (a). If A ∈ D0 (ZJ,δ ) then eJ∅ (A) ∈ D0 (Z∅,δ ) by Lemma 6.5. Con-
+versely, assume that eJ∅ (A) ∈ D0 (Z∅,δ ). Using Lemma 6.4, we have fJ∅ eJ∅ (A) ∈
+D0 (ZJ,δ ). Using this and Lemma 6.6, we see that A ∈ D0 (ZJ,δ ).
+                                              ′
+    We prove (b). Applying (a) to A = eJJ (A′ ) we see that it suffices to show that
+       ′                                                           ′
+eJ∅ eJJ (A′ ) ∈ D0 (Z∅,δ ) or equivalently (see Lemma 6.2) that eJ∅ (A′ ) ∈ D0 (Z∅,δ ).
+But this follows from Lemma 6.5.
+Corollary 6.8. Let J ⊂ I. Let A be a character sheaf on G1 . Then eIJ (A) ∈
+D0 (ZJ,δ ).
+
+                             7. Characteristic functions
+7.1. We preserve the setup of 3.1. Assume that k, Fq are as in 1.2 and that we
+are given an Fq -rational structure on Ĝ with Frobenius map F : Ĝ −  → Ĝ such that
+G1 is defined over Fq . Now F induces on the Weyl group W an automorphism
+denoted by F : W −    → W ; it commutes with δ : W −      → W and it carries I onto
+itself. Let J ⊂ I be such that F (J) = J. Then PJ , Pδ(J) are defined over Fq and
+ZJ,δ is defined over Fq with corresponding Frobenius map F : ZJ,δ −      → ZJ,δ given
+            ′                     ′
+by F (P, P , gUP ) = (F (P ), F (P ), F (g)UF (P )). The natural G-action on ZJ,δ (see
+3.11) restricts to a G(Fq )-action on ZJ,δ (Fq ). Let EJ,δ be the vector space of all
+functions ZJ,δ (Fq ) −
+                     → Q̄l that are constant on the orbits of G(Fq ).
+7.2. If X is an algebraic variety over k with a fixed Fq -structure and with Frobe-
+nius map F : X − → X and if we are given K ∈ D(X) together with an isomorphism
+     ∗
+φ:F K−   → K, we denote by χK,φ : X(Fq ) −    → Q̄l the corresponding characteristic
+function; for x ∈ X(Fq ), χK,φ (x) is the alternating sum over i ∈ Z of the trace of
+the map induced by φ on the stalk at x of the i-th cohomology sheaf of K.
+                                 F
+7.3. In the setting of 7.1, let CJ,d = {A ∈ CJ,δ ; F ∗ A ∼                   F
+                                                         = A}. For any A ∈ CJ,δ we
+                                ∗
+choose an isomorphism φA : F A −     → A. (It is unique up to multiplication by an
+28                                        G. LUSZTIG
+
+element in Q̄∗l .) Then χA,φA : ZJ,δ F
+                                       −
+                                       → Q̄l is constant on the orbits of G(Fq ) since
+A is G-equivariant.
+                        ∼
+   Define F : T (J, δ) −→ T (J, δ) by F ((Jn , wn )n≥0 ) = (F (Jn ), F (wn ))n≥0 . Clearly,
+F : ZJ,δ −→ ZJ,δ carries t ZJ,δ onto F (t) ZJ,δ . In particular, t ZJ,δ is F -stable if and
+only if t ∈ T (J, δ)F (that is, F (t) = t). For any t ∈ T (J, δ)F , let Et,δ be the vector
+space of all functions t ZJ,δ (Fq ) −
+                                    → Q̄l that are constant on the orbits of G(Fq ). We
+may identify Et,δ with a subspace Ẽt,δ of EJ,δ by associating to f ∈ Et,δ the func-
+tion f˜ ∈ EJ,δ whose restriction to Et,δ is f and which is 0 on ZJ,δ (Fq ) − t ZJ,δ (Fq ).
+Clearly,
+
+(a)                               EJ,δ = ⊕t∈T (J,δ)F Ẽ(t, δ).
+                         ′ F
+For t ∈ T (J, δ)F let Ct,δ    = {A′ ∈ Ct,δ ′           ∼ A′ }. For any A′ ∈ C ′ F we
+                                              ; F ∗ A′ =                      t,δ
+choose an isomorphism φA′ : F ∗ A′ −  → A′ . (It is unique up to multiplication by an
+element in Q̄∗l .) Then χA′ ,φA′ : t ZJ,δ
+                                      F
+                                          −→ Q̄l is constant on the orbits of G(Fq ).
+Thus χA′ ,φA′ ∈ E(t, δ) and χ^A′ ,φA′ ∈ Ẽ(t, δ) ⊂ E(J, δ).
+                              F
+Lemma 7.4. Let A ∈ CJ,δ         . Let d = dim supp(A). For any t ∈ T (J, δ) let
+                                            ′
+t
+  A = A|t ZJ,δ . Define t ∈ T (J, δ), A0 ∈ Ct,δ
+                           0
+                                                by t A = A0 , t A = A0 (see Lemma
+                                       ′ F
+4.13). We have t0 ∈ T (J, δ)F , A0 ∈ Ct,δ  and
+                                   X                X
+       χA,φA = λχ^   A0 ,φA0 +                                   λt,A′ χ^
+                                                                        A′ ,φA′
+                                                        ′ F ,dim supp(A′ )<d
+                                 t∈T (J,δ)F ,t6=t0 A′ ∈Ct,δ
+
+
+where λt,A′ ∈ Q̄l , λ ∈ Q̄∗l .
+  For any t ∈ T (J, δ)F , φA induces an isomorphism F ∗ (t A) −
+                                                              → t A denoted again
+by φA and we have                       X
+                             χA,φA =          χ^
+                                               t A,φ .
+                                                    A
+                                            t∈T (J,δ)F
+
+For t = t0 we have χ^  t A,φ
+                             A
+                                = λχ^                         ∗
+                                     A0 ,φA0 where λ ∈ Q̄l . It remains to show that,
+for any t ∈ T (J, δ)F − {t0 }, χt A,φA is a Q̄l -linear combination of functions χA′ ,φA′
+where A′ ∈ Ct,δ
+              ′ F
+                  , dim supp(A′ ) < d. Clearly,
+                                       X
+                             χt A,φA =     (−1)i χp H i (t A),φA
+                                            i
+
+where the isomorphism F ∗ (p H i (t A)) −   → p H i (t A) induced by φA is denoted again
+by φA . It then suffices to show that
+   (a) χp H i (t A),φA is a Q̄l -linear combination of functions χA′ ,φA′ where A′ ∈
+ ′ F
+Ct,δ , dim supp(A′ ) < d.
+From Lemma 4.13 we see that dim suppt A < d. Hence dim suppp H i (t A) < d and
+any composition factor A′ of p H i (t A) has support of dimension < d. By Lemma
+4.12, any such A′ is in Ct,δ′
+                                 and (a) follows. The lemma is proved.
+                         PARABOLIC CHARACTER SHEAVES, I                                    29
+
+7.5. We consider the following statement.
+                                                      F
+   (∗) The functions χA,φA where A runs over CJ,δ          form a Q̄l -basis of EJ,δ .
+                                                1
+In the case where J = I, so that ZJ,δ = G , and assuming that the characteristic
+of k is not too small, statement (∗) appears without proof in [L6, 5.2.1] and with
+proof (when G1 = G) in [L5, 25.2]. In the remainder of this section we assume
+that (∗) holds when J = I (for G and for groups of smaller dimension).
+   We show that (∗) holds. By Lemma 7.4, the functions χA,φA are related to
+                                                    ′      ′ F
+the functions χ^                               F
+                  A′ ,φA′ (with t ∈ T (J, δ) , A ∈ Ct,δ ) by an upper triangular
+matrix with invertible entries on the diagonal. Hence it suffices to show that the
+functions χ^                           F     ′     ′ F
+            A′ ,φA′ (with t ∈ T (J, δ) , A ∈ Ct,δ ) form a Q̄l -basis of EJ,δ . Using
+7.3(a), we see that it suffices to show that for any t ∈ T (J, δ)F , the functions
+χA′ ,φA′ (with A′ ∈ Ct,δ ′ F
+                             ) form a Q̄l -basis of Et,δ . Using 3.14 and the definition
+     ′
+of Ct,δ (see 4.6), we see that it suffices to prove the statement in the previous
+sentence when t ZJ,δ are replaced by tr ZJr ,δ (notation of 3.14) for r large. We may
+assume that P, P ′ , Lt , Ct (as in 3.14) are defined over Fq . We are reduced to the
+statement that the characteristic functions of the character sheaves on Ct (relative
+to the Fq -structure) form a Q̄l -basis for the space of Lt (Fq )-invariant functions
+Ct (Fq ) −
+         → Q̄l , which is part of our assumption.
+
+                                       References
+[B]   R.Bédard, On the Brauer liftings for modular representations, J.Algebra 93 (1985), 332-
+      353.
+[BBD] A.A.Beilinson, J.Bernstein and P.Deligne, Faisceaux pervers, Astérisque 100 (1982).
+[DL] P.Deligne and G.Lusztig, Representations of reductive groups over finite fields, Ann.
+      Math. 103 (1976), 103-161.
+[G]   V.Ginzburg, Admissible complexes on a symmetric space, Astérisque 173-174 (1989),
+      199-255.
+[L1]  G.Lusztig, On the Green polynomials of classical groups, Proc.Lond.Math.Soc. 33 (1976),
+      443-475.
+[L2]  G.Lusztig, On the finiteness of the number of unipotent classes, Inv.Math. 34 (1976),
+      201-213.
+[L3]  G.Lusztig, Character sheaves, I, Adv.Math. 56 (1985), 193-237.
+[L4]  G.Lusztig, Character sheaves, III, Adv.Math. 57 (1985), 266-315.
+[L5]  G.Lusztig, Character sheaves, V, Adv.Math. 61 (1986), 103-155.
+[L6]  G.Lusztig, Introduction to character sheaves, Proc.Symp.Pure Math. 47 (1987), 165-179.
+[L7]  G.Lusztig, Green functions and character sheaves, Ann.Math. 131 (1990), 355-408.
+[L8]  G.Lusztig, Hecke algebras with unequal parameters, RT/0208154.
+
+      Department of Mathematics, M.I.T., Cambridge, MA 02139
+

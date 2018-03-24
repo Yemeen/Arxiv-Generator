@@ -1,0 +1,829 @@
+                                                  TWO-ROW NILPOTENT ORBITS OF CYCLIC
+                                                               QUIVERS
+arXiv:math/0111184v2 [math.RT] 6 Feb 2002
+
+
+
+
+                                                                      ANTHONY HENDERSON
+
+                                                   Abstract. We prove that the local intersection cohomology of
+                                                   nilpotent orbit closures of cyclic quivers is trivial when the two
+                                                   orbits involved correspond to partitions with at most two rows.
+                                                   This gives a geometric proof of a result of Graham and Lehrer,
+                                                   which states that standard modules of the affine Hecke algebra of
+                                                   GLd corresponding to nilpotents with at most two Jordan blocks
+                                                   are multiplicity-free.
+
+
+
+
+                                                                        1. Introduction
+                                               Let ∆n be the cyclic quiver with n vertices. The isomorphism classes
+                                            of nilpotent complex representations of ∆n are in bijection with certain
+                                            nilpotent orbits in a suitable variety (see §2 for the definition). The clo-
+                                            sure of such a nilpotent orbit is usually singular, and it is an important
+                                            problem to compute its local intersection cohomology at the points of
+                                            another given orbit (see §3). If n = 1, these are the usual nilpotent
+                                            orbits in gld , and the problem was solved by Lusztig in [6].
+                                               The main result of this paper (Theorem 3.1 below) is that this local
+                                            intersection cohomology is trivial when the two orbits involved corre-
+                                            spond to partitions with at most two rows (equivalently, the represen-
+                                            tations of ∆n involved are either indecomposable or the sum of two
+                                            indecomposables).
+                                               In §3 we discuss some equivalent formulations of this result. The
+                                            most noteworthy concerns the complex representation theory of H          ed ,
+                                            the affine Hecke algebra of GLd (C) (as defined in [4]). This algebra
+                                            has geometrically-defined standard modules Ms,x,q0 indexed by triples
+                                            (s, x, q0 ) where s ∈ GLd (C) is semisimple, x ∈ gld (C) is nilpotent,
+                                            q0 ∈ C× , and
+                                                                          Ad(s)(x) = q0 x.
+                                            By a well-known result of Ginzburg, Theorem 3.1 (for n ≥ 2) is equiv-
+                                            alent to the statement that Ms,x,q0 is multiplicity-free when q0 is a
+                                            primitive n-th root of unity, all eigenvalues of s are powers of q0 , and x
+                                            has at most two Jordan blocks. (See §3 for more on the equivalence.)
+                                                                                   1
+2                          ANTHONY HENDERSON
+
+   This statement was recently proved by Graham and Lehrer in [2].
+Actually, they imposed no conditions on s and q0 , but it is easy to
+reduce to the above case. Their method is algebraic, making use of the
+representation theory of the affine Temperley-Lieb algebras, and their
+results apply over more general ground fields (with induced modules in-
+stead of standard modules). The present paper arose from the author’s
+desire to give a purely geometric/combinatorial proof of Theorem 3.1,
+thus reproving Graham and Lehrer’s result (in the complex case).
+   In §4 we introduce canonical resolutions of the nilpotent orbit clo-
+sures, and derive a dimension formula for the orbits, which appears to
+be new (see Lemma 4.1). We also discuss how to determine the local
+intersection cohomology, given the Poincaré polynomials of the fibres
+of these resolutions. Then for the remainder of the paper we restrict
+attention to the nilpotent orbits with at most two rows. Section 5 con-
+tains some preliminary Lemmas, and Section 6 completely describes
+the closure relations among such orbits. Section 7 presents the proof
+of Theorem 3.1.
+   Our notation for partitions and Young diagrams follows [8]. In par-
+ticular, if λ is a partition, its nonzero parts are λ1 ≥ λ2 ≥ · · · ≥ λℓ(λ) ,
+where ℓ(λ) is the length; and λ′ denotes the transpose partition.
+   Acknowledgements. I am very grateful to John Graham and Gus
+Lehrer for telling me about their result and showing me a draft of [2].
+
+              2. Nilpotent Orbits of Cyclic Quivers
+   Fix   a positive integer n. Let ∆n be the cyclic quiver of type A]n−1 ,
+which    has vertex set I = Z/nZ and an arrow from i to i − 1 for all
+i ∈ I.   Let V = ⊕i∈I Vi be an I-graded vector space over C. We write
+di for   dimPVi , d for the dimension vector dim V = (di )i∈I , and d for
+dim V    = i∈I di . Let
+                                M
+                           EV =     Hom(Vi , Vi−1 )
+                                i∈I
+
+be the space of representations of ∆n on V . Two representations
+                                                           Q          in
+EV are isomorphic iff they are in the same orbit of GV = i∈I GL(Vi ),
+acting on EV by conjugation.
+   We say that x ∈ EV , and its GV -orbit, are nilpotent if x is nilpo-
+tent as an element of End(V ). Let NV be the subvariety of nilpotent
+elements of EV . The nilpotent GL(V )-orbits in End(V ) are in bijec-
+tion with Λ(d), the set of partitions of size d: let Oλ denote the orbit
+corresponding to the partition λ. The GV -orbits in NV have a similar
+description, as follows.
+           TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                       3
+
+   The isomorphism classes of indecomposable nilpotent representa-
+tions of ∆n are called segments. There is a segment [i; l) for each i ∈ I
+and l ∈ Z+ ; in our convention this is the isoclass of indecomposables
+of length l whose socle is the simple module corresponding to i. The
+notation is meant to suggest the multiset {i, i + 1, · · · , i + l − 1}, which
+(regarded as a function I → N) is precisely the dimension vector of an
+indecomposable representation in this class. Since any representation
+is a direct sum of indecomposables, the nilpotent representations are
+parametrized by multisegments (multisets of segments), which we write
+with direct sum notation, e.g. [i1 ; l1 ) ⊕ · · · ⊕ [is ; ls ).
+   Collecting together all segments [i; l) with the same i, we can think
+of a multisegment as an I-tuple of partitions λ = (λ(i) )i∈I . Let   ` Λ be
+the set of such I-tuples, and for λ ∈ Λ, write λ for the union i∈I λ(i) .
+We will identify λ with the corresponding I-labelled Young diagram
+of shape λ. This is the unique I-labelled Young diagram in which the
+labels from left to right across a row increase by 1 at each step, and λ(i)
+is the subpartition formed by all rows starting with the label i. (Two
+I-labelled Young diagrams which differ by permuting rows of equal
+length are considered the same.)
+Example 2.1. Suppose n = 3. Consider the multisegment
+                  [2; 2) ⊕ [0; 2) ⊕ [1; 4) ⊕ [1; 1) ⊕ [0; 2).
+The corresponding λ has λ(0) = (22 ), λ(1) = (41), and λ(2) = (2). So
+                                          1      201
+                              3
+                                          0      1
+                      λ = (42 1), and λ = 0      1   .
+                                          2      0
+                                          1
+  The dimension vector of a nilpotent representation in the class cor-
+responding to λ is d(λ) = (di (λ))i∈I , where di (λ) is the number of
+boxes labelled i. Consequently, the GV -orbits in NV are in bijection
+with Λ(d) = {λ ∈ Λ | d(λ) = d}. For λ ∈ Λ(d), write Oλ for the
+corresponding orbit. In other words,
+                 Oλ = {x ∈ NV | dim ker xk = d(λ≤k )},
+where λ≤k is obtained from λ by deleting all but the first k columns.
+Clearly the GL(V )-orbit containing Oλ is Oλ .
+  We define a partial order ≤ on Λ(d) by
+                           µ ≤ λ ⇔ Oµ ⊆ Oλ.
+We will be mainly interested in the sub-poset Λ≤2 (d) of Λ(d) con-
+sisting of all λ with at most two rows. The corresponding nilpotent
+4                        ANTHONY HENDERSON
+
+representations are either indecomposable or the sum of two indecom-
+posables; as elements of End(V ), they have at most two Jordan blocks.
+Obviously µ ∈ Λ≤2 (d), µ ≤ λ ⇒ λ ∈ Λ≤2 (d).
+Remark 2.2. All of the above remains true for the linear quiver of
+type A∞ , if we take I = Z. In this case Λ≤2 (d) has at most 2 elements,
+of which the maximal one parametrizes the orbit which is dense in
+NV = EV . As we will see, Λ≤2 (d) is more interesting for ∆n , but still
+much simpler to describe than the whole poset Λ(d).
+
+              3. Local Intersection Cohomology
+   For λ ∈ Λ(d), let Hk IC(Oλ) be the k-th intersection cohomology
+sheaf of the (usually singular) variety Oλ. As we will see, this vanishes
+if k is odd. If µ ≤ λ, let the local IC polynomial K̃λ,µ(t) ∈ N[t] be
+                               X
+                   K̃λ,µ(t) =      dim Hx2kµ IC(Oλ) tk ,
+                               k≥0
+
+where Hx2kµ IC(Oλ) means the stalk at some point xµ ∈ Oµ. Trivially
+we have K̃λ,λ(t) = 1 for all λ. By basic properties of intersection
+cohomology, K̃λ,µ(t) has constant term 1 and satisfies
+(3.1)           deg K̃λ,µ < (codim Oλ Oµ)/2, if µ < λ.
+If µ  λ, we set K̃λ,µ(t) = 0. The main result of this paper is:
+Theorem 3.1. For λ ≥ µ in Λ≤2 (d), K̃λ,µ(t) = 1.
+In other words, for λ ≥ µ in Λ≤2 (d), Oλ is rationally smooth at the
+points of Oµ (in general, it is not actually smooth there).
+  If n = 1, Λ(d) = Λ(d) and Oλ = Oλ . Lusztig proved in [6] that
+                     K̃λ,µ (t) = tn(µ)−n(λ) Kλ,µ (t−1 ),
+                                                           P
+where Kλ,µ (·) is the Kostka-Foulkes polynomial and n(λ) = (k−1)λk .
+So in this case Theorem 3.1 is well known.
+   Several important results involve the polynomials K̃λ,µ(t), which is
+why one wants to compute them. In [7, §11] Lusztig showed that the
+orbit closures Oλ could be embedded as open subvarieties of certain
+affine Schubert varieties of type A, which explains why Hk IC(Oλ) = 0
+for k odd. It also means that there is an order-preserving injection
+                         Λ(d) ֒→ W̃ : λ 7→ wλ,
+where W̃ is the affine Weyl group of type A ]d−1 , such that K̃λ,µ(t) is
+the affine Kazhdan-Lusztig polynomial Pwµ ,wλ (t). (This gives a combi-
+natorial algorithm for computing K̃λ,µ(t) in general, but it is a highly
+          TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                    5
+
+impractical one.) So Theorem 3.1 assserts that certain very special
+affine Kazhdan-Lusztig polynomials are trivial. One can also interpret
+(K̃λ,µ(t)) as the transition matrix between two bases of the generic Hall
+algebra of ∆n , an algebra of great importance in the theory of quantum
+affine sln (see for instance [5, §3]). We will not say anything further
+about either of these points of view.
+   There are also well-known interpretations of (some of) the values
+K̃λ,µ(1) in complex representation theory. In the case n = 1, K̃λ,µ (1)
+is the Kostka number Kλ,µ , which gives the multiplicity of the simple
+representation Vλ of the symmetric group Sd in the induced representa-
+tion IndSSdµ ×Sµ ×···×Sµ (C). So in this case Theorem 3.1 asserts that an
+          1    2     ℓ(µ)
+
+induced representation of the form IndSSdµ ×Sµ (C) is multiplicity-free,
+                                          1   2
+which is again well known.
+   If on the other hand n ≥ 2, let ζ ∈ C× be a primitive n-th root of
+unity. Let s ∈ GL(V ) be the semisimple element which acts by the
+scalar ζ −i on Vi . Then EV = {x ∈ End(V ) | Ad(s)(x) = ζx}. Thus for
+any x ∈ NV , we have an associated standard module Ms,x,ζ of H  ed , the
+affine Hecke algebra of GLd (C) mentioned in the Introduction. Up to
+isomorphism, this depends only on the GV -orbit of x, so we will write
+it as Mλ for λ ∈ Λ(d).
+   Let Lλ be the quotient of Mλ defined in [1, Chapter 8], which is
+either 0 or a simple module. We say that λ ∈ Λ(d) is aperiodic if
+for all m there exists some i ∈ I such that m is not a part of λ(i) .
+It follows from results of Lusztig that Lλ 6= 0 iff λ is aperiodic (see
+[5, §2 and Appendix]). All simple constituents of Mµ for µ ∈ Λ(d)
+are isomorphic to some such nonzero Lλ, and we have the following
+multiplicity formula due to Ginzburg ([1, Theorem 8.6.15], [5, §2]):
+                            [Mµ : Lλ] = K̃λ,µ(1).
+So Theorem 3.1 implies that if µ ∈ Λ≤2 (d), Mµ is multiplicity-free. In
+fact, this is equivalent to Theorem 3.1 (for n ≥ 2), since an element of
+Λ≤2 (d) must be aperiodic, unless n = 2, all di are equal, and it is the
+minimal element of Λ≤2 (d). As mentioned in the Introduction, this
+equivalent formulation is part of the main result of [2]. Thus Theorem
+3.1 has already been proved representation-theoretically; we will prove
+it geometrically in the course of subsequent sections.
+
+              4. Resolutions of the Orbit Closures
+  The key to our approach is the fact that each orbit closure Oλ has
+an obvious resolution of singularities. Fix λ ∈ Λ(d). Let l = ℓ(λ′ )
+be the number of columns of λ. Recall that λ≤k ∈ Λ is obtained by
+6                         ANTHONY HENDERSON
+
+deleting all but the first k columns of λ. Define the I-graded partial
+flag variety
+    Fλ = {0 = W (0) ⊂ W (1) ⊂ · · · ⊂ W (l) = V | dim W (k) = d(λ≤k )},
+and let
+    f = {(x, (W (k) )) ∈ N × F | x(W (k) ) ⊆ W (k−1) , 1 ≤ k ≤ l}.
+    O λ                   V   λ
+
+In the case n = 1, this is the cotangent bundle of Fλ = Fλ . In general
+we have:
+Lemma 4.1.       1. Fλ is a smooth irreducible projective variety, and
+                        "                                   #
+                   X di  X     l 
+                                     di (λ≤k ) − di (λ≤k−1)
+          dim Fλ =            −                                .
+                    i∈I
+                          2     k=1
+                                                2
+
+                             f → F is a vector bundle, with fibres of
+    2. The second projection O  λ      λ
+       dimension
+              "                                        #
+          X di  X     l 
+                            di (λ≤k ) − di (λ≤k−1 ) + 1
+                    +                                     − ǫ(λ),
+          i∈I
+                 2     k=1
+                                         2
+
+      where
+                               X
+                   ǫ(λ) =                 dlast label of R (λ≤|R| )
+                            rows R of λ
+                                   (i)
+                            X ℓ(λ
+                               X)                         (i)
+                        =                di+λ(i)
+                                             p −1
+                                                  (λ≤λp ).
+                            i∈I   p=1
+
+                                 f → N has image O and is an iso-
+    3. The first projection pλ : Oλ   V              λ
+       morphism over Oλ. Hence pλ is a resolution of Oλ, and
+
+                       dim Oλ = dim Oλ = dim O f
+                                                λ
+                                X
+                              =    d2i − ǫ(λ).
+                                    i∈I
+
+      So if µ ≤ λ, codim Oλ Oµ = ǫ(µ) − ǫ(λ).
+Proof. (1) is obvious, because Fλ is the product of partial flag varieties
+in each V of the required dimension. Clearly O   f → F is a vector
+           i                                                    λ     λ
+bundle, and the fibre over (W (k) ) ∈ Fλ is
+        M                             (k)     (k−1)
+           {φ ∈ Hom(Vi+1 , Vi ) | φ(Wi+1) ⊆ Wi      , 1 ≤ k ≤ l},
+          i∈I
+            TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                   7
+
+which has dimension
+                l
+               XX
+                         (di+1 (λ≤k ) − di+1 (λ≤k−1))di (λ≤k−1 ).
+               i∈I k=1
+
+This is the number of ordered pairs of boxes (b, b′ ) in λ where the
+column containing b′ is further right than the column containing b, and
+the label of b′ is one more than the label of b. Considering the box b′′
+immediately to the left of b′ , we see that this is the same as the number
+of ordered pairs of boxes (b, b′′ ) with the same label where the column
+containing b′′ is further right than or equal to the column containing b,
+and where b′′ is not at the end of a row. This gives (2). For (3), pλ is
+proper since Fλ is projective. From the definitions,
+   p−1
+    λ (Oλ) = {(x, (W
+                     (k)
+                         )) ∈ NV × Fλ | ker xk = W (k) , 1 ≤ k ≤ l},
+
+which is clearly open in O f and isomorphic to O . The rest follows
+                             λ                      λ
+                                       f
+since we know from (1) and (2) that Oλ is smooth and irreducible.
+              P      2
+   Note that    i∈I di = dim GV . So (3) implies that for xλ ∈ Oλ,
+dim ZGV (xλ) = ǫ(λ). (Thus the notation agrees with [5, §3].) Since
+ZGV (xλ) is an open subvariety of the algebra of endomorphisms of xλ
+as a representation of ∆n , it is connected. So the only GV -equivariant
+simple perverse sheaves on NV are the shifted intersection cohomol-
+ogy complexes IC(Oλ)[dim Oλ], for λ ∈ Λ(d). By the Equivariant
+Decomposition Theorem (see for example [1, Theorem 8.4.7]),
+                                 M
+(4.1)     R(pλ)∗ C[dim Oλ] ∼  =      IC(Oν )[dim Oν + j]⊕aλ,ν ,j
+                                   ν≤λ
+                                   j∈Z
+
+for some aλ,ν,j ∈ N. Since the left-hand side is Verdier self-dual,
+aλ,ν,j = aλ,ν,−j . Since pλ is an isomorphism over Oλ, aλ,λ,j is 1 if
+j = 0 and 0 otherwise.
+   Taking stalk at xµ ∈ Oµ of both sides of (4.1), we get
+                                                           !
+   X                          X X
+       dim H k (p−1        k
+                 λ (xµ )) t =           aλ,ν,j tǫ(ν)−ǫ(λ)−j K̃ν,µ(t2 ).
+  k≥0                            λ≥ν≥µ     j∈Z
+
+Now
+        p−1     ∼     (k)
+                          ) ∈ Fλ | xµ(W (k) ) ⊆ W (k−1) , 1 ≤ k ≤ l}.
+         λ (xµ) = {(W
+
+It is easy to prove (say by induction on l) that p−1
+                                                  λ (xµ ) has a paving
+by affine spaces, and hence has no odd cohomologies. (In the cases we
+use below we will see this another way.) So in fact aλ,ν,j = 0 if j is of
+8                             ANTHONY HENDERSON
+
+
+            P to ǫ(ν) −2kǫ(λ),
+opposite parity
+                           −1
+                               and if we write gλ,µ(t) for the Poincaré
+polynomial k≥0 dim H (pλ (xµ)) tk , we have
+                                                              
+                X            X
+(4.2) gλ,µ(t) =                       aλ,ν,j t(ǫ(ν)−ǫ(λ)−j)/2  K̃ν,µ(t).
+                    λ≥ν≥µ     j≡ǫ(ν)−ǫ(λ) mod 2
+
+Thanks to the degree constraint and others we have mentioned, know-
+ing gλ,µ(t) for all λ ≥ µ determines all aλ,µ,j and K̃λ,µ(t). In fact:
+Lemma 4.2. If bλ,µ,j ∈ C and Lλ,µ(t) ∈ C[t] for all λ ≥ µ ∈ Λ(d)
+and j ∈ Z satisfy:
+  1. for all λ ≥ µ,
+                                                        
+                X        X
+    gλ,µ(t) =                   bλ,ν,j t(ǫ(ν)−ǫ(λ)−j)/2  Lν,µ(t),
+                  λ≥ν≥µ     j≡ǫ(ν)−ǫ(λ) mod 2
+
+    2.   bλ,λ,j = δj,0 ,
+    3.   bλ,µ,j = bλ,µ,−j ,
+    4.   bλ,µ,j = 0 if j is of opposite parity to ǫ(µ) − ǫ(λ),
+    5.   Lλ,λ(t) = 1, and
+    6.   deg Lλ,µ < (ǫ(µ) − ǫ(λ))/2 for µ < λ,
+then bλ,µ,j = aλ,µ,j , Lλ,µ(t) = K̃λ,µ(t) for all λ ≥ µ, j ∈ Z.
+Proof. We know that bλ,µ,j = aλ,µ,j , Lλ,µ(t) = K̃λ,µ(t) is a solution of
+(1)–(6). We now give an algorithm to determine bλ,µ,j and Lλ,µ(t) from
+(1)–(6), assuming that all gλ,µ(t) are known, thus showing that this is
+the unique solution. This algorithm is by induction on ǫ(µ) − ǫ(λ).
+If this is 0, µ = λ, and bλ,λ,j and Lλ,λ(t) are determined by (2) and
+(5) respectively. Otherwise, we can apply the induction hypothesis to
+λ > ν and ν > µ, and hence assume that all terms in the right-hand
+side of (1) have been determined except ν = λ and ν = µ. So we know
+the value of
+                             X
+              Lλ,µ(t) +                bλ,µ,j t(ǫ(µ)−ǫ(λ)−j)/2 .
+                            j≡ǫ(µ)−ǫ(λ) mod 2
+
+Because of (6), this determines bλ,µ,j for j ≤ 0, j ≡ ǫ(µ) − ǫ(λ) mod 2,
+hence for all j by (3) and (4). Thus Lλ,µ(t) also is determined.
+The argument of this proof is familiar in other contexts, for instance
+in the study of Kazhdan-Lusztig polynomials.
+Remark 4.3. Note that if we want to determine a specific polynomial
+K̃λ,µ(t) by this method, we only need to know gρ,ν (t) for those ρ, ν such
+that λ ≥ ρ ≥ ν ≥ µ; that is, we can restrict attention to the interval
+           TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                         9
+
+[µ, λ] ⊆ Λ(d). In particular, in proving Theorem 3.1 we can restrict
+attention to Λ≤2 (d). In the remaining sections, we will calculate gλ,µ(t)
+for λ ≥ µ in Λ≤2 (d) and show that it has the required form.
+
+
+Remark 4.4. Note that in the case n = 1, pλ : O    f → O is semismall ;
+                                                    λ      λ
+equivalently, aλ,ν,j = 0 if j 6= 0. For example, p(d) is the famous
+Springer resolution of the nilpotent cone. The Poincaré polynomial
+gλ,µ (t) is the generalized Hall polynomial g µ λ′    λ′
+                                                         (t), the function
+                                                 (1 l ),··· ,(1   1)
+
+ǫ(λ) is 2n(λ)+d, and the nonzero coefficient aλ,ν,0 is the Kostka number
+Kν ′ ,λ′ (see [8, III.6, Example 5]). This can be proved geometrically,
+using Fourier transform (see [3, §5]). When n ≥ 2, Fourier transform
+does not seem to be useful for analysing R(pλ)∗ C.
+
+Remark 4.5. An example when pλ is not semismall is the case n = 2,
+λ = [0; 4) ⊕ [0; 1). If µ = [0; 2) ⊕ [0; 2) ⊕ [0; 1), the reader can check
+that aλ,µ,1 = aλ,µ,−1 = 1.
+
+Remark 4.6. When n = 2, it is easy to see that
+                                  (d0 − d1 )2 + ǫ(λ)
+                         ǫ(λ) =                      ,
+                                          2
+whence dim Oλ = 21 dim Oλ . This is well known, since the orbits Oλ
+are the nilpotent orbits of the symmetric pair (gld , gld0 ⊕ gld1 ).
+
+Remark 4.7. When n ≥ 3, it is not true in general that ǫ(λ) only
+depends on d and λ. (Consider n = 3, d0 = 2, d1 = d2 = 1, λ = (212).)
+However, it is still true that µ ≤ λ, µ = λ ⇒ µ = λ. This can be seen
+by interpreting Oλ as the image of pλ.
+
+
+                        5. Preliminary Lemmas
+   Now we restrict attention to λ ∈ Λ≤2 (d) and the corresponding
+nilpotent orbits. It is convenient to return to multisegment notation,
+and write elements of Λ≤2 (d) as [i1 ; l1 )⊕[i2 ; l2 ) where l2 is possibly zero
+(by convention [i; 0) is the empty partition). For any m ∈ Z, write {m}
+for the unique element of {0, 1, · · · , n − 1} ∩ (m + nZ). So
+                     m    m − {m} m     m + {−m}
+                 ⌊     ⌋=        , ⌈ ⌉=          .
+                     n       n      n       n
+10                             ANTHONY HENDERSON
+
+Lemma 5.1. Let λ = [i1 ; l1 ) ⊕ [i2 ; l2 ), where the factors are ordered so
+that l1 ≥ l2 . Then
+                       l1    l2       l2 − {i1 − i2 + l1 − 1}
+               ǫ(λ) = ⌈ ⌉ + ⌈ ⌉ + ⌈                           ⌉
+                       n     n                    n
+                             l2 − {i1 − i2 }
+                          +⌈                  ⌉.
+                                   n
+Proof. This is trivial from the definition of ǫ.
+     Fix λ = [i1 ; l1 ) ⊕ [i2 ; l2 ), with l1 ≥ l2 ≥ 0. Let
+                 Λ≤2 (d)≤λ = {µ ∈ Λ≤2 (d) | µ ≤ λ},
+                       i1 ,i2
+                Λ≤2 (d)≤λ     = {µ = [i1 ; m1 ) ⊕ [i2 ; m2 ) | µ ≤ λ}.
+
+                                         i1 ,i2
+Lemma 5.2. If l2 ≥ 1, Λ≤2 (d)≤λ = Λ≤2 (d)≤λ     . If l2 = 0,
+                               [         i1 ,i2
+                   Λ≤2 (d)≤λ =    Λ≤2 (d)≤λ     ,
+                                             i2
+
+and the union is disjoint except for λ.
+Proof. If l2 ≥ 1, we have dim ker x = {i1 , i2 } for any x ∈ Oλ, where
+{i1 , i2 } is considered as a multiset, and hence dim ker x ≥ {i1 , i2 } for
+any x ∈ Oλ. Thus if µ ≤ λ and µ ∈ Λ≤2 (d), µ must be [i1 ; m1 ) ⊕
+[i2 ; m2 ) for some m1 , m2 ∈ N. If l2 = 0, we know only that for x ∈ Oλ,
+dim ker x ≥ {i1 }. But if µ < λ and µ ∈ Λ≤2 (d), µ must have two
+rows, so there is a unique i2 such that µ = [i1 ; m1 ) ⊕ [i2 ; m2 ).
+
+                                                        i1 ,i2
+Lemma 5.3. Suppose µ = [i1 ; m1 ) ⊕ [i2 ; m2 ) ∈ Λ≤2 (d)≤λ     . Then
+                        m1 + m2 = l1 + l2 , l1 ≥ m1 ≥ l2 ,
+and either
+               (a) m1 ≡ l1 , m2 ≡ l2 mod n; or
+               (b) m1 ≡ i2 − i1 + l2 , m2 ≡ i1 − i2 + l1 mod n.
+(It is possible that (a) and (b) both hold.)
+Proof. That m1 + m2 = d = l1 + l2 is obvious. Since Oµ ⊆ Oλ, we
+must have Oµ ⊆ Oλ , which implies that l1 ≥ m1 ≥ l2 . Finally,
+                  d([i1 ; m1 ) ⊕ [i2 ; m2 )) = d([i1 ; l1 ) ⊕ [i2 ; l2 )).
+Subtracting d([i1 ; m1 ) ⊕ [i2 ; l2 )) from both sides, we get
+                 d([i2 + l2 ; m2 − l2 )) = d([i1 + m1 ; l1 − m1 )).
+This clearly implies either (a) or (b).
+            TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                             11
+
+   It will be easier to get a converse to this Lemma after we describe
+the fibres p−1  λ (xµ ). For s1 , s2 ∈ N, let B(s1 ,s2 ) be the Springer fibre
+p−1
+ (s1 +s2 ) (s1 )⊕(s2 ) ), a special case of this fibre when n = 1. (The choices
+          (x
+of the vector space of dimension s1 + s2 and the element x(s1 )⊕(s2 ) ∈
+O(s1 )⊕(s2 ) are unimportant.)
+Lemma 5.4. Let µ = [i1 ; m1 ) ⊕ [i2 ; m2 ) 6= λ, where m1 and m2 satisfy
+the conditions in Lemma 5.3. Then p−1          ∼
+                                       λ (xµ ) = B(s1 ,s2 ) , where
+
+                        m1 − l2 − {i2 − i1 }           m2 − l2
+               s1 = ⌊                        ⌋, s2 = ⌊         ⌋,
+                                n                        n
+so that
+                            l1 − l2 − {i2 − i1 } − {i1 − i2 + l1 − l2 }
+          s1 + s2 = s :=                                                .
+                                                 n
+(We declare B(−1,s2 )    to be empty.)
+Proof. By definition,
+      p−1     ∼       (k)
+                          ) ∈ Fλ | xµ(W (k) ) ⊆ W (k−1) , 1 ≤ k ≤ l1 }.
+       λ (xµ) = {(W
+
+It is clear that for 1 ≤ k ≤ l2 , W (k) is forced to be ker xkµ. Hence
+p−1      ∼ −1
+ λ (xµ) = pλ′ (xµ′ ) where
+
+    λ′ = [i1 + l2 ; l1 − l2 ), µ′ = [i1 + l2 ; m1 − l2 ) ⊕ [i2 + l2 ; m2 − l2 ).
+Since λ 6= µ, m2 − l2 > 0. In this new fibre, if i1 6= i2 , W (1) is
+forced to be (ker xµ′ )i1 +l2 . Passing to the quotient space and repeating,
+we see that W (k) is uniquely determined for 1 ≤ k ≤ {i2 − i1 }, so
+p−1
+ λ′
+    (xµ′ ) ∼
+           = p−1
+              λ′′
+                  (xµ′′ ) where
+             λ′′ = [i2 + l2 ; l1 − l2 − {i2 − i1 }),
+            µ′′ = [i2 + l2 ; m1 − l2 − {i2 − i1 }) ⊕ [i2 + l2 ; m2 − l2 ).
+(If any lengths become negative here we understand that the corre-
+sponding fibre is empty.)
+   We now wish to apply the dual argument, so note that the end box
+of λ′′ is labelled i1 + l1 − 1, and the end labels of µ′′ are i1 + l1 − 1
+and i2 + l2 − 1 in some order. If i1 + l1 6= i2 + l2 , W (l1 −l2 −{i2 −i1 }−1) is
+forced to be the preimage of (cokerxµ′′ )i2 +l2 −1 . Hence W (l1 −l2 −{i2 −i1 }−k)
+is unique for 1 ≤ k ≤ {l1 − l2 + i1 − i2 }, so p−1
+                                                λ′′
+                                                    (xµ′′ ) ∼
+                                                            = p−1
+                                                               λ′′′
+                                                                    (xµ′′′ ), where
+ λ′′′ = [i2 + l2 ; l1 − l2 − {i2 − i1 } − {l1 − l2 + i1 − i2 }) = [i2 + l2 ; ns),
+and µ′′′ is obtained from µ′′ by deleting the last {l1 − l2 + i1 − i2 } boxes
+of the row whose end label is i1 + l1 − 1. This is the first row if (a)
+holds and the second row if (b) holds; if both hold, there are no boxes
+to be deleted. In either case, µ′′′ = [i2 + l2 ; ns1 ) ⊕ [i2 + l2 ; ns2 ).
+12                            ANTHONY HENDERSON
+
+     So in the end it suffices to show that
+                     p−1                                   ∼
+                      [i;n(s1 +s2 )) (x[i;ns1 )⊕[i;ns2 ) ) = B(s1 ,s2 ) .
+
+This is obvious, since each I-graded flag in the left-hand side is uniquely
+determined by the induced flag in the subspace corresponding to i.
+
+Example 5.5. To illustrate this proof, here is an example of the se-
+quence of steps when n = 3 (the boxes with bold borders are the ones
+to be removed):
+                 0 1 2 0 1 2 0 1 2 0      0 1 2 0 1 2 0
+           λ=                        , µ=
+                 1 2                      1 2 0 1 2
+
+                                                                 2 0 1 2 0
+                 λ′ = 2 0 1 2 0 1 2 0 , µ′ =
+                                                                 0 1 2
+
+                                                                  0 1 2 0
+                   λ′′ = 0 1 2 0 1 2 0 , µ′′ =
+                                                                  0 1 2
+
+                                                           0 1 2
+                λ′′′ = 0 1 2 0 1 2 , µ′′′ =                                 B(1,1) .
+                                                           0 1 2
+
+                                                                i1 ,i2
+Corollary 5.6. Let µ = [i1 ; m1 ) ⊕ [i2 ; m2 ). Then µ ∈ Λ≤2 (d)≤λ     if
+and only if
+                m1 + m2 = l1 + l2 , l1 ≥ m1 ≥ l2 + {i2 − i1 },
+and either (a) or (b) holds.
+Proof. We know from Lemma 4.1 that Oλ is the image of pλ, so µ ≤ λ
+iff p−1
+     λ (xµ ) is nonempty. Lemma 5.4 shows that for m1 , m2 as in Lemma
+5.3, p−1
+      λ (xµ) is empty if and only if (a) holds and m1 −l2 < {i2 −i1 }.
+
+
+Corollary 5.7. For µ < λ, p−1 λ (xµ) has no odd cohomologies, and
+                        min{s1 ,s2 }           
+                           X          s       s
+              gλ,µ(t) =             (    −         ) tk ,
+                           k=0
+                                      k     k − 1
+where s1 , s2 and s are as in Lemma 5.4.
+Proof. Springer fibres such as B(s1 ,s2 ) have no odd cohomologies. The
+                                             (s ,s )
+right-hand side is the Green polynomial Q(11s ) 2 (t), which is well known
+         P
+to equal k≥0 dim H 2k (B(s1 ,s2) ) tk .
+            TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                          13
+
+                    6. Description of the Posets
+    Maintain the notations of §5. In particular, λ = [i1 ; l1 )⊕[i2 ; l2 ) where
+l1 ≥ l2 ≥ 0; and s is as in Lemma 5.4. Using Corollary 5.6, we can
+                                            i1 ,i2
+completely describe the poset Λ≤2 (d)≤λ             and hence the poset Λ≤2 (d)
+as a whole. The arguments are trivial applications of the Lemmas in
+§5, and are mostly left to the reader. There are four cases.
+    Case 1: i1 = i2 = i, l1 ≡ l2 mod n.
+In this case conditions (a) and (b) coincide, and s = l1 −l    n
+                                                                 2
+                                                                   . If l1 − l2 = 0
+                                        ≤2      i,i
+or n, λ is the unique element of Λ (d)≤λ, and conversely. Otherwise,
+[i; l1 − n) ⊕ [i; l2 + n) is a predecessor of λ, also in Case 1. So Λ≤2 (d)i,i   ≤λ
+is a chain:
+
+
+
+
+                             [i; l1 ) ⊕ [i; l2 )              (s, 0)
+                                      
+                                      
+                                      y
+                       [i; l1 − n) ⊕ [i; l2 + n)           (s − 1, 1)
+                                   
+                                   
+                                   y
+                                     :
+                                     
+                                     
+                                     y
+                   [i; l1 − ⌊ 2s ⌋n) ⊕ [i; l2 + ⌊ 2s ⌋n)   (⌈ 2s ⌉, ⌊ 2s ⌋)
+
+
+
+
+Here and in subsequent diagrams µ → ν means that ν is a predecessor
+of µ, and the boldface labels are the values of (s1 , s2 ) as in Lemma 5.4
+(whose order is actually not determined in the case that i1 = i2 ). It is
+easy to see from Lemma 5.1 that ǫ([i; l1 − n) ⊕ [i; l2 + n)) = ǫ(λ) − 2.
+So the codimension at each link of the chain is 2. There are ⌊ 2s ⌋ links.
+   Case 2: i1 = i2 = i, l1 6≡ l2 mod n.
+Here conditions (a) and (b) are mutually exclusive, and s = ⌊ l1 −l     n
+                                                                          2
+                                                                            ⌋. It
+                                                       ≤2    i,i
+is easy to see that λ is the unique element of Λ (d)≤λ if and only if
+l1 −l2 < n; otherwise, [i; l1 −{l1 −l2 }) ⊕[i; l2 + {l1 −l2 }) is a predecessor
+of λ, also in Case 2, and satisfying condition (b). Again, Λ≤2 (d)i,i      ≤λ is
+14                          ANTHONY HENDERSON
+
+a chain:
+
+
+
+
+                               [i; l1 ) ⊕ [i; l2 )                  (s, 0)
+                                        
+                                        
+                                        y
+                [i; l1 − {l1 − l2 }) ⊕ [i; l2 + {l1 − l2 })         (s, 0)
+                                     
+                                     
+                                     y
+                         [i; l1 − n) ⊕ [i; l2 + n)               (s − 1, 1)
+                                     
+                                     
+                                     y
+                    [i; l1 − n − {l1 − l2 }) ⊕ [i; · · · )       (s − 1, 1)
+                                    
+                                    
+                                    y
+                                       :
+                                       
+                                       
+                                       y
+                  [i; l1 − ⌊ 2s ⌋n − {l1 − l2 }) ⊕ [i; · · · )   (⌈ 2s ⌉, ⌊ 2s ⌋)
+
+
+
+
+(To make this and later diagrams legible, some row lengths are omitted;
+recall that for every element the sum of the lengths is l1 + l2 .) If s is
+even, the minimal element is actually the same as the element which
+might be thought to be directly above it, namely [i; l1 − 2s n)⊕[i; l2 + 2s n).
+So there are always s links in the chain. This time the codimension at
+each link is 1.
+   Case 3: i1 6= i2 , l1 − l2 ≡ i2 − i1 mod n.
+In this case conditions (a) and (b) coincide, and s = ⌊ l1 −l         n
+                                                                        2
+                                                                          ⌋. The
+                                                    ≤2    i  ,i
+condition for λ to be the only element of Λ (d)≤λ is that l1 − l2 =
+                                                            1 2
+
+
+{i2 −i1 }. Otherwise, [i2 ; l1 −{l1 −l2 })⊕[i1 ; l2 +{l1 −l2 }) is a predecessor
+of λ, also in Case 3. The summands here are in the right order, i.e.
+            TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                                  15
+
+                                                    i1 ,i2
+l1 − {l1 − l2 } > l2 + {l1 − l2 }. Once more Λ≤2 (d)≤λ     is a chain:
+
+
+
+
+                               [i1 ; l1 ) ⊕ [i2 ; l2 )                  (s, 0)
+                                          
+                                          
+                                          y
+                [i2 ; l1 − {l1 − l2 }) ⊕ [i1 ; l2 + {l1 − l2 })         (0, s)
+                                       
+                                       
+                                       y
+                          [i1 ; l1 − n) ⊕ [i2 ; l2 + n)              (s − 1, 1)
+                                        
+                                        
+                                        y
+                    [i2 ; l1 − n − {l1 − l2 }) ⊕ [i1 ; · · · )       (1, s − 1)
+                                      
+                                      
+                                      y
+                                         :
+                                         
+                                         
+                                         y
+                  [i2 ; l1 − ⌊ 2s ⌋n − {l1 − l2 }) ⊕ [i1 ; · · · )   (⌊ 2s ⌋, ⌈ 2s ⌉)
+
+
+
+
+If s is even, the minimal element here is also [i1 ; l1 − 2s n) ⊕ [i2 ; l2 + 2s n),
+so there are always s links in the chain. Again the codimension at each
+link is 1.
+    Case 4: i1 6= i2 , l1 − l2 6≡ i2 − i1 mod n.
+Conditions (a) and (b) are mutually exclusive, and s = ⌊ l1 −l               n
+                                                                               2
+                                                                                 ⌋ or
+  l1 −l2
+⌊ n ⌋ − 1 depending on whether {l1 − l2 } or {i2 − i1 } is larger. If
+                                                                  i1 ,i2
+l1 − l2 < {i2 − i1 }, λ is the unique element of Λ≤2 (d)≤λ               , and con-
+versely. Otherwise, write A = {i2 − i1 }, B = {i1 − i2 + l1 − l2 }; then
+[i1 ; l1 − B) ⊕ [i2 ; l2 + B) and [i2 ; l1 − A) ⊕ [i1 ; l2 + A) are predecessors
+of λ, also in Case 4, and satisfying condition (b). These coincide iff
+l1 − l2 < n + {i2 − i1 }, in which case their common value is a minimal
+element; otherwise, the summands are in the right order. The poset
+16                                     ANTHONY HENDERSON
+
+       i1 ,i2
+Λ≤2 (d)≤λ     is as follows:
+
+        (s, 0)              [i1 ; l1 ) ⊕ [i2 ; l2 )
+
+
+        (s, 0)          [i1 ; l1 − B) ⊕ [i2 ; · · · ) [i2 ; l1 − A) ⊕ [i1 ; · · · )     (0, s)
+
+
+                               [i1 ; l1 − n)              [i2 ; l1 − A − B)
+     (s − 1, 1)                                                                         (0, s)
+                                ⊕[i2 ; · · · )                 ⊕[i1 ; · · · )
+
+
+                            [i1 ; l1 − n − B)             [i2 ; l1 − n − A)
+     (s − 1, 1)                                                                       (1, s − 1)
+                                 ⊕[i2 ; · · · )                ⊕[i1 ; · · · )
+
+
+                                      :                             :
+
+
+                         [i1 ; l1 − ⌊ 2s ⌋n − B)        [i2 ; l1 − ⌊ 2s ⌋n − A)
+     (⌈ 2s ⌉, ⌊ 2s ⌋)                                                           (⌊ 2s ⌋, ⌈ 2s ⌉)
+                                 ⊕[i2 ; · · · )                ⊕[i1 ; · · · )
+If s is even, the bottom two elements coincide and are minimal. If s is
+odd, there is one more element below these two, namely
+                               s                  s                       s    s
+                   [i1 ; l1 − ⌈ ⌉n) ⊕ [i2 ; l2 + ⌈ ⌉n)                  (⌊ ⌋, ⌈ ⌉).
+                               2                  2                       2    2
+So the length of a maximal chain in this poset is s + 1. Again, all
+predecessors have codimension 1.
+                                                           i1 ,i2
+Example 6.1. As an example of how these posets Λ≤2 (d)≤λ          fit to-
+                ≤2
+gether to make Λ (d), the following is the case n = 2, d0 = d1 = 3:
+                                      [0; 6)                  [1; 6)
+
+
+                                [0; 5) ⊕ [1; 1)          [1; 5) ⊕ [0; 1)
+
+
+ [0; 4) ⊕ [0; 2)                [0; 4) ⊕ [1; 2)          [1; 4) ⊕ [0; 2)          [1; 4) ⊕ [1; 2)
+
+
+                                [0; 3) ⊕ [1; 3)
+           TWO-ROW NILPOTENT ORBITS OF CYCLIC QUIVERS                        17
+
+                       7. Proof of Theorem 3.1
+   For λ ≥ µ in Λ≤2 (d), define a nonnegative integer cλ,µ by the fol-
+                                                                         i1 ,i2
+lowing rule. If λ = µ, let cλ,µ = 1. If λ > µ, then µ ∈ Λ≤2 (d)≤λ
+                                                                        i1 ,i2
+for unique (i1 , i2 ), and the interval [µ, λ] is contained in Λ≤2 (d)≤λ       .
+Define s1 , s2 , and s as above, and let k(µ) = min{s1 , s2 }. Say µ is spe-
+cial (relative to λ) if there is no element ν of [µ, λ] with k(ν) = k(µ)
+                                                 s        s
+except µ itself. If µ is special, let cλ,µ = k(µ)   − k(µ)−1   . Otherwise,
+let cλ,µ = 0. We can now prove a stronger version of Theorem 3.1:
+Theorem 7.1. If λ ≥ µ in Λ≤2 (d), then K̃λ,µ(t) = 1, aλ,µ,j = 0 if
+j 6= 0, and aλ,µ,0 = cλ,µ.
+Proof. By inspection of the diagrams in the previous section, we see
+that if µ is special, then ǫ(µ)−ǫ(λ) = 2k(µ). Moreover, for all positive
+k ′ ≤ k(µ), there is a unique special ν ∈ [µ, λ] such that k(ν) = k ′ . So
+Corollary 5.7 can be rephrased:
+                                X
+                      gλ,µ(t) =      cλ,ν t(ǫ(ν)−ǫ(λ))/2 .
+                                λ≥ν≥µ
+
+Now we apply Lemma 4.2 (bearing in mind Remark 4.3) with bλ,µ,j =
+δj,0cλ,µ and Lλ,µ(t) = 1. The result follows.
+                                References
+[1] N. Chriss and V. Ginzburg, Representation Theory and Complex Geometry,
+    Birkhauser Boston, 1997.
+[2] J. J. Graham and G. I. Lehrer, Diagram algebras, Hecke algebras and de-
+    composition numbers at roots of unity. Preprint.
+[3] A. Henderson, Fourier transform, parabolic induction, and nilpotent orbits,
+    Transform. Groups, 6 (2001), pp. 353–370.
+[4] D. Kazhdan and G. Lusztig, Proof of the Deligne-Langlands conjecture for
+    Hecke algebras, Invent. Math., 87 (1987), pp. 153–215.
+[5] B. Leclerc, J.-Y. Thibon, and E. Vasserot, Zelevinsky’s involution at
+    roots of unity, J. Reine Angew. Math., 513 (1999), pp. 33–51.
+[6] G. Lusztig, Green polynomials and singularities of unipotent classes, Adv.
+    Math., 42 (1981), pp. 169–178.
+[7]       , Canonical bases arising from quantized enveloping algebras, J. Amer.
+    Math. Soc., 3 (1990), pp. 447–498.
+[8] I. G. Macdonald, Symmetric Functions and Hall Polynomials, Oxford Univ.
+    Press, second ed., 1995.
+
+  School of Mathematics and Statistics, University of Sydney, NSW
+2006, AUSTRALIA
+  E-mail address: anthonyh@maths.usyd.edu.au
+

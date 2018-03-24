@@ -1,0 +1,2117 @@
+                                               Projective-injective modules, Serre functors and
+arXiv:math/0508119v2 [math.RT] 6 Sep 2005
+
+
+
+
+                                                              symmetric algebras
+                                                        Volodymyr Mazorchuk and Catharina Stroppel
+
+
+                                                                                Abstract
+                                                     We describe Serre functors for (generalisations of) the category O
+                                                 associated with a semi-simple complex Lie algebra. In our approach,
+                                                 projective-injective modules, that is modules which are both, projec-
+                                                 tive and injective, play an important role. They control the Serre func-
+                                                 tor in the case of a quasi-hereditary algebra having a double centraliser
+                                                 given by a projective-injective module whose endomorphism ring is a
+                                                 symmetric algebra. As an application of the double centraliser prop-
+                                                 erty together with our description of Serre functors, we prove three
+                                                 conjectures of Khovanov about the projective-injective modules in the
+                                                 parabolic category O0µ (sln ).
+
+
+                                            Contents
+                                            1 Introduction                                                                          2
+
+                                            2 Standardly stratified structure and double centralisers                                6
+                                              2.1 Tilting modules and Ringel duality . . . . . . . . . . . . . . .                   7
+                                              2.2 Double centraliser property . . . . . . . . . . . . . . . . . . .                  9
+                                              2.3 Double centralizer and projective-injective modules . . . . . .                   10
+
+                                            3 Serre functors                                                         13
+                                              3.1 A characterisation of Serre functors . . . . . . . . . . . . . . . 14
+                                              3.2 Serre functors via partial coapproximation . . . . . . . . . . . 16
+
+                                            4 Applications                                                                          19
+                                              4.1 Bernstein-Gelfand-Gelfand category O . . . . . . . . .            .   .   .   .   19
+                                              4.2 The parabolic category O in the sense of Rocha-Caridi             .   .   .   .   22
+                                              4.3 Harish-Chandra bimodules . . . . . . . . . . . . . . . .          .   .   .   .   29
+                                              4.4 The category O for rational Cherednik algebras . . . .            .   .   .   .   30
+
+                                            5 Projective-injectives in the category Op(sln (C))                       32
+                                              5.1 On a result of Irving . . . . . . . . . . . . . . . . . . . . . . . 33
+                                              5.2 On Khovanov’s conjectures . . . . . . . . . . . . . . . . . . . 34
+
+
+                                                                                    1
+1    Introduction
+Symmetric algebras are particularly well-behaved algebras with several spe-
+cial properties. We first want to recall two of these properties and then
+discuss to which extend they can be generalised and transferred to other
+finite dimensional algebras. A finite dimensional algebra A is called sym-
+metric if there is an A-bimodule isomorphism A ∼ = A∗ . In particular, pro-
+jective A-modules are always injective. On the other hand, since A ∼
+                                                                   = A∗ as
+A-bimodules, the isomorphism of vector spaces
+
+            HomA (A, A) ∼
+                        = HomA (A, A∗ ⊗A A) ∼
+                                            = HomA (A, A)∗
+
+gives rise to an isomorphism
+
+           HomA (M, N ) ∼
+                        = HomA (M, A∗ ⊗A N ) ∼
+                                             = HomA (N, M )∗
+
+for any free A-modules M and N . Moreover, this isomorphism is functorial
+in M and N .
+The question we want to ask now is whether these two properties can be
+transferred somehow to a more general class of algebras. We will consider
+finite dimensional algebras which have a symmetric subalgebra which, in
+some sense, can control the representation theory of the original algebra. If
+we are lucky, A has “enough” projective modules which are also injective.
+We fix a system of representatives for the isomorphism classes of indecom-
+posable projective-injective (i.e. at the same time projective and injective)
+A-modules. Then, instead of considering A itself we propose to consider
+the direct sum, say Q, of all modules from this fixed system. The endomor-
+phism ring EndA (Q) is at least a Frobenius algebra. The following questions
+naturally arise
+
+    • Is EndA (Q) a symmetric algebra?
+
+    • How much information about the category of finitely generated A-
+      modules is already encoded in Q and EndA (Q)?
+
+    • Is there an isomorphism, functorial in both entries,
+
+             HomA (P1 , P2 ) ∼
+                             = HomA (P1 , A∗ ⊗A P2 ) ∼
+                                                     = HomA (P2 , P1 )∗
+
+      for any projective-injective A-modules P1 and P2 ?
+
+    In general, the first question is very difficult to answer. Concerning the
+second question, we will describe the situation where all the information
+about A -mod is already contained in Q and EndA (Q). This is given by the
+so-called double centraliser property which we will explain more precisely
+
+
+                                      2
+shortly. The last question relates to the existence and description of a so-
+called Serre functor, motivated by Serre’s duality for sheaves on projective
+varieties. The purpose of this paper is to answer the above three questions
+for certain algebras appearing in representation theory.
+     To substantiate and to specify our approach we would like to recall the
+important role projective-injective modules play in representation theory, in
+particular in different versions of the category O. The striking example is
+the case of an integral block of the category O for a semisimple complex Lie
+algebra. By Soergel’s result ([Soe90, Endomorphismensatz and Struktur-
+satz]) such a block can be completely described by (a certain subcategory
+of) the category of finitely generated modules over the endomorphism ring of
+the (unique up to isomorphism) indecomposable projective-injective module
+in this block. This idea was generalised and formalised in [KSX01] as the so-
+called double centraliser property. In this language, Soergel’s result could be
+stated as follows: Let A be a finite dimensional algebra such that A -mod is
+equivalent to the block of the category O in question. Then for the indecom-
+posable projective-injective A-module Q we have A = EndEndA (Q) (Q). Note
+that [Soe90, Endomorphismensatz] implies that EndA (Q) is a symmetric
+algebra.
+     Using the Ringel duality functor it is easy to see (Corollary 2.4) that
+there is always a tilting module T having the double centraliser property
+above. This module T need not to be projective-injective in general. Nev-
+ertheless, there are many known examples where we have the particularly
+handy situation of the double centraliser property with respect to a projective-
+injective tilting module T . We recall such examples in Section 2. Since in
+these cases the category A -mod is completely determined by EndA (T ) and
+T , it follows directly that the centre of A -mod is isomorphic to the centre
+of the endomorphism ring of T (in particular [Kho04, Conjecture 4] follows,
+see Theorem 5.2).
+     Motivated by Serre’s duality, there is the notion of a Serre functor for
+any k-linear category with finite dimensional homomorphism spaces (see
+Section 3). Kapranov and Bondal ([BK89]) showed that the bounded de-
+rived category D b (A) for any finite dimensional algebra A of finite global
+dimension admits a Serre functor. In fact, the existence of a Serre functor is
+equivalent to the finiteness of the global dimension of A and also to the ex-
+istence of Auslander-Reiten triangles ([RVdB02], [Hap91]). It is well-known
+that in the latter case the Serre functor is the left derived of the Nakayama
+functor (see e.g. [Hap88, page 37]), that is of the functor isomorphic to
+A∗ ⊗A •. However, if the algebra A is not explicitly given, the Serre functor
+might be hard to compute.
+     Nevertheless, in some cases the Serre functor for D b (A) can be explicitly
+described, using for instance geometric or functorial methods. For example,
+
+
+                                      3
+in [BK89] it was conjectured that the Serre functor of the bounded derived
+category of perverse sheaves on flag varieties is given by a geometrically
+defined intertwining functor. This was our motivation to study the Serre
+functor of the bounded derived category of (integral blocks of) O, associated
+with the corresponding semi-simple Lie algebra, which is equivalent to the
+category of perverse sheaves in question. The original conjecture has recently
+been proved by Beilinson, Bezrukavnikov and Mirkovic in [BBM04]. In the
+present paper we explicitly construct the Serre functor for the bounded de-
+rived category of any integral block of O using the twisting functors, defined
+in [Ark97] and studied e.g. in [AS03]. Our approach is purely algebraic and
+does not require the explicit knowledge of the associative algebra associated
+to O. As a (very unexpected) consequence we obtain an isomorphism be-
+tween a certain composition of twisting functors and a certain composition
+of Irving’s shuffling functors (see Corollary 4.2).
+    We further apply this result to construct the Serre functors of the bounded
+derived categories of (integral blocks of) of any parabolic category Op in the
+sense of Rocha-Caridi, [RC80]. Using the explicit description of the Serre
+functor (in terms of shuffling functors) we prove in Theorem 4.6 that the
+endomorphism algebra of the sum of all indecomposable projective-injective
+modules in Op is symmetric, which was conjectured by Khovanov. One of
+the motivations to consider the category of projective-injective modules in
+Op is to find a precise connection between Khovanov’s categorification of the
+Jones polynomial ([Kho00]) and the categorification of the Jones polynomial
+via representation theory of the Lie algebra sln (as proposed in [BFK99] and
+proved in [Str05]). It might be possible to simplify the approach in [BFK99]
+and [Str05] by working with these symmetric endomorphism algebras. More-
+over, from a topological point of view it seems to be much more natural and
+plausible to work with symmetric (or at least Frobenius) algebras to con-
+struct knot invariants instead of the complicated algebras which describe
+the integral blocks of the (parabolic) category O.
+    We expect that the Serre functor for the category O for rational Chered-
+nik algebras can be constructed in a similar way via twisting functors as the
+Serre functor for the Bernstein-Gelfand-Gelfand category O. However, we
+are not able to prove this, mainly because of the lack of translation functors.
+Nevertheless, we give a description of the Serre functor for the category O
+for rational Cherednik algebras via partial coapproximation with respect
+to the direct sum of all indecomposable projective-injective modules (see
+[KM05, 2.5]). The proof however uses the fact that Hecke algebras are sym-
+metric and the properties of the Knizhnik-Zamolodchikov-functor. Using
+[GGOR03, Remark 5.10] it might be possible to construct the Serre functor
+in a different way, which would imply a conceptual proof of the fact ([CIK71])
+that the Hecke algebras occurring here are symmetric (see Conjecture 4.12).
+
+
+                                      4
+    In the last section of the paper we consider the special case of a parabolic
+category, O0p(sln ), for the Lie algebra sln . For this category we give an eas-
+ier proof of the main result of [Irv85] (Theorem 5.1). As a consequence
+we show that there is a double centraliser property with respect to a ba-
+sic projective-injective module. This implies [Kho04, Conjecture 4]. The
+parabolic subalgebra p of sln is determined by some composition of n. In
+[Irv85, Proposition 4.3] it is shown that indecomposable projective-injective
+modules in O0 (sln )p are indexed by the elements of some left cell. The
+Kazhdan-Lusztig combinatorics of translation functors, applied to these
+projective-injective modules, suggests a connection with Specht modules for
+the symmetric group Sn . It is well known that the Specht modules which
+correspond to different compositions of n, but giving rise to the same par-
+tition of n, are isomorphic. This observation might have led M. Khovanov
+to the conjecture that the endomorphism algebras of the basic projective-
+injective modules in different O0 (sln )p, corresponding to the same partition
+of n, are isomorphic. We finish the paper by proving this conjecture (The-
+orem 5.4).
+
+Some guidance for the reader: Section 2 recalls some facts and results
+on double centralisers for module categories over standardly stratified alge-
+bras. In principle, the content is not new, the viewpoint might be slightly
+more general than usual. We formulated the setup as generally as possi-
+ble, since we believe that our approach can be applied to a much wider
+class of algebras than the ones actually appearing in the paper. For the
+reader, however, it might be more approachable to have first a look at the
+Examples 2.7, skip the details of Section 2 and focus on the main result char-
+acterising Serre functors which can be found in Section 3. Applications and
+concrete descriptions of Serre functors are given in Section 4. The deepest
+result might be Theorem 4.6 stating that the endomorphism ring of a basic
+projective-injective module in the principal block of a (parabolic) category
+O is not only Frobenius, but symmetric.
+
+Acknowledgements. We thank Mikhail Khovanov for sharing his ideas
+with us and for many helpful discussions and remarks. We also would like
+to thank Iain Gordon for many useful discussions and explanations and Ken
+Brown for useful remarks. We also thank Joshua Sussan for comments on a
+preliminary version of the paper. The first author was partially supported
+by The Royal Swedish Academy of Sciences, The Swedish Research Council,
+and STINT. The second author was supported by EPSRC.
+
+
+
+
+                                       5
+2    Standardly stratified structure and double cen-
+     tralisers
+In representation theory double centraliser properties play an important role.
+The aim of this section is to recollect known results from the literature, to
+emphasise the universal principle behind it, and to show the significance of
+projective-injective modules.
+    Let k be an algebraically closed field. Let A be a unital finite dimensional
+associative k-algebra. We denote by A -mod (mod −A) the category of finite
+dimensional left (resp. right) A-modules. In the following we will mainly
+work with left A-modules, hence an “A-module” is always meant to be a left
+A-module. For M , N ∈ A -mod we denote by TrM N the trace of M in N
+(which is by definition the submodule of N , generated by the images of all
+morphisms from M to N ).
+    Let {L(λ)}λ∈Λ be a complete set of representatives for the isomorphism
+classes of simple A-modules. For a simple A-module, L(λ), we denote by
+P (λ) its projective cover, and by I(λ) its injective hull. We assume that
+there is a partial pre-order  (i.e. a reflexive and transitive binary relation)
+on Λ, which we fix. Let P ≻λ = µ≻λ P (µ) and P λ = µλ P (µ).
+                                  L                         L
+
+    With respect to  we define the so-called standard module ∆(λ) to be
+the largest quotient of P (λ) containing only composition factors of the form
+L(µ), where λ 6≺ µ, i.e. ∆(λ) = P (λ)/ TrP ≻λ P (λ). We also have a proper
+standard module ∆(λ) which is the largest quotient of P (λ) such that its
+radical contains only composition factors of the form L(µ), where λ 6 µ,
+i.e. ∆(λ) = P (λ)/ TrP λ rad P (λ). Dually, we have the costandard module
+∇(λ) and the proper costandard module ∇(λ).
+    We denote by F(∆A ) = F(∆) the full subcategory of A -mod given by
+all modules having a filtration, with all subquotients of this filtration being
+isomorphic to ∆(λ) for various λ ∈ Λ. If M ∈ F(∆) then we say that M has
+a standard flag. Similarly, we define F(∆), F(∇), F(∇), the categories of
+modules having a proper standard, a costandard, and a proper costandard
+flag respectively.
+    Let A be a finite dimensional standardly stratified algebra as defined in
+[CPS96], that is
+
+    • the kernel of the canonical surjection P (λ)→
+                                                  →∆(λ) has a standard flag;
+
+    • the kernel of the canonical surjection ∆(λ)→
+                                                 →L(λ) has a filtration with
+      subquotients L(µ), where µ  λ.
+
+   In particular, if  is a partial order and ∆(λ) = ∆(λ) for λ, then A is
+quasi-hereditary (see [CPS88, DR89]). If  is a partial order and any ∆(λ)
+has a proper standard flag, then A is properly stratified (see [Dla00]).
+
+
+                                       6
+     We call a module M basic with respect to some property P, if M is the
+direct sum of pairwise non-isomorphic indecomposable modules with prop-
+erty P and any indecomposable module having this property is isomorphic
+to a summand in M . For example, a basic projective module in A -mod is a
+minimal projective generator. If N = ⊕ki=1 Nimi , where mi ∈ {1, 2, . . . } for
+all i, with Ni indecomposable and pairwise non-isomorphic, we set Nbasic =
+⊕ki=1 Ni .
+
+2.1   Tilting modules and Ringel duality
+A tilting module is an object in F(∆) ∩ F(∇), and a cotilting module is an
+object in F(∆) ∩ F(∇). In [Fri04] it is shown that for a standardly stratified
+algebra the category F(∆) ∩ F(∇) is closed under taking direct summands
+and that the indecomposable modules in this category are in natural bijec-
+tion with standard modules. Let T (λ) denote the unique indecomposable
+tilting module having a standard flag, where ∆(λ) occurs as a submodule.
+Let T = ⊕λ∈Λ T (λ) be the characteristic tilting module. There is the dual
+notion of cotilting modules. In general, cotilting modules cannot be classified
+in the same way as tilting modules. However, this can be done in the case
+when the opposite algebra Aopp is also standardly stratified (with respect to
+the same partial pre-order), see [Fri04, 4.2]. For quasi-hereditary algebras
+cotilting and tilting modules obviously coincide, but in general they do not
+have to. The Ringel duality functor (as introduced in [Rin91]) was stud-
+ied in the more general setup of various stratified algebras for example in
+[ÁHLU00] and [Fri04]. We will need the following slight variation of these
+results:
+
+Proposition 2.1. Let A be a standardly stratified algebra. Then the Ringel
+dual R(A) = EndA (T ) is standardly stratified and the contravariant functor
+R = HomA (•, T ) : A -mod → mod- R(A) satisfies the following properties:
+
+(1) R maps tilting modules to projective modules.
+
+(2) R maps projective modules to tilting modules.
+
+(3) R defines an equivalence of categories F(∆A ) ∼
+                                                  = F(∆R(A) ).
+
+Proof. That the algebra R(A) is standardly stratified follows for example
+from [Fri04, Theorem 5 (iii)]. Obviously, T is mapped to EndA (T ), hence it
+is projective. Taking direct summands implies the first statement. The last
+statement is proved analogously to [ÁHLU00, Theorem 2.6 (iv)] (note that
+the duality D used there swaps standard and costandard modules). To prove
+the second statement let now Q be projective, then RQ has a standard flag.
+Of course, Ext1A (Q, ∆(λ)) = 0 for any λ. Using the last part of the propo-
+sition we get Ext1R(A) (R∆(λ), RQ) = 0, even Ext1R(A) (∆R(A) (λ), RQ) = 0 for
+
+                                      7
+any standard module ∆R(A) (λ) ∈ R(A) -mod. Therefore, (see e.g. [Fri04,
+Theorem 3] and [ÁHLU00, Theorem 1.6]), RQ has a proper costandard flag,
+hence it is tilting.
+
+    For any abelian category C we denote by D b (C) its bounded derived
+category. If C = A -mod we set D b (A) = D b (C). If the opposite is not
+explicitly stated, by a “functor” we always mean a covariant functor. We
+use the standard notation like LF , RG, Li F , Ri G etc. to denote left derived
+and right derived functors and their i-th cohomology functors.
+    For the sake of completeness we mention the following fact
+
+Proposition 2.2. Let A and B be standardly stratified such that tilting
+modules are also cotilting. Let F : A -mod → B -mod be a (covariant) right-
+exact functor with right adjoint G. Assume that F defines an equivalence
+                                   A           B
+                              F(∆ ) ∼
+                                    = F(∇ ).
+
+Then the following hold
+
+(1) F maps projective modules to tilting modules and tilting modules to in-
+    jective modules. In fact, F defines equivalences (with inverse G) of the
+    corresponding additive subcategories.
+
+(2) If A has finite global dimension then B has finite global dimension as
+    well, moreover, LF : D b (A) → D b (B) is an equivalence with inverse
+    RG.
+
+(3) B is the Ringel dual of A.
+                                                              B
+Proof. Let P ∈ A -mod be projective, then F P ∈ F(∇ ) by assumption
+and
+
+    Ext1B (F P, ∇(λ)) ∼
+                      = Ext1B (F P, F F −1 ∇(λ)) ∼
+                                                 = Ext1A (P, F −1 ∇(λ)) = 0
+
+for any proper costandard module ∇(λ). Hence F P ∈ F(∆B ) and is there-
+                                                            A
+fore tilting. If X is tilting, hence cotilting, then X ∈ F(∆ ). Therefore
+             B
+F X ∈ F(∇ ) and
+                     B                            B
+             Ext1B (∇ (λ), F X) ∼
+                                = Ext1B (F F −1 ∇ (λ), F X)
+                                ∼               B
+                                = Ext1 (F −1 ∇ (λ), X) = 0
+                                           A                               (2.1)
+                                       B                  B            A
+for any proper costandard module ∇ (λ), since F −1 ∇ (λ) ∈ F(∆ ) and
+                                                             B
+X ∈ F(∇A ). If we now choose an inclusion of F X ∈ F(∇ ) in its injective
+                                           B
+hull, then the cokernel is contained in F(∇ ) and the inclusion splits because
+of (2.1). This means that F X is injective and the first part follows. We have
+
+                                       8
+RG LF ∼  = ID on projectives and LF RG ∼= ID on injectives. This implies
+that the global dimension of B is finite and then the second statement
+follows. The fact that B is the Ringel dual of A is then clear from the
+definitions.
+
+2.2   Double centraliser property
+We claim that, given a standardly stratified algebra A, there is always some
+tilting module X such that we have a double centraliser property, A ∼      =
+EndEndA (X) (X). This relies on the following
+
+Proposition 2.3. Let A be standardly stratified and let R = R(A) be its
+Ringel dual. Let P be the projective cover of the characteristic tilting module
+T in mod- R. Then there is an exact sequence 0 → A → Q → coker → 0,
+where Q = R−1 P (see Proposition 2.1) is tilting and coker ∈ F(∆A ).
+
+Proof. Since P, T ∈ F(∆R ), the kernel K of the surjection between P and
+T is contained in F(∆R ) ([ÁHLU00, Theorem 1.6 (i)] and [Fri04, Theo-
+rem 3]). Applying the inverse of the Ringel duality functor (which is defined
+on F(∆R )) we get the short exact sequence
+
+                         0 → A → Q → coker → 0,
+
+where coker ∈ F(∆) by Proposition 2.1.
+
+Corollary 2.4. There exists a (basic) tilting module X such that we have
+an isomorphism, A ∼
+                  = EndEndA (X) (X).
+
+Proof. Let Y be a tilting module such that we have an inclusion coker ֒→ Y
+(the existence follows from [AR91, Theorem 5.4]). Put X := (Q ⊕ Y )basic ,
+then there exists an exact sequence, 0 → coker → X n , satisfying the as-
+sumptions of [KSX01, Theorem 2.8]. Hence the double centraliser property
+follows.
+
+Remark 2.5. One can show that there exists a minimal basic tilting module
+Y with the following property: any M ∈ F(∆) embeds into Y m for some
+m. Here minimal means that every other tilting module with the latter
+property has Y as a direct summand. However, it is not clear whether there
+exists a minimal basic tilting module Y , with respect to which one has the
+double centraliser property. It is the case in all the examples we know, in
+particular in the Examples 2.7.
+    In general, it could happen that X is already the characteristic tilting
+module, and the statement of Corollary 2.4 is not very useful. As an example
+we refer to [KK99, Example A1 ] where the algebra A is given by all 3 × 3
+upper triangular matrices over some field k with the matrix idempotents e1 ,
+
+
+                                      9
+e2 , e3 and the quasi-hereditary structure given by the ordering 1 < 2 < 3.
+The same algebra, but with the quasi-hereditary structure given by the
+reversed order (see [KK99, Example A2 ]) provides also an example, where
+X is not contained in Add(Q), the additive category generated by Q. In
+particular, we do not have the double centralizer property with respect to
+Q.
+
+2.3   Double centralizer and projective-injective modules
+On the other hand, under the assumptions and notation of Proposition 2.3
+we have the following nice situation, where projective-injective modules play
+a crucial role.
+
+Corollary 2.6. If the injective hull of any standard module is contained in
+Add(Q), then the following holds:
+
+               A∼
+                = EndEndA (Q) (Q) ∼
+                                  = EndEndA (Qbasic ) (Qbasic ).
+
+Proof. If the injective envelope of any standard module is contained in
+Add Q, the assumptions of [KSX01, Theorem 2.8; Theorem 2.10] are sat-
+isfied and the statement follows.
+
+   As interesting examples we have the following:
+
+Examples 2.7. In the examples which follow we illustrate the use of Propo-
+sition 2.3 and Corollary 2.4, in particular, we explicitly describe the modules
+Q and X which appear in the double centraliser statements.
+
+  1. Let A be such that A -mod is equivalent to an integral block of the
+     Bernstein-Gelfand-Gelfand category O for some semi-simple complex
+     Lie algebra g (see [BGG76]). The algebra A is equipped with the
+     usual quasi-hereditary structure (given by the Bruhat order and the
+     Verma modules as standard modules). In this case we have exactly
+     one indecomposable projective-injective module, namely the projective
+     cover P (w0 ) of the unique simple standard (or Verma) module in this
+     block. Moreover, A is Ringel self-dual ([Soe97, Theorem 5.12 and
+     Bemerkung 2.4 (3)]). The projective cover of a tilting module is a
+     direct sum of P (w0 )’s. Via Ringel duality we get an inclusion
+
+                                    i : A ֒→ Q,                           (2.2)
+
+      where Q = P (w0 )n for some positive integer n. The cokernel of this
+      inclusion has (by Proposition 2.3) a standard (or Verma-) flag. Hence
+      there is an exact sequence of the form
+
+                              0 → A −→ Q −→ Qm ,                          (2.3)
+
+                                      10
+   for some positive integer m. We could take X = Qbasic = P (w0 ) and
+   get the famous double centraliser theorem of Soergel ([Soe90], see also
+   [KSX01, Theorem 3.2]), namely A ∼  = EndEndA (X) (X).
+
+2. Let Ap be such that Ap -mod is equivalent to an integral block of some
+   parabolic category Op in the sense of [RC80] (see also Section 4.2) with
+   the usual quasi-hereditary structure. Then Ap is Ringel-self-dual (see
+   [Soe97] or Proposition 4.4 below). The self-dual projective modules
+   are exactly the summands occurring in the injective hulls of standard
+   modules ([Irv85]), they are also exactly the summands occurring in the
+   projective cover of tilting modules. This means, we have an embedding
+   of the form (2.2) and then an exact sequence of the form (2.3), where
+   Q is a direct sum of projective-injective modules. If we set X = Qbasic
+   the sum over (a system of representatives for the isomorphism classes
+   of) all indecomposable projective-injective modules we get the double
+   centraliser property Ap ∼ = EndEndAp (X) (X) (this is proved in [Str03b,
+   Theorem 10.1]).
+
+3. Let g be a semisimple complex Lie algebra. Let H be the category of
+   Harish-Chandra bimodules for g, that is the category of g-bimodules
+   which are of finite length and locally finite for the adjoint action of g
+   (see for example [BG80] or [Jan83, Section 6]). The category H decom-
+   poses into blocks λ Hµ . A bimodule X ∈ H is contained in the block
+                                         n                               n
+   λ Hµ if it is annihilated by (ker χλ ) from the left and by (ker χµ ) from
+   the right for some positive integer n, where ker χλ is the annihilator of
+   the Verma module with highest weight λ. The category λ Hµ does not
+   have projective objects, however, we get enough projectives (see e.g.
+   [Jan83, 6.14]) if we consider the full subcategory λ Hµ1 of λ Hµ given
+   by all bimodules which are annihilated by ker χµ from the right hand
+   side. Let Aµλ be such that Aµλ -mod ∼   = λ Hµ1 , where λ and µ are integral.
+            µ
+   Then Aλ is standardly stratified (it is not quasi-hereditary in general)
+   and contains a unique indecomposable projective-injective module (see
+   [KM02, Corollary 2]). Later (Proposition 4.9) we give a new proof for
+   the fact that Aµλ is Ringel self-dual (see [FKM00, Theorem 3] for the
+   original argument). As in category O, the projective cover of a tilting
+   module is projective-injective, and hence Q becomes a direct sum of
+   copies of the unique self-dual indecomposable projective module. The
+   injective hulls of standard modules are projective as well. Hence we
+   could take X = Qbasic , the indecomposable projective-injective module
+   and get the double centraliser Aµλ ∼   = EndEndAµ (X) (X).
+                                                    λ
+
+
+4. Let A be such that A -mod ∼
+                             = O(Hc ), the category O for some rational
+   Cherednik algebra Hc = H0,c as considered for example in [Gua03]
+
+
+                                     11
+      or [GGOR03]. The projective-injective modules are exactly the sum-
+      mands occurring in the injective hulls of standard modules ([GGOR03,
+      Proposition 5.21]), they are also exactly the summands occurring in
+      the projective covers of tilting modules. Hence, Q is a direct sum of
+      projective-injectives and then we could take X = Qbasic to be the sum
+      over all indecomposable projective tilting modules. This is the double
+      centraliser property from [GGOR03, Theorem 5.16].
+  5. Quite often there are double centraliser properties with respect to tilt-
+     ing modules, which do not have to be projective or injective. In the
+     following examples the tilting module X is neither projective nor in-
+     jective: Let Q be a finite quiver with vertices {1, . . . , n}. Assume it is
+     directed, that is an arrow from i to j exists only if i > j. Let A = A(Q)
+     be the corresponding path algebra and D be its dual extension, that
+     is the algebra A ⊗k Aopp with the relations (radAopp )(radA) = 0 (see
+     e.g. [DX94]). Then D is quasi-hereditary with respect to the natural
+     order on {1, . . . , n}. One can show that there is a double centraliser
+     property with respect to the tilting module X = Qbasic = ⊕i T (i),
+     where the sum runs over all sources of Q. It is also easy to see that X
+     is neither injective nor projective in general.
+Remark 2.8. Let A and X be as in the examples above, then we could
+define
+                     V : A -mod −→ EndA (X) -mod
+                              M       −→ HomA (X, M ).
+The double centraliser property can be reformulated as: The functor V is
+fully faithful on projective modules, i.e. V induces an isomorphism
+                HomA (P1 , P2 ) ∼
+                                = HomEndA (X) (VP1 , VP2 )
+for all projective modules P1 and P2 .
+    Another easy consequence from the definitions is the following: The
+functor V is fully faithful on tilting modules, i.e. V induces an isomorphism
+                 HomA (T1 , T2 ) ∼
+                                 = HomEndA (X) (VT1 , VT2 )                (2.4)
+for all tilting modules T1 and T2 .
+
+Proof. If HomA (T1 , K) = 0 = HomA (K, T2 ) for any K ∈ A -mod such that
+VK = 0 then
+                 HomA (T1 , T2 ) ∼
+                                 = HomEndA (X) (VT1 , VT2 )
+since V is a quotient functor (see [Gab62]). All the composition factors in
+K are annihilated by V. On the other hand, none of the composition factors
+in the head of T1 and in the socle of T2 is annihilated by V. This proves the
+statement.
+
+                                        12
+3    Serre functors
+The aim of the present section is to develop an effective machinery to de-
+scribe Serre functors for the categories appearing in the examples above,
+where the algebra is not given explicitly. Let C be a k-linear additive cat-
+egory with finite dimensional homomorphism spaces. A right Serre functor
+is an additive endofunctor F of C together with isomorphisms
+
+                 ΨX,Y : HomC (X, F Y ) ∼
+                                       = HomC (Y, X)∗ ,                    (3.1)
+
+natural in X and Y . Here, ∗ denotes the ordinary duality for vector spaces.
+Right Serre functors satisfy the following properties:
+
+    • Two right Serre functors are isomorphic (see [RVdB02, Lemma I.1.3]).
+
+    • If ǫ is an auto-equivalence of C and F is a right Serre functor then
+      ǫF ∼= F ǫ. (It follows directly from the definitions that ǫF ǫ−1 is a right
+      Serre functor, hence it must be isomorphic to F ).
+
+A right Serre functor is a Serre functor if it is an auto-equivalence of C.
+By general results (see [BK89]), for any finite dimensional algebra A of fi-
+nite global dimension, there is a Serre functor S for the bounded derived
+category D b (A), more precisely S ∼ = LH, where H = A∗ ⊗A • ([BK89, Ex-
+ample 3.2(3)]). In the literature, the functor H is often called the Nakayama
+functor (see e.g. [Hap88, page 37]). This is because H ∼   = HomA (•, A)∗ .
+    Recall that for any abelian category C we denote by D b (C) its bounded
+derived category. If C = A -mod we set D b (A) = D b (C). We use the standard
+notation like LF , RG, Li F , Ri G etc. to denote left derived and right derived
+functors and their i-th cohomology functors. Let also Dperf (A) denote the
+full subcategory of D b (A), consisting of perfect complexes (i.e. of those
+complexes which are quasi-isomorphic to bounded complexes of projective
+A-modules).
+    In order to be able to describe more explicitly the Serre functors for
+some of the examples mentioned above we will need effective tools to detect
+Serre functors. Recall that a finite-dimensional algebra, A, is called self-
+injective provided that A ∼ = A∗ as left A-modules; and symmetric provided
+that A ∼    ∗
+        = A as A-bimodules. We start with the following easy observation
+
+Lemma 3.1. Let A be a finite-dimensional self-injective algebra. Then LH
+is a Serre functor of Dperf (A), moreover, LH ∼= ID if and only if A is
+symmetric.
+
+Proof. Let P • be a bounded complex of projective A-modules. Then we
+have that LHP • = HP • is a bounded complex of injective A-modules by
+the definition of H. Since A is self-injective we have HP • ∈ Dperf (A).
+
+
+                                       13
+That in this case LH is a Serre functor is proved for example in [Gin05,
+Proposition 20.5.5(i)]. Finally, the last statement follows from the definition
+of a symmetric algebra.
+
+Definition 3.2. Given an algebra A and a projective-injective module Q,
+we call Q good if the socle of Q is isomorphic to the head of Q. (Equivalently,
+if Q ∼
+     = ⊕λ∈Λ′ P (λ) for some Λ′ ⊂ Λ then Q ∼   = ⊕λ∈Λ′ I(λ).)
+
+  If A has a duality which preserves simple modules, any projective-injective
+module is automatically good.
+
+Remark 3.3. In the following we will also use double centraliser properties
+for the opposed algebra Aopp . Let I be a basic injective A-module. It is easy
+to see that the existence of an exact sequence of the form
+
+                           Q2 → Q1 → I → 0                                (3.2)
+
+for some projective-injective A-modules Q1 , Q2 , is equivalent to the re-
+quirement that Aopp has a double centraliser property with respect to a
+projective-injective module. Indeed, the double centraliser property for Aopp
+is equivalent to the existence of an exact sequence of the form
+
+                          0 → Aopp −→ X1′ −→ X2′                          (3.3)
+
+for some projective-injective modules X1′ , X2′ . Applying the usual duality
+Homk (•, k) we get an exact sequence
+
+                             X2 → X1 → I → 0,                             (3.4)
+
+where I is the injective cogenerator of A−mod and X1 , X2 are projective-
+injective.
+
+3.1   A characterisation of Serre functors
+The following result provides a tool to detect Serre functors:
+
+Theorem 3.4. Let A be a finite dimensional k-algebra of finite global dimen-
+sion. Assume that a basic projective-injective A-module is good and both, A
+and Aopp , have the double centraliser property with respect to a projective-
+injective module. Let F : A -mod → A -mod be a right exact functor. Then
+LF is a Serre functor of D b (A) if and only if the following conditions are
+satisfied:
+
+(a) Its left derived functor LF : D b (A) → D b (A) is an auto-equivalence.
+
+(b) F maps projective A-modules to injective A-modules.
+
+
+                                      14
+(c) F preserves the full subcategory PI of A−mod, consisting of all pro-
+    jective-injective modules, and the restrictions of F and H to PI are
+    isomorphic.
+
+Proof. Let Q be a good basic projective-injective A-module. We know that
+D b (A) has a Serre functor, S, and S ∼= LH, where H = A∗ ⊗A •. By
+definition, H satisfies (a) and (b) and preserves PI, because Q is good.
+Hence H satisfies (c).
+     Now let F : A -mod → A -mod be a right exact functor, satisfying (a)–
+(c). We claim that F and H are isomorphic when restricted to the category
+of injective A-modules. Indeed, the double centraliser property for Aopp
+gives us an exact sequence,
+
+                              X2 → X1 → I → 0,                             (3.5)
+
+where I is the injective cogenerator of A−mod and X1 , X2 ∈ PI (see Re-
+mark 3.3). Let ψ : F → H be the isomorphism, given by (c). Applying
+F and H to (3.5) and using (c) we obtain the following diagram with ex-
+act rows, where the square on the left hand side commutes, inducing an
+isomorphism, ψI , as indicated:
+
+          F (X2 )             / F (X1 )           / F (I)            /0
+
+         ψX2                  ψX1                  ψI
+                                                    
+         H(X2 )               / H(X1 )            / H(I)             /0
+
+By standard arguments, it defines an isomorphism of functors, F ∼     = H, when
+restricted to the full additive category of injective A-modules. Since LF is an
+auto-equivalence, we have LF S ∼   = S LF . As projectives are acyclic for right
+exact functors, we get an isomorphism, LF H ∼      = S F , when restricted to the
+full additive subcategory given by projectives. Taking the 0-th homology we
+get an isomorphism of functors
+
+                                    FH∼
+                                      =HF                                  (3.6)
+
+when restricted to the full additive category of projective A-modules. Since
+the functors F and H are right exact, we only have to deduce that F ∼= H on
+the category of projectives. We already know that F and H are invertible
+on PI, hence we can fix isomorphisms α : EndA (Q) ∼        = EndA (F Q) and
+β : EndA (Q) ∼= EndA (HQ). When restricted to PI, we have F ∼    = IDα and
+H ∼= IDβ , where IDα and IDβ denote the identity functors, but with the
+EndA (Q)-action twisted by α or β respectively. Since both, F and H, are
+right exact, they uniquely extend to functors on mod-EndA (Q), the latter
+being realized as the full subcategory C of A -mod given by all modules,
+having a presentation of the form (3.4) (see [Aus74, Section 5]). From the
+
+                                          15
+explicit description above, we obtain that both F and H are invertible as
+endofunctors of C. As both, H and F , map projectives to injectives and
+F ∼= H on injectives we get, together with (3.6), isomorphisms of functors
+F2 ∼=HF ∼   = F H when restricted to the full additive category of projective
+A-modules. This gives then rise to an isomorphism, F ∼      = H, since F is
+invertible on C. So, we are done.
+
+Proposition 3.5. Let A be a finite dimensional k-algebra of finite global
+dimension. Assume there is a good basic projective-injective module Q and
+set B = EndA (Q). Then the algebra B is symmetric if and only if the
+restriction of the Serre functor for D b (A) to PI is the identity functor.
+
+Proof. Let S be the Serre functor for D b (A). Then S obviously preserves PI,
+because Q is good, and hence it also preserves the (homotopy) category of
+bounded complexes of projective-injective A-modules. Moreover, it induces
+a Serre functor on this category. By [Aus74, Section 5], the latter one
+is equivalent to the category Dperf (B). The statement now follows from
+Lemma 3.1.
+
+3.2   Serre functors via partial coapproximation
+In this subsection we want to show that double centraliser properties with
+respect to projective-injective modules quite often make it possible to de-
+scribe the Serre functor in terms of partial coapproximations.
+    For the remaining section let A be a finite dimensional algebra of finite
+global dimension. Let Q ∈ A -mod be a projective module. For any module
+M let MQ be the trace of Q in M (ie. MQ is the smallest submodule of M
+such that HomA (Q, M/MQ ) = 0). Dually let M Q be the smallest quotient
+of M such that HomA (Q, M ) = HomA (Q, M Q ).
+    Associated with Q, there is a right exact functor CoappQ : A -mod →
+A -mod called the partial coapproximation with respect to Q (for details we
+refer for example to [KM05, 2.5]). It sends a projective module P to PQ .
+Note that if f : P → P ′ is a morphism between projective modules, then
+it induces a morphism, CoappQ (f ) : Coapp P → Coapp(P ′ ). These as-
+signments can be extended uniquely to a right exact endofunctor CoappQ
+of A -mod. For an arbitrary module M ∈ A -mod, the module CoappQ M
+can be constructed in the following way: We choose a short exact sequence
+K ֒→ P ։ M , where P is projective. Then
+
+                         CoappQ M ∼
+                                  = (P/KQ )Q ,
+
+in other words CoappQ M is obtained from M by first maximally extending
+M using simple modules, which do not occur in the top of Q, and afterwards
+deleting all occurrences of such modules in the top part.
+
+
+                                     16
+Lemma 3.6. Let A be a finite dimensional k-algebra. Assume, Aopp has the
+double centraliser property with respect to a projective-injective module. Let
+Q be a basic projective-injective A-module. Let λ ∈ Λ. Then the following
+holds: If P (λ)Q ∼
+                 = I(λ)Q then (CoappQ )2 (P (λ)) ∼ = I(λ).
+
+Proof of Lemma 3.6. We have
+
+                  (CoappQ )2 (P (λ)) ∼
+                                     = CoappQ (P (λ)Q )
+                                     ∼
+                                     = CoappQ (I(λ)Q )
+                                     ∼
+                                     = I(λ).
+
+Here, only the last isomorphism needs some explanation. If P is the projec-
+tive cover of I(λ)Q then the natural surjection from I(λ) onto I(λ)Q lifts to
+a map, f : P → I(λ). From the definition of I(λ)Q and (3.2) it follows that
+f is surjective. The double centraliser property for Aopp (see Remark 3.3)
+also implies that any composition factor in the head of the kernel of f is not
+annihilated by HomA (Q, •). Hence the desired isomorphism follows.
+
+    The following theorem describes a situation, where the double centraliser
+property with respect to a basic projective-injective module Q, the descrip-
+tion of the Serre functor via partial coapproximation, and the symmetry of
+the endomorphism ring of Q are nicely connected. Later on we will see that
+this setup applies to all the different versions of category O mentioned in
+the Examples 2.7.
+
+Theorem 3.7. Let A be a finite dimensional k-algebra of finite global di-
+mension. Let Q be a basic projective-injective A-module. Assume, Q is good
+and both, A and Aopp have the double centraliser property with respect to
+some projective-injective module. Consider the functors V = HomA (Q, •) :
+A -mod → mod-EndA (Q) and H = A∗ ⊗A •. Then the following assertions
+are equivalent:
+
+ (i) V ∼
+       = VH,
+
+ (ii) H ∼
+        = (CoappQ )2 ,
+
+(iii) EndA (Q) is symmetric.
+
+In either of these cases, the Serre functor for D(A)b is L((CoappQ )2 ).
+
+Proof. Obviously, if (ii) holds then L((CoappQ )2 ) is the Serre functor for
+D b (A). It is left to show that the three cases are equivalent.
+(i) ⇒ (ii) : Let us assume V ∼ = VH. Let P be a projective module. By the
+
+
+
+
+                                     17
+assumed double centraliser property for A and Aopp (see Remark 3.3) we
+have natural isomorphisms
+                HomA (P, P ) ∼= HomEndA (Q) (VP, VP )
+                              ∼
+                              = HomEndA (Q) (VHP, VP )
+                              ∼
+                              = HomA (HP, P ).
+(for the last isomorphism we refer to the proof of (2.4)). The identity map in
+EndA (P ) gives rise to a natural morphism, HP → P , identifying (HP )Q and
+PQ . Since H maps the projective cover of any simple module to its injective
+hull, we are in the situation of Lemma 3.6. In particular, (CoappQ )2 sends
+an indecomposable projective module to the corresponding indecomposable
+injective module. Let G be the right adjoint functor to CoappQ (this is the
+functor of partial approximation with respect to Q, see [KM05, 2.5]). We
+have the adjunction morphism ID → G2 (CoappQ )2 which we know is an
+isomorphism on projective-injective modules. From the double centraliser
+property we get that this adjunction morphism is injective on all projective
+modules. Since (CoappQ )2 P is isomorphic to the corresponding injective
+module, we have G2 (CoappQ )2 ∼    = P . In particular, G2 (CoappQ )2 ∼  = ID
+when restricted to the additive subcategory given by projective modules.
+Dually, (CoappQ )2 G2 ∼ = ID when restricted to the additive category given by
+injective modules. Since A has finite global dimension, L((CoappQ )2 ) defines
+an auto-equivalence of the derived category D b (A) with inverse RG2 . From
+our assumption we have V(CoappQ )2 ∼    =V∼  = VH. Therefore, (CoappQ )2 ∼   =
+H on the additive subcategory given by all projective-injective modules.
+Hence (CoappQ )2 satisfies the assumptions of Theorem 3.4. It follows in
+particular, H ∼ = (CoappQ )2 .
+(ii) ⇒ (iii) : The definition of CoappQ implies that it induces the identity
+functor on the category of projective-injective A-modules. Hence EndA (Q)
+is symmetric by Proposition 3.5.
+(iii) ⇒ (i) : We assume that B = EndA (Q) is symmetric. From Lemma 3.1
+we have that the Serre functor of Dperf (B) is isomorphic to the identity
+functor. On the other hand, the Serre functor of D b (A) induces a Serre
+functor on the category of bounded complexes of projective-injective A-
+modules. (Note that this category is preserved by the Serre functor, since
+Q was assumed to be good.) Altogether, when restricted to the category
+of projective-injective modules, the functor H is isomorphic to the identity
+functor. This provides the following sequence of natural isomorphisms for
+any projective A-module P :
+                        VHP     ∼
+                                = HomA (Q, HP )
+                                ∼
+                                = HomA (HQ, HP )
+                                ∼ HomA (Q, P )
+                                =
+                                ∼
+                                = VP.
+
+                                     18
+(For the penultimate isomorphism we used that H defines an auto-equivalence
+of D b (A), hence it is in particular fully faithful on projectives.) Thus we get
+an isomorphism of functors VH ∼     = V when restricted to the category of pro-
+jective modules. Since the involved functors are right exact, the isomorphism
+extends to an isomorphism of functors VH → V.
+
+
+4     Applications
+4.1   Bernstein-Gelfand-Gelfand category O
+Let g be a semisimple complex Lie algebra with a fixed Borel subalgebra
+b containing the fixed Cartan subalgebra h. Let O be the corresponding
+BGG-category (see [BGG76]). Let W denote the Weyl group of g with
+longest element w0 . For any weight λ ∈ h∗ let Wλ be the stabiliser Wλ =
+{w ∈ W | w · λ = λ}, where w · λ = w(λ + ρ) − ρ and ρ is the half-sum
+of positive roots. For µ ∈ h∗ let ∆(µ) be the Verma module with highest
+weight µ. For λ ∈ h∗ , a dominant and integral weight, we consider the block
+Oλ , containing the Verma modules ∆(µ), where µ ∈ W · λ. Let L(µ) be
+the simple quotient of ∆(µ) and P (µ) its projective cover. For any w ∈ W ,
+there is a twisting functor Tw : O → O (given by tensoring with some “semi-
+regular bimodule”), see [AL03], [KM05] or [AS03] for a precise definition.
+Let d be the duality on O. We denote by Gw the right adjoint functor of
+Tw . We have Gw ∼  = d Tw d (see [AS03, Section 4]).
+    If λ is regular, and s is a simple reflection, we denote by Cs Irving’s
+shuffling functor defined as taking the cokernel of the adjunction morphism
+between the identity functor and the translation θs “through the s-wall”
+([GJ81, Section 3]). Let w0 = si1 si2 · · · sir be a reduced expression, then we
+define Cw0 = Csir Csir−1 · · · Csi1 . Up to isomorphism, this does not depend
+on the chosen reduced expression (see e.g. [MS05, Lemma 5.10]).
+
+Proposition 4.1. Let A = Aλ such that Aλ -mod ∼
+                                              = Oλ for some integral
+block Oλ .
+
+(1) The functor L (Tw0 )2 : D b (Oλ ) → D b (Oλ ) is a Serre functor.
+
+(2) If λ is regular, then L (Cw0 )2 : D b (Oλ ) → D b (Oλ ) is a Serre functor. In
+    particular, L (Tw0 )2 ∼
+                          = L (Cw0 )2 .
+
+Proof. We want to verify the assumptions of Theorem 3.4 for A = Aλ and
+F = Tw2 0 considered as an endofunctor of A -mod.
+    Because of the existence of a duality on A we have A ∼   = Aopp and, as
+we have already mentioned in the introduction, A has a double centraliser
+property with respect to the good basic projective-injective module P (w0 ·λ)
+(see [Soe90, Struktursatz]). If λ is regular, the endomorphism algebra of the
+
+
+                                       19
+latter is the coinvariant algebra associated with W . If λ is singular then
+this endomorphism ring is isomorphic to the subalgebra of Wλ -invariants in
+the coinvariant algebra ([Soe90, Endomorphismensatz]). In any case, the
+resulting algebra is symmetric. Consider now (Tw0 )2 : Oλ → Oλ . This
+functor is both right exact and additive by definition. It’s derived functor
+defines a self-equivalence of D b (Oλ ) by [AS03, Corollary 4.2] for the regular
+case; the singular case follows by translation, since twisting functors com-
+mute naturally with translation functors ([AS03, Theorem 3.2]). Hence the
+assumption (a) of Theorem 3.4 is satisfied.
+    From [AS03, (2.3) and Theorem 2.3] we have
+
+                     F (P (λ)) = F (∆(λ)) ∼
+                                          = ∇(λ) ∼
+                                                 = I(λ),                   (4.1)
+
+if λ is regular. By [AS03, Theorem 3.2], F commutes with projective func-
+tors. Applying projective functors to (4.1) gives F (P (µ)) = I(µ) for any
+µ ∈ W · λ. Hence, the assumption (b) of Theorem 3.4 is satisfied. It is left
+to verify the assumption (c) of Theorem 3.4.
+    Since the endomorphism ring of P (w0 · λ) is symmetric, by Proposi-
+tion 3.5 it is left to check that Tw0 is isomorphic to the identity functor
+when restricted to the category of projective-injective modules. By [KM05,
+Theorem 4], there is a natural transformation, Tw0 → ID, which is an iso-
+morphism, when restricted to projective-injective modules ([AS03, Propo-
+sition 5.4]). In particular, the assumption (c) of Theorem 3.4 is satisfied.
+Theorem 3.4 therefore implies that L(Tw0 )2 is a Serre functor of D b (Oλ ).
+The first part of the proposition follows.
+    Let now λ be dominant, integral and regular. We again want to apply
+Theorem 3.4. The functor F = (Cw0 )2 : Oλ → Oλ is both right exact and ad-
+ditive by definition. Its derived functor defines a self-equivalence of D b (Oλ )
+by [MS05, Theorem 5.7]. That F (P (µ)) = I(µ) for any µ ∈ W · λ follows
+inductively from [Irv93, Proposition 3.1], [MS05, Theorem 5.7, Lemma 5.2
+and Proposition 5.3]. Since Endg(P (w0 · λ)) is symmetric, it is, by Propo-
+sition 3.5, left to check that F is isomorphic to the identity functor when
+restricted to the category of projective-injective modules. That F preserves
+projective-injective modules follows from [Irv93, Theorem 4.1(1)]. From
+[Soe90, Section 2.4] it follows that F commutes with the action of the
+centre of A, which, because of the double centraliser and commutativity
+of Endg(P (w0 · λ)), is in fact Endg(P (w0 · λ)). This implies that F , re-
+stricted to the category of projective-injective modules, is isomorphic to the
+identity functor. Theorem 3.4 now implies that L(Cw0 )2 is a Serre func-
+tor of D b (Oλ ). From the uniqueness of Serre functors we get in particular
+L (Tw0 )2 ∼
+          = L (Cw0 )2 .
+
+   We obtain the following surprising consequence:
+
+
+                                       20
+Corollary 4.2. Let λ be an integral, dominant and regular weight. Consid-
+ered as endofunctors of Oλ , there is an isomorphism of functors (Cw0 )2 ∼
+                                                                         =
+(Tw0 )2 . In particular (Cw0 )2 commutes with projective functors.
+
+Proof. The functors are isomorphic when restricted to the additive category
+of projective modules, since they both give rise to a Serre functor. On the
+other hand, they are both right exact and Oλ has finite global dimension.
+Therefore, the isomorphism extends uniquely to the whole category Oλ .
+Twisting functors commute with projective functors (see [AS03, Section 3]),
+hence (Cw0 )2 commutes with projective functors as well.
+
+Remark 4.3. We would like to draw the reader’s attention to the following
+observations concerning the principal block O0 of O:
+
+1.) The functor d Tw2 0 d is exactly Enright’s completion functor, see e.g.
+    [Jos82]. This follows from [KM05, Section 3].
+
+2.) Considered as an endofunctor of O0 , the functor Cw0 does not commute
+    with the action of the centre of the universal enveloping algebra of g (or
+    with the centre of O0 ) and does not commute with translation functors
+    even if g = sl2 (whereas Tw0 does, see [AS03, Section 3]). This is because
+    Cw0 twists the action of the centre by w0 (this follows from [Soe90, Sec-
+    tion 2.4]). This means, however, that Cy−1 Cy commutes with the action
+    of the centre of the category for any y ∈ W (however, not necessarily
+    with projective functors).
+
+3.) Since (Cw0 )2 induces the identity on the category of injective modules,
+    it follows that (Cw0 )4 ∼
+                            = (Cw0 )2 . It is easy to see that already Tw3 0 ∼
+                                                                             =
+    Tw0 . Moreover, the functors Cw0 , (Cw0 )2 , and Cw3 0 are pairwise non-
+      2
+
+    isomorphic; and the functors Tw0 , Tw2 0 are not isomorphic.
+
+4.) If w0 = s1 . . . sk is a reduced decomposition, then
+
+           L(Cw0 )2   ∼
+                      = (LCs1 LCs2 · · · LCst ) (LCs1 LCs2 · · · LCst ) ,
+           L(Tw0 )2   ∼
+                      = (LTs1 LTs2 · · · LTst ) (LTs1 LTs2 · · · LTst ) .
+
+    The first isomorphism follows for example from [Irv93, Proposition 3.1]
+    by standard arguments. The second follows directly from [AS03, Theo-
+    rem 2.2, Theorem 2.3 and Theorem 3.2].
+
+5.) The Serre functor S for D b (O0 ) satisfies Sk ∼6 Sl for all k 6= l. Indeed,
+                                                     =
+    from [AS03, Corollary 6.2] it follows that S L(0) ∼
+                                                 k
+                                                        = L(0)[k2l(w0 )]. From
+    [AS03, Corollary 6.2] it also follows that S = k  ∼
+                                                      6 [l] for any k, l because
+    SP (w0 · 0) ∼
+                = P (w0 · 0).
+
+
+
+
+                                      21
+6.) The braid group acts on D b (O0 ) via the auto-equivalences LCs and via
+    the auto-equivalences LTs . Since the Serre functor commutes with auto-
+    equivalences, it is natural to expect that it should correspond to a central
+    element in the Braid group. In fact, s1 . . . sk s1 . . . sk (see notation above)
+    generates the centre of the Braid group Bn , n ≥ 3, see for example [Bir74,
+    Corollary 1.8.4].
+
+4.2     The parabolic category O in the sense of Rocha-Caridi
+Our next task is to describe the Serre functor for the bounded derived cat-
+egory associated with the principal block of a parabolic category O in the
+sense of [RC80]. The situation here is much more complicated, since there
+are in general non-isomorphic indecomposable projective-injective modules
+in the same block and we do not yet know if the endomorphism ring of a
+basic projective-injective module is symmetric. However, the knowledge of
+the Serre functor for the bounded derived category of O0 turns out to be
+extremely useful to determine the Serre functor for the parabolic situation.
+
+     Let p ⊃ b be a parabolic subalgebra of g with corresponding Weyl group
+Wp ⊂ W . Let w0p be the longest element in Wp. For any integral dominant
+weight λ let Oλp be the full subcategory of Oλ given by locally p-finite objects.
+This category was introduced in [RC80]. For any w ∈ W let ∆p(w·λ) denote
+the corresponding parabolic Verma module with highest weight w · λ, i.e.
+the maximal quotient, contained in Oλp, of the Verma module ∆(w · λ) ∈ Oλ .
+Note that ∆p(w · λ) 6= 0 if and only if w is a shortest coset representative in
+Wp\W .
+     Let from now on λ be dominant, integral and regular. Since any object
+in D b (Oλ ) for which all cohomology objects are contained in Oλp is quasi-
+isomorphic to some complex of objects from Oλp (see the proof of [KS94,
+Proposition 1.7.11]), D b (Oλp ) embeds as a full triangulated subcategory in
+D b (Oλ ). Note that translations through walls preserve the parabolic subcat-
+egory. We may therefore consider the restriction of LCw0 to this subcategory
+as well as to the subcategory Oλp (considered as a subcategory of D b (Oλp )).
+We get the following result:
+
+Proposition 4.4. For any integral dominant and regular weight λ we have:
+
+(1) The functor L(Cw0 )[−l(w0p)] maps parabolic Verma modules to parabolic
+    dual Verma modules. More precisely
+
+                   L(Cw0 )[−l(w0p)] ∆p(w · λ) ∼       p
+                                              = d ∆p(w0 ww0 · λ)               (4.2)
+
+      for any parabolic Verma module ∆p(w · λ) ∈ Oλp.
+
+(2) The category Oλp is Ringel self-dual.
+
+                                         22
+(3) The functor L(Cw0 )2 [−2l(w0p)] maps projectives in Op to injectives in
+    Op.
+(4) The functor L(Cw0 )2 [−2l(w0p)] is a Serre functor for D b (Oλp ).
+Proof. We first check that w0pww0 is indeed a shortest coset representative,
+if so is w. Let s ∈ Wp be a simple reflection. Then
+
+  l(sw0pww0 ) = l(w0 ) − l(sw0pw) = l(w0 ) − l(sw0p) − l(w) =
+        = l(w0 ) − l(w0p) + 1 − l(w) = l(w0 ) − l(w0pw) + 1 = l(w0pww0 ) + 1.
+    Let ∆p(w · λ) be a parabolic Verma module in Oλp . From [Lep77, Section
+4] we have a finite resolution, P•w , of ∆p(w · λ) by Verma modules, where
+                                 M
+                       Piw =              ∆(yw · λ).
+                               y∈Wp ,l(y)=i
+
+The involved maps are clear up to scalars, for the exact normalisation we
+refer to [Lep77, Lemma 4.1].
+    For a simple reflection, s, the definition of Cs implies Cs ∆(x · λ) ∼=
+∆(xs · λ) if xs > x, and Cs ∇(x · λ) ∼  = ∇(xs · λ) if xs < x. Therefore
+Cw0 ∆(x · λ) ∼
+             = ∇(xw0 · λ), which implies that Cw0 is exact on the category
+of modules with Verma flag. This gives RCw0 ∆p(w · λ) ∼= Cw0 (P•w ). Dually,
+   w p ww
+d P• 0 0 is a coresolution of d ∆p(w0pww0 · λ). On the other hand, applying
+Cw0 to the resolution P•w gives a complex, Q• , where
+                   M                           M
+         Qi =             d ∆(yww0 · λ) =             ∇(yww0 · λ)
+                y∈Wp ,l(y)=i                   y∈Wp ,l(y)=i
+
+The maps in this complex satisfy the dual version of [Lep77, Lemma 4.1].
+         w p ww
+Hence d P• 0 0 ∼          p
+                = Q• [−l(w )]. The formula (4.2) follows.
+                               0
+    Let now F = Ll(w0p ) Cw0 . We claim that F , restricted to Oλp, is right exact.
+Note that the formulas above imply that Li Cw0 M = 0 for any M ∈ F(∆p)
+and i 6= l(w0p), in particular, for M ∈ Oλp projective. Let M ∈ Oλp be
+arbitrary. Choose a short exact sequence K ֒→ P ։ M , where P ∈ Oλp is
+projective. Since the global dimension of Apλ is finite, one obtains Li Cw0 M =
+0 for all M and all i < l(w0p) by induction. Therefore, F is right exact. It is
+                                                                        p
+known (see e.g. [MS05, Lemma 5.1, Lemma 5.2]) that G = Rl(w0 ) (d Cw0 d)
+is the right adjoint functor of F . From the formula (4.2) it follows that
+F defines an equivalence F(∆p) ∼    = F(∇p) with inverse G. Proposition 2.2
+                 p
+implies that Oλ is Ringel self-dual. Applying Proposition 2.2 twice, we
+get that the functor L(Cw0 )2 [−2l(w0p)] maps projective modules to injective
+modules. To prove that L(Cw0 )2 [−2l(w0p)] is a Serre functor we only have
+to verify the last assumption of Theorem 3.4. This is not completely trivial.
+Instead of applying again Theorem 3.4 we will give an alternative argument
+after the following lemma.
+
+                                        23
+    Let λ still be dominant, integral and regular. Let i : Oλp → Oλ denote the
+exact inclusion functor, let Z : Oλ → Oλp be its left adjoint and Ẑ : Oλ → Oλp
+be the right adjoint to i (i.e. Z is the Zuckerman functor of taking the
+maximal quotient in Oλp , Ẑ ∼
+                             = d Z d). To proceed we will need the following
+result from folklore:
+
+Lemma 4.5. There are isomorphisms of functors:
+
+              d i LZ d ∼           p
+                       = i LZ[−2l(w0 )] :        D b (Oλ ) → D b (Oλ )
+                d LZ d ∼           p
+                        = LZ[−2l(w )] :
+                                    0            D b (Oλ ) → D b (Oλp )
+
+Proof. Using [EW80, Proposition 4.2] we can fix an isomorphism,
+
+                     d i LZ d∆(λ) ∼               p
+                                  = i LZ∆(λ)[−2l(w0 )].
+
+Since Z commutes with projective functors (see e.g. [BFK99, Proposition3]),
+this isomorphism lifts to an isomorphism on projective modules. We have to
+verify that it is functorial. Without loss of generality we may assume that
+p = ps is the parabolic subalgebra corresponding to a simple reflection s.
+The general case for arbitrary p follows then by induction. Associated to s,
+there is a complex of functors
+
+                              Ts → ID → i Z
+
+which gives rise to a short exact sequence when applied to projective objects
+([KM05, Theorem 4] and [AS03, Proposition 5.4]). Taking the left derived
+functors we therefore get an isomorphism L2 (iZ) ∼ = L1 Ts (see [KS94, Propo-
+sition 1.8.8]). From [AS03, Theorem 4.1] and [MS04, Theorem 1] we have
+an isomorphism of functors L1 Ts ∼  = d i Z d. The first statement follows, the
+second is then also clear.
+
+   Now we are ready to complete the proof of Proposition 4.4:
+
+Proof of the last part of Proposition 4.4. To prove that L(Cw0 )2 [−2l(w0p)] is
+a Serre functor for D b (Oλp ) it is enough to show that for the functor G =
+Z L2l(wp ) (Cw0 )2 i we have an isomorphisms, natural in both arguments, as
+       0
+follows:
+                      HomOp (P p, GP p) ∼
+                                        = HomOp (P p, P p)∗ ,            (4.3)
+                          λ                          λ
+
+where  Pp is a projective generator of       Oλp .
+                                           Without loss of generality we
+        p
+assume P = ZP , where P is a projective generator of Oλ . We have isomor-
+
+
+
+
+                                        24
+phisms
+
+             HomOp (P p, GP p) ∼
+                               = HomOp (ZP, GP p)
+                   λ                 λ
+                               ∼
+                               = HomOλ (i ZP, i GP p)
+                               ∼
+                               = HomOλ (P, L2l(w0p ) (Cw0 )2 iP p)
+      (by Proposition 4.4 (1)) ∼
+                               = HomDb (Oλ ) (P, L(Cw0 )2 iP p[−2l(w0 )])
+                                                                       p
+
+                               ∼                       p           2  p
+                               = HomDb (Oλ ) (P [2l(w0 )], L(Cw0 ) iP )
+                               ∼
+          (by Proposition 4.1) = HomDb (Oλ ) (iP p, P [2l(w0p)])∗
+ (by adjointness of i and dZd) ∼
+                               = HomDb (Op ) (P p, d LZ dP [2l(w0 )])∗
+                                                                  p
+                                          λ
+              (by Lemma 4.5) ∼ = HomDb (Op ) (P p, LZP )∗
+                                          λ
+                               ∼
+                               = HomOp (P p, ZP )∗
+                                     λ
+                               ∼
+                               = HomOp (P p, P p)∗ ,
+                                            λ
+
+
+which are natural in both arguments. This completes the proof of Proposi-
+tion 4.4.
+
+   As an application we get the following nontrivial result
+
+Theorem 4.6. Let λ be an integral, regular and dominant weight. We
+consider the category Oλp , where p ⊃ b is some parabolic subalgebra of g. Let
+Q be a basic projective-injective module in Oλp . Then Endg(Q) is symmetric.
+
+   For the proof we need the following
+
+Lemma 4.7. In the situation of Theorem 4.6 we have the following: the
+socle S of ∆p(λ) is simple and Homg(Q, ∆p(λ)/S) = 0.
+
+Proof. Assume L is a composition factor of ∆p(λ) such that Homg(Q, L) 6= 0.
+From the latter it follows that the projective cover, P , of L is projective-
+injective, hence tilting. Since L is a composition factor of ∆p(λ), we have
+Homg(∆p(λ), P ) 6= 0. Therefore, L(λ) appears as a composition factor in
+P . Hence P = T p(λ) and L is unique. On the other hand
+
+            1 = [T p(λ) : ∆p(λ)] = [P : ∆p(λ)] = [∆p(λ) : L].
+
+Since (by [Irv85]) any simple module appearing in the socle of a parabolic
+Verma module is not annihilated by Homg(Q, •), the statement follows.
+
+Proof of Theorem 4.6. By Example 2.7 (2) and Proposition 3.5 it is enough
+to prove that the Serre functor is isomorphic to the identity functor when
+restricted to the additive subcategory of projective-injective modules. Let
+S = L(Cw0 )2 [−2l(w0p)] be the Serre functor of D b (Oλp ). The idea of the
+proof is the following: From Proposition 4.4 and Corollary 4.2 we know
+that S := i L2l(wp ) (Cw0 )2 Z : Oλ → Oλ is right exact and commutes with
+                  0
+translations through walls, even in a natural way as defined in [Kho05].
+
+                                     25
+We will construct another right exact functor G : Oλ → Oλ which again
+naturally commutes with translations through walls and coincides with S
+when evaluated at ∆(λ). The main result of [Kho05] states that two right
+exact additive functors, F1 , F2 : Oλ → Oλ , which agree on ∆(λ), and both
+naturally commute with translations through walls, are in fact isomorphic.
+From this fact we will deduce an isomorphism of functors S ∼       = G. Even more,
+the main step is to show that we can choose a functor G with the additional
+property that G = i G′ Z for some G′ : Oλp → Oλp , and G′ is isomorphic to
+the identity functor when restricted to the category of projective-injective
+modules in Oλp . Since Z is dense and full and S = i L2l(wp ) (Cw0 )2 Z ∼   = i G′ Z,
+                                                                0
+we get that S must be isomorphic to the identity functor on the subcategory
+of Oλp formed by projective-injective modules. This will finally imply the
+assertion of the theorem.
+     Let’s do the work! We have S = L(Cw0 )2 [−2l(w0p)], the Serre functor of
+D b (Oλp ), given by restriction of L(Cw0 )2 [−2l(w0p)] : D b (Oλ ) → D b (Oλ ). Put
+S := i L2l(wp ) (Cw0 )2 Z, considered as a functor Oλ → Oλ . This functor is
+               0
+clearly right exact and additive. Since λ is regular, the category Oλ is a
+category with full projective functors ([Kho05, Proposition 16]) in the sense
+of [Kho05, Section 2], where the projective functors are given by composi-
+tions of translations through walls and their direct summands. Recall from
+[Kho05, Definition 2] that a functor G : Oλ → Oλ naturally commutes with
+projective functors if for any projective functor θ, there is an isomorphism
+of functors ϕθ : θ G ∼  = G θ such that the following holds: for any two pro-
+jective functors θ1 , θ2 and any natural transformation α ∈ Hom(θ1 , θ2 ) the
+following diagram commutes:
+                                        αG
+                            θ1 G                   / θ2 G
+                                  ϕθ1             ϕθ2
+                                       G(α)          
+                           G θ1                   / G θ2 .
+
+(Note the typos in the original formulation [Kho05, Definition 2].)
+
+   Claim 1: The functor S : Oλ → Oλ naturally commutes with projective
+functors.
+
+Proof of Claim 1. To see this note first that S ∼  = L2l(w0p ) (Cw0 )2 i Z, where
+L(Cw0 )2 : D b (Oλ ) → D b (Oλ ). (This is clear from the definitions.) From
+[Kho05, Section 6.2] we know that i Z naturally commutes with projective
+functors on Oλ . In [Kho05, Section 6.5] it is proved that twisting functors
+on Oλ naturally commute with projective functors on Oλ . Corollary 4.2
+gives an isomorphism (Tw0 )2 ∼  = (Cw0 )2 : Oλ → Oλ , hence (Cw0 )2 naturally
+commutes with projective functors. From [Kho05, Lemma 8] it follows that
+
+
+                                             26
+L2l(wp ) (Cw0 )2 and L2l(wp ) (Cw0 )2 naturally commute with projective func-
+     0                    0
+tors, therefore so does S, because it is a composition of functors which
+commute naturally with projective functors. This implies Claim 1.
+
+    Let now J : Oλ → Oλ be the partial coapproximation with respect to
+M , where M = ⊕x∈W ′ P (x · λ) and
+
+ W ′ = {x ∈ W | ZP (x · λ) = 0 or ZP (x · λ) ∈ Oλp is projective-injective}.
+
+Recall that, when restricted to projective objects, J is nothing else than
+taking the trace with respect of M . The functor J is additive and right
+exact.
+
+   Claim 2: The functor J : Oλ → Oλ naturally commutes with projective
+functors.
+
+Proof of Claim 2. Let θ : Oλ → Oλ be a projective functor. We first show
+that θ TrM P = TrM θP , via the natural inclusions
+
+                        θ TrM P ֒→ θP ←֓ TrM θP,
+
+for any projective module P ∈ Oλ . To see this consider the short exact
+sequence TrM P ֒→ P ։ N , where N is the canonical quotient, in particular
+Homg(M, N ) = 0. We claim that Homg(M, θN ) = 0. Let θ ′ be the adjoint
+functor of θ. This is of course again a projective functor and therefore we
+have the following: If ZP (x · λ) = 0 then 0 = θ ′ ZP (x · λ) ∼  = Zθ ′ P (x · λ).
+If ZP (x · λ) 6= 0, but x ∈ W ′ , then ZP (x · λ) is projective-injective in Oλp,
+hence so is θ ′ ZP (x · λ) ∼
+                           = Zθ ′ P (x · λ). In particular,
+
+    Homg(M, θN )      ∼
+                      =    Homg(θ ′ M, N )
+                      ֒→ Homg(M n , N )       (for some positive integer n)
+                      =    0.
+
+The definition of the trace implies that the projective cover of TrM P is a
+direct summand of some M n , n ∈ Z>0 . From the arguments above it follows
+that the projective cover of θ TrM P is also a direct summand of some M n ,
+n ∈ Z>0 . Altogether, θ TrM P = TrM θP via the natural inclusions. In other
+words, we may fix an isomorphism of functors ϕθ : θJ ∼   = Jθ, restricted to
+the category of projective modules, such that
+
+                          jθ ◦ ϕθ = θ(j) : θ J → θ,                         (4.4)
+
+where j : J → ID is the obvious natural transformation. In particular, J
+commutes with projective functors. We claim that this is already enough
+to show that J naturally commutes with projective functors. We have to
+
+                                       27
+check this directly using the original definition [Kho05, Definition 2]: Let
+θ1 , θ2 : Oλ → Oλ be two projective functors and let α ∈ Hom(θ1 , θ2 ) be
+a natural transformation between them. Consider the following diagram of
+functors restricted to the additive category formed by all projective objects:
+                                                    α
+                           θO1                                   / θ2
+                                                                    O
+                                          θ1 (j)             θ2 (j)
+                                     ?            αJ              ?
+                          θ1 J                                  / θ2 J
+
+                     id                   ϕθ1                 ϕθ2         id
+                                                  J(α)               
+                          Jθ 1_                                / Jθ2
+                                                                   _
+                                          jθ1                  jθ2
+                                                   α
+                                                                   
+                           θ1                                   / θ2 .
+
+The two “squares”, the one on the left hand side and the on the right side,
+commute because of (4.4). The squares at the top and bottom commute
+by definition (of a natural transformation). We only have to show that the
+middle square commutes as well, i.e. J(α) ◦ ϕθ1 = ϕθ2 ◦ αJ . Since jθ2 is
+injective (on projective modules) it is enough to show that jθ2 ◦ J(α) ◦ ϕθ1 =
+jθ2 ◦ ϕθ2 ◦ αJ . Since all the other parts of the diagram commute we can
+calculate
+
+                    jθ2 ◦ J(α) ◦ ϕθ1                      = α ◦ jθ1 ◦ ϕθ1
+                                                          = α ◦ θ1 (j)
+                                                          = θ2 (j) ◦ αJ
+                                                          = jθ2 ◦ ϕθ2 ◦ αJ .
+
+Hence, J commutes naturally with projective functors when restricted to
+projective objects. Since the involved functors are right exact, Claim 2
+follows.
+
+   Claim 3: There is an isomorphism of modules S∆(λ) ∼
+                                                     = i Z J i Z J∆(λ).
+
+Proof of Claim 3. We first show that Z J∆(λ) ∼  = soc ∆p(λ), the socle of
+  p
+∆ (λ). Define U to be the module which fits into the canonical short exact
+sequence
+
+                   0 → U −→ ∆(λ) −→ ∆p (λ) → 0.                                (4.5)
+
+From Lemma 4.7 we have Z J∆p(λ) =     ∼ soc ∆p(λ). On the other hand, ZU =
+0 by definition, i.e. the projective cover PU of U is annihilated by Z, hence
+also Z JPU = 0. Since i Z J is right exact, the sequence (4.5) implies Z JU =
+
+
+                                                        28
+0 and Z J∆(λ) ∼= soc ∆p(λ). From the double centraliser property we have
+an exact sequence in Oλp of the form
+                       0 → ∆(λ)p −→ Q1 −→ Q2 ,
+where Q1 and Q2 are projective-injective modules in Oλp . There is therefore
+also an exact sequence in Oλ of the form
+                       Q2 → Q1 → d ∆p(λ) → 0.
+Note that J Q1 = Q1 , J Q2 = Q2 . Hence i Z J d ∆p(λ) ∼ = d ∆p(λ). Al-
+together we have i Z J i Z J∆p(λ) ∼
+                                  = d ∆p(λ). The latter is isomorphic to
+   p
+S∆ (λ) by Proposition 4.4. This proves Claim 3.
+
+   From [Kho05, Theorem 1] we get the existence of an isomorphism
+                            α : iZJ iZJ ∼
+                                        = S.
+By definition, J is isomorphic to the identity functor when restricted to
+projective-injectives in Oλp . Therefore, α induces an isomorphism of functors
+                         ID ∼
+                            = L(Cw0 )2 [−2l(w0 )]
+                                             p
+
+
+when restricted to the category of projective-injective modules in Oλp . This
+is exactly the statement that the Serre functor for D b (Oλp ) is isomorphic to
+the identity when restricted to the additive category formed by projective-
+injective modules. The assertion of the theorem follows then finally from
+Proposition 3.5.
+
+   We get the following consequence
+Corollary 4.8. In the situation of Theorem 4.6 the Serre functor for D b (Oλp )
+is isomorphic to L((CoappQ )2 )
+Proof. This follows directly from Theorem 4.6 and Theorem 3.7.
+
+4.3   Harish-Chandra bimodules
+Let λ Hµ be the category of Harish-Chandra bimodules as in Examples 2.7(3),
+where λ and µ are integral and dominant. Recall the subcategory λ Hµ ∼   =
+  µ                                                                    1
+Aλ -mod. In [BG80] (see also [Jan83, 6.17, 6.23]) it is proved that λ Hµ is
+equivalent to the full subcategory Cλµ of Oλ given by all modules M , which
+have an exact presentation,
+                             P1 → P2 → M → 0,                             (4.6)
+where P1 and P2 are projective and the simple modules in their heads are
+of the form L(x · λ), where x is a longest coset representative in Wµ \W/Wλ .
+Note that this category does not have finite global dimension in general.
+Nevertheless we have the following
+
+                                      29
+Proposition 4.9. Let λ, µ be integral dominant weights. Then
+
+(1) Aµλ is Ringel self-dual.
+
+(2) Dperf (Aµλ ) has a Serre functor, namely L(Cw0 )2 (via the identification
+    of Cλµ with Aµλ -mod given by [Aus74, Section 5]).
+
+Proof. From [MS05, Proposition 4.2] and its dual version we get that Cw0
+maps standard modules to costandard modules. From [MS05, Lemma 5.18]
+it follows that Cw0 defines an equivalence between the categories of mod-
+ules with standard flag and modules with costandard flag. In particular,
+Ext1Aµ (Cw0 P, ∇) ∼= Ext1Aµ (P, Cw−1
+                                   0
+                                     ∇) = 0 for any costandard module ∇ and
+      λ                   λ
+any projective P . Hence Cw0 maps a minimal projective generator to a char-
+acteristic cotilting module, which is tilting (see e.g. [FKM00, Section 6]).
+Since it is an equivalence, it preserves the endomorphism ring. The first
+part of the theorem follows.
+    To prove the second part of the theorem we use Proposition 4.1. Because
+of this result and [Gin05, Proposition 20.5.5(i)] it is enough to show that
+L(Cw0 )2 preserves Dperf (Aµλ ). Since L(Cw0 )2 is a Serre functor for O, it sends
+indecomposable projective modules to the corresponding indecomposable
+injective modules. However, an injective Aµλ -module has a presentation of
+the form (4.6) by [MS05, Corollary 2.11]. Since all tilting Aµλ -modules are
+also cotilting ([FKM00, Section 6]), it follows that injective Aµλ -modules
+have finite projective dimension. Hence L(Cw0 )2 preserves Dperf (Aµλ ) and
+the statement follows.
+
+Remark 4.10. From [Dla96, Theorem 2.5] it follows that Aµλ has finite
+global dimension if and only if the standard and proper standard Aµλ -modules
+coincide (i.e. Aµλ is quasi-hereditary). Using the description of standard
+modules as in [MS05, Proposition 2.18] it is easy to see that this is the case
+if and only if µ is regular or Aµλ is semi-simple.
+
+Remark 4.11. One can also show that for any N, P ∈ Aµλ -mod, where P is
+projective, the Serre functor L(Cw0 )2 from Proposition 4.1 induces a natural
+isomorphism,
+                   HomAµ (N, (Cw0 )2 P ) ∼
+                                         = HomAµ (P, N )∗ .
+                          λ                         λ
+
+
+4.4   The category O for rational Cherednik algebras
+We briefly recall the facts about rational Cherednik algebras which are im-
+portant in our setup. We refer for example to [GGOR03] for details. Let
+V be a finite dimensional vector space, W ⊂ GL(V ) a finite reflection group,
+and C[W] the group algebra of W over C. Let A denote the set of reflection
+hyperplanes. If h ∈ A then Wh denotes the (pointwise) stabiliser of h in W.
+Let γ : A → C[W] be a W-equivariant map such that γ(h) ∈ C[Wh ] ⊂ C[W].
+
+                                       30
+Associated to the pair (V, γ) we have H = H(V, γ), the corresponding ra-
+tional Cherednik algebra as defined and studied for example in [GGOR03].
+As a vector space, H(V, γ) is isomorphic to S(V ) ⊗ C[W] ⊗ S(V ∗ ), where
+S(V ) denotes the algebra of polynomial functions in V ∗ (This is the PBW-
+theorem [EG02, Theorem 1.3]). The occurring three algebras S(V ), S(V ∗ )
+and C[W] are in fact subalgebras, for the nontrivial commutator relations
+between them (involving the parameter γ) we refer to [GGOR03], [Gua03].
+Let O = O(H, V, γ) be the corresponding category O given by all finitely
+generated H-modules which are locally S(V ∗ )-finite. This is a highest weight
+category, where the isomorphism classes of simple modules are in natural
+bijection with irreducible modules for W. More precisely, if E is an irre-
+ducible W-module, then ∆(E) = H(V, γ) ⊗B E, where B is the subalgebra
+of H(V, γ) generated by S(V ∗ ) and C[W]. (The action of p ∈ S(V ∗ ) on E is
+given by multiplication with p(0)). The simple head L(E) of ∆(E) is the
+simple module corresponding to E.
+                                                                           opp
+    In general, H(V, γ) is not isomorphic to its opposite algebra H(V, γ) ,
+therefore there is no simple preserving duality. However, we have an iso-
+morphism ([GGOR03, Section 4.2]) of algebras H(V, γ) ∼     = H(V ∗ , † ◦ γ)opp ,
+where † : W → W, g 7→ g−1 (the isomorphism is given by extending † trivially
+to S(V ⋆ ) and sending v ∈ V to −v).
+    With this fixed isomorphism one can define two contravariant functors,
+namely
+
+   • the naive duality ([GGOR03, Proposition 4.7]):
+
+                          dV,γ : O(V, γ) → O(V ∗ , † ◦ γ)
+
+      by sending an object M to the largest submodule dV,γ (M ) of (the
+      ordinary vector space dual) M ∗ which is locally S(V ∗ )-finite. This
+      is a right H(V, γ)-module and becomes a left H(V ∗ , † ◦ γ)-module via
+      the fixed isomorphism. This duality sends the simple module L(E)
+      to the simple module L(Ě) indexed by the dual representation Ě of
+      E. Projective objects are sent to injectives and standard objects to
+      costandard objects.
+
+   • the functor DV,γ (see [GGOR03, Proposition 4.10])
+
+             DV,γ = Extdim V
+                       H(V,γ) (•, H(V, γ)) : O(V, γ) → O(V, † ◦ γ).
+
+
+Conjecture 4.12. Let H(V, γ) be a rational Cherednik algebra with the cor-
+responding category O(V, γ). Then
+
+                      S = dV ∗ ,γ † DV ∗ ,γ dV,†◦γ DV,γ
+
+is right exact and LS is a Serre functor.
+
+                                       31
+    To prove this conjecture it would be enough to verify the assumptions
+in Theorem 3.4, where F = F1 F2 , F1 = dV,†◦γ DV,γ and F2 = dV ∗ ,γ † DV ∗ ,γ .
+The fact that F is right exact follows directly from [GGOR03, 4.1]. The
+assumption (a) follows directly from [GGOR03, Lemma 4.1, Proposition
+4.7]. The assumption (b) is proved in [GGOR03, Proposition 5.21]. We
+do not know if assumption (c) is satisfied. However, a positive answer
+to the conjecture [GGOR03, Remark 5.20] would imply, via the Knizhnik-
+Zamolodchikov-functor, that F is isomorphic to the identity functor on the
+additive subcategory given by projective-injective objects. Since the corre-
+sponding Hecke algebra is symmetric (see e.g. [CIK71, Lemma 5.10]), the
+conjecture would follow from Proposition 3.5.
+
+    Independently of the Conjecture 4.12, we can at least give a description
+of the corresponding Serre functor in terms of partial coapproximation:
+
+Proposition 4.13. Let H(V, γ) be a rational Cherednik algebra with the
+corresponding category O(V, γ). Let Q be a basic projective-injective mod-
+ule in O(V, γ). Then the Serre functor of D b (O(V, γ)) is isomorphic to
+L((CoappQ )2 ).
+
+Proof. We only have to verify that we are in the situation of Theorem 3.7.
+We can find a projective-injective module PKZ representing the Knizhnik-
+Zamolodchikov-functor (see [GGOR03, Proposition 5.21]). On the other
+hand the endomorphism ring of PKZ is isomorphic to the Hecke algebra
+([GGOR03, Theorem 5.15]), hence symmetric ([CIK71]). It is known that
+O(V, γ) has the double centraliser property with respect to PKZ ([GGOR03,
+Theorem 5.16]). Since the naive duality maps a basic projective module to
+a basic injective module, and PKZ to the corresponding PKZ ([GGOR03,
+Proposition 5.21]), and O(V, γ)opp has again a double centraliser property
+with respect to PKZ , we get that A and Aopp have the double centraliser with
+respect to a basic projective-injective module. From [GGOR03, Proposition
+5.21] it follows that such a basic projective-injective module for A is good.
+Hence, the assumptions of Theorem 3.7 are satisfied. The statement follows.
+
+
+
+5    Projective-injectives in the category Op (sln (C))
+In the following section we study more carefully projective-injective modules
+in the parabolic category Op, especially, for the Lie algebra sln = sln (C). As
+already mentioned in the introduction, one of the motivations to consider
+the category of projective-injective modules in Op is to find a precise connec-
+tion between Khovanov’s categorification of the Jones polynomial ([Kho00])
+and the categorification of the Jones polynomial via representation theory
+
+
+                                      32
+of the Lie algebra sln (as proposed in [BFK99] and proved in [Str05]). It
+might be possible to pass directly from one model to the other by connect-
+ing the involved algebras directly, because the algebra, used by Khovanov
+in his categorification, is a quotient of an algebra A such that A -mod is
+equivalent to a certain block of Op for some sln ([Bra02, page 494]). Al-
+though, we have a very nice, more or less explicit, description of the algebra
+A in question ([Bra02, Theorem 1.4.1]), we are interested in more concep-
+tual properties of the algebra. Several conjectures in this direction were
+formulated by Khovanov in [Kho04]. We want to simplify the problem by
+using the double centraliser property. In this way, by using the Serre func-
+tor, we confirm three conjectures of Khovanov: in Theorem 5.2 we confirm
+[Kho04, Conjecture 4] concerning the centre of A, and in Theorem 5.4 we
+confirm that the endomorphism algebra of a basic projective-injective mod-
+ule is symmetric, and depends only on the chosen partition of n, not on the
+actually chosen composition of n. (The last two conjectures were formulated
+in a private communication). Furthermore, Theorem 5.4 supports [Kho04,
+Conjecture 3].
+
+5.1    On a result of Irving
+Consider the classical triangular decomposition sln = n− ⊕h⊕n+ , where h is
+the Cartan subalgebra of all diagonal matrices (with zero trace) and n± de-
+notes the subalgebra of all upper- and lower-triangular matrices respectively.
+Given a composition, µ = (µ1 , . . . , µk ), of n (i.e. µ1 + · · · + µk = n), we have
+the corresponding Young subgroup Sµ = Sµ1 × Sµ2 × · · · × Sµk of Sn , the
+latter being the Weyl group of sln . Let O0µ be the corresponding parabolic
+subcategory of O0 (sln ) (see Section 4.2). Recall that the simple objects in
+O0 are in bijection with the elements of Sn . We denote by L(w) the simple
+module of highest weight w(ρ) − ρ, where ρ denotes the half-sum of the
+positive roots. For w ∈ Sn we denote by ∆(w) and P (w) the corresponding
+Verma and indecomposable projective module in O0 . Let S µ be the set of
+shortest coset representatives of Sµ \Sn and let wµ be the longest element
+in S µ . The simple objects in O0µ are then the L(w), where w ∈ S µ . For
+w ∈ S µ we denote by Lµ (w), ∆µ (w) and P µ (w) the corresponding simple,
+parabolic Verma and indecomposable projective module in O0µ respectively.
+Note that Lµ (w) = L(w) for w ∈ S µ .
+    For any i ∈ {1, . . . , n − 1} we denote by θi : O0 → O0 the translation
+functor through the si -wall (see e.g. [GJ81, Section 3]). This functor is
+exact, self-adjoint, and preserves O0µ . For w ∈ Sn we denote by L(w) the
+left cell of the element w (for a definition we refer to [KL79]). Now we can
+give (for the sln case) an easier proof for the following main result of [Irv85]:
+
+Theorem 5.1. For any composition, µ, of n the following conditions are
+
+
+                                         33
+equivalent:
+
+ (i) P µ (w) is injective.
+
+ (ii) w ∈ L(wµ )
+
+(iii) Lµ (w) occurs in the socle of some parabolic Verma module ∆µ (w′ ).
+
+Proof. Assume that (i) is satisfied. Since O0µ has a simple preserving duality,
+if P µ (w) is injective, it is a tilting module in the highest weight category
+O0µ and hence is self-dual. This means that its socle is Lµ (w), which must
+coincide with the socle of some parabolic Verma module because P µ (w) has
+a standard flag. This implies (iii).
+    Assume that (iii) is satisfied. Since any parabolic Verma module is a
+submodule of some tilting module, we get that Lµ (w) occurs in the socle of
+some tilting module. By [CI89], the tilting modules in O0µ are exactly direct
+summands of translations of Lµ (wµ ). From [Irv85, Proposition 4.3] (this is
+an easy preparatory result) it follows that w ∈ L(wµ ), that is (ii) is satisfied.
+    Assume that (ii) is satisfied. Since all P µ (w′ ), w′ ∈ L(wµ ), can be
+obtained from each other via translations through walls (this follows again
+from [Irv85, Proposition 4.3]), it is now left to show that there exists w ∈
+L(wµ ) such that P µ (w) is injective. Actually, since we already know that (i)
+implies (ii), it is enough to show that there exists some projective-injective
+module in O0µ . But this one is obtained by translating any simple projective
+module from the same weight lattice, which exists by [IS88, 3.1] (this is
+again an easy result).
+
+5.2   On Khovanov’s conjectures
+According to Theorem 5.1, the modules P µ (w), w ∈ L(wµ ), constitute an
+exhaustive list of indecomposable projective-injective modules in O0µ . Let
+                    µ
+       L
+Pµ =      w∈L(wµ ) P (w) be the basic projective-injective module and set
+Bµ = EndO0µ (Pµ ). As a consequence, we have the following result which
+confirms [Kho04, Conjecture 4]:
+
+Theorem 5.2. Let µ be a composition of n.
+
+(1) The Loewy lengths of all projective-injective modules in O0µ coincide.
+
+(2) O0µ satisfies the double centraliser property with respect to a basic projec-
+    tive-injective module, in particular, the restriction induces an isomor-
+    phism between the centres of Aµ0 and Bµ .
+
+Remark 5.3. Theorem 5.2 is true for any semisimple complex Lie algebra
+g (the proof is exactly the same if one replaces Theorem 5.1 by the main
+result of [Irv85]).
+
+                                       34
+Proof. Let P µ (w) be a projective-injective module. From [Irv85, Proposi-
+tion 4.3(ii)] it follows that P µ (w) is a direct summand of some translation of
+P µ (wµ ). Hence to prove the first statement it is enough to show that transla-
+tions through walls do not increase the Loewy length of projective-injective
+modules. If θi (L(w)) 6= 0, then
+       dim HomO (θi P µ (w), L(w)) = dim HomO (P µ (w), θi L(w)) = 2
+by [Jan83, 4.12(3), 4.13(3’)], which implies that P µ (w) ⊕ P µ (w) is a direct
+summand of θi (P µ (w)). Comparing the lengths of the standard filtrations
+we even get θi (P µ (w)) ∼
+                         = P µ (w) ⊕ P µ (w), in particular, such translations do
+not produce new projective-injective modules.
+    Now assume that θi (L(w)) = 0. The algebras A0 and Aµ0 , which corre-
+spond to O0 and O0µ are Koszul ([Soe90], [BGS96], [Bac99]), in particular,
+they admit a canonical positive grading (the Koszul grading), which we fix.
+This allows us to consider graded versions of both O0 and O0µ (see [BGS96],
+[Str03a]). In [Str03a] and [BGS96] it was shown that simple modules, Verma
+modules, parabolic Verma and projective modules in O0 and O0µ are grad-
+able. Their graded lifts are unique up to isomorphism and grading shift,
+therefore we call a lift standard if the head is concentrated in degree zero.
+In [Str03a] it was shown, that the functors θi (as endofunctors of O0 ) are
+gradable as well. We denote by θ̃i the standard graded lift of θi (i.e. θ̃i ,
+applied to a simple module concentrated in degree 0 has socle concentrated
+in degree 1). Since θi preserves O0µ , the functor θ̃i restricts to a graded lift
+of θi on O0µ .
+    Let P gr be the standard graded lift of P µ (w). Since it has both sim-
+ple top and simple socle, the radical-, socle- and graded filtrations of P gr
+coincide by [BGS96, Proposition 2.4.1]. In particular, P gr has a unique
+component of maximal and a unique component of minimal degree. On
+the other hand, θ̃i (L) is concentrated in the degrees −1, 0, 1 for any simple
+module L, concentrated in degree 0 ([Str03a, Theorem 5.1]). This implies
+that the length of the graded filtration of θ̃i (P gr ) can not exceed the length
+of the graded filtration of P gr . Hence, the Loewy length of θi (P µ (w)) does
+not exceed that of P µ (w) and the statement (1) follows.
+    The double centraliser property follows from Corollary 2.6 and the main
+result of [Irv85] (as formulated in Theorem 5.1). For an algebra, A, we
+denote its centre by Z(A). From the double centraliser property we have
+                               Aµ0 = EndBµ (Pµ ).
+If x ∈ Z(Aµ0 ), then xa = ax for all a ∈ Aµ0 and hence x ∈ Bµ . On the other
+hand, every element of Aµ0 commutes with each element in Bµ by definition.
+Hence x ∈ Z(Bµ ). This implies Z(Aµ0 ) ֒→ Z(Bµ ). Because of the left-right
+symmetry of the double centraliser we finally get Z(Aµ0 ) = Z(Bµ ). This
+completes the proof.
+
+                                       35
+   We formulate now the main result of this section:
+Theorem 5.4. (1) Let µ be a composition of n. Then the algebra Bµ is
+   symmetric.
+
+(2) Let µ and ν be two compositions of n, which give rise to the same par-
+    tition of n. Then Bµ ∼
+                         = Bν .
+Proof. The statement (1) is just a special case of Theorem 4.6.
+    Let us now prove (2). Without loss of generality we may assume µ =
+(µ1 , . . . , µk ) and
+
+                     ν = (µ1 , . . . , µl−1 , µl+1 , µl , µl+2 , . . . , µk )
+
+for some l ∈ {1, . . . , k − 1}. Moreover, we assume µl > µl+1 .
+     For any composition, τ , of n Irving and Shelton constructed in [IS88,
+3.1] a special weight, λ(τ ), with the following property: the simple highest
+weight module L(λ(τ ) − ρ) with the highest weight λ(τ ) − ρ is the only
+simple module in its block of Oτ . From the definition in [IS88, 3.1] it follows
+immediately that, if τ and τ ′ are two compositions of n which give rise to the
+same partition, then λ(τ ) and λ(τ ′ ) are in the same Sn -orbit, in particular,
+L(λ(τ ) − ρ) and L(λ(τ ′ ) − ρ) belong to the same block of O.
+     Now we apply this to the case τ = ν, τ ′ = µ. Let Oξ be the common block
+(of O) for L(λ(µ)−ρ) and L(λ(ν)−ρ). Although L(λ(µ)−ρ) and L(λ(ν)−ρ)
+are in the same block of O, we have that the parabolic categories Oξµ and Oξν
+are semi-simple containing only one simple object each. Obviously, they are
+equivalent. However, we would like to construct a functor on O, which gives
+rise to an equivalence between these categories, and, additionally, commutes
+with tensoring with finite-dimensional sln -modules.
+     To proceed we will need some general notation. For any transposition
+s = si = (i, i + 1) in Sn we set Os = Oβ , where β = (β1 , . . . , βn−1 ) is the
+composition of n such that βi = 2 and βj = 1 for all j 6= i. Denote by
+is : Os ֒→ O the inclusion functor, and by Zs : O → Os the left adjoint to
+is , which is the Zuckerman functor, associated to s. Then d Zs d : Os ֒→ O
+is the right adjoint to is . It is known that
+
+               Li Zs = 0 for all i ≥ 3,          and       LZs ∼
+                                                               = d LZs d[2],           (5.1)
+
+see [EW80] or [BFK99, Proposition 3] and also Lemma 4.5. Finally, we
+denote by iµ : Oµ ֒→ O and iν : Oν ֒→ O the inclusion functors and by
+Zµ : O → Oµ and Zν : O → Oν the corresponding left adjoint Zuckerman
+functors.
+    Let m′ = m′l = µ1 + · · · + µl−1 and m = ml = m′ + µl+1 , and set
+r = µl − µl+1 . Consider the following element in Sn :
+
+ w = (sm′ +r+1 . . . sm+r ) . . . (sm′ +2 . . . sm+1 sm′ +1 )(sm′ +1 sm′ +2 . . . sm−1 sm ).
+
+                                               36
+(for example if µ = (2, 4) then ν = (4, 2) and we have w = (s2 s3 )(s1 s2 )).
+For simplicity we write the above product in the form w = t1 . . . tp (thus
+p = rµl+1 , t1 = sm′ +r+1 and so on). For i = 1, . . . , p we set wi = ti . . . tp ,
+and wp+1 = e. The element w is constructed such that w(λ(ν)) = λ(µ) and
+wi (λ(ν)) > wi+1 (λ(ν)) for all i = 1, . . . , p. Define
+
+ F = LZµ it1 LZt1 it2 LZt2 . . . itp LZtp iν [−l(w)]     : D b (Oν ) → D b (Oµ ),
+ G = LZν itp LZtp itp−1 LZtp−1 . . . it1 LZt1 iµ [−l(w)] : D b (Oµ ) → D b (Oν ).
+
+Both, F and G, commute with tensoring with finite-dimensional sln -modules
+([EW80, Proposition 2.2 and Proposition 3.7], see also [BFK99, Proposi-
+tion 3]). Further, F is both left and right adjoint to G by (5.1).
+
+   Claim: The functors F and G define, via restriction, mutually inverse
+equivalences F : Oξν → Oξµ and G : Oξµ → Oξν .
+
+Proof of the Claim. Since F and G are adjoint to each other and both Oξµ
+and Oξν are semi-simple, it is enough to show that
+
+                         F (L(λ(ν) − ρ)) = L(λ(µ) − ρ).
+
+    To prove this we first note that for a simple reflection, s, and for a
+dominant integral weight, λ, we have
+                         
+                         L(x
+                              · λ) ⊕ L(x · λ)[2],               sx · λ < x · λ,
+   LZs (L(x · λ)) =                         a
+                           L
+                             y:y>sx L(y · λ) [1],                sx · λ = x · λ,
+                                             y
+                         
+                                                         a
+                                          L
+                           L(sx · λ)[1] ⊕ y:y>sx L(y · λ) y [1], otherwise,
+                         
+                                                                              (5.2)
+where ay ∈ {0, 1, . . . }. To see this, let Ts : O → O be the twisting func-
+tor, associated with s (as in Subsection 4.1). In [KM05, Theorem 4] (see
+also [MS04, Proposition 2.3]) it is shown that there exists a natural trans-
+formation, cans : Ts → ID, non-vanishing on Verma modules. In [MS04,
+Theorem 1(3)] it is proved that the kernel of cans is isomorphic to L1 Zs .
+Now (5.2) follows from the Kazhdan-Lusztig conjectures, see [AS03, Theo-
+rem 6.3 and Theorem 7.8] for details. (Note that the assumption for L′ to
+be s-finite is missing in the formulation of [AS03, Theorem 6.3(3)].)
+    For i = 1, . . . , p set
+
+      Fi = LZti it2 LZt2 . . . itp LZtp iν [−(p − i + 1)] : D b (Oν ) → D b (Oti ).
+
+From (5.2) it follows by induction that
+                                                    M                    (i)
+        Fi L(λ(τ ) − ρ) = L(wi (λ(τ )) − ρ) ⊕               L(y · λ(τ ))ay [b(i)
+                                                                             y ],
+                                                   y:y>wi
+
+
+
+                                           37
+         (i)               (i)
+where ay ∈ {0, 1, . . . }, by ∈ {1, . . . } for all i. In particular, we have
+                      LZµ it1 F1 L(λ(τ ) − ρ) = L(λ(µ) − ρ)
+since Oξµ is semi-simple and the claim follows.
+
+    Let us now sum up what we know. We have an adjoint pair, (F, G), of
+functors between D b (Oν ) and D b (Oµ ), which commute with tensoring with
+finite-dimensional sln -modules and induce mutually inverse equivalences,
+when restricted to Oξν and Oξµ . On the other hand, there is a finite di-
+mensional sln -module, E, such that E ⊗ L(λ(ν) − ρ) contains Pν as a direct
+summand, and E ⊗ L(λ(µ) − ρ) contains Pµ as a direct summand (this
+follows from Theorem 5.2, for the explicit statement see [Irv85, Proposi-
+tion 4.3(ii)]). Therefore the adjunction morphisms F G → ID and ID → GF
+are isomorphisms when evaluated at Pµ and Pν respectively. Hence F and
+G define mutually inverse equivalences between the corresponding additive
+categories of projective-injective modules. This completes the proof of The-
+orem 5.4.
+
+    We have the following direct consequence, a part of which was also ob-
+tained in [Kho04, Section 6] by establishing a derived equivalence between
+Oξµ and Oξν using a geometric argument:
+Corollary 5.5. The centres of Bµ , Bν , Oξµ and Oξν are all isomorphic.
+Remark 5.6. Since the Kazhdan-Lusztig left cell modules for the Iwahori-
+Hecke algebra Hn of the symmetric group are exactly the irreducible mod-
+ules, Theorem 5.1 can be used to “categorify” these irreducible modules:
+Let λ be a partition of n. Consider the abelian category of modules, admit-
+ting a 2-step presentation by projective-injective modules in the parabolic
+category O for sln , associated with λ. This abelian category is invariant
+under the action of translations through walls. The action of these transla-
+tion functors gives rise to a categorification of the Specht module Sλ for the
+symmetric group Sn . The graded version of the above result (in the sense
+of [Str03a]) gives rise to a categorification of the Specht module Sλ for Hn .
+The details will appear in [KMS].
+
+
+References
+[ÁHLU00] I. Ágoston, D. Happel, E. Lukács, and L. Unger, Finitistic di-
+          mension of standardly stratified algebras, Comm. Algebra 28
+          (2000), no. 6, 2745–2752.
+[AL03]         H. H. Andersen and N. Lauritzen, Twisted Verma modules,
+               Studies in memory of Issai Schur, Progr. Math., vol. 210,
+               Birkhäuser, 2003, pp. 1–26.
+
+                                        38
+[AR91]    M. Auslander and I. Reiten, Applications of contravariantly fi-
+          nite subcategories, Adv. Math. 86 (1991), no. 1, 111–152.
+
+[Ark97]   S. M. Arkhipov, Semi-infinite cohomology of associative algebras
+          and bar duality, Internat. Math. Res. Notices (1997), no. 17,
+          833–863.
+
+[AS03]    H. H. Andersen and C. Stroppel, Twisting functors on O, Rep-
+          resent. Theory 7 (2003), 681–699 (electronic).
+
+[Aus74]   M. Auslander, Representation theory of Artin algebras. I, II,
+          Comm. Algebra 1 (1974), 177–268.
+
+[Bac99]   E. Backelin, Koszul duality for parabolic and singular category
+          O, Represent. Theory 3 (1999), 139–152 (electronic).
+
+[BBM04]   A. Beilinson, R. Bezrukavnikov, and I. Mirković, Tilting exer-
+          cises, Mosc. Math. J. 4 (2004), no. 3, 547–557, 782.
+
+[BFK99]   J. Bernstein, I. Frenkel, and M. Khovanov, A categorification
+          of the Temperley-Lieb algebra and Schur quotients of U (sl2 )
+          via projective and Zuckerman functors, Selecta Math. (N.S.) 5
+          (1999), no. 2, 199–241.
+
+[BG80]    J. N. Bernstein and S. I. Gel′ fand, Tensor products of finite- and
+          infinite-dimensional representations of semisimple Lie algebras,
+          Compositio Math. 41 (1980), no. 2, 245–285.
+
+[BGG76]   I. N. Bernstein, I. M. Gel′ fand, and S. I. Gel′ fand, A certain
+          category of g-modules, Funkcional. Anal. i Priložen. 10 (1976),
+          no. 2, 1–8.
+
+[BGS96]   A. Beilinson, V. Ginzburg, and W. Soergel, Koszul duality pat-
+          terns in representation theory, J. Amer. Math. Soc. 9 (1996),
+          no. 2, 473–527.
+
+[Bir74]   J. S. Birman, Braids, links, and mapping class groups, Princeton
+          University Press, 1974, Annals of Mathematics Studies, No. 82.
+
+[BK89]    A. I. Bondal and M. M. Kapranov, Representable functors, Serre
+          functors, and reconstructions, Izv. Akad. Nauk SSSR Ser. Mat.
+          53 (1989), no. 6, 1183–1205, 1337.
+
+[Bra02]   T. Braden, Perverse sheaves on Grassmannians, Canad. J.
+          Math. 54 (2002), no. 3, 493–532.
+
+
+
+
+                                    39
+[CI89]    D. H. Collingwood and R. S. Irving, A decomposition theorem
+          for certain self-dual modules in the category O, Duke Math. J.
+          58 (1989), no. 1, 89–102.
+
+[CIK71]   C. W. Curtis, N. Iwahori, and R. Kilmoyer, Hecke algebras and
+          characters of parabolic type of finite groups with (B, N )-pairs,
+          Inst. Hautes Études Sci. Publ. Math. (1971), no. 40, 81–116.
+
+[CPS88]   E. Cline, B. Parshall, and L. Scott, Finite-dimensional alge-
+          bras and highest weight categories, J. Reine Angew. Math. 391
+          (1988), 85–99.
+
+[CPS96]          , Stratifying endomorphism algebras, Mem. Amer. Math.
+          Soc. 124 (1996), no. 591.
+
+[Dla96]   V. Dlab, Quasi-hereditary algebras revisited, An. Ştiinţ. Univ.
+          Ovidius Constanţa Ser. Mat. 4 (1996), no. 2, 43–54, Represen-
+          tation theory of groups, algebras, and orders (Constanţa, 1995).
+
+[Dla00]         , Properly stratified algebras, C. R. Acad. Sci. Paris Sér.
+          I Math. 331 (2000), no. 3, 191–196.
+
+[DR89]    V. Dlab and C. M. Ringel, Quasi-hereditary algebras, Illinois J.
+          Math. 33 (1989), no. 2, 280–291.
+
+[DX94]    B. Deng and C. Xi, Quasi-hereditary algebras which are dual
+          extensions of algebras, Comm. Algebra 22 (1994), no. 12, 4717–
+          4735.
+
+[EG02]    P. Etingof and V. Ginzburg, Symplectic reflection algebras,
+          Calogero-Moser space, and deformed Harish-Chandra homomor-
+          phism, Invent. Math. 147 (2002), no. 2, 243–348.
+
+[EW80]    T. J. Enright and N. R. Wallach, Notes on homological algebra
+          and representations of Lie algebras, Duke Math. J. 47 (1980),
+          no. 1, 1–15.
+
+[FKM00]   V. Futorny, S. König, and V. Mazorchuk, S-subcategories in O,
+          Manuscripta Math. 102 (2000), no. 4, 487–503.
+
+[Fri04]   A. Frisk, Dlab’s theorem and tilting modules for stratified alge-
+          bras, Tech. report, University of Uppsala, 2004.
+
+[Gab62]   P. Gabriel, Des catégories abéliennes, Bull. Soc. Math. France
+          90 (1962), 323–448.
+
+
+
+
+                                   40
+[GGOR03] V. Ginzburg, N. Guay, E. Opdam, and R. Rouquier, On the
+         category O for rational Cherednik algebras, Invent. Math. 154
+         (2003), no. 3, 617–651.
+
+[Gin05]   V. Ginzburg,    Lectures on        noncommutative     geometry,
+          arXiv:math.AG/0506603, 2005.
+
+[GJ81]    O. Gabber and A. Joseph, Towards the Kazhdan-Lusztig conjec-
+          ture, Ann. Sci. École Norm. Sup. (4) 14 (1981), no. 3, 261–302.
+
+[Gua03]   N. Guay, Projective modules in the category O for the Cherednik
+          algebra, J. Pure Appl. Algebra 182 (2003), no. 2-3, 209–221.
+
+[Hap88]   D. Happel, Triangulated categories in the representation the-
+          ory of finite-dimensional algebras, London Mathematical Society
+          Lecture Note Series, vol. 119, Cambridge University Press, 1988.
+
+[Hap91]           , Auslander-Reiten triangles in derived categories of
+          finite-dimensional algebras, Proc. Amer. Math. Soc. 112 (1991),
+          no. 3, 641–648.
+
+[Irv85]   R. Irving, Projective modules in the category OS : self-duality,
+          Trans. Amer. Math. Soc. 291 (1985), no. 2, 701–732.
+
+[Irv93]          , Shuffled Verma modules and principal series modules
+          over complex semisimple Lie algebras, J. London Math. Soc. (2)
+          48 (1993), no. 2, 263–277.
+
+[IS88]    R. S. Irving and B. Shelton, Loewy series and simple projective
+          modules in the category OS , Pacific J. Math. 132 (1988), no. 2,
+          319–342.
+
+[Jan83]   J. C. Jantzen, Einhüllende Algebren halbeinfacher Lie-Algebren,
+          Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 3,
+          Springer-Verlag, Berlin, 1983.
+
+[Jos82]   A. Joseph, The Enright functor on the Bernstein-Gel′ fand-
+          Gel′ fand category O, Invent. Math. 67 (1982), no. 3, 423–445.
+
+[Kho00]   M. Khovanov, A categorification of the Jones polynomial, Duke
+          Math. J. 101 (2000), no. 3, 359–426.
+
+[Kho04]          , Crossingless matchings and the cohomology of (n, n)
+          Springer varieties, Commun. Contemp. Math. 6 (2004), no. 4,
+          561–577.
+
+[Kho05]   O. Khomenko, Categories with projective functors, Proc. London
+          Math. Soc. (3) 90 (2005), no. 3, 711–737.
+
+                                  41
+[KK99]    M. Klucznik and S. König, Characteristic tilting modules over
+          Quasi-hereditary algebras, SFB343 Universität Bielefeld, 1999.
+
+[KL79]    D. Kazhdan and G. Lusztig, Representations of Coxeter groups
+          and Hecke algebras, Invent. Math. 53 (1979), no. 2, 165–184.
+
+[KM02]    S. König and V. Mazorchuk, Enright’s completions and injec-
+          tively copresented modules, Trans. Amer. Math. Soc. 354 (2002),
+          no. 7, 2725–2743 (electronic).
+
+[KM05]    O. Khomenko and V. Mazorchuk, On Arkhipov’s and Enright’s
+          functors, Math. Z. 249 (2005), no. 2, 357–386.
+
+[KMS]     M. Khovanov, V. Mazorchuk, and C. Stroppel, Categorifica-
+          tion of irreducible representations of symmetric groups and their
+          Hecke algebras, in preparation.
+
+[KS94]    M. Kashiwara and P. Schapira, Sheaves on manifolds, Grund-
+          lehren der Mathematischen Wissenschaften, vol. 292, Springer-
+          Verlag, 1994.
+
+[KSX01]   S. König, I. H. Slungard, and C. Xi, Double centralizer proper-
+          ties, dominant dimension, and tilting modules, J. Algebra 240
+          (2001), no. 1, 393–412.
+
+[Lep77]   J. Lepowsky, A generalization of the Bernstein-Gelfand-Gelfand
+          resolution, J. Algebra 49 (1977), no. 2, 496–511.
+
+[MS04]    V. Mazorchuk and C. Stroppel, On functors associated to a sim-
+          ple root, arXiv:math.RT/0410339, 2004.
+
+[MS05]           , Translation and shuffling of projectively presentable
+          modules and a categorification of a parabolic Hecke module,
+          Trans. Amer. Math. Soc. 357 (2005), no. 7, 2939–2973.
+
+[RC80]    A. Rocha-Caridi, Splitting criteria for g-modules induced from
+          a parabolic and the Berňsteı̆n-Gel′ fand-Gel′ fand resolution of
+          a finite-dimensional, irreducible g-module, Trans. Amer. Math.
+          Soc. 262 (1980), no. 2, 335–366.
+
+[Rin91]   C. M. Ringel, The category of modules with good filtrations over
+          a quasi-hereditary algebra has almost split sequences, Math. Z.
+          208 (1991), no. 2, 209–223.
+
+[RVdB02] I. Reiten and M. Van den Bergh, Noetherian hereditary abelian
+         categories satisfying Serre duality, J. Amer. Math. Soc. 15
+         (2002), no. 2, 295–366 (electronic).
+
+                                   42
+[Soe90]    W. Soergel, Kategorie O, perverse Garben und Moduln über den
+           Koinvarianten zur Weylgruppe, J. Amer. Math. Soc. 3 (1990),
+           no. 2, 421–445.
+
+[Soe97]           , Charakterformeln für Kipp-Moduln über Kac-Moody-
+           Algebren, Represent. Theory 1 (1997), 115–132 (electronic).
+
+[Str03a]   C. Stroppel, Category O: Gradings and Translation functors,
+           Journal of Algebra 268 (2003), no. 1, 301–326.
+
+[Str03b]           , Category O: quivers and endomorphism rings of pro-
+           jectives, Represent. Theory 7 (2003), 322–345 (electronic).
+
+[Str05]            , Categorification of the Temperley-Lieb category, tan-
+           gles, and cobordisms via projective functors, Duke Math. J. 126
+           (2005), no. 3, 547–596.
+
+Volodymyr Mazorchuk, Department of Mathematics, Uppsala University,
+Box 480, 751 06, Uppsala, SWEDEN,
+e-mail: mazor@math.uu.se, web: “http://www.math.uu.se/˜mazor/”.
+Catharina Stroppel, Department of Mathematics, University of Glasgow,
+University Gardens, Glasgow G12 8QW, UK,
+e-mail: cs@maths.gla.ac.uk
+
+
+
+
+                                   43
+

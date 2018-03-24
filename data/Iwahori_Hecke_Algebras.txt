@@ -1,0 +1,1477 @@
+                                                                   IWAHORI-HECKE ALGEBRAS
+arXiv:math/0309168v3 [math.RT] 16 Apr 2009
+
+
+
+
+                                                  THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+
+                                                Our aim here is to give a fairly self-contained exposition of some basic facts
+                                             about the Iwahori-Hecke algebra H of a split p-adic group G, including Bernstein’s
+                                             presentation and description of the center, Macdonald’s formula, the Casselman-
+                                             Shalika formula, and the Lusztig-Kato formula.
+                                                There are no new results here, and the same is essentially true of the proofs.
+                                             We have been strongly influenced by the notes [1] of a course given by Bernstein.
+                                             In the spirit of Bernstein’s work, we approach the material with an emphasis on
+                                             the “universal unramified principal series” module M = Cc (AO N \G/I), which
+                                             is a right module over the Iwahori-Hecke algebra H = Cc (I\G/I). We use M
+                                             to develop the theory of intertwining operators in a purely algebraic framework.
+                                             Once this framework is established, we adapt it to produce rather efficient proofs
+                                             of the above results, following closely at times earlier proofs. In particular, in our
+                                             treatment of Macdonald’s formula and the Casselman-Shalika formula, we follow
+                                             the method introduced by Casselman [6] and Casselman-Shalika [7]. We follow
+                                             Kato’s strategy from [14] in proving a fundamental formula of Lusztig [16], which
+                                             nowadays has come to be known as the Lusztig-Kato formula.
+                                                The reader may find in [21] another survey article which proves some of the
+                                             results of the present paper by different methods.
+
+                                                The following notation will be used throughout this paper. We work over a p-
+                                             adic field F with valuation ring O and prime ideal P = (π). We denote by k the
+                                             residue field O/P and by q the cardinality of k.
+                                                Consider a split connected reductive group G over F , with split maximal torus
+                                             A and Borel subgroup B = AN containing A. We write B̄ = AN̄ for the Borel
+                                             subgroup containing A that is opposite to B. We assume that G, A, N are defined
+                                             over O. We write K for G(O) and I for the Iwahori subgroup of K defined as the
+                                             inverse image under G(O) → G(k) of B(k). For µ ∈ X∗ (A) we write π µ for the
+                                             element µ(π) ∈ A(F ). Note that µ 7→ π µ gives an isomorphism from X∗ (A) to
+                                             A/AO . (We will often abbreviate A(F ) to A and A(O) to AO , etc.)
+
+
+                                                                    1. Bernstein’s presentation [17]
+                                             1.1. Extended affine Weyl group. The extended affine Weyl group W            f is the
+                                                                                    f
+                                             quotient of NG(F ) (A) by AO . Thus W contains the translation subgroup A/AO =
+                                                                                                                  f as the quotient
+                                             X∗ (A), as well as the finite Weyl group W , which we realize inside W
+                                                                             f
+                                             of NK (A) by AO . Recall that W is the semidirect product of W and X∗ (A). In the
+                                             early part of the paper, when we are thinking about a cocharacter µ as an element
+                                             of the translation subgroup of W f , we denote it by π µ ; later on we often denote it
+                                             instead by tµ .
+                                                                                       1
+2         THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+1.2. Iwahori-Hecke algebra H. We denote by H the Iwahori-Hecke algebra
+Cc (I\G/I). The convolution product is defined using the Haar measure giving
+I measure 1. The elements Tx := 1IxI (x ∈ W f ) form a C-basis for H. (Throughout
+the paper we write the characteristic function of a subset S as 1S .)
+
+1.3. Double cosets AO N \G/I = W     f . The obvious map W    f → AO N \G/I is a
+bijection. How does this decomposition work? Write g ∈ G as g = π µ nk. Then
+write k = nO wi with nO ∈ NO , i ∈ I, w ∈ W , with w inside K. Thus g = π µ nnO wi,
+                                                   f . In short, we read off π µ from
+showing that g lies in the double coset of π µ w ∈ W
+the Iwasawa decomposition and then read off w ∈ W by applying the Bruhat
+decomposition over the residue field to the element k produced from the Iwasawa
+decomposition.
+
+1.4. Definition of the module M . Put M := Cc (AO N \G/I). Note that M is
+a right H-module (since it arises as the I-fixed vectors in the smooth G-module
+considered in (1.5.1) below).1 For x ∈ Wf we denote by vx the characteristic function
+                                f ) form a C-basis for M . Of special importance (see
+1AO N xI . The elements vx (x ∈ W
+Lemma 1.6.1 below) is the basis element v1 = 1AO N I . Let R = Cc (A/AO ) = C[X∗ ],
+the group algebra of X∗ , an abbreviation for X∗ (A). Thus the elements π µ (µ ∈ X∗ )
+form a basis for the vector space R. We make M into a left R-module as follows. Let
+µ ∈ X∗ and let x ∈ W f . Then π µ · vx := q −hρ,µi vπµ ·x , where ρ is half the sum of the
+roots of A in Lie(N ). (Note that the scalar q −hρ,µi is equal to δB (π µ )1/2 , where for
+a ∈ A, δB (a) denotes the absolute value of the determinant of the adjoint action of
+a on Lie(N ).) The actions of R and H commute, so that M is an (R, H)-bimodule.
+
+1.5. Second point of view on the module M . Consider the representation (by
+right translations) of G on Cc∞ (AO N \G). It is compactly induced from the trivial
+representation of AO N ; doing the induction in stages, we see that
+(1.5.1)                          Cc∞ (AO N \G) = iG
+                                                  B (R).
+
+Here we are using normalized induction and R is viewed as A-module via χ−1     univ ,
+where χuniv is the tautological character A/AO → R× mapping π µ to π µ . Thus
+an element in this induced representation is a locally constant R-valued function φ
+on G satisfying
+                          φ(ang) = δB (a)1/2 · a−1 · φ(g)
+for all a ∈ A, n ∈ N , g ∈ G, and the group G acts by right translations. The
+isomorphism (1.5.1) has the following explicit description. Let ϕ ∈ Cc∞ (AO N \G).
+Then the corresponding element φ ∈ iGB (R) is defined by
+                                 X
+(1.5.2)                 φ(g) =         δB (a)−1/2 ϕ(ag) · a
+                                    a∈A/AO
+
+for g ∈ G. There is an obvious R-module structure on iGB (R), with rφ given by
+(rφ)(g) = r(φ(g)). The isomorphism (1.5.1) induces an (R, H)-bimodule isomor-
+phism from M to the Iwahori fixed vectors in iG
+                                              B (R).
+
+
+   1 More explicitly, the action of h ∈ H on m ∈ M is given by the convolution m · h of the two
+functions, where convolution is defined using the Haar measure on G giving I measure 1.
+                                 IWAHORI-HECKE ALGEBRAS                                          3
+
+
+   Let χ denote a quasicharacter χ : A/AO → C× . Then χ determines a C-algebra
+homomorphism R → C. Using this homomorphism to extend scalars, we obtain
+the H-module
+                                           −1 I
+                        C ⊗R M = C ⊗R iG             G
+                                       B (χuniv ) = iB (χ
+                                                          −1 I
+                                                            ) .
+
+1.6. Structure of the module M . The next result is due to Chriss and Khuri-
+Makdisi [8], who derived it from Bernstein’s presentation of the Iwahori-Hecke
+algebra. Here we turn the logic around, first studying M directly, then using it to
+produce Bernstein’s presentation.
+Lemma 1.6.1. The map h 7→ v1 h is an isomorphism of right H-modules from H
+to M . In other words M is free of rank 1 as H-module with canonical generator
+v1 . In particular we have a canonical isomorphism H ≃ EndH (M ), which identifies
+h′ ∈ H with the endomorphism v1 h 7→ v1 h′ h of M .
+Proof. It suffices to show that the map h 7→ v1 h, written in terms of the bases
+{Tw }w and {vw }w , is “a triangular matrix with non-zero diagonal”. This follows
+from the following claim.
+Claim: N xI ∩ IyI 6= ∅ ⇒ x ≤ y in the Bruhat ordering.2
+    Proof of Claim: Suppose nx ∈ IyI, for n ∈ N . Choose µ so dominant that
+π µ nπ −µ ∈ I. Then (π µ nπ −µ )π µ x ∈ π µ IyI, hence
+                                                   a
+                           Iπ µ xI ⊂ Iπ µ IyI ⊂        Iπ µ y ′ I,
+                                                      y ′ ≤y
+
+from which the claim follows.
+                                                                                                
+
+   The following three equalities (see [8], [23]) are also useful.
+(1.6.1)              v1 Tw = vw , for every w ∈ W ,
+(1.6.2)             vπµ Tw = vπµ w , for every w ∈ W and µ ∈ X∗ (A),
+(1.6.3)             v1 Tπµ = vπµ , for µ ∈ X∗ (A) dominant.
+
+Recall the Iwahori factorization I = (I ∩ N )AO (I ∩ N̄ ). The first equality uses
+AO N I · IwI = AO N wI (a consequence of the Iwahori factorization) as well as
+AO N I ∩ wIw−1 I = I (a consequence of AO N I ∩ K = I), and the second equality
+follows from the first (using the left R-module structure on M ). The third equality
+uses AO N I · Iπ µ I = AO N π µ I, a consequence of the Iwahori factorization and the
+dominance of µ, which implies that
+                 π µ (I ∩ N )π −µ ⊂ I ∩ N and π −µ (I ∩ N̄ )π µ ⊂ I ∩ N̄ ,
+and also uses AO N I ∩ π µ Iπ −µ I = I, which we leave as an exercise for the reader.
+
+   2The Iwahori subgroup I determines in a canonical way the Bruhat order on W̃ , but only when
+f is viewed as NG (A)/AO . When W
+W                                     f is viewed as the semidirect product of W and X∗ (A), the
+Bruhat order depends on the normalization of the isomorphism between X∗ (A) and A/AO . Our
+normalization is µ 7→ π µ , and therefore our Bruhat order on X∗ (A) ⋊ W is the one determined by
+the simple affine reflections about the walls of the unique alcove in X∗ (A) whose closure contains
+the origin and lies in the negative Weyl chamber. See section 7.
+4         THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+1.7. Rough structure of the algebra H. The finite dimensional Hecke algebra
+H0 = C(I\K/I) is a subalgebra of H. Moreover, elements in R can be viewed
+as endomorphisms of M , and hence by the previous lemma can be considered as
+elements in H. In this way we embed R as a subalgebra of H. We will denote by
+Θλ ∈ H the image of the basis element π λ of R under the embedding R ֒→ H.
+Unwinding the definitions, one finds the basic identity
+(1.7.1)                               v1 Θλ = π λ v1 ,
+which says that v1 is an eigenvector for the right action of the subalgebra R of H.
+Lemma 1.7.1. Multiplication in H induces a vector space isomorphism
+                                                  ≈
+                                    R ⊗C H0 −→ H,
+sending π µ ⊗h to Θµ h. Composing this isomorphism with the isomorphism h 7→ v1 h
+considered above, we get a vector space isomorphism from R ⊗C H0 to M , sending
+π µ ⊗ Tw to q −hρ,µi vπµ w .
+Proof. Using (1.6.1) and the definitions, one checks that the composition
+                                 R ⊗ C H0 → H → M
+sends π µ ⊗ Tw to q −hρ,µi vπµ w and is hence an isomorphism. Since H → M is an
+isomorphism by Lemma 1.6.1, the map R ⊗C H0 → H is also an isomorphism.
+                                                                              
+
+Remark 1.7.2. It follows from (1.6.3) that Θλ agrees with the element denoted
+by this symbol in Lusztig’s work: namely, Θλ = q hρ,−λ1 +λ2 i Tπλ1 Tπ−1
+                                                                      λ2 , where λ =
+
+λ1 − λ2 , and λ1 , λ2 are dominant cocharacters.
+1.8. Involutions on R and H. Recall that in order to pass back and forth between
+left and right G-modules one uses the anti-isomorphism g 7→ g −1 from G to itself.
+The corresponding way of passing from left to right H-modules uses the standard
+anti-involution ι on H given by ι(h)(x) = h(x−1 ).
+   Moreover there is also an involution ιA on R (which is the Iwahori-Hecke algebra
+for A); thus ιA sends π µ to π −µ .
+                                                                     −1
+1.9. A sesquilinear form on M . There is an R-valued pairing on iG
+                                                                 B (χuniv ),
+defined by
+                                    I
+(1.9.1)               (φ1 , φ2 ) :=   ιA (φ1 (g))φ2 (g).
+                                          B\G
+                        H                                               1/2
+What is the meaning of B\G ? Consider the induced representation iG
+                                                                  B (δB ), which
+consists of locally constant functions F on G satisfying
+                                 F (ang) = δB (a)F (g).
+                                                           1/2
+TheH space of G-invariant linear functionals on iG
+                                                 B (δB ) is 1-dimensional; we denote
+by B\G the unique such functional that takes the value 1 on the function F0 ∈
+    1/2
+iG
+ B (δB ) defined by F0 (ank) = δB (a).
+   This pairing is sesquilinear, in the sense that
+(1.9.2)                   (r1 φ1 , r2 φ2 ) = ιA (r1 )r2 · (φ1 , φ2 ).
+                             IWAHORI-HECKE ALGEBRAS                                  5
+
+
+Moreover it satisfies
+(1.9.3)                         (φ2 , φ1 ) = ιA (φ1 , φ2 )
+and is G-invariant.
+                                                                −1
+  Note that φ 7→ ιA ◦ φ is an ιA -linear isomorphism from iG               G
+                                                            B (χuniv ) to iB (χuniv ).
+Therefore our sesquilinear form can also be thought of as an R-bilinear pairing
+                                                −1
+(1.9.4)                     iG              G
+                             B (χuniv ) ⊗R iB (χuniv ) → R.
+
+  After extending scalars R → C using a quasicharacter χ : A/AO → C× , the
+pairing (1.9.4) becomes the standard pairing
+(1.9.5)                       iG         G
+                               B (χ) ⊗C iB (χ
+                                              −1
+                                                 ) → C.
+                                                                              −1
+  Recall that we have identified M with the Iwahori fixed vectors in iG   B (χuniv ).
+Thus, by restriction, we get a perfect sesquilinear form on M , which we denote by
+(m1 , m2 ). It satisfies the Hecke algebra analog of G-invariance, namely
+(1.9.6)                      (m1 h, m2 ) = (m1 , m2 ι(h))
+for all h ∈ H.
+1.10. Generalities on intertwiners. For each w ∈ W we would like to define an
+intertwiner Iw from one suitable completion of M to another. To this end it is best
+to let the Borel subgroup vary (and then recover Iw by bringing the second Borel
+back to the first by an element of the Weyl group). In this discussion the maximal
+torus A, the Iwahori subgroup I, and the maximal compact K will remain fixed.
+We let B(A) denote the set of Borel subgroups containing A. For B = AN ∈ B(A),
+put MB = Cc (AO N \G/I).
+   First let us discuss the completions that will come up. Let J be a set of coroots
+which is a subset of some system of positive coroots. As usual R denotes the group
+algebra of X∗ (A). We denote by C[J] the C-subalgebra of R generated by J, and
+by C[J]ˆthe completion of C[J] with respect to the (maximal) ideal generated by J.
+Finally, we denote by RJ the R-algebra C[J]ˆ⊗C[J] R, a completion of R that can be
+viewed as the convolution algebra of complex valued functions on X∗ (A) supported
+on a finite union of sets of the form x + CJ , with x ∈ X∗ (A) and where CJ is the
+submonoid of X∗ (A) consisting of all non-negative integral linear combinations of
+elements in J.
+   Given B = AN ∈ B(A) and given J as above, we then denote by MB,J the mod-
+ule RJ ⊗R MB , which can be thought of as consisting of functions f on AO N \G/I
+satisfying the following support condition: there exists a finite union S of sets
+of the form x + CJ such that the support of f is contained in the union of the
+sets AO N π ν K for ν ∈ S. It is clear that MB,J is a left RJ -module and a right
+H-module.
+   Now let B = AN , B ′ = AN ′ be two Borel subgroups in B(A). As usual we
+write B̄ = AN̄ for the Borel subgroup in B(A) opposite to B. Let J be the set
+of coroots that are positive for B ′ and negative for B. We are going to define an
+intertwiner IB ′ ,B : MB,J → MB ′ ,J . This intertwiner is an (RJ , H)-bimodule map,
+and is defined as follows (viewing elements in completions as functions, as above).
+Let ϕ ∈ MB,J . Then the intertwiner IB ′ ,B takes ϕ to the function ϕ′ on AO N ′ \G/I
+whose value at g ∈ G is defined by the integral
+                                       Z
+                                ′
+                              ϕ (g) =         ϕ(n′ g)dn′ .
+                                        N ′ ∩N̄
+6       THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+The Haar measure dn′ is normalized to give N ′ ∩ N̄ ∩ K measure 1. Note that
+the integral makes sense since the integrand is a smooth and compactly supported
+function on the group N ′ ∩ N̄ (smoothness being trivial, compact support requiring
+justification, to be done in the lemma below). In fact things still work fine if we
+enlarge J in any way (but so that the enlarged set is still contained in some positive
+system, for instance, the positive system defined by B ′ ).
+   Now suppose that we have three Borel subgroups B1 = AN1 , B2 = AN2 , B3 =
+AN3 in B(A). Let Jij be the set of coroots that are positive for Bi and negative
+for Bj , and assume that J31 is the disjoint union of J21 and J32 . Write Iij as an
+abbreviation for the intertwiner IBi ,Bj . Then I21 , I32 and I31 can all be defined
+using the biggest of the three sets Jij , namely J31 , and when this is done we have
+the equality
+                                    I31 = I32 I21 .
+In this formula we could also have taken J to be the set of all coroots that are
+positive for B3 .
+   Why do the integrals make sense? For this we need the following lemma, in
+which we return to B, B ′ as above.
+Lemma 1.10.1. For ν ∈ X∗ (A) define a subset Cν of the group N ′ ∩ N̄ by Cν :=
+N ′ ∩ N̄ ∩ π ν N K. Then:
+    (1) If Cν is non-empty, then ν is a non-negative integral linear combination of
+         coroots that are positive for B and negative for B ′ .
+    (2) The subset Cν is compact.
+Proof. We begin by recalling the definition of the retraction rB : G → X∗ (A). Let
+g ∈ G and use the Iwasawa decomposition to write g = π µ nk for some µ ∈ X∗ (A),
+n ∈ N , k ∈ K; then put rB (g) := µ. It is well-known that rB ′ (g) − rB (g) is a
+non-negative integral linear combination of coroots that are positive for B ′ and
+negative for B. (It is enough to prove this for adjacent B, B ′ , for which a simple
+computation in SL(2) does the job.)
+   To prove the first statement we consider an element g ∈ Cν . It is clear from the
+definition of Cν that rB ′ (g) = 0 and rB (g) = ν. Therefore ν = rB (g) − rB ′ (g) is
+a non-negative integral linear combination of coroots that are positive for B and
+negative for B ′ .
+   Now we turn to the second statement. It is enough to prove that N̄ ∩ N C is
+compact for any compact subset C of G, which is equivalent to proving that the
+map N̄ → N \G is proper (in the topological sense). But in fact N̄ → N \G is
+a closed immersion (in the algebraic sense), as follows from the fact that N N̄ is
+closed in G. Recall the proof of this: For any dominant weight λ there exists a
+unique regular function fλ on the algebraic variety G such that fλ (nan̄) = λ(a)−1
+for all n ∈ N , a ∈ A, n̄ ∈ N̄ . Then N N̄ is the closed subvariety defined by the
+equations fλ = 1 (one for every dominant λ).                                       
+   Next we need to understand how the intertwiners behave with respect to the
+sesquilinear form on MB . Denote by −J the set of negatives of the coroots in J.
+The involution ιA on R extends to an isomorphism, still denoted ιA , between RJ
+and R−J , and the sesquilinear form (·, ·) on MB extends to our completions in the
+following sense: given m1 ∈ MB,−J and m2 ∈ MB,J our old definition of (m1 , m2 )
+still makes sense and yields an element of RJ . The extended form (·, ·) still satisfies
+(1.9.2).
+                                IWAHORI-HECKE ALGEBRAS                                7
+
+
+   Consider the intertwiner IB ′ ,B : MB,J → MB ′ ,J , where J denotes (as before)
+the set of coroots that are positive for B ′ and negative for B. We also have the
+intertwiner IB,B ′ : MB ′ ,−J → MB,−J . Let m ∈ MB,J and m′ ∈ MB ′ ,−J . Then we
+claim that
+(1.10.1)                       (m′ , IB ′ ,B m) = (IB,B ′ m′ , m).
+                                          −1
+Indeed, let φ, φ′ be the elements of iG                  G
+                                      B (χuniv )⊗R RJ , iB ′ (χuniv )⊗R RJ corresponding
+         ′                                     ′
+to m, m respectively. Put H := A(N ∩ N ). Then one sees easily that both sides
+of the last equality are equal to
+                                   I
+(1.10.2)                                  φ′ (g)φ(g),
+                                        H\G
+        H
+where      H\G
+                 is the unique G-invariant linear functional on
+   {f ∈ C ∞ (G) : f (hg) = δH (h)f (g) (∀h ∈ H), compactly supported mod H}
+that takes the value 1 on the function f0 supported on HK whose values on HK
+are given by f0 (hk) = δH (h).
+1.11. Intertwiners Iw . We return now to the earlier notation, where B = AN is
+a fixed Borel subgroup. For each w ∈ W , we define an intertwiner
+                                  Iw : MB,w−1 J → MB,J
+as the composition IB,wB L(w). Here L(w) is the isomorphism MB,w−1 J → ˜ MwB,J
+given by (L(w)φ)(g) = φ(ẇ−1 g), where ẇ is a representative for w taken in K.
+Thus Iw is defined by the integral
+                                      Z
+(1.11.1)                  Iw (ϕ)(g) =   ϕ(ẇ−1 ng) dn,
+                                              Nw
+                                 −1
+where Nw denotes N ∩ wN̄ w .
+  From the discussion above, the following properties are immediate.
+Lemma 1.11.1. We have
+    (i) Iw ◦ π µ = π wµ ◦ Iw , ∀µ ∈ X∗ (A),
+   (ii) Iw1 w2 = Iw1 ◦ Iw2 , if l(w1 w2 ) = l(w1 ) + l(w2 ),
+  (iii) Iw is a right H-module homomorphism.
+1.12. Intertwiners in the rank 1 case. We suppose for the moment that G has
+semisimple rank 1. We write α for the unique positive root of A, and sα for the
+corresponding simple reflection, in this case the unique non-trivial element in W .
+    Now we compute ϕ′ = Isα (ϕ) for ϕ = v1 = 1AO N I . We write J(j, w) (j ∈ Z,
+                                                ∨
+w ∈ W ) for the value of ϕ′ at the element π jα w. Note that other values of ϕ are
+0 and also that J(j, w) = 0 unless j ≥ 0, which we now assume. At this point we
+may as well take G = SL(2). To simplify notation we temporarily write µ for jα∨ .
+    First suppose that j = 0. Note that sα nw ∈ AO N K iff n ∈ NO . For n ∈ NO
+the element sα nw belongs to K and hence belongs to AO N I iff its lower left entry
+                                                                                  −1
+is in the prime ideal in O. We conclude
+                                         that
+                                           J(0,   1) =0 and that
+                                                                 j J(0, sα ) = q .
+                                    0 −1           1 x           π      0
+    Suppose j > 0. We have sα =             ,n=          , πµ =             , so that
+                                    1 0            0 1           0 π −j
+                                                    
+                                    µ      0 −π −j
+                              sα nπ = j                .
+                                          π    xπ −j
+8          THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+For sα nπ µ w to lie in AO N K, we must have x ∈ π j O× . We now assume  this and
+             j                               µ     u−1 −π −j        1     0
+write x = π u for some unit u. Then sα nπ =                                 , the first
+                                                     0       u   u−1 π j 1
+factor lying in AO N , the second factor lying in K. Therefore sα nπ µ ∈ AO N I iff the
+second factor lies in I, which is always the case. Therefore J(j, 1) is the measure
+of π j O× , namely q −j (1 − q −1 ).
+                     µ
+ Moreover sα nπ sα ∈ AO N I iff the product of the second factor and sα , namely
+ 0      −1
+               , lies in I, which never happens. Therefore J(j, sα ) = 0.
+ 1 −u−1 π j
+   We have proved:
+                                             P
+Lemma 1.12.1. ϕ′ = q −1 vsα + (1 − q −1 ) ∞     j=1 q
+                                                      −j
+                                                         vπjα∨ .
+    Even easier:
+Lemma 1.12.2. The intertwiner sends 1AO N K to
+                                 ∞
+                                 X                                                          ∨
+               −1                          −j            −1                     1 − q −1 π α
+           q        1 AO N K +         q        (1 − q        )1AO N πjα∨ K   =              1 AO N K .
+                                 j=0
+                                                                                  1 − π α∨
+
+1.13. Consequences of the calculations above. Now we return to the general
+case. In the next lemma the calculations reduce easily to the rank 1 case treated
+above, so we just record the results.
+Lemma 1.13.1. Let α be a simple root and sα the corresponding simple reflection.
+Then
+                                                    ∞
+                                                    X     ∨
+(i)              Isα (v1 ) = q −1 vsα + (1 − q −1 )   π jα v1 .
+                                                                              j=1
+                                                          1 − q −1 π α∨ 
+(ii)                        Isα (v1 + vsα ) =                     (v1 + vsα ).
+                                                     1 − π α∨
+                                                   1 − q −1 π α 
+                                                                ∨
+
+(iii)                            Isα (1AO N K ) =                  1 AO N K .
+                                                      1 − π α∨
+   We now introduce the following notation. For w ∈ W we denote by Rw the set
+of positive roots α such that w−1 α is negative.
+Corollary 1.13.2 (Gindikin-Karpelevich formula). For w ∈ W we have
+                                   Y 1 − q −1 π α∨ 
+                  Iw (1AO N K ) =                     1 AO N K .
+                                        1 − π α∨
+                                                         α∈Rw
+
+1.14. Intertwiners Jw without denominators.     Q To eliminate    denominators
+                                                                                 we
+                                                              α∨
+define a new intertwiner Jw (w ∈ W ) by Jw :=     α∈Rw (1 − π    )  · Iw . Note that
+Jw preserves the subspace M of MB,w−1 J and MB,J and hence can be regarded as
+an element of H, via our identification of H with EndH (M ). For a simple root α,
+the element of H corresponding to Jsα is (by Lemma 1.13.1(i)) equal to
+                                                         ∨                    ∨
+(1.14.1)                           (1 − q −1 )π α + q −1 (1 − π α )Tsα 3.
+
+   3Here we abuse notation and write π λ in place of its image Θ under our embedding R ֒→ H.
+                                                                    λ
+We will often do this (e.g. in (1.15.2) and again in section 2.1), leaving context to dictate what is
+really meant by π λ .
+                              IWAHORI-HECKE ALGEBRAS                                  9
+
+
+1.15. Bernstein’s relation. Equation (1.14.1), together with the equality
+(1.15.1)                         Jw ◦ π µ = π w(µ) ◦ Jw
+(for w = sα ), yields Bernstein’s relation:
+                                                    π sα (µ) − π µ
+(1.15.2)              Tsα π µ = π sα (µ) Tsα + (1 − q)             .
+                                                     1 − π −α∨
+Using Bernstein’s relation one can calculate the square of Jsα , viewed as element
+                                                  ∨                  ∨
+in H; it turns out to be the element (1 − q −1 π α )(1 − q −1 π −α ) in the subalgebra
+R of H.
+   Lemma 1.7.1 together with Bernstein’s relation (1.15.2) gives Bernstein’s pre-
+sentation of H.
+
+                                2. The center of H
+2.1. A preliminary result. We are going to prove that the subalgebra RW is the
+center of H, but we start by proving something weaker.
+Lemma 2.1.1. The subalgebra RW is contained in the center of H.
+Proof. Let r ∈ RW . Then r commutes with all elements in R, so by Lemma 1.7.1
+it suffices to show it commutes with Tsα for all simple α. By the intertwining
+                                                              ∨               ∨
+property (1.15.1) of Jsα , it does commute with (1 − q −1 )π α + q −1 (1 − π α )Tsα . So
+                            ∨
+r commutes with (1 − π α )Tsα and hence the bracket of r and Tsα is annihilated
+           ∨
+by 1 − π α . Since H is a free R-module, the bracket vanishes.                        
+
+2.2. The normalized intertwiners Kw . Let L denote the field of fractions of
+the integral domain R. Then LW is the field of fractions of RW . We now consider
+the algebra Hgen := LW ⊗RW H and the module Mgen := L ⊗R M = LW ⊗RW M ,
+which is an (L, Hgen )-bimodule.
+   We define the normalized intertwiners by
+                        Y         1                Y   1 − πα 
+                                                                  ∨
+
+(2.2.1)        Kw :=                         · Jw =                   · Iw .
+                             1 − q −1 π α∨              1 − q −1 π α∨
+                        α∈Rw                             α∈Rw
+
+Each Kw is an endomorphism of the Hgen -module Mgen and fixes the spherical
+vector 1AO N K , as one sees from Corollary 1.13.2. For simple α we have Ks2α = 1.
+It follows from this and Lemma 1.11.1 that
+(2.2.2)                           Kw1 w2 = Kw1 Kw2
+for all w1 , w2 ∈ W .
+   The involution ιA extends to L, and our sesquilinear pairing form (·, ·) on M
+extends to a sesquilinear L-valued form, still denoted (·, ·), on Mgen . It follows
+from (1.10.1) that
+                                                      
+(2.2.3)                 w Kw−1 (m), m′ = m, Kw (m′ )
+for all m, m′ ∈ Mgen .
+   For later use we remark that it follows from (1.14.1) that for any w ∈ W one has
+                                         X
+(2.2.4)                      Kw (v1 ) =       aww′ · vw′
+                                          w ′ ≤w
+10      THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+for certain elements aww′ ∈ L, with the diagonal elements given by the simple
+formula
+                                   Y 1 − π −α∨
+(2.2.5)                    aww =                  .
+                                       1 − qπ −α∨
+                                     α∈Rw
+
+2.3. Calculation of the center of H. Since the endomorphism ring of the Hgen -
+module Mgen is Hgen , we can view the endomorphisms Kw as elements of Hgen . The
+                                                    ×
+map w 7→ Kw is a group homomorphism from W to Hgen     and therefore induces an
+algebra homomorphism from the twisted group algebra L[W ] to Hgen .
+Lemma 2.3.1. The homomorphism L[W ] → Hgen is an isomorphism. The center
+of Hgen is LW . The center of H is RW .
+Proof. The twisted group algebra is a matrix algebra over LW , and is therefore
+simple, which implies our map is injective. Comparing dimensions, we see that the
+map is an isomorphism. Therefore Hgen is a matrix algebra over LW , and its center
+is LW . It follows easily that the center of H is RW . (Use along the way the obvious
+fact that H is torsion-free as RW -module.)                                        
+
+     3. Application: Restriction of two involutions to the center
+3.1. Restriction of ι to the center. Recall from before the anti-involution ι :
+H → H given by ι(h)(x) = h(x−1 ). We are going to see that the restriction of ι to
+the center of H is very simple.
+Lemma 3.1.1. There are two involutions on RW , one obtained by restricting ιA to
+RW , the other obtained by restricting ι to the center of H, which we have identified
+with RW . The two involutions on RW coincide.
+Proof. This follows from (1.9.2), (1.9.6), the non-degeneracy of our sesquilinear
+form, and the basic identity
+                         rϕ = ϕzr       ∀ r ∈ RW , ∀ ϕ ∈ M
+where zr denotes the element of the center of H that corresponds to r.             
+3.2. Restriction of the Kazhdan-Lusztig involution to the center. Now
+consider the affine Hecke algebra H associated to G. This is an algebra over the
+ring Z[v, v −1 ] (v an indeterminate), generated by symbols Tw (w ranging over the
+extended affine Weyl group for G), which satisfy the usual braid and quadratic
+relations. If q = pn denotes the cardinality of the residue field of F , the map
+v 7→ q 1/2 determines a ring homomorphism Z[v, v −1 ] → C. There is a canonical
+isomorphism H = H ⊗Z[v,v−1 ] C (see section 7.2).
+   The Kazhdan-Lusztig involution h 7→ h̄ of H is determined by v 7→ v −1 and
+Tw 7→ Tw−1−1 (beware that this does not descend to an involution of H). There is
+
+also an anti-involution on H given by v 7→ v and Tw 7→ Tw−1 . On specializing
+v → q 1/2 , this does descend to H and gives precisely the anti-involution of H
+denoted ι above; therefore we denote the anti-involution of PH by the same symbol.
+   For each dominant coweight µ ∈ X∗ (A), we let zµ = λ∈W µ Θλ , where Θλ is
+the element of H defined by Θλ = v h2ρ,−λ1 +λ2 i Ttλ1 Tt−1
+                                                        λ2
+                                                           , where λ = λ1 − λ2 , and
+λi is dominant (i = 1, 2); see Remark 1.7.2. A result of Bernstein says that the
+elements zµ form a Z[v, v −1 ]-basis for the center of H, as µ ranges over dominant
+coweights in X∗ (A) (see also section 7.5).
+                             IWAHORI-HECKE ALGEBRAS                                   11
+
+
+  These considerations yield a simple proof of Corollary 8.8 in [16]:
+Lemma 3.2.1. zµ = zµ .
+Proof. First of all we can relate the two involutions by the easily-checked formula
+ι(Θ−λ ) = Θλ . It follows that ι(z−w0 µ ) = zµ , where w0 is the longest element of W .
+On the other hand, the previous lemma says that, at least after v is specialized to
+q 1/2 , the elements ι(z−w0 µ ) and zµ coincide as elements in H. Since this is true for
+every power of q by the same token, we must have the equality ι(z−w0 µ ) = zµ in H
+as well, which proves that zµ = zµ .                                                  
+
+                           4. Satake isomorphism [26]
+4.1. Definition of HK and MK . Let eK be the idempotent 1K / meas(K) in H.
+Put HK := Cc (K\G/K), which we identify with the subring eK HeK of H (so
+that 1K 7→ eK ). We also put MK := Cc (AO N \G/K), which we identify with the
+HK -submodule M eK of M . Then MK is an (R, HK )-bimodule, with R-module
+structure inherited from the one on M . Concretely, the action of the function
+h ∈ HK on m ∈ MK is given by m ∗ h, where ∗ denotes convolution using the Haar
+measure on G giving K measure 1.
+4.2. The Satake transform. Since MK is free of rank 1 as R-module (with basis
+element the spherical vector 1AO N K ), we get a C-algebra homomorphism HK → R,
+denoted h 7→ h∨ and called the Satake transform, characterized by the property
+that
+(4.2.1)                             m ∗ h = h∨ · m
+for all h ∈ HK and all m ∈ MK .
+   Taking m to be the spherical vector, we get the equation
+(4.2.2)                       1 AO N K ∗ h = h ∨ · 1 AO N K .
+In fact h∨ lies in the subalgebra RW , as one sees by applying the normalized
+intertwiners (which fix the spherical vector) to equation (4.2.2). Thus the Satake
+transform actually maps HK into RW .
+   Recall that π ν (for ν ranging through X∗ ) form a C-basis for R. Evaluating
+both sides of equation (4.2.2) on the element π ν and using the usual G = AN K
+integration formula (see [4]), one sees that the coefficient of π ν in h∨ is equal to
+                                            Z
+                              δB (π ν )−1/2   h(nπ ν ) dn,
+                                             N
+where the Haar measure dn is normalized so that NO has measure 1.
+4.3. Satake transform is an isomorphism. The elements hµ :=     P1Kπ K , with µ
+                                                                     µ
+
+a dominant coweight, form a C-basis for HK . The elements sν := λ∈W ν π λ , with
+ν a dominant coweight, form a C-basis for RW . The coefficients cµν of h∨
+                                                                        µ in the
+basis sν are given by
+                                        Z
+                                 ν −1/2
+(4.3.1)               cµν = δB (π )       1Kπµ K (nπ ν )dn.
+                                              N
+The real number cµν is non-negative and is non-zero if and only if Kπ µ K meets
+N π ν . It follows from [3, 4.4.4] that cµν is 0 unless ν ≤ µ (by which we mean
+that µ − ν is a non-negative integral linear combination of simple coroots), and it
+is obvious that cµµ is non-zero. Therefore a standard upper-triangular argument
+12        THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+shows that the Satake transform is an isomorphism from HK to RW . In particular
+HK is commutative.
+   We remark that in [19, Théoremè 5.3.17], [22], [12], it is shown that if ν ≤ µ
+(both dominant), then cµν is non-zero.
+
+4.4. Compatibility of two involutions. Recall from 1.8 the involutions ι, ιA on
+H, R respectively. It is clear that ι preserves the subring HK and that ιA preserves
+the subring RW . One sees easily (imitate the proof of Lemma 3.1.1) that the Satake
+isomorphism is compatible with these involutions, in the sense that
+(4.4.1)                             (ι(h))∨ = ιA (h∨ ).
+
+4.5. Further discussion of the Satake transform. Consider a quasicharacter
+χ : A/AO → C× . Then χ determines a C-algebra homomorphism R → C. Using
+this homomorphism to extend scalars, we obtain an HK -module C ⊗R MK which
+can be identified with the (1-dimensional) space of K-fixed vectors in the unramified
+principal series representation iG
+                                 B (χ
+                                      −1
+                                         ). It is customary to work with left G-modules
+(and hence left modules over Hecke algebras) rather than right modules, and to
+switch back and forth between right and left one uses g 7→ g −1 on G (and hence the
+involution ι on HK ). Bearing these remarks in mind, one sees that for any h ∈ HK
+and any K-fixed vector v ∈ iG B (χ) there is an equality
+
+(4.5.1)                               hv = h∨ (χ)v,
+where for r ∈ R we write r(χ) for the image of r under the homomorphism R → C
+determined by χ. (We used that ιA (r)(χ−1 ) = r(χ).)
+
+4.6. Compatibility of the Satake and Bernstein isomorphisms [9, 11, 16].
+We now have canonical isomorphisms (Satake and Bernstein)
+                                   HK ≃ RW ≃ Z(H),
+where Z(H) denotes the center of H. Let h ∈ HK , r ∈ RW , z ∈ Z(H) be elements
+that correspond to each other under these isomorphisms. We have
+                             mh = meK h = rmeK = meK z
+for all m ∈ M . It follows that
+(4.6.1)                                  h = eK z,
+which is the compatibility referred to in the heading of this section.
+
+                        5. Macdonald’s formula [6, 18, 19]
+5.1. Preliminary remarks about unramified matrix coefficients. The con-
+tragredient of the induced representation iG               G
+                                                 B (χ) is iB (χ
+                                                                −1
+                                                                   ). (Recall that iG
+                                                                                    B (χ
+                                                                                         −1
+                                                                                            )
+has as usual a left G-action given by right translations.) Now choose K-fixed vectors
+v ∈ iG               G
+     B (χ) and ṽ ∈ iB (χ
+                          −1
+                             ) such that hv, ṽi = 1, and put
+(5.1.1)                              Γχ (g) := hgv, ṽi,
+an unramified matrix coefficient, otherwise known as a zonal spherical function.
+Clearly Γχ is a C-valued function on K\G/K, and we have
+(5.1.2)                                 Γχ (1) = 1.
+                             IWAHORI-HECKE ALGEBRAS                                 13
+
+
+Let h ∈ HK . It follows from the definition of Γχ that (h ∗ Γχ )(g) = hgv, hṽi, which
+by (4.5.1) is equal to h∨ (χ−1 )Γχ (g). Thus we have
+(5.1.3)                         h ∗ Γχ = h∨ (χ−1 )Γχ .
+Similarly we have
+(5.1.4)                         Γχ ∗ h = h∨ (χ−1 )Γχ .
+The function Γχ is uniquely determined by (5.1.2) and either of (5.1.3), (5.1.4);
+indeed, taking h = 1Kπ−µ K = ι(Kπ µ K) in (5.1.3) and then evaluating both sides
+at the identity element, we see that
+(5.1.5)               meas(Kπ µ K) · Γχ (π µ ) = (1Kπµ K )∨ (χ),
+where the measure is taken with respect to the Haar measure on G that gives K
+measure 1. In other words, knowing the values of unramified matrix coefficients is
+essentially the same as knowing the Satake transforms of the elements 1Kπµ K ∈ HK .
+
+5.2. Definition of Γ. It is more convenient to work with the R-valued matrix
+coefficient Γ defined by
+(5.2.1)                    Γ(g) := (1AO N K , 1AO N K · g),
+                                              −1
+where (·, ·) is our sesquilinear form on iG
+                                          B (χuniv ) (regarded as a right G-module).
+   Of course Γ is a function on K\G/K with values in R; applying the homomor-
+phism R → C determined by χ to the values of Γ, we get the C-valued function
+Γχ . Therefore computing Γ is the same as computing Γχ for all χ.
+   We can rewrite (5.2.1) as
+(5.2.2)                  Γ(g) := (1AO N K , 1AO N K ∗ eKgK ),
+where eKgK denotes meas(KgK)−1 · 1KgK , from which it follows that
+(5.2.3)                           Γ(g) = (eKgK )∨ ,
+in agreement with (5.1.5). Equation (5.2.3) shows that Γ actually takes values
+in RW and hence that Γwχ = Γχ for all w ∈ W .
+   Macdonald’s formula [6, 18, 19] is an explicit formula for Γχ , which we will now
+derive, following Casselman’s method [6]. As mentioned above, it is the same to
+give an explicit formula for Γ, and this is what we will do.
+
+5.3. Decomposition of the spherical vector as a sum of eigenvectors. As
+a first step towards Macdonald’s formula, we are going to decompose the spherical
+vector 1AO N K ∈ M as a sum of eigenvectors for the action of the commutative
+subalgebra R of H. This can only be done in Mgen .
+   Recall that v1 denotes the element 1AO N I ∈ M . The vector v1 is an eigenvector
+for the subalgebra R of H by the very definition of that subalgebra; more precisely
+we have the formula
+(5.3.1)                            v1 Θλ = π λ · v1 ,
+where (as before) Θλ is a notation for the image of π λ ∈ R under R ֒→ H. Applying
+the normalized intertwiner Kw to this equation, we see that
+(5.3.2)                     Kw (v1 )Θλ = π wλ · Kw (v1 ),
+which shows that Kw (v1 ) is an eigenvector for R with character w−1 (χuniv ).
+14      THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+Lemma 5.3.1. In Mgen we have the formula
+                           X  Y 1 − qπ α∨ 
+                1 AO N K =    w               · Kw (v1 ).
+                                 α>0
+                                     1 − π α∨
+                                 w∈W
+
+Proof. Let w0 denote the longest element of W . Recall the standard basis elements
+vx for M . Then vw (w ∈ W ) form an R-basis for M , hence an L-basis for Mgen .
+From (2.2.4) it is clear that the vectors Kw (v1 ) also form an L-basis for Mgen . Write
+the spherical vector in this second basis:
+                                          X
+(5.3.3)                       1 AO N K =      dw · Kw (v1 ).
+                                          w∈W
+
+We can alsoPwrite the spherical vector in the first basis; since the spherical vector
+is equal to w∈W vw , it is clear that the coefficient of the basis element vw0 in the
+spherical vector is 1; on the other hand, from (2.2.4) and (5.3.3), it is clear that
+this same coefficient is also equal to dw0 aw0 w0 ; equating the two expressions for the
+coefficient and using the explicit formula (2.2.5) for aw0 w0 , we see that
+                                         Y 1 − qπ −α∨
+                                 dw0 =                 .
+                                         α>0
+                                             1 − π −α∨
+Moreover, since the normalized intertwiners Kw fix the spherical vector, we have
+                                     dw1 w2 = w1 (dw2 )
+for all w1 , w2 ∈ W , from which it follows that
+                                        Y 1 − qπ α∨ 
+                              dw = w                   .
+                                         α>0
+                                             1 − π α∨
+This completes the proof.                                                             
+5.4. Partial information about some more matrix coefficients. We see from
+Lemma 5.3.1 that in order to calculate Γ it would be enough to calculate the matrix
+coefficients (1AO N K , Kw (v1 ) · g). Now this new matrix coefficient is a function on
+I\G/K = X∗ rather than K\G/K, and it is difficult to calculate all its values.
+Fortunately it easy to calculate them for elements g of the form π µ for dominant
+coweights µ, and in the end this is enough since Γ is K-bi-invariant and hence
+determined by its values on such elements.
+Lemma 5.4.1. For group elements of the form g = π µ with µ dominant, we have
+                 (1AO N K , Kw (v1 ) · g) = [K : I]−1 · δB (π µ )1/2 · π wµ .
+Proof. For f ∈ M , the function f · g need not be right I-invariant, and so need not
+have a simple form. However, letting δg denote the Dirac measure concentrated at
+g, we have an equality of measures eI · δg · eI = eIgI , where eX is the characteristic
+function of a set X divided by its measure. Since g = π µ with µ dominant, we have
+eIgI = δB (π µ )Tπµ = δB (π µ )1/2 Θµ . Using these considerations (and the fact that
+the idempotent eI fixes both 1AO N K and Kw (v1 )), we see that
+              (1AO N K , Kw (v1 ) · g) = δB (π µ )1/2 · (1AO N K , Kw (v1 )Θµ ).
+From (5.3.2) we have Kw (v1 )Θµ = π wµ Kw (v1 ), and therefore
+            (1AO N K , Kw (v1 ) · g) = δB (π µ )1/2 · π wµ · (1AO N K , Kw (v1 )).
+                              IWAHORI-HECKE ALGEBRAS                                  15
+
+
+Using (2.2.3), we see that
+            (1AO N K , Kw (v1 )) = w(Kw−1 (1AO N K ), v1 ) = w(1AO N K , v1 ).
+Moreover (1AO N K , v1 ) = [K : I]−1 , as follows immediately from the definitions.
+This completes the proof.
+                                                                                 
+
+5.5. Macdonald’s formula. Combining Lemmas 5.3.1 and 5.4.1, we get
+Theorem 5.5.1 (Macdonald). For any dominant coweight µ we have
+                                    X          Y 1 − qπ α∨ 
+            Γ(π µ ) = [K : I]−1 ·         w              α∨
+                                                              · δB (π µ )1/2 · π wµ
+                                               α>0
+                                                   1 − π
+                                    w∈W
+
+and
+                              X  Y 1 − q(wχ)(π α∨ ) 
+           µ           −1
+      Γχ (π ) = [K : I]     ·                   α∨ )
+                                                       · δB (π µ )1/2 · (wχ)(π µ ).
+                                 α>0
+                                     1 − (wχ)(π
+                             w∈W
+
+5.6. Alternative version of Macdonald’s formula. For any finite subset X ⊂
+f , define the polynomial X(t) := P
+W                                            l(w)
+                                       w∈X t      , where the length function l(·) is
+defined using the set of reflections for the B̄-positive simple affine roots, as in
+section 7.1. Let Wµ denote the stabilizer of µ in W . We write tµ for the element
+                                   f.
+π µ of the translation subgroup of W
+Theorem 5.6.1. For any dominant coweight µ,
+                        q hρ,µi X  Y 1 − q −1 π −α  wµ
+                                                      ∨
+
+          (1Kπµ K )∨ =             w                ∨   ·π .
+                       Wµ (q −1 )     α>0
+                                            1 − π −α
+                                          w∈W
+
+Proof. Using Theorem 5.5.1, this follows easily from the identities [K : I] = W (q),
+W (q) = q l(w0 ) W (q −1 ), meas(Kπ µ K) = W tµ W (q)/W (q), and
+                                              W (q)q l(tµ ) W (q −1 )
+(5.6.1)                     W tµ W (q) =                              .
+                                                  Wµ (q −1 )
+To prove (5.6.1), note that any element in W tµ W has a unique decomposition of
+the form wµ tµ w, where w ∈ W and wµ is a minimal length representative for a
+coset in W/Wµ . Furthermore, such an element has length l(w) + l(tµ ) − l(wµ ) (as
+may be seen by induction on l(wµ ); note that µ is anti-dominant for B̄).       
+
+                   6. Casselman-Shalika formula [7, 24, 27]
+   We are going to give an exposition of Casselman-Shalika’s proof of their formula
+[7] for unramified Whittaker functions.
+
+6.1. Unramified characters
+                    Q             ψ on N̄ . Let ∆ denote the set of simple roots.
+The abelian group α∈∆ N−α is a quotient of N̄ . Here N−α is the root subgroup
+for −α, which we identify with the additive group Ga over    Q O. Given characters
+ψα : N−α → C× , their product defines a character on α∈∆ N−α and hence a
+character ψ on N̄ . We say that ψ is principal if all the ψα are non-trivial. We say
+that ψ is unramified if all the characters ψα are trivial on O but non-trivial on p−1 .
+16      THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+6.2. Whittaker functionals. Let ψ be a principal character on N̄ . Let S be a
+commutative C-algebra. The inclusion of C in S lets us view ψ as a character with
+values in S × .
+   Let χ : A → S × be an S-valued character, and form the induced representation
+ G
+iB (χ), which is both a G-module and an S-module. A Whittaker functional on
+iG
+ B (χ) is an S-module map
+                                      L : iG
+                                           B (χ) → S
+
+such that L(n̄φ) = ψ(n̄)L(φ) for all n̄ ∈ N̄ and all φ ∈ iG
+                                                          B (χ).
+   In case S = C Rodier [25] (see also [7]) proved that the space of Whittaker
+functionals is 1-dimensional and that there exists a unique Whittaker functional W
+whose restriction to the subspace of functions φ in iGB (χ) supported on the big cell
+B N̄ is given by the integral
+                                      Z
+(6.2.1)                       W (φ) =    φ(n̄)ψ(n̄)−1 dn̄
+                                          N̄
+
+(the integrand of which is compactly supported by our assumption on the support
+of φ). Here dn̄ denotes the Haar measure on N̄ that gives measure 1 to N̄ ∩ K.
+For general S the same proof shows that there again exists a unique Whittaker
+functional W given by (6.2.1) for functions supported on the big cell, and that the
+S-module of all Whittaker functionals is free of rank 1 with W as basis element.
+   Now let us consider the case in which S is R and χ is χ−1       univ . We let J denote
+the set of negative coroots and consider the completion RJ of R defined in 1.10. It
+follows from Lemma 1.10.1 that the integral (6.2.1) makes sense as an element of
+                       −1                            −1
+RJ for all φ ∈ iG                                G
+                   B (χuniv ), and even for φ ∈ iB (χuniv ) ⊗R RJ . Using the uniqueness
+                                      G    −1
+of W for RJ , we see that for φ ∈ iB (χuniv ) the integral (6.2.1) actually takes values
+in the subring R of RJ . (In other words the presence of the principal character ψ
+causes all but finitely many of the coefficients of the Laurent power series W (φ) to
+                                                                                   −1
+vanish.) Therefore we will now regard the Whittaker functional W on iG         B (χuniv ) as
+being defined by the integral (6.2.1).
+   Recall that we have identified the module M with the Iwahori-fixed vectors in
+      −1
+iG
+ B (χ univ ), and thus we also have the (restricted) Whittaker functional W : M → R.
+It is necessary to calculate W for a few very special vectors in M .
+   From now on, we assume the character ψ is principal and unramified.
+
+Lemma 6.2.1. Let w0 denote the longest element in W , and let α be a simple root
+with corresponding simple reflection sα . Then
+
+(i)                                 W (v1 ) = q −l(w0 )
+                                                                 ∨
+(ii)                   W (v1 + vsα ) = q 1−l(w0 ) · (1 − q −1 π −α ).
+
+Proof. The first statement follows from the fact that N̄ ∩ BI = N̄ ∩ I, which has
+measure q −l(w0 ) . Similarly, the second statement reduces to a calculation in SL(2),
+which we leave to the reader. Note that for SL(2) the second statement gives the
+                             ∨
+value (namely 1 − q −1 π −α ) of the Whittaker functional on the spherical vector.
+                                                                                    
+
+6.3. Effect of intertwiners on the Whittaker functional. Earlier we defined
+normalized intertwiners Kw , normalized in the sense that they preserve the spherical
+                                  IWAHORI-HECKE ALGEBRAS                                         17
+
+
+vector 1AO N K . Now we normalize them differently. Put
+                      Y 1 − q −1 π α∨           Y     1 − πα
+                                                               ∨   
+                ′
+(6.3.1)      Kw   :=           −1  −α ∨  · K w =            −1 −α∨   · Iw .
+                          1−q π                         1−q π
+                         α∈Rw                                α∈Rw
+                                                               ′
+Lemma 6.3.1 ([13],[7]). The newly normalized intertwiners Kw     preserve the Whit-
+                                             ′
+taker functional W in the sense that W ◦ Kw = w ◦ W for all w ∈ W . On the right
+side of this equality w stands for the automorphism of R determined by w. Moreover
+  ′          ′    ′
+Kw  1 w2
+         = Kw  1
+                 Kw 2
+                      .
+                                                      ′
+Proof. One sees directly from the definition that Kw    is multiplicative in w. There-
+fore to prove the first statement of the lemma, it is enough to treat the case w = sα
+for a simple root α. By uniqueness of W there exists c ∈ L× such that
+(6.3.2)                            W ◦ Ks′ α = c(sα ◦ W ).4
+To prove that c = 1 we evaluate both sides of (6.3.2) on v1 + vsα , using Lemma
+1.13.1(ii) and Lemma 6.2.1(ii).                                               
+Lemma 6.3.2. In Mgen we have the formula
+                        Y               ∨
+                                            X Y                       1     
+   1AO N K = q l(w0 ) ·    (1 − q −1 π −α ) · w                           −α∨
+                                                                                   ′
+                                                                                · Kw (v1 ).
+                            α>0                                 α>0
+                                                                    1 − π
+                                                      w∈W
+                                                            ′
+Proof. This follows from Lemma 5.3.1 and the definition of Kw .                                  
+6.4. Whittaker functions. We continue with S, ψ and χ as in 6.2. For any
+φ ∈ iG
+     B (χ) we define the corresponding Whittaker function Wφ : G → S by
+
+(6.4.1)                                Wφ (g) := W (gφ).
+Then Wφ is an S-valued function satisfying the transformation law
+(6.4.2)                        f (n̄g) = ψ(n̄)f (g)       ∀ n̄ ∈ N̄ ,
+and φ 7→ Wφ is a G-map from          iG
+                                      B (χ)   to the space of functions satisfying (6.4.2).
+
+6.5. Unramified Whittaker functions. From now on we assume that both φ
+and χ are unramified. Then inside iG
+                                   B (χ) we have the normalized spherical vector
+φχ defined by
+                          φχ (ank) = χ(a)δB (a)1/2 .
+The Casselman-Shalika formula is an explicit formula for the Whittaker function
+Wχ := Wφχ corresponding to the spherical vector φχ . It is enough to consider the
+case in which S is R and χ is χ−1
+                               univ , in which case we abbreviate Wχ−1      to W.
+                                                                       univ
+   Since W is right K-invariant and satisfies (6.4.2), it is determined by its values
+on elements g ∈ G of the form π −µ for µ ∈ X∗ . In fact W(π −µ ) = 0 unless µ is
+dominant. Indeed, for x ∈ N−α ∩ K we have
+                      W(π −µ ) = W(π −µ x) = ψα (π −µ xπ µ )W(π −µ ),
+
+   4Here, we are implicitly using normalized intertwiners K : L ⊗ iG (χ−1 ) → L ⊗ iG (χ−1 ).
+                                                           w     R B   univ      R B   univ
+The reader may derive the existence and basic properties of such intertwiners following the method
+of sections 1.10-2.2. Although the discussion there was limited to the theory of intertwiners on the
+Iwahori-invariants in the induced modules in question, it is possible to develop a similar theory
+on the induced modules themselves.
+18        THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+which implies that W(π −µ ) vanishes unless ψα is trivial on phα,µi , which, since ψ
+is unramified, implies in turn that hα, µi ≥ 0. Therefore it is enough to find the
+values of W(g) for g of the form π −µ for dominant µ.
+
+Theorem 6.5.1 (Casselman-Shalika). Let µ be a dominant coweight. Then
+                         Y                ∨ 
+              W(π −µ ) =    (1 − q −1 π −α ) · δB (π µ )1/2 · Eµ ,
+                                    α>0
+
+where Eµ ∈ RW is the character of the irreducible representation of the Langlands
+dual group G∨ having highest weight µ.
+                                           −1
+Proof. As usual (see 1.5) we identify iG                ∞
+                                       B (χuniv ) with Cc (AO N \G). The spherical
+vector in the induced representation corresponds to 1AO N K . We begin by noting
+that
+
+(6.5.1)              W(π −µ ) = W (1AO N Kπµ ) = W (1AO N K · eIπµ I )
+
+where eIπµ I denotes the characteristic function of Iπ µ I divided by its measure.
+Here we used that Iπ µ I = Iπ µ (I ∩ N̄ ) (a consequence of the Iwahori factorization
+I = (I ∩ B) · (I ∩ N̄ ) and the dominance of µ), as well as the right I-invariance of
+1AO N K and the fact that ψ is trivial on I ∩ N̄ . Since eIπµ I = δB (π µ )1/2 · Θµ , we
+can rewrite the equation above as
+
+(6.5.2)                   W(π −µ ) = δB (π µ )1/2 W (1AO N K · Θµ ).
+
+It then follows from Lemmas 6.2.1(i), 6.3.1, and 6.3.2 that
+                                  Y                 ∨
+                                                        X Y                1     
+      W(π −µ ) = δB (π µ )1/2 ·        (1 − q −1 π −α ) · w                    −α∨   · π wµ .
+                                   α>0                               α>0
+                                                                         1 − π
+                                                           w∈W
+
+     The Casselman-Shalika formula now follows from the Weyl character formula:
+
+                                         X         Y    πµ    
+                                  Eµ =         w           −α∨   .
+                                                   α>0
+                                                       1−π
+                                         w∈W
+
+                                                                                                
+
+
+                        7. The Lusztig-Kato formula [14, 16]
+   Following the strategy of [14], we derive the formula of Lusztig-Kato and, as a
+corollary, another result of Lusztig [16]. The Lusztig-Kato formula relates the Sa-
+take transforms of the functions 1Kπλ K to the character Eµ of the highest weight
+module of the Langlands dual group corresponding to µ. It is the function-theoretic
+counterpart of the geometric Satake isomorphism [10, 20], and it can also be for-
+mally deduced from that statement by using the function-sheaf dictionary.
+   The proof requires us to give v-analogs of several objects studied above (here v
+is an indeterminate which can be specialized to q 1/2 ). Most importantly, we need
+the v-analog of Theorem 5.6.1. The reader willing to accept that on faith may skip
+directly to section 7.7.
+                              IWAHORI-HECKE ALGEBRAS                                   19
+
+
+7.1. Preliminaries about affine roots. Write T for the group X∗ (A), viewed as
+the group of translations in the extended affine Weyl group Wf ; thus W
+                                                                      f = T ⋊W . We
+denote by tµ the element of T corresponding to the cocharacter µ. For simplicity, we
+assume here that the root system underlying G is irreducible. Let α1 , . . . , αr denote
+the B-positive simple roots, and let α̃ denote the B-highest root. Let s0 = t−α̃∨ sα̃ ,
+and Saff = S ∪ {s0 }. Here S = {sαi = s−αi }ri=1 is the set of simple reflections
+corresponding to the B-positive (or B̄-positive) simple roots, but our definition
+of s0 means that Saff is the set of simple affine reflections corresponding to the
+B̄-positive affine roots.
+    We have Wf = Waff ⋊Ω, where Waff is the Coxeter group generated by Saff , and Ω
+is the subgroup of Wf which preserves the set of B̄-positive simple affine roots under
+the usual left action (an affine-linear automorphism acts on a functional by pre-
+composition with its inverse). The set Saff induces a length function and a Bruhat
+order on W f (the same as that mentioned in Lemma 1.6.1). The elements σ ∈ Ω
+are of length zero, and the algebra generated by the functions 1IσI is naturally
+isomorphic to C[Ω]. We have a twisted tensor product decomposition H = Haff ⊗
+C[Ω], where Haff is the algebra generated by the functions 1IxI , x ∈ Waff (this
+follows from the remarks following Lemma 7.2.1 below).
+    Recall our convention for embedding X∗ (A) into A: λ 7→ π λ = λ(π). We also
+regard each w ∈ W as an element in K, fixed once and for all. These conventions
+tell us how we view elements of W    f as elements in G. For example, for SL(2),
+                                                   
+                                            0 π −1
+we are identifying s0 with the element                . It is important to bear these
+                                           −π     0
+conventions in mind in this section.
+7.2. More about the H-action on M .
+Lemma 7.2.1. Fix ϕ ∈ M and π λ w ∈ W       f , where w ∈ W . Suppose σ ∈ Ω, and
+that s = sα ∈ S corresponds to a B-positive simple root α. Then we have
+                     (
+               λ       q · ϕ(π λ ws), if w(α) is B-positive
+(i)    ϕTsα (π w) =
+                       ϕ(π λ ws) + (q − 1) · ϕ(π λ w), if w(α) is B-negative
+                     (
+               λ       q · ϕ(π λ ws0 ), if w(α̃) is B-negative.
+(ii)    ϕTs0 (π w) =
+                       ϕ(π λ ws0 ) + (q − 1) · ϕ(π λ w), if w(α̃) is B-positive.
+(iii)   ϕTσ (π λ w) = ϕ(π λ wσ −1 ).
+                                                         q−1
+Proof. To illustrate the method, we prove (ii). Let {xi }i=0 denote a set of repre-
+                              ×
+sentatives for O/P taken in O ∪ {0}. For a root β, let uβ : Ga → G denote the
+associated homomorphism. Then we have the decomposition
+                                     a
+                             Is0 I =   u−α̃ (πxi )s0 I.
+                                         i
+We therefore have
+                                         X
+                        ϕTs0 (π λ w) =       ϕ(π λ w u−α̃ (πxi )s0 ).
+                                         i
+
+If w(α̃) is B-negative, then each term in the sum is ϕ(π λ ws0 ). If w(α̃) is B-positive,
+then the term for xi = 0 is ϕ(π λ ws0 ). If xi 6= 0, then using the identity
+                            u−α̃ (πxi )s0 I = uα̃ (π −1 x−1
+                                                         i )I
+20         THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+(which holds whenever xi ∈ O× ), we see the term indexed by xi is ϕ(π λ w).
+   Part (i) can be proved in a similar way; alternatively it can be derived from
+(1.6.2) together with the usual relations in the Hecke algebra for W .         
+   The proof of (ii) above parallels the standard proof of the Iwahori-Matsumoto
+relations in H, which state that for x ∈ Wf , s ∈ Saff , and σ ∈ Ω
+                            (
+                              Txs , if x < xs
+                    Tx Ts =
+                              q · Txs + (q − 1) · Tx , if xs < x
+                         Tx Tσ = Txσ ,
+where < denotes the Bruhat order determined by Saff . If H denotes the affine Hecke
+algebra over Zv := Z[v, v −1 ] associated to our root system, this means we have a
+canonical isomorphism H = H ⊗Zv C.
+   Note that R is the Iwahori-Hecke algebra for the group A, and hence it also has
+a v-analog over Zv , which we denote by R. Concretely, we have R = Zv [X∗ (A)].
+   We will use Lemma 7.2.1 as the starting point in defining v-analogs
+                     f−1
+              M, iW                                          ′
+                  T (χuniv ), (R, H) − actions, (·|·), Kw , M eW , h
+                                                                     ∨
+
+of the objects we have already studied
+                       −1 I
+               M, iG                                                 ∨
+                   B (χuniv ) , (R, H) − actions, (·, ·), Kw , MK , h .
+                                      −1 I
+7.3. v-analogs of M and iG       B (χuniv ) . Let us define M to be the set of functions
+ϕ:W  f → Zv which are supported on a finite subset. This is a free Zv -module with
+basis given by the characteristic functions 1x , x ∈ W    f.
+    Next we define δ : T → Z×        v  by  δ(t λ ) := v −2hρ,λi
+                                                                 . This is the v-analog of
+the function δB . By δ 1/2 we will mean the obvious square root of δ, namely the
+character tλ 7→ v −hρ,λi .
+    The left action of R on M is given by the formula t · 1x := δ 1/2 (t)1tx . The right
+H-action is given by defining (following Lemma 7.2.1), for ϕ ∈ M,
+                       (
+                          v 2 · ϕ(tλ ws), if w(α) is B-positive
+(i)     ϕTsα (tλ w) =
+                          ϕ(tλ ws) + (v 2 − 1) · ϕ(tλ w), if w(α) is B-negative
+                       (
+                          v 2 · ϕ(tλ ws0 ), if w(α̃) is B-negative.
+(ii)     ϕTs0 (tλ w) =
+                          ϕ(tλ ws0 ) + (v 2 − 1) · ϕ(tλ w), if w(α̃) is B-positive.
+(iii)       ϕTσ (tλ w) = ϕ(tλ wσ −1 ).
+These rules determine a right H-module structure on M 5, and moreover M is an
+(R, H)-bimodule. Indeed, it suffices to observe that by Lemma 7.2.1 this statement
+holds after every specialization v 7→ q 1/2 . Specialization arguments like this will be
+used repeatedly below to prove v-analogs of statements known for M .
+                f   −1                                     f
+   Now define iWT (χuniv ) to be the set of functions φ : W → R which satisfy
+
+                                    φ(tx) = δ 1/2 (t)φ(x) · t−1 ,
+                  f . As in section 1.5, there is a canonical isomorphism
+for t ∈ T and x ∈ W
+                                                   −1
+(7.3.1)                                   M = iW̃
+                                               T (χuniv ).
+
+     5Matsumoto gives a similar definition for a left H-action in [19, section 4.1.1].
+                               IWAHORI-HECKE ALGEBRAS                                 21
+
+
+Explicitly, we associate to ϕ ∈ M the function φ given by
+                                   X
+                            φ(x) =    δ −1/2 (t) ϕ(tx) · t.
+                                        t∈T
+                           f   −1
+The left action of R on   iW
+                           T (χuniv )
+                                   is defined by (t·φ)(x) = t(φ(x)). The right action
+                                                        f   −1
+of H is defined by requiring the isomorphism M → iW     T (χuniv ) to be H-linear (one
+could also write out an explicit rule, again in the spirit of Lemma 7.2.1). Then
+       f    −1
+M = iW T (χuniv ) is an isomorphism of (R, H)-bimodules.
+
+7.4. v-analog of the sesquilinear pairing. We will define an R-valued sesquilin-
+                      f   −1
+ear pairing (·|·) on iW
+                      T (χuniv ) (thus on M) which is almost the v-analog of (·, ·) (they
+differ by a constant). Hence, it will automatically satisfy the analogs of (1.9.2),
+(1.9.3), and (1.9.6). We write ιR for the v-analog of ιR , namely the involution on
+R = Zv [X∗ (A)] induced by the identity on Zv and the map µ 7→ −µ on X∗ (A).
+                   f   −1
+   For φ1 , φ2 ∈ iWT (χuniv ), define
+                                      X
+(7.4.1)                  (φ1 |φ2 ) =      v 2l(w) ιR φ1 (w) φ2 (w).
+                                        w∈W
+
+Lemma 7.4.1. The pairing (·|·) on M induces the pairing W (q) (·, ·) on M =
+M ⊗Zv C.
+Proof. Consider the R-basis {1w }w∈W for M, and the corresponding R-basis {vw }w∈W
+for M . From the definitions, we easily see
+                                 (1w | 1w′ ) = v 2l(w) δw,w′ .
+It is therefore enough to prove
+                             (vw , vw′ ) = q l(w) W (q)−1 δw,w′ .
+The orthogonality is clear, and then one can easily check that
+            (vw , vw ) = (1AO N K , vw ) = (1AO N K Tw−1 , v1 ) = q l(w) W (q)−1 .
+                                                                                       
+
+7.5. v-analogs of normalized intertwiners. For a simple reflection s = sα ,
+define Js : M → M by setting
+                     Js (11 ) = v −2 (1 − tα∨ ) · 1s + (1 − v −2 )tα∨ · 11 ,
+                   Js (11 h) = Js (11 )h, for h ∈ H.
+This makes sense because M is the free H-module generated by 11 (by the same
+upper-triangular argument we used to prove that M is the free H-module generated
+by v1 ). Further, for any w ∈ W , choose a reduced expression w = s1 · · · sn , and set
+                                   Jw := Js1 ◦ · · · ◦ Jsn .
+(The usual specialization argument shows that the right hand side is independent
+of the choice of reduced expression.)
+   Next define L to be the fraction field of R; note that LW is the fraction field
+of RW and that L = LW ⊗RW R. Imitating what we did before, we see that RW
+embeds into the center of H, so that we can form the algebra Hgen := LW ⊗RW H
+22        THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+and the right Hgen -module Mgen := LW ⊗RW M = L ⊗R M. Finally we define
+the normalized intertwiner Kw : Mgen → Mgen by
+                                 Y       1       
+                         Kw :=                      · Jw .
+                                     1 − v −2 tα∨
+                                       α∈Rw
+
+   It is clear that
+     (i) Kw is Hgen -linear;
+    (ii) Kw ◦ tλ = twλ ◦ Kw ;
+   (iii) Kw fixes 1W ,
+                P
+where 1W := w∈W 1w is the v-analog of 1AO N K . It is also clear that w 7→ Kw
+                                    ×
+defines a homomorphism W → Hgen        , and that the v-analogs of (2.2.3-2.2.5) hold
+(using (·|·) in (2.2.3)). Moreover, the v-analog of Lemma 5.3.1 holds. Finally, we
+recover Bernstein’s result that RW is the center of H by going through all the same
+steps we did before.
+
+7.6. v-analog of the Satake isomorphism. Let Z′v , R′ , H′ , and M′ denote
+                                                                         P     the
+localizations of Zv , R, H, and M at the element W (v 2 ) ∈ Zv . Let TW = w∈W Tw
+and eW = W (v 2 )−1 TW , an element in H′ . Further, define H0 = eW H′ eW , and
+M0 = M′ eW . Then H0 is a Z′v -algebra with product ∗ := W (v 2 )−1 · and identity
+element TW , where · denotes the usual product in H. Similarly M0 is an H0 -module
+with product ∗ := W (v 2 )−1 ·, where · now denotes the usual H-action on M. It is
+clear that ∗ makes M0 an (R′ , H0 )-bimodule.
+   The R′ -module M0 is free of rank 1, so there is a homomorphism
+                                        ∨ : H0 → R′
+characterized by
+                                      m0 ∗ h 0 = h ∨
+                                                   0 m0 ,
+for all h0 ∈ H0 and all m0 ∈ M0 .
+   We have the formula
+(7.6.1)             h∨       2 −1
+                     0 = W (v )   (1W | 1W ∗ h0 ) = (11 | 11 h0 ).
+   We can now easily derive the v-analog of Theorem 5.6.1. We apply the first
+equality of (7.6.1) to the function
+                             X          W (v 2 )W (v −2 )
+(7.6.2)            hµ :=           Tw =                   eW Ttµ eW
+                                          Wµ (v −2 )
+                           w∈W tµ W
+
+to get
+                                  W (v −2 )
+                   (hµ )∨ =                       (1W | 1W · eW Ttµ eW )
+                               W (v 2 )Wµ (v −2 )
+                               v −2l(w0 ) v 2(l(tµ )/2)
+                           =                            (1W | 1W Θµ ).
+                                    Wµ (v −2 )
+Now using the v-analog of Lemma 5.3.1 as in the proof of Theorem 5.5.1, we find
+
+
+                           v 2(l(tµ )/2) X  Y 1 − v −2 t−α∨ 
+(7.6.3)         (hµ )∨ =                  w                    · twµ .
+                           Wµ (v −2 )       α>0
+                                                 1 − t−α∨
+                                        w∈W
+                                 IWAHORI-HECKE ALGEBRAS                                        23
+
+
+7.7. The Satake isomorphism commutes with the Kazhdan-Lusztig invo-
+lution. The compatibility of the Bernstein and Satake isomorphisms (4.6) is the
+commutativity of the following diagram:
+                                                b
+                                     R′W oo       eW99 H′ eW
+                                                 sss
+                                     B        sss
+                                             s
+                                        sss −·eW
+                                         ′
+                                    Z(H ),
+                                                                       P
+where b(h0 ) := W (v 2 )h∨
+                         0 and where the Bernstein isomorphism B sends   λ∈W µ tλ
+to zµ . By Lemma 3.2.1, B commutes with the Kazhdan-Lusztig involution. Since
+eW = eW 6 , the diagonal map does as well. We thus have the following lemma
+which is implicit in [16], section 8.
+Lemma 7.7.1. For every h0 ∈ H0 ,
+                                          b(h0 ) = b(h0 ).
+Equivalently,
+                                     (h0 )∨ = v −2 l(w0 ) h∨
+                                                           0.
+
+   Note that the Kazhdan-Lusztig
+                 P               involution
+                                   P        on the commutative ring R′ is simply
+                          −1                −1
+the map sending λ zλ (v, v )tλ to λ zλ (v , v)tλ .
+
+7.8. The Lusztig-Kato formula. We now switch notation and let q 1/2 play the
+role of the indeterminate v used in sections 7.1-7.7. In this section we will use
+some elementary properties of the Kazhdan-Lusztig polynomials Px,y (q) attached
+          f , all of which may be found in [15].
+to x, y ∈ W
+    Recall that throughout this article, the Bruhat order ≤ and the length function
+        f are defined using the B̄-positive affine reflections Saff := S ∪ {s0 }. For
+l(·) on W
+any dominant coweight λ, the element wλ := tλ w0 is the unique longest element in
+W tλ W , and l(tλ w0 ) = l(w0 ) + l(tλ ) = l(w0 ) + 2hρ, λi. It is known that
+                                  {x ≤ wµ } = ∪λµ W tλ W,
+where λ ranges over dominant coweights such that µ − λ is a sum of B-positive
+coroots.
+Theorem 7.8.1 (Lusztig, Kato). For any dominant coweight µ, let Eµ denote the
+character of the corresponding highest
+                                P        weight module of the Langlands dual group
+G∨ . Let hµ denote the function w ∈ W tµ W Tw . Then we have
+                              X
+                        Eµ =     q −l(tµ )/2 Pwλ ,wµ (q) (hλ )∨ .
+                                    λµ
+
+Proof. We have the identity
+                           X                        X
+                 q −l(y)/2   Px,y (q)Tx = q −l(y)/2   Px,y (q)Tx .
+                              x≤y                            x≤y
+
+
+    6Via the function-sheaf dictionary, the Kazhdan-Lusztig involution corresponds to taking the
+Verdier dual. The equality can then be derived from the fact that if the constant sheaf on the
+smooth variety G/B is placed in degree −l(w0 ) and Tate-twisted by l(w0 )/2, the resulting complex
+is Verdier self-dual.
+24          THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+Applying this to y = wµ and using Pwwλ w′ ,wµ (q) = Pwλ ,wµ (q) for every w, w′ ∈ W ,
+we get
+                         X                                    X
+       q −hρ,µi−l(w0 )/2   Pwλ ,wµ (q) hλ = q −hρ,µi−l(w0 )/2   Pwλ ,wµ (q) hλ .
+                             λµ                                            λµ
+
+Applying the Satake isomorphism to both sides and using Lemma 7.7.1, we have
+                     X                              X
+             q hρ,µi   Pwλ ,wµ (q −1 ) h∨
+                                        λ =q
+                                             −hρ,µi
+                                                      Pwλ ,wµ (q) h∨
+                                                                   λ.
+                           λµ                                    λµ
+
+By (7.6.3), this gives
+
+      X                                            X           Y 1 − q t−wα∨
+            q hρ,µ−λi Pwλ ,wµ (q −1 )Wλ (q)−1            twλ
+                                                               α>0
+                                                                   1 − t−wα∨
+      λµ                                          w∈W
+                X                                              X           Y 1 − q −1 t−wα∨
+            =         q −hρ,µ−λi Pwλ ,wµ (q)Wλ (q −1 )−1             twλ                    .
+                                                                           α>0
+                                                                               1 − t−wα∨
+                λµ                                            w∈W
+
+  Now deg Pwλ ,wµ (q) ≤ hρ, µ − λi − 1/2 if λ < µ and so Lemma 7.8.2 below implies
+that the right hand side is a polynomial in q −1 (with coefficients in Z[X∗ ]W ).
+Similarly, the left hand side is a polynomial in q. The result now follows since the
+constant terms are equal to
+                           X        Y
+                               twµ     (1 − t−wα∨ )−1 = Eµ .
+                                 w∈W         α>0
+
+                                                                                                  
+Lemma 7.8.2. We have
+                                   X         Y 1 − q −1 t−wα∨
+                  Wλ (q −1 )−1         twλ                    ∈ Z[q −1 ][X∗ ]W .
+                                             α>0
+                                                 1 − t −wα ∨
+                                 w∈W
+
+Proof. It is obvious that the expression belongs to Z[[q −1 ]][X∗ ]W , so it is enough
+by (7.6.3) to show that h∨
+                         λ belongs to R. But this follows from (7.6.1).              
+     Taking q = 1 we immediately recover Theorem 6.1 of [16]:
+Theorem 7.8.3 (Lusztig). For any dominant coweight µ,
+                          X                 X
+                    Eµ =      Pwλ ,wµ (1) (     twλ ).
+                                       λµ                 w∈W/Wλ
+
+
+                                              References
+ [1] J. Bernstein, Representations of p-adic groups, Notes taken by K. Rumelhart of lectures by
+     J. Bernstein at Harvard in the Fall of 1992.
+ [2] A. Borel, Admissible representations of a semi-simple group over a local field with vectors
+     fixed under an Iwahori subgroup, Invent. Math. 35 (1976), 233–259.
+ [3] F. Bruhat and J. Tits, Groupes réductifs sur un corps local. I, Inst. Hautes Études Sci. Publ.
+     Math. 41 (1972), 5–251.
+ [4] P. Cartier, Representations of p-adic groups: a survey In: Automorphic Forms, Represen-
+     tations and L-functions, Proc. Sympos. Pure Math., vol. 33, part 1, Amer. Math. Soc.,
+     Providence, RI, 1979, pp. 111–155.
+ [5] W. Casselman, Introduction to the theory of admissible representations of p-adic reductive
+     groups, unpublished notes.
+                                  IWAHORI-HECKE ALGEBRAS                                          25
+
+
+ [6] W. Casselman, The unramified principal series of p-adic groups I. The spherical function,
+     Compositio Math. 40 (1980), 387–406.
+ [7] W. Casselman and J. Shalika, The unramified principal series of p-adic groups II. The Whit-
+     taker function, Compositio Math. 41 (1980), 207–231.
+ [8] N. Chriss and K. Khuri-Makdisi, On the Iwahori-Hecke algebra of a p-adic group, Internat.
+     Math. Res. Notices (1998), 85–100.
+ [9] J.-F. Dat, Caractères à valeurs dans le centre de Bernstein, J. Reine Angew. Math. 508
+     (1999), 61–83.
+[10] V. Ginzburg, Perverse sheaves on a loop group and Langlands duality, Preprint (1996).
+     alg-geom/9511007.
+[11] T. J. Haines, The combinatorics of Bernstein functions, Trans. Amer. Math. Soc. 353 (2001),
+     1251–1278.
+[12] T. J. Haines, On matrix coefficients of the Satake isomorphism: complements to the paper
+     of Rapoport, manuscripta math. 101 (2000), 167–174.
+[13] H. Jacquet, Fonctions de Whittaker associées aux groupes de Chevalley, Bull. Soc. Math.
+     France 95 (1967), 243–309.
+[14] S. Kato, Spherical functions and a q-analogue of Kostant’s weight multiplicity formula, In-
+     vent. Math. 66 (1982), 461-468.
+[15] D. Kazhdan and G. Lusztig, Representations of Coxeter groups and Hecke algebras, Invent.
+     Math. 53 (1979), 165-184.
+[16] G. Lusztig, Singularities, character formulas, and a q-analog of weight multiplicities In:
+     Analyse et topologie sur les espaces singuliers, I-II (Luminy, 1981), Soc. Math. France,
+     Paris, 1983, pp. 208–229.
+[17] G. Lusztig, Affine Hecke algebras and their graded versions, J. Amer. Math. Soc. 2 (1989),
+     599–635.
+[18] I. G. Macdonald, Spherical functions on a group of p-adic type, Ramanujan Institute, Uni-
+     versity of Madras Publ., 1971.
+[19] H. Matsumoto, Analyse Harmonique dans les Systèmes de Tits Bornologiques de Type Affine,
+     Springer Lecture Notes 590, Berlin, 1977.
+[20] I. Mirkovic, K. Vilonen, Perverse sheaves on affine Grassmannians and Langlands duality,
+     Math. Res. Lett. 7 (2000), no.1, 13-24.
+[21] K. Nelsen, A. Ram, Kostka-Foulkes polynomials and Macdonald spherical functions, Sur-
+     veys in combinatorics, 2003 (Bangor), 325–370, London Math. Soc. Lecture Note Ser., 307,
+     Cambridge Univ. Press, Cambridge, 2003.
+[22] M. Rapoport, A positivity property of the Satake isomorphism, manuscripta math. 101
+     (2000), 153–166.
+[23] M. Reeder, On certain Iwahori invariants in the unramified principal series, Pacific J. Math.
+     153 (1992), 313–342.
+[24] M. Reeder, p-adic Whittaker functions and vector bundles on flag manifolds, Compositio
+     Math. 85 (1993), 9–36.
+[25] F. Rodier, Whittaker models for admissible representations of reductive p-adic split groups,
+     In: Harmonic Analysis on Homogeneous Spaces, Proc. Symp. Pure Math. XXVI, Amer.
+     Math. Soc., 1973.
+[26] I. Satake, Theory of spherical functions on reductive algebraic groups over p-adic fields, Inst.
+     Hautes Études Sci. Publ. Math. 18 (1963), 1–69.
+[27] T. Shintani, On an explicit formula for class-1 Whittaker functions, Proc. Japan Acad. 52
+     (1976), 180–182.
+
+
+
+   University of Maryland
+   Mathematics Department
+   College Park, MD 20742-4015
+   tjh@math.umd.edu
+
+   University of Chicago
+   Department of Mathematics
+26        THOMAS J. HAINES, ROBERT E. KOTTWITZ, AND AMRITANSHU PRASAD
+
+
+     5734 S. University Ave.
+     Chicago, IL 60637
+     kottwitz@math.uchicago.edu
+
+     The Institute of Mathematical Sciences
+     CIT campus Taramani
+     Chennai 600113, India
+     amri@imsc.res.in
+

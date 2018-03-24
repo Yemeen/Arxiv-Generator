@@ -1,0 +1,1938 @@
+                                                 Explicit Hilbert Spaces for certain unipotent
+arXiv:math/0110339v1 [math.RT] 31 Oct 2001
+
+
+
+
+                                                              representations III
+                                                             Alexander Dvorsky∗and Siddhartha Sahi†
+                                                                          February 20, 2018
+
+
+
+                                             0     Introduction
+                                             This paper is the culmination of a series dedicated to the problem of constructing
+                                             explicit analytic models for small unitary representations of certain semisimple
+                                             Lie groups. (See [S1], [S2], [S3], [DS1], [DS2] and also [SS], [KS].)
+                                                 The groups G that we consider are those that arise from real semisimple
+                                             Jordan algebras via the Tits-Koecher-Kantor construction. Such a G is char-
+                                             acterized by the fact that it admits a parabolic subgroup P = LN which is
+                                             conjugate to its opposite P = LN , and for which the nilradicals N and N are
+                                             abelian. We identify N and N with their Lie algebras n and n via the expo-
+                                             nential map, and moreover we identify n with n∗ via a suitably rescaled Killing
+                                             form. The space n is naturally endowed with a real semisimple Jordan algebra
+                                             structure, which is isotopic to the one giving rise to G and P . We write n for
+                                             the rank of n as a Jordan algebra.
+                                                 In this situation, the Levi component L has a finite number of orbits on
+                                             n; each orbit has a rank ≤ n, and carries a measure dµ which transforms
+                                             by a character under L. For the non-open orbits (rank < n) this measure is
+                                             unique up to scalar multiple; for the open orbits (rank = n) there is a one-
+                                             parameter family of such measures. For each non-open orbit O we consider the
+                                             Hilbert space HO = L2 (O, dµ). By Mackey theory this space carries a natural
+                                             irreducible unitary representation πO of P , and we consider the following two
+                                             problems:
+
+                                                 • Extend πO to a unitary representation of G.
+                                                 • Decompose πO1 ⊗ · · · ⊗ πOs , for rank O1 + ... + rank Os ≤ n.
+
+                                                For Euclidean Jordan algebras the first problem was solved in [S1] and [S2],
+                                             and the second problem was solved in [DS1]. Therefore in this paper we restrict
+                                               ∗ dvorsky@math.miami.edu, Department of Mathematics, University of Miami, Coral
+
+                                             Gables, FL 33126
+                                               † sahi@math.rutgers.edu,  Department of Mathematics, Rutgers University, New
+                                             Brunswick, NJ 08903
+
+
+                                                                                     1
+our attention to non-Euclidean Jordan algebras. The case of rank 1 orbits in
+non-Euclidean Jordan algebras was completely settled in [DS2]. It turned out
+that for rank 1 orbits in certain rank 2 Jordan algebras the representation πO
+cannot be extended to G. We shall call these orbits inadmissible; they arise for
+the groups G = O(p, q), p 6= q and are connected with the Howe-Vogan “no-go”
+result for minimal representations of such groups ([V]). For rank 1 orbits in the
+remaining Jordan algebras we established the desired extension and calculated
+the tensor product decomposition in [DS2].
+   In this paper we consider the general case, and prove the following results:
+   First suppose O is an admissible non-open orbit in a non-Euclidean Jordan
+algebra N .
+
+Theorem 0.1 For O as above, the representation πO of P extends to an irre-
+ducible spherical unitary representation of G on HO .
+
+   Now suppose O1 , . . . , Os are admissible non-open orbits in N such that
+rank O1 +...+rank Os ≤ n. In subsection 4.2 we define a reductive homogeneous
+space G′ /H ′ , essentially the generic fiber of the addition map from O1 ×. . .×Os
+to N , and consider the decomposition of the quasi-regular representation
+                                           Z ⊕
+                           L2 (G′ /H ′ ) =     m(σ)σ dρ(σ),
+                                        c′
+                                        G
+
+where m(σ) is the multiplicity function and dρ(σ) is the Plancherel measure.
+
+Theorem 0.2 Let O1 , . . . , Os and G′ , H ′ be as above; then there is a map θ
+from the H ′ -spherical dual of G′ to the unitary dual of G such that
+                                         Z ⊕
+                     πO1 ⊗ · · · ⊗ πOs =     m(σ)θ(σ) dρ(σ).
+                                            c′
+                                            G
+
+    Our approach to these results requires consideration of three different kinds
+of groups, each with its own flavor of representation theory. These are:
+
+   • Harish-Chandra modules for semisimple Lie groups.
+   • Operator algebras for parabolic subgroups.
+   • Fourier analysis for abelian nilradicals.
+
+    The Harish-Chandra theory was studied in [S3]. The necessary operator-
+algebraic results (C ∗ -algebras, von Neumann algebras) were already obtained
+in [DS1] and [DS2]. Thus the missing ingredient, which is provided by this
+paper, involves abelian Fourier analysis. The key result, Proposition 3.2, shows
+that a certain function (eventually, the “spherical” vector in πO ) belongs to
+L2 (O, dµ). For rank 1 orbits this result was obtained in [DS2] by establishing
+a close connection between this function and a certain one-variable Bessel K-
+function. The required L2 -estimate was then deduced from a precise knowledge
+of the singularity of the Bessel K-function at 0.
+
+                                        2
+    For higher rank orbits, we expect that there should exist a similar connection
+between the spherical vectors and multivariate Bessel K-functions. However in
+order to exploit this connection one would have to first develop the theory of
+such functions, possibly along the lines of the theory of the multivariate Bessel
+J-functions of [Op]. While we feel that the connection with multivariate Bessel
+K-functions is of interest and should be pursued further, in the present paper
+we follow a different approach that allows us to obtain the desired estimate
+directly, obviating the need to first study Bessel functions. The key here is a
+“stability” result (Lemma 3.12) which transfers the problem from a non-open
+orbit to a related problem on the open orbit for a smaller group. The open orbit
+problem turns out to be easier to solve.
+    This approach was inspired in part by a recent paper of Shimura [Sh]. We
+wish to thank L. Barchini for drawing our attention to this paper.
+
+
+1     Preliminaries
+In this section we recall basic facts about the Tits-Kantor-Koecher construction.
+All results of this section are well-known. More details may be found in [KS],
+[DS2] and in the references therein (in particular, [BK] and [Lo]).
+
+1.1     The pair (G, P )
+The Tits-Kantor-Koecher construction associates to a real simple Jordan alge-
+bra, a pair (G, P ), where G is a real simple Lie group with Cartan involution
+θ, and maximal compact subgroup K; and P is a parabolic subgroup with
+Levi decomposition LN , say. In the context of Lie theory, these pairs can be
+characterized as follows:
+
+    1. N is abelian.
+    2. P is G-conjugate to its opposite parabolic P = θ(P ) = LN .
+
+    Conversely, in the above situation one can endow N with the structure of a
+real simple Jordan algebra, unique up to the choice of an identity element.
+    In view of the classification of real simple Lie groups and their parabolic
+subgroups in terms of the possible restricted root systems, it is an easy matter
+to determine the above pairs. The two conditions correspond to simple restricted
+roots α such that
+
+    1. α has coefficient 1 in the highest root
+    2. α satisfies α = −w0 α for the longest element w0 of the Weyl group.
+
+   The conditions 1. and 2. each give rise to a symmetric space denoted by K/M
+and L/H respectively, and much of the relevant information about the Jordan
+algebra and the associated pair (G, P ) can be described in a simple and coherent
+manner in terms of these symmetric spaces. This makes it possible to have a
+
+                                         3
+uniform discussion for the most part, with only some occasional arguments
+requiring case-by-case considerations.
+    In the next few sections we describe these spaces and conclude by giving a
+complete list of examples.
+    We follow the practice of denoting the real Lie algebras of various Lie groups
+by the corresponding fraktur letters; with the exception of p which will denote
+instead the −1 eigenspace of θ in the Cartan decomposition g = k ⊕ p.
+
+1.2    The symmetric space K/M
+Condition 1. implies (and is equivalent to the assertion) that the subgroup L is
+a symmetric subgroup of G, and M = K ∩ L is a symmetric subgroup of K.
+Let t be a maximal toral subalgebra for the compact symmetric space K/M ,
+i.e. a Cartan subspace for in the orthogonal complement of m in k. The real
+rank of N as a Jordan algebra is n = dimR t.
+    The roots of tC in gC always form a root system of type Cn , and we fix a
+basis {γ1 , γ2 , . . . , γn } of t∗ such that
+
+                        Σ(tC , gC ) = {±(γi ± γj )/2, ±γj }.
+
+For the subsystem Σ = Σ(tC , kC ), there are three possibilities:
+
+            An−1 = {±(γi − γj )/2}, Dn = {±(γi ± γj )/2}, and Cn .
+
+    The first of these cases arises precisely when N is a Euclidean Jordan algebra.
+This case was studied in [S1], therefore we restrict our attention to the last two
+cases. If Σ is Cn , there are two multiplicities, corresponding to the short and
+long roots, which we denote by d and e, respectively. If Σ is Dn , and n 6= 2,
+then there is a single multiplicity, which we denote by d, so that Dn may be
+regarded as a special case of Cn , with e = 0.
+    The root system D2 ≈ A1 × A1 is reducible and there are two (possibly dif-
+ferent) root multiplicities. In what follows, we explicitly exclude the case when
+these multiplicities are different. This means that we exclude from consideration
+the groups
+
+                       G = O(p, q), N = Rp−1,q−1 (p 6= q).
+
+When the two multiplicities coincide (p = q), we once again denote the common
+multiplicity by d.
+
+1.3    S-triples and the Cayley transform
+The discussion of the various cases can be made uniform by emphasizing the
+special role played by a family of n commuting SL2 ’s or S-triples, together with
+the associated Cayley transform.
+
+
+
+
+                                         4
+    For the Lie algebra sl2 (C), we define
+                                                      
+                   0 1              0 0              1 0
+            x=             , y=             , h=             ,
+                   0 0              1 0              0 −1
+                                                                      
+                 1 i 1               1 −i 1                   0        1
+           X=                  ,Y =                , H=i                       .
+                 2   1  −i           2     1   i             −1        0
+
+The Cayley transform is the automorphism of sl2 (C) given by
+
+                                                                                  
+                    πi                   πi              1             1       i
+         c = exp ad    (X + Y ) = exp ad    (x + y) = Ad √
+                    4                    4                2            i       1
+
+It satisfies
+
+                      c (X) = x, c (Y ) = y, c (H) = h.
+                                             P
+   Now, as remarked earlier, the root system (tC , gC ) is of type Cn . Moreover,
+the various compact and non-compact root multiplicities are as follows:
+
+                    dim k±(γi ±γj )/2 = d, dim p±(γi ±γj )/2 = d
+                           dim k±γi = e, dim p±γi = 1
+
+We fix holomorphic homomorphisms
+
+                         Ψj : sl2 (C) −→ gC , j = 1, ..., n
+
+such that each Ψj (X) spans pγj , and we write
+
+                   Xj = Ψj (X), xj = Ψj (x), yj = Ψj (y),etc.
+
+The images of Ψj commute with each other and we also write
+                      X           X           X
+                  X=     Xj , x =    xj , y =   yj , etc.
+                           j            j            j
+
+The Cayley transform of g is the product
+                               πi                  πi
+                 c = exp ad       (x + y) = exp ad    (X + Y).
+                               4                   4
+We write a = c (it) for the Cayley transform of it. This is the abelian subalgebra
+of g spanned by h1 , · · · , hn .
+
+1.4     The symmetric space L/H
+Let H ⊂ L be the stabilizer of y ∈ n, then condition 2. implies (and is in fact
+equivalent to the assertion) that L/H is a symmetric space. The involution σ
+for this symmetric space consists of conjugation by a suitable element of K —
+corresponding to the element w0 of condition 2.
+
+                                         5
+    Example. If G = O2n,2n , then L = GL2n (R) and N is the Jordan algebra
+of 2n × 2n real skew-symmetric matrices, and H = Spn (R).
+    In the present situation L/H is always non-Riemannian; and moreover a is
+the corresponding Cartan subalgebra in the usual sense. In other words, if we
+consider the Cartan decompositions for θ and σ
+
+                                l = m + r , l = h + q;
+
+then a is a Cartan subspace in q ∩ r.
+   Since a = c (it), the roots of a in g are
+                                                             1
+               Σ(a, g) = {±εi ± εj , ±2εj } where εi =         γi ◦ c−1 .
+                                                             2
+Moreover it is easy to see that
+
+ Σ(a, l) = {±(εi − εj )} , Σ(a, n) = {εi + εj , 2εj } , Σ(a, n) = {−εi − εj , −2εj } .
+
+    We now remark that the weight
+
+                               ν = ε1 + ε2 + . . . + εn
+
+extends to a character of l. The easiest way to see this is to consider for a in a,
+                   h      X                        X    i
+       tr adn (a) = −2d       (εi + εj ) − (e + 1)   2εj (a) = −2rν (a) .
+
+Thus we can define
+                 
+                  1
+      ν (l) = −     tr adn (l) for l ∈ l, where r = d(n − 1) + (e + 1).
+                 2r
+
+Similarly, we define a corresponding positive character of L by
+                                               −1/(2r)
+                    eν (l) = lν = |det Adn l|            for l in L.
+
+Considering an appropriate power of the determinant we obtain a corresponding
+positive character of the groups P and P , which we write as g 7→ eν (g), or as
+g 7→ g ν .
+    To complete the connection with the Jordan structure, we note that the
+Jordan norm φ on n is a polynomial function which transforms by the character
+e−2ν of L. Finally we observe that the Killing form on g gives a pairing between
+n and n which we rescale by setting hx1 , y1 i = 1.
+
+
+2    Integral formulas
+It is an immediate consequence of Corollary 5.3 that the L-orbits in n carry
+equivariant measures. More precisely, we write eν for the positive character of
+L defined in 1.4 and let r = d(n − 1) + (e + 1) be as before. Then we have
+
+                                          6
+Lemma 2.1    1. The Lebesgue measure dλ on n is e2rν -equivariant for the
+   L-action.
+  2. The rank k-orbit carries an e2dkν -equivariant measure dµ = dµk .
+   The (easy) proof of this lemma is postponed to the next subsection. We
+now describe a “polar coordinates” expression for these equivariant measures.
+Let O be the rank k orbit, O = L · (y1 + . . . + yk ). In [Lo] it is shown that the
+elements
+                     {z1 y1 + . . . + zk yk | z1 > z2 > . . . > zk > 0}
+give a complete set of orbit representatives for the action of M = L ∩ K on the
+rank k orbit. Accordingly, we write Ck ⊂ Rk for the cone
+               Ck = {z = (z1 , z2 , . . . , zk ) | z1 > z2 > . . . > zk > 0};
+and for m in M , z in Ck we write
+                         m · z = Ad m (z1 y1 + . . . + zk yk ) ∈ n.
+   For z in Ck we introduce the notation
+                                               Y                             Yk
+                                                                              dzj
+           Pk (z) = z1 . . . zk , Vk (z) =                 zi2 − zj2 , d×
+                                                                        kz =
+                                                                                 z
+                                                                             j=1 j
+                                             1≤i<j≤k
+
+where each dzj denotes the Lebesgue measure on R.
+    The main results of this section are summarized in the following two propo-
+sitions.
+Proposition 2.2 Let dλ be the Lebesgue measure on n, then
+                                
+     Z         Z Z
+       f dλ = c  f (m · z)dm d∗ z where d∗ z = [Pn ]e+1 [Vn ]d d×
+                                                                  n z.
+       n            Cn    M
+
+
+Proposition 2.3 Let dµ be the equivariant measure on the rank k orbit O, then
+                                
+    Z          Z Z
+                                                               d
+       f dµ = c  f (m · z)dm dk z where dk z = Pkn−k+1 Vk d×     k z.
+      O            Ck    M
+
+   The scalars c appearing in the above integral formulas are independent of f
+and depend only on the normalization of the measures dλ and dµ.
+   For subsequent purposes we need to consider the Lebesgue measure on n as
+well as n. For m in M , z in Cn , we write
+                         m ◦ z = Ad m (z1 x1 + . . . + zn xn ) ∈ n .                  (1)
+Since the Cartan involution θ gives a linear isomorphism between n and n,
+satisfying θ (m ◦ z) = m · z, the following result can be derived immediately
+from Proposition 2.2.
+
+                                               7
+Corollary 2.4 Let dλ be the Lebesgue measure on n, then for all functions f
+on n
+                                
+     Z          Z Z
+                                                        e+1      d
+        f dλ = c  f (m ◦ z)dm d∗ z where d∗ z = [Pn ]     [Vn ] d×
+                                                                   n z.
+       n          Cn   M
+
+
+
+
+   The proofs of the propositions will occupy the rest of this section.
+
+2.1    Stabilizers and equivariant measures
+In this subsection, we prove Lemma 2.1. For this we need to first determine the
+stabilizer of the point y1 + . . . + yk in the rank k orbit. If k = n, the stabilizer is
+the symmetric subgroup H described previously. We now discuss the remaining
+orbits. To simplify notation we fix k and write
+
+                                 y 1 = y1 + . . . + yk .
+
+In Jordan algebra terms, y1 is a Peirce idempotent and considering the 1 and
+0 Peirce-eigenspaces of y1 , we obtain smaller Jordan algebras n1 and n0 with
+identity elements y1 and y0 = yk+1 + . . . + yn , respectively. The corresponding
+structure groups L1 and L0 are naturally subgroups of L. Subgroups of L1 and
+L0 will be distinguished by subscripts 1 and 0, respectively. For example,
+
+            M1 = M ∩ L1 , M0 = M ∩ L0 , H1 = H ∩ L1 , a1 = a ∩ l1 .
+
+Thus H1 is the stabilizer of y1 in L1 , and the full stabilizer of y1 in L is given
+by
+
+                                 S = (H1 × L0 ) · U ,                               (2)
+
+where U is the abelian subgroup whose Lie algebra u is spanned by the root
+spaces l−εi +εj (1 ≤ i ≤ k < j ≤ n). Then
+
+                    l = s+ (q1 + u) , where q1 = q ∩ l1 , u = θu.
+
+    Proof. (of Lemma 2.1) From the calculation in the previous section, it
+follows that the Lebesgue measure dλ on n is equivariant by the character
+                               −1
+           η (l) = |det Adn l|      = e2rν (l) = l2[d(n−1)+e+1]ν for l in L,
+
+which proves the first part of the lemma.
+   For the second part, we consider the stabilizer of y1 + . . . + yk . First suppose
+k = n; in this case the stabilizer H is semisimple, and hence
+
+                           |det Adh h| = 1 for all h ∈ H.
+
+
+                                            8
+Since eν |H = 1 as well, it follows from Corollary 5.3 that for each real t, the
+open orbit carries a measure which is etν -equivariant. The measure dµ is simply
+the special case t = 2dn.
+     Now suppose k < n, then s = h1 +l0 +u and it is easy to see that tr [ads (z)] =
+0 for z in h1 and u. Thus we can assume that z is in l0 , and then tr [adh1 +l0 (z)] =
+0, hence tr [ads (z)] = tr [adu (z)]. To calculate this, it suffices to consider z in
+a0 , and then we get
+                                      X
+      tr [ads (z)] = tr [adu (z)] =          2d (−εi + εj ) (z)
+                                   1≤i≤k<j≤n
+
+                 = −2d (n − k) [ε1 + . . . + εk ] (z) + 2dk [εk+1 + . . . + εn ] (z) .
+
+Now the weights ε1 , . . . , εk restrict trivially on a0 , hence we see that the required
+trace is the restriction of 2dkν to s. Thus we get
+
+                                |det Ads s| = e2dkν (s)
+
+and the result follows by Corollary 5.3.
+
+2.2    Jacobians for homogeneous spaces
+In order to prove integral formulas for homogeneous spaces, we need a method
+for calculate the Jacobian of a diffeomorphism between such spaces. It is conve-
+nient to work with the more flexible notion of a local diffeomorphisms between
+X and Y , by which we simply mean a diffeomorphism between open subsets of
+X and Y . We also introduce the notation
+                                            F
+                                    (X, x) → (Y, y)
+
+to represent the situation where X and Y are smooth manifolds; x and y are
+points in X and Y ; F is a diffeomorphism from an open neighborhood of x to
+an open neighborhood of Y such that F (x) = y.
+    We now consider the following situation: Suppose X and Y are homogenous
+spaces for groups G and H, and dx and dy are regular measures on this spaces
+which are equivariant for characters γ (g) and η (h) respectively. We choose two
+points x0 ∈ X and y0 ∈ Y , and fix linear bases for the tangent spaces at these
+points.
+
+Lemma 2.5 Suppose that in the above situation we have a local diffeormor-
+phism F : X → Y . Then for all x in the domain of F we have
+
+                        JF (x) = cη (h) γ (g) |det DhF g (x0 )| ,
+
+where c is a scalar independent of x; h ∈ H and g ∈ G satisfy
+
+                              g · x0 = x, h · F (x) = y0
+
+and DhF g : Tx0 X → Ty0 Y is regarded as a matrix via the above bases.
+
+                                            9
+   Proof. We fix x and write y = F (x). Then we have local diffeomorphisms
+                               g          F           h
+                      (X, x0 ) → (X, x) → (Y, y) → (Y, y0 ) .
+
+By formula (16) we get
+
+           JhF g (x0 ) = Jg (x0 ) JF (x) Jh (y) = γ (g)−1 JF (x) η (h)−1 .
+
+On the other hand by Lemma 5.1 we have
+
+                          JhF g (x0 ) = c |det DhF g (x0 )|
+
+for some positive scalar c, independent of hF g. The lemma follows.
+
+2.3    Integral formula for the Lebesgue measure
+We now apply the results of the previous subsections to prove the integration
+formulas on the L-orbits. In order to do this we first need to fix bases for various
+subspaces of l which are compatible with the actions of θ and σ. We start with
+the weight decomposition
+                                                     
+                              l = l0 ⊕ ⊕i6=j lεi −εj
+
+where l0 is the centralizer of a. The involutions θ and σ act by −1 on a, thus
+the space l0 is invariant by θ and σ; considering their eigenvalues we have the
+decomposition
+
+                           l0 = l++ + l+− + l−+ + l−−
+
+where l++ = l0 ∩ (m ∩ h), l+− = l0 ∩ (m ∩ q) etc. Note of course that l−− = a.
+On the other hand, the root spaces lα are not stable under θ and σ, in fact each
+involution maps lα to l−α . However the involution τ = σθ = θσ does stabilize
+these spaces. Considering the eigenvalues of τ we have a decomposition
+
+                                   lα = lα,+ + lα,−
+
+where lα,+ = l ∩ (m ∩ h + r ∩ q), lα,− = lα ∩ (m ∩ q + r ∩ h) (cf. [Sc, 8.1]).
+  In the present situation, we always have
+
+                            dim lα,+ = dim lα,− = d.
+
+This fact can be checked easily for each of the examples in the table below, from
+the lists of multiplicities in [OS]. We fix bases
+                           α,± 	                	
+                           Xl      ⊂ lα,± , Xl±,± ⊂ l±,± .
+
+   We now turn to the proof of Proposition 2.2. The rank n orbit L/H is open
+and dense in n and its complement has measure 0. Since L/H is a symmetric
+space of type An−1 , the “multiplication” map
+
+                                F : m × a 7→ ma−1
+
+                                         10
+gives an diffeomorphism between [M/M ′ ] × A+ and L/H, where M ′ is the
+centralizer of A in M ∩ H and A+ = exp a+ with
+
+                   a+ = {c1 h1 + · · · + cn hn | c1 ≥ . . . ≥ cn }
+
+We regard F as a local diffeomorphism between the homogeneous spaces [M/M ′ ]×
+A+ = [M × A] / [M ′ × {1}] and L/H. By Corollary 5.3, the first space carries
+an invariant measure dm × da, while the second space carries the Lebesgue
+measure dλ which is e2rν -equivariant by Lemma 2.1. The main result is the
+following Jacobian computation.
+
+Lemma 2.6 In the above situation there is a scalar c such that
+                                            Y               
+           JF,dm×da,dλ (m × a) = ca2(e+1)ν      a4εi − a4εj d .
+                                                    i<j
+
+
+   Proof. We fix the natural base points x0 = 1 × 1 ∈ [M/M ′ ] × A and
+y0 = 1 ∈ L/H and apply Lemma 2.5 from the previous subsection with
+
+                              g = m × a, h = am−1
+
+Then we have
+                                                 
+                                                 −1
+      hF g m′ , a′ = hF mm′ , aa′ = h mm′ (aa′ )      = (am′ a−1 ) a′−1
+
+Therefore the differential DhF g : m/m′ + a → l/h is given by
+
+                      Ta (v, w) := Ad (a) v + w (mod h)                      (3)
+
+This shows that
+
+                     JF,dm×da,dλ (m × a) ∼ a2rν |det Ta |
+
+for some fixed choice of bases for m/m′ + a and l/h. Since r = d(n − 1) + e + 1,
+the result follows from the next lemma.
+
+Lemma 2.7 For the map Ta defined in formula (3) we have
+                                       Y            
+                |det Ta | ∼ a−2d(n−1)ν  a4εi − a4εj d
+                                              i<j
+
+    Proof. In order to compute the determinant, we choose convenient bases
+for l/h and m/m′ + a. We have l/h ≈ q, and so we may choose the basis
+             ±,− 	  α,+                                 	
+             Xk     , Xk − θXkα,+ , Xkα,− + θXkα,− | α > 0 ;
+
+   For the space m/m′ + a, we note that m′ = l++ in our earlier notation, and
+thus a basis is given by:
+              ±,− 	  α,+                                  	
+              Xk      , Xk + θXkα,+ , Xkα,− + θXkα,− | α > 0
+
+                                         11
+     We now claim that
+
+                     Ta · Xk±,− = Xk±,−
+                               aα − a−α                               
+          Ta · Xkα,+ + θXkα,+ =                         Xkα,+ − θXkα,+       (mod h)
+                                       2
+               α,−        α,−    aα + a−α                             
+          Ta · Xk + θXk          =                      Xkα,− + θXkα,−       (mod h)
+                                       2
+The first equality is obvious. For the second, we calculate
+                                             
+Ta · Xkα,+ + θXkα,+ = Ad (a) · Xkα,+ + θXkα,+ = aα Xkα,+ + a−α θXkα,+
+                         aα − a−α  α,+             aα + a−α  α,+        
+                       =            Xk − θXkα,+ +              Xk + θXkα,+
+                             2                             2
+                         aα − a−α  α,+        α,+ 
+                       =            Xk − θXk         (mod h) .
+                             2
+The third equality follows by a similar calculation.
+                                                              	                	
+   Since there are d vectors in each of the sets Xkα,+ + θXkα,+ , Xkα,− + θXkα,−
+we get
+                                                             
+                   Y  aεi −εj − aεj −εi d  aεi −εj + aεj −εi d
+       |det Ta | ∼                                           
+                               2                   2         
+                   i<j
+                   Y                              Y                          d
+                 ∼     a2εi −2εj − a2εj −2εi d =      a−2(εi +εj ) a4εi − a4εj 
+                   i<j                              i<j
+                                 Y            
+                =a   −2d(n−1)ν    a4εi − a4εj d .
+                                 i<j
+
+
+
+   We can now prove Proposition 2.2.
+   Proof. (of Proposition 2.2) Since the map F is a diffeomorphism between
+[M/M ′ ] × A+ and L/H, by the Jacobian calculation, we get
+Z         Z             Z "Z              
+                                                #
+                                                          Y             
+  f dλ =       f dλ = c            f ma−1 dm a2(e+1)ν       a4εi − a4εj d da.
+ n          L/H              A−        M/M ′                                 i<j
+
+For a suitable normalization
+                            of the Haar measures, the innermost integral can
+                R
+be rewritten as M f ma    −1   dm. Also for a = exp (c1 h1 + · · · + cn hn ) in A+ ,
+we have
+
+                          a−1 = a · y =e2c1 y1 + · · · + e2cn yn .
+
+Thus if we identify A+ and Cn via the map
+                                                                             
+                     exp (c1 h1 + · · · + cn hn ) ←→ e2c1 , · · · , e2cn
+
+
+
+                                               12
+then we get
+                                        Y            
+         ma−1 ↔ m · z, a2ν ↔ Pn ,        a4εi − a4εj  ↔ Vn , da ↔ d×
+                                                                     nz
+                                        i<j
+
+Making these substitutions in the integral formula, we obtain the desired result.
+
+
+2.4    Integral formula for the equivariant measure
+We now turn to the proof of Proposition 2.3. For the case of the measure dµ on
+the open orbit, the calculations are exactly the same as in the previous section,
+the only difference being that the measure is e2dnν -equivariant. Thus arguing
+as in Lemmas 2.6 and 2.7 we obtain that
+                                                      Y              
+         JF,dm×da,dµ (m × a) ∼ a2dnν |det Ta | = a2dν    a4εi − a4εj d
+                                                           i<j
+
+Now arguing as in the proof of Proposition 2.2 we obtain Proposition 2.3 for
+k = n.
+     Now consider the case k ≤ n. We recall the notation y1 = y1 + . . . +
+yk , M1 , M0 , etc. introduced in section 2.1. Now writing M1′ = ZM1 ∩H1 (a1 ) and
+a+             +                                      1         ′
+ 1 = a1 ∩ a etc., we get a local diffeomorphism F : M/(M1 × M0 ) × A1 →
+                                                                              +
+
+O = L/S given by
+                                  F 1 (m, a) = ma−1
+Arguing as in Lemma 2.6, we obtain
+                                                                   
+                   JF,dm×da,dµ (m × a) ∼ a2dk(ε1 +···+εk ) det Ta1 
+where Ta1 : m/ (m′1 + m0 ) + a1 → l/s is given by
+                         Ta1 (v, w) = Ad a (v) + w (mod s )
+and we compute the determinant for some choice of basis for the two sides. We
+choose these bases in the following manner. We have A1 -module isomorphisms
+                           m              m     m1
+                                + a1 ≈         + ′ + a1
+                       m′1 + m0        m1 + m0  m1
+                                   l/s ≈ u + q1 .
+Thus the map Ta1 decomposes as a direct sum Ta1 = T0 + T1 with
+                                m             m1
+                      T0 :           → u, T1 : ′ + a1 → q1 .
+                             m1 + m0          m1
+The calculation for |det T1 | is the same as in Lemma 2.7, applied to a smaller
+Jordan algebra of rank k. This gives
+            Y                                                    Y             
+|det T1 | =     a2εi −2εj − a2εj −2εi d = a−2d(k−1)(ε1 +···+εk )   a4εi − a4εj d
+           i<j≤k                                                  i<j≤k
+
+
+                                          13
+To calculate det T0 we use the following bases for m/ (m1 + m0 ) and u
+               m                                              	
+                    : Xlα,± + θXlα,± | α = εi − εj , i ≤ k, j > k .
+            m1 + m0
+                                                        	
+                  u : Xlα,± | α = εi − εj , i ≤ k, j > k
+
+The action of T0 is given by
+                          
+     ad a · Xlα,± + θXlα,± = aα Xlα,± + a−α θXlα,± = aα Xlα,± (mod s)
+
+Since for a in A1 we have aεj = 1 for j > k, we get
+                            Y           
+                |det T0 | =     aεi −εj 2d = a2d(n−k)(ε1 +···+εk ) .
+                           i≤k,j>k
+
+Thus we get
+
+        JF,dm×da,dµ (m × a) ∼ a2dk(ε1 +···+εk ) |det T1 | |det T0 |
+                                                          Y                
+                            = a2d(n−k+1)(ε1 +···+εk )          a4εi − a4εj d .
+                                                         i<j≤k
+
+   Now arguing as in the proof of Proposition 2.2 we obtain Proposition 2.3 for
+k < n.
+
+
+3     Estimates for spherical vectors
+We can relate the P -representation πO to a unitarizable submodule of a certain
+degenerate principal series for G, which is described as follows: If χ is a character
+                                                                                  G
+of L, we write (πχ , I(χ)) for the degenerate principal series representation Ind P χ
+(unnormalized smooth induction); thus
+
+        I(χ) = {f ∈ C ∞ (G)|f (lng) = χ(l)f (g) for l ∈ L, n ∈ N , g ∈ G}
+
+and the group G acts by right translations. By virtue of the Gelfand-Naimark
+decomposition G ≈ P N , functions from I(χ) are determined by their restriction
+to N . Combining this with the exponential map we can identify I(χ) with a
+subspace E(χ) of C ∞ (n) . We refer to this as the noncompact picture.
+    For t ∈ R, we write I(t), E(t) for I(etν ), E(etν ); more generally, if ε : L → T
+is a unitary character, we write I(t, ε), E(t, ε) for I(etν ⊗ ε), E(etν ⊗ ε). These
+principal series were studied in [S3] via the “Cayley operator” D which is the
+constant coefficient differential operator on n, whose symbol is the Jordan norm
+polynomial φ. Powers of D are intertwining operators for the principal series,
+and their eigenvalues on the various K-isotypic components are given by the
+Capelli identity of [KS].
+    E(t) is a spherical representation of G and we write Φt for the K-spherical
+vector. Among the results obtained in [S3] is that for
+
+                          χk = e−dkν , k = 1, . . . , n − 1;
+
+                                          14
+the space E(−dk) contains a unitarizable spherical submodule. We need to
+study the Fourier transforms of the corresponding spherical vectors
+
+                            Φ−dk ; k = 1, . . . , n − 1.
+
+For this we identify n with the dual of n∗ via the normalized Killing form from
+subsection 1.4. Also we fix k < n, write Φ for the spherical vector Φ−dk , and
+write (O, dµ) for the rank k orbit in n together with its equivariant measure
+described in Lemma 2.1. The main results are
+
+Proposition 3.1 The measure Φdλ is a tempered distribution on n and there
+exists an M -invariant function g in L1 (O, dµ) such that
+                                        d
+                                  Φdλ = gdµ.
+
+Proposition 3.2 For k < n, one has g ∈ L2 (O, dµ).
+
+   We prove these propositions in the next few subsections. The strategy is
+as follows: Let us write Φk,n for the function Φ−dk , in order to emphasize
+dependence on n as well as k. Now although the above results are false in
+general for the open orbit (k = n), nevertheless we can prove the desired results
+by reducing to a slightly weaker estimate for k = n, which turns out to be true,
+and somewhat easier to prove. We establish this result in the next subsection
+and then outline the reduction procedure in the two following subsections. We
+then deduce Theorem 0.1 from Proposition 3.2 by arguments similar to [S1] and
+[DS2].
+
+3.1    Estimates for the open orbit
+As indicated above, we first consider the function
+
+                               Φ = Φn,n = Φ−dn .
+
+We need appropriate L2 -estimates with respect to the Lebesgue measure dλ
+on n for the function Ψ and its derivatives. The “straightforward” estimate is
+actually false for the group Spn (C), but it does work for the other groups G in
+the table in subsection 5.3. Thus we formulate two results, one for G 6= Spn (C)
+and the other for all groups:
+
+Proposition 3.3 For all groups G other than Spn (C), we have Φ ∈ L2 (n, dλ).
+
+
+
+Proposition 3.4 For all groups G and for all m ≥ 1, we have Dm Φ ∈ L2 (n, dλ).
+
+
+   For each t, the function Φt is M -invariant, and is therefore determined by
+the restriction to the subspace {z1 x1 + · · · + zn xn } ⊆ n; we start by giving an
+explicit formula for the restriction.
+
+                                        15
+Lemma 3.5 We have
+                                       n
+                                       Y                 t
+                    Φt (m ◦ z) =            (1 + zi2 ) 2 for all m in M.
+                                       i=1
+
+
+
+    Proof. For the group G = SL2 (R) this is a straightforward calculation
+which we leave to the reader. In the general case, we view Φ as a function on G
+which is right K-invariant, and left P -equivariant with character etν . We now
+restrict Φ to the subgroup SL2 × · · · × SL2 corresponding to the S-triples of
+section 1.3. This restriction is right SO2 × · · ·× SO2 -invariant, and left B × · · ·×
+B-equivariant with character esν = esε1 × · · · × esεn . Thus applying the SL2 -
+calculation to each factor, we conclude that the restriction to z1 x1 + · · · + zn xn
+is given as in the statement of the lemma .
+    Combining this with Corollary 2.4 we obtain the following estimate
+
+Lemma 3.6 For t < − [d (n − 1) + (e + 1) /2], we have Φt ∈ L2 (n, dλ).
+
+   Proof. Combining the previous lemma with Corollary 2.4, we get
+                  Z             Z
+                          2
+                     |Φt | dλ =     ψ(z)dz1 dz2 . . . dzn ,
+                                              Cn
+
+where
+                                n
+                                Y                            Y
+                     ψ(z) =           zie (1 + zi2 )t             (zi2 − zj2 )d .
+                                i=1                     1≤i<j≤n
+
+
+Expanding (zi2 − zj2 )d , we can write ψ(z) as a combination of terms of the form
+                  n
+                  Y
+                        zie+ki (1 + zi2 )t where each ki ≤ 2d (n − 1) .
+                  i=1
+
+Each of these integrals is a product of one-variable integrals which converge if
+                       Z ∞
+                                               t
+                             xe+2d(n−1) 1 + x2 dx < ∞.
+                            0
+
+This happens if 2t + e + 2d (n − 1) < −1, which proves the lemma.
+
+Corollary 3.7 If f ∈ E(t, ε) for some t < − [d(n − 1) + (e + 1) /2] and D is
+any constant coefficient differential operator, then we have Df ∈ L2 (n, dλ).
+
+    Proof. The group G acts on I(t, ε) by right translations. The corresponding
+action of the Lie algebra g in the noncompact picture E(t, ε) is by polynomial
+coefficient vector fields on n. The action of x ∈ n is independent of (t, ε) and
+is given simply by the directional derivative in the direction x. In particular,
+
+                                                 16
+the space E(t, ε) is invariant for the action of constant coefficient differential
+operators.
+    Thus f ′ ≡ Df also belongs to E(t, ε). Thus f ′ is the restriction to N of
+a P -equivariant smooth function on G. Since G = P K, any such function is
+determined by its restriction to K. The constant function 1 on K corresponds
+to the spherical vector Φt in I(t). Thus if c is the maximum of |f ′ | on K, then
+we have |f ′ | ≤ cΦt , and the corollary follows from the previous lemma.
+    We can now prove Propositions 3.3 and 3.4 (for G 6= Spn (C).
+    Proof. (of Propositions 3.3 and 3.4 for G 6= Spn (C)) From the table in
+Section 5.3 we see that in every case except G = Spn (C), we have 2d > e + 1.
+Consequently we get
+
+                       −dn < − [d (n − 1) + (e + 1) /2] .
+
+Proposition 3.3 now follows from Lemma 3.6, and Proposition 3.4 follows im-
+mediately from Corollary 3.7 for all groups except for G = Spn (C).
+    Suppose now that G is Spn (C). Then L = GLn (C) and n is the space of
+n × n complex symmetric matrices. We write V for the finite-dimensional space
+of holomorphic polynomials on n spanned by all the minors of the symmetric
+                                                                   det l
+matrix x, and let ε be the unitary character of L given by ε(l) =         .
+                                                                  |det l|
+
+Lemma 3.8 V is a Spn (C)-invariant subspace of E(1, ε).
+
+   Proof. The character eν of L is simply |det l|. Therefore, the space I(1, ε)
+consists of smooth functions on G = Spn (C) satisfying
+
+                              f (lng) = det(l)f (g).
+
+   An easy calculation shows that the representation of G on I(1, ε) can be
+expressed in the noncompact picture E(1, ε) as follows:
+                                                                
+                                         −1                    a b
+     g · f (x) = det(a + xc) f [a + xc] [b + xd] for g =             ∈ G.
+                                                               c d
+              −1                                
+               a      b                     0 −1
+   For p =                ∈  P  and  w =             we have
+                 0   at                     1 0
+                                                          
+                        p · f (x) = det(a−1 ) f ab + axat
+                                                   
+                        w · f (x) = det(x) f −x−1
+
+    Evidently, transformations of the form x 7−→ c + axat take minors of x to
+linear combinations of (possibly smaller) minors; thus V is P -invariant.
+    Also each minor of x−1 is equal to ± det(x)−1 times the complementary
+minor of x; thus V is w-invariant. Since P is a maximal parabolic subgroup, w
+and P generate G, and hence the space V is G-invariant.
+    It remains only to prove that V ⊂ E(1, ε). Using the Gelfand-Naimark
+decomposition, the functions in V can be lifted to P -equivariant functions on
+
+                                       17
+the dense open set P N in G. From the G-invariance of the finite-dimensional
+space V, it follows that these functions transform finitely under right translations
+by K. Therefore they extend to smooth functions on K, and hence on G. The
+lemma follows.
+
+Corollary 3.9 For G = Spn (C), the function det(x) belongs to the space E(1, ε).
+
+
+   We can now finish the proof of Lemma 3.4.
+   Proof. (of Lemma 3.4 for G = Spn (C)) For G = Spn (C), we have d = 1,
+and the function Ψ is given explicitly by
+
+                              Ψ(x) = det(1 + xx)−n/2
+
+and we have
+
+                               φ(x) = det(x) det(x)
+                                 D = det(∂x ) det(∂x ).
+
+Thus
+
+                     DΨ = det(∂x ) det(∂x ) det(1 + xx)−n/2 .                    (4)
+
+    To calculate this, we proceed as follows. First of all, it is well known that
+for u a complex symmetric matrix
+
+                        det(∂u ) det(u)s = const · det(u)s−1
+
+where the constant can be calculated using, for example, the Capelli identity
+from [KS].
+   Making a simple change of variables, we deduce
+
+                   det(∂u ) det(1 + u)s = const · det(1 + u)s−1 .
+
+Now if v is a fixed n × n complex matrix, then changing variables from u to
+v t uv, we get
+
+           det(∂u ) det(1 + v t uv)s = const · det(vv t ) det(1 + v t uv)s−1 .
+
+This can be rewritten as
+
+           det(∂u ) det(1 + vv t u)s = const · det(vv t ) det(1 + vv t u)s−1 .
+
+By analytic continuation, we get for all complex symmetric w
+
+              det(∂u ) det(1 + wu)s = const · det(w) det(1 + wu)s−1 .
+
+   Applying this to (4), we obtain
+
+                 DΨ = const · det(∂x ) det(x) det(1 + xx)−n/2−1 .
+
+                                           18
+    The function det(1+xx)−n/2−1 is the spherical vector in E(−n−2). Also, by
+the corollary above, det(x) belongs to E(1, ε). Each of these functions extends
+to a smooth function on G with appropriate P -equivariance. By considering the
+equivariance of the product, we deduce
+
+                   det(x) det(1 + xx)−n/2−1 ∈ E(−n − 1, ε).
+
+   Since Dm−1 det(∂x ) is a constant coefficient differential operator, we get
+                              h                             i
+  Dm Ψ = const ·Dm−1 det(∂x ) det(x) det(1 + xx)−n/2−1 ∈ E(−n − 1, ε).
+
+Now in the present case we have d = 1, e = 1, thus we get
+
+                   − [d (n − 1) + (e + 1) /2] = −n > −n − 1
+
+and so the result follows from Corollary 3.7.
+
+3.2    Proof of the L1 estimate
+We fix k and denote the spherical vector Φk,n = Φ−dk by simply Φ as before.
+In order to prove the necessary estimates for Φ, we first relate it to the “rank
+1” spherical vector
+
+                                Υ = Φ1,n = Φ−d .
+
+We now describe the key result in [DS2, Theorem 0.1] concerning the function Υ.
+Let τ = d−e−1
+          2    and let Kτ be the corresponding one-variable K-Bessel function;
+define an M -invariant function υ on the rank 1 orbit O1 = L · y1 ⊂ n ≈ n∗ by
+the formula
+                                      Kτ (z)
+                  υ (z [m · y1 ]) =          for z ∈ R+ , m ∈ M .
+                                       zτ
+Then writing dµ1 for the equivariant measure on O1 , we have
+                                      [1 = Υdλ
+                                      υdµ
+
+where dλ is the Lebesgue measure on n, and b denotes the Fourier transform
+of tempered distributions. This result is proved in Propositions 2.1 and 2.2 of
+[DS2]. For our present purposes, it is crucial that τ depends only on d and e
+but does not depend on n.
+    An immediate consequence of 3.5 is the relation
+
+                                       Φ = Υk .                              (5)
+
+This in turn implies a relation between the Fourier transforms of Φ and Υ which
+we now explain. We start with the following abstract situation:
+   Suppose A is a Lie group, χ is a positive character of A, and B ⊃ C are
+subgroups such that each of the homogeneous spaces A/B and A/C admit χ-
+equivariant measures dmA/B and dmA/C .
+
+                                          19
+Lemma 3.10 In the above situation, the space Z = B/C admits a B-invariant
+measure dz. Moreover, the formula
+                                     Z
+                           Cf (aB) =   f (az) dz
+                                                Z
+
+gives a well-defined operator C = CA,B,C : L1 (A/C) → L1 (A/B) satisfying
+                       Z                   Z
+                             [Cf ] dmA/B =      f dmA/C .                 (6)
+                             A/B                        A/C
+
+     Proof. By Lemma 5.2 for b ∈ B, c ∈ C, we get
+
+                        −1       |deta (Ad b)|        −1 |deta (Ad c)|
+                  χ (b)      =                 , χ (c) =               .
+                                 |detb (Ad b)|           |detc (Ad c)|
+
+Specializing to b = c, this implies
+
+                                      |detb (Ad c)|
+                                                    =1
+                                      |detc (Ad c)|
+
+and another application of 5.2 proves the existence of an invariant measure on
+B/C.
+   The left side of formula (6) gives a χ-equivariant mean on the space Cc (A/C)
+thus it agrees with the right side after suitable normalization of the various
+measures involved. On the other hand we have
+                           Z            Z
+                                       
+               |Cf (a)| =  f (az) dz  ≤   |f (az)| dz = C |f | (a)
+                                 Z                  Z
+
+     therefore for f in Cc (A/C) we get
+             Z                   Z                   Z
+                   |Cf | dmA/B ≤      C |f | dmA/B =                |f | dmA/C .
+              A/B                      A/B                    A/C
+
+  This shows that C extends to a bounded linear operator from L1 (A/C) →
+ 1
+L (A/B) such that the formula (6) continues to hold.
+  We apply the previous result to the situation where
+
+                     A = L, B = S = stab y1 , C = S ′ = stab y′
+
+with y1 = y1 + y2 + . . . + yk as before, and y′ = (y1 , y2 , . . . , yk ) ∈ O1 × . . . × O1 .
+The space O = L/S is the rank k orbit and hence by Lemma 2.1 carries a e2dkν -
+equivariant measure. On the other hand, the space O1 × . . . × O1 also carries a
+e2dkν -equivariant measure, viz. dµ′ = dµ1 × . . . × dµ1 ; moreover in this situation
+O′ = L/S ′ is an open subset whose complement has measure 0. Thus O′ also
+admits an e2dkν -equivariant measure. Thus by the previous lemma, obtain a
+well defined operator C = CL,S,S ′ : L1 (O′ ) → L1 (O) satisfying formula (6).
+
+
+                                             20
+   Now given a function f on O1 , we define a function f˘ on O by the following
+two-step procedure: first define f on O′ by
+
+                           f (l · y ′ ) = f (l · y1 ) · · · f (l · yk ) ,
+
+and then set
+
+                                            f˘ = Cf .
+
+   Then we have the following result:
+
+Lemma 3.11 For υ as above, put g = ῠ = Cυ, then we have
+
+                                         d = Φdλ.
+                                         gdµ
+
+   Proof. It suffices to prove
+                       Z
+                             e−ihx,yi g (y) dµ (y) = Φ (x) .
+                            y∈O
+
+To show this, we rewrite the left side as
+                      Z
+                                                         
+                         e−ihx,l·y i Cυ l · y 1 dµ l · y 1 .
+                                  1
+                                                                                     (7)
+
+Now we have
+                       
+          
+                        x, l · y 1 = hx, l · y1 i + · · · + hx, l · yk i .
+
+Thus setting
+
+                             η (l · y1 ) = exp (−i hx, l · y1 i) ,
+
+formula (7) becomes
+                                          Z
+                                              Cηυdµ.
+
+Now using the previous lemma, we can rewrite this as
+           Z             k Z
+                         Y                                              
+                   ′
+               ηυdµ =              f (l · yj ) η (l · yj ) dµ1 (l · yj ) = Υk = Φ.
+                         j=1
+
+
+
+    Proof. (of Proposition 3.1) In view of the previous lemma, it remains only
+to prove that g ∈ L1 (O, dµ). In turn, using Lemma 3.10, it suffices to show that
+υ ∈ L1 (O′ , dµ′ ), or equivalently that
+
+                                     υ ∈ L1 (O1 , dµ1 ).
+
+
+                                                21
+   This is essentially contained in Proposition 2.1 of [DS2]. The key point is
+that by Proposition 2.3 for k = 1, we get
+                        Z           Z
+                                        Kτ (z) dn−1
+                            υdµ1 =            z     dz.
+                         O1          R+   zτ
+
+Since the function Kτ (z) has exponential decay at infinity, it suffices to prove
+that the integral on the right converges at 0. For this we note that Kzτ τ(z) has a
+pole of order 2τ = d − e − 1 at 0 if τ > 0, and a logarithmic singularity if τ = 0.
+At any rate (dn − 1) − 2τ = d (n − 1) + e is greater than −1, which guarantees
+the convergence of the integral.
+
+3.3    Proof of the L2 estimate
+The key to the proof of Proposition 3.2 is a “stability” result for the function g
+defined in Lemma 3.11. To state this, we temporarily write gk,n and dµk,n for
+g and dµ, in order to emphasize dependence on k (the rank of the orbit) and n
+(the rank of the Jordan algebra). Thus Lemma 3.11 becomes
+
+                                  \
+                                gk,n dµk,n = Φk,n dλ.
+
+    We now recall the notation n1 , n0 , L1 , M1 etc., introduced in subsection 2.1.
+Thus n1 is a Jordan algebra of rank k (with same values of d and e as n). By
+applying the considerations of the previous sections to n1 we obtain a family
+of functions gj,k ; j = 1, ..., k, defined on the various L1 -orbits in n1 . We are
+particularly interested in the function
+
+                                         e
+                                         g = gk,k
+
+which is defined on the open orbit Oe in n1 . Now by definition we have n1 ⊂ n,
+and moreover we have O   e ⊂ O, where O is the rank k orbit in n. Thus we can
+                                         e The crucial “stability” result is the
+restrict the function g = gk,n from O to O.
+following:
+
+Lemma 3.12 With the above notation, we have g|Oe = e
+                                                   g.
+
+    Proof. The function ge is also defined by the analogous two-step procedure
+applied to the Jordan algebra n1 . We start with the M1 -invariant function υ  e
+on the rank 1 orbit Oe1 ⊂ n1 corresponding to the Bessel function Kτ /z τ . As
+observed after the definition υ, the parameter τ = (d − e − 1) /2 is independent
+of n. Thus we get
+
+                                                 e,
+                                        υ|Oe 1 = υ                              (8)
+
+which is the rank 1 version of the present lemma.
+   Next, we consider the open L1 -orbit O  e′ in O
+                                                 e1 × · · · × O
+                                                              e1 , and define the
+analogous function υe by the formula
+
+                         e (l · y ′ ) = υe (l · y1 ) · · · υe (l · yk )
+                         υ
+
+                                              22
+                               e′ and l in L1 . Comparing this with the definition of υ,
+for y ′ = (y1 , · · · , yk ) ∈ O
+and using formula (8) we deduce
+
+                                                e
+                                       υ|Oe ′ = υ
+
+Now the functions g and ge are defined by the integrals
+                                  Z
+                               
+                     g l · y1 =      υ (l · z) dz for l in L                        (9)
+                                  ZZ
+                               
+                     ge l · y 1 =    e (l · ze) de
+                                     υ           z for l in L1
+                                      e
+                                      Z
+
+where dz and de z are the invariant measures on the homogeneous spaces Z =
+S/S ′ ⊂ L/S ′ = O′ and Z e = (S ∩ L1 ) / (S ′ ∩ L1 ) ⊂ L1 / (S ′ ∩ L1 ) = O
+                                                                          e′ . How-
+ever, as in formula (2) we see that
+
+                              S = ((S ∩ L1 ) × L0 ) · U,
+                             S ′ = ((S ′ ∩ L1 ) × L0 ) · U .
+
+                      e′ ⊂ O′ , we have
+Thus in the imbedding O
+                                              e
+                                          Z = Z.
+
+Moreover, since both measures are L1 -invariant, we have
+
+                                       dz = de
+                                             z.
+
+Thus the two integrals in formula (9) coincide for l in L1 , and the result follows.
+
+    Let f 7→ fˇ denote the inverse Fourier transform which maps functions on n1
+to functions on n1 . Thus
+                                     Z
+                             ˇ
+                             f (y) =    eihx,yi f (x) dλ
+                                          n1
+
+where dλ is the Lebesgue measure on n1 .
+
+Lemma 3.13 Writing φe for the Jordan norm polynomial on n1 , we have
+                             d−(e+1)            
+                                       ed−(e+1) 
+                (Φk,kˇ) = e
+                            g φe      = e
+                                           gφ        .
+
+    Proof. The Fourier transform of tempered distributions is defined by ad-
+jointness from its action on Schwartz functions, and we have the relation
+
+                                     fď
+                                       dλ = f dλ.
+
+   Now by the definition of ge we have
+
+                                    ged
+                                      dµ = Φk,k dλ,
+
+                                               23
+where dµ is the equivariant measure on the open orbit O  e ⊂ n1 . Propositions 2.2
+and 2.3 imply that in polar coordinates, the measures dλ and dµ are given by
+Pke+1 Vkd d×        d d ×                                 e
+           k z and Pk Vk dk z respectively. Thus, writing φ for the Jordan norm
+polynomial on n1 , we get
+                                       d−(e+1)
+                                       
+                                dµ = φe        dλ.
+
+Combining these formulas we obtain the result.
+               e be the Cayley operator on n1 then for l ≥ 0 we have
+Lemma 3.14 Let D
+                                               
+                      el                       
+                     (D Φk,kˇ) = geφel+d−(e+1)  .
+
+   Proof. If f (x) is a Schwartz function on n1 and q(y) is a homogeneous
+polynomial on n1 , then we have (up to a scalar multiple)
+
+                                    (∂q f ˇ) = q fˇ,
+
+where ∂q is the constant coefficient differential operator on n1 with “symbol” q.
+Thus the proof of the Lemma consists in establishing that the above identity
+continues to hold when f (like Φk,k ) is a smooth function of polynomial growth
+such that fˇ ∈ L1 (n1 , dλ). This is fairly standard; indeed by adjointness we have
+the result
+
+                                 q[
+                                  fˇdλ = ∂q (f dλ),
+
+where the derivative on the right is the distributional derivative. Under the
+assumption on f , the right side equals (∂q f ) dλ, and the result follows.
+    We are now in a position to prove Proposition 3.2.
+    Proof. (of Proposition 3.2) The function g is M -invariant, thus by Propo-
+sition 2.3, it suffices to prove the convergence of the integral
+                    Z
+                                                   2         d
+                        |g(z1 y1 + . . . + zk yk )| Pkn−k+1 Vk d×k z.
+                      Ck
+
+By the previous Lemma, this can be rewritten as
+                Z
+                                                         d
+                    g(z1 y1 + . . . + zk yk )|2 Pkn−k+1 Vk d×
+                   |e                                        k z.
+                      Ck
+
+Using Proposition 2.3 we can further rewrite this as
+               Z         
+                         
+                   g |2 φet  dλ where t = d(n − k + 1) − (e + 1) .
+                  |e
+                 n1
+
+   Thus it suffices to prove that
+                                    
+                               2 et 
+                               g φ  ∈ L1 (n1 , dλ) .
+                              e                                              (10)
+
+
+                                          24
+    Now the map f 7→ fˇ extends as an isometry from L2 (n1 , dλ) to L2 (n1 , dλ)
+(after suitable normalizations of the Lebesgue measures). Thus we have
+
+                     f1 , f2 ∈ L2 (n1 , dλ) ⇒ fˇ1 fˇ2 ∈ L1 (n1 , dλ) ;      (11)
+
+we shall deduce (10) from (11) by a suitable choice of f1 , f2 .
+   Let us put
+
+                  s = t + 2 (e + 1 − d) = d(n − k − 1) + (e + 1) ;
+
+since n > k, we have s > 0. Now if we set
+
+                  f1 = D                e l2 Φk,k where l1 + l2 = s;
+                       e l1 Φk,k , f2 = D                                   (12)
+
+then by the previous lemma we have
+                                     l1 +l2 −2(e+1−d)        
+                    fˇ1 fˇ2  = ge2 φe                 2 et 
+                                                         = e
+                                                            g φ .          (13)
+
+    We now consider two cases: if G 6= Spn (C) we set l1 = 0 and l2 = s; if G =
+Spn (C), we set l1 = 1 and l2 = s − 1. In the former case we have l1 , l2 ≥ 0;
+while in the latter case, we have e = 1, whence s ≥ 2 and l1 , l2 ≥ 1. Thus in
+either case by the open orbit estimates of Lemmas 3.3 and 3.4, applied to the
+Jordan algebra n1 , we deduce that the functions f1 and f2 from formula (12)
+belong to L2 (n1 , d1 x). Thus formula (10) follows from (13) and (11).
+
+
+4     Proof of the main results
+We now explain how to deduce Theorems 0.1 and 0.2 from the previous results.
+As explained in the introduction, the arguments are very similar to those in
+[S1], [DS1] and [DS2]. Thus we shall limit ourselves to only sketching the proofs
+of the various results below.
+
+4.1     Proof of Theorem 0.1
+In order to prove Theorem 0.1, we introduce a number of spaces.
+    First of all, let I (−dk) ⊂ C ∞ (n) be the space of smooth vectors in the
+degenerate principal series defined in section 3.The representation π = π−dkν
+of the group G on this space is by “fractional linear transformations”, and we
+have
+                                                           
+                    [π (l) f ] (x) = e−dkν (l) f Ad l−1 [x] for l in L,
+               [π (exp x′ ) f ] (x) = f (x + x′ ) for x′ in n.
+
+By [S3], the space E(−dk) has an irreducible unitarizable spherical (g, K)-
+submodule V which we also regard as a subspace of C ∞ (n). Thus by Harish-
+Chandra theory, the Hilbert space closure H of V with respect to the (g, K)-
+invariant norm carries an irreducible unitary representation of G.
+
+                                            25
+    For convenience, we first describe H as the closure of a G-invariant space.
+For this we introduce the space V consisting of those vectors in I(−dk) whose
+restriction to K, and subsequent expansion in K-isotypic components only in-
+volves the K-types of V. Since V is (g, K)-invariant, the space V is G-invariant
+and we have the following result.
+
+Lemma 4.1 The functions in V have finite H-norm and H is the closure of
+V.
+
+    Proof. This is a consequence of a general result due to Casselman-Wallach
+on the smooth vectors of a representation. In the present situation, one can also
+give an alternative proof along the lines of the remark in section 2.4 of [DS2] as
+follows.
+    First of all, the K-types of V have multiplicity 1, and have highest weights
+of the form
+
+                              m 1 γ1 + · · · + m k γk ,
+
+where m1 ≥ · · · ≥ mk ≥ 0 and γ1 , · · · , γk are as in subsection 1.2. Moreover
+the H-norm on each K-type is computed explicitly in [S3] and the ratio of the
+H-norm to the L2 (K)-norm grows at most polynomially in (m1 , · · · , mk ). On
+the other hand by the Riemann-Lebesgue lemma for f in V, the L2 (K)-norms
+of its K-isotypic components decay rapidly. Thus such an f will have finite
+H-norm. Evidently since V ⊂ V, the closure of V is H as well.
+    Next recall the space HO = L2 (O, dµ); by Mackey theory, this space carries
+a natural irreducible unitary representation πO of P , which is given by the
+following explicit formulas:
+                                                          
+                    [πO (l) ψ] (y) = edkν (l) ψ Ad l−1 [y] for l in L
+              [πO (exp x) ψ] (y) = e−ihx,yi ψ (y) for x in n ,
+
+where hx, yi is the normalized Killing form of subsection 1.4. We shall prove
+Theorem 0.1 by constructing a unitary P -isomorphism I between (π|P , H) and
+(πO , HO ).
+   We first define I on a suitable subspace of H. For this, let C (G) be the
+convolution algebra of smooth L1 functions on G. Then by standard arguments,
+π extends to a representation of C (G) on V and we define
+
+                             W = π (C (G)) Φ ⊂ V ,
+
+where Φ = Φ−dk is the spherical vector in I (−dk). Since G = P K and Φ is
+K-fixed, we also have
+
+                                W = π (C (P )) Φ;
+
+and we shall prove the following result:
+
+
+
+                                         26
+Lemma 4.2 For each f in W there is a unique I (f ) ∈ HO such that we have
+the equality
+
+                                  f dλ = I\
+                                          (f ) dµ,
+
+of tempered distributions. Furthermore, for all F ∈ C (P ) we have
+
+                             I ◦ π (F ) = πO (F ) ◦ I .                         (14)
+
+   Proof. The key step is, of course, 3.2 which shows that for the function
+Φ = Φ−dk we have
+                                          d
+                                    Φdλ = ψdµ.
+
+where ψ ∈ HO ; or, equivalently,
+                                   Z
+                          Φ(x) =           e−ihx,yi ψ(y)dµ(y).
+                                       O
+
+Now for l in L, by Lemma 2.1 we have
+Z                                           Z
+                                                                       
+    e−ihx,yi [πO (l) ψ] (y)dµ(y) = edkν (l)     e−ihx,yi ψ Ad l−1 [y] dµ(y)
+  O                                           O
+                                                        Z
+                                    dkν       −2dkν
+                                 =e     (l) e       (l)    e−ihx,Ad l[y]i ψ(y)dµ(y)
+                                                         O
+                                              Z
+                                                 e−ihAd l [x],yi ψ(y)dµ(y) = π (l) f
+                                                          −1
+                                 = e−dkν (l)
+                                                   O
+               ′
+Similarly for x in n, we have
+ Z                                        Z
+                                            e−ihx+x ,yi ψ(y)dµ(y) = π (exp x′ ) f.
+                                                   ′
+    e−ihx,yi [πO (exp x′ ) ψ] (y) dµ(y) =
+  O                                            O
+
+   Thus for any F ∈ C (P ), we have
+
+                          [π (F ) Φ] dλ = ([πO (F ) ψ] dµb)
+
+and we can define I by the formula
+
+                             I (π (F ) Φ) = πO (F ) ψ.
+
+Then I satisfies the conditions of the lemma. The uniqueness is clear.
+   We can now finish the proof of Theorem 0.1.
+   Proof. (of Theorem 0.1) Given the previous lemma, the proof of the result
+proceeds along lines similar to [S1] and [DS2, ]. By the previous lemma, the
+space W1 = I (W) is a C (P )-invariant subspace of HO , and moreover we can
+equip it with a second P -invariant norm, namely that transferred from H. Now
+as explained in [S1, 3.3], it follows from [P] that W1 contains a further C (P )-
+invariant subspace W2 on which the two norms coincide (up to a scalar multiple
+which we normalize to be 1 by rescaling I).
+
+                                             27
+    Since HO is irreducible, W2 is dense in HO and thus HO can be regarded
+as the closure of W2 with respect to the H-norm. It follows that the two norms
+agree on W1 as well, and thus the map
+
+                                   I −1 : W1 → W
+
+extend to an isometric P -invariant imbedding J of HO into H. Now the image
+of J is closed, and contains a G-invariant subspace (namely W); thus since H is
+an irreducible representation, it follows that J is surjective as well. Thus J is a
+unitary intertwining operator between (πO , HO ) and (π|P , H). The required ex-
+tension of (πO , HO ) to G is now given by simply transferring the representation
+from (π, H) via J −1 .
+
+4.2    Proof of Theorem 0.2
+We now study tensor products of our representations πO . The analogous study
+for conformal groups of Euclidean Jordan algebras was conducted in [DS1].
+Since the statements and proofs from [DS1] can be transferred to our present
+(non-Euclidean) setting without substantial changes, we will only sketch some
+of the arguments below.
+    Fix s ≥ 2 and a collection of positive integers k1 , . . . , ks satisfying the con-
+dition
+
+                               k = k1 + · · · + ks ≤ n.
+
+For each i = 1, . . . , s, let Oi be the L-orbit on n of rank ki , with L-equivariant
+measure dµi . Let πOi be the unitary representation of G on the space L2 (Oi , dµi )
+as described in theorem 0.1. We wish to study the tensor product representation
+
+                                Π = πO1 ⊗ . . . ⊗ πOs
+
+which can be realized explicitly on the space L2 (O1 × . . . × Os , dµ1 × . . . × dµs ).
+   Let y1 , · · · , yn be as in subsection 1.3, and define
+
+  vi = ymi +1 + ymi +2 + . . . + ymi +ki , where mi = k1 + . . . + ki−1 , 1 ≤ i ≤ s.
+
+Then vi is an orbit representative for Oi ; v = v1 + · · · + vs is an orbit represen-
+tative for the rank k orbit O; and the L-orbit of
+
+                                  v ′ = (v1 , · · · , vs )
+
+is an open subset of O1 × . . . × Os with full measure. We denote by S ′ and S
+the isotropy subgroups of v ′ and v, respectively. In the notation of subsection
+2.1, we have v = y1 , and thus
+
+                                 S = (H1 × L0 ) · U .
+
+It is easy to see that S ′ can then be written as
+
+                                 S ′ = (H1′ × L0 ) · U ,
+
+                                            28
+where H1′ is a certain reductive subgroup of H1 . We now change the notation
+slightly and write G′ for H1 and H ′ for H1′ .
+    Example. Take G = E7(7) , s = 2 and k1 = 1, k2 = 2. Then k = n = 3
+and S = G′ (the stabilizer of the identity element of n – the exceptional Jordan
+algebra of dimension 27). In this case we have G′ = F4(4) and S ′ = H ′ = Spin4,5
+(cf. [A, p. 119]).
+    In general, X = G′ /H ′ is a reductive homogeneous space, and we write
+    G′
+IndH ′ 1 for the quasiregular representation of G′ on L2 (X). We decompose this
+using the Plancherel measure dρ and the corresponding multiplicity function
+m:H  b → {0, 1, 2, . . . , ∞}, i.e.,
+                                           Z ⊕
+                                     ′
+                              IndGH′   1 ≃     m(σ)σ dρ(σ).
+                                               c′
+                                               G
+
+We define a map Θ from irreducible unitary representations of G′ to unitary
+representations of P defined as follows
+
+                              Θ(σ) = IndP
+                                        SN (Eσ ⊗ χv ),
+
+where Eσ denotes the trivial extension of σ to S = (G′ × L0 ) · U , and χv is the
+unitary character of N defined by
+
+                                  χv (exp x) = e−ihv,xi .
+
+An easy application of Mackey theory shows that all representations Θ(σ) are
+unitary irreducible representations of P , and Θ(σ) ≃ Θ(σ ′ ) if and only if σ ≃ σ ′ .
+
+Proposition 4.3 The restriction of Π to P decomposes as follows
+                              Z ⊕
+                      Π|P ≃       m(σ)Θ(σ) dρ(σ),                                (15)
+                                          c′
+                                          G
+
+   Proof. This is proved as in [DS1, Lemma 2.1] — here is a sketch of the
+argument. We define an operator F from the space of Π to functions on P by
+the formula
+                                    
+              [F f ] (ln) = χv lnl−1 f (l · v ′ ), l ∈ L, n ∈ N.
+
+It is an easy exercise to verify that F gives a unitary isomorphism
+
+                               Π|P ≃ IndP
+                                        S ′ N (1 ⊗ χv ).
+
+   Next, using induction by stages we obtain an isomorphism
+                                                            
+                 IndP
+                    S N
+                      ′ (1 ⊗ χ v ) ≃ IndP
+                                        SN   (IndS
+                                                 S ′ 1) ⊗ χ v .
+
+
+A final easy calculation shows that
+                                                   Z   ⊕
+                                           ′
+                  IndSS ′   1≃E       IndG
+                                         H′    1 ≃           m(σ) (Eσ) dρ(σ)
+                                                     c′
+                                                     G
+
+
+                                                29
+Combining the various isomorphisms, we obtain the result.
+   Let κ be a unitary representation of G on a Hilbert space H, and R be a
+subgroup of G. We shall write A(κ, R) for the von Neumann algebra generated
+by the operators {κ(g)|g ∈ R}. If G is a type I group [M], then for irreducible
+κ one has A(κ, G) = B (H) — the full algebra of bounded operators on H. To
+extend the P -decomposition of Π from formula (15) to the G- decomposition,
+we require the following
+
+Proposition 4.4 A(Π, G) = A(Π, P ).
+
+    Proposition 4.4 was proved in [DS1, 4.4] for conformal groups of Euclidean
+Jordan algebras. The proof given in [DS1] combines the low rank theory of [Li1],
+[Li2] for classical groups, and Jordan algebra techniques for the exceptional
+groups. The arguments extend to our present setting without any significant
+modifications. For the readers convenience, we outline the steps of the argument
+in Appendix 5.2.
+    Proof. (of Theorem 0.2) Consider the direct integral decomposition of Π
+                                  Z ⊕
+                              Π=      m(κ)κ dη(κ)
+
+into irreducible representations of G. Then
+               Z ⊕                       Z ⊕
+    A(Π, P ) ⊆      m(κ)A(κ, P ) dη(κ) ⊆     m(κ)A(κ, G) dη(κ) = A(Π, G).
+
+The equality of Proposition 4.4 is possible only when the following conditions
+are satisfied (for almost every κ with respect to dη):
+
+   • κ|P is irreducible (then A(κ, P ) = A(κ, G));
+   • If κ|P ≃ κ′ |P , then κ ≃ κ′ .
+
+    In other words, in this case (almost) every irreducible representation Θ(σ)
+from the spectrum of Π|P extends uniquely to a certain irreducible representa-
+tion of G, which we denote by θ(σ); and the P -decomposition (15) gives rise to
+the G-decomposition
+                                 Z ⊕
+                            Π=       m(σ)θ(σ) dρ(σ)
+                                      c′
+                                      G
+
+and the theorem follows.
+   Example. Again, take G = E7(7) , s = 2 and k1 = 1, k2 = 2. Then the
+map σ 7→ θ(σ) establishes a correspondence between the spectrum of Π and the
+spectrum of the rank 1 reductive symmetric space F4(4) /Spin(4, 5). In other
+words, we obtain a duality between (some subsets of) the unitary duals of two
+exceptional groups: split F4 on one side and split E7 on the other side. As
+with Howe’s duality correspondence (the usual θ-correspondence), we expect
+that this new duality will have smooth and global analogues.
+
+                                           30
+5     Appendix
+5.1    Measures and Jacobians
+If F : X → Y is a diffeomorphism between manifolds and dx is a measure on
+X, the pushforward of dx is the measure F∗ dx on Y defined by
+                        Z              Z
+                           f [F∗ dx] =   f (F (x)) dx.
+                            Y             X
+
+                                    n
+If dλ is the Lebesgue measure on R and A : U → V is a diffeomorphism between
+open sets in Rn , then the “change of variables” formula for the Lebesgue integral
+says
+                      Z                               Z
+                          f (A (x)) |det DA (x)| dλ =   f dλ
+                        U                              V
+
+where DA (x) : Rn → Rn is the differential of A at x in U . In other words, we
+have
+
+                            A∗ [|det DA (x)| dλ] = dλ or
+
+or equivalently
+                                                                −1
+                   A∗ dλ = gdλ where g (A (x)) = |det DA (x)|
+
+   A measure on an open set U ⊂ Rn will be called regular if it is of the form
+φdλ where φ is a smooth positive function. If A : U → V is a diffeomorphism,
+then we have
+
+            A∗ (φdλ) = ψdλ where ψ (A (x)) = φ (x) / |det DA (x)| ;
+
+thus A∗ maps regular measures to regular measures. If dx is a measure on a
+smooth manifold X and U is a coordinate open set, then the pushforward of
+dx|U under the coordinate map is a measure on an open set in Rn , which we
+shall call the “local expression” of dx. We shall say that dx is regular if each
+of these local expressions is a regular measure in the earlier sense. It follows
+from our discussion that if F : X → Y is a diffeomorphism and dx is a regular
+measure on X, then F∗ dx is a regular measure on Y .
+    Suppose X and Y are manifolds with regular measures dx and dy, and F :
+X → Y is a diffeomorphism. The Jacobian of F is the function JF (x) =
+JF,dx,dy (x) on X satisfying
+                       Z             Z
+                          f (y) dy = JF (x) f (F (x)) dx.
+
+or, equivalently
+
+                                  F∗ [JF dx] = dy
+
+
+                                         31
+If we have another diffeomorphism G : Y → Z, where Z is a manifold with
+regular measure dz, then
+
+                    JGF (x) = JF (x)JG (y) where y = F (x)                     (16)
+
+If X and Y are open sets in Rn , and dx = φdλ, dy = ψdλ, then it is easy to see
+that
+                                       |det DF (x)| ψ (x)
+                          JF,dx,dy =                      .
+                                            φ (F (x))
+
+If X and Y are smooth manifolds, then we can determine the Jacobian in
+a similar manner by passing to local coordinates and using formula (16). In
+particular we see that for regular measures, the Jacobian is a well-defined smooth
+positive function.
+    The following lemma will be quite useful in calculating Jacobians.
+
+Lemma 5.1 Suppose X and Y are manifolds with regular measures dx and
+dy; let x ∈ X, y ∈ Y , and fix linear bases for the tangent spaces Tx X, Ty Y .
+                                                                               F
+Then there is a positive constant c, such that for any diffeomorphism X → Y
+satisfying F (x) = y, we have
+
+                               JF (x) = c |det DF (x)|
+
+where we regard the differential DF (x) : Tx X → Ty Y as a matrix for the above
+bases.
+
+   Proof. If X and Y are open sets in Rn , and dx = φdλ, dy = ψdλ, then
+
+                              |det DF (x)| ψ (x)
+                 JF,dx,dy =                      = c |det DF (x)| ,
+                                    φ (y)
+
+where the determinant is computed for the standard basis of Tx X = Ty Y = Rn .
+If we use different bases then the scalar c is replaced by a different scalar, which
+is still independent of F . Passing to local coordinates, we obtain the result in
+general.
+    Now suppose X is a smooth manifold with the action of a Lie group G, and
+let χ be a positive multiplicative character of G. A regular measure dx is called
+χ-equivariant
+
+                          g∗ dx = χ (g) dx for all g in G.
+
+Equivalently
+
+                   Jg,dx,dx (x) = χ (g)−1 for all x ∈ X, g ∈ G.
+
+For example, the Lebesgue measure dλ on Rn is equivariant by the character
+     −1
+|det| of the group GL (Rn ).
+
+
+                                         32
+   If X is a homogeneous space for G then for x in X, the tangent space Tx X
+can be naturally identified with g/gx , where gx is the Lie algebra of the stabilizer
+Gx of x. Moreover, for g in G we have
+
+                           Dg = Ad g : g/gx → g/gg·x .
+
+
+Lemma 5.2 A G-homogeneous space X admits a χ-equivariant measure if and
+only if
+                   −1               
+              χ (h) = detg/gx (Ad h) for all h ∈ Gx .
+
+    This result is well-known and can be proved in a manner analogous to The-
+orem I.1.9 in [H]. Here is a quick argument for the necessity of the condition.
+If h is in Gx , then we have
+                                                                  
+                 χ (h)−1 = Jh (x) = c |det Dh | = c detg/gx (Ad h) .
+
+Specializing to h = 1 ∈ G, we deduce that c = 1.
+
+Corollary 5.3 If G is reductive, then the condition of the previous lemma be-
+comes
+
+                      χ (h) = |detgx (Ad h)| for all h ∈ Gx .
+
+5.2    Low rank representations
+Let τ be a unitary representation of G. Consider its restriction to P , and its
+further restriction to N . Since N is abelian, the restriction τ |N decomposes
+into a direct integral of unitary characters of N . This decomposition defines a
+projection valued measure on the dual space N ∗ , which we identify with n. If
+this measure is supported on a single non-open orbit Or ⊂ N , we say that τ a
+low-rank representation of G and write
+
+                                   rankN τ = r.
+
+   An element x1 is a primitive idempotent in a Jordan algebra N , and we can
+consider the associated Peirce decomposition
+                                              1
+                      N = N (x1 , 1) + N (x1 , ) + N (x1 , 0).
+                                              2
+Observe that the spaces N (x1 , 1) and N (x1 , 0) are the Jordan algebras of ranks
+1 and n − 1, respectively, with the respect to the Jordan structure inherited
+from N.
+   We will write N1 and N0 for N (x1 , 1) and N (x1 , 0), respectively. Similarly,
+we write G0 for the conformal group of N0 , P0 = L0 N0 for the Siegel parabolic
+subgroup of G0 , etc.
+   Below are the examples of N0 and G0 for several different groups G :
+
+                                         33
+   • For G = Op+2,p+2 , we have N0 = R (rank 1 Jordan algebra), and G0 =
+     GL2 (R).
+   • If G = Spn,n , then G0 = Spn−1,n−1 .
+   • If G = E7(7) , then N0 = R6,6 (rank 2 Jordan algebra), and G0 = O6,6 .
+    • If G = E7 (C), then G0 = O12 (C).
+            L               L
+    Set f = ni=2 gε1 −εi ⊕ ni=2 gε1 +εi and n′ = f + n1 . Then n′ is a two-step
+nilpotent subalgebra of g with the center n1 .
+    Any generic unitary irreducible representation of the group N ′ is determined
+by the unitary character of its center N1 . We denote by ρt the unitary irreducible
+representation of N ′ which restricts to the multiple of the character χt on N1 ,
+t ∈ N1∨ = N1∗ \{0}.
+    Consider now a subgroup G0 N ′ of G. We can view G0 as a subgroup of a
+symplectic group Sp(f) associated with the standard skew-symmetric bilinear
+form on f. Hence we can use the oscillator representation of Sp(f) to extend the
+representation ρt of N ′ to a representation of G0 N ′ which we denote by ρet .
+    Let σ be a unitary representation of G, rankN σ = r, 0 < r < n. Without
+loss of generality we may assume that σ has no N1 -fixed vectors. Then by
+Mackey theory, we can write down the decomposition
+                                       Z ⊕
+                             σ|G0 N =
+                                   ′         κt ⊗ ρet dt,
+                                        N1∨
+
+where all κt are unitary representations of G0 .
+   Proceeding as in [DS1, 3.1], we verify that all of the representations κt are in
+turn the low-rank representations of G0 . More precisely, we have the following
+
+Lemma 5.4 Let σ be a low-rank representation of G, rankN σ = r, 0 < r < n.
+Then for any t ∈ N1∨ the N0 -spectrum of the representation κt is supported on
+a single L0 -orbit, and rankN0 κt = r − 1.
+
+   The next technical lemma is proved exactly as in [DS1, 3.2]:
+
+Lemma 5.5 If for all t ∈ N1∨ one has A(κt , G0 ) = A(κt , P0 ), then
+              Z ⊕                 !     Z ⊕                       !
+                                                                ′
+         A         κt ⊗ ρet dt, G0 ⊆ A         κt ⊗ ρet dt, P0 N .
+                   N1∨                        N1∨
+
+
+
+Theorem 5.6 Let σ be a representation of G, rankN σ = r, 0 < r < n. Then
+
+                               A(σ, G) = A(σ, P ).
+
+
+
+
+                                        34
+    Proof. The proof of the theorem is based on the fact that G0 and P generate
+G, so it is enough to verify that A(σ, G0 ) ⊆ A(σ, P ). Since P0 N ′ is a subgroup
+of P, by the Lemma above the assertion of the theorem is equivalent to the
+claim that for any t ∈ N1∨
+
+                             A(κt , G0 ) = A(κt , P0 ).
+
+By the Lemma 5.4, all κt have rank r − 1. Proceeding in the same manner,
+we reduce the statement of the theorem to that about rank 0 representations of
+the certain (classical) group G00 . Since all rank 0 representations are the direct
+integrals of characters, and any character of G00 is determined by its restriction
+to the Siegel parabolic P00 ⊂ G00 , the theorem follows.
+    We now consider the tensor product
+
+                              Π = πO1 ⊗ . . . ⊗ πOs ,
+
+for k = k1 + k2 + · · · + ks < n. Then Π is low-rank representation of G and
+rankN Π = k. Applying the theorem above to Π, we obtain the statement of
+Proposition 4.4 for k < n.
+    It remains to check Proposition 4.4 for k = n. For all groups G except
+Op+2,p+2 , Op+4 (C) and E7(7) , E7 (C) the statement of the proposition follows
+from the results of [Li2], since all the representations form the spectrum of Π
+appear in the Howe duality correspondence for appropriate stable range dual
+pairs (G1 , G). For the exceptional cases listed above, the argument can be
+constructed along the lines of Section 4 of [DS1].
+
+5.3     Tables of groups and symmetric spaces
+In the table below we list the various groups G arising from the Tits-Kantor-
+Koecher construction for non-Euclidean Jordan algebras; together with the as-
+sociated symmetric spaces K/M and L/H; and the crucial root multiplicities d
+and e in Σ(tC , kC ). The rank of the Jordan algebra is n in each case, except for
+Op+4 (C), Op+2,p+2 where the rank is 2, and E7(7) , E7 (C) where the rank is 3.
+
+
+         G                K/M                        L/H                 d   e
+      GL2n (R)   O2n /(On × On )          GLn (R)×GLn (R)/GLn (R)        1   0
+      O2n,2n     (O2n × O2n )/O2n         GL2n (R)/Spn (R)               2   0
+      E7(7)      SU8 /Sp4                 R∗ ×E6(6) /F4(4)               4   0
+      Op+2,p+2   [Op+2 ]2 /[O1 × Op+1
+                                  2
+                                      ]   R∗ × Op+1,p+1 /Op,p+1          p   0
+      Spn (C)    Spn /Un                  GLn (C)/On (C)                 1   1
+      GL2n (C)   U2n /(Un × Un )          GLn (C)×GLn (C)/GLn (C)        2   1
+      O4n (C)    O4n /U2n                 GL2n (C)/Spn (C)               4   1
+      E7 (C)     E7 /(E6 × U1 )           C∗ ×E6 (C)/F4 (C)              8   1
+      Op+4 (C)   Op+4 /(Op+2 × U1 )       C∗ × Op+2 (C)/Op+1 (C)         p   1
+      Spn,n      (Spn × Spn )/Spn         GLn (H)/On∗                    2   2
+      GL2n (H)   Sp2n /(Spn × Spn )       GLn (H)×GLn (H)/GLn (H)        4   3
+
+                                          35
+In this table we list the various homogeneous spaces X = G′ /H ′ that arise in
+the θ-correspondence of Theorem 0.2.
+
+                G                                X
+             GL2n (R)     GLk (R)/ [GLk1 (R) × · · · × GLks (R)]
+             O2n,2n       Spk (R)/ [Spk1 (R) × · · · × Spks (R)]
+                           Spin4,5 /Spin4,4 (k1 = 1, k2 = 1)
+             E7(7)
+                           F4(4) /Spin4,5        (k1 = 2, k2 = 1)
+             Op+2,p+2     SOp,p+1 /SOp,p (k1 = 1, k2 = 1)
+             Spn (C)      Ok (C)/ [Ok1 (C) × · · · × Oks (C)]
+             GL2n (C)     GLk (C)/ [GLk1 (C) × · · · × GLks (C)]
+             O4n (C)      Spk (C)/ [Spk1 (C) × · · · × Spks (C)]
+                            Spin9 (C)/Spin8 (C) (k1 = 1, k2 = 1)
+             E7 (C)
+                            F4 (C)/Spin9 (C)          (k1 = 2, k2 = 1)
+             Op+4 (C)     SOp+1 (C)/SOp (C) (k1 = 1, k2 = 1)
+                                                   
+             Spn,n        Ok∗ / Ok∗1 × · · · × Ok∗s
+             GL2n (H)     GLk (H)/ [GLk1 (H) × · · · × GLks (H)]
+
+
+
+References
+[A]    Adams, J.F., Lectures on exceptional Lie groups, University of Chicago
+       Press, Chicago 1996
+[BK] Braun, H. and Koecher, M., Jordan-Algebren, Springer, Berlin – New
+     York 1966
+[DS1] Dvorsky, A. and Sahi, S., Tensor products of singular representations and
+      an extension of the θ-correspondence, Selecta Math. 4 (1998), 11-29
+[DS2] Dvorsky, A. and Sahi, S., Explicit Hilbert spaces for certain unipotent
+      representations II, Invent. Math. 138 (1999), 203–224
+[H]    Helgason, S., Groups and Geometric Analysis, Mathematical surveys and
+       monographs v. 83, Amer. Math. Soc., Providence 2000
+[KS] Kostant, B. and Sahi, S., Jordan algebras and Capelli identities, Invent.
+     Math. 112 (1993), 657–664
+[Li1] Li, J.-S., Singular unitary representations of classical groups, Invent.
+      Math. 97 (1989), 237–255
+[Li2] Li, J.-S., On the classification of irreducible low rank unitary representa-
+      tions of classical groups, Comp. Math 71 (1989), 29-48
+[Lo]   Loos, O., Bounded symmetric domains and Jordan pairs, Mathematical
+       Lectures, University of California, Irvine 1977
+
+
+                                        36
+[M]    Mackey, G., The theory of unitary group representations, University of
+       Chicago Press, Chicago 1976
+[Op] Opdam, E., Dunkl operators, Bessel functions and the discriminant of a
+     finite Coxeter group, Compositio Math. 85 (1993), 333-373
+[OS] Oshima, T. and Sekiguchi, J., The restricted root system of a semisimple
+     symmetric pair, In: Adv. Stud. Pure Math. 4, 433-497, North-Holland,
+     Amsterdam 1984
+[P]    Poguntke, D., Unitary representations of Lie groups and operators of
+       finite rank, Ann. of Math. (2) 140 (1994), 503-556
+[S1]   Sahi, S., Explicit Hilbert spaces for certain unipotent representations, In-
+       vent. Math. 110 (1992), 409–418
+[S2]   Sahi, S., Unitary representations on the Shilov boundary of a symmetric
+       tube domain, In: Contemp. Math. v. 145 (1993), 275-286
+[S3]   Sahi, S., Jordan algebras and degenerate principal series, J. reine angew.
+       Math. 462 (1995), 1–18
+[SS]   Sahi, S. and Stein, E., Analysis in matrix space and Speh’s representation,
+       Invent. Math. 101 (1990), 379-393
+[Sc]   Schlichtkrull, H., Hyperfunctions and harmonic analysis on symmetric
+       spaces, Birkhäuser, Boston 1984
+[Sh]   Shimura, G., Generalized Bessel functions on symmetric spaces, J. reine
+       angew. Math. 509 (1999), 35-66
+[V]    Vogan, D., Singular unitary representations, In: Lect. Notes Math. 880,
+       506-535, Springer, Berlin-New York 1980
+
+
+
+
+                                        37
+

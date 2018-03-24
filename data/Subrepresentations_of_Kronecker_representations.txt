@@ -1,0 +1,812 @@
+                                                    Subrepresentations of Kronecker
+                                                           Representations
+                                                                                        Yang Han ∗
+arXiv:math/0403088v2 [math.RT] 18 Apr 2005
+
+
+
+
+                                               Institute of Systems Science, Academy of Mathematics and Systems
+                                                                             Science,
+                                                    Chinese Academy of Sciences, Beijing 100080, P.R. China.
+                                                                      E-mail: hany@iss.ac.cn
+
+
+                                             Abstract : Translated into the language of representations of quivers, a challenge in matrix pencil
+                                             theory is to find sufficient and necessary conditions for a Kronecker representation to be a subfactor of
+                                             another Kronecker representation in terms of their Kronecker invariants. The problem is reduced to
+                                             a numerical criterion for a Kronecker representation to be a subrepresentation of another Kronecker
+                                             representation in terms of their Kronecker invariants. The key to the problem is the calculation
+                                             of ranks of matrices over polynomial rings. For this, a generalization and specialization approach
+                                             is introduced. This approach is applied to provide a numerical criterion for a preprojective (resp.
+                                             regular, preinjective) Kronecker representation to be a subrepresentation of another preprojective
+                                             (resp. regular, preinjective) Kronecker representation in terms of their Kronecker invariants.
+
+
+
+
+                                             Introduction
+                                             The classification of Kronecker representations was started by Weierstrass in 1867 and
+                                             completed by Kronecker in 1890. A natural problem is to classify the subrepresentations
+                                             of Kronecker representations, i.e., the pairs (N, M) in which N is a subrepresentation
+                                             of a Kronecker representation M, just as has been done for uniserial rings by Ringel
+                                             and Schmidmeier [9]. However this problem is hopeless to solve completely: Indeed,
+                                                ∗
+                                                 The author is supported by Project 10201004 NSFC and OSRF EDC. 2000 Mathematics Subject
+                                             Classification: 16G20, 15A22, 15A21
+
+
+
+
+                                                                                                1
+this problem is clearly equivalent to classifying those representations of the quiver
+                                             γ r
+                                          r 1✲ ✲
+                                             γ
+                                       β1 α2 β2
+                                          ❄
+                                          r    1 ❄
+                                               ✲
+                                               ✲r
+                                             α2
+
+which satisfy the relations β2 γ1 − α1 β1 = β2 γ2 − α2 β1 = 0 and which are such that
+the maps β1 and β2 are inclusion maps [1]. For this, one would have to classify the
+representations of the quiver
+                                        α✲1   β2
+                                        r    ✲ r✛    r
+                                            α2
+which are such that the map β2 is an inclusion map. This problem is clearly wild
+[8]. Nevertheless we may study the subrepresentations of Kronecker representations in
+another interesting way, namely, to find a numerical criterion for a Kronecker represen-
+tation to be a subrepresentation of another Kronecker representation in terms of their
+Kronecker invariants. Later on we will see that the solution of this problem is also the
+solution of the first part of the challenge below.
+    Our original motivation is based on a challenge in matrix pencil theory. In [7, p.
+329] the following question, which is closely related to pole placement, non-regular
+feedback, dynamic feedback, zero placement and early-stage design in control theory
+is declared to be a “challenge” by the authors.
+    Recall that a matrix pencil over a field K is a matrix λE + H where λ is an in-
+determinate and E, H are matrices over K of the same size. Two matrix pencils
+λE1 + H1 and λE2 + H2 of the same size are said to be strictly equivalent, denoted
+λE1 + H1 ∼ λE2 + H2 , if there exist invertible constant matrices P and Q such that
+λE1 + H1 = P (λE2 + H2 )Q.
+    Challenge. [7] Let E, H ∈ R(m+n)×(p+q) and E ′ , H ′ ∈ Rm×p . Find necessary and
+sufficient conditions in terms of Kronecker invariants of the matrix pencils λE +H and
+λE ′ + H ′ for the existence of matrix pencils F12 (λ), F21 (λ) and F22 (λ) such that λE +
+         λE ′ + H ′ F12 (λ)
+H ∼                              holds. Moreover, provide an algorithm for constructing
+            F21 (λ) F22 (λ)
+F12 (λ), F21 (λ) and F22 (λ) whenever a solution exists.
+    The following was mentioned in [5, p. 62] : “The problem of giving necessary and
+sufficient conditions for the existence of a matrix pencil with prescribed Kronecker
+invariants and a prescribed arbitrary subpencil remains open and seems to be very
+difficult.” However, partial answers are known when λE + H and λE ′ + H ′ are both
+regular [2, 10, 11]; when λE + H is regular and λE ′ + H ′ is arbitrary [4]; when λE + H
+is arbitrary and λE ′ + H ′ is regular [5]; when λE + H has rank equal to the number
+of its rows and λE ′ + H ′ has rank equal to the number of its columns [3].
+
+                                                 2
+    Three approaches, i.e., matrix pencil approach, polynomial approach, and geometric
+approach, have been used to attack the Challenge, see [7] and the references cited there.
+In this paper we provide the fourth approach, namely representations of quivers. Here
+we focus on the first part of the challenge.
+    The contents of this paper is organized as follows: In section 1, we first translate the
+Challenge into the language of representations of quivers. Thus the Challenge is found
+equivalent to finding sufficient and necessary conditions for a Kronecker representation
+to be a subfactor of another Kronecker representation in terms of their Kronecker in-
+variants. Then the problem is reduced to finding a numerical criterion for a Kronecker
+representation to be a subrepresentation of another Kronecker representation in terms
+of their Kronecker invariants. And thus the problem becomes fairly elementary. The
+key point is to calculate the ranks of matrices over polynomial rings. Finally we extend
+the underlying field from the field of real numbers R to the field of complex numbers
+C and more generally we work on an arbitrary algebraically closed field K. Thus the
+Kronecker invariants of a Kronecker representation can be expressed simply by a set of
+positive integers. In section 2, we consider the homomorphisms between two Kronecker
+representations, i.e., the matrix pairs that satisfy two equations [1]. We partition such
+a matrix pair into a block matrix pair. Via easy calculations one can learn the explicit
+form of each block in the matrix pair. This is very useful. In section 3, we obtain a
+numerical criterion for a preprojective (resp. regular, preinjective) Kronecker represen-
+tation to be a subrepresentation of another preprojective (resp. regular, preinjective)
+Kronecker representation in terms of their Kronecker invariants. This follows from the
+calculation of the rank of matrices over polynomial rings using the generalization and
+specialization approach.
+
+
+1      Reduction of the Challenge
+
+1.1    Translation into the Language of Representations of Quiv-
+       ers
+Recall that the Kronecker quiver is the quiver with two vertices 1, 2 and two arrows α
+and β from 1 to 2. A Kronecker representation M, i.e., a representation of the Kro-
+necker quiver, can be written as (M(1), M(2); M(α), M(β)) or (M(α), M(β)), where
+M(1), M(2) are the vector spaces associated with the vertices 1, 2 respectively and
+M(α), M(β) : M(1) → M(2) are the linear maps that are represented by the arrows
+α and β, respectively. For more on representation theory of quivers we refer to [1].
+Denote by K the representation category of the Kronecker quiver. Note that in this
+paper we always consider subrepresentations up to isomorphism. As a result, we say
+a Kronecker representation N = (N(α), N(β)) is a subrepresentation of a Kronecker
+representation M = (M(α), M(β)) if there is a monomorphism from N to M, or
+
+                                             3
+equivalently if there are injective linear maps φ and ψ such that M(α)φ = ψN(α)
+and M(β)φ = ψN(β). Dually, a Kronecker representation N = (N(α), N(β)) is called
+a factor representation of a Kronecker representation M = (M(α), M(β)) if there is
+an epimorphism from M to N, or equivalently if there are surjective linear maps φ
+and ψ such that N(α)φ = ψM(α) and N(β)φ = ψM(β). A subfactor of a Kronecker
+representation M is a factor representation of a subrepresentation of M, equivalently
+a subrepresentation of a factor representation of M.
+    Clearly a matrix pencil λE + H corresponds to a Kronecker representation (E, H).
+Moreover, two matrix pencils λE1 + H1 and λE2 + H2 are strictly equivalent if and
+only if (E1 , H1 ) and (E2 , H2 ) are isomorphic as Kronecker representations, i.e., if there
+are invertible matrices G1 and G2 such that G2 E1 = E2 G1 and G2 H1 = H2 G1 . In this
+way, the Challenge amounts to finding matrices E12       , E21 , E22 , H12 ,H21 , and H22
+                                                                                         such
+                                                               ′                   ′
+                                                       
+                                                            E E12              H H12
+that the two Kronecker representations (E, H) and                         ,                 are
+                                                            E21 E22            H21 H22
+isomorphic. If such a solution exists, then we write λE + H ≻ λE ′ + H ′ or λE ′ + H ′ ≺
+λE + H or (E, H) ≻ (E ′ , H ′) or (E ′ , H ′) ≺ (E, H). Clearly, if (E1 , H1 ) ∼ (E, H)
+and (E, H) ≻ (E ′ , H ′ ), then (E1 , H1 ) ≻ (E ′ , H ′); and if (E2 , H2 ) ∼ (E ′ , H ′) and
+(E, H) ≻ (E ′ , H ′), then (E, H) ≻ (E2 , H2 ).
+    Proposition 1. (E, H) ≻ (E ′ , H ′) if and only if (E ′ , H ′ ) is a subfactor of (E, H).
+In particular, the relation ≻ is a partial order on the set of all Kronecker representa-
+tions.
+     Proof. If (E, H) ≻ (E ′ , H ′) then there are matrices   E12 , E21 , E22 ,H12 , H21 and H 22
+                                                                    E ′ E12             H ′ H12
+                                                                                                  
+such that two Kronecker representations (E, H) and                                ,
+                                                            E21 ′ E22        ′
+                                                                                       H
+                                                                                         21 H22
+                                I                                     E           H
+are isomorphic. Since                , I is a monomorphism,                  ,              is a sub-
+                                 0                                    E21         H21
+representation    of 
+                      (E, H).        Furthermore, (E ′ , H ′) is a factor representation of
+      E′        H′
+           
+                                                is an epimorphism. Thus (E ′ , H ′ ) is a sub-
+                                            
+            ,            , since I, I 0
+     E21        H21
+factor of (E, H). Conversely, if (E ′ , H ′ ) is a subfactor of (E, H), then there is a
+subrepresentation (E1 , H1 ) of (E, H) such that (E ′ , H ′) is a factor representation of
+(E1 , H1 ). Hence, there are full rank matrices Ai , Bi , i = 1, 2, and A′1 , B2′ such that
+(E, H)A2 = B2 (E1 , H1 ), (E ′ , H ′)A1 = B1 (E1 , H1 ), A1 A′1 = I, and B2′ B2 = I. Since
+B1 B2′ and A2 A′1 are full rank matrices, there exist    invertible
+                                                                      matrices Ci , Di , i = 1, 2,
+                                                            I
+such that B1 B2′ = C1 I 0 C2 and A2 A′1 = D1
+                                  
+                                                                D2 . Consequently,
+                                                           ′0
+(E , H ) = (E , H )A1 A1 = B1 (E1 , H1 )A1 = B1 B2 B2 (E1 , H1 )A′1 = B1 B2′ (E, H)A2 A′1
+   ′    ′          ′   ′       ′                 ′
+                                                                                   
+                                            I                                      I
+            = C1 I 0 C2 (E, H)D1                   D2 ∼ I 0 C2 (E, H)D1
+                                              0                                        0
+            ≺ C2 (E, H)D1 ∼ (E, H) .                                                             ✷
+
+
+                                                 4
+1.2    Reduction to the Subrepresentation Case
+Once we find a sufficient and necessary condition C(N , M) for a Kronecker representa-
+tion N to be a subrepresentation of another Kronecker representation M in terms of the
+Kronecker invariants N and M of N and M, then dually we will find a sufficient and
+necessary condition C ∗ (M, N ) for N to be a factor representation of M. Furthermore,
+we will find a sufficient and necessary condition for N to be a subfactor of M: There
+exists a Kronecker module L of Kronecker invariants L such that conditions C(L, M)
+and C ∗ (L, N ) are satisfied. Therefore the question is reduced from the subfactor one
+to one of the subrepresentation.
+   Remark. The existence question in the condition is not very easy to handle, but it
+seems difficult to avoid. Indeed, existence question also appear in the results of [3, 4, 5].
+
+
+1.3    Extension of the Underlying Field
+Though the question is posed on the field of real numbers R, we may consider the
+question on the field of complex numbers C:
+   Proposition 2. A real Kronecker representation (E ′ , H ′ ) is a subrepresentation of
+another real Kronecker representation (E, H) over R if and only if the same is the case
+over C.
+    Proof. The necessity is trivial. It remains to consider sufficiency. First, there are
+full column rank complex matrices P and Q such that QE ′ = EP and QH ′ = HP .
+Second, √let P = P1 + iP2 and Q = Q1 + iQ2 with Pj , Qj , j = 1, 2, being real matrices
+and i = −1. Then we have Qj E ′ = EPj and Qj H ′ = HPj for j = 1, 2. Since P (resp.
+Q) is of full column rank, P1 = P2 = 0 (resp. Q1 = Q2 = 0) can not occur. Hence
+P1 + xP2 (resp. Q1 + xQ2 ) is of smaller rank than P (resp. Q) for only finitely many
+values x in C, i.e., the common roots of all rank P (resp. rank Q)–minors of P1 + xP2
+(resp. Q1 + xQ2 ). Consequently there is some value x0 in R such that P1 + x0 P2 and
+Q1 + x0 Q2 are of full column rank, and (P1 + x0 P2 , Q1 + x0 Q2 ) is a monomorphism
+from (E ′ , H ′ ) to (E, H).                                                           ✷
+   And more generally, we are able to consider the problem over an arbitrary alge-
+braically closed field K. By extension of the underlying field we can simply express
+Kronecker invariants as a set of integers (see section 2.1 below), this is of great benefit.
+
+
+2      Homomorphisms between two Kronecker Rep-
+      resentations
+Note that a homomorphism between two Kronecker representations is just a pair of
+matrices satisfying two equations. In this section we partition these two matrices in
+
+                                             5
+the natural way (corresponding to their direct sum decompositions of indecomposable
+representations) and observe the form of every block.
+
+
+2.1     Kronecker Invariants
+Denote by I the identity matrix and by J the Jordan block with eigenvalue 0 (of the
+appropriate size). Denote by P1 (K) the projective line over K. By the well-known Krull-
+Schmidt theorem, a Kronecker representation can be decomposedinto a direct                   sum of
+                                                                        i−1     i    I     0
+indecomposable Kronecker representations. Let Qi := (K , K ; 0 , I ), R∞,i :=
+(Ki , Ki ; J, I), Rp,i := (Ki , Ki ; I, pI + J), and Ji := (Ki , Ki−1 ; [ I 0 ], [ 0 I ]), p ∈ K, i ∈
+N1 := {1, 2, ...}. Then the sets {Qi |i ∈ N1 }, {Rp,i |p ∈ P1 (K), i ∈ N1 } and {Ji |i ∈ N1 },
+called preprojective, regular, and preinjective indecomposable Kronecker representa-
+tions respectively, constitute a complete set of nonisomorphic indecomposable Kro-
+necker representations [1]. Up to isomorphism, a Kronecker representation M can be
+                                       P                       mp                 mI
+uniquely written as M = (⊕m          i=1 Qai ) ⊕ (⊕p∈P1 (K) ⊕i=1 Rp,bi ) ⊕ (⊕i=1 Jci ) for some pos-
+                                                                       p
+
+itive integers ai , i = 1, ..., mP ; bpi , i = 1, ..., mp , p ∈ P1 (K); ci , i = 1, ..., mI (notice that
+the superscripts do not mean power). The Kronecker representation M is uniquely
+determined by ai , bpi , ci , which are called the Kronecker invariants of M. Moreover, a
+Kronecker representation is said to be preprojective (resp. regular, preinjective) if it is
+the direct sum of preprojective (resp. regular, preinjective) indecomposable represen-
+tations.
+    Remark. Usually the Kronecker invariants of M viewed as a matrix pencil are re-
+ferred to the row minimal indices, the infinite elementary factors, the finite elementary
+factors, and the column minimal indices [6, 7]. Over an algebraically closed field K,
+                                                p
+they correspond to positive integers ai , b∞
+                                           i , bi (p ∈ K), ci respectively.
+
+
+
+2.2     Decomposition of Homomorphism
+Let M and N be two Kronecker representations. Then M = M P ⊕ M R ⊕ M I and
+                                                  P
+N = N P ⊕ N R ⊕ N I where M P = ⊕m             i=1 Qai with a1 ≥ a2 ≥ · · · ≥ amP , M
+                                                                                             R
+                                                                                               =
+           m p               p     p              p                      1        I    mI
+⊕p∈P1 (K) ⊕i=1 Rp,bpi with b1 ≥ b2 ≥ · · · ≥ bmp for every p ∈ P (K), M = ⊕i=1 Jci with
+                                 P                                                        p
+c1 ≥ c2 ≥ · · · ≥ cmI , N P = ⊕ni=1 Qdi with d1 ≥ d2 ≥ · · · ≥ dnP , N R = ⊕p∈P1 (K) ⊕ni=1 Rp,epi
+with ep1 ≥ ep2 ≥ · · · ≥ epnp for every p ∈ P1 (K), N I = ⊕ni=1 Jfi with f1 ≥ f2 ≥ · · · ≥
+                                                                       I
+
+
+fnI . Of course these numbers ai , bpi , ci , di , epi , fi are positive integers. Once again the
+superscripts do not mean power here.
+   By [1; Theorem 7.5], any homomorphism
+                                            of representations φ ∈ HomK (N, M) can
+                    φP P   0   0
+be written as φ = φRPIP
+                          φRR
+                           IR
+                               0
+                               II
+                                    where φST ∈ HomK (N T , M S ) for S, T ∈ {P, R, I}.
+                         φ     φ    φ
+
+
+
+
+                                                   6
+Writing φ as a matrix pair, we have
+                              P P 1                                                               
+                                 φ                   0        0           φP P 2      0         0
+                     1  2
+              φ = (φ , φ ) =     φRP 1
+                                   IP 1
+                                                    φRR1      0      ,    φRP 2     φRR2        0
+                                        φ           φIR1     φII1         φIP 2     φIR2       φII2
+
+
+
+with φST = (φST 1 , φST 2) for S, T ∈ {P, R, I}.
+
+
+2.3     Analysis of φP P and φII
+We can write M P = (M P (1), M P (2); M P (α), M P (β)) and N P = (N P (1), N P (2);
+                                             P mP                                  P mP                    P nP
+N P (α), N P (β)), where M P (1) = K          i=1 (ai −1)    , M P (2) = K     , N P (1) = K j=1 (dj −1) ,
+                                                                                    i=1   ai
+              P nP
+N P (2) = K j=1 dj , M P (α) and N P (α)
+                                                                                            
+                                                     are  of the     form diag { I0 , . . . , I0 }, and
+M P (β) and N P (β) are of the form diag{ 0I , . . . , I0 }. We can write φP P = (φP P 1, φP P 2)
+                                                                  
+                                   P P                    PnP                    PmP             PnP
+where φP P 1 and φP P 2 are ( m      i=1 (ai − 1)) × (      j=1 (dj − 1)) and (     i=1 ai ) × (  j=1 dj )
+                                                            P         P
+matrices respectively. By partitioning into m × n block matrices in the natural
+way (corresponding to their direct sum decomposition), we have φP P 1 = (φPijP 1 )ij and
+φP P 2 = (φPijP 2 )ij , i = 1, ..., mP , j = 1, ..., nP . Since M P (α)φP P 1 = φP P 2N P (α) and
+M P (β)φP P 1 = φP P 2N P (β), we have I0 φPijP 1 = φPijP 2 I0 and 0I φPijP 1 = φPijP 2 0I .
+                                                                                              
+                            PP1
+Therefore the blocks φij          and φPijP 2 have the form
+                                                                       
+                                          xP1 P ij
+                                           ..       ..                 
+                                              .        .               
+                                                     ..
+                                                                       
+                                      P P ij                  P P ij
+                                      xai −dj +1       .    x1                                       (1)
+                                                                        
+                                                                        
+                                                     ..        ..
+                                                                       
+                                                        .         .
+                                                                       
+                                                                       
+                                                             P P ij
+                                                           xai −dj +1
+
+of size (ai − 1) × (dj − 1) and ai × dj , respectively, in case ai ≥ dj , and empty otherwise.
+                                                                                   P I
+    Similarly we can write φII = (φII1, φII2 ) where φII1 and φII2 are ( m            i=1 ci ) ×
+ PnI              PmI                 PnI
+( j=1 fj ) and ( i=1 (ci − 1)) × ( j=1 (fj − 1)) matrices, respectively. We partition
+these into mI × nI block matrices in the natural way and have φII1 = (φII1          ij )ij and
+φII2 = (φII2  )
+           ij ij where   the blocks φ II1
+                                      ij   and φ II2
+                                                 ij  have  the form
+                                       ..                             
+                                xIIij
+                                 1         . xIIij
+                                              fj −ci +1
+                                       ..      ..      ..             
+                                                                                                                  (2)
+                            
+                                          .       .       .           
+                                                                       
+                                                 IIij   ..    IIij
+                                              x1           . xfj −ci+1
+
+of size ci × fj and (ci − 1) × (fj − 1), respectively, in case ci ≤ fj , and empty otherwise.
+
+
+                                                         7
+2.4      Analysis of φRR
+Note that we can write M R = (M R (1), M R (2); M R (α), M R (β)) and N R = (N R (1),
+                                                                 P               P mp  p
+                                                                                  i=1 bi
+N R (2); N R (α), N R (β)), where M R (1) = M R (2) = K               p∈P1 (K)             , N R (1) = N R (2) =
+  P        P np   p
+             j=1 ej
+K p∈P1 (K)      , M R (α) and N R (α) are of the form diag{J, . . . , J, I, . . . , I}, and M R (β)
+and N R (β) are of the form diag{I, . . . , I, . . . , pI
+                                                       P + J, . .P. , pIp + J, . . P.}. We can  Pnpwrite
+φRR = (φRR1 , φRR2 ) where φRR1 and φRR2 are ( p∈P1 (K) m             i=1 ibp
+                                                                              ) × (    p∈P1 (K)
+                                                                                                        p
+                                                                                                   j=1 ej )
+matrices. By [1; Theorem 7.5], we have φRR1 = diag{φ                    RR1p
+                                                                               }p∈P1 (K) and    φRR2 =
+diag{φRR2p }p∈P1 (K) . If we partition these matrices into ( p∈P1 (K) mp ) × ( p∈P1 (K) np )
+                                                                  P                       P
+
+block matrices in the natural way, we have φRR1p = (φRR1p       ij      )ij and φRR2p = (φRR2p   ij    )ij .
+         R     RR1        RR2 R             R          RR1     RR2 R                            RR1∞
+Since M (α)φ          = φ N (α) and M (β)φ                 = φ N (β), we have Jφij                       =
+  RR2∞          RR1∞        RR2∞      RR1p       RR2p                           RR1p      RR2p
+φij    J and Iφij       = φij    I, Iφij   = φij I, and (pI + J)φij                   = φij (pI + J)
+                                          RR1p          RR2p
+for every p ∈ K. Therefore the block φij         = φij       has the form
+
+                                                 ..
+                                                                       
+                                         xppij
+                                           p
+                                          gij
+                                                    . xppij
+                                                       2    xppij
+                                                             1
+                                                                       
+                                                 ..    ..
+                                                    .     . xppij
+                                                                       
+                                                             2
+                                                                       
+                                                       ..    ..                                             (3)
+                                                                       
+                                   
+                                                         .     .       
+                                                                        
+                                                             ppij
+                                                            xgp
+                                                                       
+                                                                       
+                                                                 ij
+
+
+
+
+of size bpi × epj , where gijp = min{bpi , epj } for every p ∈ P1 (K) and h ∈ {1, 2}.
+   Remark. In a similar way, one can easily describe every block in φ1 and φ2 .
+However, as sections 2.3 and 2.4 are enough for later use, all other cases are omitted
+here.
+
+
+3       Subrepresentations of Kronecker Representations
+Assume that N ′ and M ′ are preprojective (resp. regular, or preinjective) Kronecker
+representations. In this section we provide a sufficient and necessary condition for N ′ to
+be a subrepresentation of M ′ in terms of their Kronecker invariants. For convenience,
+we consider the preprojective (resp. regular, or preinjective) parts of the Kronecker
+modules N and M given in section 2.2 instead of N ′ and M ′ .
+   A generic matrix is a matrix whose elements are pairwise different indeterminates.
+A matrix pair φ = (φ1 , φ2 ) is called a generic homomorphism from N to M if φ1
+and φ2 are generic matrices satisfying M(α)φ1 = φ2 N(α) and M(β)φ1 = φ2 N(β).
+Clearly, a generic homomorphism from N to M is a homomorphism from N to M
+over some transcendental extension field of K. Once the indeterminates in the generic
+
+
+                                                      8
+homomorphism φ take special values in K then φ becomes a homomorphism from N to
+M. Conversely, any homomorphism from N to M can be obtained in this way. From
+now on φ = (φ1 , φ2 ) is always assumed to be a generic homomorphism from N to M.
+Clearly, N is a subrepresentation of M if and only if there exists a monomorphism
+from N to M, or if and only if the generic homomorphism φ = (φ1 , φ2 ) from N to
+M is a monomorphism over some rational function field over K, or if and only if φ1
+and φ2 viewed as matrices over the polynomial rings, equivalently over their quotient
+fields, are of full column ranks. If we partition φ as done in section 2.2 and partition
+φSSh, S ∈ {P, R, I}, h ∈ {1, 2}, as done in section 2.3 and section 2.4, then the blocks
+in φSSh have the forms (1), (2) or (3) in sections 2.3 and 2.4 where all x∗∗ are assumed
+to be indeterminates. Thus N S is a subrepresentation of M S if and only if φSS1 and
+φSS2 are of full column rank. In order to determine when φSS1 and φSS2 are of full
+column rank, we calculate the ranks of φSS1 and φSS2 .
+
+
+3.1    Generalization and Specialization
+In order to calculate the ranks of the matrices φSS1 and φSS2, we employ the general-
+ization and specialization approach. The generalization procedure consists of replacing
+some elements in the matrix of rational functions A with new independent indetermi-
+nates, so that the rank of the resulting matrix of rational functions provides an upper
+bound for the rank of the original matrix A. The specialization procedure consists of
+replacing some indeterminates in A with special values, usually 0 or 1, so that the rank
+of the resulting matrix provides a lower bound for the rank of the original matrix A.
+Usually, by a series elementary transformations of matrices and generalizations, we can
+obtain a matrix of rational functions B from A, and by specialization we can obtain
+a matrix C from A. It will be shown that rank B = rank C. Thus we conclude that
+rank A = rank B = rank C. In the following we will apply this approach to calculate
+the ranks of φSS1 and φSS2.
+    First we calculate the ranks of block upper triangular generic matrices by the
+generalization-specialization approach. The rank formula obtained is closely related
+to the rank formula obtained in the preprojective-to-preprojective and preinjective-to-
+preinjective cases (see the remarks in section 3.3 and section 3.4 below).
+   Proposition 3. Let A = (Aij )ij with 1 ≤ i, j ≤ q be a block upper triangular
+generic matrix, i.e., Aij = 0 for 1 ≤ j < i ≤ q and Aij is ri × cj generic matrix for
+1 ≤ iP≤ j ≤ q.PAssume that all indeterminates in A are different. Then rank A =
+min{ ij=1 rj + qj=i+1 cj |0 ≤ i ≤ q}.
+   Remark. By convention we require ij=k yj = 0 if i < k.
+                                        P
+
+   Proof. Let F be the transcendental extension field of K obtained by adding all
+indeterminates in A, i.e., the field of rational functions in all indeterminates in A over
+
+                                            9
+K. We proceed by induction on q: It is trivial for case q = 1. Now consider the case
+q ≥ 2.
+     If r1 ≤ c1 then by elementary transformations over F , A can be reduced to another
+block upper triangular matrix A′ = (A′ij )ij , 1 ≤ i, j ≤ q, where A′ij = 0 for 1 ≤ j <
+i ≤ q, A′11 = [I, 0] and I is the r1 × r1 identity matrix, and A′1j = 0 for 2 ≤ j ≤ q with
+A′ij = Aij for 2 ≤ i ≤ q. By our induction hypothesis, rank A = r1 + min{ ij=2 rj +
+                                                                                            P
+Pq                                  Pi               Pq
+   j=i+1 cj |1 ≤ i ≤ q} = min{          j=1 rj +       j=i+1 cj |0 ≤ i ≤ q}.
+     If r1 > c1 then by elementary transformations over F , A can be reduced to another
+block upper triangular matrix A′ = (A′ij )ij , 1 ≤ i, j ≤ q, where A′ij = 0 for 1 ≤
+j < i ≤ q, A′11 = I for the c1 × c1 identity matrix, and A′1j = 0 for 2 ≤ j ≤ q
+with A′ij = Aij for 3 ≤ i ≤ q. By generalization, i.e., replacing all elements in the
+(r1 + r2 − c1 ) × cj matrices A′2j , 2 ≤ j ≤ q, with different new indeterminates, we
+obtain a P  matrix B. By induction        Phypothesis,       we get rank A P=   rank A′ ≤ rank B =
+               q                              q                              q
+c1 + min{ j=2 cj , (r1 + r2 − c1 ) + j=3 cj , (r1 + r2 − c1 ) + r3 + j=4 cj , ..., (r1 + r2 − c1 ) +
+Pq                  Pi          Pq
+   j=3 rj } = min{    j=1 rj +       j=i+1 cj |0 ≤ i ≤ q}. On the other hand, by specialization,
+i.e., taking the (1, 1), (2, 2), · · · , (c1 , c1 ) entries of A to be 1 and all other indeterminates
+lying in the same rows or columns as these entries as 0. The resulting matrix C clearly
+has the same rank P as B. ThusP rank A ≥ rank C = rank B. Finally rank A = rank C =
+rank B = min{ ij=1 rj + qj=i+1 cj |0 ≤ i ≤ q}.                                                     ✷
+
+
+3.2     The Preprojective to Preprojective Case
+Keeping in mind the analysis of φP P in section 2.3, let
+
+                             r1 := max{1 ≤ j ≤ nP |dj > a1 };
+                             s1 := max{1 ≤ i ≤ mP |dr1 +1 ≤ ai };
+                             ...
+                             rl := max{1 ≤ j ≤ nP |dj > asl−1 +1 };
+                             sl := max{1 ≤ i ≤ mP |drl +1 ≤ ai };
+                             ...
+                             rt = nP .
+
+Note that r1 is just the number of zero blocks in the first block row of φP P 2, s1 is just
+the number of the block rows of φP P 2 having the largest number of nonzero blocks. In
+the following all undefined numbers such as s0 are assumed to be 0.
+   Proposition 4. rank φP P 2 = min{ sj=1    aj + rj=r
+                                        Pi        Pt
+                                                              d |0 ≤ i ≤ t − 1}.
+                                                        i+1 +1 j
+
+   Proof. We calculate rank φP P 2 by induction on t. If t = 1 then φP P 2 = 0 and we
+           Psi t ≥ 2.
+are done. Assume     Pri+1
+   Case 1. j=1 aj ≥ j=r       d , 1 ≤ i ≤ t − 2.
+                          1 +1 j
+
+
+
+
+                                                 10
+    In this case we do not need to use induction. Clearly
+                               st−1           rt                     si             rt
+                               X              X                      X              X
+               PP2
+      rank φ         ≤ min{           aj ,             dj } = min{         aj +               dj |0 ≤ i ≤ t − 1} .
+                               j=1           j=r1 +1                 j=1          j=ri+1 +1
+
+
+Next we prove that rank φP P 2 ≥ min{ sj=1                     aj , rj=r
+                                                       P t−1         Pt
+                                                                                 d }. We proceed by special-
+                                                                             1 +1 j
+                                                                 PP2
+ization, namely we let the indeterminatesPin φ P                        take the special values 0 or 1 such
+                                                            st−1          rt
+that the resulting matrix    Prt is of rank min{ j=1 aj , Pj=r                  +1 dj }.
+                                                                           r1 1                  Pr1
+     (1) If a1 ≥               j=r  1 +1 d j  then    let  the    (1,      j=1  d j +   1), (2,     j=1 dj + 2), ...,
+ Prt              Prt                             PP2
+( j=r1+1 dj , j=1 dj ) elements of φ                    take 1, and let all other indeterminates take 0.
+This finishes      the   specialization.     P 1 +1
+     (2) If uj=r           dj ≤ a1 < uj=r
+              P 1
+                      1 +1 P
+                                                       d for some r1 + 1P
+                                                  1 +1 j P
+                                                                                    ≤ u1 < rt then    Puwe     let the
+(1, uj=1     dj + 1), (2, uj=1       dj + 2), ..., (a1 − uj=r                        r1
+    P     1                     1                             1                                            1
+                                                                 1 +1 j
+                                                                       d ,  a 1 +        d j ), (a1 −     j=r1 +1 dj +
+   Pr1                        P u1                  Pr1                          Puj=1
+1, j=1 dj + 1), (a1 − j=r1+1 dj + 2, j=1 dj + 2), ..., (a1 , j=1 dj ) entries of φP P 2 take
+                                                                                     1
+
+
+the value 1. If t = 2 then all other indeterminates are set to 0. This ends the special-
+ization.
+     (3) For t P  ≥ 3 supposePa2 < du1 +1 . Then s1 = 1 and r2 ≥ u1 +1. This                  Prt contradicts the
+                     s1               r2
+assumption j=1 aj ≥ j=r1 +1 dj . Thus a2 ≥ du1 +1 . If a1 + a2 ≥ j=r1 +1 dj then we
+                           P 1 +1                                                               P 1 +1
+set the (a1 + a2 − ( uj=r               d − a1 ) + 1, rj=1    dj + a1 + 1), (a1 + a2 − ( uj=r
+                                                       P1
+                                 1 +1 j
+                                                                                                           d − a1 ) +
+                                                                                                      1 +1 j
+   Pr1                                          Pu1 +1                   Pu1 +1                          Pu1 +1
+2, j=1 dj + a1 + 2), ..., (a1 + a2 , j=1 dj ); (a1 + 1, j=1 dj + 1), (a1 + 2, j=1 dj +
+2), ..., (a1 + rj=u           d , rj=1     dj ) entries of φP P 2 equal to 1, and choose all other inde-
+                 Pt               Pt
+                         1 +2 j
+terminates   Pas2 0.                            Pu2 +1
+     (4) If uj=r      +1  d j ≤  a 1  +  a2  <            dj for some r1 + 1 ≤ u2 < rt , then we set the
+              Pu1 +11
+                                           Pr1 j=r1+1                            P 1 +1
+(a1 +a2 −( j=r1 +1 dj −a1 )+1, j=1 dj +a1 +1), (a1 +a2 −( uj=r
+                                                                                                           Pr1
+                                                                                            d j −a 1 )+2,     j=1 dj +
+                           Pu1 +1                  Pu2                          Pu2 1+1
+a1 +2), ..., (a1 +a2 , j=1 dj ); (a1 +1, j=1 dj +1), (a1 +2, j=1 dj +2), ..., (a1 +(a1 +a2 −
+Pu2               Pr1                                           P u2                   Pu1 +1
+   j=r1 +1 dj ),      j=1 dj +a1 +a2 ); (a1 +(a1 +a2 −              j=r1 +1 dj )+1,       j=1 dj +1), (a1 +(a1 +
+                               Pu1 +1                                  Pu1 +1
+a2 − j=r1+1 dj ) + 2, j=1 dj + 2), ..., (a1 + a2 − ( j=r1+1 dj − a1 ), uj=1
+       P u2                                                                                     P 2
+                                                                                                       dj ) elements
+      PP2
+of φ        equal to 1. If t = 3 we set all other indeterminates equal to 0.
+     (5) For t ≥ 4 suppose a3 < du2 +1 . Then there exists some                     Psi si = 2 P    with 1 ≤ i ≤ 2
+                                                                                                      ri+1
+such that ri+1 ≥ u2 + 1. This contradicts the assumption j=1 aj ≥ j=r                                       dj . Thus
+                                         Prt                                                      Pu2 +1 1
+a3 ≥ du2 +1 . If a1 +a2 +a3 ≥ j=r1 +1 dj , then we let the (a1 +a2 +a3 −( j=r1 +1 dj −a1 −
+                                                            P 2 +1
+a2 )+1, rj=1       dj +a1 +a2 +1), (a1 +a2 +a3 −( uj=r                   d −a1 −a2 )+2, rj=1
+            P1                                                                                  P1
+                                                                    1 +1 j
+                                                                                                       dj +a1 +a2 +
+                          Pu2 +1                        Pu2 +1                            Pu2 +1
+2), ..., (a1 +a2 +a3 , j=1 dj ), (a1 +a2 +1, j=1 dj +1); (a1 +a2 +2, j=1 dj +2), ..., (a1 +
+a2 + rj=u           d , rj=1    dj ) elements of φP P 2 be 1, and set all other indeterminates to
+       Pt                Pt
+               2 +2 j
+be 0.
+     Proceeding in this way, this process will end with one of two possibilities:
+     (i) we can proceed in 2st−1 steps: In this case all nonzero rows are exhausted.
+     (ii) we can proceed in 2q − 1 steps with 1 ≤ q ≤ st−1 : In this case all nonzero
+columns are exhausted.
+
+                                                             11
+                                                                                                Pst−1
+     ViaPour specializations we have obtained a (0,1)-matrix whose rank is                        j=1 aj
+           rt
+(resp.             d
+           j=r1 +1 j ) in the case  (i)  (resp.  (ii)):  Indeed     this (0,1)-matrix  can   be reduced
+by elementary
+          P t−1 transformations      to a (0,1)-matrix for which in case (i) (resp. (ii)) there
+are just sj=1     aj (resp. rj=r
+                            Pt
+                                 1 +1 j
+                                       d ) elements 1 lying in different rows and columns (by
+keeping the ones as far to P   the left as possible).
+     Case 2. Assume that sj=1
+                                              Pri+1
+                                  i
+                                      aj < j=r      1 +1 j
+                                                          d for some 1 ≤ i ≤ t − 2 and let v :=
+min{1 ≤ i ≤ t − 2| j=1 aj < j=r1 +1 dj }. Let A := φP P 2 (1, ..., sj=1
+                        Psi          Pri+1
+                                                                                         aj ; rj=1
+                                                                                  Pv         P1
+                                                                                                   d +
+       Prv+1                                PP2
+                                                                                                Psv j
+1, ..., j=1 dj ) be the submatrix of φ          which is the intersection of the 1-st,...,( j=1 aj )-
+                                Pr1                       Prv+1
+th rows of φP P 2 and the  Psv(   j=1  d j +  1)-st,...,(    j=1 dj )-th columns of φ
+                                                                                         PP2
+                                                                                              . By case
+1, we have rank A = j=1 aj . By the induction hypothesis, the rank of the subma-
+trix B := φP P 2( sj=1     aj + 1, ..., sj=1    aj ; rj=1    dj + 1, ..., rj=1  dj ) of φP P 2 is equal
+                     Pv                 P t−1       P v+1                 Pt
+          Psi              Prt
+to min{ j=sv +1 aj + j=ri+1 +1 dj |v ≤ i ≤ t − 1}. Thus rank φP P 2 = rank A +
+rank B = sj=1       aj + min{ sj=s         aj + rj=r           dj |v ≤ i ≤ t − 1} = min{ sj=1
+             Pv                Pi               Pt                                            Pi
+                                     v +1               i+1 +1                                     aj +
+Prt
+   j=ri+1 +1 dj |0 ≤ i ≤ t − 1}.                                                                      ✷
+    Note that r1 = max{1 ≤ j ≤ nP |dj −1 > a1 −1}; s1 = max{1 ≤ i ≤ mP |dr1 +1 −1 ≤
+ai −1}; ... ; rl = max{1 ≤ j ≤ nP |dj −1 > asl−1 +1 −1}; sl = max{1 ≤ i ≤ mP |drl +1 −1 ≤
+ai − 1}; ... ; rt = nP . By Proposition 4 we have the following formula on rank φP P 1.
+    Corollary 5. rank φP P 1 = min{ sj=1   (aj − 1) + rj=r
+                                       Pi               Pt
+                                                             i+1 +1
+                                                                    (dj − 1)|0 ≤ i ≤ t − 1}.
+   Remark. By Proposition 4, Corollary 5, and Proposition 3 we find that rank φP P h ,
+h ∈ {1, 2}, is equal to the rank of the matrix obtained from φP P h by replacing each
+nonzero block in φP P h with a generic matrix of the same size. (Of course all indeter-
+minates in these generic matrices are assumed to be different.)
+   By Proposition 4 and Corollary 5 we obtain a numerical criterion for a preprojective
+Kronecker representation to be a subrepresentation of another preprojective Kronecker
+representation in terms of their Kronecker invariants.
+                     P                                P
+                                                                                Psi
+   Theorem
+Pri+1          6.
+                PsiN    is a subrepresentation
+                                  Pri+1         of M    if and only if r 1 = 0,  j=1 aj ≥
+         d
+  j=r1 +1 j and        (a
+                   j=1 j   − 1) ≥           (d
+                                     j=r1 +1 j − 1), 1 ≤ i ≤ t − 1.
+
+
+3.3     The Preinjective to Preinjective Case
+Keep in mind the analysis of φII in section 2.3. Let
+                             u1 := max{1 ≤ j ≤ mI |cj > f1 };
+                             v1 := max{1 ≤ i ≤ nI |cu1 +1 ≤ fi };
+                             ···
+                             ul := max{1 ≤ j ≤ mI |cj > fvl−1 +1 };
+                             vl := max{1 ≤ i ≤ nI |cul +1 ≤ fi };
+                             ···
+                             uw = mI .
+
+                                                 12
+Note that u1 is just the number of the zero blocks in the first block column of φII1 , v1
+is just the number of the block columns of φII1 having the largest number of nonzero
+blocks. Dual to Proposition 4 and Corollary 5 we have:
+    Proposition 7. rank φII1 = min{ vj=1    fj + uj=u
+                                      Pi         P w
+                                                              c |0 ≤ i ≤ w − 1}.
+                                                       i+1 +1 j
+
+    Corollary 8. rank φII2 = min{ vj=1   (fj − 1) + uj=u
+                                    P               P
+                                       i                w
+                                                           i+1 +1
+                                                                  (cj − 1)|0 ≤ i ≤ w − 1}.
+    Remark. By Proposition 7, Corollary 8, and Proposition 3 we find that rank φIIh , h ∈
+{1, 2}, is equal to the rank of the matrix obtained from φIIh by replacing each nonzero
+block in φIIh with a generic matrix of the same size.
+   Theorem 9.P N I is a subrepresentation           I
+                                               of M P if and only if vw−1 = vw =
+n , j=vi +1 fj ≤ j=ui+1 +1 cj and j=vi +1 (fj − 1) ≤ uj=u
+ I  vw−1         uw               vw−1
+   P                             P                      w
+                                                          i+1 +1
+                                                                 (cj − 1), 0 ≤ i ≤ w − 2.
+
+
+3.4      The Regular to Regular Case
+This case is easier.
+                                                    Pmin{mp ,np }
+      Proposition 10. rank φRRh =                                 min{bp , ep }, h ∈ {1, 2}.
+                                       P
+                                         p∈P1 (K)       i=1              i   i
+
+    Proof. Keep in mind the analysis of φ in section 2.4. For every p ∈ P1 (K) and
+                                                 RR
+
+every h ∈ {1, 2} we keep the first nonzero element in each row of the matrices φRRhp       11
+and use it to eliminate all other entries in φRRhp which lie in the same row or column
+by elementary transformations over the transcendental extension field F of K obtained
+by adding all indeterminates in φRRh . Next keep the first nonzero element in each row
+of the matrices φRRhp
+                   22  , and use them to eliminate all other elements in φRRhp which
+lie in the same row or column by elementary transformations over F . Proceeding in
+                                                Pmin{mp ,np }
+this way, after min{mp , np } steps, we obtain i=1             min{bpi , epi } nonzero elements
+which lie in different rows and different columns of φRRhp , while all other entries in
+                                                     Pmin{mp ,np }
+φRRhp are reduced to 0. Thus rank φRRhp =              i=1         min{bpi , epi }. Furthermore
+                        Pmin{mp ,np }
+rank φRRh =                           min{bp , ep }, h ∈ {1, 2}.
+              P
+                 p∈P1 (K)       i=1          i      i                                         ✷
+      Theorem 11. N is a subrepresentation of M R if and only if mp ≥ np and
+                            R
+
+bpi   ≥ epi , p ∈ P1 (K), 1 ≤ i ≤ np .
+   Remark. In the same way, one can show that N P is a subrepresentation of M I if
+           P I              P nP
+and only if mi=1 (ci − 1) ≥   i=1 di . However, to solve the problem completely, i.e., for
+arbitrary Kronecker representations N and M, more analysis is needed.
+
+Acknowledgement :               The author would like to express his gratitude towards
+the referees for pointing out errors in earlier versions. He is also grateful to the referees
+and the editor for their careful reading and suggestions for improvement.
+
+
+
+                                              13
+References
+ [1] M. Auslander, I. Reiten and S.O. Smalø, Representation Theory of Artin Algebras, Cambridge
+     Studies in Advanced Mathematics 36, Cambridge University Press, Cambridge, 1995.
+ [2] I. Baragaña, Interlacing inequalities for regular pencils, Linear Algebra Appl. 121 (1989), 521-
+     535.
+ [3] I. Cabral and F.C. Silva, Unified theorems on completions of matrix pencils, Linear Algebra
+     Appl. 159 (1991), 43-54.
+ [4] I. Cabral and F.C. Silva, Similarity invariants of completions of submatrix, Linear Algebra Appl.
+     169 (1992), 151-161.
+ [5] S. Furtado and F.C. Silva, Embedding a regular subpencil into a general linear pencil, Linear
+     Algebra Appl. 295 (1999), 61-72.
+ [6] F.R. Gantmacher, Matrix theory, vol. 2, Chelsea, New York, 1974.
+ [7] J.J. Loiseau, S. Mondié, I. Zaballa and P. Zagalak, Assigning the Kronecker invariants of a
+     matrix pencil by row or column completions, Linear Algebra Appl. 278 (1998), 327-336.
+ [8] C.M. Ringel, The representation type of local algebras, In: Representations of algebras, Lecture
+     Notes in Math. 488, Springer-Verlag, 1975, 282–305.
+ [9] C.M. Ringel and M. Schmidmeier, Submodules of Modules over a Uniserial Ring, Preprint
+     (2002), 1-24.
+[10] E.M. Sá, Imbedding conditions for λ-matrices, Linear Algebra Appl. 24 (1979), 33-50.
+[11] R.C. Thompson, Interlacing inequalities for invariant factors, Linear Algebra Appl. 24 (1979),
+     1-31.
+
+
+
+
+                                                14
+

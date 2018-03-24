@@ -1,0 +1,2267 @@
+                                              THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE
+                                                             ALGEBRA
+arXiv:math/0312517v1 [math.RT] 31 Dec 2003
+
+
+
+
+                                                              PATRICK DELORME AND ERIC M. OPDAM
+
+
+
+
+                                               Date: February 1, 2008.
+                                               2000 Mathematics Subject Classification. Primary 20C08; Secondary 22D25,
+                                             22E35, 43A30.
+                                               During the preparation of this paper the second named author was partially
+                                             supported by a Pionier grant of the Netherlands Organization for Scientific Research
+                                             (NWO).
+                                                                                      1
+2
+
+                               Contents
+    1. Introduction                                                       2
+    2. The affine Hecke algebra and the Schwartz algebra                  5
+    2.1. The root datum and the affine Weyl group                         5
+    2.2. Standard parabolic subsystems                                    6
+    2.3. Label functions and root labels                                  6
+    2.4. The Iwahori-Hecke algebra                                        7
+    2.5. Intertwining elements                                            9
+    2.6. Hilbert algebra structure on H                                  10
+    2.7. Discrete series representations                                 10
+    2.8. The Schwartz algebra; tempered representations                  11
+    2.9. Casselman’s criteria for temperedness                           12
+    2.10. Exponents of finite functionals                                12
+    2.11. The space Atemp of tempered finite functionals                 13
+    2.12. Formal completion of H and Lusztig’s structure theorem         14
+    3. Fourier Transform                                                 16
+    3.1. Induction from standard parabolic subquotient algebras          16
+    3.2. Groupoid of standard induction data                             17
+    3.3. Fourier transform on L2 (H)                                     20
+    4. Main Theorem and its applications                                 22
+    4.1. Applications of the Main Theorem                                23
+    5. Constant terms of matrix coefficients of π(ξ)                     25
+    5.1. Definition of the constant terms of f ∈ Atemp                   25
+    5.2. Constant terms of coefficients of π(ξ) for ξ ∈ Ξu generic       26
+    5.3. Some results for Weyl groups                                    28
+    5.4. The singularities of f d                                        30
+    6. Proof of the main theorem                                         34
+    6.1. Uniform estimates for the coefficients of π(ξ)                  34
+    6.2. Uniform estimates of the difference of a coefficient and its   constant term 37
+    6.3. Wave packets                                                    39
+    6.4. End of the proof of the main Theorem                            41
+    7. Appendix: Some applications of spectral projections               43
+    8. Appendix: The c-function                                          45
+    References                                                           48
+    Index                                                                49
+
+
+
+1. Introduction
+  An affine Hecke algebra is associated to a root datum (with basis)
+R = (X, Y, R0 , R0∨ , F0 ), where X, Y are lattices with a perfect pairing,
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   3
+
+R0 ⊂ X is a reduced root system, R0∨ ⊂ Y is the coroot system and F0
+is a basis of R0 , together with a length multiplicative function q of the
+affine Weyl group associated to R. It is denoted by H(R, q) or simply
+H. It admits a natural prehibertian structure (provided q has values in
+R+ , which we assume throughout), and it acts on its completion L2 (H)
+through bounded operators. Thus H is a Hilbert algebra in the sense
+of [6].
+    The spectral decomposition of the left and right representation of
+this Hibert algebra has been made explicit by one of the authors (E.O.,
+[14]). We will denote by F the isomorphism between L2 (H) and its
+decomposition into irreducible representations. We will call this map
+F the Fourier transform.
+    Another interesting completion of H is the Schwartz algebra S ⊂
+L2 (H), which is a Fréchet algebra completion of H [14]. The main
+theorem of this article is the characterisation of the image of S by
+the Fourier transform F . This characterisation has several important
+consequences which are described in Section 4. Let us briefly discuss
+these applications.
+    First of all, we obtain the analog of Harish-Chandra’s completeness
+Theorem for generalized principal series of real reductive groups. The
+representations involved in the spectral decomposition of L2 (H) are,
+as representations of H, subrepresentation of certain finite dimensional
+induced representations from parabolic subalgebras (which are subalge-
+bras of H which themselves belong to the class of affine Hecke algebras).
+We call these the standard tempered induced representations. There
+exist standard interwining operators (see [14]) between the standard
+induced tempered representations. The completeness Theorem states
+that the commutant of the standard tempered induced representations
+is generated by the self-intertwining operators given by standard inter-
+twining operators.
+    Next we determine the image of the center of S and, as a conse-
+quence, we obtain the analog of Langlands’ disjointness Theorem for
+real reductive groups: two standard tempered induced representations
+are either disjoint, i.e. without simple subquotient in common, or
+equivalent.
+    Then we discuss the characterisation of the Fourier transform, and
+of the set of minimal central idempotents of the reduced C ∗ -algebra
+Cr∗ (H) of H.
+    Finally we observe that that the dense subalgebra S ⊂ Cr∗ is closed
+for holomorphic calculus.
+    Let us now comment on the proof of the Main Theorem. As it is
+familiar since Harish-Chandra’s work on real reductive groups [7], [8],
+4               PATRICK DELORME AND ERIC M. OPDAM
+
+the determination of the image of S by F requires a theory of the
+constant term (see also [5] for the case of the hypergeometric Fourier
+transform) for coefficients of tempered representations of H. This the-
+ory is fairly simple using the decomposition of these linear forms on
+H along weights of the action of the abelian subalgebra A of H. This
+subalgebra admits as a basis, the family θx , x ∈ X, which arises in the
+Bernstein presentation of H.
+   There is a natural candidate Ŝ for the image of S by F . The inclu-
+sion F (S) ⊂ Sˆ is easy to prove, using estimates of the coefficients of
+standard induced tempered representations.
+   The only thing that remains to be proved at this point, is that the
+inverse of the Fourier transform, the wave packet operator J , maps Ŝ
+to S. For this a particular role is played by normalized smooth family
+of coefficients of standard tempered induced representations: these are
+smooth families divided by the c-function. Of particular importance is
+the fact that the constant terms of these families are finite sums of nor-
+malized smooth families of coefficients for Hecke subalgebras of smaller
+semisimple rank. This is a nontrivial fact which requires the explicit
+computation of the constant term of coefficients for generic standard
+tempered induced representations. If I is the maximal ideal of the
+center Z of H which annihilates such a representation, its coefficients
+can be viewed as linear forms on Lusztig’s formal completion of H as-
+sociated to I. This allows to use Lusztig’s first reduction Theorem [11]
+which decomposes this algebra. Some results on Weyl groups are then
+needed to achieve this computation of the constant term.
+   Once this property of normalized smooth family is obtained, it easy
+to form wave packets in the Schwartz space, by analogy with Harish-
+Chandra’s work for real reductive groups [7]. Simple lemmas on spec-
+tral projections of matrices and an induction argument, allowed by the
+theory of the constant term, lead to the desired result.
+   The paper is roughly structured as follows. First we discuss in Sec-
+tions 2 and 3 the necessary preliminary material on the affine Hecke
+algebra and the Fourier transform on L2 (H). We formulate the Main
+Theorem in Section 4, and we discuss some of its consequences. In Sec-
+tion 5 we compute the constant terms of coefficients of the standard
+induced representations and of normalized smooth families of such co-
+efficients. In Section 6 we use this and the material in the Appendix
+on spectral projections in order to prove the Main Theorem. Finally,
+in the Appendix on the c-function we have collected some fundamental
+properties of the Macdonald c-functions on which many of our results
+ultimately rely.
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                         5
+
+2. The affine Hecke algebra and the Schwartz alge-
+   bra
+  This section serves as a reminder for the definition of the affine Hecke
+algebra and related analytic structures. We refer the reader to [14], [11]
+and [13] for further background material.
+
+2.1. The root datum and the affine Weyl group
+   A reduced root datum is a 5-tuple R = (X, Y, R0 , R0∨ , F0 ), where
+X, Y are lattices with perfect pairing h·, ·i, R0 ⊂ X is a reduced root
+system, R0∨ ⊂ Y is the coroot system (which is in bijection with R0 via
+the map α → α∨), and F0 ⊂ R0 is a basis of simple roots of R0 . The
+set F0 determines a subset R0,+ ⊂ R0 of positive roots.
+   The Weyl group W0 = W (R0 ) ⊂ GL(X) of R0 is the group generated
+by the reflections sα in the roots α ∈ R0 . The set S0 := {sα | α ∈ F0 }
+is called the set of simple reflections of W0 . Then (W0 , S0 ) is a finite
+Coxeter group.
+   We define the affine Weyl group W = W (R) associated to R as the
+semidirect product W = W0 ⋉ X. The lattice X contains the root
+lattice Q, and the normal subgroup W aff := W0 ⋉ Q ⊳ W is a Coxeter
+group whose Dynkin diagram is given by the affine extension of (each
+component of) the Dynkin diagram of R0∨ . The affine root system of
+W aff is given by Raff = R0∨ × Z ⊂ Y × Z. Note that W acts on Raff .
+   Let R+aff
+             be the set of positive affine roots defined by R+ aff
+                                                                   = {(α∨, n) |
+n > 0, or n = 0 and α ∈ R0,+ }. Let F aff denote the corresponding set
+of affine simple roots. Observe that F0∨ ⊂ F aff . If S aff denotes the
+associated set of affine simple reflections, then (W aff , S aff ) is an affine
+Coxeter group.
+   In this paper we adhere to the convention N = {1, 2, 3, · · · } and
+Z+ = {0, 1, 2, . . . }. We define the length function l : W → Z+ on
+W as usual, by means of the formula l(w) := |R+         aff
+                                                            ∩ w −1 (R−aff
+                                                                          )|. Let
+Ω ⊂ W denote the set {w ∈ W | l(w) = 0}. It is a subgroup of W ,
+complementary to W aff . Therefore Ω ≃ X/Q is a finitely generated
+Abelian subgroup of W .
+   Let X + ⊂ X denote the cone of dominant elements X + = {x ∈ X |
+∀α ∈ R0,+ : hx, α∨i ≥ 0}. Then ZX := X + ∩ X − ⊂ X is a sublattice
+which is central in W . In particular it follows that ZX ⊂ Ω. The
+quotient Ωf ≃ Ω/ZX is a finite Abelian group which acts faithfully on
+S aff by means of diagram automorphisms.
+   We choose a basis zi of ZP              P a norm k · k on the rational
+                                X , and define
+vector space Q ⊗Z ZX by k li zi k :=          |li|. We now define a norm N
+6                PATRICK DELORME AND ERIC M. OPDAM
+
+on W by
+(2.1)                    N (w) := l(w) + kw(0)0k,
+where w(0)0 denotes the projection of w(0) onto Q⊗Z ZX along Q⊗Z Q.
+The norm N plays an important role in this paper. Observe that it
+satisfies
+(2.2)                   N (ww ′) ≤ N (w) + N (w ′),
+and that N (w) = 0 iff w is an element of Ω of finite order.
+  We call R semisimple if ZX = 0.
+
+2.2. Standard parabolic subsystems
+   A root subsystem R′ ⊂ R0 is called parabolic if R′ = QR′ ∩ R0 . The
+Weyl group W0 acts on the collection of parabolic root subsystems.
+Let P be the power set of F0 . With P ∈ P we associate a standard
+parabolic root subsystem RP ⊂ R0 by RP := ZP ∩R0 . Every parabolic
+root subsystem is W0 -conjugate to a standard parabolic subsystem.
+   We denote by WP = W (RP ) ⊂ W0 the Coxeter subgroup of W0
+generated by the reflections in P . We denote by W P the set of shortest
+length representatives of the left cosets W0 /WP of WP ⊂ W0 .
+   Given P ∈ P we define a sub root datum RP ⊂ R simply by RP :=
+(X, Y, RP , RP∨ , P ). We also define a “quotient root datum” RP of RP
+by RP = (XP , YP , RP , RP∨ , P ) where XP := X/(X ∩ (RP∨ )⊥ ) and YP =
+Y ∩ QRP∨ . The root datum RP is semisimple.
+
+2.3. Label functions and root labels
+   A positive real label function is a length multiplicative function q :
+W → R+ . This means that q(ww ′) = q(w)q(w ′) whenever l(ww ′ ) =
+l(w) + l(w ′ ), and that q(ω) = 1 for all ω ∈ Ω.
+   Such a function q is uniquely determined by its restriction to the set
+of affine simple reflections S aff . By the braid relations and the action
+of Ωf on S aff it follows easily that q(s) = q(s′ ) whenever s, s′ ∈ S aff are
+W -conjugate. Hence there exists a unique W -invariant function a → qa
+on Raff such that qa+1 = q(sa ) for all simple affine roots a ∈ F aff .
+   We associate a possibly non-reduced root system Rnr with R by
+(2.3)               Rnr := R0 ∪ {2α | α∨ ∈ R0∨ ∩ 2Y }.
+If α ∈ R0 then 2α ∈ Rnr iff the affine roots a = α∨ and a = α∨ + 1 are
+not W -conjugate. Therefore we can also characterize the label function
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                 7
+
+q on W by means of the following extension of the set of root labels
+qα∨ to arbitrary α ∈ Rnr . If α ∈ R0 with 2α ∈ Rnr , then we define
+                                       qα∨ +1
+(2.4)                        qα∨ /2 :=        .
+                                        qα∨
+With these conventions we have for all w ∈ W0
+                                  Y
+(2.5)               q(w) =                 qα∨ .
+                              α∈Rnr,+ ∩w −1 Rnr,−
+
+  We denote by R1 ⊂ X the reduced root system
+(2.6)                R1 := {α ∈ Rnr | 2α 6∈ Rnr }.
+
+2.3.1. Restriction to parabolic subsystems. Let P ∈ P. Both the non-
+reduced root system associated with RP and the non-reduced root
+system associated with RP are equal to RP,nr := QRP ∩ Rnr . We define
+a collection of root labels qP,α∨ = qαP∨ for α ∈ RP,nr by restricting the
+labels of Rnr to RP,nr ⊂ Rnr . Then qP denotes the length-multiplicative
+function on W (RP ) associated with this label function on RP,nr , and
+q P denotes the associated length multiplicative function on W (RP ).
+
+2.4. The Iwahori-Hecke algebra
+   Given a root datum R and a (positive real) label function q on
+the associated affine Weyl group W , there exists a unique associative
+complex Hecke algebra H = H(R, q) with C-basis Nw indexed by w ∈
+W , satisfying the relations
+       (i) Nww′ = Nw Nw′ for all w, w ′ ∈ W such that l(ww ′) = l(w) +
+           l(w ′ ).
+      (ii) (Ns + q(s)−1/2 )(Ns − q(s)1/2 ) = 0 for all s ∈ S aff .
+Notice that the algebra H is unital, with unit 1 = Ne . Notice also that
+it follows from the defining relations that Nw ∈ H is invertible, for all
+w ∈ W.
+   By convention we assume that the label function q is of the form
+(2.7)                         q(s) = qfs .
+The parameters fs ∈ R are fixed, and the base q satisfies q > 1.
+
+2.4.1. Bernstein presentation. There is another, extremely important
+presentation of the algebra H, due to Joseph Bernstein (unpublished).
+Since the length function is additive on the dominant cone X + , the
+map X + ∋ x → Nx is a homomorphism of the commutative monoid
+X + with values in H× , the group of invertible elements of H. Thus
+8                   PATRICK DELORME AND ERIC M. OPDAM
+
+there exists a unique extension to a homomorphism X ∋ x → θx ∈ H×
+of the lattice X with values in H× .
+   The Abelian subalgebra of H generated by θx , x ∈ X, is denoted by
+A. Let H0 = H(W0 , q0 ) be the finite type Hecke algebra associated with
+W0 and the restriction q0 of q to W0 . Then the Bernstein presentation
+asserts that both the collections θx Nw and Nw θx (w ∈ W0 , x ∈ X) are
+bases of H, subject only to the cross relation (for all x ∈ X and s = sα
+with α ∈ F0 ):
+(2.8)
+θx Ns − Ns θs(x) =
+                       1/2     −1/2 θx −θs(x)
+(
+                     (qα∨ − qα∨ ) 1−θ−α                      if 2α 6∈ Rnr .
+        1/2   1/2      −1/2 −1/2    1/2    −1/2      θ −θ
+                                                      x  s(x)
+     ((qα∨ /2 qα∨ − qα∨ /2 qα∨ ) + (qα∨ − qα∨ )θ−α ) 1−θ −2α
+                                                              if 2α ∈ Rnr .
+2.4.2. The center Z of H. A rather immediate consequence of the
+Bernstein presentation of H is the description of the center of H:
+Theorem 2.1. The center Z of H is equal to AW0 . In particular, H
+is finitely generated over its center.
+  As an immediate consequence we see that irreducible representations
+of H are finite dimensional by application of (Dixmier’s version of)
+Schur’s lemma.
+  We denote by T the complex torus T = Hom(X, C× ) of complex
+characters of the lattice X. The space Spec(Z) of complex homomor-
+phisms of Z is thus canonically isomorphic to the (geometric) quotient
+W0 \T .
+  Thus, to an irreducible representation (V, π) of H we attach an orbit
+W0 t ∈ W0 \T , called the central character of π.
+2.4.3. Parabolic subalgebras and their semisimple quotients. We con-
+sider another important consequence of the Bernstein presentation of
+H:
+Proposition 2.2.          (i) The Hecke algebra HP := H(RP , q P ) is
+        isomorphic to the subalgebra of H generated by A and the
+        finite type Hecke subalgebra H(WP ) := H(WP , q|WP ).
+   (ii) We can view HP := H(RP , qP ) as a quotient of HP via the
+        surjective homomorphism φ1 : HP → HP characterized by (1)
+        φ1 is the identity on the finite type subalgebra H(WP ) and (2)
+        φ1 (θx ) := θx , where x ∈ XP is the canonical image of x in
+        XP = X/(X ∩ (RP∨ )⊥ ).
+   Let T P denote the character torus of the lattice X/(X ∩QRP ). Then
+T P ⊂ T is a subtorus which is fixed for all the elements w ∈ WP and
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                     9
+
+which is inside the simultaneous kernel of the α ∈ RP . The next result
+again follows simply from the Bernstein presentation:
+
+Proposition 2.3. There exists a family of automorphisms ψt (t ∈ T P )
+of HP , defined by ψt (θx Nw ) = x(t)θx Nw .
+
+  We use the above family of automorphisms to twist the projection
+φ1 : HP → HP . Given t ∈ T P , we define the epimorphism φt : HP →
+HP by φt := φ1 ◦ ψt .
+
+
+2.5. Intertwining elements
+   When s = sα ∈ S0 (with α ∈ F1 ), we define an intertwining element
+ιs ∈ H as follows:
+                                                      1/2
+   ιs = qα∨ q2α∨ (1 − θ−α )Ns + ((1 − qα∨ q2α∨ ) + qα∨ (1 − q2α∨ )θ−α/2 )
+                                                       1/2
+        = qα∨ q2α∨ Ns (1 − θα ) + ((qα∨ q2α∨ − 1)θα + qα∨ (q2α∨ − 1)θα/2 )
+
+ (If α/2 6∈ X then we put q2α∨ = 1; see Remark 8.1.) We recall from
+[13], Theorem 2.8 that these elements satisfy the braid relations, and
+they satisfy (for all x ∈ X)
+
+(2.9)                            ιs θx = θs(x) ιs
+
+   Let Q denote the quotient field of the centre Z of H, and let Q H
+denote the Q-algebra Q H = Q ⊗Z H. Inside Q H we normalize the
+elements ιs as follows.
+   We first introduce
+                         1/2             1/2
+(2.10)          nα := (qα∨ + θ−α/2 )(qα∨ q2α∨ − θ−α/2 ) ∈ A.
+
+  Then the normalized intertwiners ι0s (s ∈ S0 ) are defined by (with
+s = sα , α ∈ R1 ):
+
+(2.11)                         ι0s := n−1
+                                       α ιs ∈ Q H.
+
+ It is known that the normalized elements ι0s satisfy (ι0s )2 = 1. In
+particular, ι0s ∈ Q H× , the group of invertible elements of Q H. In fact
+we have:
+
+Lemma 2.4. ([14], Lemma 4.1) The map S0 ∋ s → ι0s ∈ Q H× extends
+(uniquely) to a homomorphism W0 ∋ w → ι0w ∈ Q H× . Moreover, for
+all f ∈ Q A we have that ι0w f ι0w−1 = f w .
+10               PATRICK DELORME AND ERIC M. OPDAM
+
+2.6. Hilbert algebra structure on H
+   The anti-linear map h → h∗ defined by ( w cw Nw )∗ = w cw−1 Nw is
+                                             P               P
+an anti-involution of H. Thus it gives H the structure of an involutive
+algebra.
+   In the context of involutive algebras we also dispose of Schur’s lemma
+for topologically irreducible representations (cf. [6]). Thus the topo-
+logically irreducible representations of the involutive algebra (H, ∗) are
+finite dimensional by Theorem 2.1.                    P
+   The linear functional τ : H → C given by τ ( w cw Nw ) = ce is a
+positive trace for the involutive algebra (H, ∗). The basis Nw of H is
+orthonormal with respect to the pre-Hilbert structure (x, y) := τ (x∗ y)
+on H. We denote the Hilbert completion of H with respect to (·, ·)
+by L2 (H). This is a separable Hilbert space with Hilbert basis Nw
+(w ∈ W ).
+   Let x ∈ H. The operators λ(x) : H → H (given by λ(x)(y) = xy)
+and ρ(x) : H → H (given by ρ(x)(y) := xy) extend to B(L2 (H)), the
+algebra of bounded operators on L2 (H). This gives H the structure of
+a Hilbert algebra (cf. [6]).
+   The operator norm completion of λ(H) ⊂ B(L2 (H)) is a C ∗ -algebra
+which we call the reduced C ∗ -algebra Cr∗ (H) of H. The natural action
+of Cr∗ (H) on L2 (H) via λ (resp. ρ) is called the left regular (resp. right
+regular) representation of Cr∗ (H). Since it has only finite dimensional
+irreducible representations by the above remark, Cr∗ (H) is of type I.
+   The norm kxko of x ∈ Cr∗ (H) is by definition equal to the norm
+of λ(x) ∈ B(L2 (H)). Observe that the map x → λ(x)Ne defines an
+embedding Cr∗ (H) ⊂ L2 (H).
+
+2.7. Discrete series representations
+Definition 2.5. We call an irreducible representation (Vδ , δ) of (H, ∗)
+a discrete series representation if (Vδ , δ) is equivalent to a subrepre-
+sentation of (L2 (H), λ). We denote by ∆ = ∆R,q a complete set of
+representatives of the equivalence classes of the irreducible discrete se-
+ries representations of (H, ∗). When r ∈ T is given, ∆W0 r ⊂ ∆ denotes
+the subset of ∆ consisting of irreducible discrete series representations
+with central character W0 r (r ∈ T ).
+Corollary 2.6. (of Theorem 2.1) ∆W0 r is a finite set.
+   There is an important characterization of the discrete series represen-
+tations due to Casselman. This characterization has consequences for
+the growth behaviour of matrix coefficients of discrete series representa-
+tions. Recall that T denotes the complex algebraic torus of characters
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                 11
+
+of the lattice X. It has polar decomposition T = Trs Tu where Trs is
+the real split form of T , and Tu the compact form. If t ∈ T we denote
+by |t| ∈ Trs its real split part.
+Theorem 2.7. (Casselman’s criterion for discrete series representa-
+tions, cf. [14], Lemma 2.22). Let (Vδ , δ) be an irreducible representa-
+tion of H. The following are equivalent:
+       (i) (Vδ , δ) is a discrete series representation.
+      (ii) All matrix coefficients of δ belong to H.
+    (iii) The character χ of δ belongs to H.
+     (iv) The weights t ∈ T of the generalized A-weight spaces of Vδ
+           satisfy: |x(t)| < 1, for all 0 6= x ∈ X + .
+      (v) ZX = {0}, and there exists an ǫ > 0 such that for all ma-
+           trix coefficients m of δ, there exists a C > 0 such that the
+           inequality |m(Nw )| < Cq−ǫl(x) holds.
+   We have the following characterization of the set of central characters
+of irreducible discrete series representations. For the notion of “residual
+points” of T we refer the reader to Definition 8.3.
+Theorem 2.8. (cf. [14], Lemma 3.31 and Corollary 7.12) The set
+∆W0 r is nonempty iff r ∈ T is a residual point. In particular, ∆ is
+finite, and empty unless ZX = 0.
+
+2.8. The Schwartz algebra; tempered representations
+  We define norms pn (n ∈ Z+ = {0, 1, 2, . . . }) on H by
+(2.12)            pn (h) = max |(Nw , h)|(1 + N (w))n,
+                           w∈W
+
+and we define the Schwartz completion S of H by
+                       X
+(2.13)       S := {x =     xw Nw ∈ H∗ | pn (x) < ∞ ∀n ∈ Z+ }
+                           w
+
+In ([14], Theorem 6.5) it was shown that the multiplication operation of
+H is continuous with respect to the family pn of norms. The completion
+S is a (nuclear, unital) Fréchet algebra (cf. [14], Definition 6.6).
+  As an application of ([14], Theorem 6.1) it is easy to see that there
+exist constants D ∈ Z+ and C > 0 such that khko ≤ CpD (h) for all
+h ∈ H. Thus
+(2.14)                    S ⊂ Cr∗ (H) ⊂ L2 (H)
+The Main Theorem 4.3 can be viewed as a structure theorem for this
+Fréchet algebra via the Fourier transformation.
+12               PATRICK DELORME AND ERIC M. OPDAM
+
+Definition 2.9. The topological dual S ′ is called the space of tempered
+functionals. A continuous representation of S is called a tempered rep-
+resentation. By abuse of terminology, we call a finite dimensional rep-
+resentation of H tempered if it extends continuously to S.
+   In particular, a finite dimensional representation (V, π) of H is tem-
+pered if and only if the matrix coefficient h → φ(π(h)v) extends con-
+tinuously to S for all φ ∈ V ∗ and v ∈ V .
+   We will now discuss Casselman’s criteria for temperedness of finite
+functionals and finite dimensional representations if H.
+
+2.9. Casselman’s criteria for temperedness
+                                                                 ∗
+2.9.1. Algebraic dual of H. We identify
+                                      P the algebraic dual H of H
+with formal linear combinations f = w∈W dw Nw via the sesquilinear
+pairing (·, ·) defined by (x, y) = τ (x∗ y). Thus f (x) = (f ∗ , x) and
+dw = f (Nw−1 ). For x, y ∈ H and f ∈ H we define Rx (f )(y) = f (yx)
+and Lx (f )(y) := f (xy) (a right representation of H). Note that in
+terms of multiplication of formal series we have: Rx (f ) = x.f and
+Lx (f ) = f.x (sic).
+2.9.2. Finite functionals. Let A ⊂ H∗ denote the linear space of finite
+linear functionals on H:
+Definition 2.10. The space A consists of all the elements f ∈ H∗ such
+that the space H.f.H is finite dimensional.
+  Since H is finite over its center Z, f is finite if and only if dim(f.Z) <
+∞. Let A denote the abelian subalgebra of H spanned by the elements
+θx with x ∈ X. Since Z ⊂ A we see that f ∈ A if and only if
+dim(A.f ) < ∞ if and only if dim(f.A) < ∞.
+
+2.10. Exponents of finite functionals
+Definition 2.11. We say that t ∈ T is an exponent of f ∈ A if the
+X-module on the finite dimensional space V = f.H (the space of left
+translates of f ) defined via x → Lθx |V contains a (generalized) weight
+space with weight t.
+Proposition 2.12. Let f ∈ A and let ǫ denote the set of exponents of
+f . There exist unique functions Etf (t ∈ ǫ) on H × X, polynomial in
+X, such that
+                                 X f
+(2.15)                f (θx h) =    Et (h, x)t(x)
+                                   t∈ǫ
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  13
+
+Proof. Uniqueness: Suppose that we have a finite set ǫ of exponents
+and for each t ∈ ǫ a polynomial function x → Et (x) of X such that
+                          X
+                             Et (x)t(x) ≡ 0.
+                            t∈ǫ
+
+Suppose that there exists a t ∈ ǫ such that x → Et (x) has positive
+degree. We apply the difference operator ∆t,y (t ∈ ǫ, y ∈ X) defined by
+                 ∆t,y (f )(x) := t(y)−1f (x + y) − f (x).
+It is easy to see that for a suitable choice of y this operator lowers
+the degree of the coefficient of t by 1, and leaves the degrees of the
+other coefficients invariant. Hence, if we assume that not all of the
+coefficients Et are zero, we obtain a nontrivial complex linear relation
+of characters of X, after applying a suitable sequence of operators ∆s,z .
+This is a contradiction.
+   Existence: We fix h ∈ H and we decompose f according to general-
+ized LX -eigenspaces in V . We may replace f by one of its constituents,
+and thus assume that ǫ = {t}. We may replace the action of X by
+the action L′x = t(x)−1 Lx . Therefore it is enough to consider the case
+t = 1. Let N denote the dimension of V . By Engel’s theorem applied
+to the commuting unipotent elements Lθx acting in V , we see that any
+product of N or more difference operators of the form ∆y = Lθy − 1 is
+equal to zero in V . By induction on N this implies that for any h, the
+function x → f (θx h) is a polynomial in x of degree at most N − 1. 
+
+Corollary 2.13. We have Etf (θx h, y) = t(x)Etf (h, x+y). In particular,
+the degree of the polynomial Etf (h, x) is uniformly bounded as a function
+of h.
+Corollary 2.14. Put ft (h) = Etf (h, 0). Then ft is the component of f
+corresponding to the generalized LX -eigenspace with eigenvalue t in V .
+Observe that ft (θx h) = t(x)Etf (h, x), and that ft ∈ f · A = LX (f ) ⊂
+V ⊂ A.
+
+2.11. The space Atemp of tempered finite functionals
+  If f ∈ A, we can express the condition f ∈ S ′ (temperedness) or
+f ∈ L2 (H) (square integrability) in terms of a system of inequalities
+on the set of exponents ǫ of f . This is the content of the Casselman
+conditions for temperedness ([14], Lemma 2.20). We will formulate
+these results below, adapted to suit the applications we have in mind
+(Section 5.1).
+14                PATRICK DELORME AND ERIC M. OPDAM
+
+     We introduce a partial ordering ≤F0 on Trs by
+(2.16)          t1 ≤F0 t2 ⇐⇒ x(t1 ) ≤ x(t2 ) for all x ∈ X +
+(this is in fact the special case P = F0 of the ordering ≤P defined in
+Definition 5.1).
+   Let (V, π) be finite dimensional representation of H. It follows easily
+from Definition 2.11 that the union of the sets of exponents of the
+matrix coefficients h → φ(π(h)v) of π coincides with the set of weights
+t of the generalized A-weight spaces of V . Using ([14], Lemma 2.20)
+we get:
+Corollary 2.15. ([14], Lemma 2.20) Let (V, π) be a finite dimensional
+representation of H. The following statements are equivalent:
+      (i) (V, π) is tempered.
+     (ii) The weights t of the generalized A-weight spaces of V satisfy
+          |t| ≤F0 1.
+    (iii) The exponents t of the matrix coefficients h → φ(π(h)v) of π
+          satisfy |t| ≤F0 1.
+   Let f ∈ A. The space of matrix coefficients of the finite dimensional
+representation (Vf := RH (f ), R) is the space H · f · H. Hence the union
+of the sets of exponents of the matrix coefficients of Vf is equal to the
+set of exponents of f . Hence we obtain:
+Corollary 2.16. (Casselman’s condition) We have f ∈ Atemp := A∩S ′
+if and only if the real part |t| of every exponent t of f satisfies |t| ≤F0 1.
+Definition 2.17. We put Acusp for the subspace ofQAtemp consisting of
+those f such that all exponents t of f satisfy |t| = α∈F0 (da ⊗ α∨ ) with
+0 < dα < 1.
+     Then Theorem 2.7 implies similarly that:
+Corollary 2.18. A2 := A ∩ L2 (H) 6= 0 only if ZX = 0, and in this
+case, A2 = Acusp .
+
+2.12. Formal completion of H and Lusztig’s structure theorem
+  Let t ∈ T , and let It denote the maximal ideal of Z associated with
+the orbit W0 t. We denote by Z̄W0 t the It -adic completion of Z. In [11]
+Lusztig considered the structure of the completion
+(2.17)                      H̄t := Z̄W0 t ⊗Z H.
+We will use Lusztig’s results on the structure of this formal completion
+(in a slightly adapted version) for so called RP -generic points t ∈ T .
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                         15
+
+2.12.1. RP -generic points of T . Let RP ⊂ R0 be a parabolic subset
+of roots, i.e. RP = RRP ∩ R0 . Let us recall the notion of an RP -
+generic point t ∈ T (cf. [14], Definition 4.12). With t ∈ T we associate
+RP (t) ⊂ R0 , the smallest parabolic subset containing all roots α ∈ R0
+for which one of the following statements holds (where cα denotes the
+Macdonald c-function, cf. equation (8.2)):
+       (i) cα 6∈ Ot× (the invertible holomorphic germs at t)
+      (ii) α(t) = 1
+     (iii) α(t) = −1 and α 6∈ 2X.
+We say that t1 , t2 ∈ T are equivalent if there exists a w ∈ WP (t1 ) :=
+W (RP (t1 ) ) such that t2 = w(t1 ). Notice that in this case RP (t1 ) = RP (t2 ) ,
+so that this is indeed an equivalence relation. The equivalence class of
+t ∈ T is equal to the orbit ̟ = WP (t) t ⊂ W0 t.
+   We define P (t) as the basis of simple roots of RP (t) inside R0,+ , and
+we sometimes use the notation P (̟) instead of P (t).
+Definition 2.19. We call t ∈ T an RP -generic point if wt ∈ ̟ (with
+w ∈ W0 ) implies that w ∈ WP .
+Remark 2.20. Notice that if t ∈ T is RP generic then RP (t) ⊂ RP (but
+not conversely). In particular, the set of RP nongeneric points is con-
+tained in a finite union of cosets of the finite collection of codimension
+1 complex subtori H of T such that α(H) = 1 for some α ∈ R0 \RP .
+2.12.2. Lusztig’s first reduction Theorem. Lusztig [11] associates idem-
+potents ew̟ ∈ H̄t with the equivalence classes w̟ ∈ W0 t. By Lusztig’s
+first reduction Theorem (cf. [11]) we know that if u, v ∈ W P , then
+ι0u e̟ ι0v−1 is a well defined element of H̄t , and that we have the decom-
+position (compare with [14], equation (4.46))
+                                   M
+(2.18)                      H̄t =       ι0u e̟ H̄tP ι0v−1 .
+                                 u,v∈W P
+
+Moreover, the subspace ι0u e̟ H̄tP ι0v−1 is equal to eu̟ H̄t ev̟ . When u =
+v then this is a subalgebra of H̄t , and when u = v = e then this
+subalgebra reduces to e̟ H̄tP , which is isomorphic to H̄tP via x → e̟ x.
+Finally, for x ∈ H̄tP we have the formula ι0u (e̟ x)ι0u−1 = eu̟ ψu (x).
+   We will use this in the situation that t ∈ T is is of the form t = rP tP
+with WP rP ⊂ TP the central character of a discrete series representa-
+tion (Vδ , δ), and tP ∈ T P (this is the case if W0 t ⊂ T is the central
+character of a representation which is induced from (Vδ , δ). Recall that
+in this situation rP ∈ TP is an (RP , qP )-residual point (Theorem 2.8).
+Therefore, RP (t) ⊃ RP ([14], Proposition 7.3), and RP (t) = RP for an
+16              PATRICK DELORME AND ERIC M. OPDAM
+
+open dense subset of T P (the complement of a subvariety of codimen-
+sion 1 in T P ). Thus t = rP tP is RP -generic iff RP (t) = RP , and then
+the equivalence class of t is equal to ̟ = WP t.
+
+2.12.3. Application. We will use the above result (2.18) when analyzing
+a finite functional f ∈ A or a representation π of H which contains a
+power Itn of It in its kernel.
+   We can thus view f (or π) as a linear function on the quotient
+H/Itn H. Since this quotient is finite dimensional (by Theorem 2.1),
+we have
+(2.19)                   H/Itn H = H̄t /Itn H̄t .
+In this way we can view f (resp. π) as a functional (resp. represen-
+tation) of the completion H̄t . For example, this applies when W0 t is
+the central character of an irreducible representation π. We can view
+π as a representation of the quotient Ht := H/It H (the case n = 1 of
+(2.19)), and the matrix coefficients of π can be viewed as functionals
+on Ht .
+
+
+3. Fourier Transform
+  In this section we briefly review the Fourier transform on L2 (H)
+as formulated in [14]. The spectral data are organized in terms of
+the induction functor on the groupoid of unitary standard induction
+data WΞu . Finally we formulate the Main Theorem 4.3 and discuss its
+applications.
+
+3.1. Induction from standard parabolic subquotient algebras
+   Let P ⊂ F0 and let WP ⊂ W0 be the standard parabolic subgroup of
+W0 generated by the simple reflections sα with α ∈ P . Let HP ⊂ H be
+the subalgebra HP := H(WP ) · A ⊂ H, and let HP denote the quotient
+of HP by the (two sided) ideal generated by the central elements θx − 1
+where x ∈ X is such that hx, α∨ i = 0 for all α ∈ P . Then HP is again
+an affine Hecke algebra, with root datum RP = (RP , XP , RP∨ , YP , P ),
+where XP = X/P ∨,⊥ and YP = Y ∩ RP ∨, and root labels qP that are
+obtained by restriction from Rnr to RP,nr .
+   There exists a parameter family of homomorphisms φtP : HP → HP
+with tP ∈ T P ⊂ T , the subtorus with character lattice X P = X/(X ∩
+RP ), defined by φtP (θx Tw ) = x(tP )θx̄ Tw , where x̄ ∈ XP denotes the
+canonical image of x in XP . The kernel of φtP is the two-sided ideal
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   17
+
+generated by elements of the form x(tP )−1 θx − 1, with x ∈ X such that
+hx, α∨i = 0 for all α ∈ P .
+  Let (Vδ , δ) be a discrete series representation of the subquotient
+Hecke algebra HP . Let WP rP be the central character of δ. It is
+known that rP is a residual point of TP (cf. [14], Lemma 3.31), the
+subtorus of T with character lattice XP .
+  Now let tP ∈ TuP , and let δtP denote the lift to HP of δ via φtP . Then
+the induced representation π = π(RP , WP rP , δ, tP ) from the represen-
+tation δtP of HP to H is a unitary, tempered representation (cf. [14],
+Proposition 4.19 and Proposition 4.20).
+
+3.1.1. Compact realization of π(RP , WP rP , δ, tP ). Put H(W P ) ⊂ H for
+the finite dimensional linear subspace of H spanned by the elements
+Nw with w ∈ W P . Then
+(3.1)                      H ≃ H(W P ) ⊗ HP ,
+where the isomorphism is realized by the product map. Therefore we
+have the isomorphism
+(3.2)              H ⊗HP Vδ ≃ i(Vδ ) := H(W P ) ⊗ Vδ .
+We will use this isomorphism to identify the representation space of
+π(P, WP rP , δ, tP ) with i(Vδ ). This realization of the induced repre-
+sentation is called the compact realization, by analogy with induced
+representations for reductive groups.
+   According to [14], Proposition 4.19, the representation π(P, WP rP , δ, tP )
+is unitary (i.e. a ∗-representation) with respect to the Hermitian inner
+product
+(3.3)             hh1 ⊗ v1 , h2 ⊗ v2 i = τ (h∗1 h2 )(v1 , v2 ),
+where (v1 , v2 ) denotes the inner product on the representation space Vδ
+of the discrete series representation (Vδ , δ).
+   More generally, for tP ∈ T P the Hermitian form h·, ·i on i(Vδ ) defines
+a nondegenerate sesquilinear pairing of H-modules as follows:
+                                −1
+(3.4)        π(P, WP rP , δ, t¯P ) × π(P, WP rP , δ, tP ) → C.
+
+3.2. Groupoid of standard induction data
+   Let P denote the power set of F0 . Let Ξ (respectively Ξu ) denote
+the set of all triples ξ = (P, δ, tP ) with P ∈ P, δ an irreducible discrete
+series representation of HP (with underlying vector space Vδ ), and tP ∈
+T P (respectively tP ∈ TuP ). We denote the central character of δ by
+WP rP .
+18                PATRICK DELORME AND ERIC M. OPDAM
+
+   Let W denote the finite groupoid whose set of objects is P and such
+that the set of arrows from P to Q (P, Q ∈ P) consists of KQ ×W (P, Q),
+where KQ = TQ ∩ T Q and W (P, Q) = {w ∈ W0 | w(P ) = Q}. The
+composition of arrows is defined by (k1 , w1 )(k2 , w2 ) = (k1 w1 (k2 ), w1 w2 ).
+This groupoid acts on Ξ as follows. An element g = k × n ∈ KQ ×
+W (P, Q) of WΞ defines an algebra isomorphism ψg : HP → HQ as
+follows. An element n ∈ W (P, Q) defines an isomorphism from the
+root datum (RP , qP ) to (RQ , qQ ), which determines an algebra isomor-
+phism ψn . On the other hand, if k ∈ KQ then ψk : HQ → HQ is
+the automorphism defined by ψk (θx Nw ) = k(x)θx Nw . Then ψg is de-
+fined by the composition of these isomorphisms. We obtain a bijection
+Ψg : ∆WP rP → ∆k−1 WQ n(rP ) (where ∆WP rP = ∆P,WP rP denotes a com-
+plete set of representatives for the equivalence classes of irreducible dis-
+crete series representations of HP with central character WP rP ) char-
+acterized by the requirement Ψg (δ) ≃ δ ◦ ψg−1 . The action of W on Ξ
+is defined by: g(P, δ, tP ) = (Q, Ψg (δ), g(tP )), with g(tP ) := kn(tP ).
+Definition 3.1. The fibred product WΞ = W ×P Ξ is called the groupoid
+of standard induction data. The full compact subgroupoid WΞ,u = W×P
+Ξu is called the groupoid of tempered standard induction data.
+Definition 3.2. An element ξ = (P, δ, tP ) ∈ Ξ is called generic if
+t = rP tP is RP -generic (cf. Definition 2.19), where rP ∈ TP is such
+that WP rP is the central character of δ.
+   The groupoid WΞ,u was introduced in [14] (but was denoted by WΞ
+there) and plays an important role in the theory of the Fourier trans-
+form for H. It is easy to see that WΞ is a smooth analytic, étale
+groupoid, whose set of objects is equal to Ξ. Thus WΞ is a union
+of complex algebraic tori, and therefore we can speak of polynomial
+and rational functions on Ξ and on WΞ . This also applies to the full
+compact subgroupoid WΞ,u .
+   Theorem 4.38 of [14] states that there exists an induction functor
+π : WΞ,u → PRepunit,temp (H), where the target groupoid is the cate-
+gory of finite dimensional, unitary, tempered representations of H in
+which the morphisms are given by unitary intertwining isomorphisms
+modulo the action of scalars. The image of ξ = (P, δ, tP ) ∈ Ξu is the
+representation π(ξ) := π(P, WP rP , δ, tP ) of H, in its compact realiza-
+tion, as was defined in subsection 3.1.1.
+   The intertwining isomorphism π(g, ξ) : i(Vδ ) → i(VΨg (δ) ) associated
+with g = k × n ∈ KQ × W (P, Q) is the operator A(g, RP , WP rP , δ, tP )
+which was defined in [14] (equation (4.82)). In order to explain its
+construction we need to use Lusztig’s theorem on the structure of the
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                    19
+
+formal completion of H at the central character of π(ξ) (cf. Subsection
+2.12). The central character of π(ξ) (ξ = (P, δ, tP )) is equal to W0 t
+with t = rP tP , where WP rP denotes the central character of δ. Recall
+that we can then extend π(ξ) to the formal completion H̄t of H with
+respect to the maximal ideal It of Z at W0 t (cf. 2.12.3).
+   First we consider the case where ξ is generic (Definition 3.2, Remark
+2.20). For w ∈ W P , w 6= e, the idempotent ewω (cf. equation 2.18)
+vanishes on 1 ⊗ Vδ ⊂ i(Vδ ), where the action is through π(ξ) (extended
+to the completion). Therefore we have the natural isomorphisms of
+vector spaces:
+(3.5)                     i(Vδ ) ≃ H ⊗HP Vδ
+                                 ≃ H̄t ⊗e̟ H̄Pt Vδ
+                                    M
+                                 ≃       ι0u e̟ ⊗ Vδ ,
+                                    u∈W P
+
+where e̟ H̄tP ≃ H̄tP acts on Vδ via δtP , extended to the formal comple-
+tion at the central character WP t. We will often suppress the subscript
+e̟ H̄tP of ⊗.
+   Let us now define the unitary standard intertwining operators π(g, ξ)
+in this case where ξ is generic. First we choose a unitary isomorphism
+δ̃g : Vδ → VΨg (δ) intertwining the representations δ ◦ ψg−1 and Ψg (δ).
+Then we define
+(3.6)           π(g, ξ) : i(Vδ ) → i(VΨg (δ) )
+                         h ⊗ v → hι0g−1 eg̟ ⊗eg̟ Hg(P ) δ̃g (v),
+                                                     g(t)
+
+
+where we use the isomorphism of equation (3.5) to view the right hand
+side as an element of i(VΨg (δ) ). It follows easily that π(g, ξ) is an inter-
+twining operator between π(ξ) and π(gξ).
+   For general ξ we need the following regularity results from [14]. The
+matrix elements of π(g, ξ) are meromorphic in ξ, with possible poles
+at the nongeneric ξ. However, it was shown in [14], Theorem 4.33,
+that for RP -generic t = rP tP , π(g, ξ) is unitary with respect to the
+Hilbert space structures of i(Vδ ) and i(VΨg (δ) ) (which are independent
+of tP ∈ TuP , cf. equation (3.3)). Together with a description of the
+locus of the possible singularities of π(g, ξ) (as a rational function on
+ΞP,δ , the set of induction data of the form (P, δ, tP ) with tP ∈ T P ),
+this implies (according to a simple argument, cf. [2], Lemma 8) that
+π(g, ξ) has only removable singularities in a tubular neighborhood of
+ΞP,δ,u (the subset of triples in ΞP,δ with tP ∈ TuP ). Thus π(g, ξ) has
+a unique holomorphic extension to a tubular neighborhood of ΞP,δ,u.
+20               PATRICK DELORME AND ERIC M. OPDAM
+
+This finally clarifies the definition of π(g, ξ) for general ξ ∈ ΞP,δ,u (and
+in fact in a “tubular neighborhood” of this subset of ΞP,δ ).
+   We conclude with the following summary of the above
+Theorem 3.3. The induction functor π : WΞ,u → PRepunit,temp (H) is
+rational and smooth.
+  By this we simply mean that on each component ΞP,δ,u of Ξu , the
+representations π(ξ) can be realized by smooth rational matrices as
+a function of ξ ∈ ΞP,δ,u , and also the matrices of the π(g, ξ) are both
+rational and smooth in ξ ∈ ΞP,δ,u . We note that the matrices π(ξ; h) :=
+π(ξ)(h) (for h ∈ H fixed) are in fact even polynomial, and that the
+matrices π(k, ξ) (for k ∈ KP ) are constant.
+
+3.3. Fourier transform on L2 (H)
+  Let Vξ denote the representation space of π(ξ), ξ ∈ Ξ. Thus Vξ =
+i(Vδ ) if ξ = (P, δ, tP ), and this vector space does not depend on the
+parameter tP ∈ T P . We denote by VΞ the trivial fibre bundle over Ξ
+whose fibre at ξ is Vξ , thus
+(3.7)                    VΞ := ∪(P,δ) ΞP,δ × i(Vδ )
+where ΞP,δ denotes the component of Ξ associated to P ∈ P, and
+(Vδ , δ) ∈ ∆P , a complete set of representatives of the irreducible dis-
+crete series representations δ of HP . We denote by End(VΞ ) the en-
+domorphism bundle of VΞ , and by Pol(Ξ, End(VΞ )) the space of poly-
+nomial sections in this bundle. Similarly, let us introduce the space
+Ratreg (Ξu , End(VΞ )) of rational sections which are regular in a neigh-
+borhood of Ξu .
+  There is an action of W on End(VΞ ) as follows. If (P, g) ∈ WP
+(the set of elements of W with source P ∈ P) with g = k × n ∈
+KQ × W (P, Q), ξ ∈ ΞP , and A ∈ End(Vξ ) we define g(A) := π(g, ξ) ◦
+A ◦ π(g, ξ)−1 ∈ End(Vg(ξ) ). A section of f of End(VΞ )) is called W-
+equivariant if we have f (ξ) = g −1 (f (g(ξ))) for all ξ ∈ Ξ and g ∈ Wξ
+(where Wξ := WP if ξ = (P, δ, tP )).
+Definition 3.4. We define an averaging projection pW onto the space
+of W-equivariant sections by:
+                                     X
+(3.8)          pW (f )(ξ) := |Wξ |−1   g −1(f (g(ξ))).
+                                       g∈Wξ
+
+Notice that this projection preserves the space Ratreg (Ξu , End(VΞ )), but
+not the space Pol(Ξ, End(VΞ )).
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   21
+
+  The Fourier transform FH on H is the following algebra homomor-
+phism
+(3.9)                 FH : H → Pol(Ξu , End(VΞ ))W
+                            h → {ξ → π(ξ; h)}
+where Pol(Ξ, End(VΞ ))W denotes the space of W-equivariant polyno-
+mial sections of End(VΞ )).
+   We will now describe a W-invariant measure µP l on Ξu whose push
+forward to W\Ξu will be the Plancherel measure of H ([14], Theorem
+4.43). Put ξ = (P, δ, tP ) ∈ Ξu and let t = rP tP . We write dξ :=
+|KP,δ |dtP where dtP denotes the normalized Haar measure of TuP and
+where KP,δ denotes the stabilizer of δ under the natural action of KP
+on ∆P . Let K ⊳W denote the normal subgroupoid whose set of objects
+is P, and with HomK (P, Q) = ∅ unless P = Q, in which case we have
+HomK (P, P ) = KP . Thus WP /KP = {w ∈ W0 | w(P ) ⊂ F0 }. Let
+µRP ,P l ({δ}) denote the Plancherel mass of δ with respect to HP (see
+[14], Corollary 3.32 for a product formula for µRP ,P l ({δ})). We now
+define the Plancherel measure µP l :
+Definition 3.5.
+(3.10)       dµP l (ξ) := q(w P )−1 |WP /KP |−1 µRP ,P l ({δ})|c(ξ)|−2dξ
+where c(ξ) is the Macdonald c-function, see Definition 8.7.
+   This measure is smooth on Ξu (Proposition 8.8(v)), and it is invariant
+for the action of W on Ξu , by Proposition 8.8(ii).
+   With these notations we have:
+Theorem 3.6. ([14], Theorem 4.43)
+    (i) FH extends to an isometric isomorphism
+(3.11)            F : L2 (H) → L2 (Ξu , End(VΞ ), µP l )W ,
+          where the Hermitian inner product (·, ·) on L2 (Ξu , End(VΞ ), µP l )W
+          is defined by integrating the Hilbert-Schmidt form (A, B) :=
+          tr(A∗ B) in the fibres End(Vξ ) against the above measure µP l
+          on the base space Ξu .
+     (ii) If x ∈ Cr∗ (H) ⊂ L2 (H) then F (x) ∈ C(Ξu , End(VΞ ))W .
+    (iii) Let Cr∗ (H)o denote the opposite C ∗ -algebra of Cr∗ (H). Let
+          (x, y) ∈ Cr∗ (H) × Cr∗ (H)o act on L2 (H) via the regular repre-
+          sentation λ(x) × ρ(y), and on L2 (Ξu , End(VΞ ), µP l )W through
+          fibrewise multiplication from the left with F (x) and from the
+          right with F (y). Then F intertwines these representations of
+          Cr∗ (H) × Cr∗ (H)o .
+22                PATRICK DELORME AND ERIC M. OPDAM
+
+Proof. As to (ii), first recall that according to Equation (3.9), FH (H) ⊂
+Pol(Ξu , End(VΞ ))W . By ([14], Theorem 4.43(iii)) one easily deduces
+that khko = kFH (h)ksup for all h ∈ H, where kσksup := supξ∈Ξu kσ(ξ)ko
+(where kσ(ξ)ko denotes the operatornorm of σ(ξ) ∈ End(Vξ )). Hence
+F (Cr∗(H)) ⊂ C(Ξu , End(VΞ ))W .
+  Now (iii) follows from (ii) and ([14], Theorem 4.43(iii)).             
+
+     The following easy corollary is important in the sequel:
+Corollary 3.7. ([14], Theorem 4.45) The averaging operator pW de-
+fines an orthogonal projection onto the space of W-equivariant sections
+in L2 (Ξu , End(VΞ ), µP l). Moreover, if
+(3.12)              J : L2 (Ξu , End(VΞ ), µP l ) → L2 (H)
+denotes the adjoint of F (the wave packet operator), then J F = id and
+F J = pW .
+Proof. Theorem 3.6 implies that J F := id and that F J is equal to
+the orthogonal projection onto the space of W-equivariant L2 -sections
+of End(VΞ ).
+   On the other hand, since the action of W on End(VΞ ) is defined in
+terms of invertible smooth matrices (cf. Theorem 3.3), pW preserves
+the space of L2 -sections. By the W-invariance of µP l , the projection
+pW on L2 (Ξu , End(VΞ ), µP l ) is in fact an orthogonal projection. This
+finishes the proof.                                                    
+
+
+4. Main Theorem and its applications
+   The space of smooth section of the trivial bundle End(VΞ ) on Ξu
+will be denoted by C ∞ (Ξu , End(VΞ )). We equip this vector space with
+its usual Fréchet topology. The collection of semi-norms inducing the
+topology is of the form p(σ) := supξ∈Ξu kDσ(ξ)ko, where D is a constant
+coefficient differential operator on Ξu (i.e. one such operator for each
+connected component of Ξu ), acting entrywise on the section σ of the
+trivial bundle End(VΞ ), and where k·ko denotes the operatornorm. It is
+obvious from the product rule for differentiation that C ∞ (Ξu , End(VΞ ))
+is a Fréchet algebra.
+   The projection pW is continuous on C ∞ (Ξu , End(VΞ )), since it is
+defined in terms of the action of W on Ξu , and conjugations with
+invertible smooth matrices. Thus the subalgebra C ∞ (Ξu , End(VΞ ))W
+of W-equivariant sections is a closed subalgebra.
+   We now define the vector space
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   23
+
+Definition 4.1.
+(4.1)            C(Ξu , End(VΞ )) := cC ∞ (Ξu , End(VΞ )),
+where c denotes the c-function of Definition 8.7 on Ξu . We equip
+C(Ξu , End(VΞ )) with the Fréchet space topology of C ∞ (Ξu , End(VΞ )) via
+the linear isomorphism C ∞ (Ξu , End(VΞ )) → C(Ξu , End(VΞ )) defined by
+σ → cσ.
+Lemma 4.2. The complex vector space C(Ξu , End(VΞ )) is closed for
+taking (fibrewise) adjoints, and
+(4.2)           C(Ξu , End(VΞ )) ⊂ L2 (Ξu , End(VΞ ), µP l ).
+Moreover,
+(4.3)             C ∞ (Ξu , End(VΞ )) ⊂ C(Ξu , End(VΞ ))
+is a closed subspace.
+Proof. It is closed for taking adjoints by Proposition 8.8(iv) (applied to
+d = w P ∈ W (P, P ′)), and it is a subspace of L2 (Ξu , End(VΞ ), µP l) by
+Proposition 8.8(i). The last assertion follows from Proposition 8.8(v).
+
+
+  Now we are prepared to formulate the main theorem of this paper.
+Theorem 4.3. The Fourier transform restricts to an isomorphism of
+Fréchet algebras
+(4.4)                FS : S → C ∞ (Ξu , End(VΞ ))W .
+The wave packet operator J restricts to a surjective continuous map
+(4.5)                   JC : C(Ξu , End(VΞ )) → S.
+ We have JC FS = idS , and FS JC = pW,C (the restriction of pW to
+C(Ξu , End(VΞ ))). In particular, the map pW,C is a continuous projection
+of C(Ξu , End(VΞ )) onto C ∞ (Ξu , End(VΞ ))W .
+
+4.1. Applications of the Main Theorem
+  Before we embark on its proof we discuss some immediate conse-
+quences of the Main Theorem.
+Corollary 4.4. (Harish-Chandra’s completeness Theorem, cf. [8], and
+[10], Theorem 14.31) Let ξ ∈ Ξu . The complex linear span Cξ of the set
+of operators {π(g, ξ) | g ∈ EndWΞ (Vξ )} is a unital, involutive subalgebra
+of End(Vξ ). For all ξ ∈ Ξu , the centralizer algebra π(ξ, H)′ is equal to
+Cξ .
+24               PATRICK DELORME AND ERIC M. OPDAM
+
+Proof. Let ξ = (P, δ, tP ) and denote by Cξ ⊂ End(i(Vδ )) the complex
+linear span of the set of operators {π(g, ξ) | g ∈ EndWΞ (Vξ )}. By
+Theorem 3.3, Cξ is an involutive (i.e. ∗-invariant), unital subalgebra of
+End(i(Vδ )). Theorem 4.3 implies that π(ξ, H) = Cξ′ . The Bicommutant
+Theorem therefore implies that Cξ = π(ξ, H)′.                          
+
+Corollary 4.5. The center ZS of S is, via the Fourier Transform FS ,
+isomorphic to the algebra C ∞ (Ξu )W .
+Proof. The algebra of scalar sections of C ∞ (Ξu , End(VΞu ))W is isomor-
+phic to C ∞ (Ξu )W , and is contained in FS (ZS ) by Theorem 4.3. To
+show the equality, observe that Corollary 4.4 implies that an element
+of FS (ZS ) is scalar at all fibers End(Vξ ) with ξ ∈ Ξu generic (since
+EndWΞ (Vξ ) = C in this case). By the density of the set of generic
+points in Ξu we obtain the desired equality.                           
+
+  Notice that ZS is in general larger than the closure in S of the center
+Z of H.
+Corollary 4.6. (Langlands’ disjointness Theorem, cf. [10], Theorem
+14.90) Let ξ, ξ ′ ∈ Ξu . If π(ξ) and π(ξ ′) are not disjoint, then the objects
+ξ, ξ ′ of WΞu are isomorphic (and thus, π(ξ) and π(ξ ′ ) are actually
+equivalent).
+Proof. Corollary 4.5 implies that ZS separates the W-orbits of Ξu .
+Whence the result.                                              
+
+Corollary 4.7. The Fourier Transform F restricts to a C ∗ -algebra
+isomorphism
+(4.6)               FC : Cr∗ (H) → C(Ξu , End(VΞ ))W ,
+where Cr∗ (H) denotes the reduced C ∗ -algebra of H (cf. [14], Definition
+2.4).
+Proof. By Theorem 3.6, the restriction of F to Cr∗ (H) is an algebra
+homomorphism. It is a homomorphism of involutive algebras since
+π(ξ; x∗) = π(ξ; x)∗ (cf. Subsection 3.1).
+  The reduced C ∗ -algebra Cr∗ (H) of H is defined in [14] as the norm clo-
+sure of λ(H) ⊂ B(L2 (H)). By Theorem 3.6, the norm kxko of Cr∗ (H) is
+equal to the supremum norm kF (x)ksup of the W-invariant continuous
+function ξ → kπ(ξ; x)ko on Ξu (where kπ(ξ; h)ko denotes the operator
+norm for operators on the finite dimensional Hilbert space Vξ = i(Vδ )).
+Notice that, by the regularity of the standard intertwining operators,
+the projection operator pW restricts to a continuous projection on the
+space of continuous sections of End(VΞ ).
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  25
+
+  By Theorem 4.3, the closure of F (S) with respect to k · ksup is equal
+to C(Ξu , End(VΞ ))W . In view of Theorem 3.6(ii) this finishes the proof.
+
+
+Corollary 4.8. The set of minimal central idempotents of Cr∗ (H) is
+parameterized by the (finite) set of W-orbits of pairs (P, δ) with P ∈ P
+and δ ∈ ∆P . The central idempotents e(P,δ) are elements of S.
+Proof. This is immediate from Theorem 4.3 and Corollary 4.7.            
+
+Corollary 4.9. The dense subalgebra S ⊂ Cr∗ (H) is closed for holo-
+morphic functional calculus.
+Proof. According to a well known criterium for closedness under holo-
+morphic functional calculus, we need to check that if a ∈ S is invertible
+in Cr∗ (H), then a−1 ∈ S. This is obvious from Theorem 4.3 and 4.7. 
+
+
+5. Constant terms of matrix coefficients of π(ξ)
+  In the remainder of this paper we will prove the Main Theorem
+Theorem 4.3. A main tool is the notion of the constant term f P of a
+function f ∈ Atemp with respect to a standard parabolic subset P ∈ P.
+
+5.1. Definition of the constant terms of f ∈ Atemp
+   It this section we define the constant term of a tempered finite func-
+tional f ∈ Atemp along a standard parabolic subalgebra HP of H. Recall
+the notion of exponents 2.10 and the Casselman criteria for tempered
+finite functionals.
+Definition 5.1. Let P ⊂ F0 , and RP the standard parabolic subsystem
+with that subset. For real characters t1 , t2 on X we say that t1 ≤P t2
+if and only if t1 (x) ≤ t2 (x) for all x ∈ X P,+ := {x ∈ X | ∀α ∈
+P : hx, α∨ i ≥ 0}. In other words, t1 ≤P t2 iff both t1 ≤F0 t2 and
+t1 |X∩P ⊥ = t2 |X∩P ⊥ .
+    Thus t1 ≤P t2 iff t1 t−1                 ∨
+                              Q
+                          2 =   α∈P (dα ⊗ α ) with 0 < dα ≤ 1, where
+                                                                ∨
+d ⊗ α∨ ∈ Trs is the real character defined by d ⊗ α∨ (x) = dhx,α i .
+Definition 5.2. (Constant term) Let P ∈ P and f ∈ Atemp . Then we
+define the constant term of f along P by
+                                   X
+                        f P (h) :=       ft (h).
+                                  t∈ǫ:|t|≤P 1
+26                PATRICK DELORME AND ERIC M. OPDAM
+
+where (in the notation of Corollary 2.14) ft (h) := Etf (h, 0), and the
+coefficients Etf and the set ǫ are defined by the expansion 2.15. We say
+that an exponent t ∈ ǫ of f is P -tempered if it satisfies the condition
+|t| ≤P 1.
+   The notion of cuspidality (cf. Definition 2.17) can now be reformu-
+lated as follows:
+Corollary 5.3. Let f ∈ Atemp . Then f ∈ Acusp iff f P = 0 for every
+proper P ∈ P.
+     Observe the following elementary properties of the constant term:
+Corollary 5.4.        (i) f P ∈ Atemp .
+    (ii) Lx commutes with f → f P if x ∈ HP .
+   (iii) Ry commutes with f → f P for all y ∈ H.
+   (iv) f P ∈ LX (f ) = f · A ⊂ f · H.
+  The projection of f to f P can be made explicit using an idempotent
+eP in a formal completion of A ⊂ H. Such completions were introduced
+and studied by Lusztig [11] (cf. Subsection 2.12). This will be applied
+to the case were f is a matrix coefficient of a parabolically induced
+representation in the next subsection.
+
+5.2. Constant terms of coefficients of π(ξ) for ξ ∈ Ξu generic
+   In this subsection we assume that ξ is generic unless stated otherwise
+   We will now discuss the constant terms of a matrix coefficient of
+π = π(ξ) in the case where ξ = (P, δ, tP ) ∈ Ξu is generic. Choose
+rP ∈ TP such that WP rP is the central character of δ. We thus assume
+that t = rP tP ∈ T is RP -generic in this subsection.
+   Let a, b ∈ i(Vδ ), and denote by f = fa,b = fa,b (ξ) the matrix co-
+efficient defined by f (h) = ha, π(ξ; h)(b)i. By [14], Lemma 2.20 and
+Proposition 4.20, we have: If tP ∈ TuP then fa,b ∈ Atemp for all
+a, b ∈ H(W P ) ⊗ Vδ . More precisely:
+Proposition 5.5. The exponents of f are of the form wt′ where w
+runs over the set W P and where t′ runs over the set of weights of δtP ,
+thus tP times the set of XP -weights of δ.
+  Now let Q ⊂ F0 be another standard parabolic. By proof of [14],
+Proposition 4.20 we deduce:
+Proposition 5.6. Let w ∈ W P and let u ∈ WP such that wut is an
+exponent of f . If wu|t| ≤Q 1, then w(P ) ⊂ RQ,+ .
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   27
+
+Proof. The equivalence class ̟ of t = rP tP is equal to WP t (since we
+assume genericity). If wut is an exponent then wut = w ′t′ with t′ an
+X-weight of δtP and w ′ ∈ W P . Thus t′ and ut are both in ̟, the
+equivalence class of t. Hence by genericity, w ′ = w and thus        ′
+                                                            Q ut = t , ∨a
+                                      Qfor HP , hence |ut| = α∈P dα ⊗α
+weight of δtP . But δ is discrete series
+with all 0 < dα < 1. Thus wu|t| = α∈P dα ⊗w(α∨ ) ≤Q 1 implies (since
+for all α ∈ P : w(α∨ ) ∈ R0,+
+                            ∨
+                               ) that w(P ) ⊂ RQ,+ .                   
+
+Corollary 5.7. Recall that the equivalence classes in W0 t are of the
+form w̟ with ̟ = WP t and w ∈ W P . If an exponent wt′ of f (with
+w ∈ W P and t′ a weight of δtP ) is Q-tempered, then all exponents
+of f in its class w̟ are Q-tempered. The class w̟ (w ∈ W P ) is
+Q-tempered if and only if w(P ) ⊂ RQ,+ .
+Proof. Since w(P ) ⊂ RQ,+ we have wWP w −1 ⊂ WQ . Hence w̟ ⊂
+WQ wt, so that all elements of w̟ have the same restriction 1 to X ∩Q⊥ .
+
+
+   Now we will express the constant term of a matrix coefficient of
+π(ξ) in terms of the idempotents e̟ of the completion H̄t . Recall the
+material of Subsection 2.12.
+   We will use the analog of Lusztig’s first reduction theorem (2.18) for
+H̄t , in combination with the results in ([14], Section 4.3) on the Hilbert
+algebra structure of Ht , the quotient of Ht by the radical of the positive
+semi-definite Hermitian pairing (x, y)t := χt (x∗ y), in order to express
+and study the constant term.
+Proposition 5.8. We have that
+                                      X
+                    f Q (h) =                       f (ew̟ h)
+                                w∈W P :w(P )⊂RQ,+
+
+Proof. Let us denote by Jw the ideal in AWw(P ) of elements in this ring
+vanishing at w̟. Clearly It ⊂ Jw for all w. By some elementary
+algebra (similar to proof of Prop 2.24(4) in [13]) we see that for every
+x ∈ Jw and k ∈ N there exist a x̄ ∈ It and a unit e in Āmw such that
+                                ex ∈ x̄ + mkw ,
+where mw denotes the ideal of all functions in A which vanish at the
+points of w̟. (To be sure, we construct x̄ by first adding an element
+u ∈ Jwk such that x + u is nonzero at the other classes w ′̟ with w ′ ∈
+W P , w ′ 6= w. Take x̄ equal to the product of the translates (x + u)w
+where w runs over the set of left cosets W0 /Ww(P ). Let e be equal to
+the product of these factors (x + u)w where w runs over the set of left
+28              PATRICK DELORME AND ERIC M. OPDAM
+
+cosets W0 /Ww(P ) with w 6= Ww(P ) ).QLet M be the ideal of functions
+in A vanishing at W0 t. Then M = mw and by genericity the ideals
+mw are relatively prime. So ĀM = ⊕Āmw by the Chinese remainder
+theorem. Then ew̟ is the unit of the summand Āmw . Let ēw̟ be
+the unit of R := Āmw /It Āmw (the canonical image of ew̟ ∈ Āmw ).
+Note that R is finite dimensional over C, and thus R is Artinian. By
+definition of mw , mw ēw̟ is contained in all the maximal ideals of R.
+Hence mw ēw̟ is contained in the intersection of the maximal ideals of
+R, which is nilpotent in R (see the proof of Theorem 3.2 of [12]). In
+particular, for sufficiently large k, mkw ew̟ ⊂ It Āmw , whence
+                            xew̟ ∈ It Āmw .
+But then the right hand side is in the kernel of π, thus we conclude
+that Jw ew̟ is inQthe kernel of π. In particular, the element (for any
+z ∈ X) Θz := y∈Ww(P ) z ((wt)(z)−1 θy − 1) ∈ Jw acts by zero on the
+finite dimensional space of left A-translates of h → f (ew̟ h). Thus the
+exponents of f → f (ew̟ h) are contained in w̟.
+   We obviously have
+                                  X
+                         f (h) =       f (ew̟ h)
+                                 w∈W P
+
+(splitting of 1 according the decomposition of ĀM ). By the results
+in this paragraph, an exponent of h → f (ew̟ h) is Q-tempered iff all
+exponents of this term are Q-tempered iff w(P ) ⊂ RQ,+ . Hence the
+result.                                                            
+
+Corollary 5.9. The constituents f (ew̟ h) depend on the induction pa-
+rameter tP as a rational function.
+Proof. In the proof of Corollary 5.8 we can equally well work over
+the field K of rational functions on T P instead of C. Then ēw̟ ∈
+Ā(K)M /It Ā(K)M = A(K)/It A(K). Hence the result.              
+
+
+5.3. Some results for Weyl groups
+  We want to work with standard parabolics only, and w(P ) ⊂ RQ,+
+does not need to be standard. We resolve this by combining terms
+according to left WQ cosets. We use the following results (see [4],
+Section 2.7).
+Proposition 5.10. Let P, Q ∈ P. The set D Q,P := (W Q )−1 ∩ W P
+intersects every double coset WQ wWP in precisely one element d =
+d(w), which is the unique element of shortest length of the double coset.
+       THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  29
+
+Proposition 5.11. (Kilmoyer) Let d ∈ D Q,P . Then WQ ∩ Wd(P ) is
+the standard parabolic subgroup of W0 corresponding to the subset L =
+Q ∩ d(P ).
+
+  Let t ∈ rP T P be WP -generic as before, where WP rP ⊂ TP is the
+central character of a discrete series representation δ of HP . Let ̟ =
+WP t be the equivalence class of t.
+
+Corollary 5.12.            (i) Let w ∈ W P be such that w̟ is Q-tempered.
+        Then w(P ) ⊂ RQ,+ . We can write w = ud with d = d(w) ∈
+                                                               d(P )
+        D Q,P and u ∈ WQ . Then d(P ) ⊂ Q, and u ∈ WQ . Con-
+        versely, if d ∈ D Q,P is such that d(P ) ⊂ Q, then for all
+                d(P )
+        u ∈ WQ         we have |ud(̟)| ≤Q 1 (in other words, is Q-
+        tempered).
+   (ii) The classes ̟u,d =: ud(̟) with d ∈ D Q,P such that d(P ) ⊂ Q
+                     d(P )
+        and u ∈ WQ , are mutually disjoint.
+
+Proof. (i) According to a result of Howlett (cf. [4], Proposition 2.7.5),
+we can uniquely decompose w as a product of the form w = udv with
+d = d(w) ∈ D Q,P , u ∈ WQ ∩ W L (with L = Q ∩ d(P )), and v ∈ WP .
+In fact v = e, since otherwise there would exist a α ∈ RP,+ with
+v(α) = −αp ∈ P . But then ud(αp ) < 0, which implies according to [4],
+Lemma 2.7.1 that d(αp ) = αq ∈ L. Hence u(αq ) < 0, which contradicts
+the assumption u ∈ WQ ∩W L . Thus we have d(P ) = u−1w(P ) ⊂ RQ,+ ,
+whence Wd(P ) ⊂ WQ . By Kilmoyer’s result it now follows that Wd(P ) =
+WQ∩d(P ) . Hence d(P ) ⊂ Q and L = d(P ). The converse is clear.
+   (ii) Suppose that ̟u,d ∩ ̟u′ ,d′ 6= ∅. The Weyl group W0 permutes
+equivalence classes, thus this implies that (ud)−1u′ d′ (t) ∈ ̟. Since t
+is generic, there exists a v ∈ WP such that u′ d′ = udv. By Howlett’s
+result [4], Proposition 2.7.5 this implies that v = 1, u = u′ and d = d′ .
+
+
+Corollary 5.13. For all d ∈ D Q,P with d(P ) ⊂ Q we write
+                                  X
+                      eWQ d̟ =         eud̟ .
+                                        d(P )
+                                   u∈WQ
+
+
+This is a collection of orthogonal idempotents of H̄t . The constant term
+of f = fa,b (ξ) equals
+                                     X
+                       f Q (h) =            f d (h),
+                               d∈D Q,P :d(P )⊂Q
+30               PATRICK DELORME AND ERIC M. OPDAM
+
+where we define f d (h) := f (eWQ d̟ h). This is the contribution to the
+constant term f Q of f whose exponents have the same restriction to
+X ∩ Q⊥ as d(t).
+
+5.4. The singularities of f d
+   In this section we take the formulae of Corollary 5.13 as a definition
+of f Q and f d , even when tP ∈ T P is not in TuP .
+   We will now bound the possible singularities of the individual con-
+tributions f d to f Q , viewed as functions of tP ∈ T P . We have seen in
+Corollary 5.9 that f d extends to a rational function of ξ ∈ Ξ. To stress
+this dependence we sometimes write f d (ξ, h). We write ξ = (P, δ, tP )
+and put t = t(ξ) = rP tP , where rP ∈ TP is such that WP rP is equal to
+the central character of δ.
+Lemma 5.14. Let P, Q ∈ P and let d ∈ D Q,P be such that d(P ) ⊂ Q.
+Let h, h′ ∈ H̄t . Then
+(5.1)                  d
+                      fa,b (ξ; hh′) = fa,π(ξ;h
+                                       d
+                                               ′ )(b) (ξ; h).
+
+
+Proof. This follows immediately from Corollary 5.4.                    
+
+Lemma 5.15. As in Lemma 5.14. Let g ∈ WP and put P ′ = g(P ).
+                                                                       ′
+According to Corollary 5.12 we can write dg −1 = u′ d′ with d′ ∈ D Q,P
+               ′
+and u′ ∈ WQP . We put t′ = g(t) and ̟ ′ = WP ′ t′ = g(̟), so that
+eWQ d̟ = eWQ d′ ̟′ . With these notations we have the following equality
+of rational functions of ξ:
+                  d             d   ′
+(5.2)            fa,b (ξ; h) = fπ(g, ξ̄ −1 )(a),π(g,ξ)(b) (g(ξ); h),
+
+                        −1
+where ξ¯−1 := (P, δ, t¯P ).
+Proof. This equation follows from the special case ξ ∈ ΞP,δ,u because the
+left hand side and the right hand side are obviously rational functions
+of ξ. In this special case the equation simply expresses the unitarity of
+the intertwiners (cf. Theorem 3.3).                                    
+
+Lemma 5.16. Let P, Q ∈ P. Then H has the following direct sum
+decomposition in left HQ -right H(WP )-submodules:
+                                M
+(5.3)                    H=        HQ,P (d),
+                                   d∈D Q,P
+
+where HQ,P (d) := HQ Nd H(WP ).
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  31
+
+Proof. Using the Bernstein presentation of HQ and the definition of
+the multiplication in H(W0 ) we easily see that
+                                    M
+(5.4)                 HQ,P (d) =           ANw .
+                                        w∈WQ dWP
+
+The result thus follows from the Bernstein presentation of H.             
+
+  After these preparations we will now concentrate on an important
+special case.
+                         d
+Definition 5.17. Let πQ,P    : H → HQ,P (d) denote the projection ac-
+cording to the above direct sum decomposition. Given Q ∈ P, denote
+by w Q = w0 wQ the longest element of W Q , and by Q′ = w Q (Q) =
+                       ′                 ′
+−w0 (Q) ∈ P. Then w Q = (w Q )−1 ∈ D Q,Q , and
+                            ′
+(5.5)          HQ,Q′ (w Q ) = HQ NwQ′ = ANwQ′ H(WQ′ ).
+Let pQ : H → HQ be the left HQ -module map defined by
+                                      w    Q′   −1
+(5.6)                      pQ (h) := πQ,Q ′ (h)N Q′
+                                                w
+(Observe that this map indeed has values in HQ by (5.4)).
+  In (5.5) we have used that NwQ′ Nw′ = Nw NwQ′ if w ∈ WQ .
+Theorem 5.18. Let P, Q ∈ P be such that P ⊂ Q. We put P ′ :=
+                                                      ′
+w Q (P ) ⊂ Q′ ∈ P and ξ ′ = w Q (ξ) := (P ′ , δ ′ , tP ).
+                           ′                            ′
+  Let a′ ∈ i(Vδ′ ) = H(W P ) ⊗ Vδ′ , b′ ∈ H(WQP′ ) ⊗ Vδ′ ⊂ i(Vδ′ ) and let
+h ∈ H. We introduce the unitary isomorphism
+                                                              ′
+(5.7)       σ := ψwQ ⊗ δ̃wQ : H(WQP ) ⊗ Vδ → H(WQP′ ) ⊗ Vδ′ ,
+and the orthogonal projection
+(5.8)                     ρ : i(Vδ ) → H(WQP ) ⊗ Vδ .
+With these notations, put
+(5.9)           a : = ρ(π(w Q , ξ¯−1 )−1 (a′ )) ∈ H(WQP ) ⊗ Vδ
+              b : = σ −1 (b′ ) ∈ H(WQP ) ⊗ Vδ
+We then have, with cQ (ξ) := α∈R0,+ \RQ,+ cα (t),
+                                Q
+
+                  Q′
+(5.10)         faw′ ,b′ (ξ ′, h) = q(w Q )1/2 cQ (ξ)fQ,a,b(ξ, pQ(h)).
+Here fQ,a,b (ξ, h) = fa,b (ξ, h) (with h ∈ HQ , a, b ∈ H(WQP ) ⊗ Vδ ) is the
+matrix coefficient (associated to the pair a, b) of the representation
+                                                Q
+(5.11)                          π Q (ξ) := IndH
+                                              HP δtP
+of HQ (which is tempered and unitary if ξ ∈ Ξu ).
+32                   PATRICK DELORME AND ERIC M. OPDAM
+
+Proof. Choose rP ∈ TP such that WP rP is the central character of δ,
+and write t′ = w Q (t) with t = rP tP . Since we are dealing with rational
+functions of ξ it is sufficient to assume that ξ is regular, i.e. that t is
+RP -regular. We then extend π(ξ ′ ) to the completion H̄t (recall 2.12.3)
+and study π(ξ ′ ) in the light of the isomorphisms (2.18) and (3.5).
+    We combine, in the decomposition (2.18) applied to the parabolic
+P = w Q (P ) and parameter t′ , the idempotents according to left cosets
+  ′
+
+of WQ′ . In other words, we partition W0 t into the sets w(Ω) with
+         ′                        ′
+w ∈ W Q and Ω = WQ′ t′ = WQP′ ̟ ′ (with ̟ ′ = w Q (̟) = WP ′ t′ ). These
+sets are evidently unions of the original equivalence classes in formula
+(2.18) (with respect to P ′ and t′ ), the left WP ′ -cosets acting on t′ . We
+                                                                ′
+denote the corresponding idempotents by (for all w ∈ W Q )
+                                    X
+                           e♯w :=           ewx̟′ .
+                                                wQ (P )
+                                          x∈WQ′
+
+    Note that t′ is P ′ -generic, and thus certainly Q′ -generic. The struc-
+ture formula (2.18) holds therefore, also in terms of the idempotents
+e♯w , where we replace in (2.18) the parabolic P ′ by Q′ .
+    Remark that e♯wQ′ Ω Nw e♯Ω = 0 for any w ∈ W0 with length of less than
+|R0,+ \RQ | (=the length of w Q ). Note by the way that e♯wQ′ Ω = e♯WQ t .
+                                   ′
+
+
+
+Thus for all d ∈ D Q,Q , d 6= w Q we see that e♯WQ t HQ,P (d)e♯wQ WQ t = 0.
+                             ′            ′
+
+
+                                                                      ′
+     Hence for all h ∈ H, a′ ∈ i(Vδ′ ) and b′ ∈ H(WQP′ ) we have
+                    Q′
+(5.12)          faw′ ,b′ (ξ ′ , h) = fa′ ,b′ (ξ ′ , pQ (h)e♯WQ t NwQ′ e♯wQ WQ t ).
+           Q′
+Since faw′ ,b′ (ξ ′ , HIt ) = 0 we can use the analog of formula (4.57) of [14]
+(we use here that the c-function cQ (t) is WQ -invariant, together with
+the argument in the proof of the Proposition 5.8. This makes that we
+can evaluate the c-factors at t′ ):
+                   Q′
+(5.13)          faw′ ,b′ (ξ ′ , h) = q(w Q )1/2 cQ (t)fa′ ,b′ (ξ ′, pQ (h)ι0wQ′ ).
+We use Lemma 5.14 and then rewrite the result using (2.18) and Defi-
+nition 3.6. Assume that b′ = x′ ⊗ v ′ and b = σ −1 (b′ ) = x ⊗ v. Then
+                         ι0wQ′ (b′ ) = ι0wQ′ (x′ e♯WQ′ t′ ⊗ v ′ )
+                                    = e♯WQ t (ψwQ′ (x′ )ι0wQ′ ⊗ v ′ )
+                                    = e♯WQ t π(w Q , ξ)(x ⊗ v)
+                                    = π(w Q , ξ)(b).
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                               33
+
+Thus we obtain
+               Q′
+(5.14)      faw′ ,b′ (ξ ′ , h) = q(w Q)1/2 cQ (ξ)fa′ ,π(wQ ,ξ)(b) (ξ ′, pQ (h))
+                              = q(w Q)1/2 cQ (ξ)f(π(wQ ,ξ̄−1 )−1 (a′ )),b (ξ, pQ(h))
+                              = q(w Q)1/2 cQ (ξ)fQ,a,b(ξ, pQ (h)).
+In the second step we use the unitarity of the intertwining operators
+π(w Q , ξ) to rewrite the matrix coefficient as a coefficient of the induced
+representation π(ξ) (extended holomorphically as in Lemma 5.15; in
+fact it is a simple special case of this Lemma). Since b ∈ H(WQP ) ⊗
+Vδ and pQ (h) ∈ HQ , we can project the vector π(w Q , ξ¯−1 )−1 (a′ ) onto
+H(WQP ) ⊗ Vδ , and consider the result as a matrix coefficient of π Q (ξ).
+
+
+Theorem 5.19. Fix P ∈ P and δ ∈ ∆P,WP rP . We denote by ΞP,δ ⊂ Ξ
+the collection of standard induction data of the form (P, δ, tP ) with
+tP ∈ T P , and by ΞP,δ,u ⊂ ΞP,δ the subset of such triples with tP ∈ TuP .
+Then for all d ∈ D Q,P such that d(P ) ⊂ Q and for all a, b ∈ i(Vδ ), the
+rational function
+(5.15)                            ξ → c(ξ)−1 fa,b
+                                              d
+                                                  (ξ, h)
+is regular in a neighborhood of ΞP,δ,u .
+Proof. We apply Lemma 5.15 with g = w Q d ∈ W (P, P ′) where P ′ =
+                                       ′
+w Q (d(P )) ⊂ Q′ . Notice that d′ = w Q . Put ξ ′ = g(ξ) and
+(5.16)                                 a′ = π(g, ξ̄ −1)(a)
+                                       b̃′ = π(g, ξ)(b).
+We obtain
+                                                                Q′
+(5.17)                  c(ξ)−1fa,b
+                               d
+                                   (ξ, h) = c(ξ)−1 faw′ ,b̃′ (ξ ′, h).
+Now we can uniquely decompose b̃′ in the following way
+(5.18)                                 b̃′ = π(ξ ′ , h̃)(b′ )
+                    ′                            ′
+with h̃ ∈ H(W Q ) and b′ ∈ H(WQP′ ) ⊗ Vδ′ ⊂ i(Vδ′ ). With the help of
+Lemma 5.14 we get
+                                                                Q′
+(5.19)                  c(ξ)−1fa,b
+                               d
+                                   (ξ, h) = c(ξ)−1 faw′ ,b′ (ξ ′, hh̃).
+We can now apply Theorem 5.18 with respect to P0 := d(P ) ⊂ Q. We
+put ξ0 := d(ξ) and
+                                  −1
+(5.20)        a0 : = ρ(π(w Q , ξ¯0 )−1 (a′ )) ∈ H(W P0 ) ⊗ Vδ        Q
+                             −1
+               b0 : = σ (b ) ∈     ′
+                                          H(WQP0 )     ⊗ Vδ
+34                 PATRICK DELORME AND ERIC M. OPDAM
+
+to obtain:
+(5.21)
+  c(ξ)−1fa,b
+          d
+             (ξ, h) = q(w Q )1/2 (c(ξ)−1c(ξ0 ))cQ (ξ0 )−1 fQ,a0 ,b0 (ξ0 , pQ (hh̃)),
+where in general for Q ⊃ P we denote
+                                 Y
+(5.22)                cQ (ξ) :=                      cα (t).
+                                      α∈RQ,+ \RP,+
+
+The regularity of the normalization factor cQ (ξ0 )−1 as a function of ξ0
+(and thus as a function of ξ = d−1 (ξ0 )) follows from [14], Theorem
+3.25, when we consider the tempered residual coset rP TuP ⊂ T for the
+Hecke algebra HQ (instead of H itself). It is a simple special case of
+Proposition 8.8(v). Similarly, the regularity of c(ξ)−1c(ξ0 ) is asserted
+by Proposition 8.8(iv). By the regularity of the various intertwining
+operators we have used (cf. Theorem 3.3) it is clear that also a0 , b0 are
+also rational and regular on ΞP,δ,u . We have finished the proof.       
+
+     From the proof of Theorem 5.19 we obtain
+Corollary 5.20. Thus, the final conclusion of all these considerations
+is that for all h ∈ H, P ∈ P, δ ∈ ∆P , and a, b ∈ i(Vδ ) fixed, the
+function
+                                                 Q
+(5.23)           ΞP,δ,u × HQ ∋ (ξ, hQ ) → c(ξ)−1fa,b (ξ, hQ h)
+is a linear combination with coefficient functions which are regular ra-
+tional functions on ΞP,δ,u , of normalized matrix coefficients
+(5.24)                     cQ (d(ξ))−1 fQ,a′ ,b′ (d(ξ), hQ)
+of induced representations of HQ of the form π Q (d(ξ)) (where d ranges
+over the Weyl group elements d ∈ D Q,P such that d(P ) ⊂ Q).
+
+6. Proof of the main theorem
+6.1. Uniform estimates for the coefficients of π(ξ)
+   Recall that X + is the cone {x ∈ X | hx, α∨ i ≥ 0 for all α ∈ R1,+ }.
+We put ZX = X + ∩ X − . This is a sublattice of elements in X with
+length 0. Recall that Q denotes the root lattice. The sublattice Q ⊕
+ZX ⊂ X has finite index in X. If x = xQ + xZ ∈ Q+ + ZX then
+(6.1)                      N (x) = xQ (2ρ∨ ) + kxZ k.
+Let us show that Q+ is finitely generated over Z+ . For each fundamen-
+tal weight δi , let qi = mi δi be the least multiple of δi such that qi ∈ Q
+(thus mi ∈ N = {1, 2, 3, · · · } is a divisor of the index [P : Q]). These
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                          35
+
+multiples generateP        over Z+ a cone C + ⊂ Q+ . Let F be the fundamen-
+tal domain F = { i ti qi |ti ∈ [0, 1)} of C, and let FQ = F ∩ Q ⊂ Q+
+(a finite set). Clearly FQ and the {qi } generate Q+ over Z+ . Let
+x1 , · · · , xm , xm+1 , · · · , xN ∈ X + such that x1 , · · · , xm is a set of Z+ -
+generators of Q+ and that xm+1 , · · · , xN ∈ ZX is a Z-basis of ZX .
+By (6.1) we see that there exists a constant        P K > 0 such that for all
+          +
+x ∈ Q + XZ and all decompositions x =                 li xi with li ≥ 0 if i ≤ m,
+we have
+                                    X
+(6.2)                                  |li | ≤ KN (x)
+(just observe that xi (2ρ∨ ) ≥ 1 if i ∈ 1 . . . , m). We fix such a K > 0.
+   We define a function ν on Trs by
+        ν(t) = max({|xi (t)| |i = m + 1, . . . , N}
+(6.3)                           ∪ {|xi (wt)| | i = 1, . . . , m; w ∈ W0 }).
+ The positive real cone spanned by the elements wxi (w ∈ W0 , i =
+1, . . . , m) and ±xi (i = m + 1, . . . , N) is the full dual of Lie(Trs ).
+Therefore the function log(ν) ◦ exp is a norm on Lie(Trs ).
+Theorem 6.1. Let R > 1, P ∈ P, and δ ∈ ∆P be given. Choose
+a set xi ∈ X + as above and let K and ν be as above. We use the
+notation ν(|ξ|) := ν(|tP |) for ξ = (P, δ, tP ) ∈ ΞP,δ . Define a compact
+neighborhood D P (R) ⊂ ΞP,δ of ΞP,δ,u ⊂ ΞP,δ by D P (R) = {ξ ∈ ΞP,δ |
+ν(|ξ|) ≤ R}.
+  There exists a d ∈ N, and there exists a constant c > 0 (depending
+on R only) such that for all w ∈ W , for all a, b ∈ i(Vδ ), and for all
+ξ ∈ D P (R), the matrix coefficient fa,b (ξ, Nw ) satisfies
+(6.4)         |fa,b (ξ, Nw )| ≤ ckakkbk(1 + N (w))dν(|ξ|)KN (w)
+Proof. Using [14], equation (2.27) (also see the proof of Lemma 6.11) we
+see that it is equivalent to show that fa,b (ξ, Nu θx Nv ) can be estimated
+by the right hand side of (6.4) with w = x, for all u, v ∈ W0 and
+x ∈ X + . By applying right (resp. left) translations of the matrix
+coefficient fa,b (ξ) by Nv (resp. Nu ) and by a set of representatives of
+the finite quotient X/(Q + ZX ) we see that we may further reduce to
+proving the estimates (6.4) for w = x ∈ Q+ + ZX .
+   Recall (cf. [14], Proposition 4.20 and its proof) that the the eigen-
+values of the matrix of π(ξ, θx ) are of the form x(wi (rj tP )). Here the
+rj ∈ TP are the generalized XP -eigenvalues of the discrete series rep-
+resentation δ. By Casselman’s criterion we know therefore that for
+all x ∈ X + , x(wi (rj )) ≤ 1. This implies that for all i ∈ 1, . . . , m,
+and for all ξ ∈ ΞP,δ , the eigenvalues of π(ξ, θxi ) are bounded by ν(|ξ|).
+36                 PATRICK DELORME AND ERIC M. OPDAM
+
+Then Lemma 7.1 allows to estimate the norm of π(ξ, θli xi ), by dividing
+π(ξ, θxi ) by ν(|ξ|).
+   Taking into account the fact that D R (P ) is compact, one sees that
+the norm of π(ξ, θxi ) is bounded if ξ is in D R (P ). By a simple product
+formula, one estimates the norm of π(ξ, θx ). These estimates together
+with equation (6.2) imply the desired result.                           
+
+Corollary 6.2. For all constant coefficient differential operators D on
+ΞP,δ there exist constants d ∈ N and c > 0 such that for all ξ ∈ ΞP,δ,u ,
+for all a, b ∈ i(Vδ ), and for all w ∈ W
+(6.5)              |Dfa,b (ξ, Nw )| ≤ ckakkbk(1 + N (w))d.
+Proof. This is a standard application of the Cauchy integral formula,
+starting with equation (6.4). Choose a basis x1 , . . . , xp of the character
+lattice X P of T P , and let y1 , . . . , yp be the dual basis. Let Cǫ := {v ∈
+Lie(T P ) | ∀i : |xi (v)| = ǫ}. We may assume that D is of the form
+                       α
+D = D α := y1α1 . . . yp p . By the holomorphicity of fa,b we have, for a
+suitable constant Cα > 0 and any choice of a sequence of radii ǫ(w):
+                                           fa,b (exp(v) · ξ, Nw )
+                              Z
+          α
+(6.6) D fa,b (ξ, Nw ) = Cα                     Q           αi +1
+                                                                  dx1 ∧ · · · ∧ dxp .
+                                v∈Cǫ(w)           i xi (v)
+
+Now use the estimates of Theorem 6.1 with the sequence ǫ(w) chosen
+such that r(w) := max{ν(| exp(v)|) | v ∈ Cǫ(w) } is equal to
+(6.7)                          1 + 1/(1 + N (w)).
+But log(ν) ◦ exp is a norm on Lie(T P ), as well as Supi |xi (v)|. They are
+equivalent. Moreover log(1 + x) ≥ k ′ x for x ∈ [0, 1], for some k ′ > 0.
+Together with 6.7 this implies that there exists a constant k > 0 such
+that ǫ(w) ≥ k/(1 + N (w)). So equation (6.6) yields the estimate (for
+some constant c′ > 0)
+(6.8)
+ |D α fa,b (ξ, Nw )| ≤ c′ kakkbk(1 + N (w))d+|α|(1 + 1/(1 + N (w)))KN (w).
+This easily leads to the desired result.                                          
+
+Corollary 6.3. We have F (S) ⊂ C ∞ (Ξu , End(VΞ ))W . The restriction
+FS of F to S defines a continuous map FS : S → C ∞ (Ξu , End(VΞ ))W .
+Proof. The equivariance of the sections in the image is clear. Recall
+that F (Nw ) ∈ Pol(Ξu , End(VΞ )) is defined by F (Nw )(ξ) = π(ξ, Nw ).
+  Hence by the estimates of Corollary 6.2 we see that for any continu-
+ous seminorm p on C ∞ (Ξu , End(VΞ )) there exist constants C > 0 and
+d ∈ Z+ such that p(F (Nw )) ≤ C(1 + N (w))d.
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                   37
+
+   Let b ∈ Z+ be such that 0 < Cb := w∈W (1 + N (w))−b < ∞, and
+                                       P
+let q = qp denote the continuous seminorm on S defined by q(x) :=
+CCb supw |(x, Nw )|(1 + N (w))d+b. Then p(FS (x)) ≤ q(x) for all x ∈ H,
+implying that FS is a continuous map as claimed.                     
+
+
+6.2. Uniform estimates of the difference of a coefficient and its
+     constant term
+   We now introduce the important notion of a normalized smooth fam-
+ily of coefficients:
+Definition 6.4. Let P ∈ P and let δ ∈ ∆P be an irreducible discrete
+series of HP with central character WP rP ∈ WP \TP . We put ξ =
+(P, δ, tP ) ∈ ΞP,δ,u. A smooth family of coefficients of π(ξ), ξ ∈ ΞP,δ,u is
+a family of linear functionals on H of the form:
+(6.9)                  H ∋ h 7→ Tr(σ(ξ)π(ξ)(h)),
+where σ is a section of C ∞ (ΞP,δ,u, End(VΞ )).
+  A smooth section σ ∈ C ∞ (ΞP,δ,u, End(VΞ )) is called normalized smooth
+when it is divisible (in the C ∞ (ΞP,δ,u)-module C ∞ (ΞP,δ,u, End(VΞ ))) by
+the smooth function {ξ → c−1 (ξ)} ∈ C ∞ (ΞP,δ,u ) (cf. Proposition 8.8).
+  A normalized smooth family of coefficients of π(ξ), ξ ∈ ΞP,δ,u is a
+smooth family of coefficients (6.9) for which σ is normalized smooth.
+Remark 6.5. We frequently use tP rather than ξ = (P, δ, tP ) as the
+parameter of a family of coefficients.
+Corollary 6.6. It follows directly from the definitions that smooth
+(resp. normalized smooth) families of coefficients of π(ξ), ξ ∈ ΞP,δ,u ,
+are stable under left and right translations by elements of h ∈ H.
+  Moreover, Corollary 5.20 implies that:
+Corollary 6.7. The restriction to HQ of the constant term of a nor-
+malized smooth family of π(ξ) = π(P, δ, tP ), tP ∈ TuP , along Q ∈ P is
+a finite sum of terms, each of these being a normalized smooth family
+of coefficients of π Q (d(ξ)), where d is some Weyl group element with
+d(P ) ⊂ Q.
+Lemma 6.8. Assume ZX = {0}. Let ΞP,δ,tP ∋ ξ → Φξ be a smooth
+family of coefficients.
+   Let α ∈ F0 , and put Q = F0 \ {α}.
+   Let k · k denote a norm which comes from a W0 -invariant euclidean
+structure on X ⊗Z R.
+38                PATRICK DELORME AND ERIC M. OPDAM
+
+  Let a > 0 and let Xa+ denote the cone (over Z+ ) Xa+ = {x ∈ X + |
+hx, α∨i > akxk}. Then there exists C, b > 0 such that
+
+(6.10)               |(Φξ − ΦQ
+                             ξ )(Nu θx Nv )| ≤ Ce
+                                                 −bkxk
+                                                       ,
+
+for all x ∈ Xa+ , ξ ∈ ΞP,δ,u, u ∈ WQ , and v ∈ W0 .
+Proof. Recall that the lattice X contains the root lattice Q(R0 ), and
+hence an integral multiple of the weight lattice P (R0 ), kP (R0 ) say.
+We put X ′ = kP (R0 ) ⊂ X and we identify X ′ with Zl via a basis
+of X ′ consisting of the elements (kδβ ), β ∈ F0 (where the δβ are the
+fundamental weights), ordered in such a way that e1 = kδα . The
+temperedness of π(P, δ, tP ), tP ∈ TuP , and the fact that its central
+character is given by t = rP tP imply that the possible eigenvalues
+of π(P, δ, tP )(θkδβ ) are among the wt(kδβ ) with w ∈ W0 such that
+|wt(kδβ )| ≤ 1. Moreover the modulus of wt(kδβ ), hence of wt(e1 ), does
+not depend on tP ∈ TuP .
+   Hence if u = v = e and x ∈ X ′ = kP (R0 ), (6.10) follows, in view of
+the definition of the constant term, from Lemma 7.3.
+   Let us now derive the general case of (6.10) from this special case.
+Since ZX = {0}, X ′ is of finite index in X. One can assume that a is
+small enough, in such a way that Xa+ is nonempty, otherwise there is
+nothing to prove. Let x ∈ Xa+ and let y be the orthogonal projection of
+x on the line Rδα . By definition of XQ we have x − y ∈ XQ , and since
+hx−y, β ∨i = hx, β ∨ i for all β ∈ Q we find that in fact x−y ∈ XQ+ . Thus
+x−y is a nonnegative linear combination of the fundamental weights δβQ
+of RQ . It is a basic fact that the fundamental weights of a root system
+(with given basis of simple roots) have nonnegative rational coefficients
+in the basis of its simple roots (indeed, this statement reduces to the
+case of an irreducible root system, in which case the indecomposability
+of the Cartan matrix implies that these coefficients are in fact strictly
+positive). Hence we have x − y ∈ XQ+ ⊂ Q+ Q. Since hβ, α∨i ≤ 0 for all
+β ∈ Q, we see that hy, α∨i ≥ hx, α∨ i > akxk ≥ akyk. Hence kδα ∈ Xa+ .
+   Let (x1 , . . . , xr ) be a set of representatives in X of X/X ′ . Let us
+show that one can choose the xi in −Xa+ . Our claim is a consequence
+of the following fact. If y ∈ X, one has y + nδα ∈ Xa+ for n large. In
+fact by the triangular inequality one has:
+     hy + nδα , α∨ i − aky + nδα k ≥ n(hδα , α∨i − akδα k) + α(y) − akyk
+Thus, if x ∈ Xa+ and x = x′ + xi , for some x′ ∈ X ′ and some i, one has
+x′ ∈ X ′ +
+         a . To get the estimates, one applies the previous estimates to
+the translates of the family Φξ by the Nu (from the left), and by θxi Nv
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  39
+
+(from the right), which are smooth families of coefficients themselves
+(cf. Corollary 6.6), and taking into account Corollary 5.4.         
+
+
+6.3. Wave packets
+  Recall that J was introduced as the adjoint of F . Thus if σ ∈
+L2 (ΞP,δ,u , End(VΞ ), µP l ) then J (σ) ∈ L2 (H), and is completely charac-
+terized by the value of (J (σ), h) where h ∈ H. We have, using Theorem
+3.6, that
+(6.11)
+    J (σ)(h) : = (J (σ)∗ , h) = (h∗ , J (σ)) =
+                                      Z
+                      ∗
+               = (F (h ), σ) = µR,δ          Tr(σ(ξ)π(ξ, h))|c(ξ)|−2dξ,
+                                      ΞP,δ,u
+
+where µR,δ = q(w P )−1 |WP /KP |−1 µRP ,P l ({δ}) > 0.
+   Recall Definition 4.1. Assume that σ̃ = c(w P ·)σ ∈ C(Ξu , End(VΞ ))
+(in other words, σ ∈ C ∞ (ΞP,δ,u , End(VΞ ))).
+   Denote by Φσ the smooth family of coefficients Φσξ (h) = Tr(σ(ξ)π(ξ, h))
+associated with σ. Then we have by (6.11) (with h ∈ H)
+(6.12)                   J (σ̃)(h) = µR,δ Wσ (h),
+where we put for any σ ∈ C ∞ (ΞP,δ,u, End(VΞ )),
+                         Z
+(6.13)        Wσ (h) : =         Φσξ (h)c−1 (ξ)dξ
+                          Ξ
+                         Z P,δ,u
+                       =         Tr(σ(ξ)π(ξ, h))c−1(ξ)dξ
+                             ΞP,δ,u
+
+Theorem 6.9. For every k ∈ Z+ , there exists a continuous seminorm
+pk on C ∞ (ΞP,δ,u , End(VΞ )) such that
+(6.14)             |Wσ (Nu θx Nv )| ≤ (1 + kxk)−k pk (σ),
+for all x ∈ X + , u, v ∈ W0 and σ ∈ C ∞ (ΞP,δ,u , End(VΞ )).
+Proof. First, by using right and left translations by the Nw , w ∈ W0 ,
+and Corollary 6.6, it is enough to prove (6.14) for u = v = 1. Thus, we
+assume u = v = 1 in the following.
+   The proof is by induction on the rank of X. The statement is clear
+if the rank of X is zero. One assumes the theorem is true for lattices
+of rank strictly smaller than rank of X.
+   For the induction step we consider two cases, namely the case where
+ZX 6= 0 (first case), and the case where ZX = 0 (second case).
+40                 PATRICK DELORME AND ERIC M. OPDAM
+
+  First case. In this case the semisimple quotient HF0 of H = HF0
+has smaller rank than H. Recall the results of Proposition 2.2 and
+Proposition 2.3. Let us denote the semisimple quotient HF0 of H by
+H0 , its root datum RF0 by R0 etc.
+  We have TP ⊂ T0 and T P ⊃ T 0 . Let T0P = (T0 )P be the connected
+component of e of the intersection T0 ∩ T P . Then the product map
+TP ×T0P → T0 is a finite covering, as is the product map T0P ×T 0 → T P .
+Let ξ = (P, δ, tP ) and suppose that tP = tP0 t0 for tP0 ∈ T0,u
+                                                            P
+                                                                and t0 ∈ Tu0 .
+Let ξ0 = (P, δ, tP0 ) ∈ ΞR0 ,P,δ,u denote the standard induction datum for
+H0 . Recall the epimorphism φt0 : H → H0 of Proposition 2.3. It is easy
+to see that π(ξ) = π(ξ0 )t0 , the pull back of the representation π(ξ0 ) of
+H0 to H via φt0 . This implies that
+(6.15)                    π(ξ)(θx ) = t0 (x)π(ξ0 )(θx0 )
+for all x ∈ X, where x0 ∈ X0 is the canonical image of x in X0 .
+   Hence, since c(ξ) = c(ξ0 ) (indeed, use Definition 8.7 and observe that
+α(t) = α(rP tP ) = α(rP tP0 t0 ) = α(rP tP0 ) for all α ∈ R0 ) and since
+                 Z                  Z
+                         P      P
+(6.16)               f (t )dt =                f (tP0 t0 )dtP0 dt0
+                    TuP                    P ×T 0
+                                          T0,u u
+
+for all integrable functions f on TuP , we have
+(6.17)                      Wσ (θx ) = W0,σx (θx0 ),
+               ∞
+where σx ∈ C (ΞR0 ,P,δ,u, End(VΞ0 )) is defined by
+                              Z
+(6.18)             σx (ξ0 ) =     t0 (x)σ(tP0 t0 )dt0
+                               T0
+                              Z u
+                            =     t0 (x0 )σ(tP0 t0 )dt0 ,
+                                    Tu0
+
+and where x0 is the canonical image of x in X 0 .
+  From equation (6.18) it is clear, by harmonic analysis on the torus
+ P
+T0,u × Tu0 , that for all k ∈ Z+ and all continuous seminorms q on
+C ∞ (ΞR0 ,P,δ,u, End(VΞ0 )), there exists a continuous seminorm p = pq,k
+on C ∞ (ΞP,δ,u, End(VΞ )) such that
+(6.19)                    q(σx ) = (1 + kx0 k)−k p(σ)
+for all x ∈ X and for all σ ∈ C ∞ (ΞP,δ,u , End(VΞ )).
+   Now apply the induction hypothesis to W0,σx . In view of (6.17) and
+(6.19) this yields the induction step in the first case.
+   Second case. We now consider the case ZX = 0. If α ∈ F0 and a > 0,
+               +
+one defines Xα,a  = {x ∈ X + | hx, α∨ i > akxk}. We first prove that:
+                    +
+(6.20)       ∪α∈F0 Xα,a = X + \ {0}, for all a small enough
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                 41
+
+Let x ∈ X + \ {0}. We write
+                                  X
+                             x=          hx, α∨iδα
+                                  α∈F0
+
+where (δα ) are the fundamental weights. For a > 0 small enough, one
+has, by equivalence of norms in finite dimensional vector spaces:
+(6.21)              2akxk ≤ supα∈F0 |hx, α∨ i|, x ∈ X +
+Then, for x ∈ X + \ {0}, choose α ∈ F0 with hx, α∨ i maximal. From
+(6.21), one has hx, α∨ i ≥ 2akxk, hence, as kxk =
+                                                6 0:
+                      hx, α∨ i > akxk, i.e. x ∈ Xα,a
+                                                 +
+
+
+which proves (6.20).
+                                                      +
+  Hence it is enough to prove the estimates for x ∈ Xα,a . Let Q =
+F0 \ {α}. Then it follows from Lemma 6.8, that for some b > 0, and
+C > 0, one has:
+     |ΦσtP (θx ) − Φσ,Q
+                    tP
+                        (θx )| ≤ Ce−bkxk , for all x ∈ Xα,a
+                                                        +
+                                                            , tP ∈ TuP
+By integration of this inequality over TuP against the continuous func-
+tion |c−1 (ξ)| it suffices to prove the estimates (6.14) after replacing
+ΦσtP by Φσ,Q
+          tP
+             . But by Corollary 5.20, the restriction to HQ of the con-
+stant term Φσ,QtP
+                  c−1 (ξ) of the normalized smooth family ΦσtP c−1 (ξ) of
+coefficients is a sum of normalized smooth families of coefficients for
+                      ∨
+RQ = (X, Y, RQ , RQ     , Q). This brings us back at the first case of the
+induction step, thus finishing the proof.                               
+
+Corollary 6.10. It follows from Theorem 6.9, (6.12) and Lemma
+6.11 that J (σ) ∈ S for all σ ∈ C(ΞP,δ,u , End(VΞ )), and that JC :
+C(ΞP,δ,u , End(VΞ )) → S is contiunous.
+  By Lemma 4.2 we see that in particular J (σ) ∈ S for all σ ∈
+  ∞
+C (ΞP,δ,u , End(VΞ )).
+
+6.4. End of the proof of the main Theorem
+  We start with a basic technical lemma:
+Lemma 6.11. Let n ∈ Z. There exists a constant Cn with the following
+property. For all f ∈ H∗ for which there exists C > 0 such that:
+(6.22)          |f (Tu θx Tv )| ≤ C(1 + kxk)−n , u, v ∈ W0 , x ∈ X +
+then one has:
+                  |f (Nw )| ≤ Cn C(1 + N (w))−n, w ∈ W
+42                PATRICK DELORME AND ERIC M. OPDAM
+
+Proof. As in [14] (2.25), one writes, for w = uxv, with u, v ∈ W0 , x ∈
+X +,
+                             X
+(6.23)                Nw =        cw,(u′ ,v′ ) Tu′ θx Tv′
+                                u,v∈W0
+
+where the real coefficients cuxv,(u′ ,v′ ) and cuyv,(u′ ,v′ ) are equal if x and y
+belong to the same facets of the cone X + . The number of facets being
+finite, one sees, by using the assumption (6.22), that there exists C ′
+such that:
+
+(6.24)          |f (Nuxv | ≤ C ′ C(1 + kxk)−n , u, v ∈ W0 , x ∈ X +
+
+But, from [14] (2.27), one deduces the existence of r0 ≥ 0 such that:
+
+(6.25)      N (x) − r0 ≤ N (uxv) ≤ N (x) + r0 , u, v ∈ W0 , x ∈ X +
+
+But one has : N (x) = hx, 2ρ∨ i + kx0 k, x ∈ X + where x0 is the
+projection of x ∈ X ⊗ R on ZX ⊗ R along ZR0 ⊗ R. Let us define
+
+              kv k′ = supu∈W0 |v (2uρ∨)| + kv 0 k, v ∈ X ⊗ R
+
+Then k · k′ is a norm on X ⊗ R, which is equivalent to k · k. Moreover
+
+                       N (x) = kxk′ , for all x ∈ X + .
+
+Hence there exists C ′′ > 0 such that:
+                           −1
+(6.26)                  C ′′ N (x) ≤ kxk ≤ C ′′ N (x)
+
+Taking into account (6.24), (6.25) and (6.26), one gets the result.            
+
+     End of the proof of the Main Theorem:
+By Corollary 6.3, the image of FS is contained in the space of smooth
+W-equivariant sections C ∞ (Ξu , End(VΞ ))W , and FS is continuous.
+   Corollary 6.10 states that the image of JC is contained in S, and
+that JC : C(Ξu , End(VΞ )) → S is continuous.
+   Since C ∞ (Ξu , End(VΞ ))W ⊂ C(Ξu , End(VΞ )) (see Lemma 4.2) and
+S ⊂ L2 (H) (see (2.14)), Corollary 3.7 implies that JC FS = idS . It
+follows that the map JC in (4.5) is surjective, and that FS is injective.
+   Since C ⊂ L2 (Ξu , End(VΞ ), µP l) (see Lemma 4.2), Corollary 3.7 also
+implies that FS JC = pW,C . It follows, since pW,C is the identity on
+C ∞ (Ξu , End(VΞ ))W ⊂ C(Ξu , End(VΞ )), that FS is also surjective in
+(4.4). This finishes the proof of the Main Theorem.                    
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  43
+
+7. Appendix: Some applications of spectral projec-
+   tions
+  The following lemma was suggested by Lemma 20.1 from [1] and its
+proof.
+Lemma 7.1. Let V be a complex normed vector space of dimension p.
+There exists C > 0 such that for all A ∈ End(V ) with eigenvalues less
+or equal to 1:
+(7.1)            kAn k ≤ C(1 + kAk)p−1 (1 + n)p , n ∈ Z+
+Here kAk is the operator norm of A.
+Proof. Let Dn be the disk of center 0 and radius 1 + (1 + n)−1 . Then
+                              Z
+(7.2)              n
+                  A = 1/2iπ        z n (z Id −A)−1 dz
+                                  ∂Dn
+
+From the Cramer rules, there exists a polynomial function from End(V )
+into itself, B 7→ M(B), of degree p − 1, such that for any invertible B,
+one has:
+(7.3)                    B −1 = (det(B))−1 M(B)
+Hence, there exists C ′ > 0 such that:
+                kM(B)k ≤ C ′ (1 + kBk)p−1 , B ∈ End(V ).
+Hence, taking into account:
+1 + kz Id −Ak ≤ 2 + (1 + n)−1 + kAk ≤ (2 + (1 + n)−1)(1 + kAk), z ∈ Dn ,
+one has
+(7.4)     kM(z Id −A)k ≤ C ′ (2 + (1 + n)−1 )p−1 (1 + kAk)p−1 , z ∈ Dn
+Now the eigenvalues of z Id −A, z ∈ ∂Dn are of modulus greater or
+equal to (1 + n)−1 . Hence
+(7.5)              | det(z Id −A)| ≥ (1 + n)−p , n ∈ Z+
+The length of ∂Dn is 2π(1 + (1 + n)−1 ). From equations (6.1) to (6.4),
+one gets:
+ kAn k ≤ (1 + (1 + n)−1 )1+n C ′ (2 + (1 + n)−1 )p−1 (1 + n)p (1 + kAk)p−1
+One gets the required estimate with:
+                               C = C ′ e3p−1
+                                                                         
+44                PATRICK DELORME AND ERIC M. OPDAM
+
+Corollary 7.2.        (i) Let r ′ > r > 0. There exists Cr,r′ such that
+        for all A ∈ End(V ) with eigenvalues of modulus less or equal
+        to r, one has:
+                                              n
+                      kAn k ≤ Cr,r′ (r ′ ) (1 + kAk)p−1
+     (ii) Let ǫ > 0 and let Ωǫ be the set of elements in End(V ) whose
+          eigenvalues are either of modulus one or of modulus less or
+          equal to 1 − ǫ. Let P<1 be the sum of the spectral projections
+          corresponding to the eigenvalues of modulus strictly less than
+          1. Then P<1 An = (A<1 )n , where A<1 = P<1 A. Let b > 0 such
+          that 1 − ǫ < e−b . There exists C depending on b, ǫ and V such
+          that:
+           kP<1 An k ≤ C(1 + kP<1 Ak)p−1e−bn , n ∈ N, A ∈ Ωǫ
+     (iii) If A(t) is a continuous ( resp. holomorphic) function with
+           values in Ωǫ , then A<1 (t) has the same property
+Proof. (i) One applies the previous result to r ′′ −1 A, where r < r ′′ < r ′
+and one uses the fact that (1 + n)p (r ′/r ′′ )−n is bounded.
+  (ii) follows from (i) applied to A<1 , r = 1 − ǫ, r ′ = e−b .
+  (iii) follows from the formula
+                                  Z
+                    A<1 = 1/2iπ      z(z Id −A)−1 dz
+                                         ∂D
+
+where D is the disc of center 0 and radius 1 − ǫ/2.                          
+
+Lemma 7.3. Let ǫ, a > 0, p, l ∈ N. Let V a normed complex vector
+space of dimension p and X = Zl . Let π be a finite dimensional complex
+representation of X. One denotes by (e1 , . . . , ep ) the canonical basis of
+X. One sets A1 = π(e1 ), . . . , Al = π(el ). If n = (n1 , . . . , nl ) ∈ X, one
+sets : knk = |n1 | + · · · + |nl |, and An = π(n).
+Assume that the modulus of the eigenvalues of the Ai are less or equal to
+one, and the eigenvalues of A1 are either of modulus one or of modulus
+less or equal to 1 − ǫ. Let us denote by P>1 (resp. P1 ) the sum of the
+spectral projections of A1 corresponding to the eigenvalues of modulus
+strictly less than 1 (resp. of modulus 1).
+   Set Xa+ = {n ∈ Zl+ |n1 > aknk}.
+Then there exists a′ and C ′ , independent of the representation π in V ,
+such that:
+                                                      ′
+                               Y
+            kP<1 An k ≤ C ′ (        (1 + kAi k)p )e−a knk , n ∈ Xa+
+                             i=1,...,l
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                 45
+
+Proof. From Corollary 7.2(i), (ii), one deduces that, for b > 0 such that
+1 − ǫ < e−b , and b′ > 0, there exists a constant C > 0, depending only
+on ǫ, b, b′ and V such that:
+                                                   ′
+                         Y
+       kP<1 An k ≤ C ′ (     (1 + kAi k)p )e−bn1 +b (n2 +···+nl ) , n ∈ X +
+                             i=1,...,l
+
+If n ∈   Xa+ ,   one has :
+                      bn1 − b′ (n2 + · · · + nl ) ≥ (ab − b′ )knk
+b being chosen, one takes b′ = ab/2. Then the inequality of the Lemma
+is satisfied for a′ = ab/2.                                         
+
+
+8. Appendix: The c-function
+  In this appendix we have collected some of the properties of the Mac-
+donald c-function. These properties play a predominant role through-
+out this paper, and are closely related with the properties of residual
+cosets as discussed in [14], Appendix: residual cosets (Section 7).
+  The Macdonald c-function is defined as the following expression c ∈
+Q A = Q ⊗Z A the quotient field of A:
+                              Y          Y
+(8.1)                   c :=      cα =       cα ,
+                                         α∈R0,+   α∈R1,+
+
+where cα for α ∈ R1 is equal to
+                               −1/2        −1     −1/2
+                 (1 + qα∨ θ−α/2 )(1 − qα∨ q2α∨ θ−α/2 )
+(8.2)      cα :=                                       ∈ Q A.
+                               1 − θ−α
+If α ∈ R0 \R1 then we define cα := c2α .
+Remark 8.1. We have thus associated a c-function cα to each root
+α ∈ Rnr , but cα only depends on the direction of α. This convention
+was used in [14], but differs from the one used in [13]. If α ∈ R1
+and α/2 6∈ R0 , then the formula for cα should be interpreted by setting
+q2α∨ = 1, and then rewriting the numerator as (1 − qα−1∨ θ−α ). Here and
+below we use this convention.
+   We view c as a rational function on T via the isomorphism of A and
+the ring of regular functions on T sending θx to the complex character
+x of T .
+   Since the numerator and the denominator of c both are products of
+irreducible factors whose zero locus is nonsingular (a coset of a codi-
+mension 1 subtorus of T ), it is straightforward to define the pole order
+it of (c(t)c(w0 t))−1 at a point t ∈ T (see [14], Definition 3.2).
+46                PATRICK DELORME AND ERIC M. OPDAM
+
+   Let Q = Q(R0 ) denote the root lattice of R0 . The following theorem
+is the main property of the c-function:
+Theorem 8.2. ([14], Theorem 7.10) We have: it ≤ rank(Q) for all
+t ∈ T.
+  We define the notion of a “residual point” of T (with respect to
+(R, q)) as follows:
+Definition 8.3. A point t ∈ T is called residual if it = rank(X).
+Corollary 8.4. There exist only finitely many residual points in T , for
+every root datum R and label function q for R, and the set of residual
+points is empty unless ZX = 0.
+Proof. Let n = rank(R0 ). From equation (8.1) it is clear that for any
+k ∈ Z, the set Sk := {t | it = k} is a finite (possibly empty) union of
+nonempty Zariski open subsets of cosets L of subtori of T , whose Lie
+algebra is an intersection of root hyperplanes α = 0 of C ⊗ Y . If L is
+such a coset with codim(L) = d, then RL := {α ∈ R0 | α|L is constant}
+is a parabolic subsystem of rank d. Moreover, the projection tL of L
+onto TL is point with iR  tL = k. Applying Theorem 8.2 to TL with
+                            L
+
+
+respect to (RL , qL ) we obtain k ≤ d.
+   Hence if Sn is not finite, then there exists a proper parabolic root
+subsystem RL ⊂ R0 of rank m < n say, such that n ≤ m, which is
+clearly absurd. The remaining part of the Corollary is straightforward
+from Theorem 8.2.                                                    
+
+Remark 8.5. There is a classification of residual points (cf. [9], [14]).
+     Another fact of great consequence is the following.
+Theorem 8.6. ([14], Theorem 7.14) Let r = sc ∈ T be residual, with
+s ∈ Tu and c ∈ Trs . Then r ∗ := sc−1 ∈ W (Rs,1)r, where Rs,1 is the
+root subsystem of R1 defined by Rs,1 := {α ∈ R1 | α(s) = 1}.
+  We extend the definition of the c-function to arbitrary standard in-
+duction data. First recall Theorem 2.8, stating that the central char-
+acter of a residual discrete series representation is residual.
+Definition 8.7. Let ξ = (P, δ, tP ) be a standard induction datum, and
+let rP ∈ TP be such that WP rP is the central character of δ (thus rP is
+a (RP , TP )-residual point). Put t = rP tP ∈ T . We define:
+                                     Y
+(8.3)                    c(ξ) :=            cα (t)
+                                 α∈R0,+ \RP,+
+
+Notice that we recover the original c-function defined on T as the special
+case where P = ∅ and δ = C.
+        THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                  47
+
+  The next proposition goes back to [9], Theorem 3.13 (also see [14],
+Theorem 3.25).
+Proposition 8.8. Let P ⊂ F0 and let ξ = (P, δ, tP ) ∈ ΞP,δ,u. Choose
+rP ∈ TP such that WP rP is the central character of δ, and let t =
+rP tP ∈ T .
+       (i) c(ξ −1 ) = c(w P (ξ)) = c(ξ).
+      (ii) The function ξ → |c(ξ)|2 on Ξu is W-invariant.
+     (iii) The function c(ξ) is K-invariant.
+     (iv) Let P ′ ∈ P and d ∈ KP ′ × W (P, P ′). The rational functions
+           c(dξ)c(ξ)−1 and c(dξ)−1c(ξ) (of ξ ∈ ΞP,δ ) are regular in a
+           neighborhood of ΞP,δ,u.
+      (v) The rational function c(ξ)−1 is regular in a neighborhood of
+           Ξu .
+Proof. (i) A straightforward computation from the definitions, using
+Theorem 8.6 (cf. [14], (3.58)).
+   (ii) The W-invariance follows simply from the definitions if we write
+(using (i)) |c(ξ)|−2 = (c(ξ)c(ξ −1)−1 (cf. [14], Proposition 3.27).
+   (iii) This follows trivially from the definition of the action of K on
+ξ: If k ∈ KP then kξ = k(P, δ, tP ) = (P, Ψk (δ), ktP ). The central
+character of Ψk (δ) is equal to k −1 WP rP = WP (k −1 rP ), thus we need to
+evaluate the cα in the product c(kξ) at the point k −1 rP ktP = t, or any
+of its images under the action of WP . Hence c(kξ) = c(ξ).
+   (iv) By (i) and (ii) it is clear that these rational functions have
+modulus 1 on ΞP,δ,u (outside their respective singular sets).
+   The singular sets of these rational functions are of the following form.
+Choose rP ∈ TP such that WP rP is the central character of δ. Then the
+singular set of c(dξ)c(ξ)−1 is the union of the zero sets of the functions
+                                  Y
+                                                    −1
+(8.4)                                         (1 − αP,δ )
+                             α∈R1,+ \RP,1,+
+
+and
+                                  −1/2   −1/2          −1/2   −1/2
+                Y
+                                                     −1
+(8.5)                       (1 + qα∨ αP,δ )(1 − qα∨ q2α∨ αP,δ )
+
+           α∈R1,+ \RP,1,+
+
+on ΞP,δ , where αP,δ denotes the function on ΞP,δ defined by αP,δ (ξ) =
+α(rP tP ).
+   In the case of c(w P ξ)−1 c(ξ) the answer is the same, but we need to
+take the products over the set α ∈ d−1 R1,+ \RP,1,− .
+   The intersection of a component of this hypersurface with ΞP,δ,u is
+either empty or it has (real) codimension 1 in ΞP,δ,u .
+48                  PATRICK DELORME AND ERIC M. OPDAM
+
+   By the boundedness of c(dξ)c(ξ)−1 on ΞP,δ,u , this implies that the
+pole order of this function at a components of the singular set which
+meets ΞP,δ,u is in fact equal to zero. Hence the poles are removable in
+a neighborhood of ΞP,δ,u . Similarly for c(dξ)−1c(ξ).
+   (v) The proof of [9], Theorem 3.13 may be adapted to the present
+situation. Or we may argue as in (iv) as follows.
+   Since |c(ξ)|−2 = (c(ξ)c(w P (ξ)))−1 is smooth on Ξu (cf. [14], Theorem
+3.25, equation (3.53), Proposition 3.27 and equation (3.58)), it follows
+that c(ξ)−1 is bounded on ΞP,δ,u . Hence the argument that was used in
+the proof of (iv) applies.                                              
+
+
+References
+ [1] E.P. van den Ban, The principal series for a reductive symmetric space II, J.
+     Funct. Analysis 109 (1992), pp. 331–441.
+ [2] E.P. van den Ban, J. Carmona, P. Delorme, Paquets d’onde dans l’espace de
+     Schwartz d’un espace symétrique réductif, J. Funct. Analysis 139 (1996), pp.
+     225–243.
+ [3] N. Bourbaki, Groupes et Algèbres de Lie, Chaps IV,V,VI, Hermann, Paris
+     (1972).
+ [4] R.W. Carter, Finite groups of Lie type, Wiley Classics Library, John Wiley
+     and sons, Chichester, UK.
+ [5] P. Delorme (avec un appendice de M. Tinfou), Espace de Schwartz pour la
+     transformée de Fourier hypergéométrique, J. Funct. Anal., 168 (1999), pp.
+     239–312.
+ [6] J. Dixmier, Les C ∗ -algèbres et leurs representations, Cahiers scientifiques, fasc.
+     XXIX (1969), Gauthier-Villars, Paris.
+ [7] Harish-Chandra, Harmonic analysis on real reductive groups II, Wave packets
+     in the Schwartz space, Inv. Math 36 ( 1976), pp. 1–35.
+ [8] Harish-Chandra, Harmonic analysis on real reductive groups III, The Maass-
+     Selberg relations and the Plancherel formula, Ann. Math. 104 (1976), pp. 117–
+     201.
+ [9] G.J. Heckman, E.M. Opdam, Yang’s system of particles and Hecke algebras,
+     Annals of mathematics 145 (1997), pp. 139–173.
+[10] A.W. Knapp, Representation of semisimple groups, An overview based on ex-
+     amples, Princeton Math. Series 36, Princeton University Press (1986).
+[11] G. Lusztig, Affine Hecke algebras and their graded version, J. Amer. Math.
+     Soc. 2 (1989), no. 3, pp. 599–635.
+[12] H. Matsumura, Commutative Ring Theory, Cambridge studies in advanced
+     mathematics 8, Cambridge University Press, (1986).
+[13] E.M. Opdam, A generating formula for the trace of the Iwahori-Hecke algebra,
+     Progress in Mathematics 210 (2003), pp. 301–323 (also math.RT/0101006).
+[14] E.M. Opdam, On the spectral decomposition of affine Hecke algebras, JIMJ,
+     (to appear).
+Index
+(·, ·)                                            ι0s , normalized intertwining element of
+    inner product on H, 10                               Q H, 9
+    inner product on Pol(End(V(K\Ξ) )),           µP l , Plancherel measure, spectral mea-
+       21                                                sure of the tracial state τ on Cr∗ (H),
+k · k, norm on the vector space Q ⊗Z                     21
+       ZX , 6                                     ν, (multiplicative) distance function
+k · ko , operator norm on H, 10, 24                      on Trs , 35
+h → h∗ , conjugate linear anti-involution         ξ = (P, δ, tP ) standard induction da-
+       of H, 10                                          tum, 17
+h·, ·i                                            π, induction functor on WΞ , 20
+    perfect pairing between X and Y ,             π(RP , WP r, δ, t) = IndH   HP (δt ), parabol-
+
+       5                                                 ically induced representation, 17
+                                                  π(ξ) := π(RP , WP rP , δ, tP ), where ξ =
+    inner product on Vπ , 17
+                                                         (P, δ, tP ) and WP rP is the cen-
+≤P , partial ordering of exponents rel-
+                                                         tral character of δ, 18
+       ative to P ∈ P, 14, 25
+                                                  ̟, equivalence class inside W0 t, 15
+∆ = ∆R,q , complete set of represen-
+                                                  π(g, ξ), unitary intertwining operator,
+       tatives of the irreducible discrete
+                                                         intertwining π(ξ) and π(gξ), 18
+       series representations of H(R, q),
+                                                  τ , trace functional of H, 10
+       10
+                                                  φtP : HP → HP , family of surjective
+∆W0 r , subset of ∆ consisting of the                    homomorphisms, 9
+       representations with central char-
+                                                  ψg : HP → HQ , isomorphism for g ∈
+       acter W0 r, 10
+                                                         KQ × W (P, Q), 18
+∆P = ∆RP ,qP , complete set of rep-
+       resentatives for the equivalence
+                                                  A, abelian subalgebra of H, 8
+       classes of irreducible discrete se-
+                                                  A, space of finite functionals on H, 12
+       ries representations of HP
+                                                  Acusp , cuspidal elements in Atemp , 14
+       = H(RP , qP ), 18
+                                                  Atemp , tempered elements in A, 14
+Ξ set of standard induction data ξ =
+                                                  Q A = Q ⊗Z A, quotient field of A, 45
+       (P, δ, tP ) with P ∈ P, δ ∈ ∆P             a = (α∨ , k), affine root, 6
+       and tP ∈ T P , 17
+ΞP , set of standard induction data of            C ∞ (Ξu ), space of C ∞ -functions on
+       the form (P, δ, tP ) with δ ∈ ∆P                 Ξu , 37
+       and tP ∈ T P , 20
+                                                  C ∞ (Ξu , End(VΞ )), space of smooth sec-
+Ξu set of tempered standard induc-                      tions in End(VΞ ), 22
+       tion data ξ = (P, δ, tP ), 17              Cr∗ (H), the reduced C ∗ algebra of H,
+Ψg : ∆P → ∆Q , bijection induced by                     10
+       ψg , 18                                    C(Ξu , End(VΞ )) = cC ∞ (Ξu , End(VΞ )),
+Ω, length 0 elements in W , 5                           23 Q
+Ωf = Ω/ZX , 6                                     c(ξ) = α∈R0,+ \RP,+ cα (t), Macdon-
+δ̃g : Vδ → VΨg (δ) , unitary isomorphism                ald’s c-function on Ξ, where ξ =
+       intertwining the representations                 (P, δ, tP ), and t = rP tP with WP rP
+       δ ◦ ψg−1 and Ψg (δ), 19                          the central character of δ, 45
+θx , basis elements of A, 8                       cα , rank one c-function, 45
+ιs , intertwining element of H, 9                 central character of (V, π), 8
+                                             49
+50                   PATRICK DELORME AND ERIC M. OPDAM
+
+e̟ , idempotent of H̄t associated with        P, power set of F0 , 6
+      ̟ ⊂ W0 t, 15                            pW , averaging operator for the action
+                                                   of W on sections of End(VΞ ), 20
+F aff , affine simple roots, 5                Pol(End(VΞ ))W , space of WΞ -equivariant
+F0 ⊂ R0 , simple roots of R0 , 5                   sections in Pol(End(VΞ )), 20
+F , Fourier Transform, 21                     Pol(Ξ), space of Laurent polynomials
+   FH , F restricted to H, 21                      on Ξ, 20
+   FS , F restriced to S, 23
+   FC , F restricted to Cr∗ (H), 24
+                                              Q
+fs = logq (q(s)), 7
+                                                 Q = Q(R0 ), root lattice, 5
+H, affine Hecke algebra, 7                       Q ∈ P, subset of F0 , 6
+Q H = Q ⊗Z H, 9
+                                              Q, quotient field of Z, 9
+H∗ , algebraic dual of H, 12                  q, base for the labels q(s), 7
+H0 = H(W0 , q |S0 ) ⊂ H, 8                    q, l-multiplicative function on W , 6
+HP = H(RP , q P ), parabolic subalge-         q P , label function on RP determined
+     bra of H, 8                                     by the restriction of q to RP,nr , 7
+HP = H(RP , qP ), semisimple quo-             qP , label function on RP determined
+     tient of HP , 8                                 by the restriction of q to RP,nr , 7
+H̄t = Z̄W0 t ⊗Z H, 14                         qa , affine root label, 6
+Ht = H/It H, where It is the maxi-            qα∨ , label for α∨ ∈ Rnr ∨
+                                                                         ,7
+     mal ideal of W0 t in Z, 16
+Ht , the quotient of Ht by the radical        R, root datum, 5
+     of the positive semi-definite Her-       RP , root datum associated to P , 6
+     mitian pairing (x, y)t := χt (x∗ y),     RP , semisimple root datum associ-
+     27                                              ated to P , 6
+                                              R0 ⊂ X, reduced integral root sys-
+i(Vδ ) = H(W P ) ⊗ Vδ , underlying vec-              tem, 5
+      tor space of π(P, δ, tP ) in the com-   R0∨ ⊂ Y , coroot system, 5
+      pact realization, 17                    RP ⊂ R0 , parabolic subsystem, root
+it , pole order of (c(t)c(w0 t))−1 at t ∈            system of RP , 6
+      T , 45                                  R1 , system of long roots in Rnr , 7
+                                              Rnr , non reduced root system, 7
+J , wave packet operator, adjoint of
+     F , 22                                   Raff , affine root system, 5
+                                                aff
+   JC , restriction of J to the Fréchet      R±    , positive (negative) affine roots,
+     space C(Ξu , End(VΞ )), 23                      5
+                                              Ratreg (Ξ), rational functions on Ξ, reg-
+KP , finite abelian group TP ∩ T P , 18              ular in an open neighborhood of
+K⊳W, normal subgroupoid whose set                    Ξu ⊂ Ξ, 20
+     of objects is P, with HomK (P, Q)
+     = KP if P = Q and ∅ else, 21             S aff , simple reflections of W aff , 5
+                                              S0 , simple reflections of W0 , 5
+L2 (H), Hilbert completion of H, 10           S, the Schwartz completion of H, 11
+l, length function on W , 5                   sα , reflection in α, 16
+N = {1, 2, 3, · · · }, 5
+Nw , basis elements of H, 7                   T = HomZ (X, C× ), complex algebraic
+N , norm function on W , 6                        torus, 8
+                                              T P ⊂ T , algebraic subtorus of T with
+P ∈ P, subset of F0 , 6                           Lie(T P ) = P ⊥ , 16
+         THE SCHWARTZ ALGEBRA OF AN AFFINE HECKE ALGEBRA                           51
+
+TP ⊂ T , algebraic subtorus orthogo-          Z̄W0 t , formal completion of Z at W0 t,
+      nal to T P , with character lattice          14
+      XP , 17
+Trs = Hom(X, R×     + ), real split form of
+      T , 11
+Tu = Hom(X, S 1 ), compact form of
+      T , 11
+|t| ∈ Trs , real split part of t ∈ T , 11
+
+Vξ = i(Vδ ), underlying vector space of
+      π(ξ), 20
+VΞ , trivial fiber bundle over Ξ, 20
+
+W , affine Weyl group, 5
+Wσ , wave packet, 39
+W0 , Weyl group of R0 , 5
+W aff = W0 ⋉ Q ⊂ W , 5
+WP , Weyl group of RP , parabolic sub-
+      group W0 , 6
+W P = W0 /WP , set of left cosets wWP .
+      If P ⊂ F0 , identified with short-
+      est length representatives, 6
+W (P, Q) = {w ∈ W0 | w(P ) = Q},
+      with P, Q ∈ P, 18
+W, groupoid whose set of objects is
+      P, with morphisms HomW (P, Q) =
+      W(P, Q) := KQ × W (P, Q), 18
+WΞ := W ×P Ξ, groupoid of standard
+      induction data, 18
+WP , set of elements of W with source
+      P ∈ P, 20
+Wξ = WP if ξ ∈ ΞP , 20
+WΞu := W ×P Ξ, groupoid of tem-
+      pered standard induction data, 18
+w0 , longest element of W0 , 31
+wP , longest element of WP , 31
+wP , longest element of W P , 31
+
+X, Y , lattices, 5
+X + , cone of dominant elements in X,
+      6
+XP ⊃ RP , lattice of RP , character
+      lattice of TP , 6
+
+YP ⊃ RP∨ , lattice of RP , cocharacter
+    lattice of TP , 6
+
+Z+ = {0, 1, 2, . . . }, 5
+ZX , length 0 translations in W , 6
+Z, the center of H, 8
+52             PATRICK DELORME AND ERIC M. OPDAM
+
+   Institut de Mathématiques de Luminy, UPR 9016 du CNRS, Faculté
+des Sciences de Luminy, 163 Avenue de Luminy, Case 901, 13288 Mar-
+seille Cedex 09, France, email: delorme@iml.univ-mrs.fr
+
+  Korteweg de Vries Institute for Mathematics, University of Ams-
+terdam, Plantage Muidergracht 24, 1018TV Amsterdam, The Nether-
+lands, email: opdam@science.uva.nl
+

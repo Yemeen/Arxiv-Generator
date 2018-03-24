@@ -1,0 +1,2080 @@
+                                               CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV
+arXiv:math/0312338v1 [math.RT] 17 Dec 2003
+
+
+
+
+                                                                                  G. Lusztig
+
+
+                                                                                Introduction
+                                                Throughout this paper, G denotes a fixed. not necessarily connected, reductive
+                                             algebraic group over an algebraically closed field k. This paper is a part of a
+                                             series (beginning with [L10], [L11], [L12]) which attempts to develop a theory of
+                                             character sheaves on G. The numbering of the sections and references continues
+                                             that of the earlier Parts.
+                                                Assume that k is an algebraic closure of a finite field Fq and that G has a fixed
+                                             Fq -rational structure with Frobenius map F : G −      → G. To any triple (L, S, E)
+                                                                                     0
+                                             (where L is a Levi of a parabolic of G , S is an isolated stratum of the normalizer
+                                             of L, with certain properties, and E is an irreducible cuspidal local system on S) we
+                                             have an associated in 5.6 a (not necessarily irreducible) intersection cohomology
+                                             complex K on G. If F (L) = L, F (S) = S and we are given an isomorphism
+                                             F ∗E −→ E, there is an induced isomorphism φ : F ∗ K −  → K hence the characteristic
+                                                               F
+                                             function χK,φ : G −  → Q̄l is well defined.
+                                                The main result of this paper (Theorem 21.14) is that the functions χK,φ that
+                                             are not identically zero (for various (L, S, E) up to G0F -conjugacy) form a Q̄l -
+                                             basis of the vector space V of functions GF −     → Q̄l that are constant on G0F -
+                                             conjugacy classes. The proof uses several of the results developed in earlier Parts
+                                             (the generalized Springer correspondence in §11, the generalized Green functions
+                                             in §15, the character formula in §16). It also uses the classification of cuspidal
+                                             local systems (this is needed in §17 which is a preliminary to the proof of Theorem
+                                             21.14).
+                                                A corollary of the main theorem is Theorem 21.21 which states that the char-
+                                             acteristic functions of admissible complexes A such that F ∗ A ∼   = A form a basis
+                                             for V. In the connected case such a result was proved in [L13] subject to some
+                                             mild restrictions on the characteristic. The present proof has no restrictions on
+                                             the characteristic and it makes no use of the orthogonality formulas which will
+                                             appear in a later stage of the theory.
+                                                Another corollary of the main theorem is the construction in §22 of a ”twisted
+                                             induction” map from certain functions on a subgroup of GF to functions on GF .
+
+                                               Supported in part by the National Science Foundation
+
+                                                                                                              Typeset by AMS-TEX
+                                                                                        1
+2                                     G. LUSZTIG
+
+   Our paper contains also a new characterization of isolated elements (see 18.2)
+which is obvious in the connected case but less obvious in the disconnected case.
+                                                                        ∼
+   Notation. If Γ is a finite group with a given automorphism F : Γ −→ Γ, the
+”F -twisted conjugacy classes” of Γ are the orbits of the Γ-action on Γ given by
+y : w 7→ F −1 (y)wy −1 .
+   We shall denote by σG the map from G to the set of G0 -conjugacy classes of
+quasi-semisimple elements in G defined in 7.1 (where it is denoted by σ).
+   For two elements a, b of a group we set ab = b−1 ab.
+   Let p ≥ 0 be the characteristic of k.
+
+   Errata for Part I.
+   In 1.11 replace [B, 9.8] by: A.Borel and J.Tits, Groupes réductifs, Publ.Math.IHES
+27(1965), 55-150, Lemma 11.1.
+   6.7: line 3,4: replace Ẽ by π! Ẽ.
+   p.403 line 5: replace ZL1 (gs ) by dim ZL1 (gs ).
+
+                                      Contents
+    17.   Properties of cuspidal classes.
+    18.   A property of isolated elements.
+    19.   Properties of cuspidal local systems.
+    20.   Twisted group algebras.
+    21.   Bases.
+    22.   Twisted induction of class functions.
+
+                       17. Properties of cuspidal classes
+17.1. This section contains the proof of a key property (17.13) of ”cuspidal con-
+jugacy classes (see below) which is needed in the proof of the main results of
+§21.
+
+17.2. A G0 -conjugacy class in G is said to be isolated if one (or equivalently, any)
+element of it is isolated in G, see 2.2. We show:
+   (a) if G0 is semisimple and g ∈ G is isolated then gs has finite order.
+We may assume that gu is quasi-semisimple in ZG (gs ). Let H = ZG (gu ). As in the
+proof of Lemma 2.7, we see that H 0 is semisimple. By Lemma 2.5, gs is isolated
+in H. Replacing G by H, we are reduced to the case where g is semisimple. In
+this case we argue by induction on dim G. Assume first that dim ZG (g) < dim G.
+Now ZG (g)0 is semisimple and g is isolated in ZG (g). By the induction hypothesis
+g has finite order. Assume next that dim ZG (g) = dim G that is, ZG (g)0 = G0 .
+We can find an integer n ≥ 1 such that g n ∈ G0 . Clearly, ZG (g)0 ⊂ ZG (g n )0 .
+Hence ZG (g n )0 = G0 . Thus, g n ∈ ZG0 . Since ZG0 is finite, we see that g n has
+finite order. This proves (a).
+             CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                             3
+
+17.3. Let c be an isolated G0 -conjugacy class in G and let F be a local system
+on c. Let [F ] be the isomorphism class of F . We say that (c, F ) (or (c, [F ]) or
+F ) is cuspidal if F is G0 -equivariant and for any proper parabolic P of G0 and
+any UP -coset R in NG P we have Hcd (c ∩ R, F ) = 0 where d is dim c minus the
+dimension of the P/UP -conjugacy class of R/UP in NG P/UP .
+   A G0 -conjugacy class in G is said to be cuspidal if it is isolated and if it carries
+some non-zero cuspidal local system.
+   Let c be an isolated G0 -conjugacy class in G and let F be a G0 -equivariant
+local system on c. Then
+   (a) (c, F ) is cuspidal if and only if for some/any g ∈ c, and some/any unipotent
+ZG (gs )0 -conjugacy class c of ZG (gs ) contained in {u ∈ ZG (gs ); u unipotent, gs u ∈
+c}, the local system j ∗ F on c is cuspidal relative to ZG (gs ) (here j : c −  → c is
+u 7→ gs u).
+The proof of (a) is identical to that of its special case 6.6.
+
+17.4. (a) Let g ∈ G be quasi-semisimple. Then ZG0 (g)/ZG (g)0 is a diagonalizable
+group.
+   (b) If in addition, G0 is semisimple, simply connected, we have ZG0 (g) =
+ZG (g)0 .
+(b) is proved in [St, 8.1]; in the closely related case of compact Lie groups, it goes
+back to the earlier paper [B1, 3.4]. In the case where G0 is semisimple, (a) is
+proved in [St, 9.1] using (b). For the general case see [DM, 1.6(i)], [DM, 1.24].
+
+Lemma 17.5. Assume that G is such that G0 is semisimple, simply connected.
+Let s ∈ G be semisimple and u ∈ G be unipotent such that su = us and the G0 -
+conjugacy class of su is cuspidal. Let z ∈ ZG0 . Let Z = ZG (s)0 . Assume that
+g ∈ G0 , g s = zg, g u = yg with y ∈ Z 0 . Then y = y ′u y ′−1 for some y ′ ∈ Z 0 .
+
+   The proof (carried out in 17.6-17.11) consists of a number of steps which reduce
+us to the case where G0 is almost simple, simply connected, in which case we shall
+use the classification of cuspidal conjugacy classes (which by 17.3(a) follows from
+the results on the classification of unipotent cuspidal conjugacy classes given in
+§12 and [L2]).
+
+17.6. In the setup of 17.5 assume that
+   (a) G0 is almost simple and G = G0 × Cm (semidirect product, Cm a cyclic
+                                                                            ′
+group of order m ≥ 1 with generator e) with group structure (a, et )(a′ , et ) =
+                ′
+(aαt (a′ ), et+t ) where α : G0 −
+                                → G0 is an automorphism of order m ≥ 1 preserving
+an épinglage and su is of the form (x, e) for some x ∈ G0 .
+If ZG0 = {1} then we must have z = 1 and we can take y ′ = g. This handles the
+following types of G0 :
+   Bn , Cn (with m = 1, p = 2), Dn (with m ∈ {1, 2}, p = 2)
+   D4 (with m = 3, p = 2)
+   E6 (with m ∈ {1, 2}, p = 3), E7 (with p = 2),
+4                                    G. LUSZTIG
+
+   E8 , F4 (with m ∈ {1, 2}), G2 .
+If Z = G0 then we must have z = 1 and we can take y ′ = g. This handles the
+following types of G0 :
+   An (with m = 1), An (with m = 2, p = 2),
+   E6 (with m = 1, p = 2, Z = G0 ), E7 (with p = 3, Z = G0 ).
+Let c1 (resp. c2 ) be the Z 0 -conjugacy class of u (resp. uy) in ZG (s). Then
+                 ∼
+Ad(g) : ZG (s) −→ ZG (s) carries c1 to c2 . Thus c1 , c2 are two cuspidal unipotent
+Z-conjugacy classes in the same connected component of ZG (s). It is enough to
+show that c1 = c2 . (Then uy = y ′ uy ′−1 for some y ′ ∈ Z.) If there is only one
+cuspidal unipotent Z-conjugacy class in uZ then clearly c1 = c2 . This handles
+the following types of G0 :
+   An (with m = 2, p 6= 2), Cn , D4 (with m = 3, p 6= 2),
+   E6 (with m = 1, p 6= 2, 3), E6 (with m = 1, p = 2, Z 6= G0 ),
+   E6 (with m = 2, p 6= 3),
+   E7 (with p 6= 2, 3), E7 (with p = 3, Z 6= G0 ).
+The cases not covered by the arguments above are with G0 of type Bn or Dn
+with m ∈ {1, 2} and p 6= 2. In each of these cases there are at most two cuspidal
+unipotent Z-conjugacy classes in ZG (s) (they are automatically contained in Z).
+Each of these classes is stable under any automorphism of Z; in particular, under
+Ad(g). Hence these cases are settled. Thus, Lemma 17.5 holds in the present case.
+17.7. In the setup of 17.5 assume that
+    (a) G0 is almost simple and G = G0 × Cn (semidirect product, Cn a cyclic
+                                                                                   ′
+group of order n ≥ 1 with generator e) with group structure (a, et )(a′ , et ) =
+                   ′
+(aαt (a′ ), et+t ) where α : G0 −     → G0 is an automorphism preserving an épinglage
+such that α = 1 and su is of the form (x, e) for some x ∈ G0 .
+                 n
+
+Let m be the order of α. Thus, n/m ∈ Z. Let Ḡ = G0 × Cm (semidirect prod-
+uct, Cn a cyclic group of order m ≥ 1 with generator e′ ) with group structure
+                   ′                    ′
+(a, e′t )(a′ , e′t ) = (aαt (a′ ), e′t+t ). Let π : G −
+                                                      → Ḡ, (g, et ) 7→ (g, e′t ). Then
+                     ∼
+π induces G0 −→ Ḡ0 with kernel K = {1, em , e2m , . . . }. From the definitions
+we see that the Ḡ0 -conjugacy class of π(s)π(u) is cuspidal. Applying 17.6 to
+Ḡ, π(s), π(u), π(g), π(z), π(y) instead of G, s, u, g, z, y, we see that there exists
+y ′ ∈ G0 such that sy ′ = y ′ sk, uy = y ′ uy ′−1 k ′ with k, k ′ ∈ K. Applying the
+homomorphism ρ : G −      → Cn , (g, et) 7→ et we get
+    ρ(s)ρ(y ) = ρ(y )ρ(s)ρ(k), ρ(u)ρ(y) = ρ(y ′ )ρ(u)ρ(y ′ )−1 ρ(k ′ ),
+               ′       ′
+
+    ρ(u)−1 ρ(g)ρ(u) = ρ(y)ρ(g).
+Using the commutativity of Cn we deduce ρ(y) = 1, ρ(k ′ ) = 1, ρ(k) = 1. Since
+ρ:K−     → Cn is injective it follows that k = k ′ = 1. Thus, Lemma 17.5 holds in the
+present case.
+17.8. In the setup of 17.5 assume that
+  (a) G0 is almost simple and G is generated by the connected component D that
+contains su.
+We can find d ∈ D such that Ad(d) : G0 −
+                                       → G0 preserves an épinglage. Then d has
+                CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                              5
+
+order n < ∞. Let G̃ = G0 × Cn (semidirect product, Cn a cyclic group of order
+                                                                      ′                     ′
+n ≥ 1 with generator e) with group structure (a, et )(a′ , et ) = (aAd(d)t (a′ ), et+t ).
+Now π : G̃ −     → G, π(g, et) = gdt is a group homomorphism with kernel K =
+                                                                     ∼
+{(dt , e−t ); dt ∈ G0 }; it induces an isomorphism G̃0 −→ G0 . Let x ∈ G̃ be
+s.t. π(x) = su, x of the form (x0 , e), x0 ∈ G0 . We have (g, 1)xs(g −1 , 1) =
+xs (z, 1)k, with k ∈ K. Taking images in G̃/G0 we see that k goes to the neu-
+tral element hence k ∈ G0 . But K ∩ G0 = {1} so that k = 1. We have
+(g, 1)xu(g −1 , 1) = xu (y, 1)k ′ with k ′ ∈ K. As above we see that k ′ = 1. We
+have (y, 1)xs (y −1 , 1) = xs k ′′ with k ′′ ∈ K. As above we see that k ′′ = 1. From
+the definitions we see that the G̃0 -conjugacy class of x is cuspidal. Applying
+17.7 to G̃, xs , xu , (g, 1), (y, 1), (z, 1) instead of G, s, u, g, y, z we find y ′ ∈ G0 such
+that (y ′ , 1)xs (y ′−1 , 1) = xs , (y, 1) = x−1      ′
+                                                  u (y , 1)xu (y
+                                                                 ′−1
+                                                                     , 1). Applying π we get
+ ′ ′−1                −1 ′     ′−1
+y sy     = s, y = u y uy . Thus Lemma 17.5 holds in the present case.
+17.9. In the setup of 17.5 assume that G has no closed connected Q                  normal subgroup
+                 0                                                            0
+other than G and {1}. Assume also that p = 0. We have G = j∈Z/b Hj where
+Hj is connected, simply connected, almost simple, b ≥ 1 and sHj s−1 = Hj+1 ,
+u ∈ G0 . Set g = (gj ), z = (zj ), y = (yj ), u = (uj ) where gj ∈ Hj , zj ∈ ZHj ,
+                                   s                u              s
+yj ∈ Hj , uj ∈ Hj . We have gj+1        = zj gj , gj j = yj gj , yj+1  = yj , zju = zj , usj+1 = uj .
+Let G′ be the subgroup of G generated by H0 , sb . This is a closed subgroup with
+identity component H0 since s has finite order (see 17.2; recall that su is isolated
+                                      b
+                                                                  sb−1
+in G). We have g0u0 = y0 g0 , g0s = zg0 , where z = zb−1               . . . z1s z0 ∈ ZH0 . We have
+   b
+y0s = y0 . Also sb u0 = u0 sb . We show that the H0 -conjugacy class of sb u0 is
+cuspidal. By 17.3(a), it is enough to show that:
+    (i) the ZH0 (sb )0 -conjugacy class of u0 is cuspidal in ZG′ (sb )0 ,
+    (ii) sb u0 is isolated in G′ .
+Since the G0 -conjugacy class of su is cuspidal, we see from 17.3(a) that:
+    (iii) the ZG (s)0 -conjugacy class of u is cuspidal in ZG (s),
+    (iv) su is isolated in G.
+Now ZG (s)0 = ZG0 (s) (see 17.4(b)) consists of all (xj ) where xj ∈ Hj satisfy
+xsj+1 = xj . We may identify ZG0 (s) = ZH0 (sb ) and (i) follows. We prove (ii).
+From (iv) we see that ZZG0 (s) ∩ ZG0 (u) is finite. Hence f ∈ ZH0 (sb ) subject to
+f u0 = f has finitely many possible values. Hence (iv) holds.
+    Applying 17.8 to G′ , sb , u0 , g0 , y0 , z instead of G, s, u, g, y, z we find ỹ ∈ H0 such
+           b                                      −j
+that ỹ s = ỹ, y0 = ỹ u0 ỹ −1 . Set yj′ = ỹ s ∈ Hj . Clearly, yj+1     ′     s
+                                                                                   = yj′ , y0 y0′ = y0′ u0 .
+Hence yj yj′ = yj′ uj . (We have
+                       −j           −j          −j
+    yj yj′ = (y0 y0′ )s = (y0′ u0 )s = (y0′ s )uj = yj′ uj .)
+Hence setting y ′ = (yj′ ) we have y ′s = y ′ , y = y ′u y ′−1 . Thus Lemma 17.5 holds in
+the present case.
+17.10. In the setup of 17.5 assume that
+  (a) G has noQclosed connected normal subgroup other than G0 , {1} and p > 1.
+We have G0 = i∈Z/a,j∈Z/b Hij where Hij is connected, simply connected, almost
+6                                              G. LUSZTIG
+
+simple, a ≥ 1, b ≥ 1 and uHij u−1 = Hi+1,j , sHij s−1 = Hi,j+1 . Let G′ be the
+subgroup of G generated by H00 , ua , sb . This is a closed subgroup with identity
+component H00 since s has finite order (see 17.2; recall that su is isolated) and
+u has finite order, power of p. Now a is a power of p and b is prime to p. Set
+g = (gij ), z = (zij ), y = (yij ) where gij ∈ Hij , zij ∈ ZHij , yij ∈ Hij . We have
+     s                  u                      s             u
+   gi,j+1  = zij gij , gi+1,j  = yij gij , yi,j+1   = yij , zi+1,j = zij .
+(The last equation follows from uz = zu: we have
+   z u g u = (g s )u = (g u )s = (yg)s = yzg = zyg = zg u
+hence z u = z.) We have
+     ua                   ua−1           u
+   g00   = yg00 , y = ya−1,0     . . . y1,0 y0,0 ∈ H00 ,
+       b                  b−1
+     s                  s              s
+   g00   = zg00 , z = z0,b−1   . . . z0,1  z0,0 ∈ ZH00 .
+          b                          b
+          s
+Since yij    = yij we have ys = y. Also, sb ua = ua sb . We show that the H00 -
+conjugacy class of sb ua is cuspidal. By 17.3(a) it is enough to show that:
+    (i) the ZH00 (sb )0 -conjugacy class of ua is cuspidal in ZG′ (sb )0 ,
+    (ii) sb ua is isolated in G′ .
+Since the G0 -conjugacy class of su is cuspidal, we see from 17.3(a) that:
+    (iii) the ZG (s)0 -conjugacy class of u is cuspidal in ZG (s),
+    (iv) su is isolated in G.
+Now ZG (s)0 = ZG0 (s) (see 17.4(b)) consists                 of all (xij ) where xij ∈ Hij satisfy
+xsi,j+1 = xij . For each i ∈ Z/a let Fi = j∈Z/b Hij . Then
+                                                    Q
+
+    sFi s−1 = Fi , uFi u−1 = Fi+1 , ZG0 (s) = i∈Z/a ZFi (s).
+                                                       Q
+                                                                       0
+                                                                             Q
+By an argument            in  12.5(e)   applied  to  Z G  (s), Z G (s)    =    i ZFi (s), u instead of
+G, G0 = i Hi , u, we see that the ZF0 (s)-conjugacy class of ua is cuspidal in the
+            Q
+subgroup generated by ZF0 (s), ua . We may identify ZF0 (s) = ZH00 (sb ) and (i)
+follows. We prove (ii). From (iv) we see that ZZG0 (s) ∩ ZG0 (u) is finite. Hence
+                                          u
+if (fi ) satisfies fi ∈ ZZFi (s) , fi+1       = fi then fi has finitely many values. Hence
+                                     ua
+f0 ∈ ZZF0 (s) , subject to f0 = f0 has finitely many values. Hence f0 ∈ ZH00 (sb )
+                  a
+subject to f0u = f0 has finitely many values. Hence (ii) holds.
+    Applying 17.8 to G′ , sb , ua , g00 , y, z instead of G, s, u, g, y, z we find ỹ ∈ H00
+                b                  a                                        −j
+such that ỹ s = ỹ, y = ỹ u ỹ −1 . Set yij    ′
+                                                    ∈ Hij by y0j  ′
+                                                                      = ỹ s for j ∈ Z/b,
+      ′      u−1 s−j          u−i+1 s−j u−i s−j u−i s−j
+    yij  = yi−1,0      . . . y1,0       y0,0   ỹ
+                                                        ′      s     ′                     ′     ′    u
+for i = 1, . . . , a − 1 and j ∈ Z/b. Clearly, yi,j+1            = yij  . Moreover, yij yij  = yi+1,j
+for i = 0, 1, . . . , a − 2. The same holds for i = a − 1:
+                                     −j       −1 −j            −a+2 −j     −a+1 −j      −a+1 −j
+                      ′        s      u s          u                s     u     s
+              ya−1,j ya−1,j = ya−1,0 ya−2,0 . . . y1,0                   y0,0        ỹ u   s
+
+                    −a+1 −j      −a+1 −j                −j
+                                                                ′ u    ′ u
+              = yu       s
+                              ỹ u        s
+                                              = ỹ us        = y0j  = yaj  .
+
+Hence setting y ′ = (yij
+                      ′
+                         ) ∈ G0 we have y ′s = y ′ , y = y ′u y ′−1 . Thus Lemma 17.5
+holds in the present case.
+17.11. We now prove Lemma 17.5 by induction on dim G. If dim G = 0 the result
+is trivial. We now assume that dim G > 0. Assume first that G0 = G1 × G2 where
+                CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                         7
+
+Gi 6= {1} are connected, simply connected, normal in G. Let G′1 = G/G2 , G′2 =
+G/G1 , G′ = G′1 × G′2 . Then G ⊂ G′ , G0 = G′0 . We have
+    s = (s1 , s2 ), u = (u1 , u2 ), z = (z1 , z2 ), g = (g1 , g2 ), y = (y1 , y2 )
+where si is semisimple in G′i , ui is unipotent in G′i , zi ∈ ZGi , gi ∈ Gi , yi ∈ ZG′i (si )0 .
+We have si ui = ui si , gisi = zi gi , giui = yi gi . Also the Gi -conjugacy class of
+si ui is cuspidal. By the induction hypothesis, we can find yi′ ∈ ZG′i (si )0 with
+yi = yi′ ui yi′ −1 . Let y ′ = (y1′ , y2′ ). Then y ′ ∈ ZG0 (s), y = y ′u y ′−1 . Thus Lemma
+17.5 holds in the present case.
+    Next we assume that no decomposition G0 = G1 × G2 as above exists. Then
+the result follows from 17.9, 17.10. The lemma is proved.
+
+Lemma 17.12. Let s ∈ G be semisimple and u ∈ G be unipotent such that
+su = us and the G0 -conjugacy class of su is cuspidal. Assume that g ∈ G0 ,
+g s = g, g u = yg with y ∈ ZG (s)0 . Then y = y ′u y ′−1 for some y ′ ∈ ZG (s)0 .
+
+    Assume first that G0 is semisimple and that
+    (a) there exists an element d in the connected component of G that contains su
+such that Ad(d) : G0 −    → G0 preserves an épinglage and such that {dt ; t ∈ Z}∩G0 =
+{1}.
+Using [St, 9.16] we can find a reductive group G̃ with G̃ semisimple, simply con-
+nected and a surjective homomorphism of algebraic groups π : G̃ −                        → G such
+                                          ′
+that K = Kerπ ⊂ ZG̃0 . Pick s̃ ∈ G̃ semisimple, ũ ∈ G̃ unipotent such that
+π(s̃′ ) = s, π(ũ) = u. Then ũs̃′ = s̃′ ũk with k ∈ K. Now ũk = s̃′−1 ũs̃′ is unipo-
+tent. Since ũ normalizes K (a diagonalizable group) it follows that ũk = k ′ ũk ′−1
+for some k ′ ∈ K. Set s̃ = s̃′ k ′ . Then s̃ is semisimple (since s̃′ normalizes K,
+a diagonalizable group) and π(s̃) = s, ũs̃ = s̃ũ. Since π(s̃ũ) = su we see that
+the G0 -conjugacy class of su is cuspidal. Let g ′ ∈ G̃0 be such that π(g ′ ) = g.
+Since Ẑ = {x ∈ G̃; s̃x ∈ xs̃ZG̃0 } has identity component ZG̃ (s̃)0 , we see that
+ZG̃ (s̃)0 −
+          → ZG (s)0 is surjective. Hence we can find ỹ ∈ ZG̃ (s̃)0 such that π(ỹ) = y.
+We have π(g ′ ũ ) = π(ỹg ′ ) hence g ′ ũ = k ′ ỹg ′ for some k ′ ∈ Γ. Hence g ′ ũg ′−1 = ũk ′ ỹ,
+equality in Ẑ. Hence ũk ′ is unipotent in Ẑ/Ẑ 0 . Since the image of ũk ′ in Ẑ/Ẑ 0
+normalizes the image of K in Ẑ/Ẑ 0 , we see that there exists k1 ∈ K such that
+ũk ′ = k1 ũk1−1 (equality in Ẑ/Ẑ 0 ) hence ũk ′ = k1 ũk1−1 ỹ1 (equality in Ẑ) for some
+ỹ1 ∈ ZG̃ (s̃)0 . Hence g ′ ũg ′−1 = k1 ũk1−1 ỹ1 ỹ = k1 ũỹ ′′ k1−1 for some ỹ ′′ ∈ ZG̃ (s̃)0 .
+Set g̃ = k1−1 g ′ . Then g̃ ∈ G̃0 , g̃ ũ = ỹ ′′ g̃, π(g̃) = g. We have π(g̃ s̃ ) = π(g̃)
+hence g̃ s̃ = zg̃ for some z ∈ K. Applying Lemma 17.5 to G̃, s̃, ũ, g̃, ỹ ′′ , z instead
+of G, s, u, g, y, z we see that ỹ ′′ = ỹ ′ ũ ỹ ′−1 for some ỹ ′ ∈ ZG̃ (s̃)0 . Let y ′ = π(ỹ ′ ).
+Then π(ỹ ′′ ) = y ′u y ′−1 , y ′ ∈ ZG (s)0 . Also, g u = π(ỹ ′′ )g, g u = yg hence π(ỹ ′′ ) = y
+and y = y ′u y ′−1 . Thus the lemma holds in the present case.
+    Next assume that G0 is semisimple and G is generated by a connected com-
+ponent D. We can find d ∈ D such that Ad(d) : G0 −                          → G0 preserves an
+                                                              ′       0
+épinglage. Then d has order n < ∞. Let G = G × Cn (semidirect prod-
+uct, Cn a cyclic group of order n ≥ 1 with generator e) with group structure
+8                                             G. LUSZTIG
+
+              ′                           ′
+(a, et )(a′ , et ) = (aAd(d)t (a′ ), et+t ). Now π ′ : G′ −     → G, π(g, et) = gdt is a group
+homomorphism with kernel K ′ = {(dt , e−t ); dt ∈ ZG0 }; it induces an isomorphism
+         ∼
+G′0 −→ G0 . Then G′ is as in the first part of the proof. Let x ∈ G′ be such that
+π ′ (x) = su. From the definitions we see that the G′0 -conjugacy class of x is cuspi-
+dal. For any h ∈ ZG (s) we have (h, 1)xs (h−1 , 1) = xs k with k ∈ K ′ . Taking images
+in G′ /G′0 we see that k goes to 1 hence k ∈ G′0 ∩ K ′ = {1} hence k = 1. Thus,
+(h, 1) ∈ ZG′ (xs ). It follows that for any h ∈ ZG (s)0 we have (h, 1) ∈ ZG′ (xs )0 . In
+particular (y, 1) ∈ ZG′ (xs )0 . In the same way we see that (g, 1)xs(g −1 , 1) = xs ,
+(g, 1)xu(g −1 , 1) = xu (y, 1) (compare 17.8). From the first part of the proof we
+see that there exists (y ′ , 1) ∈ ZG′ (xs )0 such that (y, 1) = x−1           ′
+                                                                         u (y , 1)xu (y
+                                                                                          ′−1
+                                                                                              , 1). It
+                      ′         0          −1 ′   ′−1
+follows that y ∈ ZG (s) , y = u y uy . Thus the lemma holds in the present
+case.
+     Next, assume that G0 is semisimple (but there is no assumption on G/G0 ). Let
+G1 be the subgroup of G generated by the connected component that contains
+su. By the earlier part of the proof, the lemma holds for G1 , s, u, g, y instead of
+G, s, u, g, y. But then it automatically holds for G, s, u, g, y.
+     Finally, we consider the general case. Let π ′′ : G −            → Ḡ = G/ZG        0
+                                                                                           0 be the
+                                                 ′′            ′′                     0
+obvious homomorphism. Let s̄ = π (s), ū = π (u). Then the Ḡ -conjugacy
+class of s̄ū = ūs̄ is cuspidal. Let ḡ = π ′′ (g) ∈ Ḡ0 , ȳ = π ′′ (y). Then ḡ s̄ =
+ḡ, ḡ ū = ȳḡ, ȳ ∈ ZḠ (s̄)0 . Since the lemma holds for Ḡ instead of G, we have
+ȳ = ȳ ′ ū ȳ ′−1 for some ȳ ′ ∈ ZḠ (s̄)0 . Let Z̃ = {x ∈ G; xsx−1 ∈ sZG      0
+                                                                                    0 }. Then π
+                                                                                                     ′′
+
+induces a surjective homomorphism Z̃ −              → ZḠ (s̄). Moreover, Z̃ 0 = ZG (s)0 hence
+π ′′ induces a surjective homomorphism ZG (s)0 −               → ZḠ (s̄)0 . Hence we can find
+y1 ∈ ZG (s) such that π (y1 ) = ȳ . We have y = y1′ u y1′ −1 z for some z ∈ ZG
+  ′               0               ′′ ′         ′                                                   0
+                                                                                                     0.
+                     ′  ′ −1                        −1                                  ′    ′ −1
+Thus uy = y1 uy1 z. Since uy = gug                     is unipotent, we see that y1 uy1 z is
+unipotent. Also, z = y1 (u y1 u)y ∈ ZG (s)0 (since y, y1′ ∈ ZG (s)0 , u ∈ ZG (s))
+                               ′    −1 ′ −1
+
+hence z ∈ ZG (s)0 ∩ ZG       0
+                               0.
+
+     Assume first that p = 0. We set y ′ = y1′ . Then y ′ uy ′−1 being unipotent is in
+G0 hence it commutes with z. Since y ′ uy ′−1 z is unipotent, we have z = 1 and
+y = y ′u y ′−1 , as required.
+     Next assume that p > 1. Then y1′ uy1′ −1 has finite order and, being in ZG (s), it
+                                                       ′
+normalizes H = ZG (s)0 ∩ ZG          0
+                                       0 . Hence, if H is the subgroup of G generated by H
+
+and y1′ uy1′ −1 , we see that H ′ contains H as a normal subgroup of finite index, a
+power of p. Since H is diagonalizable, it follows that any two unipotent elements
+of H ′ in the same H-coset are H-conjugate. In particular, the unipotent elements
+uy = y1′ uy1′ −1 z, y1′ uy1′ −1 of H ′ are H-conjugate. Hence uy = ζy1′ uy1′ −1 ζ −1 for
+some ζ ∈ H. We set y ′ = ζy1′ . Then y ′ ∈ ZG (s)0 and uy = y ′ uy ′−1 . The lemma
+is proved.
+
+Proposition 17.13. Let c be a cuspidal G0 -conjugacy class in G. Let s ∈ G be
+the semisimple part of some element of c and let δ be a connected component of
+ZG (s). Then {u ∈ ZG (s) unipotent , u ∈ δ, su ∈ c} is a single ZG (s)0 -conjugacy
+class.
+             CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                            9
+
+    We must show that, if u, u′ ∈ ZG (s) are unipotent, u′ ∈ uZG (s)0 and su ∈
+c, su′ ∈ c, then u, u′ are ZG (s)0 -conjugate. We can find g ∈ G0 such that gsug −1 =
+su′ . Then gsg −1 = s, gug −1 = u′ = uy where y ∈ ZG (s)0 . Hence g s = g, g u = yg.
+By Lemma 17.12 we can find y ′ ∈ ZG (s)0 such that y = u−1 y ′ uy ′−1 . Then
+u′ = y ′ uy ′−1 . The proposition is proved.
+
+                    18. A property of isolated elements
+18.1. This section contains a characterization of isolated elements of G. (This
+will not be used later in this Part.)
+Proposition 18.2. Let s ∈ G be semisimple and u ∈ G be unipotent such that
+su = us. Then su is isolated in G if and only if s is isolated in G. Equivalently, we
+have (ZZG (s)0 ∩ZG (u))0 = (ZG0 ∩ZG (su))0 if and only if ZZ0 G (s)0 = (ZG0 ∩ZG (s))0 .
+   Clearly, if s is isolated in G then su is isolated in G. The proof of the converse
+is given in 18.3-18.12.
+   In 18.3-18.12, it is assumed that su is isolated in G.
+18.3. In the setup of 18.2 assume that u ∈ G0 . (This condition is automatically
+satisfied if p = 0.) By assumption, we have u ∈ ZG0 (s). The image of u in
+ZG0 (s)/ZG (s)0 is semisimple (by 17.4(a)) and unipotent hence is 1. Thus, u ∈
+ZG (s)0 . It follows that (ZZG (s)0 ∩ ZG (u))0 = ZZ0 G (s)0 and (ZG0 ∩ ZG (su))0 =
+(ZG0 ∩ ZG (s))0 . Hence the condition (ZZG (s)0 ∩ ZG (u))0 = (ZG0 ∩ ZG (su))0
+implies that ZZ0 G (s)0 = (ZG0 ∩ ZG (s))0 . Thus s is isolated in G.
+
+18.4. In the setup of 18.2 assume that G0 is semisimple, that s ∈ G0 . We show
+that s is isolated in G. We may assume that u is unipotent, quasi-semisimple in
+ZG (s). Let Z = ZZ0 G (s)0 . Assume that Z =   6 {1}. Let L = ZG0 Z, a Levi of a
+                0               0            0
+parabolic of G . Since s ∈ G , we have ZL = Z. Since su is quasi-semisimple,
+we can find a Borel B and a maximal torus T of B that are normalized by su.
+Since s ∈ G0 , we have s ∈ T . Hence T ⊂ ZG (s)0 so that Z ⊂ T and T ⊂ L. Let
+β = B ∩ L, a Borel of L. Let Π ⊂ V = Hom(T, k∗ ) ⊗ Q be the set of simple roots
+of G0 with respect to T, B (in particular, the corresponding root subgroups are
+contained in UB ). Let Q be the basis of V ∗ = Hom(k∗ , T ) ⊗ Q dual to Π. There is
+a unique subset Q1 of Q which is a basis for the subspace V1∗ = Hom(k∗ , Z) ⊗ Q of
+V ∗ . Since Z 6= {1} we have V1∗ 6= 0 hence Q1 6= ∅. Now u normalizes ZG (s)0 hence
+uZu−1 = Z, uLu−1 = u, uβu−1 = β. Hence the automorphism of V1∗ induced by
+Ad(u) preserves Q and Q1 and the sum of elements in Q1 is a non-zero Ad(u)-
+invariant vector. Thus, Ad(u) : V1∗ − → V1∗ has a non-zero fixed point set. It follows
+that dim(Z ∩ ZG (u)) > 0 contradicting the assumption that su is isolated in G.
+We have proved that Z = {1}. Hence s is isolated in G.
+18.5. In the setup of 18.2 assume that G0 is semisimple, simply connected and
+17.6(a) holds. Since m in 17.6(a) is 1 or a prime number, we have three cases:
+   (i) u ∈ G0 , s ∈
+                  / G0 and 1 < m 6= p;
+10                                     G. LUSZTIG
+
+          / G0 , s ∈ G0 and 1 < m = p;
+   (ii) u ∈
+   (iii) u ∈ G0 , s ∈ G0 and 1 = m.
+In cases (ii),(iii) we have s ∈ G0 hence by the argument in 18.4 we see that s is
+isolated in G. In cases (i),(iii) we have u ∈ G0 hence by the argument in 18.3 we
+see that s is isolated in G.
+18.6. In the setup of 18.2 assume that G0 is semisimple, simply connected and
+17.7(a) holds. Let π : G −  → Ḡ be as in 17.7. Let s̄ = π(s), ū = π(u). One checks
+that s̄ū is isolated in Ḡ. Applying 18.5 to Ḡ, s̄, ū instead of G, s, u we see that
+ZZ0 (s̄)0 = {1}. Hence ZZ0 G (s)0 = {1}. Thus s is isolated in G.
+     Ḡ
+
+
+18.7. In the setup of 18.2 assume that G0 is semisimple, simply connected and
+17.8(a) holds. Let π : G̃ −→ G, x ∈ G̃ be as in 17.8. One checks that x is isolated in
+G̃. Applying 18.6 to G̃, xs , xu instead of G, x, s we see that ZZ0 (s̃)0 = {1}. Hence
+                                                                   G̃
+ZZ0 G (s)0 = {1}. Thus s is isolated in G.
+
+18.8. In the setup of 18.2 assume that G0 is semisimple, simply connected and
+17.10(a) holds. Let a, b, Hij , G′ , Fk be as in 17.10. As in 17.10 we see that sb ua is
+isolated in G′ . Applying 18.7 to G′ , sb , ua instead of G, s, u we see that ZZ0 ′ (sb )0 =
+                                                                                 G
+{1} that is ZZ0 H (sb )0 = {1}. Hence ZZ0 F (s)0 = {1}. Now uk F0 u−k = Fk and
+                    00                          0
+                                                             ∼
+since us = su, Ad(uk ) is an isomorphism ZF0 (s)  0
+                                                    −→ ZFk (s)0 hence we have
+ZZ0 F (s)0 ∼
+           = ZZ0 F (s)0 = {1}. Hence ZZ0 G (s)0 = i ZZ0 F (s)0 = {1}. Thus s is
+                                                 Q
+     k            0                                      i
+isolated in G.
+18.9. In the setup of 18.2 assume that G0 is semisimple, simply connected. We
+show that s is isolated in G by induction on dim G. If dim G = 0 the result
+is trivial. We now assume that dim G > 0. Assume first that G0 = G1 × G2
+where Gi 6= {1} are connected, simply connected, normal in G. Let G′i , si , ui be
+as in 17.11. Then si ui = ui si is isolated in G′i . By the induction hypothesis we
+have ZZ0 G (si )0 = {1} for i = 1, 2. Now ZG (s)0 = ZG1 (s1 )0 × ZG2 (s2 )0 hence
+            i
+ZZ0 G (s)0 = ZZ0 G (s1 )0 × ZZ0 G (s2 )0 = {1}. Thus s is isolated in G.
+                1             2
+   Next we assume that no decomposition G0 = G1 × G2 as above exists. If p > 1,
+then 18.8 shows that s is isolated in G. If p = 0 then 18.3 shows that s is isolated
+in G. This completes the inductive proof.
+18.10. In the setup of 18.2 assume that G0 is semisimple and that 17.12(a) holds.
+Let π : G̃ −  → G, s̃, ũ be as in 17.12. We show that s̃ũ is isolated in G̃. Let
+x ∈ (ZZ0 (s̃)0 ∩ ZG̃ (ũ))0 . Then π(x) ∈ ZZ0 G (s)0 ∩ ZG (u). Indeed, the map π :
+          G̃
+ZG̃ (s̃)0 −
+          → ZG (s)0 is a surjective, finite covering of connected reductive groups
+hence it restricts to a surjective map
+   (∗) ZZ0 (s̃)0 −
+                 → ZZ0 G (s)0 .
+           G̃
+We see that π(x) ∈ (ZZ0 G (s)0 ∩ZG (u))0 . Hence π(x) ∈ (ZG0           0
+                                                             0 ∩ZG (u)) and π(x) = 1.
+
+Hence x ∈ Kerπ, a finite group. It follows that x = 1 and s̃ũ is isolated in
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                   11
+
+G̃. Applying 18.9 to G̃, s̃, ũ instead of G, s, u, we see that ZZ0 (s̃)0 = {1}. Let
+                                                                    G̃
+y ∈ (ZZG (s)0 )0 . By the surjectivity of (∗) we have y = π(y ′ ) where y ′ ∈ ZZ0 (s̃)0 .
+                                                                                 G̃
+Hence y ′ = 1 and y = 1. We see that (ZZG (s)0 )0 = {1}. Thus s is isolated in G.
+   Next we assume, in the setup of 18.2 that G0 is semisimple and G/G0 is cyclic.
+Let π ′ : G′ −
+             → G, x be as in 17.12. Then x is isolated in G′ . By the argument above
+applied to G′ instead of G we see that xs is isolated in G′ . It follows immediately
+that s is isolated in G.
+18.11. In the setup of 18.2 assume that G0 is semisimple. Let G1 be the subgroup
+of G generated by the connected component that contains su. Clearly, su is
+isolated in G1 . Applying 18.10 to G1 , s, u instead of G, s, u we see that s is isolated
+in G1 . Hence s is isolated in G.
+18.12. In the setup of 18.2 let π ′ : G −    → Ḡ, s̄, ū be as in 17.12. Then the Ḡ0 -
+conjugacy class of s̄ū = ūs̄ is isolated in Ḡ. Applying 18.11 to Ḡ, s̄, ū instead of
+G, s, u we see that s̄ is isolated in Ḡ. Using now 2.3(a) we see that s is isolated in
+G. Proposition 18.2 is proved.
+
+                   19. Properties of cuspidal local systems
+19.1. Let s ∈ G be semisimple and let c be a unipotent ZG (s)0 -conjugacy class in
+ZG (s). Assume that the unique G0 -conjugacy class c that contains sc is isolated in
+G. Let G1 = {g ∈ ZG0 (s); gcg −1 = c} (a subgroup of ZG0 (s) containing ZG (s)0 ).
+Let c̃ be the variety of orbits for the ZG (s)0 -action z : (y, u) 7→ (yz −1 , zuz −1 ) on
+G0 × c. Then (y, u) 7→ ysuy −1 is a finite principal covering π : c̃ −  → c with group
+G1 /ZG (s)0 . Let f be a cuspidal local system on c. Let f̃ be the local system on c̃
+whose inverse image under G0 × c −     → c̃ is Q̄l ⊠ f. We show that
+   (a) π! f̃ is a cuspidal local system on c.
+Since π! f̃ is clearly a G0 -equivariant local system, it is enough to show that the
+local system j ∗ π! f̃ on c is cuspidal relative to ZG (s) (here j : c −
+                                                                       → c is u 7→ su);
+                                                    ∗    ∼
+see 17.3(a). From the definitions we see that j π! f̃ = ⊕g1 Ad(g1 )∗ f where g1 runs
+over a set of representatives for the ZG (s)0 -cosets in G1 . Clearly, each Ad(g1 )∗ f is
+a cuspidal local system on c and (a) follows.
+19.2. Let u ∈ G be unipotent, quasi-semisimple. Then ZG0 (u) is connected.
+(See [DM, 1.28]).
+19.3. Let P be a parabolic of G0 and let x ∈ NG P, v ∈ UP , x′ = xv. We show
+that
+     (a) there exists v ′ ∈ UP such that x′s = v ′ xs v ′−1 , x′u = v ′ xu v ′−1 mod ZG (x′s )0 .
+By 1.4(a) we can find Levi subgroups L.L′ of P such that xs ∈ NG L, x′s ∈ NG L′ .
+Applying the canoical projection p : NG P −     → NG P/UP to xs xu v = x′s x′u we obtain
+p(xs )p(xu ) = p(x′s )p(x′u ). Using the uniqueness of the Jordan decomposition in
+NG P/UP we get p(xs ) = p(x′s ). We can find v ′ ∈ UP such that L′ = v ′ Lv ′−1 . Then
+v ′ xs v ′−1 , x′s are elements of NG L′ ∩ NG P with the same image under p hence, by
+12                                   G. LUSZTIG
+
+1.26(a), we have v ′ xs v ′−1 = x′s . We must show that x−1
+                                                          u v
+                                                              ′−1 ′ ′
+                                                                 xu v ∈ ZG (xs )0 . We
+have x′u = v ′ x−1
+                s v
+                    ′−1
+                        xs xu v hence x−1
+                                        u v
+                                            ′−1 ′ ′
+                                               xu v = x−1  −1 ′−1
+                                                       u xs v     xs xu vv ′ ∈ UP since
+x = xs xu ∈ NG (UP ). Since xu v xu v ∈ ZG (xs ) we see that x−1
+                                    −1 ′−1 ′ ′
+                                                                         u v
+                                                                              ′−1 ′ ′
+                                                                                 xu v ∈
+                           0
+ZG (xs ) ∩ UP ⊂ ZG (xs ) (we use 1.11).
+19.4. Let C be an isolated stratum of G and let E ∈ S(C). We show that
+conditions (i),(ii) below are equivalent.
+   (i) E is a cuspidal local system on C;
+   (ii) for any G0 -conjugacy class c in C, E|c is a cuspidal local system on c.
+Let P be a parabolic of G0 with P 6= G0 and let R be a UP -coset in NG P .
+By 19.3(a), the semisimple part of any element of R is contained in a fixed G0 -
+conjugacy class. Hence R is contained in a union of finitely many G0 -conjugacy
+classes. Hence C∩R is contained in a union of finitely many G0 -conjugacy classes in
+C; this union is necessarily disjoint (as a variety), by the definition of C. Thus, C ∩
+R = ⊔ni=1 (ci ∩ R) where ci are G0 -conjugacy classes in C. Let d be the dimension
+of any G0 -conjugacy class in C minus the dimension of the P/UP -conjugacy class
+of R/UP in NG P/UP . If (ii) holds then Hcd (C ∩ R, E) = ⊕ni=1 Hcd (ci ∩ R, E|ci ) = 0
+hence (i) holds. Conversely, assume that (i) holds and c is a G0 -conjugacy class in
+C. We must show that Hcd (c ∩ R, E|c) = 0 for R as above. We may assume that
+c∩R 6= ∅ hence c = ci for some i. We have 0 = Hcd (C∩R, E) = ⊕ni=1 Hcd (ci ∩R, E|ci )
+hence each Hcd (ci ∩ R, E|ci ) is 0. In particular, Hcd (c ∩ R, E|c) = 0, as desired.
+19.5. Let C be an isolated stratum of G. Let c be a G0 -conjugacy class in C.
+Let F be a G0 -equivariant cuspidal local system on c. Let D be the connected
+component of G that contains C and let T = D ZG        0
+                                                         0. Let L ∈ S(T ). Define
+π :T ×c −        → C by π(z, c) = zc. We show that
+    (a) π! (L ⊠ F ) ∈ S(C) is a cuspidal local system.
+Let Γ be the set of all z ∈ T such that zc = c (a finite group, see 1.23(a).) Then
+π is a finite principal covering with group Γ. Hence π! (L ⊠ F ) is a local system
+on C. It is immediate that π! (L ⊠ F ) ∈ S(C). We show that it is cuspidal.
+Let P be a parabolic of G0 with P 6= G0 and let R be a UP -coset in NG P .
+Let d be dim c minus the dimension of the P/UP -conjugacy class of R/UP in
+NG P/UP . We must show that Hcd (C ∩ R, π! (L ⊠ F )) = 0 or equivalently that
+Hcd (π −1 (C ∩ R), L ⊠ F ) = 0. Now π −1 (C ∩ R) = {(z, c) ∈ T × c; zc ∈ R}.
+By 19.3(a), the semisimple part of any element of R is contained in a fixed G0 -
+conjugacy class. Hence for (z, c) ∈ π −1 (C ∩ R), (zc)s is contained in a fixed
+semisimple G0 -conjugacy class hence zc is contained in a union of finitely many
+G0 -conjugacy classes, hence z can take only finitely many values. Thus there exist
+z1 , z2 , . . . , zm in T × c such that
+                                                             −1
+                     π −1 (C ∩ R) = ⊔m
+                                     i=1 {(zi , c); c ∈ c ∩ zi R},
+
+
+           Hcd (π −1 (C ∩ R), L ⊠ F ) ∼
+                                      = ⊕m          d       −1
+                                         i=1 Lzi ⊗ Hc (c ∩ zi R, F ) = 0.
+
+This proves (a).
+             CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                           13
+
+19.6. Let H be a connected algebraic group acting transitively on the variety X.
+Assume that we are given Fq -rational structures on H, X compatible with the
+action. Let F : H −  → H, F : X −   → X be the Frobenius maps. Let Υ be a set
+of representatives for the isomorphism classes of irreducible H-equivariant local
+                                                                              ∼
+systems F on X such that F ∗ F ∼   = F . For any F ∈ Υ we choose φ : F ∗ F −→ F .
+Then χF,φ : X F − → Q̄l is a function constant on the orbits of H F , independent of
+the choice of φ, up to a non-zero scalar.
+Lemma 19.7. (χF,φ )F∈Υ is a Q̄l -basis of the vector space of functions X F −
+                                                                            → Q̄l
+                                    F
+that are constant on the orbits of H .
+   A special case of this (when H is reductive and X is a unipotent conjugacy
+class in H) is proved in [L13, §24, p.140]. A similar proof works in the general
+case. We can find x ∈ X F . Let Hx = {h ∈ H; hx = x}. Associating to F ∈ Υ the
+stalk Fx (an irreducible Hx -module, by the equivariance of F , on which Hx acts
+through its finite quotient Γ = Hx /Hx0 ) gives a bijection between Υ and a set Υ′
+of representatives for the isomorphism classes of irreducible Q̄l [Γ]-modules V such
+that there exists an isomorphism ιV : V −   → V with ιV γ = F (γ)ιV : V − → V for all
+γ ∈ Γ. (For V = Fx we may take ιV to be the isomorphism Fx −        → Fx induced by
+  −1
+φ .) Now F acts naturally on Γ and, according to [SS, 2.7],
+   (a) Hx −→ H F \X F , z 7→ H F − orbit of hx where h ∈ H, h−1 F (h) = z
+induces a bijection between the set of F -twisted conjugacy classes in Γ and the set
+H F \X F of H F -orbits on X F .
+Via this bijection, giving a function X F −→ Q̄l that is constant on H F -orbits is the
+same as giving a function Γ −  → Q̄l that is constant on F -twisted conjugacy classes
+in Γ. If F ∈ Υ and V = Fx , then the function χF,φ : X F −      → Q̄l corresponds to
+the function
+                     F (h)−1        φ    h                 F (h)−1 h    φ
+       γ 7→ tr(Fhx −−−−→ Fx −
+                            → Fx −
+                                 → Fhx ) = tr(Fx −−−−−→ Fx −
+                                                           → Fx )
+        = tr(ι−1
+              V γ
+                  −1
+                     ,V)
+
+where h ∈ H is such that h−1 F (h) ∈ Hx has image γ in Γ. (We use the fact that,
+for any h′ ∈ H, y ∈ X, the compositions
+                     φ         h′              F (h′ )            φ
+                    → Fy −→ Fh′ y ,
+             FF (y) −                   FF (y) −−−→ FF (h′ )F (y) −
+                                                                  → Fh′ y
+
+coincide.) It is then enough to show that the functions γ 7→ tr(ι−1   V γ
+                                                                          −1
+                                                                             , V ) (for
+                 ′
+various V ∈ Υ ) form a basis for the vector space of functions Γ −    → Q̄l that are
+constant on F -twisted conjugacy classes. This follows from a variant of the Schur
+orthogonality relations. (It also follows from 20.4(f) applied to the group algebra
+E = Q̄l [Γ]; in this case all elements of Γ are effective, see 20.4.)
+19.8. In the remainder of this section we assume that k is an algebraic closure of
+a finite field Fq and that G has a fixed Fq -rational structure with Frobenius map
+F :G−  → G.
+14                                   G. LUSZTIG
+
+   Let C be an isolated stratum of G such that F (C) = C. Let I be a set of
+representatives for the isomorphism classes of irreducible local systems E in S(C)
+                                                                           ∼
+such that F ∗ E ∼
+                = E; for each E ∈ I we choose an isomorphism φ : F ∗ E −→ E. We
+show:
+   (a) the functions χE,φ where E ∈ I form a basis of the vector space of functions
+  F
+C − → Q̄l that are constant on the G0F -conjugacy classes in C F .
+Let D be the connected component of G that contains C. Since I is a finite set,
+we can find an integer n ≥ 1, invertible in k, such that
+   (∗) E ∈ I =⇒ E ∈ Sn (C), (see 5.2),
+   (∗∗) z ∈ D ZG0
+                  0 , F (z) = z =⇒ z
+                                     n
+                                       = 1.
+Applying Lemma 19.7 to the transitive action 5.2(a) (with n as above) of H =
+D 0
+  ZG0 × G0 on C, we see that the functions χE,φ where E runs over the elements
+of I that belong to Sn (C) (or equivalently, E runs over I, see (∗)) form a basis of
+the vector space of functions C F −→ Q̄l that are constant on the H F -orbits in C F .
+By (∗∗), the H F -orbits on C F are the same as the G0F -conjugacy classes in C F .
+This proves (a).
+19.9. For any isolated stratum C (resp. isolated G0 -conjugacy class c) in G such
+that F (C) = C (resp. F (c) = c) let CG0 (C) (resp. CG0 (c)) be the subspace of the
+vector space of functions C F −  → Q̄l (resp. cF − → Q̄l ) spanned by the functions
+χF,ǫ where F runs through a set of representatives for the isomorphism classes
+of irreducible cuspidal local systems on C (resp. on c) such that F ∗ F ∼   = F and
+      ∗    ∼
+ǫ : F F −→ F is a fixed isomorphism. Clearly, the subspace CG0 (C) (resp. CG0 (c))
+is independent of choices. From 19.8(a) (resp. Lemma 19.7) we see that the
+functions χF,ǫ (as above) form a basis of CG0 (C) (resp. CG0 (c)): they are part of
+a basis of the vector space of all functions C F − → Q̄l (resp. cF − → Q̄l ) that are
+                0F
+constant on G -conjugacy classes. From the definitions we see that:
+    (a) if F is a (not necessarily irreducible) cuspidal local system on C (resp. c)
+and ǫ : F ∗ F −→ F is an isomorphism then χF,ǫ belongs to CG0 (C) (resp. CG0 (c)).
+19.10. Let C be an isolated stratum of G such that F (C) = C. For any G0 -
+conjugacy class c in C such that F (c) = c then f 7→ f |cF defines a linear map
+   (a) CG0 (C) −→ CG0 (c),
+(To see that this map is well defined, it is enough to show that, if F is a cuspidal
+local system on C and ǫ : F ∗ F −  → F is an isomorphism then χF,ǫ |cF ∈ CG0 (c).
+This follows from 19.4.) We now take the direct sum of the maps (a) where c runs
+over the F -stable G0 -conjugacy classes in C. We show that
+   (b) the resulting linear map CG0 (C) − → ⊕c CG0 (c) is an isomorphism.
+It is obvious that this map is injective. To show that it is surjective it is enough
+to verify the following statement:
+   for any F -stable G0 -conjugacy class c in C, any cuspidal local system F on c
+and any isomorphism F ∗ F −   → F , there exists f ∈ CG0 (C) such that f |cF = χF,ǫ
+and f |c′ F = 0 for any F -stable G0 -conjugacy class c′ in C with c′ 6= c.
+Let D be the connected component of G that contains C. Let T = D ZG         0
+                                                                              0 . Let J
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                          15
+
+be a set of representatives for the isomorphism classes of local systems L of rank
+1 in S(T ) such that F ∗ L ∼
+                           = L. For each L ∈ J there is a unique isomorphism φL :
+F ∗L −→ L which induces the identity map on the stalk of L at 1. Then θL = χL,φL
+                                                          ∼
+is a character T F −→ Q̄∗l and L 7→ θL is a bijection J −→ Hom(T F , Q̄∗l ). Define
+π : T ×c − → C by π(z, c) = zc. For any L ∈ J , π! (L ⊠ F ) is naturally isomorphic
+with its inverse image under F (using φL ⊠ ǫ); let χπ! (L⊠F),? : C F −     → Q̄l be
+the corresponding characteristic function. From 19.5(a) we see that χπ! (L⊠F),? ∈
+CG0 (C). From the definitions
+                    P          we have
+   χπ! (L⊠F),? (x) = z∈T F ,c∈cF ;zc=x θL (z)χF,ǫ (c)
+for x ∈ C F . Let f = L∈J χπ! (L⊠F),? ∈ CG0 (C). For x ∈ C F we have
+                      P
+
+                    X          X                               X
+    f (x) =                           θL (z)χF,ǫ (c) =                       |T F |δz,1 χF,ǫ (c).
+              z∈T F ,c∈cF ;zc=x L∈J                      z∈T F ,c∈cF ;zc=x
+
+
+Thus f (x) = |T F |χF,ǫ (x) if x ∈ cF and f (x) = 0 if x ∈ C F − cF . This completes
+the proof of (b).
+19.11. If E is the set of unipotent quasi-semisimple elements in some F -stable
+connected component of G that contains unipotent elements then E F is a single
+G0F -conjugacy class.
+This follows from the fact that E is a homogeneous G0 -space (see 1.9(a)) defined
+over Fq in which the isotropy group of any point is connected (see 19.2).
+19.12. Let c be a cuspidal G0 -conjugacy class in G. Let c• = σG (x) for any x ∈ c;
+this is the set of all quasi-semisimple elements g ∈ G such that for some x ∈ c we
+have xs = gs , xu ∈ ZG (gs )0 gu . Let Z be the set of all pairs (s, c) where s ∈ G
+is semisimple and c is a connected component of ZG (s) such that there exists a
+unipotent element u ∈ ZG (s) with su ∈ c, u ∈ c. We have a diagram
+
+                                            a     b
+                                         c−
+                                          →Z←
+                                            − c•
+
+where a(x) = (xs , ZG (xs )0 xu ), b(g) = (gs , ZG (gs )0 gu ). Now G0 acts transitively
+on c, Z, c• compatibly with a, b. For any y ∈ G let
+
+               HG0 (y) = {h ∈ G0 ; hys h−1 = ys , hyu h−1 ∈ ZG (ys )0 yu },
+
+a closed subgroup of ZG0 (ys ) containing ZG (ys )0 .
+   (a) Let x ∈ c, g ∈ c• be such that a(x) = b(g). Let H = HG0 (x) = HG0 (g)
+(the stabilizer of a(x) = b(g) in G0 ). The map ZG0 (x)/ZG0 (x)0 −      → H/H 0 in-
+duced by a is surjective and the map ZG0 (g)/ZG0 (g)0 − → H/H 0 induced by b is an
+isomorphism.
+We have a(x) = b(g) = (xs , ZG (xs )0 xu ) = (gs , ZG (gs )0 gu ). Let h ∈ H. Then
+x, hxh−1 are elements of c with the same semisimple part xs and their unipo-
+tent parts are contained in the same connected component of ZG (xs ). By 17.13,
+16                                   G. LUSZTIG
+
+there exists z ∈ ZG (xs )0 such that hxu h−1 = zxu z −1 . Thus, h = zh1 where
+h1 ∈ ZG0 (x). We see that H = ZG (xs )0 ZG0 (x). This proves the first assertion of
+(a).
+   If h ∈ H then gu , hgu h−1 are unipotent quasi-semisimple elements of ZG (gs )
+contained in the same connected component of ZG (gs ) hence, by 17.13, there exists
+z ∈ ZG (gs )0 such that hgu h−1 = zgu z −1 . Thus, h = zh1 where h1 ∈ ZG0 (g).
+We see that H = ZG (gs )0 ZG0 (g). This shows that b induces a surjective map
+                  ∼
+ZG0 (g)/ZG0 (g)0 −→ H/H 0 and that the group of components of H is the same as
+the group of components of ZG0 (g)/(ZG0 (g) ∩ ZG (gs )0 ) = ZG0 (g)/(ZZG (gs )0 (gu )
+which (by the connectedness of ZZG (gs )0 (gu ), see 19.2) is the same as the group of
+                                                                       ∼
+components of ZG0 (g). Thus, the surjective map ZG0 (g)/ZG0 (g)0 −→ H/H 0 must
+be an isomorphism. This proves (a).
+19.13. In the setup of 19.12, let L be an irreducible G0 -equivariant local system
+on Z. Since H/H 0 = ZG0 (g)/ZG0 (g)0 (see 19.12(a)) is commutative (see 17.4(a)),
+L has rank 1. Let L̃ = a∗ L, a local system of rank 1 on c. We show:
+   (a) if F is a cuspidal local system on c then F ⊗ L̃ is a cuspidal local system
+on c.
+Let P be a parabolic of G0 with P 6= G0 and let x ∈ c∩NG P . Let d be dim c minus
+the dimension of the P/UP -conjugacy class of xUP in NG P/UP . We must show
+that Hcd (c ∩ xUP , F ⊗ L̃) = 0. By our assumption we have Hcd (c ∩ xUP , F ) = 0.
+Hence it is enough to show that L̃|c∩xUP ∼    = Q̄l . Since L̃ = a∗ L, it is enough to
+show that there exists a subvariety V of Z such that
+   (b) a(c ∩ xUP ) ⊂ V , L|V ∼ = Q̄l .
+Let V be the UP -orbit of a(x) in Z (for the restriction of the G0 -action to UP ). For
+this V the first assertion of (b) holds by 19.3(a). We now show that for this V , the
+second assertion of (b) holds. It is enough to note that L|V is a UP -equivariant
+local system of rank 1 on the homogeneous UP -space V in which the isotropy
+group of a(x) that is, UP ∩ ZG (xs ), is connected (we use that xs normalizes UP ,
+see 1.11). Thus (b), hence also (a), are proved.
+19.14. We now assume that F (c) = c. Then Z and c are defined over Fq and we
+denote again by F the corresponding Frobenius maps.
+    (a) The map a0 : Z F −    → cF (restriction of a : Z −   → c) is surjective; the map
+       F      F
+b0 : Z − → c• (restriction of b : Z −    → c• ) induces a bijection on the sets of G0F -
+orbits.
+This follows immediately from 19.12(a) and 19.7(a). We have a partition cF        • = ⊔γ
+                                                                             −1
+where γ runs over the G -orbits on c• . For any γ we set Zγ = b0 (γ), cF
+                              0F              F                       F
+                                                                                     γ =
+      F                               F         F                      F        0F
+a0 (Zγ ). From (a) we see that Z = ⊔γ Zγ is the partition of Z into G -orbits
+and that cF = ⊔γ cF                          F
+                     γ is a partition of c into non-empty G
+                                                                 0F
+                                                                    -stable subsets.
+    Let f ∈ CG0 (c) and let γ be a G -orbit on c• . Define fγ : cF −
+                                           0F              F
+                                                                                → Q̄l by
+fγ (x) = 1 if γ ∈ cF
+                   γ , f γ (x) = 0 if γ ∈ c F
+                                              −  c F
+                                                   γ . We show that
+
+(b)                                 fγ f ∈ CG0 (c).
+                CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                17
+
+We may assume that f = χF,ǫ where F is a cuspidal local system on c and
+            ∼
+ǫ : F ∗ F −→ F is an isomorphism. Define f˜γ : Z F −            → Q̄l by f˜γ (z) = 1 if
+z ∈ ZγF , f˜γ (z) = 0 if z ∈ Z F − ZγF . By 19.7 applied to the homogeneous G0 -
+space Z, there exist irreducible G0 -equivariant local systems Li , (i ∈ [1, m] on
+                                        ∼
+Z and isomorphisms ei : F ∗ Li −→ Li such that f˜γ =                   i∈[1,m] ci χLi ,ei where
+                                                                   P
+                     i                                                 F
+ci ∈ Q̄l . PEach L has rank 1. Composing            with a0 : c −         → Z F we obtain
+f˜γ ◦ a0 = i∈[1,m] ci χLi ,ei ◦ a0 , that is fγ = i∈[1,m] ci χL̃i ,ẽi where L̃i = a∗ Li and
+                                                 P
+            ∼
+ẽi : F ∗ L̃i −→ L̃i is induced by ei . Hence
+                             X                               X
+                   fγ f =             ci χL̃i ,ẽi χF,ǫ =             ci χF⊗L̃i ,ǫ⊗ẽi .
+                            i∈[1,m]                         i∈[1,m]
+
+
+Using 19.13(a), we see that this belongs to CG0 (c). This proves (b).
+  For any G0F -orbit γ on cF• we set
+
+
+                      CG0 ,γ (c) = {f ∈ CG0 (c); f = 0 on cF − cF
+                                                                γ }.
+
+
+From (b) we see that:
+
+(c)                                   CG0 (c) = ⊕γ CG0 ,γ (c).
+
+19.15. We now fix g ∈ cF       • . We set s = gs . Let
+   c = {u ∈ ZG (s)0 gu ; u unipotent, su ∈ c}.
+From the definitions we see that c 6= ∅ and from 17.13 we see that c is a single
+(unipotent) ZG (s)0 -conjugacy class in ZG (s). We have F (c) = c and c carries some
+non-zero cuspidal local system (see 17.3(a)). Define CZG (s)0 (c) in terms of ZG (s), c
+in the same way as CG0 (c) was defined in terms of G, c. For any f ∈ CG0 (c) we
+define f¯ : cF −→ Q̄l by f¯(u) = f (su). We claim that
+   f¯ ∈ CZG (s)0 (c).
+We may assume that f = χF,ǫ where F is a cuspidal local system on c and
+              ∼
+ǫ : F ∗ F −→ F is an isomorphism. Let F ′ = j ∗ F where j : c −            → c, u 7→ su
+                 ∗ ′ ∼
+and let ǫ : F F −→ F be the isomorphism induced by ǫ. By 17.3(a), F ′ is a
+            ′                ′
+
+cuspidal local system on c and by 19.9(a) applied to c instead of c we see that
+χF ′ ,ǫ′ ∈ CZG (s)0 (c). Clearly, χF ′ ,ǫ′ = f¯ and our claim is verified.
+   From 17.13 it follows that cF is stable under conjugation by HG0 (g)F . It is
+clear that for f, f¯ as above, f¯ is constant on any HG0 (g)F -conjugacy class in cF .
+Thus we have a well defined linear map
+
+(a)                                    → CHG0 (g) (c), f 7→ f¯
+                               CG0 (c) −
+
+where CHG0 (g) (c) is the space of functions in CZG (s)0 (c) that are constant on any
+HG0 (g)F -conjugacy class in cF .
+18                                     G. LUSZTIG
+
+  We show that the map (a) is surjective. Now CHG0 (g) (c) is spanned by functions
+ ′
+f : cF −
+       → Q̄l of the form
+
+                      f ′ (u) = |ZG (s)0F |−1                χf,ǫ (y −1 uy)
+                                                    X
+
+                                                y∈HG0 (g)F
+
+                                                                ∼
+where f is a cuspidal local system on c and ǫ : F ∗ f −→ f is an isomorphism. It is
+enough to show that any such f ′ is in the image of the map (a). Let π : c̃ −     → c, f̃ be
+as in 19.1. Now ǫ induces an isomorphism ǫ̃ : F ∗ π! f̃ − → π! f̃. Let f = χπ! f̃,ǫ̃ : cF −
+                                                                                          →
+Q̄l . Since π! f̃ is a cuspidal local system on c (see 19.1(a)) we see that f ∈ CG0 (c).
+From the definitions we have
+
+             f¯(u) = f (su) = |ZG (s)0F |−1                          χf,ǫ (u′ )
+                                                       X
+
+                                                y∈G0F ,u′ ∈cF ;ysu′ y −1 =su
+
+
+for u ∈ cF . For each y, u′ in the sum we have y ∈ ZG0 (s)F and yu′ y −1 = u hence
+y ∈ HG0 (g)F , u′ = y −1 uy; hence
+
+                      f¯(u) = |ZG (s)0F |−1                  χf,ǫ (y −1 uy).
+                                                   X
+
+                                              y∈HG0 (g)F
+
+
+We see that f¯ = f ′ . Thus the surjectivity of the map (a) is established.
+   Next we note that, if γ ′ is a G0F -orbit on cF  • that does not contain g, then
+the restriction of the map (a) to CG0 ,γ ′ (c) is 0. Using this and the direct sum
+decomposition 19.14(c) we deduce that, if γ is the G0F -orbit on cF  • that contains
+g, then (a) restricts to a surjective linear map
+
+(b)                              CG0 ,γ (c) −
+                                            → CHG0 (g) (c).
+
+We show that this map is injective. Let f, f ′ ∈ CG0 ,γ (c) be such that f (su) =
+f ′ (su) for any u ∈ cF . Since cF    γ = {ysuy
+                                                 −1
+                                                    ; y ∈ G0F , u ∈ cF } and f, f ′ are
+constant on G0F -conjugacy classes it follows that f = f ′ on cF                 ′
+                                                                   γ . Since f, f are 0
+                                    ′
+on cF − cF   γ it follows that f = f , as desired. We see that
+     (c) the map (b) is an isomorphism.
+
+                           20. Twisted group algebras
+20.1. Let Γ be a finite group. Let E be a finite dimensional Q̄l -vector space with
+a direct sum decomposition E = ⊕w∈Γ Ew with dim Ew = 1 for all w. Assume that
+on E we are given an associative algebra structure with 1 such that Ew Ey = Ewy
+for any w, y ∈ Γ. Then 1 ∈ E1 −{0}. We choose a basis {bw ; w ∈ Γ} of E such that
+bw ∈ Ew for all w. Each bw is invertible. We have bw by = λ(w, y)bwy , b−1    −1
+                                                                           y bw =
+λ(w, y)−1 b−1                  ∗
+           wy with λ(w, y) ∈ Q̄l for any w, y ∈ Γ. We show that
+                    CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                19
+
+   (a) the algebra E is semisimple.
+Let M be a finite dimensional E-module and let M ′ be an E-submodule of M .
+We must show that there exists an E-submodule of M complementary to M ′ . Let
+π:M −    → M ′ be a Q̄l -linear map such that π(mP   ′
+                                                       ) = m′ for all m′ ∈ M ′ . Define
+                                 ′                −1          −1                 ′    ′
+a Q̄l -linear map π̃ : M − → M by π̃(m) = |Γ|            w∈Γ bw π(bw m). For m ∈ M
+we have π̃(m′ ) = |Γ|−1 w∈Γ b−1           ′     ′
+                                   w bw m = m . We show that π̃ is E-linear. It is
+                           P
+
+enough to show that b−1  y π̃(by m) = π̃(m) for m ∈ M , y ∈ Γ. We have
+
+          |Γ|b−1            −1
+                                   b−1                   b−1 −1
+                               X                   X
+              y π̃(by m) = by       w π(bw by m) =        y bw π(λ(w, y)bwy m)
+                                          w                         w
+
+                     λ(w, y)−1 b−1                                  b−1
+                X                                               X
+            =                   wy π(λ(w, y)bwy m) =                 wy π(bwy m) = |Γ|π̃(m),
+                w                                               w
+as desired. Now Kerπ̃ is an E-submodule of M complementary to M ′ . This proves
+(a).
+20.2. Let V, V ′ be two simple E-modules.           Let t : V −   → V, t′ : V ′ − → V ′ be Q̄l -
+linear invertible maps. Let N = |Γ|−1 w∈Γ tr(bw t, V )tr(t′−1 b−1               ′
+                                                                         w , V ). We show:
+                                             P
+   (a)N = 0 if V, V ′ are not isomorphic E-modules and N = 1 if V = V ′ , t = t′ .
+In the case where λ(w, y) = 1 for all w, y this is just Schur’s orthogonality formula.
+The proof in the general case is similar. Let (ei )i∈I be a basis of V and P        let (e′h )h∈I ′
+                  ′                               w    w                                      w
+be a basis of V . For w ∈ Γ we define αij , βhk ∈ Q̄l by bw (ei ) =                    j∈I αij ej ,
+b−1   ′                w ′
+                k∈I ′ βhk ek . Define ξij , ζhk ∈ Q̄l by t(ei ) =
+                                                                                      ′−1 ′
+             P                                                        P
+  w (eh ) =                                                            j∈I ξij ej , t     (eh ) =
+            ′
+        ζ  e  . We    have
+P
+   k∈I ′ hk k
+
+                              N = |Γ|−1
+                                        X X
+(b)                                                ξij αw        w
+                                                         ji ζhk βkh .
+                                                  w∈Γ i,j,k,h
+
+For a Q̄l -linear map f : V −  → V we define f˜ : V −
+                                              ′
+                                                       → V ′ by f˜(v) = w∈Γ b−1
+                                                                       P
+                                                                                w f (bw v).
+As in the proof of 20.1(a) we see that f˜ is E-linear. For i ∈ I, h ∈ I define a linear
+                                                                         ′
+
+map f : V −   → V ′ by f (ej ) = δij e′h for all j. We have
+       f˜(eu ) =     b−1                   b−1                     b−1             ′
+                 X                     X          X              X     X
+                      w f (bw eu ) =         w f(    αwuj ej ) =    w     αw
+                                                                           uj δij eh
+                      w                           w         j             w       j
+                         −1 ′                  w ′
+            X                       X
+        =           αw
+                     ui bw eh =           αw
+                                           ui βhk ek .
+                w                   w,k
+
+If V, V Pare not isomorphic E-modules then, by Schur’s lemma, we have f˜ = 0
+        ′
+
+hence w αw         w
+              ui βhk = 0 for any u, i, h, k and N = 0 as desired. Assume now that
+V = V ′ , t = t′ . We may assume that I = I ′ , ei = e′i . If f, f˜ are as above then, by
+Schur’s lemma, f˜ is a multiple of 1. Since tr(f˜, V ) = |Γ|tr(f, V ) = |Γ|tr(f, V ) =
+δih |Γ| we have f˜ = δih |Γ|n−1 1 where n = dim V . Hence w αw          w
+                                                                    ui βhk = δih δuk |Γ|n
+                                                                                          −1
+                                                              P
+for any u, i, h, k and
+                          ξij δik δjh ζhk n−1 =   ξij ζji n−1 =      n−1 = 1,
+                     X                          X               X
+              N=
+                          i,j,k,h                         i,j                 i
+
+as desired.
+20                                          G. LUSZTIG
+
+20.3. Since E is semisimple, we have an algebra isomorphism
+                  ′
+   (a) E −  → ⊕ri=1 End(Vi ),
+e 7→ (fie ) where fie : Vi −       → Vi takes v to ev; here Vi , (i ∈ [1, r ′ ]) is a set of
+representatives for the isomorphism classes of simple E-modules.
+   Let ι : E −  → E be an automorphism of the algebra E. We may assume that for
+i ∈ [1, r] the following property holds:
+   (∗) there exists a Q̄l -linear isomorphism ιi : Vi −      → Vi such that ιi (ev) = ι(e)ιi (v)
+for all e ∈ E, v ∈ V
+and that for i > r this property does not hold. We choose for each i ∈ [1, r] an
+isomorphism ιi : Vi −    → Vi as above (it is unique up to a non-zero scalar). We show
+                      ′
+that, for
+        Pr  any  w, w   in Γ,
+   (b) i=1 tr(bw ιi , Vi )tr(ι−1       −1
+                                   i bw ′ , Vi ) is equal to the trace of the linear map κ :
+E− → E, e 7→ b−1 w′ ι
+                     −1
+                         (e)bw .
+             r′                      ′
+Let τ : ⊕i=1 End(Vi ) −     → ⊕ri=1 End(Vi ) be the linear map which corresponds to
+κ:E−    → E under the isomorphism (a). For i ∈ [1, r], τ restricts to a linear map
+τi : End(Vi ) −  → End(Vi ), while for i P        > r, τ maps the summand End(Vi ) to a
+                                                     r
+different summand. Hence tr(κ, E) = i=1 tr(τi , End(Vi )). For i ∈ [1, k], τi takes
+f ∈ End(Vi ) to v 7→ b−1        −1
+                           w ′ ιi (f (ιi (bw v))) hence
+   tr(τi , End(Vi ) = tr(b−1      −1
+                             w ′ ιi , Vi )tr(ιi bw , Vi );
+(b) follows.
+20.4. We now assume that ι : E −   → E in 20.3 satisfies ι(Ew ) = EF (w) for all
+w, where F : Γ −    → Γ is a group isomorphism. For x ∈ Γ, let Γx = {y ∈
+                                         → Q̄∗l by ι−1 (by )bx = γx (y)bx by . We
+Γ; F −1 (y)xy −1 = x}; we define γx : Γx −
+show that γx is a group homomorphism. Let z, z ′ ∈ Γx . We have bz bz ′ = ubzz ′
+with u ∈ Q̄∗l . We have
+
+       ι−1 (bzz ′ )bx = u−1 ι−1 (bz bz ′ )bx = u−1 ι−1 (bz )γx (z ′ )bx bz ′
+       = u−1 γx (z ′ )ι−1 (bz )bx bz ′ = u−1 γx (z ′ )γx (z)bx bz bz ′ = γx (z ′ )γx (z)bx bzz ′
+
+hence γx (zz ′ ) = γx (z ′ )γx (z), as desired.
+   An element x ∈ Γ is said to be effective if γx is identically 1. For x, y ∈ Γ, z ∈ Γx
+we have yzy −1 ∈ ΓF −1 (y)xy−1 and γx (z) = γF −1 (y)xy−1 (yzy −1 ). It follows that the
+set of effective elements in Γ is a union of F -twisted conjugacy classes. We say
+that an F -twisted conjugacy class in Γ is effective if some/any element of it is
+effective.
+   (a) If an F -twisted conjugacy class C is not effective then for i ∈ [1, r] and
+x ∈ C we have tr(ιi bx , Vi ) = 0.
+Indeed, we can find y ∈ Γx such that γx (y) 6= 1. We have
+
+            tr(ιi bx , Vi ) = tr(b−1
+                                  y ιi bx by , Vi ) = γx (y)
+                                                             −1
+                                                                tr(b−1
+                                                                    y ιi ι
+                                                                          −1
+                                                                             (by )bx , Vi )
+             = γx (y)−1 tr(ιi bx , Vi ).
+
+Thus (1 − γx (y)−1 )tr(ιi bx , Vi ) = 0 and tr(ιi bx , Vi ) = 0 as claimed.
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                               21
+
+   (b) If i, j ∈ [1, r] then x 7→ tr(bx ιi , Vi )tr(ι−1 −1
+                                                     j bx , Vj ) is constant on any F -
+twisted conjugacy class.
+Indeed let y ∈ Γ. We have b(F −1 (y)xy −1 ) = cι−1 (by )bx b−1     y  for some c ∈ Q̄∗l .
+Hence
+
+           tr(bF −1 (y)xy−1 ιi , Vi )tr(ι−1 −1
+                                         j bF −1 (y)xy −1 , Vj )
+                                              −1 −1
+            = tr(cι−1 (by )bx b−1
+                               y ιi , Vi )tr(ιj c   by b−1
+                                                        x ι
+                                                           −1
+                                                              (by )−1 , Vj )
+            = tr(ι−1 (by )bx ιi ι−1 (by )−1 , Vi )tr(ι−1 (by )ι−1 −1 −1
+                                                               j bx ι   (by )−1 , Vj )
+            = tr(bx ιi , Vi )tr(ι−1 −1
+                                 j bx , Vj )
+
+and (b) follows.
+   Let Γ̄ be a set of representatives for the effective F -twisted conjugacy classes in
+Γ. We rewrite 20.2(a) for V = Vi , V ′ = Vj , t = ιi , t′ = ιj where i, j ∈ [1, r], taking
+into account (a),(b):
+
+                          |Γx |−1 tr(bx ιi , Vi )tr(ι−1 −1
+                       X
+(c)                                                  j bx , Vj ) = δij .
+                        x∈Γ̄
+
+We rewrite 20.3(b) for w, w′ ∈ Γ̄ as follows
+                       r
+                               tr(bw ιi , Vi )tr(ι−1 −1
+                       X
+(d)                                               i bw ′ , Vi ) = δw,w ′ |Γw |.
+                        i=1
+
+Indeed, it is enough toP   show that the trace of κ in 20.3(b) is in our case δw,w′ |Γw |.
+Now that trace is           y∈Γ;w ′−1 F −1 (y)w=y cy where cy      ∈ Q̄∗l is defined by
+b−1
+ w′ ι
+      −1
+         (by )bw = cy by . IfPw′ 6= w, the last sum is empty so its value is 0. If
+  ′
+w = w, the last sum is y∈Γw γw (y) and this equals |Γw | since γw is identically
+1.
+    (e) The matrix (tr(bx ιi , Vi ))i∈[1,r],x∈Γ̄ is square and invertible.
+Indeed, from (c),(d) we see that this matrix has a left inverse and a right inverse.
+The same argument shows that
+    (f) the matrix (tr(ι−1   −1
+                          i bx , Vi ))i∈[1,r],x∈Γ̄ is square and invertible.
+In particular,
+    (g) |Γ̄| = r.
+
+                                             21. Bases
+                                                   •
+21.1. If L is a Levi of a parabolic of G0 , let NG   L be the set of all g ∈ NG L such
+                                  0                                            •
+that for some parabolic P of G with Levi L we have g ∈ NG P . Then NG            L is a
+union of connected components of NG L.
+   Let AG be the set of all pairs (L, c) where L is a Levi subgroup of some parabolic
+                                                               •
+of G0 and c is a unipotent cuspidal L-conjugacy class in NG      L.
+   Let Gun be the set of unipotent elements in G.
+22                                   G. LUSZTIG
+
+21.2. Let L be a Levi of a parabolic P of G0 and let g ∈ L̃ = NG L ∩ NG P . Then
+  (a) g is quasi-semisimple in G if and only if g is quasi-semisimple in L̃.
+See [DM, 1.10].
+21.3. For a fixed g ∈ G, let R be the set of all L such that L is a Levi of a
+                         •
+parabolic of G0 , g ∈ NG   L and g is isolated in NG L; let R′ be the set of all L such
+that L is a Levi of a parabolic of ZG (gs )0 and g ∈ NZ•G (gs ) L. We show:
+   (a) L 7→ a(L) = L ∩ ZG (gs )0 , L 7→ b(L) = ZG0 ((ZL0 ∩ ZG (g))0 ) define inverse
+bijections R ↔ R′ .
+Let L ∈ R′ . Set L = b(L). Then L is a Levi of a parabolic of G0 . Clearly,
+g ∈ NG L. If χ : k∗ −  → (ZL0 ∩ ZG (g))0 is general enough, then
+   ZZG (gs )0 (χ(k∗ )) = ZZG (gs )0 (ZL0 ∩ ZG (g))0 = L (see 1.10) and ZG0 (χ(k∗ )) =
+ZG0 (ZL0 ∩ ZG (g))0 = L.
+Then L is a Levi of the parabolic P = Pχ (see 1.16). We have gχ(t)g −1 = χ(t) for
+all t ∈ k∗ , hence gP g −1 = P . Thus g ∈ NG   •
+                                                 L. We have
+
+          L ∩ ZG (gs )0 = ZG0 (χ(k∗ )) ∩ ZG (gs )0 = ZZG (gs )0 (χ(k∗ )) = L.
+
+From L = ZG (gs )0 ∩ L we see that L = ZL (gs )0 . Hence ZZ0 L (gs )0 = ZL0 ,
+
+             TNG L (g) = (ZZ0 L (gs )0 ∩ ZG (g))0 = (ZL0 ∩ ZG (g))0 ⊂ ZL0 .
+
+By 2.2(ii), we see that g is isolated in NG L. Hence L ∈ R and b is well defined.
+   Conversely, let L ∈ R. Set L = a(L). Let P be a parabolic of G0 with Levi L
+such that g ∈ NG L ∩ NG P . Let Q = P ∩ ZG (gs )0 . By 1.12, Q is a parabolic of
+ZG (gs )0 with Levi L. Clearly, g ∈ ZG (gs ) normalizes L and Q. Hence L ∈ R′ and
+a is well defined. Since g is isolated in NG L, we have (see 2.2(iii)):
+
+        (ZL0 ∩ ZG (g))0 = TNG L (g) = (ZZ0 L (gs )0 ∩ ZG (g))0 = (ZL0 ∩ ZG (g))0
+
+hence (using 1.10):
+
+         L = ZG0 ((ZL0 ∩ ZG (g))0 ) = ZG0 ((ZL0 ∩ ZG (g))0 ) = b(L) = ba(L).
+
+Thus, ba = 1. As we have seen above, for L ∈ R′ we have ab(L) = L. This proves
+(a).
+21.4. In the remainder of this section we assume that k is an algebraic closure of
+a finite field Fq and that G has a fixed Fq -rational structure with Frobenius map
+F :G−  → G.
+   Let R be the set of all triples (g, L, c) where g ∈ GF is quasi-semisimple, L is
+a Levi of a parabolic of G0 , F (L) = L, c is a a cuspidal L-conjugacy class in NG L
+                            •
+such that F (c) = c, c ⊂ NG   L and g ∈ σNG L (c).
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                             23
+
+   Let R′ be the set of all triples (g, L, c) where g ∈ GF is quasi-semisimple, L
+is a Levi of a parabolic of ZG (gs )0 , F (L) = L, and c is a unipotent cuspidal L-
+conjugacy class in NZG (gs ) L such that F (c) = c, c ⊂ gu L, c ⊂ NZ•G (gs ) L (we have
+automatically g ∈ NZG (gs ) L). Define ã : R − → R′ by
+   (a) (g, L, c) 7→ (g, L, c), L = a(L), c = {u ∈ gu L; u unipotent,gs u ∈ c}.
+To see that (g, L, c) ∈ R′ we note that c is a single L-conjugacy class, by 17.13
+applied to NG L instead of G; also from 20.7(a) we have g ∈ NZ•G (gs ) L, c ⊂ gu L
+hence c ⊂ NZ•G (gs ) L.
+   Define b̃ : R′ −→ R by
+   (b) (g, L, c) 7→ (g, L, c), L = b(L), c = ∪l∈L lgs cl−1 .
+To see that (g, L, c) ∈ R we note that there exists x ∈ c with xs = gs , xu ∈
+                                                        •
+ZL (gs )0 gu and that g is isolated in NG L, g ∈ NG       L (see 20.7(a)); it follows that
+                                                          •
+g ∈ σNG L (c) and that c is isolated in NG L, c ∈ NG        L (we apply Lemma 2.5 with
+NG L instead of G to g and x as above).
+   From the definition we see that
+   (c) the maps (a),(b) are inverse bijections R ↔ R′ .
+21.5. Assume that (g, L, c) ∈ R, (g, L, c) ∈ R correspond to each other under the
+bijections 20.8(c). Let hgi = ∪l∈LF lgl−1 . Let
+   G = {y ∈ ZG0 (gs )F ; yLy −1 = L, ycy −1 = c},
+   G ′ = {y ∈ G0F , yLy −1 = L, ycy −1 = c, yhgiy −1 = hgi}.
+We show:
+   (a) G ′ = LF G.
+Let y ∈ G. Since c ⊂ gu L and yLy −1 = L, ycy −1 = c, we have c ⊂ ygu y −1 L. Hence
+ygu y −1 , gu are two F -stable, unipotent quasi-semisimple elements of NG L in the
+same connected component of NG L. Using 19.11 we have ygu y −1 = lgu l−1 for
+some l ∈ LF . We have L = ZG0 ((ZL0 ∩ ZG (g))0 ) = ZG0 ((ZL0 ∩ ZG (gu ))0 ). Hence
+
+            yLy −1 = ZG0 ((ZyLy
+                            0
+                                −1 ∩ ZG (ygu y
+                                               −1 0
+                                                 )) )
+             = ZG0 ((ZL0 ∩ ZG (lgu l−1 ))0 ) = ZG0 ((ZL0 ∩ ZG (gu ))0 ) = L.
+
+Since c = ∪l′ ∈L l′ gs cl′−1 we see that ycy −1 = c. We have ygy −1 = ygs y −1 ygu y −1 =
+gs lgu l−1 = lgl−1 ∈ hgi. Hence yhgiy −1 = hgi. We see that y ∈ G ′ . Thus, G ⊂ G ′ .
+The inclusion LF ⊂ G ′ is obvious. Hence LF G ⊂ G ′ . Conversely, let y ∈ G ′ .
+Then y = l′ y ′ where l′ ∈ LF , y ′ ∈ G ′ , y ′ gy ′−1 = g. We have y ′ Ly ′−1 = L hence
+y ′ Ly ′−1 = L. We have y ′ cy ′−1 = c, y ′ (gu L)y ′−1 = gu L hence y ′ cy ′−1 = c. Thus
+y ′ ∈ G and (a) holds.
+21.6. Let (L, S) ∈ A and let E ∈ S(S) be an irreducible cuspidal local system on S
+(relative to NG L). Let Y = YL,S , Ỹ = ỸL,S , π : Ỹ −
+                                                       → Y be as in 3.13. Let Ẽ be the
+local system on Ỹ defined in 5.6. Let Γ̃ = {n ∈ NG0 L; nSn−1 = S, Ad(n)∗ E ∼     = E}
+and let Γ = Γ̃/L. Let Ȳ be the closure of Y in G and let K = IC(Ȳ , π! Ẽ).
+Assume that F L = L, F S = S, F ∗ E ∼  = E. Now F : G −   → G induces isomorphisms
+F : Γ̃ −
+       → Γ̃, F : Γ −
+                   → Γ.
+24                                       G. LUSZTIG
+
+    For any n ∈ Γ̃F there is a well defined element η(n) ∈ Q̄∗l such that the
+following holds: if α : Ad(n)∗ E −   → E, ǫ : F ∗ E −
+                                                    → E are isomorphisms, then for any
+                                          α         ǫ
+g ∈ S, the composition EnF (g)n−1 −      → EF (g) − → Eg is η(n) times the composition
+              ǫ            α
+EnF (g)n−1 −  → Engn−1 −   → Eg . (This follows from the irreducibility of E and Schur’s
+lemma.) Clearly, η(n) is independent of the choice of α, ǫ. It follows that, if g ∈ S F
+                                   α      ǫ                                              ǫ
+then the composition Engn−1 −      → Eg − → Eg is η(n) times the composition Engn−1 −    →
+            α
+Engn−1 −    → Eg . Hence χE,ǫ (g) = η(n)χE,ǫ (ngn−1 ). This property characterizes η(n)
+since S F 6= ∅. Since χE,ǫ is constant on LF -conjugacy classes in S F it follows that
+η induces a homomorphism Γ̃F /LF = (Γ̃/L)F = ΓF −          → Q̄∗l . We say that (L, S, E)
+is effective if the associated homomorphism η : Γ −    F
+                                                         → Q̄∗l is identically 1. (In this
+case we have χE,ǫ (ngn−1 ) = χE,ǫ (g) for any g ∈ S F , n ∈ Γ̃F .)
+                                            ∼
+    We fix an isomorphism ǫ : F ∗ E −→ E. Now F induces Frobenius maps on
+                                                       ∼
+Y, Ỹ , Ȳ . Also, ǫ induces an isomorphism F ∗ Ẽ −→ Ẽ of local systems on Ỹ , an
+                          ∼                                                              ∼
+isomorphism F ∗ π! Ẽ −→ π! Ẽ of local systems on Y and an isomorphism φ : F ∗ K −→
+K in D(Ȳ ). As in 7.10, let E be the algebra of endomorphisms of the local system
+π! Ẽ on Y . As in 7.10(a) we have a canonical decomposition E = ⊕w∈Γ Ew where
+Ew is a one dimensional subspace of E. From the definitions we see that for
+w, y ∈ Γ we have Ew Ey = Ewy . Let bw be a basis element of Ew . Then E, Ew , bw
+are as in 20.1. As in 20.3, let Vi , (i ∈ [1, r ′ ]) be a set of representatives for the
+isomorphism classes of simple E-modules. We have canonically E = End(K). For
+i ∈ [1, r ′ ] let (π! Ẽ)i = HomE (Vi , π! Ẽ), Ki = HomE (Vi , K). Then (π! Ẽ)i is an
+irreducible local system on Y and Ki = IC(Ȳ , (π! Ẽ)i ). Also, (π! Ẽ)i ∼ 6 (π! Ẽ)i′ for
+                                                                             =
+       ′
+i 6= i . We have canonically π! Ẽ = ⊕i∈[1,r′ ] Vi ⊗ (π! Ẽ)i and K = ⊕i∈[1,r′ ] Vi ⊗ Ki .
+For f ∈ Hom(π! Ẽ, π! Ẽ) we have
+
+      F ∗ (f ) ∈ Hom(F ∗ π! Ẽ, F ∗ π! Ẽ) = Hom(π! F ∗ Ẽ, π! F ∗ Ẽ) = Hom(π! Ẽ, π! Ẽ)
+
+where the last equality is obtained by using twice the isomorphism F ∗ Ẽ −            → Ẽ
+as above. Hence we have a map ι : E −            → E, f 7→ F ∗ (f ) which is an algebra
+isomorphism; it carries Ew onto EF (w) for any w ∈ Γ. As in 20.3 we may assume
+that for i ∈ [1, r], property 20.3(∗) holds and that for i > r that property does not
+hold. For i ∈ [1, r] we choose an isomorphism ιi : Vi −          → Vi as in 20.3(∗). For any
+                                       ∗    ∼
+w ∈ Γ, the isomorphism bw φ : F K −→ K corresponds under K = ⊕i∈[1,r′ ] Vi ⊗ Ki
+to an isomorphism
+   (a) ⊕i∈[1,r′ ] Vi ⊗ F ∗ Ki −
+                              → ⊕i∈[1,r′ ] Vi ⊗ Ki
+which is an isomorphism of the summand Vi ⊗ F ∗ Ki onto a summand Vi′ ⊗ Ki′
+where i′ = i for i ∈ [1, r] and i′ 6= i for i > r; moreover, the restriction of (a)
+                                                                                 ∼
+to Vi ⊗ F ∗ Ki , i ∈ [1, r], is of the form bw ιi ⊗ φi where φi : F ∗ Ki −→ Ki is an
+isomorphism independent of w. (Note that F ∗ Ki ∼           6 Ki for i > r.) Taking induced
+                                                             =
+maps on stalks and taking traces we obtain for any j ∈ Z, g ∈ Ȳ F :
+                                         X
+                      tr(bw φ, Hgj K) =        tr(bw ιi , Vi )tr(φi , Hj Ki ).
+                                        i∈[1,r]
+                CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                       25
+
+Taking alternating sum over j we obtain
+                                  X
+(b)                    χK,bw φ =      tr(bw ιi , Vi )χKi ,φi .
+                                          i∈[1,r]
+
+                                                  −1
+We choose an element gw ∈ G0 such that gw            F (gw ) = nw , a representative of w in
+            w          −1  w               −1    w           −1 ∗
+Γ̃. We set L = gw Lgw , S = gw Sgw , E = Ad(gw                 ) E (a local system on S w ).
+                                                                                           ∼
+Then F (Lw ) = Lw and F (S w ) = S w . We define an isomorphism ǫw : F ∗ E w −→ E w
+                       ∼
+in terms of ǫ : F ∗ E −→ E and bw as follows. By definition, bw defines for each
+                                                    ∼
+g ∈ S an isomorphism of stalks Enw gn−1        w
+                                                   −→ Eg ; hence it defines for any g ′ ∈
+                                                     ∼
+S w an isomorphism Enw F (gw )−1 F (g ′ )F (gw )n−1
+                                                 w
+                                                    −→ EF (gw )−1 F (g ′ )F (gw ) or equivalently
+                ∼                                                          ∼
+Egw−1 F (g ′ )gw −→ EF (gw−1 g ′ gw ) . Composing with ǫ : EF (gw−1 g ′ gw ) −→ Egw−1 g ′ gw we obtain
+                ∼                                   ∼
+Egw−1 F (g ′ )gw −→ Egw−1 g ′ gw that is, EFw(g ′ ) −→ Egw′ which comes from an isomorphism
+                ∼                                                                  ∼
+ǫw : F ∗ E w −→ E w . We define π w : Ỹ w −
+                                           → Y w , Ẽ w , Kw , φw : F ∗ Kw −→ Kw in terms
+                                                                         ∼
+                                                 → Y , Ẽ, K, φ : F ∗ K −→ K were defined
+of Lw , S w , E w , ǫw in the same way as π : Ỹ −
+                                                                                −1 w
+in terms of L, S, E, ǫ. We have Y w = Y and the map (g, xL) 7→ (g, xgw             L ) is
+                                 w                                          w
+an isomorphism µ : Ỹ −     → Ỹ commuting with the projections π, π onto Y . We
+                                                                            ∼
+have µ∗ Ẽ w = Ẽ canonically. Hence µ induces an isomorphism π! Ẽ −→ π!w Ẽ w hence
+                             ∼
+an isomorphism µ′ : K −→ Kw . From the definitions we see that the compositions
+       F ∗ µ′           φw                bw φ          µ′
+F ∗ K −−−→ F ∗ Kw −−→ Kw , F ∗ K −−→ K −→ Kw coincide. Hence for j ∈ Z, g ∈
+Ȳ F we have tr(bw φ, Hgj K) = tr(φw , Hgj Kw ). Taking alternating sum over j gives
+χK,bw φ = χKw ,φw . Introducing this in (b) we obtain
+                                     X
+(c)                       χKw ,φw =         tr(bw ιi , Vi )χKi ,φi .
+                                          i∈[1,r]
+
+
+Using (c) for w running through Γ̄ (a set of representatives for the effective F -
+twisted conjugacy classes in Γ) and 20.4(e),(g), we see that
+   (d) the functions (χKw ,φw )w∈Γ̄ span the same vector space as the functions
+(χKi ,φi )i∈[1,r] ; moreover |Γ̄| = r.
+From the definitions we see that
+   (e) (Lw , S w , E w ) is effective if and only if w ∈ Γ is effective.
+We show that,
+   (f) if x ∈ Γ is not effective, then χKx ,φx = 0.
+It is enough to show that, for any j ∈ Z, g ∈ Ȳ F we have tr(bx φ, Hgj K) = 0. The
+proof is a repetition of that of 20.4(a). We can find y ∈ Γx such that γx (y) 6= 1.
+(Notation of 20.4.) We have
+
+        tr(φbx , Hgj K) = tr(b−1          j
+                              y φbx by , Hg K) = γx (y)
+                                                        −1
+                                                           tr(b−1
+                                                               y φι
+                                                                   −1
+                                                                      (by )bx , Hgj K)
+         = γx (y)−1 tr(φbx , Hgj K).
+
+Thus (1 − γx (y)−1 )tr(φbx , Hgj K) = 0 and tr(φbx , Hgj K) = 0 as claimed.
+26                                        G. LUSZTIG
+
+21.7. We preserve the setup of 21.6. Let Ξ be the set of all triples (L′ , S ′ , [E ′ ])
+such that
+     (L′ , S ′ ) ∈ A,
+   [E ′ ] is the isomorphism class of an irreducible cuspidal local system E ′ ∈ S(S ′ )
+(relative to NG L′ ),
+    there exists g ∈ G0 such that gLg −1 = L′ , gSg −1 = S ′ and Ad(g −1 )∗ E ∈ [E ′ ].
+Note that G0 acts naturally on Ξ and this action is transitive. The isotropy group
+of (L, S, [E]) in G0 is Γ̃. Thus we may identify Ξ = G0 /Γ̃. Since Γ̃ is F -stable,
+we have an induced Frobenius map F : Ξ −              → Ξ whose fixed point set consists of
+all (L′ , S ′ , [E ′ ]) ∈ Ξ such that F (L′ ) = L′ , F (S ′ ) = S ′ and F ∗ E ′ ∼
+                                                                                = E ′ . By 19.7(a),
+the triples (Lw , S w , E w ) (where w runs through a set of representatives of the F -
+twisted conjugacy classes in Γ) form a set of representatives for the G0F -orbits in
+ΞF . Using now 21.6(e) we see that the triples (Lw , S w , E w ) (where w runs through
+Γ̄) form a set of representatives for the G0F -orbits on the set of effective triples in
+ΞF .
+    Let (h L, h S, [h E])h∈I be a set of representatives for the G0F -orbits on the set
+of effective triples in ΞF . For each h ∈ I choose h E ∈ [h E] and an isomorphism
+                 ∼                                   ∼
+h
+  ǫ : F ∗ (h E) −→ h E. Define h K, h φ : F ∗ (h K) −→ h K in terms of h L, h S, h E, h ǫ in the
+                              ∼
+same way as K, φ : F ∗ K −→ K were defined in terms of L, S, E, ǫ. Let (Aj )j∈J be a
+set of representatives for the isomorphism classes of simple intersection cohomology
+complexes A on Ȳ that are summands of K and satisfy F ∗ A ∼          = A. For each j ∈ J
+                                     ∗      ∼
+choose an isomorphism ψj : F Aj −→ Aj . We can now reformulate 21.6(d) as
+follows.
+  (a) the functions (χh K,h φ )h∈I span the same vector space as the functions
+(χAj ,ψj )j∈J ; moreover, |I| = |J|.
+
+
+21.8. Let L, S, E be as in 21.6. Assume that S contains a unipotent L-conjugacy
+class c (necessarily unique hence F -stable), that E is the inverse image under
+                                                                                   ∼
+S− → c, g 7→ gu of an irreducible cuspidal local system F on c and that ǫ : F ∗ E −→ E
+                                                       ∼
+is induced via S − → c by an isomorphism ǫ0 : F ∗ F −→ F . We show that
+   (a) (L, S, E) is effective.
+                       ∼
+Let Ȳ , K, φ : F ∗ K −→ K, E, bw , Γ, F : Γ −
+                                             → Γ, ι : E −
+                                                        → E be as in 21.6. By 21.6(e)
+it is enough to show that 1 ∈ Γ is effective (relative to the basis bw of E and
+F :Γ−   → Γ). We may assume that bw are chosen as in the proof of Proposition
+11.9. We must show that y ∈ Γ, F (y) = y =⇒ ι−1 (by ) = by . Hence it is enough
+to show that ι(by ) = bF (y) for any y ∈ Γ. Let c be the unique unipotent G0 -
+conjugacy class of G that is open dense in Ȳ ∩ Gun (see 10.3). Let H = H0 K|c , an
+irreducible local system on G0 (see 11.8). The natural action of E on K induces
+an action of E on H in which by acts as the identity map (by the choice of by ).
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                               27
+
+Let f ∈ Hom(K, K) = E. The commutative diagram
+                                             F ∗f
+                                   F ∗ K −−−−→ F ∗ K
+                                               
+                                   φy          φy
+                                               
+
+                                             ι(f )
+                                     K     −−−−→       K
+(which comes from the definition of ι) induces a commutative diagram
+                                             F ∗f
+                                   F ∗ H −−−−→ F ∗ H
+                                               
+                                   φy          φy
+                                               
+
+                                             ι(f )
+                                    H      −−−−→       H
+If f = by then f : H − → H is the identity map hence F ∗ f : F ∗ H −   → F ∗ H is the
+identity map. Then the last commutative diagram shows that ι(f ) : H −        → H is
+the identity map. Since ι(by ) is a scalar multiple of bF (y) and bF (y) acts on H as
+the identity map, it follows that ι(by ) = bF (y) , as required.
+21.9. Let V be the vector space of functions GF         un −→ Q̄l that are constant on
+  0F                             F
+G -conjugacy classes in Gun . Let N be the set of all pairs (c, [F ]) where c
+is a unipotent G0 -conjugacy class in G and [F ] is an isomorphism class of an
+irreducible G0 -equivariant local system F on c. Define F : N −      → N by F (c, [F ]) =
+                                           F
+(F (c), [F! F ]). The fixed point set N is the set of all (c, [F ]) ∈ N such that
+F (c) = c and F ∗ F ∼   = F . For any (c, [F ]) ∈ N F we choose a local system F ∈ [F ]
+                                      ∼
+and an isomorphism φF : F ∗ F −→ F . The function χF,φF : cF −            → Q̄l will be
+                             0F                             0F     F
+regarded as a function Gun −    → Q̄l , equal to zero on Gun − c . Using Lemma 19.7,
+we see that
+   (a) for any F -stable unipotent G0 -conjugacy class c′ in G, the functions χF ′ ,φF ′
+with (c′ , [F ′ ]) ∈ N F form a basis for the vector space of functions in V that are
+                    ′F
+zero on GF  un − c .
+From (a) we deduce
+   (b) the functions χF,φF with (c, [F ]) ∈ N F form a basis of the vector space V.
+For (c, [F ]) ∈ N F let F ♯ = IC(c̄, F ). Now φF induces an isomorphism φ♯F :
+         ∼
+F ∗ F ♯ −→ F ♯ in D(c̄). Hence χF ♯ ,φ♯ : c̄F − → Q̄l is well defined. We regard χF ♯ ,φ♯
+                                       F                                                  F
+as a function GF  un −→ Q̄l , equal to zero on GF   un −P c̄F . This function is constant on
+G0F -conjugacy classes. Hence it is of the form c′ cc′ fc′ where c′ runs over the
+unipotent G0 -conjugacy classes in G such that F (c′ ) = c′ , c′ ⊂ c̄, cc′ ∈ Q̄l and
+fc′ ∈ V is zero on GF − c′F . For such c′ , fc′ is a linear combination of functions
+χF ′ ,φF ′ with F ′ such that (c′ , [F ′ ]) ∈ N F (see (a)). From the definitions we have
+fc = χF,φF . We see that
+                                             X
+                          χF ♯ ,φ♯ =                c[F],[F ′ ] χF ′ ,φF ′
+                               F
+                                    (c′ ,[F ′ ])∈N F
+28                                     G. LUSZTIG
+
+where c[F],[F ′ ] ∈ Q̄l are uniquely determined and equal to zero unless c′ ⊂ c̄;
+moreover, if c′ = c then c[F],[F ′ ] = δ[F],[F ′ ] . Thus, the functions χF ♯ ,φ♯ are related
+                                                                                F
+to the functions χF,φF by an upper triangular matrix with all diagonal entries
+equal to 1. Hence (b) implies:
+   (c) the functions χF ♯ ,φ♯ with (c, [F ]) ∈ N F form a basis of the vector space V.
+                             F
+
+
+21.10. Let Y be the set of triples (L, c, [f]) where L is the Levi of some parabolic
+                                                                          •
+of G0 , c is a unipotent L-conjugacy class of NG L with c ⊂ NG              L and [f] is the
+isomorphism class of an irreducible cuspidal local sytem f on c (relative to NG L).
+Let G0 \Y be the set of orbits of the natural G0 -action on Y given by conjugation all
+factors. Define F : Y −     → Y by F (L, c, [f]) = (F (L), F (c), [F!f]); we have F (gy) =
+F (g)F (y) for all g ∈ G0 , y ∈ Y. Hence F induces a bijection F : G0 \Y −                →
+G0 \Y. Putting together the generalized Springer correspondences 11.10(a) for the
+various connected components of G that contain unipotent elements we obtain a
+canonical surjective map N −      → G0 \Y. From the definitions we see that this map
+is compatible with the F -actions, hence it restricts to a surjective map N F −           →
+   0     F                                            F                   F
+(G \Y) whose fibres form a partition of N into subsets Nη indexed by the
+F -stable G0 -orbits η on Y. Using 21.9(c), we see that
+   (a) V = ⊕η Vη
+(η as above) where Vη is the subspace of V with basis formed by the functions
+χF ♯ ,φ♯ with (c, [F ]) ∈ NηF . Since η is a homogeneous space for the connected
+       F
+group G0 , it contains some F -fixed point (L, c, [f]). We have F (L) = L, F (c) = c.
+                                                                                        ∼
+We choose f ∈ [f]. We have F ∗ f ∼       = f; we choose an isomorphism ǫ1 : F ∗ f −→ f.
+Let S be the stratum of NG L that contains c, let E be the inverse of F under
+                                         ∼
+S −→ c, g 7→ gu and let ǫ : F ∗ E −→ E be the isomorphism induced by ǫ1 . Then
+(L, S, E, ǫ) are as in 21.6.
+   We will apply 21.7(a) in our case. Restricting the functions in 21.7(a) to Ȳ ωF =
+Ȳ ∩ GF un (Ȳ as in 21.6) we see that
+   (b) the functions χh K,h φ |Ȳ ωF (h ∈ I) span the same vector space as the func-
+tions χAj ,ψj |Ȳ ωF (j ∈ J); moreover, |I| = |J|.
+From the definition of generalized Springer correspondence we see that the func-
+tions χAj ,ψj |Ȳ ωF , (j ∈ J), extended by 0 on GF  un − Ȳ
+                                                             ωF
+                                                                , are up to non-zero scalars
+                                                             F
+the same as the functions χF ♯ ,φ♯ with (c, [F ]) ∈ Nη . In particular, they form a
+                                     F
+basis of the vector space Vη . Using now (b), we see that the functions χh K,h φ |Ȳ ωF ,
+(h ∈ I), extended by 0 on GF     un − Ȳ
+                                         ωF
+                                             (or equivalently, the generalized Green func-
+                             F
+tions QG,h L,h c,h f,h ǫ1 : Gun −→ Q̄l , see below) form a basis of the vector space Vη .
+Here c is the set of unipotent elements in h S, h f = h E|h c and h ǫ1 is the restriction
+       h
+
+of h ǫ to h c. In our case
+   (c) all triples in ΞF (see 21.7) are effective,
+since all elements of Γ are effective (see 21.6(e) and 21.8(a)). Letting now η vary
+and using (a), we obtain the following result.
+Proposition 21.11. The generalized Green functions QG,L,c,f,ǫ1 (where (L, c, [f])
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                            29
+
+runs through a set of representatives for the G0F -orbits on Y F and for each
+                                                          ∼
+(L, c, [f]) in this set we choose f ∈ [f] and ǫ1 : F ∗ f −→ f) form a basis of the
+Q̄l -vector space V of functions GF    → Q̄l that are constant on G0F -conjugacy
+                                    un −
+classes in GF  un .
+
+21.12. Define F : AG −    → AG by F (L, c) = (F (L), F (c)). Let (L, c) ∈ AF
+                                                                           G . Then
+CL (c) is well defined (see 19.9).
+   (a) For any n ∈ G0F such that nLn−1 = L, ncn−1 = c and any f ∈ CL (c), g ∈ cF
+we have f (ngn−1 ) = f (g).
+Indeed, we may assume that f = χf,ǫ1 where f is an irreducible cuspidal local
+                             ∼
+system on c and ǫ1 : F ∗ f −→ f is an isomorphism. In that case the result follows
+from 21.10(c), since we have automatically Ad(n)∗ f ∼ = f (see 11.7(a)).
+                                                    f
+   We define a Q̄l -linear map CL (c) −→ V, f 7→ QG,L,c by the requirement that
+QfG,L,c = QG,L,c,f,ǫ1 for any f = χf,ǫ1 as above. It is clear that this linear map
+is well defined. Let JL,c be the its image. Note that JL,c depends only on the
+G0F -orbit of (L, c). We can reformulate Proposition 21.11 as follows.
+   (b) For any (L, c) ∈ AF G , the linear map CL (c) −→ JL,c is an isomorphism. We
+have a direct sum decomposition V = ⊕(L,c) JL,c where (L, c) runs through a set of
+representatives for the G0F -orbits on AF G.
+On ⊕(L,c)∈AFG CL (c) we have a linear G -action: an element g ∈ GF takes f ∈ CL (c)
+                                        F
+
+to f ′ ∈ CgLg −1 (gcg −1) where f ′ (h) = f (g −1 hg) for h ∈ (gcg −1 )F . This action
+restricts to a G0F -action. Consider the linear map ⊕(L,c)∈AFG CL (c) −    → V whose
+restriction to any summand CL (c) is f 7→ QfG,L,c . Restricting this to the space of
+G0F -invariants we obtain
+                                          0F ∼
+   (c) an isomorphism (⊕(L,c)∈AFG CL (c))G −→ V.
+This follows immediately from (b),(a).
+21.13. Let s ∈ GF be a semisimple element and let (L, c) ∈ AF                       s
+                                                                      ZG (s) . Let CL (c)
+be the vector space CL (c) defined as in 19.9 with respect to ZG (s) instead of G.
+Let ′ CLs (c) be the subspace of CLs (c) consisting of all functions that are invariant
+under the natural action of {g ∈ ZG0 (s)F ; gLg −1 = L, gcg −1 = c}. Replacing G
+by ZG (s) in 21.12(c) we obtain an isomorphism
+                                 0F ∼
+  (⊕(L,c)∈AF       CLs (c))ZG (s) −→ Vs
+             ZG (s)
+
+where Vs is the vector space of functions {unipotent elements in ZG (s)F } −
+                                                                           → Q̄l
+that are constant on ZG (s)0F -conjugacy classes. Taking now invariants for the
+natural action of ZG0 (s)F (which contains ZG (s)0F as a normal subgroup) we
+obtain an isomorphism
+                                  F  ∼
+   (⊕(L,c)∈AF      CLs (c))ZG0 (s) −→ Vs′
+            ZG (s)
+or, equivalently, an isomorphism
+                        ′ s            F ∼
+   (∗) (⊕(L,c)∈AF        CL (c))ZG0 (s) −→ Vs′
+                  ZG (s)
+
+where Vs′ is the vector space of functions {unipotent elements in ZG (s)F } −
+                                                                            → Q̄l
+                             F
+that are constant on ZG0 (s) -conjugacy classes. We now take the direct sum of
+30                                       G. LUSZTIG
+
+these isomorphisms over all semisimple s in GF and then take invariants for the
+natural action of G0F . We obtain an isomorphism
+                                                        0F
+(a)                           (⊕(s,L,c)∈X ′ CLs (c))G          −
+                                                               →VV
+
+where X is the set of all triples (s, L, c) with s ∈ GF semisimple and (L, c) ∈ AF     ZG (s)
+and V is the vector space of functions GF −         → Q̄l that are constant on G0F -
+conjugacy classes.
+   Let X 1 be the set of all quadruples (s, u, L, c) where s ∈ GF is semisimple,
+u ∈ GF is unipotent, quasi-semisimple in NZG (s) L, (L, c) ∈ AF       ZG (s) , c ⊂ uL. Now
+  0F                       1                    1
+G acts naturally on X and the map X −             → X , (s, u, L, c) 7→ (s, L, c) induces a
+bijection
+                 ∼
+   (b) G0F \X 1 −→ G0F \X
+on the sets of G0F -orbits. (We use the fact that, for fixed (s, L, c) ∈ X , the set
+of unipotent quasi-semisimple elements of NZG (s) L that are fixed by F and are
+contained in the component cL of NZG (s) L is a single LF -conjugacy class; this
+follows from 19.11.) Now (g, L, c) 7→ (gs , gu , L, c) is a bijection
+           ∼
+   (c) R′ −→ X 1 .
+(We use 1.4(c) and 21.2(a).) Combining (a),(b),(c) we obtain an isomorphism
+                                                          0F   ∼
+(d)                           (⊕(g,L,c)∈R′ ′ CLgs (c))G        −→ V.
+
+Assume that (g, L, c) ∈ R corresponds to (g, L, c) ∈ R′ under 21.4(c) and let hgi
+be the LF -conjugacy of g. From 19.15(b),(c) applied to NG L, L instead of G, G0
+we have an isomorphism
+                                              ∼
+(e)                               CL,hgi (c) −→ CHL (g) (c)
+
+where HL (g) = {l ∈ L; lgs l−1 = gs , lgul−1 ∈ ZL (gs )0 gu }.
+    Let G = {y ∈ ZG0 (gs )F ; yLy −1 = L, ycy −1 = c} (a group containing HL (g)F as
+a normal subgroup).
+    Let G ′ = {y ∈ G0F , yLy −1 = L, ycy −1 = c, yhgiy −1 = hgi} (a group containing
+LF as a normal subgroup).
+    Assume that f 7→ f¯ under (e). We show that the following two conditions are
+equivalent:
+    (i) f¯ is invariant under the natural action of G;
+    (ii) f is invariant under the natural action of G ′ .
+Assume that (i) holds. Let y ∈ G ′ . Then y = l′ y ′ where l′ ∈ LF , y ′ ∈ G (see
+21.5(a)). We must show that f (ylgsul−1 y −1 ) = f (lgs ul−1 ) for l ∈ LF , u ∈ cF or
+that f (l′ y ′ lgs ul−1 y ′−1 l′−1 ) = f¯(u) or that f¯(y ′ uy ′−1 ) = f¯(u); this follows from
+y ′ ∈ G.
+    Assume that (ii) holds. Let y ∈ G. Then y ∈ G ′ (see 21.5(a)). We must
+show that f¯(yuy −1 ) = f¯(u) for u ∈ cF or that f (gs yuy −1 ) = f (gs u) or that
+f (ygs uy −1 ) = f (gs u); this follows from y ∈ G ′ .
+                CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                          31
+
+      From the equivalence of (i),(ii), we see that (e) restricts to an isomorphism
+                                                   ∼
+(f)                                ′
+                                       CL,hgi (c) −→ ′ CLgs (c)
+
+where ′ CL,hgi (c) is the space of all functions f ∈ CL,hgi (c) that are invariant under
+the natural action of {y ∈ G0F , yLy −1 = L, ycy −1 = c, yhgiy −1 = hgi}. Using (f),
+we deduce from (d) an isomorphism
+                                                              0F    ∼
+                            (⊕(g,L,c)∈R ′ CL,hgi (c))G             −→ V
+
+or equivalently an isomorphism
+                                                               0F
+                            (⊕(L,c)∈AFG ⊕γ ′ CL,γ (c))G             −
+                                                                    →V
+
+where γ runs through the set of LF -orbits on (σNG L c)F , or equivalently an iso-
+morphism
+                                               0F ∼
+                      (⊕(L,c)∈AFG ⊕γ CL,γ (c))G −→ V.
+From the definitions we have canonically ⊕γ CL,γ (c) = CL (c) hence we obtain an
+isomorphism
+                                                        0F     ∼
+(g)                           (⊕(L,c)∈AFG CL (c))G            −→ V.
+
+We define F : A −    → A by F (L, S) = (F (L), F (S)). There is a well defined
+                  F
+surjective map AG −  → AF given by (L, c) 7→ (L, S) where S is defined by c ⊂
+                                                                              ∼
+S. Moreover, if (L, S) ∈ AF is given we have a natural isomorphism CL (S) −→
+⊕c CL (c) where c runs over the F -stable L-conjugacy classes contained in S. (A
+special case of 19.10(b).) Introducing this in (g) we obtain an isomorphism
+                                                         0F    ∼
+                              (⊕(L,S)∈AF CL (S))G              −→ V.
+
+For each (L, S) ∈ AF we have a canonical direct sum decomposition
+                                                        [E]
+                                   CL (S) = ⊕[E] CL (S)
+
+where [E] runs over the set of isomorphism classes of irreducible cuspidal local
+                                                               [E]
+systems E ∈ S(S) (relative to NG L) such that F ∗ E ∼
+                                                    = E and CL (S) is the line
+                                                          ∼
+spanned by χE,ǫ where E ∈ [E] and ǫ : F ∗ E −→ E. (This follows from 19.8(a).)
+Hence we have an isomorphism
+                                                 [E]          0F    ∼
+(h)                         (⊕(L,S,[E])∈ÃF CL (S))G               −→ V
+
+where ÃF is the set of triples (L, S, [E]) with (L, S) ∈ AF and [E] is as above.
+The left hand side of (h) is naturally a direct sum of subspaces V(L,S,[E]) indexed
+32                                        G. LUSZTIG
+
+by a set of representatives for the G0F -orbits on ÃF and V(L,S,[E]) is the space
+                                                      [E]
+of vectors in the one dimensional vector space CL (S) that are invariant under
+the natural action of the group {g ∈ G0F ; gLg −1 = L, gSg −1 = S, Ad(g)∗ E ∼   = E}.
+From the definitions we see that V(L,S,[E]) is 1-dimensional if (L, S, E) is effective
+and is 0 if (L, S, E) is not effective.
+   Thus the left hand side of (h) has dimension equal to the number of G0F -orbits
+on the set of effective triples in ÃF . Hence this number is equal to the dimension
+of the right hand side that is, to the number of G0F -conjugacy classes in GF .
+Theorem 21.14. Let A be a set of representatives for the G0F -orbits on the set
+of effective triples in ÃF . For each (L, S, [E]) ∈ A we choose E ∈ [E] and an
+                        ∼                                                      ∼
+isomorphism ǫ : F ∗ E −→ E. To L, S, E, ǫ we associate K ∈ D(G) and φ : F ∗ K −→ K
+as in 21.6 (with L instead of L). The functions χK,φ (one for each (L, S, [E]) ∈ A)
+form a Q̄l -basis of the vector space V of functions GF −
+                                                        → Q̄l that are constant on
+  0F
+G -conjugacy classes.
+   Let V′ be the subspace of V spanned by the functions χK,φ in the theorem.
+By the last paragraph in 21.13, it is enough to show that V′ = V. This will be
+done in 21.17. Note that in the definition of V′ we may include the functions χK,φ
+corresponding to non-effective triples in Ã (these functions are identically 0 by
+21.6(f)).
+21.15. Let (L, S) ∈ AF . We define a linear function Ψ : CL (S) −  → V by the
+requirement that for any irreducible cuspidal local system E ∈ S(S) and any
+           ∼
+ǫ : F ∗ E −→ E we have Ψ(χE,ǫ ) = χK,φ where K, φ are defined as in 21.6. From
+Theorem 16.14 we see that for any f ∈ CL (S) and any y ∈ GF we have
+
+                                                         0F −1 F −1    fd
+                           X
+(a)   Ψ(f )(y) =                          |LF
+                                            x ||ZG (ys )   | |L | QLxx ,ZG (ys ),d (yu )
+                   x∈G0F ,d;x−1 ys x∈Ss
+
+
+where d runs over the set of F -stable ZG (ys )0 -orbits contained in
+   {v ∈ ZG (ys ); v unipotent, x−1 ys vx ∈ S},
+Lx = ZxLx−1 (ys )0 (a Levi of some parabolic of ZG (ys )0 ), and fxd ∈ CLx (d) is
+defined by fxd (v) = f (x−1 ys vx). (Notation of 21.12.)
+21.16. Assume that we are given an F -stable L-conjugacy class c in S and a
+quasi-semisimple element g ∈ NG L such that F (g) = g and such that
+  c = {u ∈ ZL (s)0 gu ; u unipotent , su ∈ c} =
+                                              6 ∅.
+Here s = gs . We assume that c is cuspidal (relative to NG L). Then c is a single
+ZL (gs )0 -conjugacy class (see 17.13). Assume that f in 21.15 satisfies:
+  (i) f |S F −cF = 0,
+  (ii) h ∈ cF , f (h) 6= 0 =⇒ h = lsul−1 for some l ∈ LF and some u ∈ cF .
+Consider the function f˜ ∈ V given on y ∈ GF by
+  (a) f˜(y) = 0 if ys is not G0F -conjugate to s;
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                     33
+
+   f˜(y) = |ZG (s)0F |−1 z∈Z 0 (s)F QhL1 ,ZG (s),c (z −1 yu z) if ys = s;
+                           P
+                                  G
+here L1 = ZL (ys )0 and h : cF −    → Q̄l is given by h(v) = f (ys v). We show that
+                               F −1 ˜
+   (b) Ψ(f ) = |LF 1 ||Z L (s)  |   f .
+Consider the sum over x, d in 21.15(a) for our f . If fxd is not identically 0 then
+f (x−1 ys vx) 6= 0 for some v ∈ dF . Hence there exist l ∈ LF , u ∈ cF such that
+x−1 ys vx = lsul−1 where v ∈ dF . Thus, xls(xl)−1 = ys , xlu(xl)−1 = v. We see
+that Ψ(f )(y) = 0 if ys is not G0F -conjugate to s. Assume now that ys = s. Setting
+z = xl we have z ∈ ZG0 (s)F , zuz −1 = v. Hence d = zcz −1 . We see that
+                                                                                          −1
+                                              0F −1 F −1                          f zcz
+                                                | |L | |ZL (s)F |−1 QLzz ,ZG (s),zcz −1 (yu )
+                    X
+ Ψ(f )(y) =                      |LF
+                                   z ||ZG (s)
+              z∈ZG0 (s)F ,l∈LF
+
+                 0F −1                                fc
+                   | |ZL (s)F |−1                   QL11 ,ZG (s),c (z −1 yu z),
+                                          X
+  = |LF
+      1 ||ZG (s)
+                                       z∈ZG0 (s)F
+
+
+as desired.
+21.17. From the definitions we see that V′ is the subspace of V spanned by the
+functions Ψ(f ) for various (L, S) ∈ AF and f ∈ CL (S). Since the vector space
+CL (S) is spanned by functions as in 21.16(i),(ii) (see 19.10(b),19.14(c)) we see that
+any function f˜ as in 21.16(a) is contained in V′ . In formula 21.16(a) defining f˜ we
+may take (g, L1 , c) to be any triple in R′ and h to be any function in CL1 (c) that is
+invariant under the natural action of {g ′ ∈ ZG0 (s)F ; g ′ L1 g ′−1 = L1 , g ′ cg ′−1 = c}.
+(This follows from the bijection R ↔ R′ in 21.4(c), the isomorphism 19.15(c)
+and the equivalence of (i),(ii) in 21.13.) But such f˜ span the vector space Vs
+of functions in V that vanish at elements whose semisimple parts are not G0F -
+conjugate to s. (Vs may be identified with Vs′ in 21.13 and we may use the
+isomorphism 21.13(∗).) We see that Vs ⊂ V′ . Since V is the sum of its subspaces
+Vs for various s, we see that V ⊂ V′ . Hence V = V′ . Theorem 21.14 is proved.
+21.18. Let J be the set of all triples (L, S, [E]) where (L, S) ∈ A and [E] is the
+isomorphism class of an irreducible cuspidal local system E ∈ S(S). The group
+G0 acts on J by g : (L, S, [E]) 7→ (Ad(g)L, Ad(g)S, [Ad(g −1 )∗ E]); let G0 \J be the
+set of orbits.
+   Let A(G) be the subcategory of D(G) whose objects are the complexes X on
+G such that X[d] is a (simple) admissible perverse sheaf on G with support of
+dimension d (see 6.7).
+   Let A(G) be the set of isomorphism classes of objects in A(G). We define a
+map
+                                           → G0 \J
+                                  j : A(G) −
+as follows. Let A ∈ A(G). By definition there exists (L, S, E) as above such that
+A is isomorphic to a direct summand of IC(Ȳ , π! Ẽ) (extended by 0 on G − Ȳ ),
+with π, Ẽ, Ȳ as in 5.6. Then j takes the isomorphism class of A to the G0 -orbit
+of (L, S, [E]). To show that this is well defined we must show that, if (L′ , S ′ , E ′ )
+34                                        G. LUSZTIG
+
+is another triple like (L, S, E) such that A is isomorphic to a direct summand
+of IC(Ȳ ′ , π!′ Ẽ ′ ) (extended by 0 on G − Ȳ ′ ), with π ′ , Ẽ ′ , Ȳ ′ defined as in 5.6 in
+terms of L′ , S ′ , E ′ instead of L, S, E, then (L, S, [E]), (L′ , S ′ , [E ′ ]) are in the same
+G0 -orbit. Now A is an intersection cohomology complex supported by Ȳ and
+also by Ȳ ′ . It follows that Ȳ = Ȳ ′ hence YL,S = YL′ ,S ′ . Using 3.12(b) we
+deduce that (L, S), (L′, S ′ ) are in the same G0 -orbit. Hence we may assume that
+L = L′ , S = S ′ . Then E, E ′ ∈ S(S) and there exists an irreducible local system
+on Ȳ which is a direct summand of both π! Ẽ and π! Ẽ ′ . Thus, Hom(π! Ẽ, π! Ẽ ′ ) 6= 0.
+We now repeat an argument in 7.10 (and use notation there):
+
+           Hom(π! Ẽ, π! Ẽ ′ ) = Hom(π ∗ π! Ẽ, Ẽ ′ ) = ⊕w∈WS Hom(fw∗ Ẽ, Ẽ ′ )
+           = ⊕w∈W Hom(a∗ f ∗ Ẽ, a∗ Ẽ ′ ) = ⊕w∈W Hom(fˆ∗ a∗ Ẽ, a∗ Ẽ ′ )
+                      S            w                     S         w
+
+            = ⊕w∈WS Hom(fˆw∗ b∗ E, b∗ E ′ ) = ⊕w∈WS Hom(b∗ Ad(nw )∗ E, b∗ E ′ )
+            = ⊕w∈WS Hom(Ad(nw )∗ E, E ′ ).
+
+We see that ⊕w∈WS Hom(Ad(nw )∗ E, E ′ ) =6 0. Hence Hom(Ad(nw )∗ E, E ′ ) 6= 0 for
+some w ∈ WS , so that Ad(nw )∗ E ∼
+                                 = E ′ . Thus, (L, S, [E]) is in the same G0 -orbit
+            ′
+as (L, S, [E ]), as required.
+21.19. From the definitions we see that the map j in 21.18 is compatible with the
+maps F : A(G) −   → A(G), F : G0 \J −  → G0 \J defined by A 7→ F! A, (L, S, [E]) 7→
+(F (L), F (S), [F!E]). Hence it induces a map j0 : A(G)F −
+                                                         → (G0 \J)F on the fixed
+point sets of F .
+21.20. From Theorem 21.14 we see that V = ⊕Ξ VΞ where Ξ runs over the
+set of F -stable G0 -orbits in J and VΞ is the subspace of V with basis given by
+the characteristic functions of F -stable effective triples (L, S, [E]) ∈ Ξ (up to the
+action of G0F ). Using now 21.7(a) we see that another basis of VΞ is given by
+the characteristic functions of objects in j0−1 (Ξ). (Either of these bases is defined
+only up to multiplication of any of its members by a non-zero scalar.) Here we
+have used the fact that Ξ contains at least one F -stable triple (L, S, [E]) which
+follows from Lang’s theorem for G0 since Ξ is a homogeneous G0 -space. Since
+A(G)F = ⊔Ξ j0−1 (Ξ), we see that the following result holds.
+Theorem 21.21. Let A′ be a set of representatives for the isomorphism classes
+of objects A ∈ A such that F ∗ A ∼
+                                 = A. For each A ∈ A′ we choose an isomorphism
+           ∼
+α : F ∗ A −→ A. The functions χA,α (one for each A ∈ A′ ) form a Q̄l -basis of the
+vector space V of functions GF − → Q̄l that are constant on G0F -conjugacy classes.
+
+                   22. Twisted induction of class functions
+22.1. This section gives an application of Theorem 21.14 to the construction of
+a ”twisted induction” map (see 22.3) from certain functions on a subgroup of GF
+to functions on GF .
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                                  35
+
+Lemma 22.2. Let L be a Levi of a parabolic of G0 and let L′ be a Levi of a
+parabolic of L. Let δ ′ be a connected component of NNG L L′ and let δ be the
+connected component of NG L that contains δ ′ . Assume that δ ′ ⊂ NN
+                                                                   •
+                                                                     GL
+                                                                        (L′ ) and
+      •
+δ ⊂ NG  L. Then δ ′ ⊂ NG
+                       •
+                         (L′ ).
+                 •
+   Since δ ⊂ NG     L, there exists a parabolic P of G0 such that L is a Levi of P and
+δ ⊂ NG P . Since δ ′ ⊂ NN   •
+                              GL
+                                 (L′ ), there exists a parabolic Q of L such that L′ is a
+Levi of Q and δ ⊂ NNG L Q. Then P ′ = QUP is a parabolic of G0 such that L′ is
+                   ′
+
+a Levi of P ′ . If g ∈ δ ′ then gQg −1 = Q and gUP g −1 = UP (since g ∈ δ ⊂ NG P )
+hence gP ′ g −1 = P ′ . Thus δ ′ ⊂ NG P ′ . We see that δ ′ ⊂ NG  •
+                                                                    (L′ ), as required.
+22.3. Let L be a Levi of a parabolic of G0 and let δ be a connected component
+                         •
+of NG L contained in NG    L. We assume that F (L) = L, F (δ) = δ. Let D be the
+connected component of G that contains δ. Let VL (δ) (resp. VG0 (D)) be the set
+of all functions δ F −
+                     → Q̄l (resp. DF −→ Q̄l ) that are constant on LF -conjugacy
+                        0F
+classes in δ (resp. on G -conjugacy classes in D).
+   There is a unique Q̄l -linear map
+
+                                 RδD : VL (δ) −
+                                              → VG0 (D)
+
+such that the following holds.
+    Let L′ be a Levi of a parabolic of L with F (L′ ) = L′ , let S ′ be an isolated
+stratum of NNG L (L′ ) = NG L ∩ NG L′ with F (S ′ ) = S ′ , S ′ ⊂ δ, S ′ ⊂ NN   •
+                                                                                  GL
+                                                                                     (L′ ), let
+                                                                                ∼
+E ′ be an irreducible cuspidal local system in S(S ′ ) and let ǫ′ : F ∗ E ′ −→ E ′ be an
+                                                ∼
+isomorphism. Define K′ ∈ D(NG L), φ′ : F ∗ K′ −→ K′ in terms of NG L, L′ , S ′ , E ′ , ǫ′
+                                ∼
+and K′′ ∈ D(G), φ′′ : F ∗ K′′ −→ K′′ in terms of G, L′ , S ′ , E ′ , ǫ′ in the same way as
+                      ∼
+K ∈ D(G), φ : F ∗ K −→ K were defined in 21.6 in terms of G, L, S, E, ǫ. (Note that
+K′′ is well defined since S ′ ⊂ NG• ′
+                                   L , by Lemma 22.2.) Then
+
+                               RδD (χK′ ,φ′ |δF ) = χK′′ ,φ′′ |DF .
+
+To see that this definition is correct we use the fact that the functions χK′ ,φ′ |δF
+as above (with ǫ′ chosen for each L′ , S ′ , E ′ given up to LF -conjugacy) provide a
+basis for VL (δ) (which follows from Theorem 21.14 for NG L instead of G); note
+that the choice of ǫ′ is immaterial since the same choice is made in the definition
+of χK′′ ,φ′′ |DF .
+22.4. For any G0F -conjugacy class c of semisimple elements in GF let VG0 ,c (D)
+be the vector space consisting of all functions in VG0 (D) that vanish on elements
+g ∈ DF with gs ∈/ c. We have a direct sum decomposition
+   (a) VG0 (D) = ⊕c VG0 ,c (D)
+where c runs over the semisimple G0F -conjugacy classes in GF . Similarly we have
+a direct sum decomposition
+   (b) VL (δ) = ⊕c′ VL,c′ (δ)
+where c′ runs over the semisimple LF -conjugacy classes in (NG L)F . The next
+result shows that RδD is compatible with the direct sum decompositions (a),(b).
+36                                          G. LUSZTIG
+
+Proposition 22.5. Let c′ be any semisimple LF -conjugacy class in (NG L)F and
+let c be the semisimple G0F -conjugacy class in GF such that c′ ⊂ c. Then
+RδD (VL,c′ (δ)) ⊂ VG0 ,c (D).
+    Let L′ , S ′ be as in 22.3. As in 21.15 we define linear maps Ψ′ : CL′ (S ′ ) −        → VL (δ),
+  ′′           ′                                                               ′ ′
+Ψ : CL (S ) −
+           ′      → VG0 (D) by the requirement that for any E , ǫ as in 22.3 we have
+Ψ′ (χE ′ ,ǫ′ ) = χK′ ,φ′ |δF , Ψ′′ (χE ′ ,ǫ′ ) = χK′′ ,φ′′ |DF (notation of 22.3). Clearly,
+    (a) RδD (Ψ′ (f )) = Ψ′′ (f )
+for f = χE ′ ,ǫ′ hence also for any f ∈ CL′ (S ′ ). Assume now that c is an F -stable
+L′ -conjugacy class in S ′ and that g is a quasi-semisimple element in NNG L (L′ ) such
+that g ∈ δ, F (g) = g and such that c = {u ∈ ZL′ (s)0 gu ; u unipotent , su ∈ c} =             6 ∅
+(with s = gs ). Assume that c is cuspidal (relative to NNG L (L′ )) so that c is a
+single ZL′ (s)0 -conjugacy class. Assume that f ∈ CL′ (S ′ ) satisfies
+    (i) f |S ′F −cF = 0,
+    (ii) h ∈ cF , f (h) 6= 0 =⇒ h = lsul−1 for some l ∈ L′F and some u ∈ cF .
+Consider the functions f˜ ∈ VL (δ), f˜′′ ∈ VG0 (D) defined by
+    f˜(y) = 0 if y ∈ δ F , ys is not LF -conjugate to s;
+    f˜(y) = |ZL (s)0F |−1 z∈ZL (s)F QhL′ ,ZN L (s),c (z −1 yu z) if y ∈ δ F , ys = s;
+                               P
+                                                  1     G
+
+    f˜′′ (y) = 0 if y ∈ DF , ys is not G0F -conjugate to s;
+    f˜′′ (y) = |ZG (s)0F |−1                        h
+                                                F Q ′          (z −1 yu z) if y ∈ DF , ys = s;
+                                P
+                                z∈ZG0 (s)     L1 ,ZG (s),c
+    here L′1            0
+             = Z (s) and h : c −
+                  L′
+                                    F
+                                   → Q̄l is given by h(v) = f (ys v). Using 21.16(f)
+for G and for NG L and (a) we see that
+    (b) RδD (f˜) = f˜′′ .
+As in 21.17, here we may assume that (g, L′1, c) used in the definition of f˜, f˜′′ is any
+triple in R′ (for NG L instead of G) with g ∈ δ and h is any function in CL′1 (c) that
+is invariant under the natural action of {g ′ ∈ ZL (s)F ; g ′ L′1 g ′−1 = L′1 , g ′ cg ′−1 = c}.
+Since the functions f˜ as above span the vector space VL,c′ (δ) where c′ is the
+LF -conjugacy class of gs and the corresponding functions f˜′′ are contained in the
+corresponding VG0 ,c (D) we see that the Proposition follows from (b).
+22.6. Let L′ ⊂ L ⊂ G0 , δ ′ ⊂ δ be as in Lemma 22.2 and let D be the connected
+component of G that contains δ. Then Rδδ′ , RδD , RδD′ are well defined (the last one,
+by Lemma 22.2). From the definitions we see that the transitivity property
+   (a) RδD ◦ Rδδ′ = RδD′
+holds.
+
+                                         References
+[B1]   A.Borel, Sous groupes commutatifs et torsion des groups de Lie compacts connexes, To-
+       hoku Math.J. 13 (1961), 216-240.
+[DM]   F.Digne and J.Michel, Groupes réductifs non-connexes, Ann.Sci.École Norm.Sup. 27
+       (1994), 345-406.
+[L2]   G.Lusztig, Intersection cohomology complexes on a reductive group, Invent. Math. 75
+       (1984), 205-272.
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, IV                              37
+
+[L10]   G.Lusztig, Character sheaves on disconnected groups, I, Represent. Theory 7 (2003),
+        374-403.
+[L11]   G.Lusztig, Character sheaves on disconnected groups, II, math.RT/0307268.
+[L12]   G.Lusztig, Character sheaves on disconnected groups, III, math.RT/0308126.
+[L13]   G.Lusztig, Character sheaves, V, Adv.Math. 61 (1986), 103-155.
+[SS]    T.A.Springer and R.Steinberg, Conjugacy classes, Seminar on algebraic groups and re-
+        lated finite groups, by A.Borel et al. LNM 131, Springer Verlag, 1970, pp. 167-266.
+[St]    R.Steinberg, Endomorphisms of linear algebraic groups, Memoirs Amer.Math.Soc. 80
+        (1968).
+
+   Department of Mathematics, M.I.T., Cambridge, MA 02139
+

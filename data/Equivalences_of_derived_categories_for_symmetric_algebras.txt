@@ -1,0 +1,868 @@
+                                               EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC
+                                                                   ALGEBRAS
+arXiv:math/0201052v1 [math.RT] 8 Jan 2002
+
+
+
+
+                                                                                 JEREMY RICKARD
+
+
+
+
+                                                                                 1. Introduction
+                                                It is about a decade since Broué made his celebrated conjecture [2] on equivalences of de-
+                                            rived categories in block theory: that the module categories of a block algebra A of a finite
+                                            group algebra and its Brauer correspondent B should have equivalent derived categories
+                                            if their defect group is abelian. Since then, character-theoretic evidence for the conjecture
+                                            has accumulated rapidly, but until very recently there have been very few examples where
+                                            the conjecture has actually been verified. This is because the precise structure of, say, the
+                                            indecomposable projective modules for A is known only in the simplest cases (although
+                                            the corresponding structure for B is much easier to determine): this makes it very difficult
+                                            to carry out explicit calculations to verify an equivalence of derived categories.
+                                                Recently, however, Okuyama [6] introduced a method of proving that there is an equiv-
+                                            alence of derived categories that needs very little explicit information about A.
+                                                In many of the simpler cases where Broué’s conjecture is not yet known to be true,
+                                            there is known to be a ‘stable equivalence of Morita type’ between A and B: an exact
+                                            functor between the module categories that is an equivalence of categories ‘modulo pro-
+                                            jective modules’. This is a consequence of an equivalence of derived categories, since the
+                                            stable module category is a canonical quotient of the derived category. Moreover, recent
+                                            work of Rouquier [11],[12] gives a method of constructing such stable equivalences from
+                                            equivalences of derived categories for smaller groups.
+                                                Okuyama’s method is a strategy for lifting stable equivalences to equivalences of derived
+                                            categories. If one can produce an equivalence of derived categories between B and a third
+                                            algebra C, and if the objects of the derived category D b (mod(B)) that correspond to
+                                            the simple C-modules are isomorphic in the stable module category of B (regarded as a
+                                            quotient category of D b (mod(B))) to the images of the simple A-modules under a stable
+                                            equivalence of Morita type, then it follows from a theorem of Linckelmann [5, Theorem 2.1]
+                                            that A and C are Morita equivalent, and so A and B have equivalent derived categories.
+                                            Note that to carry out this strategy, one needs to know nothing about A except which
+                                            objects of the stable module category of B correspond to the simple A-modules.
+                                                Okuyama used this method to verify Broué’s conjecture for many examples of blocks
+                                            with defect group C3 × C3 [6].
+                                                This still leaves the problem of finding a suitable equivalence
+
+                                            (1.1)                           D b (mod(B)) ≈ D b (mod(C))
+                                                                                           1
+2                                     JEREMY RICKARD
+
+of derived categories. Okuyama did this by constructing a suitable ‘tilting complex’ T for
+B: by the main theorem of [8], T is the object corresponding to the free C-module under
+an equivalence (1.1), where C is the endomorphism algebra of T . The main theorem of
+this paper, Theorem 5.1, gives an alternative approach. Rather than characterizing the
+objects of D b (mod(B)) that correspond to free modules under equivalences of derived
+categories, as the definition of a tilting complex does, we characterize the sets of objects
+that can correspond to the simple modules. Our proof requires only that B should be a
+symmetric algebra, which is of course the case for a block of a finite group algebra; it is
+easy to construct counterexamples for general finite-dimensional algebras, but we do not
+know any counterexamples for self-injective algebras.
+   Since Linckelmann’s theorem focuses on the simple modules, this new characterization of
+derived equivalence is well suited to applying his theorem as Okuyama did. In Section 7 we
+give several fairly simple examples. Simple modules have a less complicated structure than
+projective modules, so it is no surprise that in our examples the objects of D b (mod(B))
+that we construct (corresponding to the simple A-modules) are considerably simpler than
+the tilting complex (corresponding to a free A-module) would be.
+   In a recent paper [3], Chuang has used our main theorem to give a proof of Broué’s
+conjecture for the principal block of SL(2, p2 ) in characteristic p for an arbitrary prime
+p. Using different methods, this result has subsequently been extended to SL(2, pn ) for
+all n by Okuyama [7]. Holloway [4] has also used our main theorem to verify Broué’s
+conjecture for several blocks, including the principal block of the sporadic Hall-Janko
+group in characteristic five, using computer calculations.
+
+                             2. Conventions and notation
+   Throughout most of this paper, k will be an algebraically closed field. This is not
+really essential, but for the sake of clarity we prefer to avoid the (entirely routine) added
+complication involved in dealing with a field that is not algebraically closed. In Section 8
+we shall give details of the minor modifications that need to be made to deal with a general
+field.
+   By a ‘module’ for a ring, we shall mean a left module unless we specify otherwise.
+   If Λ is a ring, then Mod(Λ) will be the category of all (left) Λ-modules. If Λ is a finite-
+dimensional k-algebra, then mod(Λ) will be the category of finitely generated Λ-modules
+and proj(Λ) will be the category of finitely generated projective Λ-modules.
+   If Λ is a finite-dimensional self-injective k-algebra (i.e., the injective and projective
+Λ-modules coincide), then stmod(Λ) will be the stable module category, which is the
+quotient of mod(Λ) by the ideal of maps that factor through projective modules. This
+is a triangulated category with shift functor the inverse Ω−1 of the Heller translate. The
+space of maps from M to N in stmod(Λ) will be denoted by HomΛ (M, N ).
+   Our ‘complexes’ will all be cochain complexes, so the differentials will have degree +1.
+   If
+                                           di−1     di
+                       X := · · · −→ X i−1 −→
+                                            X
+                                               X i −→
+                                                    X
+                                                       X i+1 −→ . . .
+is a cochain complex, then X[m] will be X ‘shifted m places to the left’: i.e., X[m]i = X i+m
+and diX[m] = (−1)m di+m
+                     X .
+           EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                        3
+
+   If A is an additive category, then K(A) will be the chain homotopy category of cochain
+complexes over A, K − (A) will be the full subcategory consisting of complexes X that
+are ‘bounded above’ (i.e., X i = 0 for i >> 0) and K b (A) will be the full subcategory of
+‘bounded’ complexes (i.e., complexes X with X i = 0 for all but finitely many i).
+   If A is an abelian category, then D(A) will be the derived category of cochain com-
+plexes over A, and D − (A) and D b (A) will be the full subcategories of complexes that are
+respectively bounded above and bounded.
+   We shall regard an abelian category A as a full subcategory of its derived category D(A)
+in the usual way, identifying an object X of A with the complex whose only non-zero term
+is X in degree zero.
+
+                      3. Preliminaries on symmetric algebras
+  A finite-dimensional k-algebra Λ is said to be symmetric if there is a symmetrizing
+form on Λ: i.e., a linear map λ : Λ → k such that
+                                 ∀x, y ∈ Λ, λ(xy) = λ(yx),
+and such that the kernel of λ contains no non-zero left or right ideal of Λ.
+   The principal example is the group algebra kG of a finite group, when λ can be taken
+to be
+                                        1 if g = 1
+                                      n
+                               λ(g) =
+                                        0 if g ∈ G − {1},
+extended linearly to the whole of kG. Any block algebra of kG is also a symmetric algebra,
+using the restriction of the same map λ to the block.
+   The following theorem, giving characterizations of symmetric algebras in terms of the
+module category, is well-known, but for the readers’ convenience we include a proof.
+Theorem 3.1. Let Λ be a finite-dimensional k-algebra. The following conditions are
+equivalent.
+ (a) Λ is symmetric.
+  (b) Λ and its dual Λ∨ = Homk (Λ, k) are isomorphic as Λ-bimodules.
+  (c) Homk (?, k) and HomΛ (?, Λ) are isomorphic as functors from the category of left Λ-
+       modules to the category of right Λ-modules.
+ (c′ ) Homk (?, k) and HomΛ (?, Λ) are isomorphic as functors from the category of right
+       Λ-modules to the category of left Λ-modules.
+ (d) For finitely generated projective left Λ-modules P and finitely generated left Λ-modules
+       M , there is an isomorphism of k-vector spaces
+                               HomΛ (P, M ) ∼ = HomΛ (M, P )∨ ,
+      functorial in both P and M .
+(d′ ) For finitely generated projective right Λ-modules P and finitely generated right Λ-
+      modules M , there is an isomorphism of k-vector spaces
+                              HomΛ (P, M ) =∼ HomΛ (M, P )∨ ,
+     functorial in both P and M .
+4                                    JEREMY RICKARD
+
+Proof. Since (a) and (b) are left-right symmetric, it is sufficient to prove that (a) and (b)
+are equivalent and that (b) ⇒ (c) ⇒ (d) ⇒ (b).
+  First we shall show that (a) implies (b). Let λ : Λ → k be a symmetrizing form on Λ.
+Consider the map
+                                    θ : Λ → Homk (Λ, k)
+defined by θ(x) = x.λ for x ∈ Λ: i.e., θ(x) : Λ → k is the map
+                                    y 7→ λ(yx) = λ(xy).
+Since θ(xz) is the map
+                            y 7→ λ(yxz) = λ(zyx) = (x.λ.z)(y),
+θ is a Λ-bimodule homomorphism.
+   Now let x ∈ Λ, and suppose θ(x) = 0. Then λ(yx) = 0 for all y ∈ Λ, and so the left
+ideal Λx is contained in the kernel of λ. Since λ is a symmetrizing form, this implies x = 0.
+Hence θ is injective, and is therefore an isomorphism, since Λ and Λ∨ are vector spaces of
+the same dimension.
+   To show (b) implies (a), suppose θ : Λ → Λ∨ is a Λ-bimodule isomorphism. Let
+λ = θ(1). Then for x, y ∈ Λ,
+        λ(xy) = θ(1)(xy) = (yθ(1))(x) = θ(y)(x) = (θ(1)y)(x) = θ(1)(yx) = λ(yx).
+Also, suppose the left ideal Λx is contained in the kernel of λ. Then for every y ∈ Λ,
+
+                             0 = λ(yx) = (xθ(1))(y) = θ(x)(y),
+and so θ(x) = 0, and so x = 0, since θ is an isomorphism. Similarly, no non-zero right
+ideal of Λ is contained in the kernel of λ, and so λ is a symmetrizing form on Λ.
+   Next we show that (b) implies (c). Suppose that Λ and Λ∨ are isomorphic as Λ-
+bimodules. Let M be a left Λ-module. There is a chain of natural isomorphisms of right
+Λ-modules
+       HomΛ (M, Λ) ∼ = HomΛ (M, Homk (Λ, k)) ∼  = Homk (Λ ⊗Λ M, k) ∼ = Homk (M, k).
+   Next assume that (c) is true, and let us deduce (d). Let M and P be finitely generated
+left Λ-modules. Then HomΛ (M, P ) ∼  = Homk (P ∨ ⊗Λ M, k), and since these are all finite-
+dimensional vector spaces, HomΛ (M, P )∨ ∼  = P ∨ ⊗Λ M , which, since (c) is true, is in turn
+isomorphic to HomΛ (P, Λ) ⊗Λ M . There is a natural map
+(3.1)                     HomΛ (P, Λ) ⊗Λ M −→ HomΛ (P, M ),
+sending α ⊗ m (where α ∈ HomΛ (P, Λ) and m ∈ M ) to the map P → M sending p ∈ P to
+α(p)m. For P = Λ, it is easy to check that (3.1) is an isomorphism between vector spaces
+naturally isomorphic to M . By naturality, (3.1) is also an isomorphism for P any direct
+summand of a finite direct sum of copies of Λ; i.e., for any finitely generated projective
+module P .
+   Finally, the fact that (d) implies (b) follows by taking M = P = Λ Λ. The natural
+isomorphism
+                                     Λ∼= HomΛ (Λ, Λ)
+           EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                         5
+
+is an isomorphism of Λ-bimodules, where the bimodule structure on the right hand side is
+induced by the right action of Λ by multiplication on the two arguments. But by (d) the
+right hand side is naturally isomorphic to its dual, and by naturality this isomorphism is
+an isomorphism of bimodules. Hence (b).
+  We shall most often be using condition (d).
+  Here is a corollary about maps in the derived category.
+Corollary 3.2. Let Λ be a finite-dimensional symmetric k-algebra. Let P ∗ be a bounded
+complex of finitely generated projective left Λ-modules, and let M ∗ be a complex of finitely
+generated left Λ-modules. Then HomD(Mod(Λ)) (P ∗ , M ∗ ) and HomD(Mod(Λ)) (M ∗ , P ∗ ) are
+naturally dual.
+Proof. Since P ∗ is a bounded complex of projective and (since Λ is symmetric) injective
+modules, calculating homomorphisms from or to P ∗ in the derived category is equivalent
+to doing so in the chain homotopy category K(Mod(Λ)).
+   Recall that if X ∗ and Y ∗ are complexes of Λ-modules, then HomK(Mod(Λ)) (X ∗ , Y ∗ ) may
+be calculated as the degree zero homology of the ‘completed’ total complex of the double
+complex HomΛ (X ∗ , Y ∗ ) (i.e., the variation of the total complex where the terms are formed
+by taking direct products rather than the direct sums of diagonals in the double complex).
+In fact, the fact that P ∗ is bounded ensures that for X ∗ = P ∗ and Y ∗ = M ∗ or vice versa,
+there is only a finite number of non-zero terms on each diagonal, and so the completed
+total complex is the same as the usual total complex.
+   Condition (d) of Theorem 3.1 implies that the double complexes HomΛ (P ∗ , M ∗ ) and
+HomΛ (M ∗ , P ∗ ) are naturally dual. By the remark at the end of the last paragraph, their
+total complexes are complexes of finite dimensional vector spaces and are also naturally
+dual. Taking degree zero homology, the corollary follows.
+
+                       4. Preliminaries on homotopy colimits
+   In this section, Λ will be an arbitrary ring.
+   Let
+                                      α0      α1     α2
+                                 X0 −→   X1 −→   X2 −→  ...
+be a sequence of maps in a triangulated category T with countable coproducts. Recall [1]
+that the homotopy colimit hocolim(Xi ) of this sequence is defined by forming the dis-
+tinguished triangle
+                     M∞          M∞                         ∞
+                                                            M
+(4.1)                    Xi −→       Xi −→ hocolim(Xi ) −→    Xi [1],
+                     i=0         i=0                           i=0
+where the restriction of the first map to Xi is idXi − αi . This defines hocolim(Xi ) up to
+isomorphism, but not usually up to unique isomorphism.
+   If T is the derived category D(Mod(Λ)), and if we can choose chain maps βi representing
+the maps αi of the derived category, then hocolim(Xi ) is isomorphic to the usual colimit
+in the category of chain complexes of the sequence
+                                       β0    β1      β2
+                                X0 −→ X1 −→ X2 −→ . . . .
+6                                   JEREMY RICKARD
+
+This is an easy consequence of the fact that the coproduct, in the derived category, of a
+family of complexes is the same as the coproduct in the category of chain complexes.
+  An object C of the triangulated category T is called compact if the functor Hom(C, ?)
+commutes with arbitrary coproducts: more precisely, if the natural map
+                           M                           M
+                              Hom(C, Xi ) −→ Hom C,        Xi )
+                          i∈I                           i∈I
+
+is an isomorphism whenever {Xi : i ∈ I} is a set of objects of T whose coproduct exists
+in T .
+   In the derived category D(Mod(Λ)) of a module category, the compact objects are
+precisely those that are isomorphic to bounded complexes of finitely generated projective
+modules.
+   An easy consequence of the definition is that if C is a compact object, then there is a
+natural isomorphism
+                                                                 
+                      Hom C, hocolim(Xi ) −→ colim Hom(C, Xi ) .
+  We shall need a generalization of this. Let us say that a family X of objects of the
+derived category D(Mod(Λ)) is uniformly bounded below if there is some n ∈ Z such
+that the degree j cohomology H j (X) of X is zero for all X ∈ X and all j < n.
+Proposition 4.1. Let C be an object of D(Mod(Λ)) isomorphic to a complex of finitely
+generated projective Λ-modules that is bounded above. For example, if Λ is a finite-
+dimensional k-algebra, let C be any object of D − (mod(Λ)).
+   (a) Let X be a family of objects of D(Mod(Λ)) that is uniformly bounded below. Then
+the natural map
+                          M                             M         
+                                Hom(C, X) −→ Hom C,           X
+                          X∈X                           X∈X
+
+is an isomorphism.
+   (b) Let X0 → X1 → X2 → . . . be a sequence of maps in the derived category D(Mod(Λ)),
+and suppose that {Xi : i ∈ N} is uniformly bounded below. Then
+                      Hom C, hocolim(Xi ) ∼
+                                                                 
+                                             = colim Hom(C, Xi ) .
+Proof. First, if Λ is a finite-dimensional k-algebra, then any object of D − (mod(Λ)) is
+isomorphic to its minimal projective resolution, which is a complex of finitely generated
+projective Λ-modules that is bounded above.
+   (a) Without loss of generality, we shall assume that every X ∈ X is a complex with no
+non-zero terms in negative degrees, and that C is the bounded above complex
+                      . . . −→ C −2 −→ C −1 −→ C 0 −→ C 1 −→ . . . ,
+of finitely generated projectives. Let C̃ be the truncated complex
+                       . . . −→ 0 −→ C −1 −→ C 0 −→ C 1 −→ . . . ,
+            EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                         7
+
+which is a bounded complex of finitely generated projectives. The inclusion C̃ → C of
+complexes induces an isomorphism
+                      HomD(Mod(Λ)) (C, Y ) −→ HomD(Mod(Λ)) (C̃, Y )
+                        L
+for Y ∈ X and for Y = X∈X X. The proposition follows because C̃ is compact.
+   (b) This follows because, by (a), the natural map
+                        M                            M          
+                           Hom(C, Xi [m]) −→ Hom C,     Xi [m]
+                        i∈N                                i∈N
+is an isomorphism for every m, and so the long exact sequence obtained by applying the
+functor Hom(C, ?) to the triangle (4.1) breaks up into a sequence of short exact sequences,
+including one isomorphic to
+             M                    M
+        0 −→     Hom(C, Xi ) −→       Hom(C, Xi ) −→ Hom(C, hocolim(Xi )) −→ 0,
+              i∈N                   i∈N
+
+which expresses Hom(C, hocolim(Xi )) as the colimit of Hom(C, Xi ).
+
+                                  5. The main theorem
+    Let Λ and Γ be two rings. A necessary and sufficient condition [8] for the derived
+categories D(Mod(Λ)) and D(Mod(Γ)) to be equivalent as triangulated categories is that
+there should be a tilting complex in D(Mod(Λ)) whose endomorphism ring is isomorphic
+to Γ: i.e., a bounded complex T of finitely generated projective Λ-modules such that
+   (i) Hom(T, T [m]) = 0 for m 6= 0, and
+  (ii) the direct summands of T generate K b (proj(Λ)) as a triangulated category,
+with End(T ) ∼     = Γ.
+    If T is such a tilting complex, then there is an equivalence D(Mod(Λ)) ≈ D(Mod(Γ))
+that sends T to the free Γ-module of rank one, so the indecomposable summands of T
+correspond to the indecomposable projective Γ-modules.
+    We shall use later the fact [8] that, for a finite-dimensional algebra Λ, condition (ii) can
+be replaced by the condition that, for any non-zero object C of D − (mod(Λ)), Hom(T, C[m]) 6=
+0 for some m ∈ Z.
+    In this section we shall consider instead the objects X0 , . . . , Xr of D(Mod(Λ)) that corre-
+spond to the simple Γ-modules in the case that Λ and Γ are finite-dimensional symmetric
+k-algebras. Since an equivalence D(Mod(Λ)) ≈ D(Mod(Γ)) restricts to an equivalence
+between the full subcategories of objects isomorphic to bounded complexes of finitely gen-
+erated modules, X0 , . . . , Xr must (up to isomorphism) be objects of D b (mod(Λ)). Also,
+for 0 ≤ i, j ≤ r, they must satisfy
+  (a) Hom(Xi , Xj [m]) = 0 for m < 0,
+                             0 if i 6= j
+                          n
+  (b) Hom(Xi , Xj ) =                    , and
+                             k if i = j
+  (c) X0 , . . . , Xr generate D b (mod(Λ)) as a triangulated category,
+since the simple Γ-modules satisfy the corresponding properties.
+    In this section we shall prove a partial converse to this.
+8                                            JEREMY RICKARD
+
+Theorem 5.1. Let Λ be a finite-dimensional symmetric k-algebra. Let X0 , . . . , Xr be
+objects of D b (mod(Λ)) satisfying conditions (a)–(c) above. Then there is another finite-
+dimensional symmetric k-algebra Γ and an equivalence of triangulated categories
+                                      D(Mod(Λ)) ≈ D(Mod(Γ))
+sending X0 , . . . , Xr to the simple Γ-modules.
+   We shall give the proof as a sequence of lemmas.
+   What we shall do is construct a tilting complex T = T0 ⊕ · · · ⊕ Tr for Λ such that, for
+0 ≤ i, j ≤ r and m ∈ Z,
+                                          n k if i = j and m = 0
+(5.1)                  Hom(Ti , Xj [m]) =
+                                             0 otherwise.
+
+Lemma 5.2. Suppose there is a tilting complex T = T0 ⊕ · · · ⊕ Tr for Λ satisfying the
+property (5.1). Then Theorem 5.1 is true.
+Proof. For Γ = End(T ), there is an equivalence of triangulated categories
+                                  F : D(Mod(Λ)) → D(Mod(Γ))
+sending T0 , . . . , Tr to the indecomposable projective Γ-modules P0 , . . . , Pr . Since the sim-
+ple Γ-modules S0 , . . . , Sr , numbered so that Pi is the projective cover of Si , are character-
+ized up to isomorphism in D(Mod(Γ)) by the fact that, for 0 ≤ i, j ≤ r and m ∈ Z,
+                                               n k if i = j and m = 0
+                            Hom(Pi , Sj [m]) =                          ,
+                                                 0 otherwise
+the equivalence F sends X0 , . . . , Xr to the simple modules S0 , . . . , Sr .
+  Since a ring whose derived category is equivalent to a finite-dimensional symmetric
+k-algebra is itself a finite-dimensional symmetric k-algebra [9], Theorem 5.1 follows.
+    Now let us construct the summands Ti of the tilting complex T .
+         (0)
+    Set Xi := Xi . By induction on n, we shall construct a sequence
+                           (0)        (1)                   (n−1)         (n)
+                         Xi      → Xi       → · · · → Xi            → Xi        → ...
+of objects and maps in D(Mod(Λ)).
+                                         (n−1)
+   Suppose we have constructed Xi              . For each 0 ≤ j ≤ r and t < 0, choose a basis
+  (n−1)                        (n−1)         (n−1)
+Bi      (j, t) of Hom(Xj [t], Xi     ), let Zi     (j, t) be a direct sum of copies of Xj [t] indexed
+     (n−1)
+by Bi       (j, t), and let
+                                  (n−1)             (n−1)               (n−1)
+                                 αi       (j, t) : Zi       (j, t) → Xi
+                                                                (n−1)
+be the map whose restriction to the summand of Zi       (j, t) corresponding to an element
+      (n−1)
+β ∈ Bi      (j, t) is just β. Now let
+                                    (n−1)
+                                            M (n−1)
+                                  Zi      =  Zi     (j, t),
+                                                  0≤j≤r
+                                                   t<0
+              EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                          9
+
+and let
+                                     (n−1)      (n−1)          (n−1)
+                                    αi       : Zi       → Xi
+                                                         (n−1)              (n−1)
+be the map whose restriction to the summand Zi                   (j, t) is αi          (j, t).
+  All that will matter about this map is that
+          (n−1)
+ (a) Zi       is a (possibly infinite) direct sum of objects, each of which is isomorphic to
+     Xj [t] for some 0 ≤ j ≤ r and some t < 0,
+                              (n−1)                   (n−1)                (n−1)
+ (b) the map Hom(Xj [t], Zi         ) → Hom(Xj [t], Xi      ) induced by αi      is surjective
+     for every 0 ≤ j ≤ r and t < 0, and
+                                (n−1)                     (n−1)               (n−1)
+ (c) the map Hom(Xj [−1], Zi          ) → Hom(Xj [−1], Xi       ) induced by αi      is an iso-
+     morphism for every 0 ≤ j ≤ r.
+  The map we have constructed clearly satisfies properties (a) and (b). Since
+                      Hom(Xj [−1], Xj ′ [t]) = Hom(Xj , Xj ′ [t + 1]) = 0
+for all 0 ≤ j, j ′ ≤ r and t < 0 except for j = j ′ and t = −1, property (c) is also satisfied.
+                    (n)                               (n−1)
+   Now define Xi , together with a map from Xi              , by forming the distinguished tri-
+angle
+                                (n−1)
+                         (n−1) αi          (n−1)         (n)           (n−1)
+(5.2)                  Zi       −→ Xi               −→ Xi      −→ Zi            [1].
+                                     (n)
+  Finally, define Ti := hocolim(Xi ).
+                                                               (n−1)
+Remark. In general it will not be possible to choose Zi    in the bounded derived category
+   b                                                    (n−1)
+D (mod(Λ)) that satisfy properties (a)–(c), even if Xi        is in D b (mod(Λ)). However,
+if Λ is the group algebra of a finite group, then one can prove, using the fact that the
+cohomology algebra is finitely generated, that we can do so, and so, by induction on n, we
+                   (n)
+may force every Xi to be in D b (mod(Λ)). However, it is still not obvious a priori that
+the homotopy colimit Ti will be in D b (mod(Λ)).
+
+Lemma 5.3. If Y is an object of D − (mod(Λ)), then
+                                                        (n) 
+                            Hom(Y, Ti ) ∼
+                                        = colim Hom(Y, Xi ) .
+Proof. A projective resolution of Y is a complex of finitely generated projective Λ-modules
+that is bounded above, so the Lemma will follow from Proposition 4.1(b) if we can show
+         (n)
+that {Xi : n ≥ 0} is uniformly bounded below.
+   Since {Xi : 0 ≤ i ≤ r} is a finite set of objects of D b (mod(Λ)), we shall assume,
+without loss of generality, that the cohomology H m (Xi ) vanishes for all m < 0. But
+             (n)
+then H m (Zi ) = 0 for all i, n and all m < 1, and so, by induction on n and the long
+                                                                                    (n)
+exact sequence of homology for the distinguished triangle (5.2), we have H m (Xi ) = 0
+                                              (n)
+for all m < 0 and all n. In other words, {Xi : n ≥ 0} is uniformly bounded below, as
+required.
+10                                   JEREMY RICKARD
+
+Lemma 5.4. For 0 ≤ i, j ≤ r, and m ∈ Z,
+                                     n k if i = j and m = 0
+                  Hom(Xj , Ti [m]) =
+                                        0 otherwise.
+Proof. We shall prove this lemma by considering the natural map
+                                   (n−1)                      (n)
+(5.3)                  Hom(Xj , Xi         [m]) −→ Hom(Xj , Xi [m])
+by using the long exact sequence obtained by applying the functor Hom(Xj , ?) to the
+distinguished triangle (5.2).
+                                             (n−1)
+   Since, by Proposition 4.1(a), Hom(Xj , Zi       [m]) = 0 for m ≤ 0, the map (5.3) is an
+isomorphism for m < 0 and is injective for m = 0.
+                        (n−1)    (n−1)    (n−1)
+   By property (c) of αi      : Zi     → Xi     , the map (5.3) is also surjective for m = 0.
+   Since, for m ≤ 0,
+                                              k if i = j and m = 0
+                                            n
+                                   (0)
+                      Hom(Xj , Xi [m]) =                               ,
+                                              0 otherwise
+Lemma 5.3 implies the cases of the lemma involving m ≤ 0.
+                        (n−1)
+  By property (b) of αi       , the map (5.3) is zero for m > 0. So Lemma 5.3 implies that
+Hom(Xj , Ti [m]) = 0 for m > 0.
+
+Lemma 5.5. For each 0 ≤ i ≤ r, Ti is a compact object of D(Mod(Λ)): i.e., it is
+isomorphic to a bounded complex of finitely generated projectives.
+Proof. For an object Y of D(Mod(Λ)), consider the vector space
+                                M
+                                     Hom(Y, Ti [m]).
+                                     m∈Z
+By Lemma 5.4 this is finite-dimensional for Y = Xj , for any 0 ≤ j ≤ r. The class of objects
+Y for which it is finite-dimensional form a full triangulated subcategory of D(Mod(Λ)),
+and so, since {Xj : 0 ≤ j ≤ r} generates D b (mod(Λ)) as a triangulated category, it is
+finite-dimensional for any Y in D b (mod(Λ)).
+   In particular,
+                                 H m (Ti ) ∼
+                             M               M
+                                           =   Hom(Λ, Ti [m])
+                            m∈Z               m∈Z
+is finite-dimensional,
+             L         so Ti is isomorphic to an object of D b (mod(Λ)). Then, for any simple
+module S, m∈Z Hom(S, Ti [m]) is finite-dimensional, so a minimal injective resolution of
+Ti contains only a finite number of copies of the injective hull of S. Thus this injective
+resolution is a bounded complex of finitely generated injectives, which are also projective,
+since Λ is symmetric.
+
+Lemma 5.6. For 0 ≤ i, j ≤ r and m ∈ Z,
+                                       k if i = j and m = 0
+                                     n
+                  Hom(Ti , Xj [m]) =
+                                       0 otherwise.
+           EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                          11
+
+Proof. Since, by Lemma 5.5, we now know that Ti is isomorphic to a bounded complex of
+projectives, this follows by combining Lemma 5.4 and Corollary 3.2.
+
+Lemma 5.7. For 0 ≤ i, j ≤ r and m 6= 0,
+                                       Hom(Ti , Tj [m]) = 0.
+Proof. By Lemma 5.6, Hom(Ti , Xl [m]) = 0 for all m < 0 and 0 ≤ l ≤ r. Hence, for any n,
+           (n)                                                                (n)
+Hom(Ti , Zj [m]) = 0 for m ≤ 0, since Ti is compact (by Lemma 5.5) and Zj is a direct
+sum of copies of negative shifts of copies of various Xl s. Applying the functor Hom(Ti , ?)
+to the triangle 5.2, we get an exact sequence
+                   (n−1)                       (n)                     (n−1)
+        Hom(Ti , Xj        [m]) → Hom(Ti , Xj [m]) → Hom(Ti , Zj               [m + 1]) = 0
+                                                       (n)
+for every m < 0. So by induction on n, Hom(Ti , Xj [m]) = 0 if m < 0.
+   By Proposition 4.1(b), Hom(Ti , Tj [m]) = 0 if m < 0. For m > 0 it follows that
+Hom(Tj , Ti [m]) = 0 by Corollary 3.2.
+
+Lemma 5.8. Let C be an object of D − (mod(Λ)). If C ∼
+                                                    6= 0, then for some 0 ≤ i ≤ r and
+some m ∈ Z, Hom(C, Ti [m]) 6= 0.
+Proof. Since C is bounded above and Xi is bounded, Hom(C, Xi [m]) = 0 for m << 0.
+   However, if Hom(C, Xi [m]) = 0 for all i and m, then Hom(C, X) = 0 for every object X
+of D b (mod(Λ)), since {Xi : 0 ≤ i ≤ r} generates D b (mod(Λ)) as a triangulated category.
+In particular, Hom(C, Λ[m]) = 0 for all m, and so C ∼   = 0.
+   Thus, if C =∼
+               6 0, we can choose m and i so that Hom(C, Xi [m]) 6= 0 and m is minimal:
+i.e., Hom(C, Xj [m′ ]) = 0 for all 0 ≤ j ≤ r and all m′ < m.
+   Let us apply the functor Hom(C, ?) to the triangle (5.2). Since, by Proposition 4.1(a),
+           (n−1)
+Hom(C, Zi        [m]) = 0, we get an exact sequence
+                           (n−1)                     (n−1)                       (n)
+           0 = Hom(C, Zi           [m]) → Hom(C, Xi          [m]) → Hom(C, Xi [m]).
+In other words,
+                                       (n−1)                     (n)
+                           Hom(C, Xi     [m]) → Hom(C, Xi [m])
+                                                  (n)                       (0)
+is injective for every n ≥ 1. Hence colim Hom(C, Xi [m]) 6= 0, since Hom(C, Xi [m]) 6=
+0. So by Lemma 5.3, Hom(C, Ti [m]) 6= 0.
+  We now have all the ingredients to complete the proof of our main theorem.
+                                                                                L
+Proof of Theorem 5.1. By Lemmas 5.2 and 5.6, it is sufficient to show that T = 0≤i≤r Ti
+is a tilting complex for Λ.
+   Lemma 5.5 shows that T is isomorphic in D(Mod(Λ)) to a bounded complex of finitely
+generated projective modules.
+   Lemma 5.7 shows that Hom(T, T [m]) = 0 for m 6= 0.
+   We just need to show that if C is an object of D − (mod(Λ)) such that Hom(T, C[m]) = 0
+for all m ∈ Z, then C ∼= 0. Let C be such an object. By Corollary 3.2,
+                          Hom(C, T [−m]) ∼ = Hom(T, C[m])∨ ∼  =0
+12                                     JEREMY RICKARD
+
+for all m ∈ Z, and so C ∼
+                        = 0 by Lemma 5.8.
+
+                              6. Lifting stable equivalences
+  Suppose Γ′ is another algebra satisfying the conclusion of Theorem 5.1. Then we have
+an equivalence of derived categories
+                                 D b (mod(Γ)) ≈ D b (mod(Γ′ ))
+that takes the simple Γ-modules to the simple Γ′ -modules. Since the finitely generated
+projective modules P are characterized up to isomorphism in D b (mod(Γ)) by the fact that
+Hom(P, S[m]) = 0 for every simple module S and every integer m 6= 0, this equivalence of
+derived categories restricts to give an equivalence
+                                      proj(Γ) ≈ proj(Γ′ ).
+Hence the algebra Γ is determined up to Morita equivalence by the objects X0 , . . . , Xr .
+  In general, however, the algebra Γ might be hard to identify. In this section we shall
+build on an idea of Okuyama to show how this algebra can be identified in certain cases.
+  First we shall briefly describe Okuyama’s method [6] of lifting stable equivalences to
+equivalences of derived categories.
+6.1. Okuyama’s method. Let A and B be finite-dimensional self-injective k-algebras.
+   Recall that the stable module category stmod(A) of A is equivalent to the quotient of
+triangulated categories
+                               D b (mod(A))/K b (proj(A)).
+Thus any object X of D b (mod(A)) determines an object of the stable module category
+stmod(A). For example, if X is the bounded complex
+                              · · · → X i−1 → X i → X i+1 → . . . ,
+and if X i is projective for i 6= 0, then this object of stmod(A) is just X 0 . A little more
+generally, if all the terms of X except for X n are projective, then the corresponding object
+of stmod(A) is Ωn (X n ). If two objects of D b (mod(A)) become isomorphic in stmod(A),
+we shall say that they are stably isomorphic.
+   Since any equivalence of derived categories
+                                 D b (mod(A)) ≈ D b (mod(B))
+restricts to an equivalence
+                                K b (proj(A)) ≈ K b (proj(B)),
+an equivalence of derived categories induces an equivalence of stable module categories.
+This stable equivalence is ‘of Morita type’; i.e., it is induced (up to isomorphism) by an
+exact functor between the module categories mod(A) and mod(B).
+  Suppose we know that there is a stable equivalence of Morita type
+                                  F : stmod(A) ≈ stmod(B),
+and suppose we can produce an equivalence of derived categories
+                               G : D b (mod(B)) ≈ D b (mod(C)),
+            EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                           13
+
+where C is a third self-injective k-algebra: for example, we might construct a tilting
+complex for B and take C to be its endomorphism algebra. Okuyama’s idea was to use a
+theorem [5, Theorem 2.1] of Linckelmann, which states that if there is a stable equivalence
+of Morita type
+                                  stmod(A) ≈ stmod(C),
+for self-injective algebras A and C, that takes the simple A-modules to the simple C-
+modules, then A and C are Morita equivalent, and so their derived categories are certainly
+equivalent. Thus if we can choose G above so that the induced equivalence between
+stmod(A) and stmod(C) has this property, then
+                        D b (mod(A)) ≈ D b (mod(C)) ≈ D b (mod(B)).
+   In a typical case of Broué’s conjecture, where A is a block algebra of a group G with
+abelian defect group D, and B is the Brauer correspondent block algebra of NG (D), the
+structure of B is much easier to determine and understand than that of A. This is the
+reason Okuyama’s method is so useful for proving special cases of Broué’s conjecture: so
+long as we already know that there is a stable equivalence of Morita type between A and B,
+and so long as we can determine the images of the simple modules under this equivalence,
+the method requires no more information about A.
+   Okuyama has successfully used his method to verify several cases of Broué’s conjecture:
+for example, many cases involving defect group C3 × C3 .
+6.2. Combining Okuyama’s method with Theorem 5.1. Since Theorem 5.1 not
+only provides an algebra Γ whose derived category is equivalent to that of Λ, but also
+identifies the objects that are sent to the simple Γ-modules, it immediately combines with
+Okuyama’s method to give the following theorem.
+Theorem 6.1. Let Λ and Γ be finite-dimensional symmetric k-algebras, let
+                                    F : mod(Γ) → mod(Λ)
+be an exact functor inducing a stable equivalence of Morita type, and let {S0 , . . . , Sr } be a
+set of representatives for the isomorphism classes of simple Γ-modules.
+   If there are objects X0 , . . . , Xr of D b (mod(Λ) such that, for each 0 ≤ i ≤ r, Xi is stably
+isomorphic to F (Si ), and such that
+  (a) Hom(Xi , Xj [m]) = 0 for m < 0,
+                             0 if i 6= j
+                          n
+  (b) Hom(Xi , Xj ) =                     , and
+                             k if i = j
+  (c) X0 , . . . , Xr generate D b (mod(Λ)) as a triangulated category,
+then D(Mod(Λ)) and D(Mod(Γ)) are equivalent as triangulated categories.
+6.3. Objects with homology concentrated in one degree. As in Theorem 6.1, let
+Λ and Γ be finite-dimensional symmetric k-algebras,let
+                                    F : mod(Γ) → mod(Λ)
+be an exact functor inducing a stable equivalence of Morita type, and let {S0 , . . . , Sr } be
+a set of representatives for the isomorphism classes of simple Γ-modules. We shall assume
+14                                   JEREMY RICKARD
+
+that F (Si ) is indecomposable for every i: if this is not the case, then F has a summand
+that induces an isomorphic stable equivalence and which does send simple modules to
+indecomposable modules, so this assumption does not involve any real loss of generality.
+   In order to use Theorem 6.1 to prove that Λ and Γ have equivalent derived categories,
+we need to find suitable objects X0 , . . . , Xr of D b (mod(Λ)) that are stably isomorphic
+to F (S0 ), . . . , F (Sr ). We shall consider the case where each of these objects has non-
+zero homology in only one degree. Since X0 , . . . , Xr must certainly be indecomposable if
+condition (b) of the theorem is to be satisfied, we must then have
+(6.1)                                       ∼ Ωni F (Si )[ni ]
+                                         Xi =
+for some integers n0 , . . . , nr .
+   Let us consider what is required in order for these objects to satisfy conditions (a) and
+(b) of Theorem 6.1. It turns out that many of the conditions are satisfied automatically,
+especially if n0 , . . . , nr are small.
+   Recall that if M and N are modules for a finite-dimensional self-injective k-algebra A,
+then for m > 0 there are natural isomorphisms
+                Extm (M, N ) ∼
+                  A                = HomD(Mod(A)) (M, N [m]) ∼
+                                                             = Hom (Ωm M, N ).
+                                                                A
+
+Proposition 6.2. Conditions (a) and (b) of Theorem 6.1 are satisfied by the objects Xi
+of (6.1) if
+   (i) EndΛ (Ωni F (Si )) ∼= k for 0 ≤ i ≤ r,
+  (ii) HomΛ (Ω F (Si ), Ωnj F (Sj )) = 0 whenever i 6= j and ni ≤ nj ,
+                 n i
+
+
+and if the four equivalent conditions
+ (iii) HomΛ (Ωm F (Si ), F (Sj )) = 0 whenever −1 > m > ni − nj ,
+ (iv) HomΓ (Ωm Si , Sj ) = 0 whenever −1 > m > ni − nj ,
+  (v) ExtpΛ (F (Sj ), F (Si )) = 0 whenever 0 < p < nj − ni − 1,
+ (vi) ExtpΓ (Sj , Si ) = 0 whenever 0 < p < nj − ni − 1,
+are satisfied.
+   Before we prove this, let us point out how few conditions this leaves us to check when
+n0 , . . . , nr do not vary very much.
+Corollary 6.3. Suppose
+                                    max |ni − nj | ≤ 2.
+                                   0≤i,j≤r
+Then conditions (a) and (b) of Theorem 6.1 are satisfied by the objects Xi of (6.1) if
+  (i) EndΛ (Ωni F (Si )) ∼
+                         = k for 0 ≤ i ≤ r, and
+ (ii) HomΛ (Ωni F (Si ), Ωnj F (Sj )) = 0 whenever i 6= j and ni ≤ nj .
+Proof of Proposition 6.2. The case i = j of condition (b) of Theorem 6.1 is just condi-
+tion (i) of the proposition.
+   Since
+                Hom(Xi , Xj [m]) = Hom(Ωni F (Si ), Ωnj F (Sj )[m + nj − ni ]),
+we have Hom(Xi , Xj [m]) = 0 when m + nj − ni < 0, so we need only consider values of m
+with ni − nj ≤ m ≤ 0.
+            EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                          15
+
+  The case 0 ≥ m = ni − nj requires
+                               0 = HomΛ (Ωni F (Si ), Ωnj F (Sj ))
+when i 6= j, which is condition (ii) of the proposition.
+  Since F induces a stable equivalence,
+                        HomΛ (Ωm F (Si ), F (Sj )) ∼
+                                                   = HomΓ (Ωm Si , Sj )
+for any m, and by Tate duality these spaces are dual to
+                      Hom (Ωp F (Sj ), F (Si )) ∼
+                              Λ                 = Hom (Ωp Sj , Si )
+                                                            Γ
+
+for p = −1 − m.
+   What remains to be checked is that these spaces are zero for 0 ≥ m > ni − nj , or
+−1 + nj − ni < p ≤ −1 (in which case ni 6= nj , so i 6= j). Since Si and Sj are non-
+isomorphic simple modules,
+                             HomΓ (Si , Sj ) = 0 = HomΓ (Sj , Si ),
+so the cases m = 0, p = −1 and m = −1, p = 0 are automatically satisfied. The remaining
+cases are just conditions (iii) to (vi) of the proposition.
+   In fact, projective maps are the only obstruction to the automatic satisfaction of condi-
+tion (i) and, if nj −ni < 2, of condition (ii). For Λ-modules M and N , write PHomΛ (M, N )
+for the space of projective maps from M to N , so that
+                       HomΛ (M, N ) = HomΛ (M, N )/ PHomΛ (M, N ).
+
+Proposition 6.4. (a) Condition (i) of Proposition 6.2 (or Corollary 6.3) is satisfied for
+a given i if and only if
+                         PHomΛ (Ωni F (Si ), Ωni F (Si )) = 0.
+  (b) Condition (ii) is satisfied for a given i and j if and only if
+                              PHomΛ (Ωni F (Si ), Ωnj F (Sj )) = 0
+and either
+  (I) nj − ni < 2, or
+                         n −n −1
+ (II) nj − ni ≥ 2 and ExtΓj i (Sj , Si ) = 0.
+Proof. Since F induces a stable equivalence,
+                    HomΛ (Ωni F (Si ), Ωnj F (Sj )) ∼
+                                                    = HomΓ (Si , Ωnj −nj Sj ),
+which is isomorphic to k if i = j, is zero if i 6= j and ni = nj , is dual to HomΓ (Sj , Si ) = 0
+                                  n −n −1
+if nj − ni = 1, and is dual to ExtΓj i (Sj , Si ) if nj − ni > 1.
+
+Remark. Since there are no non-zero projective maps from a simple module to a mod-
+ule with no projective summands, the vanishing of PHomΛ (Ωni F (Si ), Ωnj F (Sj )) = 0 is
+automatic if Ωni F (Si ) is a simple Γ-module.
+16                                      JEREMY RICKARD
+
+                                   7. Some examples
+  We shall give some examples to show how Theorem 6.1 can be used to verify specific
+cases of Broué’s conjecture on equivalences of derived categories for blocks with abelian
+defect group.
+Conjecture 7.1 (Broué). Let A be a block algebra of a finite group algebra kG, where k
+is an algebraically closed field of characteristic p > 0. Suppose that a defect group D of A
+is abelian. Let H = NG (D), and let B be the Brauer correspondent of A: a block algebra
+of kH. Then there is an equivalence D(Mod(A)) ≈ D(Mod(B)) of triangulated categories.
+   We shall use the notation (G, H, A, B, D, k, p) of Conjecture 7.1 in all the examples.
+In each case we shall describe a set X = {Xi : 0 ≤ i ≤ r} of objects of D b (mod(B)) that
+are stably isomorphic to the images of the simple A-modules under a stable equivalence.
+We shall then need to check the conditions of Theorem 6.1. The last of these conditions is
+that D b (mod(B)) is generated as a triangulated category by the elements of X . We shall
+use the notation hX i to refer to the triangulated category generated by X , and to prove
+that this is the whole of D b (mod(B)) we shall show that each of the simple B-modules is
+in hX i.
+   All of these examples are already known by other methods, but Theorem 6.1 provides
+a simpler proof. In these cases we shall give references to previous proofs.
+   In all the examples we give, it is well-known that there is a stable equivalence which
+coincides with Green correspondence on objects.
+   We start with a very simple example.
+
+7.1. Principal block of G = A5 , p = 2. The alternating group G = A5 ∼      = SL(2, 4) ∼
+                                                                                       =
+P SL(2, 5) has Sylow 2-subgroup P = C2×C2 , with normalizer H = NG (P ) = A4 ∼
+                                    ∼                                      ∼   = P⋊C3 .
+   The principal block A of kG has three simple modules: the trivial module and two
+2-dimensional modules.
+   B = kH has three 1-dimensional simple modules, which we will denote by k, 1 and 2.
+   The restrictions of the simple A-modules have the following structures.
+                                                  1             2
+                             Y0 := k,     Y1 :=     ,   Y2 :=
+                                                  2             1
+   We shall take X0 := k and Xi := ΩYi [1] for i ∈ {1, 2}. The structure of ΩYi is as
+follows.
+                                    k               k
+                             ΩY1 :=    , ΩY2 :=
+                                    1               2
+  To verify conditions (a) and (b) of Theorem 6.1, it is sufficient, by Corollary 6.3, to
+note that
+                              EndB (k) ∼
+                                       = EndB (ΩYi ) ∼
+                                                     =k
+and that
+                                    HomB (k, ΩYi ) = 0
+for i ∈ {1, 2}.
+           EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                      17
+
+  Finally, to verify condition (c) of Theorem 6.1, note that k is certainly in hX i, and the
+other two simples are in hX i because they are the kernels of surjective maps
+                                           ΩYi → k.
+  Hence D b (mod(A)) ≈ D b (mod(B)) by Theorem 6.1.
+  The first published proof of this example is in [10].
+7.2. Principal block of G = A7 , p = 3. The alternating group G = A7 has Sylow
+3-subgroup P ∼= C3 ×C3 , with normalizer H = NG (P ) ∼
+                                                     = P ⋊C4 .
+   The principal block A of kG has four simple modules: the trivial module, two 10-
+dimensional modules and a 13-dimensional module.
+   B = kH has four 1-dimensional simple modules, which we will denote by k, 1, 2 and 3.
+Fixing a generator x for C4 ≤ H and a primitive fourth root of unity ζ ∈ k, x acts on the
+simple module i as multiplication by ζ i .
+   The Green correspondents of the simple A-modules have the following Loewy structures.
+                                                             2
+                     Y0 := k,   Y1 := 1,       Y2 := 1               3 ,   Y3 := 3
+                                                             2
+  The Loewy structure of the projective cover of the simple module 2 is:
+
+                                                     2
+                                                 1       3
+                                P (2) := k           2           k ,
+                                                 1       3
+                                                     2
+and so
+                                           k                     k
+                                 ΩY2 :=         1        3 .
+                                                  2
+   We shall take X0 := k, X1 := 1, X2 := ΩY2 [1], X3 := 3.
+   Since ΩY2 has simple 2 as its socle, and since this simple occurs with multiplicity one
+as a composition factor of ΩY2 , the conditions of Corollary 6.3 are satisfied.
+   To check condition (c) of Theorem 6.1, note that the simples k, 1 and 3 are certainly in
+hX i, and hence M := ΩY2 / soc(ΩY2 ) is in hX i, since each composition factor is isomorphic
+to one of k, 1, 3. Therefore the simple 2 is in hX i, since it is the kernel of the natural
+surjection ΩY2 → M .
+   Okuyama [6] gave the first proof of this example.
+7.3. Principal block of G = A8 , p = 3. The alternating group G = A8 has Sylow
+3-subgroup P ∼= C3 ×C3 , with normalizer H = NG (P ) ∼= P ⋊D8 .
+   The principal block A of kG has five simple modules: the trivial module and modules
+with dimensions 7, 13, 28 and 35.
+   B = kH has four 1-dimensional modules, which we shall denote by k, 1, 2 and 3. We
+shall choose the names so that the kernel of the action of D8 on the simple 2 is cyclic,
+18                                           JEREMY RICKARD
+
+whereas the kernels of the actions on 1 and 3 are elementary abelian of rank two. There
+is also a 2-dimensional simple module S.
+   The Green correspondents of the simple A-modules have the following Loewy structures.
+
+                                                    1
+                      Y0 := k,      Y1 := 2,Y2 := S , Y3 := 3, Y4 := S
+                                                    1
+     We shall take Xi := Yi for i ∈ {0, 1, 3, 4} and X2 := ΩY2 [1].
+     The Loewy structure of the projective cover of the simple module 1 is
+                                                    1
+                                                    S
+                                                  k 1 2 ,
+                                                    S
+                                                    1
+and so ΩY2 has the structure
+                                                  k        2
+                                               S    .
+                                               1
+   Since ΩY2 has simple socle 1, and since 1 only occurs with multiplicity one as a com-
+position factor, EndB (ΩY2 ) ∼  = k and HomB (Xi , ΩY2 ) = 0 for i ∈ {0, 1, 3, 4}. Hence the
+conditions of Corollary 6.3 are satisfied.
+   Condition (c) of Theorem 6.1 also holds, because clearly all the simples other than 1
+are in hX i, and since ΩY2 , which contains 1 as a composition factor with multiplicity one,
+is also in hX i, it follows that 1 is in hX i.
+   Okuyama [6] gave the first proof of this example.
+
+                                  8. General coefficient fields
+   The only use we made of the condition that k is algebraically closed was to assume that
+the endomorphism ring of a simple module for a finite-dimensional k-algebra was just k.
+Our main theorem, Theorem 5.1, is true a little more generally for a field k that is not
+algebraically closed, as we can allow End(Xi ) to be any finite-dimensional division algebra
+over k. The only difference in the construction of the objects Ti is that rather than using
+            (n−1)                        (n−1)                                (n−1)
+a k-basis Bi      (j, t) of Hom(Xj [t], Xi     ) in order to form the object Zi     (j, t), we
+should use a basis as a left End(Xj )-module.
+   Theorem 6.1 generalizes similarly.
+
+                                               References
+ [1] Marcel Bökstedt and Amnon Neeman. Homotopy limits in triangulated categories. Compositio Math.,
+     86(2):209–234, 1993.
+ [2] Michel Broué. Isométries parfaites, types de blocs, catégories dérivées. Astérisque, (181-182):61–92,
+     1990.
+ [3] Joseph Chuang. Derived equivalence in SL2 (p2 ). Trans. Amer. Math. Soc., 353(7):2897–2913 (elec-
+     tronic), 2001.
+             EQUIVALENCES OF DERIVED CATEGORIES FOR SYMMETRIC ALGEBRAS                                  19
+
+ [4] Miles Holloway. Derived equivalences for group algebras. PhD thesis, Bristol, 2001.
+ [5] Markus Linckelmann. Stable equivalences of Morita type for self-injective algebras and p-groups. Math.
+     Z., 223(1):87–100, 1996.
+ [6] Tetsuro Okuyama. Some examples of derived equivalent blocks of finite groups. Preprint, Hokkaido,
+     1998.
+ [7] Tetsuro Okuyama. Derived equivalence in SL(2, q). Preprint, Hokkaido, 2000.
+ [8] Jeremy Rickard. Morita theory for derived categories. J. London Math. Soc. (2), 39(3):436–456, 1989.
+ [9] Jeremy Rickard. Derived equivalences as derived functors. J. London Math. Soc. (2), 43(1):37–48,
+     1991.
+[10] Jeremy Rickard. Splendid equivalences: derived categories and permutation modules. Proc. London
+     Math. Soc. (3), 72(2):331–358, 1996.
+[11] Raphaël Rouquier. Gluing p-permutation modules. Preprint, Paris, 1988.
+[12] Raphaël Rouquier. Block theory via stable and Rickard equivalences. In Modular representation theory
+     of finite groups, pages 101–146. de Gruyter, Berlin, 2001.
+
+  University of Bristol, School of Mathematics, University Walk, Bristol BS8 1TW, ENG-
+LAND
+  E-mail address: j.rickard@bristol.ac.uk
+

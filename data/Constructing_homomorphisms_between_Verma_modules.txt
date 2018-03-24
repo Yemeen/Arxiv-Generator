@@ -1,0 +1,688 @@
+                                            Constructing homomorphisms between Verma modules
+arXiv:math/0212153v2 [math.RT] 5 Apr 2004
+
+
+
+
+                                                                             W. A. de Graaf,
+                                                                   School of Mathematics and Statistics,
+                                                                           University of Sydney,
+                                                                                Australia
+                                                                     email: wdg@maths.usyd.edu.au
+
+
+                                                                                       Abstract
+                                                      We describe a practical method for constructing a nontrivial homomorphism be-
+                                                  tween two Verma modules of an arbitrary semisimple Lie algebra. With some addi-
+                                                  tions the method generalises to the affine case.
+
+                                                A theorem of Verma, Bernstein-Gel’fand-Gel’fand gives a straightforward criterion for
+                                            the existence of a nontrivial homomorphism between Verma modules. Moreover, the the-
+                                            orem states that such homomorphisms are always injective. In this paper we consider the
+                                            problem of explicitly constructing such a homomorphism if it exists. This boils down to
+                                            constructing a certain element in the universal enveloping algebra of the negative part of
+                                            the semismiple Lie algebra.
+                                                There are several methods known to solve this problem. Firstly, one can try and find
+                                            explicit formulas. In this approach one fixes the type (but not the rank). This has been
+                                            carried out for type An in [18], Section 5, and for the similar problem in the quantum
+                                            group case in [4], [5], [6]. In [4] root systems of all types are considered, and the solution is
+                                            given relative to so-called straight roots, using a special basis of the universal enveloping
+                                            algebra (not of Poincaré-Birkhoff-Witt type). In [5], [6] the solution is given for types An
+                                            and Dn for all roots, in a Poincaré-Birkhoff-Witt basis. Our approach compares to this in
+                                            the sense that we have an algorithm that, given any root of a fixed root system, computes
+                                            a general formula relative to any given Poincaré-Birkhoff-Witt basis (see Section 3).
+                                                A second approach is described in [18], which gives a general construction of homo-
+                                            morphisms between Verma modules. However, it is not easy to see how to carry out this
+                                            construction in practice. The method described here is a variant of the construction in
+                                            [18], the difference being that we are able to obtain the homomorphism explicitly.
+                                                In Section 1 of this paper we review the theoretical concepts and notation that we use,
+                                            and describe the problem we deal with. In Section 2 we derive a few commutation formulas
+                                            in the field of fractions of U(n− ). Then in Section 3 the construction of a homomorphism
+                                            between Verma modules is described. In Section 4 we briefly comment on the problem of
+                                            finding compositions of inclusions. In Section 5 we comment on the analogous problem for
+
+                                                                                           1
+affine algebras, and we show how our algorithm generalises to that case. Finally in Section 6
+we give an application of the algorithm to the problem of constructing irreducible modules.
+This is based on a result by P. Littelmann.
+    I have implemented the algorithms described in this paper in the computer algebra
+system GAP4 ([7]). Sections 3 and 6 contain tables of running times. All computations for
+these have been done on a PII 600 Mhz processor, with 100M of memory of GAP.
+
+
+1      Preliminaries
+Let g be a semisimple Lie algebra, with root system Φ, relative to a Cartan subalgebra h.
+We let ∆ = {α1 , . . . , αl } be a fixed set of simple roots. Let Φ+ = {α1 , . . . , αs } be the set of
+positive roots (note that here the simple roots are listed first). Then there are root vectors
+yi = x−αi , xi = xαi (for 1 ≤ i ≤ s), and basis vectors hi ∈ h (for 1 ≤ i ≤ l), such that the
+set {x1 , . . . , xs , y1 , . . . , ys , h1 , . . . , hl } forms a Chevalley basis of g (cf. [10]). We have that
+g = n− ⊕ h ⊕ n+ , where n− , n+ are the subalgebras spanned by the yi , xi respectively.
+     In the sequel, if β = αi ∈ Φ+ , then we also write yβ in place of yi .
+     We let P denote the integral weight lattice spanned by the fundamentalP                     weights λ1 , . . . , λl .
+Also QP = Qλ1 + · · · + Qλl . For λ, µ ∈ QP we write µ ≤ λ if µ = λ − li=1 ki αi , where
+ki ∈ Z≥0 . Then ≤ is a partial order on QP .
+     For α ∈ Φ we have the reflection sα : QP → QP , given by sα (λ) = λ − hλ, α∨ iα.
+     Let U(g) denote the universalP                    enveloping algebra of g. We consider U(g) as a g-module
+by left multiplication. Let λ =                           ai λi ∈ QP , and let J(λ) be the g-submodule of U(g)
+generated by hi − ai + 1 for 1 ≤ i ≤ l and xi for 1 ≤ i ≤ s. Then M(λ) = U(g)/J(λ) is
+a g-module. It is called a Verma module. As U(g) = U(n− ) ⊕ J(λ) we see that U(n− ) ∼                                =
+M(λ) (as U(n− )-modules). Let vλ denote the image of 1 under this isomorphism. Then
+hi · vλ = (ai − 1)vλ , and xi · vλ = 0. Furthermore, all other elements of M(λ) can be written
+                                        −
+as Y · vλ , where Pl Y ∈ U(n ).
+     Let ν = i=1 ki αi , where ki ∈ Z≥0 . Then we let U(n− )ν be the span of all yi1 · · · yir
+such that αi1 + · · · + αir = ν.
+     For a proof of the following theorem we refer to [1], [3].
+
+Theorem 1 (Verma, Bernstein-Gel’fand-Gel’fand) Let λ, µ ∈ QP , and set
+
+                                       Rµ,λ = HomU (g) (M(µ), M(λ)).
+
+Then
+    1. dim Rµ,λ ≤ 1,
+
+    2. non-trivial elements of Rµ,λ are injective,
+
+    3. dim Rµ,λ = 1 if and only if there are positive roots αi1 , . . . , αik such that
+
+                            µ ≤ sαi1 (µ) ≤ sαi2 sαi1 (µ) ≤ · · · ≤ sαik · · · sαi1 (µ) = λ.
+
+                                                           2
+    The problem we consider is to construct a non-trivial element in Rµ,λ if dim Rµ,λ = 1.
+By Theorem 1, this boils down to finding an element in Rµ,λ if µ = sα (λ) = λ − hλ, α∨ iα
+and hλ, α∨i ∈ Z>0 . Suppose that we are in this situation, and set h = hλ, α∨i. An
+element Y · vλ ∈ M(λ), where Y ∈ U(n− ) is said to be singular if xα · (Y · vλ ) = 0 for
+α ∈ Φ+ . Let ψ ∈ Rµ,λ be a non-trivial U(g)-homomorphism. Then ψ(vµ ) = Y · vλ for
+some Y ∈ U(n− ) with Y · vλ singular. We have hi y = yhi − hν, αi∨iy for all y ∈ U(n− )ν .
+Hence hi · (y · vλ ) = (hλ − ν, αi∨ i − 1)yvλ . So, as hi · (Y vλ ) = (hµ, αi∨i − 1)Y vλ we see that
+Y ∈ U(n− )hα . Conversely, if we have a Y ∈ U(n− )hα such that Y · vλ is singular, then
+ψ : M(µ) → M(λ) defined by ψ(Y ′ · vµ ) = Y ′ Y · vλ will be a non-trivial element of Rµ,λ . So
+the problem reduces to finding a Y ∈ U(n− )hα such that Y · vλ is singular. Note that this
+can be done by writing down a basis for U(n− )hα and computing a set of linear equations
+for Y . However, this algorithm becomes rather cumbersome if dim U(n− )hα gets large. We
+will describe a more direct method.
+
+
+2      The field of fractions
+From [3], §3.6 we recall that U(n− ) has a (non-commutative) field of fractions, denoted by
+K(n− ). It consists of all elements ab−1 for a ∈ U(n− ), b ∈ U(n− ) \ {0}. For the definitions
+of addition and multiplication in K(n− ) we refer to [3], §3.6. They imply aa−1 = a−1 a = 1.
+    Let α, β ∈ Φ+ . If α + β ∈ Φ+ then we let Nα,β be the scalar such that [yα , yβ ] =
+−Nα,β yα+β . Also set Pα,β = {iα + jβ | i, j ≥ 0} ∩ Φ+ . Then there are seven possibilities
+for Pα,β :
+    (I) Pα,β = {α, β},
+ (II) Pα,β = {α, β, α + β}
+(III) Pα,β = {α, β, α + β, α + 2β},
+(IV) Pα,β = {α, β, α + β, 2α + β},
+ (V) Pα,β = {α, β, α + β, 2α + β, 3α + β, 3α + 2β}
+(VI) Pα,β = {α, β, α + β, α + 2β, α + 3β, 2α + 3β},
+(VII) Pα,β = {α, β, α + β, 2α + β, α + 2β}.
+
+Lemma 2 In case (I) we have yβm yαn = yαn yβm for all m, n ∈ Z.
+Proof. If n > 0 then yβ yαn = yαn yβ . Multiplying this relation on the left and on the right
+by yα−n we get yβ yα−n = yα−n yβ . So we have yβ yαn = yαn yβ for all n ∈ Z. From this it follows
+that yβm yαn = yαn yβm for m > 0, n ∈ Z. If we now multiply this from the left and the right
+by yβ−m we get the result for m < 0 as well.                                                    ✷
+   Since                         
+                                  n     n(n − 1) · · · (n − k + 1)
+                                      =                            ,
+                                  k                 k!
+
+                                                 3
+these binomial    coefficients are defined for arbitrary n ∈ Q, and k ∈ Z≥0 . In fact, we see
+that nk is a polynomial of degree k in n. Note also that if n ∈ Z and 0 ≤ n < k then the
+        
+
+coefficient is 0.
+
+Lemma 3 In case (II) we have for m ≥ 0, n ∈ Z,
+                             m         
+                     m n
+                            X
+                                 k    m n
+                    yβ yα =     Nα,β         k!yαn−k yβm−k yα+β
+                                                            k
+                                                                .
+                            k=0
+                                      k   k
+
+Proof. First of all, this formula is known for m, n ≥ 0 (see, e.g., [9]). In particular, for
+n > 0 we have yβ yαn = yαn yβ + Nα,β nyαn−1yα+β . If we multiply this relation on the left and
+the right with yα−n , and use Lemma 2, then we get it for all n ∈ Z. Now the formula for
+m > 1 is proved by induction.                                                                ✷
+
+Lemma 4 In case (III) we have for m ≥ 0, n ∈ Z,
+                              X m,n
+                    yβm yαn =     ck,l yαn−k−lyβm−k−2l yα+β
+                                                        k    l
+                                                            yα+2β ,
+                                      k,l≥0
+                                     k+2l≤m
+
+where                                                                     
+                            k+l 1              n              m            k+l
+                cm,n
+                 k,l   =   Nα,β ( Nβ,α+β )l                                     (k + 2l)!.
+                                 2            k+l           k + 2l          l
+Proof. This goes in exactly the same way as the proof of Lemma 3.                             ✷
+
+Lemma 5 In case (IV) we have for m ≥ 0, n ∈ Z,
+                             X m,n
+                   yβm yαn =     ck,l yαn−k−2l yβm−k−l yα+β
+                                                        k    l
+                                                            y2α+β ,
+                                      k,l≥0
+                                     k+l≤m
+
+where                                                                     
+                            k+l 1                   n            m         k+l
+                cm,n
+                 k,l   =   Nα,β ( Nα,α+β )l                                      (k + 2l)!.
+                                 2                k + 2l        k+l         l
+Proof. Again we get the formula for m, n ≥ 0 from [9]. In this case the formula for m = 1,
+n ≥ 0 reads
+                                                            
+                 n    n             n−1                      n n−2
+             yβ yα = yα yβ + Nα,β nyα yα+β + Nα,β Nα,α+β        y y2α+β .
+                                                             2 α
+If we multiply this on the left and the right by yα−n , and use Lemmas 2, 3 we get the same
+relation with n replaced by −n. So the case m = 1, n ∈ Z follows. The formula for m > 1
+now follows by induction.                                                                 ✷
+    The cases (V), (VI), (VII) can only occur when the root system has a component of
+type G2 . We omit the formulas for these cases; they can easily be derived from those given
+in [9].
+
+                                                     4
+   Now let a = y1n1 · · · ysns be a monomial in U(n− ). For β ∈ Φ+ and m, n ∈ Z consider
+the element yβm ayβ−n . By repeatedly applying Lemmas 2, 3, 4, 5 we see that
+                                X
+               yβmayβ−n =                     c(k1 , . . . , kt )yβm−n−p1k1 −···−pt kt a(k1 , . . . , kt ).   (1)
+                            (k1 ,...,kt )∈I
+
+
+Here the a(k1 , . . . , kt ) ∈ U(n− ), the (finite) index set I, the pi ∈ Z>0 are all independent
+of n, they only depend on a. Only the exponents of yβ and the coefficients c(k1 , . . . , kt )
+(which are polynomials in n) depend on n.
+    Now we take m, n ∈ Q such that m − n ∈ Z. Then we define yβmayβ−n to be the right-
+hand side of (1), and we say that yβm ayβ−n is an element of K(n− ). More generally, if Y is
+a linear combination of monomials, and m, n ∈ Q such that m − n ∈ Z then yβm Y yβ−n is an
+element of K(n− ).
+
+
+3     Constructing singular vectors
+Here we suppose that we are given a λ ∈ QP and α ∈ Φ+ with hλ, α∨i = h ∈ Z>0 . The
+problem is to find a Y ∈ U(n− )hα such that Y · vλ is a singular vector.
+   We recall that l = |∆| is the rank of the root system. Let 1 ≤ i ≤ l, then
+
+                                 xi yir · vλ = r(hλ, αi∨i − r)yir−1 · vλ .                                    (2)
+
+Lemma 6 Suppose that α ∈ ∆, i.e., α = αi , 1 ≤ i ≤ l. Then yih · vλ is a singular vector.
+Proof. This follows from (2), cf. the proof of [1], Lemma 2.                         ✷
+   Note that this solves the problem when g = sl2 . So in the remainder we will assume
+that the rank of the root system is at least 2. By an embedding φ : M(µ) ֒→ M(λ) we will
+always mean an injective U(g)-homomorphism.
+
+Lemma 7 Suppose that ν, η ∈ P , and β ∈ ∆ is such that m = hν, β ∨ i is a non-negative
+integer. Suppose further that we have an embedding ψ : M(ν) ֒→ M(η) given by ψ(vν ) =
+Y vη . Set n = hη, β ∨i. Then yβm Y yβ−n is an element of U(n− ) and we have an embedding
+φ : M(sβ ν) ֒→ M(sβ η) given by φ(vsβ ν ) = yβmY yβ−n · vsβ η .
+Proof. If n ≤ 0 then the first statement is clear. The embedding φ is the composition
+M(sβ ν) ֒→ M(ν) ֒→ M(η) ֒→ M(sβ η), where the first and the third maps follow from
+Lemma 6.
+   If n > 0, then we view M(sβ η) as a submodule of M(η). We have vsβ η = yβn vη
+(Lemma 6). Set v = yβmY vη ; then v is a singular vector (being the image of vsβ ν under
+M(sβ ν) ֒→ M(ν) ֒→ M(η)). We claim that v ∈ M(sβ η). Suppose that this claim is proved.
+Then there is a Y ′ ∈ U(n− ) such that v = Y ′ vsβ η . But that means that yβmY = Y ′ yβn , and
+the lemma follows.
+   The claim above is proved in [1]. For the sake of completeness we transcribe the
+argument. Set V = M(η)/M(sβ η), and let v̄ν denote the image of ψ(vν ) in V ; then
+
+                                                             5
+v̄ν = X · v̄η , for some X ∈ U(n− ). For k ≥ 0 write yβk X = X1 yβk1 . By increasing k we
+can get k1 arbitrarily large (cf. [3], Lemma 7.6.9; it also follows by straightforward weight
+considerations). By Lemma 6 we know that yβn vη ∈ M(sβ η). Therefore there is a k > 0
+such that yβk v̄ν = 0. Then by using (2) we see that the smallest such k must be equal to
+m.                                                                                         ✷
+
+Proposition 8 Let ν, η ∈ QP be such that ν = sγ (η) = η−kγ, where γ ∈ Φ+ and k ∈ Z>0 .
+Let Y ∈ U(n− )kγ be such that Y · vη is singular. Let β ∈ ∆, β 6= γ. Set m = hν, β ∨i,
+n = hη, β ∨i. Then yβm Y yβ−n is an element of K(n− ); it is even an element of U(n− ).
+Secondly, we have an embedding φ : M(sβ ν) ֒→ M(sβ η) given by φ(vsβ ν ) = yβm Y yβ−n · vsβ η .
+Proof. We have that m − n = −khγ, β ∨ i ∈ Z, so yβm Y yβ−n is an element of K(n− ).
+     Set V = {µ ∈ QP | hµ, γ ∨ i = k}, whichP        is a hyperplane in QP , containing η. Let
+                                                       l
+{a1 , . . . , at } be a basis of U(n− )kγ . Take
+                                            Pt   µ =   i=1 ri λi ∈ V and set µ̃ = sγ (µ) = µ − kγ.
+Then by Theorem 1 there is a Yµ = i=1 ζi ai such that Yµ · vµ is singular. Here the ζi are
+polynomial functions of the ri . (Indeed, if we write linear equations for the Yµ , then the
+coefficients depend linearly on the ri . Hence the coefficients of a solution are polynomial
+functions of the ri .)
+     Set p = hµ̃, β ∨ i, q = hµ, β ∨i. Then Y ′ = yβp Yµ yβ−q = j cj bj , where the bj are linearly
+                                                                 P
+independent elements of K(n− ), and the cj are coefficients that depend polynomially on
+the ri . Now Lemma 7 implies that if the ri ∈ Z and p ≥ 0, then Y ′ ∈ U(n− ). Let now
+j be such that bj 6∈ U(n− ). If the ri ∈ Z and p ≥ 0, then cj = 0. Suppose that β = αi0 ,
+the i0 -th simple root. P    Then the condition p ≥ 0 amounts to ri0 ≥ khγ, β ∨ i. We have that
+µ ∈ V if and only if li=1 ui ri = k, where the ui are certain elements of Z. Also, since
+β 6= γ at least one ui 6= 0 with i 6= i0 . We see that the requirement ri0 ≥ khγ, β ∨i cuts a
+half space W off V . Furthermore V ∩ P is an (l − 1)-dimensional lattice in V (cf. [1]). The
+conclusion is that cj = 0 if µ ∈ W ∩ P . Since the cj are polynomials in the ri , it follows
+that cj = 0 if µ ∈ V . In particular, yβm Y yβ−n lies in U(n− ).
+                                 ′                                                        ′
+P Finally we note that Y ·vsβ µ is singular, by the same arguments. (Indeed, xi ·(Y ·vsβ µ )−=
+   j fj zj · vsβ µ where the fj are polynomials in the ri , and the zj are elements of U(n ).
+Since the fj are zero when µ ∈ W ∩ P we have that fj = 0 when µ ∈ V .) In particular,
+yβm Y yβ−n · vsβ η is singular.                                                                  ✷
+
+Example 9 To illustrate the argument in the preceding proof, consider the Lie algebra
+of type A3 , with simple roots α, β, γ (with β corresponding to the middle node of the
+Dynkin diagram). Then it is possible to choose a Chevalley basis such that [yα , yβ ] = yα+β ,
+[yα , yβ+γ ] = yα+β+γ , [yβ , yγ ] = yβ+γ , [yγ , yα+β ] = −yα+β+γ . Set a1 = yα yβ yγ , a2 = yγ yα+β ,
+a3 = yα yβ+γ , a4 = yα+β+γ . Then {a1 , a2 , a3 , a4 } is a basis of U(n− )α+β+γ .
+     We abbreviate a weight r1 λ1 + r2 λ2 + r3 λ3 by (r1 , r2 , r3 ). Let V be the hyperplane in
+QP consisting of all weights µ such that hµ, (α + β + γ)∨ i = 1, i.e., V = {(r1 , r2 , r3 ) |
+r1 + r2 + r3 = 1}. Let µ = (r1 , r2 , r3 ) ∈ V and set µ̃ = sα+β+γ (µ) = (r1 − 1, r2, r3 − 1). Set
+Yµ = a1 − r1 a2 − (r1 + r2 )a3 − r1 r3 a4 ; then Yµ · vµ is singular. Set p = hµ̃, α∨ i = r1 − 1 and
+q = hµ, α∨i = r1 . Now Y ′ = yαp Yµ yα−q = yβ yγ − (r1 + r2 )yβ+γ + r1 (1 − r1 − r2 − r3 )yα−1 yα+β+γ .
+
+
+                                                  6
+According to Lemma 7 this is an element of U(n− ) whenever (r1 , r2 , r3 ) ∈ V with the ri
+integral and p ≥ 0. Therefore the coefficient of yα−1yα+β+γ has to vanish, which is indeed
+the case. We see that Y ′ lies in U(n− ) for all (r1 , r2 , r3 ) ∈ V .
+   Now we return to the situation of the beginning of the section. We have λ ∈ QP ,
+α ∈ Φ+ with hλ, α∨i = h ∈ Z>0 . Set µ = sα (λ) = λ − hα. To obtain an embedding
+M(µ) ֒→ M(λ), we perform the following steps:
+   1. Select β1 , . . . , βr ∈ ∆ and positive roots α0 , . . . , αr in the following way. Set α0 = α,
+      and k = 0. Then:
+
+       (a) If αk ∈ ∆, then set r = k and go to step 2.
+                                                       ∨
+       (b) Otherwise, let βk+1 ∈ ∆ be such that hαk , βk+1 i > 0, and set αk+1 = sβk+1 (αk ),
+           and k := k + 1. Return to (a).
+
+   2. Set β = αr ∈ ∆. For 1 ≤ k ≤ r set ak = −hµ, sβ1 · · · sβk−1 (βk )∨ i, and bk =
+      hλ, sβ1 · · · sβk−1 (βk )∨ i.
+
+   3. Set Y0 = yβh , and for 0 ≤ k ≤ r − 1:
+                                                     a
+                                                   r−k       b
+                                          Yk+1 = yβr−k Yk yβr−k
+                                                            r−k
+                                                                .
+
+Remark. Note that the βk+1 in step 1 (b) exists because otherwise hαk , γ ∨ i ≤ 0 for all
+γ ∈ ∆, and this implies that the set ∆ ∪ {αk } is linearly independent (cf. [11], Chapter
+IV, Lemma 1), which is not possible since αk 6∈ ∆. Also, all αk must be positive roots
+because sγ permutes the positive roots other than γ, for γ ∈ ∆. Then the loop in 1. must
+terminate because the height of αk decreases every step.
+
+
+Proposition 10 All Yk are elements of U(n− ) and we have an embedding M(µ) ֒→ M(λ)
+given by vµ 7→ Yr · vλ .
+Proof. We write si = sβi . For 0 ≤ k ≤ r we set wk = sr−k · · · s1 (so wr = 1), and
+µk = wk µ, λk = wk λ. We claim that there is an embedding M(µk ) ֒→ M(λk ) given by
+vµk 7→ Yk · vλk . First we look at the case k = 0. Note that sr · · · s1 (α) = β ∈ ∆. Since for
+w in the Weyl group we have wsβ w −1 = swβ we get sα = s1 · · · sr sβ sr · · · s1 = w0−1 sβ w0 .
+Therefore µ0 = w0 sα (λ) = sβ (λ0 ), and hλ0 , β ∨i = hλ, s1 · · · sr (β)∨ i = hλ, α∨i = h. The
+case k = 0 now follows by Lemma 6.
+    Now suppose we have an embedding M(µk ) ֒→ M(λk ) as above. Note that wk+1 =
+sr−k wk and αk = wk α. Also µk = wk µ = λk − hαk , and hλk , αk∨ i = h, so that µk = sαk (λk ).
+We now apply Proposition 8 (with ν := µk , η := λk , β := βr−k ). We have βr−k ∈ ∆ and
+                                                           ∨
+βr−k 6= αk as αk 6∈ ∆. Furthermore, m = hsr−k · · · s1 µ, βr−k i = −hµ, s1 · · · sr−k−1(βr−k )∨ i =
+                                    ∨
+ar−k . In the same way n = hλk , βr−k i = −br−k . So by Proposition 8, if we set
+                                                a
+                                               r−k       b
+                                      Yk+1 = yβr−k Yk yβr−k
+                                                        r−k
+                                                            ,
+
+                                                 7
+then we have an embedding M(µk+1 ) = M(sβr−k µk ) ֒→ M(sβr−k λk ) = M(λk+1 ) by vµk+1 7→
+Yk+1 · vλk+1 .
+    Finally we note that λr = λ, µr = µ.                                                               ✷
+    It is possible to reformulate the algorithm in such a way that it looks more like the
+method from [18]. The construction described in [18] works as follows. Write sα =
+sαi1 · · · sαit , as a product of simple reflections. For 1 ≤ k ≤ t set mk = hsαik+1 · · · sαit λ, αi∨k i.
+Then Y = yim1 1 · · · yimt t is an element of U(n− ) and we have an embedding M(µ) ֒→ M(λ)
+by vµ 7→ Y · vλ . Now, using the same notation as in the description of the algorithm, the
+expression we get is
+                                         yβa11 · · · yβarr yβh yβbrr · · · yβb11 .
+As remarked in the proof of Proposition 10, sα = s1 · · · sr sβ sr · · · s1 (where again we
+write si = sβi ). Furthermore, bk = hsk−1 · · · s1 λ, βk∨ i, h = hλ, α∨ i = hsr · · · s1 λ, β ∨i,
+ak = hsk+1 · · · sr sβ sr · · · s1 λ, βk∨ i. So we see that our method is a special case of the con-
+struction in [18]. However, the difference is that we have an explicit method to rewrite the
+element above to an element of U(n− ). By the next lemma the expression we use for sα
+is the shortest possible (so we cannot do essentially better by taking a different reduced
+expression).
+
+Lemma 11 The expression sα = s1 · · · sr sβ sr · · · s1 obtained by the first step of the algo-
+rithm, is reduced.
+Proof. Set γ = s1 (α) = α − mβ1 , where m > 0. Then sα = ss1 (γ) = s1 sγ s1 . By induction,
+the expression sγ = s2 · · · sr sβ sr · · · s2 is reduced. We show that ℓ(sα ) = ℓ(sγ ) + 2. For this
+we use the fact that the length of an element w of the Weyl group is equal to the number
+of positive roots that are mapped to negative roots by w. Write Φ+ = A ∪ {β1 }, where
+A = Φ+ \ {β1 }. There is a positive root δ0 ∈ Φ with sγ s1 δ0 = β1 . Set S = {δ ∈ A | sγ s1 δ <
+0} ∪ {δ0 , β1 }. Then sα maps all elements of S to negative roots. Since hγ, β1∨ i = −m < 0,
+also hβ1 , γ ∨ i < 0, and hence sγ (β1 ) > 0. So all roots that are mapped to negative roots by
+sγ are in A. Therefore, since s1 permutes A, there are ℓ(γ) roots δ ∈ A with sγ s1 (δ) < 0.
+We conclude that the cardinality of S is ℓ(γ) + 2. So ℓ(α) ≥ ℓ(γ) + 2, but that means that
+ℓ(α) = ℓ(γ) + 2.                                                                                   ✷
+    We can use the algorithm described in this section to construct general formulas for
+singular elements. More precisely, let γ be a fixed root in the root system of g. Then by
+applying the formulas of Section 2 symbolically we can derive a formula that given arbitrary
+weights λ, µ such that hλ, γ ∨i ∈ Z>0 and µ = sγ (λ) produces an element Y ∈ U(n− )λ−µ
+such that Y · vλ is singular. We illustrate this with an example.
+
+Example 12 Suppose that g is of type A3 . We use the same basis of n− as in Example
+9. We consider the root α + β + γ. Let λ = (r1 , r2 , r3 ) be such that h = r1 + r2 + r3 is a
+positive integer. A reduced expression of sα+β+γ is sα sβ sγ sβ sα . The corresponding element
+of U(n− ) is
+                                 Y = yαr2 +r3 yβr3 yγh yβr1+r2 yαr1 .
+
+
+                                                    8
+First we have
+                                              h                
+                                              X         h r1 + r2
+                        yβr3 yγh yβr1 +r2   =     (−1)k
+                                                                    k!yβh−k yγh−k yβ+γ
+                                                                                   k
+                                                                                       .
+                                              k=0
+                                                        k    k
+
+Now to obtain the formula for Y we have to apply Lemma 3 three times (and Lemma 2 a
+few times), to obtain
+          h X
+            k X   s
+              h−k X                                                     
+          X
+                                      k+l+s    h r1 + r2   k  r1 h−k    r1 − l s h − k
+    Y =                        (−1)
+                     s=0 t=0
+                                               k    k      l   l  s        s    t   t
+          k=0   l0
+
+                               k!l!s!t!yαh−l−s yβh−k−syγh−k−tyα+β
+                                                              s−t k−l l+t
+                                                                  yβ+γ yα+β+γ .
+
+Table 1 contains a few running times of the implementation of this algorithm in GAP4.
+The root γ is in each case the highest root of the root system. The length of a formula is
+
+                                              type    length time (s)
+                                               A6         29      0.2
+                                               D6        109      1.6
+                                               E6        316      2.9
+                                               E7       2866    26.3
+                                               E8    > 10556       ∞
+
+     Table 1: Running times for the computation of a formula for a singular vector.
+
+
+the number of summations it contains (so the length of the above formula for A3 is 4). The
+computation for E8 did not terminate in the available amount of memory (100M). When
+the program exceeded the memory, the expression contained 10556 summations.
+Remark. It is also possible to use this method to obtain formulas for a fixed type, but
+variable rank. However, for that a convenient Chevalley basis needs to be chosen. We refer
+to [18], Section 5, for the formula for An .
+
+Remark. We have chosen Q as the ground field, because it is easy to work with. However,
+from the algorithm it is clear that instead we can choose any field F of characteristic zero
+and construct embeddings of Verma modules with highest weights from F P .
+
+
+
+4     Composition of embeddings
+In this section we consider the problem of obtaining an embedding M(ν) ֒→ M(λ), where
+ν = sα sβ (λ) < sβ (λ) < λ. The obvious way of doing this is to set µ = sβ (λ) and obtain the
+embeddings M(ν) ֒→ M(µ), M(µ) ֒→ M(λ) and composing them. This amounts to multi-
+plying two elements of U(n− ). This then corresponds to an expression for sα sβ , which is not
+
+                                                           9
+necessarily reduced. The question arises whether in this case it is possible to do better, i.e.,
+to start with a reduced expression for sα sβ = sαi1 · · · sαir , set mk = hsαik+1 · · · sαit λ, αi∨k i,
+and rewrite Y = yim1 1 · · · yimt t to an element of U(n− ). The next example shows that this
+does not always work.
+
+Example 13 Let Φ be of type F4 , with simple roots α1 , . . . , α4 and Cartan matrix
+                                                 
+                                 2 −1 0         0
+                             −1 2 −2 0 
+                              0 −1 2 −1 .
+                                                 
+
+                                 0    0 −1 2
+
+Let α = α1 +α2 +2α3 and β = α1 +2α2 +2α3 +α4 . We abbreviate a weight a1 λ1 +· · ·+a4 λ4
+by (a1 , a2 , a3 , a4 ). Set λ = ( 65 , − 21 , 23 , 0) and ν = (− 16 , − 21 , − 13 , 2). Then ν = sα sβ (λ). Write
+si = sαi . Then a reduced expression of sα sβ is
+
+                                       s1 s2 s1 s3 s2 s1 s3 s2 s4 s3 s2 s1 s3 s2 .
+
+We get
+                                       1   2   1   5   3       4    5       4   1   1
+                                                                                        −1 −1
+                              Y = y16 y23 y12 y33 y22 y1 y33 y26 y4 y33 y22 y13 y3 3 y2 2 .
+And I do not see any direct way to rewrite this as an element of U(n− ).
+   In general we have to obtain the embedding by composition. In this example set
+µ = sβ (λ) = λ − β = ( 65 , − 32 , 35 , 0). Then for the embedding M(µ) ֒→ M(λ) we get
+                                           2   4   2   1
+                                                           −1           4   1   1
+                                                                                    −1 −1
+                                 Y1 = y23 y33 y13 y22 y3 3 y4 y33 y22 y13 y3 3 y2 2 .
+
+For the embedding M(ν) ֒→ M(µ) we get
+                                                           1    1       5   5
+                                               Y2 = y16 y33 y2 y33 y16 .
+
+Then the product Y2 Y1 will provide the embedding M(ν) ֒→ M(λ).
+
+
+5      Affine algebras
+In this section we comment on finding embeddings of Verma modules of affine Kac-Moody
+algebras. First we fix some notation and recall some facts. Our main reference for this is
+[12].
+    We let ĝ be the (untwisted) affine Lie algebra corresponding to g, i.e.,
+
+                                       ĝ = Q[t, t−1 ] ⊗ g ⊕ QK ⊕ Qd
+
+with multiplication
+
+[tm ⊗x+a1 K+b1 d, tn ⊗y+a2 K+b2 d] = (tm+n ⊗[x, y]+b1 ntn ⊗y−b2 mtm ⊗x)+mδm,−n κ(x, y)K,
+
+                                                               10
+where m, n ∈ Z, x, y ∈ g, a1 , a2 , b1 , b2 ∈ Q and κ( , ) is the Killing form on g.
+     The Lie algebra ĝ has a triangular decomposition ĝ = n̂− ⊕ ĥ ⊕ n̂+ . Here n̂− is spanned
+by the tm ⊗ yi for m ≤ 0, along with tn ⊗ xi , and tn ⊗ hj for n < 0. The subalgebra ĥ is
+spanned by the t0 ⊗ hi and K and d. Furthermore, n̂+ is spanned by the tm ⊗ xi for m ≥ 0,
+along with tn ⊗ yi and tn ⊗ hj for n > 0.
+     The Verma module M(λ) of highest weight λ is defined in the same way as for g. As
+vector spaces M(λ) ∼     = U(n̂− ). Let α be a positive root of ĝ. Then from [13] we get that
+M(λ − nα) embeds in M(λ) if and only if 2(λ, α) = n(α, α), where n is a positive integer.
+     Now if α is a real root with 2(λ, α) = n(α, α), then we can construct a singular vector
+in U(n̂− )nα by essentially the same method as in Section 3. The only difference is the
+algorithm for rewriting fin−r afir , where r ∈ Q, a ∈ U(n̂− ), and fi a basis element of
+n̂− . We need commutation relations y m fir = fir y m + · · · , where y runs through the basis
+elements of n̂− .
+     First of all, if fi = tj ⊗ xα for some α ∈ Φ, and y = tk ⊗ xβ for some β ∈ Φ such that
+α + β ∈ Φ, then set ymα+nβ = tmj+nk ⊗ xmα+nβ . Set B = {ymα+nβ | mα + nβ ∈ Φ}. Then
+B spans a subalgebra of ĝ isomorphic to the subalgebra of g spanned by the corresponding
+xmα+nβ . The isomorphism is given by ymα+nβ 7→ xmα+nβ . So we get the same formula as
+in the finite-dimensional case.
+     Now suppose that α+β = 0. Then j +k ≤ 0; so [fi , y] = tj+k ⊗hα , where hα = [xα , x−α ].
+In this case we use the following relation:
+    (tk ⊗ x−α )(tj ⊗ xα )r =(tj ⊗ xα )r (tk ⊗ x−α )−
+                               r(tj ⊗ xα )r−1 (tk+j ⊗ hα ) − r(r − 1)(tj ⊗ xα )r−2 (tk+2j ⊗ xα ),
+which is easily proved by induction. If tk ⊗ x−α occurs with an exponent > 1 then we use
+this formula repeatedly.
+    The last possibility is
+         (tk ⊗ hq )(tj ⊗ xα )r = (tj ⊗ xα )r (tk ⊗ hq ) + rhα, αq∨i(tj ⊗ xα )r−1 (tk+j ⊗ xα ).
+Again, we use this formula repeatedly if tk ⊗ hq occurs with exponent > 1.
+     Now we suppose that α = mδ is an imaginary root with (λ, α) = 0 (here δ is the
+fundamental imaginary root). Then M(λ − nα) ֒→ M(λ) for all positive integers n. In
+this case there are a lot of singular elements. One class of them is easily constructed. Let
+u1 , . . . , uq , u1 , . . . , uq be two basis of g, dual to each other with respect to the Killing form.
+For n > 0 set
+                                                q    n
+                                               X   X
+                                         Sn =          (t−j ⊗ ui )(tj−n ⊗ ui ).
+                                        i=1 j=0
+
+Lemma 14 Suppose that (λ, δ) = 0, then Sn · vλ is a singular vector of weight nδ in M(λ).
+Proof. From [12], 12.8 we have the Sugawara operators
+                                        q
+                                       XX
+                                Ts =             (t−m ⊗ ui )(tm+s ⊗ ui ).
+                                       m∈Z i=1
+
+
+                                                    11
+It is straightforward to see that Sn · vλ = T−n · vλ . Now K acts on M(λ) as scalar
+multiplication by −h∨ , where h∨ is the dual Coxeter number. But also by [12], Lemma
+12.8 we have for x ∈ g:
+
+                            [tm ⊗ x, T−n ] = 2m(K + h∨ )(tm−n ⊗ x).
+
+From this it follows that x · Sn vλ = 0 for 0 ≤ i ≤ l, x ∈ n+ . Therefore Sn · vλ is a singular
+vector.                                                                                      ✷
+    Lemma 14 provides an infinite number of singular vectors. However, these are not the
+only ones. In [17] it is shown that for n > 0 and 1 ≤ i ≤ l there are independent elements
+Sni ∈ U(n̂− ) of weight nδ, such that Sni · vλ is a singular vector. These Sni are constructed
+from the generators of the centre of U(g). In this construction the Sn correspond to the
+Casimir operator. However, with the exception of the Casimir operator, I do not know
+of efficient algorithms to construct the generators of the centre of U(g). For example, the
+explicit expressions given in [8] for a generator of the centre of degree s involve sums of
+(dim g)s terms. So constructing generators of the centre of U(g) appears to be a very hard
+algorithmic problem in its own right.
+    The conclusion is that we have efficient algorithms to construct an inclusion M(λ −
+nα) ֒→ M(λ) if α is a real root, or when α is imaginary. However, in the last case there are
+many singular vectors for which at present we have no efficient way of constructing them.
+
+
+6     Constructing irreducible representations
+In [16], P. Littelmann proves a theorem describing a particular basis of the irreducible
+representations of g, using inclusions of Verma modules. Apart from giving a basis this
+result also allows one to construct the irreducible representations of g. In this section we
+first briefly indicate how this works, and then give some experimental data concerning this
+algorithm.
+    The first ingredient of the construction is Littelmann’s path method. Here we only give
+a very rough description of that method; for the details we refer to [14], [15]. A path is a
+piecewise linear function π : [0, 1] → RP , such that π(0) = 0. Such a path is given by two
+sequences µ̄ = (µ1 , . . . , µr ) and ā = (a0 = 0, a1 , . . . , ar = 1), where the µi ∈ RP and the ai
+are real numbers with 0 = a0 < a1 < . . . < ar = 1. The path π corresponding to this data
+is given by
+                                             s−1
+                                             X
+                   π(t) = (t − as−1 )µs +        (ai − ai−1 )µi for as−1 ≤ t ≤ as .
+                                           i=1
+
+Let λ be a dominant weight. Then the path πλ is given by the sequences (λ) and (0, 1),
+i.e., it is the straight line from the origin to λ. For α ∈ ∆ there is a path-operator fα .
+Given a path π, fα (π) is a new path, or 0. Set B(λ) = {fαi1 · · · fαik (πλ ) | k ≥ 0, αij ∈ ∆},
+and let V (λ) be the irreducible g-module with highest weight λ. Then from [14], [15] we
+have that the endpoints of the paths in B(λ) are weights of V (λ) and the number of paths
+with endpoint µ is equal to the dimension of the weight space in V (λ) with weight µ.
+
+                                                 12
+    Let π ∈ B(λ) be given by the sequences (µ1 , . . . , µr ) and (a0 = 0, a1 , . . . , ar = 1). Set
+µr+1 = λ and νi = ai µi and ηi = ai µi+1 for 1 ≤ i ≤ r. Then it can be shown that
+M(νi ) ֒→ M(ηi ). Let Θi ∈ U(n− )ηi −νi be such that Θi · vηi is a singular vector. Then
+set Θπ = Θ1 · · · Θr . The element Θπ ∈ U(n− )λ−π(1) is determined upto a multiplicative
+constant.
+    Now in [16] an inclusion B(mλ) ֒→ B(nλ) is described for m < n. With this inclusion
+we can view B(mλ) as as a subset of B(nλ). Furthermore, B(λ, ∞) denotes the union of
+all B(mλ) for m ≥ 1. Write λ = n1 λ1 + · · · + nl λl , and let I(λ) be the left ideal of U(n− )
+generated by the elements yini+1 for 1 ≤ i ≤ l. Then V (λ) = M(λ + ρ)/I(λ) · vλ , where
+ρ = λ1 + · · · + λl . Now from [16] we have the following result.
+
+Proposition 15 Suppose that all ni > 0. Then the set {Θπ | π ∈ B(λ, ∞), π 6∈ B(λ)} is
+a basis of I(λ).
+    (If some ni = 0 then there is a similar result, which we will omit here, cf. [16].)
+    In order to construct and work with the quotient M(λ + ρ)/I(λ), we need a basis of
+I(λ). If λ − µ is not a weight of V (λ), then I(λ) ∩ U(n− )µ = U(n− )µ . So we only need
+bases of the spaces I(λ) ∩ U(n− )µ where λ − µ is a weight of V (λ). By the above theorem
+we can compute those bases by first computing paths π ∈ B(λ, ∞) with π(1) = λ − µ, and
+then constructing the corresponding Θπ . We call this algorithm A.
+    In Table 2, the running times are given of algorithm A on some sample inputs. Also
+listed are the running times of the algorithm described in [9], which uses a Gröbner basis
+method to compute bases of the spaces I(λ) ∩ U(n− )µ . We call it algorithm B. In order
+to fairly compare both algorithms, the output in both cases consisted of the representing
+matrices of a Chevalley basis of g.
+
+              type           λ dim V (λ) ♯ inclusions time A (s) time B (s)
+               A2      (2, 2)         27           64        1.0        1.3
+               A2      (3, 4)         90          296        2.3        5.0
+               A2      (5, 5)       216           788        6.5       14.2
+               A3    (1, 1, 1)        64          897       16.6        6.0
+               A3    (2, 1, 1)      140         2834        56.4       15.0
+               A3    (2, 1, 2)      300         7837       178.4       40.0
+               B2      (2, 2)         81          807         10          6
+               B2      (3, 3)       256         3330          56         23
+               B2      (4, 4)       625         9502         347         79
+
+Table 2: Running times (in seconds) of the algorithms A and B for the construction of
+V (λ). The fourth column displays the number of inclusions of Verma modules computed
+by algorithm A. The ordering of the fundamental weights is as in [2].
+
+
+   We see that for type A2 , algorithm A competes well with algorithm B. However, for
+the other types considered this is not the case. In these cases huge numbers of inclusions
+
+                                                13
+of Verma modules have to be constructed, which slows the algorithm down considerably. I
+have also tried to construct V (λ) for λ = (1, 1, 1), and g of type B3 . But algorithm A did
+not complete this calculation within the available amount of memory (100M).
+
+
+References
+ [1] I. N. Bernšteı̆n, I. M. Gel′ fand, and S. I. Gel′ fand. Structure of representations that
+     are generated by vectors of highest weight. Funckcional. Anal. i Priložen., 5(1):1–9,
+     1971.
+ [2] N. Bourbaki. Groupes et Algèbres de Lie, Chapitres 4, 5 et 6. Hermann, Paris, 1968.
+ [3] J. Dixmier. Algèbres Enveloppantes. Gauthier-Villars, Paris, Bruxelles, Montréal,
+     1974.
+ [4] V. K. Dobrev. Singular vectors of quantum group representations for straight Lie
+     algebra roots. Lett. Math. Phys., 22(4):251–266, 1991.
+ [5] V. K. Dobrev and M. El Falaki. Quantum group Uq (Al ) singular vectors in Poincaré-
+     Birkhoff-Witt basis. Lett. Math. Phys., 49(1):47–57, 1999.
+ [6] V. K. Dobrev and M. El Falaki. Quantum group Uq (Dl ) singular vectors in the
+     Poincaré-Birkhoff-Witt basis. J. Phys. A, 33(36):6321–6332, 2000.
+ [7] The GAP Group. GAP – Groups, Algorithms, and Programming, Version 4.3, 2002.
+     (\protect\vrule width0pt\protect\href{http://www.gap-system.org}{http://www.gap-syst
+ [8] M. A. Gauger. Some remarks on the center of the universal enveloping algebra of a
+     classical simple Lie algebra. Pacific J. Math., 62(1):93–97, 1976.
+ [9] W. A. de Graaf. Constructing representations of split semisimple Lie algebras. J.
+     Pure Appl. Algebra, 164(1-2):87–107, 2001. Effective methods in algebraic geometry
+     (Bath, 2000).
+[10] J. E. Humphreys. Introduction to Lie Algebras and Representation Theory. Springer
+     Verlag, New York, Heidelberg, Berlin, 1972.
+[11] N. Jacobson. Lie Algebras. Dover, New York, 1979.
+[12] V. G. Kac. Infinite Dimensional Lie Algebras. Cambridge University Press, Cam-
+     bridge, third edition, 1990.
+[13] V. G. Kac and D. A. Kazhdan. Structure of representations with highest weight of
+     infinite-dimensional Lie algebras. Adv. in Math., 34(1):97–108, 1979.
+[14] P. Littelmann. A Littlewood-Richardson rule for symmetrizable Kac-Moody algebras.
+     Invent. Math., 116(1-3):329–346, 1994.
+
+                                              14
+[15] P. Littelmann. Characters of representations and paths in H∗R . In Representation
+     theory and automorphic forms (Edinburgh, 1996), pages 29–49. Amer. Math. Soc.,
+     Providence, RI, 1997.
+
+[16] P. Littelmann. Bases for representations, LS-paths and Verma flags. preprint, 2003.
+
+[17] F. G. Malikov. Singular vectors corresponding to imaginary roots in Verma modules
+     over affine Lie algebras. Math. Scand., 66(1):73–90, 1990.
+
+[18] F. G. Malikov, B. L. Feı̆gin, and D. B. Fuks. Singular vectors in Verma modules over
+     Kac-Moody algebras. Funktsional. Anal. i Prilozhen., 20(2):25–37, 96, 1986.
+
+
+
+
+                                           15
+

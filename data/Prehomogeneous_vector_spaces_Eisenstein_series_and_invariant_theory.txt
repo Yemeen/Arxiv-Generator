@@ -1,0 +1,1504 @@
+                PREHOMOGENEOUS VECTOR SPACES
+            EISENSTEIN SERIES AND INVARIANT THEORY
+
+                                        Akihiko Yukie1
+                                  Oklahoma State University
+        Abstract. In this paper, we give an introduction to the rationality of the equivari-
+        ant Morse stratication, and state the author's results on zeta functions of prehomo-
+        geneous vector spaces.
+
+
+
+Content
+  Introduction
+  x1 Review of invariant theory
+  x2 Examples of Morse stratications
+  x3 An invariant measure on GL(n)
+  x4 The zeta function
+  x5 The smoothed Eisenstein series
+  x6 Adjusting terms
+  x7 The general program
+  x8 Examples of principal part formulas
+  References
+Introduction
+    The aim of this paper is to state the author's results on the global theory of zeta
+functions associated with prehomogeneous vector spaces and give an introduction
+to equivariant Morse stratications and their rationality.
+    Let Z; Q; R; C be the set of integers, rational numbers, real numbers, and complex
+numbers respectively. Let k be a number eld, and ok its integer ring. Let A and
+A  be the sets of adeles and ideles of k respectively. We use the notation jxj for
+the adelic absolute value of x 2 A . Also let jxj1 be the product of absolute values
+of x at all the innite places.
+    Let G be a connected reductive group, V a representation of G, and V an
+indivisible non-trivial character of G all dened over k. In this paper, we are
+mainly interested in the case when G is a product of GL(n)'s. The triple (G; V; V )
+is called a prehomogeneous vector space if the following two conditions are satised.
+    (1) There exists a Zariski open orbit.
+    (2) There exists a polynomial 0 6=  2 k[V ] such that (gx) = 0 (g)(x) where
+0 is a rational character, proportional to V .
+1   Partially supported by NSF Grant DMS-9101091
+
+                                                                            Typeset by AMS-TEX
+   A polynomial  which satises the property (2) is called a relative invariant
+polynomial. We dene Vkss = fx 2 Vk j (x) 6= 0g, and call it the set of semi-stable
+points. For practical purposes, we assume that there exists a one dimensional
+split torus T0 contained in the center of G such that if  2 T0, it acts on V by
+multiplication by  and V () = e for some e > 0.
+   Our purpose in this paper is to outline the author's program to compute Laurent
+expansions at poles of zeta functions for prehomogeneous vector spaces when the
+group is a product of GL(n)'s.
+   The notion of prehomogeneous vector spaces and their zeta functions was in-
+troduced by Sato and Shintani in [17]. However, some special cases were studied
+earlier by many mathematicians, most notably Siegel [20] and Davenport [4]. Nei-
+ther Siegel nor Davenport used the zeta function explicitly to obtain the density
+theorems for equivalence classes of quadratic forms [20] and binary cubic forms [4].
+Davenport's result was later used by Davenport and Heilbronn [5], [6] to prove the
+density theorem for cubic extensions of Q, which states
+                                    X           x ;
+                                          1   (3)
+                                   [k:Q
+                                      ]=3
+                                   jk j1 x
+where k runs through all the cubic elds and k is the discriminant of k.
+   D. J. Wright and the author proved in [23] that generic Gk -orbits of several
+\parabolic type" prehomogeneous vector spaces correspond almost bijectively with
+number eld extensions of certain degrees. Therefore, by studying the global and
+the local zeta functions for those cases, we can expect certain density theorems
+where number elds are counted possibly with some weights.
+   Let L  Vkss be a Gk -invariant subset, and  a Schwartz{Bruhat function on VA .
+Let ! be a character of GA =Gk . Consider an integral of the following form
+                                  Z                            X
+(0:1)             ZL(; !; s) =                jV (g)js!(g)         (gx)dg;
+                                      GA =Gk                   x2L
+where dg is a Haar measure on GA . If (0:1) is well dened for L = Vkss and Re(s)
+suciently large, we say that (G; V; V ) is of complete type. Otherwise, we say that
+(G; V; V ) is of incomplete type. If (G; V; V ) is a prehomogeneous vector space of
+complete type, the zeta function is, by denition, the integral ZVkss (; !; s).
+   Suppose that (G; V; V ) is a prehomogeneous vector spaceof complete type. Then
+the meromorphic continuation and the functional equation of the zeta function were
+proved by reducing the problem to the local theory at innite places (see [17], [15]).
+Therefore, in most cases, the Tauberian theorem implies the existence of a limit of
+the form                         X
+                                        y  cxa(log x)b ;
+                             y2Gok nVossk
+                             jP (y)j1 x
+where y is a number determined by the stabilizer of y, and c; a; b are constants. The
+improved version of the Tauberian theorem in [17] gives us the error term estimate
+also. However, the existence of a similar limit for Gk -orbits is unknown for most
+cases and does not automatically follow from the the meromorphic continuation
+                                                2
+and the functional equation of the zeta function, or the knowledge of the location
+and the orders of the poles. The process to handle Gk -orbits of prehomogeneous
+vector spaces from the viewpoint of zeta function theory is called the \ltering
+process" and was formulated by Datskovsky and Wright [3]. This process has to be
+modied for the general case, because the zeta function can have higher order poles
+in general, and it is likely that the possible generalization of this process requires
+answers to the following two problems.
+   Problem A Determine the Laurent expansions at all the poles of the zeta function.
+   Problem B Compute the local zeta function explicitly for special test functions.
+   If we use the ltering process, the only pole we can use is the rightmost pole.
+However, it is likely that all the poles have to be studied in order to say anything
+about the rightmost pole. The author's approach to Problem A is a generalization
+of Shintani's approach in [18], and is based on the framework of equivariant Morse
+theory. We give an introduction to invariant theory and related materials for the
+sake of number theorists in x1,2.                                      P
+   If f (s) is a meromorphic function having the Laurent expansion ai (s s0 )i at
+s = s0, we call ai 's generalized special values of f at s = s0 . Roughly speaking, we
+want to express the coecients of the Laurent expansions at the poles of the zeta
+function by the generalized special values of the zeta functions which correspond
+to \unstable strata" in equivariant Morse theory.
+   Let G1A = fg 2 GA j jV (g)j = 1g. ItPis easy to prove (see [17]) that if (G; V; V )
+is of complete type and the function x2Vk (gx) is integrable on G1A =Gk , all the
+poles of the zeta function are simple and the residues can be computed. However,
+this assumption hardly applies to any important cases. Even though Siegel [20]
+and Davenport [4] essentially computed the residue of the zeta function at the
+rightmost pole for their cases, Shintani's work on the space of binary cubic forms
+is the rst non-trivial work where Problem A was answered from the viewpoint of
+zeta function theory.
+   The primary diculty of Problem A is based on the diculty of handling di-
+vergent integrals. So far, our main analytic tool to handle this diculty is the
+smoothed Eisenstein series and the iterated use of the Poisson summation formula.
+We discuss the smoothed Eisenstein series in x5 and describe our program in x7.
+   Among the eight cases in [23], four types (C2; D4 ; D5 ; E6) are of incomplete
+type. Also even if we start with a prehomogeneous vector space of complete type,
+we have to face prehomogeneous vector spaces of incomplete type in the induction
+step anyway. In that case, we have to use generalized special values of the \adjusted
+zeta functions" (see [26]). For this reason, understanding of prehomogeneous vector
+spaces of incomplete type is essential to the entire theory. Therefore, from the
+viewpoint of Problem A, we can not restrict ourselves to prehomogeneous vector
+spaces of complete type.
+   There are not so many prehomogeneous vector spaces of incomplete type for
+which the Laurent expansions at the poles of the zeta function is known. The space
+of binary quadratic forms is an example of such a case. The diculty of handling
+prehomogeneous vector spaces of incomplete type is that some semi-stable points
+have extra stabilizing elements. As is shown in [19], [25], [26] the zeta function
+itself does not satisfy a functional equation. Instead, it is natural to consider an
+adjusted version of the zeta function. We discuss this issue in x6.
+                                           3
+   In x8, we list some examples of prehomogeneous vector spaces for which Problem
+A was answered.
+   This manuscript was prepared mainly during the academic year 1990{1991 when
+the author was staying at SFB 170 Gottingen. The author would like to thank SFB
+170 for supporting this project.
+
+x1 Review of invariant theory
+    In this section, we review invariant theory and equivariant Morse theory. We do
+not restrict ourselves to prehomogeneous representations in this section.
+    Let k be a perfect eld. Let G be a split connected reductive group and V a
+representation of G both dened over k. This G does not correspond to the group
+G in the introduction. Instead, it corresponds to G0 = Ker(V ). Note that since G
+is connected and V is indivisible, G0 is connected.
+    For any group G over k, let X  (G); X (G) be the groups of rational characters,
+rational one parameter subgroups (which we abbreviate to \1PS" from now on) of
+G respectively. We choose a maximal split torus T  G. We dene t = X (T ) 
+
+R; t = X  (T ) 
+ R. Let tQ = X (T ) 
+ Q; tC = X (T ) 
+ C etc. Elements in
+tQ ; tQ are called rational elements. We x a Weyl group invariant inner product
+( ; ) on t . We assume that if z; z0 2 tQ , then (z; z0 ) 2 Q. Let k k be the metric
+dened by this inner product. We choose a split Borel subgroup T  B and a
+Weyl chamber t  t so that the weights of the unipotent radical of B belong to
+t by the conjugation b ! tbt 1. We can identify t; t by this inner product, and
+therefore, we consider k k; t for t also.
+    We recall the denition of stability over k. Let  : V n f0g ! P(V ) be the
+natural projection map. Let k[V ]Gk be the ring of polynomials invariant under the
+action of Gk . Suppose that P 2 k[V ]Gk is a homogeneous polynomial. We dene
+P(V )P = f (x) j P (x) 6= 0g.
+Denition (1.1) Let y 2 P(V )k . We dene
+(1) y is semi-stable if there exists a homogeneous polynomial P 2 k[V ]Gk such that
+y 2 P(V )P ,
+(2) y is properly stable if there exists a homogeneous polynomial P 2 k[V ]Gk such
+that y 2 P(V )P , all the orbits in P(V )P are closed, and the stabilizer of y in Gk is
+nite,
+(3) y is unstable if it is not semi-stable.
+    We use the notation P(V )ssk (resp. P(V )s(0)k ) for the set of semi-stable (resp.
+properly stable) points. These are Gal(k=k)-invariant opensets of P(V )k . However,
+we will consider the set P(V )s(0)k in number theoretic situations only when P(V )ssk =
+P(V )s(0)k .
+    We will recall three equivalent denitions of the equivariant Morse stratication
+for the rest of this section. The rst denition is invariant theoretic and is closely
+related to the Hilbert{Mumford criterion of stability. We need this denition,
+because we are interested in the rationality question in number theoretic situations.
+This approach is due to Kempf and Ness. The second denition is combinatorial
+and was given by both Kirwan and Ness. We need this denition for practical
+determination of the equivariant Morse stratication. The third denition is Morse
+                                           4
+theoretic and is based on the convexity property of the moment map. The moment
+map and the Morse theoretic approach was used by Kirwan to prove the smoothness
+and the perfectness of the stratication when k = C .
+(1) The invariant theoretic denition.
+   Let k be an algebraically closed eld. We are only interested in the plain stability,
+so our situation corresponds to the case S = f0g in [8]. Let X be a variety and
+f : G m ! X a morphism. We imbed G m to the one dimensional ane space A1
+in the usual manner. We say that lim!0 f () = y if f extends to a morphism
+from A1 to X and f (0) = y. If  is a 1PS of G, we dene P () = fp 2 G j
+lim!0 ()p() 1 exists g. The group P () is a parabolic subgroup of G.
+   Let x 2 V n f0g. We dene jV; xj (resp. jV; xjf0g ) to be the set of 1PS's  such
+that lim!0 ()x exists (resp. lim!0 ()x = 0). Let  be a non-trivial 1PS  P  of G
+                                                                                 N
+(not necessarily in jV; xj). We consider when  belongs to jV; xPjf0g . Let x = i=1 xi
+be the eigen decomposition with respect to , i.e. ()x = Ni=1 pi xi , xi 6= 0 for
+all i, and pi 6= pj if i 6= j .
+Denition (1.2)
+                                                N
+(1)                               (x; ) = min
+                                             i=1 i
+                                                   p;
+(2)                                (x; ) = (kx;k) :
+
+  If 1; 2 are two non-trivial proportional 1PS's, then  (x; 1 ) =  (x; 2 ).
+  The following theorem is Theorem (3.4) [8] ((1),(2) were proved by Mumford in
+Proposition 2.17 [12]).
+Theorem (1.3)
+(1) The function  (x; ) has a maximum value (which we denote by Bx) on the set
+jV; xj if it is not empty.
+(2) The condition Gx3 0 is equivalent to the condition that jV; xjf0g is non-empty.
+   Suppose that jV; xjf0g is non-empty, and let x be the set of indivisible 1PS 's
+such that  (; x) = Bx.
+(3) The set x is non-empty, and there exits a parabolic subgroup Px of G such that
+Px = P () for all  2 x.
+(4) The set x is a principal homogeneous space under the action of the unipotent
+radical of Px.
+(5) Any maximal torus of Px contains a unique element of x.
+   We followed [8] for the denition of (x; ). However, this is L (x; ) in [12].
+Roughly speaking, if x 2 V corresponds to a geometric object, elements of x are
+1PS's which give the fastest degeneration of x. Now we are ready to state the
+stratication dened by Ness [13].
+   Suppose that x 2 V n f0g, and (x) is unstable. This means that x is non-
+empty. There is a unique 1PS  2 t such that  is conjugate to any element
+of x. Let 0 2 x. Let x 2 t be the element which is proportional to  and
+kxk =  (x; 0 ). This x is uniquely determined by x, and is a rational element.
+                                            5
+   For  2 t \ tQ , we dene
+(1:4)                        S = fx 2 V n f0g j x =  g:
+Let S0 =  1(P(V )ss). Apparently,
+                                                   a
+                                    V n f0g =           S ;
+                                                    
+where  runs through all the elements of t \ tQ . It turns out that we only have to
+consider nitely many such  's. We discuss this issue in the second denition. In
+[13], Ness used the notion of the lengths of vectors (see [9]) to formulate the strati-
+cation. The fact that the formulation in [9] is equivalent to the above formulation
+is explained in Lemma 3.1 [10].
+    Hilbert-Mumford criterion of stability says that a point is semi-stable or properly
+stable if and only if it is stable or properly stable with respect to the action of all
+the non-trivial 1PS's. The above theorem implies that if a point is unstable, there
+is a canonical choice of a 1PS which, in a way, gives the worst degeneration of x.
+Since we are interested in number theoretic applications, one natural question is if
+we can choose such a 1PS which is split over the ground eld. This question was
+answered armatively by Kempf [8].
+    The following theorem was proved by Kempf (Theorem (4.2) [8]).
+Theorem (1.5) Suppose that x 2 Vk , and jV; xjf0g is non-empty over the closure
+k. Then all the elements in x are split, Px is rationally conjugate to a standard
+parabolic subgroup, and x is a principal homogeneous space under the action of
+the k-points of the unipotent radical of Px.
+    The above theorem was proved without the assumption that the group is split.
+This theorem implies that if x 2 Vk and jV; xjf0g is non-empty over the closure k,
+x is conjugate to y 2 Vk by an element of Gk and y contains a split 1PS of T . We
+discuss the inductive structure of S and its rationality in the next denition.
+(2) The combinatorial denition
+    Let k; G; V etc. be as before. We can diagonalize the action of T because k
+is a perfect eld. Let (x0 ;    ; xN ) be a coordinate system of V whose coordinate
+vectors are eigenvectors of T . Let i 2 t be the weight determined by the i-th
+coordinate. The following denition is due to Kirwan.
+Denition (1.6) A point  2 tQ is called a minimal combination of weights if  is
+the closest point to the origin of the convex hull of a nite subset of f1;    ; N g.
+    We denote the set of minimal combination of weights which lie in t by B. In
+this denition, B is the index set of the stratication. Since B is a nite set, this
+means that the stratication is a nite stratication. It turns out that S0 is the
+set of semi-stable points. We describe the stratum S for  2 B n f0g. The reader
+should note that S can be the empty set.
+    We change the ordering of f1;    ; N g = f10 ;    ; N0 g so that
+                                (10 ;  )      (N0 ;  ):
+                                               6
+We assume that
+                                                n               n                     np
+         0                  0         1 z    }| 1    {  z     }|2     { z }| {
+      ((1 ;  );    ; (N ;  )) = (m1;    ; m1; m2 ;    ; m2;    ; mp;    ; mp)
+                                      m0
+where m0 > 0; m1 <    < mp are coprime integers. Since  2 B, there exists some
+1  s  p such that mm0s = k k2. Let e0i be the coordinate vector which corresponds
+to i0. Let Vb be the subspace spanned by
+                                                           mb g:
+                                       fe0i j (i0 ;  ) = m
+                                                             0
+We dene
+                        Z = b=sVb; W = b>sVb; Y = Z  W ;
+          Z = f(x) j x 2 Z n f0gg; Y = f(x; y) j x 2 Z n f0g; y 2 W g;
+                                   M = fg 2 G j Ad(g) =  g:
+The group M is Stab in [10].
+    Let p : Y ! Z be the projection map. Let  be the indivisible rational
+character of M whose restriction to T is a positive multiple of  . Let  be the
+indivisible split 1PS of M which is a positive multiple to  . We dene G = fg 2
+M j  (g) = 1g. Note that G is connected. The group G acts on Z linearly.
+Let Zss be the set of semi-stable points with respect to this action. Let P be the
+standard parabolic subgroup of G whose Levi component is M and xes the set
+Y . Let U be the unipotent radical of P . Since  is split, all these groups are
+split groups over k.
+    Let Yssk = p 1(Zssk ). We dene Sk =  1(Sk ) etc. The following inductive
+structure of the strata was proved by Kirwan and Ness [10], [13].
+Proposition (1.7) Sk = Gk Pk Yssk :
+    The fact that this S and S in (1) coincide is proved in [10, pp. 150{156]. More
+precisely, suppose that x 2 Sk, and  2 x. Choose g 2 Gk so that gg 1 is a
+1PS of Tk proportional to  . Then gx must belong to Ykss.
+(3) The convexity property of the moment map
+    We assume that k = C . Let K be a maximal compact subgroup of G, and TK a
+maximal torus of K . We assume that the action of TK on P(V ) is diagonalized. Let
+g; k; t, be the Lie algebras of G; K; TK respectively. Let t be a Weyl chamber. We
+choose a K invariant Hermitian product ( ; )V on V . This denes a homomorphism
+of Lie algebras k 7! u(N ) (the N dimensional unitary Lie algebra). We consider
+the Fubini-Study metric on P(V ) dened by this metric. Let ! be its Kahler form.
+If a 2 k, it denes a vector eld on P(V ).
+Denition (1.8) A map  : P(V ) 7! k is called a moment map if it satises the
+following two conditions
+(1)  is K -equivariant with respect to the co-adjoint action of K on k ,
+(2) d(x)()(a) = !x(; ax ) for all x 2 P(V );  2 Tx P(V ), and a 2 k.
+   If a moment map exists and K is semi-simple, it is uniquely determined by the
+above conditions.
+                                                    7
+   For P(V ), one can construct a moment map in the following manner. Suppose
+that x 2 V n f0g, (x) = y 2 P(V ), and a 2 u(N ). We dene a map  : P(V ) !
+u(N ) by                                    t
+                              (y)(a) = p xax :
+                                         2 1(x; x)
+Let  be the composition of  and the natural map u(N ) 7! k . This  is a moment
+map.
+   Let T be the composition of , and the projection k ! t. The third denition
+of the stratication is based on the following convexity property of the moment
+map (see [1], [7] or, [12] Appendix by Mumford).
+Theorem (1.9) Let X  P(V ) be a connected G-invariant closed subvariety. Then
+T (X ) \ t is a rational convex polytope.
+   For y = (x) 2 P(V ), we consider the closest point of (Gy) \ t to the origin,
+which we call x. Let  2 tQ \ t . By the identication t 
+                                                            = t , we can consider 
+as an element of tQ \ t . We dene S = fx j x =  g. Clearly,
+                                                a
+                                    V n f0g =       S :
+                                                
+This denition coincides with previous denitions. Kirwan proved that this strati-
+cation is perfect with respect to HG ( ) 
+ Q (the equivariant cohomology group)
+using this formulation. The isomorphism HG (P(V )) 
+ Q       = H  (BG) 
+ H  (P(V )) 
+ Q
+is proved in 5.8 [10] (also see [2]). Also
+   HG (S ) 
+ Q 
+                  = HP (Yss) 
+ Q 
+                                     = HM  (Zss) 
+ Q 
+                                                         = H  (BC  ) 
+ HG  (Zss) 
+ Q:
+Therefore, this gives an eective way of computing HG (P(V )ss ) 
+ Q. The basic
+reason why the stratication is perfect is that by  , C  acts non-trivially on Z by
+scalar multiplications, and it induces a multiplication by an element of H  (BC  ) 
+
+HG  (Zss) 
+ Q whose rst component is non-zero via the Gysin map (see Theorem
+5.4 [10] for the details).
+   This is the Morse stratication with respect to the function kk2. However,
+critical points are not isolated, so one has to give the direction of the Morse ow,
+which is given by  for points in Yss .
+   Now we consider the situation in the introduction. Let (G; V; V ) be a preho-
+mogeneous vector space over a number eld k. Let G0 = Ker(V ) as before. The
+group G0 is connected as we mentioned at the beginning of this section. Let
+                                                a
+                                   Vk n f0g =       Sk
+                                                
+be the equivariant Morse stratication with respect to the action of G0 .
+Lemma (1.10) Gk = G0k Tk .
+Proof. We only have to show that V is indivisible as a character of T also. Since
+all the characters of G are rational, we assume that k is algebraically closed. Let
+                                            8
+C be the connected center, and G = [G; G]. Then G = C G , G is semi-simple and
+T = T \ G is a maximal torus of G . Suppose that V = p on T . Since T is
+connected, this implies that  is trivial on T also. Since T=T     = C=C \ G   = G=G,
+we can extend  to a character of G. Regular elements are dense in G, so V = p.
+Therefore, p = 1.
+                                                                                     Q.E.D.
+   Let M = fg 2 G j Adg ( ) =  g, and M0 = M \ G0 etc. Kempf's theorem
+(1.5) and (1.7) imply the following proposition.
+Proposition (1.11) Sk = Gk Pk Ykss .
+Proof. Let x 2 Sk . Then any  2 x is split. Therefore, we can choose g in the
+remark after (1.7) from Gk . So gx 2 Ykss \ Vk = Ykss. Therefore, Gk  Ykss ! Sk
+is surjective. Suppose that g1; g2 2 G0k ; t1; t2 2 Tk ; y1; y2 2 Ykss, and g1t1y1 =
+g2t2y2 . Then g1(t1 y1 ) = g2(t2 y2). By (1.8), there exists p 2 P0 k such that
+g1 = pg2; (t1 y1 ) = p 1 (t2 y2 ). From the rst equation, p 2 Pk  0 . By assumption,
+g2pt1 y1 = g2t2y2 . Therefore, y1 = t1 1p 1 t2y2 . Let pe = t2 1 pt1. This pe is an element
+of Pk , and satises the condition g1t1 = g2t2pe; y1 = pe 1 y2 .
+                                                                                     Q.E.D.
+   Equivariant Morse theory in algebraic situation like in this section was estab-
+lished around 1983. However, Kempf's paper appeared in Annals in 1978. There-
+fore, he proved the rationality of the Morse stratication before equivariant Morse
+theory was established.
+   Of course, if (G; V; V ) is a prehomogeneous vector space over an algebraically
+closed eld, the equivariant Morse stratication is the decomposition into G-orbits.
+But how do we determine the orbit decompositions of prehomogeneous vector spaces
+systematically? It is easy to observe from the second denition of the stratication
+that it is possible to write a computer program to determine all the possible B 3  's.
+Moreover, the knowledge of B enables us to determine the inductive structure of
+each stratum also.
+
+x2 Examples of Morse stratications
+   We consider equivariant Morse stratications for the following examples
+   (1) G = GL(1)  GL(2); V = Sym3 k2,
+   (2) G = GL(2)  GL(1)2 ; V = Sym2k2  k2,
+   (3) G = GL(3)  GL(2); V = Sym2 k3 
+ k2.
+   The zeta function for the case (1) was studied by Shintani. The case (2) is an
+example of a reducible representation and was studied by F. Sato [14]. The case
+(3) is the F4 case (or the quartic case) in [23].
+   For later purposes, we x some notations. Let
+(2:1)              tAn   1   = fq = (q1 ;    ; qn) 2 Rn j q1 +    + qn = 0g:
+Let tAn   1C   be the complexication of tAn 1 . For
+                         q = (q1 ;    ; qn); q0 = (q10 ;    ; qn0 ) 2 tAn 1 ;
+                                                     9
+                            P
+we dene (q; q0 )An 1 = i qi qi0 . For z = (z1 ;    ; zn ) 2 tAn 1C and a permutation
+ , we dene z = (z (1) ;    ; z (n)). This inner product is invariant under permu-
+tations. By this inner product, we identify tAn 1 with its dual space. Let k kAn 1
+be the metric dened by this inner product.
+(1) The case G = GL(1)  GL(2); V = Sym3 k2
+    The group GL(2) acts on V naturally, and if  2 GL(1),  acts by multiplication
+by . Let Te  G be the kernel of the homomorphism G ! GL(V ). We consider the
+character V (t; g) = (det g)2t 3 for (t; g) 2 G. We can consider V as a character
+of G=Te, and it is indivisible as a character of G. It is known that (G=Te; V; V ) is a
+prehomogeneous vector space. Let G0 be the kernel of V . Then G0 is isomorphic
+to SL(2). Therefore, t; t can be identied with tA1 . We choose an identication
+R  = t by the map q ! ( q; q). We choose t = fq 2 R j q  0g as the Weyl
+chamber. The weighs of coordinates of V are 3; 1; 1; 3. Therefore, there are two
+possibilities for  , i.e. 1 = 1; 2 = 3. The stratum S1 is the set of forms with one
+double factor. The stratum S2 is the set of forms with one triple factor (see [18],
+[22] for the details).
+(2) The case G = GL(2)  GL(1)2 ; V = Sym2k2  k2
+    The group GL(2) acts on each irreducible component of V naturally. Let g =
+(g1; t1 ; t2) and v = (v1; v2 ), where
+                   g1 2 GL(2); t1; t2 2 GL(1); v1 2 Sym2k2; v2 2 k2:
+   We dene gv = (t1 g1v1; t2 g1v2). Let Te  G be the kernel of the homomorphism
+G ! GL(V ). Let V (g) = (det g1)atb11 tb22 be a character of G. The character V
+is trivial on Te if and only if 2a 2b1 b2 = 0. Suppose that this condition is
+satised and (a; b1 ; b2) is relatively prime. Then V is indivisible as a character
+of G. We consider V as a character of G=Te. The kernel of V is isomorphic
+to SL(2)  GL(1) by (g1; ) ! (g1; b2 ;  b1 ). We assume that 2b1 > b2 . We
+identify t with R2 by the map q = (q1 ; q2) ! (( q1 ; q1 ); b2 q2 ; b1q2 ). We dene
+((q1 ; q2 ); (q10 ; q20 )) = 2q1q10 + 141 q2 q20 . We choose f(q1 ; q2 ) 2 R2 j q1  0g as the Weyl
+chamber. The weights of the coordinates look as the following picture.
+
+                                                              
+
+
+                                                       
+   We call these points 1;11; 1;12; 1;22; 2;1; 2;2 from the left to the right and from
+the top to the bottom. Consider the convex hulls of the following sets
+   (1) C1 : f1;22; 2;1g,
+   (2) C2 : f1;12; 2;2g,
+   (3) C3 : f1;22; 2;2g,
+   (4) C4 : f1;11; 1;22g,
+                                                10
+  (5) C5 : f1;22g,
+  (6) C6 : f2;2g.
+
+                      C1                                               C2
+                                                                               
+
+
+                                                                             
+                      C3                                               C4
+                                                                               
+
+
+                                                                             
+                      C5                                               C6
+                                                                               
+
+
+                                                                             
+   Let i be the closet point to the origin from Ci for i = 1;    ; 6. In this case,
+there are precisely 6 unstable strata S1 ;    ; S6 (The vector (0; b1 ) gives the
+empty set).
+(3) The case G = GL(3)  GL(2); V = Sym2 k3 
+ k2
+   Let Ve be the space of quadratic forms in three variables v = (v1 ; v2 ; v3). We
+identify Ve with k6 as follows
+          Qx(v) = x11 v12 + x12 v1v2 + x13v1 v3 + x22 v22 + x23 v2v3 + x33v32
+                        ! x = (x11 ; x12 ; x13 ; x22 ; x23 ; x33):
+The group G1 = GL(3) acts on Ve in the following way
+                                Qg1 x(v) = Qx (vg1);
+for g1 2 G1 .
+   We identify V with Ve  Ve . Any element of V is of the form
+                                   Q = (Qx1 ; Qx2 );
+                                          11
+where
+                      x1 = (x1;11; x1;12 ; x1;13; x1;22 ; x1;23; x1;33 );
+                      x2 = (x2;11; x2;12 ; x2;13; x2;22 ; x2;23; x2;33 ):
+We use x = (x1 ; x2 ) as the coordinate systemof V . 
+  If g = (g1; g2) 2 GL(3)  GL(2) and g2 = ac db , we dene
+
+                       g  Q = (aQg1 x1 + bQg1 x2 ; cQg1 x1 + dQg1 x2 ):
+     Let Te be as before. Let V (g1; g2) = (det g1)4 (det g2)3 for g1 2 GL(3); g2 2
+GL(2). The character V is tirvial on Te, and we consider V as a character of
+G=Te. The character V is indivisible as a character of G.
+     First, we x a metric on t. We identify t with tA2  tA1 . For q = (q1; q2 ); q0 =
+(q10 q20 ) 2 t , we dene (q; q0 ) = (q1 ; q10 )A2 + (q2 ; q20 )A1 . This inner product is Weyl
+group invariant.
+     We dene
+        t = fq = (q11 ; q12; q13 ; q21; q22 ) 2 t j q11  q12  q13; q21  q22 g:
+We use t as the Weyl chamber. The weights of x1;ij ; x2;ij are as follows
+               x1;11     ( 43 ; 32 ; 23 ; 21 ; 12 )        x2;11   ( 34 ; 23 ; 32 ; 12 ; 12 )
+               x1;12     ( 13 ; 31 ; 23 ; 21 ; 12 )        x2;12   ( 31 ; 13 ; 23 ; 21 ; 21 )
+               x1;13     ( 13 ; 32 ; 13 ; 21 ; 12 )        x2;13   ( 31 ; 23 ; 13 ; 21 ; 21 )
+               x1;22     ( 23 ; 34 ; 23 ; 21 ; 12 )        x2;22   ( 23 ; 34 ; 32 ; 12 ; 12 )
+               x1;23     ( 32 ; 31 ; 13 ; 21 ; 12 )        x2;23   ( 23 ; 31 ; 13 ; 21 ; 21 )
+               x1;33     ( 23 ; 23 ; 34 ; 21 ; 12 )        x2;33   ( 23 ; 32 ; 34 ; 12 ; 12 )
+   With our metric, the weights of the coordinates look as the following picture.
+
+
+
+
+  We proved in [23] that q 2 Vkss if and only if the zero set of Q1 = Q2 = 0 in P2k
+consists of precisely four points. The unstable strata also have geometric meanings.
+Tables (2.2) (2.3) are the list of unstable strata in this case (see [26] for the details).
+
+
+                                                      12
+                       Table (2.2)
+Strata   Convex hull                           Conics
+
+
+
+ S1
+
+
+                                2 identical non-singular conics
+
+
+
+ S2
+
+
+                                     2 identical reducible conics
+
+
+
+ S3
+
+
+                                       2 identical double lines
+
+
+
+ S4
+
+
+                                       1 common component
+
+
+
+
+                         13
+Strata   Convex hull                  Conics
+
+
+
+ S5
+
+
+                             1 common double line
+
+
+
+ S6
+
+
+                             2 multiplicity 2 points
+
+
+
+ S7
+
+
+                            The local ring 
+                                           = k[]=(4 )
+
+
+
+ S8
+
+
+                              1 multiplicity 2 point
+
+
+
+
+                       14
+Strata           Convex hull                              Conics
+
+
+
+ S9
+
+
+                                                 1 multiplicity 3 point
+
+
+
+S10
+
+
+                                          The local ring 
+                                                         = k[1 ; 2]=(21 ; 22 )
+
+                               Table (2.3)
+        k k2                      Z                              W
+ 1       1       x2;j1 j2 for j1; j2 = 1; 2; 3                      |
+          2
+ 2       7       x2;22; x2;23; x2;33                                |
+          6
+ 3       17      x2;33                                              |
+          6
+ 4       1       x1;13; x1;23; x2;13 ; x2;23                x1;33; x2;33
+          6
+ 5       11      x1;33; x2;23                               x2;33
+          12
+ 6       1       x1;33; x2;j1 ;j2 for j1; j2 = 1; 2; 3      x2;13; x2;23 ; x2;33
+          24
+ 7       1       x1;33; x2;13; x2;22                        x2;23; x2;33
+          4
+ 8       1       x1;22; x1;23; x1;33 ; x2;12; x2;13         x2;22; x2;23 ; x2;33
+          42
+ 9       1       x1;23; x2;13; x2;22                        x1;33; x2;23 ; x2;33
+          10
+ 10      2       xi;j1 j2 for i = 1; 2, j1; j2 = 2; 3               |
+          3
+
+
+
+
+                                    15
+x3 An invariant measure on GL(n)
+    Let k be a number eld for the rest of this paper. Let G = GL(n). We choose
+an invariant measure on G in this section. We denote the elds of rational, real,
+complex numbers by Q; R; C respectively. We denote the ring of rational integers by
+Z. The set of positive real numbers is denoted by R+. For any ring R, R is the set
+of invertible elements of R. Let k be a number eld. Let M; M1 ; MR ; MC ; Mf be
+the set of all the places, all the innite, real, imaginary, nite places of k respectively.
+Let A f (resp. A f ) be the restricted product of kv 's (resp. kv's) over v 2 Mf . Let
+k1 (resp. k1    ) be the product of kv 's (resp. kv 's) over v 2 M1 . Then A = k1 A f ,
+                
+A = k1  A f . If x 2 A or A  , we denote the nite (resp. innite) part of x by
+xf (resp. x1 ). If V is a vector space over k, we dene VA ; V1 ; Vf similarly. Let
+S (VA ); S (V1 ); S (Vf ) be the spaces of Schwartz{Bruhat functions.
+    For a place v, kv is the completion at v. If v 2 Mf , ov  kv is, by denition,
+the integer ring of kv . The absolute value of kv is denoted by j jv . For x 2 A  ,
+we denote the product of jxjv 's over all v 2 Mf (resp. v 2 M1 ) by jxjf (resp.
+jxj1). For v 2 Mf , let v be the prime element, and jv jv = qv 1. Note that if v is
+imaginary and jxj is the usual absolute value, jxjv = jxj2 .
+    Let r1 ; r2 be the numbers of real and imaginary places respectively. Let h; R; e
+be the class number, regulator, and the number of units of k respectively. Let k
+be the discriminant
+                 R       of k. Let Ck = 2r1 (2)r2 hRe 1. We choose a Haar measure dx
+on A so that  R   A =k dx = 1. For any nite place v , we choose a Haar measure dxv on
+kv so that ov dxv = 1. We use the ordinary Lebesgue measure dxv for v real, and
+                                                       Q
+dxv ^ dxv for v imaginary. Then dx = jk j 21 v dxv (see [21, pp. 91]).
+                                                                       1
+    For  2 R+, let  be the idele whose component at v is  [k:Q] if v 2 M1 and 1
+if v 2 Mf . Clearly, jj = . We identify R+ with a subgroup of A  by the map
+ ! . Let A 1 = fx 2 A  j jxj = 1g. Then A              = A 1 =kR  R+, and A 1 =k is
+compact. We choose a Haar measure d t on A so that A 1 =k d t1 = 1. Using
+                                                1        1
+this measure, we choose a Haar measure d t on A  so that
+                        Z                    Z 1Z
+                              f (t)d t =                   f (t1 )dd t1;
+                         A                  0        A1
+
+
+where dR  =  1 d. For any nite place v, we choose a Haar measure d tv on kv
+so that ov d tv = 1. Let d tv (x) =Qjxjv 1 dx if v is real, and d tv (x) = jxjv 1dx ^ dx
+if v is Qimaginary. Then dt = Ck 1 v dtv (see [21, pp. 95]). We x a character
+<>= v <>v of A =k.
+    Let k (s) be the Dedekind zeta function. As in [21], we dene
+                                                     r1              
+                  Zk (s) = jkj s2     2s   ( 2s )          (2) s (s) r2 k (s):
+
+   For a character ! of A  =k, we dene (!) = 1 if ! is trivial, and (!) = 0
+otherwise. Q
+   Let K = v2M Kv , where Kv = O(n) if v is real, and Kv = U (n) if v is
+imaginary, and Kv = GL(n; ov ) if v is nite. Let T  G be the set of diagonal
+matrices, and N  G the set of lower triangular matrices whose diagonal entries
+                                                 16
+are 1. Then B = TN is a Borel subgroup of G. We use the notation
+                                              0 t1      1
+                  t = an (t1 ;    ; tn ) = @ . . . A ;
+                                                     tn
+                            01               0 1
+                  nn(u) = @ . . A ; u = (uij )i>j 2 A 2 ;
+                                       .                  n(n 1)
+
+                             u       1
+for elements t 2 TA ; nn(u) 2 NA respectively. Let
+                      T+ = ft = an (t1;    ; tn ) j t1 ;    ; tn > 0g:
+   The group GA has the Iwasawa decomposition GA = KTA NA . So any element
+g 2 GA can be written as
+            g = k(g)t(g)nn(u(g)); k(g) 2 K; t(g) 2 TA ; nn(u(g)) 2 NA :
+Let T 0 = T \ SL(n), and T+0 = T+ \ TR0 . We consider t in x1 for T 0 . We can identify
+t with tAn 1 . For s 2 tC , we dene ts; jtjsv in the usual manner. Let  be half
+the sum of weights of N , with respect to the conjugation by elements of T . Let
+G0A = fg 2 GQA j j det gj = 1g.
+   Let du = i>j duij . This R   is an invariant measure on NA . We choose an invariant
+measure dk on K so that KQdk = 1. Let d t = dt1    d tn (t = an (t1 ;    ; tn )).
+Let db = t 2d tdu (t 2 = i<j jti 1 tj j). We choose an invariant measure on GA
+by dg = t 2 dkdtdu. Let cn() = an (;    ; ). Let dg0 be the invariant measure
+on G0A such that for any measurable function on f (g) on GA ,
+                     Z                   Z 1Z
+                           f (g)dg = n                f (cn ()g0 )d dg0;
+                      GA                  0     G0A
+where d =  1d. We dene invariant measures on Gkv ; Kv ; Bkv ; Nkv ; Tkv
+similarly, and denote them by dgv ;Qdkv ; dbv ; duv ; dtv respectively. Then du =
+      n(n 1) Q
+jk j 4 v duv , and dt = Ck n v dtv .
+   Let
+(3:1)                       V = Zk (2)    Zk (n) :
+                                     n
+                                                 Rnk   1
+
+We dene V1 = 1 for convenience. The volume of GL(n)0A = GL(n)k is Vn .
+
+x4 The zeta function
+   Let (G; V; V ) be a prehomogeneous vector space. We dene the zeta function
+in a general manner.
+   Our main interest is a function of the form ZL (; !; s) in the introduction for
+irreducible representations, but in order to carry out the induction, we have to
+                                               17
+consider a slightly more general objects. Let T0; e be as in the introduction. For
+any split torus T    = GL(1)r , we dene T+ to be the subset of TA which corresponds
+to Rr+ by the above isomorphism. Let T+1 = G1A \ T+ .
+   Let ! be a character of G1A =Gk . A principal quasi-character of G1A =Gk is a
+function of the form j(g)js where  is a rational character of G and s 2 C . If  is a
+principal quasi-character of G1A =Gk , we extend it to GA so that it it trivial
+                                                                         Q on T0+.
+Let  = (1 ;    ; l) be principal quasi-characters. We dene (g) = i i (g). Let
+S (VA ) be the space of Schwartz{Bruhat functions on VA .
+   For later purposes, we introduce some notations.
+Denition P  (4.1) Let L  Vk be a Gk -invariant subset. For  2 S (VA ), we dene
+L (; g) = x2L (gx).
+   We use the notation S (; g) instead of Sk (; g) etc.
+Denition (4.2) For a Gk -invariant subset L  Vkss and a Schwartz{Bruhat func-
+tion  2 S (VA ), we dene
+                                    Z
+(1)             ZL(; !; ; s) =                !(g)(g)jV (g)j se L (; g)dg;
+                                    ZGA=Gk
+(2)            ZL+(; !; ; s) =         G =G   k
+                                                     !(g)(g)jV (g)j se L (; g)dg:
+                                        jVA(g)j1
+if these integtrals converges absolutely.
+     For x 2 Vk , let G0x be the connected component of 1 of the stabilizer of x. Let
+   0
+Vk be the set of points x 2 Vk such that G0x does not have a non-trivial rational
+character. We expect that the largest Gk -invariant set L for which the integrals
+(1), (2) converges absolutely for Re(s)  0 is Vk0 .
+     In [16], F. Sato proved this convergence under the condition that if the stabilizer
+of x is connected for any x 2 Vkss and Vk0 = Vkss . F. Sato's paper [16] is written
+in classical language and the proof in adelic language can be seen in [24]. The
+above condition applies to many prehomogeneous vector spaces. However, there
+are several very interesting prehomogeneous vector spaces which do not satisfy the
+above condition. For those cases, it is useful to use invariant theory as follows.
+     If X  (G) is generated by one element, we do not have to consider , and therefore
+we write ZL (; !; s) etc.
+     We give an alternative denition of the zeta function when the group is of the
+form G=Te where G is a product of GL(n)'s, and Te is a split torus contained in the
+center of G.
+Denition (4.3) For a connected reductive group G, we dene G0A = fg 2 GA j
+j(g)j = 1 for all  2 X  (G)g.
+     If G = GL(n), GL(n)0A = fg 2 GL(n)A j j det gj = 1g. Suppose that G =
+GL(n1 )      GL(nf ). Let ! = (!1 ;    ; !f ) be characters of A  =k . We dene
+!(g1;    ; gf ) = !1(det g1)    !f (det gf ). Let # (!) = (!1 )    (!f ). Let ci(i )
+be as in x3 for i 2 R+. For  = (1 ;    ; f ) 2 Rf+, let c() = (c1(1 );    ; cf (f )).
+Any element of GA is of the form c()g0 where g0 2 G0A . We choose a subgroup
+T+  T+1 so that T+   = T+1 =Te+. Let g1 = tg0 where t 2 T; g0 2 G0A . Let G1A = TG     0A
+                                                     18
+and GeA = R+  G1A . We identify T0+ with R+. We use the measure dg0 on G0A
+which is a product of measures we dened in x3. Let d t be a Haar measure on T,
+and dg1 = d tdg0. Let eg = (; g1), where  2 R+. We dene deg = ddg1. If we
+choose d t suitably, ZL (; !; ; s) is equal to the following integral
+                            Z
+(4:4)                                  s !(g1)(g1)L (; ge)deg:
+                             GeA =Gk
+ZL+(; !; ; s) has a similar expression also. In particular, if X  (G=Te) is generated
+by one element, G1A = G0A and T+ is trivial. Therefore, in this case, we use the
+measure on G0A which we dened in x3. Also we do not have to consider . We
+used this kind of formulation in [26].
+   We say that (G; V; V ) is of complete type if for any , there exists a constant
+() such that ZVkss (; !; ; s) converges absolutely and locally uniformly for all
+!; , and Re(s) > (). Otherwise we say it is of incomplete type. If (G; V; V ) is
+of complete type, we write ZV (; !; ; s) or simply Z (; !; ; s) for ZVkss (; !; ; s)
+etc.
+   Let G0 be as in x1, and T 0 = T \ G0 . Let t = X (T 0 ) 
+ R etc. We choose a
+coordinate system x = (x1 ;    ; xN ) whose coordinate vectors are eigenvectors of
+T . Let i 2 t be the weights of xi . For x 2 Vk n f0g, we dene Ix = fi j xi 6= 0g.
+Let Cx be the convex hull of the set fi j i 2 Ixg.
+Denition (4.5) A point x 2 Vk n f0g is called k-stable if for any g 2 Gk , Cgx
+contains a neighborhood of the origin.
+   We denote the set of k-stable points by Vks.
+   We proved in [26] that ZL (; !; ; s) is well dened for L = Vks if Re(s) is
+suciently large, and ZL+(; !; ; s) is an entire function. For the cases where F.
+Sato's criterion of convergence of the zeta function does not apply, the set Vks seems
+to coincide with Vk0 . Therefore, except for a few cases, we know the convergence of
+the zeta function.
+   Let G = GL(n1 )      GL(nf ), and (G; V ) be a prehomogeneous vector space.
+For g = (g1;    ; gf ), we dene t g = (t g1;    ; t gf ). Let G the longest element of
+the Weyl group of G. Let V  be the dual space of V . The action f (x) ! f (g 1 x)
+for f 2 V  denes a representation of G on V  . The action x ! tg 1x is a
+representation of G on V and the weights of this representation and the weights of
+the representation V  are the same. Therefore, these representations are equivalent.
+So there exists a bilinear form [x; y]0V on V such that [gx; y]0V = [x; t gy]0V . We
+dene [x; y]V = [x; Gy]0V and g = Gtg 1G 1. Then [gx; y]V = [x; (g ) 1 y]V for
+all x; y 2 V and g is an involution of G.
+   We dene a Fourier transform b of  2 S (VA ) by the formula
+                                       Z
+(4:6)                       b (x) =          (y) < [x; y]V > dy:
+                                         VA
+   The determinant of GL(V ) denes a rational character of G which we call V .
+Let V be the principal quasi-character of GA =Gk which is jV (g1)j 1 for g1 2 G1A ,
+and is trivial on T0+. For a Gk -invariant subset L  VA , we dene
+                                         X b            X
+(4:7)            JL(; ge) =  N V (eg)      (eg x)         (egx)
+                                              x2Vk nL         x2VknL
+                                                 19
+for eg = (; g1). If L = Vkss, we drop L, and simply write J (; g). For  2 S (VA )
+and  2 R+, we dene (x) = (x). By the Poisson summation formula,
+(4:8)       ZL (; !; ; s) = ZL+(; !; ; s) + ZL+(b ; ! 1 ; V 1 1 ; N s)
+                                 Z 1Z
+                             +                  JL (; g   1 )d dg 1 :
+                                  0     G1A =Gk
+  For later purposes, we dene an operator MV;! on S (VA ) for a character ! on
+GeA =Gk .          R standard maximal compact subgroup K . We x a Haar
+         Consider the
+measure dk so that K dk = 1.
+Denition (4.9) Let ; ! be as above. We dene
+                                           Z
+                           MV;! (x) =           !(det k)(kx)dk:
+                                             K
+   If ! is trivial, this is the operator to average over K .
+
+x5 The smoothed Eisenstein series
+   Let G be a connected reductive group not necessarily split over a number eld k.
+We x a minimal parabolic subgroup P  G. Let T  G be a maximal split torus
+contained in P . Let  be half the sum of positive weights. Let d be the dimension
+of T+0 . Let t0 be the Lie algebra of T+0 , and t0C = t0 
+ C . Let EP (g; z) be the
+Eisenstein series of G with respect to P where g 2 G0A , and z 2 t0C.
+   We x a Weyl group invariant Hermitian product ( ; )0 on t0C. Let k k0 be the
+norm dened by this product. Let L(z) = (z; )0 , and w0 = L(). We choose an
+entire function (z) on t0C which is rapidly decreasing on any vertical strip.
+Denition (5.1) We dene a function E (g; w; ) on G0A =Gk  C by the following
+contour integral
+                             1 d Z                 EP (g; z) (z) dz;
+               E (g; w; ) =      p
+                              2 1         Re(w)>L(q) w L(z )
+                                             Re(z)=q
+
+where we choose q so that EP (g; z) converges absolutely for Re(z) = q.
+    We call E (g; w; ) a smoothed Eisenstein series. If there is no confusion, we drop
+  , and write E (g; w) also.
+    Let 1;    ; d 2 t0 be simple roots. We x a small positive number . Let K
+be a special maximal compact subgroup of GA , so GA = KPA . The group K is
+contained in G0A . Let T0 = ft 2 T+0 j ti   for all ig. We can choose a compact
+set 
+  PA so that KT0
+ surjects to G0A =Gk . We can also choose a compact set
+
+b  G0A so thatPfktnt 1 j k 2 K; t 2 T0; n 2 
+g  
+b T0 .
+    Let t0+ = f i ai i j a1;    ; ad > 0g. If r1; r2 2 t0, then we use the notation
+r1 > r2 if r1 r2 2 t0+ . Let r 2 t0 . Let C (G0A =Gk ) be the set of continuous
+functions on G0A =Gk . We dene
+(5:2)           C (G0A =Gk ; r) = ff 2 C (G0A =Gk ) j sup jf (kt)tr j < 1g:
+                                                      k2
+b ;t2T
+                                                 20
+If f 2 C (G0A =Gk ; r) for some r, we say that f is slowly increasing. A function f is
+integrable on G0A =Gk if f 2 C (G0A =Gk ; r) for some r > 2.
+Conjecture (5.3)
+   (1) There exists a constant CG with the property: for any  > 0, there exists
+ > 0 such that if M > w0,
+                                             C  ( )
+                                                       
+                        sup       E (g; w; )  G        tr < 1
+                    w0 Re(w)M               w  w  0
+                             b
+                     g=kt; k2
+;t2T
+
+for some r 2 t satisfying krk0 < .
+(2) There exist constants c1 > 0; c2 such that if M1 > M2 > w0,
+                                                                Pdi=1 i
+                       sup
+                  M2 Re(w)M1
+                                   jE (g; w; )jt(c1 Re(w)+c2)              < 1:
+                         b
+                  g=kt; k2
+;t2T
+
+
+  The statement (1) of the above theorem implies that if f 2 C (G0A =Gk ; r) for
+some r > 2, then the integral
+                                   Z
+                                              f (g)E (g; w; )dg
+                                    G0A =Gk
+is well dened for Re(w) > w0, can be continued meromorphically to Re(w) > w0 
+for some  > 0, and the principal part around w = w0 is
+                              CG () Z
+                              w w0 G0A =Gk f (g)dg:
+The statement (2) of the above theorem implies that if f is a slowly increasing
+function,                  Z
+                             0
+                                  f (g)E (g; w; )dg
+                                    GA =Gk
+is well dened and becomes a holomorphic function in some right half plane.
+   If the statement of (5.3) is true for a group G, we call it Shintani's lemma for
+G, because we are generalizing Lemma 2.9 [18]. The author proved the following
+theorem in [26].
+Theorem (5.4) The conjecture (5.3) is true if G is a product of GL(n)'s.
+   If G = GL(n), the constant CG is Vn 1 . The proof of this theorem is fairly
+technical and involves estimates of Whittaker functions. We briey explain why we
+have to use the linear function L(z) by the case of GL(n). We consider the Borel
+subgroup B.
+   In this case, the Weyl group is the set of permutations of the set f1;    ; ng. For
+a permutation  , we dene
+                                   Y Zk (z (i) z (i) )
+                       M  (z ) =        Zk (z (i) z (i) + 1) :
+                                   i>j
+                                        (i)< (j)
+
+                                                     21
+                                                            P
+  The constant term of EB (g; z) is equal to  M (z)tz+ . Let
+                                               n 1 Z                M (z)tz+ (z) dz;
+             E (g; w;   )=            p1                                w L(z )
+                                  2        1             Re(z)=q
+                                                         Re(w)>L(q)
+
+where we use the same q as in (5.1).
+    Note that if  is an element of the Weyl group,  p      (  1 ;  1)0 = (; )0.
+                  1
+Therefore,   lies on the sphere of radius (; )0 . It is easy to see that
+    1 =  if and only if  is the longest element of the Weyl group. Therefore,
+L(  1) < L() unless  is the longest element. If z =  1, then z (i)
+z (i)  1 for all (i; j ) such that i > j;  (i) <  (j ). Therefore, we can choose q
+in a neighborhood of  1 so that z (i) z (j) > 1 for all such pairs. Then
+jE (g; w; )j  tq+. The value kq + k0 can be arbitrarily small and L(q) < w0,
+if  is not the longest element. This consideration is enough for (1) when  is not
+the longest element. If  is the longest element, we consider the residue of M (z)
+along z1 z2 = 1 then along z2 z3 and we continue this process. Since the eventual
+residue is the constant function Vn 1 as a function of g, we get (1). This argument
+for constant terms is fairly easy and is seen in Langlands' work [11]. However, in
+[26], we spent most of our labor to the estimates of the non-constant terms. The
+statement (2) is slightly trickier, and the reader should see [26] for the details of
+the proof of Theorem (5.4).
+
+x6 Adjusting terms
+    In this section, we illustrate the necessity of adjusting terms by the example of
+the space of binary quadratic forms. Let G = GL(1)  GL(2); V = Sym2k2. Let
+Te  G be the kernel of the homomorphism G ! GL(V ). Let V (t; g) = t det g for
+(t; g) 2 G. Then V is a rational character of G=Te and is indivisible as a character
+of G. In this case, Vks is the set of forms without rational factors.
+    Let ! be as in x3. We do not have to consider  in (4.1). We use the alternative
+denition (4.3) of the zeta function for L = Vks i.e.,
+                                  Z
+(6:1)         ZV (; !; s) =                      s!(g0)Vks (; g0)d dg0 etc.
+                                  R+   G0A =Gk
+
+Denition (6.2) For u 2 A , we dene
+                                                 8 sup(1; ju j ) 1               for v 2 Mf ;
+                  Y                              <           vv 1
+        ( u ) =      v (uv ); where v (uv ) = : (1 + juv j2v ) 2              for v 2 MR ;
+                 v 2M                               (1 + juv jv ) 1              for v 2 MC :
+
+Denition (6.3) Let v be a place of k. Let 	; 	v be Schwartz{Bruhat functions
+on A 2 ; kv2 respectively. Let s; s1 be complex variables, and ! a character of A  =k.
+                                                    22
+We dene
+                                    Z
+(1)     TV;v (	v ; !; s; s1 ) =                   !(tv )jtv jsv v (uv )s1 	v (tv ; tv uv )d tv duv ;
+                                Z       kv kv
+(2)     TV (	; !; s; s1 ) =                 !(t)jtjs (u)s1 	(t; tu)d tdu;
+                                A  A
+                                    Z
+(3)     TV +(	; !; s; s1 ) =            A A
+                                                !(t)jtjs (u)s1 	(t; tu)d tdu;
+                            Z           jtj1
+(4)     TV1 (	; !; s1 ) =            ! ( t1 )(u)s1 	(t1 ; t1 u)d t1 du;
+                             A 1 A
+                                    d
+                                       
+(5)     TV;v (	v ; !; s; s1 ) = ds  TV (	; !; s; s1 ):
+                                     1 s1 =0
+
+   Let ReV;0 2 S (A 2 ) be the restriction of  to the set of elements of the form
+(0; x1 ; x2 )
+Denition (6.4)
+                                         ( !  !  1)
+           ZV;ad(; !; s) = Z (; !; s)      1  2    e
+                                              2 TV (RV;0MV;w ; !1; s)
+                                                                    Q
+   If 	 = 
+	v , then TV (	; !; s; s1 ) = jk j 12 Ck 1 v Tv (	v ; !; s; s1 ). Suppose that
+	v is the characteristic function of o2v , and ! is trivial. Then easy computations
+(see (2.10) [25]) show that
+                                                1  q   (s+s1)
+                    Tv (	v ; !; s; s1 ) =            v              :
+                                          (1 qv s)(1 qv (s+s1 1))
+   In general, Tv (	v ; !; s; s1 ) can be continued meromorphically everywhere, and
+is holomorphic for Re(s) + Re(s1 ) > 1; Re(s) > 0. Therefore, TV (	; !; s; s1 ) can be
+continued meromorphically everywhere, and is holomorphic for Re(s) + Re(s1 ) >
+2; Re(s) > 1. Also the integrals dening TV +(	; !; s; s1 ); TV1 (	; !; s1 ) converge
+absolutely and locally uniformly1 for all s; s1 . We call ZV;ad(; !; s) the adjusted
+zeta function for V , and (!12!2 ) TV (ReV;0MV;! ; !1 ; s) the adjusting term.
+   ZV;ad(; !; s) has nitely many poles and satises a functional equation
+                        ZV;ad(; !; s) = ZV;ad(b ; ! 1 ; 3 s):
+We will state the principal part of ZV;ad(; !; s) in x8. Also the author proved that
+generalized special values of ZV;ad(; !; s) contribute to the poles of zeta functions
+in [26].
+   First we briey explain how the adjusting term arises. Let HV be the subgroup
+of G generated by T and the element (1; GL(2)).
+Proposition (6.5) Let
+                                                                                  q
+         XHV = f(t; ka(t1 ; t2)n(u)) 2 G0A                j k 2 K; jt1t2 1j          (t1 1t2 u)g:
+                                                        23
+Then for any measurable function f (g) on G0A =HV k ,
+                               Z                                   Z
+                                               f (g)dg =                     f (g)dg;
+                                   G0A =HV k                       XHV =Tk
+if the right hand side converges absolutely.
+     Let Z 0ss0 be the set of points of the form (0; x1 ; 0) such that x1 6= 0. Then
+Gk Z 0ss0;k = Gk HV k Z 0 ss0;k . The reason why we need the adjusting term in this case
+is that we have to consider the fundamenental domain XHV for the group HV in
+order to handle the set Vkss n Vks.
+     Suppose that (G; V; V ) is a prehomogeneous vector space of incomplete type.
+Then if L is the maximal subset such that (4.1) converges absolutely and locally
+uniformly for Re(s)  0 (assuming such L exists), the author expects that Vkss n L
+decomposes into nite Gk -invariant subsets Sst;1;    ; Sst;iV where Sst;i = Gk HV;ik
+Z 0;ik , HV;i  G is a (not necessarily connected) reductive subgroup of G, Z00 ;i  V
+  0 ss
+is an HV;i -invariant subspace, and Z 0ss0;ik is the set of semi-stable points with respect
+to HV;i \ G0 for all i. Let HV;i    0 be the connected component of HV;i which contains
+the unit element. Suppose that for each i, there exist functions V;i1;    ; V;ijV;i
+and that if
+               XHV;i = fg1 2 G1A j V;i1(g1)  1;    ; V;ijV;i (g1)  1g;
+                                                   0 , and
+then XHV;i is invariant under the right action of HV;ik
+                          Z                                    Z
+                                        f (g1 )dg1 =                           f (g1 )dg1:
+                           G1A =HV;ik                                   0
+                                                                XHV;i =HV;ik
+
+  Suppose that these conditions are satised.
+Denition (6.6) Let si = (si;1 ;    ; si;jV;i ) 2 C jV;i . We dene
+(1)       TV;iZ(; !; ; s; si )
+          =                     s ! (g 1 )(g 1 ) Y ij (g 1 )sj S (; g 1 )d dg 1 ;
+                                                                    st;i
+               R+    1
+                    GA =HV;ik                             j
+(2)       TV;iZ+(; !; ; s; si )
+                                      Y
+          = R+G1 =HV;ik s!(g1)(g1 ) ij (g1 )sj Sst;i (; g1)d dg1;
+                      A
+                     1                                   j
+(3)        1 (; !; ; si )
+          TV;i
+             Z                                 Y
+          =                   !(g1)(g1 )           ij (g1 )sj Sst;i (; g1)dg1;
+               G1A =HV;ik                       j
+(4)       TV;i(;!; ; s)               
+                 
+          = dsd     dsd                          TV;i(; !; ; s; s1 ;    ; sjV;i ) etc.
+                1 s1 =0              jV;i sj   V;i =0
+
+                                                           24
+if these functions are well dened.
+                                       1 (; !; ; si ) to be entire and TV;i (; !; ; s; si )
+    We expect TV;i+(; !; ; s; si ); TV;i
+is well dened if Re(s)  0 depending on si .
+    In the case V = Sym2 k2, our adjusting term appeared in this way. Also we
+proved in [25] that TV +(	; !; s) is an entire function, and TV (	; !; s) is holomor-
+phic for Re(s) > 2. Therefore, TV (	; !; s) does not eect the right most pole.
+The author expects similar properties for the general adjusting terms (see [26] for
+example).
+
+x7 The general program
+   In this section, we describe our program to compute the principal parts of zeta
+functions for prehomogeneous vector spaces when G is a product of GL(n)'s.
+Denition (7.1) Let f1 (w); f2 (w) be meromorphic functions on a domain of the
+form fw 2 C j Re(w) > Ag. We use the notation f1  f2 if the following two
+conditions are satised.
+(1) There exists a constant A0 < w0 such that f1 f2 can be continued meromor-
+phically to the domain fw 2 C j Re(w) > A0 g.
+(2) f1 (w) f2(w) is holomorphic around w = w0.
+   Consider the identication G1A =Gk   = T  G0A =Gk in x4. Suppose that
+                              jJL(; tkt0)j  h1(t)jt0jr ;
+where h1(t) is an integrable function on T, kt0 2 
+b T , and that r 2 t0 satises the
+condition r > 2. Let dg1 = dtdg0. By (5.4),
+                       Z
+                             0
+                                   !(g0)(t)JL(; tg0)E (g0 ; w; )dg0
+                        
+                        T GA =Gk
+                          C G  ( ) Z
+                        w w  0 !(g0)(t)JL (; tg0)dg0:
+                                  0 T GA =Gk
+   Suppose that (6.6) is well dened. Then we can state our program as follows.
+Program (7.2) Find constants CV;st;1;    ; CV;st;iV , points p1 ();    ; pdV () 2 C
+and distributions a(; !; ); aij (; !; ) for i = 1;    ; dV ; j = 1;    ; dV;i with the
+following properties
+        Z
+(1)                !(g0)(t)JL(; g1 )E (g1 ; w; )dg1
+         G1A =Gk
+         CG ( ) XiV
+                                             1 (; ! )) + () a(; !; );
+                                  b ; ! 1 ) TV;i
+        w w                  1 (
+                     CV;st;i(TV;i                        w w0
+               0 i=1
+                           dV X
+                           X  dV;i
+                                          pi () (log )j aij (; !; );
+(2)    a( ; !; ) =                 
+                           i=1 j =1
+where  2 R+.
+                                                      25
+  The following equations are easy to verify.
+        Z1
+             s TV;i
+                 1 (c; ! 1 ; V 1 1 )d = TV;i+(b ; ! 1 ; V 1 1; N s);
+        0
+                   Z1
+                             1 ( ; !; )d  = TV;i (; !; ; s) TV;i+ (; !; ; s):
+                         s TV;i
+                    0
+Also               Z1
+                          s   pi () (log )j d  = ( 1)j j !(s     pi ())   j 1:
+                     0
+We dene
+                                                             X
+                                                             dV
+(7:3)          ZL;ad (; !; ; s) = ZL (; !; ; s) +              Cst;iTV;i(; !; ; s)
+                                                             i=1
+and call ZL;ad (; !; ; s) the adjusted zeta function.
+  Then if (7.2) is carried out, we get the following formula for ZL;ad(; !; ; s)
+(7:4)        ZL;ad(; !; ; s)
+             = ZL+ (; !; ; s) + ZL+(b ; ! 1; V  1; N s)
+                   X
+                   iV
+               +         Cst;i(TV;i+(; !; ; s) + TV;i+(b ; ! 1 ; V  1 ; N s))
+                   i=1
+                      dV X
+                      X   dV;i
+               + CG 1          (      1)j j ! (saij ( ; !; ) :
+                                                     p ())j+1
+                      i=1 j =1                      i
+
+We expect that the rst four terms to be entire and that the adjusting terms are
+holomorphic at s = max pi().
+   The author carried out this program for Sym2kn and Sym2k3 
+ k2. We describe
+our results in x8. Consider the second case. The stratum S8 in x2 corresponds
+to the representation (2) in x2. The zeta function for this case was handled by F.
+Sato (see [14]) in a slightly dierent formulation. The author handled two more
+reducible prehomogeneous vector spaces which correspond to 6; 8 in x2 from our
+viewpoint. These are reducible representations with two irreducible components.
+The reader should see [26] for the details of these cases. In the future, we have to
+generalize the method so that we can handle representations with more than two
+irreducible factors.
+   For the rest of this section, we briey discuss how we proceed, and point out
+technical diculties. We consider an irreducible prehomogeneous vector space of
+complete type (G; V; V ) for simplicity. So G1A = G0A , and we do not have to
+consider .
+   By the Morse stratication,
+                               X                                     
+              J (; g1) =           S (b ; (g1 )) S (; g1) + b (0) (0):
+                               
+                                                   26
+(V (g1) = 1.)
+   Therefore,
+                     Z
+                                  !(g1)J (; g1)E (g1; w; )dg1
+                      G1A =Gk
+                         XZ
+                     =                      !(g1)S (b ; (g1 ))E (g1; w; )dg1
+                                 G1A =Gk
+                          XZ
+                                              !(g1)S (; g1 )E (g1; w; )dg1
+                                   G1A =Gk
+
+                     + w (w) (b (0) (0)):
+                               0
+In this way, we can at least start considering the contributions from unstable strata
+indirectly by the use of the smoothed Eisenstein series. Let
+                                      Z
+                  (; !; w) =                   !(g1)S (; g1 )E (g1 ; w; )dg1:
+                                        G1A =Gk
+   First, it can happen that  (; !; w)  0 for some strata  . For Sym2k3 
+ k2,
+this is the case for  = 2 ; 3 ; 5. Therefore, not all the strata contribute to the
+poles, and these strata have to be removed.
+   If  = MV;! ,
+                 Z
+ (; !; w) =                !(g1 )Yss (; g1 n (u ))E (g1 n (u ); w; )(g1 )   2 dg 1 du ;
+                                                                                                
+                  P1A =Pk
+where P1A = PA \ G1A ,  is half the sum of positive weights of P , and dg1 ; du
+are invariant measures on MA \ G1A ; UA . We want to compare this integral
+with the integration on MA \ G1A =Mk by considering the constant terms of both
+Yss (; g1 n (u )), and E (g1 n (u ); w; ) with respect to U . Then the result-
+ing integral resembles the zeta function for (M ; Z ) except it still has the Eisen-
+stein series in the integrand. However, the estimate of the non-constant terms is
+a formidable task. In the case Sym2k3 
+ k2, this was done by considering further
+stratications of the representations Z using the notion of  -sequences ([10, pp.
+73]).
+   Also it is too optimistic to expect that for all  ,
+                Z
+                          ! ( g 1 )S (; g 1 )E (g 1 ; w; )dg 1  () a (; ! )
+                  G1A =Gk
+                                     
+                                                                  w w0
+for some a (; !), satisfying a similar property as in (7.2) (2). This is because there
+are interactions (both constant terms and non-constant terms) between strata. For
+example, for Sym2k3 
+ k2, some cancellations have to be established between the
+strata S6 ; S8 ; S9 . Those cancellations can be established only if we consider the
+further Morse stratications of the representations Z8 etc. The reader should see
+[26] for the details.
+                                                     27
+x8 Examples of principal part formulas
+   In this section, we consider some examples of prehomogeneous vector spaces for
+which the principal parts of the poles of the zeta function were determined. In
+order to state them, we have to introduce some notation.
+   Let  2 S (VA ), and S = G P Yss be a stratum. We dene R  2 S (ZA )
+by the formula                        Z
+                           R (x) =           (x; y)dy
+                                           WA =Wk
+                                                                   R
+for x 2 ZA , where dy is the measure on WA such that WA =Wk dy = 1.
+   Let 	 2 S (A i ). Let !1 ;    ; !i be characters
+                                                Q      of A  =k, and ! = (!1;    ; !i ).
+For t = (t1 ;    ; ti ) 2 A , we dene
+                              i
+                                     P    !(t) = j !j (tj ). We consider ! as a character
+        
+of (A =k ) . Let i(	; t) = x2(k)i 	(tx). For s = (s1 ;    ; si ) 2 C i , and t as
+              i
+above, we dene jtjs in an obvious manner.
+Denition (8.1)
+                                      Z
+                      i(	; !; s) =                  jtjs!(t)i(	; t)d t:
+                                       (A  =k )i
+
+   If ! is trivial, we drop !, and use the notation i (	; s).
+Denition (8.2) For j = (j1;    ; ji ) 2 Zi; s0 = (Qs0;1 ;    ; s0;i ) 2 C i , we use
+the notation i;(j1 ; ;ji )(	; !; s0 ) for the coecient of l (sl s0;l)jl in the Laurent
+expansion of i (	; !; s) at s = s0 . We also drop ! in this notation when ! is
+trivial.
+   If i(	; !; s) is holomorphic at s = s0, i;(0; ;0)(	; !; s0 ) = i(	; !; s0 ).
+(1) The case G = GL(1)  GL(2); V = Sym3 k2
+   We consider the situation in the second example in x2. We dene the zeta
+function by (4.4) (see the remark after (4.4)) for L = Vkss. The following theorem
+was proved by Shintani [18], and the adelic version can be found in [22].
+Theorem (8.3) Suppose that  = MV;! . Then
+                                                                                        !
+  ZV (; !; s) = ZV +(; !; s) + ZV + (b ; ! 1; 4 s) + V2 #(!) s 4 (0)    b (0)
+                                                                                s
+                                     b                           !
+                 + #(!) 1(Rs1 4; 1) 1(R1s; 1)
+                                  1 ( R   b
+                                             ; !  1 ; 2 ) 1 (R ; !1 ; 2 ) !
+                 + (!13 )(!2 )         2       1     3         2        3 :
+                                        3s 10                   3s 2
+
+(2) The case G = GL(1)  GL(2); V = Sym2 k2
+   In this case, there is precisely one unstable stratum S1 , where 1 = 2 using
+a similar identication R = t as in x2 (1). The following theorem was proved by
+Shintani [19], and the adelic version can be found in [25].
+                                              28
+Theorem (8.4) Suppose that  = MV;! . Then
+ ZV;ad(; !; s) = ZV + (; !; s) + ZV +(b ; ! 1; 3 s)
+                      1 T (Re ; !; s) 1 T (Re b ; ! 1 ; 3 s)
+                      2 V + V;0                 2 V!+ V;0
+                                       b
+                    + V2 #(!) s(0)3 (0)      s
+                       ( ! 2 ) (!2 )           ( R b
+                                                       ; !   1 ; 1)      ( R b
+                                                                                ; ! 1 ; 1) !
+                                           1;( 1) 1        1       + 1;(0) s1 2 1
+                    + 12                         (s 2)2
+                                       
+                      (!12 )(!2 ) 1;( 1)(R1 ; !1 ; 1) + 1;(0)(R1 ; !1; 1) :
+                                                                                     
+                              2               (s 1)2                    s 1
+(3) The case G = GL(1)  GL(n); V = Sym2 kn
+   The case n = 2 is the previous case. Let Te be as before, and we consider
+(G=T;e V ). If n  3, it is of complete type and X  (G=Te) is generated by one
+element. So we consider the situation in (4.4). We dene
+                            ZVn;(j)(; !; s0 ); ZV2;ad;(j)(; !; s0 )
+similarly as in (8.2).
+   Let Si be the set of rank n i forms. Then S1 ;    ; Sn 1 are unstable strata.
+For all i, Yi = Zi  = Vn i . Let Z0 n 2;0  Zn 2 be the set of points of the form
+f(0; x1 ; 0)g by the above identication. For  2 S (VA ) and x1 2 Z0 n 2 , let
+                                            Z
+                        R0n 2;0 (x1 ) =   Rn 2 (0; x1 ; x2 )dx2 :
+                                            A
+   Shintani proved a partial result, and the author carried out the complete calcu-
+lation of the principal parts in this case (see [19], [25]).
+   If n = 3, we dene
+                                                        1 (R2 ; !1 ; 32 )
+            F3(; !; s) = V3 # (!) (0)
+                                      s   +  V  
+                                               2 2( ! )      2s 3
+                                    Z        (R ; (! ; 1); 3)
+                          + (!2 ) V2;ad;(0) s 1 3 1
+                                      31(R0 ; 2) 1;(1)(R0 ;0 ; 2) 
+                          + # (!)           1 ;0                     1          :
+                                         2(s 3)2 +              2(s 3)
+If n  4, we dene
+                          (0)       X                      Z Vn i (Ri ; (!1 ; 1);
+                                                                                     n(n i) )
+ Fn (; !; s) = Vn #(!) s +              (n i)Vi (!2)             2s n(n i)
+                                                                                       2
+                                  i6=1;n 2
+                                Z (R ; (! ; 1); n)
+                + Vn 2 (!2) V2 ;ad ns 2 n 1
+                                 Z         (R ; (! ; 1); n(n 1) )
+                + (n 1)(!2 ) Vn 1;(0)2s 1 n(n 1 1) 2
+                                  n1(R0n 2;0 ; n 1) 1;(1)(R0n 2;0; n 1)
+                                                                                          !
+                + V n 2 # ( ! )         2(s n)2            +            2(s n)               :
+
+                                                29
+Theorem (8.5) Let n  3. Suppose that MVn;!  = . Then
+                ZVn (; !; s) = ZVn+(; !; s) + ZVn+(b ; ! 1 ; n(n2+ 1) s)
+                                  Fn(b ; ! 1; n(n2+ 1) s) Fn (; !; s):
+
+   Suppose that  = 
+v v , and v has a compact support contained in Vkssv for a
+place v 2 M1. Then it turns out that 1(R0n 2;0; n 1) = 1 (R0n 2;0b ; n 1) =
+0. Therefore, the poles of the associated Dirichlet series are all simple.
+(4) The case G = GL(3)  GL(2); V = Sym2 k3 
+ k2
+   This is the third example in x2. Let ! = (!1; !2 ) be as before. In order to handle
+the zeta function in this case, we need to know the pole structures of zeta func-
+tions for unstable strata. The strata S2 ; S3 ; S5 do not contribute to the poles.
+The stratum S1 corresponds to V3 in (3). Let 1 (	; !0 ; s) = ZV3 (	; !0 ; s) for
+	 2 S (Z1A ), !0 a character of A 1 =k  GL(3)0 = GL(2)k , and s 2 C . The distri-
+bution 1 (	; !0 ; s) is holomorphic at s = 2. The stratum S4 corresponds to the
+prehomogeneous vector space GL(2)  GL(2)=Te; V = k2 
+ k2, where Te is as before.
+We dene 4 (	; !0 ; s) by (4.4). The distribution 4 (	; !0 ; s) is holomorphic at
+s = 2. The strata S6 ; S8 correspond to GL(2)  GL(1)2 =Te; V = Sym2k2  k or
+Sym2 k2 k2 where GL(2) acts on k trivially, and the action of GL(1)2 is similar as in
+x2. A similar argument as in x2 holds for S6 also. We choose (b1 ; b2 ) = (3; 5); (3; 4)
+for S6 ; S8 respectively. Let a6 (1) = (1; 51; 1 3 ); a8 (1 ) = (1; 41 ; 1 3) for
+1 2 R+. Then we can choose T = fa6 (1 ) j 1 2 R+g or fa8 (1 ) j 1 2 R+g.
+We use d1 on T. Let 6 ; 8 be principal quasi-characters of G1A =Gk satisfy-
+ing 6 (a6 (1 )) = 1 1; 8 (a8 (1 )) = 21. We dene 8 (	; !0 ; 8 ; s) by (4.4).
+This case was handled by F. Sato in a slightly dierent formulation [14]. Note
+that !0 = (!10 ; !20 ; !30 ) is a character on GL(2)0 = GL(2)k  (A  =k)2 . The case
+Sym2 k2  k is of incomplete type, and let 6;ad(	; !0 ; 6 ; s) be the adjusted zeta
+function (see [26] for the details). The distribution 6 (	; !0 ; 6 ; s) is holomor-
+phic at s = 3, but 8 (	; !0 ; 8 ; s) has a possible simple pole at s = 3. We
+choose (x1;33 ; x2;13; x2;22 ) (resp. (x1;23 ; x2;13; x2;22 )) as the coordinate of Z7 (resp.
+Z9 ). The stratum S10 corresponds to GL(2)  GL(2)=T;             e V = Sym2k2 
+ k2. We
+                   0
+dene 10 (	; ! ; s) by (4.4). This case is of incomplete type, and requires an ad-
+justing term. Let 10;ad(	; !0 ; s) be the adjusted zeta function. The distribution
+10;ad(	; !0 ; s) is holomorphic at s = 3. Let Z0 6;0 (resp. Z0 10;0) be the set of
+points x's such that xi;jk = 0 except for x1;33 ; x2;12 (resp. x1;33 ; x2;22). We dene
+                                      Z
+      R0  6 ;0 (x1;33 ; x2;12 ) =       R6 (x1;33 ; 0; x2;12 ; x2;22)dx2;22 ;
+                                      Z
+                                      A
+
+     R010 ;0 (x1;33 ; x2;22 ) =          R10 (0; 0; x1;33 ; x2;22; x2;23 ; x2;33)dx2;23 dx2;33:
+                                      A2
+
+   We need some denitions in order to state the result in this case.
+Denition (8.6)
+                                                     30
+(1) 1 (!) = (!2 ), !1 = (1; !1 ),
+(2) 4 (!) = (!1 ), !4 = (1; !2 ),
+(3) 6 (!) = (!12), !6 = (!1 ; !2; !2 ),
+(4) 7 (!) = (!13)(!22 ), !7 = (!2 ; !1; !1 1 !2),
+(5) 8 (!) = (!1 ), !8 = (!1 ; !2 ; !2),
+(6) 9 (!) = (!13)(!2 ), !9 = (1; !1 1 ; !1),
+(7) 10 (!) = (!1 ); 10;st(!) = (!1 )(!22 ), !10 = (1; !2); !10 ;st = (!2; !2 ).
+   We dene
+ F 1(; !; 0) = V2V3 #(!)(0) + 24 (!)4 (R4 ; !4 ; 2)
+                  + 86 (!)6 ;ad(R6 ; !6 ; 6 ; 3)
+                  + 148 (!)8;(0)(R8 ; !8 ; 8 ; 3))
+                  + #2(!) 52;(1;0)(R06;0 ; 1; 3) + 32;(0;1)(R06;0; 1; 3) ;
+                                                                                         
+ F 2(; !; 0) = 3# (!)2 (R06;0; 1; 3);
+ F 1(; !; 2) = 1 (!)1 (R1 ; !1 ; 2) + 93(!) 3(R9 ; !9 ; 1; 23 ; 23 );
+ F 1(; !; 3) = 76(!) 3;(0;0;0)(R7 ; !7 ; 21 ; 0; 12 )
+                  + 10 (!)10;ad(R10 ; !10 ; 3)
+                     10 ;st(!)               ( R   0 ; ! ;st ; 1 ; 1 )
+                           8         2 ; (1; 0)       10 ;0         10 2 2
+
+                  + 1024;st (! )                   0
+                                     2;(0;1)(R10 ;0 ; !10 ;st ; 2 ; 2 );
+                                                                            1 1
+
+ F 2(; !; 3) = 10 ;st   4
+                              (!)  (R0 ; !
+                                     2       10  ; 0       10 ;st ; 1 ; 1 );
+                                                                      2 2
+                      X F j (; !; i) F 1(; !; 2)
+      F (; !) =                   (s i)j + s 2 :
+                  i=0;3;j =1;2
+  We proved the following theorem in [26].
+Theorem (8.7) Suppose that MV;!  = . Then
+ Z (; !; s) = Z+ (; !; s) + Z+(b ; ! 1; 12 s) F (b ; ! 1 ; 12 s) F (; !; s):
+  Most of the coecients of the Laurent expansions at the poles of Z (; !; s) are
+generalized special values of the adjusted zeta functions dened for Z 's. However,
+we have some extra terms like 2;(1;0)(R06;0; 1; 3). The author expects similar
+phenomena for other prehomogeneous vector spaces. Also the author hopes to
+handle more cases in the near future.
+                                      References
+ [1] Atiyah, M. F. Convexity and commuting hamiltonians. Bull. London Math. Soc., 14:1{15,
+     1982.
+
+                                            31
+ [2] Blanchard, A. Sur les varietes abalytiques complexes. Ann. Sci. Ecole Norm. Sup., 73:178{
+     201, 1956.
+ [3] Datskovsky, B., and D. J. Wright. Density of discriminants of cubic extensions. J. Reine
+     Angew. Math., 386:116{138, 1988.
+ [4] Davenport, H. On the class-number of binary cubic forms I and II. London Math. Soc.,
+     26:183{198, 1951. Corrigendum: ibid., 27:512, 1952.
+ [5] Davenport, H., and H. Heilbronn. On the density of discriminants of cubic elds I. Bull.
+     London Math. Soc., 1:345{348, 1961.
+ [6] Davenport, H. and H. Heilbronn. On the density of discriminants of cubic elds. II. Proc.
+     Royal Soc., A322,:405{420, 1971.
+ [7] Guillemin, V., and S. Sternberg. Convexity properties of the moment mapping. Invent.
+     Math., 67:491{513, 1982.
+ [8] Kempf, G. Instability in invariant theory. Ann. of Math., 108:299{316, 1978.
+ [9] Kempf, G., and L. Ness. The length of vectors in representation spaces. In Algebraic Ge-
+     ometry, Proceedings, Copenhagen, volume 732, pages 233{242. Springer Lecture Notes in
+     Mathematics, Berlin, Heidelberg, New York, 1978.
+[10] Kirwan, F. C. Cohomology of quotients in symplectic and algebraic geometry. Mathematical
+     Notes, Princeton University Press, 1984.
+[11] Langlands, R. The volume of the fundamental domain for some arithmetical subgroups of
+     Chevalley groups. In Proceedings of symposium in pure mathematics, volume 9. 1966.
+[12] Mumford, D., and J. Fogarty. Geometric invariant theory, 2nd edition. Springer, Berlin,
+     Heidelberg, New York, 1982.
+[13] Ness, L. A stratication of the null cone via the moment map. Amer. J. Math., 106:1281{1325,
+     1984.
+[14] Sato, F. On zeta functions of ternary zero forms. J. Fac. Sci. Univ. Tokyo, Sect IA, 28:585{
+     604, 1981.
+[15] Sato, F. Zeta functions in several variables associated with prehomogeneous vector spaces I:
+     Functional equations. T^ohoku Math. J., (2) 34:no. 3 437{483, 1982.
+[16] Sato, F. Zeta functions in several variables associated with prehomogeneous vector spaces II:
+     A convergence criterion. T^ohoku Math. J., (2) 35 no. 1:77{99, 1983.
+[17] Sato, M., and T. Shintani. On zeta functions associated with prehomogeneous vector spaces.
+     Ann. of Math., 100:131{170, 1974.
+[18] Shintani, T. On Dirichlet series whose coecients are class-numbers of integral binary cubic
+     forms. J. Math. Soc. Japan, 24:132{188, 1972.
+[19] Shintani, T. On zeta-functions associated with vector spaces of quadratic forms. J. Fac. Sci.
+     Univ. Tokyo, Sect IA, 22:25{66, 1975.
+[20] Siegel, C. L. The average measure of quadratic forms with given discriminant and signature.
+     Ann. of Math., 45:667{685, 1944.
+[21] Weil, A. Basic number theory. Springer, Berlin, Heidelberg, New York, 1974.
+[22] Wright, D. J. The adelic zeta function associated to the space of binary cubic forms part I:
+     Global theory. Math. Ann., 270:503{534, 1985.
+[23] Wright, D. J., and A. Yukie. Prehomogeneous vector spaces and eld extensions. Invent.
+     Math., 110:283{314, 1992.
+[24] Ying, K. On the convergence of the adelic zeta function associated to irreducible regular
+     prehomogeneous vector spaces. Ph. D. Thesis, Johns Hopkins University, 1993.
+
+                                               32
+[25] Yukie, A. On the Shintani zeta function for the space of binary quadratic forms. Math. Ann.,
+     292:355{374, 1992.
+[26] Yukie, A. Shintani zeta functions, volume 183. London Mathematical Society Lecture Note
+     series, Cambridge, 1993.
+
+Akihiko Yukie
+Oklahoma State University
+Mathematics Department
+401 Math Science
+Stillwater OK 74078-1058 USA
+yukie@math.okstate.edu
+
+
+
+
+                                               33
+

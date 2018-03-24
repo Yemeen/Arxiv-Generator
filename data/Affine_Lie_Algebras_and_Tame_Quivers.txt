@@ -1,0 +1,2729 @@
+                                                       AFFINE LIE ALGEBRAS AND TAME QUIVERS
+arXiv:math/0005119v1 [math.RT] 11 May 2000
+
+
+
+
+                                                        IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+
+
+                                                                                Contents
+                                               0. Introduction                                                              1
+                                               1. Cartan datum, Lie algebras, and quivers                                   5
+                                               1.1. Cartan datum and Dynkin graph                                           5
+                                               1.2. A subalgebra of a Kac-Moody algebra                                     6
+                                               1.3. Quiver and the Euler cocycle                                            7
+                                               1.4. Category of representations of a quiver                                 8
+                                               2. Convolution algebra                                                      10
+                                               2.1. Algebraically constructible functions                                  10
+                                               2.2. Convolution algebra and Lie subalgebras                                11
+                                               3. Functors                                                                 13
+                                               3.1. Hall functors and Hall maps                                            13
+                                               3.2. Reflection functors                                                    15
+                                               4. Quiver of finite type                                                    18
+                                               4.1. Root system for a Cartan datum of finite type                          18
+                                               4.2. Lie algebra based on the Euler cocycle                                 18
+                                               4.3. Lie algebra n∗ for a quiver of finite type                             19
+                                               4.4. Reflections revisited or a proof of the Ringel theorem                 20
+                                               5. Quiver of affine type                                                    21
+                                               5.1. Root system for a Cartan datum of affine type                          22
+                                               5.2. Lie algebra based on the Euler cocycle                                 22
+                                               5.3. Jordan quiver                                                          23
+                                               5.4. Kronecker quiver                                                       24
+                                               5.5. Cyclic quiver                                                          29
+                                               5.6. General affine quiver                                                  32
+                                               5.7. Lie algebras over Z                                                    41
+                                               6. Fine structure of affine root systems                                    42
+                                               References                                                                  47
+
+
+
+                                                                            0. Introduction
+                                             0.0.1. There is a remarkable connection between the theory of representations of
+                                             quivers and the structure theory of Lie algebras. The first manifestation of this
+                                             connection was discovered by P. Gabriel [Gab72]. Let Q be a quiver obtained by
+                                             orienting edges of the Dynkin graph corresponding to a simple simply laced Lie
+                                             algebra g. Gabriel proved that the set T of isomorphism classes of indecomposable
+
+                                               Date: May 11, 2000.
+                                                                                     1
+2             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+complex representations of Q is in one-to-one correspondence with the set R+ of
+positive roots of g.
+   Gabriel’s result was soon extended by J. Bernstein, I. Gelfand, and V. Ponomarev
+[BGP73], who introduced reflection functors Si corresponding to Coxeter generators
+of the Weyl group of g. The reflection functor Si acts from the category M(Q) of
+complex representations of Q to the category M(Q′ ), where Q′ differs from Q only
+by orientation. Using the reflection functors Bernstein, Gelfand and Ponomarev
+were able to give another proof of the Gabriel theorem.
+
+0.0.2. The set R+ of positive roots corresponds to a basis of a maximal nilpotent
+subalgebra n of g, and one might guess that there exists an intrinsic Lie bracket on
+the C-linear span of the set T , such that the resultant Lie algebra is isomorphic
+to n. However this Lie bracket was introduced only 18 years later by C. M. Ringel
+[Rin90b, Rin90c]. Ringel actually considers representations of Q over finite fields
+rather than over complex numbers, so we use a variant of his definition due to A.
+Schofield [Sch91] and G. Lusztig [Lus91b].
+   Let [Pα ], [Pβ ] ∈ T be isomorphism classes of indecomposable representations of
+Q. Then their Lie bracket is defined as follows
+                                    X
+(0.0.2.a)          [[Pα ], [Pβ ]] =   (χ(NPα ,Pβ ;Pγ ) − χ(NPβ ,Pα ;Pγ ))[Pγ ],
+                                 [Pγ ]∈T
+
+where χ(NPα ,Pβ ;Pγ ) is the Euler characteristic with compact support of the alge-
+braically constructible set NPα ,Pβ ;Pγ of all subrepresentations V ⊂ Pγ such that
+V is isomorphic to Pα , and Pγ /V is isomorphic to Pβ .
+   Thus we obtain a complex Lie algebra denoted by n∗ with a distinguished basis
+{[P]}[P]∈T . In [Rin90c] Ringel proved that n∗ and n are isomorphic as R+ -graded
+complex Lie algebras, and, moreover, he was able to find the structure constants
+in n∗ . Namely, let Pα be the unique up to an isomorphism indecomposable rep-
+resentation of Q corresponding to a root α ∈ R+ . Then given α, β ∈ R+ one
+has
+                                   (
+                                     ǫ(α, β)[Pα+β ] if α + β ∈ R+ ,
+(0.0.2.b)         [[Pα ], [Pβ ]] =
+                                     0              if α + β ∈
+                                                             / R+ ,
+where ǫ is a bimultiplicative two-cocycle on the root lattice of g, uniquely defined
+by its values on pairs of simple roots: ǫ(i, i) = −1 for any simple root i, ǫ(i, j) = −1
+if there is an arrow i → j in Q, ǫ(i, j) = 1 otherwise. The choice of bimultiplicative
+cocycle ǫ corresponds to a choice of orientation of edges which converts a Dynkin
+graph into quiver.
+    It is interesting to note that the choice of Chevalley basis in n and, more generally,
+in g, such that structure constants are given by the cocycle ǫ, was first introduced
+in relation to a vertex operator construction of the affine Lie algebra ĝ associated
+to g (see [FK80, Seg81]).
+    Let us also remark that there is an equivalent definition of the cocycle ǫ in terms
+of the category M(Q). Namely,
+                                                                  1
+(0.0.2.c)         ǫ(α, β) = (−1)(dimC HomM(Q) (Pα ,Pβ )−dimC ExtM(Q) (Pα ,Pβ )) .
+  Ringel’s proof of (0.0.2.b) is based on a case-by-case study of all possible varieties
+NPα ,Pβ ;Pγ and is rather long. In this paper we give a new and short proof of the
+Ringel theorem using reflection functors of Bernstein, Gelfand, and Ponomarev.
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                             3
+
+
+Instead of studying varieties NPα ,Pβ ;Pγ and calculating their Euler characteristics
+for a particular quiver Q we consider all quivers with the same underlying Dynkin
+graph and use functorial properties of the Lie algebra n∗ .
+   More explicitly, given a quiver Q we define a complex Lie algebra nǫ . As a linear
+space nǫ has a basis {ẽα }α∈R+ corresponding to isomorphism classes of indecom-
+posable representations of Q. The Lie bracket is defined as follows
+                                     (
+                                      ǫ(α, β)ẽα+β if α + β ∈ R+ ,
+                      [ẽα , ẽβ ] =
+                                      0            if α + β ∈
+                                                            / R+ .
+Because of (0.0.2.c) nǫ is functorial with respect to reflection functors. The same
+is true for n∗ by definition.
+    It turns out that there are enough reflection functors to ensure that a Lie algebra
+with a basis parameterized by isomorphism classes of indecomposable representa-
+tions of Q and with functorial structure constants is unique. More precisely, we
+introduce a homomorphism Ξ : nǫ → n∗ given on generators by Ξ(ẽi ) = [Pi ] for
+any simple root i. Then we use reflection functors to prove that Ξ(ẽα ) = [Pα ] for
+any α ∈ R+ , which is equivalent to the Ringel theorem.
+0.0.3. Shortly after appearance of Gabriel’s paper L. A. Nazarova [Naz73] and
+independently P. Donovan and M. R. Freislich [DF73] classified indecomposable
+representations of quivers associated to simply laced extended Dynkin graphs, which
+we call quivers of affine type (they are also called tame quivers).
+   For quivers of affine type the bijection between isomorphism classes of indecom-
+posable representations and positive roots of the corresponding affine Lie algebra g
+                                          re
+holds only for positive real roots α ∈ R+    . In the case of a positive imaginary root
+      im
+α ∈ R+ there exists an uncountable family Tα of non-isomorphic indecomposable
+representations corresponding to α. According to Dlab and Ringel [DR76] the set
+                               im
+Tα does not depend on α ∈ R+      and admits a surjection
+                                    µ : Tα → CP1
+such that µ is injective for all points of CP1 except for L ≤ 3 exceptional points for
+which fibers are finite sets.
+   Since Tα is an infinite set for α ∈ R+im
+                                            one has to adjust the definition of n∗ . One
+way to do it, proposed by Ringel [Rin90a, Rin93], consists of replacing represen-
+tations of Q by formal composition series. We adopt another approach due to A.
+Schofield [Sch91] and G. Lusztig [Lus91a, Lus91b]. Instead of formal linear com-
+binations of elements of the set T of indecomposable representations we consider
+complex valued constructible (in some sense) functions on T . One can generalize
+the definition of Lie bracket (0.0.2.a). Finally we define n∗ to be the Lie subalge-
+bra of the Lie algebra of constructible functions on T generated by characteristic
+functions of simple representations.
+   The main result of the present paper is a generalization of the Ringel theorem
+described in 0.0.2 to affine case. We show, in particular, that the Lie algebra n∗ is
+isomorphic to the positive part n of the affine Lie algebra g corresponding to the
+quiver Q. The Lie algebra n is graded by the set R+ of positive roots and is the
+precise analogue of a maximal nilpotent subalgebra of a finite dimensional simple
+Lie algebra.
+   Our results imply that the Lie algebra n∗ contains the characteristic function of
+indecomposable representation Pα corresponding to any positive real root α, and
+4             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+we can find the structure constants for the Lie bracket of two such characteristic
+                                     re
+functions. Namely, if α, β, α + β ∈ R+  then
+                                [[Pα ], [Pβ ]] = ǫ′ (α, β)[Pα+β ].
+Here abusing notation we denote by [Pα ] the characteristic function of [Pα ] ∈ T .
+The structure constants ǫ′ are related to the bimultiplicative two-cocycle ǫ defined
+in 0.0.2 via a twist by coboundary
+                       ǫ′ (α, β) = ǫ(α, β)ξ(α + β)ξ −1 (α)ξ −1 (β),
+
+where ξ(α) = (−1)1+dimC HomM(Q) (Pα ,Pα ) . Note that in the case of a quiver with
+underlying Dynkin graph HomM(Q) (Pα , Pα ) = C for any indecomposable Pα and,
+therefore, the twist does not affect Ringel’s structure constants.
+                                         im
+   The case of an imaginary root α ∈ R+      is more involved. We give a description
+of the root space nα in terms of the surjection µ : Tα → CP1 . Namely, n∗α consists
+                    ∗
+
+of all functions f on Tα such that
+                      X
+(0.0.3.a)                  f ([P]) does not depend on z ∈ CP1 .
+                  [P]∈µ−1 (z)
+
+The following remarkable identity guarantees that n∗α has the correct dimension
+                           X
+                                (Nz − 1) = rank g − 2,
+                                z∈CP1
+
+where Nz is the order of the fiber µ−1 (z).
+   Considering constructible functions on T with values in Z satisfying condition
+(0.0.3.a) on Tα for any α ∈ R+  im
+                                   one obtains a lattice ℵ∗ ∈ n∗ . Our results imply
+that ℵ is closed with respect to the Lie bracket in n∗ (i.e. it is an order). We also
+       ∗
+
+prove that ℵ∗ is characterized by the property that it is the minimal order in n∗
+containing simple root generators. In particular, the lattice ℵ∗α for any imaginary
+root α is isomorphic to the root lattice of a simple Lie algebra g0 , such that g = ĝ0 .
+   Our strategy in affine case is similar to the one we use in the proof of the
+Ringel theorem. We define some ad hoc Lie algebra nǫ using the cocycle ǫ, and
+a homomorphism Ξ : nǫ → n∗ . Then we use functorial properties of nǫ and n∗ to
+describe Ξ. In the affine case, however, the set of reflection functors is not enough
+to fix Ξ, and we employ additional functors Cz introduced by Dlab and Ringel. A
+functor Cz corresponds to a point z ∈ CP1 and is a full, faithful, exact functor from
+M(CNz ) to M(Q), where CNz is the cyclic quiver with Nz vertices. Both n∗ and
+nǫ are functorial with respect to functors Cz by construction. Using the reflection
+functors and the functors Cz we are able to describe the map Ξ for any real root
+space and a codimension one subspace in any imaginary root space. The proof is
+completed with analysis of the positive part of an affine Lie algebra sl ˆ 2 embedded
+into g.
+
+0.0.4. Our description of the isomorphism of the Lie algebra n∗ constructed via
+representation theory of a quiver of affine type with the positive part n of the
+corresponding affine Lie algebra reveals a certain fine structure of affine Lie algebras
+and their root systems. It turns out that for any orientation of edges of the extended
+                                                                                     (1)
+Dynkin graph one can canonically associate L ≤ 3 affine Lie algebras of type An
+                       (1)        (1)
+embedded into g. In Dn and En cases these subalgebras correspond precisely to
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                            5
+
+
+the connected components of the non-extended Dynkin graph with the branching
+vertex removed. In particular, it follows that L = 3 in DE case.
+   If orientation of Q is such that each vertex is either a sink or a source, then
+one can interpret representations of Q in terms of a finite subgroup Γ of SL(2, C)
+                                                                            (1)
+associated to Q via McKay correspondence [Lus92]. In this case the type An subal-
+gebras arise from maximal cyclic subgroups of Γ and their positive roots correspond
+to representations of Γ induced from the cyclic subgroups. Thus our construction
+of the positive part n of an affine Lie algebra g can be viewed as a far-reaching ex-
+pansion of the McKay correspondence between group Γ ⊂ SL(2, C) and extended
+Dynkin graph of g.
+
+0.0.5. We conclude Introduction with remarks concerning some generalizations
+and interpretations of our results.
+   First let us note that using species instead of quivers one can extend results of
+the paper to all simple and affine types of Lie algebras. Though we consider only
+simply laced case in order to preserve clarity of the exposition, the statements and
+the proofs can be generalized almost word-by-word to species.
+   Second we remark that Ringel’s construction of the nilpotent Lie algebra n was
+extended by L. Peng and J. Xiao [PX97] to the whole simple Lie algebra g via
+the root category R(Q) = Db M(Q)/T 2 . Our proof of the Ringel theorem can
+be extended to this setting. Moreover it would become more transparent as the
+reflection functors act more naturally in the root category than in abelian category
+M(Q). It would be very interesting to extend the construction of n∗ to the root
+category of a quiver of affine type.
+   Let us finally mention that results and techniques used in this paper could be
+stated in the language of algebraic stacks. For example, description (0.0.3.a) of
+imaginary root subspaces of n∗ indicates that the right setting for n∗ is that of co-
+homology of the set T considered as a stack. The details will be provided elsewhere.
+
+Acknowledgements. The authors are grateful to Mikhail Khovanov for his careful
+reading of the manuscript and many valuable comments. This research was sup-
+ported in part by NSF grant DMS-9700765.
+
+                1. Cartan datum, Lie algebras, and quivers
+   Throughout the paper Z and C denote, respectively, integer numbers and com-
+plex numbers; Z+ = {k ∈ Z, k ≥ 0}.
+
+1.1. Cartan datum and Dynkin graph.
+
+1.1.1. A Cartan datum is a pair (I, <, >), consisting of a finite set I and a bilinear
+form <, > on the free abelian group Z[I], with values in Z. The bilinear form should
+satisfy the following conditions:
+                             < i, i > = 2 for all i ∈ I,
+                            < i, j > ≤ 0 for all i 6= j,
+                            < i, j > = 0 if < j, i >= 0.
+   The matrix aij =< i, j > is called the Cartan matrix of the Cartan datum
+(I, <, >).
+6             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+1.1.2. A Cartan datum is said to be irreducible if the corresponding Cartan matrix
+cannot be made block-diagonal by simultaneous permutations of rows and columns.
+    A Cartan datum is said to be of finite type if the corresponding Cartan matrix
+is positive definite.
+    A Cartan datum is said to be of affine type if the corresponding Cartan matrix
+is irreducible, positive semi-definite, but not positive definite.
+    A Cartan datum is said to be symmetric if aij = aji for all i, j.
+    A Cartan datum is said to be simply laced if aij ∈ {0, −1} for all i 6= j.
+    If a Cartan datum is simply laced then it is symmetric.
+1.1.3. From now on all the Cartan data is assumed to be symmetric. See, however,
+0.0.5.
+1.1.4. For a given finite set S we denote by P2 (S) the set of all two-element subsets
+of S.
+   By definition, a finite graph is a triple (I, E, Ends), consisting of two finite sets
+I (vertices) and E (edges), and a map Ends : E → P2 (I).
+   To a symmetric Cartan datum (I, <, >) we associate a Dynkin graph (I, E, Ends)
+as follows: the set of vertices coincides with I, two vertices i and j are joined by
+−aij edges, there are no edges joining a vertex with itself.
+   A Dynkin graph is called irreducible (resp. of finite type, of affine type) if the
+corresponding Cartan datum is irreducible (resp. of finite type, of affine type).
+1.1.5. The lists of all irreducible Dynkin graphs of finite and affine types are
+contained in Figures 1 and 2 respectively (cf. [Bou68]).
+
+
+         An           (n ≥ 1 vertices)                                	
+   	
+    ...         	
+      	
+
+                                                                                                                      	
+
+                                                                                                                   
+         Dn           (n ≥ 4 vertices)                     	
+   	
+   ...         	
+    	
+??
+                                                                                                                    ??
+                                                                                                                      ?	
+
+         E6                                                           	
+   	
+    	
+    	
+          	
+
+                                                                                              	
+
+         E7                                                	
+   	
+   	
+    	
+    	
+          	
+
+                                                                                  	
+
+         E8                                     	
+   	
+   	
+   	
+    	
+    	
+          	
+
+                                                                      	
+
+
+                   Figure 1. Finite Irreducible Dynkin Graphs
+
+   The integers on vertices of affine Dynkin graphs on Figure 2 are components of
+the first imaginary root δ (see 5.1.1).
+   Note that all symmetric Cartan data of finite or affine type are simply laced
+             (1)
+except for A1 .
+1.1.6. If one removes a vertex together with adjacent edges from a Dynkin graph
+of affine type one obtains a Dynkin graph of finite type (not necessarily irreducible).
+1.2. A subalgebra of a Kac-Moody algebra.
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                                                                                               7
+
+
+        (1)
+       A1                                                                                                                         	
+   	
+
+                                                                                                                                  1          1
+                                                                                                            oo OOO
+                                                                                                              	
+
+                                                                                                  ooooo 1 OOOOO
+       A(1)      (n + 1 ≥ 3 vertices)                                                   	
+oo 	
+ . . . 	
+ O	
+
+        n                                                                              1            1                  1              1
+                                                         	
+? ?                                                                 1	
+
+                                                         1          ??                                                             
+                                                                      ?                	
+ . . . 	
+         	
+??
+      Dn(1)      (n + 1 ≥ 5 vertices)                                 2	
+
+                                                                                     2                      2        2 ??
+                                                         	
+                                                                  ?	
+
+                                                         1                                                                                   1
+       (1)                                                                             1               2               3          2          1
+      E6                                                                               	
+        	
+        	
+   	
+   	
+
+
+                                                                                                                  2 	
+
+
+                                                                                                                  1 	
+
+       (1)                                               1                  2          3               4            3             2          1
+      E7                                                 	
+           	
+   	
+        	
+        	
+   	
+   	
+
+
+                                                                                                  2 	
+
+       (1)                                    2          4                  6          5            4                  3          2          1
+      E8                                      	
+   	
+           	
+   	
+        	
+        	
+   	
+   	
+
+
+                                                                       3 	
+
+
+
+                         Figure 2. Affine Dynkin Graphs
+
+1.2.1. Let n be the quotient of the free Lie algebra over C with generators {ei }i∈I
+by the ideal generated by the following relations
+
+(1.2.1.a)                   (ad(ei ))1−aij ej = 0 if i 6= j ,
+where ad(x)y = [x, y].
+  Relations 1.2.1.a are called the Serre relations.
+  The Lie algebra n is Z+ [I]-graded with deg ei = i.
+1.3. Quiver and the Euler cocycle.
+1.3.1. A quiver Q is an oriented graph, that is a quadruple (I, Ω, In, Out), con-
+sisting of two finite sets I (vertices) and Ω (oriented edges), and two maps In and
+Out from Ω to I. The underlying non-oriented graph is given by (I, Ω, {In, Out}).
+   A quiver is said to be of finite (resp. affine) type if the underlying non-oriented
+graph is a Dynkin graph of finite (resp. affine) type.
+1.3.2. For a quiver Q of finite or affine type we denote by n(Q) the Lie algebra
+over C associated with the underlying Dynkin graph of Q as in 1.2.1.
+1.3.3. The abelian group Z[I] is called the root lattice.
+1.3.4. Given a quiver Q we introduce a biadditive form e : Z[I] × Z[I] → Z given
+by the following values on generators:
+      e(i, j) = δij − (number of h ∈ Ω such that i = Out(h) and j = In(h)),
+where δij is the Kronecker symbol. The form e is called Euler form (see 1.4.6 for a
+justification of this name).
+8              IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+    If Q is of finite or affine type then
+(1.3.4.a)                     e(α, β) + e(β, α) =< α, β > .
+   Having the Euler form e we define Euler cocycle ǫ to be a bimultiplicative function
+from Z[I] × Z[I] to {±1} given by
+                                  ǫ(α, β) = (−1)e(α,β) .
+   If we want to specify the quiver Q used in the definition of ǫ we write ǫQ .
+   Euler cocycle ǫ is the main building block of the structure constants of n in the
+natural basis associated to the quiver Q. The precise construction of the natural
+basis will be carried out in Sections 4 and 5 in the finite and the affine cases
+respectively.
+
+1.4. Category of representations of a quiver.
+
+1.4.1. Let Q = (I, Ω, In, Out) be a quiver.
+   A (finite-dimensional) representation of Q (over C) is the following data:
+        • a finite dimensional I-graded vector space V = ⊕i∈I Vi over C,
+        • a collection of linear maps x = ⊕h∈Ω xh ∈ ⊕h∈Ω HomC (VOut(h) , VIn(h) ).
+   A morphism from a representation (V, x) to another representation (V ′ , x′ ) is an
+I-graded C-linear map φ : V → V ′ , such that x′h φOut(h) = φIn(h) xh for each h ∈ Ω.
+The composition of morphisms is the composition of linear maps.
+   We denote the category of representations of the quiver by M(Q). It is an
+abelian category with respect to the natural additive structure on morphisms.
+
+1.4.2. Let M(Q) be a full subcategory of M(Q) with objects being M = (V, x) ∈
+Ob(M(Q)) for which there exists N (M) ∈ N such that xhN . . . xh1 = 0 for any
+sequence h1 , . . . , hN ∈ Ω with In(hi ) = Out(hi+1 ). We call objects of M(Q)
+nilpotent representations of Q.
+   The subcategory M(Q) is closed with respect to extensions. If Q does not
+contain an oriented cycle then M(Q) = M(Q).
+
+1.4.3. Dimension of a representation M = (V, x) of Q is an element of Z[I] given
+by the graded dimension of V :
+                                      X
+                         dimM(Q) M =      dimC (Vi )i.
+                                             i∈I
+
+1.4.4. It is easy to see that isomorphism classes of simple objects in M(Q) are in
+one-to-one correspondence with vertices of Q (we recall that Ob(M(Q)) consists
+of nilpotent representations). The simple object corresponding to a vertex i ∈ I is
+given (up to an isomorphism) by
+                                         
+                                         Vj = {0}, j 6= i,
+                                         
+                       Pi = (V, x), where Vi = C,
+                                         
+                                           x = 0.
+                                         
+
+    Note that dimM(Q) Pi = i ∈ I ⊂ Z[I].
+
+1.4.5. Let M ∈ Ob(M(Q)). It follows from 1.4.4 that (dimM(Q) M)i is equal to
+the number of factors isomorphic to Pi in Jordan-Hölder series of M.
+                       AFFINE LIE ALGEBRAS AND TAME QUIVERS                               9
+
+
+1.4.6. The following proposition explains the homological meaning of the Euler
+form e.
+Proposition. 1.4.6.a. The category M(Q) is hereditary, i.e. ExtnM(Q) (M, N) =
+          0 for any M, N ∈ Ob(M(Q)) and any n ≥ 2.
+ 1.4.6.b. The following equality holds for any M, N ∈ Ob(M(Q)).
+  e(dimM(Q) M, dimM(Q) N) =
+               = dimC HomM(Q) (M, N) − dimC Ext1M(Q) (M, N) =
+                                                       ∞
+                                                       X
+                                                   =         (−1)k dimC ExtkM(Q) (M, N)
+                                                       k=0
+
+Proof. The proof is standard. Let us consider the following exact sequence of
+functors from (M(Q))◦ × M(Q) to the category of C-linear spaces.
+
+                                        π                           ρ
+(1.4.6.c) 0 −
+            → HomM(Q) (M, N) −
+                             → ⊕i∈I HomC (Vi , Wi ) −
+                                                    →
+                           ρ                                    σ
+                          −                               → Ext1M(Q) (M, N) −
+                          → ⊕h∈Ω HomC (VOut(h) , WIn(h) ) −                 → 0.
+Here M = (V, x), N = (W, y) ∈ Ob(M(Q)), and π, ρ, σ are natural transformations
+given as follows
+                               π(φ) = ⊕φi ,
+                           ρ(⊕φi ) = ⊕(φIn(h) xh − yh φOut(h) ),
+                        σ(⊕ψh ) = [0 → N → E → M → 0],
+where E = (⊕i∈I (Vi ⊕ Wi ), ⊕h∈Ω ψxhh y0h ). The two middle terms in the exact
+                                          
+
+sequence 1.4.6.c are exact functors (both with respect to the first and to the second
+arguments). Thus Ext1M(Q) is right exact, which proves 1.4.6.a. The equality 1.4.6.b
+follows from evaluation of dimensions in 1.4.6.c.
+1.4.7. Let X (Q) be the set of isomorphism classes of objects of M(Q). We denote
+the isomorphism class of M ∈ Ob(M(Q)) by [M].
+   We also use the following notation:
+
+                  Xα (Q) ={[M] ∈ X (Q)| dimM(Q) M = α},
+                      T (Q) ={[M] ∈ X (Q)| M is indecomposable },
+                  Tα (Q) ={[M] ∈ T (Q)| dimM(Q) M = α}.
+   So T (Q) is the set of isomorphism classes of indecomposable objects. For exam-
+ple, Xi (Q) = Ti (Q) = {[Pi ]}.
+1.4.8. The set Xα (Q) has a natural structure of the orbit space for an action of
+an algebraicPgroup on an affine algebraic variety over C.
+   Let α = i∈I αi i ∈ Z+ [I]. Consider an affine space over C
+                              M
+                       Eα =        HomC (CαOut(h) , CαIn(h) ).
+                                  h∈Ω
+
+                      GL(αi , C). The group Gα acts on Eα by xgh = gIn(h) xh gOut(h)
+                                                                              −1
+              Q
+   Let Gα =     i∈I                                                                  ,
+g ∈ Gα .
+10            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+   When we want to specify the quiver Q used in the definition of Eα and Gα we
+write Eα (Q) and Gα (Q).
+   There is a natural bijection between the set of isomorphism classes of objects in
+M(Q) of dimension α and the set of orbits of Gα in Eα . Namely, given a point
+x ∈ Eα , (Cα , x) is a representative of the isomorphism class of objects in M(Q),
+corresponding to this point. This class depends only on the orbit to which the point
+belongs. And vice versa, in each isomorphism class there are objects of the form
+(Cα , x).
+
+1.4.9. Let c = (h1 , . . . , hn ) be an oriented cycle, that is n-tuple of elements of Ω,
+such that In(hi ) = Out(hi+1 ) for 1 ≤ i ≤ n − 1 and In(hn ) = Out(h1 ). Given M =
+(V, x) ∈ Ob(M(Q)), we call xhn . . . xh1 ∈ HomC (VOut(h1 ) , VOut(h1 ) ) the holonomy
+of x around the cycle c.
+   An object M = (V, x) ∈ Ob(M(Q)) is nilpotent if and only if the trace of the
+holonomy of x around every cycle c is equal to zero. Thus the set Enil        α = {x ∈
+Eα |(Cα , x) ∈ M(Q)} is an affine subvariety in Eα . One can consider functions on
+Xα (Q) as Gα -invariant functions on Enil   α .
+
+
+                             2. Convolution algebra
+2.1. Algebraically constructible functions.
+
+2.1.1. Let X be an algebraic variety over C.
+   A constructible set in X is a set obtained from subvarieties in X by finitely many
+standard set theoretic operations.
+   A function on X is called constructible if X has a finite partition into con-
+structible sets such that the function is constant on each of them.
+   We denote by M (X) the set of all constructible functions on X with values in
+C. The set M (X) is naturally a C-linear space.
+   Let G be an algebraic group acting on X. We denote by MG (X) a subspace of
+M (X), consisting of all G-invariant functions.
+
+2.1.2. Let f : X → Y be a morphism of algebraic varieties. Then f ∗ denotes a
+C-linear map from M (Y ) to M (X) defined as follows:
+
+
+                                (f ∗ (φ))(x) = φ(f (x)).
+  Let f : X → Y be a proper morphism of algebraic varieties. Then f∗ denotes a
+C-linear map from M (X) to M (Y ) defined as follows [Mac74]:
+
+                                       X
+                       (f∗ (φ))(y) =         aχ(f −1 (y) ∩ φ−1 (a)),
+                                       a∈C
+
+where χ denotes the Euler characteristic with compact support.
+   Note that if f is an equivariant morphism of G-varieties, then the restriction of
+f ∗ (resp. f∗ ) gives a C-linear map from MG (Y ) to MG (X) (resp. from MG (X) to
+MG (Y )).
+   Let G and H be algebraic groups, X and Y be algebraic varieties with H actions,
+and f : X → Y be a locally trivial H-equivariant principal G-bundle. Then f♭ is a
+C-linear map from MG×H (X) to MH (Y ) defined as follows:
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                           11
+
+
+
+
+                              (f♭ (φ))(y) = φ(f −1 (y)).
+  The map f♭ (φ) is well defined because φ ∈ MG (X).
+Proposition. The maps f ∗ , f∗ , and f♭ have the following properties:
+ 2.1.2.a. f ∗ , f∗ , and f♭ are functorial:
+                                 (f ◦ g)∗ = g ∗ ◦ f ∗ ,
+                                 (f ◦ g)∗ = f∗ ◦ g∗ ,
+                                    (f ◦ g)♭ = f♭ ◦ g♭ ,
+          when the right-hand side if defined,
+ 2.1.2.b. if f : X → Y is a locally trivial H-equivariant principal G-bundle then
+          f♭ and f ∗ are inverse to each other and give an isomorphism between
+          MG×H (X) and MH (Y ).
+Proof. All the statements except the functoriality of f∗ are obvious. The functo-
+riality of f∗ follows from properties of the Euler characteristic (namely, additivity
+with respect to algebraic stratifications, and multiplicativity for fiber bundles).
+2.2. Convolution algebra and Lie subalgebras.
+2.2.1. We introduce the following C-linear spaces:
+                               Lα (Q) = MGα (Enil
+                                              α ),
+                                        M
+                               L(Q) =        Lα (Q)
+                                            α∈Z+ [I]
+
+    Due to 1.4.8 we can consider elements of L(Q) as functions on X (Q) with values
+in C. Note however, that not every function on X (Q) belongs to L(Q).
+    In particular, given a representation M of Q we sometimes say ”the character-
+istic function of [M ]” instead of ”the characteristic function of Gα -orbit in Eα ,
+corresponding to [M ]”. In either case, one should make sure that the function in
+question is constructible. It is always true, for example, if the number of Gα -orbits
+is finite, or if the function is in the image of a Hall map (see 3.1).
+2.2.2. For example
+                           Li (Q) = CEi for i ∈ I ⊂ Z[I],
+where Ei is the function equal to 1 on Ei = Enil
+                                             i   (which is a point).
+2.2.3. We endow L(Q) with a bilinear product ∗, graded by Z+ [I],
+
+(2.2.3.a)                   Lα (Q) ∗ Lβ (Q) ⊂ Lα+β (Q).
+   By linearity it is enough to define ∗-product for a pair of functions fα ∈ Lα (Q)
+and fβ ∈ Lβ (Q). Moreover fα ∗ fβ should belong to Lα+β (Q) for the grading
+property (2.2.3.a) to hold.
+   The product fα ∗ fβ is defined as follows [Lus91a, Lus91b]. Consider a diagram
+of varieties:
+                                       p1       p2         p3
+(2.2.3.b)              Enil  nil
+                        α × Eβ ← −− E′ −→ E′′ −→ Enil
+                                                  α+β ,
+where the notation is as follows:
+12             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+    Enil    nil     nil
+      α , Eβ , Eα+β are defined in 1.4.8,
+    E′′ is the variety of all pairs (x, W ), consisting of x ∈ Enil α+β and an x-stable
+I-graded subspace of Cα+β such that dim W = α,
+    E′ is the variety of all quadruples (x, W, R′ , R′′ ), where (x, W ) ∈ E′′ , R′ is an
+isomorphism Cα →W     ˜ , R′′ is an isomorphism Cβ →C  ˜ α+β /W .
+                ′    ′′
+    p2 (x, W, R , R ) = (x, W ),
+    p3 (x, W ) = x,
+    p1 (x, W, R′ , R′′ ) = (x′ , x′′ ), where xh ROut(h)
+                                                  ′          ′
+                                                         = RIn(h) x′h , and xh ROut(h)
+                                                                                ′′
+                                                                                        =
+  ′′     ′′
+RIn(h) xh for all h ∈ H.
+    Note that p2 is a principal Gα × Gβ fibration, and p3 is proper.
+    Given fα ∈ Lα (Q) and fβ ∈ Lβ (Q), let g(x1 , x2 ) = fα (x1 )fβ (x2 ) be an alge-
+braically constructible function on Enil           nil
+                                            α × Eβ . By definition
+
+                             fα ∗ fβ = (p3 )∗ (p2 )♭ (p1 )∗ (g).
+Theorem. The space L(Q) equipped with the ∗-product is a Z+ [I]-graded associa-
+tive algebra over C.
+Proof. Associativity follows from functorial properties 2.1.2 of the maps p∗ , p∗ , p♭ .
+
+
+2.2.4. The algebra L(Q) with the ∗-product defined above is called the Hall al-
+gebra. In our definition the ∗-product is the opposite of the one given in [Lus91b]
+(which goes back to Ringel [Rin90b]).
+
+2.2.5. Let Q be a quiver of finite or affine type. Consider L(Q) as a Z+ [I]-graded
+Lie algebra over C, with the following Lie bracket:
+(2.2.5.a)                        [f, g] = f ∗ g − g ∗ f.
+                    ∗
+     We denote by n (Q) the Lie subalgebra of L(Q) generated by {Ei }i∈I (see 2.2.2).
+2.2.6. Proposition. n∗ (Q) has the following properties:
+ 2.2.6.a. n∗ (Q) is a Z+ [I]-graded Lie algebra: n∗ (Q) = α∈Z+ [I] n∗α (Q),
+                                                          L
+
+ 2.2.6.b. dimC n∗α (Q) < ∞ for any α ∈ Z+ [I],
+  2.2.6.c. n∗i (Q) = CEi for i ∈ I ⊂ Z+ [I], where Ei is defined in 2.2.2,
+ 2.2.6.d. the generators Ei satisfy the following relations:
+                           (ad(Ei ))1−aij Ej = 0 for i 6= j ,
+            where ad(X)Y = [X, Y ], and aij =< i, j >.
+Proof. 2.2.6.d is a simple calculation using the definition of the ∗-product, all the
+rest is obvious.
+2.2.7. Given M1 , M2 , M3 ∈ Ob(M(Q)) we denote by nQ    M1 ,M2 ;M3 the Euler char-
+                                                Q
+acteristic with compact support of the variety NM1 ,M2 ;M3 of all subobjects V of
+                                                                   Q
+M3 such that [V] = [M1 ] and [M3 /V] = [M2 ] (we consider NM         1 ,M2 ;M3
+                                                                               as a
+constructible subvariety in a product of Grassmannians):
+                            nQ               Q
+                             M1 ,M2 ;M3 = χ(NM1 ,M2 ;M3 ).
+
+    We denote by Lind (Q) the subspace of L(Q) consisting of all f ∈ L(Q) such that
+f ([M]) = 0 if M ∈ Ob(M(Q)) is decomposable.
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                                13
+
+
+2.2.8. Proposition. 2.2.8.a. Let M′ and M′′ be two indecomposable objects of
+          M(Q). If nQ   M′ ,M′′ ;M 6= 0 then either M is indecomposable or M =
+             ′      ′′
+          M ⊕M .
+ 2.2.8.b. Let M′ and M′′ be two indecomposable objects of M(Q). Then
+                                           (
+    Q                   Q                    1 if M′ is not isomorphic to M′′ ,
+   nM′ ,M′′ ;M′ ⊕M′′ = nM′′ ,M′ ;M′ ⊕M′′ =
+                                             2 if M′ is isomorphic to M′′ .
+ 2.2.8.c. The subspace Lind (Q) ⊂ L(Q) is closed with respect to Lie bracket 2.2.5.a.
+ 2.2.8.d. n∗ (Q) ⊂ Lind (Q), that is if f ∈ n∗ (Q) then f ([M]) = 0 for any decom-
+          posable M ∈ M(Q).
+Proof. 2.2.8.a and 2.2.8.b have been proven by Ch. Riedtmann [Rie94].
+  2.2.8.c follows from 2.2.8.a and 2.2.8.b.
+  2.2.8.d follows from 2.2.8.c and from the fact that Ei ∈ Lind (Q) for any i ∈ I.
+2.2.9. Because of 2.2.6.d we have a surjective Z[I]-graded homomorphism of Lie
+algebras Ξ∗ from the Lie algebra n(Q) introduced in 1.3.2 to n∗ (Q), defined as
+follows:
+                                    Ξ∗ : n(Q) → n∗ (Q),
+                                   Ξ∗ (ei ) = Ei ,    i ∈ I.
+  Our goal in this paper is to investigate the homomorphism Ξ∗ . For this study
+we utilize functorial properties of the ∗-product.
+
+                                       3. Functors
+3.1. Hall functors and Hall maps.
+
+3.1.1. Let Q = (I, Ω, In, Out), Q′ = (I ′ , Ω′ , In′ , Out′ ) be quivers, F : M(Q) →
+M(Q′ ) be a full, faithful, exact functor, such that im F is épaisse (closed with
+respect to extensions).
+   We denote by dim F an additive map from Z[I] to Z[I ′ ] such that
+
+                       dim F (dimM(Q) M) = dimM(Q′ ) (F (M))
+for any M ∈ M(Q). The map dim F is well-defined due to 1.4.5.
+
+3.1.2. Let Q = (I, Ω, In, Out), Q′ = (I ′ , Ω′ , In′ , Out′ ) be quivers, F : M(Q) →
+M(Q′ ) be a full, faithful, exact functor with épaisse image. We call F a Hall
+functor if there exist two sets of linear maps
+             {φi ∈ ⊕h′ ∈Ω′ HomC (C(dim F (i))Out(h′ ) , C(dim F (i))In(h′ ) )}i∈I ,
+        {ψh ∈ ⊕h′ ∈Ω′ HomC (C(dim F (Out(h)))Out(h′ ) , C(dim F (In(h)))In(h′ ) )}h∈Ω ,
+such that F is given by the following action on objects of M(Q)
+                               F ((V, x)) = (W, z), where
+(3.1.2.a)                      W = ⊕i∈I (Vi ⊗C Cdim F (i) ),
+                       z = (⊕i∈I (IdVi ⊗φi )) ⊕ (⊕h∈Ω (xh ⊗ ψh )),
+and the natural action on morphisms.
+14             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+  We borrow all functors we use from the theory of representations of quivers,
+however we want them to be given by specific formulas (3.1.2.a). The following
+proposition asserts that this condition is not too restrictive.
+Proposition. Let Q and Q′ be quivers, H : M(Q) → M(Q′ ) be a full, faithful,
+exact functor with épaisse image. Then there exist a Hall functor F : M(Q) →
+M(Q′ ) and an automorphism G of the category M(Q) such that H is naturally
+equivalent to F ◦ G.
+Proof. Given h ∈ Ω let Ph = (U, t) ∈ Ob(M(Q)), where
+                          Ui = C if i = Out(h) or i = In(h),
+                          Ui = {0} otherwise ,
+                          th = IdC ,
+                          ts = 0 if s 6= h.
+We fix an object of the form (Cdim F (i) , φi ) (resp. (Cdim F (Out(h)) ⊕ Cdim F (In(h)) ,
+  φOut(h)   0 
+    ψh    φIn(h) )) in the isomorphism class of H(Pi ) for each i ∈ I (resp. H(Ph )
+for each h ∈ Ω). Using {φi }i∈I and {ψh }h∈Ω we construct a functor F : M(Q) →
+M(Q′ ). Namely the action of F on objects is given by (3.1.2.a), and the action
+on morphisms is the natural one. It is easy to see that F is exact, F (Pi ) is
+isomorphic to H(Pi ) for any i ∈ I, and the natural map Ext1M(Q) (Pi , Pj ) →
+Ext1M(Q′ ) (F (Pi ), F (Pj )) is a bijection for any i, j ∈ I. Now one can deduce the
+statement of the proposition by induction on length of Jordan-Hölder series of an
+object of M(Q).
+
+3.1.3. Let F : M(Q) → M(Q′ ) be a Hall functor. As F is full and faithful it in-
+duces an injective map from the set X (Q) of isomorphism classes of representations
+of Q to the set X (Q′ ) of isomorphism classes of representations of Q′ (or from the
+                                                           ′                         ′
+set of Gα (Q)-orbits in Enil                                             nil
+                          α (Q) to the set of Gdim F (α) (Q )-orbits in Edim F (α) (Q )).
+Therefore one can define a push-forward map f from L(Q) to the set of C-valued
+functions on X (Q′ ) as follows
+
+                               (f(g))([F (M)]) = g([M]),
+              (f(g))([X]) = 0 if ∄N ∈ Ob(M(Q)) such that X = F (N) .
+     We call f the Hall map associated with the Hall functor F .
+Proposition. Let F : M(Q) → M(Q′ ) be a Hall functor, and f be the correspond-
+ing Hall map. Then
+  3.1.3.a. im f ⊂ L(Q′ ), that is f maps constructible Gα (Q)-invariant functions on
+                                                             ′
+           the variety Enil
+                         α (Q) to constructible Gdim F (α) (Q )-invariant functions on
+                         nil        ′
+           the variety Edim F (α) (Q ),
+  3.1.3.b. f : L(Q) → L(Q′ ) is a homomorphism of algebras:
+                      f(g) ∗ f(h) = f(g ∗ h) for any g, h ∈ L(Q).
+Proof. Follows from definitions. Note that being a Hall functor F induces algebraic
+                                 ′   ′′
+maps between varieties Enilα , E , E (used in (2.2.3)) for the quiver Q and the
+corresponding varieties for the quiver Q′ .
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                               15
+
+
+3.1.4. Let F : M(Q) → M(Q′ ) be a Hall functor, in particular, F is full and
+faithful. Then F (M) is indecomposable if and only if M is indecomposable. It
+follows that F induces an injective map from the set T (Q) of isomorphism classes
+of indecomposable objects of M(Q) to the set T (Q′ ) of isomorphism classes of
+indecomposable objects of M(Q′ ).
+3.1.5. The following proposition describes functorial properties of the Euler cocy-
+cle ǫ and the bilinear form <, > with respect to a Hall functor.
+Proposition. Let F : M(Q) → M(Q′ ) be a Hall functor. Then
+    ǫQ (dimM(Q) M1 , dimM(Q) M2 ) = ǫQ′ (dimM(Q′ ) F (M1 ), dimM(Q′ ) F (M2 )),
+ < dimM(Q) M1 , dimM(Q) M2 >Q =< dimM(Q′ ) F (M1 ), dimM(Q′ ) F (M2 ) >Q′ .
+for any M1 , M2 ∈ Ob(M(Q)).
+Proof. The proposition follows from 1.4.6 and from the fact that F is full, faithful,
+exact, and has épaisse image.
+3.1.6. The simplest example of a Hall functor is an embedding functor.
+   We call a subquiver Q′ = (I ′ , Ω′ , In′ , Out′ ) of a quiver Q = (I, Ω, In, Out) full if
+any h ∈ Ω such that In(h) ∈ I ′ and Out(h) ∈ I ′ belongs to Ω′ .
+   Let Q′ be a full subquiver of Q. Then the natural embedding IQ′ ⊂Q : M(Q′ ) →
+M(Q) clearly satisfies all the axioms of a Hall functor, and therefore induces an
+injective homomorphism iQ′ ⊂Q : L(Q′ ) → L(Q). Moreover,
+                                    iQ′ ⊂Q (Ek ) = Ek ,
+where k is a vertex of Q′ . It follows that iQ′ ⊂Q induces an injective homomorphism
+from n∗ (Q′ ) to n∗ (Q).
+   In the next section we consider a more intricate example of an (almost) Hall
+functor – the reflection functor, and in Section 5 we have still more examples.
+3.2. Reflection functors.
+3.2.1. Let (I, <, >) be a Cartan datum. We denote by σi an endomorphism of
+Z[I] given by the reflection with respect to a vertex i ∈ I:
+                                 σi (α) = α− < i, α > i.
+It is easy to see that σi preserves the inner product <, >, and that σi σi = id. The
+subgroup of the group of endomorphisms of Z[I] generated by {σi }i∈I is called the
+Weyl group. We denote the Weyl group by W .
+3.2.2. Let Q = (I, Ω, In, Out) be a quiver with the underlying Cartan datum
+(I, <, >).
+   A vertex i ∈ I is called a source if there is no h ∈ Ω such that In(h) = i.
+   A vertex i ∈ I is called a sink if there is no h ∈ Ω such that Out(h) = i.
+   A vertex is called admissible if it is either a source or a sink.
+   A reflection σi is called admissible if i is an admissible vertex.
+   We denote by σi Q = (I, Ω, In′ , Out′ ) a quiver with the same sets of vertices and
+edges and with the maps In′ and Out′ defined as follows:
+           In′ (h) = In(h), Out′ (h) = Out(h) if In(h) 6= i and Out(h) 6= i,
+            In′ (h) = Out(h), Out′ (h) = In(h) if In(h) = i or Out(h) = i.
+16             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+In other words, σi Q is obtained from Q by reversing all the arrows coming to i and
+going out of i.
+3.2.3. We call a sequence of vertices i1 , . . . , iK ∈ I admissible if for any l ∈
+{1, . . . , K} the vertex il is a sink for the quiver σil+1 . . . σiK Q.
+   We call c = σi1 . . . σi|I| ∈ W a Coxeter element if i1 , . . . , i|I| is an admissible
+sequence of vertices in which each vertex is present exactly once (in other words it
+is an ordering of vertices). It is easy to see that if the quiver has no oriented cycles
+then there exists a unique Coxeter element.
+   It is clear that cQ = Q.
+3.2.4. The following proposition asserts that the Euler cocycle ǫ introduced in
+1.3.4 is functorial with respect to admissible reflections.
+Proposition. Let i be an admissible vertex for Q. Then
+                              ǫσi Q (σi α, σi β) = ǫQ (α, β),
+for any α, β ∈ Z[I].
+Proof. An easy calculation using the definition of ǫQ . See also Remark 3.2.7.
+3.2.5. For an admissible i ∈ I we denote by i M(Q) the full subcategory of M(Q)
+defined as follows. Let i be a source L (resp. sink) and (V, x) beLan object of M(Q).
+Then it is an object of i M(Q) if                    x
+                                          h| Out(h)=i h : Vi  →     h| Out(h)=i VIn(h) is
+                 L                 L
+injective (resp.   h| In(h)=i xh :  h| In(h)=i VOut(h) → Vi is surjective). Let us note
+that the subcategory i M(Q) is not abelian in general.
+Proposition. 3.2.5.a. The subcategory i M(Q) is épaisse.
+ 3.2.5.b. Ob(i M(Q)) contains all indecomposable objects of M(Q) except for the
+          simple object Pi .
+Proof. Follows from the definition.
+3.2.6. Let i be an admissible vertex. Following [BGP73] we define reflection func-
+tor Si (Q) : M(Q) → M(σi Q).
+    If i is a sink then the action of the functor Si (Q) on objects is defined by
+Si (Q)((V, x)) = (V ′ , x′ ), where
+                                    Vk′ = Vk if k 6= i,
+                                   M            M
+                    Vi′ = Ker(           xh :           VOut(h) → Vi ),
+                               h| In(h)=i      h| In(h)=i
+
+                                   x′h = xh if In(h) 6= i,
+     x′h : Vi′ → VOut(h) is the inclusion composed with the projection if In(h) = i.
+    If i is a source then the action of the functor Si (Q) on objects is defined by
+Si (Q)((V, x)) = (V ′ , x′ ), where
+                                    Vk′ = Vk if k 6= i,
+                                    M                        M
+                  Vi′ = Coker(            xh : Vi →                   VIn(h) ),
+                                 h| Out(h)=i            h| Out(h)=i
+
+                                  x′h = xh if Out(h) 6= i,
+     x′h : VIn(h) → Vi′ is the inclusion composed with the projection if Out(h) = i.
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                            17
+
+
+  The action of Si (Q) on morphisms is the natural one.
+
+Proposition. The functor Si (Q) has the following properties:
+ 3.2.6.a. The image of Si (Q) coincides with the subcategory i M(σi Q).
+ 3.2.6.b. The restriction of the functor Si (Q) defines an equivalence of categories:
+          Si (Q) : i M(Q)→˜ i M(σi Q), the inverse functor is Si (σi Q).
+ 3.2.6.c. An object M ∈ Ob(i M(Q)) is indecomposable if and only if Si (Q)M is
+          indecomposable.
+ 3.2.6.d. Let M ∈ Ob(i M(Q)), dimM(Q) M = α. Then dimM(σi Q) Si (M) =
+          σi (α).
+ 3.2.6.e. If
+
+                             0 → M1 → M2 → M3 → 0
+
+          is an exact sequence of objects of i M(Q) then
+
+                 0 → Si (Q)(M1 ) → Si (Q)(M2 ) → Si (Q)(M3 ) → 0
+
+          is exact in i M(σi Q).
+
+Proof. 3.2.6.a and 3.2.6.d follow from the definition of Si (Q),
+  3.2.6.b Let i be a sink. Then there is the following split exact sequence
+
+                      0 → Si (σi Q)Si (Q)(M) → M → Li → 0,
+
+for any M ∈ M(Q). Here Li = (V, x), where
+
+                                    Vk = 0 if k 6= i,
+                                   M           M
+                  Vi = Coker(           xh :          VOut(h) → Vi ),
+                               h| In(h)=i      h| In(h)=i
+                                            x = 0.
+
+  If M ∈ i M(Q) then Li = 0.
+  The proof for i being a source is analogous.
+  3.2.6.c follows from 3.2.6.b.
+  3.2.6.e follows from the Snake Lemma.
+
+
+3.2.7. Remark. Roughly speaking Proposition 3.2.6 means that the restriction
+of the functor Si to the subcategory i M(Q) has associated dimension mapping
+dim Si = σi and has properties of a Hall functor. In particular together with 3.1.5
+it explains 3.2.4. However one should be careful, as the subcategory i M(Q) is not
+abelian. It would be more accurate to define the reflection functor Si not on a
+subcategory, but on a quotient category (in the sense of Serre) – namely, on the
+quotient of M(Q) over the embedded category of representations of the quiver with
+one vertex i and no edges.
+   Authors decided not to go into the treatment of Hall mappings for quotient
+categories in order to save space. Interested reader can easily invent all the necessary
+notions.
+18           IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+3.2.8. Though Si is not strictly speaking a Hall functor, one can still define the
+corresponding Hall map si if one restricts its domain.
+                    nil                                 i nil
+   We denote by i Eα the subvariety of Enil                           nil   α
+                                           α given by Eα = {x ∈ Eα |(C , x) ∈
+i
+  M(Q)}.
+   Let i Lα (Q) be a subspace of Lα (Q) consisting of all functions with support
+      nil
+in i Eα , and i L(Q) = ⊕α∈Z+ [I] i Lα (Q). It follows from 3.2.5.a that i L(Q) is a
+subalgebra of L(Q) with respect to ∗-product, and a Lie subalgebra with respect
+to the Lie bracket (2.2.5.a).
+   Now one can repeat the construction of the Hall map in 3.1.3 for the functor Si
+using Proposition 3.2.6, and get an isomorphism of algebras
+                                si : i L(Q) → i L(σi Q),
+such that
+                              (si (g))([Si (M)]) = g([M])
+        i
+for g ∈ L(Q).
+
+                             4. Quiver of finite type
+4.0.0. Throughout this chapter Q = (I, Ω, In, Out) denotes a quiver of finite type
+with underlying Cartan datum (I, <, >).
+4.1. Root system for a Cartan datum of finite type.
+4.1.1. An element α of Z[I] is called a root if < α, α >= 2. We denote the set of
+all roots by R. Let R+ denote the set of positive roots : R+ = R ∩ Z+ [I].
+   For example elements of I ⊂ Z[I] are (positive) roots. We call i ∈ I ⊂ R+ a
+simple root.
+   Since the symmetric form <, > is positive definite, the set of roots is finite.
+Therefore the Weyl group W (which preserves the root system R) is a finite group.
+4.2. Lie algebra based on the Euler cocycle.
+4.2.1. We denote by nǫ (Q) a C-linear space with basis {ẽα }α∈R+ equipped with
+the bilinear bracket
+                                    (
+                                     ǫ(α, β)ẽα+β     if α + β ∈ R+ ,
+(4.2.1.a)            [ẽα , ẽβ ] =
+                                     0                if α + β ∈
+                                                               / R+ ,
+where the Euler cocycle ǫ is defined in 1.3.4.
+Theorem (Frenkel, Kac [FK80], Segal [Seg81]). The space nǫ (Q) equipped with the
+bracket (4.2.1.a) is a Lie algebra over C.
+Proof. One has to check that the bracket is skew-symmetric and satisfies the Jacobi
+identity. Both statements follow from the definition of ǫ.
+
+4.2.2. Proposition. The Lie algebra nǫ (Q) is generated by {ẽi }i∈I , the following
+relations hold in nǫ (Q) :
+                               [ẽi , ẽj ] = 0 if < i, j >= 0 ,
+                          [ẽi , [ẽi , ẽj ]] = 0 if < i, j >= −1 .
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                                19
+
+
+Proof. Induction using the fact that for any α ∈ R+ there exists i ∈ I such that
+(α − i) ∈ (R+ ∪ 0) [Bou68].
+
+4.2.3. Because of Proposition 4.2.2 we have a surjective homomorphism of Lie
+algebras
+                                   Ξǫ : n(Q) → nǫ (Q)
+induced by
+                                         Ξǫ (ei ) = ẽi ,
+where n(Q) is introduced in 1.3.2.
+   It is known that n(Q) is isomorphic to the nilpotent radical of a Borel subalgebra
+of the semisimple Lie algebra associated to the Dynkin graph underlying the quiver
+Q. In particular dimC n(Q) = |R+ | = dimC nǫ (Q).
+   Comparison of dimensions implies that the surjective homomorphism Ξǫ is actu-
+ally an isomorphism and ΞQ = Ξ∗ ◦ (Ξǫ )−1 is a well-defined, surjective, Z[I]-graded
+homomorphism from nǫ (Q) to n∗ (Q).
+   The following commutative diagram shows all the Lie algebras involved and the
+corresponding Z[I]-graded homomorphisms
+
+
+                                          n(Q)
+                                         w     GG
+                                     ǫ
+                                    Ξ www        GGΞ∗
+                                      w            GG
+                                     w               GG
+                                  {ww      ΞQ           #
+                              ǫ
+                             n (Q)                    / n∗ (Q)
+
+  Our goal is to study the map ΞQ .
+
+4.3. Lie algebra n∗ for a quiver of finite type.
+
+4.3.1. The following theorem is a combination of results of Gabriel [Gab72], and
+Bernstein, Gelfand, and Ponomarev [BGP73].
+Theorem. Let Q be a quiver of finite type.
+ 4.3.1.a. If α ∈/ R+ then there are no indecomposable objects in M(Q) with dimen-
+          sion α (in other words, Tα is empty).
+ 4.3.1.b. There is a unique (up to an isomorphism) indecomposable object Pα in
+          M(Q) with dimension α for any α ∈ R+ In other words, Tα consists of
+          a single point. We denote the characteristic function of [Pα ] by Eα ∈
+          Lα (Q).
+ 4.3.1.c. For any given α ∈ R+ there exists an admissible sequence {it }N              t=0 of
+          vertices of Q (depending on α), such that
+             • α = σiN σiN −1 . . . σi1 i0 ,
+             • Pα = SiN SiN −1 . . . Si1 Pi0 ,
+             • Eα = siN siN −1 . . . si1 Ei0 ,
+             • for any t ∈ {1, . . . , N } the element σit σit−1 . . . σi1 i0 of R belongs to
+               R+ .
+  Note that the notation Pα and Eα is consistent with the notation Pi and Ei
+which we use above.
+20            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+4.3.2. Remark. It follows from Theorem 4.3.1 that in the case of a quiver of finite
+type there are finitely many non-isomorphic objects of M(Q) in each dimension. In
+other words, there are finitely many Gα -orbits in Eα for each α. Therefore Lα (Q)
+is finite-dimensional with a basis consisting of characteristic functions of the orbits.
+Thus L(Q) can be thought of as a C-linear space with a basis given by the set X (Q)
+of isomorphism classes of objects of M(Q).
+    The ∗-product can be rewritten as
+                                                nQ
+                                        X
+                      [M1 ] ∗ [M2 ] =             M1 ,M2 ;M3 [M3 ],
+                                       [M3 ]∈X (Q)
+
+where M1 , M2 , M3 are representatives of isomorphism classes and nQ
+                                                                   M1 ,M2 ;M3 is
+defined in 2.2.7.
+4.3.3. Our main result for quivers of finite type is the following
+Theorem. Let Q be a quiver of finite type. Then ΞQ (ẽα ) = Eα for any α ∈ R+ .
+4.3.4. Before proving Theorem 4.3.3 we give the following immediate Corollary:
+Corollary (Ringel [Rin90c]). 4.3.4.a. The C-linear space n∗ (Q) coincides with
+          the space of all C-valued functions on the set T of isomorphism classes
+          of indecomposable representations.
+ 4.3.4.b. The Lie bracket in n∗ (Q) is given by the Euler cocycle ǫ:
+                                (
+                                  ǫ(α, β)Eα+β , if α + β ∈ R+ ,
+                   [Eα , Eβ ] =
+                                  0              if α + β ∈
+                                                          / R+ .
+4.3.5. Remark. Statement 4.3.4 was first established by C. M. Ringel [Rin90c], who
+used slightly different definition of the Lie algebra n∗ (Q). He found all the varieties
+  Q
+NM  1 ,M2 ;M3
+              used in the definition of the structure constants nQM1 ,M2 ;M3 (see 4.3.2).
+                                                                      Q
+   Our proof does not rely on the explicit form of the varieties NM     1 ,M2 ;M3
+                                                                                  .
+4.4. Reflections revisited or a proof of the Ringel theorem.
+                                                                ∗
+4.4.1. Let i be an admissible vertex. We denote by i n (Q) the intersection of
+n∗ (Q) with i L(Q) (see 3.2.8). Note that Ei ∈  / i n∗ (Q).
+    Let j be a vertex connected with i by an edge (we recall that Q being of finite type
+is simply laced). Let Ei+j ∈ i L(Q) be a function on Ei+j equal to the characteristic
+function of the Gi+j -orbit, corresponding to the unique, up to an isomorphism,
+indecomposable representation Pi+j of dimension i + j ∈ Z[I].
+    It follows from the definition of the ∗-product that Ei+j = [Ej , Ei ] if i is a source,
+and Ei+j = [Ei , Ej ] if i is a sink. In particular, Ei+j ∈ i n∗ (Q).
+Proposition. 4.4.1.a. Let α ∈ R+ , α 6= i. We denote by Eα′ ∈ i L(Q) and
+        Eα′′ ∈ i L(σi Q) the characteristic functions defined in 4.3.1.b for quivers
+        Q and σi Q respectively. Then
+                                     si (Eα′ ) = Eσ′′i α .
+                            ∗
+ 4.4.1.b. The subspace i n (Q) is a Z+ [I]-graded Lie subalgebra of n∗ (Q) generated
+          by elements Ek for k 6= i and Ei+j for all j connected to i by an edge.
+                                      ∗
+ 4.4.1.c. The restriction of si to i n (Q) yields an isomorphism of Lie algebras
+          i ∗         i ∗
+           n (Q) and n (σi Q).
+                                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                                     21
+
+
+Proof. Note that σi (j) = i + j because Q is simply laced. Now the proposition
+                                                                                   ∗
+follows from 3.2.8, 3.2.6.c, and 3.2.6.d. The action of si on the generators of i n (Q)
+is given by
+                   si (Ej′ ) = Ej′′                 if i is not connected with j by an edge ,
+         ′
+    si (Ei+j )   =     Ej′′ ,          si (Ej′ )         ′′
+                                                      = Ei+j          if i is connected with j by an edge ,
+where the notation is as in 4.4.1.a.
+4.4.2. For an admissible vertex i we denote by i nǫ the Lie subalgebra of nǫ , gen-
+erated by elements {ẽk }k∈I and {ẽi+j } j∈I (cf. 4.4.1). Note that i + j ∈ R+ if
+                                         k6=i                   i+j∈R+
+and only if j is connected to i by an edge. One has nǫ = i nǫ ⊕ Cẽi as a C-linear
+space, and ẽi+j = [ẽj , ẽi ] (resp. ẽi+j = [ẽi , ẽj ]) if i is a source (resp. a sink).
+4.4.3. We denote by sǫi a C-linear map i nǫ (Q) → i nǫ (σi Q) given by sǫi (ẽ′α ) = ẽ′′σi (α) ,
+                                           ǫ
+where ẽ′α , ẽ′′α are basic vectors of i n (Q) and i nǫ (σi Q) respectively. In particular,
+for the generators
+                  sǫi (ẽ′j ) = ẽ′′j               if i is not connected with j by an edge ,
+       sǫi (ẽ′i+j )   =   ẽ′′j ,    sǫi (ẽ′j )   = ẽ′′i+j    if i is connected with j by an edge .
+Proposition. The map                       sǫi   is well-defined and is an isomorphism of Lie algebras.
+Proof. Follows from the fact that σi (R+ \{i}) = R+ \{i} and from 3.2.4.
+4.4.4. It follows from 4.4.1, 4.4.2 that ΞQ (i nǫ (Q)) ⊂ i n∗ (Q), and that ΞQ (ẽi+j ) =
+Ei+j .
+   Using Propositions 4.4.1.c and 4.4.3 we get the following diagram of Lie algebra
+homomorphisms:
+
+                                                                sǫi
+(4.4.4.a)                                            i ǫ              / i nǫ (σi Q)
+                                                      n (Q)
+                                                           ΞQ                 Ξσi Q
+                                                               si
+                                                                               
+                                                     i ∗              / i n∗ (σi Q),
+                                                      n (Q)
+where the horizontal maps are isomorphisms. The diagram (4.4.4.a) is commutative
+on generators ẽk , ẽi+j of i nǫ (Q) and, therefore, is commutative.
+4.4.5. Proof of Theorem 4.3.3. Let G(Q) ⊂ R+ be the set of all α ∈ R+ such
+that ΞQ (ẽα ) = Eα . Then I ⊂ G(Q) for any Q, and it follows from 4.4.1.a, 4.4.3,
+and the commutative diagram (4.4.4.a) that σi (G(Q)\{i}) = G(σi Q)\{i} for any
+admissible vertex i. Using the sequence of reflections (4.3.1.c) one obtains that
+α ∈ G(Q) for any α ∈ R+ . Therefore ΞQ (ẽα ) = Eα for any α ∈ R+ , which proves
+the theorem.
+
+                                                 5. Quiver of affine type
+5.0.0. In this chapter we consider the Lie algebra n∗ (Q) in the case of Q being of
+affine type.
+   Throughout the chapter Q = (I, Ω, In, Out) denotes a quiver of affine type with
+underlying Cartan datum (I, <, >). In particular the bilinear form <, > is positive
+semi-definite.
+22           IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.1. Root system for a Cartan datum of affine type.
+5.1.1. An element α ∈ Z[I] is called a root if < α, α >≤ 2 and α 6= 0. We denote
+the set of all roots by R. Let R+ denote the set of positive roots : R+ = R ∩ Z+ [I].
+   For example elements of I ⊂ Z[I] are (positive) roots. We call i ∈ I ⊂ R+ a
+simple root.
+   It is easy to see that if α ∈ R then < α, α >∈ {0, 2}. A root α such that
+< α, α >= 2 (resp. < α, α >= 0 ) is called real (resp. imaginary) root. We denote
+                                                                   re         im
+the set of all positive real (resp. positive imaginary) roots by R+   (resp. R+  ). So
+          re    im
+R+ = R+ ∪ R+ .
+                       im
+   It is known that R+    = (Z+ \{0})δ, where δ ∈ R+ . We call δ the first imaginary
+root.
+   The components of δ are given in the table of affine Dynkin graphs (Figure 2).
+5.1.2. A vertex p ∈ I is called an extending vertex if δp = 1, where δ is the first
+imaginary root. Such a vertex always exists, but it is not unique in general. If
+one removes from Q an extending vertex together with adjacent edges one gets an
+irreducible quiver of finite type.
+5.2. Lie algebra based on the Euler cocycle.
+5.2.1. We consider the following set of C-linear spaces:
+       • for each positive real root α a one-dimensional C-linear space nǫα (Q) =
+         Cẽα with generator ẽα ,
+       • for each positive imaginary root nδ a C-linear space nǫnδ (Q) = C[I]/Cδ,
+         where we consider δ as an element of R+ ⊂ Z[I] ⊂ C[I]. For h ∈ C[I]
+         we denote by h(n) the image of h under the natural projection map
+         C[I] → nǫnδ (Q).
+   We denote by nǫ (Q) the following R+ -graded C-linear space:
+                                        M
+                               nǫ (Q) =      nǫα (Q),
+                                           α∈R+
+
+equipped with the bilinear bracket
+                                                 
+                                                                             re
+                                                 ǫ(α, β)ẽα+β
+                                                                if α + β ∈ R+  ,
+                                   [ẽα , ẽβ ] = ǫ(α, β)α(k)    if α + β = kδ,
+                                                 
+(5.2.1.a)                                          0             if α + β ∈
+                                                                          / R+ ,
+                                                 
+
+                 [h(n), ẽα ] = −[ẽα , h(n)] = ǫ(nδ, α) < h, α > ẽα+nδ ,
+                             [h(n), h(m)] = 0,
+where h ∈ C[I], ǫ is the Euler cocycle (see 1.3.4). Note that < h′ , α >=< h′′ , α > if
+h′ (n) = h′′ (n) because δ ∈ Ker <, >. Therefore the bracket (5.2.1.a) is well-defined.
+Theorem. The C-linear space nǫ (Q) equipped with the bracket (5.2.1.a) is a Lie
+algebra.
+Proof. One has to check that the bracket is skew-symmetric and satisfies the Jacobi
+identity. Both statements follow (after lengthy, but straightforward calculations)
+from the definition of ǫ. A more conceptual proof is to consider nǫ as embedded into
+an algebra of vertex operators, associated with the quiver Q (see [Fre85, MRY90]).
+                    AFFINE LIE ALGEBRAS AND TAME QUIVERS                           23
+
+
+5.2.2. Proposition. The Lie algebra nǫ (Q) is generated by {ẽi }i∈I , the following
+relations hold in nǫ (Q) :
+
+                           (ad(ẽi ))1−aij ẽj = 0 if i 6= j ,
+
+where ad(x)y = [x, y], and aij =< i, j >.
+                                                P
+Proof. Induction on n(α), where n(α) =              i∈I   αi for a root α.
+
+5.2.3. Because of Proposition 5.2.2 we have a surjective R+ -graded homomorphism
+of Lie algebras:
+
+                                 Ξǫ : n(Q) → nǫ (Q)
+
+induced by
+
+                                     Ξǫ (ei ) = ẽi ,
+
+where n(Q) is the Lie algebra introduced in 1.3.2.
+  It is known that
+                            (                      )
+                              1        if α ∈ Rre
+             dimC nα (Q) =                           = dimC nǫα (Q).
+                              |I| − 1 if α ∈ Rim
+
+   Comparison of dimensions implies that the surjective homomorphism Ξǫ is actu-
+ally an isomorphism and ΞQ = Ξ∗ ◦ (Ξǫ )−1 is a well-defined, surjective, Z[I]-graded
+homomorphism from nǫ (Q) to n∗ (Q).
+   As in the case of a quiver of finite type we want to study the map ΞQ and,
+in particular, its image. There are two (related) differences with the finite case.
+First, the description of indecomposable objects in the category M(Q) is more
+complicated. In particular, there are infinite families of indecomposable objects in
+some graded dimensions. Second, some of the graded components of nǫ (Q) are not
+one-dimensional.
+   Because of these complications we consider special cases first, and then build the
+general affine case on them.
+
+5.3. Jordan quiver.
+
+5.3.1. In this subsection we consider quiver C1 that consists of one vertex con-
+nected by an edge with itself: C1 = ({δ}, {e}, In, Out), where In(e) = Out(e) = δ.
+One can draw C1 as follows:
+
+
+
+                                           
+                                                δ .
+                                               '&%$
+                                                !"#
+
+   Though C1 is not a Dynkin quiver, the definition of the category of nilpotent rep-
+resentations of C1 makes perfect sense. Objects of M(C1 ) are pairs (V, x) consisting
+of a C-linear space V and a nilpotent x ∈ HomC (V, V ).
+24            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.3.2. An indecomposable object of M(C1 ) with dimension n is isomorphic to the
+pair (Cn , Jn ) = Jn , where Jn is the Jordan block
+                                                                         
+                                    0 1 0 ... 0 0
+                                  0 0 1 . . . 0 0
+                                                                         
+                                  . . . . . . . . . . . . . . . . . . . .
+(5.3.2.a)                   Jn =                                        .
+                                  0 0 0 . . . 1 0
+                                                                          
+                                  0 0 0 . . . 0 1
+                                    0 0 0 ... 0 0
+
+5.3.3. Proposition. dimC HomM(C1 ) (Jn , Jn ) = n.
+
+Proof. An element f of HomM(C1 ) (Jn , Jn ) is, by definition, an n × n matrix such
+that f Jn = Jn f . It follows that
+                                                                                       
+                              a1 a2 a3 . . . an−1                                an
+                             0 a1 a2 . . . an−2 an−1 
+                                                                                       
+                            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+(5.3.3.a)               f = 0 0 0 ...
+                                                                                        
+                                                                   a2           a3    
+                             0 0 0 ...                             a1           a2 
+                               0 0 0 ...                             0           a1
+
+for some set {ai ∈ C}ni=1 .
+
+5.3.4. We call the vertex δ of C1 the first imaginary root when δ is considered as
+an element of Z[δ].
+   One has eC1 (α, β) = 0 for any α, β ∈ Z[δ]. We put < α, β >C1 = eC1 (α, β) +
+eC1 (β, α) = 0 and ǫC1 (α, β) = (−1)eC1 (α,β) = 1.
+   We use the notation r (rotation transformation, cf. 5.5.2) for the identity trans-
+formation of Z[δ].
+
+5.4. Kronecker quiver.
+
+5.4.1. In this section we consider a quiver K that consists of two vertices connected
+by two edges, which are directed in the same way. So K = ({0, 1}, {a, b}, In, Out),
+where In(a) = In(b) = 1, Out(a) = Out(b) = 0:
+
+                                             a
+                                                 ( '&%$
+                                       0
+                                      '&%$
+                                       !"#          1
+                                                  6 !"#
+                                             b
+
+  The set of indecomposable representations of K was described by Kronecker
+[Kro90].
+
+5.4.2. It is easy to see that α ∈ Z ⊕ Z is a positive real root (resp. positive
+imaginary root) if α = (n + 1, n) or α = (n, n + 1) (resp. α = (n + 1, n + 1)) for
+some n ∈ Z+ . In particular α0 = (1, 0) and α1 = (0, 1) are the simple roots, and
+δ = (1, 1) is the first imaginary root.
+   The Lie bracket (5.2.1.a) in nǫ (K) can be written as follows:
+                       AFFINE LIE ALGEBRAS AND TAME QUIVERS                                         25
+
+
+
+
+                    [ẽ(n,n+1) , ẽ(m,m+1) ] = 0,
+                    [ẽ(n+1,n) , ẽ(m+1,m) ] = 0,
+                          [α1 (n), α1 (m)] = 0,
+(5.4.2.a)
+                       [α1 (n), ẽ(m,m+1) ] = 2(−1)n ẽ(m+n,m+n+1) ,
+                       [α1 (n), ẽ(m+1,m) ] = 2(−1)n+1 ẽ(m+n+1,m+n) ,
+                    [ẽ(n,n+1) , ẽ(m+1,m) ] = (−1)n+m α1 (m + n + 1).
+   Note that α0 (n) = −α1 (n).
+
+5.4.3. According to Section 1.4 a representation M of the quiver K is a quadru-
+ple ((V0 , V1 ), (xa , xb )) consisting of two C-linear spaces V0 and V1 and two linear
+maps xa , xb ∈ HomC (V0 , V1 ). The dimension of the representation M is given by
+dimM(K) M = (dimC V0 , dimC V1 ).
+
+5.4.4. Let us describe the structure of the category M(K). There are two simple
+objects U00 = ((C, 0), (0, 0)) and U10 = ((0, C), (0, 0)). If one applies repeatedly
+the reflection functors S0 and S1 to the simple objects one obtains two families of
+indecomposable objects U0n and U1n , given by
+              U0n = ((Cn+1 , Cn ), (A, B)),            dimM(K) U0n = (n + 1, n),
+             U1n = ((Cn , Cn+1 ), (At , B t )),         dimM(K) U1n = (n, n + 1),
+where
+                                                                                           
+                       1 0 ... 0 0                             0 1 ... 0 0
+                     0 1 . . . 0 0                          0 0 . . . 0 0
+                                                                                           
+(5.4.4.a)             . . . . . . . . . . . . . . . . ,
+                   A=                                
+                                                              . . . . . . . . . . . . . . . . .
+                                                            B=                               
+                     0 0 . . . 0 0                          0 0 . . . 1 0
+                       0 0 ... 1 0                             0 0 ... 0 1
+  Note that the set of graded dimensions of the indecomposables obtained in this
+way coincides with the set of positive real roots.
+
+5.4.5. In this section we use the argument and notation borrowed (with slight
+adjustments) from [Lus92, Section 2].
+   The category M(K) is isomorphic to the following category C: an object of C is
+a triple ((V0 , V1 ), ∆) consisting of a pair (V0 , V1 ) of C-linear spaces, and a C-linear
+map ∆ : V0 ⊗C C2 → V1 . A morphism from ((V0 , V1 ), ∆) to ((V0′ , V1′ ), ∆′ ) is a pair
+(φ0 , φ1 ) of C-linear maps φi : Vi → Vi′ such that φ1 ◦ ∆ = ∆′ ◦ (φ0 ⊗ IdC2 ). Let
+us introduce the following notation: ∆e (v) = ∆(v ⊗ e), where e ∈ C2 , v ∈ V0 .
+The isomorphism of categories C and M(K) is given by a functor J that takes
+((V0 , V1 ), ∆) to ((V0 , V1 ), (∆ 1  , ∆ 0  )), and acts naturally on morphisms.
+                                    0        1
+   Let M = ((V0 , V1 ), ∆) ∈ Ob(C). We denote by Spec M (spectrum of M) the set
+of all lines z ∈ CP1 such that for e ∈ z, e 6= 0 the map ∆e : V0 → V1 is not an
+isomorphism.
+   Let 0 C be the following full subcategory of C. An object M of C belongs to
+Ob(0 C) if Spec M is a finite set. In particular, if M = ((V0 , V1 ), ∆) ∈ Ob(0 C) then
+                                                   im
+dimC V0 = dimC V1 , that is dimM(K) J (M) ∈ R+        .
+26            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+   One can prove (cf. [Lus92]) that 0 C = ⊕z∈CP1 0 C z (direct coproduct of abelian
+categories), where 0 C z is a full subcategory of 0 C whose objects are M ∈ Ob(0 C)
+such that Spec M = z.
+   The category 0 C z for any z ∈ CP1 is equivalent to the category M(C1 ) of nilpo-
+tent representations of the Jordan quiver C1 . Let us describe the equivalence functor
+Iz : M(C1 ) → 0 C z . We choose two elements e, e′ ∈ C2 such that e 6= 0, e′ 6= 0,
+e ∈ z, e′ ∈
+          / z. Then the functor Iz is given by the following action on objects
+
+                              Iz ((V, x)) = ((V, V ), ∆),
+                        where ∆(v ⊗ (ce + c′ e′ )) = cxv + c′ v,
+
+and the natural action on morphisms. The equivalence class of Iz does not depend
+on the choice of e, e′ .
+  We denote by Hz the composition functor Hz = J ◦ Iz : M(C1 ) → M(K). For
+example, if z = (1 : 0) the functor H(1:0) is given by the following action on objects
+
+                          H(1:0) ((V, x)) = ((V, V ), (x, IdV ))
+
+and the natural action on morphisms (here we have chosen e = (1, 0), e′ = (0, 1)).
+   The functor Hz is a Hall functor for any z ∈ CP1 .
+   It follows that Hz (Jn ) is indecomposable in M(K) of dimension nδ, and all
+indecomposables in Ob(J (0 C)) are of this form. One can prove (cf. [Lus92]) that
+if M ∈ Ob(M(K)) is indecomposable then either M is isomorphic to an object,
+obtained from a simple one by repeated applications of reflection functors, or M
+belongs to Ob(J (0 C)). Therefore any indecomposable object of M(K) of dimension
+nδ belongs to Ob(J (0 C)), and we can use the map
+
+                                  Spec : Tnδ → CP1 ,
+                                 Spec([M]) = Spec M
+
+to identify Tnδ and CP1 . Abusing notation we just write Tnδ = CP1 . In this way
+Tnδ is endowed with a structure of an algebraic variety.
+
+5.4.6. We summarize the above discussion in the following proposition which de-
+scribes the set T of isomorphism classes of indecomposable objects of M(K).
+
+Proposition. One has:
+ 5.4.6.a. if α ∈
+               / R+ then Tα = ∅,
+                  re
+ 5.4.6.b. if α ∈ R+   then Tα = pt, the only (up to an isomorphism) indecomposable
+          representation with dimension α being U0n (resp. U1n ) for α = (n + 1, n)
+          (resp. α = (n, n + 1)),
+ 5.4.6.c. if α ∈ R+im
+                       then Tα = CP1 ; the indecomposable representation of dimen-
+          sion α = (n, n) corresponding to z ∈ CP1 is Hz (Jn ).
+
+5.4.7. Let Eind
+              α   = {(xa , xb ) ∈ Eα | ((Cα0 , Cα1 ), (xa , xb )) is indecomposable }.
+                                                   1
+Abusing notation we denote by Spec : Eind nδ → CP a regular map obtained by as-
+signing to element (xa , xb ) ∈ Enδ the point z ∈ CP1 such that ((Cn , Cn ), (xa , xb ))
+                                 ind
+                                                     1
+is isomorphic to Hz (Jn ). The map Spec : Eind
+                                            nδ → CP is a fibration with a constant
+fiber.
+                       AFFINE LIE ALGEBRAS AND TAME QUIVERS                                   27
+
+
+5.4.8. Let us introduce the following functions on the set of isomorphism classes
+of indecomposable objects of M(K) (which by our usual abuse of notation are also
+Gα -equivariant functions on Eα ):
+                             Eα = θ(Tα ) = θ(Eind
+                                              α ) ∈ Lα (K),
+                                                                        im
+where θ denotes the characteristic function of a set. Note that if α ∈ R+  then Eα
+                                                1
+is the constant function equal to 1 on Tα = CP .
+
+5.4.9. The following proposition gives some ∗-products, which we use later. Due
+to Proposition 2.2.8 we are only interested in the restrictions of the ∗-products to
+the set of indecomposable representations.
+Proposition.
+(5.4.9.a)                  E(0,1) ∗ E(n,n−1) |Eind = E(n,n) ,
+                                                (n,n)
+
+(5.4.9.b)                  E(n,n−1) ∗ E(0,1) |Eind = 0,
+                                                (n,n)
+
+(5.4.9.c)                  E(1,0) ∗ E(n−1,n) |Eind = 0,
+                                                (n,n)
+
+(5.4.9.d)                  E(n−1,n) ∗ E(1,0) |Eind = E(n,n) ,
+                                                (n,n)
+
+(5.4.9.e)                  E(0,1) ∗ E(n,n) |Eind        = 2E(n,n+1) ,
+                                              (n,n+1)
+
+(5.4.9.f)                  E(n,n) ∗ E(0,1) |Eind        = 0,
+                                              (n,n+1)
+
+(5.4.9.g)                  E(1,0) ∗ E(n,n) |Eind        = 0,
+                                              (n+1,n)
+
+(5.4.9.h)                  E(n,n) ∗ E(1,0) |Eind        = 2E(n+1,n) .
+                                              (n+1,n)
+
+
+Proof. 5.4.9.b and 5.4.9.f follow from the fact that U10 is projective.
+    5.4.9.c and 5.4.9.g follow from the fact that U00 is injective.
+    Let us prove 5.4.9.a. We need to find the value of the function E(0,1) ∗ E(n,n−1)
+on the isomorphism class of the representation Hz (Jn ). We give below the calcu-
+lation for z = (1 : 0). The case of arbitrary z ∈ CP1 is completely analogous, and,
+moreover, the result does not depend on z. The value of E(0,1) ∗ E(n,n−1) on the
+isomorphism class of H(1:0) (Jn ) is equal, by the definition of the ∗-product, to the
+Euler characteristic of the variety NU10 ,U0n−1 ,H(1:0) (Jn ) of all subrepresentations V
+of H(1:0) (Jn ) such that V is isomorphic to U10 and H(1:0) (Jn )/V is isomorphic to
+U0n−1 . Since H(1:0) (Jn ) = ((Cn , Cn ), (Jn , IdCn )) it follows that NU10 ,U0n−1 ;H(1:0) (Jn )
+coincides with the set of all lines l ∈ Cn such that ((Cn , Cn /l), (p◦Jn, p)) is indecom-
+posable, where p : Cn → Cn /l is the projection. The object ((Cn , Cn /l), (p ◦ Jn , p))
+is indecomposable if and only if l ∈   / im Jn . Therefore NU10 ,U0n−1 ;H(1:0) (Jn ) = Cn−1 ,
+and we get 5.4.9.a.
+    Statement 5.4.9.d is dual to 5.4.9.a.
+    Let us prove 5.4.9.e. We need to find the value of the function E(0,1) ∗E(n,n) on the
+isomorphism class of the representation U1n . This value is equal, by the definition
+of the ∗-product, to the Euler characteristic of a variety X of all subrepresentations
+V of U1n such that V is isomorphic to U10 and U1n /V is isomorphic to Hz (Jn )
+for some z ∈ CP1 . Similar to 5.4.7 one can use the Spec map to prove that
+the variety X is a fibration over CP1 with the fiber over z equal to the variety
+NU10 ,Hz (Jn );U1n of all subrepresentations V of U1n such that V is isomorphic to U10
+and U1n /V is isomorphic to Hz (Jn ). Let us consider the case z = (1 : 0). Since
+28             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+U1n = ((Cn , Cn+1 ), (At , B t )), where A and B are as in (5.4.4.a), and H(1:0) (Jn ) =
+((Cn , Cn ), (Jn , IdCn )), it follows that V = {(((0, . . . , 0), (a, . . . , 0)), (0, 0))}a∈C ⊂
+U1n . Therefore NU10 ,H(1:0) (Jn );U1n is a point. The calculation for arbitrary z ∈ CP1
+is completely analogous, and, moreover, the variety NU10 ,Hz (Jn );U1n does not depend
+on z. Thus χ(X) = χ(CP1 ) = 2, which is the statement 5.4.9.e.
+    Statement 5.4.9.h is dual to 5.4.9.e.
+5.4.10. Let us recall that n∗ (K) denotes the Lie algebra generated by E(0,1) and
+E(1,0) with respect to the bracket (2.2.5.a). In 5.2.3 we introduced a homomorphism
+ΞK : nǫ (K) → n∗ (K). The following proposition is an analog of Ringel Theorem
+(Theorem 4.3.3) for the quiver K.
+Proposition. The homomorphism ΞK is given by the formulas
+                                                re
+                        ΞK (ẽα ) = Eα for α ∈ R+  ,
+                              ΞK (α1 (n)) = (−1)n+1 E(n,n) .
+Proof. We prove the proposition by induction. It follows from the definitions that
+                                    ΞK (ẽ(0,1) ) = E(0,1) ,
+                                     ΞK (ẽ(1,0) ) = E(1,0) .
+Suppose that
+                                 ΞK (ẽ(k,k+1) ) = E(k,k+1) ,
+                                  ΞK (ẽ(k+1,k) ) = E(k+1,k) .
+Then using (5.4.2.a) and Proposition 5.4.9 we have
+                     ΞK (α1 (k + 1)) = ΞK ((−1)k [ẽ(0,1) , ẽ(k+1,k) ]) =
+            = (−1)k [ΞK (ẽ(0,1) ), ΞK (ẽ(k+1,k) )] = (−1)k [E(0,1) , E(k+1,k) ] =
+                                 = (−1)(k+1)+1 E(k+1,k+1) ,
+which gives ΞK (α1 (k + 1)), and
+                                       (−1)k+1
+                  ΞK (ẽ(k+1,k+2) ) = ΞK (         [α1 (k + 1), ẽ(0,1) ]) =
+                                            2
+           (−1)k+1                                     −1
+         =         [ΞK (α1 (k + 1)), ΞK (ẽ(0,1) )] =     [E(k+1,k+1) , E(0,1) ] =
+              2                                         2
+                                   = E(k+1,k+2) ,
+
+                                         (−1)k
+                   ΞK (ẽ(k+2,k+1) ) = ΞK (        [α1 (k + 1), ẽ(1,0) ]) =
+                                             2
+              (−1)k                                     1
+            =       [ΞK (α1 (k + 1)), ΞK (ẽ(1,0) )] = [E(k+1,k+1) , E(1,0) ] =
+                2                                       2
+                                    = E(k+2,k+1) ,
+which provides the induction step.
+   One can avoid some of these calculations using an argument similar to the proof
+                                                 re
+of Theorem 4.3.3 to get ΞK (ẽα ) = Eα for α ∈ R+   (note that the indecomposable
+                            re
+object with dimension α ∈ R+ can be obtained by repeated applications of reflection
+functors to a simple object). However, one would still need explicit calculations
+with the ∗-product to get the statement of the theorem in the case of an imaginary
+root.
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                           29
+
+
+5.4.11. Let us introduce the following function ξK : R+ → {±1}.
+
+
+                        ξK (α) = (−1)(1+dimC HomM(K) (P,P)) ,
+
+where P ∈ Ob(M(K)) is indecomposable and dimM(K) P = α.
+   Since U0n and U1n can be obtained by sequences of reflection functors from simple
+                                      re
+objects we have ξK (α) = 1 if α ∈ R+     . As any indecomposable object with dimen-
+sion nδ is isomorphic to Hz (Jn ) for some z ∈ CP1 , it follows from Proposition 5.3.3
+that ξK (nδ) = (−1)n+1 . In particular, ξK is well-defined.
+   We put Ẽα = ξK (α)Eα .
+
+5.4.12. Here is our final theorem for the Kronecker quiver.
+
+Theorem. The homomorphism ΞK : nǫ (K) → n∗ (K) is given by the formulas
+                                                       re
+                              ΞK (ẽα ) = Ẽα for α ∈ R+  ,
+                           ΞK (α1 (n)) = Ẽ(n,n) .
+
+Proof. Follows from Proposition 5.4.10.
+
+5.4.13. Given an imaginary root nδ, there are infinitely many indecomposable
+representations with dimension nδ and only one basic element of the Lie algebra
+with degree nδ. In a sense the Lie algebra of functions n∗ (K) does not distinguish
+among these representations (they are ”similar”, though not isomorphic). Note
+also that the Euler characteristic of the set of indecomposable representations with
+dimension nδ is equal to 2 (for Tnδ = CP1 ). It is this 2 that appears in the structure
+constants 5.4.2.a !
+
+5.5. Cyclic quiver.
+
+5.5.1. Let us fix N ∈ Z, N ≥ 2. In this section we study the cyclic quiver
+CN = (Z/N Z, Z/N Z, In, Out), where In(k) ≡ k + 1 (mod N ), Out(k) ≡ k (mod N ).
+                                                                         (1)
+It is a quiver of affine type, with the underlying Dynkin graph of type AN −1 .
+   One can draw C7 as follows
+
+                                                 1 Pg
+                                                '&%$
+                                                 !"#
+                                           nnnnn PPPPP
+                                        w
+                                        n n           P'&%$
+                                      2
+                                   '&%$
+                                    !"#                 0&S
+                                                        !"#
+                                                         &&
+                                                          &&
+                                                               &
+                                
+                               3 99
+                              '&%$
+                               !"#                                 6
+                                                                 '&%$
+                                                                  !"#
+                                   99                          B
+                                     99                       
+                                       9                   
+                                                          
+                                                     / '&%$
+                                          4
+                                        '&%$
+                                         !"#            5
+                                                        !"#
+
+  and C2 as follows
+
+                                                    ( '&%$
+                                          0h
+                                         '&%$
+                                          !"#          1
+                                                       !"#
+30              IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.5.2. A cyclic quiver has no admissible vertices. In particular, there is no Coxeter
+element. However there exists the following ”rotation” transformation r of the
+lattice Z[Z/N Z].
+                                       r : Z[Z/N Z] → Z[Z/N Z],
+                                          r(i) ≡ i + 1 (mod N ).
+
+5.5.3. It is easy to see that if (a0 , a1 , . . . , aN −1 ) ∈ Z+ [Z/N Z] is a positive real
+root then there exist unique i ∈ Z/N Z and l ∈ Z+ , l 6≡ 0 (mod N ), such that
+ak = #{m ∈ {i, . . . , i + l − 1}| m ≡ k (mod N )}. We denote the corresponding root
+by αi,l . In particular the set of simple roots is {αi,1 }i∈Z/N Z . Imaginary roots are
+integer multiples of δ = (1, 1, . . . , 1) ∈ Z[Z/N Z].
+
+5.5.4. Next we want to write down explicitly the Lie bracket (5.2.1.a) in the case
+of a cyclic quiver. It appears that expressions become much simpler if one changes
+the basis in nǫ (CN ) a little. Namely, let
+                                          f˜αi,l = (−1)[l/N ] ẽαi,l ,
+where [l/N ] denotes the integer part of l/N , and
+                                            h̃(n) = (−1)n h(n)
+for h(n) ∈ nǫnδ . Then
+                                      −f˜αi,k+l
+                                     
+                                     
+                                                                        if i + l ≡ j (mod N )
+                                     
+                                                                         and k + l 6≡ 0 (mod N ) ,
+                                     
+                                     
+                                     
+                                     
+                                     f˜
+                                     
+                                                                         if j + k ≡ i (mod N )
+                                        α
+(5.5.4.a)     [f˜αi,l , f˜αj,k ] =        j,k+l
+
+                                     
+                                     
+                                                                        and k + l 6≡ 0 (mod N ) ,
+                                      (α̃i,1 + · · · + α̃j−1,1 )(n)      if i + l ≡ j (mod N )
+                                     
+                                     
+                                     
+                                     
+                                     
+                                                                         and k + l = nN ,
+                                     
+
+                                 [h̃(n), f˜αi,l ] =< h, αi,l > f˜αi,l+N n .
+
+5.5.5. Let us consider the case N = 2. The Lie bracket 5.5.4.a becomes
+                              (
+            ˜       ˜           α̃i,1 (n) if i 6≡ j (mod 2) and k + l = 2n ,
+           [fαi,l , fαj,k ] =
+                                0         otherwise ,
+                                 [h̃(n), f˜αi,l ] =< h, αi,l > f˜αi,l+2n .
+     The scalar product is given by < α0,1 , α0,1 >= < α1,1 , α1,1 >= − < α0,1 , α1,1 >=
+2.
+                                                                                                     (1)
+   Note that the quivers C2 and K have the same underlying Dynkin graph A1 .
+Therefore the algebras nǫ (C2 ) and nǫ (K) are (non-canonically) isomorphic. An
+isomorphism can be given by
+                                           η : nǫ (C2 ) → nǫ (K)
+
+                     η(ẽα0,2n+1 ) = η((−1)n f˜α0,2n+1 ) = (−1)n ẽn+1,n ,
+                     η(ẽα 1,2n+1) = η((−1)n f˜α       ) = (−1)n+1 ẽn,n+1 ,
+                                                       1,2n+1
+
+                      η(α1,1 (n)) = η((−1)n α̃1,1 (n)) = α1 (n).
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                                   31
+
+
+5.5.6. We now turn to the Lie algebra n∗ (CN ). The category M(CN ) is isomorphic
+to the following category NN . Objects of NN are pairs (V, x), where V is a Z/N Z-
+graded C-linear space and x is C-linear nilpotent endomorphism of V , such that
+deg(xv) = deg(v) + 1 for any v ∈ V , the set of morphisms from (V, x) to (W, y) is
+the set of all Z/N Z-graded C-linear maps f from V to W , such that yf = f x.
+
+5.5.7. A simple object Pi,1 (i ∈ Z/N Z) of the category NN is a pair Pi,1 =
+(V, x) ∈ Ob(NN ), such that
+                                                Vi = C,
+                                       Vj = 0 for j 6= i ,
+                                                 x = 0.
+   The set {[Pi,1 ]}i∈Z/N Z is the complete set of isomorphism classes of simple ob-
+jects of NN .
+
+5.5.8. Given i ∈ Z/N Z and l ∈ Z+ , l 6= 0, we denote by Pi,l the following object
+(V, x) of NN :
+
+
+                                                V = Cl ,
+                             deg(ǫk ) ≡ l − k + i (mod N ),
+                                         x = Jl ,
+
+where {ǫ1 , . . . , ǫl } is the standard basis in Cl and Jl is the Jordan block (5.3.2.a).
+  Note that the notation Pi,l is consistent with the notation Pi,1 used for simple
+objects.
+  The dimension of Pi,l is given by
+                                          (
+                                            αi,l if l 6≡ 0 (mod N ) ,
+                            dimNN Pi,l =
+                                            nδ    if l = nN .
+
+Proposition. The set {[Pi,l ]}       i∈Z/N Z         is the complete set of isomorphism classes
+                                    l∈Z+ \{0}
+of indecomposable objects of NN . In other words, Tα is a one element set if α is a
+positive real root and an N element set if α is a positive imaginary root.
+Proof. An exercise in (graded) linear algebra (see, for example, [Lus92, 2.19]).
+
+5.5.9. We denote by Ei,l ∈ L(CN ) the characteristic function of [Pi,l ].
+   The following proposition describes the restriction of the ∗-product to the set of
+indecomposable representations.
+Proposition.
+                                                (
+                                                    Ej,l+k   if j + k ≡ i (mod N ) ,
+             (Ei,l ∗ Ej,k )|Eind            =
+                             αi,l+α   j,k           0        if j + k 6≡ i (mod N ) .
+
+Proof. Follows from the fact that if X ∈ Ob(NN ) is a subobject of Pm,n then X
+is isomorphic to Po,p for some p ≤ n and o = m + n − p (mod N ), and Pm,n /X is
+isomorphic to Pm,n−p .
+32              IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.5.10. Now we are ready to prove the analog of the Ringel theorem for the quiver
+CN (cf. [Rin93]).
+Proposition. The following formulas describe the map ΞCN : nǫ (CN ) → n∗ (CN ):
+                         ΞCN (f˜α ) = Ei,l ,
+                                       i,l
+
+                            ΞCN (α̃i,1 (n)) = Ei+1,nN − Ei,nN .
+Proof. Let us temporarily denote the map given by the formulas in the formulation
+of the proposition by Ξ′CN . It follows from (5.5.4.a) and Proposition 5.5.9 that
+Ξ′CN : nǫ (CN ) → n∗ (CN ) is a homomorphism of Lie algebras, whose value on
+generators f˜αi,1 of nǫ (CN ) coincides with the value of ΞCN . Thus Ξ′CN = ΞCN ,
+which proves the proposition.
+   Another possible proof is an induction on length l in αi,l similar to the one used
+in the proof of Proposition 5.4.10.
+5.5.11. Let us introduce the following function ξCN : R+ → {±1} (cf. 5.4.11).
+
+                          ξCN (α) = (−1)(1+dimC HomNN (P,P)) ,
+where P ∈ Ob(NN ) is indecomposable and dimNN P = α.
+  It follows from a graded analogue of Proposition 5.3.3 that
+                                  ξCN (αi,l ) = (−1)[l/N ] ,
+                                   ξCN (nδ) = (−1)n+1 .
+     We put Ẽi,l = ξCN (αi,l )Ei,l for l 6≡ 0 (mod N ) and Ẽi,nN = ξCN (nδ)Ei,nN .
+5.5.12. Here is our final theorem for a cyclic quiver (we return to the original
+generators ẽα and h(n) of nǫ (CN )).
+Theorem. The following formulas describe the map ΞCN : nǫ (CN ) → n∗ (CN ):
+                              ΞCN (ẽαi,l ) = Ẽi,l ,
+                            ΞCN (αi,1 (n)) = Ẽi,nN − Ẽi+1,nN .
+Proof. Follows from Proposition 5.5.10.
+5.5.13. Remark. For any real root α there is only one indecomposable representa-
+tion of CN with dimension equal to α. However, unlike the case of a finite type
+quiver the image under the map ΞCN of a basic root vector ẽα is not always the char-
+acteristic function Eα , but ±Eα (compare with imaginary roots of the Kronecker
+quiver).
+5.5.14. We recall (see Proposition 5.5.8) that the set of isomorphism classes of
+indecomposable representations with dimension nδ is the N -element set Tnδ =
+{[Pi,nN ]}i∈Z/N Z . Therefore the set of functions on Tnδ is N -dimensional. However
+dimC nǫnδ (CN ) = N − 1. The following corollary of Theorem 5.5.12 describes the
+image of the restriction to nǫnδ (CN ) of the map ΞCN .
+Corollary. ΞCN (nǫnδ (CN )) = {f : Tnδ → C | i∈Z/N Z f ([Pi,nN ]) = 0}
+                                                P
+
+     This corollary concludes the discussion of the cyclic quiver CN .
+5.6. General affine quiver.
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                             33
+
+
+5.6.1. Finally let Q = (I, Ω, In, Out) be a quiver of affine type, Q 6= CN , K. In
+                                                   (1)
+particular, Q can be a quiver with cyclic (type Ak ) underlying Dynkin graph, but
+with non-cyclic orientation.
+   In what follows we use classification of indecomposable objects of M(Q) as given
+by V. Dlab and C.M. Ringel [DR76]. Let us note that originally the classification
+was obtained by L.A. Nazarova [Naz73], and P. Donovan and M.R. Freislich [DF73].
+However the description in [DR76] is more conceptual and suitable for our purposes.
+The original proof of Dlab and Ringel relies on case-by-case consideration. Since
+then there appeared proofs based on McKay correspondence [Lus92], and on pure
+homological algebra (see, for example, [CB92]).
+   Our strategy in studying the map ΞQ is to consider different kinds of roots
+separately.
+
+5.6.2. Given a root α we denote by Supp(α) (support of α) the set of all vertices
+i ∈ I such that αi 6= 0.
+     A root α is said to be of finite type if there exists a proper full subquiver Q′ =
+(I , Ω′ , In′ Out′ ) of Q such that Supp(α) ⊂ I ′ . It follows that Q′ is of finite type
+   ′
+
+and that α is a real root (see 1.1.6).
+                             ′
+     Note that the set R+       of all positive roots of Q with support in Q′ coincides
+with the set of positive roots of Q′ , and that the restriction of the Euler cocycle
+ǫQ to Z[I ′ ] × Z[I ′ ] coincides with ǫQ′ . Therefore there exists a natural embedding
+iǫQ′ ⊂Q : nǫ (Q′ ) → nǫ (Q).
+     We recall that iQ′ ⊂Q : n∗ (Q′ ) → n∗ (Q) denotes the Hall map associated to the
+embedding functor IQ′ ⊂Q : M(Q′ ) → M(Q) (see 3.1.6).
+     The following diagram of Lie algebra homomorphisms is commutative on gener-
+ators {ẽk }k∈I ′ of nǫ (Q′ ), and, therefore, is commutative.
+
+                                            iǫQ′ ⊂Q
+(5.6.2.a)                        nǫ (Q′ )             / nǫ (Q)
+
+                                 Ξ Q′                      ΞQ
+                                           iQ′ ⊂Q          
+                                 n∗ (Q′ )             / n∗ (Q)
+
+5.6.3. Proposition. Let α be a positive root of finite type. Then:
+ 5.6.3.a. There exists unique (up to an isomorphism) indecomposable object Pα ∈
+          Ob(M(Q)) with dimM(Q) Pα = α. In other words Tα = pt. We denote
+          by Eα ∈ L(Q) the characteristic function of Tα .
+ 5.6.3.b. ΞQ (ẽα ) = Eα .
+Proof. The proposition follows from 3.1.4, diagram (5.6.2.a), and Theorem 4.3.3.
+
+
+5.6.4. Let ∂ : Z[I] → Z be an additive function given by
+                                    ∂(α) = e(δ, α),
+where δ is the first imaginary root and e is the Euler form 1.3.4.
+    The integer ∂(α) is called defect of α.
+    An element α ∈ Z[I] is called regular (resp. irregular ) if ∂(α) = 0 (resp. ∂(α) 6=
+0).
+34            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+   A root α ∈ R is called regular root (resp. irregular root) if it is regular (resp.
+irregular) as an element of Z[I].
+                                                                     reg         irr
+   We denote the set of regular (resp. irregular) positive roots by R+   (resp. R+   ).
+                                                                          <δ,δ>
+   Let us note that each imaginary root is regular, because e(δ, δ) = 2 = 0.
+However there are regular real roots.
+5.6.5. Irregular roots behave similarly to roots of a quiver of finite type. The
+following proposition is proven in [DR76, Sections 1, 2].
+Proposition. Let Q be a quiver of affine type, Q 6= CN , K. Then:
+ 5.6.5.a. A positive root α is irregular if and only if there exists an admissible
+          sequence {it }kt=0 of vertices of Q such that α = σik σik−1 . . . σi1 i0 , and
+          σil σil−1 . . . σi1 i0 ∈ R+ for any l ∈ {1, . . . , k}.
+ 5.6.5.b. If M ∈ Ob(M(Q)) is indecomposable and dimM(Q) M is irregular then
+          dimM(Q) M is an (irregular) root.
+5.6.6. Having the admissible sequence of vertices 5.6.5.a one can repeat word-by-
+word the proof of Theorem 4.3.3 to get the following proposition.
+                           irr
+Proposition. Let α ∈ R+        . Then:
+ 5.6.6.a. There exists unique (up to an isomorphism) indecomposable object Pα ∈
+          Ob(M(Q)) with dimM(Q) Pα = α. In other words Tα = pt. We denote
+          the characteristic function of Tα by Eα ∈ L(Q).
+ 5.6.6.b. ΞQ (ẽα ) = Eα .
+5.6.7. Next we turn to regular roots.
+   Let us consider a full subcategory Mreg (Q) of M(Q) with objects being such
+M ∈ Ob(M(Q)) that
+       • ∂(dimM(Q) M) = 0 and
+       • ∂(dimM(Q) M′ ) ≤ 0 for any subobject M′ of M in M(Q).
+   Objects of Mreg (Q) are called regular objects (of M(Q)).
+   The following is proved in [DR76].
+Proposition. 5.6.7.a. The subcategory Mreg (Q) is abelian and épaisse in M(Q).
+ 5.6.7.b. Let M ∈ Ob(M(Q)) be indecomposable and ∂(dimM(Q) M) = 0. Then
+          M ∈ Ob(Mreg (Q)).
+5.6.8. The following proposition gives a complete description of the category Mreg
+due to V. Dlab and C.M. Ringel [DR76] (see also [Lus92], [CB92]).
+Proposition. There exists a set of functors {Cz }z∈CP1 , parameterized by points of
+CP1 , such that:
+ 5.6.8.a. Cz : M(CNz ) → M(Q) is a Hall functor from the category of nilpotent
+          representations of a cyclic or the Jordan quiver to the category of nilpotent
+          representations of Q.
+ 5.6.8.b. Mreg (Q) = ⊕z∈CP1 im Cz (coproduct of abelian categories).
+                      reg
+ 5.6.8.c. Let α ∈ R+      . Then there exists z ∈ CP1 such that α = dim Cz (α′ ), where
+            ′
+          α ∈ Z[Z/Nz Z].
+ 5.6.8.d. dim Cz (δz ) = δ for any z ∈ CP1 , where δz (resp. δ) is the first imaginary
+          root of CNz (resp. Q).
+ 5.6.8.e. dim Cz ◦ rz = c ◦ dim Cz for any z ∈ CP1 , where rz is the rotation trans-
+          formation of Z[Z/Nz Z] and c is the Coxeter element of Q.
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                            35
+
+
+ 5.6.8.f. Nz = 1 for all z ∈ CP1 except for a finite number of points (actually no
+          more then 3). We denote the exceptional points by z1 , . . . , zL .
+          P                  PL                                ǫ
+ 5.6.8.g.   z∈CP1 (Nz − 1) =   i=1 (Nzi − 1) = |I| − 2 = dimC nnδ (Q) − 1.
+
+   We refer the reader to Corollary 6.1.4 for a description of the set of integers L,
+{Nzi }L
+      i=1 . We do not use the exact values of L or Nzi in this chapter.
+                                                               (1)
+   An example of explicit construction of the functors Cz in E6 case can be found
+in [GR92, Chapter 11].
+5.6.9. Let αz,i,l = dim Cz (αi,l ) and Pz,i,l = Cz (Pi,l ), where z ∈ CP1 , i ∈ Z/Nz Z,
+and l ∈ Z+ \{0} (if Nz = 1 we put P0,l = Jl ; if l = nNz we put αz,i,l =
+nδ). Then dimM(Q) Pz,i,l = αz,i,l and Pz,i,l is indecomposable because Cz is a
+Hall functor. Moreover it follows from 5.6.5.b, 5.6.6.a, 5.6.7.b, and 5.6.8.b that
+{[Pα ]}α∈Rirr
+          +
+              ⊔ {[Pz,i,l ]} z∈CP1 is the complete set of isomorphism classes of inde-
+                            i∈Z/Nz Z
+                           l∈Z+ \{0}
+composable representations.
+5.6.10. The set of functors Cz satisfying conditions of Proposition 5.6.8 is defined
+uniquely up to a permutation of the set of points of CP1 and up to automorphisms
+of categories M(CNz ). More explicitly, one can first identify the set of isomorphism
+classes of simple objects of Mreg (Q). This set splits into orbits of the Coxeter func-
+tor (product of reflection functors, corresponding to the reflections in the Coxeter
+element). Each orbit is the set {[Pz,i,1 ]}i∈Z/Nz Z for some z. Then Ob(im Cz ) is
+the set of such M ∈ Ob(Mreg (Q)) that Jordan-Hölder series (in Mreg (Q)) of M
+contains only objects Pz,i,1 .
+5.6.11. The following proposition lists some properties of the dimension maps
+dim Cz .
+Proposition. One has
+5.6.11.a. ǫQ (dim Cz (α), dim Cw (β)) = 1 if z 6= w.
+5.6.11.b. ǫQ (dim Cz (α), dim Cz (β)) = ǫCNz (α, β).
+5.6.11.c. < dim Cz (α), dim Cw (β) >Q = 0 if z 6= w.
+5.6.11.d. < dim Cz (α), dim Cz (β) >Q =< α, β >CNz .
+5.6.11.e. {αz,i,l } z∈CP1 is the complete list of regular roots, the only equalities
+                  i∈Z/Nz Z
+                 l∈Z+ \{0}
+          being αz,i,nNz = αw,j,nNw (= nδ).
+5.6.11.f. Let
+                          V = C[{αz,i,1      mod Cδ}    z∈CP1 ]   =
+                                                       i∈Z/Nz Z
+                    = C[{αzk ,i,1       mod Cδ} k=1,...,L ] ⊂ C[I]/Cδ,
+                                                 i∈Z/Nzk Z
+
+          where C[S] denotes the C-linear span of a set S. Then
+                          dimC V = |I| − 2 = dimC nǫnδ (Q) − 1.
+          The following is a generating set of linear relations among elements of
+          the set {αzk ,i,1 mod Cδ} k=1,...,L .
+                                         i∈Z/Nzk Z
+                          X
+                    {               αzk ,i,1 ≡ 0 ( mod Cδ)}k∈{1,...,L}
+                        i∈Z/Nzk Z
+36              IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.6.11.g. Let z = zk (i.e. Nz 6= 1). Then there exists i0 ∈ Z/Nz Z such that αz,i0 ,1
+          is of finite type.
+Proof. 5.6.11.a and 5.6.11.c follow from 1.4.6 and 5.6.8.b.
+   5.6.11.b and 5.6.11.d follow from 5.6.8.a and 3.1.5.
+   5.6.11.e follows from the definition of root, 5.6.8.b, 5.6.8.c, 5.6.11.c, and 5.6.11.d.
+   5.6.11.f follows from 5.6.8.g, 5.6.11.c, and 5.6.11.d.
+   Let us prove 5.6.11.g. Let p ∈ I be an extending vertex (i.e. δp = 1). It follows
+from the following equality
+                  X                        X
+                        αz,i,1 = dim Cz (        αi,1 ) = dim Cz (δz ) = δ
+                  i∈Z/Nz Z                   i∈Z/Nz Z
+
+that either Nz = 1 or there exists i0 ∈ Z/Nz Z such that (αz,i0 ,1 )p = 0, which proves
+5.6.11.g.
+
+5.6.12. Now we are ready to give the classification of indecomposable objects of
+M(Q) (cf. [DR76]).
+Theorem. Let Q be a quiver of affine type, Q 6= CN , K. Let T be the set of
+isomorphism classes of indecomposable objects of M(Q). Then
+5.6.12.a. T = {[Pα ]}α∈Rirr
+                        +
+                            ⊔ {[Pz,i,l ]}       z∈CP1     ,
+                                               i∈Z/Nz Z
+                                              l∈Z+ \{0}
+5.6.12.b. Tα = ∅ if α ∈
+                      / R+ ,
+                            re
+5.6.12.c. Tα = pt if α ∈ R+    ,
+5.6.12.d. Tkδ = {[Pz,i,kNz ]} z∈CP1 .
+                                 i∈Z/Nz Z
+
+Proof. The theorem follows from 5.6.9 and 5.6.11.e.
+
+5.6.13. Theorem 5.6.12 allows us to introduce the following function ξQ : R+ →
+{±1} (compare with 5.4.11, 5.5.11).
+
+
+                             ξQ (α) = (−1)(1+dimC HomM(Q) (P,P)) ,
+where P ∈ Ob(M(Q)) is indecomposable and dimM(Q) P = α.
+                                                re
+   The function ξQ (α) is well-defined for α ∈ R+  because there is unique (up to an
+isomorphism) indecomposable object with dimension α. In the case of an imaginary
+root one has
+
+     ξQ (nδ) = (−1)(1+dimC HomM(Q) (Pz,i,nNz ,Pz,i,nNz )) =
+                                            (1+dimC HomM(CN       ) (Pi,nNz ,Pi,nNz ))
+                                  = (−1)                      z                          = (−1)n+1 .
+This expression does not depend on z or i.
+   If α is an irregular root then ξQ (α) = 1, because Pα can be obtained from a
+simple object by a sequence of reflection functors. We put Ẽα = ξQ (α)Eα = Eα
+          irr
+for α ∈ R+    .
+
+5.6.14. We return to the map ΞQ .
+   Let Ez,j,l ∈ L(Q) be the characteristic function of [Pz,j,l ] ∈ Tαz,j,l and Ẽz,j,l =
+ξQ (αz,j,l )Ez,j,l .
+                        AFFINE LIE ALGEBRAS AND TAME QUIVERS                            37
+
+
+Proposition. Let 1 ≤ i ≤ L and j ∈ Z/Nzi Z. Then
+
+                               ΞQ (ẽαzi ,j,1 ) = Ezi ,j,1 = Ẽzi ,j,1 .
+
+Proof. Given i the statement is true for one j, say j0 , because of 5.6.11.g and
+Proposition 5.6.3. Any other αzi ,j,1 can be obtained from αzi ,j0 ,1 by repeated
+applications of the Coxeter element (see 5.6.8.e). Then one can use the sequence
+of reflection functors corresponding to the sequence of reflections in the Coxeter
+element, and reason similarly to the proof of Theorem 4.3.3 to get the first equality
+in the statement of the proposition for any j.
+   The second equality in the statement of the proposition follows from the fact
+that ξQ (αzi ,j,1 ) = ξCNzi (αj,1 ) = 1.
+
+5.6.15. Next we consider arbitrary regular positive real roots.
+
+Proposition. The map cǫi : nǫ (CNzi ) → nǫ (Q) given by
+
+                                       cǫi (ẽαj,l ) = ẽαzi ,j,l ,
+                                    cǫi (αj,1 (n)) = αzi ,j,1 (n)
+
+is an injective homomorphism of Lie algebras for any i ∈ {1, . . . , L}.
+
+Proof. The proposition follows from 5.6.11.b, 5.6.11.d, and 5.6.8.d.
+
+
+5.6.16. We denote by ci : n∗ (CNzi ) → n∗ (Q) the Hall map associated to the functor
+Czi : M(CNzi ) → M(Q). In particular, ci (Ẽj,l ) = Ẽzi ,j,l .
+   The following diagram of Lie algebra homomorphisms
+
+
+                                                     cǫi
+                                     nǫ (CNzi )             / nǫ (Q)
+
+                                   ΞCN                                ΞQ
+                                         zi
+                                                    ci
+                                                                  
+                                     n∗ (CNzi )             / n∗ (Q)
+
+is commutative on generators ẽαj,1 of nǫ (CNzi ) (because of Proposition 5.6.14), and,
+therefore, is commutative, and using Theorem 5.5.12 we get the following:
+
+Proposition. Let 1 ≤ i ≤ L. Then
+
+                        ΞQ (ẽαzi ,j,l ) = Ẽzi ,j,l for l 6≡ 0 (mod Nzi ) ,
+                        ΞQ (αzi ,j,1 (n)) = Ẽzi ,j,nNzi − Ẽzi ,j+1,nNzi .
+
+5.6.17. At this point we know values of ΞQ on nǫα (Q) for any α ∈ R+        re
+                                                                               . As for an
+                             ǫ
+imaginary root space nnδ (Q) we only know values of ΞQ on the C-linear span of
+{αzk ,i,1 (n)} k=1,...,L , which has codimension 1 in nǫnδ (Q) due to Proposition 5.6.11.f.
+            i∈Z/Nzk Z
+  Note also that all functions in the part of the image of ΞQ that we know by now
+vanish on [Pz,0,n ] for any z 6= z1 , . . . , zL (i.e. when Nz = 1).
+38            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+5.6.18. The following proposition is due to V. Dlab and C.M. Ringel [DR76].
+Proposition. There exist
+        • a functor K : M(K) → M(Q) from the category of representations of the
+           Kronecker quiver to the category of representations of Q,
+        • a set of elements ki ∈ Z/Nzi Z, one for each i ∈ {1, . . . , L}
+such that
+5.6.18.a. K is a Hall functor.
+5.6.18.b. Cz = K ◦ Hz for any z 6= z1 , . . . , zL .
+ 5.6.18.c. K ◦ Hzi (Jn ) = Pzi ,ki ,nNzi for any i ∈ {1, . . . , L},
+5.6.18.d. Let α0 = dimM(Q) K(U00 ). Then α0 ∈ R+         irr
+                                                               and dimM(Q) K(U10 ) = (δ −
+                   irr
+           α0 ) ∈ R+ .
+  Let us remark that by redefining functors Czi (”rotating cyclic quivers”) one can
+make ki = 0 for all i.
+5.6.19. As the authors could not find a reference for Proposition 5.6.18 except
+for [DR76] which relies on case-by-case considerations, let us give a sketch of a
+construction of the functor K.
+   We choose an extending vertex p ∈ I, which is admissible. If the underlying
+                               (1)
+Dynkin graph of Q is not An then any extending vertex has only one adjacent
+                                                                                     (1)
+edge, and, therefore, is admissible. If the underlying Dynkin graph of Q is An
+then one can still choose an admissible extending vertex because Q has non-cyclic
+orientation. We assume that p is a sink. If p is a source the construction is analogues
+or one can compose the functor K described below with the reflection functor Sp .
+   We fix an indecomposable object (Cδ−p , y) ∈ Ob(M(Q)) (note that δ − p is a
+                                                      (1)
+positive root of finite type). Let q (q1 , q2 in the An case) be the vertex (vertices)
+connected with p by an edge (edges). We denote by h0 (resp. h1 , h2 ) the edge
+(resp. edges) such that In(h0 ) = p (resp. In(h1 ) = In(h2 ) = p) and Out(h0 ) = q
+(resp. Out(h1 ) = q1 , Out(h2 ) = q2 ).
+   Instead of K we construct a functor K′ = K ◦ J : C → M(Q) (see 5.4.5 for the
+definitions of C and J ). Then K = K′ ◦ J −1 (being an isomorphism of categories
+J has the inverse).
+                                                  (1)
+   Let Q have the underlying graph not of An type. Then it is known that (δ −
+                                 ′
+p)q = δq = 2. The functor K : C → M(Q) is given by the following action on
+objects:
+                               K′ ((V0 , V1 ), ∆) = (W, z),
+where
+                            Wi = V0 ⊗C C(δ−p)i if i 6= p ,
+                                     Wp = V1 ,
+        zh = IdV0 ⊗yh : V0 ⊗C C(δ−p)Out(h) → V0 ⊗C C(δ−p)In(h) if h 6= h0 ,
+                             zh0 = ∆ : V0 ⊗C C2 , → V1 ,
+and the natural action on morphisms.
+                                      (1)
+  Let Q have the underlying graph of An type. Then (δ − p)q1 = (δ − p)q2 = 1.
+             ′
+The functor K : C → M(Q) is given by the following action on objects:
+                               K′ ((V0 , V1 ), ∆) = (W, z),
+                      AFFINE LIE ALGEBRAS AND TAME QUIVERS                         39
+
+
+where
+                            Wi = V0 ⊗C C(δ−p)i if i 6= p ,
+                                     Wp = V1 ,
+        zh = IdV0 ⊗yh : V0 ⊗C C(δ−p)Out(h) → V0 ⊗C C(δ−p)In(h) if h 6= h1 , h2 ,
+                        zh1 ⊕ zh2 = ∆ : V0 ⊗C (C ⊕ C) → V1 ,
+and the natural action on morphisms.
+  One can check that the functor K defined above satisfies all the conditions in
+Proposition 5.6.18 (see [CB92, §9] for a similar argument).
+5.6.20. Functor K : M(K) → M(Q) satisfying conditions of Proposition 5.6.18 is
+not unique (cf. 5.6.10). For example, in construction 5.6.19 one needs to choose
+an extending vertex, and, moreover, one can compose the functor K described in
+5.6.19 with a sequence of reflection functors.
+   On the other hand a choice of functor K fixes the parameterization of the functors
+Cz by points in CP1 . More precisely, given a functor K : M(K) → M(Q), the set
+of functors {Cz : M(CNz ) → M(Q)}z∈CP1 , such that Propositions 5.6.8 and 5.6.18
+hold true is uniquely defined up to automorphisms of categories M(CNz ).
+   From now on we fix some particular choice of the functors K and Cz .
+5.6.21. Since K is a Hall functor, the following proposition follows from 3.1.5.
+Proposition. A map kǫ : nǫ (K) → nǫ (Q) given by
+                             kǫ (ẽ(n+1,n) ) = ẽα0 +nδ ,
+                             kǫ (ẽ(n,n+1) ) = ẽ−α0 +(n+1)δ ,
+                                kǫ (α′0 (n)) = α0 (n)
+is a Lie algebra homomorphism. Here α′0 = dimM(K) U00 = (1, 0) and α0 =
+dimM(Q) K(U00 ).
+5.6.22. Let E0 (n) be the characteristic function of the set {[K ◦ Hz (Jn )]}z∈CP1 ⊂
+Tnδ . In particular, according to 5.6.18.c,
+                                                 (
+                                                   1 if j = ki ,
+                        E0 (n)([Pzi ,j,nNzi ]) =
+                                                          6 ki .
+                                                   0 if j =
+  We put Ẽ0 (n) = ξQ (nδ)E0 (n) = (−1)n+1 E0 (n).
+5.6.23. Let k : n∗ (K) → n∗ (Q) be the Hall map associated with the functor K.
+   Using 5.6.18.d and 5.6.6 we get the following equalities
+                               ΞQ (ẽα0 ) = Eα0 = Ẽα0 ,
+                            ΞQ (ẽδ−α0 ) = Eδ−α0 = Ẽδ−α0 ,
+which guarantee that the following diagram of Lie algebra homomorphisms is com-
+mutative.
+
+                                             kǫ
+                                  nǫ (K)          / nǫ (Q)
+
+                                      ΞK                ΞQ
+                                            k
+                                                        
+                                  n∗ (K)          / n∗ (Q).
+40             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+     Using this diagram and Theorem 5.4.12 we get the following proposition.
+
+Proposition. ΞQ (α0 (n)) = −Ẽ0 (n).
+
+5.6.24. The last proposition concludes description of the map ΞQ due to the fol-
+lowing
+
+Proposition. The set
+
+                 {αzi ,j,1 (n)}    1≤i≤L      ∪ {α0 (n)} ⊂ nǫnδ (Q) = C[I]/Cδ
+                                  j∈Z/Nzi Z
+
+spans the whole space nǫnδ (Q) = C[I]/Cδ as a C-linear space.
+
+Proof. Note that α0 is linearly independent with {αzi ,j,1 }           1≤i≤L      ∪ {δ} because
+                                                                      j∈Z/Nzi Z
+∂(α0 ) 6= 0 whereas ∂(αzi ,j,1 ) = ∂δ = 0. Now the proposition follows from 5.6.11.f.
+
+
+5.6.25. Let us simplify our notation a little. We put Ni = Nzi , Ẽi,j (n) =
+Ẽzi ,j,nNi ∈ Lnδ (Q), and αi,j = αzi ,j,1 ∈ Z[I] ⊂ C[I].
+
+5.6.26. Here is our main theorem for a general affine quiver, which follows from
+Propositions 5.6.6, 5.6.16, 5.6.11.e, 5.6.23, 5.6.24.
+
+Theorem. Let Q be a quiver of affine type, Q 6= CN , K. Then the following
+equalities completely describe the map ΞQ :
+                                                               re
+                                  ΞQ (ẽα ) = Ẽα for any α ∈ R+  ,
+                          ΞQ (αi,j (n)) = Ẽi,j (n) − Ẽi,j+1 (n),
+                           ΞQ (α0 (n)) = −Ẽ0 (n).
+
+5.6.27. Theorem 5.6.26 is an affine analog of the Ringel theorem. Let us state a
+few corollaries.
+
+Corollary. The map ΞQ : nǫ (Q) → n∗ (Q) is an isomorphism of Lie algebras.
+
+Proof. The map ΞQ is surjective by construction. Theorem 5.6.26 implies that
+Ker ΞQ = 0.
+
+  Since ΞQ is an isomorphism given by explicit formulas (see Theorem 5.6.26) one
+can use ΞQ together with (5.2.1.a) to obtain explicit expression for a Lie bracket of
+any two elements of n∗ (Q) (cf. Corollary 4.3.4).
+
+5.6.28. The next corollary of Theorem 5.6.26 is a kind of inverse to Proposition
+2.2.8.d.
+
+Corollary. The support of the space of functions n∗ (Q) is equal to the set of all
+isomorphism classes of indecomposable objects of M(Q). In other words, for any
+indecomposable object M there exists an element f of the Lie algebra n∗ (Q) such
+that f ([M]) 6= 0.
+                    AFFINE LIE ALGEBRAS AND TAME QUIVERS                             41
+
+
+5.6.29. The most interesting feature of the category M(Q) for a general affine
+quiver Q is the structure of the set Tnδ of indecomposable objects with dimension
+equal to an imaginary root (it does not depend on the root in question) and the
+restriction of the image of the map ΞQ to this set. We refer the reader to 5.6.12
+and 5.6.26 for the corresponding results.
+   Let us consider a map
+
+
+                                     µ : Tnδ → CP1 ,
+                                  µ([Pz,i,nNz ]) = z.
+
+   Note that µ−1 (z) consists of Nz points. In particular, the map µ is injective on
+CP1 \{z1, . . . , zL }.
+   We denote by µ∗ the following map from the space of C-valued functions on Tnδ
+to the space of C-valued functions on CP1 :
+
+                                             X
+                            µ∗ (φ)(z) =                 φ([P]).
+                                          [P]∈µ−1 (z)
+
+
+5.6.30. The following is a corollary of Theorem 5.6.26.
+
+Corollary.
+
+     n∗nδ (Q) = im(ΞQ |nǫnδ (Q) ) = {φ : Tnδ → C | µ∗ (φ) is a constant function}.
+
+5.6.31. Instead of introducing the functions Ẽα we could change the definition of
+                                       ′
+the Lie algebra nǫ (Q). Namely let nǫ (Q) be the Lie algebra defined in the same
+way as nǫ (Q) (see 5.2.1) but using the following cocycle
+
+(5.6.31.a)           ǫ′Q (α, β) = ǫQ (α, β)ξQ (α + β)(ξQ (α))−1 (ξQ (β))−1
+
+instead of the Euler cocycle ǫQ . Here we use arbitrary extension of ξQ from R+ to
+                                                        ′
+Z[I]. To avoid confusion we denote the generators of nǫ (Q) by f˜α and h̃(n) instead
+                                                                             ′
+of ẽα and h(n). Then it follows from Theorem 5.6.26 that the map Ξ′Q : nǫ (Q) →
+n∗ (Q) given by
+
+                             Ξ′Q (f˜α ) = Eα for any α ∈ R+
+                                                          re
+                                                             ,
+                        Ξ′Q (α̃i,j (n)) = Ei,j (n) − Ei,j+1 (n),
+                         Ξ′Q (α̃0 (n)) = −E0 (n)
+
+is an isomorphism of Lie algebras.
+   Let us remark that equation (5.6.31.a) means that the cocycles ǫQ and ǫ′Q differ
+by a coboundary, that is belong to the same cohomology class in H 2 (Z[I], Z/2Z).
+
+5.7. Lie algebras over Z.
+
+5.7.1. Throughout this section Q = (I, Ω, In, Out) is a quiver of affine type, Q 6=
+CN , K.
+42             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+                    re
+5.7.2. Let α ∈ R+      . We put ℵǫα (Q) = Zẽα ⊂ nǫα (Q). We denote by ℵǫnδ (Q) ⊂
+nnδ (Q) the lattice additively generated by {i mod Cδ}i∈I . The lattice ℵǫnδ (Q) is
+  ǫ
+
+isomorphic to the root lattice Z[I ′ ] of the quiver Q′ = (I ′ , Ω′ , In′ Out′ ) obtained by
+removing from Q an extending vertex and the adjacent edges.
+    We put ℵǫ (Q) = ⊕α∈R+ ℵǫα (Q). The lattice ℵǫ (Q) is a Lie algebra over Z with
+respect to the Lie bracket (5.2.1.a).
+Proposition. The Lie algebra ℵǫ (Q) is generated by {ẽi }i∈I .
+                                       P
+Proof. Induction on n(α), where n(α) = i∈I αi for a root α. It is crucial that Q
+is simply laced.
+
+5.7.3. Let α ∈ R+ re
+                     . We denote by ℵ∗α (Q) the set of all Z-valued functions on
+Tα = pt. We put (cf. Corollary 5.6.30)
+                ℵ∗nδ (Q) = {φ : Tnδ → Z | µ∗ (φ) is a constant function}.
+
+Let ℵ∗ (Q) = ⊕α∈R+ ℵ∗α (Q). Our goal is to prove that ΞQ (ℵǫ (Q)) = ℵ∗ (Q).
+
+5.7.4. Let ℵ̂∗ (Q) = ⊕α∈R+ ℵ̂∗α (Q), where ℵ̂∗α (Q) is the set of all constructible Gα -
+invariant functions f : Enil                                 α
+                          α → Z such that f (x) = 0 if (C , x) is decomposable.
+    It follows from the definition of the ∗-product and Proposition 2.2.8 that ℵ̂∗ (Q)
+is a Lie algebra over Z with respect to the bracket (2.2.5.a).
+    Using definition of the map ΞQ and Proposition 5.7.2 one gets ΞQ (ℵǫ (Q)) ⊂
+ℵ̂ (Q). On the other hand it follows from definitions that ΞQ (ℵǫ (Q)) ⊂ n∗ (Q) and
+  ∗
+
+from Corollary 5.6.30 that ℵ∗ (Q) = n∗ (Q) ∩ ℵ̂∗ (Q). Thus we get an inclusion
+(5.7.4.a)                           ΞQ (ℵǫ (Q)) ⊂ ℵ∗ (Q).
+     It follows from Theorem 5.6.26 that
+                           Ẽi,j (n) − Ẽi,j+1 (n) ∈ ΞQ (ℵǫ (Q)),
+                                    Ẽ0 (n) ∈ ΞQ (ℵǫ (Q)),
+                                Ẽα ∈ ΞQ (ℵǫ (Q)) for α ∈ R+
+                                                           re
+                                                              .
+
+Since {Ẽi,j (n)−Ẽi,j+1 (n)}1≤i≤L ∪{E0 (n)} is a set of additive generators of     ℵ∗nδ (Q)
+                            j∈Z/Ni Z
+and Ẽα is an additive   generator of ℵ∗α (Q) for α ∈ R+
+                                                       re
+                                                          , we conclude that
+(5.7.4.b)                           ℵ∗ (Q) ⊂ ΞQ (ℵǫ (Q)).
+
+     Combining (5.7.4.a) and (5.7.4.b) we get the following
+Proposition. ΞQ (ℵǫ (Q)) = ℵ∗ (Q).
+   It follows, in particular, that ℵ∗ (Q) is closed with respect to the Lie bracket
+(2.2.5.a) and is generated as a Lie algebra over Z by {Ei }i∈I .
+
+                   6. Fine structure of affine root systems
+   In this section we deliberate on relations of our results to the structure theory
+of affine Lie algebras.
+                       AFFINE LIE ALGEBRAS AND TAME QUIVERS                           43
+
+
+6.1.1. Let Q = (I, Ω, In, Out) be a quiver of affine type, Q 6= CN , K.
+   The set {αi,j ∈ Z[I]} 1≤i≤L (notation as in 5.6.25) plays a prominent role in
+                           j∈Z/Ni Z
+our consideration of an imaginary root space n∗nδ (Q). This set of elements of the
+root lattice Z[I] of Q is canonically associated to the quiver. We call αi,j a cyclic
+root.
+   Tables of cyclic roots for particular quivers of affine type can be found in [DR76,
+Section 6].
+   Let us give another description of the set of cyclic roots. It follows from 5.6.8.e
+and 5.6.11.e that regular roots have finite orbits under the action of the Coxeter
+element c. The converse is also true, that is any root having finite c-orbit is regular
+(see [DR76, Section 1]).
+   We call a finite c-orbit lowest if an element of this orbit cannot be represented as
+a sum of two regular positive roots (this condition does not depend on the choice of
+the element of the orbit). Let Oi = {αi,j }j∈Z/Ni Z . It follows from 5.6.8.e, 5.6.11.e
+and 5.6.11.f that {Oi }1≤i≤L is the complete set of the lowest c-orbits.
+   Let Ri ⊂ Z[I] be the additive span of elements of an orbit Oi . It follows from
+Proposition 5.6.11 that < Ri , Rj >Q = 0 if i 6= j, ⊕L  i=1 Ri ⊗Z C has codimension 1
+                                                                  (1)
+in C[I], and each Ri is isomorphic to the root lattice of type ANi −1 . In other words
+                                      (1)
+there are L root lattices of type An ”hidden” inside the root lattice of Q, and to
+uncover them one can use finite orbits of the Coxeter element.
+
+6.1.2. It follows from Proposition 5.7.4 that the set {αi,j mod Cδ = Ξ−1  Q (Ẽi,j (n)−
+Ẽi,j+1 (n))} 1≤i≤L ∪ {α0 mod Cδ = −Ξ−1   Q (Ẽ0 (n))} is a set of additive generators
+            j∈Z/Ni Z
+of ℵǫnδ (Q). Since δp = 1 for an extending vertex p ∈ I it follows that if α, β ∈
+Z[I] ⊂ C[I] and α ≡ β (mod Cδ) then α ≡ β (mod Zδ). Combining with 5.6.11.f,
+5.6.8.d and Proposition 5.6.24 we get the following
+
+Proposition. The abelian group Z[I] has the following presentation:
+                                            X
+          < {αi,j } 1≤i≤L ∪ {α0 } ∪ {δ} | {       αi,j = δ}1≤i≤L >,
+                       j∈Z/Ni Z                   j∈Z/Ni Z
+
+
+that is {αi,j } 1≤i≤L ∪ {α0 } ∪ {δ} is a set of additive generators of Z[I] and the set
+ P             j∈Z/Ni Z
+{ j∈Z/Ni Z αi,j = δ}1≤i≤L is a generating set of relations among the generators.
+
+6.1.3. From now till the end of the chapter we assume that δ − α0 is a simple root,
+δ − α0 = p ∈ I. We also assume that p is an extending vertex. Then it follows from
+the definition of α0 that p is a sink.
+   Let Q′ = (I ′ , Ω′ , In′ , Out′ ) be the quiver obtained from Q by removing the vertex
+p and adjacent edges. It is a quiver of finite type. The lattice ℵǫnδ (Q) is isomorphic
+to Z[I ′ ].
+                               (1)                                     P
+   Assume Q is not of An type. It follows from 5.6.8.d that ( j∈Z/Ni Z αi,j )p =
+δp = 1. Hence for each i ∈ {1, . . . , L} there exists ni ∈ Z/Ni Z such that
+
+                                      (αi,ni )p = 1,
+                                  (αi,l )p = 0 if l 6= ni .
+44               IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+   Note that p being a sink we may assume that the reflection σp is the first reflection
+in the Coxeter element c. Therefore
+             0 = (αi,ni +1 )p = (cαi,ni )p = (αi,ni )q − (αi,ni )p = (αi,ni )q − 1,
+
+            P vertex connected with p by an edge. We conclude that (αi,ni )q = 1.
+where q is the
+Note that ( j∈Z/Ni Z αi,j )q = δq = 2. Hence there exists mi ∈ Z/Ni Z, mi 6= ni
+such that
+                                                   (αi,mi )q = (αi,ni )q = 1
+                                               (αi,l )q = 0 if l 6= ni , mi .
+Now we again use the fact that σp is the first reflection in the Coxeter element c:
+                     (αi,mi +1 )p = (cαi,mi )p = (αi,mi )q − (αi,mi )p = 1.
+Therefore ni = mi + 1.
+  It follows from the above considerations and from Proposition 6.1.2 that the
+abelian group Z[I ′ ] is freely generated by the set {αi,j } 1≤i≤L ∪ {−α0 } and
+                                                                                                           j∈Z/Ni Z,j6=ni
+that
+                     eQ (−α0 , αi,mi ) = eQ (p, αi,mi ) = 0,
+                     eQ (αi,mi , −α0 ) = eQ (αi,mi , p) = −1,
+(6.1.3.a)
+                         eQ (−α0 , αi,j ) = eQ (p, αi,j ) = 0 if j 6= ni , mi ,
+                         eQ (αi,j , −α0 ) = eQ (αi,j , p) = 0 if j 6= ni , mi .
+               (1)
+   In the An case one also has a set of pairs {(ni , mi )}L    i=1 such that the above
+statement is true. The proof is similar, except that one should consider two vertices
+q1 and q2 connected to p instead of one vertex q. From now on we do not distinguish
+            (1)             (1)
+between An and non-An cases.
+   Let Q̂ = (I,ˆ Ω̂, In,
+                      ˆ Out)
+                         ˆ be a quiver given as follows. The set of vertices Iˆ is equal
+to {α̂i,j } 1≤i≤L        ∪ {♠}, the set of edges is equal to the set of all ordered pairs
+            j∈Z/Ni Z,j6=ni
+(h, t), where either h = α̂i,j and t = α̂i,j−1 , or h = ♠ and t = α̂i,mi , and the maps
+ ˆ and Out
+In       ˆ are given by In((h,
+                           ˆ                ˆ
+                                 t)) = h, Out((h,   t)) = t. One can draw the quiver Q̂
+as follows.
+
+                             α̂1,n1 +1 	
+/ /                                                      α̂L,nL +1
+                                                                                                        	
+
+                                                  //                                                
+                                                    //                                             
+                                 α̂       1,n1 +2    	 
+                         	
+  α̂L,n +2
+                                                                                                    L
+
+
+
+
+                                                      α̂1,m1 	
+/ /         	
+ α̂L,m
+                                                                        //                   L
+
+                                                                          / 
+                                                                           ♠
+     We summarize the results of this subsection in the following proposition.
+
+Proposition. The map ν : Z[I] ˆ → Z[I ′ ] given by ν(α̂i,j ) = αi,j , ν(♠) = −α0 is an
+                                                                             ˆ
+isomorphism of lattices and eQ′ (ν(α), ν(β)) = eQ̂ (α, β) for any α, β ∈ Z[I].
+                     AFFINE LIE ALGEBRAS AND TAME QUIVERS                             45
+
+
+6.1.4. It follows from Proposition 6.1.3 that < ν(α), ν(β) >Q′ =< α, β >Q̂ for any
+α, β ∈ Z[I]. ˆ In other words, ν is an isometry of lattices.
+   We recall (see [Bou68]) that the set of simple roots in a root system of finite type
+is unique up to an action of the semi-direct product of the automorphism group
+of the Dynkin graph and the Weyl group. In our situation we state it as follows
+(abusing notation we denote by the same letter π a morphism of Dynkin graphs
+                                  ˆ Ω̂, {In,
+π : (I ′ , Ω′ , {In′ , Out′ }) → (I,      ˆ Out})
+                                             ˆ    and the induced morphism of the root
+lattices π : Z[I ′ ] → Z[I]).ˆ
+
+Proposition. There exist a morphism of Dynkin graphs π : (I ′ , Ω′ , {In′ , Out′ }) →
+ ˆ Ω̂, {In,
+(I,      ˆ Out})
+            ˆ                                           ˆ Ω̂, {In,
+                 and an element w of the Weyl group of (I,      ˆ Out})
+                                                                     ˆ      such that
+π ◦ ν = w, or, more explicitly,
+                                  π(αi,j ) = w(α̂i,j ),
+for any 1 ≤ i ≤ L, j ∈ Z/Ni Z, j 6= ni and
+                                   π(α0 ) = −w(♠).
+   A similar result for such an orientation of Q that each vertex is admissible has
+been proven by R. Steinberg [Ste85].
+   In particular, the underlying Dynkin graphs of Q̂ and Q′ coincide, and we get
+the following corollary which describes the set of numbers L, {Ni }Li=1 for a quiver
+with a given underlying Dynkin graph (cf. [DR76]).
+Corollary. One has:
+                        (1)
+ 6.1.4.a. If Q is of An type then either L = 1 and N1 = n, or L = 2 and
+          N1 + N2 = n + 1.
+                      (1)
+ 6.1.4.b. If Q is of Dn type then L = 3, N1 = N2 = 2, and N3 = n − 2 (up to a
+          permutation of {Ni }).
+                       (1)
+ 6.1.4.c. If Q is of En type (6 ≤ n ≤ 8) then L = 3, N1 = 2, N2 = 3, and
+          N3 = n − 3 (up to a permutation of {Ni }).
+                                                                       (1)
+   Corollary 6.1.4 does not give the numbers L, {Ni }L i=1 in the An case. Let us
+describe these numbers for the sake of completeness (see [DR76] for the proof). We
+denote by J1 (resp J2 ) the number of clockwise (resp. counterclockwise) oriented
+arrows in Q. Note that J1 , J2 6= 0 since Q is not cyclic. If J1 = 1 (resp. J2 = 1),
+then L = 1 and N1 = J2 (resp. N1 = J1 ). If J1 6= 1 and J2 6= 1, then L = 2 and
+Ni = Ji up to the transposition of N1 and N2 .
+
+6.1.5. Finally we would like to discuss relation of the quiver construction of the
+Lie algebra n and the representation theory of finite groups. In this section we
+                                  (1)     (1)      (1)
+assume that Q is a quiver of A2n+1 , Dn , or En type with such an orientation
+that each vertex is admissible. Lusztig [Lus92] has reinterpreted representations of
+such quivers using McKay correspondence [McK80].
+   Let us recall that McKay correspondence establishes an isomorphism of lattices
+η : KCΓ → Z[I], where KCΓ is the Grothendieck group of the category of C-linear
+finite dimensional representations of a finite subgroup Γ of SL(2, C) and Z[I] is the
+root lattice of an affine Dynkin graph (I, E, Ends). In particular, η −1 (i) is the class
+of a simple CΓ-module, which we denote by ρi . The following formula describes
+the pull-back of the bilinear form <, > under η ∗ .
+46            IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+
+
+      < η(X), η(Y ) >= dimC HomCΓ (X ⊗ C2 , Y ) − dimC HomCΓ (X ⊗ ρ, Y ),
+where X, Y are CΓ-modules, C2 is equipped with the trivial Γ-action, and ρ is the
+natural 2-dimensional representation of Γ ⊂ SL(2, C).
+    The isomorphism of lattices yields the following bijection between the set of
+affine Dynkin graphs and the set of finite subgroups of SL(2, C).
+      (1)
+    An ↔ Z/(n + 1)Z - cyclic group of order n + 1,
+      (1)
+    Dn ↔ Dn−2 - binary dihedral group,
+      (1)
+    E6 ↔ T - binary tetrahedral group,
+      (1)
+    E7 ↔ O - binary octahedral group,
+      (1)
+    E8 ↔ I - binary icosahedral group.
+                                             (1)
+    Note that affine Dynkin graphs of type A2n do not have an orientation such that
+each vertex is admissible and are excluded from our considerations. The rest of the
+graphs admit precisely two such orientations.
+    For an affine quiver Q with the special orientation Lusztig was able to re-obtain
+the classification of indecomposable representations of Q entirely in terms of the
+representation theory of Γ. Below we discuss relation of maximal cyclic subgroups
+of Γ and cyclic roots of Q following [Lus92].
+    Let F be the set of lines l in P (ρ) whose isotropy group Γl (which is a cyclic
+group) has order greater than 2. The set F is finite. Let us choose representatives
+       ′
+                                                                          ′
+{li }L
+     i=1 for Γ-orbits in F . We assume that if Γl′ = Γli for some i, but l and li are
+                                ′
+not in the same Γ-orbit then l = lj for some j. Let Γi = Γli . It follows from our
+assumptions on the quiver Q that the order of Γi is even. We put Ni′ = |Γ2i | . Note
+                                                        ⊗(2N ′ )
+that li is a one-dimensional CΓi -module, and that li    i
+                                                           is a trivial CΓi -module.
+             ⊗(2j)    ⊗(2j+1)            ′
+Let κi,j = li      ⊕ li       for j ∈ Z/Ni Z.
+   One can identify the number of exceptional points of CP1 and their multiplicities
+appearing in the classification of indecomposable representations of Q in terms of
+the group Γ and its maximal cyclic subgroups (see [Lus92, Section 1]). We recall
+that {αi,j ∈ Z[I]} 1≤i≤L is the set of cyclic roots.
+                   j∈Z/Ni Z
+
+Proposition. One has
+ 6.1.5.a. L = L′ .
+ 6.1.5.b. Ni = Ni′ up to a permutation of indexes i ∈ {1, . . . , L}.
+ 6.1.5.c. αi,j = η(IndΓΓi κi,j ) up to a permutation of indexes i ∈ {1, . . . , L} and a
+          cyclic permutation of indexes j ∈ Z/Ni Z.
+   In particular, combining Propositions 6.1.4 and 6.1.5 one can identify the lengths
+of the branches of the Dynkin graph with the orders of the maximal cyclic subgroups
+of Γ.
+   Using Frobenius Reciprocity we get the following formula for the cyclic roots in
+terms of the representation theory of Γ and its cyclic subgroups.
+
+          (αi,j )k = dimC HomCΓ (IndΓΓi κi,j , ρk ) = dimC HomCΓi (κi,j , ρk ).
+   We would like to remark that both our construction of the Lie algebra n and the
+proof of Theorem 5.6.26 can be reformulated in the language of the representation
+theory of Γ. In particular, instead of the reflection functors which involve all possible
+                        AFFINE LIE ALGEBRAS AND TAME QUIVERS                                   47
+
+
+quiver orientations one might use “the square root” of the Coxeter functor and its
+inverse employed by Lusztig [Lus92].
+
+                                         References
+[BGP73] J. Bernstein, I. Gelfand, and V. Ponomarev, Coxeter functors, and Gabriel’s theorem,
+         Uspehi Mat. Nauk 28 (1973), no. 2(170), 19–33.
+[Bou68] N. Bourbaki, Éléments de mathématique. Fasc. XXXIV. Groupes et algèbres de Lie.
+         Chapitre IV: Groupes de Coxeter et systèmes de Tits. Chapitre V: Groupes engendrés
+         par des réflexions. Chapitre VI: systèmes de racines, Hermann, Paris, 1968, Actualités
+         Scientifiques et Industrielles, No. 1337.
+[CB92] W. Crawley-Boevey, Lectures on representations of quivers, Lectures in Oxford in 1992,
+         available at http://www.amsta.leeds.ac.uk/˜pmtwc/.
+[DF73] P. Donovan and M. R. Freislich, The representation theory of finite graphs and associ-
+         ated algebras, Carleton University, Ottawa, Ont., 1973, Carleton Mathematical Lecture
+         Notes, No. 5.
+[DR76] V. Dlab and C. M. Ringel, Indecomposable representations of graphs and algebras, Mem.
+         Amer. Math. Soc. 6 (1976), no. 173, v+57.
+[FK80] I. B. Frenkel and V. G. Kac, Basic representations of affine Lie algebras and dual
+         resonance models, Invent. Math. 62 (1980), no. 1, 23–66.
+[Fre85] I. B. Frenkel, Representations of Kac–Moody algebras and dual resonance models, Ap-
+         plications of group theory in physics and mathematical physics (Chicago, 1982), Amer.
+         Math. Soc., Providence, R.I., 1985, pp. 325–353.
+[Gab72] P. Gabriel, Unzerlegbare Darstellungen. I, Manuscripta Math. 6 (1972), 71–103; correc-
+         tion, ibid. 6 (1972), 309.
+[GR92] P. Gabriel and A. V. Roiter, Representations of finite-dimensional algebras, Algebra,
+         VIII, Springer, Berlin, 1992, With a chapter by B. Keller, pp. 1–177.
+[Kro90] L. Kronecker, Algebraische reduction der schaaren bilinearer formen, Sitzungsberichte
+         Akad. Berlin 1890 (1890), 1225–1237.
+[Lus91a] G. Lusztig, Quivers, perverse sheaves, and quantized enveloping algebras, J. Amer.
+         Math. Soc. 4 (1991), no. 2, 365–421.
+[Lus91b] G. Lusztig, Intersection cohomology methods in representation theory, Proceedings of
+         the International Congress of Mathematicians, Vol. I, II (Kyoto, 1990) (Tokyo), Math.
+         Soc. Japan, 1991, pp. 155–174.
+[Lus92] G. Lusztig, Affine quivers and canonical bases, Inst. Hautes Études Sci. Publ. Math.
+         (1992), no. 76, 111–163.
+[Mac74] R. D. MacPherson, Chern classes for singular algebraic varieties, Ann. of Math. (2)
+         100 (1974), 423–432.
+[McK80] J. McKay, Graphs, singularities, and finite groups, The Santa Cruz Conference on Finite
+         Groups (Univ. California, Santa Cruz, Calif., 1979), Amer. Math. Soc., Providence, R.I.,
+         1980, pp. 183–186.
+[MRY90] R. V. Moody, S. E. Rao, and T. Yokonuma, Toroidal Lie algebras and vertex represen-
+         tations, Geom. Dedicata 35 (1990), no. 1-3, 283–307.
+[Naz73] L. A. Nazarova, Representations of quivers of infinite type, Izv. Akad. Nauk SSSR Ser.
+         Mat. 37 (1973), 752–791.
+[PX97] L. Peng and J. Xiao, Root categories and simple Lie algebras, J. Algebra 198 (1997),
+         no. 1, 19–56.
+[Rie94] Ch. Riedtmann, Lie algebras generated by indecomposables, J. Algebra 170 (1994),
+         no. 2, 526–546.
+[Rin90a] C. M. Ringel, From representations of quivers via Hall and Loewy algebras to quantum
+         groups, Preprint, 1990.
+[Rin90b] C. M. Ringel, Hall algebras, Topics in algebra, Part 1 (Warsaw, 1988), PWN, Warsaw,
+         1990, pp. 433–447.
+[Rin90c] C. M. Ringel, Hall polynomials for the representation-finite hereditary algebras, Adv.
+         Math. 84 (1990), no. 2, 137–178.
+[Rin93] C. M. Ringel, The composition algebra of a cyclic quiver. Towards an explicit descrip-
+         tion of the quantum group of type Ãn , Proc. London Math. Soc. (3) 66 (1993), no. 3,
+         507–537.
+48             IGOR FRENKEL, ANTON MALKIN, AND MAXIM VYBORNOV
+
+
+[Sch91]   A. Schofield, Notes on constructing Lie algebras from finite-dimensional algebras,
+          Preprint, 1991.
+[Seg81]   G. Segal, Unitary representations of some infinite-dimensional groups, Comm. Math.
+          Phys. 80 (1981), no. 3, 301–342.
+[Ste85]   R. Steinberg, Finite subgroups of su2 , Dynkin diagrams and affine Coxeter elements,
+          Pacific J. Math. 118 (1985), no. 2, 587–598.
+
+   Department of Mathematics, Yale University, P.O. Box 208283, New Haven, CT
+06520-8283
+   E-mail address: frenkel@math.yale.edu
+
+   Department of Mathematics, Yale University, P.O. Box 208283, New Haven, CT
+06520-8283
+   E-mail address: malkin@math.yale.edu
+
+   Department of Mathematics, Duke University, P.O. Box 90320, Durham, NC 27708-
+0320
+   E-mail address: mv@math.duke.edu
+

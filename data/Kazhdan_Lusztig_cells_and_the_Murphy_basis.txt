@@ -1,0 +1,1607 @@
+                                              KAZHDAN–LUSZTIG CELLS AND THE MURPHY BASIS
+arXiv:math/0504217v2 [math.RT] 27 Apr 2005
+
+
+
+
+                                                                                MEINOLF GECK
+
+
+                                                    Abstract. Let H be the Iwahori–Hecke algebra associated with Sn ,
+                                                    the symmetric group on n symbols. This algebra has two important
+                                                    bases: the Kazhdan–Lusztig basis and the Murphy basis. While the for-
+                                                    mer admits a deep geometric interpretation, the latter leads to a purely
+                                                    combinatorial construction of the representations of H, including the
+                                                    Dipper–James theory of Specht modules. In this paper, we establish a
+                                                    precise connection between the two bases, allowing us to give, for the first
+                                                    time, purely algebraic proofs for a number of fundamental properties of
+                                                    the Kazhdan–Lusztig basis and Lusztig’s results on the a-function.
+
+
+
+
+                                                                              1. Introduction
+                                                Let W be a finite or affine Weyl group and H be the associated generic
+                                             Iwahori–Hecke algebra. By definition, H is equipped with a standard basis
+                                             usually denoted by {Tw | w ∈ W }. In a fundamental paper, Kazhdan and
+                                             Lusztig [10] constructed a new basis {Cw | w ∈ W } and used this, among
+                                             other applications, to define representations of H endowed with canonical
+                                             bases. While that construction is completely elementary, it has deep connec-
+                                             tions with the geometry of flag varieties and the representation theory of Lie
+                                             algebras and groups of Lie type. An excellent account of these connections
+                                             is given in Lusztig’s survey [16].
+                                                One of the main consequences of the geometric interpretation are certain
+                                             “positivity properties” for which no elementary proofs have ever been found.
+                                             In turn, these positivity properties allowed Lusztig to establish a number of
+                                             fundamental properties of the basis {Cw }, which are concisely summarized
+                                             in a list of 15 items (P1)–(P15) in [17, 14.2]. For example, one application
+                                             of these properties is the construction of a “canonical” isomorphism from H
+                                             onto the group algebra of W (when W is finite); see Lusztig [12].
+                                                This paper arose from the desire to give elementary, purely algebraic
+                                             proofs for (P1)–(P15) in the case where W is the symmetric group Sn . This
+                                             goal will be achieved in Secetion 5; we will also prove a tiny piece of “posi-
+                                             tivity” in this case, namely, the fact that the structure constants of Lusztig’s
+                                             ring J are 0 or 1. The key idea of our approach is to relate the basis {Cw } to
+                                             the basis constructed by Murphy [20], [21]. The main problem in establish-
+                                             ing that relation is that the Murphy basis elements are not directly indexed
+                                             by the elements of W = Sn . Indeed, those elements are written as xst where
+                                               Date: April 6, 2005.
+                                               2000 Mathematics Subject Classification. Primary 20C08.
+                                                                                         1
+2                                    Geck
+
+(s, t) runs over all pairs of standard λ-tableaux, for various partitions λ of
+n. Now, the Robinson–Schensted correspondence does associate to each el-
+ement of Sn a pair of standard tableaux of the same shape, but this works
+on a purely combinatorial level; we need to relate this to basis elements of
+H. Eventually, we shall see that the “leading matrix coefficients” introduced
+by the author [5] provide a bridge to pass from the Kazhdan–Lusztig basis
+to the Murphy basis of H; see Theorem 4.10 and Corollary 4.11. While the
+explicit form of the base change seems to be rather complicated, our results
+are sufficiently fine to enable us to translate combinatorial properties of the
+Murphy basis into properties of the Kazhdan–Lusztig basis.
+   This paper is organized as follows. In Section 2, we recall the basic def-
+initions concerning the Kazhdan–Lusztig basis of H, the left cells and the
+corresponding representations. In Section 3, we consider the orthogonal
+representations and leading matrix coefficients introduced by the author [5].
+These provide an efficient tool for identifying Kazhdan–Lusztig basis ele-
+ments and irreducible representations occuring as constituents in left cell
+representations.
+   In the remaining parts of this paper, we exclusively consider the case
+where W = Sn is the symmetric group. In Section 4, we recall the construc-
+tion of the Murphy basis {xst} of H. One of Murphy’s key results is that,
+for a fixed partition λ, the submodule N λ spanned by all basis elements xst,
+where (s, t) are standard µ-tableaux such that λ E µ, is a two-sided ideal in
+H. In Theorem 4.10, we show that the image of N λ under a certain algebra
+automorphism is spanned by the Kazhdan–Lusztig basis elements Cw , where
+w has a non-zero leading matrix coefficient in a representation labelled by a
+partition µ such that λ E µ.
+   Finally, in Section 5, we discuss the applications to the left cells in Sn .
+In Theorem 5.1, we characterize the Kazhdan–Lusztig pre-order relation
+6LR in terms of the dominance order on partitions. In Theorem 5.3, we
+establish Lusztig’s “Property (A)” which played a decisive role in [12]. In
+Theorem 5.6, we interprete our results in terms of the Robinson–Schensted
+correspondence; our approach even yields a new proof for a key step in
+establishing the fact that the left cells of Sn are given by the Robinson–
+Schensted correspondence. To deal with Lusztig’s a-function, we rely on the
+methods developped by Iancu and the author in [7, §4]. These methods show
+that most of the properties (P1)–(P15) follow from a relatively small set of
+hypotheses which are easily seen to be satisfied thanks to the link between
+the Kazhdan–Lusztig basis and the Murphy basis; see Theorem 5.10.
+
+                        2. Kazhdan-Lusztig cells
+   Let W be a Coxeter group with (finite) generating set S. Until the end
+of this section, we do not need to assume that W is finite. Let l : W → N be
+the usual length function with respect to S (where N = {0, 1, 2, . . .}). Let
+A = Z[v, v −1 ] be the ring of Laurent polynomials in an indeterminate v. Let
+                     Kazhdan–Lusztig cells and the Murphy basis             3
+
+H = HA (W, S) be the corresponding Iwahori–Hecke algebra. Then H is free
+over A with basis {Tw | w ∈ W }; the multiplication is given by the rule
+                  
+                            Tsw            if l(sw) = l(w) + 1,
+          Ts Tw =
+                     Tsw + (v − v −1 )Tw   if l(sw) = l(w) − 1,
+where w ∈ W and s ∈ S. For basic properties of W and H, we refer to [8].
+2.1. Kazhdan–Lusztig bases. There are two types of Kazhdan–Lusztig
+bases, denoted by {Cw | w ∈ W } and {Cw′ | w ∈ W } in the original article
+by Kazhdan and Lusztig [10]. In [17], Lusztig writes cw instead of Cw′ , but
+we shall adhere to the older notation here. The precise definitions are as
+follows.
+   There is a unique ring involution A → A, a 7→ ā, such that v̄ = v −1 . We
+can extend this map to a ring involution j : H → H such that
+                   X            X
+                j      aw Tw =       εw āw Tw   (aw ∈ A),
+                  w∈W              w∈W
+
+where we write εw =     (−1)l(w)   for any w ∈ W . Furthermore, there is an
+A-algebra automorphism
+                † : H → H,         Ts 7→ Ts† = −Ts−1      (s ∈ S).
+It is easily checked that j and † commute with each other. For any h ∈ H, we
+set h := j(h)† = j(h† ). Thus, the map H → H, h 7→ h, is a ring involution
+such that           X              X
+                         aw Tw =     āw Tw−1
+                                            −1   (aw ∈ A).
+                  w∈W              w∈W
+Now, for each w ∈ W , there exists a unique element Cw′ ∈ H such that
+                 ′
+              C w = Cw′      and    Cw′ ≡ Tw mod H<0 ,
+where H<0 := w∈W A<0 Tw and A<0 := v −1 Z[v −1 ]; see [17, Theorem 5.2].
+             P
+The elements {Cw′ | w ∈ W } form an A-basis of H, and we have
+                                    X
+                         Cw′ = Tw +     py,w Ty ,
+                                          y∈W
+                                          y<w
+
+where < denotes the Bruhat–Chevalley order on W and py,w ∈ A<0 for all
+y < w in W . It will be technically more convenient to work with the C-basis
+of H. (The reasons can be seen, for example, in [17, Chap. 18].) We set
+Cw := εw j(Cw′ ). Then we have
+                           X
+               Cw = Tw +       εy εw py,w Ty    for all w ∈ W .
+                           y∈W
+                           y<w
+
+As before, one shows that the basis element Cw is uniquely determined by
+the conditions that
+               C w = Cw   and   Cw ≡ Tw mod H>0 ,
+              P
+where H>0   := w∈W A>0 Tw and A>0 := vZ[v].
+4                                         Geck
+
+2.2. Multiplication rules. For any x, y ∈ W , we write
+                         X
+               Cx′ Cy′ =   hx,y,z Cz′   where hx,y,z ∈ A.
+                            z∈W
+We have the following more explicit formula for s ∈ S, y ∈ W (see [17, §6]):
+                                 X
+                           ′
+                       Csy +
+                                        µz,y Cz′ if sy > y,
+                ′ ′
+              Cs Cy =            z∈W
+                                sz<z<y
+                         (v + v −1 ) Cy′
+                      
+                                                  if sy < y,
+                      
+
+where µz,y ∈ Z is the coefficient of v −1 in pz,y ; see [17, Cor. 6.5]. Using the
+relation Cw = εw j(Cw′ ), we obtain the formula
+                                 X
+                       Cx Cy =        εx εy εz hx,y,z Cz .
+                                    z∈W
+
+Note also that, for s ∈ S, we have Cs′ = Ts + v −1 T1 and Cs = Ts − vT1 .
+2.3. The Kazhdan–Lusztig pre-orders. As in [17, §8], we write x ←L y
+if there exists some s ∈ S such that hs,y,x 6= 0, that is, Cx′ occurs in Cs′ Cy′
+(when expressed in the C ′ -basis) or, equivalently, Cx occurs in Cs Cy (when
+expressed in the C-basis). The Kazhdan–Lusztig left pre-order 6L is the
+relation on W generated by ←L , that is, we have x 6L y if there exists a
+sequence x = x0 , x1 , . . . , xk = y of elements in W such that xi−1 ←L xi for
+all i. The equivalence relation associated with 6L will be denoted by ∼L
+and the corresponding equivalence classes are called the left cells of W .
+   Similarly, we can define a pre-order 6R by considering multiplication by
+Cs′ on the right in the defining relation. The equivalence relation associated
+with 6R will be denoted by ∼R and the corresponding equivalence classes
+are called the right cells of W . We have
+                           x 6R y     ⇔      x−1 6L y −1 .
+This follows by using the antiautomorphism ♭ : H → H given by Tw♭ = Tw−1 ;
+we have Cw′♭ = Cw′ −1 and Cw♭ = Cw−1 for all w ∈ W ; see [17, 5.6]. Thus,
+any statement concerning the left pre-order relation 6L has an equivalent
+version for the right pre-order relation 6R , via ♭.
+   Finally, we define a pre-order 6LR by the condition that x 6LR y if there
+exists a sequence x = x0 , x1 , . . . , xk = y such that, for each i ∈ {1, . . . , k},
+we have xi−1 6L xi or xi−1 6R xi . The equivalence relation associated with
+6LR will be denoted by ∼LR and the corresponding equivalence classes are
+called the two-sided cells of W .
+2.4. Lusztig’s conjectures. For the convenience of the reader, we recall
+here Lusztig’s conjectures (P1)–(P15) from [17, Chap. 14]. (In fact, Lusztig
+formulates these conjectures in a slightly more general setting, where H is
+defined with respect to a weight function L on W ; but we will not need to
+discuss that more general situation here.) For a fixed z ∈ W , we set
+             a(z) := min{i > 0 | v i hx,y,z ∈ Z[v] for all x, y ∈ W };
+                       Kazhdan–Lusztig cells and the Murphy basis                     5
+
+this is Lusztig’s function a : W → N, introduced in [14]. Note that, for
+infinite W , it is not at all clear if a(z) < ∞ for all z ∈ W . However, Lusztig
+[17, 13.4] conjectures that this is always the case.
+   Furthermore, we define ∆(z) ∈ Z and 0 6= nz ∈ Z by the condition
+            p1,z = nz v −∆(z) + combination of smaller powers of v;
+note that ∆(z) > 0. Given x, y, z ∈ W , we define γx,y,z −1 ∈ Z by
+                 γx,y,z −1 = constant term of v a(z) hx,y,z ∈ Z[v].
+Let
+                         D := {z ∈ W | a(z) = ∆(z)}.
+Then Lusztig [17, 14.2] conjectures that the following properties hold.
+  P1. For any z ∈ W we have a(z) 6 ∆(z).
+  P2. If d ∈ D and x, y ∈ W satisfy γx,y,d 6= 0, then x = y −1 .
+  P3. If y ∈ W , there exists a unique d ∈ D such that γy−1 ,y,d 6= 0.
+  P4. If z ′ 6LR z then a(z ′ ) > a(z). Hence, if z ′ ∼LR z, then a(z) = a(z ′ ).
+  P5. If d ∈ D, y ∈ W , γy−1 ,y,d 6= 0, then γy−1 ,y,d = nd = ±1.
+  P6. If d ∈ D, then d2 = 1.
+  P7. For any x, y, z ∈ W , we have γx,y,z = γy,z,x .
+  P8. Let x, y, z ∈ W be such that γx,y,z 6= 0. Then x ∼L y −1 , y ∼L z −1 ,
+      z ∼L x−1 .
+  P9. If z ′ 6L z and a(z ′ ) = a(z), then z ′ ∼L z.
+ P10. If z ′ 6R z and a(z ′ ) = a(z), then z ′ ∼R z.
+ P11. If z ′ 6LR z and a(z ′ ) = a(z), then z ′ ∼LR z.
+ P12. Let I ⊂ S and WI be the parabolic subgroup generated by I. If y ∈
+      WI , then a(y) computed in terms of WI is equal to a(y) computed
+      in terms of W .
+ P13. Any left cell C of W contains a unique element d ∈ D. We have
+      γx−1 ,x,d 6= 0 for all x ∈ C.
+ P14. For any z ∈ W , we have z ∼LR z −1 .
+ P15. Let v̆ be a second indeterminate and let h̆x,y,z ∈ Z[v̆, v̆ −1 ] be obtained
+      from hx,y,z by the substitution v 7→ v̆. If x, x′ , y, w ∈ W satisfy
+      a(w) = a(y), then
+                   X                          X
+                        h̆w,x′ ,y′ hx,y′ ,y =   hx,w,y′ h̆y′ ,x′ ,y .
+                    y ′ ∈W                   y ′ ∈W
+If W is a finite or affine Weyl group then all these properties hold thanks to
+a geometric interpretation which yields the following “positivity property”:
+      px,y ∈ v −1 N[v −1 ]    and       hx,y,z ∈ N[v, v −1 ]        (x, y, z ∈ W );
+see the discussion of the “split case” by Lusztig [17, Chap. 15] and the
+references there; see also Springer [22].
+   Once (P1)–(P15) are known to hold, one can construct the ring J as
+explained in [17, Chap. 18]. As an abelian group, J is free with a basis
+6                                      Geck
+
+{tw | w ∈ W }. The multiplication is given by
+                          X
+                tx · ty =   γx,y,z −1 tz   for all x, y ∈ W ,
+                           z∈W
+                                      P
+where the identity element is 1J = d∈D nd td . Furthermore, we have an
+A-algebra homomorphism φ : H → A ⊗Z J defined by Lusztig’s formula [17,
+Theorem 18.9]. Then all the methods developped in [17, Chap. 20–24] can
+be applied to the study of the left cell representations of H.
+2.5. Left cell representations. Let C be a left cell or, more generally, a
+union of left cells of W . We define an H-module by [C]A := IC/ÎC, where
+                IC := hCw | w 6L z for some z ∈ CiA ,
+                ÎC := hCw | w 6∈ C, w 6L z for some z ∈ CiA .
+Note that, by the definition of the pre-order relation 6L , these are left
+ideals in H. Denote by bx (x ∈ C) the residue class of εx Cx in [C]A . Then
+the elements {bx | x ∈ C} form an A-basis of [C]A and the action of Cw
+(w ∈ W ) is given by the formula
+                                      X
+                          Cw .bx = εw   hw,x,y by .
+                                         y∈C
+
+Note that, since Cw† =  εw Cw′ ,
+                             this coincides with the definition in [17, §21.1].
+Up to the change of basis bx ↔ εx bx (x ∈ C), this also coincides with the
+original definition by Kazhdan–Lusztig [10].
+2.6. Kazhdan–Lusztig’s star operation. Let us consider two generators
+s 6= t in S such that sts = tst. We set
+      DR (s, t) := {w ∈ W | either ws < w, wt > w or wt < w, ws > w}.
+If w ∈ DR (s, t), then exactly one of the elements ws, wt belongs to DR (s, t);
+we denote it w∗ . The map
+                       DR (s, t) → DR (s, t),    w 7→ w∗ ,
+is an involution. It is readily checked that
+(a)                    w ∼R w ∗      for any w ∈ DR (s, t).
+Now let w, w1 ∈ W . Following Kazhdan–Lusztig [10, §5], we write w ≈ w1
+if there exist s, t ∈ S as above such that w ∈ DR (s, t) and w1 = w∗ . Now,
+the relations ≈ and ∼L are compatible, in the following sense. Let y ∈ W
+be such that y ∼L w. Then, by [17, 8.6], we also have y ∈ DR (s, t). Hence,
+by [10, Cor. 4.3], we have y ∗ ∼L w∗ . Consequently, we have a bijection
+                             ∼
+(b)                       C → C1 ,      x 7→ x1 := x∗ ,
+                     Kazhdan–Lusztig cells and the Murphy basis                     7
+
+where C is the left cell containing w and C1 is the left cell containing w1 .
+We shall also write C ≈ C1 in this situation. By [10, Theorem 4.2] (see also
+the discussion in [10, §5]), the above bijection has the following property:
+(c)          hs,x,y = hs,x1 ,y1        for all s ∈ S and all x, y ∈ C.
+This means that the action of Cs (s ∈ S) on the H-modules [C]A and [C1 ]A
+is given by exactly the same formulas with respect to the standard bases of
+[C]A and [C1 ]A , respectively. Since the elements Cs (s ∈ S) generate H as
+an A-algebra, we can even conclude that
+(c’)        hw,x,y = hw,x1 ,y1        for all w ∈ W and all x, y ∈ C.
+We also note the following property of the bijection in (b):
+(d)       l(x) + l(y) ≡ l(x1 ) + l(y1 )       mod 2,         for all x, y ∈ C.
+Indeed, by the definition of   w∗ ,   we have   l(w∗ )   = l(w) ± 1. This immediately
+yields (d).
+2.7. Induction from parabolic subgroups. Let I ⊆ S and consider the
+parabolic subgroup WI ⊆ W . Let XI be the set of distinguished left coset
+representatives; we have
+              XI = {w ∈ W | w has minimal length in wWI }.
+Furthermore, the map XI × WI → W , (x, u) 7→ xu, is a bijection and we
+have l(xu) = l(x) + l(u) for all u ∈ WI and all x ∈ XI ; see [8, §2.1]. Let
+HI = hTw | w ∈ WI iA ⊆ H be the corresponding parabolic subalgebra of H.
+For any w ∈ WI , we have Cw ∈ HI and Cw′ ∈ HI ; hence {Cw | w ∈ WI } and
+{Cw′ | w ∈ WI } are the Kazhdan–Lusztig bases of HI .
+   The linear map εI : HI → A defined by εI (Tw ) = εw v −l(w) for any w ∈ WI
+is an algebra homomorphism, called the sign representation. We denote by
+                                       IndSI (εI ),
+the H-module obtained by induction from εI . According to the situation,
+we will also use the same symbol for the corresponding character. See [8,
+§9.1] for the definition and basic properties of induced modules.
+Lemma 2.8. Assume that WI is finite and let wI ∈ WI be the unique
+element of maximal length. Then the following hold.
+    (a) For any w ∈ WI , we have Tw CwI = εw v −l(w) CwI .
+   (b) We have Cw2 I = εwI v −l(wI ) PI CwI , where PI = w∈WI v 2l(w) .
+                                                        P
+
+    (c) The set XI wI is a union of left cells in W ; we have
+                    XI wI = {w ∈ W | w 6L wI }.
+                         ∼ IndS (εI ) ∼
+       We have [XI wI ]A =            = HCwI (isomorphisms as left H-
+                              I
+       modules).
+8                                             Geck
+
+Proof. (a) It is well-known that l(wwI ) = l(wI ) − l(w) for all w ∈ WI .
+Hence, by [17, Cor. 12.2], we obtain
+                      X                              X
+              Cw′ I =      v −l(wwI ) Tw = v −l(wI )   v l(w) Tw .
+                     w∈WI                                     w∈WI
+Applying j : H → H yields the expression:
+                                      X
+                   CwI = εwI v l(wI )     εw v −l(w) Tw .
+                                               w∈WI
+Now let s ∈ I. Then we have swI < wI and so the multiplication rule in
+(2.2) shows that Cs CwI = −(v + v −1 )CwI . Since Cs = Ts − vT1 , this yields
+Ts CwI = −v −1 CwI . The required formula for Tw CwI now follows by a simple
+induction on l(w).
+   (b) Using (a), we have
+                                        X
+                   Cw2 I = εwI v l(wI )   εw v −l(w) Tw CwI
+                                          w∈WI
+                                          X
+                                 l(wI )
+                       = εwI v                       v −2l(w) CwI
+                                          w∈WI
+                                              X
+                       = εwI v −l(wI )                v 2(l(wI )−l(w)) CwI
+                                           w∈WI
+                                 −l(wI )
+                       = εwI v             PI CwI .
+   (c) Let w ∈ W be such that w 6L wI . Then the right descent set of wI
+(which is I) is contained in the right descent set of w; see [17, Lemma 8.6].
+Hence we can write w = xwI where x ∈ XI . Conversely, if x ∈ XI then
+l(xwI ) = l(x) + l(wI ) and so xwI 6L wI . This yields the equality XI wI =
+{w ∈ W | w 6L wI }. That equality also shows that XI wI is a union of left
+cells. Hence the module [XI wI ]A is defined. Now it is known that CxwI is
+the sum of Tx CwI and a linear combination of terms Ty CwI where y ∈ XI
+and y < x. (This is just a special case of [6, Prop. 3.3], for example.) Hence
+we also have that Tx CwI is the sum of CxwI and a linear combination of
+terms CywI where y ∈ XI and y < x. Consequently, we have
+                  hCxwI | x ∈ XI iA = hTx CwI | x ∈ XI iA ,
+and it is easily seen that the subspace on the right hand side equals HCwI .
+Hence, by the definition of induced modules, we have
+                      [XI wI ]A ∼
+                                = IndS (hCw iA ) ∼
+                                          I      = H Cw ,
+                                                      I              I
+
+where hCwI iA is an HI -submodule of HI affording εI .                       
+
+                    3. Orthogonal representations
+   We now recall the basic facts concerning the leading matrix coefficients
+introduced in [5]. For this purpose, we assume from now on that W is a
+                      Kazhdan–Lusztig cells and the Murphy basis             9
+
+finite Coxeter group. We extend scalars from A to the field K = R(v).
+Every element x ∈ K can be written in the form
+       x = rx v γx f /g      where rx ∈ R, γx ∈ Z and f, g ∈ 1 + vR[v];
+note that, if x 6= 0, then rx and γx indeed are uniquely determined by x; for
+x = 0, we have r0 = 0 and we set γ0 := +∞ by convention. Let
+         O := {x ∈ K | γx > 0}          and       p := {x ∈ K | γx > 0}.
+Note that O is nothing but the localisation of R[v] in the ideal (v); hence,
+O is a discrete valuation ring and p is the unique maximal ideal of O. The
+group of units in O is given by
+                          O× = {x ∈ O | rx 6= 0, γx = 0}.
+Note that we have
+          O ∩ R[v, v −1 ] = R[v]        and       p ∩ R[v, v −1 ] = vR[v].
+The substitution v 7→ 0 defines an R-linear ring homomorphism O → R with
+kernel p. The image of x ∈ O in R is called the constant term of x. Thus,
+the constant term of x is 0 if x ∈ p; the constant term equals rx if x ∈ O× .
+3.1. Schur elements and a-invariants. Extending scalars from A to K,
+we obtain a finite dimensional K-algebra HK = K ⊗A H, with basis {Tw |
+w ∈ W }. It is well-known that HK is split semisimple and abstractly isomor-
+phic to the group algebra of W over K; see, for example, [8, Theorem 9.3.5].
+Let Irr(HK ) be the set of irreducible characters of HK . We write this set in
+the form
+                            Irr(HK ) = {χλ | λ ∈ Λ},
+where Λ is some finite indexing set. We have a symmetrizing trace τ : HK →
+K defined by τ (T1 ) = 1 and τ (Tw ) = 0 for 1 6= w ∈ W . We have
+                                             if w′ = w−1 ,
+                                   
+                                     1
+                     τ (Tw Tw′ ) =
+                                     0       if w′ 6= w−1 ;
+see [8, §8.1]. The fact that HK is split semisimple yields that
+                      X 1
+                 τ=          χλ    where 0 6= cλ ∈ R[v, v −1 ].
+                          cλ
+                      λ∈Λ
+The elements cλ are called the Schur elements. By [8, 8.1.8], we have cλ =
+PW /Dλ where PW = w∈W v 2l(w) is the Poincaré polynomial of W and Dλ
+                      P
+is the “generic degree” associated with χλ . There is a unique a(λ) ∈ N and
+a positive real number rλ such that
+           cλ = rλ v −2a(λ) + combination of higher powers of v;
+see [13, Chap. 4] and [5, Def. 3.3]. The number a(λ) is called the a-invariant
+of χλ .
+10                                          Geck
+
+3.2. Orthogonal representations. By [5, Prop. 4.3], every χλ is afforded
+by a so-called orthogonal representation. This means that there exists a ma-
+trix representation Xλ : HK → Mdλ (K) with character χλ and an invertible
+diagonal matrix P ∈ Mdλ (K) such that the following conditions hold:
+  (O1) We have Xλ (Tw−1 ) = P −1 · Xλ (Tw )tr · P for all w ∈ W , and
+  (O2) the diagonal entries of P lie in 1 + vR[v].
+This has the following consequence. Let λ ∈ Λ and 1 6 i, j 6 dλ . For any
+h ∈ HK , we denote by Xijλ (h) the (i, j)-entry of the matrix Xλ (h). Then, by
+[5, Theorem 4.4 and Remark 4.6], we have
+               v a(λ) Xij
+                       λ (Tw ) ∈ O          and     v a(λ) Xij
+                                                            λ (Cw ) ∈ O
+for any w ∈ W and
+                     v a(λ) Xij
+                             λ (Tw ) ≡ v
+                                         a(λ) ij
+                                             Xλ (Cw )     mod p.
+Hence, the above three elements of O have the same constant term which
+which we write as εw cij                     ij
+                        w,λ . The constants cw,λ ∈ R are called the leading
+matrix coefficients of Xλ . By [5, Theorem 4.4], these coefficients have the
+following property:
+                          cij     ji
+                           w,λ = cw −1 ,λ     for all w ∈ W ,
+                          cij
+                           w,λ 6= 0           for some w ∈ W .
+We have the following Schur relations. Let λ, µ ∈ Λ, 1 6 i, j 6 dλ and
+1 6 k, l 6 dµ ; then
+                                  
+                     X ij
+                            kl      δik δjl rλ if λ = µ,
+                      cw,λ cw,µ =
+                                        0           6 µ;
+                                               if λ =
+                    w∈W
+see [5, Theorem 4.4]. (Here δij is the Kronecker delta.) The leading matrix
+coefficients are related to the left cells of W by the following result. Recall
+that, given a left cell C, we have a corresponding left cell module [C]A .
+Extending scalars from A to K, we obtain an HK -module [C]K . We denote
+by χC the character of [C]K . Then we have:
+Proposition 3.3. Let λ ∈ Λ and C be a left cell of W . Then we have
+        [χC : χλ ] 6= 0      ⇔     cij
+                                    w,λ 6= 0 for some w ∈ C and some i, j.
+Here, [χC : χλ ] denotes the multiplicity of χλ in χC.
+Proof. By [5, Prop. 4.7], we have the identity
+            dλ X
+            X
+                     (cik   2
+                       y,λ ) = [χC : χλ ] rλ ,      for any 1 6 i 6 dλ .
+            k=1 y∈C
+
+Now assume first that [χC : χλ ] 6= 0. Then, clearly, we must have cij
+                                                                    w,λ 6= 0
+for some w ∈ C and some i, j. Conversely, assume that cij
+                                                       w,λ 6= 0 for some
+w ∈ C and some i, j. Then the term corresponding to y = w and k = j in
+                        Kazhdan–Lusztig cells and the Murphy basis                11
+
+the sum on the left hand side is non-zero. Since there are no cancellations in
+that sum, the left hand side is non-zero and so [χC : χλ ] 6= 0, as desired. 
+   The Schur relations lead to particularly strong results when some addi-
+tional hypotheses are satisfied.
+Lemma 3.4. Assume that the following condition is satisfied for all λ ∈ Λ:
+(∗)         rλ = 1   and    cij
+                             w,λ ∈ Z    for all w ∈ W and 1 6 i, j 6 dλ .
+Then the following hold.
+   (a) We have cij  w,λ ∈ {0, ±1} for all w ∈ W , λ ∈ Λ and 1 6 i, j 6 dλ .
+   (b) For any λ ∈ Λ and 1 6 i, j 6 dλ , there exists a unique w ∈ W
+       such that cij w,λ 6= 0; we write w = wλ (i, j). The correspondence
+       (λ, i, j) 7→ wλ (i, j) defines a bijective map
+                     {(λ, i, j)} | λ ∈ Λ, 1 6 i, j 6 dλ } −→ W.
+Proof. This is proved in [7, Lemma 3.8]; see also [5, Theorem 4.10]. In order
+to illustrate the role of the conditions in (∗), we just recall here the proof
+of the uniqueness statement in (b). Let λ ∈ Λ and 1 6 i, j 6 dλ . Then
+consider the Schur relation where λ = µ, i = l and j = k. This yields:
+                             X ij
+                                 (cw,λ )2 = rλ = 1.
+                                w∈W
+Since the leading matrix coefficients are integers, we conclude that there
+exists a unique w ∈ W such that cij              ij
+                                   w,λ = ±1 and cy,λ = 0 for all y ∈ W \ {w}.
+Thus, we have a map (λ, i, j) 7→ w = wλ (i, j) as in (b). The remaining
+statements are proved in [loc. cit.].                                      
+Remark 3.5. In the setting of Lemma 3.4, let λ ∈ Λ and set
+                R(λ) := {w ∈ W | cij
+                                  w,λ 6= 0 for some 1 6 i, j 6 dλ }
+                      = {wλ (i, j) | 1 6 i, j 6 dλ }.
+It follows from [5, Theorem 4.4(b)] that
+(a)                             wλ (i, j)−1 = wλ (j, i).
+In particular, wλ (i, j) is an involution if and only of i = j. Furthermore, let
+i, j ∈ {1, . . . , dλ } and define
+      j
+(b)       Cλ := {wλ (k, j) | 1 6 k 6 dλ } and Cλi := {wλ (i, l) | 1 6 l 6 dλ }.
+It is shown in [5, Theorem 4.10] that j Cλ is contained in a left cell of W and
+Cλj is contained in a right cell of W . In particular, the whole set R(λ) is
+contained in a two-sided cell of W .
+  The following two results will be useful for the identification of irreducible
+characters; they rely on Proposition 3.3 and Lemma 2.8.
+12                                        Geck
+
+Lemma 3.6. Assume that condition (∗) in Lemma 3.4 is satisfied. Let
+I ⊆ S and λ ∈ Λ be such that
+                             [IndSI (εI ) : χλ ] 6= 0.
+Then the following hold.
+   (a) We have w 6LR wI for any w ∈ R(λ).
+   (b) Suppose that a(λ) = l(wI ). Then
+                    wI ∈ R(λ)            and         [χC : χλ ] 6= 0,
+        where C is the left cell of W containing wI .
+Proof. By Lemma 2.8, XI wI is a union of left cells of W ; furthermore, the left
+cell module [XI wI ]A affords the character IndSI (εI ). Hence, our assumption
+that χλ occurs with non-zero multiplicity in that induced character implies
+that there exists some left cell C of W such that
+                    C ⊆ XI wI            and         [χC : χλ ] 6= 0.
+By Proposition 3.3, we have       cij
+                                    6= 0 for some z ∈ C and some i, j. In
+                                   z,λ
+particular, we have z ∈ R(λ). Furthermore, writing z = xwI where x ∈ XI ,
+we see that z 6L wI . Since all elements of R(λ) are contained in a two-sided
+cell, we obtain (a).
+   Now suppose that a(λ) = l(wI ). Let eI ∈ HI,K be the primitive idempo-
+tent affording the sign representation εI of HI,K . By Frobenius reciprocity,
+we know that εI occurs with non-zero multiplicity in the restriction of χλ
+to HI . Hence we conclude that
+                     χλ (eI ) ∈ N         and         χλ (eI ) 6= 0.
+Now, by Lemma 2.8, we have PI eI = εwI v l(wI ) CwI . Since PI ∈ 1 + p, we
+obtain
+           dλ
+           X                               dλ
+                                           X
+              v a(λ) Xii
+                      λ  (CwI ) ≡ v l(wI )
+                                              Xii
+                                               λ (CwI )
+             i=1                               i=1
+                            dλ
+                            X
+                       ≡±         Xii
+                                   λ (eI ) ≡ ±χλ (eI ) 6≡ 0            mod p.
+                            i=1
+Hence, there is some i such that ciiwI ,λ 6= 0 and so wI ∈ R(λ). Then Proposi-
+tion 3.3 shows that [χC : χλ ] 6= 0, where C is the left cell containing wI . 
+Lemma 3.7. Assume that condition (∗) in Lemma 3.4 is satisfied. Let
+I ⊆ S, x ∈ XI and λ ∈ Λ be such that xwI ∈ R(λ). Then we have
+                             [IndSI (εI ) : χλ ] 6= 0.
+Proof. We have xwλ = wλ (i, j) where 1 6 i, j 6 dλ . Let C be the left cell
+containing xwλ . Then Proposition 3.3 shows that [χC : χλ ] 6= 0. On the
+other hand, χC is a summand in IndSI (εI ), by Lemma 2.8. Consequently, χλ
+occurs with non-zero-multiplicity in that induced character, as claimed. 
+                      Kazhdan–Lusztig cells and the Murphy basis            13
+
+Example 3.8. Let W = Sn be the symmetric group on {1, . . . , n}. Then
+W is a Coxeter group with generating set S = {s1 , . . . , sn−1 }, where si =
+(i, i + 1) for 1 6 i 6 n − 1. The diagram is given as follows.
+                              s1       s2                    sn−1
+               An−1            i        i        · · ·          i
+
+Let H = HA (Sn , S) be the corresponding Iwahori–Hecke algebra. Let Λn
+be the set of all partitions of n. Then it is well-known (see, for example,
+Hoefsmit [9] or Dipper–James [2]) that we have a labelling
+                           Irr(HK ) = {χλ | λ ∈ Λn }.
+It will be important to specify precisely the labelling that we are using. A
+“standard” labelling is defined in [8, §5.4]; however, in order to avoid going
+back and forth between partitions and their conjugates, we shall change that
+labelling and simply denote here by χλ the irreducible character which is
+labelled by the conjugate partition λ∗ in [loc. cit.]. (See also Corollary 4.5
+where we describe a representation affording χλ .) For example, with this
+convention, χ(1n ) is the trivial character and χ(n) is the sign character of
+HK . The labelling that we have chosen is characterized as follows in terms of
+induced characters (and this characterisation will be important in Section 4).
+   Let λ ∈ Λn . If λ has parts λ1 > λ2 > · · · > 0, we set
+               λ+
+                i = λ1 + λ2 + · · · + λi         for i = 1, 2, 3, . . ..
+                         {λ+
+Let Iλ := {1, . . . , n} \ i  | i = 1, 2, . . .}. Then Iλ ⊆ S and Sλ := WIλ
+is the Young subgroup corresponding to λ. Let ελ be the sign character of
+the corresponding parabolic subalgebra Hλ ⊆ H. Then, by [8, 5.4.7], the
+labelling of Irr(HK ) is uniquely determined by the condition that
+(a)         IndSIλ (ελ ) = χλ + sum of characters χµ where λ ⊳ µ,
+where E denotes the usual dominance order on Λn . (We have λ E µ if and
+only if λ+      +
+          i 6 µi for i = 1, 2, 3, . . .; we write λ ⊳ µ if λ E µ and λ 6= µ.)
+   The formula for the Schur elements in [8, Prop. 9.4.5] and the identities
+in [8, §5.4] now show that we have
+(b)        rλ = 1       and        a(λ) = l(wλ )         for any λ ∈ Λn ,
+where wλ is the unique element of maximal length in Sλ . Furthermore, by
+the discussion in [5, §5], each χλ is afforded by an orthogonal representa-
+tion such that the leading matrix coefficients cij
+                                                w,λ are integers. (Since that
+discussion is somewhat sketchy, a more rigorous argument is given in [7, Re-
+mark 3.7], based on the Dipper–James construction of Hoefsmit’s matrices
+in [3, Theorem 4.9].) Thus, condition (∗) in Lemma 3.4 is satisfied. Hence,
+each element of Sn lies in R(λ) for a unique λ ∈ Λn . Furthermore, applying
+Lemma 3.6 and using (a) and (b), we obtain that wλ ∈ R(λ). Thus, we
+14                                       Geck
+
+have a partition
+                           a
+(c)                Sn =           R(λ)    where    wλ ∈ R(λ).
+                           λ∈Λn
+
+Remark 3.9. In the setting of Example 3.8, we will henceforth fix, for each
+λ ∈ Λn , an orthogonal representation Xλ : HK → Mdλ (K) affording χλ such
+that the leading matrix coefficients cij
+                                      w,λ are integers. Thus, the sets R(λ)
+are defined and we have wλ ∈ R(λ). By Remark 3.5, we have
+                      R(λ) = {wλ (i, j) | 1 6 i, j 6 dλ }.
+Since wλ ∈ R(λ) is an involution, we have wλ = wλ (i, i) for some i. Con-
+jugating Xλ by a suitable permutation matrix, we may in fact assume that
+i = 1. In the sequel, we shall always assume that Xλ has been “normalized”
+in this way, that is, we have
+(a)                            wλ = wλ (1, 1) ∈ R(λ).
+Let Xλ be the set of distinguished left coset representatives of Sλ in Sn .
+Now, by Remark 3.5, the set 1 Cλ = {wλ (i, 1) | 1 6 i 6 dλ } is contained in a
+left cell of Sn . Hence, by Lemma 2.8, we have
+(b)    wλ (i, 1) = xi wλ       where xi ∈ Xλ for 1 6 i 6 dλ and x1 = 1.
+(An explicit description of the elements xi will be given in Remark 5.7.)
+  We shall need the following result.
+Lemma 3.10. Let λ ∈ Λn and x ∈ Xλ . Assume that µ ∈ Λn is such that
+xwλ ∈ R(µ). Then we have λ E µ; furthermore, if µ = λ, then x = xi for
+some i ∈ {1, . . . , dλ }.
+Proof. By Lemma 3.7, χµ occurs with non-zero multiplicity in IndSIλ (ελ ).
+Hence Example 3.8(a) shows that λ E µ. Thus, it remains to consider the
+case where λ = µ. Now, by Lemma 2.8, the set Xλ wλ is a union of left cells
+of Sn . Let C, C′ ⊆ Xλ wλ be left cells such that wλ ∈ C and xwλ ∈ C′ . First
+we claim that C = C′ . This is seen as follows. By Lemma 3.6(b), χλ occurs
+with non-zero multiplicity in χC. On the other hand, since xwλ ∈ R(λ),
+we can apply Proposition 3.3 to conclude that χλ also occurs with non-zero
+multiplicity in χC′ . Now assume, if possible, that C 6= C′ . Since χC and χC′
+both occur as summands in IndSIλ (ελ ) (see Lemma 2.8), we conclude that χλ
+occurs with multiplicity at least 2 in that induced character, contradicting
+Example 3.8(a). Thus, we must have C = C′ , as claimed.
+   Now let us write xwλ = wλ (i, j) ∈ C where 1 6 i, j 6 dλ . As in the proof
+of Proposition 3.3, we have the identity
+                       dλ X
+                       X
+                           (cik   2
+                             y,λ ) = [χC : χλ ] rλ = 1.
+                       k=1 y∈C
+
+As discussed in Remark 3.9, we have xi wλ = wλ (i, 1) ∈ C. Hence this term
+gives a non-zero contribution to the sum on the left hand side. On the other
+                      Kazhdan–Lusztig cells and the Murphy basis                    15
+
+
+hand, we also have cij
+                    xwλ ,λ 6= 0 and this gives a non-zero contribution. Since
+the right hand side equals 1, we conclude that xwλ = xi wλ and so x = xi ,
+as desired.                                                                
+Remark 3.11. Let λ, µ ∈ Λn be such that λ E µ. Then the multiplicity
+                                  [IndSIλ (ελ ) : χµ ]
+can be expressed in a purely combinatorial way, by Young’s rule. In partic-
+ular, it is known that the above multiplicity is non-zero; see, for example,
+Murphy [21, Theorem 7.2]. So Lemma 3.6 shows that w 6LR wλ for any
+w ∈ R(µ). Using Example 3.8(c), we conclude that
+(a)                      λEµ          ⇒         wµ 6LR wλ .
+In Corollary 5.1, we will see that the converse also holds, but the proof
+requires much more work.
+
+                             4. The Murphy basis
+   Throughout this and the following section, we consider the Iwahori–Hecke
+algebra H = HA (Sn , S), as in Example 3.8. The conventions in Remark 3.9
+will also remain in force.
+   In two fundamental articles [20] and [21], Murphy has constructed a new
+basis {xst} of H whose elements are indexed by pairs of standard λ-tableaux,
+for various partitions λ of n. As we shall see, the elements xst are defined
+as a mixture of basis elements Tw and Cw . Our aim is to establish a direct
+link with the Kazhdan–Lusztig basis; this will be achieved in Theorem 4.10.
+   We begin by recalling some purely combinatorial notions, where we follow
+[21] (but we let Sn act on the left on {1, . . . , n}). Another reference is the
+exposition by Mathas [18].
+   As before, let Λn be the set of all partitions of n. Let λ ∈ Λn and let
+λ1 > . . . > λr > 0 be the non-zero parts of λ. The correspdonding Young
+diagram [λ] is the set of all pairs (i, j) such that 1 6 i 6 r and 1 6 j 6 λi .
+A λ-tableau is a bijection t : [λ] → {1, . . . , n}. We say that t is row-standard
+if the sequence t(i, 1), t(i, 2), . . . is strictly increasing for each i; similarly,
+we say that t is column-standard if the sequence t(1, j), t(2, j), . . . is strictly
+increasing for each j. We say that t is standard if t is row-standard and
+column-standard. We denote by tλ the unique standard λ-tableau such that
+      tλ (i, j) = λ1 + λ2 + · · · + λi−1 + j    for 1 6 i 6 r and 1 6 j 6 λi .
+Here are some examples, where n = 5 and λ = (3, 2):
+
+                 1 2 3                    1 3 5                     1 4 5
+         tλ =
+                 4 5                      2 4                       2 3
+                                         (standard)                (row-standard)
+The group Sn acts naturally on λ-tableaux, the action being given by
+(w.t)(i, j) := w.t(i, j) for a tableau t and w ∈ Sn . The row stabiliser of
+16                                    Geck
+
+tλ is the Young subgroup Sλ . As in Remark 3.9, let Xλ be the set of
+distinguished left coset representatives of Sλ in Sn . By Dipper–James [2,
+Lemma 1.1], we have the following explicit description:
+                  Xλ = {w ∈ Sn | w.tλ is row-standard}.
+As in [loc. cit.], if t is a row-standard λ-tableau, the unique element d ∈ Xλ
+such that t = d.tλ will be denoted by d(t).
+  Let T(λ) be the set of standard λ-tableaux.
+Theorem 4.1 (Murphy [20], [21]). For any λ ∈ Λn and s, t ∈ T(λ), we
+define elements of H by
+                  X
+           xλ :=      v l(w) Tw and   xst := Td(s) xλ Td(t)−1 .
+                 w∈Sλ
+Then the following hold.
+   (a) The set {xst | s, t ∈ T(λ) for some λ ∈ Λn } is an A-basis of H.
+   (b) For any λ ∈ Λn , let N λ be the A-submodule of H spanned by all
+       elements xst where s, t ∈ T(µ) for some µ ∈ Λ such that λ E µ.
+       Then N λ is a two-sided ideal in H.
+   The statement in (a) can be found in [20, Theorem 3.9] or, with a some-
+what different proof, in [21, Theorem 4.17]. The statement in (b) is proved
+in [21, Theorem 4.18] (see also [21, §5]). Note that the element that we
+denote by Tw corresponds to the element v −l(w) Tw in Murphy’s notation.
+Thus, the element denoted by xλ in the above statement is exactly the same
+as in Murphy’s work; the element denoted by xst is only the same up to a
+power of v. However, this does not affect the validity of (a) and (b) since v
+is invertible in A.
+   Murphy also obtains the following result concerning the Specht modules
+of H. For any λ ∈ Λn , let N̂ λ be the A-submodule of H spanned by all xst
+where s, t ∈ T(µ) for some µ ∈ Λ such that λ ⊳ µ, that is, λ E µ and λ 6= µ.
+Thus, we have                          X
+                                N̂ λ =    Nµ
+                                         µ
+
+where the sum runs over all µ ∈ Λn such that λ ⊳ µ. In particular, N̂ λ is a
+two-sided ideal and we have N λ = Hxλ H + N̂ λ .
+Theorem 4.2 (Murphy [21, §5]). Let λ ∈ Λn . Then
+                S̃ λ := hTd(s) xλ + N̂ λ | s ∈ T(λ)iA ⊆ N λ /N̂ λ
+is a left H-module, and N λ /N̂ λ is a direct sum of |T(λ)| copies of S̃ λ .
+Furthermore, the HK -module K⊗A S̃ λ is simple, and S̃ λ is the contragredient
+dual of the Dipper–James Specht module defined in [2].
+   The following reformulation of Theorem 4.1 will eventually allow us to
+establish a direct connection between the Murphy basis and the Kazhdan–
+Lusztig basis.
+                     Kazhdan–Lusztig cells and the Murphy basis                  17
+
+Corollary 4.3. For any λ ∈ Λn and s, t ∈ T(λ), we set
+                          ỹst := Td(s) Cwλ Td(t)−1 ∈ H.
+Then ỹst = ±v l(wλ ) j(xst) for all s, t. Consequently, the following hold.
+   (a) The set {ỹst | s, t ∈ T(λ) for some λ ∈ Λn } is an A-basis of H.
+   (b) For any λ ∈ Λn , let N λ be the A-submodule of H spanned by all
+        elements ỹst where s, t ∈ T(µ) for some µ ∈ Λ such that λ E µ.
+        Then N λ is a two-sided ideal in H.
+Proof. Using the expression for Cw′ λ in the proof of Lemma 2.8, we immedi-
+ately see that xλ = v l(wλ ) Cw′ λ . Next recall that, for any w ∈ Sn , we have
+j(Tw ) = εw Tw and j(Cw′ ) = εw Cw . Hence we obtain
+                  j(xst) = j(Td(s) ) j(xλ ) j(Td(t)−1 )
+                         = εd(s) εd(t) εwλ v −l(wλ ) Td(s) Cwλ Td(t)
+                         = ±v −l(wλ ) ỹst.
+Since j : H → H is a ring involution, we now see that the statements in
+Theorem 4.1 hold with xst replaced by ỹst throughout.               
+Remark 4.4. For any λ ∈ Λn , let N̂ λ be the A-submodule of H spanned by
+all elements ỹst where s, t ∈ T(µ) for some µ ∈ Λ such that λ ⊳ µ. Thus, we
+have                                    X
+                                 N̂ λ =    Nµ
+                                              µ
+
+where the sum runs over all µ ∈ Λn such that λ ⊳ µ. In particular, N̂ λ is a
+two-sided ideal and we have N λ = HCwλ H + N̂ λ . We claim that
+          j(N λ ) = (N λ )† = N λ       and       j(N̂ λ ) = (N̂ λ )† = N̂ λ .
+Indeed, in the proof of Corollary 4.3, we have seen that j(xλ ) = ±v −l(wλ ) Cwλ .
+But then we also have
+                  x†λ = j(xλ ) = ±v l(wλ ) C wλ = ±v l(wλ ) Cwλ .
+An easy induction on the dominance order, using the relations
+            N λ = Hxλ H + N̂ λ         and        N λ = HCwλ H + N̂ λ ,
+now shows that (N λ )† = N λ = j(N λ ). Since this holds for all λ ∈ Λn , we
+also have (N̂ λ )† = N̂ λ = j(N̂ λ ). Thus, the above claim is proved.
+   The identification of χλ in the following result relies on our conventions
+for labelling the irreducible characters in Example 3.8.
+Corollary 4.5. Let λ ∈ Λn . Then
+                E λ := hTd(s) Cwλ + N̂ λ | s ∈ T(λ)iA ⊆ N λ /N̂ λ
+is a left H-module, and N λ /N̂ λ is a direct sum of |T(λ)| copies of E λ . The
+character afforded by K ⊗A E λ is χλ , and we have dλ = |T(λ)|.
+18                                   Geck
+
+Proof. By Remark 4.4, the ring involution j : H → H transforms N λ and
+N̂ λ into N λ and N̂ λ , respectively. Hence we have an induced isomorphism
+of additive groups
+                              θ : N λ /N̂ λ → N λ /N̂ λ
+such that θ(h.e) = j(h).θ(e) for all h ∈ H and e ∈ N λ /N̂ λ . Now, by
+Corollary 4.3, we have j(xλ ) = ±v −l(wλ ) Cwλ and so θ(S̃ λ ) = E λ . Hence
+Theorem 4.2 implies that E λ is a left H-module such that K ⊗A E λ is simple;
+furthermore, N λ /N̂ λ is a direct sum of |T(λ)| copies of E λ .
+   Thus, we see that it will be sufficient to prove that the character afforded
+by (N λ )/N̂ λ )K is dλ χλ . (The subscript K indicates extension of scalars
+from A to K.) For this purpose, we proceed by downward induction on
+the dominance order. The unique maximal element for that order is the
+partition λ = (n). In this case, we have S(n) = Sn and X(n) = {1}. Hence
+we have N (n) = hCw(n) iA and N̂ (n) = {0}. By Lemma 2.8, N (n) affords the
+sign character. On the other hand, by Example 3.8, χ(n) also is the sign
+character and d(n) = 1. Thus, the assertion holds in this case. Now let
+λ 6= (n). First we prove the following two statements.
+     (1) If λ ⊳ µ, then χµ does not occur in the character of (N λ /N̂ λ )K .
+     (2) Consider the left H-module M λ := HCwλ . Then (N λ /N̂ λ )K and
+         MK λ have a common simple constituent.
+
+To prove (1), we argue as follows. As a left HK -module, we have
+               Nλ ∼
+               K   = (N λ /N̂ λ )K ⊕ N̂ λ
+                                    K         where     N µ ⊆ N̂ λ .
+                                                        K      K
+By induction, we already know that dµ χµ is the character afforded by
+(N µ /N̂ µ )K . Hence, the character of N̂ λ contains dµ χµ as a summand.
+Since dµ is the multiplicity of χµ in the character of the regular representa-
+tion of HK and NK   λ is contained in H , we conclude that (1) holds. Now
+                                          K
+let us prove (2). Since Cwλ ∈ N λ and Cwλ 6∈ N̂ λ , the inclusion M λ ⊆ N λ
+induces a non-zero homomorphism of H-modules ϕ : M λ → N λ /N̂ λ . Hence,
+(2) follows.
+   Now we can determine the character afforded by (N λ /N̂ λ )K . Let µ ∈ Λn
+be such that χµ is the character of a common simple component as in (2).
+By Lemma 2.8, we have M λ ∼     = IndSIλ (ελ ). Hence, since χµ occurs in MKλ,
+
+we must have λ E µ by Example 3.8(a). But then (1) yields that λ = µ.
+Thus, χλ occurs in the character of (N λ /N̂ λ )K . Since the latter module is
+a direct sum of |T(λ)| copies of EK λ , we conclude that χ is the character
+                                                             λ
+of EKλ . Since E λ has dimension |T(λ)|, this also yields that |T(λ)| = d , as
+                K                                                         λ
+required.                                                                   
+Corollary 4.6. Let λ, µ ∈ Λn and h ∈ N λ . Then Xµ (h) = 0 unless λ E µ.
+Proof. Let us assume that Xµ (h) 6= 0. We must show that λ E µ. To see
+this, consider the representation afforded by the left H-module N µ /N̂ µ . Ex-
+tending scalars to K and using Corollary 4.5, we see that this representation
+                       Kazhdan–Lusztig cells and the Murphy basis               19
+
+is equivalent to a direct sum of dµ copies of Xµ . So the condition Xµ (h) 6= 0
+implies that h.(N µ /N̂ µ ) 6= 0. This means that there exist some standard
+µ-tableaux s, s1 , t, t1 such that ỹs1 t1 occurs with non-zero coefficient in the
+decomposition of hỹst. Now, since h ∈ N λ and N λ is a two-sided ideal, we
+can write hỹst as a linear combination of terms ỹuv where u, v are standard
+ν-tableaux for partitions ν ∈ Λn such that λ E ν. One of the terms in that
+linear combination is ỹs1 t1 . Hence, we conclude that λ E µ, as claimed. 
+   The following definition relies on our conventions in Remark 3.9 concern-
+ing the labelling of the elements in the sets R(λ).
+Definition 4.7. Let w ∈ Sn . Let λ ∈ Λn be such that w ∈ R(λ). Then
+w = wλ (i, j) where 1 6 i, j 6 dλ are uniquely determined. We set
+               λw := λ,        Pλ := PIλ ,       αw := a(λ) = l(wλ )
+(see Example 3.8) and
+                        1
+                    Zw := εw v l(wλ ) Cxi wλ Cwλ x−1 ∈ HK .
+                       Pλ λ                       j
+
+Note that we do need to extend scalars from A to K in order to define the
+above element.
+  The following result shows that Zw actually lies in H.
+Lemma 4.8. We have Zw ∈ N λ ⊆ H and Z w = Zw . For w = wλ , we have
+Zwλ = Cwλ .
+Proof. By [6, Prop. 3.3], we have
+      Cxi wλ = A-linear combination of terms Tx Cwλ where x ∈ Xλ ,
+     Cwλ x−1 = A-linear combination of terms Cwλ Ty−1 where y ∈ Xλ .
+           j
+
+(We have already used this fact in the proof of Lemma 2.8.) Hence, Zw is
+an A-linear combination of terms of the form
+                1
+                  εw v l(wλ ) Tx Cw2 λ Ty−1 where x, y ∈ Xλ .
+               Pλ λ
+Using Lemma 2.8, each of the above terms is equal to Tx Cwλ Ty−1 and, hence,
+lies in H. Consequently, we also have that Zw lies in HCwλ H, and this is
+contained in N λ by Remark 4.4. Finally, note that v l(wλ ) P λ = v −l(wλ ) Pλ .
+This yields Z w = Zw .                                                       
+Lemma 4.9. Let w ∈ R(λ) and 1 6 k, l 6 dλ . Then we have
+      v a(λ) Xkl
+              λ (Zw ) ∈ O       and       v a(λ) Xkl
+                                                  λ (Zw ) ≡ ±δik δjl   mod p,
+where i, j ∈ {1, . . . , dλ } are such that w = wλ (i, j).
+20                                         Geck
+
+Proof. We write w = wλ (i, j) where 1 6 i, j 6 dλ . We have a(λ) = l(wλ )
+by Example 3.8. Hence we obtain
+                          1 2a(λ) kl                     
+     v a(λ) Xkl
+             λ (Zw ) = ±    v      Xλ Cxi wλ Cwλ x−1
+                         Pλ                             j
+
+                             dλ 
+                         1 X                                                 
+                     =±           v a(λ) Xkr
+                                          λ  (Cxi w λ )   v a(λ) rl
+                                                                Xλ  (C     −1
+                                                                      w λ xj  )  .
+                         Pλ
+                               r=1
+First of all, this shows that the above expression lies in O; note that
+Pλ ∈ 1 + vZ[v]. Furthermore, its constant term can be expressed by the
+leading matrix coefficients of xi wλ and xj wλ . Indeed, since xi wλ = wλ (i, 1),
+Lemma 3.4 shows that
+              v a(λ) Xkr                    kr
+                      λ (Cxi wλ ) ≡ εxi wλ cxi wλ ,λ ≡ ±δki δr1    mod p.
+Similarly, since wλ x−1
+                     j = wλ (1, j), we have
+
+                      v a(λ) Xrl
+                              λ (Cwλ x−1 ) ≡ ±δlj δr1     mod p.
+                                       j
+
+Now note that Pλ ∈ 1 + p and so Pλ−1 ≡ 1 mod p. Hence, we obtain
+                        v a(λ) Xkl
+                                λ (Zw ) ≡ ±δki δlj      mod p,
+as desired.                                                                     
+Theorem 4.10. Let λ ∈ Λn . Then the following hold.
+(a)      ηw Cw ∈ Zw + N̂ λ ⊆ N λ       for all w ∈ R(λ), where ηw = ±1,
+              λ
+(b)         N = hCw | w ∈ R(µ) for some µ ∈ Λn such that λ E µiA .
+     (The sign in (a) will be determined explicitly in Corollary 5.11.)
+Proof. (a) We proceed by downward induction on the dominance order. The
+unique maximal element for that order is the partition λ = (n). In this case,
+we have S(n) = Sn , X(n) = {1} and d(n) = 1. Consequently, we have
+                  R((n)) = {w(n) }         and     N (n) = hCw(n) iA .
+On the other hand, we also have Zw(n) = Cw(n) . Hence the desired statement
+holds in this case. Now consider an arbitrary partition λ 6= (n) and assume
+that the desired statements hold for all elements in sets R(ν) where λ ⊳ ν.
+Let 1 6 i, j 6 dλ be such that w = wλ (i, j). By Lemma 4.8, we can write
+                           X
+                     Zw =      fz Cz      where fz ∈ A.
+                              z∈Sn
+
+Claim (1). We have fz ∈ Z for all z ∈ Sn such that λ 6 ⊳ λz .
+   This is seen as follows. Let A be the collection of all z ∈ Sn such that
+   6 0 and λ 6 ⊳ λz . If A = ∅, there is nothing to be proved. Now assume
+fz =
+                       Kazhdan–Lusztig cells and the Murphy basis               21
+
+that A 6= ∅. Since Zw = Z w , we have fz = f z for all z ∈ Sn . Hence it will
+be sufficient to show that the non-negative number
+                 m := min{i > 0 | v i fz ∈ Z[v] for all z ∈ A}
+is actually equal to 0. Let z ′ ∈ A be such that v m fz ′ ∈ Z[v] has a non-zero
+constant term. Let µ ∈ Λn be such that z ′ ∈ R(µ) and write z ′ = wµ (k, l)
+where 1 6 k, l 6 dµ . Note that, by the definition of A, we have λ 6 ⊳ µ. Now
+we obtain the following identity:
+                                    X                         
+               v m+a(µ) Xkl
+                         µ (Zw ) =      v m fz v a(µ) Xkl
+                                                        µ (Cz ) .
+                                       z∈Sn
+Let z ∈ Sn be such that z ∈ R(ν) where λ ⊳ ν. By induction, Cz ∈ N ν .
+Now Corollary 4.6 shows that, if Xµ (Cz ) 6= 0, then ν E µ and so λ ⊳ µ, a
+contradiction. Hence, the above sum need only be extended over all elements
+z ∈ A. But then we have v m fz ∈ Z[v] and so
+                                   X
+               v m+a(µ) Xkl
+                         µ (Zw ) ≡    v m fz εz ckl
+                                                 z,µ mod p.
+                                        z∈A
+
+Now, we have   ckl
+                z,µ   = 0 unless z = z ′ ; see Lemma 3.4. Hence we obtain
+           v m+a(µ) Xkl         m           kl         m
+                     µ (Zw ) ≡ v fz ′ εz ′ cz ′ ,µ ≡ ±v fz ′        mod p.
+Since v m fz ′ has a non-zero constant term, we conclude that the above ex-
+pression is not congruent to 0 modulo p. In particular, the left hand side is
+non-zero. Since Zw ∈ N λ , we can now deduce that λ E µ; see Corollary 4.6.
+Since we also have λ 6 ⊳ µ, we conclude that λ = µ. Thus, we have reached
+the conclusion that
+                                          
+                       v m v a(λ) Xkl
+                                   λ  (Zw )  6≡ 0 mod p.
+Using Lemma 4.9, we now see that m = 0. Thus, (1) is proved.
+Claim (2). We have fz = 0 unless λ E λz .
+    To see this, let µ ∈ Λn be such that λ E
+                                           6 µ. Assume, if possible, that there
+exists some z ′ ∈ R(µ) such that fz ′ 6= 0. Let 1 6 k, l 6 dµ be such that
+z ′ = wµ (k, l) ∈ R(µ). Now, as above, we see that
+                                        X                 
+                      v a(µ) Xkl
+                              µ (Zw ) =  fz v a(µ) Xkl
+                                                    µ (Cz )
+                                          z
+where the sum need only be extended over all z ∈ Sn such that λ E
+                                                                6 λz . By
+(1), we have fz ∈ Z for all such elements z. Hence we obtain
+       v a(µ) Xkl
+               µ (Zw ) ∈ O     and v a(µ) Xkl
+                                           µ (Zw ) ≡ ±fz ′ 6≡ 0        mod p,
+since ckl               kl               ′
+       z ′ ,µ = ±1 and cz,µ = 0 if z 6= z . In particular, we can now conclude
+that Xµ (Zw ) 6= 0. But then Lemma 4.6 shows that λ E µ, a contradiction.
+Thus, (2) is proved.
+Claim (3). We have ±Cw ∈ Zw + N̂ λ .
+22                                        Geck
+
+     This is seen as follows. By (1) and (2), we can write
+                       X
+                Zw ≡         fz Cz mod hCy | y ∈ Sn , λ ⊳ λy iA ,
+                     z∈R(λ)
+
+where fz ∈ Z for all z ∈ R(λ). By induction, we have Cy ∈ N̂ λ for any
+y ∈ Sn such that λ ⊳ λy . Thus, we have
+                     X
+             Zw ≡          fz Cz mod N̂ λ   where fz ∈ Z.
+                      z∈R(λ)
+
+Now fix z0 ∈ R(λ) and write z0 = wλ (k, l) where 1 6 k, l 6 dλ . In order to
+determine fz0 , we multiply the above relation by v a(λ) and apply Xkl
+                                                                     λ . By
+                                                   λ
+Corollary 4.6, we have Xλ (h) = 0 for all h ∈ N̂ . Hence we obtain
+                                    X                      
+                 v a(λ) Xkl
+                         λ  (Zw ) =      f z  v a(λ) kl
+                                                     Xλ (Cz .
+                                                           )
+                                       z∈R(λ)
+
+Now let us take constant terms. On the left, we obtain ±1 if k = i and
+l = j, and 0 otherwise; see Lemma 4.9. On the right, we obtain
+                            X
+                               fz εz ckl
+                                      z,λ = ±fz0 .
+                              z∈R(λ)
+
+Hence, we obtain fz0 = ±1 if z0 = w and fz0 = 0, otherwise; thus, (3) is
+proved and the proof of (a) is complete.
+   (b) Let Mλ be the A-submodule of H defined by the right hand side of
+the desired identity in (b). Let µ ∈ Λn be such that λ E µ and w ∈ R(µ).
+Since Zw ∈ N µ , we can deduce from (a) that Cw ∈ N µ ⊆ N λ . Hence, we
+have
+                                 Mλ ⊆ N λ .
+Now note that |T(λ)| = dλ ; see Corollary 4.5. Hence, both N λ and Mλ are
+free A-modules of the same rank, namely,
+                   X              X           X
+                        |R(λ)| =     |dλ |2 =     |T(λ)|2 .
+                    µ∈Λn               µ∈Λn      µ∈Λn
+                     λEµ                λEµ       λEµ
+
+Consequently, we have K0 ⊗A N λ = K0 ⊗A Mλ , where K0 is the field of
+fractions of A. So there exists some 0 6= f ∈ A such that
+                                f N λ ⊆ Mλ ⊆ N λ ,
+that is, N λ /Mλ is contained in the torsion part of H/Mλ . But, since the
+generators of Mλ can be extended to an A-basis of H, the quotient H/Mλ
+is a free A-module. Hence, we also have N λ ⊆ Mλ , as desired.          
+Corollary 4.11. Let λ ∈ Λn and s, t ∈ T(λ). Then there exists a unique
+element w ∈ R(λ) such that
+         ỹst = ηw Cw + vZ[v]-combination of elements Cy where λ = λy
+                      + A-combination of elements Cy where λ ⊳ λy .
+                      Kazhdan–Lusztig cells and the Murphy basis                23
+
+We have w = wλ (i, j), where 1 6 i, j 6 dλ are such that d(s) = xi and
+d(t) = xj .
+  Applying the ring involution j : H → H and using Corollary 4.3, we also
+obtain a relation with the original Murphy basis:
+v −l(wλ ) xst = ηw
+                 ′
+                   Cw′ + v −1 Z[v −1 ]-combination of elements Cy′ where λ = λy
+                      + A-combination of elements Cy′ where λ ⊳ λy ,
+       ′ =ε
+where ηw   d(s) εd(t) εwλ εw ηw = ±1.
+
+Proof. We begin with the following preliminary remarks. Let x ∈ Xλ . In
+the proof of Lemma 4.8, we have used [6, Prop. 3.3] to write Cxwλ as a
+linear combination of terms Ty Cwλ where y ∈ Xλ . But, the result in [loc.
+cit.] actually yields something stronger, namely, we have
+                             X
+           Cxwλ = Tx Cwλ +        axy Ty Cwλ where axy ∈ vZ[v].
+                               y∈Xλ
+                                y<x
+
+(Note that, in [6], we work with the C ′ -basis; applying the ring involution
+j : H → H yields the above reformulation.) Inverting the above relations,
+we also obtain that
+                             X
+           Tx Cwλ = Cxwλ +       bxy Cywλ where bxy ∈ vZ[v].
+                                y∈Xλ
+                                 y<x
+
+Now assume that x = xi where 1 6 i 6 dλ is such that d(s) = xi . Let
+y ∈ Xλ be such that y < x and bxy 6= 0. By Theorem 4.10(b), we have
+either ywλ ∈ R(λ) or Cywλ ∈ N̂ λ . Hence, using Lemma 3.10, we can write
+                                           dλ
+                                           X
+                   Txi Cwλ ≡ Cxi wλ +            bik Cxk wλ        mod N̂ λ
+                                           k=1
+where bik ∈ vZ[v]. Applying the anti-involution ♭ : Tx 7→ Tx−1 , we can also
+write
+                                   dλ
+                                   X
+              Cwλ Tx−1 ≡ Cwλ x−1 +     bjl Cwλ x−1 mod N̂ λ
+                       j          j                            l
+                                               l=1
+where bjl ∈ vZ[v] and 1 6 j 6 dλ is such that d(t) = xj . Consequently, we
+obtain that
+                                        dλ
+                                        X
+      Txi Cw2 λ Tx−1 ≡ Cxi wλ Cwλ x−1 +    ckl Cxk wλ Cwλ x−1 mod N̂ λ
+               j                      j                                  l
+                                               k,l=1
+
+where ckl ∈ vZ[v]. Using the identity in Lemma 2.8 and the definition of
+Zw , we obtain that
+                                          dλ
+                                          X
+                ỹst ≡ Zwλ (i,j) +             ckl Zwλ (k,l)       mod N̂ λ .
+                                      k,l=1
+24                                               Geck
+
+Finally, Theorem 4.10(a) yields
+                                            dλ
+                                            X
+                ỹst ≡ ηij Cwλ (i,j) +             ckl ηkl Cwλ (k,l)      mod N̂ λ ,
+                                           k,l=1
+
+where we set ηkl := ηy if y = wλ (k, l). Thus, the desired assertion holds
+where w = wλ (i, j).                                                    
+Example 4.12. Let n = 4 and λ = (3, 1). We have w(3,1) = s1 s2 s1 ; the
+standard (3, 1)-tableaux are given by
+
+                 1 2 3                               1 2 4                                1 3 4
+     t(3,1) =                        s3 .t(3,1) =                       s2 s3 .t(3,1) =
+                 4                                   3                                    2
+
+Thus, we have {d ∈ X(3,1) | d.t(3,1) ∈ T(1, 3)} = {1, s3 , s2 s3 }. Given s, t ∈
+T(3, 1), we write ỹd(s),d(t) instead of ỹst. With this convention, the nine
+Murphy basis elements corresponding to pairs of standard (3, 1)-tableaux
+are given as follows:
+            ỹ1,1 = C s1 s2 s1 ,
+           ỹ1,s3 = vCs1 s2 s1 + C s1 s2 s1 s3 ,
+        ỹ1,s2 s3 = vCs1 s2 s1 s3 + C s1 s2 s1 s3 s2
+           ỹs3 ,1 = vCs1 s2 s1 + C s1 s3 s2 s1 ,
+         ỹs3 ,s3 = v 2 Cs1 s2 s1 + vCs1 s2 s1 s3 + vCs1 s3 s2 s1 + C s1 s2 s3 s2 s1 ,
+       ỹs3 ,s2 s3 = v 2 Cs1 s2 s1 s3 + C s1 s2 s3 s2 + vCs1 s2 s1 s3 s2
+                                           + vCs1 s2 s3 s2 s1 + Cs1 s2 s1 s3 s2 s1 ,
+        ỹs2 s3 ,1 = vCs1 s3 s2 s1 + C s2 s1 s3 s2 s1 ,
+        ỹs2 s3 ,s3 = v 2 Cs1 s3 s2 s1 + C s2 s3 s2 s1 + vCs1 s2 s3 s2 s1
+                                            + vCs2 s1 s3 s2 s1 + Cs1 s2 s1 s3 s2 s1 ,
+     ỹs2 s3 ,s2 s3 = C s2 s3 s2 + vCs1 s2 s3 s2 + vCs2 s3 s2 s1
+                                           + v 2 Cs1 s2 s3 s2 s1 + (v − v −1 )Cs1 s2 s1 s3 s2 s1
+In each case, we have underlined the Kazhdan–Lusztig basis element which
+corresponds to the Murphy basis element as in Corollary 4.11. These exam-
+ples show, in particular, that the coefficient of Cy , where λ ⊳ λy , may involve
+negative powers of v.
+
+        5. Applications to the Kazhdan–Lusztig cells in Sn
+  We keep the setting of the previous sections. In particular, recall the
+partition            a
+              Sn =       R(λ)      where     wλ ∈ R(λ),
+                              λ∈Λn
+                    Kazhdan–Lusztig cells and the Murphy basis             25
+
+see Example 3.8. By Remark 3.5, we already know that each set R(λ) is
+contained in a two-sided cell of Sn . Now we can prove the following result.
+Theorem 5.1. Let λ, µ ∈ Λn and x ∈ R(λ), y ∈ R(µ). Then we have
+                        x 6LR y             ⇔         µ E λ.
+In particular, wλ 6LR wµ if and only if µ E λ. The sets R(λ), λ ∈ Λn , are
+precisely the two-sided cells of Sn .
+Proof. If µ E λ, then wλ 6LR wµ by Remark 3.11. Since each of the sets
+R(λ) and R(µ) is contained in a two-sided cell, we conclude that x 6LR y.
+Conversely, assume that x 6LR y. We may assume without loss of generality
+that x ←L y or x ←R y. Let us first assume that x ←L y. This means that
+exists some h ∈ H such that Cx occurs in hCy (expressed in the C-basis).
+Since y ∈ R(µ), we have Cy ∈ N µ by Theorem 4.10(a). Hence we also
+have hCy ∈ N µ since N µ is a two-sided ideal. But then Theorem 4.10(b)
+shows that hCy can be written as an A-linear combination of elements Cz
+where µ E λz . Since Cx occurs in that linear combination, we conclude that
+µ E λ, as desired. The argument in the case where x ←R y is completely
+analogous. The statement concerning the two-sided cells is now clear.    
+   The equivalence “wλ 6LR wµ ⇔ µ E λ” is not a new result. However, as
+far as we are aware of, all the previously known proofs for the implication
+“⇒” rely on the geometric interpretation of the Kazhdan–Lusztig basis and
+the resulting “positivity properties”. See, for example, Du–Parshall–Scott
+[4, 2.13.1], where this is deduced from a result of Lusztig–Xi [15, 3.2].
+Lemma 5.2. Let λ ∈ R(λ) and 1 6 j 6 dλ . Then
+              Vjλ := hCwλ (i,j) + N̂ λ | 1 6 i 6 dλ iA ⊆ N λ /N̂ λ
+is a left H-module, free over A of rank dλ . We have
+                         N λ /N̂ λ = V1λ ⊕ · · · ⊕ Vdλλ .
+Proof. First note that, by Theorem 4.10, N λ /N̂ λ is free over A, with a
+basis given by the residue classes of the elements Cw where w ∈ R(λ). This
+already shows that each Vjλ is free over A of rank dλ , and that N λ /N̂ λ is
+the direct sum of all Vjλ . It remains to prove that Vjλ is a left H-module.
+For this purpose, we must prove that, for any h ∈ H and 1 6 i, k 6 dλ ,
+there exist rhj (i, k) ∈ A such that
+                               dλ
+                                     rhj (i, k) Cwλ (k,j)
+                               X
+                hCwλ (i,j) ≡                                mod N̂ λ .
+                               k=1
+First we prove this in the case where j = 1. Then
+                    wλ (i, 1) = xi wλ           where xi ∈ Xλ ;
+see Remark 3.9. Now, by Lemma 2.8(c), the A-module
+                               hCxwλ | x ∈ Xλ iA
+26                                             Geck
+
+is a left ideal in H. Hence, for any h ∈ H, we can write
+                        X
+              hCxi wλ =      rh (i, x) Cxwλ  where rh (i, x) ∈ A.
+                            x∈Xλ
+
+Now let x ∈ Xλ and µ ∈ Λn be such that xwλ ∈ R(µ). Then, by Lemma 3.10,
+we have either λ ⊳ µ or x = xk for some k ∈ {1, . . . , dλ }. By Theorem 4.10,
+the former condition implies that Cxwλ ∈ N̂ λ . Consequently, we have
+                                   dλ
+                                   X
+                   hCxi wλ ≡             rh (i, xk ) Cxk wλ       mod N̂ λ .
+                                   k=1
+Thus, the desired assertion holds where we set rh1 (i, k) := rh (i, xk ).
+  Now let j > 1. By Theorem 4.10, there exist signs ηij = ±1 such that
+         Cxi wλ Cwλ x−1 ≡ ηij Cwλ (i,j)            mod N̂ λ           for 1 6 i 6 dλ .
+                        j
+
+We shall now set
+               rhj (i, k) := ηij ηkj rh1 (i, k)           for 1 6 i, k 6 dλ .
+Then, since N̂ λ is a two-sided ideal, we obtain
+                   hCwλ (i,j) ≡ ηij (hCxi wλ )Cwλ x−1
+                                                              j
+
+                                           dλ
+                                           X
+                                   ≡ ηij         rh1 (i, k) Cxk wλ Cwλ x−1
+                                                                         j
+                                           k=1
+                                           Xdλ
+                                   ≡ ηij         ηki rh1 (i, k) Cwλ (k,j)
+                                           k=1
+                                       dλ
+                                             rhj (i, k) Cwλ (k,j)
+                                       X
+                                   ≡
+                                       k=1
+
+as desired, where all of the above congruences are taken modulo N̂ λ .                   
+Theorem 5.3. Let x, y ∈ Sn . Then we have the following implication:
+                   x 6L y          and     x ∼LR y         ⇒        x ∼L y.
+Proof. Let x, y ∈ Sn be such that x 6L y and x ∼LR y. Since the relation
+6L is defined as the transitive closure of ←L , it will be sufficient to consider
+the special case where x ←L y. Now, since x ∼LR y, we have x, y ∈ R(λ)
+for some λ ∈ R(λ); see Theorem 5.1. Thus, we have y = wλ (i, j) where
+1 6 i, j 6 dλ . By Lemma 5.2, we have
+                                         dλ
+                                               rhj (i, k) Cwλ (k,j)
+                                         X
+             hCy ≡ hCwλ (i,j) ≡                                         mod N̂ λ ,
+                                         k=1
+
+where rhj (i, k) ∈ A.   By Theorem 4.10 and Theorem 5.1, N̂ λ is spanned by
+elements Cw where       w 6LR y but w 6∼LR y. Hence, our hypothesis that
+                       Kazhdan–Lusztig cells and the Murphy basis             27
+
+Cx occurs in the decomposition of hCy implies that either x = wλ (k, j) for
+some 1 6 k 6 dλ or x 6∼LR y. Hence, we must have x = wλ (k, j) and so
+x ∼L y by Remark 3.5.                                                    
+   Again, the above result is not new (and the conclusion is known to hold
+for more general types of Coxeter groups). But, even for the symmetric
+group Sn , it was first proved by Lusztig [12, Lemma 4.1] using the (deep)
+connection between cells and primitive ideals in universal envelopping al-
+gebras via the main conjecture of Kazhdan–Lusztig [10]. Another proof,
+applicable to finite and affine Weyl groups, was given by Lusztig [14], using
+the geometric interpretation of the Kazhdan–Lusztig basis and the resulting
+“positivity properties”.
+   The following result was first obtained by Kazhdan–Lusztig [10, Theo-
+rem 1.4], as a consequence of the combinatorial description of the left cells
+in terms of the Robinson–Schensted correspondence. (We will come back to
+the latter point in Theorem 5.6.)
+Theorem 5.4. For each left cell C of Sn , we have χC ∈ Irr(HK ). Further-
+more, two left cells C, C′ afford the same character if andPonly if C, C′ ⊆ R(λ)
+for some λ ∈ Λn . The total number of left cells equals λ∈Λn dλ .
+Proof. For λ ∈ Λn and 1 6 j 6 dλ , we set
+                   j
+                       C λ := {wλ (i, j) | 1 6 i 6 dλ } ⊆ R(λ).
+By Remark 3.5, the above set is contained in a left cell of Sn . We claim
+that j Cλ is a left cell. Since 6L is defined as the transitive closure of the
+relation ←L , it is enough to prove the following statement.
+   Let y ∈ j C λ and h ∈ H. Then hCy is a linear combination of basis
+elements Cx where x ∈ Cλj or x <LR y.
+   This is proved as follows. By Lemma 5.2, we can write hCy as a linear
+combination of basis elements Cx where x ∈ j Cλ , and some element of N̂ λ .
+But, by Theorem 4.10 and Theorem 5.1, N̂ λ is spanned by basis elements
+Cw where w <LR y. This yields the above statement. Thus, j C λ is a left
+cell, as claimed. Now it is clear that we have a partition
+                                           dλ
+                                         a a
+                                                   j
+                                Sn =                   C λ.
+                                        λ∈Λn j=1
+
+Hence, the sets j C λ are precisely the left cells of Sn . The remaining state-
+ments concerning the characters of the left cell representations now follow by
+a standard counting argument. Indeed, since HK is semisimple, the above
+partition yields an isomorphism of left HK -modules
+                                         dλ
+                              HK ∼
+                                       M M
+                                 =               [j C λ ]K .
+                                      λ∈Λn j=1
+28                                     Geck
+
+Thus, HK P  (regarded as a left HK -module) has a decomposition into a direct
+sum with λ dλ terms. Now recall that the latter number is the sum of
+the dimensions of all irreducible representations
+                                     P            of HK (up to equivalence).
+Hence, by Wedderburn’s Theorem, λ dλ is the maximum number of terms
+in a direct sum decomposition of HK . Consequently, each direct summand
+[j C λ ]K must be a simple HK -module. Thus, we have shown that [C]K is a
+simple HK -module for any left cell C. Finally, we claim that
+                      χλ = character afforded by [j C λ ]K .
+Indeed, since j C λ ⊆ R(λ), Proposition 3.3 shows that χλ occurs in the
+character afforded by [j C λ ]K . Since the latter is irreducible, we have equality,
+as desired. We conclude that two left cells afford the same character if and
+only if these two left cells are both contained in R(λ) for some λ.               
+  Let us recall some basic facts concerning the Robinson–Schensted corre-
+spondence. We use Knuth [11, §5.1.4] as a reference. Recall that, for any
+λ ∈ Λn , we denote by T(λ) the set of all standard λ-tableaux. Then the
+Robinson–Schensted correspondence defines a bijection
+                         a                
+                              T(λ) × T(λ) → Sn .
+                           λ∈Λn
+If s, t ∈ T(λ), we denote by πλ (s, t) the corresponding element of Sn . Given
+w ∈ Sn , the pair (s, t) such that w = πλ (s, t) can be constructed explicitly
+by the “insertion algorithm” [11, p. 49]. The tableau s is obtained by “in-
+serting” the numbers from the sequence (w.1, w.2, . . . , w.n) into an initially
+empty tableau; the tableau t “keeps the record” of the order in which the
+positions in s have been filled. For example, applying the insertion algorithm
+to the element wλ where λ ∈ Λn , we obtain
+                                             ∗  ∗
+                               wλ = πλ∗ tλ , tλ
+where λ∗ denotes the conjugate partition.
+  We shall need the following property of the Robinson–Schensted corre-
+spondence.
+Proposition 5.5 (Knuth). Let λ ∈ Λn and s, s′ , t, t′ ∈ T(λ). We set
+                   w := πλ (s, t)     and      w′ := πλ (s′ , t′ ).
+Then we have s = s′ if and only if w, w′ are linked by a finite sequence of
+“star operations”, that is, there exists a sequence w = y0 , y1 , . . . , yk = w′ of
+elements yi ∈ Sn such that yi−1 ≈ yi for all i, where ≈ is defined in (2.6).
+   For the proof, see Exc. 4 in [11, §5.1.4]. Note that Knuth shows that we
+have s = s′ if and only if the permutations w, w′ can be transformed to each
+other by a finite sequence of so-called “admissible transformations”. It is
+readily checked that the latter condition is equivalent to the fact that w, w′
+are linked by a finite sequence of “star operations”, using the characteri-
+sation of l(w) as the number of pairs (i, j) such that 1 6 i < j 6 n and
+w(j) > w(i). See also [1, §3.2] for more details.
+                     Kazhdan–Lusztig cells and the Murphy basis                29
+
+   Now we can prove the following result. The statements in (a) and (b) are
+due to Kazhdan–Lusztig [10, §5], but the proof given there is quite sketchy.
+A complete, self-contained proof, based on the methods in [10, §4], is given
+by Ariki [1]. The proof that we give here is different as far as the (more
+difficult) implications “⇒” are concerned. Note also that (c) is neither
+proved in [10] nor in [1].
+Corollary 5.6. Let w, w′ ∈ Sn . Let λ, µ ∈ Λn be such that w = πλ (s, t)
+where s, t ∈ T(λ) and w′ = πµ (s′ , t′ ) where s′ , t′ ∈ T(µ). Then the following
+hold:
+(a)                   w ∼R w ′       ⇔    λ = µ and s = s′ ,
+(b)                   w ∼L w ′       ⇔    λ = µ and t = t′ ,
+(c)                  w ∼LR w′        ⇔    λ = µ.
+In particular, the intersection of a left cell and a right cell is either empty
+or a singleton set. Furthermore, for any λ ∈ Λn , we have
+                      R(λ) = {πλ∗ (u, v) | u, v ∈ T(λ∗ )},
+where λ∗ denotes the conjugate partition.
+Proof. First note that dλ = |T(λ)| for any λ ∈ Λn ; see Corollary 4.5.
+  (a) Let λ ∈ Λn and s ∈ T(λ). By Proposition 5.5 and (2.6)(a), the set
+                        T(λ, s) := {πλ (s, t) | t ∈ T(λ)}
+is contained in a right cell. Now note that the family of sets
+                          {T(λ, s) | λ ∈ Λn , s ∈ T(λ)}
+                                                 P
+forms a partition of Sn , and that there are λ dλ pieces in that partition.
+On the other hand, by Theorem 5.4, the latter number also equals the
+number of all left cells of Sn , and that number is the same as the number
+of all right cells. Hence each set T(λ, s) must be a right cell.
+   (b) We have πλ (s, t)−1 = πλ (t, s) for all λ ∈ Λn and s, t ∈ T(λ); see
+Theorem B in [11, §5.1.4]. Hence the assertion follows from (a).
+   (c) Let λ ∈ Λn . Then, by (a) and (b), the set {πλ (s, t) | s, t ∈ T(λ)} is
+contained in a two-sided cell of Sn . Using Theorem 5.1, we can now argue
+as in the proof of (a) to conclude that the above set is a two-sided cell.
+   Finally, consider the statement concerning R(λ). By Remark 3.9, we have
+wλ ∈ R(λ). On the other hand, applying the “insertion algorithm” to wλ ,
+we see that wλ = πλ∗ (u0 , v0 ) for some standard λ∗ -tableaux u0 , v0 . Now
+Theorem 5.1 and (c) imply that R(λ) = {πλ∗ (u, v) | u, v ∈ T(λ∗ )}.         
+Remark 5.7. Once the above result is established, we can also identify the
+elements xi in Remark 3.9. Indeed, for λ ∈ Λn , the set
+                          1
+                              Cλ = {xi wλ | 1 6 i 6 dλ }
+30                                  Geck
+
+is the left cell containing wλ . Then the Robinson–Schensted correspondence
+shows that
+                           1
+                             Cλ = {d(s)wλ | s ∈ T(λ)};
+see [19, Lemma 3.3] and the references there. We also remark here that, in
+[19, Theorem 3.5], McDonough and Pallikaros construct an explicit isomor-
+                                                              ∗
+phism of H-modules from [1 Cλ ]A onto the Specht module S̃ λ , where λ∗ is
+the conjugate partition.
+Corollary 5.8. Let λ ∈ Λn and C, C1 be two left cells contained in R(λ).
+                                   ∼
+Then there is a unique bijection C → C1 , x 7→ x1 , such that the following
+conditions are satisfied:
+(a)             x ∼R x1           for all x ∈ C,
+(b)          hw,x,y = hw,x1 ,y1   for all x, y ∈ C and w ∈ Sn .
+Thus, the H-modules [C]A and [C1 ]A are not only isomorphic, but they even
+afford exactly the same matrix representations with respect to the standard
+bases of [C]A and [C]A , respectively.
+Proof. This follows by the argument in [10, §5]. Indeed, by Corollary 5.6
+and Proposition 5.5, C and C1 can be linked by a finite sequence of star
+operations. Hence the assertions follow from (2.6).                    
+  Finally, we turn to the properties (P1)–(P15) in (2.4). Recall that, for
+any w ∈ Sn , we defined αw := a(λ) = l(wλ ), where λ ∈ Λn is such that
+w ∈ R(λ); see Definition 4.7.
+Lemma 5.9. Let x, y ∈ Sn and assume that x 6LR y. Then we have
+αy 6 αx , with equality only if x ∼LR y.
+Proof. Let λ, µ ∈ Λn be such that x ∈ R(λ), y ∈ R(µ). By Corollary 5.1,
+we have µ E λ. This implies a(µ) 6 a(λ) with equality only if λ = µ; see,
+for example, [8, (5.4.2) and Exc. 5.6]. Thus, we have αy 6 αx , with equality
+only if λ = µ. Finally, by Theorem 5.1, we have x ∼LR y if λ = µ.          
+Theorem 5.10. We have a(w) = αw for any w ∈ Sn . Furthermore, the
+properties (P1)–(P15) in (2.4) hold, where the set of “distinguished involu-
+tions” is given by
+                           D = {z ∈ Sn | z 2 = 1}.
+The constants γx,y,z are given as follows. Let x, y, z ∈ Sn and d ∈ D be such
+that y −1 ∼L d. Then we have
+                               if x ∼L y −1 , y ∼L z −1 , z ∼L x−1 ,
+                    
+                      nd
+           γx,y,z =
+                      0        otherwise.
+Furthermore, nd = 1 for any d ∈ D. Lusztig’s ring J, see (2.4), is isomor-
+phic to the direct sum of the matrix rings Mdλ (Z) (λ ∈ Λn ).
+                     Kazhdan–Lusztig cells and the Murphy basis                   31
+
+Proof. First we determine a(w) and show that (P1)–(P15) hold. Since con-
+dition (∗) in Lemma 3.4 is satisfied, we can apply the results in [7, §4]. By
+Lemma 5.9, the hypotheses of [7, Lemma 4.4] are satisfied. Hence we have
+a(w) = αw for any w ∈ Sn . Once the identity a(w) = αw is established,
+Lemma 5.9 shows that (P4) and (P11) hold.
+   But then we can also apply [7, Lemma 4.6] and this yields (P1), (P2),
+(P3), (P5), (P6), (P7), (P8) and (P14). Since all of the above properties
+hold for any parabolic subgroup of Sn , (P12) also holds; see the argument in
+[17, 14.12]. By Theorem 5.4, we have χC ∈ Irr(HK ) for any left cell C. Hence
+[7, Lemma 4.8] yields that (P13) holds and that D = {z ∈ Sn | z 2 = 1}. By
+[7, Remark 4.10], we have
+                               if x ∼L y −1 , y ∼L z −1 , z ∼L x−1 ,
+                    
+                      ±1
+           γx,y,z =
+                       0       otherwise.
+The statement about the structure of J is contained in [7, Lemma 4.9].
+    Next we show that (P9), (P10) hold. Now, by [17, 14.10], property (P10)
+is a formal consequence of (P9). To prove (P9), let x, y ∈ Sn be such that
+x 6L y and a(x) = a(y). By (P11), we obtain x ∼LR y. Hence Theorem 5.3
+implies x ∼L y, as desired.
+    It remains to consider (P15). Since (P4), (P9), (P10) are already known
+to hold, (P15) can be reformulated as explained in [17, 14.15]. But then we
+can argue as in [17, 15.7] to conclude that (P15) hold. (Note that we are in
+the case of equal parameters; the “positivity properties” are not required in
+[17, 15.7].) Thus, we have proved (P1)–(P15) for W = Sn .
+    Next, let x, y, z ∈ Sn and d ∈ D be such that x ∼L y −1 , y ∼L z −1 ,
+z ∼L x−1 and y −1 ∼L d. We show that γx,y,z = nd . Now, by Theorem 5.1,
+we have x, y, z ∈ R(λ) for some λ ∈ R(λ). Furthermore, there exist 1 6
+i, j 6 dλ such that
+        x = wλ (i, j),   y = wλ (j, k),    z = wλ (k, i),        d = wλ (j, j).
+(See Remark 3.5 and note that, by the proof of Theorem 5.4, the sets j Cλ
+defined there are precisely the left cells contained in R(λ).) By Remark 3.5,
+we also have x ∼L d. So (P5), (P7), (P13) show that
+                         γx,d,x−1 = γx−1 ,x,d = nd = ±1.
+Now, since d = d−1 ∼R y, x ∼R z −1 and y ∼L z −1 , we have
+                   hx,d,x = hx,y,z −1 ;     see Corollary 5.8.
+By (P4), we have a(x) = a(z −1 ). Hence the above identity implies that
+                                                     −1 )
+                  γx,y,z = constant term of v a(z           hx,y,z −1
+                         = constant term of v a(x) hx,d,x
+                         = γx,d,x−1 = nd ,
+as desired.
+32                                        Geck
+
+   Finally, we show that nd = 1 for any d ∈ D. Let λ ∈ Λn be such that
+d ∈ R(λ) and write d = wλ (j, j) where 1 6 j 6 dλ . We consider the element
+xj wλ = wλ (j, 1) where xj ∈ Xλ ; see Remark 3.9. Using the description of
+Cwλ in Lemma 2.8 and the multiplication rules in (2.2), one easily shows
+that
+                     Cxj wλ Cwλ = εwλ v −l(wλ ) Pλ Cxj wλ .
+Thus, we have
+                        hxj wλ ,wλ ,xj wλ = v −l(wλ ) Pλ .
+Now, by Remark 3.5, we have xj wλ ∼R d. Furthermore, since wλ x−1
+                                                               j  =
+        −1                              −1
+(xj wλ ) = wλ (1, j), we have wλ ∼R wλ xj ∼L d. Hence Corollary 5.8
+implies that
+                  hxj wλ ,wλ x−1 ,d = hxj wλ ,wλ ,xj wλ = v −l(wλ ) Pλ .
+                             j
+
+By (P4), we have a(d) = a(xj wλ ) and this equals a(λ) = l(wλ ), as we have
+seen at the beginning of the proof. Since Pλ is a polynomial with constant
+term 1, we now conclude that
+                      γxj wλ ,wλ x−1 ,d = γxj wλ ,wλ ,wλ x−1 = 1.
+                                  j                       j
+
+By (P5), the left hand side equals nd . Thus, nd = 1.                            
+     We can now also determine the sign in Theorem 4.10 and Corollary 4.11.
+Corollary 5.11. We have ηw = 1 for all w ∈ Sn .
+Proof. Let λ ∈ Λn be such that w ∈ R(λ) and write w = wλ (i, j) where
+1 6 i, j 6 dλ . Then we have
+                                        X
+  εwλ Pλ Zw = v l(wλ ) Cxi wλ Cwλ x−1 =   εxi εxj εz v l(wλ ) hxi wλ ,wλ x−1 ,z Cz .
+                                      j                                    j
+                                            z∈Sn
+
+On the other hand, by Theorem 4.10(a), we have Zw ≡ ηw Cw mod N̂ λ
+where ηw = ±1. Using Theorem 4.10(b), we conclude that
+                  Pλ εwλ ηw = εxi εxj εw v l(wλ ) hxi wλ ,wλ x−1 ,w .
+                                                                 j
+
+By Theorem 5.10, we have a(w) = a(λ) = l(wλ ). Hence, taking constant
+terms on both sides of the above identity, we obtain
+                      ηw = εxi εxj εw εwλ γxi wλ ,wλ x−1 ,w−1 .
+                                                          j
+
+Now, in Theorem 5.10, we also have seen that the constants γx,y,z are either
+0 or 1. This yields that
+                            ηw = εxi εxj εwλ εw .
+Now let C be the left cell containing wλ and C1 be the left cell containing
+                                      ∼
+wλ x−1
+    j . Then we have a bijection C → C1 as in Corollary 5.8. Under this
+bijection, wλ ∈ C corresponds to wλ x−1
+                                      j ∈ C1 , and xi wλ ∈ C corresponds to
+w ∈ C1 . Since that bijection is the composition of a finite number of star
+                       Kazhdan–Lusztig cells and the Murphy basis                       33
+
+operations, a correspondingly repeated application of the relation in (2.6)(d)
+yields
+                l(wλ ) + l(xi wλ ) ≡ l(wλ x−1
+                                           j ) + l(w) mod 2.
+Consequently, we have ηw = 1, as desired.                                   
+
+Acknowledgements. This paper was written while the author enjoyed the
+hospitality of the Bernoulli center at the EPFL Lausanne (Switzerland), in
+the framework of the research program “Group representation theory” from
+january to june 2005.
+
+                                    References
+ [1] S. Ariki, Robinson-Schensted correspondence and left cells. Combinatorial methods
+     in representation theory (Kyoto, 1998), 1–20, Adv. Stud. Pure Math., 28, Kinoku-
+     niya, Tokyo, 2000.
+ [2] R. Dipper and G. D. James, Representations of Hecke algebras of general linear
+     groups, Proc. London Math. Soc. 52 (1986), 20–52.
+ [3] R. Dipper and G. D. James, Blocks and idempotents of Hecke algebras of general
+     linear groups, Proc. London Math. Soc. 54 (1989), 57–82.
+ [4] J. Du, B. Parshall, and L. Scott, Cells and q-Schur algebras, Transformation
+     Groups 3 (1998), 33–49.
+ [5] M. Geck, Constructible characters, leading coefficients and left cells for finite Cox-
+     eter groups with unequal parameters, Represent. Theory 6 (2002), 1–30 (electronic).
+ [6] M. Geck, On the induction of Kazhdan–Lusztig cells, Bull. London Math. Soc. 35
+     (2003), 608–614.
+ [7] M. Geck and L. Iancu, Lusztig’s a-function in type Bn in the asymptotic case,
+     preprint (april 2005); available at http://arXiv.org/math.RT/0504213.
+ [8] M. Geck and G. Pfeiffer, Characters of finite Coxeter groups and Iwahori–Hecke
+     algebras, London Math. Soc. Monographs, New Series 21, Oxford University Press,
+     2000.
+ [9] P. N. Hoefsmit, Representations of Hecke algebras of finite groups with BN pairs
+     of classical type, Ph.D. thesis, University of British Columbia, Vancouver, 1974.
+[10] D. Kazhdan and G. Lusztig, Representations of Coxeter groups and Hecke alge-
+     bras, Invent. Math. 53 (1979), 165–184.
+[11] D. E. Knuth, The art of computer programming, volume 3: Sorting and Searching,
+     Addison-Wesley, Second Edition, 1998.
+[12] G. Lusztig, On a theorem of Benson and Curtis, J. Algebra 71 (1981), 490–498.
+[13] G. Lusztig, Characters of reductive groups over a finite field, Annals Math. Studies
+     107 (Princeton University Press, 1984).
+[14] G. Lusztig, Cells in affine Weyl groups, Advanced Studies in Pure Math. 6, Alge-
+     braic groups and related topics, Kinokuniya and North–Holland, 1985, 255–287.
+[15] G. Lusztig and N. Xi, Canonical left cells in affine Weyl groups, Advances in
+     Math. 72 (1988), 284–288.
+[16] G. Lusztig, Intersection cohomology methods in representation theory, Proceedings
+     of the International Congress of Mathematics, Kyoto, Japan, 1990 (I. Satake, ed.),
+     Springer-Verlag, 1991, pp. 155–174.
+[17] G. Lusztig, Hecke algebras with unequal parameters, CRM Monographs Ser. 18,
+     Amer. Math. Soc., Providence, RI, 2003.
+[18] A. Mathas, Iwahori–Hecke algebras and Schur algebras of the symmetric group,
+     Univ. Lecture Ser., vol. 15, Amer. Math. Soc., Providence, RI, 1999.
+34                                       Geck
+
+ [19] T. P. McDonough and C. A. Pallikaros, On relations between the classical
+      and the Kazhdan–Lusztig representations of symmetric groups and associated Hecke
+      algebras, preprint (2004).
+ [20] G. E. Murphy, On the representation theory of the symmetric groups and associ-
+      ated Hecke algebras, J. Algebra 152 (1992), 492–513.
+ [21] G. E. Murphy, The representations of Hecke algebras of type An , J. Algebra 173
+      (1995), 97–121.
+ [22] T. A. Springer, Quelques applications de la cohomologie d’intersection, Séminare
+      Bourbaki (1981/82), exp. 589, Astérisque 92–93 (1982).
+
+  Institut Girard Desargues, bat. Jean Braconnier, Université Lyon 1, 21 av
+Claude Bernard, F–69622 Villeurbanne Cedex, France
+  E-mail address: geck@igd.univ-lyon1.fr
+

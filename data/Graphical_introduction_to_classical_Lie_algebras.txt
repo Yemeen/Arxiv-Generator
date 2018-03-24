@@ -1,0 +1,1606 @@
+                                                               Graphical introduction to classical Lie algebras
+arXiv:math/0504602v1 [math.RT] 29 Apr 2005
+
+
+
+
+                                                                                 Rafael Dı́az∗ and Eddy Pariguan†
+
+                                                                                            February 1, 2008
+
+
+
+                                                                                               Abstract
+                                                          We develop a graphical notation to introduce classical Lie algebras. Although this pa-
+                                                       per deals with well-known results, our pictorial point of view is slightly different to the
+                                                       traditional one. Our graphical notation is fairly elementary and easy to handle and, thus
+                                                       provides an effective tool for computations with classical Lie algebras. More over, it may
+                                                       be regarded as a first and foundational step in the process of uncovering the categorical
+                                                       meaning of Lie algebras.
+
+
+                                             1        Introduction
+                                             A first step in the study of an arbitrary category C is to define the appropriated set S(C) of
+                                             isomorphisms classes of simple objects in C. For example, an object y ∈ Ob(C) of an abelian
+                                             category C (see [5]) is said to be simple if in any exact sequence
+
+                                                                                         0 → x → y → z → 0,
+
+                                             either x is isomorphic to 0 or z is isomorphic to 0. It is a remarkable fact that non-equivalent
+                                             categories may very well have equivalent sets of isomorphisms classes of simple objects. Let us
+                                             introduce a list of categories that at first seem to be utterly unrelated and yet the corresponding
+                                             sets of simple objects are deeply connected.
+
+                                                 1. WeylGroup ⊂ FinGroup ⊂ LieGroup ⊂ Group.
+                                                       We denote by Group the category whose objects are groups and whose morphisms are
+                                                       group homomorphisms. We let LieGroup denote the subcategory of Group whose
+                                                       objects are finite dimensional complex Lie groups. Morphism in LieGroup are smooth
+                                                       group homomorphisms. We define FinGroup to be the full subcategory of Group whose
+                                                       objects are finite groups and WeylGroup to be the full subcategory of Group whose
+                                                       objects are Weyl groups.
+                                                 ∗
+                                                     Work partially supported by UCV.
+                                                 †
+                                                     Work partially supported by FONACIT.
+
+
+
+
+                                                                                                   1
+  S(Group) denotes the set of isomorphisms classes of groups having no proper normal
+  subgroups. S(LieGroup) denotes the set of isomorphisms classes of Lie groups which
+  are simple as groups and also are connected and simply connected. S(FinGroup) denotes
+  the set of isomorphisms classes of finite simple groups. S(WeylGroup) denotes the set
+  isomorphisms classes of Weyl groups, which can be taken to be An = Sn+1 , Bn = Cn =
+  Zn2 ⋉ Sn , Dn = Z2n−1 ⋉ Sn , where Sn is the group of permutations in n letters, and
+  E6 , E7 , E8 , F4 , G2 are so called exceptional groups.
+
+2. LieAlg denotes the category whose objects are finite dimensional complex Lie algebras,
+   morphism are Lie algebra homomorphism. S(LieAlg) is the set of isomorphisms classes
+   of simple Lie algebras, i.e., Lie algebras having no proper ideals.
+
+3. Root denotes the category of root systems.
+
+     • Objects in Root are triples (V, h , i, Φ) such that
+         – (V, h , i) is an Euclidean space.
+         – Φ is a finite set spanning V .
+         – If α ∈ Φ then −α ∈ Φ, but kα 6∈ Φ if k is any real number other then ±1.
+         – For α ∈ Φ the reflection Sα in the hyperplane α⊥ = {x ∈ V : hx, αi = 0} maps
+           Φ to itself.
+                                  hα, βi
+         – For α, β ∈ Φ, Aα,β = 2        ∈ Z.
+                                  hα, αi
+     • Morphisms in Root from (V1 , h , i1 , Φ1 ) to (V2 , h , i2 , Φ2 ) consists of linear trans-
+       formations T : V1 −→ V2 such that hT (x), T (y)i2 = hx, yi1 for all x, y ∈ V1 , and
+       T (Φ1 ) ⊂ Φ2 .
+     • Suppose that (Vi , h , iVi , Φi ), i = 1, . . . , n are root systems, then the direct sum
+       V = ni=1 Vi is an Euclidean vector space with inner product
+           L
+
+                                                       n
+                                                       X
+                                            h , iV =         h , iVi
+                                                       i=1
+
+       Moreover setting Φ = ni=1 Φi , the triple (V, h , iV , Φ) becomes a root system called
+                             F
+
+       the direct sum of root systems (Vi , h , iVi , Φi ). S(Root) is the set of isomorphisms
+       classes of simple root systems, i.e., root systems which are not isomorphic to the
+       direct sum of two non-vanishing root systems.
+
+4. Dynkin denotes the category of Dynkin diagrams.
+
+     • Objects in Dynkin are called Dynkin diagrams and are non-directed graphs ∆ with
+       the following properties
+         – The set V∆ of vertices of ∆ is equal to {1, . . . , n} for some n ≥ 1.
+
+                                               2
+            – The number of edges joining two vertices in ∆ is 0, 1, 2 or 3.
+            – If vertices i and j are joined by 2 or 3 edges, then an arrow is chosen pointing
+              either from i to j, or from j to i.
+            – The quadratic form
+                                                               n
+                                                               X             X√
+                                Q(x1 , x2 , · · · , xn ) = 2         x2i −          nij xi xj
+                                                               i=1           i6=j
+
+              where (nij ) is the adjacency matrix of ∆, i.e., nij equal the number of edges
+              from vertex i to vertex j is positive definite.
+        • Morphism in Dynkin from diagram ∆1 to diagram ∆2 consists of maps ρ : V∆1 →
+          V∆2 such that Q2 (xρ(1) , xρ(2) , · · · , xρ(n) ) = Q1 (x1 , x2 , · · · , xn ).
+        • S(Dynkin) denotes the set of of isomorphisms classes of connected Dynkin diagrams
+
+Next theorem gives an explicit characterization of S(Dynkin).
+
+Theorem 1. S(Dynkin) consists of the Dynkin diagrams included in the following list
+
+                                An , n ≥ 1                 ···
+
+                                Bn , n ≥ 2                 ··· >
+
+                                Cn , n ≥ 3                 ··· <
+
+                                Dn , n ≥ 4                 ···
+
+
+                                        E6
+
+
+                                    E7
+
+
+                                   E8
+
+                                          F4         >
+
+                                               G2    >
+
+                            Figure 1: Simple Dynkin diagrams.
+
+
+
+
+                                                 3
+We enunciate the following fundamental
+
+Theorem 2.          1. WeylGroup ⊂ S(FinGroup) ⊂ S(LieGroup) ⊂ S(Group).
+
+    2. S(LieGroup) ∼
+                   = S(LieAlg) ∼
+                               = S(Root) ∼
+                                         = S(Dynkin) → WeylGroup.
+
+Part 1 of Theorem 2 is obvious. Although we shall not give a complete proof of part 2 the
+reader will find in the body of this paper many statements that shed light into its meaning.
+The map S(Dynkin) −→ WeylGroup is surjective but if fails to be injective. Diagrams Bn
+and Cn of the list above have both Zn2 ⋊ Sn as associated Weyl groups.
+
+
+2     Lie Algebras
+We proceed to consider in details the category of Lie algebras. First we recall the notion of a
+Lie group.
+
+Definition 3. A group (G, m) is said to be a Lie group if
+
+    1. G is a finite dimensional smooth manifold.
+
+    2. the map m : G × G −→ G given by m(a, b) = ab, for all a, b ∈ G, is smooth.
+
+    3. The map I : G → G given by I(a) = a−1 , for all a ∈ G, is smooth.
+
+Definition 4. A Lie algebra (g, [ , ]) over a field k is a vector space g together with a binary
+operation [ , ] : g × g −→ g, called the Lie bracket, satisfying
+
+    1. [ , ] is a bilinear operation.
+
+    2. Antisymmetry: [x, y] = −[y, x] for each x, y ∈ g.
+
+    3. Jacobi identity: [x, [y, z]] = [[x, y], z] + [y, [x, z]] for each x, y, z ∈ g.
+
+Example 5. A k-algebra A may be regarded as a Lie algebra (A, [ , ]), with bracket [x, y] =
+xy − yx for all x, y ∈ A. In particular End(V ) is a Lie algebra for any k-vector space V .
+
+Example 6. Let M be a smooth manifold. The space Γ(M ) = {X : M −→ T M, X(m) ∈
+Tm M, m ∈ M } of vector fields on M is a Lie algebra with the Lie bracket
+
+                                     ∂Y i ∂           i
+                                                 j ∂X ∂
+                     [X, Y ] = X j           − Y           , for all X, Y ∈ Γ(M ).
+                                     ∂xj ∂xi       ∂xj ∂xi
+Example 7. Let G be a Lie group. The space Te (G) tangent to the identity e ∈ G is a Lie
+algebra since Te (G) ∼
+                     = Γ(G)G is a Lie subalgebra of Γ(G).
+
+
+
+                                                     4
+Definition 8. A morphism of Lie algebras ρ : g −→ h is a linear map ρ from g to h such that
+ρ([x, y]) = [ρ(x), ρ(y)] for x, y ∈ g. A representation ρ of a Lie algebra g on a k-vector space V
+is a morphism ρ : g → End(V ) of Lie algebras.
+
+The functor
+                       Te : LieGroup −→ LieAlg
+                                 G     7−→ Te (G)
+                            ϕ : G → H 7−→  de ϕ : Te (G) → Te (H)
+induces an equivalence between S(LieGroup) and S(LieAlg).
+
+Definition 9. For any Lie algebra g the adjoint representation ad : g → End(g) is given by
+ad(x)(y) = [x, y] for all x, y ∈ g.
+
+Definition 10.     1. A subspace I of a Lie algebra g is called a Lie subalgebra if [x, y] ∈ I for
+     all x, y ∈ I.
+
+  2. A subalgebra I of g is said to be abelian if [x, y] = 0 for all x, y ∈ I.
+
+  3. A subalgebra I of a Lie algebra g is called an ideal if [x, y] ∈ I for all x ∈ I and y ∈ g.
+
+Example 11. For any k-algebra the space of derivations of A
+Der(A) = {d : A −→ A | d(xy) = d(x)y +xd(y) for all x, y ∈ A}is a Lie subalgebra of End(A).
+
+Definition 12.      1. A Lie algebra g is called simple if it has no ideals other than g and {0}.
+
+  2. A Lie algebra g is called semisimple if it has no abelian ideals other than {0}.
+
+  3. A maximal abelian subalgebra h of g is called a Cartan subalgebra.
+
+Next theorem is due to Cartan. A proof of it may be found in [3].
+
+Theorem 13. Let g be a finite dimensional simple Lie algebra over C, then g is isomorphic to
+one of those in the list sln (C), sp2n (C), so2n (C), so2n+1 (C), E6 , E7 , E8 , F4 and G2 .
+
+Algebras sln (C), sp2n (C), so2n (C) and so2n+1 (C) are called classical and will be explained using
+our graphical notation in Sections 5, 6, 7 and 8. The algebras E6 , E7 , E8 , F4 and G2 are called
+exceptional and the reader may find their definitions in [3].
+
+Definition 14. The Killing form on g is the bilinear map h , i : g×g −→ C given for all x, y ∈ g
+by hx, yi = tr(ad(x) ◦ ad(y)), where ◦ denotes the product in End(g) and tr : End(g) → C is the
+trace map.
+
+Denote by h∗ the linear dual of vector space h. The following proposition describes representa-
+tions of abelian Lie algebras.
+
+
+
+                                                 5
+Proposition 15. Let h be an abelian Lie algebra and ρ : h → End(V ) a representation of h.
+Then V admits a decomposition
+                                           M
+                                      V =      Vα                                      (1)
+                                                       α∈Φ
+
+where for each α ∈    h∗ ,   Vα = {x ∈ V : ρ(h)(x) = α(h)x, for all                 h ∈ h}, and Φ = {α ∈
+h∗ | hα 6= 0}.
+
+Equation (1) is called Cartan decomposition of the representation ρ of h. Proposition 15 yields
+a map from S(LieAlg) into S(Root), which turns out to be a bijection, as follows. Let g be a
+finite dimensional simple Lie algebra over C and h ⊂ g a Cartan subalgebra. The killing form
+h , i : h × h −→ C restricted to h is non-degenerated and makes the pair (h, h , i) an Euclidean
+space. The linear dual h∗ has an induced Euclidean structure, which we still denote by h , i
+induced by the linear isomorphism f : h −→ h∗ given by f (x)(y) = hx, yi, for all x, y ∈ h.
+The adjoint representation ad : h −→ End(g) restricted to h give us a Cartan decomposition
+     M
+g=        gα where for each α ∈ h gα = {x ∈ g| [h, x] = α(h)x, for all h ∈ h} and Φ = {α ∈
+    α∈Φ
+h∗ : hα 6= 0}. It is not difficult to show that the triple (h∗ , h , i, Φ) is a root system.
+
+Definition 16. Let g be a simple Lie algebra and let Φ the root systems associated to g. The
+                                                                         hα,βi
+group W generated by all reflections Sα with α ∈ Φ, where Sα (β) = β − 2 hα,αi α, is known as
+the Weyl group associated to g.
+
+One can show that there exists a subset Π = {α1 , α2 , . . . , αn } of Φ such that Π is a basis of h∗
+and each root α ∈ Φ can be written as a linear combination of roots in Π with coefficients in Z
+which are either all non-negative or all non-positive. The set Π is called a set of fundamental
+roots. The integers
+                                                 hαi , αj i
+                                         Aij = 2                                                  (2)
+                                                 hαi , αi i
+are called the Cartan integers and the matrix A = (Aij ) is called the Cartan matrix. Notice
+that Aii = 2, and that for any αi , αj ∈ Π with i 6= j, Sαi (αj ) is a Z-combination of αi and αj .
+Since the coefficient of αj is 1, the coefficient associated to αi in Sαi (αj ) must be a non-positive
+integer, i.e., Aij ∈ Z≤0 . The angle θij between αi , αj is given by the cosine formula
+                                                        1           1
+                                hαi , αj i = hαi , αi i 2 hαj , αj i 2 cos(θij ).
+
+Then we have
+                                                      hαi , αj i hαj , αi i
+                                  4 cos2 (θij ) = 2             ·2          ,
+                                                      hαj , αj i hαi , αi i
+and therefore 4 cos2 (θij ) = Aij Aji . Let nij = Aij Aji clearly nij ∈ Z and nij ≥ 0. Since
+−1 ≤ cos(θij ) ≤ 1 the only possible values for nij are nij = 0, 1, 2 or 3.
+
+Definition 17. The Dynkin diagram ∆ associated to a simple Lie algebra g is the graph ∆ with
+vertices {1, . . . , n} in bijective correspondence with the set Π of fundamental roots of g such that
+
+                                                        6
+   1. Vertices i, j with i 6= j are joined by nij = Aij Ai edges, where Aij is given by formula (2).
+
+   2. Between each double edge or triple we attach the symbol <, or the symbol > pointing
+      towards the shorter root with respect to Killing form.
+
+Theorem 18. Consider the root decomposition of the simple Lie algebra g with respect to h. Let
+α ∈ Φ be a root, for each nonzero xα ∈ gα there is x−α ∈ gα and hα ∈ h such that α(hα ) = 2,
+[xα , x−α ] = hα , [hα , xα ] = 2xα and [hα , x−α ] = 2x−α .
+
+Theorem 18 implies that for any root α ∈ Φ, xα , x−α and hα span a subalgebra sα such that
+sα ∼
+   = sl2 (C), see Section 4 for a definition of sl2 (C). This fact explain the distinguished role
+played by sl2 (C) in the representation theory of simple Lie algebras.
+
+Definition 19. Let Φ ⊂ h be the root system associated with a simple Lie algebra g.
+
+   1. For any α ∈ Φ, the Cartan element hα ∈ h given by Theorem 18 is called the coroot
+      associated to root α. Φc = {hα : α ∈ Φ} is the coroot system associated to h and
+      Πc = {hα : α ∈ Π} is the set of fundamental coroots.
+
+   2. The elements w1 , . . . , wn in h∗ given by the relations wi (hj ) = δij , for all 1 ≤ i, j ≤
+      n, where hj is the coroot associated to fundamental root αj , are called the fundamental
+      weights.
+
+One can recover a simple Lie algebra g from its associated Dynkin diagram ∆ as follows: Let nij
+be the adjacency matrix of ∆. The relation nij = Aij Aji determines univocally the Cartan ma-
+trix Aij . Consider the free Lie algebra generated by the symbols H1 , . . . , Hn , X1 , . . . , Xn , Y1 , . . . , Yn .
+Form the quotient of this free Lie algebra by the relations
+
+         [Hi , Hj ] = 0 (all i, j);             [Xi , Yi ] = Hi (all i);              [Xi , Xj ] = 0 (i 6= j);
+
+         [Hi , Xj ] = Aij Xj (all i, j); [Hi , Yj ] = −Aij Yj (all i, j);
+
+    and for all i 6= j,
+
+                [Xi , Xj ] = 0,                        [Yi , Yj ] = 0,                  if Aij = 0.
+
+                [Xi , [Xi , Xj ]] = 0,                 [Yi , [Yi , Yj ]] = 0            if Aij = −1.
+
+                [Xi , [Xi , [Xi , Xj ]]] = 0,          [Yi , [Yi , [Yi , Yj ]]] = 0     if Aij = −2.
+
+                [Xi , [Xi , [Xi , [Xi , Xj ]]]] = 0, [Yi , [Yi , [Yi , [Yi , Yj ]]]] = 0 if Aij = −3.
+
+Serre shows that the resulting Lie algebra is a finite-dimensional simple Lie algebra isomorphic
+to g. See [10] for more details.
+
+
+                                                            7
+2.1    Jacobian Criterion
+Let k be a field of characteristic zero and let V be a finite dimensional k-vector space. Set
+V = he1 , e2 , . . . , en i and V ∗ = hx1 , x2 , . . . , xn i such that xi (ej ) = δij . We have
+                                            n
+                                           X         
+                                      xk         ai ei = ak , 1 ≤ k ≤ n.
+                                           i=1
+
+Any f ∈ V is written as f = b1 x1 + b2 x2 + · · · + bn xn . Denote by S = S(V ∗ ) the symmetric
+             ∗
+
+algebra of the dual space V ∗ which can be identify with the polynomial ring k[x1 , x2 , . . . , xn ].
+Let G be a finite group which acts on V . G also acts on V ∗ , and thus it acts on S = S(V ∗ ) as
+follows
+                                  S(V ∗ ) × G −→ S(V ∗ )
+                                     (p, g)      7−→ p(g)
+where (pg)(v) = p(gv), for all g ∈ G, p ∈ S(V ∗ ), v ∈ V. The algebra
+
+                   k[x1 , x2 , . . . , xn ]G = {p ∈ k[x1 , x2 , . . . , xn ] : p(g) = p, ∀g ∈ G}
+
+is called the G-invariant subalgebra of k[x1 , x2 , . . . , xn ].
+Definition 20. Let K be a field and F a extension of K. Let S be a subset of F . The set S
+is algebraically dependent over K if for any positive integer n there is a polynomial non-zero
+f ∈ k[x1 , . . . , xn ] such that f (s1 , . . . , sn ) = 0 for any different s1 , . . . , sn ∈ S. In otherwise S is
+algebraically independent.
+Theorem 21. Let C[x1 , x2 , . . . , xn ]W be the subalgebra of C[x1 , x2 , . . . , xn ] consisting of W -
+invariant polynomials, then C[x1 , x2 , . . . , xn ]W is generated as an C-algebra by n homogeneous,
+algebraically independent elements of positive degree together with 1.
+The idea of proof of Theorem 21 goes as follows: let I be the ideal of C[x1 , x2 , . . . , xn ] gen-
+erated by all homogeneous W -invariant polynomials of positive degree. Using Hilbert’s Basis
+Theorem we may choose a minimal generating set f1 , f2 , . . . , fr for I consisting of homoge-
+neous W -invariant polynomials of positive degree. One can show that r = n and furthermore
+C[x1 , x2 , . . . , xn ]W = C[f1 , f2 , . . . , fn ].
+Proposition 22. Let f1 , . . . , fn and g1 , . . . , gn be two sets of homogeneous, algebraically inde-
+pendent generators of C[x1 , . . . , xn ]W with degrees di and ei respectively, then (after reordering)
+di = ei for all i = 1, . . . , n.
+The numbers d1 , . . . , dn written in increasing order are called the degrees of W . Theorem 23
+below is a simple criterion for the algebraic independence of polynomials f1 , . . . , fn expressed
+in terms of the Jacobian determinant. We write J(f1 , . . . , fn ) for the determinant of the n × n
+                               ∂fi
+matrix whose (i, j)-entry is ∂x  j
+                                   .
+Theorem 23 (Jacobian criterion). The set of polynomials f1 , . . . , fn ∈ k[x1 , . . . , xn ] are
+algebraically independent over a field k of characteristic zero if and only if J(f1 , . . . , fn ) 6= 0.
+
+                                                        8
+3    Graph and matrices
+We denote by Digraph1 (n, n) the vector space generated by bipartite directed graphs with a
+unique edge starting on the set [n] and ending on the set [n]. We describe Digraph1 (n, n)
+pictorially as follows
+                                                                             j
+
+                             Digraph1 (n, n) =                                  , 1 ≤ i, j ≤ n
+                                                                        i
+
+
+
+
+where the symbol
+                                                                        j
+                                                                µ
+                                                                i
+
+
+
+
+denotes the graph whose unique edge stars at vertex at i and ends at vertex j. We define a
+product on Digraph1 (n, n) as follows
+                                                                   m
+                                                                        ]        =
+                                                                                        m
+                                                                                        
+                                                            
+                                                                                                      , if j = k
+                                                            
+                         j           m
+                                                                        
+                                                            
+                                       I               =           i
+                                                                                        i
+                     i                      k               
+                                                                        0,           otherwise
+                                                            
+                                                            
+
+
+
+The trace on Digraph1 (n, n) is defined as the linear functional tr : Digraph1 (n, n) −→ C
+given by
+                                                                                                 j
+                                                                                                   
+                             tr      6              =1              and           tr                     =0
+                                    i                                                       i
+
+
+
+
+Algebra Digraph1 (n, n) is isomorphic to End(Cn ) through the application
+
+                                   Digraph1 (n, n) ∼
+                                                   =                                    gln (C)
+
+                                                    j
+                                                                   −→                          Eij
+                                            i
+
+
+
+
+We will use this isomorphism to give combinatorial interpretation of results on End(Cn ) that
+are traditionally express in the language of matrices.
+
+
+
+
+                                                                    9
+4     Linear special algebra sl2 (C)
+We begin studying the special linear algebra sl2 (C). It plays a distinguished role in the theory
+of Lie algebras. By definition we have
+
+                                  sl2 (C) = {A ∈ End(C2 ) : tr(A) = 0}.
+
+As subspace of Digraph1 (2, 2), sl2 (C) is the following vector space
+                                                                               2     1
+
+                        sl2 (C) =             6 −              6,          3 , k                      ⊂ Digraph1 (2, 2)
+                                              1                2       1                     2
+
+
+
+
+We fix as Cartan subalgebra of sl2 (C) the 1-dimensional subspace
+                                      n                                                                               o
+                             h=               a1 6         + a2                     6,       a1 + a2 = 0
+                                                 1                                 2
+
+
+
+
+The dual space is h∗ = ha1 , a2 i/{a1 + a2 = 0}, where
+                                                                              
+                                                       ai              6 = δij
+                                                                       j
+
+
+
+
+4.1   Root system of sl2 (C)
+Consider the projection map ha1 , a2 i −→ ha1 , a2 i/{a1 + a2 = 0}. We still denote by ai the
+image of ai under the projection above. Now each h ∈ h is of the form
+
+                                 h=               a1 6             +a2               6,              a1 , a. 2 ∈ h∗
+                                                     1                               2
+
+
+
+
+Let us compute the roots
+                                  2
+        a1 6 +a2        6,       3 =
+           1            2    1
+                    2                     2                                   2                 2
+                                                                                                                                 2       2
+                                                                                                                                                   
+      a1 6 ,       3 +a2         , 3 = a1
+                                 6                         6               3 −               3         6           + a2    6 3 −           3   6=
+         1     1             2    1                        1           1                 1            1                    2   1       1       2
+                                                   2                       2
+
+                                          a1 3 −a2
+                                                                                                               2
+                                                                        6
+                                            6                          3 = (a1 − a2 ) 3
+                                                                                                           1
+                                              1                    1
+
+
+
+
+Therefore the root system of sl2 (C) is Φ = {a1 − a2 , a2 − a1 }. Setting α = a1 − a2 we have that
+the roots are α and −α and the set of fundamental roots is Π = {α}. In pictures
+
+
+                                                                           10
+                                                               -
+
+
+4.2     Coroot system of sl2 (C)
+Let xα and x−α be the covectors associated with the roots α and −α of sl2 (C) respectively.
+                                                                    2                               1
+                  α = a1 − a2        , xα =                     >                       x−α =       }
+                                                       1                                                2
+
+
+
+
+A vector hα ∈ h is said to be the coroot associated to the root α ∈ h∗ , if hα = c[xα , x−α ], c ∈ C
+and α(hα ) = 2.
+                                               h           2        1
+                                                                                i
+                        hα = [xα , x−α ] =             > ,          }               = 6 -       6
+                                                   1                    2                1      2
+
+
+
+
+since
+                                                                                   
+                                  (a1 − a2 )           6        −           6 =2
+                                                       1                    2
+
+
+
+
+4.3     Killing form of sl2 (C)
+                           X
+               hx, yi =          α(x)α(y)
+                           α∈Φ
+                       = 2(x1 − x2 )(y1 − y2 )
+                       = 2x1 y1 + 2x2 y2 − 2x1 y2 − 2x2 y1
+                       = 2(x1 y1 + x2 y2 ) − 2(x1 + x2 )(y1 + y2 ) + 2(x1 y1 + x2 y2 )
+                       = 4tr(xy).
+
+4.4     Dynkin diagram of sl2 (C)
+We have only one fundamental root, so the Dynkin diagram is just ◦.
+
+
+5       Special linear algebra sln (C)
+Let us recall the special linear algebra sln (C)
+
+                              sln (C) = {A ∈ End(Cn ) : tr(A) = 0}
+
+sln (C) consider as a subspace of Digraph1 (n, n) is following subspace
+
+                                                           11
+                                                                               j           i
+                sln (C) =                 6         −    6
+                                                        i+1
+                                                                  ,  , I
+                                                                         j
+                                                                                                        ; 1≤i<j ≤n−1
+                                          i                         i
+
+
+
+
+5.1    Root system of sln (C)
+We take as Cartan subalgebra the subspace of sln (C)
+
+                    n                                                                                                      P              o
+              h=             a1 6         + · · · +ak 6 + · · · +an                                          6,                ak = 0
+                                  1                               k                                         n
+
+
+
+
+The dual space is h∗ = ha1 , . . . , an i/( ai = 0), where
+                                           P
+
+                                                                           
+                                                             ai            6 = δij
+                                                                           j
+
+
+
+
+                                                                  P
+Consider the projection ha1 , . . . , an i −→ ha1 , . . . , an i/( ak = 0). The image of ai under the
+projection above is still denote by ai . Then vector h ∈ h can be written as
+
+
+                                      h = a1 6           + · · · +ai                   6 + · · · +an                       6
+                                                1                                      i                                   n
+
+
+
+
+Let us compute the root system                                                                          j                      j
+                                                                                                                                                      j
+                                                                               j
+                                                                                        a                      −aj            6=     (ai − aj ) 
+       a1 6    + · · · +ai    6 + · · · +an               6,                          = i          6                                           i
+         1                    i                          n             i                            i                      i
+
+
+
+
+Also                                                                                                i                      i
+                                                                                                                                                  i
+                                                                       i                       aj   I  −aj                     6   = (aj − ai )   I
+       a1 6    + · · · +ai    6 + · · · +an               6,           I               =             6                         I                      j
+         1                    i                          n                     j                        j                      j
+
+
+
+
+Thus the root system of sln (C) is Φ = {ai − aj , aj − ai , 1 ≤ i < j ≤ n − 1} ⊂ h∗ . The set of
+fundamental roots is Π = {ai − ai+1 , i = 1, . . . , n − 1}. In pictures for n = 2, 3 and 4 the root
+systems look like
+                                                                                                                  •
+                                                                                                            •          •
+                                                                                                             ••            •
+                                                                      K 
+                                             -                                   -                    •         ••
+                                      sl2 (C)                                                               •          •
+                                                                       U                                     •
+                                                                  sl3 (C)                                   sl4 (C)
+
+
+
+
+                                                                               12
+Consider the linear map
+
+                             T : Digraph1 (n, n) −→ Digraph1 (n, n)
+
+sending each directed graph into its opposite graph. Clearly T is an antimorphism, i.e, T (ab) =
+T (b)T (a), for all a, b ∈ Digraph1 (n, n). For example,
+                                                                 j                      i
+                                               T :           >           −→             }
+                                                         i                                      j
+
+
+
+
+Notice that negative roots can be obtain from the positive ones through an application of T .
+
+5.2   Coroots and weights for sln (C)
+  1. Coroot associated to the root ai − aj
+                                               j             i
+
+                                                    ,       I            =        6            −         6
+                                           i                     j                i                       j
+
+
+
+
+  2. Coroot associated to the root aj − ai
+                                   i                     j
+
+                                    I          ,                        =                  6−                6
+                                       j             i                                      j                 i
+
+
+
+
+The set of fundamental coroots has the form Πc = {hi − hi+1 , 1 ≤ i ≤ n − 1} where
+
+                                    hi − hi+1 =                               6         −            6
+                                                                              i                     i+1
+
+
+
+
+The set of fundamental weights is wi = a1 + a2 + · · · + ai since
+                                                                                               
+                          (a1 + · · · + ai )                         6 −           6                 = 1
+                                                                     i            i+1
+
+                                                                                               
+                          (a1 + · · · + ai )                         6 −          6                  =1 − 1 = 0
+                                                                 i−k          i+1−k
+
+                                                                                               
+                          (a1 + · · · + ai )                         6 −              6              = 0
+                                                                 i+k              i+1k
+
+
+
+
+                                                                         13
+5.3    The Killing form of sln (C)
+Let x and y in h. Set
+                                           X
+                       hx, yi =                  α(x)α(y)
+                                           α∈Φ
+                                           X                       X
+                                   =        (xi − xj )(yi − yj ) +   (xj − xi )(yj − yi )
+                                           i<j                                          i<j
+                                            X
+                                   = 2               (xi − xj )(yi − yj )
+                                            i<j
+                                              X                       X                 X               X             
+                                   = 2                xi y i +              xj yj −           xi yj −         xj yi
+                                              i<j                     i<j               i<j             i<j
+                                       X               X               X       
+                                   = 2  (n − i)xi yi +  (i − 1)xi yi +   xi yi
+                                   = 2ntr(xy).
+
+5.4    Weyl group of sln (C)
+Consider the fundamental roots αi = ai −ai+1 , i = 1, . . . , n−1 and Sαi the reflection associated
+to the fundamental root αi . Let h ∈ h and hαi be the coroot associated to the fundamental
+root αi . By definition we have Sαi (h) = h − αi (h)hαi
+                                                                                                                                       
+      Sαi (h) = a1 6   + · · · +ai     6 + ai+1                  6 + · · · + an               6 − (ai − ai+1 )            6   −    6
+                 1                     i                        i+1                           n                           i       i+1
+
+                       = a1 6          + · · · + ai+1 6 + ai                            6 + · · · + an                    6
+                               1                                      i                i+1                            n
+
+
+
+
+so we see that reflections Sαi has the form
+                                                                 
+                                       S αi            6              =         6 , k 6= i, i + 1
+                                                       k                       k
+
+                                                                 
+                                       S αi             6             =            6
+                                                        i                      i+1
+
+
+                                                                 
+                                       S αi                 6         =         6
+                                                       i+1                     i
+
+
+
+
+Therefore the Weyl group An associated with sln+1 (C) is the symmetric group on n letters
+
+                                       An = hSαi | i = 1, . . . , n − 1i = Sn .
+
+
+
+
+                                                                          14
+5.5   Dynkin diagram of sln (C) and Cartan matrix.
+Using equation (2) one can checks that the Cartan matrix associated to the Lie algebra sln (C)
+is
+                                                                          
+                                         2 −1 0     0 ...              0
+                                       −1 2 −1     0 ...              0   
+                                                                          
+                                        0 −1 2 −1 . . .               0   
+                                                                          
+                                  An =            ..                      
+                                       
+                                                     .                    
+                                                                           
+                                                       ..                 
+                                                          .               
+                                         0 0 . . . 0 −1                2
+The Dynkin diagram associated to sln (C) is
+
+                                An−1 , n ≥ 2                     ···
+
+
+5.6   Invariant polynomials for sln (C)
+Consider the action of Sn+1 on Rn+1 given by
+
+                                 Sn+1 × Rn+1 −→       Rn+1
+                                    (π, x)   7−→ (πx)i = xπ−1 (i)
+
+notice that the permutation (ij) acts as a reflection on Rn+1 since
+
+                                (ij)(xi − xj ) = xj − xi = −(xi − xj )
+
+                         (ij)(x) = x, si x ∈ (xi − xj )⊥ (es decir xi = xj )
+
+Since Sn+1 is generated by transpositions (i i+1), i = 1, . . . , n, then Sn+1 is an example of what
+is called a reflection group. Recall that a linear action of a group G on a vector space V is said
+to be effective if the only fixed point is 0. The action of Sn+1 on Rn+1 fixes points in Rn+1 lying
+on the straight line {(x, x, . . . , x)| x ∈ R}. Thus the action of An on Rn+1 fails to be effective.
+If we instead let An act on the hyperplane V = {(x1 . . . xn+1 ) ∈ Rn+1 | x1 + · · · + xn+1 = 0}
+then the action becomes effective. Consider the power symmetric functions
+
+                                 fi = xi+1
+                                       1   + · · · + xi+1
+                                                      n+1 , 1 ≤ i ≤ n.
+
+Each fi is Sn+1 -invariant, and together the power symmetric functions form a set of basic
+invariants. This fact can be proven as follows: first notice that
+
+              gr(f1 )gr(f2 ) · · · gr(fn ) = 2 · 3 · · · n(n + 1) = (n + 1)! = |Sn+1 | = |An |.
+
+
+                                                     15
+Next, it is easy to compute the Jacobian J(f1 , f2 , · · · , fn ) yielding the nonvanishing polynomial
+
+                                                             Y                             n
+                                                                                           Y
+            J(f1 , f2 , · · · , fn ) = (n + 1)!                        (xj − xi )            (x1 + · · · + 2xi + · · · + xn )
+                                                         1≤i<j≤n                           i=1
+
+Finally, use the Jacobian criterion.
+
+
+6     Symplectic Lie algebra sp2n (C)
+Recall that the symplectic Lie algebra sp2n is defined as
+
+                                           sp2n (C) = {X : X t S + SX = 0}.
+
+Here S ∈ M2n (C) is the matrix                                                            
+                                                                        0  In
+                                                         S=
+                                                                       −In 0
+Equivalently,
+                                   (                                                                                           )
+                                           A B                                                                   t           t
+                 sp2n (C) =                                  ; A, B, C ∈ Mn (C) y B = B , C = C
+                                           C −At
+
+sp2n (C) as a subspace of Digraph1 (2n, 2n) is given by
+                                                         n+j               n+i                 j           i                 j           n+i
+    sp2n (C) =        6        −       6    ,            3       + 7                   ,         o     + k           ,   7           −    o     ,
+                      i            n+i               i                 j                         n+i           n+j       i                n+j
+
+
+
+                          i                n+j               n+i             i
+
+                          oj       −       7         ,       3         ,     }                   1≤i<j≤n
+                                         n+i             i                       n+i
+
+
+
+
+We take as a Cartan subalgebra of sp2n (C) the following subspace
+
+                                   h=      hk =          6         −         6     , k = 1, . . . , n
+                                                         k                 n+k
+
+
+
+
+6.1     Root system of sp2n (C)
+Consider h ∈ h
+                                                             P                                        
+                                                h=            ai 6 −                             6
+                                                                 i                          n+i
+
+
+
+
+                                                                           16
+where {ai } denotes de base of h∗ dual to the given base of h. Let us define
+
+                            T : Digraph1 (2n, 2n) −→ Digraph1 (2n, 2n)
+
+to be the linear map that sends each directed graph into its opposite. Clearly T es un an-
+timorphism, i.e, T (ab) = T (b)T (a) for all a, b ∈ Digraph1 (2n, 2n). For example, We will
+                                                   n+j              i
+                                       T :         >       −→       }
+                                               i                        n+j
+
+
+
+
+compute explicitly the positive roots. To obtain the negative roots it is enough to apply the
+transformation T to each positive root.
+         P                               j        n+i
+                                                                           j          n+i  
+             ak     6  −    6     ,          −      I       = (ai − aj ) 7 − on+j .
+                   k      n+k           i            n+j                       i
+
+         P                            n+j      n+i                            n+j     n+i 
+            ak 6 − n+k    6     ,       3   +   7         = (a i + a j )        >    +  7      .
+                 k                    i        j                             i         j
+                       P                            n+i                  n+i
+                          ak 6 − 6             ,     3          = 2ai 3 .
+                                   k         n+k               i                           i
+
+
+
+
+Thus the root system of sp2n (C) is Φ = {ai −aj , aj −ai , ai +aj , −ai −aj , 2ai , −2ai 1 ≤ i < j ≤ n}.
+The set of fundamental roots is Π = {α1 , . . . , αn } where αi = ai − ai+1 , i = 1, . . . , n − 1 and
+αn = 2an . In pictures, the root system of sp6 (C) looks like
+
+
+
+
+6.2    Coroots and weights of sp2n (C)
+   1. Coroot asociated to the root ai − aj
+              j       n+i    i           n+j
+                  −                −                   =
+                                                                                                        
+            7
+            i
+                       o
+                       n+j
+                           , Ij         
+                                       n+i
+                                                                6   −     6
+                                                                         n+i
+                                                                                   −           6 −
+                                                                                               j
+                                                                                                      6 = hi − hj
+                                                                                                     n+j
+                                                                i
+
+
+
+
+      hi − hj is the coroot associated to the root ai − aj , since (ai − aj )(hi − hj ) = 2.
+
+   2. Coroot associated to the root ai + aj
+
+
+
+
+                                                         17
+          n+j    n+i       j              i
+                                                                                                                                    
+          * +          , I   + Y n+j                         =           6      −            6        +             6 −           6       = hi + hj
+      i       j           n+i                                             i                  n+i                    j          n+j
+
+
+
+
+      hi + hj is the coroot associated to the la root ai + aj , since (ai + aj )(hi + hj ) = 2.
+
+   3. Coroot associated to the root 2ai
+                                      n+i           i
+                                      3       ,     }                   =            6         −           6       = hi
+                                  i                     n+i                          i                   n+i
+
+
+
+
+We conclude that Φc = {hi − hj , hj − hi , hi + hj , −hi − hj , hi , −hi , 1 ≤ i < j ≤ n} is the coroot
+system of sp2n (C). The set of fundamental coroots is given by Πc = {hi −hi+1 , hn ; 1 ≤ i ≤ n−1}
+where
+                                                                            
+                       hi − hi+1 =      6     −   n+i
+                                                     6    −       6    −     6
+                                        i                                                          i+1             n+i+1
+
+
+
+
+and
+                                                        hn = 6 −                               6
+                                                             n                                2n
+
+
+
+
+The fundamental weights are wi = a1 + a2 + · · · + ai since
+                                      n                                                                             o
+           (a1 + · · · + ai )                     6 −                 6          −              6 −                6           =1
+                                                  i               n+i                         i+1          n+i+1
+
+                                      n                                       o       
+          (a1 + · · · + ai )                    6 −     6           6   −     6  − =1−1=0
+                                              i−k     n+i−k      i+1−k    n+i+1−k
+                                      n                                      o
+          (a1 + · · · + ai )                      6 −    6    −      6 −      6    =0
+                                              i+k                 i+1+k
+                                                              n+i+k       n+i+1+k
+
+
+
+
+6.3    Killing form of sp2n (C)
+Let x and y be in h, we have
+
+                           X
+            hx, yi =              α(x)α(y)
+                          α∈Φ
+                         X                       X                          X
+                       =  (xi − xj )(yi − yj ) +   (xi + xj )(yi + yj ) + 2   (2xi )(2yi )
+                           i6=j                                           i6=j                                             i
+                                              X
+                       = 4(n + 1)                 xi y i
+                       = 4(n + 1)tr(xy).
+
+                                                                          18
+6.4    Weyl group of sp2n (C)
+Consider the fundamental roots of the form αi = ai − ai+1 . Similarly to the sln (C), it is easy
+to check that they generate a copy of Sn . Let us compute the reflection associated to the root
+αn = 2an . Given h ∈ h, we have that Sαn (h) = h−αn (h)hαn , where hαn is the coroot associated
+to the root αn
+                                     P                                                  
+                     Sαn (h) =        ai i6 −             6 − 2an                −             =
+                                                         n+i                  n6      6
+                                                                                     2n
+                                                                                        
+                     a1        6       −     6         + ···       −an        6 −         6    .
+                               1            n+1                               n       2n
+
+
+
+
+This reflections are the sign changes and they generate a copy of the group Zn2 . Altogether the
+Weyl group associated to sp2n (C) is
+
+                                                      Cn = Zn2 ⋊ Sn .
+
+6.5     Cartan matrix and Dynkin diagram of sp2n (C)
+                                                                                
+                                             2 −1            0      0    ... 0
+                                           −1 2           −1       0    ... 0 
+                                                                                
+                                            .. ..          ..            .. .. 
+                                            . .               .           .  . 
+                                      Cn = 
+                                            .. ..                 ..         .. 
+                                                                                 
+                                            . .
+                                                                   .          . 
+                                                                                 
+                                            0 0            . . . −1      2 −1 
+                                             0 0            ... 0        −2 2
+There are n vertices in this case, one for each fundamental root. The Killing form is hαi , αi+1 i =
+1, if i = 1, . . . , n−1 and hαn−1 , αn i = 2. Moreover hαn−1 , αn−1 i < hαn , αn i, and thus the Dynkin
+diagram of sp2n (C) has the form
+
+                                           Cn , n ≥ 3                    ··· <
+
+
+
+6.6    Invariant functions under the action of Cn = Zn2 ⋊ Sn
+Let us recall that the group structure on Zn2 ⋊ Sn is given by
+
+                                            (a, π)(b, σ) = (a · π(b), π ◦ σ)
+
+where (πb)i = bπ−1 (i) .
+
+Proposition 24. Zn2 ⋊ Sn acts on Rn as follows
+
+                                   Zn2 ⋊ Sn × Rn −→            Rn
+                                      ((a, π)x)  7−→ ((a, π)x)i = ai xπ−1 (i)
+
+
+                                                            19
+Consider the polynomials
+
+                                     fi = x2i   2i           2i
+                                           1 + x2 + · · · + xn , 1 ≤ i ≤ n
+
+
+Each polynomial fi is invariant under the action of (Z2 )n ⋊ Sn given by
+
+                                                (f (a, π))(x) = f ((a, π)x).
+
+The set of invariants
+                                              f1 =          x21 + x22 + · · · + x2n
+                                              f2 =          x41 + x42 + · · · + x4n
+                                               ..
+                                                .
+                                              fn = x2n   2n           2n
+                                                    1 + x2 + · · · + xn
+
+is a basic set. This follows from the Jacobian criterion since
+
+                        gr(f1 )gr(f2 ) · · · gr(fn ) = 2 · 4 · 6 · · · 2n = 2n n! = |Zn2 ⋊ Sn |
+
+and
+                                                                    Y
+                                    J = 2n n! x1 · · · xn                  (x2j − x2i ) 6= 0.
+                                                                  1≤i<j≤n
+
+
+7      Orthogonal Lie Algebra so2n(C)
+Recall that the 2n-orthogonal Lie Algebra is defined as follows
+
+                                             so2n (C) = {X : X t S + SX = 0}
+
+where S ∈ M2n (C) is the matrix                                             
+                                                                    0 In
+                                                         S=
+                                                                   In 0
+Eexplicitly
+                              (                                                                            )
+                                    A B
+                 so2n (C) =                            ; A, B, C ∈ Mn (C) y B = −B t, C = −C t .
+                                    C −At
+
+so2n (C) as a subspace of Digraph1 (2n, 2n) is given by
+                                         j         n+i        i          n+j             n+j   n+i       j       i
+    so2n (C) =      6   −      6,    7         −    o   ,     oj    −    7       ,       *−         ,   I   − }n+j   .
+                    i         n+i    i              n+j                 n+i          i      j            n+i
+
+
+
+
+where 1 ≤ i < j ≤ n. We fix h the Cartan subalgebra of so2n (C) to be
+
+
+
+
+                                                                   20
+                              h=   hk =           6           −             6     , k = 1, . . . , n
+                                              k                            n+k
+
+
+
+
+7.1   Root System of so2n (C)
+Let h ∈ h
+                                                  P                                              
+                                         h=                   ak            6     −         6
+                                                                                          n+k
+                                                                           k
+
+
+
+
+where {ai } is the base of h∗ dual to the natural base of h. As for the case of the symplectic
+algebra we define a map T : Digraph1 (2n, 2n) −→ Digraph1 (2n, 2n). T sends a given graph
+to its opposite if it does not cross the vertical line, and to minus its opposite if it crosses the
+vertical line. We have again that T (ab) = T (b)T (a) For example,
+                                                              n+j                     i
+                                           T :                >            −→         }
+                                                          i                               n+j
+
+
+
+
+Let us find out the positive roots
+                                                    j                     n+i
+                                                                                                       j            n+i        
+                                                                                          = (ai − aj ) i7
+              P
+                 ak      6 −  6      ,                           −          I                              −         o              .
+                        k    n+k                  i                          n+j                                          n+j
+                                                                                                          n+j             n+i
+                                                    n+j                  n+i
+                                                                                                                                   
+                                                  * −                                     = (ai + aj )    * −
+              P
+                ak 6 − n+k
+                      k
+                             6     ,          i
+                                                                       
+                                                                       j                                      i
+                                                                                                                      
+                                                                                                                      j
+
+
+
+
+To get the negative roots it is enough to apply T to the positive roots. Therefore the root
+system is Φ = {ai − aj , aj − ai , ai + aj , −ai − aj , 1 ≤ i < j ≤ n} and the fundamental roots can
+be taken to be Π = {α1 , . . . , αn } where αi = ai − ai+1 , i = 1, . . . , n − 1 and αn = an−1 + an
+
+7.2   Coroots and weights of so2n (C)
+  1. Coroot associated to the root ai − aj
+          j       n+i                n+j
+                        i
+                                                                                                                         
+      7       −    o   , Ij    −                 =                    6 −                6           −        6 −    6         = hi − hj
+      i            n+j             n+i                                 i              n+i                     j      n+j
+
+
+
+
+      in this case (ai − aj )(hi − hj ) = 2, thus hi − hj is the coroot associated to the root ai − aj .
+
+  2. Coroot associated to the root ai + aj
+
+
+
+
+                                                                       21
+          n+j   n+i            j       i
+          * −                 − Y n+j
+                                                                                                                                    
+                         , I                                =−               6       −       6             −            6 −         6 = −hi − hj
+      i       j            n+i                                               i              n+i                        j           n+j
+
+
+
+
+      since (ai + aj )(−hi − hj ) = −2, hi + hj is the coroot associated to the root ai + aj .
+
+We concluded that Φc = {hi −hj , hj −hi , hi +hj , −hi −hj , 1 ≤ i < j ≤ n} is the coroot system of
+so2n (C). The set of fundamental coroots is given by Πc = {hi − hi+1 , hn−1 + hn ; 1 ≤ i ≤ n − 1}
+where
+                                                                                                                       
+                               hi − hi+1 =                  6     −        6
+                                                                         n+i
+                                                                                        −         6        −          6
+                                                            i                                    i+1            n+i+1
+
+
+
+
+and
+                                                                                                                           
+                           hn−1 + hn =                       6 −                6        +             6 −                6
+                                                            n−1             2n−1                       n                2n
+
+
+
+
+                                                                                                                                           a1 +a2 +···+an
+The fundamental weights are given by wi = a1 +· · ·+ai , i = 1, · · · , n−1 and wn =                                                              2
+In a similar as for sp2n (C) one can prove that wi (hj − hj+1 ) = δij . For wn we get
+                                      n                                                                              o
+                     (a1 +···+an )
+                           2                            6 −             6        +              6 −                 6             =1
+                                                n−1                2n−1                      n                   2n
+
+
+                                      n                                                                              o
+                     (a1 +···+an )
+                           2                        6       −         6          −           6 −                 6                =0
+                                                    i              n+i                      i+1                n+i+1
+
+
+
+
+7.3   Killing form of so2n (C)
+Let x and y be in h
+
+                        X
+          hx, yi =             α(x)α(y)
+                       α∈Φ
+                       X                       X                       X
+                =       (xi − xj )(yi − yj ) +  (xi + xj )(yi + yj ) +  (xi − xj )(yi − yj )
+                        i≤j                                       i≤j                                            j≤i
+                         X
+                       +  (xi + xj )(yi + yj )
+                           j≤i
+                       X
+                =              2xi yj + 2xi yj
+                        i6=j
+                                     X
+                = 4(n − 1)                 xi y i
+                = 4(n − 1)tr(xy).
+
+                                                                        22
+7.4    Weyl group of so2n (C)
+Consider the fundamental roots αi = ai − ai+1 . Just as for sln (C), the associated reflections
+associated to these roots generate the group Sn . We compute the reflections associated to the
+roots αn = an+1 + an . Given h ∈ h, we have Sαn (h) = h − αn (h)hαn where hαn is the coroot
+associated to the root αn
+                   P                                                                                         
+      Sαn (h) =     ai i6 −       6 −             (an−1 + an )            6 −          6 +              −             =
+                                 n+i                                     n−1          2n−1           n6      2n
+                                                                                                                 6
+                                                                                                             
+          a1       6   −    6        + · · · − an            6 −          6         −an−1        6 −         6
+                   1       n+1                             n−1           2n−1                    n          2n
+
+
+
+
+This reflection correspond to a change of sign. Thus we have that the Weyl group associated
+with so2n (C) is
+                                      Dn = Z2n−1 ⋊ Sn
+
+7.5    Cartan matrix and Dynkin diagram of so2n (C).
+                                                                            
+                                            2 −1              0     0 ... 0
+                                          −1 2             −1      0 ... 0 
+                                           .. ..                         .. 
+                                                                            
+                                                             ..
+                                     Dn =  . .
+                                                               .          . 
+                                                                             
+                                           0 0              . . . 2 −1 −1 
+                                                                            
+                                           0 0              . . . −1 2 0 
+                                            0 0              . . . −1 0 2
+The Dynkin diagram has n vertices corresponding with the fundamental roots. The Killing has
+the form hαi , αi+1 i = 1, if i = 1, . . . , n−2, hαn−2 , αn−1 i = 1, hαn−2 , αn i = 1 and hαn−1 , αn i = 0.
+Thus the Dynkin diagram so2n (C)
+
+                                      Dn , n ≥ 4                         ···
+
+
+
+
+7.6    Invariant functions under the action of Z2n−1 ⋊ Sn
+Consider the polynomials
+                                                   n
+                                                   X
+                                     fi       =           x2i
+                                                           j ,      1≤i≤n−1
+                                                   j=1
+                                     fn = x1 · · · xn
+clearly each fi is invariant under the action of Z2n−1 ⋊ Sn . It is easy to check that
+
+                           gr(f1 )gr(f2 ) . . . gr(fn ) = 2n−1 n! = |Z2n−1 ⋊ Sn |
+
+
+
+                                                            23
+and
+                                                                             Y
+                                  J = (−2)n−1 (n − 1)!                                (x2j − x2i ) 6= 0,
+                                                                        1≤i<j≤n
+
+so the Jacobian criterion tell us that f1 , . . . , fn is a basic set of invariants.
+
+
+8      Orthogonal algebra so2n+1(C)
+We orthogonal odd algebra
+
+                                         so2n+1 (C) = {X : X t S + SX = 0}
+
+where S ∈ M2n+1 (C) is of the form
+                                                               
+                                                         0 In 0
+                                                  S =  In 0 0 
+                                                         0 0 1
+In an explicit form
+              (  A B −H t                                                                 )
+so2n+1 (C) =  C −At −Gt  ; A, B, C ∈ Mn (C), H, G ∈ M1×n (C), 0 ∈ C y B = −B t , C = −C t
+                   G H 0
+
+so2n+1 (C) as a subspace of Digraph1 (2n + 1, 2n + 1) is given by
+                                                              n+j            n+i                  j           i                    j       n+i
+
+    so2n+1 (C) =          6   −      6       ,            3           − 7                 ,       o     − k             ,      7       −    o     ,
+                          i        n+i                i                 j                         n+i             n+j          i            n+j
+
+
+
+                     i              n+j                             2n+1     n+i                          2n+1 i
+                              −                                     1−         k                          >− i
+                     oj             7         ,                                               ,                                ,1≤i<j≤n
+                                   n+i                    i                        2n+1                 n+i             2n+1
+
+
+
+
+Let us fix h a Cartan subalgebra of so2n+1 (C)
+
+                                   h=             6   −               6 ,      k = 1, . . . , n
+                                             k                    n+k
+
+
+
+
+8.1     Root system of so2n+1 (C)
+Let h ∈ h,                                            P                                          
+                                             h=           ak             6     −       6
+                                                                                      n+k
+                                                                        k
+
+
+
+
+where {ai } is a base of h∗ dual to the natural base of h. We compute the positive roots. The
+negative roots are obtain applying the following antimorphism to the positive roots.
+T : Digraph1 (2n + 1, 2n + 1) −→ Digraph1 (2n + 1, 2n + 1). For example
+
+                                                                      24
+                                                                                            n+j                       i
+                                                                      T :                  >       −→                 }
+                                                                                       i                                   n+j
+
+
+
+
+                                                                         j                       n+i
+                                                                                                                                                           j               n+i        
+                                                                                                                          = (ai − aj )
+                  P
+                      ak         6        −      6          ,                             −        I                                                   7             −         o
+                                k               n+k                    i                            n+j                                                 i                        n+j
+                                                                             n+j                  n+i                                                        n+j             n+i    
+                                                                           3                                              = (ai + aj )                       >        − 7
+                  P
+                      ak         6        −         6       ,                               − 
+                                k               n+k                    i                      j                                                             i               j
+                                                                                                                                                             2n+1         n+i
+                                                                                                                                                            *−
+                                                                                           2n+1             n+i
+                                                                                                                                                                               
+                                                                                           * −                                  = ai                                        I
+                    P
+                           ak         6 −
+                                      k             n+k
+                                                        6       ,                  i
+                                                                                                             I
+                                                                                                             2n+1                                   i                       2n+1
+
+
+
+
+Thus the set of roots is Φ = {ai − aj , aj − ai , ai + aj , ai , −ai }. The fundamental roots are
+Π = {α1 , . . . , αn } where αi = ai − ai+1 , i = 1, . . . , n − 1 and αn = an . In pictures the root
+system of so7 (C) looks like
+
+
+
+
+8.2   Coroots and weights of so2n+1 (C)
+  1. Coroots associated to the root ai − aj
+              j                 n+i       i                     n+j                                                                                                      
+          7           −          o   ,o             −                                 =            6         −            6            −           6 −                6 = hi − hj
+          i                      n+j   j                    n+i                                     i                     n+i                    j                    n+j
+
+
+
+
+      Since (ai − aj )(hi − hj ) = 2, we see that hi − hj is the coroot associated to the root ai − aj .
+
+  2. Coroot associated to the root ai + aj
+              n+j          n+i            j             i
+          *       −  , I − Y
+                                                                                                                                                                         
+                                                                               =−                       6         −        6            −            6 −               6         =−hi − hj
+      i             j   n+i   n+j                                                                       i                 n+i                       j                 n+j
+
+
+
+
+      Here (ai + aj )(−hi − hj ) = −2, and thus hi + hj is the coroot associated to the root ai + aj .
+
+  3. Coroot associated to the root ai
+                                 2n+1         n+i                 2n+1         i
+                                                                                                                                                            
+                                 *−                                            Y                            =−                   6      −        6               = −hi
+                                               I        ,         −
+                            i                  2n+1             n+i                        2n+1                                 i               n+i
+
+
+
+
+      Thus 2hi is the coroot associated to the root ai .
+
+                                                                                                   25
+We have that Φc = {hi − hj , hj − hi , hi + hj , −hi − hj , 2hi , −2hi , 1 ≤ i < j ≤ n} is the coroot
+system of so2n+1 (C). The set of fundamental coroot has the form Πc = {hi − hi−1 , 2hn ; 1 ≤
+i ≤ n − 1} where
+                                                                            
+                      hi − hi+1 =        6   −      6
+                                                  n+i
+                                                         −         6  −     6
+                                         i                                             i+1         n+i+1
+
+
+
+
+and
+                                                                                                           
+                       hn−1 + hn =               6 −             6         +                 6 −          6
+                                                n−1             2n−1                     n               2n
+
+
+
+
+                                                                                 a1 + · · · + an
+The fundamental weights are wi = a1 + · · · + ai , i = 1, · · · , n − 1 and wn =                 . In
+                                                                                        2
+a similar fashion to the so2n (C) case we have that wi (hj − hj+1 ) = δij and wi (2hn ) = δin .
+
+8.3   Killing form of so2n+1 (C)
+Given x and y in h
+
+                     X
+        hx, yi =           α(x)α(y)
+                     α∈Φ
+                  X                       X                       X
+                =  (xi − xj )(yi − yj ) +  (xi + xj )(yi + yj ) +  (xi − xj )(yi − yj )
+                     i≤j                              i≤j                                          j≤i
+                       X                       X          X
+                     +  (xi + xj )(yi + yj ) +   xi y i +   (2xi )(2yi )
+                       j≤i                                  i                  i
+                               X
+                = (4n − 2)         xi y i
+                = (4n − 2)tr(xy)
+
+8.4   Weyl group of so2n+1 (C)
+Consider the fundamental roots αi = ai − ai+1 . Just like for sln+1 (C), the reflections associated
+to these roots generate the symmetric group Sn . Let us analyze the reflection associated to the
+root αn = an . Let h ∈ h, we have Sαn (h) = h − αn (h)hαn where hαn is the coroot associated
+to the root αn
+                              P                                                                                
+                   Sαn (h) =               6 − 2an
+                                 ai i6 − n+i                     −                                                    =
+                                                            n6                                             6
+                                                                                                          2n
+                                                                                                       
+                         a1    6   − 6     + · · · − an        −
+                              1      n+1                   n6                                        2n
+                                                                                                         6
+
+
+
+
+                                                            26
+This reflections represent sign changes and generate the group Zn2 , therefore the Weyl group
+associated with so2n+1 (C) is
+                                        Bn = Zn2 ⋊ Sn
+
+8.5    Cartan matrix and Dynkin diagram of so2n+1 (C).
+                                                                     
+                                       2 −1        0     0    ... 0
+                                     −1 2       −1      0    ... 0 
+                                                                     
+                                      .. ..      ..              .. 
+                                      . .           .             . 
+                                Bn = 
+                                      .. ..             ..        .. 
+                                                                      
+                                      . .                .         . 
+                                                                     
+                                      0 0        . . . −1     2 −2 
+                                       0 0        ... 0       −1 2
+The diagram has n vertices, one for each fundamental root. The killing form is given by
+hαi , αi+1 i = 1, if i = 1, . . . , n − 1 and hαn−1 , αn i = 2. Furthermore hαn−1 , αn−1 i > hαn , αn i,
+and thus, the Dynkin diagram of so2n+1 (C) has form
+
+                                   Bn , n ≥ 2                 ··· >
+
+
+
+Acknowledgment
+Thanks to Manuel Maia for helping us with Latex.
+
+
+References
+ [1] Theodor Bröcker, Tammo Tom Dieck. Representations of Compact Lie Groups. Springer-
+     Verlag, New York 1985.
+
+ [2] Roger Carter, Graeme Segal y Ian Macdonald. Lecture on Lie groups and Lie algebras.
+     Students Texts 32, London Mathematical Society, 1995.
+
+ [3] Williams Fulton, Joe Harris. Representation Theory. A first course . Springer-Verlag, New
+     York 1991.
+
+ [4] I.M. Gelfand. Lectures on linear algebra, Robert E. Krieger Publishing Company. Hunt-
+     ington, New York, 1978.
+
+ [5] S. Gelfand and Y. Manin Methods of homological algebra. Second edition. Springer Mono-
+     graphs in Mathematics. Springer-Velarg, Berlin, 2003.
+
+ [6] James E. Humphreys. Introductions to Lie Algebras and Representation theory . Springer-
+     Verlag, New York 1972.
+
+
+                                                  27
+ [7] James E. Humphreys. Reflection Groups and Coxeter Groups. Cambridge Studies in Ad-
+     vanced Mathematics 29. Cambridge University Press, 1990.
+
+ [8] Eduard Looijenga. Root Systems and Elliptic Curves, Mathematisch Instituut, Toer-
+     nooiveld, Driehuizerweg 200, Nijmegen, The Netherlands. Springer-Verlag, 1976.
+
+ [9] A.L. Onishchik and E.B. Vinberg. Lie groups and Lie algebras II, Encyclopaedia of Math-
+     emaltical Sciences. Springer-Velarg, New York, 1990.
+
+[10] J-P. Serre. Complex semisimple Lie algebras . Springer-Verlag, New York 1977.
+
+[11] P. Slodowy. Groups and Special Singularities, Mathematisches Seminar, Universität Ham-
+     burg, D-20146 Hamburg, Germany.
+
+[12] P. Slodowy. Platonic Solids, Kleinian Singularities, and Lie Groups, Mathematisches In-
+     stitut, Universität Bonn, Wegelerstraβe 10, D-5300 Bonn, W. Germany.
+
+[13] A.N. Varchenko, S.V. Chmutov. Finite irreducible groups, generated by reflections are mon-
+     odromy groups of suitable Singularities and Lie Groups.
+
+
+
+ Rafael Dı́az. Instituto Venezolano de Investigaciones Cientı́ficas (IVIC). radiaz@ivic.ve
+ Eddy Pariguan. Universidad central de Venezuela (UCV). eddyp@euler.ciens.ucv.ve
+
+
+
+
+                                              28
+

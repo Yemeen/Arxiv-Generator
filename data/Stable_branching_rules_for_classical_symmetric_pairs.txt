@@ -1,0 +1,1730 @@
+                                                                STABLE BRANCHING RULES FOR
+                                                                 CLASSICAL SYMMETRIC PAIRS
+arXiv:math/0311159v2 [math.RT] 6 Nov 2005
+
+
+
+
+                                                           ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+
+
+                                                                              1. Introduction
+                                               Given completely reducible representations, V and W of complex algebraic
+                                            groups G and H respectively, together with an embedding H ֒→ G, we let [V, W ] =
+                                            dim HomH (W, V ) where V is regarded as a representation of H by restriction. If
+                                            W is irreducible, then [V, W ] is the multiplicity of W in V . This number may of
+                                            course be infinite if V or W is infinite dimensional. A description of the numbers
+                                            [V, W ] is referred in the mathematics and physics literature as a branching rule.
+                                               The context of this paper has its origins in the work of D. Littlewood. In [Li2],
+                                            Littlewood describes two classical branching rules from a combinatorial perspective
+                                            (see also [Li1]). Specifically, Littlewood’s results are branching multiplicities for
+                                            GLn to On and GL2n to Sp2n . These pairs of groups are significant in that they
+                                            are examples of symmetric pairs. A symmetric pair is a pair of groups (H, G) such
+                                            that G is a reductive algebraic group and H is the fixed point set of a regular
+                                            involution defined on G. It follows that H is a closed, reductive algebraic subgroup
+                                            of G.
+                                               The goal of this paper is to put the formula into the context of the first named
+                                            author’s theory of dual reductive pairs. The advantage of this point of view is
+                                            that it relates branching from one symmetric pair to another and as a consequence
+                                            Littlewood’s formula may be generalized to all classical symmetric pairs.
+                                               Littlewood’s result provides an expression for the branching multiplicities in
+                                            terms of the classical Littlewood-Richardson coefficients (to be defined later) when
+                                            the highest weight of the representation of the general linear group lies in a certain
+                                            stable range.
+                                               The point of this paper is to show how when the problem of determining branch-
+                                            ing multiplicities is put in the context of dual pairs, a Littlewood-like formula results
+                                            for any classical symmetric pair. To be precise, we consider 10 families of symmet-
+                                            ric pairs which we group into subsets determined by the embedding of H in G (see
+                                            Table I in §3).
+
+                                            Acknowledgement: We are grateful to the referee for elaborate and in-depth com-
+                                            ments. Most notably, for the vast number of references and comments on related
+                                            works for branching rules and tensor products of infinite-dimensional representa-
+                                            tions.
+
+                                            1.1. Parametrization of Representations. Let G be a classical reductive alge-
+                                            braic group over C: G = GLn (C) = GLn , the general linear group; or G = On (C) =
+                                            On , the orthogonal group; or G = Sp2n (C) = Sp2n , the symplectic group. We shall
+                                            explain our notations on irreducible representations of G using integer partitions.
+                                                                                       1
+2                ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+In each of these cases, we select a Borel subalgebra of the classical Lie algebra as is
+done in [GW]. Consequently, all highest weights are parameterized in the standard
+way (see [GW]).
+    A non-negative integer partition λ, with k parts, is an integer sequence λ1 ≥
+λ2 ≥ . . . ≥ λk > 0. Sometimes we may refer to partitions as Young or Ferrers
+diagrams. We use the same notation for partitions as is done in [Ma]. For example,
+we write ℓ(λ) to denote   P the length (or depth) of a partition, |λ| for the size of a
+partition (i.e., |λ| = i λi ). Also, λ′ denotes the transpose (or conjugate) of λ
+(i.e., (λ′ )i = |{λj : λj ≥ i}|). A partition where all parts are even is called an even
+partition, and we shall denote an even partition 2δ1 ≥ 2δ2 ≥ . . . ≥ 2δk simply by
+2δ.
+
+GLn Representations: Given non-negative integers p and q such that n ≥ p + q
+and non-negative integer partitions λ+ and λ− with p and q parts respectively, let
+  (λ+ ,λ− )
+F(n)        denote the irreducible rational representation of GLn with highest weight
+given by the n-tuple:
+                                                                                       
+               (λ+ , λ− ) = λ+        +            +                   −             −
+                                 1 , λ2 , · · · , λp , 0, · · · , 0, −λq , · · · , −λ1
+                              |                            {z                          }
+                                                            n
+                                         +            (λ+ ,λ− )
+If λ− = (0) then we will write F(n)  λ
+                                       for F(n)                   . Note that if λ+ = (0) then
+ − ∗                     +   −
+   λ                     (λ  ,λ  )
+  F(n) is equivalent to F(n)       .
+
+On Representations: The complex (or real) orthogonal group has two connected
+components. Because the group is disconnected we cannot index irreducible repre-
+sentation by highest weights. There is however an analog of Schur-Weyl duality for
+the case of On in which each irreducible rational representation is indexed uniquely
+by a non-negative integer partition ν such that (ν ′ )1 + (ν ′ )2 ≤ n. That is, the sum
+of the first two columns of the Young diagram of ν is at most n. (See [GW] Chapter
+                       ν
+10 for details.) Let E(n) denote the irreducible representation of On indexed by ν
+in this way.
+   The irreducible rational representations of SOn may be indexed by their highest
+weight, since the group is a connected reductive linear algebraic group. In [GW]
+Section 5.2.2, the irreducible representations of On are determined in terms of
+their restrictions to SOn (which is a normal subgroup having index 2). See [GW]
+Section 10.2.4 and 10.2.5 for the correspondence between this parametrization and
+the above parametrization by partitions.
+
+Sp2n Representations: For a non-negative integer partition ν with p parts where
+             ν
+p ≤ n, let V(2n) denote the irreducible rational representation of Sp2n where the
+highest weight indexed by the partition ν is given by the n tuple:
+                               (ν1 , ν2 , · · · , νp , 0, · · · , 0)
+                               |                {z                 } .
+                                                 n
+1.2. Littlewood-Richardson Coefficients. Fix a positive integer n0 . Let λ, µ
+and ν denote non-negative integer partitions with at most n0 parts. For any n ≥ n0
+we have:           h                   i h                        i
+                     µ       ν     λ         µ       ν       λ
+                    F(n) ⊗ F(n) , F(n)  = F(n  0)
+                                                  ⊗ F(n0)
+                                                          , F(n0)
+                             STABLE BRANCHING RULES                                     3
+
+
+And so we define:                    h                   i
+                                       µ
+                             cλµ ν := F(n)    ν
+                                           ⊗ F(n)    λ
+                                                  , F(n)
+for some (indeed any) n ≥ n0 .
+   The numbers cλµ ν are known as the Littlewood-Richardson coefficients and are
+extensively studied in the algebraic combinatorics literature. Many treatments
+defined from wildly different points of view. See [BKW], [CGR], [Fu], [GW], [JK],
+[Kn1], [Ma], [Sa], [St3] and [Su] for examples.
+1.3. Stability and the Littlewood Restriction Rules. We now state the Lit-
+tlewood restriction rules.
+                                                             n
+Theorem 1.1 (On ⊆ GLn ). Given λ such that ℓ(λ) ≤            2   and µ such that (µ′ )1 +
+(µ′ )2 ≤ n then,                         X
+                           λ      µ
+                         [F(n) , E(n) ]=   cλµ 2δ                                   (1.1)
+                                               2δ
+where the sum is over all non-negative even integer partitions 2δ.
+Theorem 1.2 (Sp2n ⊆ GL2n ). Given λ such that ℓ(λ) ≤ n and µ such that
+ℓ(µ) ≤ n then,                         X
+                       λ        µ
+                     [F(2n) , V(2n) ]=   cλµ (2δ)′               (1.2)
+                                               2δ
+where the sum is over all non-negative integer partitions with even columns (2δ)′ .
+   Notice that the hypothesis of the above two theorems do not include an arbitrary
+parameter for the representation of the general linear group. The parameters which
+fall within this range are said to be in the stable range. These hypothesis are
+necessary but for certain µ it is possible to weaken them considerably see [EW1]
+and [EW2].
+   One purpose of this paper is to make the first steps toward a uniform stable
+range valid for all symmetric pairs. In the situation presented here we approach
+the stable range on a case-by-case basis. Within the stable range, one can express
+the branching multiplicity in terms of the Littlewood-Richardson coefficients. These
+kinds of branching rules will later be combined with the rich combinatorics literature
+on the Littlewood-Richardson coefficients to provide more algebraic structure to
+branching rules.
+
+                         2. Statement of the results.
+   We now state our main theorem. As it addresses 10 families of symmetric pairs,
+which state in 10 parts. The parts are grouped into 4 subsets named: Diagonal,
+Direct Sum, Polarization and Bilinear Form. These names describe the embedding
+of H into G (see Table I of §3).
+4                  ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+Main Theorem:
+2.1. Diagonal:
+2.1.1. GLn ⊂ GLn × GLn . Given non-negative integers, p, q, r and s with n ≥
+p + q + r + s. Let λ+ , µ+ , ν + , λ− , µ− , ν − be non-negative integer partitions. If
+ℓ(λ+ ) ≤ p + r, ℓ(λ− ) ≤ q + s, ℓ(µ+ ) ≤ p, ℓ(µ− ) ≤ q, ℓ(ν + ) ≤ r and ℓ(ν − ) ≤ s, then
+      h                                        i X +
+         (µ+ ,µ− )    (ν + ,ν − )    (λ+ ,λ− )               +       −       −       −       +
+       F(n)        ⊗ F(n)         , F(n)        = cλα2 α1 cµα1 γ1 cνγ1 β2 cλβ2 β1 cµβ1 γ2 cνγ2 α2
+where the sum is over non-negative integer partitions α1 , α2 , β1 , β2 , γ1 and γ2 .
+2.1.2. On ⊂ On × On . Given non-negative integer partitions λ, µ and ν such that
+ℓ(λ) ≤ ⌊n/2⌋ and ℓ(µ) + ℓ(ν) ≤ ⌊n/2⌋, then
+                      h                    i X
+                         µ      ν      λ
+                        E(n) ⊗ E(n) , E(n)  =  cλα β cµα γ cνβ γ
+where the sum is over all non-negative integer partitions α, β, γ.
+2.1.3. Sp2n ⊂ Sp2n × Sp2n . Given non-negative integer partitions λ, µ and ν such
+that ℓ(λ) ≤ n and ℓ(µ) + ℓ(ν) ≤ n, then
+                     h                      i X
+                        µ       ν       λ
+                      V(2n) ⊗ V(2n) , V(2n)  =  cλα β cµα γ cνβ γ
+where the sum is over all non-negative integer partitions α, β, γ.
+2.2. Direct Sum:
+2.2.1. GLn × GLm ⊂ GLn+m . Let p and q be non-negative integers such that p +
+q ≤ min(n, m). Let λ+ , µ+ , ν + and λ− , µ− , ν − be non-negative integer partitions.
+If ℓ(λ+ ), ℓ(µ+ ), ℓ(ν + ) ≤ p and ℓ(λ− ), ℓ(µ− ), ℓ(ν − ) ≤ q, then
+             h                                       i X +
+               (λ+ ,λ− )    (µ+ ,µ− )    (ν + ,ν − )                 −         +       −
+              F(n+m) , F(n)           ⊗ F(m)          =  cγµ+ ν + cγµ− ν − cλγ + δ cλγ − δ
+
+where the sum is over all non-negative integer partitions γ + , γ − , δ.
+2.2.2. On × Om ⊂ On+m . Let λ, µ and ν be non-negative integer partitions such
+that ℓ(λ), ℓ(µ), ℓ(ν) ≤ 12 min(n, m), then
+                         h                      i X
+                            λ        µ      ν
+                          E(n+m)  , E(n) ⊗ E(m)  =  cγµ ν cλγ 2δ
+where the sum is over all non-negative integer partitions δ and γ.
+2.2.3. Sp2n × Sp2m ⊂ Sp2(n+m) . Let λ, µ and ν be non-negative integer partitions
+such that ℓ(λ), ℓ(µ), ℓ(ν) ≤ min(n, m), then
+                     h                           i X
+                         λ           µ       ν
+                       V(2(n+m)) , V(2n) ⊗ V(2m)  =  cγµ ν cλγ (2δ)′
+where the sum is over all non-negative integer partitions δ and γ.
+2.3. Polarization:
+2.3.1. GLn ⊂ O2n . Let µ+ , µ− and λ be non-negative integer partitions with at
+most ⌊n/2⌋ parts, then
+                      h                   i X
+                                (µ+ ,µ− )
+                        λ
+                       E(2n) , F(n)        =  cγµ+ µ− cλγ (2δ)′
+where the sum is over all non-negative integer partitions δ and γ.
+                            STABLE BRANCHING RULES                                 5
+
+
+2.3.2. GLn ⊂ Sp2n . Let µ+ , µ− and λ be non-negative integer partitions with at
+most ⌊n/2⌋ parts, then
+                       h                    i X
+                                  (µ+ ,µ− )
+                           λ
+                         V(2n) , F(n)        =  cγµ+ µ− cλγ 2δ
+where the sum is over all non-negative integer partitions δ and γ.
+2.4. Bilinear Form:
+2.4.1. On ⊂ GLn . Let λ+ , λ− and µ denote non-negative integer partitions with
+at most ⌊n/2⌋ parts, then
+                       h                   i X
+                          (λ+ ,λ− )    µ                +      −
+                        F(n)        , E(n)  =  cµα β cλα 2γ cλβ 2δ
+where the sum is over all non-negative integer partitions α, β, γ and δ.
+2.4.2. Sp2n ⊂ GL2n . Let λ+ , λ− and µ denote non-negative integer partitions with
+at most n parts, then
+                     h                    i X
+                        (λ+ ,λ− )     µ                +         −
+                       F(2n)      , V(2n)  =  cµα β cλα (2γ)′ cλβ (2δ)′
+where the sum is over all non-negative integer partitions α, β, γ and δ.
+
+2.5. Remarks: Although a thorough survey is beyond our present goals, we wish to
+record here many previous works on branching rules which in many cases overlaps
+with ours. We are grateful to the referee who has given us an extensive list of
+references with comments on related works by experts. We shall briefly summarize
+related works as follows:
+    (a) Diagonal: The first rule 2.1.1 appears as (4.6) with (4.15) in King’s paper
+        [Ki2]. The branching rules 2.1.2 and 2.1.3 for orthogonal and symplectic
+        groups goes back to Newell [Ne] and Littlewood [Li3]. A more rigorous
+        account of the Diagonal rules also appears in [Ki4], along with a treatment
+        of rational representations of GLn . See Theorem 4.5 and Theorem 4.1 of
+        [Ki4] and the references therein. Our methods are also cast in this same
+        generality. Further, 2.1.2 and 2.1.3 are beautifully presented in Sundaram’s
+        survey [Su] with references to the proofs in [BKW].
+    (b) Direct Sum: Rule 2.2.1 appears as (5.8) with (4.16) in one of the earlier
+        works of King [Ki1], which derives from a conjecture in the Ph.D. thesis by
+        Abramsky [Ab]. These branching rules are also addressed in [Ko] and [KT].
+        Specifically, 2.2.1 can be found in Proposition 2.6 of [Ko], and 2.2.2 and
+        2.2.3 can be found in Theorem 2.5 and Corollary 2.6 of [KT]. An account
+        of the Direct Sum rules also appears in [Ki4] (see (2.1.6) and the references
+        therein).
+    (c) Polarization: The polarization branching rules, 2.3.1 and 2.3.2 are stated
+        as (4.21) and (4.22), respectively, in [Ki3], and also as Theorem A1 of [KT].
+    (d) Bilinear Form: The Littlewood restriction rule is a special case of for-
+        mulas, 2.4.1 and 2.4.2 (see [Li1] and [Li2]). These two formulas can be
+        viewed as a generalization of Littlewood’s restriction rule. Besides the Di-
+        agonal branching formulas, [Su] also presents a thorough treatment of the
+        classical Littlewood restriction rules. However, in the most general form,
+        the rules 2.4.1 and 2.4.2 appear as (5.7) with (4.19), and (5.8) with (4.23)
+        respectively in [Ki2].
+6                ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+   Most of the results have been sufficiently well known by experts. For a well
+presented survey of the representation theory of the classical groups from a com-
+binatorial point of view we refer the reader to [Su]. And the late Wybourne and
+his students have even incorporated these results in the software package SCHUR
+downloadable at http://smc.vnet.net/Schur.html. This package implements all the
+modification rules given in [Ki2] and [BKW] that allow the stable branching rules
+to be generalized so as to cover all possible non-stable cases as well.
+   From our point of view, it is striking that the theory of dual pairs leads to proofs
+of all 10 of these formulas in such a unified manner. We feel that this unifying theme
+should be brought out in the literature more systematically than it has been.
+   In [Su] Theorem 5.4, it is shown how the Littlewood Richardson rule for branch-
+ing from GL2n to Sp2n may be modified to obtain a version of the Littlewood
+restriction rule which is valid outside the stable range. Removing the stability
+condition for Littlewood’s restriction rules is a delicate problem, which was also
+addressed in [EW1] and [EW2]. Classically, Newell [Ne] presents modification rules
+to the Littlewood restriction rules to solve the branching problem outside of the
+stable range (see [Su] and [Ki2]). For some recent remarks on the literature of
+branching rules we refer the reader to [Ki3], [Kn2], [Kn3], [Kn4] and [Pr]. The
+discussions in [Kn2] are relevant to our approach. Some of the results in [Kn2] are
+important special cases of the results in [GK].
+   While we only require decompositions of tensor products of infinite-
+dimensional holomorphic discrete series as in [Re], we also wish to note the nu-
+merous works in more generality which can be found in [RWB], [KW], [TTW], [OZ]
+and [KTW], amongst the many others. It is interesting to note that the papers
+[RWB], [KW], [TTW] and [KTW] have exploited the duality correspondence (see
+§3.1) to relate the multiplicities of tensor products of infinite-dimensional represen-
+tations to multiplicities of tensor products of finite-dimensional representations in
+the same spirit of [Ho1].
+
+                        3. Dual Pairs and Reciprocity
+  The formulation of classical invariant theory in terms of dual pairs [Ho2] allows
+one to realize branching properties for classical symmetric pairs by considering
+concrete realizations of representations on algebras of polynomials on vector spaces.
+
+3.1. Dual Pairs and Duality Correspondence. Let W ≃ R2m be a
+2m-dimensional real vector space with symplectic form < ·, · >. Let Sp(W ) =
+Sp2m (R) denote the isometry group of the form < ·, · >. A pair of subgroups
+(G, G′ ) of Sp2m (R) is called a reductive dual pair (in Sp2m (R)) if
+    (a) G is the centralizer of G′ in Sp2m (R) and vice versa, and
+    (b) both G and G′ act reductively on W .
+   The fundamental group of Sp2m (R) is the fundamental group of Um , its maximal
+compact subgroup, and is isomorphic to Z. Let Sp f 2m (R) denote a choice of a double
+                                                                            em denote
+cover of Sp2m (R). We will refer to this as the metaplectic group. Also let U
+the pull-back of the covering map on Um . Shale-Weil constructed a distinguished
+                    f (R), which we shall refer to as the oscillator representation.
+representation ω of Sp 2m
+This is a unitary representation and one realization is on the space of holomorphic
+functions on Cm , commonly referred to as the Fock space. In this realization, the
+                                    STABLE BRANCHING RULES                                           7
+
+
+em -finite functions appear as polynomials on Cm which we denote as P(Cm ). A
+U
+vector v ∈ P(Cm ) is U      em -finite if the span of U
+                                                      em · v in P(Cm ) is finite dimensional.
+   Choose z1 , z2 , . . . , zm as a system of coordinates on Cm . The Lie algebra action
+of sp2m (the complexified Lie algebra of Sp2m (R)) on P(Cm ) can be described by
+the following operators:
+                                             (1,1)       (2,0)      (0,2)
+                             ω(sp2m ) = sp2m ⊕ sp2m ⊕ sp2m                                       (3.1)
+where
+                                                             
+                            (1,1)            1     ∂     ∂
+                          sp2m = Span          zi     +     zj    ,
+                                             2    ∂zj   ∂zi
+                            (2,0)
+                          sp2m = Span {zi zj },                                                  (3.2)
+                                               
+                            (0,2)           ∂2
+                          sp2m = Span             .
+                                        ∂zi ∂zj
+   The decomposition (3.1) is an instance of the complexified Cartan decomposition
+
+                                       sp2m = k ⊕ p+ ⊕ p−                                        (3.3)
+        (1,1)               (2,0)                    (0,2)                           P
+where sp2m      ≃ ω(k),   sp2m      ≃ ω(p+ ) and   sp2m      ≃ ω(p− ). If P(Cm ) =       s≥0   P s (Cm )
+                                                                         (i,j)
+is the natural grading on P(Cm ), it is immediate that                 sp2m      brings P (Cm ) to
+                                                                                          s
+
+P s+i−j (Cm ).
+   Let us restrict our dual pairs to the following:
+                                                                            ∗
+                  (On (R), Sp2k (R)),         (Un , Up,q ),        (Sp(n), O2k ).                (3.4)
+Observe that the first member is compact, and these pairs are usually loosely re-
+ferred to as compact pairs.
+   To avoid technicalities involving covering groups, instead of the real groups
+(G0 , G′0 ), we shall discuss in the context of pairs (G, g′ ) where G is a complexi-
+fication of G0 and g′ is a complexification of the Lie algebra of G′0 . The use of
+the phrase “up to a central character” in the statements (a) to (c) below basically
+suppresses the technicalities involving covering groups. Each of these pairs can be
+conveniently realized as follows:
+    (a) (On (R), Sp2k (R)) ⊂ Sp2nk (R):
+        Let Cn ⊗ Ck be the space of n by k complex matrices. The complexified
+                                                            enk -finite functions. The
+        pair (On , sp2k ) acts on P(Cn ⊗ Ck ) which are the U
+        group On acts by left multiplication on P(Cn ⊗ Ck ) and can be identified
+        with the holomorphic extension of the On (R) action on the Fock space.
+        The action of the subalgebra glk of sp2k is (up to a central character) the
+        derived action coming from the natural right action of multiplication by
+        GLk .
+
+    (b) (Un , Up,q ) ⊂ Sp2n(p+q) (R):
+                                           en(p+q) -finite functions with the polyno-
+        For this pair, we may identify the U
+        mial ring P(Cn ⊗ Cp ⊕ (Cn )∗ ⊗ Cq ). The complexified pair is (GLn , glp,q ).
+        There is a natural action of GLn and GLp × GLq on this polynomial ring
+        as follows:
+                      (g, h1 , h2 ) · F (X, Y ) = F (g −1 Xh1 , g t Y h2 ),
+8                    ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+         where X ∈ Cn ⊗ Cp , Y ∈ (Cn )∗ ⊗ Cq , g ∈ GLn , h1 ∈ GLp and h2 ∈ GLq .
+         Obviously both left and right actions commute. Here glp,q ≃ glp+q , but
+         we choose to differentiate the two because of the role of the subalgebra
+         glp ⊕ glq , which acts by (up to a central character) the derived action of
+         GLp × GLq on the polynomial ring.
+                   ∗
+    (c) (Sp(n), O2k  ) ⊂ Sp4nk (R):
+        In this case, P(C2n ⊗ Ck ) are the U e2nk -finite functions, with natural left
+        and right actions by Sp2n and GLk respectively. The complexified pair
+        is (Sp2n , o2k ), where the subalgebra glk of o2k acts by (up to a central
+        character) the derived right action of GLk .
+   With the realizations of these compact pairs (G, g′ ) ⊂ Sp2m (R), let us look at
+the representations that appear. Form
+                                                       (i,j)        (i,j)
+                                                g′             = sp2m ∩ ω(g′ )
+to get
+                                                           (1,1)         (2,0)           (0,2)
+                          ω(g′ ) = g′   ⊕ g′    ⊕ g′    .                    (3.5)
+                  ′
+  Observe that G0 is Hermitian symmetric in all three cases, and the decomposition
+above is an instance of the complexified Cartan decomposition
+                                                                         +           −
+                                                       g′ = k′ ⊕ p′ ⊕ p′                                                          (3.6)
+         (1,1)                       (2,0)                 +                 (0,2)               −
+where g′     ≃ ω(k′ ), g′   ≃ ω(p′ ) and g′   ≃ ω(p′ ). In particular, k′ has a
+                             ′±                                            ±
+one-dimensional center and p are the ±i eigenspaces of this center. Each p′ is
+an abelian Lie algebra. Note, in particular,
+                   (1,1)          (2,0)            (2,0)                              (1,1)          (0,2)            (0,2)
+             [g′           , g′           ] ⊂ g′                   and          [g′           , g′           ] ⊂ g′           .   (3.7)
+                                                   ′
+   A representation (ρ, Vρ ) of g is holomorphic if there is a non-zero vector v0 ∈ Vρ
+              −
+killed by ρ(p′ ). The following are the key properties of holomorphic representa-
+tions:
+     (a) There is a non-trivial subspace
+                                            −                                                                           −
+             (Vρ )0 = ker ρ(p′ ) = {v ∈ Vρ | ρ(Y ) · v = 0 for all Y ∈ p′ }
+        which is k′ irreducible. This is known as the lowest k′ -type of ρ.
+    (b) Vρ is generated by (Vρ )0 , more precisely,
+                                                               +                     +
+                                          Vρ = U(p′ ) · V0 = S(p′ ) · V0 .
+                                                                              +
+         The second equality results because p′ is abelian.
+  Now one of the key features in the formalism of dual pairs is the branching
+decomposition of the oscillator representation. The branching property for compact
+pairs alluded to is (see [Ho2] and the references therein):
+                                             M
+                            P(Cm ) |G×g′ =        τ ⊗ Vτ ′                    (3.8)
+                                                                          b
+                                                                     τ ∈S⊂G
+
+where S is a subset of the set of irreducible representations of G, denoted by G.  b
+                                                                            ′
+The representations Vτ ′ (written to emphasize the correspondence τ ↔ τ and the
+dependence on τ ∈ G)  b are irreducible holomorphic representations of g′ . They
+are known to be derived modules of irreducible unitary representations of some
+appropriate cover of G′0 ([Ho3]). The key feature of this branching is the uniqueness
+                                 STABLE BRANCHING RULES                                         9
+
+
+of the correspondence, i.e., a representation of G appearing uniquely determines the
+representation of the g′ module that appears and vice-versa. We refer to this as
+the duality correspondence.
+   This duality is subjugated to another correspondence in the space of harmonics.
+                                                         (0,2)
+Theorem 3.1. ([Ho2], [KV]) Let H = ker g′        be the space of harmonics. Then
+H is a G × K ′ module and it admits a multiplicity-free G × K ′ (hence G × k′ )
+decomposition:
+                             M                     (0,2)
+                       H=         τ ⊗ ker ρτ ′ (g′       ).                 (3.9)
+                                         b
+                                    τ ∈S⊂G
+
+We also have the separation of variables theorem providing the following G × g′
+decomposition:
+                                                                          
+                                   M                                      
+                         (2,0)                                      (0,2)          (2,0)
+       P(Cm ) = H · S(g′       )=                τ ⊗ ker ρτ ′ (g′         ) · S(g′       )
+                                                                          
+                                      τ ∈S⊂G  c′
+                                                                                           (3.10)
+                 M           n                                     o       M
+                                  ′ (2,0)                 ′ (0,2)
+               =       τ ⊗ S(g            ) · ker ρτ ′ (g         ) =          τ ⊗ Vτ ′ .
+                         b
+                    τ ∈S⊂G                                                             b
+                                                                                  τ ∈S⊂G
+
+   The structure of Vτ ′ is even nicer in certain category of pairs, which we will refer
+to as the stable range. The stable range refers to the following:
+    (a) (On (R), Sp2k (R)) for n ≥ 2k;
+    (b) (Un , Up,q ) for n ≥ p + q;
+                    ∗
+    (c) (Sp(n), O2k   ) for n ≥ k.
+In the stable range, the holomorphic representations of g′ that occur have k′ -
+structure which are nicer ([HC], [Sc1], [Sc2]), namely,
+                                           (2,0)                     (0,2)
+                             Vτ ′ = S(g′           ) ⊗ ker τ ′ (g′           ).
+They are known as holomorphic discrete series or limits of holomorphic discrete
+series (in some limiting cases of the parameters determining τ ′ ) of the appropriate
+covering group of G′0 . It is these representations that will feature prominently in
+this paper.
+   Let us conclude by describing the duality correspondence for the compact dual
+pairs in the stable range. Parts of the following well known result can be found in
+several places, see [EHW], [HC], [Ho2], [Ho3], [Sc1], [Sc2] for example.
+Theorem 3.2.           (a) (On (R), Sp2k (R)): The duality correspondence for On ×
+      sp2k is:
+                                                    M
+                              P(Cn ⊗ Ck ) =               λ
+                                                         E(n)  eλ
+                                                              ⊗E                           (3.11)
+                                                                (2k)
+                                                     λ
+
+         where λ runs through the set of all non-negative integer partitions such
+         that l(λ) ≤ k and (λ′ )1 + (λ′ )2 ≤ n. The space E  e λ is an irreducible
+                                                              (2k)
+                                                                   λ
+         holomorphic representation of sp2k of lowest glk -type F(k) . In the stable
+         range n ≥ 2k,
+                      e λ ≃ S(sp(2,0) ) ⊗ F λ ≃ S(S 2 Ck ) ⊗ F λ .
+                      E(2k)     2k         (k)                (k)
+10                  ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+     (b) (Un , Up,q ): The duality correspondence for GLn × glp,q is:
+                                              M (λ+ ,λ− )       (λ+ ,λ− )
+                P(Cn ⊗ Cp ⊗ (Cn )∗ ⊗ Cq ) =        F(n)    ⊗ Fe(p,q)               (3.12)
+                                                   λ+ ,λ−
+
+         where the sum is over all non-negative integer partitions λ+ and λ− such
+                                                                            (λ+ ,λ− )
+         that l(λ+ ) ≤ p, l(λ− ) ≤ q and l(λ+ ) + l(λ− ) ≤ n. The space Fe(p,q)       is
+         an irreducible holomorphic representation of glp,q with lowest glp ⊕ glq -type
+           λ+     λ−
+         F(p) ⊗ F(q) . In the stable range n ≥ p + q,
+              +   −                        +                               +
+            (λ ,λ     )
+          Fe(p,q)
+                                                  −                            −
+                          ≃ S(gl(2,0)    λ      λ        p   q     λ      λ
+                                p,q ) ⊗ F(p) ⊗ F(q) ≃ S(C ⊗ C ) ⊗ F(p) ⊗ F(q) .
+
+         The degenerate case when q = 0 is particularly interesting. This is the
+         GLn × GLp duality:
+                                        M
+                          P(Cn ⊗ Cp ) =     λ
+                                          F(n)      λ
+                                               ⊗ F(p)                     (3.13)
+                                                  λ
+
+         where the sum is over all integer partitions λ such that l(λ) ≤ min(n, p).
+                  ∗
+     (c) (Sp(n), O2k ): The duality correspondence for Sp2n × so2k is:
+                                           M
+                          P(C2n ⊗ Ck ) =        λ
+                                              V(2n) ⊗ Ve(2k)
+                                                         λ
+                                                                                   (3.14)
+                                                  λ
+         where λ runs through the set of all non-negative integer partitions such that
+         l(λ) ≤ min(n, k). The space Ve(2k)
+                                          λ
+                                              is an irreducible holomorphic represen-
+                                                λ
+         tation of so2k with lowest glk -type F(k) . In the stable range n ≥ k,
+                                        (2,0)
+                           Ve(2k)
+                              λ                 λ
+                                  ≃ S(so2k ) ⊗ F(k) ≃ S(∧2 Ck ) ⊗ F(k)
+                                                                   λ
+                                                                       .
+
+3.2. Symmetric Pairs and Reciprocity Pairs. In the context of dual pairs, we
+would like to understand the branching of irreducible representations from G to H,
+for symmetric pairs (H, G). Table I lists the symmetric pairs which we will cover
+in this paper.
+
+                            Table I: Classical Symmetric Pairs
+
+                          Description        H                   G
+                            Diagonal        GLn             GLn × GLn
+                            Diagonal        On               On × On
+                            Diagonal       Sp2n             Sp2n × Sp2n
+                           Direct Sum   GLn × GLm             GLn+m
+                           Direct Sum    On × Om               On+m
+                           Direct Sum   Sp2n × Sp2m          Sp2(n+m)
+                           Polarization     GLn                 O2n
+                           Polarization     GLn                Sp2n
+                          Bilinear Form     On                 GLn
+                          Bilinear Form    Sp2n                GL2n
+
+  If G is a classical group over C, then G can be embedded as one member of a dual
+pair in the symplectic group as described in [Ho2]. The resulting pairs of groups
+                              STABLE BRANCHING RULES                                           11
+
+
+are (GLn , GLm ) or (On , Sp2m ), each inside Sp2nm , and are called irreducible dual
+pairs. In general, a dual pair of reductive groups in Sp2r is a product of such pairs.
+
+Proposition 3.1. Let G be a classical group, or a product of two copies of a
+classical group. Let G belong to a dual pair (G, G′ ) in a symplectic group Sp2m .
+Let H ⊂ G be a symmetric subgroup, and let H ′ be the centralizer of H in Sp2m .
+Then (H, H ′ ) is also a dual pair in Sp2m , and G′ is a symmetric subgroup inside
+H ′.
+
+Proof: This can be shown by fairly easy case-by-case checking. These are shown
+in Table II. We call these pair of pairs reciprocity pairs. These are special cases of
+see-saw pairs [Ku].      
+
+                             Table II: Reciprocity Pairs
+
+
+ Symmetric Pair (H, G)                      (H, h′ )                            (G, g′ )
+   (GLn , GLn × GLn )                   (GLn , glm+ℓ )                 (GLn × GLn , glm × glℓ )
+      (On , On × On )                  (On , sp2(m+ℓ) )                 (On × On , sp2m × sp2ℓ )
+   (Sp2n , Sp2n × Sp2n )              (Sp2n , so2(m+ℓ) )              (Sp2n × Sp2n , so2m ⊕ so2ℓ )
+  (GLn × GLm , GLn+m )            (GLn × GLm , glℓ × glℓ )                  (GLn+m , glℓ )
+    (On × Om , On+m )              (On × Om , sp2ℓ ⊕ sp2ℓ )                 (On+m , sp2ℓ )
+ (Sp2n × Sp2m , Sp2(n+m) )       (Sp2n × Sp2m , so2ℓ ⊕ so2ℓ )              (Sp2(n+m) , so2ℓ )
+         (GLn , O2n )                    (GLn , gl2m )                        (O2n , sp2m )
+        (GLn , Sp2n )                    (GLn , gl2m )                       (Sp2n , so2m )
+           (On , gln )                    (On , sp2m )                        (GLn , glm )
+       (Sp2n , GL2n )                   (Sp2n , so2m )                       (GL2n , glm )
+
+   Consider the dual pairs (G, G′ ) and (H, H ′ ) in Sp2m . We illustrate them in the
+see-saw manner as follows:
+                                  G      −       G′
+                                     ∪                 ∩
+                                H       −      H′
+Recall the duality correspondence for G × g′ and H × h′ on the space P(Cm ):
+                                M                 M
+               P(Cm ) |G×g′ =         σ ⊗ Vσ′ =      P(Cm )σ⊗σ′ ,
+                                      b
+                                  σ∈S⊂G                     b
+                                                        σ∈S⊂G
+                                    M                         M
+               P(Cm ) |H×h′ =               τ ⊗ Wτ ′ =               P(Cm )τ ⊗τ ′ ,
+                                        b
+                                  τ ∈T ⊂H                        b
+                                                           τ ∈T ⊂H
+                             m                    m
+where we have written P(C )σ⊗σ′ and P(C )τ ⊗τ ′ as the σ ⊗σ ′ -isotypic component
+and τ ⊗ τ ′ -isotypic component in P(Cm ) respectively. Given σ and τ ′ , we can seek
+the σ ⊗ τ ′ -isotypic component in P(Cm ) in two ways as follows:
+                   P(Cm )σ⊗τ ′ ≃ (σ |H )τ ⊗ Vσ′ ≃ τ ⊗ (Wτ ′ |h′ )σ′ .                      (3.15)
+In other words, we have the equality of multiplicities (as pointed out in [Ho1]):
+                                    [σ, τ ] = [Wτ ′ , Vσ′ ]                                (3.16)
+that is, the multiplicity of τ in σ |H is equal to the multiplicity of Vσ′ in Wτ ′ |h′ .
+This is good enough for our purposes in this paper. However, this equality of
+12               ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+multiplicities is just a feature of some deeper phenomenon – an isomorphism of
+certain branching algebras which captures the respective branching properties.
+3.3. Branching Algebras. One approach to branching problems exploits the fact
+that the representations have a natural product structure, embodied by the algebra
+of regular functions on the flag manifold of the group. For a reductive complex
+algebraic G, let NG be a maximal unipotent subgroup of G. The group NG is
+determined up to conjugacy in G. Let AG denote a maximal torus which normalizes
+NG , so that BG = AG ·NG is a Borel subgroup of G. Let A  b+ be the set of dominant
+                                                           G
+characters of AG – the semigroup of highest weights of irreducible representations
+of G. It is well-known (see for instance, [Ho4]) that the space of regular functions
+on the coset space G/NG decomposes (under the action of G by left translations)
+as a direct sum of one copy of each irreducible representation Vψ , of highest weight
+ψ, of G:                                     M
+                               R(G/NG ) ≃         Vψ .
+                                               b+
+                                             ψ∈A G
+
+   We note that R(G/NG ) has the structure of an A       b+ -graded algebra, for which
+                                                           G
+the Vψ are the graded components. Let H ⊂ G be a reductive subgroup and AH =
+AG ∩ H be a maximal torus of H normalizing NH , a maximal unipotent subgroup
+of H, so that BH = AH · NH is a Borel subgroup of H. We consider the algebra
+R(G/NG )NH , of functions on G/NG which are invariant under left translations
+by NH . This is an (A     b+ × A  b+ )-graded algebra. Knowledge of R(G/NG )NH as
+                           G       H
+    b +    b +
+a (AG × AH )-graded algebra tell us how representations of G decompose when
+restricted to H, in other words, it describes the branching rule from G to H. We
+will call R(G/NG )NH the (G, H) branching algebra. When G ≃ H × H, and H
+is embedded diagonally in G, the branching algebra describes the decomposition
+of tensor products of representations of H, and we then call it the tensor product
+algebra for H.
+   Let us explain briefly how branching algebras, dual pairs and reciprocity are
+related. For a reciprocity pair (G, g′ ), (H, h′ ), the duality correspondences are
+subjugated to a correspondence in the space of harmonics H (see Theorem 3.1).
+Branching from holomorphic discrete series of h′ to g′ behaves very much like finite-
+dimensional representations in relation to their highest weights and is captured en-
+tirely by the branching from the lowest KH ′ -type to KG′ . Although H is not an
+algebra, it can still be identified as a quotient algebra of P(Cm ). With the G × KG′
+as well as H × KH ′ multiplicity-free decomposition of H, one allows HNH ×NKG′
+to be interpreted as a branching algebra from KH ′ to KG′ as well as a branching
+algebra from G to H. This double interpretation solve two related branching prob-
+lems simultaneously. Classical invariant theory also provides a flexible approach
+which allows an inductive approach to the computation of branching algebras, and
+makes evident natural connections between different branching algebras. We refer
+to readers to [HTW] for more details.
+                                      STABLE BRANCHING RULES                                          13
+
+
+                                                  4. Proofs
+4.1. Proofs of the Tensor Product Formulas.
+
+4.1.1. GLn ⊂ GLn × GLn . We consider the following see-saw pair and its com-
+plexificiation:
+        Un × Un       −    up,q ⊕ ur,s          Complexified   GLn × GLn          −   glp,q ⊕ glr,s
+           ∪                    ∩                                  ∪                        ∩
+          Un          −     up+r,q+s                             GLn              −    glp+r,q+s
+
+  Regarding the dual pair (GLn × GLn , glp,q ⊕ glr,s ), Theorem 3.2 gives the de-
+composition:
+                                                                          
+             P Cn ⊗ Cp ⊕ (Cn )∗ ⊗ Cq ⊕ Cn ⊗ Cr ⊕ (Cn )∗ ⊗ Cs
+               M  (µ+ ,µ− )    (ν + ,ν − )
+                                             
+                                                 (µ+ ,µ− )     (ν + ,ν − )
+                                                                           
+             ∼
+             =     F(n)      ⊗ F(n)          ⊗ Fe(p,q)     ⊗ Fe(r,s)
+where the sum is over non-negative integer partitions µ+ , ν + , µ− , and ν − such
+that:
+                  ℓ(µ+ ) ≤ p,            ℓ(µ− ) ≤ q,
+                     +
+                  ℓ(ν ) ≤ r,             ℓ(ν − ) ≤ s,
+                     +        −
+                  ℓ(µ ) + ℓ(µ ) ≤ n,     ℓ(ν + ) + ℓ(ν − ) ≤ n.
+Regarding the dual pair (GLn , glp+r,q+s ), Theorem 3.2 gives the decomposition:
+                                            M (λ+ ,λ− )        (λ+ ,λ− )
+           P Cn ⊗ Cp+r ⊕ (Cn ) ⊗ Cq+s ∼
+                                 ∗
+                                             =    F(n)     ⊗ Fe(p+r,q+s)
+where the sum is over all non-negative integer partitions λ+ and λ− such that
+ℓ(λ+ ) + ℓ(λ− ) ≤ n, ℓ(λ+ ) ≤ p + r and ℓ(λ− ) ≤ q + s.
+   We assume that we are in the stable range: n ≥ p + q + r + s, so that as a
+GLp+r × GLq+s representation (see Theorem 3.2):
+                          +   −
+                        (λ ,λ )                        λ+
+                      Fe(p+r,q+s) ∼
+                                  = S(Cp+r ⊗ Cq+s ) ⊗ F(p+r)    λ−
+                                                             ⊗ F(q+s)
+                                                                   +    −
+                                              (λ ,λ )
+As a GLp × GLq × GLr × GLs -representation, Fe(p+r,q+s) is equivalent to:
+                                                                                      +          −
+      S(Cp ⊗ Cq ) ⊗ S(Cr ⊗ Cs ) ⊗ S(Cp ⊗ Cs ) ⊗ S(Cr ⊗ Cq ) ⊗ F(p+r)
+                                                               λ        λ
+                                                                     ⊗ F(q+s)
+Note that n ≥ p + q + r + s implies that n ≥ p + q and n ≥ r + s, so that (see
+Theorem 3.2):
+                       (µ+ ,µ− ) ∼                µ+   µ−
+                    Fe           = S(Cp ⊗ Cq ) ⊗ F ⊗ F
+                              (p,q)                               (p)       (q)
+and
+                                  +   −
+                             (ν ,ν        )   ∼                ν+
+                           Fe(r,s)            = S(Cr ⊗ Cs ) ⊗ F(r)    ν−
+                                                                   ⊗ F(s) .
+Our see-saw pair implies (see (3.15)):
+      h                                        i h                                          i
+         (µ+ ,µ− )    (ν + ,ν − )    (λ+ ,λ− )      (λ+ ,λ− )     (µ+ ,µ− )     (ν + ,ν − )
+        F(n)       ⊗ F(n)         , F(n)        = Fe(p+r,q+s) , Fe(p,q)     ⊗ Fe(r,s)         .
+Using the fact that we are in the stable range:
+                         h                                         i
+                            (µ+ ,µ− )     (ν + ,ν − )    (λ+ ,λ− )
+                          F(n)        ⊗ F(n)          , F(n)
+     h                                                                                  i
+                                       λ+             λ−       µ+     µ−     ν+     ν−
+   = S(Cp ⊗ Cs ) ⊗ S(Cr ⊗ Cq ) ⊗ F(p+r)       ⊗ F(q+s)     , F(p)  ⊗ F(q) ⊗ F(r) ⊗ F(s)   .
+14                  ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+     Next we will combine the standard decompositions:
+                                    M +
+                             λ+   ∼              α1     α2
+                           F(p+r) =     cλα1 α2 F(p) ⊗ F(r)
+
+                                             M
+                                  λ−
+                                 F(q+s) ∼
+                                        =
+                                                    −      β1
+                                                  cλβ1 β2 F(q)    β2
+                                                               ⊗ F(s)
+with the multiplicity-free decompositions (see (3.12)):
+                                          M γ
+                            S(Cp ⊗ Cs ) ∼
+                                        =
+                                                       γ1
+                                             F(p)1 ⊗ F(s)
+                                          M γ
+                           S(Cr ⊗ Cq ) ∼=
+                                                      γ2
+                                             F(r)2 ⊗ F(q) .
+This implies the result:
+     h                                       i X +
+       (µ+ ,µ− )    (ν + ,ν − )    (λ+ ,λ− )               +       −       −       −       +
+      F(n)       ⊗ F(n)         , F(n)        = cλα2 α1 cµα1 γ1 cνγ1 β2 cλβ2 β1 cµβ1 γ2 cνγ2 α2 .
+
+4.1.2. On ⊂ On × On . We consider the following see-saw pair and its complexifi-
+ciation:
+
+
+ On (R) × On (R)        − sp2p (R) ⊕ sp2q (R)           Complexified   On × On     − sp2p ⊕ sp2q
+        ∪                          ∩                                      ∪               ∩
+     On (R)             −    sp2(p+q) (R)                                On        −  sp2(p+q)
+
+  Regarding the dual pair (On × On , sp2p ⊕ sp2q ), Theorem 3.2 gives the decom-
+position:
+                                   M µ                               
+          P (Cn ⊗ Cp ⊕ Cn ⊗ Cq ) ∼
+                                 =                ν
+                                        E(n) ⊗ E(n)   ⊗ E eµ ⊗ E
+                                                           (2p)
+                                                                 eν
+                                                                   (2q)
+
+where the sum is over non-negative integer partitions µ and ν such that:
+                                 ℓ(µ) ≤ p, (µ′ )1 + (µ′ )2 ≤ n,
+                                 ℓ(ν) ≤ q, (ν ′ )1 + (ν ′ )2 ≤ n.
+Regarding the dual pair (On , sp2(p+q) ), Theorem 3.2 gives the decomposition:
+                                      M λ
+                     P Cn ⊗ Cp+q ∼     =            eλ
+                                             E(n) ⊗ E (2(p+q))
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤ p + q,
+and (λ′ )1 + (λ′ )2 ≤ n.
+   We assume that we are in the stable range: n ≥ 2(p + q), so that as a GLp+q
+representation (see Theorem 3.2):
+                               eλ
+                               E         ∼    2 p+q      λ
+                                (2(p+q)) = S(S C    ) ⊗ F(p+q) .
+                                eλ
+As a GLp × GLq -representation, E(2(p+q)) is equivalent to:
+
+                        S(S 2 Cp ) ⊗ S(S 2 Cq ) ⊗ S(Cp ⊗ Cq ) ⊗ F(p+q)
+                                                                 λ
+
+
+Note that n ≥ 2(p + q) implies that n ≥ 2p and n ≥ 2q, so that (see Theorem 3.2):
+                                     eµ ∼
+                                     E          2 p     µ
+                                      (2p) = S(S C ) ⊗ F(p)
+
+and
+                                    eν ∼
+                                    E          2 q     ν
+                                     (2q) = S(S C ) ⊗ F(q) .
+                              STABLE BRANCHING RULES                                     15
+
+
+Our see-saw pair implies (see (3.15)):
+                 h                                                 i
+                   µ
+                  E(n)      ν
+                       ⊗ E(n)    λ
+                              , E(n)      eλ
+                                     ] = [E           eµ      eν
+                                           (2(p+q)) , E(2p) ⊗ E(2q) .
+
+Using the fact that we are in the stable range:
+    h                        i
+     e(2(p+q))
+     E λ        eµ ⊗ E
+               ,E      e(2q)
+                        ν
+                  (2p)
+      h                                                                                   i
+    = S(S 2Cp ) ⊗ S(S 2 Cq ) ⊗ S(Cp ⊗ Cq ) ⊗ F(p+q)
+                                               λ
+                                                    , S(S 2Cp ) ⊗ F(p)
+                                                                   µ
+                                                                       ⊗ S(S 2Cq ) ⊗ F(q)
+                                                                                      ν
+
+      h                                    i
+    = S(Cp ⊗ Cq ) ⊗ F(p+q)
+                       λ        µ
+                             , F(p)    ν
+                                    ⊗ F(q)   .
+
+Next we will combine the decomposition:
+                                  M
+                           λ
+                         F(p+q) ∼
+                                =           α
+                                     cλα β F(p)    β
+                                                ⊗ F(q)
+
+with the multiplicity-free decomposition (see (3.12)):
+                                          M γ
+                            S(Cp ⊗ Cq ) ∼
+                                        =
+                                                       γ
+                                             F(p) ⊗ F(q)
+to obtain the result, but first note that in the above decompositions α, β, and γ
+range over all non-negative integer partitions such that ℓ(α) ≤ p, ℓ(β) ≤ q and
+ℓ(γ) ≤ min(p, q). So we obtain:
+                       h                   i   X
+                         µ       ν     λ
+                        E(n) ⊗ E(n) , E(n)   =    cλα β cµα γ cνβ γ
+                                                 α,β,γ
+
+The above sum is over all non-negative integer partitions α, β, γ such that ℓ(α) ≤ p,
+ℓ(β) ≤ q and ℓ(γ) ≤ min(p, q), however, the support of the Littlewood-Richardson
+coefficients is contained inside the set of such (α, β, γ) when we choose p and q such
+that ℓ(λ) ≤ ⌊n/2⌋ := p + q, with ℓ(µ) := p and ℓ(ν) := q.
+
+4.1.3. Sp2n ⊂ Sp2n × Sp2n . We consider the following see-saw pair and its com-
+plexificiation:
+
+
+   Sp(n) × Sp(n) −       so∗2p ⊕ so∗2q   Complexified    Sp2n × Sp2n   − so2p ⊕ so2q
+         ∪                     ∩                              ∪               ∩
+       Sp(n)     −        so∗2(p+q)                         Sp2n       −  so2(p+q)
+
+  Regarding the dual pair (Sp2n × Sp2n , so2p ⊕ so2q ), Theorem 3.2 gives the de-
+composition:
+                               M µ                                    
+       P C2n ⊗ Cp ⊕ C2n ⊗ Cq ∼  =                 ν
+                                        V(2n) ⊗ V(2n)   ⊗ Ve(2p)
+                                                             µ
+                                                                 ⊗ Ve(2q)
+                                                                      ν
+
+
+where the sum is over non-negative integer partitions µ and ν such that:
+                        ℓ(µ) ≤ min(n, p), ℓ(ν) ≤ min(n, q).
+Regarding the dual pair (Sp2n , so2(p+q) ), Theorem 3.2 gives the decomposition:
+                                      M λ
+                    P C2n ⊗ Cp+q ∼     =      V(2n) ⊗ Ve(2(p+q))
+                                                         λ
+
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤
+min(n, p + q).
+16                  ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+   We assume that we are in the stable range: n ≥ p + q, so that as a GLp+q
+representation (see Theorem 3.2):
+                         Ve(2(p+q))
+                            λ       ∼
+                                    = S(∧2 Cp+q ) ⊗ F(p+q)
+                                                     λ
+                                                           .
+As a GLp × GLq -representation, Ve(2(p+q))
+                                   λ
+                                           is equivalent to:
+                        S(∧2 Cp ) ⊗ S(∧2 Cq ) ⊗ S(Cp ⊗ Cq ) ⊗ F(p+q)
+                                                               λ
+
+
+Note that n ≥ p + q implies that n ≥ p and n ≥ q, so that (see Theorem 3.2):
+                             Ve(2p)
+                                µ   ∼              µ
+                                    = S(∧2 Cp ) ⊗ F(p)
+and
+                             Ve(2q)
+                                ν   ∼
+                                    = S(∧2 Cq ) ⊗ F(q)
+                                                   ν
+                                                       .
+Our see-saw pair implies (see (3.15)):
+                h                     i h                                      i
+                  V µ ⊗ V ν ,V λ
+                        (2n)     (2n)  = Ve λ
+                                        (2n)       , Ve µ
+                                                    (2(p+q))   (2p)   ⊗ Ve(2q)
+                                                                           ν
+                                                                                 .
+     Using the fact that we are in the stable range:
+       h                             i
+        Ve(2(p+q))
+           λ
+                   , Ve(2p)
+                        µ
+                            ⊗ Ve(2q)
+                                 ν
+
+          h                                                                                      i
+       = S(∧2 Cp ) ⊗ S(∧2 Cq ) ⊗ S(Cp ⊗ Cq ) ⊗ F(p+q)    λ
+                                                           , S(∧2 Cp ) ⊗ F(p)
+                                                                          µ
+                                                                              ⊗ S(∧2 Cq ) ⊗ F(q)
+                                                                                             ν
+
+          h                                          i
+       = S(Cp ⊗ Cq ) ⊗ F(p+q)   λ         µ
+                                       , F(p)    ν
+                                              ⊗ F(q)   .
+Next we will combine the decomposition:
+                                  M
+                           λ
+                         F(p+q) ∼
+                                =    cλα β F(p)
+                                            α      β
+                                                ⊗ F(q)
+with the multiplicity-free decomposition (see (3.12)):
+                                          M γ
+                            S(Cp ⊗ Cq ) ∼
+                                        =
+                                                       γ
+                                             F(p) ⊗ F(q)
+to obtain the result, but first note that in the above decompositions α, β, and γ
+range over all non-negative integer partitions such that ℓ(α) ≤ p, ℓ(β) ≤ q and
+ℓ(γ) ≤ min(p, q). So we obtain:
+                      h                      i   X
+                         µ       ν       λ
+                       V(2n) ⊗ V(2n) , V(2n)   =   cλα β cµα γ cνβ γ
+                                                      α,β,γ
+
+The above sum is over all non-negative integer partitions α, β, γ such that ℓ(α) ≤ p,
+ℓ(β) ≤ q and ℓ(γ) ≤ min(p, q), however, the support of the Littlewood-Richardson
+coefficients is contained inside the set of such (α, β, γ) when we choose p and q such
+that ℓ(λ) ≤ ⌊n/2⌋ := p + q, with ℓ(µ) := p and ℓ(ν) := q.
+                                       STABLE BRANCHING RULES                                           17
+
+
+4.2. Proofs of the Direct Sum Branching Rules.
+
+4.2.1. GLn × GLm ⊂ GLn+m . We consider the following see-saw pair and its com-
+plexificiation:
+
+
+          Un+m        −        up,q              Complexified     GLn+m               −     glp,q
+            ∪                   ∩                                    ∪                        ∩
+         Un × Um      −    up,q ⊕ up,q                           GLn × GLm            − glp,q ⊕ glp,q
+
+   Regarding the dual pair (GLn+m , glp+q ), Theorem 3.2 gives the decomposition:
+                                ∗         M
+                                                    (λ+ ,λ− )   (λ+ ,λ− )
+          P Cn+m ⊗ Cp ⊕ Cn+m ⊗ Cq ∼          =     F(n+m) ⊗ Fe(p,q)
+
+where the sum is over non-negative integer partitions λ+ and λ− such that ℓ(λ+ ) ≤
+p, ℓ(λ− ) ≤ q and ℓ(λ+ ) + ℓ(λ− ) ≤ n + m. Regarding the dual pair (GLn ×
+GLm , glp+q ⊕ glp+q ), Theorem 3.2 gives the decomposition:
+                                                                                 
+                P C  n
+                        ⊗ Cp ⊕ (Cn )∗ ⊗ Cq ⊕       Cm
+                                                      ⊗ Cp ⊕ (Cm )∗ ⊗ Cq 
+               ∼  L      (µ+ ,µ− )    (ν + ,ν − )       (µ+ ,µ− )     (ν + ,ν − )
+               =        F(n)       ⊗ F(m)           ⊗ Fe(p,q)     ⊗ Fe(p,q)
+
+where the sum is over all non-negative integer partitions µ+ , µ− , ν + and ν − such
+that:
+                    ℓ(µ+ ) + ℓ(µ− ) ≤ n, ℓ(ν + ) + ℓ(ν − ) ≤ m,
+                    ℓ(µ+ ) ≤ p,           ℓ(µ− ) ≤ q,
+                       +
+                    ℓ(ν ) ≤ p,            ℓ(ν − ) ≤ q.
+We assume that we are in the stable range: min(n, m) ≥ p + q, so that as a
+GLp × GLq representation (see Theorem 3.2):
+                                   +   −                                +         −
+                              (µ ,µ        )   ∼
+                            Fe(p,q)                             µ      µ
+                                               = S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+                                   +   −
+                              (ν ,ν        )   ∼                ν+
+                            Fe(p,q)            = S(Cp ⊗ Cq ) ⊗ F(p)    ν−
+                                                                    ⊗ F(q)
+Note that min(n, m) ≥ p + q implies that n + m ≥ p + q, so that (see Theorem 3.2):
+                                   +   −
+                              (λ ,λ        )   ∼                λ+
+                            Fe(p,q)            = S(Cp ⊗ Cq ) ⊗ F(p)    λ−
+                                                                    ⊗ F(q)
+
+Our see-saw pair implies (see (3.15)):
+       h                                          i h                                        i
+           (µ+ ,µ− )      (ν + ,ν − ) e (λ+ ,λ− )      (λ+ ,λ− )    (µ+ ,µ− )    (ν + ,ν − )
+        Fe  (p,q)    ⊗ Fe  (p,q)     ,F    (p,q)   = F           ,F
+                                                                (n+m)         ⊗F
+                                                                            (n)            (m) .
+
+Using the fact that we are in the stable range:
+     h                                        i
+        (µ+ ,µ− )     (ν + ,ν − ) e (λ+ ,λ− )
+      Fe(p,q)     ⊗ Fe(p,q)      , F(p,q)
+        h                                                                                                i
+                                µ+        µ−                       ν+       ν−                    λ+     λ−
+     = S(Cp ⊗ Cq ) ⊗ F(p)           ⊗ F(q)     ⊗ S(Cp ⊗ Cq ) ⊗ F(p)    ⊗ F(q)    , S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+        h                                                               i
+                              µ+       µ−       ν+    ν−     λ+     λ−
+     = S(Cp ⊗ Cq ) ⊗ F(p)          ⊗ F(q)   ⊗ F(p) ⊗ F(q) , F(p) ⊗ F(q)   .
+
+Next combine the above decomposition with (see (3.12)):
+                                      M
+                        S(Cp ⊗ Cq ) ∼
+                                    =      δ
+                                         F(p)     δ
+                                              ⊗ F(q)
+18                  ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+where the sum is over all non-negative integer partitions δ with at most min(p, q)
+parts. We then obtain:
+                          h                                     i
+                             (λ+ ,λ− ) (µ+ ,µ− )    (ν + ,ν − )
+                            F(n+m) , F(n)        ⊗ F(m)
+         hL                 +               +                                  i
+                 δ      δ          µ      µ−         ν            ν−      λ+     λ−
+       =      δ F(p) ⊗ F(q) ⊗ F(p) ⊗ F(q)        ⊗ F(p)   ⊗ F(q)       , F(p) ⊗ F(q)   .
+We combine this fact with the following two tensor product decompositions:
+      µ+          ∼ L cγ + + F γ                              L γ−
+                           +       +
+            ν+                                µ−     ν−  ∼               γ−
+    F(p) ⊗ F(p)   =       µ ν    (p)  and F(q)   ⊗ F(q)  =      cµ− ν − F(q)
+(where γ + and γ − have at most p and q parts respectively) and then tensor the
+                   δ      δ
+constituents with F(p) ⊗ F(q) ,
+           γ +
+                  δ           ∼ L λ+ λ+              γ     −
+                                                            δ          ∼   L     −       −
+          F(p) ⊗ F(p)         =  cγ + δ F(p)    and F(q) ⊗ F(q)        =       cλγ − δ F(q)
+                                                                                        λ
+
+
+to obtain the result.
+
+4.2.2. On × Om ⊂ On+m . We consider the following see-saw pair and its complex-
+ificiation:
+
+
+    On+m (R)              −       sp2k (R)            Complexified    On+m       −        sp2k
+        ∪                            ∩                                  ∪                   ∩
+ On (R) × Om (R)          − sp2k (R) ⊕ sp2k (R)                      On × Om     −     sp2k ⊕ sp2k
+
+     Regarding the dual pair (On+m , sp2k ), Theorem 3.2 gives the decomposition:
+                                       M λ
+                       P Cn+m ⊗ Ck ∼    =      E(n+m) ⊗ Eeλ
+                                                           (2k)
+
+where the sum is over non-negative integer partitions λ such that ℓ(λ) ≤ k and
+(λ′ )1 + (λ′ )2 ≤ n + m. Regarding the dual pair (On × Om , sp2k ⊕ sp2k ), Theorem
+3.2 gives the decomposition:
+                                  M µ                                 
+          P Cn ⊗ Ck ⊕ Cm ⊗ Ck ∼   =                ν
+                                         E(n) ⊗ E(m)   ⊗ E eµ ⊗ E
+                                                             (2k)
+                                                                    eν
+                                                                     (2k)
+
+where the sum is over all non-negative integer partitions µ and ν such that ℓ(µ) ≤ k,
+ℓ(ν) ≤ k, (µ′ )1 + (µ′ )2 ≤ n and (ν ′ )1 + (ν ′ )2 ≤ m.
+   We assume that we are in the stable range: min(n, m) ≥ 2k, so that as GLk
+representations (see Theorem 3.2):
+                 eµ ∼
+                 E          2 k     µ                   eν ∼       2 k     ν
+                  (2k) = S(S C ) ⊗ F(k)         and     E(2k) = S(S C ) ⊗ F(k) .
+
+Note that min(n, m) ≥ 2k implies that n + m ≥ 2k, so that (see Theorem 3.2):
+                                      eλ ∼
+                                      E          2 k     λ
+                                       (2k) = S(S C ) ⊗ F(k)
+
+     Our see-saw pair implies (see (3.15)):
+                  h                       i h                    i
+                    eµ ⊗ E
+                    E       eν , E eλ      = E λ
+                                                    , E µ
+                                                           ⊗ F ν
+                      (2k)    (2k)   (2k)     (n+m)    (n)    (m) .
+
+Using the fact that we are in the stable range:
+h                         i          h                                                    i
+    eµ ⊗ E
+    E      e(2k)
+            ν     e(2k)
+                 ,E λ
+                                 =  S(S 2Ck ) ⊗ F(k)
+                                                  µ
+                                                      ⊗ S(S 2Ck ) ⊗ F(k)
+                                                                      ν
+                                                                           , S(S 2Ck ) ⊗ F(k)
+                                                                                          λ
+      (2k)
+                                  h                               i
+                                 = S(S 2Ck ) ⊗ F(k)
+                                                µ      ν
+                                                    ⊗ F(k)    λ
+                                                           , F(k)   .
+                                         STABLE BRANCHING RULES                                          19
+
+
+ Next combine with the well-known multiplicity-free decomposition (see for in-
+stance, Theorem 3.1 of [Ho4] on page 32):
+                                           M
+                              S(S 2 Ck ) ∼
+                                         =    2δ
+                                             F(k)
+where the sum is over all non-negative integer partitions δ with at most k parts.
+We then obtain:
+                                    "           !                   #
+           h                     i     M
+              λ        µ      ν              2δ       µ      ν   λ
+             E(n+m) , E(n) ⊗ E(m) =        F(k) ⊗ F(k) ⊗ F(k) , F(k) .
+                                                          δ
+
+Combine this fact with the following two tensor product decompositions:
+         µ      ν    ∼   L γ γ                γ      2δ  ∼  L λ       λ
+       F(k) ⊗ F(k)   =      cµ ν F(k) and F(k)   ⊗ F(k)  =     cγ 2δ F(k)
+(where γ is a non-negative integer partition with at most k parts) and the result
+follows.
+
+4.2.3. Sp2n × Sp2m ⊂ Sp2(n+m) . We consider the following see-saw pair and its
+complexificiation:
+
+
+       Sp(n + m)   −                    so∗2k        Complexified    Sp2(n+m)       −      so2k
+           ∪                              ∩                              ∪                   ∩
+     Sp(n) × Sp(m) −                so∗2k ⊕ so∗2k                   Sp2n × Sp2m     −   so2k ⊕ so2k
+
+     Regarding the dual pair (Sp2(n+m) , so2k ), Theorem 3.2 gives the decomposition:
+                                      M
+                     P C2(n+m) ⊗ Ck ∼     =        λ
+                                                 V(2(n+m)) ⊗ Ve(2k)
+                                                                λ
+
+
+where the sum is over non-negative integer partitions λ such that
+ℓ(λ) ≤ min(n+ m, k). Regarding the dual pair (Sp2n × Sp2m , so2k ⊕ so2k ), Theorem
+3.2 gives the decomposition:
+                                M µ                                    
+        P C2n ⊗ Ck ⊕ C2m ⊗ Ck ∼  =                ν
+                                        V(2n) ⊗ V(2m)  ⊗ Ve(2k)
+                                                              µ
+                                                                  ⊗ Ve(2k)
+                                                                       ν
+
+
+where the sum is over all non-negative integer partitions µ and ν such that ℓ(µ) ≤
+min(n, k), ℓ(ν) ≤ min(n, k).
+   We assume that we are in the stable range: min(n, m) ≥ k, so that as GLk
+representations (see Theorem 3.2):
+                   Ve(2k)
+                      µ   ∼              µ
+                          = S(∧2 Ck ) ⊗ F(k)           and     Ve(2k)
+                                                                  ν   ∼
+                                                                      = S(∧2 Ck ) ⊗ F(k)
+                                                                                     ν
+                                                                                         .
+Note that min(n, m) ≥ k implies that n + m ≥ k, so that (see Theorem 3.2):
+                                             Ve(2k)
+                                                λ   ∼
+                                                    = S(∧2 Ck ) ⊗ F(k)
+                                                                   λ
+
+
+Our see-saw pair implies (see (3.15)):
+                  h                         i h                     i
+                   Ve(2k)
+                      µ
+                          ⊗ Ve(2k)
+                               ν
+                                   , Ve(2k)
+                                        λ        λ
+                                             = V(n+m)     µ
+                                                      , V(n)     ν
+                                                             ⊗ V(m)   .
+Using the fact that we are in the stable range:
+ h                              i       h                                                        i
+     Ve(2k)
+        µ
+            ⊗ Ve(2k)
+                 ν
+                     , Ve(2k)
+                          λ
+                                    =      S(∧2 Ck ) ⊗ F(k)
+                                                         µ
+                                                             ⊗ S(∧2 Ck ) ⊗ F(k)
+                                                                             ν
+                                                                                  , S(∧2 Ck ) ⊗ F(k)
+                                                                                                 λ
+
+                                        h                                i
+                                    =     S(∧2 Ck ) ⊗ F(k)
+                                                       µ      ν
+                                                           ⊗ F(k)    λ
+                                                                  , F(k)   .
+20                ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+ Next combine with the well-known multiplicity-free decomposition (see for in-
+stance, Theorem 3.8.1 of [Ho4] on page 44):
+                                          M (2δ)′
+                              S(∧2 Ck ) ∼
+                                        =   F(k)
+
+where the sum is over all non-negative integer partitions δ such that (2δ)′ has at
+most k parts. We then obtain:
+                                     "           !                      #
+        h                         i     M (2δ)′
+           λ           µ       ν                        µ      ν     λ
+         V(2(n+m)) , V(2n) ⊗ V(2m) =        F(k)    ⊗ F(k) ⊗ F(k) , F(k) .
+                                                  δ
+
+Combine this fact with the following two tensor product decompositions:
+       µ      ν    ∼   L γ γ                γ      (2δ)′ ∼  L λ         λ
+     F(k) ⊗ F(k)   =      cµ ν F(k) and F(k)   ⊗ F(k)    =    cγ (2δ)′ F(k)
+
+(where γ is a non-negative integer partition with at most k parts) and the result
+follows.
+
+4.3. Proofs of the Polarization Branching Rules.
+
+4.3.1. GLn ⊂ O2n . We consider the following see-saw pair and its complexificia-
+tion:
+
+                  O2n (R)   − sp2k (R)         Complexified     O2n   − sp2k
+                     ∪           ∩                               ∪        ∩
+                   U (n)    −   uk,k                            GLn   − glk,k
+
+     Regarding the dual pair (O2n , sp2k ), Theorem 3.2 gives the decomposition:
+                                         M λ
+                         P C2n ⊗ Ck ∼     =             eλ
+                                                E(2n) ⊗ E (2k)
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤ k and
+(λ′ )1 + (λ′ )2 ≤ 2n. Since the standard O2n representation C2n ≃ Cn ⊕ (Cn )∗ as
+a GLn representation, regarding the dual pair (GLn , glk,k ), Theorem 3.2 gives the
+decomposition:
+                                         M (µ+ ,µ− )          (µ+ ,µ− )
+                P Cn ⊗ Ck ⊗ (Cn ) ⊗ Ck ∼
+                                   ∗
+                                          =     F         ⊗ Fe(n)         (k,k)
+
+where the sum is over non-negative integer partitions µ+ and µ− with at most k
+parts such that ℓ(µ+ ) + ℓ(µ− ) ≤ n.
+   We assume that we are in the stable range: n ≥ 2k, so that as a GLk × GLk
+representation (see Theorem 3.2):
+                            +   −                               +     −
+                          (µ ,µ     )   ∼
+                        Fe(k,k)                          µ      µ
+                                        = S(Ck ⊗ Ck ) ⊗ F(k) ⊗ F(k) .
+Note that n ≥ 2k implies that n ≥ k, so that as GLk representations (see Theorem
+3.2):
+                            Eeλ ∼ = S(S 2 Ck ) ⊗ F λ
+                                        (2k)                   (k)
+
+Our see-saw pair implies (see (3.15)):
+                     h                 i h                   i
+                        (µ+ ,µ− ) e λ              (µ+ ,µ− )
+                      Fe(k,k) , E          λ
+                                   (2k) = E(2n) , F(n)         .
+                                STABLE BRANCHING RULES                                21
+
+
+Using the fact that we are in the stable range:
+       h                  i    h                                                  i
+          (µ+ ,µ− ) e λ                            µ+      µ−
+        Fe(k,k) , E  (2k)   =   S(C k
+                                      ⊗ C k
+                                            ) ⊗  F(k) ⊗  F(k) , S(S  2 k
+                                                                      C  ) ⊗ F λ
+                                                                              (k)
+                               h                +       −
+                                                                 i
+                                               µ       µ
+                            = S(∧2 Ck ) ⊗ F(k) ⊗ F(k) , F(k)  λ
+                                                                   .
+
+Note that in the above we used the fact that as a GLk -representation,
+⊗ 2 Ck ∼
+       = S 2 Ck ⊕ ∧2 Ck .
+   Next combine with the well-known multiplicity-free decomposition:
+                                         M (2δ)′
+                             S(∧2 Ck ) ∼
+                                       =    F(k)
+
+where the sum is over all non-negative integer partitions δ such that (2δ)′ has at
+most k parts. We then obtain:
+                                     "         !                     #
+            h                    i     M (2δ)′
+               λ       (µ+ ,µ− )                    µ+     µ−     λ
+              E(2n) , F(n)         =    F(k)     ⊗ F(k) ⊗ F(k) , F(k) .
+                                                δ
+
+Combine this fact with the following two tensor product decompositions:
+     µ+
+   F(k)      µ−
+        ⊗ F(k)    ∼ L cγ + − F γ
+                  =                   and F(k)γ     (2δ)′
+                                                 ⊗ F(k)    ∼
+                                                           =
+                                                             L λ          λ
+                                                                cγ (2δ)′ F(k)
+                          µ µ    (k)
+
+(where γ is a non-negative integer partition with at most k parts) and the result
+follows.
+
+4.3.2. GLn ⊂ Sp2n . We consider the following see-saw pair and its complexificia-
+tion:
+
+                    Sp(n) − so∗2k              Complexified   Sp2n   −       so2k
+                      ∪      ∩                                 ∪              ∩
+                    U (n) − uk,k                              GLn    −       glk,k
+
+   Regarding the dual pair (Sp2n , so2k ), Theorem 3.2 gives the decomposition:
+                                       M λ
+                        P C2n ⊗ Ck ∼     =    V(2n) ⊗ Ve(2k)
+                                                         λ
+
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤
+min(n, k). Since the standard Sp2n representation C2n ≃ Cn ⊕ (Cn )∗ as a GLn
+representation, regarding the dual pair (GLn , glk,k ), Theorem 3.2 gives the decom-
+position:
+                                          M (µ+ ,µ− )           (µ+ ,µ− )
+                                 ∗
+              P Cn ⊗ Ck ⊗ (Cn ) ⊗ Ck =    ∼      F          ⊗ Fe
+                                                              (n)             (k,k)
+                                                                     +
+where the sum is over non-negative integer partitions µ and µ− with at most k
+parts such that ℓ(µ+ ) + ℓ(µ− ) ≤ n.
+   We assume that we are in the stable range: n ≥ 2k, so that as GLk × GLk
+representations (see Theorem 3.2):
+                            +   −                               +        −
+                          (µ ,µ     )   ∼
+                        Fe(k,k)                          µ      µ
+                                        = S(Ck ⊗ Ck ) ⊗ F(k) ⊗ F(k) .
+Note that n ≥ 2k implies that n ≥ k, so that as a GLk representation (see Theorem
+3.2):
+                             Ve λ ∼
+                                  = S(∧2 Ck ) ⊗ F λ
+                                        (2k)                   (k)
+22                ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+Our see-saw pair implies (see (3.15)):
+                      h                 i h                   i
+                         (µ+ ,µ− )                  (µ+ ,µ− )
+                       Fe(k,k) , Ve(2k)
+                                    λ        λ
+                                         = V(2n) , F(n)         .
+
+Using the fact that we are in the stable range:
+       h                  i    h                                                  i
+          (µ+ ,µ− ) e λ                            µ+      µ−
+        Fe(k,k) , E  (2k)   =   S(C k
+                                      ⊗ C k
+                                            ) ⊗  F(k) ⊗  F(k) , S(∧  2 k
+                                                                      C  ) ⊗ F λ
+                                                                              (k)
+                               h                +       −
+                                                                 i
+                                               µ       µ
+                            = S(S 2 Ck ) ⊗ F(k)    ⊗ F(k)     λ
+                                                          , F(k)   .
+
+   Note that in the above we used the fact that as a GLk -representation,
+⊗ 2 Ck ∼
+       = S 2 Ck ⊕ ∧2 Ck .
+   Next combine with the well-known multiplicity-free decomposition:
+                                           M
+                              S(S 2 Ck ) ∼
+                                         =     2δ
+                                             F(k)
+where the sum is over all non-negative integer partitions δ with at most k parts.
+We then obtain:
+                                      "       !                    #
+             h                    i     M
+                 λ      (µ+ ,µ− )          2δ     µ+      µ−    λ
+               V(2n) , F(n)         =     F(k) ⊗ F(k) ⊗ F(k) , F(k) .
+                                            δ
+
+Combine this fact with the following two tensor product decompositions:
+       µ+      µ−   ∼   L γ        γ            γ     2δ   ∼  L λ       λ
+     F(k) ⊗ F(k)    =      cµ+ µ− F(k) and F(k)    ⊗ F(k)  =    cγ 2δ F(k)
+(where γ is a non-negative integer partition with at most k parts) and the result
+follows.
+
+4.4. Proofs of the Bilinear Form Branching Rules.
+
+4.4.1. On ⊂ GLn . We consider the following see-saw pair and its complexificiation:
+
+              GLn (R) −       GLp+q (R)         Complexified   GLn   −     glp,q
+                ∪                 ∩                             ∪           ∩
+              On (R) −       sp2(p+q) (R)                      On    −   sp2(p+q)
+
+     Regarding the dual pair (GLn , glp,q ), Theorem 3.2 gives the decomposition:
+                                             M (λ+ ,λ− )        (λ+ ,λ− )
+                P Cn ⊗ Cp ⊗ (Cn ) ⊗ Cq ∼
+                                   ∗
+                                              =    F(n)     ⊗ Fe(p,q)
+
+where the sum is over non-negative integer partitions λ+ and λ− with at most p
+and q parts respectively and such that ℓ(λ+ ) + ℓ(λ− ) ≤ n. Noting that Cn ≃ (Cn )∗
+as an On representation, regarding the dual pair (On , sp2(p+q) ), Theorem 3.2 gives
+the decomposition:
+                                     M λ
+                       P Cn ⊗ Cp+q ∼  =      E(n) ⊗ Eeλ
+                                                       (2(p+q))
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤ p + q
+and (λ′ )1 + (λ′ )2 ≤ n.
+   We assume that we are in the stable range: n ≥ 2(p + q), so that as GLp+q
+representations (see Theorem 3.2):
+                           eµ
+                           E         ∼    2 p+q      µ
+                            (2(p+q)) = S(S C    ) ⊗ F(p+q) .
+                               STABLE BRANCHING RULES                                 23
+
+
+Note that n ≥ 2(p + q) implies that n ≥ p + q, so that as GLp × GLq representations
+(see Theorem 3.2):
+                           +   −
+                         (λ ,λ     )   ∼                λ+
+                       Fe(p,q)         = S(Cp ⊗ Cq ) ⊗ F(p)    λ−
+                                                            ⊗ F(q) .
+  Our see-saw pair implies (see (3.15):
+                    h                 +  −
+                                           i h    +  −
+                                                               i
+                      eµ
+                      E         , e (λ ,λ ) = F (λ ,λ ) , E µ .
+                                  F
+                       (2(p+q))    (p,q)       (n)         (n)
+
+Using the fact that we are in the stable range:
+         h                 +  −
+                                 i
+          Eeµ          e(λ ,λ )
+            (2(p+q)) , F(p,q)
+            h                                                  i
+                                µ                    λ+     λ−
+         = S(S 2 Cp+q ) ⊗ F(p+q)   , S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+            h                                                                   i
+                                                µ                    λ+     λ−
+         = S(S 2 Cp ⊕ S 2 Cq ⊕ Cp ⊗ Cq ) ⊗ F(p+q)   , S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+            h                                             i
+                                        µ      λ+      λ−
+         = S(S 2 Cp ) ⊗ S(S 2 Cq ) ⊗ F(p+q) , F(p) ⊗ F(q)
+  Next we combine the decompositions:
+                                 M µ
+                          µ
+                        F(p+q) ∼
+                               =           α
+                                     cα β F(p)    β
+                                               ⊗ F(q) ,
+with the multiplicity-free decompositions:
+                            M 2γ                                          M
+               S(S 2 Cp ) ∼
+                          =    F(p)    and                 S(S 2 Cq ) ∼
+                                                                      =        2δ
+                                                                              F(q)
+where the sums are over all non-negative integer partitions γ and δ with at most p
+and q parts respectively. We then obtain:
+h                  i hM        M         M                                      i
+  (λ+ ,λ− )    µ           2γ                                              λ+     λ−
+ F(n)       , E(n)  =     F(p)  ⊗       2δ
+                                      F(q)  ⊗       cµα β F(p)
+                                                           α      β
+                                                               ⊗ F(q)   , F(p) ⊗ F(q)   .
+Combine this fact with the following two tensor product decompositions:
+        α       2γ  ∼   L λ+ λ+                β     2δ  ∼   L λ− λ−
+      F(p) ⊗ F(p)   =      cα 2γ F(p) and F(q)   ⊗ F(q)  =     cβ 2δ F(q)
+and the result follows.
+
+4.4.2. Sp2n ⊂ GL2n . We consider the following see-saw pair and its complexifici-
+ation:
+
+                U2n  −        up,q          Complexified   GL2n     −   glp,q
+                 ∪              ∩                           ∪            ∩
+               Sp(n) −      so∗2(p+q)                      Sp2n     − so2(p+q)
+
+  Regarding the dual pair (GL2n , glp,q ), Theorem 3.2 gives the decomposition:
+                              ∗          M
+                                                   (λ+ ,λ− )     (λ+ ,λ− )
+           P C2n ⊗ Cp ⊗ C2n ⊗ Cq ∼          =    F(2n)       ⊗ Fe(p,q)
+where the sum is over non-negative integer partitions λ+ and λ− with at most p and
+q parts respectively and such that ℓ(λ+ ) + ℓ(λ− ) ≤ 2n. Noting that (C2n )∗ ≃ C2n
+as Sp2n modules, regarding the dual pair (Sp2n , so2(p+q) ), Theorem 3.2 gives the
+decomposition:
+                                      M λ
+                      P C2n ⊗ Cp+q ∼  =      V(2n) ⊗ Ve(2(p+q))
+                                                        λ
+
+where the sum is over all non-negative integer partitions λ such that ℓ(λ) ≤
+min(2n, p + q).
+24                     ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+   We assume that we are in the stable range: n ≥ p + q, so that as GLp+q
+representations (see Theorem 3.2):
+                                 Ve(2(p+q))
+                                    µ       ∼                µ
+                                            = S(∧2 Cp+q ) ⊗ F(p+q)
+Note that n ≥ p + q implies that 2n ≥ p + q, so that as GLp × GLq representations
+(see Theorem 3.2):
+                                 +   −
+                                (λ ,λ    )   ∼                λ+
+                              Fe(p,q)        = S(Cp ⊗ Cq ) ⊗ F(p)    λ−
+                                                                  ⊗ F(q)
+     Our see-saw pair implies (see (3.15)):
+                       h                         i h                   i
+                                       (λ+ ,λ− )     (λ+ ,λ− )
+                        Ve(2(p+q))
+                           µ
+                                   , Fe(p,q)      = F(2n)          µ
+                                                               , V(2n)   .
+Using the fact that we are in the stable range:
+         h                          i
+                          (λ+ ,λ− )
+           Ve(2(p+q))
+              µ
+                      , Fe(p,q)
+             h                                                    i
+                                   µ                    λ+     λ−
+         = S(∧2 Cp+q ) ⊗ F(p+q)       , S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+             h                                                                     i
+                                                   µ                    λ+     λ−
+         = S(∧2 Cp ⊕ ∧2 Cq ⊕ Cp ⊗ Cq ) ⊗ F(p+q)        , S(Cp ⊗ Cq ) ⊗ F(p) ⊗ F(q)
+             h                                               i
+                                           µ      λ+      λ−
+         = S(∧2 Cp ) ⊗ S(∧2 Cq ) ⊗ F(p+q)      , F(p) ⊗ F(q)
+     Next we combine the decompositions:
+                                    M µ
+                             µ
+                           F(p+q) ∼
+                                  =           α
+                                        cα β F(p)    β
+                                                  ⊗ F(q) ,
+with the multiplicity-free decompositions:
+                          M (2γ)′                                         M    (2δ)′
+            S(∧2 Cp ) ∼=      F(p)     and                  S(∧2 Cq ) ∼
+                                                                      =       F(q) ,
+where the sums are over all non-negative integer partitions γ and δ such that (2γ)′
+and (2δ)′ have at most p and q parts respectively. We then obtain:
+h                        i hM         M         M                                  i
+     (λ+ ,λ− )       µ          (2γ)′       (2δ)′                             λ+     λ−
+    F(2n)        , V(2n)  =    F(p)    ⊗   F(q)    ⊗   cµα β F(p)
+                                                              α      β
+                                                                  ⊗ F(q)   , F(p) ⊗ F(q)   .
+
+Combine with the following two tensor product decompositions:
+   α      (2γ)′ ∼    L λ+         λ+        β      (2δ)′ ∼   L λ−       λ−
+  F(p) ⊗ F(p)   =       cα (2γ)′ F(p) and F(q) ⊗ F(q)    =    cβ (2δ)′ F(q)
+and the result follows.
+
+                                               References
+[Ab]  J. Abramsky, Ph. D. thesis, The University of Southampton, England, 1969.
+[BKW] G. Black, R. King, B. Wybourne, Kronecker products for compact semisimple Lie groups,
+      J. Phys. A 16 (1983), no. 8, 1555 – 1589.
+[CGR] Y. Chen, A. Garsia and J. Remmel, Algorithms for plethysm in combinatorics and algebra,
+      Contemp. Math. 24, AMS, Providence, R.I. (1984), 109 – 153.
+[EHW] T. Enright, R. Howe, and N. Wallach, Classification of unitary highest weight modules, in
+      Representation Theory of Reductive Groups (P. Trombi, Ed.), pp. 97 – 144, Birkhäuser,
+      Boston, 1983.
+[EW1] T. Enright and J. Willenbring, Hilbert series, Howe duality, and branching rules, Proc.
+      Nat. Acad. Sciences 100 (2003), No.2, 434 – 437.
+[EW2] T. Enright and J. Willenbring, Hilbert series, Howe duality, and branching rules for clas-
+      sical groups, Ann. of Math. 159 (2004), No. 1, 337 – 375.
+[Fu]  W. Fulton, Young Tableaux, Cambridge University Press, Cambridge, UK, 1997.
+[GW] R. Goodman and N. Wallach, Representations and Invariants of the Classical Groups,
+      Cambridge U. Press, 1998.
+                                STABLE BRANCHING RULES                                       25
+
+
+[GK]  K. Gross and R. Kunze Finite-dimensional induction and new results on invariants for
+      classical groups, I, Amer. J. Math. 106 (1984), 893 – 974.
+[HC] Harish-Chandra, Representations of semisimple Lie groups IV/V/VI, Amer J. Math. 77
+      (1955), 743 – 777; Trans. Amer. Math. Soc. 78 (1956), 1 – 41; Amer J. Math. 78 (1956),
+      564 – 628.
+[Ho1] R. Howe, Reciprocity laws in the theory of dual pairs, in Representation Theory of Re-
+      ductive Groups, Prog. in Math. 40, P. Trombi, ed., Birkhaüser, Boston (1983), 159 –
+      175.
+[Ho2] R. Howe, Remarks on classical invariant theory, Trans. Amer. Math. Soc. 313 (1989), 539
+      – 570.
+[Ho3] R. Howe, Transcending classical invariant theory, J. Amer. Math. Soc. 2 (1989), 535 –
+      552.
+[Ho4] R. Howe, Perspectives on Invariant Theory, The Schur Lectures, I. Piatetski-Shapiro and
+      S. Gelbart (eds.), Israel Mathematical Conference Proceedings, 1995, 1 – 182.
+[HTW] R. Howe, E-C. Tan and J. Willenbring, Reciprocity algebras and branching for classical
+      symmetric pairs, in preparation.
+[JK]  G. James and A. Kerber, The Representation Theory of the Symmetric Group, Enc. of
+      Math. and App. 16, Addison-Wesley, Reading, MA., 1981.
+[KV] M. Kashiwara and M. Vergne, On the Segal-Shale-Weil representations and harmonic
+      polynomials, Inv. Math. 44 (1978), 1 – 47.
+[Ki1] R. King, Generalized Young tableaux and the general linear group, J. Math. Phys. 11
+      (1970), 280 – 293.
+[Ki2] R. King, Modification rules and products of irreducible representations for the unitary,
+      orthogonal, and symplectic groups, J. Math. Phys. 12 (1971), 1588 – 1598.
+[Ki3] R. King, Branching rules for classical Lie groups using tensor and spinor methods, J.
+      Phys. A 8 (1975), 429 – 449.
+[Ki4] R. King, S-Functions and characters of Lie algebras and superalgebras, in Invariant Theory
+      and Tableaux (D. Stanton, Ed.), IMA Vol. Math. Appl. 19, Springer, New York, 1990, 227
+      – 261.
+[KTW] R. King, F. Toumazet and B. G. Wybourne, Products and symmetrized powers of irre-
+      ducible representations of SO ∗ (2n), J. Phys. A 31 (1998), 6691 – 6705.
+[KW] R. King and B. Wybourne, Holomorphic discrete series and harmonic series unitary
+      representations of non-compact Lie groups: Sp(2n, R), U (p, q) and SO ∗ (2n), J. Phys. A
+      18 (1985), 3113 – 3139.
+[Kn1] A. Knapp, Representation Theory of Semisimple Groups: An Overview Based on Exam-
+      ples, Princeton University Press, Princeton, NJ, 1986.
+[Kn2] A. Knapp, Branching theorems for compact symmetric spaces, Represent. Theory 5 (2001),
+      404 – 436.
+[Kn3] A. Knapp, Lie Groups Beyond An Introduction, Second edition, Progress in Mathematics
+      140, Birkhuser Boston, Inc., Boston, MA, 2002.
+[Kn4] A. Knapp, Geometric interpretations of two branching theorems of D. E. Littlewood., J.
+      Algebra 270 (2003), No. 2, 728 – 754.
+[Ko]  On the decomposition of tensor products of the representations of the classical groups,
+      Adv. Math. 74 (1989), No. 1, 57 – 86.
+[KT] K. Koike and I. Terada, Young diagrammatic methods for the restriction of representations
+      of complex classical Lie groups to reductive subgroups of maximal rank, Adv. Math. 79
+      (1990), No. 1, 104 – 135.
+[Ku] S. Kudla, Seesaw dual reductive pairs, in Automorphic Forms of Several Variables,
+      Taniguchi Symposium, Katata, 1983, Birkhäuser, Boston (1983), 244 – 268.
+[Li1] D. Littlewood, On invariant theory under restricted groups, Philos. Trans. Roy. Soc. Lon-
+      don. Ser. A., 239 (1944), 387 – 417.
+[Li2] D. Littlewood, Theory of Group Characters, Clarendon Press, Oxford, 1945.
+[Li3] D. Littlewood, Products and plethysms of characters with orthogonal, symplectic and sym-
+      metric groups, Can. Jour. Math. 10 (1958), 17 – 32.
+[Ma] I. Macdonald, Symmetric Functions and Hall Polynomials, Clarendon Press, Oxford, 1979.
+[Ne]  M. Newell, Modification rules for the orthogonal and symplectic groups, Proc. Roy. Irish
+      Acad. Sect. A. 54 (1951), 153 – 163.
+26                 ROGER HOWE, ENG-CHYE TAN, JEB F. WILLENBRING
+
+
+[OZ]  B. Orsted and G. Zhang, Tensor products of analytic continuations of holomorphic discrete
+      series, Can. J. Math. 49 (1997), No. 6, 1224 – 1241.
+[Pr]  R. Proctor, Young tableaux, Gelfand patterns and branching rules for classical groups, J.
+      Alg., Vol. 164 (1994), 299 – 360.
+[Re]  J. Repka, Tensor product of holomorphic discrete series representations, Can. J. Math.
+      31, No. 4 (1979), 863 – 844.
+[RWB] D. Rowe, B. Wybourne and P. Butler, Unitary representations, branching rules and matrix
+      elements for the non-compact symplectic group, J. Phys. A 18 (1985), 939 – 953.
+[Sa]  B. Sagan, The Symmetric Group, Wadsworth and Cole, Pacific Grove, CA, 1991.
+[Sc1] W. Schmid, Die Randwerte holomorpher Funktionen auf hermitesch symmetrischen
+      Räumen, Inv. Math. 9 (1969), 61 – 80.
+[Sc2] W. Schmid, On the characters of the discrete series (the Hermitian symmetric case), Inv.
+      Math. 30 (1975), 47 – 199.
+[St1] R. Stanley, The stable behaviour of some characters of SL(n, C), Lin. and Mult. Alg., Vol.
+      16 (1984), 3 – 27.
+[St2] R. Stanley, Enumerative Combinatorics, Vol. 1, Wadsworth and Cole, Monterey, CA, 1986.
+[St3] R. Stanley, Enumerative Combinatorics, Vol. 2, Cambridge University Press, Cambridge,
+      UK, 1999.
+[Su]  S. Sundaram, Tableaux in the representation theory of the classical Lie groups in Invariant
+      Theory and Tableaux (D. Stanton, Ed.), IMA Vol. Math. Appl. 19, Springer, New York,
+      1990, 191 – 225.
+[TTW] J-Y Thibon, F. Toumazet and B. Wybourne, Products and plethysms for the fundamental
+      harmonic series representations of U (p, q), J. Phys. A 30 (1997), 4851 – 4856.
+[We] H. Weyl, The Classical Groups, Princeton Univ. Press, Princeton, 1946.
+[Zh]  D. Zhelobenko, Compact Lie Groups and their Representations, Transl. of Math. Mono.
+      40, AMS, Providence, R.I., 1973.
+

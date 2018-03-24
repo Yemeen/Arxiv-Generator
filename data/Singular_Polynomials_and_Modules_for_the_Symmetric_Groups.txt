@@ -1,0 +1,1523 @@
+                                                   SINGULAR POLYNOMIALS AND MODULES FOR THE
+                                                               SYMMETRIC GROUPS
+arXiv:math/0501494v1 [math.RT] 27 Jan 2005
+
+
+
+
+                                                                                  CHARLES F. DUNKL
+
+
+                                                      Abstract. For certain negative rational numbers κ0 , called singular values,
+                                                      and associated with the symmetric group SN on N objects, there exist homo-
+                                                      geneous polynomials annihilated by each Dunkl operator when the parameter
+                                                      κ = κ0 . It was shown by de Jeu, Opdam and the author (Trans. Amer.
+                                                      Math. Soc. 346 (1994), 237-256) that the singular values are exactly the
+                                                      values − mn
+                                                                   with 2 ≤ n ≤ N , m = 1, 2, . . . and m     n
+                                                                                                                is not an integer. For
+                                                      each pair (m, n) satisfying these conditions there is a unique irreducible SN -
+                                                      module of singular polynomials for the singular value − m    n
+                                                                                                                     . The existence of
+                                                      these polynomials was previously established by the author (IMRN 2004, #67,
+                                                      3607-3635). The uniqueness is proven in the present paper. By using Mur-
+                                                      phy’s (J. Alg. 69(1981), 287-297) results on the eigenvalues of the Murphy
+                                                      elements, the problem of existence of singular polynomials is first restricted
+                                                      to the isotype τ (where τ is a partition of N corresponding to an irreducible
+                                                      representation of SN ) satisfying the condition that n/ gcd (m, n) divides τi + 1
+                                                      for 1 ≤ i < l; l is the length of τ , that is, τl > τl+1 = 0. Then by arguments
+                                                      involving the analysis of nonsymmetric Jack polynomials it is shown that the
+                                                      assumption τ2 ≥ n/ gcd (m, n) leads to a contradiction. This shows that the
+                                                      singular polynomials are exactly those already determined, and are of isotype
+                                                      τ , where τ2 = . . . = τl−1 = (n/ gcd (m, n)) − 1 ≥ τl .
+
+
+
+
+                                                                                   1. Introduction
+                                                The symmetric group SN on N letters acts on RN by permutation of coordinates.
+                                             The
+                                             Q alternating polynomial, also      called the discriminant, is defined by aN (x) =
+                                                                              N
+                                               1≤i<j≤N (xi − xj ) for  x ∈  R    and is a fundamental object associated to the
+                                             group. The Macdonald-Mehta-Selberg integral for SN is
+                                                                Z                           N
+                                                                                                 !       N
+                                                           −N/2               2κ         1X 2           Y    Γ (nκ + 1)
+                                                      (2π)            |aN (x)| exp −           xi dx =                  ,
+                                                                  R N                    2 i=1          n=2
+                                                                                                             Γ (κ + 1)
+                                             for κ ≥ 0. The right hand side is a meromorphic function of κ without zeroes and
+                                             with poles at κ = − m                                           m
+                                                                   n , for 2 ≤ n ≤ N, m = 1, 2, 3, . . . and n is not an integer. (For
+                                             an algebraic proof of the integral, see [5, Sect. 8.7].) Do these values have another
+                                             connection with the symmetric group? The purpose of this paper is to show that
+                                             for each pair (m, n) of natural numbers with 2 ≤ n ≤ N and m           n not an integer
+                                             there is a unique irreducible SN -module of homogeneous polynomials which have a
+
+                                                Date: January 26, 2005.
+                                                2000 Mathematics Subject Classification. Primary 20C30, 05E10; Secondary 16S32.
+                                                Key words and phrases. singular polynomials, Murphy elements, nonsymmetric Jack
+                                             polynomials.
+                                                During the preparation of this paper the author was partially supported by NSF grant DMS
+                                             0100539.
+                                                                                             1
+2                                   CHARLES F. DUNKL
+
+
+certain singularity property with respect to a commutative algebra of differential-
+difference operators. In a previous paper [2] the author established the existence of
+a space of such polynomials for each pair (m, n). This paper proves the uniqueness
+of the polynomials and the associated modules. By use of the Murphy elements one
+can find a link between the singular polynomials, the partition of N which labels
+the module and the nonsymmetric Jack polynomials (NSJP’s). This is the family
+of simultaneous eigenvectors of a commuting set {Ui (κ) : 1 ≤ i ≤ N } of operators
+(involving a parameter κ). The singular polynomials come from the specializations
+of certain of NSJP’s when κ takes the value − m       n . The algebra generated by the
+Ui (κ) is semisimple (that is, the set of NSJP’s forms a basis for all polynomials)
+for generic κ, but this property may be lost for some negative rational values. A
+part of the development is to show how to find limits of certain expressions in the
+NSJP’s as κ approaches − m    n.
+   Murphy [9] found the eigenvalues of the Murphy elements when restricted to any
+irreducible SN -module. In Section 2 we use his results to find a necessary condition
+on a partition to allow corresponding singular polynomials and also to prove a
+uniqueness result. The condition is this: suppose gcd (m, n) = 1 and there is an
+SN -module of singular polynomials corresponding to κ = − m            n,P and suppose the
+module is labeled by the partition τ (that is, τ = (τ1 , τ2 , . . .) with i≥1 τi = N and
+τ1 ≥ τ2 ≥ . . . ≥ 0) then n| (τi + 1) for 1 ≤ i < ℓ (τ ), where ℓ (τ ) = max {j : τj ≥ 1}).
+Section 3 develops the relevant results on NSJP’s. In Section 4 it is shown that the
+two-part partitions of the form (N − n, n) with n| (N − n + 1) can not give rise to
+singular polynomials. Section 5 completes the proof of the main result: if τ2 ≥ n
+then there can not be corresponding singular polynomials. This shows that the
+class of partitions, namely, τ with n| (τ1 + 1) and τ2 = τ3 = . . . = τℓ(τ )−1 = n − 1,
+appearing in [2] is exhaustive. In Section 6 there is a restatement of the main
+theorem and a discussion of the relation between singular polynomials and modules
+over the rational Cherednik algebra.
+   The group SN is the finite reflection group of type AN −1 and it acts by permuta-
+tion of coordinates. Let N0 denote {0, 1, 2, 3, . . .} (also N : = {1, 2, 3, . . .}, Z and Q
+denote the sets of integers and rational numbers respectively). For α ∈ NN          0 (called
+                               P                                                    Q
+a “composition”) let |α| = N          α
+                                  i=1 i  and  define  the  monomial     xα
+                                                                            to be     N    αi
+                                                                                      i=1 xi ;
+its degree is |α|. The length of a composition α is ℓ (α) = max {j : αj > 0}. Con-
+sider elements of SN as permutations on {1, 2, . . . , N }. Then, for x ∈ RN and
+w ∈ SN let (xw)i = xw(i) for 1 ≤ i ≤ N and extend this action to polynomials by
+(wf ) (x) = f (xw). This has the effect that monomials transform to monomials:
+w (xα ) = xwα where (wα)i = αw−1 (i) for α ∈ NN         0 . (Consider x as a row vector,
+α as a column vector, and w as a permutation matrix, with 1’s at the (w (j) , j)
+entries.) The reflections in SN are the transpositions interchanging xi and xj and
+are denoted by (i, j) for i 6= j.
+   In [1] the author constructed for each finite reflection group a parametrized com-
+mutative algebra of differential-difference operators. Let κ be a formal parameter,
+that is, Q (κ) is a transcendental extension of Q.
+
+                                                                          	
+Definition 1. The space of polynomials is P := spanQ(κ) xα : α ∈ NN      0   and for
+n ∈ N0 the  subspace of  homogeneous
+                                 	     polynomials of degree n is P n :=
+spanQ(κ) xα : α ∈ NN                                     N
+                      0 , |α| = n . For p ∈ P and α ∈ N0 let coef (p, α) denote the
+                                  P
+coefficient of xα in p (thus p = β coef (p, β) xβ ).
+                                 SINGULAR POLYNOMIALS                                        3
+
+
+   For the symmetric group SN the operators are defined as follows:
+
+Definition 2. For any polynomial f on RN and 1 ≤ i ≤ N let
+
+                                       ∂            X f (x) − (ij) f (x)
+                   Di (κ) f (x) =         f (x) + κ                      .
+                                      ∂xi                  xi − xj
+                                                   j6=i
+
+
+   It was shown in [1] that Di (κ) Dj (κ) = Dj (κ) Di (κ) for 1 ≤ i, j ≤ N and
+each Di (κ) maps Pn to Pn−1 for n ≥ 1. A specific numerical parameter value
+κ0 is said to be a singular value (associated with SN ) if there exists a nonzero
+polynomial p such that Di (κ0 ) p = 0 for 1 ≤ i ≤ N : such a p is called a singular
+polynomial. It was shown in [4] that the singular values are the numbers − m      n
+where n = 2, . . . , N, m ∈ N and m n ∈/ Z. Earlier, Opdam [10] showed that the
+SN -Bessel function J (x, y) considered as a function of the parameter κ has poles
+precisely at these numbers (for κ > 0 the Bessel function is!the entire solution
+                             PN         k               N
+                                                          P
+                                   (x)
+of the system of equations        Dj (κ) J (x, y) =          yjk J (x, y) , 1 ≤ k ≤
+                                j=1                             j=1
+N, J (0, y) = 1, J (xw, y) = J (x, yw) = J (x, y) for x, y ∈ CN ). Because the
+operators Di (κ) preserve homogeneity and have the SN -transformation property
+Di (κ) (i, j) = (i, j) Dj (κ), the set of singular polynomials for a specific singular
+value is a direct sum of irreducible SN -modules of homogeneous polynomials. The
+set of partitions of length ≤ N is denoted by NN,P  0        and consists of all λ ∈ NN 0 such
+that λi ≥ λi+1 for 1 ≤ i ≤ N − 1. When writing partitions it is customary to
+suppress
+        trailing zeros and to use exponents to indicate multiplicity, for example
+  5, 23 is the same as (5, 2, 2, 2, 0) ∈ N5,P
+                                           0 . (The exponent notation is also used for
+compositions.)
+    The irreducible representations of SN are labeled by partitions τ of N (that is,
+τ ∈ NN,P
+       0    and |τ | = N ) and we say a polynomial f is of isotype τ if f is an element
+of an irreducible SN -submodule of Pn corresponding to τ . It was conjectured
+in [4] that the two-part representations (n − 1, N − n + 1) (with 2 (n − 1) ≥ N )
+give rise to singular polynomials for the singular values − m            n with gcd (m, n) <
+    n
+N −n+1   , and the  representations   (dn − 1, n − 1, . . . , n − 1, τl for d, n ∈ N give rise
+                                                                       )
+to singular polynomials for the singular values − m          n  with   gcd (m, n) = 1 (where
+l = ℓ (τ ) and N = (dn − 1) + (l − 2) (n − 1) + τl ). This construction is presented in
+[2] in terms of nonsymmetric Jack polynomials. In this paper we show that there are
+no other singular polynomials. By using Murphy’s techniques in his construction
+of the Young seminormal representations [9] we can show that the isotype τ of any
+irreducible module of singular polynomials for κ0 = − m         n (with gcd (m, n) = 1) must
+satisfy n| (τi + 1) for 1 ≤ i < ℓ (τ ). After that most of the work is to show that the
+assumption τ2 ≥ n leads to a contradiction. Note that the condition τ2 < n implies
+for three or more parts τi = n − 1 for 2 ≤ i < ℓ (τ ) (and τℓ(τ ) ≤ n − 1) and for two
+                         τ1 + 1
+parts that τ2 <                       = n for the singular value − τm        1
+                                                                           1 +1
+                                                                                . These are the
+                    gcd (m1 , τ1 + 1)
+restrictions described above.
+    The notation is almost the same as that in [2] except that the parameter has
+been incorporated. Key parts of the proofs depend on the behavior of polynomials
+as κ approaches a singular value κ0 . The commutative algebra of the operators
+4                                 CHARLES F. DUNKL
+
+
+defining the nonsymmetric Jack polynomials is generated by
+                                                  i−1
+                                                  X
+             Ui (κ) f (x) = Di (κ) xi f (x) − κ         (j, i) f (x) , 1 ≤ i ≤ N.
+                                                  j=1
+
+(this differs by the additive constant κ from the notation in [5, Ch.8]). The operators
+act in a triangular manner on monomials, as is explained below.
+Definition 3. For α ∈ NN         +                                       +
+                        0 , let α denote the unique partition such that α = wα
+                                N
+for some w ∈ SN . For α, β ∈ N0 the partial order α ≻ β (α dominates β) means
+                Pj        Pj
+that α 6= β and i=1 αi ≥ i=1 βi for 1 ≤ j ≤ N ; α ⊲ β means that |α| = |β| and
+either α+ ≻ β + or α+ = β + and α ≻ β. The notations α  β and α D β include
+the case α = β.
+   When acting on the monomial basis of Pn the operators Ui (κ) have on-diagonal
+coefficients involving the following rank function on NN
+                                                       0 . We denote the cardinality
+of a set E by #E.
+Definition 4. For α ∈ NN
+                       0 and 1 ≤ i ≤ N let
+
+               r (α, i) = # {j : αj > αi } + # {j : 1 ≤ j ≤ i, αj = αi } ,
+              ξi (α; κ) = (N − r (α, i)) κ + αi + 1.
+
+   Clearly for a fixed α ∈ NN      0 the values {r (α, i) : 1 ≤ i ≤ N } consist of all of
+{1, . . . , N }, are independent of trailing zeros (that is, if α′ ∈ NM        ′
+                                                                          0 , αi = αi for
+                       ′                                             ′
+1 ≤ i ≤ N and αi = 0 for N < i ≤ M then r (α, i) = r (α , i) for 1 ≤ i ≤ N ),
+and α ∈ NN,P    0   if and only if r (α, i) = i for all i (the latter property motivated
+the use of “1 ≤ j ≤ i” rather than “1 ≤ j < i” in the definition). Then (see [5,
+p.291]) Ui (κ) xα = ξi (α; κ) xα + qα,i (x) where qα,i (x) is a sum of terms ±κxβ with
+α ⊲ β. The nonsymmetric Jack polynomials are the simultaneous eigenvectors of
+{Ui (κ) : 1 ≤ i ≤ N } and they are well-defined for generic κ.
+
+                                   2. SN -modules
+    In this section we find necessary conditions on a partition τ of N for the existence
+of singular polynomials of isotype τ . Suppose f is a singular polynomial for some
+singular value κ0 . We may assume f is homogeneous because the operators Di (κ)
+are homogeneous and that f has rational coefficients (Di (κ0 ) is a rational operator).
+Any translate of f by SN is singular so spanQ {wf : w ∈ SN } is an SN -module of
+singular polynomials for κ0 . Suppose one of the irreducible components has isotype
+τ , for some partition τ with |τ | = N . This decomposition is a computation over
+Q (from the representation theory of SN ). Henceforth we restrict our attention to
+this module, denoted by M .
+    We turn to the application of Murphy’s results. For any given isotype he de-
+termined the eigenvalues nPand transformation properties
+                                                    o         of the eigenvectors of the
+                             i−1
+commuting operators          j=1 (i, j) : 2 ≤ i ≤ N   (Jucys-Murphy  elements). The re-
+sults have to be read in reverse in a certain sense.
+Proposition 1. Suppose f is a singular polynomial for κ = κ0 ∈ Q and 1 ≤ i ≤ N ,
+                        P
+then Ui (κ0 ) f = f + κ0 Nj=i+1 (i, j) f .
+                                SINGULAR POLYNOMIALS                                     5
+
+                                                                   P
+Proof. We have the commutation Di (κ) (xi f ) = xi Di (κ) f + f + κ j6=i (i, j) f .
+                                                                 P
+Now set κ = κ0 and note that Ui (κ0 ) f = Di (κ0 ) (xi f ) − κ0 j<i (i, j) f =
+    P
+−κ0 j<i (i, j) f .                                                              
+
+                                               P
+                                               N
+   Denote the Murphy elements ωi =                      (N + 1 − i, j) for 2 ≤ i ≤ N and
+                                            j=N −i+2
+let ω1 = 0 (as a transformation); then Ui (κ0 ) f = f + κ0 ωN +1−i f for f ∈ M . A
+standard Young tableau (SYT) of shape τ is a one-to-one
+                                                             assignment of the numbers 	
+{1, . . . , N } to the nodes of the Ferrers diagram (i, j) ∈ N2 : 1 ≤ i ≤ ℓ (τ ) , 1 ≤ j ≤ τi
+so that the entries increase in each row and in each column. The notation T (i, j)
+refers to the entry at row i, column j. There is an order on SYT’s of given shape
+(for details see [9, p.288]) and the maximum SYT in this order, denoted by T0 , is
+produced by entering the numbers 1, 2, . . . , N row by row (the first row is 1, . . . , τ1 ,
+the second is τ1 + 1, . . . , τ1 + τ2 and so forth).
+Definition 5. Let τ ∈ NN,P  0   with |τ | = N , and let Y (τ ) denote the set of SYT’s
+of shape τ . Suppose T ∈ Y (τ ) then let rw (i, T ) , cm (i, T ) , ηi (T ) := cm (i, T ) −
+rw (i, T ) denote the row, column and content, respectively of the node of T contain-
+ing i, for 1 ≤ i ≤ N .
+    (With this notation T (rw (i, T ) , cm (i, T )) = i.) Murphy constructed a basis
+{fT : T ∈ Y (τ )} for the irreducible representation of isotype τ such that ωi fT =
+ηi (T ) fT for each i and T (actually, this is an isomorphic image of the construction,
+which is in terms of specific polynomials, of minimal degree). The eigenvalues
+(η1 (T ) , . . . , ηN (T )) determine the SYT T uniquely thus there is a unique (up to
+scalar multiplication) basis {fT : T ∈ Y (τ )} for M with
+          Ui (κ0 ) fT = (1 + κ0 ηN +1−i (T )) fT , for 1 ≤ i ≤ N, T ∈ Y (τ ) .
+(The argument for uniqueness of T is in [9]: one can reconstruct T by adjoining
+boxes containing 2, 3, . . . , N to 1 by using the values η2 (T ) , . . . , ηN (T ); at any
+stage the locations at which one can adjoin a box to make a P           larger SYT have
+different contents.) We will show that fT0 is (a multiple of) xλ + β⊳λ Aβ xβ with
+coefficients Aβ ∈ Q and λ ∈ NN,P  0   with
+                                 s−1
+                                 X                      s−1
+                                                        X                s
+                                                                         X
+(2.1)            λN +1−i = −κ0         (τj + 1) , for         τj < i ≤         τj .
+                                 j=1                    j=1              j=1
+
+This implies that if κ0 = − m   n with gcd (m, n) = 1 then n| (τj + 1) for 1 ≤ j <
+ℓ (τ ) (the maximum value for s in the above formula). The proof relies on the
+triangularity properties of the Ui (κ0 ) with respect to the order ⊲.
+                                                                            	
+Definition 6. For each T ∈ Y (τ ) let CT = β ∈ NN      0 : coef (fT , β) 6= 0 . Let C be
+the set of α ∈ ∪T ∈Y (τ ) CT such that α is ⊲-maximal in some CT (that is, α, β ∈ CT
+and β D α implies β = α).
+Lemma 1. If α is a ⊲-maximal element of C then α is a partition.
+Proof. It suffices to show that for any β ∈ ∪T CT there exists a partition λ ∈ C
+with λ D β. Since M = spanQ {fT : T ∈ Y (τ )} is SN -invariant we see that for any
+w ∈ SN and β ∈ CT for some T there    exists T1 ∈ Y (τ ) such that wβ ∈ CT1 (note
+that wfT (x) = fT (xw) and w xβ = xwβ ). So ∪T CT is SN -invariant, in particular
+6                                     CHARLES F. DUNKL
+
+
+if β ∈ ∪T CT then β + ∈ ∪T CT . Thus there exists γ ∈ C such that γ D β + . Since
+C is finite the maximal elements α satisfy α D α+ , that is, α is a partition. 
+
+  The next step is to show that there is a unique maximal element in C determined
+by equation 2.1.
+Lemma 2. If T ∈ Y (τ ) satisfies ηs+1 (T ) ≤ ηs (T ) + 1 for 1 ≤ s < N then T = T0 .
+Proof. We have to show that the condition implies rw (s, T ) ≤ rw (s + 1, T ) for
+each s. Fix s and let T (i1 , j1 ) = s and T (i2 , j2 ) = s + 1 so that ηs (T ) − ηs+1 (T ) =
+(j1 − j2 )+(i2 − i1 ). We list the possibilities for these nodes in any SYT. If s and s+1
+are in the same row of T then i2 = i1 , j2 = j1 + 1 and ηs+1 (T ) = ηs (T )+ 1. If s and
+s+ 1 are in the same column of T then i2 = i1 + 1, j2 = j1 and ηs+1 (T ) = ηs (T )− 1.
+The condition i1 < i2 and j1 < j2 is impossible or else s < T (i2 , j1 ) < s + 1. Also
+the condition i1 > i2 and j1 > j2 is impossible or else s + 1 < T (i1 , j2 ) < s. If
+i1 < i2 and j1 > j2 then ηs (T ) − ηs+1 (T ) ≥ 2. The case i1 > i2 and j1 < j2 is
+ruled out by hypothesis because it implies ηs (T ) − ηs+1 (T ) ≤ −2.                        
+
+Theorem 1. Suppose λ is a ⊲-maximal element of C then λ is ⊲-maximal in CT0
+and is given by equation 2.1.
+Proof. By hypothesis λ is a partition and is ⊲-maximal in CT for some T ∈ Y (τ ).
+By the triangularity property of Ui (κ0 ) we have that
+                 coef ((1 + κ0 ηN +1−i (T )) fT , λ) = coef (Ui (κ0 ) fT , λ)
+                                                     = ξi (λ; κ0 ) coef (fT , λ) ,
+and ξi (λ; κ0 ) = (N − i) κ0 + λi + 1, for 1 ≤ i ≤ N . This gives the equations
+                          (N − i) κ0 + λi + 1 = 1 + κ0 ηN +1−i (T ) ,
+                                      λN +1−i = κ0 (ηi (T ) + 1 − i) .
+Since λ is a partition λN +1−i ≤ λN −i for 1 ≤ i < N and thus ηi (T ) + 1 − i ≥
+ηi+1 (T ) + 1 − (i + 1) (note that κ0 < 0). By Lemma 2 T = T0 . By definition
+of T0 for 1 ≤ i ≤ τ1 we have ηi (T0 ) = i − 1 thus      λP        = 0. In the range
+                                                            N +1−i 
+Ps−1                 Ps                                      s−1
+   j=1 τj + 1 ≤ i ≤    j=1 τj (row s of T0 ) ηi (T0 ) = i −  j=1 τj − s and λN +1−i =
+     P                         Ps−1
+          s−1
+−κ0       j=1 τj + s − 1 = −κ0      j=1 (τj + 1).                                   
+
+Corollary 1. There is a unique ⊲-maximal element λ of C given by equation 2.1,
+and n| (τj + 1) for 1 ≤ j < ℓ (τ ) (where κ0 = − m
+                                                 n and gcd (m, n) = 1).
+
+                                                                                     s−1
+                                                                                     P     τj + 1
+Proof. The uniqueness is now obvious. The equation λN +1−i = m                                    for
+                                                                                     j=1      n
+s−1
+P                s
+                 P
+      τj < i ≤         τj shows inductively that n| (τj + 1) for 1 ≤ j < ℓ (τ ); since the
+j=1              j=1
+maximum value of s is ℓ (τ ).                                                                      
+
+Corollary 2. For any κ0 = − m    n and partition τ of N there is at most one ir-
+reducible SN -module, consisting of singular polynomials for the singular value κ0 ,
+that has isotype τ .
+                                  SINGULAR POLYNOMIALS                                 7
+
+
+Proof. Suppose there are two unequal modules M and M ′ satisfying the hypotheses.
+Let {fT : T ∈ Y (τ )} and {fT′ : T ∈ Y (τ )} be the respective bases for M and M ′
+produced by Murphy’s construction. Normalize     P the two bases so that both fT0
+and fT′ 0 are monic in xλ (that is, fT0 = xλ + β⊳λ Aβ xβ and fT′ 0 has the same
+form with Aβ replaced by A′β ), with λ given by equation 2.1. Let gT = fT − fT′
+for T ∈ Y (τ ), then spanQ {gT : T ∈ Y (τ )} consists of singular polynomials and its
+basis has the same transformation properties under the action of SN as the basis
+of M . By the Theorem coef (gT0 , λ) 6= 0, which is a contradiction.               
+
+
+   The following summarizes the results of this section. The polynomial fT0 is
+renamed gλ .
+
+Theorem 2. Suppose there exist singular polynomials for κ0 = − m      n with gcd (m, n) =
+1 (and 2 ≤ n ≤ N ) of isotype τ , a partition of N , thenP  n| (τi + 1) for 1 ≤ i < ℓ (τ )
+and there is a unique singular polynomial gλ = xλ + β⊳λ Aβ xβ (with Aβ ∈ Q)
+of isotype τ such that Ui (κ0 ) gλ = ξi (λ; κ0 ) gλ for 1 ≤ i ≤ N , where λ is given by
+equation 2.1.
+
+
+
+
+                      3. Nonsymmetric Jack polynomials
+   These polynomials are the simultaneous eigenvectors of the commuting set of
+operators {Ui (κ) : 1 ≤ i ≤ N } . The existence follows from the triangular property
+and the fact that the correspondence (from compositions to eigenvalues) α 7−→
+           N
+(ξi (α; κ))i=1 is one-to-one for generic κ. We use the notation from [2] (for now
+just the x-monic version is used but there will be a reference to the p-monic version).
+
+Definition 7. For α ∈ NN             x
+                            0 , let ζα (κ) denote the x-monic simultaneous eigen-
+                        x
+vectors,
+ P x that βis, Ui (κ) ζα (κ) = ξi (α;   κ) ζαx (κ) for 1 ≤ i ≤ N and ζαx (κ) = xα +
+    Aβα (κ) x , with coefficients Axβα (κ) ∈ Q (κ).
+β⊳α
+
+
+Definition 8. For 1 ≤ i ≤ N the operators Bij (with j 6= i) and the operator Bi
+(each maps Pn into itself, for n ∈ N0 ) are given by
+                                                         
+                         xi p (x) − xj p (x (i, j))          0,             i<j
+            Bij p (x) :=                            −
+                                   xi − xj                   p (x (i, j)) , i > j,
+                         X
+                 Bi p :=      Bij p, for p ∈ P.
+                           j6=i
+
+                                    ∂
+   In this notation Ui (κ) p (x) = ∂x i
+                                        (xi p (x)) + κBi p (x). There is an easily proved
+identity: Bij + Bji = 1, and this shows directly that
+
+                     N
+                     X                    N
+                                          X           ∂     N (N − 1)
+                           Ui (κ) = N +         xi       +κ           .
+                     i=1                  i=1
+                                                     ∂xi        2
+8                                      CHARLES F. DUNKL
+
+
+For α ∈ NN
+         0 and i 6= j by direct computation we obtain:
+                         αi −αj 
+                          X xj l
+                     α
+(3.1)          Bij x =               xα , for αi ≥ αj , i < j,
+                                  xi
+                                 l=0
+                                αi −αj −1         l
+                                  X           xj
+                          α
+(3.2)             Bij x =                               xα , for αi ≥ αj , i > j,
+                                              xi
+                                  l=0
+                                  αj −αi −1            l
+                                    X              xi
+                          α
+(3.3)             Bij x = −                                  xα , for αi < αj , i < j,
+                                                   xj
+                                     l=1
+                                  αj −αi          l
+                                   X          xi
+(3.4)             Bij xα = −                            xα , for αi < αj , i > j.
+                                              xj
+                                   l=1
+There is another invariant subspace structure for {Ui (κ)} besides the ⊲-triangular
+property. The purpose of the following arguments is to allow the computation of
+certain coefficients of ζαx (κ) crucial in the arguments of Section 5.
+Definition 9. For 1 ≤ s ≤ N and n ≥ 1 let
+        (N )
+                                                                        	
+       Is,n  := α ∈ NN 0 : αi < n for 1 ≤ i ≤ s, αi ≤ n for s + 1 ≤ i ≤ N ,
+                        n                o
+        (N )
+      Ps,n   := spanQ(κ) xα : α ∈ Is,n
+                                    (N )
+                                           .
+                         (N )                       (N )
+  Note that each Is,n is finite and Ps,n is the direct sum of its homogeneous
+           (N )
+subspaces Ps,n ∩ Pk , k ≥ 0.
+                                                                            (N )      (N )
+Lemma 3. Suppose
+            n      1 ≤ s ≤ N oand n ≥ 1, then Ui (κ) Ps,n ⊂ Ps,n for 1 ≤ i ≤ N ,
+              x            (N )    (N )
+and spanQ(κ) ζα (κ) : α ∈ Is,n = Ps,n .
+                  (N )                                               (N )
+Proof. Let α ∈ Is,n . It suffices to show Bij xα ∈ Ps,n for all i, j. By formulae 3.1-
+3.4 this is obvious for 1 ≤ i, j ≤ s or s + 1 ≤ i, j ≤ N , or max (αi , αj ) < n. Only the
+two cases 1 ≤ i ≤ s, αj = n (thus j > s) and 1 ≤ j ≤ s, αi = n (with i > s) remain
+                                                                                  (N )
+to be considered. Formulae 3.3 and 3.2 respectively show that Bij xα ∈ Ps,n . For
+            N                    x                                    α
+any α ∈ N0 the eigenvector ζα (κ) is contained in the orbit of x under the algebra
+                                         (N )                    (N )
+generated by {Ui (κ)} hence xα ∈ Ps,n implies ζαx (κ) ∈ Ps,n . That the span of
+                     (N )
+{ζαx (κ)} is all of Ps,n follows easily (dimension argument, for example).              
+Definition 10. For a partition λ and an integer s with 1 ≤ s ≤ N define the
+                                      N +ℓ(λ)
+insertion operator ι (s; λ) : NN
+                               0 → N0         as follows: for α ∈ NN
+                                                                   0
+                               
+                                αi ,       1≤i≤s
+              (ι (s; λ) α)i =    λi−s ,     s < i ≤ s + ℓ (λ)
+                               
+                                 αi−ℓ(λ) , s + ℓ (λ) < i ≤ N + ℓ (λ) .
+                                                                     (N )
+   The definition is only interesting when α ∈ Is,n where n = λℓ(λ) , in which
+case the following rank equations hold: let β = ι (s; λ) α and k = ℓ (λ), then
+r (β, i) = r (α, i) + k for 1 ≤ i ≤ s, r (β, i) = r (α, i − k) + k for s + k < i ≤ N + k,
+and r (β, i) = i − s for s + 1 ≤ i ≤ s + k.
+                                                                                   (N )
+Theorem 3. Suppose λ is a partition, 1 ≤      s ≤ N , α, β ∈ Is,n where n = λℓ(λ) ,
+and α ⊲ β, then coef ζι(s,λ)α (κ) , ι (s, λ) β = coef (ζαx (κ) , β).
+                      x
+                                     SINGULAR POLYNOMIALS                                        9
+
+
+    It suffices to prove this for ℓ (λ) = 1 because then one can insert one part of λ at
+a time in nondecreasing order: explicitly let λ(j) = λℓ(λ)+1−j , λℓ(λ)+2−j , . . . , λℓ(λ)
+                                                                                    (N )
+for 1 ≤ j ≤ ℓ (λ), then ι s, λℓ(λ)−j ι s, λ(j) = ι s, λ(j+1) ; also if α, β ∈ Is,n
+                       (N +j)                                                       
+then ι s, λ(j) α ∈ Is,k        where k = λℓ(λ)+1−j and α ⊲ β implies ι s, λ(j) α ⊲
+        (j)
+            
+ι s, λ        β.
+                                                               	           (M)
+    For arbitrary M ≥ 1 let P (M) = spanQ(κ) xα : α ∈ NM      0    and let Ui (κ) de-
+note the operator Ui (κ) for M variables. For M > N let πMN be the projection
+from P (M) onto P (N ) defined by setting xN +1 = xN +2 = . . . = xM = 0. The
+coefficients of the ζαx do not depend on the number of variables (that is coef (ζαx , β)
+is independent of N ≥ max (ℓ (α) , ℓ (β))) because of the intertwining relation
+                                                            
+                             (M)           (N )
+(3.5)                   πMN Ui      (κ) = Ui (κ) + (M − N ) κ πMN ,
+
+for 1 ≤ i ≤ N < M . Fix integers n, s with n ≥ 1 and 1 ≤ s ≤ N and define
+the map ιs,n : P (N ) → P (N +1) by ιs,n xα = xβ for α ∈ NN           0 and β = ι (s, (n)) α =
+(α1 , . . . , αs , n, αs+1 , . . . , αN ) and extending by linearity to all polynomials. Direct
+computation yields the identities:
+
+           (N +1)                      (N )
+          Ui        (κ) ιs,n − ιs,n Ui        (κ) = κBi,s+1 ιs,n , for 1 ≤ i ≤ s,
+           (N +1)                      (N )
+          Ui+1      (κ) ιs,n −   ιs,n Ui      (κ) = κBi+1,s+1 ιs,n , for s + 1 ≤ i ≤ N.
+
+                             (N )                              x
+   We show that if α ∈ Is,n then ιs,n ζαx (κ) is congruent to ζι(s,(n))α (κ) modulo the
+               (N +1)
+subspace Ps+1,n . To illustrate the argument, suppose there is a linear operator
+V with an invariant subspace E and there is a vector f and number c so that
+                                   −1
+Vf −cf ∈ E then f −((V − c) |E ) (Vf − cf ) is an eigenvector of V with eigenvalue
+c, provided that the restriction of V − c to E is invertible. This can be adapted for
+simultaneous eigenvectors of pairwise commuting operators by extending the base
+field Q (κ), adjoining another formal variable (transcendental) v and considering
+                    PN        (N )        PN +1      (N +1)
+just one operator i=1 v i Ui (κ) (or i=1 v i Ui             (κ), as appropriate). The
+             PN i                                N
+eigenvalues i=1 v ξi (α; κ) are simple (α ∈ N0 and generic κ). Denote the field
+Q (κ, v) by K.
+
+                                                                          (N )
+Lemma 4. Suppose 1 ≤ s ≤ N and n ≥ 1. If α ∈ Is,n then ιs,n ζαx (κ) =
+ x                                 (N +1)
+ζι(s,(n))α (κ) + fα for some fα ∈ Ps+1,n .
+
+                                          (N )        (N +1)                              (N )
+Proof. First we show Bi,s+1 ιs,n Ps,n ⊂ Ps+1,n for i 6= s + 1. Let α ∈ Is,n and
+                                                             Pn−α −1  xi l β
+β = ι (s, (n)) α. For 1 ≤ i ≤ s by Formula 3.3 Bi,s+1 xβ = − l=1 i     xs+1  x
+with the key (change from β) terms being xα   i
+                                                i +l n−l
+                                                    xs+1 where αi +1 ≤ αi +l ≤ n−1 and
+αi + 1 ≤ n − l ≤ n − 1; if αi = n − 1 then Bi,s+1 xβ = 0. Suppose s + 2 ≤ i ≤ N + 1;
+if αi−1 = n = βi then Bi,s+1 xβ = 0 by Formula 3.2, if αi−1 = βi < n then
+                                P               l
+by Formula 3.4 Bi,s+1 xβ = − n−β   l=1
+                                       i    xi
+                                           xs+1     xβ with key terms xβi i +l xs+1
+                                                                                n−l
+                                                                                    where
+                                                                             (N +1)
+βi + 1 ≤ βi + l ≤ n and βi ≤ n − l ≤ n − 1. Thus Bi,s+1 xβ ∈ Ps+1,n .
+10                                         CHARLES F. DUNKL
+
+
+  Temporarily we use a superscript on the eigenvalues ξi (α; κ) to indicate the
+number of variables, then
+            (N +1)
+           ξi        (β; κ) = (N + 1 − r (β, i)) κ + βi + 1
+                                                                                    (N )
+                             = (N + 1 − (r (α, i) + 1)) κ + αi + 1 = ξi                    (α; κ)
+                                      (N +1)                (N )
+for 1 ≤ i ≤ sn and, similarly, ξi       (β; κ) = ξi−1 (α;oκ) for s + 2 ≤ i ≤ N + 1. The
+                (N +1)
+eigenvalues ξi         (β; κ) : 1 ≤ i ≤ N + 1, i 6= s + 1 and the degree of homogene-
+                                                                         
+ity |β| = |α| + n determine ζβx (κ) uniquely, subject to coef ζβx (κ) , β = 1, because
+PN +1 (N +1)                      P +1
+   i=1 Ui       (κ) = N + 1 + N             ∂
+                                    i=1 xi ∂xi + κ
+                                                    N (N +1)
+                                                         2   . Let
+                                     s    N +1
+                                               !
+                                   X      X            (N +1)
+                           V :=        +          v i Ui      (κ) .
+                                        i=1     i=s+2
+                                                       	
+The polynomials ζγx (κ) : γ ∈ NN   0
+                                      +1
+                                         , |γ| = |α| + n form a basis of eigenvectors of
+                 γ             N +1
+                                                     	
+            n K x : γ ∈ N0 , |γ| = |α|o+ n and each eigenvalue is simple. Let
+V for E := span
+                         (N +1)
+F := spanK xγ : γ ∈ Is+1,n , |γ| = |α| + n then VF ⊂ F by Lemma 3 . Finally
+consider
+                               X s                           
+                                               (N )
+              Vιs,n ζαx (κ) =      v i ιs,n Ui + κBi,s+1 ιs,n ζαx (κ) +
+                                     i=1
+                                     N
+                                     X +1                               
+                                                       (N )
+                                 +           v i ιs,n Ui−1 + κBi,s+1 ιs,n ζαx (κ)
+                                     i=s+2
+                                       N
+                                       X +1
+                                                       (N +1)
+                                 =                v i ξi        (β; i) ιs,n ζαx (κ) + hα ,
+                                     i=1,i6=s+1
+                  P             PN +1 
+                     s
+where hα = κ           i=1   +    i=s+2 v i Bi,s+1 ιs,n ζαx (κ) and hα ∈ F , since ζαx (κ) ∈
+  (N )                                          PN +1             (N +1)
+Ps,n . Let Vβ be the restriction of V− i=1,i6=s+1 v i ξi                 (β; i) to the invariant
+                              −1                  x                x
+subspace F and let fα = Vβ hα , then ιs,n ζα (κ)−fα = ζβ (κ) because coef (fα , β) =
+0 and coef (ιs,n ζαx (κ) , β) = coef (ζαx (κ) , α) = 1. Since fα = ιs,n ζαx (κ) − ζβx (κ) the
+coefficients of fα are in Q (κ).                                                              
+                                        (N )
+Corollary 3. Suppose α, γ ∈ Is,n then
+                                               
+                     x
+              coef ζι(s,(n))α (κ) , ι (s, (n)) γ = coef (ζαx (κ) , γ) .
+
+Proof. By definition coef (ζαx (κ) , γ) = coef (ιs,n ζαx (κ) , ι (s, (n)) γ). Also
+                                                                              (N +1)
+(ι (s, (n)) γ)s+1 = n and thus coef (f, ι (s, (n)) γ) = 0 for any f ∈ Ps+1,n .                      
+
+   This completes the proof of Theorem 3.
+   The poles of the coefficients of ζαx (κ) play a key role in the analysis of singu-
+lar polynomials. Knop and Sahi [8] found an algorithm for the evaluation of the
+coefficients. It uses the idea of extending the definition of Ferrers diagrams to com-
+positions and associating a hook-length to each node in the diagram. The Ferrers
+diagram of a composition α ∈ NN       0 is the set {(i, j) : 1 ≤ i ≤ ℓ (α) , 0 ≤ j ≤ αi } .
+                                SINGULAR POLYNOMIALS                                     11
+
+
+For each node (i, j) with 1 ≤ j ≤ αi there are two special subsets of the Fer-
+rers diagram, the arm {(i, l) : j < l ≤ αi } and the leg {(l, j) : l > i, j ≤ αl ≤ αi } ∪
+{(l, j − 1) : l < i, j − 1 ≤ αl < αi }. The node itself, the arm and the leg make up
+the hook. The definition of hooks for compositions is from [8, p.15]. The cardinality
+of the leg is called the leg-length, formalized by the following:
+Definition 11. For α ∈ NN
+                        0 , 1 ≤ i ≤ ℓ (α) and 1 ≤ j ≤ αi the leg-length is
+
+                      L (α; i, j) := # {l : l > i, j ≤ αl ≤ αi }
+                                 + # {l : l < i, j ≤ αl + 1 ≤ αi } .
+For t ∈ Q (κ) the hook-length and the hook-length product for α are given by
+                        h (α, t; i, j) = (αi − j + t + κL (α; i, j))
+                                         ℓ(α) αi
+                                         YY
+                            h (α, t) =             h (α, t; i, j) ,
+                                         i=1 j=1
+
+   Note that the indices {i : αi = 0} are omitted in the product h (α, t). In [2] and
+[5] we used the notation
+              Y                       εκ
+                                                                         
+     Eε (α) =     1+                                     : i < j, αi < αj , ε = ±.
+                       κ (r (α, i) − r (α, j)) + αj − αi
+The denominator also equals ξj (α; κ) − ξi (α; κ). The relation to h (α, t) (for the
+values t = 1, κ + 1 which are of concern here) is the following:
+                                                                                 h (α+ , 1)
+Lemma 5. For α ∈ NN                      +
+                  0 , h (α, κ + 1) = h (α , κ + 1) E+ (α) and h (α, 1) =                    .
+                                                                                  E− (α)
+Proof. We use induction on adjacent transpositions. The statements are true for
+α = α+ . Fix α+ and suppose αi > αi+1 for some i. Let σ = (i, i + 1). Con-
+                   h (σα, t)
+sider the ratio              . The only node whose hook-length changes (in the sense
+                    h (α, t)
+of interchanging rows i and i + 1 of the Ferrers diagram) is (i, αi+1 + 1). Explic-
+itly h (σα, t; s, j) = h (α, t; s, j) for s 6= i, i + 1 and 1 ≤ j ≤ αs , h (σα, t; i, j) =
+h (α, t; i + 1, j) for 1 ≤ j ≤ αi+1 and h (σα, t; i + 1, j) = h (α, t; i, j) for 1 ≤ j ≤ αi
+                                       h (σα, t)     h (σα, t; i + 1, αi+1 + 1)
+except for j = αi+1 + 1. Thus                     =                             . Note that
+                                        h (α, t)        h (α, t; i, αi+1 + 1)
+L (σα; i + 1, αi+1 + 1) = L (α; i, αi+1 + 1) + 1 (the node (i, αi+1 ) is adjoined to the
+leg). Let
+            E1 = {s : s ≤ i, αs ≥ αi } ∪ {s : s > i, αs > αi } ,
+            E2 = {s : s ≤ i + 1, αs ≥ αi+1 } ∪ {s : s > i + 1, αs > αi+1 } ,
+thus by definition r (α, i) = #E1 and r (α, i + 1) = #E2 . Now E1 ⊂ E2 thus
+r (α, i + 1) − r (α, i) = # (E2 \E1 ) and E2 \E1 = {s : s < i, αi > αs ≥ αi+1 } ∪ {i} ∪
+{s : s > i + 1, αi ≥ αs > αi+1 }. This shows that # (E2 \E1 ) = 1+L (α; i, αi+1 + 1) ,
+and
+          h (α, t; i, αi+1 + 1) = κ (r (α, i + 1) − r (α, i) − 1) + t + αi − αi+1 − 1,
+    h (σα, t; i + 1, αi+1 + 1) = κ (r (α, i + 1) − r (α, i)) + t + αi − αi+1 − 1.
+12                                  CHARLES F. DUNKL
+
+
+Thus
+       h (σα, κ + 1; i + 1, αi+1 + 1)   κ (r (α, i + 1) − r (α, i) + 1) + αi − αi+1
+                                      =
+          h (α, κ + 1; i, αi+1 + 1)       κ (r (α, i + 1) − r (α, i)) + αi − αi+1
+                                                                 κ
+                                      =1+
+                                             κ (r (α, i + 1) − r (α, i)) + αi − αi+1
+                                      = E+ (σα) /E+ (α) ;
+the latter equation is proven in Theorem 8.5.8,from [5, p.302], and
+       h (σα, 1; i + 1, αi+1 + 1)     κ (r (α, i + 1) − r (α, i)) + αi − αi+1
+                                  =
+          h (α, 1; i, αi+1 + 1)     κ (r (α, i + 1) − r (α, i) − 1) + αi − αi+1
+                                                                                 −1
+                                                               κ
+                                  = 1−
+                                          κ (r (α, i + 1) − r (α, i)) + αi − αi+1
+                                  = E− (α) /E− (σα) .
+Thus h (α, κ + 1) and h (α+ , κ + 1) E+ (α) have the same transformation properties
+                                                                        h(α+ ,1)
+under adjacent transpositions and hence are equal. Similarly h (α, 1) = E− (α) . 
+    Knop and Sahi [8, Theorem 5.1] showed that h (α, κ + 1) ζαx (κ) has all coef-
+ficients in N0 [κ] for each α ∈ NN  0 . When κ takes on a negative rational num-
+ber κ0 it may happen that two different compositions have the same eigenvalues
+             N
+(ξi (α; κ0 ))i=1 so one can not claim the existence of a basis of simultaneous eigen-
+vectors of {Ui (κ0 ) : 1 ≤ i ≤ N }. We recall the following from [2].
+                                N
+Definition 12. Let α, β ∈ N0 and let m, n ∈ N with gcd (m, n) = 1 then say (α, β)
+is a − mn  -critical pair (for α) if α ⊲ β and (nκ + m) divides (r (β, i) − r (α, i)) κ+
+αi − βi (in Q [κ]) for 1 ≤ i ≤ N .
+                                                    
+   The definition implies ξi α; − m                m
+                                      n = ξi β; − n for 1 ≤ i ≤ N . We can deduce
+the existence of simple poles at κ = − m  n in a certain coefficient.
+
+Lemma 6. Suppose α, β ∈ NN      0 , h (α, κ + 1) has a simple zero at κ0 ∈ Q and (α, β)
+is the unique κ0 -critical pair for α, then coef (ζαx (κ) , β) has a simple pole at κ0 .
+Proof. Since coef (ζαx (κ) , β) is independent of the number of variables N provided
+                                                                              
+N ≥ max (ℓ (α) , ℓ (β)) we may assume N = ℓ (α) + |α|. Let γ = 0ℓ(α) , 1|α| ∈ NN      0
+then by [8] coef (ζαx (κ) , γ) = (|α|)!κ|α| /h (α, κ + 1). Let f = lim (κ − κ0 ) ζαx (κ)
+                                                                    κ→κ0
+which exists as a polynomial over Q by hypothesis and is not zero because
+lim (κ − κ0 ) coef (ζαx (κ) , γ) 6= 0. The polynomial f is a simultaneous eigen-
+κ→κ0
+vector for {Ui (κ0 ) : 1 ≤ i ≤ N } because Ui (κ0 ) f = lim (κ − κ0 ) Ui (κ) ζαx (κ) =
+                                                           κ→κ0                 	
+ξi (α; κ0 ) f . Let γ be a ⊲-maximal element of δ ∈ NN       0 : coef (f, δ) 6= 0 . By ⊲-
+triangularity ξi (α; κ0 ) = ξi (δ; κ0 ) for each i, thus δ = α or δ = β by definition of
+critical pairs. It is impossible for δ = α since coef (f, α) = lim (κ − κ0 ) = 0 hence
+                                                                 κ→κ0
+δ = β. So coef (f, β) = lim (κ − κ0 ) coef (ζαx (κ) , β) 6= 0.                          
+                          κ→κ0
+
+     In the next sections the Lemma will be combined with Theorem 3.
+Example 1. The conceptual proof of the Lemma may be the only reasonably ef-
+fective method.
+               For example in the      next section we need the conclusion of Lemma
+             x
+6 for coef ζ(5,6) (κ) , (2, 0, 3, 3, 3) , which arises for N = 5, τ = (3, 2) , κ0 = − 23 .
+                                    SINGULAR POLYNOMIALS                                13
+
+
+There is a combinatorial formula for the coefficients of ζαx (κ) due to Knop and
+Sahi [8], which requires a sum over 3! × 1721 configurations for this example (the
+factorial comes from permuting the indices (3, 4, 5)). By direct (computer algebra)
+calculations this coefficient equals
+                       30κ3 (1 + κ)2 (62κ3 + 135κ2 + 78κ + 40)
+                                                                    .
+                   (2κ + 3)(2κ + 5)(κ + 2)2 (κ + 3)2 (κ + 4)(κ + 5)
+The expression suggests that there is no practical closed form.
+   We address the problem of the relationship of a simultaneous eigenvector of
+{Ui (κ0 ) : 1 ≤ i ≤ N } to the nonsymmetric Jack polynomials; namely, how can such
+                                                                                       m
+a polynomial be expressed as a limit as κ → κ0 ? For a given α ∈ NN     0 and κ0 = − n
+let C (α, κ0 ) = {β : (α, β) is a κ0 -critical pair}. In the proof we again use the field
+                                   PN
+K = Q (κ, v) and the operator i=1 v i Ui (κ); otherwise to each γ ∈ E one has to
+associate some i for which ξi (α; κ0 ) 6= ξi (γ; κ0 ). The expressions we consider are
+all rational in κ (now with values in Q (v)) so having no pole at κ0 is equivalent to
+being analytic in a neighborhood of κ0 .
+Theorem 4. Suppose for some α ∈ NN            and κ0 = − m   n that there exists a si-
+                                     P 0
+multaneous eigenvector gα = x + β⊳α Aβ xβ of {Ui (κ0 ) : 1 ≤ i ≤ N }, with the
+                                α
+
+coefficients Aβ ∈ Q, then there are coefficientsn Bβ (κ) ∈ K defined for β ∈ C o (α, κ0 )
+                                    x
+                                            P            x
+such that the polynomial qα (κ) = ζα (κ) +       Bβ (κ) ζβ (κ) : β ∈ C (α, κ0 ) has no
+pole at κ0 and lim qα (κ) = gα .
+                κ→κ0
+
+Proof. By the triangularity property Ui (κ0 ) gα = ξi (α; κ0 ) gα . P   For generic κ there
+are coefficients Bγ′ (κ) defined for all γ ⊳ α so that gα = ζαx (κ)+ γ⊳α Bγ′ (κ) ζγx (κ)
+(because the nonsymmetric Jack polynomials form a basis and the change-of-basis
+matrix is unimodular and triangular). Let E = {γ : γ ⊳ α, γ ∈         / C (α, κ0 )}. Apply
+the operator
+                               Y         PN i
+                                           i=1 v (Ui (κ) − ξi (γ; κ))
+                      V (κ) :=         PN i
+                                  γ∈E
+                                          i=1 v (ξi (α; κ) − ξi (γ; κ))
+
+to both sides of the equation for gα , thus annihilating all ζγx (κ) with γ ∈ E. The
+right hand side becomes
+                                                  PN i                           !
+                        X                  Y
+              x                   ′                i=1 v (ξi (β; κ) − ξi (γ; κ))
+ V (κ) gα = ζα (κ) +             Bβ (κ)           PN i                             ζβx (κ)
+                                              γ∈E      v (ξ  (α; κ) − ξ  (γ; κ))
+                      β∈C(α,κ0 )                   i=1     i           i
+                        X
+          = ζαx (κ) +            Bβ (κ) ζβx (κ) ,
+                       β∈C(α,κ0 )
+
+with the last equation implicitly defining the coefficients Bβ (κ).We use the opera-
+tors Bi from Definition 8. To evaluate V (κ) gα directly we consider
+                    (Ui (κ) − ξi (γ; κ)) gα − (ξi (α; κ) − ξi (γ; κ)) gα
+                    = (Ui (κ0 ) + (κ − κ0 ) Bi − ξi (α; κ)) gα
+                    = (ξi (α; κ0 ) − ξi (α; κ) + (κ − κ0 ) Bi ) gα
+                    = (κ − κ0 ) (r (α, i) − N + Bi ) gα .
+14                                     CHARLES F. DUNKL
+
+
+Thus for each γ ∈ E we have
+  PN i                                               PN i
+    i=1 v (Ui (κ) − ξi (γ; κ))                             v (r (α, i) − N + Bi )
+ PN i                            gα = gα + (κ − κ0 ) PNi=1                          gα .
+                                                           i
+   i=1 v (ξi (α; κ) − ξi (γ; κ))                      i=1 v (ξi (α; κ) − ξi (γ; κ))
+The latter term has no pole at κ0 , since (α, γ) is not a κ0 -critical pair. Apply
+this computation repeatedly to obtain V (κ) gα = gα + (κ − κ0 ) p (κ), where p is
+polynomial in x, rational in κ and has no pole at κ0 . Hence set qα (κ) = V (κ) gα ,
+then lim qα (κ) = gα , and this completes the proof.                             
+        κ→κ0
+
+   If we apply this result toPthe hypothetical singular polynomial described in The-
+orem 2, that is gλ = xλ + β⊳λ Aβ xβ , we obtain
+                                    X                                 	
+               V (κ) gλ = ζλx (κ) +     Bβ (κ) ζβx (κ) : β ∈ C (λ, κ0 ) ,
+which has no pole at κ0 . More importantly, since Di (κ) is polynomial in κ, the
+relation lim Di (κ) V (κ) gλ = Di (κ0 ) gλ = 0 holds. This is a key ingredient in the
+           κ→κ0
+proof that τ2 < n, because we can now apply the known formulae for Di (κ) ζβx (κ).
+   The basic step is the formula for Dℓ(α) (κ) ζαx (κ) for α ∈ NN
+                                                                0 . The computation
+                                                        N
+involves a cyclic shift. For 1 ≤ i ≤ N let ε (i) ∈ N0 denote the standard basis
+element, that is, ε (i)j = δij .
+Definition 13. For 1 < k ≤ N let θk = (1, 2) (2, 3) . . . (k − 1, k) ∈ SN , (thus,
+θk α = (αk , α1 , . . . , αk−1 , αk+1 , . . .) for α ∈ NN            N
+                                                        0 ). If α ∈ N0 satisfies ℓ (α) = k for
+1 < k ≤ N set α   e = θk (α − ε (k)) = (αk − 1, α1 , . . . , αk−1 , 0, . . .).
+   In [2] the formula for Dk (κ) is stated for the p-basis {ζα (κ)}. To use the result
+here it suffices to invoke the transformation formula ζα (κ) = h(α,κ+1)      x
+                                                                     h(α,1) ζα (κ) for
+α ∈ NN 0 . The ratio does not have to be computed explicitly since only the values
+   h(α,t)
+of h(e
+     α,t) for t = 1, κ + 1 are needed.
+
+                                                              h (α, t)
+Lemma 7. Let α ∈ NN
+                  0 and suppose ℓ (α) = k then                         = (k − r (α, k)) κ + t +
+                                                              h (e
+                                                                 α, t)
+αk − 1.
+Proof. Heuristically the Ferrers diagram for α          e is produced from that of α by
+deleting the node at (k, 1) and moving the remainder of row k to the top (row
+zero); then every node still has the same hook-length and the required ratio is
+h (a, t; k, 1). Explicitly, h (e
+                               α, t; i, j) = h (α, t; i − 1, j) for 2 ≤ i ≤ k, 1 ≤ j ≤ αi−1
+and h (e α, t; 1, j − 1) = h (α, t; k, j) for 2 ≤ j ≤ αk because
+           L (α; k, j) = #l : l < k, j ≤ αl + 1 ≤ αk
+                        = # {l : 1 < l, j − 1 ≤ αl−1 ≤ αk − 1} = L (e
+                                                                    α; 1, j − 1) .
+Also
+        L (α; k, 1) = # {l : l < k, 1 ≤ αl + 1 ≤ αk } = # {l : l < k, 0 ≤ αl < αk }
+                   = k − # {l : l ≤ k, αl ≥ αk } = k − r (α, k) ,
+thus h (α, t; 1, k) = κ (k − r (α, k)) + t + αk − 1.                                             
+Proposition 2. Let α ∈          NN
+                                 0   and suppose ℓ (α) = k then
+                          (k − r (α, k)) κ + αk
+     Dk (κ) ζαx (κ) =                             ((N + 1 − r (α, k)) κ + αk ) θk−1 ζαex (κ) .
+                        (k + 1 − r (α, k)) κ + αk
+                               SINGULAR POLYNOMIALS                                   15
+
+
+Proof. In [2, Theorem 3.5] it was shown that
+               Dk (κ) ζα (κ) = ((N + 1 − r (α, k)) κ + αk ) θk−1 ζαe (κ) .
+To modify this equation to hold for the x-monic polynomials multiply the right
+             h (α, 1) h (e
+                         α, κ + 1)     (k − r (α, k)) κ + αk
+hand side by                       =                           .            
+             h (e
+                α, 1) h (α, κ + 1)   (k + 1 − r (α, k)) κ + αk
+   The last topic for the section is the action of Di (κ) with respect to the order
+⊲. In the lemma the operator is modified to be degree-preserving to simplify the
+statement.
+                                                                        
+Lemma 8. Suppose α ∈ NN                                             β
+                             0 and 1 ≤ i ≤ N , if coef xi Di (κ) x , α 6= 0 then
+β = α or β + ≻ α+ or β = (i, j) α with αi > αj , 1 ≤ j ≤ N .
+Proof. By direct computation for β ∈ NN0 we have
+
+                                   Xj −1  xj l
+                              X βi −β                      j −βi 
+                                                        X βX       xi
+                                                                      l
+     xi Di (κ) xβ = βi xβ + κ                    xβ − κ                  xβ .
+                                           xi                      xj
+                              βj <βi   l=0                  βj >βi l=1
+
+The term xα appears in the sum if (i) α = β, (ii) (with coefficient κ) for some j,
+βi > βj and αi = βi −l, αj = βj +l with 0 ≤ l ≤ βi −βj −1, (iii) (with coefficient −κ)
+for some j, βi < βj and αi = βi + l, αj = βj − l with 1 ≤ l ≤ βj − βi (for (ii) and (iii)
+αk = βk for k 6= i, j). In case (ii) α = β for l = 0 and β + ≻ α+ for 1 ≤ l ≤ βi −βj −1
+by [5, Lemma 8.2.3]. In case (iii) α = (i, j) β for l = βj − βi = αi − αj > 0 and
+β + ≻ α+ for 1 ≤ l ≤ βi − βj − 1 as before.                                            
+   The Lemma will be used in analyzing the effect of Dℓ(α) (κ) on qα (κ), the poly-
+nomial defined in Theorem 4. The aim will be to show it suffices to consider
+Dℓ(α) (κ) ζαx (κ). We point out that for any given partition τ with τ2 ≥ n there may
+be several reasons why there can be no singular polynomial of isotype τ , notably
+there may be no eigenfunction of {Ui (κ0 ) : 1 ≤ i ≤ N } with the respective eigenval-
+ues {ξi (λ; κ0 ) : 1 ≤ i ≤ N }, where λ is as specified in Theorem 2. Our proof singles
+out one aspect, a certain nonvanishing coefficient of Dℓ(λ) (κ0 ) gλ which applies to
+all cases.
+
+                               4. The two-part case
+    In this section we consider the simplest case where τ = (τ1 , τ2 ), κ0 = − m
+                                                                               n with
+gcd (m, n) = 1 and τ2 = n. By Corollary 1 τ1 = dn − 1 for some d ≥ 2 (since
+τ1 ≥ τ2 ). We will show that there is no singular polynomial for κ0 of isotype τ .
+By Theorem 2, if P    there exist singular polynomials for κ0 of isotype τ then there
+                                                  n
+exists gλ = xλ + β⊳λ Aβ xβ with λ = ((md) ) , Di (κ0 ) gλ = 0 and Ui (κ0 ) gλ =
+ξi (λ; κ0 ) gλ for 1 ≤ i ≤ N . In fact, gλ = lim ζλx (κ). This follows from Theorem 4
+                                             κ→κ0
+because there is no κ0 -critical pair (λ, β) with ℓ (β) ≤ N . (The background for this
+is detailed in [2]; briefly coef (ζαx , β) is independent of the number M of variables
+provided max (ℓ (α) , ℓ (β)) ≤ M (see equation 3.5); also if ℓ (α) ≤ N < ℓ (α) + |α|
+then not every factor of h (α, κ + 1) need appear as a pole of ζαx .) We start by
+computing h (λ, κ + 1) and showing there is a unique β so that (λ, β) is a κ0 -critical
+pair for λ and ℓ (β) = N + 1.
+   For the rectangular diagram λ = ((md)n ) it is clear that L (λ; i, j) = n−i for 1 ≤
+                                               Qn Qmd
+i ≤ n, 1 ≤ j ≤ md so that h (λ, κ + 1) = i=1 j=1 ((n − i + 1) κ + md + 1 − j) =
+16                                        CHARLES F. DUNKL
+
+Qn         Qmd
+     i=1j=1 (iκ + j). Since gcd (m, n) = 1 the multiplicity of (nκ + m) in h (λ, κ + 1)
+is one, occurring
+                  as h (λ, κ + 1; 1, md − m + 1) . The algorithm of [3] yields β =
+ 0n , mnd for a κ0 -critical pair (λ, β). Note ℓ (β) = n + nd = τ2 + (τ1 + 1) = N + 1.
+Also recall the easily proved rule: for any critical pair (α, γ) it always holds that if
+i > ℓ (α) and γi = 0 then γj = 0 for all j > i; since r (α, i) = i = r (γ, i).
+                                   n                                                   
+Proposition 3. For λ = ((md) ) , κ0 = − m                                      n
+                                              n with gcd (m, n) = 1 let β = 0 , m
+                                                                                    nd
+
+then (λ, β) is the unique κ0 -critical pair for λ.
+
+Proof. Suppose γ ∈ NM    0 for some M ≥ N , and γ satisfies the conditions λ D γ
+and Ri : (r (γ, i) − i) m = (λi − γi ) n for 1 ≤ i ≤ M (as usual, define λi = 0 for
+any i > ℓ (λ), the equation is a restatement of (r (γ, i) − i) κ0 + (λi − γi ) = 0). We
+must show γ = λ or γ = β. Since gcd (m, n) = 1 there exists η ∈ NM            0 so that
+γ = mη (componentwise; note r (γ, i) = r (η, i) for each i). By condition Rn+1 we
+have (r (η, n + 1) − n − 1) = −nηn+1 so that ηn+1 = 1 − n1 (r (η, n + 1) − 1) ≤ 1
+and thus ηn+1 = 1 or ηn+1 = 0.
+   If ηn+1 = 1 then r (η, n + 1) = 1, which implies ηi = 0 for 1 ≤ i ≤ n and ηi ≤ 1
+                             1        1
+for i > n + 1. Since |η| = m   |γ| = m  |λ| = nd we see that η + = 1nd and in fact
+ηi = 1 for n + 1 ≤ i ≤ n (d + 1), since ηj = 0 and ηj+1 = 1 is impossible for j > n.
+Thus r (1, η) = nd + 1 and condition R1 becomes (nd + 1 − 1) m = (md − 0) n. So
+γ = β; the other conditions Ri are verified similarly.
+   If ηn+1 = 0 then r (η, n + 1) = n + 1 and ℓ (η) = ℓ (γ) = n. But the conditions
+λi = λ1 for 1 ≤ i ≤ n = ℓ (λ) , λ D γ and ℓ (γ) = ℓ (λ) together imply γ = λ.         
+
+Corollary 4. The polynomial ζλx (κ) in N = nd + n − 1 variables has no pole at
+κ0 . The (hypothetical) singular polynomial gλ = lim ζλx (κ).
+                                                           κ→κ0
+
+Proof. By Theorem 4 gλ = lim ζλx (κ), since there is no γ ∈ NN
+                                                             0 so that (λ, γ) is
+                                     κ→κ0
+κ0 -critical. By [2, Theorem 4.8] ζλx (κ) in nd + n − 1 variables has no pole at κ0
+(since N = nd + n − 1 < ℓ (β)).                                                  
+
+     This implies Dn (κ0 ) gλ = lim Dn (κ) ζλx (κ). In the notation of Section 3 (noting
+                                     κ→κ0
+N + 1 − r (λ, n) = (nd + n − 1) + 1 − n = nd)
+
+                                              md
+                         Dn (κ) ζλx (κ) =          d (nκ + m) θn−1 ζλex (κ) ,
+                                            κ + md
+                                
+      e =                           n−1
+where λ              md − 1, (md) . We will show that the coefficient of xγ in the
+                                                                                 
+equation does not converge
+                            to zero as κ → κ0 , where γ = θn m − 1, 0n−1 , mnd−1 =
+ 0n−1 , m − 1, mnd−1 and ℓ (γ) = N . The following is similar to Proposition 3.
+                                                
+Proposition 4. For λ    e = md − 1, (md)n−1 , κ0 = − m with gcd (m, n) = 1 let
+                                                           n
+                                      
+β = m − 1, 0   n−1
+                   ,m nd−1          e                                      e
+                             then λ, β is the unique κ0 -critical pair for λ.
+
+Proof. Suppose  γ ∈ N M                                                  e
+                    0 for
+                          some M ≥ N, and γ satisfies the conditions λ D γ
+                      e i m= λ
+and Ri : r (γ, i) − r λ,          ei − γi n for 1 ≤ i ≤ M . The conditions Ri
+                               SINGULAR POLYNOMIALS                                   17
+
+
+specialize to:
+
+                     (r (γ, 1) − n) m = (md − 1 − γ1 ) n, for i = 1,
+                  (r (γ, i) − i + 1) m = (md − γi ) n, for 2 ≤ i ≤ n,
+                  (r (γ, i) − i + 1) m = −γi n, for i > n.
+
+Thus γ1 ≡ m − 1 mod m and γi ≡ 0 mod m for i ≥ 2. Consider the condi-
+tion Rn+1 : (r (η, n + 1) − n − 1) m = −nγn+1 , equivalent to γn+1 /m = 1 −
+(r (γ, n + 1) − 1) /n ≤ 1. Thus γn+1 = m or γn+1 = 0. If γn+1 = m then
+r (γ, n + 1) = 1, implying that γi < m for 1 ≤ i ≤ n. The congruence condi-
+tions imply γ1 = m − 1 and γi = 0 for 2 ≤ i ≤ n. Arguing similarly to Proposition
+3 we see that γi = m or γi = 0 for i ≥ n + 1; the condition |γ| = nmd − 1 shows
+that γ = m − 1, 0n−1 , mnd−1 . To verify R1 note r (γ, 1) = nd so (nd − n) m =
+((md − 1) − (m − 1)) n = mn (d − 1) is satisfied. For 2 ≤ i ≤ n we have r (γ, i) =
+nd + i − 1 and γi = 0 so the condition Ri , namely, (nd + i − 1 − i + 1) m = mdn is
+satisfied.                                                           +
+                                                   e the conditions λ
+   If γn+1 = 0 then ℓ (γ) = n; for this particular λ                 e     γ + and
+                           +
+ℓ (γ) = n together imply λ e                 e  γ implies λ
+                                = γ + ; then λ             e = γ.                 
+
+                            
+  By Lemma 7 h λ,     e κ + 1 = h (λ, κ + 1) / (κ + md) so (nκ + m) has multiplicity
+                                                        
+one in h λ, e κ + 1 . Next we will show coef ζe (κ) , β has a simple pole at κ0 ,
+                                                   λ
+where β is defined in the Proposition.
+  For w ∈ SN and α ∈ NN                     α
+                               0 since w (x ) = x
+                                                     wα
+                                                        the transformation property
+coef (p, α) = coef (wp, wα) holds for any polynomial p.
+
+Theorem 5. Suppose κ0 = − m    n with gcd (m, n) = 1 and τ = (dn − 1, n) with
+d ≥ 2, n ≥ 2 so that N = (d + 1) n − 1, then there are no singular polynomials for
+κ0 of isotype τ .
+
+Proof. By Corollary 4 if there is a singular polynomial of isotype τ for the singular
+value κ0 then gλ = lim ζλx (κ) is singular, where λ = ((md)n ). By Proposition 2
+                     κ→κ0
+                  md
+                                                                               
+Dn (κ) ζλx (κ) = κ+md d (nκ + m) θn−1 ζλex (κ). Let β = m − 1, 0n−1 , mnd−1 so that
+    
+  e β is the unique κ0 -critical pair for λ.
+ λ,                                        e It is crucial that ℓ (β) = n + nd − 1 = N .
+                             
+                                    f (κ)
+By Lemma 6 coef ζλex (κ) , β = nκ+m         where f (κ) ∈ Q (κ), f (κ) has no pole at
+        m
+                                                                  
+κ0 = − n and f (κ0 ) 6= 0. Note θn β = 0n−1 , m − 1, mnd−1 . Thus
+                                  −1
+
+
+                                        md2 (nκ + m) f (κ)   md2 f (κ)
+           coef Dn (κ) ζλx (κ) , θn−1 β =                   =
+                                          (κ + md) (nκ + m)   κ + md
+and
+                                                  md2 f (κ)
+                   coef Dn (κ0 ) gλ , θn−1 β = lim           6= 0,
+                                              κ→κ0 κ + md
+
+and so gλ is not singular for κ0 , a contradiction.                                   
+
+  This argument will serve as the key ingredient for the general case τ .
+18                                        CHARLES F. DUNKL
+
+
+                                    5. The general case
+    In this section we consider the singular value κ0 = − m    n with gcd (m, n) = 1 and
+2 ≤ n ≤ N for the isotype τ , where τ has two or more parts and τ2 > n. Let
+l = ℓ (τ ) ≥ 2. We assume there exists a singular polynomial for κ0 of isotype τ
+and will eventually arrive at a contradiction. By Corollary 1 there are integers
+d1 , d2 , . . . , dl−1 so that τi = di n − 1 for 1 ≤ i < l. Because τ is a partition it
+follows that d1 ≥ d2 ≥ . . . ≥ dl−1 . By hypothesis τ1 ≥ τ2 > n so that d1 ≥ 2, and
+d2 ≥ 2 if l ≥ 3. By Theorem   P     2 there is a corresponding partition λ and a singular
+polynomial gλ = xλ + β⊳λ Aβ xβ with Ui (κ0 ) gλ = ξi (λ; κ0 ) gλ for 1 ≤ i ≤ N .
+The computations are expressed in terms of (with 1 ≤ i ≤ l − 1):
+                  l−i
+                  X            l−i
+                               X   τj + 1
+          ti :=         dj =              ,
+                  j=1          j=1
+                                      n
+                    l
+                    X
+          pi :=            τj ,
+                  j=l+1−i
+                         τ            τ                τ
+           λ :=         , (mt2 ) l−1 , . . . , (mtl−1 ) 2 , 0τ1 ) ,
+                  ((mt1 ) l
+                                                                             
+                      τ          τ                      τ −n
+           γ := (mt1 ) l , (mt2 ) l−1 , . . . , (mtl−1 ) 2 , 0n−1 , m − 1, mτ1 ,
+                                                                          
+                      τ          τ                      τ −n
+           α := (mt1 ) l , (mt2 ) l−1 , . . . , (mtl−1 ) 2 , 0n−1 , m, mτ1 .
+
+Also let p0 = 0, pl = N . Note that pl−1 = ℓ (λ) = N − τ1 , tl−1 = d1 ≥ 2 and
+|γ| + 1 = |α| = |λ| because (τ1 + 1) m =n nd1 m = nmtl−1 . By Theorem   o   4 there
+                              x
+                                      P             x
+exists a polynomial qλ (κ) = ζλ (κ) +     Bβ (κ) ζβ (κ) : β ∈ C (λ, κ0 ) which has
+no pole at κ0 and lim qλ (κ) = gλ ; the coefficients Bβ (κ) ∈ Q (κ, v) and C (λ, κ0 )
+                     κ→κ0
+is the set of β such that (λ, β) is a κ0 -critical pair.                           
+   We will show lim Dℓ(λ) (κ) qλ (κ) 6= 0 by showing lim coef Dℓ(λ) (κ) qλ (κ) , γ 6=
+                 κ→κ0                                    κ→κ0                    
+0. The proof has two parts: firstly we show that coef Dℓ(λ) (κ) qλ (κ) , γ =
+coef Dℓ(λ) (κ) ζλx (κ) , γ and secondly we use the Insertion Theorem 3 and the
+result from the previous section.
+                                                               
+Lemma 9. Suppose δ ∈ NN                                     δ
+                             0 , λ D δ and coef Dℓ(λ) (κ) x , γ 6= 0 then δ D α.
+                                                                         
+Proof. By construction coef Dℓ(λ) (κ) xδ , γ = coef xℓ(λ) Dℓ(λ) (κ) xδ , α . By Lemma
+8 δ = α or δ + ≻ α+ or δ = (ℓ (λ) , j) α with αℓ(λ) > αj ; but in the latter case
+j < ℓ (λ) (in fact ℓ (λ) − n ≤ j < ℓ (λ) and αj = 0) so that δ ≻ α. Thus δ D α. 
+   To complete the first part of the argument we need only show that there is no
+κ0 -critical pair (λ, β) with β D α.
+Theorem 6. Suppose β ∈ NM     0 (with some M ≥ N ), λ D β D α and β satisfies the
+rank equation (r (β, i) − i) m = (λi − βi ) n for i ≥ 1 then β = λ.
+Proof. The rank equation and definition of α imply m|βi and m|αi for each i ;
+since the definition of ⊲ implies that µ ⊲ ν if and only if mµ ⊲ mν for arbitrary
+compositions µ, ν (where (mµ)i := mµi ) we will assume that m = 1 in the rest
+                                                         τ
+of the proof. Since β is trapped between λ = tτ1l , t2l−1 , . . . , tτl−1
+                                                                       2
+                                                                          , 0τ1 and α =
+  τl τl−1           τ2 −n n−1 τ1 +1
+                                                     +
+ t1 , t2 , . . . , tl−1 , 0  ,1       we deduce that β agrees with λ in the first N −
+                                    SINGULAR POLYNOMIALS                                         19
+
+
+τ1 − n entries, that is, (β + )i = λi = αi for 1 ≤ i ≤ N − τ1 − n = pl−1 − n. None
+of the entries of β equal to some tj can “move to the left” (lower index). For j, k
+with 1 ≤ j ≤ k ≤ l − 1 suppose that the first appearance (least index) of tk in β is
+at an index i with λi = tj , that is, pj−1 + 1 ≤ i ≤ pj , then r (β, i) = pk−1 + 1 and
+the rank equation implies
+              i = r (β, i) − n(λi − βi ) = pk−1 + 1 − n (tj − tk )
+                                        l−j
+                                        X                          l−j
+                                                                   X
+                = pk−1 + 1 − n                ds = pk−1 + 1 −              (τs + 1) .
+                                    s=l−k+1                      s=l−k+1
+
+Furthermore
+                                                        l−j
+                                                        X
+          0 ≤ i − (pj−1 + 1) = pk−1 − pj−1 −                   (τs + 1)
+                                                     s=l−k+1
+                 l+1−j
+                  X               l−j
+                                  X
+            =             τs −             τs − (k − j) = τl+1−j − τl−k+1 − (k − j)
+                s=l+2−k          s=l−k+1
+            ≤ j − k ≤ 0.
+The inequality τl+1−j − τl−k+1 ≤ 0 holds because τ is a partition and l − k + 1 ≤
+l − j + 1 by hypothesis. The chain of inequalities shows that j = k and i = pk−1 + 1
+(the possibility i > pk−1 + 1 has not yet been ruled out).
+   The key to the argument is the value of βℓ(λ)+1 (recall ℓ (λ) = pl−1 ). The case
+βpl−1 +1 = tj is impossible for 1 ≤ j ≤ l − 1; indeed suppose βpl−1 +1 = tj then
+r (β, pl−1 + 1) ≥ pj−1 + 1 and the rank equation is pl−1 + 1 = r (β, pl−1 + 1) + ntj
+(note λpl−1 +1 = 0) thus
+                           0 ≤ (pl−1 + 1 − ntj ) − (pj−1 + 1)
+                             = τl+1−j − τ1 − (l − j) ≤ j − l < 0.
+which is a contradiction (the calculation is similar to the previous one, replacing k
+byl and tk by tl = 	0). The condition β +  λ now implies that βpl−1 +1 < tl−1 and
+# j : βj > βpl−1 +1 ≥ ℓ (λ)−n = pl−1 −n, hence r (β, pl−1 + 1) ≥ pl−1 −n+1. The
+rank equation is −nβpl−1 +1 = r (β, pl−1 + 1) − (pl−1 + 1) ≥ −n and so βpl−1 +1 ≤ 1.
+     Suppose βpl−1 +1 = 0 then r (β, pl−1 + 1) = (pl−1 + 1) which implies βi = 0 for
+i > pl−1 + 1 and βi > 0 for i ≤ pl−1 . Since β + differs from λ in at most the
+                                                                                        +
+last n entries
+                        and λi = tl−1 for ℓ (λ) − n < i ≤ ℓ (λ) it follows that β      = λ (note
+        n                                                                           n
+if tl−1  µ where µ is a partition and ℓ (µ) = n then µ = tl−1 ). Since the
+entries of β can not move to the left, β = λ; in detail, argue inductively that the
+only possible value for βi when 1 ≤ i ≤ p1 is t1 , then the only possible value when
+p1 + 1 ≤ i ≤ p2 is t2 , and so on. (If l = 2 then this argument is not needed.)
+     Suppose βpl−1 +1 = 1. In this part replace the bound β D α by β D α′ :=
+    τl τl−1               τ2 −n n τ1 +1
+                                          
+  t1 , t2 , . . . , tl−1        ,0 ,1      , a weaker restriction since α ⊲ α′ (note that (λ, α′ )
+            1
+              
+is a − n -critical pair). We will show that β = α′ , which contradicts the assumption
+ℓ (β) = N . Recall tj > tl−1 ≥ 2 for 1 ≤ j < l − 1, by the hypothesis τ1 ≥ τ2 > n.
+The rank equation yields r (β, pl−1 + 1) = (pl−1 + 1) − nβpl−1 +1 = pl−1 + 1 − n. For
+i < pl−1 + 1 this implies βi = tj for some j or βi < 1, that is, βi = 0; for i > pl−1 + 1
+the rank implies βi = tj for some j or βi ≤ 1. This forces the values of β other than
+          τ
+  tτ1l , t2l−1 , . . . , tl−1
+                          τ2 −n
+                                  to be 0 or 1, that is, (β + )i ≤ 1 for i > pl−1 − n. The condition
+|λ| = |β| shows that # {j : βj = 1} = ntl−1 = τ1 + 1. Since βi = 1 is ruled out for
+20                                CHARLES F. DUNKL
+
+
+i ≤ pl−1 it follows that βi = 1 for pl−1 +1 ≤ i ≤ pl−1 +τ1 +1 = N +1; indeed suppose
+the j th occurrence of 1 in β is at index i, that is, r (β, i) = pl−1 + j − n, βi = 1 and
+i > pl−1 then the rank equation implies r (β, i)−i = (pl−1 + j − n)−i = −nβi = −n
+thus i = pl−1 +j, for 1 ≤ j ≤ τ1 +1. The n remaining values of βi (for 1 ≤ i ≤ N +1)
+                             +
+are zero, and so β + = (α′ ) . The condition β D α′ implies β  α′ (by definition)
+                       ′
+which shows βi = αi for 1 ≤ i ≤ pl−1 − n (if pj−1 + 1 ≤ i ≤ pj and j < l − 1
+then βi = tj and if pl−2 + 1 ≤ i ≤ pl−1 − n then βi = tl−1 ). Thus βi = 0 for
+pl−1 − n < i ≤ pl−1 and β = α′ . The proof is finished since ℓ (α′ ) = N + 1.           
+                                                                      
+Corollary 5. coef Dℓ(λ) (κ) qλ (κ) , γ = coef Dℓ(λ) (κ) ζλx (κ) , γ .
+                                                               
+Proof. Suppose β ∈ C (λ, κ0 ). If coef Dℓ(λ) (κ) ζβx (κ) , γ 6= 0 then by Lemma 9
+thereexists δ ∈ NN0 such that β D δ D α, which contradicts the Theorem. Hence
+                x
+coef Dℓ(λ) (κ) ζβ (κ) , γ = 0 for each β ∈ C (λ, κ0 ).                       
+
+Example 2. In the context of the Theorem there may well be compositions β other
+than α′ for which (λ, β) is a κ0 -critical
+                                             pair. Suppose N = 10, τ = (3, 3, 3, 1)
+and κ0 = − 21 , then λ = 6, 43 , 23 and α′ = 6, 43 , 2, 0, 0, 14 ; the multiplicity of
+(2κ + 1) in h (λ, κ + 1) is 3. Among other compositions
+                                                             β with (λ, β) being − 12 -
+                    3 3 3              3    2 4                                        ′
+critical are 6, 1 , 2 , 3 and 6, 0 , 2, 4 , 1 , 4 ; the latter is a permutation of  α.
+                                                                  1              6
+For another example     take N = 14, τ = (8, 6) and κ0 = − 3 , then λ = 3 and
+α′ = 33 , 03 , 19 ; the multiplicity
+                                     of (3κ + 1) in h (λ, κ + 1) is 2 and both 16 , 26
+and 13 , 03 , 26 , 13 form − 31 -critical pairs with λ. The algorithm of [3] was used
+to produce the β’s.
+   Let k = ℓ (λ) = N − τ1 and from Definition 13 let θk = (1, 2) . . . (k − 1, k) ∈ SN ,
+a cyclic shift and let
+                                                                            
+           e = mtl−1 − 1, (mt1 )τl , (mt2 )τl−1 , . . . , (mtl−1 )τ2 −1 , 0τ1 ,
+           λ
+                                                                               
+                            τ          τ                      τ −n
+           e = m − 1, (mt1 ) l , (mt2 ) l−1 , . . . , (mtl−1 ) 2 , 0n−1 , mτ1 ,
+           α
+so that α
+        e = θk γ. By Proposition 2
+                                mtl−1
+          Dℓ(λ) (κ) ζλx (κ) =           ((N + 1 − k) κ + mtl−1 ) θk−1 ζλex (κ)
+                              κ + mtl−1
+and (N + 1 − k) κ + mtl−1 = (τ1 + 1) κ + md1 = (nκ + m) d1 (recall τ1 + 1 = nd1 ).
+Thus
+                                       md21                                   
+        coef Dℓ(λ) (κ) ζλx (κ) , γ =            (nκ + m) coef θk−1 ζλex (κ) , γ
+                                      κ + md1
+                                        md21                                 
+                                    =           (nκ + m) coef ζλex (κ) , θk γ .
+                                      κ + md1
+We finish the argument by using the Insertion Theorem 3. Let
+                                                                   
+                                 τ       τ                     τ −n
+                   µ = (mt1 ) l , (mt2 ) l−1 , . . . , (mtl−1 ) 2     ,
+                                                         
+                                             n−1
+                   ν = mtl−1 − 1, (mtl−1 )           , 0τ1 ,
+                                           
+                   σ = m − 1, 0n−1 , mτ1 ,
+     e = ι (1, µ) ν and α
+then λ                  e = ι (1, µ) σ.
+                               SINGULAR POLYNOMIALS                                    21
+
+                                        
+Lemma 10. lim coef Dℓ(λ) (κ) ζλx (κ) , γ =6 0.
+               κ→κ0
+
+                                                                         (M)
+Proof. Let p = mtl−1 = md1 , and M = n + τ1 then ν, σ ∈ I1,p . By The-
+                          
+orem 3 coef ζλex (κ) , α e = coef (ζνx (κ) , σ) and by Proposition 4 and Lemma 6
+coef (ζνx (κ) , σ) has a simple pole at κ = κ0 (this is the same argument used in the
+                                                                                 f (κ)
+previous section). Thus there exists f (κ) ∈ Q (κ) so that coef (ζνx (κ) , σ) = nκ+m
+and f (κ0 ) 6= 0. To conclude,
+                                           md21                            
+            coef Dℓ(λ) (κ) ζλx (κ) , γ =          (nκ + m) coef ζλex (κ) , α
+                                                                           e
+                                          κ + md1
+                                            md21
+                                        =         f (κ)
+                                          κ + md1
+which has a nonzero limit at κ0 .                                                    
+Theorem 7. Suppose κ0 = − m      n with gcd (m, n) = 1 and τ is a partition of N such
+that n| (τi + 1) for 1 ≤ i < ℓ (τ ). If τ2 ≥ n then there are no singular polynomials
+for κ0 of isotype τ .
+Proof. For τ2 > n if there is a singular polynomial of isotype τ for the singular
+value then lim Dℓ(λ) (κ) qλ (κ) = 0 for the polynomial qλ (κ) described above. But
+          κ→κ0                                                
+ lim coef Dℓ(λ) (κ) qλ (κ) , γ = lim coef Dℓ(λ) (κ) ζλx (κ) , γ 6= 0, and so these
+κ→κ0                                κ→κ0
+singular polynomials do not exist. The case τ2 = n, ℓ (τ ) = 2 was done in the
+previous section.                                                           
+
+                              6. Concluding remarks
+   Together with the results of [2, Theorem 2.7] we have a complete description
+of singular polynomials for the group SN . For each pair (m0 , n0 ) ∈ N2 with 2 ≤
+n0 ≤ N and m  n0 ∈
+               0
+                  / N, let d = gcd (m0 , n0 ) , m = md0 , n = nd0 , then there is a unique
+irreducible SN -module of singular polynomials for the singular value κ0 = − m        n of
+isotype τ , where
+                                                
+                                   N − n0 + 1
+(6.1)                         l=                   +1
+                                     n−1
+                                                          
+                             τ = n0 − 1, (n − 1)l−2 , τl .
+The number l = ℓ (τ ) is the solution of the inequality 1 ≤ τl = (N − n0 + 1) −
+(l − 2) (n − 1) ≤ n − 1 (⌈r⌉ denotes the smallest integer ≥ r). Then the index for
+the corresponding singular polynomial is given by:
+(6.2) (                
+              τ2 n0 −1
+           m0 , 0       ,                                                l=2
+   λ=                       τl                 n−1             n−1 n0 −1        .
+            (m0 + (l − 2) m) , (m0 + (l − 3) m)     , . . . , m0 , 0      , l≥3
+                                                          n0
+Note that l = 2 is equivalent to N −n0 +1 < n or d < N −n   0 +1
+                                                                 , and τ2 = N −n0 +1.
+For l ≥ 3 the computation for λ uses the notation of the previous section with
+ti = d + l − 1 − i, mti = m0 + (l − 1 − i) m for 1 ≤ i ≤ l − 1. The SN -module of
+singular polynomials is spanQ {wζλx (κ0 ) : w ∈ SN } and the basis corresponding to
+Murphy’s construction is exactly the set of ζαx (κ0 ) such that α is a reverse lattice
+permutation of λ. There are no other singular polynomials.
+22                                  CHARLES F. DUNKL
+
+
+   The relation of modules of singular polynomials to monodromy representations
+of the Hecke algebra was discussed in [4, Sect.6]. The parameter is q = e−2πiκ ; the
+existence of singular polynomials of isotype τ shows that the monodromy repre-
+sentation corresponding to τ contains the trivial representation. There is a general
+result on the connection between monodromy (called the KZ-functor) and the dual
+Specht modules in [7, Sect. 6.2].
+   Recall the definition of the rational Cherednik algebra (see [7, Sect. 3] and [6]).
+We consider the image A (κ) under the faithful representation on P; indeed A (κ) is
+the Q (κ)-algebra generated by {Di (κ) : 1 ≤ i ≤ N } ∪ {xi : 1 ≤ i ≤ N } ∪ SN (where
+xi denotes the multiplication map p (x) 7→ xi p (x) and w ∈ SN acts by p (x) 7→
+p (xw) for p ∈ P). In the sequel, when κ is specialized to a rational κ0 ,we use P 	to
+denote the polynomials with rational coefficients (that is, spanQ xα : α ∈ NN     0 ).
+Here are some basic results about A (κ)-submodules of P.
+Proposition 5. Suppose M is a nontrivial proper A (κ0 )-submodule of P for some
+κ0 ∈ Q, then M is the direct sum of its homogeneous components Mn := M ∩ Pn
+for n ∈ N0 , the nonzero component Mn0 of least degree (Mj = {0} for j < n0 ) is
+an SN -module of singular polynomials and κ0 is a singular value.
+                    PN              PN       ∂      P
+Proof. The identity i=1 xi Di (κ) = i=1 xi ∂x    + κ 1≤i<j≤N (1 − (i, j)) implies
+                         PN     ∂
+                                               i
+                                                          P∞
+that the Euler operator i=1 xi ∂x i
+                                    ∈ A (κ). Hence M = n=0 (M ∩ Pn ). There
+exists n0 > 0 such that Mn0 6= {0} and Mj = {0} for 0 ≤ j < n0 (or else
+M0 6= {0} , 1 ∈ M and so M = P. Then Di (κ0 ) p = 0 for any p ∈ Mn0 and
+1 ≤ i ≤ N.                                                                     
+   Say that the degree of an A (κ0 )-submodule M is the least degree of nonzero
+homogeneous components of M , that is, min {j : Mj 6= {0}}. There is a symmetric
+bilinear form on P defined by
+                       hp, qiκ = p (D1 (κ) , . . . , DN (κ)) q (x) |x=0 .
+The radical was defined in [4, Sect. 4] to be
+                     Rad (κ) := {p ∈ P : hp, qiκ = 0 for all q ∈ P}
+and was shown to be an A (κ)-submodule. For κ0 ∈ Q, Rad (κ0 ) 6= {0} exactly
+when κ0 is a singular value.
+Proposition 6. For any singular value κ0 the radical Rad (κ0 ) is the largest proper
+A (κ0 )-submodule of P.
+Proof. Suppose M is a nontrivial proper A (κ0 )-submodule. Suppose p ∈ Mn                   =
+M ∩ Pn for some n > 0 and p 6= 0. Then for any q ∈ Pn we have hp, qiκ0                      =
+hq, piκ0 = q (D1 (κ) , . . . , DN (κ)) p (x) ∈ M0 = {0}. Hence p ∈ Rad (κ0 ) and M          ⊂
+Rad (κ0 ).                                                                                  
+   Our complete description of irreducible SN -modules of singular polynomials leads
+to some explicit results about A (κ0 )-submodules. We use the notation from equa-
+tions 6.1 and 6.2.
+Definition 14. For any pair (m0 , n0 ) ∈ N×N with 2 ≤ n0 ≤ N and m                  n0 ∈
+                                                                                     0
+                                                                                        / N let
+                   Pnτ          x
+                                                    	
+M (m0 , n0 ) =           i=1 pi ζwi λ (κ0 ) : pi ∈ P , where nτ is the degree of the represen-
+tation
+     xτ   and   {w  i λ  :1≤i≤    	 nτ } is the set of reverse lattice permutations of λ (that
+is, ζw  iλ
+           (κ 0 ) : 1  ≤   i ≤ n τ   is a basis for the singular polynomials corresponding to
+the pair (m0 , n0 )).
+                                 SINGULAR POLYNOMIALS                                      23
+
+
+   The following is from [2, Sect. 6]:
+Proposition 7. M (m0 , n0 ) is a proper A (κ0 )-submodule,
+                                                            and its degree is
+m 12 (l − 2) (n − 1) (2d + l − 3) + τl (d + l − 2) (where d = gcd (m0 , n0 ) n = n0 /d
+and m = m0 /d).
+Proof. Clearly M (m0 , n0 ) is closed under multiplication
+                                                  x           by P and the 	 action of
+SN . Suppose f = pg where p ∈ P and g ∈ span ζw      iλ
+                                                        (κ 0 ) : 1 ≤ i ≤ n τ (that is, g
+is singular). By the product rule,
+                                               X
+                                       ∂                       p (x) − p (x (i, j))
+       Di (κ0 ) f = pDi (κ0 ) g + g       p + κ0   ((i, j) g)
+                                      ∂xi                            xi − xj
+                                                    j6=i
+
+for 1 ≤ i ≤ N . But Di (κ0 ) g = 0 and p(x)−p(x(i,j))
+                                           xi −xj     is a polynomial, thus Di (κ0 ) f ∈
+M (m0 , n0 ). The degree is |λ| (as in equation 6.2).                                  
+
+   An equivalent formula for |λ|                                      1
+                                    m is (N − nd + 1) (d + l − 2)− 2 (n − 1) (l − 1) (l − 2).
+For a given pair
+              (m, n) with gcd (m, n)	        = 1 (and 2 ≤ n ≤ N ) there are the A (κ0 )-
+submodules M (dm, dn) : 1 ≤ d ≤ N           n      (⌊r⌋ denotes the largest integer ≤ r). The
+degree of M (dm, dn) decreases as d increases. This is obvious because the nonzero
+part of the index λ for M ((d + 1) m, (d + 1) n) is a substring of the index λ′ for
+M (dm, dn); for example take N = 10, κ0 =− 31 then the values of λ (from equa-
+tion 6.2) are 42 , 32 , 22 , 12 , 02 , 4, 32 , 22 , 05 , 32 , 08 for d = 1, 2, 3 respectively.
+For direct computation, let l, τ, λ and l′ , τ ′ , λ′ denote the expressions defined in
+equations 6.1 and 6.2 for (m0 , n0 ) equal to (dm, dn) and ((d + 1) m, (d + 1) n) re-
+spectively. If τl = 1 then l′ = l − 2 and τl−2        ′
+                                                           = n − 1; if 2 ≤ τl ≤ n − 1 then
+l = l − 1 and τl−1 = τl − 1. For both cases |λ| − |λ′ | = m (dn + l − 2). Thus
+ ′                ′
+
+for any given degree of homogeneity there is at most one irreducible SN -module of
+singular polynomials of that degree (for κ0 = − m             ). The singular polynomials of
+                                                          Nn
+least degree correspond to (mq, nq) where q = n .
+Proposition 8. Suppose gcd (m, n) = 1 and N = nqm+ r with 0 ≤ r ≤ n −
+1 (so q = N  n ) and k denotes
+                                  the degree of Rad − n . If r < n − 1 then
+                         m
+k = mq (r + 1), Rad − n ∩ Pk is of isotype      (nq − 1, N − nq + 1) , and equals
+       x                 	
+spanQ wζλ − n : w ∈ SN , where λ = (mq)r+1 , 0nq−1 . If r = n − 1 then
+              m
+
+                           m
+                              
+         + 1) and Rad − n ∩ Pk is of isotype (nq − 1, n − 1, 1) with correspond-
+k = m (qn
+                        n−1
+ing λ = m (q + 1) , (mq)     , 0nq−1 .
+
+  As well as the maximum A (κ0 )-submodule there is a minimum one, namely,
+M (m, n).
+Proposition 9. Suppose gcd (m, n) = 1 and 2 ≤ n ≤ N then M (m, n) is contained
+in each nontrivial A − m  n -submodule.
+                                               
+Proof. Let M be a proper nontrivial A − m     n -submodule. Let s0 be the degree of
+M . By Proposition 5 Ms0 is an SN -module of singular polynomials, thus s0 = |λ|
+for some λ given
+                N by Equation 6.2. Suppose λ corresponds to the pair (dm, dn)
+with 1 ≤  d ≤   n , then M (dm, dn) ⊂ M . The intersection
+                                                              of any two nontrivial
+A −m  n  -submodules   M 1 and M 2 is a nontrivial A − m
+                                                       n  -submodule (if f ∈ M1 and
+g ∈ M2 then f g ∈ M1 ∩M2 ). Thus M (dm, dn)∩M (m, n) is a nontrivial submodule
+24                                   CHARLES F. DUNKL
+
+
+of M (m, n) which must equal M (m, n) because the degree of M (m, n) is the
+maximum for the degrees of M (dm, dn). Hence M (m, n) ⊂ M (dm, dn) ⊂ M . 
+                                                  	
+   One could speculate
+                       that M (dm, dn) : 1 ≤ d ≤ N n    is the collection of all non-
+trivial proper A − m
+                   n   -submodules and that they are nested,  that is, M (dm, dn) ⊂
+M ((d + 1) m, (d + 1) n). This would be a characterization of Rad − m  n .
+
+                                        References
+ [1] C. Dunkl, Differential-difference operators associated to reflection groups: Trans. Amer.
+     Math. Soc. 311 (1989), 167-183.
+ [2] C. Dunkl, Singular polynomials for the symmetric groups, Int. Math. Research Notices 2004
+     (2004), #67, 3607-3635.
+ [3] C. Dunkl, Hook-lengths and pairs of compositions, preprint arXiv:math.CO/0410466, Oct.
+     2004.
+ [4] C. Dunkl, M. de Jeu, and E. Opdam, Singular polynomials for finite reflection groups, Trans.
+     Amer. Math. Soc. 346 (1994), 237-256.
+ [5] C. Dunkl and Y. Xu, Orthogonal Polynomials of Several Variables, Encycl. of Math. and its
+     Applications 81, Cambridge University Press, Cambridge, 2001.
+ [6] P. Etingof and V. Ginzburg, Symplectic reflection algebras, Calogero-Moser space and de-
+     formed Harish-Chandra isomorphism, Invent. Math. 147 (2002), 243-348.
+ [7] V. Ginzburg, N. Guay, E. Opdam and R. Rouquier, On the category O for rational Cherednik
+     algebras, Invent. Math. 154 (2003), 617–651.
+ [8] F. Knop and S. Sahi, A recursion and a combinatorial formula for Jack polynomials, Invent.
+     Math. 128 (1997), 9–22.
+ [9] G. Murphy, A new construction of Young’s seminormal representation of the symmetric
+     groups, J. Algebra 69 (1981), 287-297.
+[10] E. Opdam, Dunkl operators, Bessel functions and the discriminant of a finite Coxeter group,
+     Compos. Math. 85 (1993), 333-373.
+
+  Department of Mathematics, University of Virginia, P.O.Box 400137 Charlottesville
+VA 22904-4137
+  E-mail address: cfd5z@virginia.edu
+  URL: http://www.people.virginia.edu/~cfd5z/
+

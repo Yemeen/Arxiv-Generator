@@ -1,0 +1,1678 @@
+                                                CHARACTER SHEAVES ON DISCONNECTED GROUPS, I
+arXiv:math/0305206v1 [math.RT] 14 May 2003
+
+
+
+
+                                                                                  G. Lusztig
+
+
+
+                                                                                Introduction
+                                                Our aim in this series of papers is to develop a theory of character sheaves on
+                                             a not necessarily connected reductive algebraic group G. In the case of connected
+                                             groups such a theory appeared in [L2], [L3]. An extension to disconnected groups
+                                             has been sketched in [L4] without proofs; here we try to give a fuller and more
+                                             precise treatment and to supply the proofs that were missing in [L4]. The main
+                                             object of the theory, the character sheaves of G, are certain simple perverse sheaves
+                                             on G, equivariant with respect to the conjugation action of the identity component
+                                             of G. At least for connected G (over a finite field) the character sheaves are
+                                             intimately related with the characters of irreducible representations of the group
+                                             of rational points of G and such a relationship is also expected in the disconnected
+                                             case. The theory of character sheaves on G is also crucial for the classification
+                                             of ”unipotent representations” of simple p-adic groups [L5] and here one is forced
+                                             to allow G to be disconnected if one wants to include p-adic groups that are not
+                                             inner forms of split groups.
+                                                The present paper tries to extend parts of [L2,§1-§4] from the connected case to
+                                             the general case. We develop enough background so that we are able to define (see
+                                             6.7) the notion of ”admissible complex” on G, one of the two incarnations of the
+                                             character sheaves of G. One of the themes of this paper is the construction of a de-
+                                             composition of G into finitely many strata (generalizing a construction in [L2, 3.1]),
+                                             see §3. Each stratum is a locally closed, irreducible, smooth subvariety of G. Each
+                                             stratum is a union of G0 -conjugacy classes of fixed dimension; more precisely, the
+                                             centralizers of two points in the same stratum have G0 -conjugate identity compo-
+                                             nents. Also, the closure of any stratum is a union of strata. Each stratum carries
+                                             some natural local systems which extend to intersection cohomology complexes
+                                             on the closure, which we also describe by a direct image construction, using the
+                                             dimension estimates in §4.
+                                                I wish to thank F. Digne and J. Michel for some useful comments on [L4].
+
+                                               Supported in part by the National Science Foundation
+
+                                                                                                               Typeset by AMS-TEX
+                                                                                        1
+2                                      G. LUSZTIG
+
+                                       Contents
+    1.   Preliminaries on reductive groups.
+    2.   Isolated elements of G.
+    3.   A stratification of G.
+    4.   Dimension estimates.
+    5.   Some complexes on G.
+    6.   Cuspidal local systems.
+
+                      1. Preliminaries on reductive groups
+1.1. We fix an algebraically closed field k. All algebraic variety are assumed to
+be over k. All algebraic groups are assumed to be affine.
+   We shall use the following notation. If H is a group, the centre of H is denoted
+by ZH ; if H ′ is a subgroup of H, let NH (H ′ ) = {h ∈ H; hH ′ h−1 = H ′ }. If in
+addition H ′′ is a subgroup of H, let ZH ′ (H ′′ ) = {h′ ∈ H ′ ; h′ h′′ = h′′ h′ ∀h′′ ∈
+H ′′ }; if h ∈ H, let ZH ′ (h) = {h′ ∈ H ′ ; h′ h = hh′ }. If H is an algebraic group, we
+denote by H 0 the identity component of H and we set Hss = H/ZH             0
+                                                                              0 ; for h ∈ H
+
+we denote by hs (resp. hu ) the semisimple (resp. unipotent) part of h, so that
+h = hs hu = hu hs . If X is a subset of H we set Xs = {hs ; h ∈ X}. The unipotent
+radical of H (assumed to be connected) is denoted by UH .
+   We fix an algebraic group G such that G0 is reductive. (We then say that G is
+reductive.) Let g = Lie G.
+1.2. Let T be a torus and let f : T −→ T be an automorphism of finite order with
+fixed point set T f .We show that
+   (a) the homomorphism (T f )0 × T − → T, (t, x) 7→ xtf (x)−1 is surjective.
+This can be reduced to an analogous statement about a finite dimensional Q-
+vector space V and a linear map φ : V −    → V of finite order: the linear map
+Ker(φ − 1) × V − → V, (w, v) 7→ w + v − φ(v) is surjective.
+1.3. Let g ∈ G. We show that
+                                  0            0   0       0                    −1 −1
+   (a) the homomorphism (ZG         0 ∩ ZG (g)) × ZG0 −
+                                                      → ZG   0 , (t, x) 7→ xtgx   g   is
+surjective.
+            0       0                                                       0
+Ad(g) : ZG    0 −
+                → ZG  0 is of finite order since some power of g is in G . Therefore
+
+(a) is a special case of 1.2(a).
+1.4. Let g ∈ G. Then g normalizes some Borel of G0 , see [St, 7.2]. Following
+[St, 9], we say that g is quasi-semisimple if there exist a Borel B of G0 and a
+maximal torus T of B such that gBg −1 = B, gT g −1 = T . If g is semisimple then
+it is quasi-semisimple, see [St, 7.5, 7.6]. More generally, by an argument similar
+to that in [St, 7.6], we see that
+    (a) if g is semisimple and P is a parabolic of G0 such that gP g −1 = P then
+there exists a Levi L of P such that gLg −1 = L.
+Here are some further results.
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                            3
+
+   (b) If g is semisimple or, more generally, quasi-semisimple then ZG (g) is re-
+ductive. See [Sp, 1.17, 2.21].
+   (c) g is quasi-semisimple if and only if gu is quasi-semisimple in the reductive
+group ZG (gs ). See [Sp, 2.22].
+   (d) If g is quasi-semisimple and T1 is a maximal torus of ZG (g)0 then there
+is a unique maximal torus T of G0 such that T1 ⊂ T . See [Sp, 1.15]. (We have
+necessarily T = ZG0 (T1 ), T1 = (T ∩ ZG (g))0 .)
+   (e) g is quasi-semisimple if and only if the G0 -conjugacy class of g is closed in
+G. See [Sp, 1.15].
+1.5. Assume that s ∈ G is semisimple. Let T1 be a maximal torus of ZG (s)0 .
+Clearly, some power of s is in ZZG (s)0 hence in T1 (since ZG (s)0 is reductive). Thus,
+the subgroup hsiT1 generated by s and T1 is a closed diagonalizable subgroup of
+G with identity component T1 . For any character α : hsiT1 −      → k∗ let gα = {x ∈
+g; Ad(a)x = α(a)x ∀a ∈ hsiT1 }. Then g = ⊕α gα . Let R be the set of all α such
+that α 6= 1, gα 6= 0. For α ∈ R we have necessarily dim ga = 1. (Compare [L5,
+6.18].) We have g1 = Lie T where T = ZG0 (T1 ).
+1.6. Let Ē(G0 ) be the set of all pairs (B, T ) where B is a Borel of G0 and T is a
+maximal torus of B. The group Aut(G0 ) of automorphisms of G0 acts naturally on
+Ē(G0 ). It is known that to G0 one can associate canonically an algebraic variety
+E(G0 ) whose points are called ”épinglages” with the following properties.
+   (i) There is a natural action of Aut(G0 ) on E(G0 ) which restricts to a free
+transitive action of the group of inner automorphisms of G0 on E(G0 ).
+   (ii) There is a natural Aut(G0 )-equivariant map p : E(G0 ) −→ Ē(G0 ).
+1.7. Let g ∈ G. Assume that Ad(g)e = e where e ∈ E(G0 ). Let (B, T ) = p(e).
+Then gBg −1 = B, gT g −1 = T hence g is quasi-semisimple. In particular, ZG (g) is
+reductive. The following results are known.
+   (a) ZB (g)0 is a Borel of ZG (g)0 .
+   (b) ZZ0 G (g)0 = (ZG0 ∩ ZG (g))0 ;
+   (c) P 7→ ZP (g)0 is a bijection between the set of parabolics of G0 that contain B
+and are normalized by g and the set of parabolics of ZG (g)0 that contain ZB (g)0 ;
+moreover, if L is a Levi of P then ZL (g)0 is a Levi of ZP (g)0 .
+1.8. Assume that u ∈ G is unipotent and (B, T ) ∈ Ē(G0 ) is such that uBu−1 =
+B, uT u−1 = T . We show that
+   (a) there exists e ∈ E(G0 ) such that p(e) = (B, T ), Ad(u)e = e.
+Let E ′ = {e ∈ E(G0 ); p(e) = (B, T )}. Then T acts transitively on E ′ . Moreover,
+Ad(u)E ′ = E ′ . Hence the subgroup huiT generated by u and T acts on E ′ .
+Since u ∈ NG T and (NG T )0 = T , some power of u belongs to T . Hence huiT
+is a closed subgroup of G with identity component T . Let e0 ∈ E ′ . We have
+Ad(u)e0 = Ad(t−1 )e0 for some t ∈ T . Thus, tu belongs to the stabilizer of e0
+in huiT , a closed subgroup of huiT . Then the unipotent part (tu)u also belongs
+to this stabilizer that is, Ad((tu)u )e0 = e0 . The image of (tu)s in the unipotent
+4                                     G. LUSZTIG
+
+group (huiT )/T must be 1. Hence (tu)u has the same image as tu or as u. Thus,
+(tu)u = t′ u where t′ ∈ T and we have Ad(t′ u)e0 = e0 with t′ u unipotent. By
+1.2(a) with f : T −  → T, f (x) = uxu−1 (of finite order), we have t′ = t2 t1 ut−1 1 u
+                                                                                       −1
+
+for some t1 , t2 ∈ T with ut2 = t2 u. Then t′ u = t2 t1 ut−1
+                                                          1 . Since t2 is semisimple and
+it commutes with t1 ut1 which is unipotent, we see that t1 ut−1
+                         −1
+                                                                      1   = (t′ u)u = t′ u
+                          −1                   −1
+we see that t′ u = t1 ut1 . Thus Ad(t1 ut1 )e0 = e0 hence Ad(u)e = e where
+e = Ad(t1 )−1 e0 . This proves (a).
+1.9. Let D be a connected component of G which contains some unipotent element
+of G. Then
+   (a) D contains a unique closed unipotent G0 -conjugacy class; this is the set of
+unipotent, quasi-semisimple elements in D. See [Sp, 2.21].
+1.10. Let P be a parabolic of G0 and let L be a Levi of P . Let g ∈ NG L∩ ∈ NG P .
+We show that
+    (a) ZG0 ((ZL ∩ ZL (g))0 ) = L.
+Let L′ = ZG0 ((ZL ∩ ZL (g))0 ). Then L′ is a reductive, connected subgroup of G0
+and L ⊂ L′ . Moreover, P ∩ L′ is a parabolic subgroup of L′ with Levi L. We
+have gL′ g −1 = L′ , g(P ∩ L′ )g −1 = P ∩ L′ . If (a) is true for NG L′ , P ∩ L′ , L, g
+instead of G, L, P, g, then we would have ZL′ ((ZL ∩ ZL (g))0 ) = L. Hence L′ = L.
+Thus, to prove (a), we may assume that L′ = G0 and we must show that L = G0 .
+Replacing g by a left L-translate, we may assume that there exists (B1 , T ) ∈ Ē(L)
+such that gB1 g −1 = B1 , gT g −1 = T . Since g normalizes UP , it also normalizes
+the Borel B = B1 UP of G0 . Let e ∈ E(G0 ) be such that p(e) = (B, T ). Then
+p(Ad(g)e) = (B, T ). We can find g0 ∈ G0 such that Ad(g)e = Ad(g0 )e hence
+(B, T ) = (g0 Bg0−1 , g0 T g0−1 ) and g0 ∈ T , Ad(g0−1 g)e = e. Replacing g by g0−1 g
+we may assume in addition that Ad(g)e = e. Then automatically Ad(g) fixes an
+épinglage of L which lies over (B1 , T ) ∈ Ē(L). By 1.7(b) for (g, G) and (g, L), we
+have
+               (ZG0 ∩ ZG (g))0 = ZZ0 0 (g)0 , (ZL ∩ ZL (g))0 = ZZ0 L (g)0 .
+                                       G
+
+
+Since L′ = G0 , we have (ZL ∩ZL (g))0 ⊂ (ZG0 ∩ZG (g))0 , hence ZZ0 L (g)0 ⊂ ZZ0 0 (g)0 .
+                                                                               G
+Since ZL (g)0 is a Levi of a parabolic of ZG0 (g)0 (see 1.7(c)), we have ZL (g)0 =
+ZZG0 (g)0 (ZZ0 L (g)0 ) hence ZL (g)0 = ZG0 (g)0 . It follows that ZP (g)0 = ZG0 (g)0 .
+Using 1.7(c) we deduce that P = G0 hence L = G0 . This proves (a).
+1.11. Let P be a parabolic of G0 . Let s ∈ NG P be semisimple. Then
+   (a) UP ∩ ZG (s) is connected.
+Since s normalizes UP , this follows from [B, 9.3].
+1.12. Let P be a parabolic of G0 . Let s ∈ NG P be semisimple. Choose a Levi L
+of P such that s ∈ NG L. (See 1.4(a).) Let Q = ZG (s)0 ∩ P . We show:
+   (a) Q is a parabolic of ZG (s)0 with Levi ZL (s)0 and UQ = UP ∩ ZG (s);
+   (b) ZL (s)0 and ZG (s)0 have a common maximal torus and ZZG (s)0 ⊂ ZZL (s)0 .
+We prove (a). By 1.4(b) (for G or for NG L), ZG (s) and ZNG L (s) are reductive.
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                            5
+
+Since ZG (s)0 /Q is a closed subvariety of the projective variety G/P , it is itself
+a projective variety. Hence Q is a parabolic of ZG (s)0 . Now UP ∩ ZG (s) =
+UP ∩ ZG (s)0 (see 1.11) is a normal unipotent subgroup of Q hence it is contained
+in UQ . Since L has finite index in NG L, ZL (s) has finite index in ZNG L (s) hence
+ZL (s) is reductive. Let y ∈ Q. Then y ∈ P hence we can write uniquely y =
+xu where x ∈ L, u ∈ UP . Since sys−1 = y we have y = (sxs−1 )(sus−1 ) and
+sxs−1 ∈ L, sus−1 ∈ UP . By uniqueness we have sxs−1 = x, sus−1 = u. Thus,
+x ∈ ZL (s), u ∈ UP ∩ ZG (s). The map y 7→ x is a morphism of algebraic groups
+f :Q−  → ZL (s). Since Q is connected, f (Q) is contained in ZL (s)0 . We see that
+Q = ZL (s)0 (UP ∩ ZG (s)). Clearly, ZL (s)0 ∩ (UP ∩ ZG (s)) = {1}. Since ZL (s)0 is
+reductive and UP ∩ ZG (s) ⊂ UQ , it follows that (a) holds.
+   We prove (b). Let T1 be a maximal torus of ZL (s)0 . Let T2 be a maximal
+torus of ZG (s)0 containg T1 . By 1.4(d) (for NG L instead of G), T̃ := ZL (T1 ) is
+a maximal torus of L. By 1.4(d) (for G), T := ZG0 (T2 ) is a maximal torus of
+G0 . Now (ZL ∩ ZL (s))0 is contained in ZZL (s)0 hence is contained in T1 . Hence
+ZG0 (T1 ) ⊂ ZG0 ((ZL ∩ ZL (s))0 ) = L where the last equality comes from 1.10(a).
+Since T ⊂ ZG0 (T1 ), it follows that T ⊂ L and since T1 ⊂ T and T is commutative,
+we have T ⊂ ZL (T1 ) = T̃ . Since T̃ , T are maximal tori of G0 , we must have T̃ = T .
+By 1.4(d) we have T1 = ZT̃ (s)0 , T2 = ZT (s)0 . It follows that T1 = T2 . This proves
+the first assertion of (b). Since ZG (s)0 is reductive, its centre is contained in any
+maximal torus of ZG (s)0 , in particular in T2 . Since T1 = T2 and T1 ⊂ ZL (s)0 , we
+see that ZZG (s)0 ⊂ ZL (s)0 and (b) follows.
+
+1.13. Let P be a parabolic of G0 . Let s ∈ NG P be semisimple. Assume that
+ZG (s)0 ⊂ P . We show:
+   (a) there is a unique Levi L of P such that ZG (s)0 ⊂ L. We have s ∈ NG L.
+Let T0 be a maximal torus of ZG (s)0 . Let T be a maximal torus of P containing T0 .
+By 1.4(d), ZG0 (T0 ) is a maximal torus of G0 . It contains T hence it is equal to T .
+Clearly, ZG0 (T0 ) is normalized by s; hence sT s−1 = T . Let L be the unique Levi
+of P such that T ⊂ L. Now sLs−1 is a Levi of sP s−1 = P containing sT s−1 = T .
+By uniqueness, we have sLs−1 = L. By 1.12(a), UP ∩ ZG (s)0 equals the unipotent
+radical of ZP (s)0 = ZG (s)0 hence it is 1. This implies, by 1.12(a), that ZP (s)0
+is a parabolic of ZG (s)0 with Levi ZL (s)0 and with unipotent radical {1}. Hence
+ZP (s)0 = ZG (s)0 = ZL (s)0 . In particular, ZG (s)0 ⊂ L. This proves the existence
+of L. Assume now that L′ is another Levi of P such that ZG (s)0 ⊂ L′ . Since
+T0 ⊂ ZG (s)0 , we have T0 ⊂ L′ . Hence T0 is contained in a maximal torus T ′ of L′ .
+Now T ′ is also a maximal torus of G0 . Since T0 is contained in a unique maximal
+torus of G0 (see 1.4(d)) we have T = T ′ . Thus, L, L′ are Levi subgroups of P
+containing a common maximal torus of P . It follows that L = L′ . This proves (c).
+1.14. Let g ∈ G be quasi-semisimple and let T1 be a maximal torus of ZG (g)0 .
+Let N = {n ∈ G0 ; ngT1 n−1 = gT1 }. We show:
+   (a) N 0 = T1 hence N /T1 is finite;
+   (b) any element of gT1 is quasi-semisimple;
+6                                      G. LUSZTIG
+
+     (c) any quasi-semisimple element g ′ in gG0 is G0 -conjugate to some element in
+gT1 ;
+     (d) two elements g ′ , g ′′ ∈ gT1 are in the same G0 -conjugacy class if and only
+if they are in the same N /T1 -orbit on gT1 for the N /T1 -action induced by the
+conjugation action of N on gT1 .
+(Closely related results for non connected compact Lie groups appear in [D].)
+     We prove (a). Let T be the unique maximal torus of G0 such that T1 ⊂ T . We
+have T1 = (T ∩ ZG (g))0 . (See 1.4(d).) If n ∈ N then ngn−1 = gτ with τ ∈ T1
+and gT1 = ngT1 n−1 = gτ nT1 n−1 hence nT1 n−1 = T1 . Thus, N ⊂ NG0 (T1 ).
+Since N 0 ⊂ NG0 (T1 ) we must have N 0 ⊂ ZG0 (T1 ) = T by a standard rigidity
+argument. If n ∈ N 0 then ngn−1 = gtn with tn ∈ T1 ; since n ∈ ZG0 (T1 ), we see
+that n 7→ tn is a morphism of algebraic groups f : N 0 −          → T1 . Clearly, we can find
+k ≥ 1 such that g k is in ZZG (s)0 hence in T1 (since ZG (s)0 is reductive). Then
+g k = ng k n−1 = (ngn−1 )k = (gtn )k = g k tkn hence tkn = 1 for all n ∈ N 0 . Thus,
+f (N 0 ) is contained in a finite subgroup of T1 ; being connected, it is {1}. Thus
+N 0 ⊂ T ∩ZG (g) hence N 0 ⊂ (T ∩ZG (g))0 = T1 . The inclusion T1 ⊂ N 0 is obvious
+and (a) follows.
+     We prove (b). The conjugation action of T1 on the variety of all Borels of G0
+that are normalized by g must have a fixed point since this variety is projective.
+Thus there exists a Borel B of G0 such that T1 ⊂ B, gBg −1 = B. Now T1 is
+contained in some maximal torus of B, which is necessarily T , by the definition
+of T . Since gT g −1 is a maximal torus of G that contains T , we have gT g −1 = T
+(again by the definition of T ). If t ∈ T1 then t normalizes both B and T since
+t ∈ T . Hence gt normalizes B and T . Thus, gt is quasi-semisimple.
+     We prove (c). Let T1′ be a maximal torus in ZG (g ′ )0 . As in the proof of (b)
+we can find a Borel B ′ of G0 and a maximal torus T ′ of B ′ such that T1′ ⊂ T ′
+and g ′ B ′ g ′−1 = B ′ , g ′ T ′ g ′−1 = T ′ . We can find h ∈ G0 such that hB ′ h−1 =
+B, hT ′ h−1 = T (with B, T as above). Let g ′′ = hg ′ h−1 . Then g ′′ Bg ′′−1 =
+B, g ′′ T g ′′−1 = T . We also have gBg −1 = B, gT g −1 = T . We have g ′′ = gy
+where y ∈ G0 satisfies yBy −1 = B, yT y −1 = T . It follows that y ∈ T . Since a
+power of g is in T1 , Ad(g) : T −        → T has finite order. Using 1.2(a) we can write
+y = g y2 gy2 y1 with y2 ∈ T, y1 ∈ (T ∩ ZG (g))0 = T1 . Then gy = y2 gy1 y2−1 . We
+        −1       −1
+
+see that gy is T -conjugate (hence G0 -conjugate) to gy1 . Hence g ′ is G0 -conjugate
+to gy1 ∈ gT1 . This proves (c).
+     We prove (d). Let g ′ , g ′′ ∈ gT1 be such that g ′′ = xg ′ x−1 where x ∈ G0 . We have
+g ′′ = gt with t ∈ T1 . Clearly, T1 is a maximal torus of ZG (g ′ )0 and a maximal torus
+of ZG (g ′′ )0 . Then x−1 T1 x is a maximal torus of ZG (x−1 g ′′ x)0 = ZG (g ′ )0 . The
+maximal tori T1 , x−1 T1 x of ZG (g ′ )0 are conjugate in ZG (g ′ )0 that is, there exists
+z ∈ ZG (g ′ )0 such that zx−1 T1 xz −1 = T1 . Let n = zx−1 . We have nT1 n−1 = T1
+and n−1 g ′ n = xz −1 g ′ zx−1 = xg ′ x−1 = g ′′ . We have n−1 gT1 n = n−1 g ′ T1 n =
+g ′′ n−1 T1 n = g ′′ T1 = gT1 so that n−1 ∈ N . This proves (c).
+1.15. We shall need the following result.
+   (a) The number of unipotent G-conjugacy classes of G is finite. The number of
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                              7
+
+unipotent G0 -conjugacy classes of G is finite.
+These two statements are clearly equivalent. In the case where G = G0 is con-
+nected, (a) is proved in [L1]. The author handled also the general case by a method
+similar to that in [L1]. See [Sp, 4.1].
+                    , G0 ). For any k ∈ Z we set gk = {x ∈ g; Ad(χ(a))x =
+1.16. Let χ ∈ Hom(k∗P
+ k
+a x ∀a ∈ k }. Then k≥0 gk = Lie Pχ for a well defined parabolic Pχ of G0 .
+            ∗
+        P
+We have k>0 gk = Lie UPχ .
+1.17. Let Q be a parabolic of G0 . Let g ∈ NG Q. We show that:
+    (a) there exists u ∈ UQ and χ ∈ Hom(k∗ , G0 ) such that gχ(a)g −1 = uχ(a)u−1
+for all a ∈ k∗ and Pχ = Q.
+Let π : Q −   → Q/UQ be the obvious map. As one easily checks, one can find
+χ ∈ Hom(k∗ , G0 ) such that χ′ (k∗ ) ⊂ π −1 (ZQ/U
+  ′                                                  0
+                                                        Q
+                                                          ) and Pχ′ = Q. Let T be a
+                       −1    0                      ′ ∗
+maximal torus of π (ZQ/UQ ) that contains χ (k ). We can find n ≥ 1 such that
+g n ∈ Q. For j ∈ [0, n − 1], g j T g −j is a maximal torus of π −1 (ZQ/U
+                                                                     0
+                                                                        Q
+                                                                          ), a connected
+solvable group with unipotent radical UQ . Hence we can find uj ∈ UQ such
+that g j T g −j = uj T u−1                          ∗                   −1 j ′
+                          j . Define χj ∈ Hom(k , T ) by χj (a) = uj g χ (a)g
+                                                                                    −j
+                                                                                       uj
+                  ∗
+and χ ∈ Hom(k , T ) by χ(a) = χ0 (a)χ1 (a) . . . χn−1 (a). Define an automorphism
+       0           0                                                    0
+f : ZQ/U   Q
+              −
+              → ZQ/U    Q
+                           by f (π(x)) = π(gxg −1) for all x ∈ π −1 (ZQ/U   Q
+                                                                              ). For a ∈
+k∗ we have π(χ(a)) = π(χ′ (a))f (π(χ′(a)))f 2 (π(χ′ (a))) . . . f n−1 (π(χ′ (a))). Since
+f n = 1 it follows that f (π(χ(a))) = π(χ(a)) that is, π(gχ(a)g −1) = π(χ(a)).
+By a standard argument, if λ, λ′ ∈ Hom(k∗ , Q) are such that π(λ(a)) = π(λ′ (a))
+for all a ∈ k∗ , then there exists u ∈ UQ such that λ(a) = uλ′ (a)u−1 for all a.
+Thus, there exists u ∈ UQ such that gχ(a)g −1 = uχ(a)u−1 for all a. We have
+Pχj = u−1      j
+           j g Pχ ′ g
+                      −j
+                         uj = u−1     j
+                                 j g Qg
+                                          −j
+                                             uj = u−1
+                                                   j Quj = Q. Hence the k -action
+                                                                                 ∗
+
+a 7→ Ad(χj (a)) has > 0 weights on Lie UQ and < 0 weights on g/Lie Q. Since
+these actions (for j = 0, 1, . . . , n − 1) commute with each other, it follows that the
+k∗ -action a 7→ Ad(χ(a)) = Ad(χ0 (a))Ad(χ1 (a)) . . . Ad(χn−1 (a)) has > 0 weights
+on Lie UQ and < 0 weights on g/Lie Q. Hence Pχ = Q. This proves (a).
+1.18. Let g ∈ G. Let Q be a parabolic subgroup of ZG (gs )0 such that gu Qgu−1 =
+Q. We show that
+    (a) there exists a parabolic P of G0 such that P ∩ ZG (gs )0 = Q and gP g −1 = P .
+By 1.17, we can find χ : k∗ −     → ZG (gs )0 such that Pχ (relative to ZG (gs )0 ) is
+Q and there exists u ∈ UQ such that gu χ(a)gu−1 = uχ(a)u−1 for all a ∈ k∗ .
+Since gs χ(a)gs−1 = χ(a) for all a, we have gχ(a)g −1 = uχ(a)u−1 for all a. Define
+χ̃ : k∗ −→ G0 , χ̃′ : k∗ −
+                         → G0 by χ̃(a) = χ(a), χ̃′ (a) = g χ̃(a)g −1 = uχ̃(a)u−1 for all
+a. Let P = Pχ̃ (relative to G). From the definition we have Lie P ∩ Lie ZG (gs )0 =
+Lie Q. Hence P ∩ ZG (gs )0 = Q. We have gP g −1 = Pχ̃′ = uP u−1 = P since
+u ∈ UQ ⊂ Q ⊂ P . This proves (a).
+1.19. Let T, T ′ be tori and let f ∈ Hom(T ′ , T ) be surjective. Let τ : T −→ T, τ ′ :
+  ′      ′                                                          τ   ′τ ′
+T −   → T be automorphisms of finite order with fixed point sets T , T such that
+    ′
+f τ = τ f . We show that
+8                                      G. LUSZTIG
+
+                                                            ′
+   (a) f restricts to a surjective homomorphism (T ′τ )0 −
+                                                         → (T τ )0 .
+This can be reduced to the analogous statement where T, T ′ are replaced by their
+groups of co-characters tensored by Q. In that case we use the fact that an
+automorphism of finite order of a finite dimensional Q-vector space is semisimple.
+1.20. Let π : G −   → Gss be the canonical map. Let a ∈ G be semisimple. Let
+φ : ZG (a)0 −→ ZGss (π(a))0 be the homomorphism induced by π. We show that
+    (a) φ is surjective and Ker(φ) ⊂ ZZ0 G (a)0 .
+    (b) φ induces a surjective homomorphism ZZ0 G (a)0 −      → ZZ0 G (π(a))0 .
+                                                                       ss
+Let I be the image of φ. Let T be a maximal torus of ZGss (π(a))0 . Then
+T ′ = π −1 (T ) is a torus in G0 and Ad(a)(T ′ ) = T ′ . Moreover, since ZG0 T ′
+has finite index in NG T ′ , we see that there exists an integer n ≥ 1 such that
+Ad(a)n (t′ ) = t′ for all t′ ∈ T ′ . Let T ′′ = {t′ ∈ T ′ ; Ad(a)(t′ ) = t′ }0 . The obvious
+homomorphism T ′ −    → T restricts to a homomorphism T ′′ −     → T ′ which is surjective,
+                      ′′          0                 ′
+by 1.19(a). Since T ⊂ ZG (a) , we see that T ⊂ I. Thus, I contains the union of
+all maximal tori of ZGss (π(a))0 , which is dense in ZGss (π(a))0 , since ZGss (π(a))0
+is reductive, connected. Thus, I is dense in ZGss (π(a))0 . It is clearly closed, hence
+I = ZGss (π(a))0 . This proves the first assertion of (a). The second assertion of
+(a) is obvious. Now (b) is a special case of the following general statement. Let
+H−  → H ′ be a surjective homomorphism of connected reductive groups whose ker-
+                                                                                   0      0
+nel is contained in the centre of H. Then the induced homomorphism ZH                −
+                                                                                     → ZH   ′
+
+is surjective.
+1.21. If D is a connected component of G, we set
+   (a) D ZG0 = ZG0 ∩ ZG (g)
+where g ∈ D. (This does not depend on the choice of g.) We write D ZG         0
+                                                                                0 instead
+    D       0                                                0
+of ( ZG0 ) . Now let X be a subset of D stable under G -conjugacy. We show:
+   (b) if D ZG0                   0
+                0 X ⊂ X, then ZG0 X ⊂ X.
+                                            0
+(The converse is obvious.) Let z ∈ ZG         0 , g ∈ X. We must show that zg ∈ X.
+                                    0                                  0          0
+Clearly, some power of g is in G hence some power of Ad(g) : ZG          0 −→ ZG    0 is 1.
+                                         −1             0         0   D 0               0
+Using 1.2(a), we can write z = txgxg with t ∈ (ZG0 ∩ZG (g)) = ZG0 , x ∈ ZG                0.
+                   −1         −1
+Then zg = txgx ∈ txXx = tX = X. This proves (b).
+                     0      0
+   Consider the ZG     0 × G -action
+
+   (c) (z, x) : y 7→ xzyx−1
+on G or D. This restricts to a D ZG   0        0
+                                        0 × G -action on G. From (b) we see that
+                              0       0
+   (d) The action (c) of ZG     0 × G    on D and its restriction to D ZG 0
+                                                                            0 × G
+                                                                                   0
+                                                                                      have
+exactly the same orbits, that is, any orbit for one action is an orbit for the other
+action.
+                                      0      0
+1.22. Let C be an orbit of the ZG       0 × G -action 1.21(c) on G.   Let D be the
+connected component of G that contains C. Let C ′ = {y ∈ D; ys ∈ Cs }. We show:
+   (a) Cs and C ′ are closed in G and y 7→ ys is a morphism C ′ − → Cs ;
+   (b) if C̄ is the closure of C in G and h ∈ C̄ then there exists h′ ∈ C such that
+hs = h′s and h′−1 h ∈ ZG (hs )0 .
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                 9
+
+We prove (a). Let σ ∈ C. By 1.21(d), we have C = {xzσx−1 ; x ∈ G0 , z ∈ D ZG0 }.
+For x, z as above we have (xzσx−1 )s = xzσs x−1 since z = zs , zσ = σz. Thus,
+Cs = {xzσs x−1 ; x ∈ G0 , z ∈ D ZG     0
+                                         0 }, so that Cs is an orbit for the action 1.21(c)
+    D 0
+of ZG0 × G on G. We may assume that G is generated by D. Then D ZG
+                0                                                                    0
+                                                                                       0 is a
+                                                            ′      D 0
+closed normal subgroup of G and we may form G = G/ ZG0 . Let π : G −                   → G′
+                                                                         ′0
+be the obvious homomorphism. Then π(Cs ) is a semisimple G -conjugacy class
+in G′ hence π(Cs ) is closed in G′ by 1.4(e). Let G′ ⊂ GLn (k) be an imbedding
+of algebraic groups with n ≥ 1. Let Y be the (semisimple) class in GLn (k)
+that contains π(Cs ). Let Y ′ = {h ∈ GLn (k); hs ∈ Y }. It is well known that
+Y ′ is closed in GLn (k) and Y ′ −     → Y, g 7→ gs is a morphism of varieties. Hence
+Y ∩ G is closed in G and ρ : Y ′ ∩ G′ −
+  ′      ′                   ′
+                                                     → Y ∩ G′ , g 7→ gs is a morphism of
+varieties. Let X = {g ∈ π(D); gs ∈ π(Cs )}. Since π(Cs ) is closed in Y ∩ G′ and
+X = ρ−1 (π(Cs )) ∩ π(D), we see that X is closed in Y ′ ∩ G′ . Next we note that
+C ′ = π −1 (X ). (The inclusion C ′ ⊂ π −1 (X ) is obvious; the reverse inclusion follows
+from the equality D ZG    0                               ′
+                            0 Cs = Cs .) We see that C is closed in D. Let a ∈ Cs . Let
+
+H be the isotropy group of a in D ZG         0
+                                               0 × G
+                                                     0
+                                                       (which acts transitively on Cs ). Let
+                                  D 0           0
+R = {g ∈ D; gs = a}. The ZG0 × G -action on D restricts to an action on C ′
+and this restricts to an H-action on R which induces an isomorphism of algebraic
+                                    ∼
+varieties (D ZG  0      0
+                   0 × G ) ×H R −   → C ′ . Via this isomorphism and the isomorphism
+                             ∼
+(D ZG0       0
+       0 × G ) ×H {a} −     → Cs , the map C ′ −     → Cs , g 7→ gs becomes the morphism
+(D ZG0
+       0 × G0
+              ) ×  H R −
+                       →   ( D 0
+                               ZG0 × G  0
+                                          ) × H  {a} induced by the obvious map R − → {a}.
+                     ′
+It follows that C −    → Cs , g 7→ gs is a morphism of algebraic varieties. This proves
+(a).
+    We prove (b). We have C̄ ⊂ D. From (a) we see that g 7→ gs is a morphism C̄ −          →
+Cs . This morphism is equivariant with respect to the actions 1.21(c) of ZG0 ×G0 D 0
+
+(transitive on Cs ). Since C is a dense subset of C̄ invariant under this action, it
+follows that for any a ∈ Cs , the intersection of C with C̄a = {x ∈ C̄; xs = a} is
+dense in C̄a . Take a = hs . Then any connected component c of C̄a contains some
+point of C ∩ C̄a . Let c be the connected component containing h. Let h′ ∈ C ∩ c.
+Then h′s = a. Since C̄a ⊂ ZG (a) we have c ⊂ ZG (a). More precisely, c is contained
+in a connected component of ZG (a). Thus h′−1 h ∈ ZG (a)0 . This proves (b).
+1.23. Let c be a G0 -conjugacy class in G. Let D be the connected component of
+G that contains c. Let Γ = {z ∈ D ZG   0
+                                         0 ; zc = c}. We show:
+
+   (a) Γ is finite.
+Let c ∈ c. If z ∈ Γ, then zc = cz = gcg −1 hence zcs = cs z = gcs g −1 for
+some g ∈ G0 . Let T1 be a maximal torus of ZG (cs )0 . We have D ZG     0
+                                                                          0 ⊂ T1 . By
+                     0
+1.4(a), 1.4(d), the G -conjugacy class of cs intersects cs T1 in a finite set that is,
+F := {hcs h−1 ; h ∈ G0 } ∩ cs T1 is finite. Since cs Γ ⊂ F , we see that cs Γ is finite
+and (a) follows.
+   From (a) we deduce that, for any subgroup τ of D ZG     0
+                                                             0 we have
+
+   (b) dim(τ c) = dim τ + dim c.
+1.24. Let c, c′ be two G0 -conjugacy classes in G contained in the same connected
+10                                         G. LUSZTIG
+
+component D of G. Let δ, δ ′ be two subtori in ζ := D ZG     0
+                                                               0 . We show:
+
+    (a) δc ∩ δ c is a finite union of subsets of the form (δ ∩ δ ′ )c′′ where c′′ are
+              ′ ′
+  0
+G -conjugacy classes in D.
+We may assume that δc ∩ δ ′ c 6= ∅. Let x ∈ δc ∩ δ ′ c′ . Let c1 be the G0 -conjugacy
+class of x. Then δc = δc1 , δ ′ c′ = δ ′ c1 . Thus we may assume that c = c′ . Let Γ be
+as in 1.23. Then φ : ζ × c − → ζc, (a, c) 7→ ac is a principal covering with group Γ
+(which acts by z : (a, c) 7→ (az, c)). Since φ(δ × c) = δc, φ(δ ′ × c) = δ ′ c, we have
+φ−1 (δc) = ∪z∈Γ (δz × c), φ−1 (δ ′ c) = ∪z∈Γ γ(δ ′ z × c) and
+
+             φ−1 (δc ∩ δ ′ c) = ∪z∈Γ (δz × c) ∩ ∪z ′ ∈Γ (δ ′ z ′ × c)
+              = ∪z,z ′ ∈Γ (δz × c) ∩ (δ ′ z ′ × c)) = ∪z,z ′ ∈Γ ((δz ∩ δ ′ z ′ ) × c).
+
+Hence
+
+           δc ∩ δ ′ c = φ(∪z,z ′ ∈Γ ((δz ∩ δ ′ z ′ ) × c)) = ∪z,z ′ ∈Γ ((δz ∩ δ ′ z ′ )c).
+
+Now δz ∩ δ ′ z ′ is either empty or of the form (δ ∩ δ ′ )z1 with z1 ∈ ζ. Since Γ is finite
+(see 1.23) we see that δc ∩ δ ′ c = ∪z1 (δ ∩ δ ′ )z1 c where z1 runs over a finite subset
+of ζ. (For any such z1 , z1 c is a G0 -orbit in D.)
+1.25. Let P ′ (resp. P ′′ ) be a parabolic of G0 with Levi L′ (resp. L′′ ). Assume
+that L′ , L′′ contain a common maximal torus. Then P ′ ∩ P ′′ is a connected group
+with Levi L′ ∩ L′′ . We show:
+   (a) any g ∈ NG P ′ ∩ NG P ′′ can be written uniquely in the form g = zω where
+z ∈ NG L′ ∩ NG P ′ ∩ NG L′′ ∩ NG P ′′ , ω ∈ UP ′ ∩P ′′ . Thus, NG P ′ ∩ NG P ′′ is a
+semidirect product (NG L′ ∩ NG P ′ ∩ NG L′′ ∩ NG P ′′ )UP ′ ∩P ′′ .
+Since g −1 normalizes P ′ ∩ P ′′ , we see that g −1 (L′ ∩ L′′ )g is a Levi of P ′ ∩ P ′′
+hence it equals ω −1 (L′ ∩ L′′ )ω for some ω ∈ UP ∩P ′ . Then z := gω −1 normalizes
+L′ ∩ L′′ and also P ′ and P ′′ . Now L′ is the unique Levi of P ′ that contains
+L′ ∩ L′′ . Clearly, zL′ z −1 is again a Levi of P ′ that contains L′ ∩ L′′ . Hence
+zL′ z −1 = L′ so that z ∈ NG L′ ∩ NG P ′ . Similarly, z ∈ NG L′′ ∩ NG P ′′ . Thus,
+z ∈ NG L′ ∩ NG P ′ ∩ NG L′′ ∩ NG P ′′ and g = zω, as required. To prove uniqueness,
+it is enough to show that (NG L′ ∩ NG P ′ ∩ NG L′′ ∩ NG P ′′ ) ∩ UP ′ ∩P ′′ = {1}. If
+u ∈ UP ′ ∩P ′′ normalizes L′ and L′′ then, using u ∈ P ′ , we have u ∈ L′ and
+similarly u ∈ L′′ hence u ∈ L′ ∩ L′′ ; but L′ ∩ L′′ , being a Levi of P ′ ∩ P ′′ , has
+trivial intersection with UP ′ ∩P ′′ hence u = 1.
+    We have
+    (b) UP ′ ∩P ′′ = (L′ ∩ UP ′′ )(UP ′ ∩ P ′′ ) (semidirect product) and also UP ′ ∩P ′′ =
+(L′′ ∩ UP ′ )(UP ′′ ∩ P ′ ) (semidirect product).
+1.26. Let P be a parabolic of G0 with Levi L. Then
+   (a) any g ∈ NG P can be written uniquely in the form g = zω where z ∈
+NG L ∩ NG P, ω ∈ UP . Thus, NG P is a semidirect product (NG L ∩ NG P )UP .
+This is a special case of 1.25(a) with P ′ = P ′′ = P, L′ = L′′ = L.
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                           11
+
+1.27. Let H ′ be an algebraic group, let H be a closed subgroup of H ′ and let c
+be a semisimple H ′0 -conjugacy class in H ′ . Then
+   (a) H ∩ c is a finite union of (semisimple) H 0 -conjugacy classes in H.
+We can regard H ′ as a closed subgroup of GLn (k) for some n ≥ 1. Let c1 be
+the conjugacy class in GLn (k) that contains c. It is enough to prove (a) with c
+replaced by c1 . Thus we may assume that H ′ = GLn (k). Let D be a connected
+component of H that contains some semisimple elements. We can find a closed
+diagonalizable subgroup TD of H such that any H 0 -conjugacy class in D meets
+TD . (We pick a semisimple element s ∈ D and a maximal torus T1 in ZH (s)0 . We
+can take TD to be the subgroup generated by T1 and s. The fact that this has the
+required properties can be deduced from the analogous property of the reductive
+group H/UH 0 , see 1.14(c).) It is enough to prove that TD ∩ c is finite. Now TD is
+contained in a maximal torus T of GLn (k) and it is enough to show that T ∩ c is
+finite. But this is a well known property of GLn (k).
+
+                           2. Isolated elements of G
+2.1. Let g ∈ G. Let
+
+               T (g) = (ZZG (gs )0 ∩ ZG (gu ))0 = (ZZ0 G (gs )0 ∩ ZG (gu ))0
+                = (ZZG0 (gs )0 ∩ ZG0 (gu ))0 = (ZZG (gs )0 ∩ ZG (g))0
+
+(a torus, since ZG (gs )0 is reductive). We have T )g) ⊂ ZG (g). We sometimes write
+TG (g) instead of T (g). Clearly,
+
+                       T (xgx−1 ) = xT (g)x−1 for any x ∈ G.
+
+Let
+                        L(g) = ZG0 (T (g)), L̂(g) = NG (L(g)).
+Then
+   (a) L(g) is the Levi of a parabolic P of G0 such that gP g −1 = P .
+Indeed, we can find χ ∈ Hom(k∗ , G0 ) such that χ(k∗ ) ⊂ T (g) and L(g) =
+ZG0 (χ(k∗ )). Then P = Pχ , see 1.16, is as required.
+   From the definition we have
+   (b) ZG (gs )0 ⊂ L(g).
+The next result shows that L(g) is characterized by being minimal with the prop-
+erties (a),(b).
+   (c) Let Q be a parabolic of G0 with Levi L such that g ∈ NG L ∩ NG Q and
+ZG (gs )0 ⊂ L. Then L(g) ⊂ L.
+Since ZG0 ((ZL ∩ ZL (g))0 ) = L, see 1.10(a), it is enough to show that ZG0 (T (g)) ⊂
+ZG0 ((ZL ∩ ZL (g))0 ) or that (ZL ∩ ZL (g))0 ⊂ T (g) or that (ZL0 ∩ ZG (g))0 ⊂
+T (g). Clearly, (ZL0 ∩ ZG (g))0 ⊂ ZG (gs ) hence (ZL0 ∩ ZG (g))0 ⊂ ZG (gs )0 . Since
+ZG (gs )0 ⊂ L, we have ZL ∩ ZG (gs )0 ⊂ ZZG (gs )0 hence (ZL0 ∩ ZG (g))0 ⊂ ZZG (gs )0 .
+12                                      G. LUSZTIG
+
+Clearly, (ZL0 ∩ ZG (g))0 ⊂ ZG (g) hence (ZL0 ∩ ZG (g))0 ⊂ ZZG (gs )0 ∩ ZG (g) and
+(ZL0 ∩ ZG (g))0 ⊂ (ZZG (gs )0 ∩ ZG (g))0 = T (g), as required.
+   Since T (g) ⊂ ZG (g), we have g ∈ L̂(g) hence TL̂(g) (g) is defined. We have
+   (d) TL̂(g) (g) = T (g).
+Since ZL̂(g) (gu ) = ZG (gu ) ∩ L̂(g) and ZZL̂(g) (gs )0 ⊂ L̂(g), we have TL̂(g) (g) =
+(ZZL̂(g) (gs )0 ∩ ZL̂(g) (gu ))0 = (ZZL̂(g) (gs )0 ∩ ZG (gu ))0 . From (b) we have ZG (gs )0 ⊂
+L(g) ⊂ L̂(g) hence ZL̂(g) (gs )0 = ZG (gs )0 and TL̂(g) (g) = (ZZG (gs )0 ∩ ZG (gu ))0 =
+T (g). This proves (d).
+   We shall need the following result.
+   (e) Let g, g ′ ∈ G be such that gs = gs′ and g ′−1 g ∈ ZG (gs )0 . Then T (g) = T (g ′ ).
+We must show that (ZZ0 G (gs )0 ∩ ZG (g))0 = (ZZ0 G (gs )0 ∩ ZG (g ′ ))0 . It is enough to
+show that, for x ∈ ZZ0 G (gs )0 , the conditions xg = gx and xg ′ = g ′ x are equivalent.
+Since x commutes with any element of ZG (gs )0 , it commutes with g ′−1 g. This
+proves (e).
+
+2.2. We show that the following five conditions for g ∈ G are equivalent:
+   (i) L(g) = G0 ;
+   (ii) T (g) ⊂ ZG0 ;
+   (iii) T (g) = D ZG  0
+                         0 where D is the connected component of G containing g;
+
+   (iv) there is no proper parabolic P of G0 with Levi L such that g ∈ NG L ∩
+NG P, ZG (gs )0 ⊂ L;
+   (v) there is no proper parabolic P of G0 such that g ∈ NG P, ZG (gs )0 ⊂ P .
+Indeed, it is clear that (iii) =⇒ (ii)↔(i). Assume now that (ii) holds. Then any
+element of T (g) commutes with any element of G0 ; since T (g) ⊂ ZG (g), we have
+T (g) ⊂ ZG0 ∩ ZG (g). Since T (g) is connected, we have T (g) ⊂ (ZG0 ∩ ZG (g))0 .
+The reverse inclusion is obvious. We see that (iii) holds. Thus, the equivalence of
+(i),(ii),(iii) is established. The equivalence of (i) and (iv) follows from 2.1(c). It
+remains to prove the equivalence of (iv),(v). It is enough to prove the following
+statement.
+   If P is a parabolic of G0 such that g ∈ NG P, ZG (gs )0 ⊂ P then there exists a
+Levi of P that contains ZG (gs )0 and is normalized by g.
+By 1.13(a) there is a unique Levi L of P such that ZG (gs )0 ⊂ L. Now gLg −1 is a
+Levi of gP g −1 = P containing gZG (gs )0 g −1 = ZG (gs )0 . By uniqueness, we have
+gLg −1 = L. This completes the prove of equivalence of (i)-(v).
+   We say that g is isolated (in G) if it satisfies the equivalent conditions (i)-(v).
+    If g ∈ G and G′ is a closed subgroup of G containing g and G0 then, clearly,
+   (a) g is isolated in G if and only if g is isolated in G′ .
+By 2.1(d) we have for g ∈ G:
+    ZL̂(g) (TL̂(g) (g))0 = ZL̂(g) (T (g))0 = (L̂(g) ∩ ZG (T (g))0 (L̂(g))0 ,
+hence
+    (b) g is isolated in L̂(g).
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                              13
+
+2.3. Let π : G −  → Gss be the obvious map. Let g ∈ G. We show:
+    (a) g is isolated in G if and only if π(g) is isolated in Gss . Equivalently, the
+set of isolated elements in G is the inverse image under π of the set of isolated
+elements in Gss .
+Using the criterion 2.2(v) we see that it is enough to show that conditions (i),(ii)
+below are equivalent:
+    (i) there exists a proper parabolic P of G such that ZG (gs )0 ⊂ P, gP g −1 = P
+    (ii) there exists a proper parabolic P̄ of Gss such that ZGss (π(g)s )0 ⊂ P̄ ,
+π(g)P̄ π(g)−1 = P̄ .
+Assume that (ii) holds. Let P̄ be as in (ii). Then P = π −1 (P̄ ) is as in (i).
+Conversely, assume that (i) holds. Let P be as in (i). Then P̄ = π(P ) is as in (ii)
+since π induces a surjection ZG (gs )0 −→ ZGss (π(g)s)0 (see 1.20(a)).
+    From (a) we see that
+    (b) the set of isolated elements in G is stable under left or right translation by
+  0
+ZG0 .
+2.4. Let g ∈ G. By 1.9(a) (applied to ZG (gs ) instead of G) the set of unipotent
+elements in ZG (gs )0 gu that are quasi-semisimple in ZG (gs ) is a single ZG (gs )0 -
+conjugacy class. Let u be an element of this set. According to 1.4(c), gs u is
+quasi-semisimple in G. Thus there exist a Borel of G0 and a maximal torus of
+it, both normalized by gs u; these are automatically normalized by u, hence u is
+quasi-semisimple in G. Let H = ZG (u), a reductive group, by 1.4(b). We have
+gs ∈ H. We show that
+    (a) ZZH (gs )0 and its subgroup ZZG (gs )0 ∩ H have the same identity component.
+Let G̃ = ZG (gs ). Let H̃ = ZG̃ (u) (a reductive group by 1.4(b)). We must prove
+that ZH̃ 0 and its subgroup Z(G̃0 ) ∩ H̃ have the same identity component. This
+follows from 1.7(b) applied to G̃, u instead of G, u. (Note that 1.7(b) is applicable
+by 1.8(a).)
+    Next we show:
+    (b) (ZG0 ∩ ZG (g))0 = (ZH 0 ∩ ZG (g))0 .
+                                                  0              0
+By 1.7(b) (with g replaced by u), we have ZH        0 = (ZG0 ∩ H) . (Note that 1.7(b)
+
+is applicable by 1.8(a).) Since ZG (g) ⊂ H, the left hand side of (b) is
+
+         (ZG0 ∩ H ∩ ZG (g))0 = ((ZG0 ∩ H)0 ∩ ZG (g))0 = (ZH
+                                                          0
+                                                            0 ∩ ZG (g))
+                                                                        0
+
+
+
+and this equals the right hand side of (b). This proves (b).
+Lemma 2.5. In the setup of 2.4, g is isolated in G if and only if gs is isolated in
+H.
+   We have
+                     TH (gs ) = (ZZH (gs )0 ∩ ZH (gs ))0 = ZZ0 H (gs ) ,
+
+ZZG (gs )0 ∩H = ZZG (gs )0 ∩ZG (gu ) = ZZG (gs )0 ∩ZG (gs )∩ZG (gu ) = ZZG (gs )0 ∩ZG (g),
+14                                     G. LUSZTIG
+
+since u ∈ gu ZG (gs )0 . Hence T (g) = (ZZG (gs )0 ∩ H)0 . Using 2.4(a) we deduce that
+T (g) = TH (gs ). The condition that g is isolated in G is that T (g) = (ZG0 ∩ZG (g))0 .
+The condition that gs is isolated in H is that TH (gs ) = (ZH 0 ∩ ZH (gs ))0 that is,
+TH (gs ) = (ZG0 ∩ ZG (g))0 (see 2.4(b)). These two conditions are equivalent since
+T (g) = TH (gs ). The lemma is proved.
+                              0
+Lemma 2.6. Assume that ZG       0 = {1}. Then the set of semisimple elements that
+
+are isolated in G is a union of finitely many G0 -conjugacy classes.
+    We fix a connected component D of G which contains some semisimple element.
+Let s be a semisimple element in D. Let T1 be a maximal torus of ZG (s)0 . By
+1.14(c), any semisimple element in D is G0 -conjugate to some element in sT1 .
+Hence it is enough to show sT1 contains only finitely many elements that are iso-
+lated in G. There exist finitely many closed connected subgroups H1 , H2 , . . . , Hn
+of G0 such that for any s′ ∈ sT1 , ZG (s′ )0 is one of H1 , H2 , . . . , Hn . (Indeed, with
+the notation of 1.5, Lie ZG (s′ )0 is spanned by Lie T1 and by some of the lines
+                                                                          0
+gα , α ∈ R.) We have sT1 = ⊔i∈[1,n] Xi where Xi = {s′ ∈ sT1 ; ZG             (s′ ) = Hi }. If
+s′ ∈ Xi , the condition that s′ is isolated in G is that ZHi is finite. Thus, either
+all elements in Xi are isolated in G or none is isolated. We may assume that
+Xi is non-empty and consists of isolated elements if and only if i ∈ [1, k]. Here
+k ≤ n. We fix s′i ∈ Xi for each i ∈ [1, k]. If s′ ∈ Xi then s′ ∈ ZG (Hi ) and
+s′i ∈ ZG (Hi ) hence s′i −1 s′ ∈ ZG (Hi ). Now s′i −1 s′ ∈ T1 ⊂ Hi . Hence s′i −1 s′ ∈ ZHi .
+Thus, the set of elements of sT1 that are isolated in G is contained in the finite
+set ∪i∈[1,k] s′i ZHi . The lemma is proved.
+                                     0     0
+Lemma 2.7. The action 1.21(c) of ZG    0 ×G on G leaves stable the set of isolated
+
+elements in G and has only finitely many orbits there.
+   From 2.3(a) we see that the first assertion of the lemma holds and that, to prove
+the second assertion, it is enough to show that the conjugation action of G0ss on
+the set of isolated elements in Gss has only finitely many orbits there. Thus we
+                        0
+may assume that ZG        0 = {1}. Let D be a connected component of G. Let Y be the
+
+set of all elements of D that are isolated in G. Let Ỹ be the set of all pairs (g, u)
+where g ∈ D, u is a unipotent element in ZG (gs )0 gu that is quasi-semisimple in
+ZG (gs ) and gs is isolated in ZG (u). Let ρ : Ỹ −      → Y be the first projection. (This
+is well defined and surjective by Lemma 2.5.) Let (g0 , u0 ) ∈ Ỹ . Let H = ZG (u0 )
+(a reductive group, by 1.4(b)). Using 1.7(b) (which is applicable in view of 1.8(a))
+                 0
+we see that ZH     0 = {1}. Applying Lemma 2.6 to H instead of G, we can find
+
+isolated semisimple elements s1 , s2 , . . . , sn in H such that any isolated semisimple
+element in H is H 0 -conjugate to some si . By 1.15(a), for any i ∈ [1, n] we can find
+unipotent elements vi1 , vi2 , . . . , vipi in ZG (si ) such that any unipotent element in
+ZG (si ) is ZG (si )0 -conjugate to some vij . It is enough to show:
+   (a) Let O be an orbit for the G0 -action on Ỹ given by conjugation on both
+coordinates. Then (si vij , u′ ) ∈ O for some i ∈ [1, n], j ∈ [1, pi ] and some u′ .
+(Indeed, since ρ is surjective, (a) would imply that any G0 -conjugacy class in
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                   15
+
+Y contains si vij for some i ∈ [1, n], j ∈ [1, pi ].) Let (g, u) ∈ O. Now uG0 =
+gu G0 = (g0 )u G0 = u0 G0 (since gG0 = g0 G0 = D). Thus u, u0 are unipotent,
+quasi-semisimple in G, in the same connected component of G, hence u0 = huh−1
+for some h ∈ G0 . (See 1.9(a).) We have (hgh−1 , huh−1 ) ∈ O. Setting g ′ = hgh−1
+we have (g ′ , u0 ) ∈ O. Since gs′ is an isolated semisimple element in H, we can find
+h′ ∈ H 0 such that h′ gs′ h′−1 = si with i ∈ [1, n]. We have (h′ g ′ h′−1 , h′ u0 h′−1 ) ∈ O.
+Now h′ u0 h′−1 = u0 , the semisimple part of h′ g ′ h′−1 is h′ gs′ h−1 = si and the
+unipotent part of h′ g ′ h′−1 is a unipotent element ṽi in ZG (si ). Thus we have
+(si ṽi , u0 ) ∈ O. We can find h′′ ∈ ZG (si )0 such that h′′ ṽi h′′−1 = vij with j ∈ [1, pi ].
+We have (si vij , h′′ u0 h′′−1 ) = (h′′ si ṽi h′′−1 , h′′ u0 h′′−1 ) ∈ O. This proves (a). The
+lemma is proved.
+Lemma 2.8. The set of isolated elements of G is closed in G.
+   Using 2.3(a) we see that if the lemma holds for Gss then it holds for G. Hence
+                          0               ′
+we may assume that ZG       0 = {1}. Let G be the set of isolated elements of G. Since
+
+G′ is a union of finitely many G0 -conjugacy classes (see Lemma 2.7), we see that
+G′s is a union of finitely many semisimple G0 -conjugacy classes E 1 , E 2 , . . . , E n . For
+i ∈ [1, n] let G′i be the inverse image of E i under G′ −  → G′s , g 7→ gs . It is enough
+to prove that G′i is closed in G for any i ∈ [1, n]. Let E ′i = {g ∈ G; gs ∈ E i }.
+By 1.22(a), E i , E ′i are closed in G and π : E ′i − → E i , g 7→ gs is a morphism.
+Note that π commutes with the conjugation action of G0 on E i , E ′i and that
+action is transitive on E i . Hence a G0 -stable subset of E ′i is closed if and only if
+its intersection with π −1 (s) is closed in G for some/any s ∈ E i . Thus, to prove
+that G′i is closed in E ′i (hence in G) it is enough to prove that, if s ∈ E i , then
+{g ∈ G′i ; gs = s} = {g ∈ G′ ; gs = s} is closed in G. Let τ = ZZ0 G (s)0 . We must
+show that {su; u ∈ G, u unipotent, us = su, (τ ∩ ZG (u))0 = {1}} is closed in G
+or that {u ∈ ZG (s); u unipotent, (τ ∩ ZG (u))0 = {1}} is closed in ZG (s). Since
+the set of unipotent elements in ZG (s) is closed in ZG (s), it is enough to show
+that {g ∈ ZG (s); (τ ∩ ZG (g))0 = {1}} is closed in ZG (s). Let X be a connected
+component of ZG (s). It is enough to show that X0 := {g ∈ X; (τ ∩ZG (g))0 = {1}}
+is closed in X. Now τ ∩ ZG (g) depends only on the connected component of g in
+ZG (s). Thus, either X0 = X or X0 = ∅. In both cases, X0 is closed in X. The
+lemma is proved.
+
+                               3. A stratification of G
+3.1. For g, g ′ ∈ G we write g ∼ g ′ if g ′ g −1 ∈ T (g) = T (g ′ ). This is an equivalence
+relation on G. For x ∈ G0 , g, g ′ ∈ G with g ∼ g ′ we have xgx−1 ∼ xg ′ x−1 since
+xT (g)x−1 = T (xgx−1 ). Hence the relation on G given by g ≍ g ′ if xgx−1 ∼ g ′ for
+some x ∈ G0 is an equivalence relation. The equivalence classes on G for ≍ are
+called the strata of G. Each stratum of G is contained in a connected component
+of G and is stable under conjugation by G0 .
+Lemma 3.2. Let π : G −    → Gss be the obvious homomorphism. Let g, g ′ ∈ G. We
+have g ≍ g ′ (in G) if and only if π(g) ≍ π(g ′ ) (in Gss ). Thus, the strata of G are
+16                                           G. LUSZTIG
+
+exactly the inverse images under π of the strata of Gss and each stratum of G is
+                                           0
+stable under left or right translation by ZG 0.
+
+
+   Let g ∈ G. By 1.20(b), π induces a surjective homomorphism of tori ZZ0 G (gs )0 −
+                                                                                   →
+ 0
+ZZG (π(g)s )0 . This is compatible with the automorphisms
+     ss
+
+
+          Ad(gu ) : ZZ0 G (gs )0 −
+                                 → ZZ0 G (gs )0 , Ad(π(g)u) : ZZ0 Gss (π(g)s )0 −
+                                                                                → ZZ0 G (gs )0 ,
+which have finite order. (Some power of gu belongs to ZG (gs )0 .) Applying 1.19(a)
+we see that π restricts to a surjective homomorphism
+                  (ZZ0 G (gs )0 ∩ ZG (gu ))0 −
+                                             → (ZZ0 Gss (π(g)s )0 ∩ ZGss (π(g)u))0 .
+Thus, we have
+   (a) π(TG (g)) = TGss (π(g)).
+                               0              0          0              0
+We have TG (g) ⊂ ((TG (g)ZG      0 ) ∩ ZG (g)) = TG (g)(ZG0 ∩ ZG (g)) = TG (g). Hence
+                             0              0
+   (b) TG (g) = ((TG (g)ZG0 ) ∩ ZG (g)) .
+If z ′′ ∈ (ZG0 ∩ ZG (g))0 we have
+   (c) TG (z ′′ g) = TG (g) and z ′′ g ∼ g.
+The first assertion follows from 2.1(e) since (z ′′ g)s = gs and (z ′′ g)−1 g ∈ ZG (gs )0 .
+The second assertion follows from the first since z ′′ gg −1 = z ′′ ∈ T (g).
+             0
+   If z ∈ ZG   0 then
+
+   (d) TG (zg) = TG (g) and zg ≍ g ′ .
+                                                             0             0            0
+By 1.2(a) we have z = z ′ z ′′ gz ′−1 g −1 for some z ′ ∈ ZG   0, z
+                                                                    ′′
+                                                                       ∈ (ZG 0 ∩ ZG (g)) .
+
+Hence
+           TG (zg) = TG (z ′ z ′′ gz ′−1 ) = z ′ TG (z ′′ g)z ′−1 = z ′ TG (g)z ′−1 = TG (g)
+where the third equality comes from (c). We also have zg = z ′ z ′′ gz ′−1 ≍ z ′′ g ≍ g.
+(See (c).) This proves (d).
+    Next, for g, g ′ ∈ G,
+    (e) we have π(g) ∼ π(g ′ ) (in Gss ) if and only if zg ∼ g ′ (in G) for some
+        0
+z ∈ ZG    0.
+                       0               ′          ′ −1 −1
+Assume that z ∈ ZG       0 and zg ∼ g that is, g g     z ∈ TG (zg) = TG (g ′ ). Applying
+π and using (a), we obtain π(g )π(g) ∈ TGss (π(g)) = TGss (π(g ′ )). Thus, π(g) ∼
+                                   ′       −1
+
+π(g ′ ) in Gss .
+    Conversely, assume that π(g) ∼ π(g ′ ) in Gss that is, π(g ′ )π(g)−1 ∈ TGss (π(g)) =
+                                                                0               0
+TGss (π(g ′ )). Using (a), we deduce that g ′ g −1 ∈ TG (g)ZG              ′
+                                                                  0 = TG (g )ZG0 . Thus
+                                     0
+g ′ = tzg where t ∈ TG (g), z ∈ ZG     0 . Using (b), we have
+
+                             0            ′ 0
+     TG (g ′ ) = ((TG (g ′ )ZG 0 ) ∩ ZG (g ))
+
+                0                0           0             0
+     = ((TG (g)ZG 0 ) ∩ ZG (tzg)) = ((TG (g)ZG0 ) ∩ ZG (g)) = TG (g) = TG (zg).
+
+                                                                                 0
+(The third equality holds since tz belongs to the commutative group TG (g)ZG       0
+
+and the fifth equality comes from (d).) Thus, TG (g ′ ) = TG (zg). Now g ′ (zg)−1 =
+t ∈ TG (g) = TG (zg). Hence g ′ ∼ zg. This proves (e).
+   The lemma follows from (d),(e).
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                               17
+
+3.3. The set of isolated elements of G is a union of strata of G. (Assume that
+g ∈ G is isolated and g ′ ∈ G is in the stratum of g. We must show that g ′ is
+isolated. We may assume that g ′ ∼ g. Then T (g ′ ) = T (g). By assumption,
+           0             ′       0        ′
+T (g) ⊂ ZG   0 . Hence T (g) ⊂ ZG0 and g is isolated.) The strata of G that consist
+
+of isolated elements are called isolated strata. We show:
+                                                                                 0     0
+    (a) any isolated stratum of G is a single orbit for the action 1.21(c) of ZG   0 ×G
+
+on G.
+                                                                              0
+In view of 2.3(a) and Lemma 3.2, it is enough to consider the case where ZG     0 = {1}.
+                                                                           0
+In this case we must show that any isolated stratum C of G is a single G -conjugacy
+class in G. Let g, g ′ ∈ C. We have g ′ = hzgh−1 where h ∈ G0 , z ∈ T (g). Since g
+is isolated, we have T (g) = {1}. Hence g ′ = hgh−1 . This proves (a).
+Lemma 3.4. Let C be a stratum of G. If g, g ′ ∈ C then ZG (g)0 , ZG (g ′ )0 are
+G0 -conjugate.
+   We may assume that g ∼ g ′ . We have g ′ = tg where t ∈ T (g). If x ∈ ZG (g)0
+then x ∈ ZG (gs )0 and t ∈ ZZG (gs )0 hence xt = tx. We have also xg = gx
+hence xtg = tgx. Thus, x ∈ ZG (g ′ ). We see that ZG (g)0 ⊂ ZG (g ′ ) so that
+ZG (g)0 ⊂ ZG (g ′ )0 . Interchanging the roles of g, g ′ we obtain ZG (g ′ )0 ⊂ ZG (g)0
+hence ZG (g)0 = ZG (g ′ )0 . The lemma is proved.
+3.5. Let A be the set of all pairs (L, S) where L is a Levi of some parabolic of
+G0 and S is an isolated stratum of NG L with the following property: there exists
+a parabolic P of G0 with Levi L such that S ⊂ NG P . Now G0 acts on A by
+conjugation. Let G0 \A be the set of orbits of this action.
+Lemma 3.6. Let C be a stratum of G. For g ∈ C let L = L(g) and let S be
+the stratum of NG L that contains g. Then (L, S) ∈ A and C →
+                                                           7 (L, S) is a well
+                                                      0
+defined injective map from the set of strata of G to G \A.
+   By 2.2(b), g is isolated in NG L. By 2.1(a) there exists a parabolic P of G0 with
+Levi L such that g ∈ NG P . We have S ⊂ NG P . (Since S is an isolated stratum
+of NG L, any element of S is of the form hzgh−1 with z ∈ ZL0 , h ∈ L (see 3.3(a));
+clearly, hzgh−1 ∈ NG P .) Thus (L, S) ∈ A. Let g ′ ∈ G be such that g ≍ g ′ . Let
+L′ = L(g ′ ) and let S ′ be the stratum of NG L′ that contains g ′ . We show that
+(L, S), (L′, S ′ ) are in the same G0 -orbit. Replacing g by a G0 -conjugate, we may
+assume that g ∼ g ′ . Then T (g) = T (g ′ ) hence L = L′ . Also g ′ g −1 ∈ T (g). Using
+2.1(d) we have TNG L (g) = T (g) = T (g ′ ) = TNG L (g ′ ) and g ′ g −1 ∈ TNG L hence
+g ∼ g ′ (relative to NG L). Hence S = S ′ . Thus the map in the lemma is well
+defined. We show that it is injective. Assume that g, g ′ ∈ G are such that for
+some h ∈ G0 we have hLh−1 = L′ where L = L(g), L′ = L(g ′ ) and hgh−1 ≍ g ′
+where ≍ is relative to NG L′ . We must show that g ≍ g ′ (relative to G). Replacing
+g by hgh−1 , we may assume that L = L′ , g ≍ g ′ (relative to NG L). Replacing
+g by an L-conjugate, we may assume further that g ∼ g ′ (relative to NG L). We
+have g ′ g −1 ∈ TNG L (g) = TNG L (g ′ ). But TNG L (g) = T (g), TNG L (g ′ ) = T (g ′ ), so
+that g ∼ g ′ (relative to G). The lemma is proved.
+18                                     G. LUSZTIG
+
+Proposition 3.7. The number of strata of G is finite.
+   By Lemma 3.6, it is enough to prove that G0 \A is finite. Since the Levi
+subgroups L of parabolics of G0 fall into finitely many G0 -conjugacy classes, it is
+enough to show that for any such L, there are only finitely many isolated strata
+of NG L. This follows from Lemma 2.7 and 3.3(a). The proposition is proved.
+3.8. Let P be a parabolic of G0 with Levi L. Let g be an isolated element of
+NG L ∩ NG P . (Equivalently, g is an element of NG L ∩ NG P that is isolated in
+NG L, see 2.2(a); indeed, NG L ∩ NG P ⊂ NG L have the same identity component,
+L.) We show:
+   (a) T (g) ⊂ (ZL ∩ ZL (g))0 ;
+   (b) L ⊂ L(g);
+We prove (a). Since gs ∈ NG L∩NG P we see from 1.12(b) that ZZ0 G (gs )0 ⊂ ZZ0 L (gs )0 .
+Hence
+
+                 T (g) = (ZZ0 G (gs )0 ∩ ZG (g))0 ⊂ (ZZ0 L (gs )0 ∩ ZG (g))0
+                 = (ZZ0 L (gs )0 ∩ ZL (g))0 = (ZL ∩ ZL (g))0
+
+where the last equality holds since g is isolated in NG L. This proves (a).
+  From (a) we deduce ZG0 (T (g)) ⊃ ZG0 ((ZL ∩ ZL (g))0 ) = L (the last equality
+comes from 1.10(a)). This proves (b).
+3.9. Let P, L, g be as in 3.8. We show that the following three conditions are
+equivalent:
+    (i) L = L(g);
+    (ii) T (g) = (ZL ∩ ZL (g))0 ;
+    (iii) ZG (gs )0 ⊂ L.
+If (ii) holds, then ZG0 (T (g)) = ZG0 ((ZL ∩ ZL (g))0 ) = L (see 1.10(a)) so that
+(i) holds. Assume now that (i) holds. We show that (ii) holds. By 3.8(a) it is
+enough to show that (ZL ∩ ZG (g))0 ⊂ T (g) or that (ZZG0 (T (g)) ∩ ZG (g))0 ⊂ T (g)
+or that (ZZG0 (T (g)) ∩ZG (gs )0 ∩ZG (gu ))0 ⊂ ZZG (gs )0 ∩ZG (gu ). It is enough to show
+that ZZG0 (T (g)) ∩ ZG (gs )0 ⊂ ZZG (gs )0 . This follows from ZG (gs )0 ⊂ ZG0 (T (g)) (a
+consequence of the definition of T (g)).
+    By 3.8(a), condition (ii) is equivalent to (ZL ∩ ZG (g))0 ⊂ T (g) and also to
+(ZL ∩ ZG (g))0 ⊂ ZZG (gs )0 . Since (ZL ∩ ZG (g))0 ⊂ ZG (gs )0 this is also equivalent
+to the condition ZG (gs )0 ⊂ ZG0 ((ZL ∩ ZG (g))0 ) which by 1.10(a) is the same as
+(iii).
+3.10. Let P, L, g be as in 3.8. For any z ∈ (ZL ∩ ZL (g))0 , the element zg is
+isolated in NG L ∩ NG P . (This follows from 2.3(a) for NG L ∩ NG L instead of G.)
+We show:
+   (a) {z ∈ (ZL ∩ ZL (g))0 ; ZG (zgs )0 ⊂ L} is open dense in (ZL ∩ ZL (g))0 .
+Assume first that g = s is semisimple. Since s is isolated in NG L we have (ZL ∩
+ZL (s))0 = ZZ0 L (s)0 . Hence it is enough to show:
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                              19
+
+   (b) {z ∈ ZZ0 L (s)0 ; ZL (zs)0 = ZG (zs)0 } is open dense in ZZ0 L (s)0 .
+By 1.12(b) we can find a maximal torus T1 of ZL (s)0 which is also a maximal
+torus of ZG (s)0 . Define gα , R as in 1.5 in terms of s, G, T1 . We have ZZ0 L (s)0 ⊂ T1 .
+For z ∈ ZZ0 L (s)0 , ZG (zs)0 contains T1 and is normalized by s hence Lie ZG (zs)0 is
+spanned by Lie T1 and by the gα with α ∈ R, α(zs) = 1. Similarly, Lie ZL (zs)0
+is spanned by Lie T1 and by the gα with α ∈ R, α(zs) = 1, gα ⊂ Lie L. For each
+α ∈ R we set Xα = {z ∈ ZZ0 L (s)0 ; α(zs) 6= 1}. We see that it is enough to show:
+   (c) ∩α∈R;gα 6⊂Lie L Xα is open dense in ZZ0 L (s)0 .
+Assume that gα 6⊂ Lie L but α(zs) = 1 for all z ∈ ZZL (s)0 )0 . Then α(s) = 1 and
+α|Z 0 0 = 1. Thus, gα ⊂ Lie ZG0 (ZZ0 L (s)0 ) = Lie ZG0 ((ZL ∩ ZL (s))0 ) = Lie L
+   ZL (s)
+
+(the last equality comes from 1.10(a)). Now ga ⊂ Lie L is a contradiction. Thus,
+for any α ∈ R such that gα 6⊂ Lie L, the open subset Xα of ZZ0 L (s)0 is non-empty
+hence dense. It follows that (c) holds; (b) is proved.
+    We now consider the general case. Let u be a unipotent element in ZL (gs )0 gu
+which is quasi-semisimple in ZL (gs ). As in 2.4, u is quasi-semisimple in NG L.
+Hence there exists a Borel β of L and a maximal torus T of β such that β and
+T are normalized by u. Now UP is normalized by g hence by gu , hence by lgu
+for any l ∈ L. Since u = lgu for some l ∈ L, we have u ∈ NG (UP ). Then u
+normalizes βUP , a Borel of G0 containing T . Thus, u is quasi-semisimple in G
+and H = ZG (u) is a reductive group. Similarly, L1 = ZL (u) is a reductive group;
+it is a Levi of the parabolic P1 = ZP (u)0 of H 0 . By Lemma 2.5 (with G replaced
+by NG L), gs is isolated in NH (L1 ). Also, gs ∈ NH (L1 ) ∩ NH (P1 ). Applying the
+already proved part of (a) to H, L1 , P1 , gs instead of G, L, P, g we see that
+    {z ∈ (ZL1 ∩ ZL1 (gs ))0 ; ZH (zgs )0 ⊂ L1 } is open dense in (ZL1 ∩ ZL1 (gs ))0 .
+It is then enough to show that
+    (d) (ZL1 ∩ ZL1 (gs ))0 = (ZL ∩ ZL (g))0
+and that, for z in (d), we have ZH (zgs )0 ⊂ L1 if and only if ZG (zgs )0 ⊂ L, or
+equivalently (see 3.9), that we have TH (zgs ) = (ZL1 ∩ ZL1 (zgs ))0 if and only if
+TG (zg) = (ZL ∩ ZL (zg))0 . It is enough to prove (d) and that for any z in (d) we
+have
+    (e) TH (zgs ) = TG (zg),
+    (f) (ZL1 ∩ ZH (zgs ))0 = (ZL ∩ ZL (zg))0 .
+As a special case of 1.7(b) we have ZL0 1 = (ZL ∩ ZL (u))0 hence
+    (ZL1 ∩ ZL1 (gs ))0 = (ZL ∩ ZL (u) ∩ ZL (ugs ))0 = (ZL ∩ ZL (g))0 ,
+so that (d) holds. (In the last equality we have used that u ∈ ZL (gs )0 gu .) Similarly,
+for z in (d) we have
+    (ZL1 ∩ ZL1 (zgs ))0 = (ZL ∩ ZL (u) ∩ ZL (uzgs ))0 = (ZL ∩ ZL (zg))0 ,
+so that (f) holds. Now (e) is shown as in the proof of Lemma 2.5 (for zg instead
+of g). The lemma is proved.
+
+Lemma 3.11. Let (L, S) ∈ A. Let P be a parabolic of G0 with Levi L such that
+S ⊂ NG P . Let S ∗ = {g ∈ S; ZG (gs )0 ⊂ L}. Then S ∗ is an open dense subset of
+20                                     G. LUSZTIG
+
+S.
+   By 3.3(a) (for L), S is contained in a connected component δ of NG L ∩ NG P .
+We set δ ZL = ZL ∩ ZL (g ′ ) for some/any g ′ ∈ δ. By 3.3(a) and 1.21(d), the action
+1.21(c) of δ ZL0 × L on S is transitive. The restriction of this action to δ ZL0 is
+a free action (left translation) and Ŝ = δ ZL0 \S is well defined. The conjugation
+action of L on S induces a transitive L-action on Ŝ. Hence the condition that an
+L-invariant subset X of S is open dense in S is equivalent to the condition that
+for any δ ZL0 -orbit O on S, the intersection X ∩ O is open dense in O. For X = S ∗
+this last condition holds by 3.10(a). The lemma is proved.
+Proposition 3.12. (a) If (L, S) ∈ A then YL,S = ∪x∈G0 xS ∗ x−1 is a stratum of
+G.
+   (b) (L, S) 7→ YL,S is a bijection between G0 \A and the set of strata of G. In
+particular, we have a partition G = ⊔L,S YL,S where L, S runs through a set of
+representatives for the G0 -orbits in A; this is the same as the partition of G into
+strata.
+    We prove (a). By Lemma 3.11, S ∗ is non-empty. Hence YL,S is non-empty. Now
+YL,S is contained in a stratum of G. (It is enough to show that S ∗ is contained
+in a stratum of G. It is also enough to show that, if g, g ′ ∈ S ∗ and g ∼ g ′
+relative to NG L, then g ∼ g ′ relative to G. This follows from the equalities
+TG (g) = TNG L(g) (g) = TNG L (g), TG (g ′ ) = TNG L(g ′ ) (g ′ ) = TNG L (g ′ ), see 2.1(d),
+3.9.) We show that YL,S is a stratum of G. It is enough to show that, if g ∈ S ∗ and
+g ′ ∈ G, g ≍ g ′ relative to G, then g ′ ∈ YL,S . We may assume that g ′ ∼ g relative
+to G. Since TG (g) = TG (g ′ ), we have L(g) = ZG0 TG (g) = ZG0 TG (g ′ ) = L(g ′ ).
+Since g ∈ S ∗ we have L = L(g) (see 3.9). It follows that L(g ′ ) = L. In particular,
+g ′ ∈ NG L. As above, we have TG (g) = TNG L (g), TG (g ′ ) = TNG L(g ′ ) (g ′ ) and the
+last group equals TNG L (g ′ ) since L(g ′ ) = L. Since g ′−1 g ∈ TG (g) = TG (g ′ ), we see
+that g ′−1 g ∈ TNG L (g) = TNG L (g ′ ). Thus g ′ ∼ g relative to NL G. It follows that
+g ′ ∈ S. More precisely, since L = L(g ′ ), we have g ′ ∈ S ∗ , as required. This proves
+(a).
+    From the definitions it is clear that the map in (b) is the inverse of the map
+C 7→ (L, S) in Lemma 3.6. The lemma is proved.
+3.13. Let (L, S) ∈ A. Let
+
+                      ỸL,S = {(g, xL) ∈ G × G0 /L; x−1 gx ∈ S ∗ }.
+
+                 → YL,S by π(g, xL) = g. Now WS = {n ∈ NG0 L; nSn−1 = S}/L
+Define π : ỸL,S −
+(a subgroup of the finite group NG0 L/L) acts (freely) on ỸL,S by n : (g, xL) 7→
+(g, xn−1 L).
+   (a) This makes π : ỸL,S −
+                            → YL,S into a principal WS -bundle.
+We must show that, if g ∈ G, x ∈ G0 , x′ ∈ G0 satisfy x−1 gx ∈ S ∗ , x′−1 gx′ ∈ S ∗ ,
+then x′ = xn−1 with n ∈ NG0 L, nSn−1 = S. Replacing g, x, x′ by x′−1 gx′ , x′−1 x, 1,
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                           21
+
+we see that we may assume that x′ = 1 and we must show that xLx−1 =
+L, xSx−1 = S. We have g ∈ S ∗ , x−1 gx ∈ S ∗ and L = L(x−1 gx) = x−1 L(g)x =
+x−1 Lx. If g ′ ∈ S then g ′ = hzgh−1 for some h ∈ L, z ∈ (ZL ∩ ZL (g))0 , see 3.3(a)
+and 1.21(d). We have
+  x−1 zx ∈ (Zx−1 Lx ∩ Zx−1 Lx (x−1 gx))0 = (ZL ∩ ZL (x−1 gx))0 = (ZL ∩ ZL (g))0
+(since x−1 gx ∈ gL) hence x−1 g ′ x = (x−1 hx)(x−1 zx)(x−1 gx)(x−1 h−1 x) ∈ S.
+Thus, x−1 Sx ⊂ S. Since S is irreducible we have x−1 Sx = S, as required.
+    Since ỸL,S is an irreducible variety of dimension
+    dim(G0 /L) + dim S ∗ = dim(G0 /L) + dim S,
+it follows that
+    (b) YL,S is an irreducible constructible subset of G of dimension dim(G0 /L) +
+dim S.
+Lemma 3.14. Let (L, S) ∈ A. Let P be a parabolic of G0 with Levi L such that
+                                                       ′
+S ⊂ NG P . Let S̄ be the closure of S in NG L. Let YL,S     = ∪x∈G0 xS̄UP x−1 . Then
+                              ′                    ′
+the closure of YL,S in G is YL,S . In particular, YL,S   is independent of the choice
+of P .
+   Let X = {(g, xP ) ∈ G × G0 /P ; x−1 gx ∈ S̄UP }. Let φ : X −    → G be the first
+projection. Then φ is proper since G0 /P is complete and S̄UP is a closed Ad(P )-
+                                            ′
+stable subset of NG P . Hence φ(X) = YL,S       is a closed subset of G. Since X is
+irreducible of dimension dim(G /P ) + dim S + dim UP = dim(G0 /L) + dim S, we
+                                 0
+            ′
+see that YL,S  is an irreducible variety of dimension ≤ dim(G0 /L) + dim S. Since
+YL,S is an irreducible constructible subset of dimension dim(G0 /L)+dim S of YL,S
+                                                                                ′
+                                                  ′
+(see 3.13(b)), it follows that YL,S is dense in YL,S . The lemma is proved.
+Proposition 3.15. Let (L, S) ∈ A. The closure of YL,S in G is a union of strata
+of G.
+                ′                                                                ′
+   Let P, S̄, YL,S   be as in 3.14. By Lemma 3.14, it is enough to show that YL,S    is
+                                      ′                   0
+a union of strata of G. Since YL,S is stable under G -conjugacy, it is enough to
+show:
+             ′
+   if g ∈ YL,S , g ′ ∈ G, g ∼ g ′ , then g ′ ∈ YL,S
+                                                ′
+
+or the stronger statement:
+                  ′                                 ′
+   (a) if g ∈ YL,S    and z ∈ TG (g) then zg ∈ YL,S   .
+                               0
+Replacing (L, S, P ) by a G -conjugate we may assume that g ∈ S̄UP . Now gs ∈
+NG P is semisimple hence it normalizes some Levi of P , see 1.4(a). Hence, replacing
+(L, S) by a UP -conjugate we may assume in addition that gs ∈ NG L ∩ NG P . Let
+f be the obvious projection of the semidirect product (NG L ∩ NG P )UP (see 1.26)
+onto NG L ∩ NG P (a homomorphism of algebraic groups). Let h = f (g). We have
+g = hu where h ∈ S̄, u ∈ UP and hs = f (gs ). Since gs ∈ NG L ∩ NG P we have
+f (gs ) = gs so that gs = hs . Since the set of isolated elements of NG L is closed in
+NG L (see Lemma 2.8) and it contains S, it must also contain S̄; thus, h is isolated
+in NG L so that
+22                                      G. LUSZTIG
+
+   (b) TNG L (h) = (ZL ∩ ZG (h))0 .
+We show that
+   (c) TG (g) = TG (h).
+Using 2.1(e) and the equality gs = hs we see that it is enough to show that
+u ∈ ZG (gs )0 . Now gs = hs commutes with g and h hence it commutes with u.
+Thus u ∈ UP ∩ ZG (gs ) = UP ∩ ZG (gs )0 (see 1.11) and (c) follows. We show that
+   (d) TG (h) ⊂ TNG L (h).
+that is, (ZZG (hs )0 ∩ ZG (hu ))0 ⊂ (ZZL (hs )0 ∩ ZG (hu ))0 . It is enough to show that
+ZZG (hs )0 ⊂ ZZL (hs )0 . This follows from 1.12(b) since hs ∈ NG P . (Since S ⊂ NG P ,
+we have S̄ ⊂ NG P hence h ∈ NG P .)
+   From (b),(c),(d) we deduce that TG (g) ⊂ (ZL ∩ ZG (h))0 . Hence to prove (a) it
+is enough to show:
+   if g = hu, h ∈ S̄, u ∈ UP and z ∈ (ZL ∩ ZG (h))0 then zg ∈ S̄UP .
+It is enough to show that z S̄ ⊂ S̄. This follows from zS ⊂ S (see 2.3(a)). The
+lemma is proved.
+Proposition 3.16. For (L, S) ∈ A, YL,S is a locally closed (irreducible) subvari-
+                                          ′
+ety of G. In particular, YL,S is open in YL,S .
+   This follows from Proposition 3.15 using the following general fact.
+   Assume that we are given an algebraic variety V and a partition V = ⊔j∈J Vj
+where Vj are irreducible constructible subsets of V (J is finite) such that for any
+j ∈ J, the closure of Vj is a union of subsets of the form Vj ′ . Then each Vj is
+locally closed in V .
+We may assume that J = {1, 2, . . . , n} and j ′ ≤ j whenever Vj ′ is contained in
+the closure of Vj . Then for any j, ⊔j ′ ;j ′ ≤j Vj ′ and ⊔j ′ ;j ′ <j Vj ′ are closed in V and
+Vj = ⊔j ′ ;j ′ ≤j Vj ′ − ⊔j ′ ;j ′ <j Vj ′ is locally closed in V .
+
+3.17. We show that, for (L, S) ∈ A, YL,S is a smooth variety. Since ỸL,S is a
+principal WS -bundle over YL,S (see 3.13(a)), it is enough to show that ỸL,S is
+smooth. Consider the morphism ỸL,S −  → G0 /L, (g, xL) 7→ xL. This is a G0 -
+equivariant fibration over the homogeneous space G0 /L whose fibre at L is S ∗ ,
+which is smooth (being open in the homogeneous space S).
+
+                               4. Dimension estimates
+4.1. The estimates in this section are generalizations of results in [L2,§1] which
+we follow closely.
+                                                                                    0
+   For any parabolic P of G0 we set P̃ = NG P, P̃ = P̃ /UP , P = P/UP = P̃ ; let
+        → P̃ be the canonical map. Let P be a G0 -conjugacy class of parabolics of
+πP : P̃ −
+G0 . Assume that for each P ∈ P we are given a P -conjugacy class cP in P̃ such
+that for any P ∈ P and any g ∈ G0 , Ad(g) carries πP−1 (cP ) onto πgP g −1 (cgP g −1 ).
+Let
+         z = {(g, P1, P2 ) ∈ G × P × P; g ∈ πP−1
+                                               1
+                                                 (ZP0 1 cP1 ) ∩ πP−1
+                                                                   2
+                                                                     (ZP0 2 cP2 )},
+                  CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                       23
+
+                z′ = {(g, P1 , P2 ) ∈ G × P × P; g ∈ πP−1
+                                                        1
+                                                          (cP1 ) ∩ πP−1
+                                                                      2
+                                                                        (cP2 )}.
+We have a partition z = ∪O zO where O runs over the G0 -orbits in P × P and
+zO = {(g, P1 , P2 ) ∈ z; (P1 , P2 ) ∈ O}. Similarly we have a partition z′ = ∪O z′O
+where z′O = {(g, P1 , P2 ) ∈ z′ ; (P1 , P2 ) ∈ O}. We say that O is good if for some/any
+(P1 , P2 ) ∈ O, P1 , P2 have a common Levi. We say that O is bad if it is not good.
+Let ν be the number of positive roots of G0 . Let ν̄ be the number of positive roots
+of P , c̄ = dim cP , r̄ = dim(ZP ∩ ZP (γ))0 for P ∈ P, γ ∈ cP .
+Proposition 4.2. Let c be a G0 -conjugacy class in G, c = dim c.
+  (a) For any P ∈ P, x ∈ cP we have dim(c ∩ πP−1 (x)) ≤ (c − c̄)/2.
+  (b) For any g ∈ c we have dim{P ∈ P; g ∈ πP−1 (cP )} ≤ (ν − 2c ) − (ν̄ − 2c̄ ).
+  (c) Let d = 2ν − 2ν̄ + c̄ + r̄. Then dim zO ≤ d if O is good and dim zO < d if
+O is bad. Hence dim z ≤ d.
+  (d) Let d′ = 2ν − 2ν̄ + c̄. Then dim z′O ≤ d′ for all O. Hence dim z′ ≤ d.
+   (We make the convention that the empty set has dimension −∞.) In the case
+where P = {G0 }, the proposition is trivial. Therefore we may assume that P =               6
+   0
+{G } and that the result is already known when G is replaced by a group of strictly
+smaller dimension.
+   We prove (c) and (d). We can map zO and z′O to O by (g, P1, P2 ) 7→ (P1 , P2 ).
+We see that proving (c) and (d) for zO , z′O is the same as proving that for a fixed
+(P ′ , P ′′ ) ∈ O we have
+   (c′ ) dim{πP−1′ (ZP0 ′ cP ′ ) ∩ πP−1′′ (ZP0 ′′ cP ′′ )} ≤ d − dim O,
+   (d′ ) dim{πP−1′ (cP ′ ) ∩ πP−1′′ (cP ′′ )} ≤ d′ − dim O,
+with strict inequality in (c′ ) if O is bad. Choose Levi subgroups L′ of P ′ and
+L′′ of P ′′ such that L′ , L′′ contain a common maximal torus. Then P ′ ∩ P ′′ is a
+connected group with Levi L′ ∩ L′′ . Let L̃′ = NG L′ ∩ P̃ ′ , L̃′′ = NG L′′ ∩ P̃ ′′ . By
+                                       ′                                            ′′
+1.26, we may identify L̃′ = P̃ via πP ′ . Similarly we identify L̃′′ = P̃ via πP ′′ .
+Thus we regard cP ′ ⊂ L̃′ , cP ′′ ⊂ L̃′′ . If g ∈ P̃ ′ ∩ P̃ ′′ then, by 1.25(a),(b), we may
+write uniquely g in the form zu′′ u = zu′ v where z ∈ L̃′ ∩ L̃′′ , u′′ ∈ L′ ∩ UP ′′ , u ∈
+UP ′ ∩ P ′′ , u′ ∈ L′′ ∩ UP ′ , v ∈ UP ′′ ∩ P ′ . We see that (c′ ),(d′ ) are equivalent to
+       dim{(u, v, u′′ , u′ , z) ∈ (UP ′ ∩ P ′′ ) × (UP ′′ ∩ P ′ ) × (L′ ∩ UP ′′ ) × (L′′ ∩ UP ′ )
+(c”)
+       × (L̃′ ∩ L̃′′ ); u′′ u = u′ v, zu′′ ∈ ZL0 ′ cP ′ , zu′ ∈ ZL0 ′′ cP ′′ } ≤ d − dim O,
+
+       dim{(u, v, u′′ , u′ , z) ∈ (UP ′ ∩ P ′′ ) × (UP ′′ ∩ P ′ ) × (L′ ∩ UP ′′ ) × (L′′ ∩ UP ′ )
+(d”)
+       × (L̃′ ∩ L̃′′ ); u′′ u = u′ v, zu′′ ∈ cP ′ , zu′ ∈ cP ′′ } ≤ d′ − dim O,
+with strict inequality in (c′′ ) if O is bad. When (u′ , u′′ ) ∈ (L′′ ∩ UP ′ ) × (L′ ∩ UP ′′ )
+is fixed, the variety
+R = {(u, v) ∈ (UP ′ ∩P ′′ )×(UP ′′ ∩P ′ ); u′′ u = u′ v} = {(u, v) ∈ UP ′ ×UP ′′ ; u′′ u = u′ v}
+24                                            G. LUSZTIG
+
+is isomorphic to UP ′ ∩ UP ′′ . (Indeed, if we set ũ = u′−1 u′′ uu′′−1 ∈ UP ′ , ṽ =
+vu′′−1 ∈ UP ′′ , then R becomes {(ũ, ṽ) ∈ UP ′ × UP ′′ ; ũ = ṽ}.) Since dim(UP ′ ∩
+UP ′′ ) = 2ν − 2ν̄ − dim O we see that (c′′ ),(d′′ ) are equivalent to
+
+                  dim{(u′′ , u′ , z) ∈ (L′ ∩ UP ′′ ) × (L′′ ∩ UP ′ ) × (L̃′ ∩ L̃′′ );
+(e)              zu′′ ∈ ZL0 ′ cP ′ , zu′ ∈ ZL0 ′′ cP ′′ } ≤ c̄ + r̄,
+
+
+                  dim{(u′′ , u′ , z) ∈ (L′ ∩ UP ′′ ) × (L′′ ∩ UP ′ ) × (L̃′ ∩ L̃′′ );
+(f)              zu′′ ∈ cP ′ , zu′ ∈ cP ′′ } ≤ c̄,
+
+with strict inequality in (e) if O is bad.
+    Let us consider the variety in (f). Let π3 be the projection of that variety on
+the z-coordinate. We show
+    (g) image(π3 ) is a union of finitely many L′ ∩ L′′ -conjugacy classes in the re-
+ductive group L̃′ ∩ L̃′′ with identity component L′ ∩ L′′ .
+Let H ′ = L̃′ ∩ P̃ ′′ = (L̃′ ∩ L̃′′ )(L′ ∩ UP ′′ ) (semidirect product) and let f ′ : H ′ − →
+L̃′ ∩ L̃′′ be the projection zu′′ 7→ z. Let H ′′ = L̃′′ ∩ P̃ ′ = (L̃′ ∩ L̃′′ )(L′′ ∩ UP ′ )
+(semidirect product) and let f ′′ : H ′′ −     → L̃′′ ∩ L̃′ be the projection zu′ 7→ z. Then
+image(π3 ) = f ′ (H ′ ∩ cP ′ ) ∩ f ′′ (H ′′ ∩ cP ′′ ). Using 1.15(a) for G or reductive groups
+of smaller dimension, we see that it is enough to show that
+
+image(π3 )s = f ′ (H ′ ∩ cP ′ )s ∩ f ′′ (H ′′ ∩ cP ′′ )s = f ′ (H ′ ∩ (cP ′ )s ) ∩ f ′′ (H ′′ ∩ (cP ′′ )s )
+
+is a union of finitely many (semisimple) L′ ∩ L′′ -conjugacy classes in L̃′ ∩ L̃′′ . It is
+enough to show that H ′ ∩(cP ′ )s is a union of finitely many H ′0 = L′ ∩P ′′ -conjugacy
+classes in H ′ and that H ′′ ∩ (cP ′′ )s is a union of finitely many H ′′0 = L′′ ∩ P ′ -
+conjugacy classes in H ′′ . Since (cP ′ )s is a semisimple L′ -conjugacy class in L̃′ and
+H ′ is a closed subgroup of L̃′ , the intersection H ′ ∩ (cP ′ )s is a union of finitely
+many H ′0 -conjugacy classes in H ′ , see 1.27; similarly, H ′′ ∩ (cP ′′ )s is a union of
+finitely many H ′′0 -conjugacy classes in H ′′ . This proves (g).
+    We can write image(π3 ) = χ1 ∪ χ2 ∪ · · · ∪ χn where χi are (L′ ∩ L′′ )-conjugacy
+classes in L̃′ ∩ L̃′′ . The inverse image under π3 of a point z ∈ χi is a product of
+two varieties of the type considered in (a) but for a smaller group (G replaced by
+L̃′ or L̃′′ ) hence by the induction hypothesis it has dimension ≤ (c̄ − dim χi )/2 +
+(c̄ − dim χi )/2. Hence dim π3−1 (χi ) ≤ c̄. Since this holds for each i ∈ [1, n], we
+see that the variety in (f) has dimension ≤ c̄. Thus, (d) is proved (assuming the
+induction hypothesis).
+    We now consider the variety in (e). Let p̃3 be the projection of that variety on
+the z-coordinate. With the earlier notation we have
+
+                    image(p̃3 ) = f ′ (H ′ ∩ ZL0 ′ cP ′ ) ∩ f ′′ (H ′′ ∩ ZL0 ′′ cP ′′ ).
+                      CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                                                 25
+
+By 1.21(d) (for L̃′ , L̃′′ instead of G) we have
+                                                   ′                                 ′′
+                                  ZL0 ′ cP ′ = δ ZL0 ′ cP ′ , ZL0 ′′ cP ′′ = δ ZL0 ′′ cP ′
+
+where δ ′ (resp. δ ′′ ) is the connected component of L̃′ (resp. L̃′′ ) that contains
+                                          ′
+cP ′ (resp. cP ′′ ). We have δ ZL0 ′ ⊂ ZL0 ′ ⊂ ZL0 ′ ∩L′′ ⊂ H ′ and f ′ (ζh) = ζf ′ (h) for
+        ′                                                          ′
+ζ ∈ δ ZL0 ′ , h ∈ H ′ hence f ′ (H ′ ∩ ZL0 ′ cP ′ ) = δ ZL0 ′ f ′ (H ′ ∩ cP ′ ). Similarly, f ′′ (H ′′ ∩
+                   ′′
+ZL0 ′′ cP ′′ ) = δ ZL0 ′′ f ′′ (H ′′ ∩ cP ′′ ). By an earlier argument we have f ′ (H ′ ∩ cP ′ ) =
+ǫ′1 ∪ ǫ′2 ∪ · · · ∪ ǫ′r , f ′′ (H ′′ ∩ cP ′′ ) = ǫ′′1 ∪ ǫ′′2 ∪ · · · ∪ ǫ′′t where ǫ′1 , ǫ′2 , . . . , ǫ′r , ǫ′′1 , ǫ′′2 , . . . , ǫ′′t
+are (L′ ∩ L′′ )-conjugacy classes in L̃′ ∩ L̃′′ . Thus,
+                                                                            ′             ′′
+                              image(p̃3 ) = ∪i∈[1,r],j∈[1,t](δ ZL0 ′ ǫ′i ∩ (δ ZL0 ′′ ǫ′′j ).
+
+Here the set corresponding to i, j is empty unless ǫ′i , e′′j are contained in the same
+connected component X = Xij of L̃′ ∩ L̃′′ . In that case we have
+    δ′ 0                         ′′
+      ZL′ ⊂ (ZLX′ ∩L′′ )0 and δ ZL0 ′′ ⊂ (ZLX′ ∩L′′ )0 .
+(Indeed, since L′ ∩ L′′ is a Levi of a parabolic of L′ , we have ZL0 ′ ∩ ZL0 ′ ∩L′′ . Let
+                                                                                     ′
+x ∈ ǫ′i ⊂ L̃′ ∩ L̃′′ . We have x = f ′ (x̃) for some x̃ ∈ H ′ ∩ ZL0 ′ cP ′ . If z ∈ δ ZL0 ′ , then
+z ∈ ZL0 ′ ∩L′′ and z x̃ = x̃. Hence f ′ (z)f ′ (x̃) = f ′ (x̃)f ′ (z) that is, zx = xz so that
+                                   ′                          ′
+z ∈ ZLX′ ∩L′′ . We see that δ ZL0 ′ ⊂ ZLX′ ∩L′′ hence δ ZL0 ′ ⊂ (ZLX′ ∩L′′ )0 . Similarly,
+δ ′′ 0
+    ZL′′ ⊂ (ZLX′ ∩L′′ )0 , as required.)
+                                         ′          ′′
+    Using now 1.24(a) we see that δ ZL0 ′ ǫ′i ∩ δ ZL0 ′′ ǫ′′j is a finite union of sets of the
+         ′        ′′
+form (δ ZL0 ′ ∩ δ ZL0 ′′ )δ where δ is a (L′ ∩ L′′ )-conjugacy class in L̃′ ∩ L̃′′ contained
+in X. We see that
+                                                                        ′            ′′
+                                   image(p̃3 ) = ∪k∈[1,m] (δ ZL0 ′ ∩ δ ZL0 ′′ )δk
+
+where δ1 , δ2 , . . . , δm are (L′ ∩ L′′ )-conjugacy classes in L̃′ ∩ L̃′′ such that for any
+k, the connected component Xk of L̃′ ∩ L̃′′ that contains δk satisfies
+   δ′ 0                          ′′
+     ZL′ ⊂ Xk ZL0 ′ ∩L′′ and δ ZL0 ′′ ⊂ Xk ZL0 ′ ∩L′′ .
+                                                     ′       ′′
+The inverse image under p̃3 of a point z ∈ (δ ZL0 ′ ∩ δ ZL0 ′′ )δk is a product of two
+varieties of the type considered in (a) but for a smaller group (G replaced by L̃′
+or L̃′′ ) hence by the induction hypothesis it has dimension ≤ (c̄ − dim δk )/2 + (c̄ −
+dim δk )/2. Hence
+                          ′            ′′                                                 ′            ′′
+                   δ 0    δ
+         dim p̃−1
+               3 (( ZL′ ∩   ZL0 ′′ )δk ) ≤ c̄ − dim δk + dim(δ ZL0 ′ ∩ δ ZL0 ′′ δk )
+(h)
+                                            ′            ′′                                            ′
+          = c̄ − dim δk + dim(δ ZL0 ′ ∩ δ ZL0 ′′ ) + dim δk ≤ c̄ + dim(δ ZL0 ′ ) = c̄ + r̄
+
+where the equality comes from 1.23(a). Since this holds for each k ∈ [1, m], we see
+that the variety in (e) has dimension ≤ c̄ + r̄.
+26                                         G. LUSZTIG
+
+    Moreover, if the second inequality in (h) is an equality then O is good. (Indeed,
+                       ′        ′′
+in this case we have δ ZL0 ′ = δ ZL0 ′′ . Taking centralizers in G0 for both sides of the
+previous equality and using 1.10(a), we obtain L′ = L′′ hence O is good.) Thus
+(c) is proved (assuming the induction hypothesis).
+    We show that (b) is a consequence of (d). Let z′ (c) = {(g, P1, P2 ) ∈ z′ ; g ∈ c}.
+If z′ (c) = ∅ then the variety in (b) is empty and (b) follows. Hence we may assume
+that z′ (c) 6= ∅. From (d) we have dim z′ (c) ≤ d′ . We map z′ (c) onto c by the first
+projection. Each fibre of this map is a product of two copies of the variety in (b).
+It follows that the variety in (b) has dimension equal to
+                                                                          c̄   c
+                    (dim z′ (c) − dim c)/2 ≤ (d′ − c)/2 = ν − ν̄ +           −
+                                                                          2 2
+and (b) is proved.
+   We show that (a) is a consequence of (b). Consider the variety {(g, P ) ∈
+c × P; g ∈ πP−1 (cP )}. Projecting it to the g-coordinate and using (b) we see that
+it has dimension ≤ ν − ν̄ + 2c̄ + 2c . If we project it to the P -coordinate, each fibre
+will be isomorphic to the variety c ∩ πP−1 (cP ) (with P ∈ P fixed). Hence
+                                                     c̄  c         c̄ c
+                  dim(c ∩ πP−1 (cP )) ≤ ν − ν̄ +        + − dim P = + .
+                                                     2 2           2 2
+Now c ∩ πP−1 (cP ) maps onto cP (via πP ) and each fibre is the variety in (a). Hence
+the variety in (a) has dimension ≤ 2c̄ + 2c − c̄ = (c− c̄)/2. The proposition is proved.
+4.3. In the case where O is good, the variety in 4.2(e) is ZL0 ′ cP ′ ∩ ZL0 ′ cP ′′ since
+L′ = L′′ . This is empty if ZL0 ′ cP ′ 6= ZL0 ′ cP ′′ and is ZL0 ′ cP ′ if ZL0 ′ cP ′ = ZL0 ′ cP ′′ .
+In the last case, it follows that zO is irreducible of dimension equal to d.
+4.4. The inequality in 4.2(b) can be reformulated as follows. Let us fix P0 ∈ P and
+a P 0 -conjugacy class c0 in P̃ 0 with dim c0 = c̄. Let δ be the connected component
+of P̃ 0 that contains c0 . Then for any g ∈ c we have
+    (a) dim{xP0 ∈ G0 /P0 ; x−1 gx ∈ πP−1      0
+                                                 (c0 )} ≤ (ν − 2c ) − (ν̄ − 2c̄ ).
+We have the following variant of (a):
+    (b) dim{xP0 ∈ G0 /P0 ; x−1 gx ∈ πP−1       0
+                                                 (ZP0 0 c0 )} ≤ (ν − 2c ) − (ν̄ − 2c̄ ).
+This follows from (a) by observing that, for given g, there exist finitely many
+P 0 -conjugacy classes c1 , c2 , . . . , ct in P̃ 0 of dimension c̄ such that
+    x ∈ G0 , x−1 gx ∈ πP−1 0
+                             (ZP0 0 c0 ) =⇒ x−1 gx ∈ πP−1      0
+                                                                 (c1 ∪ · · · ∪ ct ).
+Since ZP0 0 c0 = δ ZP0 0 c0 , it is enough to show that
+     (c) δ ZP0 0 c0 ∩ πP0 (c ∩ P̃0 )
+is a union of finitely many P 0 -conjugacy classes in P̃ 0 . (All P 0 -conjugacy classes
+contained in δ ZP0 c0 have dimension c̄.) Using 1.15(a) it is enough to show that
+                       0
+
+the set of semisimple parts of the elements in (c) that is, δ ZP0 (c0 )s ∩ πP0 (cs ∩ P̃0 ),
+                                                                 0
+is a finite union of (semisimple) P 0 -conjugacy classes. This follow from the fact
+that cs ∩ P̃0 is a finite union of (semisimple) P0 -conjugacy classes in P̃0 (see 1.27).
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                              27
+
+                             5. Some complexes on G
+5.1. We fix a prime number l invertible in k. We use the term ”local system”
+instead of Q̄l -local system. For an algebraic variety V let D(V ) be the bounded de-
+rived category of Q̄l -sheaves on V . For K ∈ D(V ) let Hi K be the i-th cohomology
+sheaf of K.
+5.2. Let C be an isolated stratum of G. For any integer n ≥ 1, invertible in
+k, let Sn (C) be the category whose objects are the local systems on C that are
+                                   0        0
+equivariant for the (transitive) ZG  0 × G -action
+
+                  → xz n gx−1
+   (a) (z, x) : g −
+on C.
+If a local system is in Sn (C) then it is also in Sn′ (C) for any n′ ≥ 1 invertible in k
+such that n′ ∈ nZ. Let S(C) be the category whose objects are the local systems
+on C that are in Sn (C) for some n as above.
+Lemma 5.3. Let C be an isolated stratum of G. Let C ′ be the image of C under
+the obvious map π : G −   → Gss (an isolated stratum of Gss ). Let C ′′ be the image
+of C under the obvious map ρ : G −  → G/G0der , where G0der is the derived group of
+G0 (C ′′ is a connected component of G/G0der and an isolated stratum of G/G0der ).
+The following two conditions for a local system E on C are equivalent:
+   (i) E ∈ S(C);
+   (ii) E ∼
+          = ⊕m      ∗ ′     ∗ ′′       ′        ′   ′′       ′′
+               i=1 π Ei ⊗ ρ Ei where Ei ∈ S(C ), Ei ∈ S(C ) are irreducible and
+            ′            ′′
+π:C−   → C ,ρ : C − → C are the restrictions of π, ρ above.
+    The fact that (ii) implies (i) is immediate. We prove the converse. Let ′ G = G/Γ
+                0      0                                                  ′
+where Γ = ZG       0 ∩Gder (a finite normal subgroup of G). The image C of C under the
+
+obvious map λ : G −     → ′ G is an isolated stratum of ′ G and λ restricts to λ : C −→ ′C
+(a principal covering with group Γ). Let E be as in (i). Then λ∗ E ∈ S(′ C) (note
+however that, if E ∈ Sn (C), then λ∗ E is not necessarily in Sn (′ C)). We may assume
+that E is irreducible. There is natural surjective map λ∗ λ∗ (E) −     → E. Since λ∗ λ∗ (E)
+                                                 ∗
+is semisimple, E is a direct summand of λ λ∗ (E). We can find an irreducible direct
+summand ′ E of the local system λ∗ (E) on ′ C such that E is a direct summand of
+λ∗ (′ E). We have canonically ′ G0 = G0 /ZG        0       0   0        ′        ′
+                                                     0 × G /Gder and C = C × C . It
+                                                                                      ′′
+
+follows from the definitions that ′ E is an external tensor product E ′ ⊠ E ′′ where
+E ′ ∈ S(C ′ ), E ′′ ∈ S(C ′′ ) are irreducible local systems. Since E ′′ is irreducible and
+equivariant with respect to a transitive action of a connected commutative group,
+it has rank 1. Since π ∗ E ′ is the inverse image of an irreducible local system under
+a smooth map with connected fibres, it is itself an irreducible local system. Since
+λ∗ (′ E) = π ∗ E ′ ⊗ ρ∗ E ′′ is a tensor product of an irreducible local system and a rank
+1 local system, it is irreducible. It follows that E = λ∗ (′ E) = π ∗ E ′ ⊗ ρ∗ E ′′ . The
+lemma is proved.
+5.4. Let (L, S) ∈ A. Let P be a parabolic of G0 with Levi L such that S ⊂ NG P .
+To simplify notation, in this section we set Y = YL,S , Ỹ = ỸL,S . As in 3.14, let
+X = {(g, xP ) ∈ G × G0 /P ; x−1 gx ∈ S̄UP }; let φ : X −
+                                                       → G be the first projection.
+28                                    G. LUSZTIG
+
+Let f be the obvious projection of the semidirect product (NG L ∩ NG P )UP (see
+1.26) onto NG L ∩ NG P (a homomorphism of algebraic groups).
+                                                                  ∼
+Lemma 5.5. (g, xL) 7→ (g, xP ) is an isomorphism γ : Ỹ −→ φ−1 (Y ).
+   We verify this only at the level of sets. Assume that (g, xL), (g ′, x′ L) ∈ Ỹ
+have the same image under φ. Then g = g ′ and x′ = xp with p ∈ P . We have
+x−1 gx ∈ S ∗ , x′−1 gx′ ∈ S ∗ hence p−1 x−1 gxp ∈ S ∗ . It follows that L(x−1 gx) =
+L = L(p−1 x−1 gxp) = p−1 L(x−1 gx)p = p−1 Lp. Thus, p−1 Lp = L so that p ∈ L
+and xL = x′ L. Thus, γ is injective.
+   To show that γ is surjective it is enough to show that, if g ∈ S ∗ , x ∈ G0 satisfy
+x−1 gx ∈ S̄UP , then u−1 x−1 gxu ∈ S ∗ for some u ∈ UP or equivalently that,
+   if g ′ ∈ S̄UP , x ∈ G0 satisfy xg ′ x−1 ∈ S ∗ , then u−1 g ′ u ∈ S ∗ for some u ∈ UP .
+Now gs′ ∈ NG P is semisimple hence it normalizes some Levi of P (see 1.4(a))
+that is, some UP -conjugate of L. Hence, replacing g ′ , x by u′−1 g ′ u′ , xu′ for some
+u′ ∈ UP we may assume in addition that gs′ ∈ NG L ∩ NG P . We have g ′ = hv
+where h = f (g ′ ) ∈ S̄, v ∈ UP and hs = f (gs′ ). Since gs′ ∈ NG L ∩ NG P we have
+f (gs′ ) = gs′ so that gs′ = hs . Then h−1 g ′ ∈ UP ∩ ZG (gs′ ) = UP ∩ ZG (gs′ )0 . Using
+2.1(e), we see that T (g ′ ) = T (h). By 1.22(b), we can find h′ ∈ S such that hs = h′s
+and h′−1 h ∈ ZG (hs )0 . Then T (h) = T (h′ ), by 2.1(e). Thus, T (g ′ ) = T (h′ ). By
+3.8(b) we have L ⊂ L(h′ ) = L(g ′ ). Since xg ′ x−1 ∈ S ∗ , we have L(xg ′ x−1 ) = L
+hence L(g ′ ) = x−1 Lx. Thus, L ⊂ x−1 Lx. Since L, x−1 Lx are irreducible of
+the same dimension, we have L = x−1 Lx. Hence NG L = x−1 NG Lx. Since
+xg ′ x−1 ∈ S ∗ ⊂ NG L, we have g ′ ∈ NG L. Thus, g ′ ∈ NG L ∩ S̄UP hence g ′ ∈ S̄.
+Since g ′ ∈ x−1 S ∗ x, we see that x−1 Sx ∩ S̄ 6= ∅. Now x−1 Sx is a stratum of NG L
+since x ∈ NG L. Since S̄ is a union of strata of NG L one of which is S and the
+others have dimension < dim S, we see that x−1 Sx = S. This, together with
+x ∈ NG L, implies that x−1 S ∗ x = S ∗ . Since g ′ ∈ x−1 S ∗ x, we see that g ′ ∈ S ∗ .
+Thus, γ is surjective. The lemma is proved.
+5.6. Let E ∈ S(S). We define a local system Ẽ on Ỹ by the requirement that
+b∗ E = a∗ Ẽ where a(g, x) = (g, xL), b(g, x) = x−1 gx in the diagram
+
+                         a                                    b
+                        − {(g, x) ∈ G × G0 ; x−1 gx ∈ S ∗ } −
+                     Ỹ ←                                   → S.
+
+(We use the fact that a is a principal L-bundle and b∗ E is L-equivariant.) For
+any stratum S ′ of NG L ∩ NG P such that S ′ ⊂ S̄ we set XS ′ = {(g, xP ) ∈ G ×
+G0 /P ; x−1 gx ∈ S ′ UP }. Then X = ⊔S ′ XS ′ (union over all S ′ ⊂ S̄ as above;
+there are only finitely many S ′ in the union, see 3.7). By Lemma 2.8, each S ′ is
+an isolated stratum of NG L ∩ NG P . Note that each XS ′ is smooth, irreducible.
+We define a local system Ē on XS by the requirement that b′∗ E = a′∗ Ē where
+a′ (g, x) = (g, xP ), b′ (g, x) = f (x−1 gx) in the diagram
+
+                        a′                                        b′
+                   XS ←− {(g, x) ∈ G × G0 ; x−1 gx ∈ SUP } −→ S
+              CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                              29
+
+(We use the fact that a′ is a principal P -bundle and b′∗ E is P -equivariant.) It is
+easy to see that the restriction of Ē to Ỹ (identified with an open subset of X as
+in Lemma 5.5) is Ẽ. The intersection cohomology complexes IC(X, Ē) (on X) and
+IC(S̄, E) (on S̄) are related by
+   (a) b′′∗ IC(X, Ē) = a′′∗ IC(S̄, E)
+where a′′ (g, x) = (g, xP ), b′′ (g, x) = f (x−1 gx) in the diagram
+
+                       a′′                                      b′′
+                   X ←− {(g, x) ∈ G × G0 ; x−1 gx ∈ S̄UP } −→ S̄.
+
+Here a′′ is a principal P -bundle and b′′ is a locally trivial fibration with smooth
+connected fibres. We write φ : X −       → Ȳ for the restriction of φ : X −
+                                                                           → G. Here Ȳ
+                            1
+is the closure of Y in G . Recall that we have a finite covering (principal bundle)
+π : Ỹ −→ Y (see 3.13(a)) hence π! Ẽ is a well defined local system on Y . Thus
+IC(Ȳ , π! Ẽ) is well defined (on Ȳ ).
+
+Proposition 5.7. φ! (IC(X, Ē)) is canonically isomorphic to IC(Ȳ , π! Ẽ).
+   Let K = IC(X, Ē) and let K ∗ = IC(X, Ē ∗ ) where Ē ∗ is defined like Ē by
+replacing E by the dual local system E ∗ . Then K ∗ is the Verdier dual of K with
+a suitable shift. Since φ is proper, it follows that φ! (K ∗ ) is the Verdier dual of
+φ! K with a suitable shift. We have K|Ỹ = Ē|Ỹ = Ẽ. Using Lemma 5.5, we see
+that φ! K|Y = π! Ẽ. By the definition of an intersection cohomology complex we
+see that it is enough to verify the following statement.
+   For any i > 0 we have dim suppHi (φ! K) < dim Y −i and dim suppHi (φ! (K ∗ )) <
+dim Y − i.
+We shall only verify this for K; the corresponding statement for K ∗ is entirely
+analogous.
+   If g ∈ Ȳ , the stalk Hgi (φ! K) at g is equal to Hci (φ−1 (g), K). We have a partition
+φ−1 (g) = ∪S ′ (φ−1 (g)∩XS ′ ) where S ′ runs over the strata of NG L∩NG P contained
+in S̄. If Hci (φ−1 (g), K) 6= 0 then Hci (φ−1 (g) ∩ XS ′ , K) 6= 0 for some S ′ . Hence it
+is enough to prove:
+   For any i > 0 and any S ′ as above we have dim{g ∈ Ȳ ; Hci (φ−1 (g) ∩ XS ′ , K) 6=
+0} < dim Y − i.
+Assume first that S ′ 6= S. If Hci (φ−1 (g) ∩ XS ′ , K) 6= 0 then the hypercohomology
+spectral sequence for K on φ−1 (g) ∩ XS ′ shows that we can write i = j1 + j2 with
+j2 ≤ 2 dim(φ−1 (g)∩XS ′ ) and Hj1 (K|φ−1 (g)∩XS ′ ) 6= 0 hence Hj1 (K)|XS ′ 6= 0. Using
+5.6(a), we see that Hj1 (K) is a local system on XS ′ (since Hj1 IC(S̄, E) is a local
+system on S ′ , which is a (ZL0 ×L)-orbit on NG L∩NG P ). Thus, XS ′ ⊂ suppHj1 (K).
+Since K = IC(X, Ē), it follows that j1 < dim X −dim XS ′ = dim S −dim S ′ . Thus
+we have i < 2 dim(φ−1 (g) ∩ XS ′ ) + dim S − dim S ′ and it is enough to show that
+
+                                           i  1
+     dim{g ∈ Ȳ ; dim(φ−1 (g) ∩ XS ′ ) >     − (dim S − dim S ′ )} < dim Y − i.
+                                           2 2
+30                                    G. LUSZTIG
+
+If this is violated for some i > 0, it would follow that the space of triples
+
+       {(g, xP, x′P ) ∈ Ȳ × G0 /P × G0 /P ; x−1 gx ∈ S ′ UP , x′−1 gx′ ∈ S ′ UP }
+
+has dimension > dim Y − i + i − (dim S − dim S ′ ) = dim G0 /L + dim S ′ . This
+contradicts 4.2(c).
+  Next, assume that S ′ = S. If Hci (φ−1 (g) ∩ XS , K) 6= 0 then i ≤ 2 dim(φ−1 (g) ∩
+XS ) since K|φ−1 (g)∩XS is a local system. Hence it is enough to show that for i > 0
+we have
+                                                    i
+                 dim{g ∈ Ȳ ; dim(φ−1 (g) ∩ XS ) ≥ } < dim Y − i.
+                                                    2
+Assume that this is violated for some i > 0. Thus, setting F = {g ∈ Ȳ ; dim(φ−1 (g)∩
+XS ) ≥ 2i }, we have dim F ≥ dim Y − i. Then the space of triples
+
+        {(g, xP, x′P ) ∈ F × G0 /P × G0 /P ; x−1 gx ∈ SUP , x′−1 gx′ ∈ SUP }
+
+has dimension ≥ dim G0 /L + dim S (and the last inequality is strict if dim F >
+dim Y −i). From 4.2(c) we see that this space of triples has dimension ≤ dim G0 /L+
+dim S hence it has dimension equal to dim G0 /L + dim S, which forces dim F =
+dim Y − i. We partition our space of triples into subsets by specifying the G0 -orbit
+of (xP x−1 , x′ P x′−1 ) (for simultaneous conjugation). By 4.2(c), the subset corre-
+sponding to a bad orbit has dimension < dim G0 /L + dim S. It follows that the
+subset corresponding to some good orbit has dimension equal to dim G0 /L+dim S.
+Thus there exists n ∈ NG0 L such that
+(a)
+{(g, xP, x′P ) ∈ F × G0 /P × G0 /P ; x−1 gx ∈ SUP , x′−1 gx′ ∈ SUP ; x−1 x′ ∈ P nP }
+
+has dimension equal to dim G0 /L + dim S. By 4.3, the variety
+(b)
+{(g, xP, x′P ) ∈ G × G0 /P × G0 /P ; x−1 gx ∈ SUP , x′−1 gx′ ∈ SUP ; x−1 x′ ∈ P nP }
+
+is empty if nSn−1 6= S and is irreducible of dimension dim G0 /L + dim S if
+nSn−1 = S. It follows that we must have nSn−1 = S and the variety (a) is
+dense in the variety (b). It follows that F is dense in the image I of the variety
+(b) under the first projection. Hence dim I = dim Y − i. If g ∈ S ∗ then (g, P, nP )
+belongs to the variety (b). Thus, S ∗ ⊂ I. Since I is stable under G0 -conjugacy,
+we must have Y ⊂ I. Thus, dim I ≥ dim Y . It follows that dim Y − i ≥ dim Y
+hence i ≤ 0, contradicting i > 0. The proposition is proved.
+
+                           6. Cuspidal local systems
+6.1. In this section we fix an isolated stratum C of G. Let D be the connected
+component of G that contains C.
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                31
+
+Lemma 6.2. Let P be a parabolic of G and let g ∈ C ∩NG P . Let cP be the P/UP -
+conjugacy class of the image of g in NG P/UP . Let δ = dim C −dim D ZG
+                                                                     0
+                                                                       0 −dim cP .
+                                                                i
+Then dim(C ∩ gUP ) ≤ δ/2. Hence for any E ∈ S(C) we have Hc (C ∩ gUP , E) = 0
+for i > δ.
+   If y ∈ gUP , then the semisimple elements ys , gs normalize UP and are in the
+same UP -coset hence, by a standard argument, are UP -conjugate. Using the finite-
+ness of the number of unipotent classes in ZG (gs ), see 1.15, we deduce that gUP
+is contained in the union of finitely many G0 -conjugacy classes in G. It is then
+enough to show that for any G0 -conjugacy class c in G such that c ⊂ C, we have
+dim(c ∩ gUP ) ≤ 12 δ. This follows from 4.2(a), since dim C = dim c + dim D ZG 0
+                                                                                 0,
+
+see 1.23(b).
+6.3. Let E ∈ S(C). We say that E is a cuspidal local system or that (C, E) is a
+cuspidal pair for G if, for any P, g as in 6.2, with P 6= G0 we have Hcδ (C ∩gUP , E) =
+0 where δ is as in 6.2.
+Lemma 6.4. Let E ∈ S(C). Let us write E = ⊕m             ∗ ′    ∗ ′′
+                                                    i=1 π Ei ⊗ ρ Ei as in Lemma 5.3.
+                                                           ′  ′
+Then (C, E) is a cuspidal pair for G if and only if (C , Ei ) is a cuspidal pair for
+Gss for i = 1, . . . , m (with C ′ as in Lemma 5.3.)
+    Since the property of being cuspidal is preserved by taking direct sums of local
+systems or by passage to a direct summand, we see that we may assume that m = 1.
+Next we note that, for P, g as in 6.2, we have (π ∗ E1′ ⊗ρ∗ E1′′ )|C∩gUP ∼ = (π ∗ E1′ )|C∩gUP
+since (ρ E1 )|C∩gUP ∼
+          ∗ ′′                                                          ′′
+                       = Q̄l . Hence we may also assume that E1 = Q̄l . We set
+E = E1 . We must show that (C, E) is a cuspidal pair for G if and only if (C ′ , E ′ )
+  ′     ′
+
+is a cuspidal pair for Gss .
+    Assume that (C ′ , E ′ ) is a cuspidal pair for Gss . To show that (C, E) is a cuspidal
+pair for G we must show that for any P, g as in 6.2 with P 6= G0 we have Hcδ (C ∩
+gUP , E) = 0 where δ is as in 6.2. Let P̄ = π(P ), a proper parabolic of G0ss . By
+assumption we have Hcδ̃ (C ′ ∩ π(g)UP̄ , E ′ ) = 0 where CP̄ is the P̄ /UP̄ -conjugacy
+class of the image of π(g) in NGss P̄ /UP̄ and δ̃ = dim C ′ − dim CP̄ . It is clear
+                                                        ∼
+that π restricts to an isomorphism C ∩ gUP −→ C ′ ∩ π(g)UP̄ . Since dim C −
+dim D ZG  0          ′
+            0 = dim C and dim CP = dim CP̄ (CP as in 6.2), we have δ = δ̃. Hence
+
+Hcδ (C ∩ gUP , E) ∼= Hcδ̃ (C ′ ∩ π(g)UP̄ , E ′ ) and we see that (C, E) is a cuspidal pair
+for G. The reverse implication is proved in a similar way. The lemma is proved.
+6.5. Lemma 6.4 shows that the study of ccuspidal pairs for G can be reduced to
+the analogous problem for Gss . We will show that we can further reduce to the
+case of a unipotent class.
+    Assume that G = Gss . Let E ∈ S(C). For any x ∈ Cs let C x = {u ∈
+ZG (x); u unipotent, xu ∈ C}. Then ZG0 (x) acts transitively (by conjugation) on
+C x . Let E x be the inverse image of E under C x −
+                                                  → C, u 7→ xu.
+Lemma 6.6. The following three conditions are equivalent:
+  (i) (C, E) is a cuspidal pair for G;
+32                                    G. LUSZTIG
+
+    (ii) there exists x ∈ Cs such that for some/any ZG (x)0 -conjugacy class C ′ in
+C x , the pair (C ′ , E x |C′ ) is cuspidal for ZG (x).
+    (iii) for any x ∈ Cs and for some/any ZG (x)0 -conjugacy class C ′ in C x , the
+pair (C ′ , E x |C′ ) is cuspidal for ZG (x).
+
+    We prove (i) assuming that (ii) holds. Assume that we are given g ∈ C and a
+proper parabolic P of G0 such that g ∈ NG P . The P/UP -conjugacy class of the
+image ḡ of g in NG P/UP is denoted by cP . We must show that Hcδ (C ∩gUP , E) = 0
+where δ = dim C − dim cP . Since g ∈ NG (UP ), we have gs ∈ NG (UP ) hence
+(gs UP )s = V where V = {vgs v −1 ; v ∈ UP } ⊂ Cs . Hence y 7→ ys is a morphism
+f : C ∩gUP −  → V. Since f commutes with the conjugation action of UP on C ∩gUP
+and V, we have Hcδ (C ∩ gUP , E) ∼   = Hcδ−2 dim V (f −1 (gs ), E). Now u 7→ gs u defines
+                         ∼                                              ∼
+{u ∈ C gs ; u ∈ gu UP } −→ f −1 (gs ) or equivalently, C gs ∩ gu UQ −→ f −1 (gs ) where
+Q = P ∩ZG (gs )0 (a parabolic of ZG (gs )0 with UQ = UP ∩ZG (gs ) = UP ∩ZG (gs )0 ).
+It is then enough to show that Hcδ−2 dim V (C gs ∩ gu UQ , E ′ ) = 0. (We have gu ∈
+NG Q ∩ ZG (gs ).) Since ZG0 (gs ) acts transitively on C gs , we see that C gs is a
+disjoint union of finitely many ZG (gs )0 -conjugacy classes. It is enough to show
+that for any such conjugacy class C ′ we have Hcδ−2 dim V (C ′ ∩ gu UQ , E ′ ) = 0. (If
+this holds for some C ′ then it automatically holds for all C ′ , by the transitivity of
+the ZG0 (gs )-action on C gs .) This would follow from (iii) provided that we verify:
+    Q 6= ZG (gs )0 and δ − 2 dim V = δ ′
+where cQ is the Q/UQ -conjugacy class of the image of gu in NZG (gs ) Q/UQ and
+δ ′ = dim C ′ − dim cQ .
+    If Q = ZG (gs )0 then ZG (gs )0 ⊂ P . Hence g is not isolated, a contradiction.
+    We now show that δ − 2 dim V = δ ′ that is, dim C − dim cP − 2 dim V = dim C ′ −
+dim cQ . Now Q/UQ = ZP/UP (ḡs )0 and cQ may be identified with the ZP/UP (ḡs )0 -
+conjugacy class of ḡu in NG P/UP . Consider the morphism x 7→ xs , cP −        → (cP )s ;
+the fibre of this morphism at ḡs is the ZP/UP (ḡs )-conjugacy class of ḡu in NG P/UP
+which has pure dimension dim cQ . We see that dim cP − dim cQ = dim(cP )s . We
+also have dim C = dim C ′ + dim Cs . Thus dim C − dim cP − 2 dim V − dim C ′ +
+dim cQ = dim Cs −dim(cP )s −2 dim V. To prove that this is 0 it is enough to show
+that (dim G−dim ZG (gs ))−(dim L1 −dim ZL1 (gs ))−2(dim UP −dim ZUP (gs )) = 0
+where L1 be a Levi subgroup of P normalized by gs . Since dim G = dim L1 +
+2 dim UP it is enough to show that dim ZG (gs ) = ZL1 (gs ) + 2 dim ZUP (gs ). This
+follows from the fact that ZG (gs )0 is reductive and ZL1 (gs )0 is a Levi of a parabolic
+of ZG (gs )0 with unipotent radical ZUP (gs ) (see 1.12(a)). This proves (i).
+    We prove (iii) assuming that (i) holds. Let x ∈ Cs and let C ′ be a ZG (x)0 -
+conjugacy class in C x . Assume that we are given y ∈ C ′ and a proper parabolic
+Q of ZG (x)0 such that y ∈ NZG (x) Q. The Q/UQ -conjugacy class of the image ȳ
+                                                                      ′
+of y in NZG (x) Q/UQ is denoted by cQ . We must show that Hcδ (C ′ ∩ yUQ , E ′ ) = 0
+                                                                    ′
+where δ ′ = dim C ′ − dim cQ . It is enough to show that Hcδ (C gs ∩ gu UQ , E ′ ) = 0.
+Let g = xy = yx. We have g ∈ C and x = gs , y = gu . By 1.18(a),we can
+find a parabolic P of G0 such that g ∈ NG P and P ∩ ZG (gs )0 = Q. Clearly,
+               CHARACTER SHEAVES ON DISCONNECTED GROUPS, I                                  33
+
+P 6= G0 . By the arguments and notation in the first part of the proof, we see that
+    ′
+Hcδ (C gs ∩ gu UQ , E ′ ) is isomorphic to Hcδ (C ∩ gUP , E) which is 0 by assumption.
+This proves (iii).
+   Now (ii) and (iii) are equivalent since G0 acts transitively by conjugation on
+Cs . The lemma is proved.
+6.7. Let A be a simple perverse sheaf on G. We say that A is admissible if the
+following condition is satisfied: there exists (L, S) ∈ A, a cuspidal irreducible local
+system E ∈ S(S) and an irreducible direct summand Ẽ1 of the local system Ẽ on
+Ȳ (with Ȳ , Ẽ defined as in 5.6 in terms of L, S, E), such that A is isomorhic to
+IC(Ȳ , Ẽ1 )[dim Ȳ ] regarded as a simple perverse sheaf on G (0 on G − Ȳ ).
+
+                                       References
+[B] A.Borel, Linear algebraic groups, Benjamin, New York, 1969.
+[D] J. de Siebenthal, Sur les groupes de Lie compactes non connexes, Comment. Math. Helv.
+     31 (1956), 41-89.
+[L1] G.Lusztig, On the finiteness of the number of unipotent classes, Invent. Math. 34 (1976),
+     201-213.
+[L2] G.Lusztig, Intersection cohomology complexes on a reductive group, Invent. Math. 75
+     (1984), 205-272.
+[L3] G.Lusztig, Character sheaves,I, Adv.Math. 56 (1985), 193-237.
+[L4] G.Lusztig, Introduction to character sheaves, Proc.Symp.Pure Math. 47(1) (1987),
+     Amer.Math.Soc., 165-180.
+[L5] G.Lusztig, Classification of unipotent representations of simple p-adic groups,II, Repre-
+     sent.Th. 6 (2002), 243-289.
+[Sp] N.Spaltenstein, Classes unipotents et sous-groupes de Borel, Lecture Notes in Mathematics,
+     vol. 946, Springer Verlag, New York, 1982.
+[St] R.Steinberg, Endomorphisms of linear algebraic groups, Memoirs of Amer.Math.Soc, vol. 80,
+     1968.
+
+   Department of Mathematics, M.I.T., Cambridge, MA 02139
+

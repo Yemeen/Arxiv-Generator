@@ -1,0 +1,790 @@
+                                                 DERIVED TAME AND DERIVED WILD ALGEBRAS
+
+                                                                              YURIY A. DROZD
+
+
+                                                     Abstract. We prove that every finite dimensional algebra over an al-
+arXiv:math/0310171v1 [math.RT] 12 Oct 2003
+
+
+
+
+                                                     gebraically closed field is either derived tame or derived wild. We also
+                                                     prove that any deformation of a derived wild algebra is derived wild.
+
+
+
+
+                                                                                  Contents
+                                               Introduction                                                                      1
+                                               1. Derived categories                                                             2
+                                               2. Reduction to matrix problems                                                   5
+                                               3. Proof of the main theorem                                                      8
+                                               4. Families of complexes                                                         10
+                                               5. Families of algebras. Semi-continuity                                         12
+                                               References                                                                       14
+
+
+
+                                                                               Introduction
+                                                This is a talk given by the author at the IV International Algebraic Con-
+                                             ference in Ukraine (Lviv, August 2003). It is devoted to the notions of
+                                             derived tameness and wildness of algebras and the recent progress in the
+                                             topic. The main result, obtained by Viktor Bekkert and the author, is the
+                                             tame-wild dichotomy for derived categories, which is an analogue of the au-
+                                             thor’s theorem for algebras [5]. The proof is also very much alike that of [5];
+                                             it relies on the technique of matrix problems (representations of boxes) and
+                                             a reduction algorithm for matrices. The principal distinction is that here
+                                             we have to consider non-free (even non-semi-free) boxes. Fortunately, the
+                                             required class of boxes can be dealt with in a similar way; it is considered
+                                             in Section 3 of this paper. Section 1 is devoted to the general notions re-
+                                             lated to derived categories, derived tameness, etc., while Section 2 presents
+                                             a transition to matrix problems. Further, we consider the results related to
+                                             deformations and degenerations of derived tame and derived wild algebras
+                                             obtained by the author [7]. Namely, in Section 4 we construct some “almost
+                                             versal” families of complexes with projective bases, analogous to the families
+                                             of modules constructed in [8]. It makes possible to introduce the “number
+                                             of parameters” defining complexes of given rank and to prove (in Section 5)
+                                             that this number is upper semi-continuous in flat families of algebras. As
+                                             a corollary, we get that a deformation of a derived tame algebra is derived
+                                             tame; respectively, a degeneration of a derived wild algebra is derived wild.
+                                               2000 Mathematics Subject Classification. Primary: 16G60, secondary: 15A21, 16D90,
+                                             16E05.
+                                                                                        1
+2                                 YURIY A. DROZD
+
+
+We also explain the situation that can arise if one considers families that
+are non-flat (especially the example of Brüstle [2]).
+   Since it is a survey, we sometimes only sketch proofs referring to the papers
+[1, 7], though we try to give all necessary definitions, especially related to
+derived categories and boxes.
+   I am grateful to Viktor Bekkert and Igor Burban for fruitful collaboration
+and useful discussions, which were of great influence in preparing this paper.
+I am also thankful to Birge Huisgen-Zimmermann who inspired me to start
+these investigations.
+
+                            1. Derived categories
+   In what follows we consider finite dimensional algebras over an alge-
+braically closed field k. Let A be such an algebra. As usually, we write
+⊗ and Hom instead of ⊗k and Homk ; we denote by V ∗ the dual vector
+space Hom(V, k). All considered categories A are also supposed to be lin-
+ear categories over the field k, which means that all sets A(a, b) are vector
+spaces over k and the multiplication of morphisms is k-bilinear. Recall that
+the derived category D(A) of (finite dimensional) A-modules is defined as
+follows [13, 14]. First consider the category of complexes C(A). Its ob-
+jects are sequences M• = (Mn , dn ) of finite dimensional modules and their
+homomorphisms
+                 dn+2             dn+1           d              dn−1
+(1)       . . . −−−−→ Mn+1 −−−−→ Mn −−−n−→ Mn−1 −−−−→ . . .
+such that dn+1 dn = 0 for all n. A morphism φ• = (φn ) of a complex (1) to
+another complex M•′ = (Mn′ , d′n ) is a commutative diagram
+                 dn+2             dn+1           d              dn−1
+            . . . −−−−→ Mn+1 −−−−→ Mn −−−n−→ Mn−1 −−−−→ . . .
+                                               
+                                               
+(2)                    φn+1 y     φn y      φn−1 y
+
+                 d′n+2            d′n+1          d′             d′n−1
+                         ′
+            . . . −−−−→ Mn+1 −−−−→ Mn′ −−−n−→ Mn−1
+                                               ′   −−−−→ . . .
+One says that such a morphism is homotopic to zero if there are homomor-
+phisms σn : Mn → Mn+1  ′   (n ∈ N) such that φn = σn−1 dn + d′n+1 σn for all n.
+The factor category H(A) of C(A) modulo the ideal of morphisms homotopic
+to zero is called the homotopic category of A-modules. For each n the n-th
+homology of a complex (1) is defined as Hn (M• ) = Ker dn / Im dn+1 . Obvi-
+ously, a morphism φ• of complexes induces homomorphisms of homologies
+Hn (φ• ) : Hn (M• ) → Hn (M•′ ), and if φ• is homotopic to zero, it induces zero
+homomorphisms of homologies. Hence, Hn can be considered as functors
+H(A) → vec, the category of (finite dimensional) vector spaces. One call a
+morphism φ• from C(A) or from H(A) quasi-isomorphism if all Hn (φ• ) are
+isomorphisms. Now the derived category D(A) is defined as the category of
+fractions H(A)[Q−1 ], where Q is the set of all quasi-isomorphisms.
+   One calls a complex (1) right bounded (left bounded, bounded) if there
+is n0 such that Mn = 0 for n < n0 (respectively, there is n1 such that
+Mn = 0 for n > n1 , or there are both). The corresponding categories are
+denoted by C − , H− , D − (respectively, by C + , H+ , D + , or by C b , Hb , D b ). In
+this paper we mainly deal with the bounded derived category D b (A). The
+category A-mod of (finite dimensional) A-modules naturally embeds into
+               DERIVED TAME AND DERIVED WILD ALGEBRAS                         3
+
+
+D(A) (even in D b (A)): a module M is identified with the complex M• such
+that M0 = M, Mn = 0 for n 6= 0.
+    Since the category of modules has enough projectives, one can replace,
+when considering right bounded homotopic or derived category, arbitrary
+complexes by projective ones, i.e. consisting of projective modules only.
+We denote by P − (A) and by P b (A) the categories of right bounded and
+bounded projective complexes. Actually, D − (A) ≃ H− (A) ≃ P − (A)/Ih ,
+where Ih is the ideal of morphisms homotopic to zero [13, 14]. More-
+over, in finite dimensional case every module M has a projective cover, i.e.
+there is an epimorphism p(M ) : P (M ) → M , where P (M ) is projective,
+such that Ker p(M ) ⊆ rad P (M ), the radical of P (M ) [9]. Therefore, one
+can only consider minimal complexes, i.e. projective complexes such that
+                                                 −
+Im dn ⊆ rad Pn−1 for all n. We denote by Pmin       (A) the category of mini-
+                                      −          −
+mal projective complexes. Thus D (A) ≃ Pmin (A)/Ih . One immediately
+checks that the image in D − (A) of a morphism φ• of minimal complexes
+is an isomorphism if and only if φ itself is an isomorphism. Hence, if we
+are interested in classification of objects from D − (A), we can replace it
+       −
+by Pmin   (A). Unfortunately, it is no more the case if we consider D b (A).
+Certainly, if gl.dim A < ∞, one has that D b (A) ≃ Pmin  b (A)/I , since any
+                                                                  h
+bounded complex has a bounded projective resolution. On the contrary,
+if gl.dim A = ∞, it is wrong even for modules. Nevertheless, we propose
+the following approximation of D b (A), which is enough for classification
+purpose. (Compare it with [16].)
+    We denote by P m (A) the category of bounded projective complexes M•
+such that Mn = 0 for n > m (note that the left bound is not prescribed).
+We say that a morphism φ• in P m (A) is quasi-homotopic to zero if there
+are homomorphisms σk : Mn → Mn+1    ′     such that φn = σn−1 dn + d′n+1 σn for
+all n < m. Let Hm (A) = P m (A)/Iqh , where Iqh is the ideal of morphisms
+quasi-homotopic to zero. Especially, if P• is a minimal complex from P m (A),
+it is isomorphic in Hm (A) to a minimal complex P̃• such that P̃n = Pn , d˜n =
+dn for n 6= m, while Pm = P̃m ⊕ Q so that Q ⊆ Ker dm , d˜m = dm |P̃m and
+Ker d˜m ⊆ rad P̃m . There is a natural functor Hm (A) → Hm+1 (A), which
+maps a complex P• to the complex P•+ , where Pn+ = Pn , d+  n = dn for n ≤ m,
+         +
+while Pm+1   = P (Ker dm ) and d+
+                                m+1   is the epimorphism  p(Ker         +
+                                                                dm ) : Pm+1  →
+Ker dm . Conversely, there is a functor H     m+1           m
+                                                  (A) → H (A), which just
+abandon Pm+1 in a complex P• . One easily verifies the following results.
+
+Proposition 1.1.      (1) D b (A) ≃ limm Hm (A);
+                                    −→
+   (2) D − (A) ≃ limm Hm (A).
+                 ←−
+  Moreover, if complexes P• and P•′ ∈ P m (A) are minimal, their images in
+D (A) are isomorphic if and only if P̃• ≃ P̃•′ as complexes.
+ b
+
+
+  Thus dealing with classification problems, one can deal with Hm or with
+Pm  instead of D b . Note also that if we fix all Hn (P• ) for a complex from
+  m (A), there are finitely many possibilities for the values of P .
+Pmin                                                               n
+  Taking into consideration these remarks, one can define derived wild and
+derived tame algebras as follows.
+4                                  YURIY A. DROZD
+
+
+Definition 1.2.       (1) Let R be a k-algebra. A family of A-complexes
+       based on R is a complex of finitely generated projective A ⊗ Rop -
+       modules P• . We denote by P m (A, R) the category of all bounded
+       families with Pn = 0 for n > m (again we do not prescribe the right
+       bound). For such a family P• and an R-module L we denote by
+       P• (L) the complex (Pn ⊗R L, dn ⊗ 1). If L is finite dimensional,
+       P• (L) ∈ P m (A).
+   (2) We call a family P• strict if for every finite dimensional R-modules
+       L, L′
+        (a) P• (L) ≃ P• (L′ ) if and only if L ≃ L′ ;
+        (b) P• (L) is indecomposable if and only if so is L.
+   (3) We call A derived wild if it has a strict family of complexes over
+       every finitely generated k-algebra R.
+    The following fact is well known.
+Proposition 1.3. An algebra A is derived wild if and only if it has a strict
+family over one of the following algebras:
+   (1) free algebra khx, yi in two variables;
+   (2) polynomial algebra k[x, y] in two variables;
+   (3) power series algebra k[[x, y]] in two variables.
+   Let A1 , A2 , . . . , As be a set of representatives of isomorphism classes of
+indecomposable projective Pm       A-modules. (For instance, one can choose a de-
+composition 1 = i=1 ei , where ei are primitive orthogonal idempotents,
+take e1 , e2 , . . . , es all pairwise non-conjugate of them, and set Ai = Aei .)
+LP
+If
+   s
+      is an arbitrary projective A-module, it uniquely decomposes as P ≃
+   i=1 ri Ai . Set r(P ) = (r1 , r2 , . . . , rs ) and call it the vector rank of P . For
+a projective complex P• set r• (P• ) = (r(Pn ) | n ∈ Z). Given an arbitrary
+sequence v• = (vn | n ∈ Z) denote by P(v• , A) the set of complexes P• such
+that r• (P• ) = v• .
+Definition 1.4.        (1) A rational algebra is a k-algebra k[t, f (t)−1 ] for a
+       non-zero polynomial f (t). A rational family of A-complexes is a
+       family over a rational algebra R.
+   (2) For a rational family P• denote by r• (P• ) = r• (P• (L)) , where L is
+       a one-dimensional R-module. (This value does not depend on the
+       choice of L.)
+   (3) An algebra A is called derived tame if there is a set of rational
+       families of bounded A-complexes S such that:
+        (a) for every (bounded) v• the set S(v• ) = { P• ∈ S | r• (P• ) = v• }
+            is finite.
+        (b) for every v• all indecomposable complexes from P(v• , A), ex-
+            cept finitely many of them (up to isomorphism) are isomorphic
+            to a complex P• (L) for some P• ∈ S and some finite dimen-
+            sional L.
+We call S a parameterising set of A-complexes.
+   These definitions do not formally coincide with other definitions of derived
+tame and derived wild algebras, for instance, those proposed in [11, 12], but
+all of them are evidently equivalent. It is obvious (and easy to prove) that
+                DERIVED TAME AND DERIVED WILD ALGEBRAS                           5
+
+
+neither algebra can be both derived tame and derived wild. The follow-
+ing result (“tame-wild dichotomy for derived categories”) has recently been
+proved by V. Bekkert and the author [1].
+Theorem 1.5 (Main Theorem). Every finite dimensional algebra over an
+algebraically closed field is either derived tame or derived wild.
+
+                   2. Reduction to matrix problems
+   We recall now the main notions related to the matrix problems (represen-
+tations of boxes). More detailed exposition can be found in [6]. A box is a
+pair A = (A, V), where A is a (k-linear) category and V is an A-coalgebra,
+i.e. an A-bimodule supplied with comultiplication µ : V → V ⊗A V and
+counit ι : V → A, which are homomorphisms of A-bimodules and satisfy
+the usual coalgebra conditions
+             (µ ⊗ 1)µ = (1 ⊗ µ)µ,      il (ι ⊗ 1)µ = ir (1 ⊗ ι)µ = id,
+where il : A ⊗A V ≃ V and ir : V ⊗A A ≃ V are the natural isomorphisms.
+The kernel V = Ker ι is called the kernel of the box. A representation of such
+a box in a category C is a functor M : A → C. Given another representation
+N : A → C, a morphism f : M → N is defined as a homomorphism of A-
+modules V ⊗A M → N , or, equivalently, as a homomorphism of A-bimodules
+V → HomC (M, N ), the latter supplied with the obvious A-bimodule struc-
+ture. The composition gf of f : M → N and g : N → L is defined as the
+composition
+                     µ⊗1                      1⊗f                 g
+        V ⊗A M −−−−→ V ⊗A V ⊗A M −−−−→ V ⊗A N −−−−→ L,
+while the identity morphism idM of M is the composition
+                                 ι⊗1                 i
+                     V ⊗A M −−−−→ A ⊗A M −−−l−→ M.
+Thus we obtain the category of representations Rep(A, C). If C = vec, we
+just write Rep(A). If f is a morphism and γ ∈ V(a, b), we denote by f (γ)
+the morphism f (b)(γ ⊗ ) : M (a) → N (a). A box A is called normal (or
+group-like) if there is a set of elements ω = { ωa ∈ V(a, a) | a ∈ ob A } such
+that ι(ωa ) = 1a and µ(ωa ) = ωa ⊗ ωa for every a ∈ ob A. In this case, if f is
+an isomorphism, all morphisms f (ωa ) are isomorphisms M (a) ≃ N (a). This
+set is called a section of A. For a normal box, one defines the differentials
+∂0 : A → V and ∂1 : V → V ⊗A V setting
+             ∂0 (α) = αωa − ωb α       for α ∈ A(a, b);
+              ∂1 (γ) = µ(γ) − γ ⊗ ωa − ωb ⊗ γ       for γ ∈ V(a, b).
+Usually we omit indices, writing ∂α and ∂γ.
+   Recall that a free category kΓ, where Γ is an oriented graph, has the ver-
+tices of Γ as its objects and the paths from a to b (a, b being two vertices) as a
+basis of the vector space kΓ(a, b). A semi-free category is a category of frac-
+tions kΓ[S −1 ], where S = { gα (α) | α runs through a set of loops } (called
+the marked loops) of the graph Γ. The arrows of Γ are called the free (re-
+spectively, semi-free) generators of the free (semi-free) category. A normal
+box A = (A, V) is called free (semi-free) if such is the category A, moreover,
+the kernel V = Ker ι of the box is a free A -bimodule and ∂α = 0 for each
+6                                YURIY A. DROZD
+
+
+marked loop α. A set of free (respectively, semi-free) generators of such a
+box is a union S = S0 ∪ S1 , where S0 is a set of free (semi-free) generators of
+the category A and S1 is a set of free generators of the A-bimodule V. A set
+of free (or semi-free) generators S is called triangular if there is a function
+̺ : S → N (we call it “weight”) such that, for every α ∈ S, the differential
+∂α belongs to the sub-box generated by { β ∈ S | ̺(β) < ̺(α) }; especially, if
+̺(α) = 0, α is minimal, i.e. ∂α = 0. A free (semi-free) box having a trian-
+gular set of free (semi-free) generators is called triangular. For a triangular
+box a morphism of representations f : M → N is an isomorphism if and
+only if all f (ωa ) are isomorphisms. In what follows we always suppose that
+our graphs are locally finite, i.e. only have finitely many arrows starting or
+ending at a given vertex. If such a graph Γ has no oriented cycles, then the
+category kΓ is locally finite dimensional, i.e. all its spaces of morphisms are
+finite dimensional.
+   We call a category A trivial if it is a free category generated by a trivial
+graph (i.e. one with no arrows); thus A(a, b) = 0 if a 6= b and A(a, a) = k.
+We call A minimal, if it is a semi-free category with a set of semi-free
+generators consisting of loops only, at most one loop at each vertex. Thus
+A(a, b) = 0 again if a 6= b, while A(a, a) is either k or a rational algebra.
+We call a normal box A = (A, V) so-trivial if A is trivial, and so-minimal if
+A is minimal and all its loops α are minimal too (i.e. with ∂α = 0).
+   In [5] (cf. also [6]) the classification of representations of an arbitrary finite
+dimensional algebra was reduced to representations of a free triangular box.
+To deal with derived categories we have to consider a wider class of boxes.
+First, a factor-box of a box A = (A, V) modulo an ideal I ⊆ A is defined
+as the box A/I = (A/I, V/(IV + VI) (with obvious comultiplication and
+counit). Note that if A is normal, so is A/I.
+Definition 2.1. A sliced box is a factor-box A/I, where A = (A, V) is   S a free
+box such that the set of its objects V = ob A is a disjoint union V = i∈Z Vi
+such that A(a, b) = 0 if a ∈ Vi , b ∈ Vj with j > i, A(a, a) = k, and
+V(a, b) = 0 if a ∈ Vi , b ∈ Vj with i 6= j. WeScall a sliced box A/I triangular
+if so is the free box A. The partition V = i Vi is called a slicing.
+   Certainly, in this definition we may assume that the elements of the ideal
+I are linear combinations of paths of length at least 2. Otherwise such an
+element is a linear combination of arrows, so we can just eliminate one of
+these arrows from the underlying graph.
+   Note that for every representation M ∈ Rep(A), where A is a free (semi-
+free, sliced) box with the set of objects V, one can consider its dimension
+Dim(M ), which is a function V → N, namely Dim(M )(a) = dim M (a).
+We call such a representation finite dimensional if its support supp M =
+{ a ∈ V | M (a) 6= 0 } is finite and denote by rep(A) the category of finite
+dimensional representations. Having these notions, one can easily reproduce
+the definitions of families of representations, especially strict families, wild
+and tame boxes; see [5, 6] for details. The following procedure, mostly
+modelling that of [5], let us replace derived categories by representations of
+sliced boxes.
+   Let A be a finite dimensional algebra, J be its radical. As far as we
+are interested in A-modules and complexes, we can replace A by a Morita
+                DERIVED TAME AND DERIVED WILD ALGEBRAS                            7
+                                                                             P
+equivalent reduced algebra, thus suppose that A/J ≃ ks [9]. Let 1 = si=1 ,
+where ei are primitive orthogonal idempotents; set Aji = ej Aei and Jji =
+ej Jei ; note that Jji = Aji if i 6= j. We denote by S the trivial category
+with the set of objects { (i, n) | n ∈ N, i = 1, 2, . . . , s } and consider the S-
+bimodule J such that
+                                       (
+                                        0     if m 6= n − 1,
+                    J (i, n), (j, m) =     ∗
+                                         Jji if m = n − 1.
+Let B = S[J ] be the tensor category of this bimodule; equivalently, it is the
+free category having the same set of objects as S and the union of bases of
+all J (i, n), (j, m) as a set of free generators. Denote by U the S-bimodule
+such that                                (
+                                          0     if n 6= m,
+                     U (i, n), (j, m) =      ∗
+                                           Aji if n = m
+        f = B ⊗S U ⊗S B. Dualizing the multiplication Akj ⊗ Aji → Aki ,
+and set W
+we get homomorphisms
+                                       f
+                         λr :B → B ⊗S W,
+                                       f ⊗S B,
+                               λl :B → W
+                                    f→W
+                                µ̃ :W f ⊗S W.
+                                           f
+
+In particular, µ̃ defines on Wf a structure of B-coalgebra. Moreover, the
+                                                           f i.e. µ̃(W0 ) ⊆
+sub-bimodule W0 generated by Im(λr − λl ) is a coideal in W,
+       f     f                            f
+W0 ⊗B W ⊕ W ⊗B W0 . Therefore, W = W/W0 is also a B-coalgebra, so we
+get a box B = (B, W). One easily checks that it is free and triangular.
+   Dualizing multiplication also gives a mapping
+                                      s
+                                      M
+(3)                        ν : J∗ji →    J∗jk ⊗ J∗ki .
+                                       k=1
+Namely, if we choose bases { α } , { β } { γ } in the spaces, respectively, Jji ,
+Jjk , Jki , and dual bases { α∗ } , { β ∗ } , { γ ∗ } in their duals, then β ∗ ⊗ γ ∗
+occurs in ν(α∗ ) with the same coefficient as α occurs in βγ. Note            that
+the right-hand space in (3) coincide with each B (i, n), (j, n − 2) . Let I
+be the ideal in B generated by the images of ν in all these spaces and
+D = B/I = (A, V), where A = B/I, V = W/(IW + WI). If necessary, we
+write D(A) to emphasise that this box has been constructed from a given
+algebra A. Certainly, D is a sliced triangular box, and the following result
+holds.
+Theorem 2.2. The category of finite dimensional representations rep(D(A))
+                               b (A) of bounded minimal projective A-
+is equivalent to the category Pmin
+complexes.
+Proof. Let Ai = Aei ; they form a complete list of non-isomorphic in-
+decomposable projective A-modules; set also Ji = rad Ai = Jei . Then
+HomA (Ai , Jj ) ≃ Jji . A representation M ∈ rep(D) is given by vector
+spaces M (i, n) and linear mappings
+                                                                      
+     Mji (n) : J∗ji = A (i, n), (j, n − 1) → Hom M (i, n), M (j, n − 1)
+8                                   YURIY A. DROZD
+
+
+subject to the relations
+                    s
+                    X                            
+(4)                       m Mjk (n) ⊗ Mki (n + 1) ν(α) = 0
+                    k=1
+for all i, j, k, n and all α ∈ Jji , where m denotes the multiplication of map-
+pings
+
+                                                          
+    Hom M (k, n), M (j, n − 1) ⊗ Hom M (i, n + 1), M (k, n) →
+                                                                    
+                                    → Hom M (i, n + 1), M (j, n − 1) .
+                                    Ls
+For such a representation, set Pn =
+L                                    i=1 Ai ⊗ M (i, n). Then rad Pn =
+  n
+     J
+  i=1 i ⊗ M  (i, n) and
+                        M                                      
+  Hom(Pn , rad Pn−1 ) ≃    Hom Ai ⊗ M (i, n), Jj ⊗ M (j, n − 1) ≃
+      A                            A
+                            i,j
+                           M                                              
+                       ≃          Hom M (i, n), Hom Ai , Jj ⊗ M (j, n − 1) ≃
+                                                  A
+                            ij
+                           M
+                       ≃          M (i, n)∗ ⊗ Jji ⊗ M (j, n − 1) ≃
+                            ij
+                           M                                           
+                       ≃          Hom J∗ji , Hom M (i, n), M (j, n − 1) .
+                            ij
+
+Thus the set { Mji (n) | i, j = 1, 2, . . . , s } defines a homomorphism dn : Pn →
+Pn−1 and vice versa. Moreover, one easily verifies that the condition (4) is
+equivalent to the relation
+                       Ls dn dn+1 = 0. Since every projective A-module can
+be given in the form i=1 Ai ⊗ Vi for some uniquely defined vector spaces
+Vi , we get a one-to-one correspondence between finite dimensional represen-
+tations of D and bounded minimal complexes of projective A-modules. In
+the same way one also establishes one-to-one correspondence between mor-
+phisms of representations and of the corresponding complexes, compatible
+with their multiplication, which accomplishes the proof.                         
+Corollary 2.3. An algebra A is derived tame (derived wild) if so is the box
+D(A).
+
+                     3. Proof of the main theorem
+   Now we are able to prove the main theorem. Namely, according to Corol-
+lary 2.3, it follows from the analogous result for sliced boxes.
+Theorem 3.1. Every sliced triangular box is either tame or wild.
+   Actually, just as in [5] (see also [6]), we shall prove this theorem in the
+following form.
+Theorem 3.1a. Suppose that a sliced triangular box A = (A, V) is not
+wild. For every dimension d of its representations there is a functor Fd :
+A → M, where M is a minimal category, such that every representation
+M : A → vec of A of dimension Dim(M ) ≤ d is isomorphic to the inverse
+image F ∗ N = N ◦ F for some functor N : M → vec. Moreover, F can be
+                 DERIVED TAME AND DERIVED WILD ALGEBRAS                             9
+
+
+chosen strict, which means that F ∗ N ≃ F ∗ N ′ implies N ≃ N ′ and F ∗ N is
+indecomposable if so is N .
+Remark. We can consider the induced box AF = (M, M ⊗A V ⊗A M). It
+is a so-minimal box, and F ∗ defines a full and faithful functor rep(AF ) →
+rep(A). Its image consists of all representations M : A → vec that factorise
+through F .
+Proof. As we only consider finite dimensional representations, we    S may as-
+sume that the set of objects is finite.S    Hence the slicing V = i Vi (see
+Definition 2.1) is finite too: V = m    i=1 i and we use induction by m. If
+                                           V
+m = 1, A is free, and our claim has been proved in [5]. So we may suppose
+that the theorem is true for smaller values of m, especially, itSis true for the
+restriction A′ = (A′ , V ′ ) of the box A onto the subset V′ = m  i=2 Vi . Thus
+                              ′   ′
+there is a strict functor F : A → M, where M is a minimal category, such
+that every representation of A′ of dimension smaller than d is of the form
+                                                                         F ′
+F ′ ∗ N for N : M → vec. Consider now the amalgamation B = A A M
+and the box B = (B, W), where W = B ⊗A V ⊗A B. The functor F ′ ex-
+tends to a functor F : A → B and induces a homomorphism of A-bimodules
+V → W; so it defines a functor F ∗ : rep(B) → rep(A), which is full and
+faithful. Moreover, every representation of A of dimension smaller than d is
+isomorphic to F ∗ N for some N , and all possible dimensions of such N are
+restricted by some vector b. Therefore, it is enough to prove the claim of
+the theorem for the box B.
+    Note that the category B is generated by the loops from M and the images
+of arrows from A(a, b) with b ∈ V1 (we call them new arrows). It implies
+                                                                    P       that
+all possible relations between these morphisms are of the form β βgβ (α),
+where α ∈ B(a, a) is a loop (necessarily minimal, i.e. with ∂α = 0), gβ
+are some polynomials, and β runs through the set of new arrows from a to
+b forP some b ∈ V1 . Consider all of these relations for a fixed
+                                                                   b; let them
+be β βgβ,k (α). Their coefficients form a matrix gβ,k (α) . Making linear
+transformations of the set { β } and of the set of relations, we can make
+this matrix diagonal, i.e. make all relations being βfβ (α) = 0 for some
+polynomials fβ . If one of fβ is zero, the box B has a sub-box
+                                             β
+                                    9a
+                               α                    /b,
+
+with ∂α = ∂β = 0, which is wild; hence B and A are also wild. Otherwise,
+let f (α) 6= 0 be a common multiple of all fβ (α), Λ = { λ1 , λ2 , . . . , λr } be the
+set of roots of f (α). If N ∈ rep(B) is such that N (α) has no eigenvalues
+from Λ, then f (N (α)) is invertible; thus N (β) = 0 for all β : a → b. So
+we can apply the reduction of the loop α with respect to the set Λ and the
+dimension d = b(a), as in [5, Propositions 3,4] or [6, Theorem 6.4]. It gives a
+new box that has the same number of loops as B, but the loop corresponding
+to α is “isolated,” i.e. there are no more arrows starting or ending at the
+same vertex. In the same way we are able to isolate all loops, obtaining a
+semi-free triangular box C and a morphism G : B → C such that G∗ is full
+and faithful and all representations of B of dimensions smaller than b are
+of the form G∗ L. As the theorem is true for semi-free boxes, it accomplishes
+the proof.                                                                          
+10                                     YURIY A. DROZD
+
+
+Remark. Applying reduction functors, like in the proof above, we can also
+extend to sliced boxes (thus to derived categories) other results obtained
+before for free boxes. For instance, we mention the following theorem, quite
+analogous to that of Crawley-Boevey [3].
+Theorem 3.2. If an algebra A is derived tame, then, for any vector d =
+(dn | n ∈ Z) such that almost all dn = 0, there is at most finite set of generic
+A-complexes of endolength d, i.e. such indecomposable minimal bounded
+complexes P• of projective A-modules, not all of which are finitely generated,
+that lengthE (Pn ) = dn for all n, where E = EndA (P• ).
+   Its proof reproduces again that of [3], with obvious changes necessary to
+include sliced boxes into consideration.
+
+                            4. Families of complexes
+   We consider now algebraic families of A-complexes, i.e. flat families over
+an algebraic variety X. Such a family is a complex F• = (Fn , dn ) of flat co-
+herent A⊗OX -modules. We always assume this complex bounded and min-
+imal; the latter means that Im dn ⊆ JFn−1 for all n, where J = rad A. We
+also assume that X is connected; it implies that the vector rank r• (F• (x))
+is constant, so we can call it the vector rank of the family F and denote
+it by r• (F• ) Here, as usually, F(x) = Fx /mx Fx , where mx is the maximal
+ideal of the ring OX,x . We call a family F• non-degenerate if, for every
+x ∈ X, at least one of dn (x) : Fn (x) → Fn−1 (x) is non-zero. Having a
+family F• over X and a regular mapping φ : Y → X, one gets the inverse
+image φ∗ (F), which is a family of A-complexes over the variety Y such that
+φ∗ (F)(y) ≃ F(φ(y)). If F• is non-degenerate, so is φ∗ (F). Given an ideal
+I ⊆ J, we call a family F• an I-family if Im dn ⊆ IFn−1 for all n. Then any
+inverse image φ∗ (F) is an I-family as well. Just as in [8], we construct some
+“almost versal” non-degenerate I-families.
+   Consider again a complete set of non-isomorphic indecomposable projec-
+tive A-modules
+        Ls         { A1 , A2 , . . . , As }. For each vector r = (r1 , r2 , . . . , rs ) set
+rA =                                         ′                  ′
+           i=1 i i , and denote I(r, r ) = HomA (rA, I · r A), where I is an
+               r A
+ideal contained in J. Fix a vector      L rank of bounded complexes r• = (rk | m ≤
+k ≤ n) and set H = H(r, I) = nk=m+1 I(rk , rk−1 ). Consider the projective
+space P = P(r• , I) = P(H) and its closed subset D = D(r• , I) ⊆ P consist-
+ing of all sequences (hk ) such that hk+1 hk = 0 for all k. Because of the
+universal property of projective spaces [15, Theorem II.7.1], the embedding
+D(r• , I) → P(r• , I) gives rise to a non-degenerate I-family V• = V• (r• , I):
+                                   d              dn−1
+(5)                 V• :    Vn −−−n−→ Vn−1 −−−−→ . . . −→ Vm ,
+where Vk = OD (n − k) ⊗ rk A for all m ≤ k ≤ n. We call V• (r• , I) the
+canonical I-family of A-complexes over D(r• , I). Moreover, regular map-
+pings φ : X → D(r• , I) correspond to non-degenerate I-families F• with
+Fk = 0 for k > n or k < m and Fk = L⊗(n−k) ⊗ rk A for some invertible
+sheaf L over X. Namely, such a family can be obtained as φ∗ (V• ) for a
+uniquely defined regular mapping φ. Moreover, the following result holds,
+which shows the “almost versality” of the families V• (r• , I).
+                 DERIVED TAME AND DERIVED WILD ALGEBRAS                            11
+
+
+Proposition 4.1. For every non-degenerate family of I-complexes F• of
+vectorSrank r• over an algebraic variety X, there is a finite open covering
+X = j Uj such that the restriction of F• onto each Uj is isomorphic to
+φ∗j V• (r• , I) for a regular mapping φj : Uj → D(r• , I).
+Proof. For each x ∈ X there is an open neighbourhood U ∋ x such that
+all restrictions Fk |U are isomorphic to OU ⊗ rk A; so the restriction F• |U
+is obtained from a regular mapping U → D(r• , I). Evidently it implies the
+assertion.                                                                 
+   Note that the mappings φj are not canonical, so we cannot glue them into
+a “global” mapping X → D(r• , I).                     Q
+   Consider now the group G = G(r• ) =                  k Aut(rk A), which acts on
+H(r• , I): (gk )·(hk ) = (gk−1 hk gk−1 ). It induces the action of G(r• ) on P(R• , I)
+and on D(r• , I). The definitions immediately imply that V• (r• , I)(x) ≃
+V• (r• , I)(x′ ) (x, x′ ∈ D) if and only if x and x′ belong to the same orbit
+of G. Consider the sets
+                    Di = Di (r• , I) = { x ∈ D | dim Gx ≤ i } .
+It is known that they are closed (it follows from the theorem on dimensions
+of fibres, cf. [15, Exercise II.3.22] or [17, Ch. I, § 6, Theorem 7]). We set
+                    par(r• , I, A) = max { dim Di (r• , I) − i }
+                                        i
+and call this integer the parameter number of I-complexes of vector rank
+r• . Obviously, if I ⊆ I′ , then par(r• , I, A) ≤ par(r• , I′ , A). Especially, the
+number par(r• , A) = par(r• , J, A) is the biggest one.
+    Proposition 4.1, together with the theorem on the dimensions of fibres and
+the Chevalley theorem on the image of a regular mapping (cf. [15, Exercise
+II.3.19] or [17, Ch. I, § 5, Theorem 6]), implies the following result.
+Corollary 4.2. Let F• be an I-family of vector rank r• over a variety X.
+For each x ∈ X set Xx = { x′ ∈ X | F• (x′ ) ≃ F• (x) } and denote
+                         Xi = { x ∈ X | dim Xx ≤ i } ,
+                          par(F• ) = max { dim Xi − i } .
+                                        i
+Then all subsets Xx and Xi are constructible (i.e. finite unions of locally
+closed sets) and par(F• ) ≤ par(r• , I, A).
+   Note that the bases D(r• , I) of our almost versal families are projective,
+especially complete varieties. In the next section we shall exploit this prop-
+erty.
+   Tame-wild dichotomy allows to establish the derived type of an alge-
+bra knowing the behaviour of           P the numbers par(r• , A). Namely, if rk =
+(rk1 , rk2 , . . . , rks ), set |r• | = k,i rki . Since it is a maximal possible num-
+ber of indecomposable summands of complexes of vector rank r• , indecom-
+posable complexes over derived tame algebra form at most one-parameter
+families, and the parameter number grows quadratically for derived wild
+algebras, the following corollary is evident.
+Corollary 4.3. An algebra A is derived tame if and only if par(r• , A) ≤ |r• |
+for all vector ranks r• .
+12                                       YURIY A. DROZD
+
+
+   An important case is that of families of free modules, i.e. such that
+Fk (x) ≃ ak A for some integer k. Namely, let r(A) = (a1 , a2 , . . . , as )
+(we do not suppose that A is Morita reduced). For every vector b =
+(bm , bm+1 , . . . , bn ) we set ba = (bm a, bm+1 a, . . . , bn a) and write D(b, I),
+par(b, I, A), etc. instead of, respectively, D(ba, I), par(ba, I, A), etc. When
+we are interested in the asymptotical behaviour of parameter numbers (it is
+enough, for instance, to establish the derived type), we can restrict our con-
+siderations by free complexes only. Indeed, for a vector r = (r1 , r2 , . . . , rs ),
+denote
+                              
+                            r/a = max { b | bai ≤ ri for all i } ,
+                              
+                            r/a = min { b | bai ≥ ri for all i } .
+If r• = (rm , rm+1 , . . . , rn ), set
+                                                                        
+                   b = (bm , bm+1 , . . . , bn ),       where bk = rk /a ;
+                                                                        
+                   b′ = (b′m , b′m+1 , . . . , b′n ),   where b′k = rk /a .
+Then, obviously,
+                    par(b′ a, I, A) ≤ par(r• , I, A) ≤ par(b, I, A).
+Especially, Corollary 4.3 can be reformulated as follows.
+Corollary 4.4. An algebra A is derived tame if and only if par(b, A) ≤
+|b| dim A for every sequence b = (bm , bm+1 , . . . , bn ).
+
+                 5. Families of algebras. Semi-continuity
+  A (flat) family of algebras over an algebraic variety X is a sheaf A of
+OX -algebras, which is coherent and flat (thus locally free) as a sheaf of OX -
+modules. For such a family and every sequence b = (bm , bm+1 , . . . , bn ) one
+can define the function par(b, A, x) = par(b, A(x)). (Recall that here bk
+denote the ranks of free modules in a free complex.) Our main result is the
+upper semi-continuity of these functions.
+Theorem 5.1. Let A be a flat family of finite dimensional algebras over an
+algebraic variety X. For every vector b = (bm , bm+1 , . . . , bn ) the function
+par(b, A, x) is upper semi-continuous, i.e. all sets
+                            Xj = { x ∈ X | par(b, A, x) ≥ j }
+are closed.
+Proof. We may assume that X is irreducible. Let K be the field of rational
+functions on X. We consider it as a constant sheaf on X. Set J = rad(A⊗OX
+K) and J = R ∩ A. It is a sheaf of nilpotent ideals. Moreover, if ξ is the
+generic point of X, the factor algebra A(ξ)/J (ξ) is semisimple. Hence there
+is an open set U ⊆ X such that A(x)/J (x) is semisimple, thus J (x) =
+rad A(x) for every x ∈ U . Therefore par(b, A, x) = par(b, J (x), A(x)) for
+x ∈ U ; so Xj = Xj (J ) ∪ Xj′ , where
+                    Xj (J ) = { x ∈ X | par(b, J (x), A(x)) ≥ j }
+and  X′= X \U is a closed subset in X. Using noetherian induction, we may
+suppose that Xj′ is closed, so we only have to prove that Xj (J ) is closed
+too.
+               DERIVED TAME AND DERIVED WILD ALGEBRAS                      13
+                                        L
+   Consider the locally free sheaf H = nk=m+1 Hom(bk A, bk−1 J ) and the
+projective space bundle P(H) [15, Section II.7]. Every point h ∈ P(H) de-
+fines a set of homomorphisms hk : bk A(x) → bk−1 J (x) (up to a homothety),
+where x is the image of h in X, and the points h such that hk hk+1 = 0 form
+a closed subset D ⊆ P(H). We denote by π the restriction onto D of the
+projection P(H) → X; it is a projective, hence closed mapping. Moreover,
+for every point x ∈ X the fibre π −1 (x) is isomorphic
+                                                Qn to D(b, A(x), J (x)).
+Consider also the group variety G over X: G = k=m GLbk (A). There is a
+natural action of G on D over X, and the sets Di = { z ∈ D | dim Gz ≤ i }
+are closed
+        in D. Therefore the sets	Zi = π(Di ) are closed
+                                                    S       in X, as well as
+Zij = x ∈ Zi | dim π −1 (x) ≥ i + j . But Xj (J ) = i Zij , thus it is also a
+closed set.                                                                
+  Taking into consideration Corollary 4.4, we obtain
+Corollary 5.2. For a family of algebras A over X denote
+                 Xtame = { x ∈ X | A(x) is derived tame } ,
+                 Xwild = { x ∈ X | A(x) is derived wild } .
+Then Xtame is a countable intersection of open subsets and Xwild is a count-
+able union of closed subsets.
+   The following conjecture seems very plausible, though even its analogue
+for usual tame algebras has not yet been proved.
+Conjecture 5.3. For any (flat) family of algebras over an algebraic variety
+X the set Xtame is open.
+   Recall that an algebra A is said to be a (flat) degeneration of an algebra
+B, and B is said to be a (flat) deformation of A, if there is a (flat) family
+of algebras A over an algebraic variety X and a point p ∈ X such that
+A(x) ≃ B for all x 6= p, while A(p) ≃ A. One easily verifies that we can
+always assume X to be a non-singular curve. Corollary 5.2 obviously implies
+Corollary 5.4. Suppose that an algebra A is a flat degeneration of an
+algebra B. If B is derived wild, so is A. If A is derived tame, so is B.
+   If we consider non-flat families, the situation can completely change. The
+reason is that the dimension is no more constant in these families. That is
+why it can happen that such a “degeneration” of a derived wild algebra may
+become derived tame, as the following example due to Brüstle [2] shows.
+Example 5.5. There is a (non-flat) family of algebras A over an affine line
+A1 such that all of them except A(0) are isomorphic to the derived wild
+algebra B given by the quiver with relations
+                                    •O
+                                         γ1
+                      α        β1             β2
+                  •       /•        /•o            •   β1 α = 0,
+                                         γ2
+                                     
+                                    •
+14                                     YURIY A. DROZD
+
+
+while A(0) is isomorphic to the derived tame algebra A given by the quiver
+with relations
+                         @ •O  
+                        ξ1
+                             γ
+                                     1
+                          
+                        β1
+(6)          •
+                 α   /•         / • o β2       •   β1 α = γ1 β1 = γ2 β2 = 0.
+                                          
+                             γ2        
+                                      
+                                    ξ2
+                                  •
+Namely, one has to define A(λ) as the factor algebra of the path algebra of
+the quiver as in (6), but with the relations β1 α = 0, γ1 β1 = λξ1 , γ2 β2 = λξ2 .
+Note that dim A = 16 and dim B = 15, which shows that this family is not
+flat.
+     Actually, in such a situation the following result always holds.
+Proposition 5.6. Let A be a family (not necessarily flat) of algebras over
+a non-singular curve X such that A(x) ≃ B for all x 6= p, where p is a
+fixed point, while A(p) ≃ A. Then there is a flat family B over X such that
+B(x) ≃ B for all x 6= p and B(p) ≃ A/I for some ideal I.
+Proof. Note that the restriction of A onto U = X\{ p } is flat, since dim A(x)
+is constant there. Let n = dim B, Γ be the quiver of the algebra B and
+G = kΓ be the path algebra of Γ. Consider the Grassmannian Gr(n, G),
+i.e. the variety of subspaces of codimension n of G. The ideals form a
+closed subset Alg = Alg(n, G) ⊂ Gr(n, G). The restriction of the canonical
+vector bundle V over the Grassmannian onto Alg is a sheaf of ideals in
+G = G⊗OAlg , and the factor F = G/V is a universal family of factor algebras
+of G of dimension n. Therefore there is a morphism φ : U → Alg such that
+the restriction of A onto U is isomorphic to φ∗ (F). Since Alg is projective
+and X is non-singular, φ can be continued to a morphism ψ : X → Alg.
+Let B = ψ ∗ (F); it is a flat family of algebras over X. Moreover, B coincides
+with A outside p. Since both of them are coherent sheaves on a non-singular
+curve and B is locally free, it means that B ≃ A/T , where T is the torsion
+part of A, and B(p) ≃ A(p)/T (p).                                           
+Corollary 5.7. If a degeneration of a derived wild algebra is derived tame,
+the latter has a derived wild factor algebra.
+   In the Brüstle’s example 5.5, to obtain a derived wild factor algebra of
+A, one has to add the relation ξ1 α = 0, which obviously holds in B.
+   By the way, as a factor algebra of a tame algebra is obviously tame (which
+is no more true for derived tame algebras!), we get the following corollary
+(cf. also [4, 8]).
+Corollary 5.8. Any deformation (not necessarily flat) of a tame algebra is
+tame. Any degeneration of a wild algebra is wild.
+
+                                        References
+ [1] Bekkert, V. I. and Drozd, Yu. A. Tame–wild dichotomy for derived categories. To ap-
+     pear.
+                 DERIVED TAME AND DERIVED WILD ALGEBRAS                              15
+
+
+ [2] Brüstle, Th. Tree Algebras and Quadratic Forms. Habilitation Thesis. Universität
+     Bielefeld, 2002.
+ [3] Crawley-Boevey, W. C. Tame algebras and generic modules. Proc. London Math. Soc.
+     63 (1991), 241–265.
+ [4] Crawley-Boevey, W. C. Tameness of biserial algebras. Arch. Math. 65 (1995), 399–
+     405.
+ [5] Drozd, Yu. A. Tame and wild matrix problems. Representations and quadratic forms.
+     Institute of Mathematics, Kiev, 1977, 39–74. (English translation: Amer. Math. Soc.
+     Translations 128 (1986), 31–55.)
+ [6] Drozd, Yu. A. Reduction algorithm and representations of boxes and algebras. Comtes
+     Rendue Math. Acad. Sci. Canada 23 (2001) 97-125.
+ [7] Drozd, Yu. A. Semi-continuity for derived categories. arXiv:math.RT/0212015 (to ap-
+     pear in Algebras and Representation Theory).
+ [8] Drozd, Yu. and Greuel, G.-M. Semi-continuity for Cohen–Macaulay modules, Math.
+     Ann. 306 (1996), 371–389.
+ [9] Drozd, Yu. and Kirichenko, V. V. Finite Dimensional Algebras. Vyscha Shkola, Kiev,
+     1980. (Enlarged English edition: Springer–Verlag, 1994.)
+[10] Geiß, Ch. On degenerations of tame and wild algebras. Arch. Math. 64 (1995), 11-16.
+[11] Geiß, Ch. Derived tame algebras and Euler-forms. Math. Z. 239 (2002), 829-862.
+[12] Geiß, Ch. and Krause, H. On the notion of derived tameness. Preprint, 2000.
+[13] Gelfand, S. I. and Manin, Yu. I. Methods of Homological Algebra. Nauka,1988.
+     (English translation: Springer–Verlag, 1996.)
+[14] Happel, D. Triangulated Categories in the Representation Theory of Finite Dimen-
+     sional Algebras. London Mathematical Society Lecture Notes Series, 119, 1988.
+[15] Hartshorne, R. Algebraic Geometry. Springer–Verlag, 1997.
+[16] Huisgen-Zimmermann, B. and Saorín, M. Geometry of chain complexes and outer au-
+     tomorphisms under derived equivalence. Trans. Amer. Math. Soc. 353 (2001), 4757-
+     4777.
+[17] Shafarevich, I. R. Basic Algebraic Geometry. Nauka, 1988.
+
+  Department of Mechanics and Mathematics, Kyiv Taras Shevchenko Uni-
+versity, 01033 Kyiv, Ukraine
+  E-mail address: yuriy@drozd.org
+  URL: http://drozd.org/~yuriy
+

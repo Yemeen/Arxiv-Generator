@@ -1,0 +1,1893 @@
+                                             CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF
+arXiv:math/0311251v2 [math.RT] 21 Nov 2003
+
+
+
+
+                                                                   GL(m|n)
+
+                                                                                    JONATHAN KUJAWA
+
+
+                                                     Abstract. This paper provides results on the modular representation theory of
+                                                     the supergroup GL(m|n). Working over a field of arbitrary characteristic, we prove
+                                                     that the explicit combinatorics of certain crystal graphs describe the representa-
+                                                     tion theory of a modular analogue of the Bernstein-Gelfand-Gelfand category O.
+                                                     In particular, we obtain a linkage principle and describe the effect of certain trans-
+                                                     lation functors on irreducible supermodules. Furthermore, our approach accounts
+                                                     for the fact that GL(m|n) has non-conjugate Borel subgroups and we show how
+                                                     Serganova’s odd reflections give rise to canonical crystal isomorphisms.
+
+
+
+
+                                                                                    1. Introduction
+                                                In 1995 Serganova computed the characters of the finite dimensional irreducible
+                                             representations of the Lie superalgebra gl(m|n, C) [17, 18]. Recently, Brundan gave a
+                                             more direct way to calculate these characters [1]. He also provides for the first time
+                                             a conjectural formula for the characters of the irreducible representations belonging
+                                             to the gl(m|n, C)-analogue of the Bernstein-Gelfand-Gelfand category O. Brundan’s
+                                             approach relates the Grothendieck group of this category O to a certain gl(∞, C)-
+                                                                                                                                  ∨
+                                             module. To be more precise, let V denote the natural gl(∞, C)-module and let V
+                                             denote its dual. Brundan identifies the complexified Grothendieck group of category
+                                             O with the gl(∞, C)-module
+                                                                                ∨             ∨
+                                                                              V ⊗ ···⊗ V ⊗V ⊗ ···⊗ V                                          (1.1)
+                                                                              |   {z    } |   {z   }
+                                                                                    n times           m times
+                                             so that the Verma supermodules in category O correspond to the natural monomial
+                                             basis of (1.1). Then Brundan’s conjecture is that the irreducible supermodules in
+                                             category O correspond to Lusztig’s dual canonical basis for (a certain completion of)
+                                             the module (1.1). The subcategory F of O consisting of finite dimensional modules fits
+                                             nicely into this V        the Grothendieck group of the category F is identified with
+                                                              picture: V
+                                                                n ∨      m
+                                             the submodule        V ⊗      V of (1.1).
+                                                This article is concerned instead with the crystal structures (in the sense of Kashi-
+                                             wara) which underlie Brundan’s conjecture. Actually, we work throughout the article
+                                             over an arbitrary field k of characteristic p, considering a modular analogue Op of the
+                                             usual category O. Remarkably, all the results at the level of crystals remain true even
+                                             if p > 0 provided one replaces the Lie algebra gl(∞, C) with the affine Kac-Moody
+                                                      b C).
+                                             algebra sl(p,
+                                                When p = 0 there are certain translation functors Er , Fr (r ∈ Z) defined on category
+                                             O which play a key role in [1]; actually they already appeared in [17] but in a slightly
+                                               Date: January 23, 2018.
+                                               2000 Mathematics Subject Classification. Primary 20C20, 05E99; Secondary 17B10.
+
+                                                                                               1
+2                                       JONATHAN KUJAWA
+
+
+different form. At the level of Grothendieck groups, these functors correspond to the
+usual Chevalley generators of gl(∞, C) acting on the module (1.1). When p > 0 one
+can define analogous functors Er , Fr (r ∈ Z/pZ) on category Op . Let L(λ) be an
+irreducible module in category O or Op . In both cases we prove that the modules
+Er L(λ) and Fr L(λ) are either zero or else are self-dual indecomposable modules with
+irreducible socle and cosocle isomorphic to L(ẽ∗r (λ)) and L(f˜r∗ (λ)) respectively. This
+gives a representation theoretic definition of operators ẽ∗r , f˜r∗ on the set of weights that
+parametrizes the irreducible supermodules. Our main result (Theorem 2.4) gives an
+explicit combinatorial description of these operators, allowing us to verify that they
+are dual to the crystal operators ẽr , f˜r associated to Kashiwara’s crystal basis of the
+module (1.1).
+    Let us remark that our main result contains as a special case branching rules for
+representations of the supergroup GL(m|n) in characteristic p. They are a natural
+extension of Kleshchev’s modular branching rules in the case of GL(n); see e.g. [3].
+Our proof is an adaptation of Kleshchev’s original methods, based on some explicit
+computations with certain lowering operators in the universal enveloping algebra.
+    An important feature of the Lie superalgebra gl(m|n, C) is that it has various differ-
+ent conjugacy classes of Borel subalgebra. These may be parametrized by a sequence
+(v 1 , . . . , v m+n ) of parities v i ∈ Z2 , m of which are equal to 0̄ and n of which are equal to
+1̄. Brundan only considers the Borel subalgebra corresponding to the parity sequence
+(1̄, · · · , 1̄, 0̄, · · · , 0̄); in the present article we consider all the conjugacy classes of Borel
+subalgebras. It turns out that in the general case one must replace the module (1.1)
+with the module
+                                                 V v1 ⊗ · · · ⊗ V vm+n                            (1.2)
+                                              ∨
+where V 0̄ denotes V and V 1̄ denotes V . (It appears that Brundan’s conjecture itself
+also extends nicely to other Borel subalgebras, again replacing (1.1) with (1.2).) Odd
+reflections, introduced by Serganova [19] and, independently, by Dobrev and Petkova
+[6], give a simple way to translate between the parametrization of irreducible highest
+weight modules arising from different choices of Borel subalgebra. In the final section
+of the paper we explain how these odd reflections can also be interpreted as canonical
+crystal isomorphisms between the crystals associated to the modules (1.2) for different
+choices of parity sequences.
+Acknowledgments. The author is grateful to Jonathan Brundan for invaluable ad-
+vice during the course of this work.
+
+                           2. Preliminaries and Main Results
+2.1. Supergroups. Fix a ground field k of characteristic p (possibly p = 0). All
+objects discussed in this article (superspaces, superalgebras, supergroups, etc.) will
+be defined over k. Recall that a superspace is a Z2 -graded vector space and, given a
+superspace V and a homogeneous vector v ∈ V, we write v ∈ Z2 for the parity (i.e.
+degree) of v. We also recall that a commutative superalgebra A is a Z2 -graded asso-
+ciative algebra satisfying ab = (−1)ab ba for all homogeneous a, b ∈ A. We additionally
+assume that a2 = 0 for all a ∈ A1̄ when p = 2.
+   Fix nonnegative integers m and n. Let V be a superspace of even dimension m
+and odd dimension n; that is, V is a Z2 -graded vector space with dimk V0̄ = m and
+dimk V1̄ = n. The object of study in this article is the supergroup G = GL(V ). We
+define it using the language of group schemes (see [8]) as a functor from the category of
+         CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                      3
+
+
+commutative superalgebras to the category of groups: for a commutative superalgebra
+A let G(A) be the group of all invertible even (i.e. grading preserving) automorphisms
+of the A-supermodule V ⊗ A.
+   Once and for all we fix a ordered homogeneous basis v1 , . . . , vm+n for V. Having made
+this choice, we can now introduce coordinates: given a commutative superalgebra A,
+we identify G(A) with the group of all invertible (m + n) × (m + n) matrices
+                                     (gi,j )1≤i,j≤m+n                                (2.1)
+with gi,j ∈ Avi +vj for all 1 ≤ i, j ≤ m + n. Namely, if we identify elements of V ⊗ A
+with column vectors via                              
+                               m+n                a1
+                               X                     
+                                     vi ⊗ ai ←→  ...  ,
+                               i=1               am+n
+then we can view such a matrix as an even endomorphism in the usual way by left
+multiplication. Let f : A → B be a superalgebra homomorphism. Under our identifi-
+cation, G(f ) : G(A) → G(B) corresponds to the morphism given by applying f to the
+matrix entries.
+   Let T be the subgroup of G consisting of diagonal matrices. More precisely, given a
+commutative superalgebra A, T is the functor given by setting T (A) to be the subgroup
+of G(A) consisting of all diagonal matrices. Let X(T ) be the free abelian group
+                                               m+n
+                                               M
+                                    X(T ) =          Zεi .
+                                               i=1
+We identify X(T ) with the character group of T by identifying εi with the function
+which picks out the ith diagonal entry of a diagonal matrix. We put a symmetric
+bilinear form on X(T ) by declaring that
+                                  (εi , εj ) = (−1)vi δi,j .                         (2.2)
+Observe that we have an action by the symmetric group Sm+n on X(T ) given by
+x · εi = εxi for all 1 ≤ i ≤ m + n and x ∈ Sm+n .
+    Given 1 ≤ t ≤ m + n, let Vt denote the subspace of V generated by v1 , . . . , vt . We
+fix a choice of Borel subgroup B of G so that, for a commutative superalgebra A, B(A)
+is the stabilizer of the full flag
+                        0 ⊆ V1 ⊗ A ⊆ · · · ⊆ Vm+n ⊗ A = V ⊗ A.
+Note that B(A) equals the set of all upper triangular invertible matrices of the form
+(2.1).
+   The root system of G is the set Φ = {εi − εj : 1 ≤ i, j ≤ m + n, i 6= j}. There are
+even and odd roots, the parity of the root εi − εj being v i + v j . Our choice of Borel
+subgroup defines a set,
+                          Φ+ = {εi − εj : 1 ≤ i < j ≤ m + n},                        (2.3)
+of positive roots. The corresponding dominance order on X(T ) is denoted ≤ and is
+defined by λ ≤ µ if µ − λ ∈ Z≥0 Φ+ .
+4                                        JONATHAN KUJAWA
+
+
+2.2. The Superalgebra of Distributions. There is an abstract notion of the super-
+algebra of distributions for a supergroup; see, for example, [4, §3]. In this case however
+we can realize the superalgebra of distributions for G, Dist(G), explicitly as the reduc-
+tion modulo p from an analogue of Kostant’s Z-form for the Lie superalgebra over C
+corresponding to G. This Lie superalgebra consists of the set of (m + n) × (m + n) ma-
+trices over C with homogeneous basis given by the matrix units ei,j (1 ≤ i, j ≤ m + n)
+and with the parity of ei,j equal to v i + v j . The superbracket of this Lie superalgebra
+is given by
+                     [ei,j , ek,l ] = δj,k ei,l − (−1)(vi +vj )(vk +v l ) δi,l ek,j .   (2.4)
+Let UC denote the universal enveloping superalgebra of this Lie superalgebra. By the
+PBW theorem for Lie superalgebras [10], UC has basis consisting of all monomials
+                               Y      a
+                                             Y       d
+                                     ei,ji,j        ei,ji,j
+                                  1≤i,j≤m+n          1≤i,j≤m+n
+                                   v i +v j =0̄       v i +v j =1̄
+
+where ai,j ∈ Z≥0 , di,j ∈ {0, 1}, and the product is taken in any fixed order. We shall
+write hi = ei,i for short.
+     Define the Kostant Z-form UZ to be the Z-subalgebra of UC generated by ele-
+                                                   (r)
+ments ei,j (1 ≤ i, j ≤ m + n, v i + v j = 1̄), ei,j (1 ≤ i, j ≤ m + n, i 6= j, v i + v j =
+                                                             (r)                      
+0̄, r ≥ 1), and hri (1 ≤ i ≤ m + n, r ≥ 1). Here, ei,j := eri,j /(r!) and hri :=
+hi (hi − 1) · · · (hi − r + 1)/(r!). Following the proof of [22, Th.2], one verifies the fol-
+lowing:
+Lemma 2.1. The superalgebra UZ is a free Z-module with basis given by the set of all
+monomials of the form
+                      Y     (ai,j )
+                                    Y hi         Y       d
+                           ei,j                           ei,ji,j
+                                            ri
+                     1≤i,j≤m+n               1≤i≤m+n             1≤i,j≤m+n
+                     i6=j,v i +v j =0̄                            v i +v j =1̄
+
+for all ai,j , ri ∈ Z≥0 and di,j ∈ {0, 1}, where the product is taken in any fixed order.
+    The enveloping superalgebra UC is a Hopf superalgebra in the canonical way and,
+furthermore, this structure restricts to make UZ a Hopf superalgebra over Z. Finally,
+set
+                                     Dist(G) = k ⊗Z UZ ,
+naturally a Hopf superalgebra over k. We will abuse notation by using the same
+            (r)    
+symbols ei,j , hri etc... for the canonical images of these elements of UZ in Dist(G).
+    It is also easy to describe the superalgebras of distributions of our various natural
+subgroups of G as subalgebras of Dist(G). For example, Dist(T ) is the subalgebra
+generated by all hri (1 ≤ i ≤ m + n, r ≥ 1), and Dist(B) is the subalgebra generated
+                        (a)
+by Dist(T ) and all ei,j where 1 ≤ i, j ≤ m + n with i < j, and a ∈ Z≥0 if v i + v j =
+0̄ and a ∈ {0, 1} if v i + v j = 1̄.
+    Let us describe the category of Dist(G)-supermodules. The objects are all left
+Dist(G)-modules which are Z2 -graded; i.e., k-superspaces, M, satisfying Dist(G)r Ms ⊆
+Mr+s for all r, s ∈ Z2 . A morphism of Dist(G)-supermodules is a linear map f :
+M → M ′ satisfying f (xm) = (−1)f x xf (m) for all m ∈ M and all x ∈ Dist(G).
+Note that this definition makes sense as stated only for homogeneous elements; it
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                        5
+
+
+should be interpreted via linearity in the general case. We emphasize that we al-
+low all morphisms and not just graded (i.e. even) morphisms. However, we note
+that for superspaces M and M ′ the space Homk (M, M ′ ) is naturally Z2 -graded by
+f ∈ Homk (M, M ′ )r if f (Ms ) ⊆ Ms+r′
+                                          for all r, s ∈ Z2 . This gives a Z2 -grading on
+                  ′                ′
+HomDist(G) (M, M ) ⊆ Homk (M, M ). The category of Dist(G)-supermodules is not an
+abelian category. However, the underlying even category, consisting of the same ob-
+jects but only the even morphisms, is an abelian category. This, along with the parity
+change functor, Π, which simply interchanges the Z2 -grading of a supermodule, allows
+us to make use
+             P of the tools of homological algebra.
+   For λ = m+n i=1 λi εi ∈ X(T ) and a Dist(G)-supermodule M , define the λ-weight
+space of M to be
+                                                                      
+                           hi          λi
+       Mλ = m ∈ M :            m=          m for all 1 ≤ i ≤ m + n, r ≥ 1 .          (2.5)
+                            r          r
+We call a Dist(G)-supermodule
+           P                    M integrable if it is locally finite over Dist(G) and sat-
+isfies M = λ∈X(T ) Mλ . The category of G-supermodules can naturally be identified
+with the category of integrable Dist(G)-supermodules [4, Corollary 3.5].
+2.3. Highest Weight Theory. Given λ ∈ X(T ) let
+                 D(λ) = {µ ∈ X(T ) : µ ≤ λ in the dominance order} .
+Let Op denote the the full subcategory of the category  L        of all Dist(G)-supermodules
+consisting of supermodules M such that M =                 λ∈X(T ) Mλ , dimk Mλ < ∞ for all
+                                                                                 Sr
+λ ∈ X(T ), and there are λ(1) , . . . , λ(r) ∈ X(T ) so that Mµ 6= 0 implies µ ∈ i=1 D(λ(i) )
+for any µ ∈ X(T ). Note that any supermodule in Op is locally finite over Dist(B). We
+also remark that in the case p = 0 Brundan’s category O discussed in the introduction
+is a full subcategory of O0 . From now on we will assume all Dist(G)-supermodules
+under discussion are objects in Op .
+   For λ ∈ X(T ), we have the Verma module
+                              M (λ) := Dist(G) ⊗Dist(B) kλ ,
+where kλ denotes k viewed as a Dist(B)-supermodule of weight λ concentrated in
+degree 0̄. Note that by Lemma 2.1 it follows that M (λ) is an object in Op . We say that
+a homogeneous vector v in a Dist(G)-supermodule M is a primitive vector of weight
+λ (or simply a primitive vector ) if Dist(B)v ∼
+                                              = kλ as a Dist(B)-supermodule. Familiar
+arguments exactly as for semisimple Lie algebras over C show:
+Lemma 2.2. Let λ ∈ X(T ).
+    (i) The λ-weight space of M (λ) is 1-dimensional, and all other weights of M (λ)
+        are < λ in the dominance order.
+   (ii) Any non-zero quotient of M (λ) is generated by a primitive vector of weight λ,
+        unique up to scalars.
+  (iii) Any Dist(G)-supermodule generated by a primitive vector of weight λ is iso-
+        morphic to a quotient of M (λ).
+  (iv) M (λ) has a unique maximal submodule Rad M (λ) and, hence, an irreducible
+        quotient L(λ) := M (λ)/ Rad M (λ). The {L(λ)}λ∈X(T ) give a complete set of
+        pairwise non-isomorphic irreducibles in Op .
+  In this way, we get a parametrization of the irreducible objects in Op by their highest
+weights with respect to the ordering ≤.
+6                                     JONATHAN KUJAWA
+
+
+    Given a Dist(G)-supermodule, M, we can consider its graded dual
+                                    M
+                           M ∗ :=        Homk (Mλ , k)
+                                         λ∈X(T )
+
+with the usual Z2 -grading and Dist(G) action. We have an automorphism, τ, of Dist(G)
+induced by ei,j 7→ −(−1)vi (vi +v j ) ej,i (the negative of the supertranspose). Twisting
+M ∗ by τ yields a new Dist(G)-supermodule, which we call the contravariant dual and
+denote by M τ . In particular, for λ ∈ X(T ) we define
+                                        W (λ) = M (λ)τ ,                                     (2.6)
+the co-Verma supermodule of highest weight λ. We remark that for a module M in
+category Op we have (M τ )τ ∼
+                            = M and the characters of M and M τ coincide. In
+                        τ ∼
+particular, we have L(λ) = L(λ) for any λ ∈ X(T ).
+2.4. Crystals. Let us recall the general definition of a crystal in the sense of Kashiwara
+[11, 7.2]. Assume we have the following data:
+               P = a free Z-module (called the weight lattice)
+               I = an index set
+               αi ∈ P for all i ∈ I (called a simple root)
+               hi ∈ P ∗ = HomZ (P, Z) for all i ∈ I (called a simple coroot)
+               h−, −i : P × P → Q a symmetric bilinear form.
+Additionally, we assume the data satisfies the following axioms:
+                           hαi , αi i ∈ 2Z>0 for all i ∈ I
+                           hi (λ) = 2hα   i ,λi
+                                      hαi ,αi i for all i ∈ I
+                           hαi , αj i ≤ 0 for all i, j ∈ I with i 6= j.
+    With this fixed data, we define a crystal B as a set along with maps
+                           ẽi , f˜i : B → B ⊔ {0} (for i ∈ I)
+                              εi , ϕi : B → Z ⊔ {−∞} (for i ∈ I)
+                                  wt : B → P
+subject to the following axioms:
+ (C1) ϕi (b) = εi (b) + 2hα  i ,wt(b)i
+                           hαi ,αi i ;
+ (C2) if ẽi (b) 6= 0, then εi (ẽi (b)) = εi (b) − 1, ϕi (ẽi (b)) = ϕi (b) + 1, and wt(ẽi (b)) =
+        wt(b) + αi ;
+ (C3) if f˜i (b) 6= 0, then εi (f˜i (b)) = εi (b) + 1, ϕi (f˜i (b)) = ϕi (b) − 1, and wt(f˜i (b)) =
+        wt(b) − αi ;
+ (C4) b1 = f˜i (b2 ) if and only if ẽi (b1 ) = b2 ;
+ (C5) if ϕi (b) = −∞, then ẽi (b) = f˜i (b) = 0;
+where b, b1 , b2 ∈ B and i ∈ I.
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                           7
+
+
+  We also remind the reader of the notion of the tensor product of two crystals. If B1
+and B2 are crystals, then set B1 ⊗ B2 = {b1 ⊗ b2 : b1 ∈ B1 , b2 ∈ B2 } and
+                  wt(b1 ⊗ b2 ) = wt(b1 ) + wt(b2 ),
+                                                                            
+                                                             2hαi , wt(b1 )i
+                  εi (b1 ⊗ b2 ) = max εi (b1 ), εi (b2 ) −                     ,
+                                                                hαi , αi i
+                                                                             
+                                                              2hαi , wt(b2 )i
+                  ϕi (b1 ⊗ b2 ) = max ϕi (b2 ), ϕi (b1 ) +                       ,
+                                                                 hαi , αi i
+                                   (
+                                     ẽi b1 ⊗ b2 , if ϕi (b1 ) ≥ εi (b2 );
+                  ẽi (b1 ⊗ b2 ) =
+                                     b1 ⊗ ẽi b2 , if ϕi (b1 ) < εi (b2 );
+                                   (
+                                     f˜i b1 ⊗ b2 , if ϕi (b1 ) > εi (b2 );
+                  f˜i (b1 ⊗ b2 ) =
+                                     b1 ⊗ f˜i b2 , if ϕi (b1 ) ≤ εi (b2 ).
+If M1 and M2 are Lie algebra modules with associated crystals B1 and B2 , respectively,
+then by [11, Thm. 4.1] the crystal associated to M1 ⊗ M2 is B1 ⊗ B2 .
+2.5. Affine Lie Algebras. Recall that we have a fixed ground field k of characteristic
+p. There are two cases to consider: when p = 0 and when p > 0. In each case we define
+the requisite Cartan datum in the notation of subsection 2.4 and use this data to define
+an affine Lie algebra over C, g, in the manner of [9].          P
+   We first consider the case when p = 0. Let P = r∈Z Zγr . The index set is Z/pZ =
+Z. Define the simple roots by αr = γr − γr+1 for r ∈ Z. We define a nondegenerate
+symmetric bilinear form h−, −i : P × P → Q by setting hγr , γs i = δr,s for r, s ∈ Z.
+Observe that                                     
+                                                 
+                                                 2,       if r = s;
+                                   hαr , αs i = −1, if r = s ± 1;
+                                                 
+                                                 
+                                                   0,      otherwise;
+for all r, s ∈ Z. Using the form we identify P and P ∗ via x ↔ hx, −i. Under this
+identification the simple coroot hr is αr for all r ∈ Z.                   L
+   Now we consider the case when p > 0. Then we let P = Zδ ⊕ r∈Z/pZ ZΛr . Again,
+the index set is Z/pZ. The simple roots are defined by αr = 2Λr − Λr−1 − Λr+1 + δr,0 δ
+for r ∈ Z/pZ. Let h−, −i : P × P → Q be the nondegenerate bilinear form determined
+by requiring δ, Λ0 , . . . , Λp−1 and Λ0 , α0 , . . . , αp−1 to be dual bases with respect to the
+form. Observe that if p > 2, then
+                                           
+                                           
+                                           2,        if r ≡ s (mod p);
+                             hαr , αs i = −1, if r ≡ s ± 1 (mod p);
+                                           
+                                           
+                                              0,      otherwise;
+and if p = 2, then                      (
+                                            2,    if r ≡ s (mod 2);
+                         hαr , αs i =
+                                            −2,   if r ≡ s + 1 (mod 2);
+for all r, s ∈ Z/pZ. In particular
+                            L      this implies the form is symmetric. Using the form
+we identify Q := ZΛ0 ⊕ r∈Z/pZ Zαr ⊆ P with P ∗ via x ↔ hx, −i. Under this
+identification, the simple coroot hr is αr for all r ∈ Z/pZ. Finally, given a ∈ Z we
+write a = pd + s with d ∈ Z and s = 1, . . . , p and define γa ∈ P by
+                                    γa = Λs − Λs−1 − dδ.
+8                                      JONATHAN KUJAWA
+
+
+Observe that if a = pd + s, then γa − γa+1 = αs .
+  In both cases we define a Lie algebra over C, g, generated by h := P ⊗Z C and
+{Er , Fr : r ∈ Z/pZ} subject to the relations
+                                   [Er , Fs ] = δr,s αr
+                                    [H, H ′ ] = 0
+                                    [H, Er ] = hαr , HiEr
+                                    [H, Fr ] = −hαr , HiFr
+                                   (ad Er )1−hαr ,αs i (Es ) = 0
+                                   (ad Fr )1−hαr ,αs i (Fs ) = 0
+for all r, s ∈ Z/pZ, all H, H ′ ∈ h, and where h−, −i denotes the bilinear form on P
+                                                                        b p (C).
+extended to h. Note that if p = 0, then g = gl∞ (C). If p > 0, then g = sl
+2.6. The Crystal B. We are now prepared to describe the crystal which plays a
+central role in this paper. Let V denote the natural “evaluation” g-module with basis
+{xb : b ∈ Z} and action given by
+                                 (
+                                   xb−1 , if r + 1 ≡ b (mod p);
+                         Er xb =
+                                   0,     otherwise;
+                                 (
+                                   xb+1 , if r ≡ b (mod p);
+                         Fr xb =
+                                   0,     otherwise;
+                            Hxb = hH, γb ixb for all H ∈ h,
+where g is the affine Lie algebra defined in subsection 2.5. We say a vector x ∈ V is of
+weight λ ∈ P if Hx = hH, λix for all H ∈ h.
+    There is a crystal (B0̄ , ẽr , f˜r , εr , ϕr , wt) associated to the module V (for both p = 0
+and p > 0) where the underlying set B0̄ is {xb : b ∈ Z} (the given basis). The crystal
+operators are defined by ẽr = Er and f˜r = Fr for all r ∈ Z/pZ and, given b ∈ Z,
+εr (xb ) = 1, if r + 1 ≡ b (mod p) and is zero otherwise; and ϕr (xb ) = 1, if r ≡ b (mod p)
+and is zero otherwise. Finally, wt is the usual weight function on V, hence wt(xb ) = γb
+for all b ∈ Z. We leave it to the reader to verify the crystal axioms.
+    We have an automorphism of g given by
+                                           Er 7→ Fr ,
+                                           Fr 7→ Er ,
+                                            H 7→ −H,
+for all r ∈ Z/pZ and all H ∈ h. We can twist V by this automorphism and obtain a
+new g-module, V . This module also has an associated crystal (B1̄ , ẽr , f˜r , εr , ϕr , wt)
+                    ∨
+
+
+which is, roughly speaking, B0̄ with the roles of ẽr and f˜r interchanged. Namely, the
+                           ∨                                                             ∨
+crystal B1̄ is the set {xb : b ∈ Z} (the given basis of V viewed as a basis of V ), where
+we set ẽr (xb ) = f˜r (xb ) , f˜r (xb ) = ẽr (xb ) , εr (xb ) = ϕr (xb ), ϕr (xb ) = εr (xb ), and
+             ∨              ∨        ∨              ∨          ∨                 ∨
+
+     ∨
+wt(xb ) = − wt(xb ), for all r ∈ Z/pZ and all b ∈ Z.
+   The tensor product of crystals
+                                                                            
+                               Bv1 ⊗ · · · ⊗ Bvm+n , ẽr , f˜r , εr , ϕr , wt
+            CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                  9
+
+
+is then the crystal associated to the g-module V v1 ⊗ · · · ⊗ V vm+n where V 0̄ := V and
+              ∨
+V 1̄ := V . The key combinatorial object in this article is a different crystal structure
+(B, ẽ∗r , f˜r∗ , ε∗r , ϕ∗r , wt) on the same underlying set,
+                                      n                                            o
+                                                      v m+n
+                                B := xvb11 ⊗ · · · ⊗ xbm+n  : b1 , . . . , bm+n ∈ Z ,
+                                         ∨
+where x0̄b := xb ∈ B0̄ and x1̄b := xb ∈ B1̄ . We call this the dual crystal structure
+following Brundan [1]. The dual crystal operators are defined by
+                   ẽ∗r (x) := −f˜−1−r (−x), ε∗r (x) := ϕ−1−r (−x),
+                   f˜∗ (x) := −ẽ−1−r (−x), ϕ∗ (x) := ε−1−r (−x),
+                       r                              r
+where for
+                                                       v
+                                  x = xvb11 ⊗ · · · ⊗ xbm+n
+                                                        m+n
+                                                            ∈B
+we define
+                                                           v
+                             −x = xv−b  1
+                                          1
+                                                        m+n
+                                            ⊗ · · · ⊗ x−bm+n
+                                                             .
+The weight function is given by
+                                                 m+n X
+                                           v m+n
+                      wt xvb11 ⊗ · · · ⊗ xbm+n      =     (−1)vi γbi .
+                                                           i=1
+See [1] for a discussion of the sense in which these crystal structures are dual to one
+another. In the next subsection we will give a more explicit combinatorial description
+of the dual crystal B.
+2.7. The Crystal Structure on X(T ). We now lift the dual crystal structure on
+B to X(T ). To do so we require some additional notation. Let ρ ∈ X(T ) denote the
+unique element which satisfies the following conditions:
+                                        (
+                                          1, if v m+n = 0̄;
+                          (ρ, εm+n ) =
+                                          0, if v m+n = 1̄;
+and for 1 ≤ i ≤ m + n − 1,
+                                            
+                                            
+                                            1,        if v i = v i+1 = 0̄;
+                           (ρ, εi − εi+1 ) = −1,       if v i = v i+1 = 1̄;
+                                            
+                                            
+                                              0,       if v i 6= v i+1 .
+For 1 ≤ j ≤ m + n, let
+                                             m+n
+                                             X
+                                    ϑj =           (−1)vi +vj ,                     (2.7)
+                                           i=j+1
+and let
+                                         m+n
+                                         X
+                                    ϑ=         ϑj εj ∈ X(T ).                       (2.8)
+                                         j=1
+Then observe that we have
+                                                    X
+                                     ρ=ϑ+                  εi .                     (2.9)
+                                               1≤i≤m+n
+                                                 v i =0̄
+10                                      JONATHAN KUJAWA
+
+
+As an example, say our fixed homogeneous basis for V satisfies v i = 1̄ if 1 ≤ i ≤ n and
+v i = 0̄ if n + 1 ≤ i ≤ m + n (the parity choice in [1]), then we have
+           ϑ = −(m − n + 1)ε1 + · · · + −mεm + (m − 1)εn+1 + · · · + εm+n−1 ,
+           ρ = −(m − n + 1)ε1 + · · · + −mεm + mεn+1 + · · · + εm+n .
+     We define a bijection X(T ) → B by
+                                                                v
+                             λ 7→ xv(λ+ρ,ε
+                                     1
+                                          1)
+                                                         m+n
+                                             ⊗ · · · ⊗ x(λ+ρ,εm+n )
+                                                                    .                     (2.10)
+Using this bijection we can lift the dual crystal structure on B to the set X(T ). Let
+us describe the combinatorics of this crystal structure explicitly. It is convenient to
+use a combinatorial description of the crystal tensor product rule which uses certain
+sequences commonly called signatures. See, for example, [7, Sec. 4.4].
+   For λ ∈ X(T ) and 1 ≤ j ≤ m + n, define the j-residue of λ to be
+                           rj (λ) = (λ + ϑ, εj )                                          (2.11)
+                                    (
+                                      (λ + ρ − εj , εj ),            if v j = 0̄;
+                                  =
+                                      (λ + ρ, εj ),                  if v j = 1̄.
+Fix r ∈ Z/pZ and λ ∈ X(T ). The r-signature of λ ∈ X(T ) is
+                                   σr (λ) = (σ1 , . . . , σm+n ),
+where                                 
+                                      
+                                      +, if ri (λ + εi ) ≡ r (mod p);
+                                 σi = −, if ri (λ) ≡ r (mod p);                           (2.12)
+                                      
+                                      
+                                        0,    else.
+Given the r-signature of λ we form the reduced r-signature by successively replacing
+−+ pairs with 00 (where the − and + may be separated by zeros, which are ignored)
+until no − appears to the left of a +. Given an r-signature σ = (σ1 , . . . , σm+n ), we write
+σ̃ = (σ̃1 , . . . , σ̃m+n ) for the reduced r-signature. In particular, given λ ∈ X(T ) we write
+σ̃r (λ) for the reduced r-signature of λ. We then define ẽ∗r , f˜r∗ : X(T ) → X(T ) ⊔ {0} by
+                (
+                    λ − εj , if 1 ≤ j ≤ m + n is the position of the leftmost − in σ̃r (λ);
+     ẽ∗r (λ) =
+                    0,         if there are no −’s in σ̃r (λ);
+                (
+                    λ + εj , if 1 ≤ j ≤ m + n is the position of the rightmost + in σ̃r (λ);
+    f˜r∗ (λ) =
+                    0,         if there are no +’s in σ̃r (λ).
+We also define
+         ε∗r (λ) = max(a ≥ 0 : (ẽ∗r )a (λ) 6= 0) = the total number of −’s in σ̃r (λ),
+         ϕ∗ (λ) = max(a ≥ 0 : (f˜∗ )a (λ) 6= 0) = the total number of +’s in σ̃r (λ).
+          r                       r
+The weight function is given by
+                                              m+n
+                                              X
+                                wt(λ) =              (−1)vi γ(λ+ρ,εi ) .                  (2.13)
+                                               i=1
+Taken together the datum
+                                                                        
+                                      X(T ), ẽ∗r , f˜r∗ , ε∗r , ϕ∗r , wt                 (2.14)
+         CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                   11
+
+
+is the crystal of interest in the present work. We emphasize that this crystal structure
+on X(T ) depends on (but only on) the sequence of parities v 1 , . . . , v m+n which we
+fixed at the beginning.
+2.8. Main Results. We can now summarize our main results. Namely, that the
+crystal on X(T ) given in (2.14) describes aspects of the category Op .
+   In section 3 we prove that the function wt given as part of the crystal structure on
+X(T ) partitions the central characters of Dist(G) arising from the irreducible super-
+modules of category Op . In particular if L(λ) and L(µ) have the same central character,
+then wt(λ) = wt(µ). As a consequence we obtain the following linkage principle.
+Theorem 2.3. Let λ, µ ∈ X(T ). If
+                              Ext1Dist(G) (L(λ), L(µ)) 6= 0,
+then wt(λ) = wt(µ).
+   To continue we need to define certain translation functors on category Op . These
+functors should be compared with the translation functors defined by Jantzen [8, II.7],
+Brundan and Kleshchev [3], and Brundan [1]. For ν ∈ P, define Opν to be the full
+subcategory of Op of all modules with all their irreducible subquotients isomorphic to
+L(λ) for some λ ∈ X(T ) with wt(λ) = ν. Let M be a Dist(G)-supermodule lying in
+category Op . Fix λ ∈ X(T ). Since Z(Dist(G)), the center of Dist(G), leaves Mλ invari-
+ant, we can view it as a commuting family of endomorphisms of the finite dimensional
+superspace Mλ . Consequently, we have the direct sum decomposition as superspaces
+                                          M χ
+                                    Mλ =      Mλ
+where the sum runs over all central characters, χ : Z(Dist(G)) → k, and where
+    Mλχ = {m ∈ Mλ : (z − χ(z))N m = 0 for every z ∈ Z(Dist(G)) and N >> 0}.
+                         L
+Consequently, since M =    λ∈X(T ) Mλ , we have the direct sum decomposition as
+Dist(G)-supermodules                   M
+                                 M=        Mχ
+where again sum runs over all central characters, χ : Z(Dist(G)) → k, and where
+    M χ = {m ∈ M : (z − χ(z))N m = 0 for every z ∈ Z(Dist(G)) and N >> 0 }.
+  However, by our above remarks we can rewrite the decomposition as
+                                      M
+                                 M=       Mν
+where the sum runs over all ν ∈ P and M ν is a Dist(G)-supermodule lying in category
+Opν . That is, we have
+                                         M
+                                   Op =       Opν .                           (2.15)
+                                            ν∈P
+Let prν be the projection functor from Op to Opν . For r ∈ Z/pZ we now define the
+functors
+                                     Er , Fr : Op → Op .                       (2.16)
+                                                         ν            ν
+By additivity, it suffices to define them on objects in Op . Let M ∈ Op , then
+     Er M := prν+γr −γr+1 (M ⊗ V ∗ )    and Fr M := prν−γr +γr+1 (M ⊗ V ),       (2.17)
+where V denotes the natural G-supermodule and V ∗ denotes its dual. On a morphism
+ϕ : M → N , Er ϕ and Fr ϕ are the restriction of the map ϕ ⊗ 1.
+12                                       JONATHAN KUJAWA
+
+
+   In section 5 we prove that the action of these translation functors on irreducible
+supermodules is regulated by the crystal structure on X(T ). Namely, we have the
+following theorem:
+Theorem 2.4. Let λ ∈ X(T ) and r ∈ Z/pZ.
+   (i) Er L(λ) 6= 0 if and only if ε∗r (λ) 6= 0, in which case it is a self-dual indecompos-
+       able module with irreducible socle and cosocle both isomorphic to L(µ) where
+       µ = ẽ∗r (λ). Moreover, Er L(λ) is irreducible if and only if ε∗r (λ) = 1.
+  (ii) Fr L(λ) 6= 0 if and only if ϕ∗r (λ) 6= 0, in which case it is a self-dual indecompos-
+       able module with irreducible socle and cosocle both isomorphic to L(µ) where
+       µ = f˜r∗ (λ). Moreover, Fr L(λ) is irreducible if and only if ϕ∗r (λ) = 1.
+   As a corollary to the previous theorem we also obtain an explicit description of
+the socle of L(λ) ⊗ V ∗ and L(λ) ⊗ V and combinatorial criterion for when these
+supermodules are semisimple.
+
+                                     3. Central Characters
+3.1. Some Central Elements. Following Sergeev [20] (where the characteristic zero
+case was considered), we define certain central elements of Dist(G). Recall from sub-
+section 2.2 that {ei,j : 1 ≤ i, j ≤ m + n} is the usual homogeneous basis for the Lie
+                                       [r]
+superalgebra associated to G. Define xk,l ∈ Dist(G) inductively as follows:
+                               [1]
+                             xk,l = ek,l                                              (3.1)
+                                      m+n
+                                      X
+                               [r]                       [r−1]
+                             xk,l =         (−1)vs ek,s xs,l     , for r > 1.         (3.2)
+                                      s=1
+
+Lemma 3.1. Let 1 ≤ i, j, k, l ≤ m + n and r ∈ Z, r ≥ 1. Then,
+                  [r]
+      (i) The xk,l are homogeneous of degree v k + v l ,
+                  [r]          [r]                                [r]
+      (ii) [ei,j , xk,l ] = δj,k xi,l − (−1)(vi +v j )(vk +vl ) δi,l xk,j ,
+                                       P       [r]
+     (iii) The elements Z̃r := m+n       k=1 xk,k for r ≥ 1 are central.
+
+Proof. Each of the statements is a straightforward induction on r.                        
+     For r ∈ Z let                                X
+                             Zr = Z̃r − (−1)r         (−1)vk1 +···+vkr ϑkr ,          (3.3)
+where the sum runs over all 1 ≤ k1 < · · · < kr ≤ m + n and ϑi is as in (2.7). Since
+Zr differs from Z̃r by a scalar, these elements are still central and generate the same
+subalgebra of Dist(G). We remark that if char k = 0 one can use the results of [21] to
+prove that these elements in fact generate Z(Dist(G)).
+3.2. The Linkage Principle. Multiplication by an element of Z(Dist(G)) defines an
+endomorphism of M (λ) (λ ∈ X(T )) so takes the canonical generator vλ ∈ M (λ)λ
+to scalar multiple of itself. From this we conclude that the elements of Z(Dist(G))0̄
+must act by scalars on M (λ) and any of its subquotients. We now prove that the even
+central element Zr defined in the previous subsection acts on M (λ) by the scalar Zr (λ)
+given below.
+   For 1 ≤ i ≤ m + n define
+                                       ri = (−1)vi (ei,i + ϑi ),                      (3.4)
+            CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                                13
+
+
+where ϑi is as defined in (2.7). Observe that if M is a Dist(G)-supermodule and
+v ∈ Mλ , then ri v = ri (λ)v, the ith residue of λ (2.11). Given λ ∈ X(T ) define the
+integer
+                      X r          X
+             Zr (λ) =     (−1)s−1     (−1)vk1 +···+v ks rk1 (λ)a1 · · · rks (λ)as (3.5)
+                                 s=1
+where the unmarked sum runs over all 1 ≤ k1 < · · · < ks ≤ m + n and nonnegative
+integers a1 , . . . , as such that a1 + · · · + as = r − s + 1.
+Lemma 3.2. If M is a Dist(G)-supermodule and v ∈ Mλ (for some λ ∈ X(T )) is
+annihilated by all ei,j when 1 ≤ i < j ≤ m + n, then Zr v = Zr (λ)v.
+Proof. Given our assumption that v is annihilated by all ei,j when i < j, it suffices
+to work work modulo the left ideal generated by these elements. We shall write ≡ for
+congruence modulo this ideal. We shall prove the statement via several intermediate
+claims:
+           [r]
+Claim 1. xk,l ≡ 0 for each 1 ≤ k < l ≤ m + n, and r ≥ 1.
+   We prove this by inducting on r with the base case being clear. For r > 1 by the
+induction hypothesis, Lemma 3.1(ii), and (3.1) we have:
+
+                                 m+n
+                                 X
+                       [r]                                 [r−1]
+                      xk,l   =          (−1)vs ek,s xs,l
+                                 s=1
+                                 X                        [r−1]
+                             ≡         (−1)vs ek,s xs,l
+                                 s≥l
+                                 X                                                   
+                                               [r−1]                         [r−1]
+                             =         (−1)vs xk,l + (−1)(vk +vs )(vs +vl ) xs,l ek,s
+                                 s≥l
+                             ≡0
+Claim 2:                                                                       X
+                                         [r]              [r−1]
+                                       xk,k ≡ rk xk,k             − (−1)vk          [r−1]
+                                                                                   xs,s   .
+                                                                               s>k
+                                                                                [0]
+for all 1 ≤ k ≤ m + n and r ≥ 1 (where we define       = (−1)vs ).             xs,s
+   We do a direct calculation using (3.1), Claim 1, and Lemma 3.1 (ii):
+
+           m+n
+           X
+ [r]                              [r−1]
+xk,k =           (−1)vs ek,s xs,k
+           s=1
+                             [r−1]
+                                         X                        [r−1]
+       ≡ (−1)vk ek,k xk,k            +          (−1)vs ek,s xs,k
+                                         s>k
+                                       X                                                              
+                 vk       [r−1]                        [r−1]                                  [r−1]
+       ≡ (−1)         hk xk,k     +                                       [r−1]
+                                               (−1)vs xk,k − (−1)vk +v s xs,s   + (−1)vk +vs xs,k ek,s
+                                       s>k
+                          [r−1]
+                                       X                  [r−1]
+                                                                      X
+                 vk
+       ≡ (−1)         hk xk,k     +            (−1)vs xk,k        −                 [r−1]
+                                                                            (−1)vk xs,s
+                                       s>k                            s>k
+               [r−1]
+                                       X
+                                  vk            [r−1]
+       =   rk xk,k     − (−1)                  xs,s   .
+                                       s>k
+14                                                    JONATHAN KUJAWA
+
+
+Claim 3:
+                                       r
+                                       X                   X
+                              [r]
+                             xk,k ≡          (−1)s−1           (−1)vk1 +···+vks−1 rka11 · · · rkass hks ,                 (3.6)
+                                       s=1
+for r ≥ 1; where the second sum is over all k = k1 < k2 < · · · < ks and a1 , . . . , as ∈ Z≥0
+such that a1 + · · · + as = r − s.
+   We induct on r ≥ 1 with the case r = 1 being clear. Let r > 1, then by Claim 2
+and the induction hypothesis we have
+
+     [r]             [r−1]
+                                          X
+ xk,k ≡ rk xk,k              − (−1)vk            [r−1]
+                                                xs,s
+                                          s>k
+                      r−1
+                                                                                        !
+                      X             X
+           ≡ rk             (−1)t−1  (−1)vk1 +···+vkt−1 rka11 · · · rkatt hkt
+                      t=1
+                                                       r−1
+                                                                                                                                !
+                                                     X X                     X
+                                     − (−1)     vk
+                                                                 (−1)  u−1
+                                                                                 (−1)vk1 +···+vku−1 rka11     · · · rkauu hku
+                                                     s>k   u=1
+               r−1
+               X                X
+           ≡         (−1)t−1          (−1)vk1 +···+vkt−1 rka11 +1 · · · rkatt hkt
+               t=1
+                                                       r−1
+                                                                                                                                !
+                                                     X X                     X
+                                     − (−1)vk                    (−1)u−1         (−1)vk1 +···+vku−1 rka11 · · · rkauu hku
+                                                     s>k   u=1
+
+Which, one observes, is equal to the double sum given in (3.6).
+ Consequently, we have
+                       Xr          X
+                Z̃r ≡     (−1)s−1     (−1)vk1 +···+vks−1 rka11 · · · rkass hks
+                                       s=1
+for r ≥ 1; where the second sum is over all k1 < k2 < · · · < ks and a1 , . . . , as ∈ Z≥0
+such that a1 + · · · + as = r − s.
+Claim 4:
+                           X r         X
+                      Zr ≡     (−1)s−1   (−1)vk1 +···+vks rka11 · · · rkass ,         (3.7)
+                                          s=1
+where the unmarked sum runs over all k1 < · · · < ks and nonnegative integers a1 , . . . , as
+such that a1 + · · · + as = r − s + 1.
+   Using (3.3) and Claim 2 we have
+                                X
+Zr = Z̃r − (−1)r                          (−1)vk1 +···+v kr ϑkr
+                             k1 <···<kr
+           r
+           X                 X                                                                 X
+      ≡          (−1)s−1            (−1)vk1 +···+vks−1 rka11 · · · rkass hks − (−1)r                     (−1)vk1 +···+vkr ϑkr
+           s=1                                                                              k1 <···<kr
+             CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                                           15
+
+
+however rks = (−1)ks (hks + ϑks ) so a substitution yields:
+       r
+       X               X
+   =         (−1)s−1       (−1)vk1 +···+vks rka11 · · · rkass +1
+       s=1
+                            r
+                            X         X
+                       −      (−1)s−1   (−1)vk1 +···+v ks−1 rka11 · · · rkass ϑks
+                            s=1
+                                                                             X
+                                                            − (−1)r                    (−1)vk1 +···+v kr ϑkr
+                                                                          k1 <···<kr
+       r
+       X               X
+   =         (−1)s−1       (−1)vk1 +···+vks rka11 · · · rkass +1
+       s=1
+                         r
+                                                                                                           !
+                         X       X                                                     X
+                       +   (−1)s   (−1)vk1 +···+v ks rka11 · · · rkass                        (−1)vt rt0
+                            s=1                                                        t>ks
+                                                                             X
+                                                                      r
+                                                            − (−1)                     (−1)vk1 +···+v kr
+                                                                          k1 <···<kr
+       r
+       X               X
+   ≡         (−1)s−1       (−1)vk1 +···+vks rka11 · · · rkass +1
+       s=1
+                            r
+                            X                   X
+                       +      (−1)s                         (−1)vk1 +···+vks +vt rra11 · · · rkass rt0
+                            s=1           k1 <···<ks <t
+                                         a1 +···+as =r−s
+                                                                             X
+                                                            − (−1)r                    (−1)vk1 +···+v kr
+                                                                          k1 <···<kr
+
+We now observe that the first sum is (3.7) in all cases when as ≥ 1, the second sum
+(after reindexing) is (3.7) for as = 0 and s = 2, . . . , r plus one additional term which
+exactly cancels the third sum. It remains to note that the final possible case (when
+s = 1 and as = 0) in fact does not occur in (3.7).
+   Finally, since rt v = rt (λ)v, Claim 4 exactly implies the statement given in the
+lemma.                                                                                  
+  For λ ∈ X(T ), define Gλ (t) ∈ k[[t−1 ]] by
+                                           X
+                            Gλ (t) = 1 −      Zr (λ)t−(r+1) ,                                                  (3.8)
+                                                      r≥1
+
+and for each r ∈ Z/pZ define
+                              Ar (λ) = |{i : ri (λ + εi ) ≡ r (mod p)}| ,                                      (3.9)
+                         Br (λ) = |{i : ri (λ) ≡ r (mod p)}| ,
+                                         P                                    Pm+n
+Lemma 3.3. Let λ, µ ∈ X(T ). If λ = m+n      i=1 λi εi , then let l(λ) denote  i=1 λi . The
+following are equivalent:
+      (i) l(λ) = l(µ) and Zs (µ) ≡ Zs (µ) (mod p) for all s ∈ Z≥0 ;
+     (ii) l(λ) = l(µ) and Gλ (t) = Gµ (t);
+    (iii) l(λ) = l(µ) and Ar (λ) − Br (λ) = Ar (µ) − Br (µ) for all r ∈ Z/pZ;
+    (iv) wt(λ) = wt(µ);
+where wt : X(T ) → P is the weight function defined in (2.13).
+16                                   JONATHAN KUJAWA
+
+
+Proof. (i) ⇔ (ii) is immediate from (3.8).
+  To prove (ii) ⇔ (iii), we observe that
+                                                             
+                             m+n
+                             Y        X
+                    Gλ (t) =     1 −    (−1)vi ri (λ)r−1 t−r 
+                              i=1         r≥1
+                                                                         
+                              m+n
+                              Y                       X
+                          =         1 − (−1)vi t−1         (ri (λ)t−1 )r−1 
+                              i=1                     r≥1
+
+                              Y 
+                              m+n                     
+                                                          1
+                                                                       
+                          =          1 − (−1)vi t−1
+                            i=1
+                                                    1 − ri (λ)t−1
+                            Y  1 − ri (λ)t−1 − (−1)vi t−1 
+                            m+n
+                          =
+                            i=1
+                                        1 − ri (λ)t−1
+                            Y  t − ri (λ + εi ) 
+                            m+n
+                          =                        .
+                            i=1
+                                   t − ri (λ)
+Comparing the multiplicity of zeros and poles we see Gλ (t) = Gµ (t) if and only if
+Ar (λ) − Br (λ) = Ar (µ) − Br (µ) for r ∈ Z/pZ.
+   To prove (iii) ⇔ (iv), we need to analyze the weight function more closely. In
+characteristic zero, we have
+                  h(−1)vi γ(λ+ρ,εi ) , αr i = h(−1)vi γ(λ+ρ,εi ) , γr − γr+1 i
+                                              
+                                              
+                                              1,      if ri (λ + εi ) = r;
+                                            = −1, if ri (λ) = r;
+                                              
+                                              
+                                                0,     otherwise.
+That is, hwt(λ), αr i = Ar (λ) − Br (λ) for all r ∈ Z. Now if λ, µ ∈ X(T ) with wt(λ) =
+wt(µ), then                X
+                       0=      hwt(λ) − wt(µ), rγr i = l(λ) − l(µ),
+                            r∈Z
+and, for all r ∈ Z,
+            0 = hwt(λ) − wt(µ), αr i = (Ar (λ) − Br (λ)) − (Ar (µ) − Br (µ)).
+That is, (iv) ⇒ (iii). To prove the converse, first observe that wt(λ) − wt(µ) lies in
+the Z-span of the αr ’s so we can fix N > 0 so that wt(λ) − wt(µ) lies in the Z-span
+of {α−N , . . . , αN }. If (iii) holds, then hwt(λ) − wt(µ), αr i = 0 for −N ≤ r ≤ N. That
+is, wt(λ) − wt(µ) lies in the radical of the form restricted to this sublattice. However,
+the form is nondegenerate on this sublattice. This implies wt(λ) = wt(µ).
+         CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                      17
+
+
+  Now consider the case when char k > 0. For 1 ≤ i ≤ m+n, write (λ+ρ, εi ) = pbi +ri
+where bi ∈ Z, and ri = 1, . . . , p. Then,
+                             m+n
+                             X
+                  wt(λ) =          (−1)vi γ(λ+ρ,εi )
+                             i=1
+                             m+n
+                             X
+                         =         (−1)vi (γri − bi δ)
+                             i=1
+                             m+n
+                             X                                  m+n
+                                                                X
+                         =         (−1)vi (Λri − Λri −1 ) −            (−1)vi bi δ
+                             i=1                                 i=1
+                             m+n
+                             X                                  m+n
+                                                                X
+                         =         (Λri (λ+εi ) − Λri (λ) ) −      (−1)vi bi δ
+                             i=1                                i=1
+                              X                                  m+n
+                                                                  X
+                         =           (Ar (λ) − Br (λ))Λr −              (−1)vi bi δ.
+                             r∈Z/pZ                               i=1
+
+   particular, we see that hwt(λ), αr i = Ar (λ) − Br (λ) for r ∈ Z/pZ. Let K =
+In P
+− r∈Z/pZ Λr ∈ P. Then hγa , Ki = a for all a ∈ Z. Consequently,
+                                        m+n
+                                        X                              m+n
+                                                                       X
+                      hwt(λ), Ki =             (λi + ρi ) = l(λ) +            ρi .
+                                         i=1                            i=1
+Let λ, µ ∈ X(T ). From the above remarks, (iv) holds if and only if hwt(λ)−wt(µ), αr i =
+0 for r ∈ Z/pZ and hwt(λ)−wt(µ), Ki = 0. However the αr ’s and K together span h and
+the form is nondegenerate on h. Consequently, (iv) holds if and only if wt(λ) = wt(µ).
+                                                                                       
+  We can now deduce the main results of this section.
+Theorem 3.4. Let λ, µ ∈ X(T ). If L(µ) is a subquotient of M (λ), then wt(λ) = wt(µ).
+Proof. If L(µ) is a composition factor of M (λ), then Z(Dist(G))0̄ acts by the same
+scalars on both. If we set                 Pm+n        
+                                               i=1 ei,i
+                                     dr =
+                                                  r
+for r ∈ Z≥0 , a direct calculation verifies that these even elements of Dist(G) are central.
+Furthermore, dl(λ) acts by 1 and dr acts by 0 for all r > l(λ) (c.f. [5, Remark 2, Sec.
+3.8]). Consequently, l(λ) = l(µ). Additionally, we have Zr (λ) = Zr (µ) for all r ∈ Z.
+Taken together with Lemma 3.3 this implies wt(λ) = wt(µ).                                 
+Lemma 3.5. Let λ ∈ X(T ) and D be a Dist(G)-supermodule such that if µ ∈ X(T )
+with λ < µ in the dominance order, then Dµ = 0. Then
+                                   Ext1Dist(G) (M (λ), D) = 0.
+Moreover, for arbitrary λ, µ ∈ X(T ) we have
+                               Ext1Dist(G) (M (λ), W (µ)) = 0.
+Proof. Consider a short exact sequence
+                                0 → D → N → M (λ) → 0.
+18                                   JONATHAN KUJAWA
+
+
+Let vλ′ ∈ N be a homogeneous preimage of vλ , the canonical generator of M (λ). By the
+weight assumption we have that vλ′ is a primitive vector of weight λ. By the universal
+property of M (λ) there is a homomorphism which maps vλ 7→ vλ′ , providing a splitting
+of the sequence. Hence Ext1Dist(G) (M (λ), D) = 0.
+   Now if λ, µ ∈ X(T ) are arbitrary, by contravariant duality we have
+                 Ext1       (M (λ), W (µ)) ∼
+                       Dist(G)             = Ext1      (M (µ), W (λ)),
+                                                     Dist(G)
+so we can assume without loss that λ 6< µ. The result then immediately follows.                 
+Lemma 3.6. If λ, µ ∈ X(T ) with λ 6< µ, then
+            HomDist(G) (Rad M (λ), L(µ)) ∼ = Ext1        Dist(G) (L(λ), L(µ)).
+
+In particular, for all λ ∈ X(T )
+                                 Ext1Dist(G) (L(λ), L(λ)) = 0.
+Proof. Let R denote Rad M (λ). Consider the short exact sequence
+                                 0 → R → M (λ) → L(λ) → 0.
+Applying the functor HomDist(G) (−, L(µ)) we obtain the long exact sequence
+     0 → HomDist(G) (L(λ), L(µ)) → HomDist(G) (M (λ), L(µ)) →
+                   → HomDist(G) (R, L(µ)) → Ext1Dist(G) (L(λ), L(µ)) →
+                                                        → Ext1Dist(G) (M (λ), L(µ)) → . . . .
+We note that the map HomDist(G) (L(λ), L(µ)) → HomDist(G) (M (λ), L(µ)) is an iso-
+morphism. Since λ 6< µ, by Lemma 3.5 we have that Ext1Dist(G) (M (λ), L(µ)) = 0. The
+result immediately follows. The triviality of Ext1Dist(G) (L(λ), L(λ)) follows by a weight
+argument.                                                                               
+Theorem 3.7. Let λ, µ ∈ X(T ). If
+                                 Ext1Dist(G) (L(λ), L(µ)) 6= 0,
+then wt(λ) = wt(µ).
+Proof. By contravariant duality we have
+                     Ext1Dist(G) (L(λ), L(µ)) ∼
+                                              = Ext1Dist(G) (L(µ), L(λ)),
+so we may assume without loss that λ 6< µ in the dominance order. By Lemma 3.6, we
+can then deduce that L(µ) is a quotient of Rad M (λ), hence a subquotient of M (λ).
+Finally, one applies Theorem 3.4.                                                
+
+                                  4. Lowering operators
+      In a series of papers ([12], [13], [14]) Kleshchev gave certain elements of the algebra of
+distributions of SL(n) called lowering operators which allowed him to prove modular
+branching rules for SL(n), and via Schur functor arguments, the symmetric group.
+Brundan generalized Kleshchev’s construction to the case of quantum GL(n). In this
+section we develop the appropriate theory for the supergroup G = GL(V ) and use
+them to prove a representation theoretic interpretation of the crystal operators ẽ∗r and
+f˜r∗ .
+           CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                                   19
+
+
+4.1. A Combinatorial Interlude. We now introduce the super analogue of Kleshchev’s
+combinatorial notions of normal, conormal, good, and cogood. We first define them
+in terms of the crystal structure on X(T ) and then relate them to the appropriate
+generalization of Kleshchev’s original definitions. Let r ∈ Z/pZ and λ ∈ X(T ).
+Definition 4.1. We define 1 ≤ i ≤ m + n to be r-normal for λ if one of the following
+equivalent conditions hold:
+    (1) (ẽ∗r )a+1 (λ) = (ẽ∗r )a (λ) − εi for some a ∈ Z≥0 ;
+    (2) i is the position of a − in the reduced r-signature of λ.
+Definition 4.2. We define 1 ≤ i ≤ m + n to be r-good for λ if one of the following
+equivalent conditions hold:
+    (1) ẽ∗r (λ) = λ − εi ;
+    (2) i is the position of the leftmost − in the reduced r-signature of λ.
+   We also have the analogous definitions for f˜r∗ :
+Definition 4.3. We define 1 ≤ i ≤ m+n to be r-conormal for λ if one of the following
+equivalent conditions hold:
+    (1) (f˜r∗ )a+1 (λ) = (f˜r∗ )a (λ) + εi for some a ∈ Z≥0 ;
+    (2) i is the position of a + in the reduced r-signature of λ.
+Definition 4.4. We define 1 ≤ i ≤ m + n to be r-cogood for λ if one of the following
+equivalent conditions hold:
+    (1) f˜r∗ (λ) = λ + εi ;
+    (2) i is the position of the rightmost + in the reduced r-signature of λ.
+   We call 1 ≤ i ≤ m + n normal (resp. good, conormal, cogood ) for λ if i is r-normal
+(resp. r-good, r-conormal, r-cogood) for λ for some r ∈ Z/pZ.
+Example 4.5. Assume our fixed homogeneous basis for V satisfies v i = 1̄ if 1 ≤ i ≤ n
+and v i = 0̄ if n+1 ≤ i ≤ m+n. Consider the crystal structure (X(T ), ẽ∗r , f˜r∗ , ε∗r , ϕ∗r , wt).
+Let p = 3, m = 3, n = 2, and
+                              λ = ε1 − ε2 + ε3 + 7ε4 + 5ε5 ∈ X(T ).
+The signatures of λ are: σ0 (λ) = (+, +, −, +, +), σ1 (λ) = (−, −, +, 0, 0), and σ2 (λ) =
+(0, 0, 0, −, −). The reduced signatures of λ are: σ̃0 (λ) = (+, +, 0, 0, +), σ̃1 (λ) =
+(−, 0, 0, 0, 0), and σ̃2 (λ) = (0, 0, 0, −, −). Then for λ : 1 is 1-normal and 1-good; 4
+and 5 are 2-normal with 4 being 2-good; 1, 2 and 5 are 0-conormal with 5 being 0-
+cogood.
+   We now relate these crystal theoretic definitions to the super analogue of Kleshchev’s
+original definitions. To do so we require additional notation. Given 1 ≤ i < j ≤ m + n,
+let (i..j) = {i + 1, . . . , j − 1}, (i..j] = {i + 1, . . . , j}, [i..j) = {i, . . . , j − 1}, and [i..j] =
+{i, . . . , j}. Given A ⊆ {1, . . . , m+n} let Ai..j = A∩(i..j). Given A, B ⊆ {1, . . . , m+n},
+we write A ↓ B if there exists an injective map θ : A → B with θ(a) ≤ a for all a ∈ A.
+An equivalent definition is to say A ↓ B if |A∩[1..k]| ≤ |B ∩[1..k]| for all 1 ≤ k ≤ m+n.
+This defines a partial order on the subsets of {1, . . . , m + n}.
+   For 1 ≤ i, j ≤ m + n, 1 ≤ k ≤ m + n − 1, and λ ∈ X(T ), let
+                               ci,j (λ) = (λ + ϑ, εi − εj ),                                         (4.1)
+                               bi,k (λ) = (λ + ϑ + εk+1 , εi − εk+1 ),                               (4.2)
+20                                     JONATHAN KUJAWA
+
+
+Let 1 ≤ i < j ≤ m + n. Define the following subsets of {1, . . . , m + n}:
+                         Ci,j (λ) = {h ∈ (i..j) : ci,h (λ) ≡ 0 (mod p)},                       (4.3)
+                         Bi,j (λ) = {h ∈ [i..j) : bi,h (λ) ≡ 0 (mod p)}.                       (4.4)
+   Let λ ∈ X(T ) and let 1 ≤ i, h ≤ m + n. The following remarks are immediate from
+the definitions.
+Remark 4.6. Let λ ∈ X(T ) and let 1 ≤ i, h ≤ m + n, then
+  (1) h ∈ Ci,m+n (λ) if and only if i < h < n and ri (λ) ≡ rh (λ) (mod p);
+  (2) h ∈ Bi,m+n (λ) if and only if i ≤ h < n and ri (λ) ≡ rh+1 (λ + εh+1 ) (mod p).
+  Using the above remarks and the definitions of normal and good, a straightforward
+combinatorial argument proves the following result.
+Lemma 4.7. Let λ ∈ X(T ) and 1 ≤ i ≤ m + n. Then i is normal for λ if and only
+if Bi,m+n (λ) ↓ Ci,m+n (λ). Furthermore, i is good for λ if and only if i is normal and
+there is no j which is normal, j < i, and cj,i (λ) ≡ 0 (mod p).
+   We remark that in the purely even case these are the definitions of normal and good
+used by Brundan. They are transpose to those given by Kleshchev (see [2]).
+   We end this subsection with two combinatorial results which will be useful later. A
+straightforward combinatorial argument proves the following lemma.
+Lemma 4.8. Given 1 ≤ i ≤ m + n, r ∈ Z/pZ, and λ ∈ X(T ), i is r-good for λ if and
+only if i is r-normal for λ and i is r-conormal for λ − εi .
+   The following lemma links the notions of normal and good with conormal and
+cogood, respectively. Let us fix some notation which we will use again in subsection 4.5.
+Let w0 denote the longest element of Sm+n . Let Ve denote a superspace with dimk Ve0̄ =
+n and dimk Ve1̄ = m and let G e denote GL(Ve ). Fix a homogeneous basis ve1 , . . . ., vem+n
+satisfying
+                                         vei = v w0 i + 1̄
+for all 1 ≤ i ≤ m + n, where v1 , . . . , vm+n is our usual fixed basis for V. Let us write
+Te ∼
+   = T for the subgroup of all diagonal matrices of G.      e Following the procedure discussed
+                                                                    Lm+n
+in subsection 2.7, we put a crystal structure on X(Te) = i=1                 Zεi lifted from the dual
+crystal                                                                     
+                        e = B ⊗ ···⊗ B                  ∗ ˜∗ ∗ ∗
+                        B      v
+                               e1             e m+n , ẽr , fr , εr , εr , wt .
+                                              v
+
+     Let s̃ : X(T ) → X(Te) be given by
+                                           εi 7→ −εw0 i                                        (4.5)
+for 1 ≤ i ≤ m + n.
+Lemma 4.9. Let λ ∈ X(T ) and 1 ≤ t ≤ m + n. Then t is normal for λ if and only
+if w0 t is conormal for s̃(λ). Moreover, t is good for λ if and only if w0 t is cogood for
+s̃(λ).
+Proof. Let r ∈ Z/pZ. Recall our notation σr (λ) = (σr (λ)1 , . . . , σr (λ)m+n ) for the r-
+signature of λ. Given 1 ≤ i < j ≤ m + n, we call (i, j) an r-canceling pair for λ if
+σr (λ)i = −, σr (λ)j = +, and σk (λ)t = 0 for i < k < j.
+                                                            Pm+n
+   Given λ ∈ X(T ) and 1 ≤ t ≤ m + n, let ξ denote k=1 (−1)vk , r = rt (λ), and
+r′ = r − ξ. It is straightforward to verify that (i, j) is an r-canceling pair for λ if and
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                    21
+
+
+only if (w0 j, w0 i) is an r′ -canceling pair for s̃(λ). This along with our combinatorial
+description of the crystal structure on X(T ) immediately implies t is normal for λ if
+and only if w0 t is conormal for s̃(λ). It is clear from the definitions that i is good for
+λ if and only if w0 i is cogood for s̃(λ).                                               
+4.2. Lowering Operators. In what follows for 1 ≤ i < j ≤ m + n and 1 ≤ k ≤ m + n
+we write Ei,j = ei,j , Fi,j = ej,i , and Hk = ek,k . For 1 ≤ j ≤ m + n, let
+                                        j−1
+                                        X
+                                Lj =          (−1)vi Fi,j Ei,j .                     (4.6)
+                                        i=1
+A straightforward calculation shows that the Lj ’s commute with one another and,
+since they are of weight 0, with any element of Dist(T ).
+   For 1 ≤ i, j ≤ m + n and 1 ≤ k ≤ m + n − 1, let
+                  ci,j = (−1)vi Hi − (−1)vj Hj + (−1)vi ϑi − (−1)vj ϑj ,             (4.7)
+
+                                   c̃i,j = ci,j + (−1)vi ,                           (4.8)
+and let
+               bi,k = (−1)vi Hi − (−1)vk+1 Hk+1 + (−1)vi ϑi − (−1)vk ϑk .            (4.9)
+Note that this notation is compatible with that of subsection 4.1 in the sense that if
+M is a Dist(G)-supermodule with v ∈ Mλ then the elements ci,j , bi,k ∈ Dist(G) act on
+v by the scalars ci,j (λ) and bi,k (λ), respectively.
+   For 1 ≤ i < j ≤ m + n and A ⊆ (i..j), define
+                                                                    !
+                                    Y
+                       Sei,j (A) =      (c̃i,t − Li+1 − · · · − Lt ) Fi,j .     (4.10)
+                                  t∈A
+Note that our observations on the commutativity of the Lj ’s imply that the order of
+the product does not need to be specified.
+   Let B − denote the opposite Borel subgroup of G consisting of all lower triangular
+invertible matrices of the form (2.1). Let U denote the unipotent radical of B given
+by letting U (A) ⊆ B(A) be the set of upper triangular unipotent matrices for any
+commutative superalgebra A. Fix an ordering of the PBW basis (see Lemma 2.1) of
+Dist(G) so that each PBW monomial is of the form XY where X ∈ Dist(B − ) and
+Y ∈ Dist(U ). We define the lowering operators Si,j (A) by expanding Sei,j (A) in the
+PBW basis given by this ordering and taking Si,j (A) to be the sum of those terms
+lying in Dist(B − ). The idea is that we are interested applying the lowering operators
+to primitive vectors and the nonconstant elements of Dist(U ) annihilate all primitive
+vectors. Consequently, in many of our calculations we will work modulo a left ideal of
+Dist(G) which annihilates any primitive vector. The following lemma illustrates this
+point of view.
+22                                                 JONATHAN KUJAWA
+
+
+Lemma 4.10. Let J be the left ideal of Dist(G) generated by the nonconstant elements
+of Dist(U ). Let 1 ≤ i < t < j ≤ m + n. Then:
+     (i) Lt Fi,j ≡ −aFi,t Ft,j (mod J) where a = (−1)vi +(v i +vt )(vi +v j ) ;
+    (ii) (c̃i,t − Li+1 − · · · − Lt )Lt Fi,j ≡ 0 (mod J);
+Proof. Throughout we write ≡ for congruent modulo J.
+  To prove (i) we simply calculate the left hand side working modulo J:
+                      X
+            Lt Fi,j =   (−1)vr et,r er,t ej,i
+                                   r<t
+                                   X
+                               =         (−1)vr et,r ((−1)(vi +vj )(vr +vt ) ej,i er,t + [er,t , ej,i ])
+                                   r<t
+                                     X
+                               ≡−     (−1)vr +(vr +vt )(vj +vi ) δi,r et,r ej,t
+                                     r<t
+
+                               = −(−1)vi +(vi +vt )(vi +v j ) et,i ej,t
+                               = −aFi,t Ft,j .
+     To prove (ii) one uses (i) and calculates that
+                                                                                   X
+       (c̃i,t − Li+1 − · · · − Lt−1 )Lt Fi,j ≡ −ac̃i,t Fi,t Ft,j + a                      Lr Fi,t Ft,j
+                                                                                  i<r<t
+                                                       ≡ −ac̃i,t Fi,t Ft,j
+                                                                    X
+                                                                −          (−1)(vj +vr )(vi +vt ) Fi,r Fr,t Ft,j .
+                                                                     i<r<t
+On the other hand, one calculates that
+                                    Lt Lt Fi,j ≡ −aLt Fi,t Ft,j
+                                                    X
+                                               ≡ −a    (−1)vr et,r er,t et,i ej,t .
+                                                          r<t
+However,
+                                 
+                                 
+                                 0                                                                   if r < i;
+                                                                                     
+         et,r er,t et,i ej,t   ≡    ei,i − (−1)vi +v t et,t + (−1)vi +vt + 1 et,i ej,t                if r = i;
+                                 
+                                 
+                                   et,i ej,t + (−1)(vt +vr )(vr +v i ) er,i et,r ej,t                 if r > i.
+Together, these imply
+                                                           X
+             Lt Lt Fi,j ≡ −ac̃i,t Fi,t Ft,j − a                  (−1)(vt +vr )(vr +vi )+vr Fi,r Fr,t Ft,j .
+                                                          i<r<t
+
+Finally, through the miracle of Z2 , we have v i +(v i +v t )(v i +vj )+(v t +v r )(v r +v i )+v r =
+(v j + v r )(v i + v t ) which implies the desired result.                                         
+   A useful fact about the lowering operators, both for calculating them and for proving
+results, is the recurrence relation given in the following theorem.
+Theorem 4.11. Let i ≤ i < j ≤ m + n, and let A ⊆ (i..j). If A = ∅, then Si,j (A) =
+Fi,j . Otherwise, take any k ∈ A and let h = max([i..k)\A), then we have
+     Si,j (A) = Si,j (A\{k})ch,k + (1 − δh,i )Si,j (A\{k} ∪ {h}) + aSi,k (Ai..k )Sk,j (Ak..j ),
+                                                                                         (4.11)
+where a = (−1)vi +(vi +v k )(vi +v j ) .
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                                         23
+
+
+Proof. Throughout we write ≡ for equivalence modulo the left ideal J generated by
+the nonconstant elements of Dist(U ). If h 6= i, then
+c̃i,k − Li+1 − · · · − Lk = ch,k + (c̃i,h − Li+1 − · · · − Lh ) − (Lh+1 + · · · + Lk−1 ) − Lk .
+Using this equation, we replace the kth term in the product in the definition of Sei,j (A).
+Distributing yields Si,j (A) ≡ Sei,j (A) ≡ P1 + P2 + P3 + P4 where
+          Y                                      Y
+   P1 =        (c̃i,t − Li+1 − · · · − Lt ) ch,k    (c̃i,t − Li+1 − · · · − Lt ) Fi,j
+         t∈Ai..k                                  t∈Ak..j
+
+      ≡ Si,j (A\{k})ch,k
+since, as i < h, k < j, the ch,k commutes with all the terms;
+           Y
+   P2 =        (c̃i,t − Li+1 − · · · − Lt ) (c̃i,h − Li+1 − · · · − Lh )
+         t∈Ai..k
+                                                                Y
+                                                           ·             (c̃i,t − Li+1 − · · · − Lt ) Fi,j
+                                                               t∈Ak..j
+
+      ≡ Si,j (A\{k} ∪ {h});
+             Y
+   P3 = −        (c̃i,t − Li+1 − · · · − Lt ) (Lh+1 + · · · + Lk−1 )
+           t∈Ai..k
+                                                                Y
+                                                           ·             (c̃i,t − Li+1 − · · · − Lt ) Fi,j
+                                                               t∈Ak..j
+             k−1
+             X       Y                                     Y
+      =−                   (c̃i,t − Li+1 − · · · − Lt )             (c̃i,t − Li+1 − · · · − Lt ) Lr Fi,j
+           r=h+1 t∈Ai..k                                  t∈Ak..j
+      ≡0
+by Lemma 4.10(ii); and,
+          Y                                    Y
+   P4 = −      (c̃i,t − Li+1 − · · · − Lt ) Lk   (c̃i,t − Li+1 − · · · − Lt ) Fi,j
+           t∈Ai..k                                 t∈Ak..j
+
+      ≡ aSi,k (Ai..k )Sk,j (Ak..j )
+by Lemma 4.10(i) and a careful calculation. Together these imply the result.
+  The case when h = i is argued similarly using the equation
+                c̃i,k − Li+1 − · · · − Lk = c̃i,k − (Li+1 + · · · + Lk−1 ) − Lk .
+                                                                                                             
+4.3. Technical Lemmas. We now prove several technical lemmas about the lowering
+operators which will be useful in what follows. The proof of the lemmas in this sub-
+section follow the arguments of the analogous results of Brundan in [2]. The exception
+is the proof of Lemma 4.13. This proof is new and is simpler than Brundan’s proof of
+the analogous result, which requires the introduction of certain formal polynomials.
+    The following lemma records how the lowering operators commute with El = El,l+1 .
+24                                           JONATHAN KUJAWA
+
+
+Lemma 4.12. Let 1 ≤ i < j ≤ m + n and let A ⊆ (i..j). Let 1 ≤ l ≤ m + n − 1 and
+let Jl be the left ideal of Dist(G) generated by El . Then,
+     (i) If either
+          (a) l + 1 ∈ A, or
+          (b) l ∈
+                / {i} ∪ A and l + 1 ∈ / A ∪ {j}.
+         then
+                                  El Si,j (A) ≡ 0 (mod Jl );              (4.12)
+    (ii) If l ∈ {i} ∪ A and l + 1 ∈/ A ∪ {j}, then
+                        El Si,j (A) ≡ −bSi,l (Ai..l )Sl+1,j (Al+1..j ) (mod Jl ),
+           where                   (
+                                       (−1)(vi +vi+1 )(v i +vj ) ,       if l = i;
+                              b=
+                                       (−1)vi +(vi +vl+1 )(vi +v j ) ,        6 i.
+                                                                         if l =
+      (iii) If l = j − 1 ∈
+                         / {i} ∪ A, then
+                                   El Si,j (A) ≡ Si,j−1 (A) (mod Jl ).
+      (iv) If l = j − 1 ∈ A and h = max([i · · · l)\A), then
+      El Si,j (A) ≡ Si,j−1 (Ai..j−1 )bh,j−1 + (1 − δi,h )Si,j−1 (A\{j − 1} ∪ {h}) (mod Jl ).
+           where bh,j−1 is as defined in (4.9).
+Proof. Throughout we write ≡ for equivalence modulo Jl . Define the height of a subset
+A ⊆ {1, . . . , m + n} by                  X
+                                  ht(A) =     k.
+                                                           k∈A
+   To prove (i) we induct on ht(A). The base cases are if A = ∅ or if A 6= ∅ and
+ht(A) = ht({i + 1}), the minimal nonzero value the height function obtains. If A = ∅
+then necessarily condition (b) holds. A direct calculation shows that El Si,j (A) =
+El Fi,j ≡ 0. If ht(A) = ht({i + 1}) then A = {i + 1} and by Theorem 4.11 we have
+                   Si,j (A) = Fi,j ci,i+1 + (−1)vi +(vi +vi+1 )(vi +vj ) Fi,i+1 Fi+1,j .
+A calculation using this and condition (b) shows El Si,j (A) ≡ 0. If A = {i + 1} and
+condition (a) holds, then l = i and again a calculation shows El Si,j (A) ≡ 0.
+   Now suppose ht(A) > ht({i + 1}) and the result holds for all sets of smaller height.
+If A = {l + 1}, then by our inductive assumption l 6= i and by applying Theorem 4.11
+twice we obtain
+     Si,j (A) = Fi,j cl−1,l+1 + (1 − δi,l−1 )Si,j ({l − 1}) + (−1)vi +(vi +v l )(vi +vj ) Fi,l Fl,j
+                                                               + (−1)vi +(vi +l+1)(vi +vj ) Fi,l+1 Fl+1,j .
+The result then follows from a direct calculation and the observation that ht({l − 1}) =
+ht(A) − 2 so by the inductive hypothesis El Si,j ({l − 1}) ≡ 0. Otherwise, if A 6= {l + 1},
+then we can choose k ∈ A with k 6= l + 1 and apply theorem 4.11 and the inductive
+hypothesis to prove the result if either condition (a) or (b) holds.
+   Now we prove (ii). First one proves the case l = i by inducting on ht(A). If
+ht(A) = 0 then A = ∅ and the result follows from a direct computation. Now if we
+assume ht(A) > 0 and the statement holds for all lesser heights, then we can choose
+k ∈ A and the result follows from Theorem 4.11, Lemma 4.12(i), and the inductive
+         CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                     25
+
+
+hypothesis. To prove the case when l 6= i, one uses Theorem 4.11 with k = l and the
+previous case.
+   One proves (iii) by using Theorem 4.11 to induct on ht(A).
+   One proves (iv) by applying Theorem 4.11 and the previous parts of the lemma. 
+Lemma 4.13. Let M be a Dist(G)-supermodule and let v ∈ Mλ be a primitive vector of
+weight λ ∈ X(T ). Let 1 ≤ i < j ≤ m+n and let A, B ⊆ (i..j) with |A| = |B| and A ↓ B.
+Furthermore, assume ci,h (λ) ≡ 0 (mod p) for h ∈ (i..j)\A, and bi,h (λ) ≡ 0 (mod p) for
+h ∈ (i..j)\B. Then,
+                                                     Y
+                       Ei · · · Ej−1 Si,j (A).vλ = ε    bi,t (λ)vλ               (4.13)
+                                                          t∈{i}∪B
+
+where ε = ±1.
+Proof. We prove the statement by induction on d(i, j) := |(i..j)|. The base case is
+d(i, j) = 0. Then A = B = ∅, j = i + 1, and the left hand side of (4.13) is
+                            Ei Fi,j .vλ = ei,j ej,i .vλ
+                                                                 
+                                        = ei,i − (−1)vi +v j ej,j .vλ
+                                        = (−1)vi bi,i (λ)vλ ,
+which is the right hand side of (4.13). In this case, incidentally, ε = (−1)vi .
+  Now we assume d(i, j) > 0 and that (4.13) holds for all smaller d(i, j). We proceed
+by considering cases:
+  Case 1: Say j − 1 ∈  / A. Observe that this along with A ↓ B implies j − 1 ∈   / B.
+Then the left hand side of (4.13) is
+
+                     Ei · · · Ej−1 Si,j (A).vλ = Ei · · · Ej−2 Si,j−1 (A).vλ
+                                                     Y
+                                               =ε           bi,t (λ)vλ
+                                                     t∈{i}∪B
+
+by Lemma 4.12(iii) and the inductive assumption.
+  Case 2: Say j − 1 ∈ A and j − 1 ∈ B. Set A1 := A\{j − 1} and B1 := B\{j − 1}.
+Then A1 , B1 ⊆ (i..j − 1), |A1 | = |B1 |, and A1 ↓ B1 . If h = max([i..j − 1)\A) = i, then
+by Lemma 4.12(iv) and the inductive assumption the left hand side of (4.13) is
+                Ei · · · Ej−1 Si,j (A).vλ = Ei · · · Ej−2 Si,j−1 (A1 )bi,j−1 .vλ
+                                          = bi,j−1 (λ)Ei · · · Ej−2 Si,j−1 (A1 ).vλ
+                                                                            
+                                                               Y
+                                          = bi,j−1 (λ)ε             bi,t (λ) vλ
+                                                              t∈{i}∪B1
+                                                 Y
+                                          =ε              bi,t (λ)vλ .
+                                               t∈{i}∪B
+
+On the other hand, if h > i, set A2 := A1 ∪ {h} and B2 := B1 ∪ {l}, where l :=
+min((i..j)\B) (Note that l exists as h > i so A 6= (i..j) hence, since |A| = |B|, B 6=
+(i..j)). Then A2 , B2 ⊆ (i..j − 1), |A2 | = |B2 |, and A2 ↓ B2 . Again, by Lemma 4.12(iv)
+26                                        JONATHAN KUJAWA
+
+
+and the inductive assumption the left hand side of (4.13) is
+     Ei · · · Ej−1 Si,j (A).vλ = Ei · · · Ej−2 Si,j−1 (A1 )bh,j−1 .vλ + Ei · · · Ej−2 Si,j−1 (A2 ).vλ
+                                                                 
+                                                   Y                             Y
+                               = bh,j−1 (λ)ε             bi,t (λ) vλ + ε′            bi,t (λ)vλ
+                                                t∈{i}∪B1                    t∈{i}∪B2
+
+However, h ∈ (i..j)\A so ci,h (λ) = 0, hence bh,j−1 (λ) = bi,j−1 (λ) − ci,h (λ) = bi,j−1 (λ).
+Also, l ∈ (i..j)\B so bi,l (λ) = 0. Together, these yield
+                                 Y
+                           =ε         bi,t (λ)vλ
+                                   t∈{i}∪B
+
+Case 3: Say j − 1 ∈ A and j − 1 ∈  / B. Since j − 1 ∈
+                                                    / B and |A| = |B|, we see that
+h = max([i..j − 1)\A) 6= i. Note, too, that A\{j − 1} ∪ {h} ↓ B. Consequently, by
+Lemma 4.12(iv) and the inductive assumption, the left hand side of (4.13) is
+Ei · · · Ej−1 Si,j (A).vλ = Ei · · · Ej−2 Si,j−1 (A\{j − 1})bh,j−1 .vλ
+                                               + Ei · · · Ej−2 Si,j−1 (A\{j − 1} ∪ {h}).vλ
+                                                                                   Y
+                            = bh,j−1 (λ)Ei · · · Ej−2 Si,j−1 (A\{j − 1}).vλ + ε          bi,t (λ)vλ
+                                                                                    t∈{i}∪B
+
+However, since h ∈ (i..j)\A and j − 1 ∈ (i..j)\B, we have bh,j−1 (λ) = bi,j−1 (λ) −
+ci,h (λ) = 0. Therefore,
+                           Y
+                       =ε      bi,t (λ).
+                                t∈{i}∪B
+
+Therefore, under the assumptions given (4.13) always holds.                                             
+Lemma 4.14. Let 1 ≤ i < j ≤ m + n, λ ∈ X(T ), and vλ ∈ M (λ)λ . Let C ⊆ Ci,j (λ)
+and set A = (i..j)\C. If Si,j (A).vλ ∈
+                                     / Rad M (λ), then Bi,j (λ) ↓ C.
+Proof. We again induct on d(i, j) := |(i..j)|. If d(i, j) = 0, then A = C = ∅ and
+j = i + 1. Consequently, we have
+                         Si,j (A).vλ = Fi,i+1 .vλ = ei+1,i .vλ ∈
+                                                               / Rad M (λ).
+However, this implies we have
+                                                                                       
+          ei,i+1 ei+1,i .vλ = ei,i − (−1)vi +vi+1 ei+1,i+1 + (−1)vi +vi+1 ei+1,i ei,i+1 .vλ
+                                                          
+                            = ei,i − (−1)vi +vi+1 ei+1,i+1 .vλ
+                           = (−1)vi bi,i .vλ
+                           ∈
+                           / Rad M (λ).
+In particular, this implies bi,i .vλ 6= 0, hence bi,i (λ) 6= 0. Therefore Bi,j (λ) = ∅ and,
+trivially, Bi,j (λ) ↓ C.
+   Now assume d(i, j) > 0 and that the statement holds for all smaller d(i, j). First,
+we observe that El Si,j (A).vλ ∈/ Rad M (λ) for some 1 ≤ l ≤ m + n − 1. Otherwise this
+along with a weight argument implies Si,j (A).vλ ∈ Rad M (λ), a contradiction. Thus
+we can choose an 1 ≤ l ≤ m + n − 1 with El Si,j (A).vλ ∈     / Rad M (λ). We now consider
+the possibilities for l :
+         CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                          27
+
+
+  Case 1: l ∈ {i} ∪ A, l + 1 ∈
+                             / A ∪ {j}. Then by Lemma 4.12(ii) we have
+               El Si,j (A).vλ = −bSi,l (Ai..l )Sl+1,j (Al+1..j ).vλ ∈
+                                                                    / Rad M (λ)
+where b is as in the Lemma. However Si,l (Ai..l ) and Sl+1,j (Al+1..j ) commute so both
+Si,l (Ai..l ).vλ ∈
+                 / Rad M (λ) and Sl+1,j (Al+1..j ).vλ ∈
+                                                      / Rad M (λ). By induction Bi,l (λ) ↓
+Ci..l := (i..l)\Ai..l and Bl+1,j ↓ Cl+1..j := (l + 1..j)\Al+1..j . However, in the case
+under consideration, l + 1 ∈ Ci,j (λ). That is, ci,l+1 (λ) = 0 so bi,l (λ) 6= 0, hence
+l∈
+ / Bi,j (λ). We also observe that Bl+1,j (λ) ⊆ Bi,j (λ) and Bi,l (λ) ⊆ Bi,j (λ). Thus we
+have Bi,l (λ)∪Bl+1,j (λ) = Bi,j (λ) (with equality coming from the fact that l ∈
+                                                                               / Bi,j (λ)).
+However, C = Ci..l ∪ Cl+1..j ∪ {l + 1}. Therefore Bi,j (λ) ↓ C.
+   Case 2: l = j − 1, l ∈  / {i} ∪ A. By Lemma 4.12(iii) we have
+                        El Si,j (A).vλ = Si,j−1 (A).vλ ∈
+                                                       / Rad M (λ).
+By induction, we have Bi,j−1 (λ) ↓ Ci..j−1 := (i..j − 1)\A. But C = Ci..j−1 ∪ {j − 1}
+and either Bi,j (λ) = Bi,j−1 (λ) or Bi,j (λ) = Bi,j−1 (λ) ∪ {j − 1}. In either case, the
+weakly increasing injective map θ : Bi,j−1 (λ) ֒→ Ci..j−1 extends to a weakly increasing
+injective map Bi,j (λ) ֒→ C. Therefore Bi,j (λ) ↓ C.
+   Case 3: l = j − 1 ∈ A. Let h = max([i..l)\A). Then by Lemma 4.12 (iv)
+   El Si,j (A).vλ = Si,j−1 (Ai..j−1 )bh,j−1 .vλ + (1 − δi,h )Si,j−1 (A\{j − 1} ∪ {h}).vλ .
+Then necessarily either Si,j−1 (Ai..j−1 )bh,j−1 .vλ ∈
+                                                    / Rad M (λ) or (1 − δi,h )Si,j−1 (A\{j −
+1} ∪ {h}).vλ ∈ / Rad M (λ). If the former occurs, then by induction we have Bi,j−1 (λ) ↓
+Ci..j−1 . As in Case 2, one concludes that Bi,j (λ) ↓ C. If the latter occurs, then h 6= i
+and by induction Bi,j−1 (λ) ↓ C\{h}. Again one can extend any weakly increasing
+injective map to prove that Bi,j (λ) ↓ C.
+   All other possibilities are eliminated by Lemma 4.12 and our assumption that
+El Si,j (A).vλ 6∈ Rad M (λ). This proves the desired result in all possible situations. 
+4.4. Filtrations and Hom-spaces. By weights and Frobenious reciprocity, we have
+the following lemma.
+Lemma 4.15. Let λ, µ ∈ X(T ) and let W be a nonzero submodule of W (µ). Then
+                           dimk HomDist(G) (M (λ), W ) = δλ,µ .
+Corollary 4.16. Say M is a Dist(G)-supermodule with a filtration by co-Verma su-
+permodules:
+                      0 = M0 ⊆ M1 ⊆ M2 ⊆ · · · ⊆ Mr = M
+with Mi /Mi−1 isomorphic to W (µ(i) ) for 1 ≤ i ≤ r. Then
+                     dimk HomDist(G) (M (λ), M ) = |{i : µ(i) = λ}|.
+Proof. We prove the theorem by inducting on r. The base case of r = 1 follows im-
+mediately from Lemma 4.15. One proves the inductive step by applying the functor
+HomDist(G) (M (λ), −) to the short exact sequence
+                           0 → W (µ(1) ) → M → M/M1 → 0,
+and Lemmas 3.5 and 4.15.                                                                     
+  For 1 ≤ i ≤ m + n, let wi ∈ V ∗ denote the element defined by wi (vj ) = (−1)vi δi,j .
+Then {wi : 1 ≤ i ≤ m + n} forms a basis for V ∗ .
+28                                  JONATHAN KUJAWA
+
+
+Lemma 4.17. Let λ ∈ X(T ). Then we have the filtration
+                     0 = M0 ⊆ M1 ⊆ · · · ⊆ Mm+n = M (λ) ⊗ V ∗
+of M (λ)⊗V ∗ with Mi /Mi−1 ∼ = M (λ−εm+n−i+1 ) for all i = 1, . . . , m+n. Furthermore,
+if vλ is the canonical generator for M (λ), then the image of vλ ⊗ wm+n−i+1 is the
+canonical generator of Mi /Mi−1 .
+Proof. Let kλ be the Dist(B)-supermodule of highest weight λ ∈ X(T ), and let vλ de-
+note its canonical generator. We have a filtration of kλ ⊗ V ∗ as a Dist(B)-supermodule
+given by
+                        0 = Q0 ⊆ Q1 ⊆ · · · ⊆ Qm+n = kλ ⊗ V ∗ ,
+where Qk is generated by vλ ⊗ wm+n , . . . , vλ ⊗ wm+n−k+1 . Let
+                               Mk = Dist(G) ⊗Dist(B) Qk .
+The result follows by exactness of the functor Dist(G) ⊗Dist(B) − and the super version
+of the Tensor Identity (c.f. [8, I.3.6]).                                             
+Corollary 4.18. Let λ ∈ X(T ). Then
+                                  (
+                                          k,   if µ = λ − εi for some 1 ≤ i ≤ m + n;
+     HomDist(G) (M (µ), W (λ) ⊗ V ∗ ) =
+                                          0,   otherwise.
+Proof. It follows from Lemma 4.17 and taking contravariant duals that we have the
+filtration
+                      0 = N0 ⊆ N1 ⊆ · · · ⊆ Nm+n = W (λ) ⊗ V ∗                         (4.14)
+               ∼
+with Ni /Ni−1 = W (λ − εi ) for all i = 1, . . . , m + n. The result then follows by applying
+Corollary 4.16.                                                                             
+4.5. Return to Normal, Good, Conormal, and Cogood. We are now able to
+provide representation theoretic interpretations of the combinatorial notions of normal,
+good, conormal, and cogood. Note that the arguments used here are an adaptation of
+those used in [2].
+   Let V ′ denote the subspace of V spanned by the vectors v1 , . . . , vm+n−1 . We con-
+sider G′ = GL(V ′ ) as a subgroup of G = GL(V ) in the natural way and make the
+corresponding identification of Dist(G′ ) as a subalgebra of Dist(G). A direct calculation
+verifies the following lemma.
+Lemma 4.19. Let M be a Dist(G)-supermodule. Define the following linear map
+                                  Pm+n−1
+ e : M → M ⊗ V ∗ , x 7→ x ⊗ wm+n + h=1 (−1)(vh +x)(vh +v m+n ) Eh,m+n x ⊗ wh .
+The map e is a homomorphism of Dist(G′ )-supermodules.
+Theorem 4.20. Let λ ∈ X(T ) and let 1 ≤ i ≤ m + n. Let vλ ∈ M (λ)λ denote the
+canonical generator of M (λ). The following are equivalent:
+     (i) dimk HomDist(G) (M (λ − εi ), L(λ) ⊗ V ∗ ) = 1;
+    (ii) Si,m+n (A).vλ ∈
+                       / Rad M (λ), where A := (i..m + n)\Ci,m+n (λ);
+   (iii) Bi,m+n (λ) ↓ Ci,m+n (λ) (i.e. i is normal for λ);
+Proof. Say i = m + n. A consideration of weights shows that the image of vλ ⊗ wm+n ∈
+L(λ) ⊗ V ∗ is a primitive vector. Consequently, by Frobenious reciprocity we have
+HomDist(G) (M (λ − εm+n ), L(λ) ⊗ V ∗ ) 6= 0. When i = m + n it is straightforward to
+verify that (ii) and (iii) also always hold. Therefore, for the rest of the proof we
+assume 1 ≤ i ≤ m + n − 1.
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                        29
+
+
+   (i) ⇒ (ii) : Let ϕ : M (λ) → W (λ − εi ) ⊗ V be the non-zero homomorphism given
+in Corollary 4.18. We can choose ϕ so that ϕ(vλ ) = w ⊗ vi , where w is the dual of the
+canonical generator of M (λ − εi ). Observe that (i) holds if and only if Rad M (λ) ⊆
+Ker ϕ. Suppose (ii) is false, then Si,m+n (A).vλ = Sei,m+n (A).vλ ∈ Rad M (λ). It
+suffices to show Sei,n (A).vλ ∈
+                              / Ker ϕ. As a vector space, we have the direct sum decom-
+position
+                                             m+n
+                                             M
+                           W (λ − εi ) ⊗ V =     W (λ − εi ) ⊗ vi .
+                                               i=1
+From the definition of Sei,m+n (A), one can verify that
+                                             Y
+ϕ(Sei,m+n (A).vλ ) = Sei,m+n (A).(w ⊗ vi ) =   c̃i,t Fi,m+n .(w ⊗ vi ) + (∗)
+                                               t∈A
+                                                        Y
+                                           = Fi,m+n           ci,t .(w ⊗ vi ) + (∗)
+                                                        t∈A
+                                                        Y
+                                           = Fi,m+n           ci,t (λ)(w ⊗ vi ) + (∗)
+                                                        t∈A
+                                               Y
+                                           =         ci,t (λ)(w ⊗ vm+n + (Fi,m+n w) ⊗ vi ) + (∗)
+                                               t∈A
+                  Lm+n−1                                                        e
+where (∗) lies in i=1         W (λ−εi )⊗v
+                                        Qi . In particular, the projection of ϕ(Si,m+n (A).vλ )
+onto W (λ − εi ) ⊗ vm+n is precisely t∈A ci,t (λ)(w ⊗ vm+n ), which is nonzero by the
+choice of A. Therefore ϕ(Sei,m+n (A).vλ ) 6= 0.
+   (ii) ⇒ (iii) : This follows from Lemma 4.14.
+   (iii) ⇒ (i) : Since Bi,m+n (λ) ↓ Ci,m+n (λ), then we can find a subset C ⊆ Ci,m+n (λ)
+such that Bi,m+n (λ) ↓ C and |Bi,m+n (λ)| = |C|. Note that since Bi,m+n (λ) ↓
+Ci,m+n (λ), we have i ∈     / Bi,m+n (λ). So, setting B = (i..m + n)\Bi,m+n (λ) and
+A = (i..m + n)\C, we have A, B ⊆ (i..m + n), |A| = |B|, and A ↓ B. Consequently,
+by Lemma 4.13, we have
+                                                           Y
+                    Ei · · · Em+n−1 Si,m+n (A).vλ = ε            bi,t (λ)vλ .
+                                                          t∈{i}∪B
+
+However, by the definition of B, the right hand side is a nonzero scalar multiple of
+vλ . Therefore, z := Si,m+n (A).vλ ∈
+                                   / Rad M (λ) and the image of z in L(λ) is nonzero.
+Consequently z ⊗ wm+n ∈ L(λ) ⊗ V ∗ is nonzero and, hence,
+                                 m+n−1
+                                  X
+  vλ (i) := e(z) = z ⊗ wm+n +           (−1)(vk +v i +vm+n )(v k +vm+n ) Ek,m+n z ⊗ wk (4.15)
+                                  k=1
+is nonzero.
+                       (r)
+   We now show El .z ∈ Rad M (λ) for all r ≥ 1 and 1 ≤ l ≤ m + n − 2. If r > 2
+         (r)
+then El .z = 0 by a weight argument. It remains to consider the case when r = 1 : If
+l+1 ∈ A, or l ∈  / {i}∪A and l+1 ∈ / A, then El .z = 0 by Lemma 4.12(i). If l ∈ {i}∪A and
+l+1 ∈  / A, then by Lemma 4.12(ii), El .z = −bSi,l (Ai..l )Sl+1..m+n (Al+1..m+n ).vλ . Since
+Si,l (Ai..l ) and Sl+1,m+n (Al+1..m+n ) commute, it suffices to show either Si,l (Ai..l ).vλ ∈
+Rad M (λ) or Sl+1,m+n (Al+1..m+n ).vλ ∈ Rad M (λ). First, however, observe that our
+assumptions about l imply ci,l+1 (λ) = 0, so bi,l (λ) 6= 0, Cl+1..m+n ⊆ Cl+1,m+n (λ), and
+Bi,m+n (λ) = Bi,l (λ) ∪ Bl+1,m+n (λ). Now suppose Si,l (Ai..l ).vλ ∈/ Rad M (λ). Then by
+Lemma 4.14, Bi,l (λ) ↓ Ci..l and, hence, |Bi,l (λ)| ≤ |Ci..l |. Thus, |Bl+1,m+n (λ)| ≥
+30                                   JONATHAN KUJAWA
+
+
+|Cl..m+n |, so |Bl+1,m+n (λ)| > |Cl+1..m+n |. But this implies that Bl+1,m+n (λ) ↓
+Cl+1..m+n is false. Therefore, Sl+1,m+n (Al+1..m+n ).vλ ∈ Rad M (λ) by Lemma 4.14.
+   The preceding paragraph proves z ∈ L(λ) is a Dist(G′ ) primitive vector hence, by
+Lemma 4.19, vλ (i) is a Dist(G′ ) primitive vector. Furthermore, observe that a weight
+                                                      (r)
+argument along with a direct calculation verifies Em+n−1 .vλ (i) = 0 for any r ≥ 1.
+Therefore vλ (i) is in fact a Dist(G) primitive vector. By a routine application of
+Frobenious reciprocity we obtain
+                        HomDist(G) (M (λ − εi ), L(λ) ⊗ V ∗ ) 6= 0.
+                                                                                        
+   To continue, recall from subsection 4.1 the definitions of Ve , G
+                                                                   e = GL(Ve ), and X(Te).
+Let us write B e for the Borel subgroup of G
+                                           e of upper triangular matrices, L(λ)
+                                                                              e    for the
+                   e                                          e
+irreducible Dist(G)-supermodule of highest weight λ ∈ X(T ), etc.
+   Let S̃ : Dist(G) → Dist(G)e be the even superalgebra isomorphism given by
+                             S̃(ei,j ) = −(−1)vi (vi +v j ) ew0 j,w0 i              (4.16)
+for all 1 ≤ i, j ≤ m + n, where w0 ∈ Sm+n is the longest element. Given a Dist(G)-   e
+supermodule, M, we can twist it by S̃ to obtain a Dist(G)-supermodule. Namely, M =
+M as a superspace with action given by x.m = S̃(x)m for all x ∈ Dist(G) and all m ∈
+M. We denote the resultant Dist(G)-supermodule by M S̃ . Since S̃(Dist(T )) = Dist(Te),
+the weight space decomposition of M is preserved. In fact, since ei,i 7→ −ew0 i,w0 i for
+all 1 ≤ i ≤ m + n, we have
+                                     Ms̃(λ) = (M S̃ )λ
+for all λ ∈ X(T ), where the map s̃ : X(T ) → X(Te) is as defined in (4.5). Furthermore,
+                           e twisting by S̃ preserves primitive vectors. Consequently
+since S̃(Dist(B)) = Dist(B),
+we have
+                     f(s̃(λ))S̃ ∼
+                     M          = M (λ) and L(s̃(λ))  e   S̃ ∼ L(λ).
+                                                             =
+In particular, we have that
+                                       (Ve ∗ )S̃ ∼
+                                                 = V.
+                         e
+Note that for any Dist(G)-supermodules M and N we have
+                                 (M ⊗ N )S̃ ∼
+                                            = M S̃ ⊗ N S̃ .
+Corollary 4.21. Let λ ∈ X(T ) and let 1 ≤ i ≤ m + n. Then i is conormal for λ if
+and only if
+                  dimk HomDist(G) (M (λ + εi ), L(λ) ⊗ V ) = 1.
+Proof. By Lemma 4.9, i is conormal for λ ∈ X(T ) if and only if w0 i is normal for
+s̃(λ) ∈ X(T̃ ). By the above remarks we have the following isomorphisms of Hom-
+spaces:
+               Hom        f                   e          e∗
+                       e (M (s̃(λ) − εw0 i ), L(s̃(λ)) ⊗ V )
+                   Dist(G)
+                       ∼             f(s̃(λ) − εw0 i )S̃ , (L(s̃(λ))
+                       = HomDist(G) (M                      e        ⊗ Ve ∗ )S̃ )
+                       ∼
+                       = HomDist(G) (M (λ + εi ), L(λ) ⊗ V ).
+The result then follows immediately from Theorem 4.20.                                  
+          CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                        31
+
+
+Corollary 4.22. Let 1 ≤ i ≤ m + n. Then i is good for λ if and only if
+                       dimk HomDist(G) (L(λ − εi ), L(λ) ⊗ V ∗ ) = 1.                   (4.17)
+Proof. By Lemma 4.8, it suffices to show (4.17) holds if and only if i is normal for
+λ and conormal for λ − εi . That is, by Theorem 4.20 and Corollary 4.21, that (4.17)
+holds if and only if
+                         HomDist(G) (M (λ − εi ), L(λ) ⊗ V ∗ ) 6= 0                     (4.18)
+                         HomDist(G) (L(λ − εi ), W (λ) ⊗ V ∗ ) 6= 0.
+   The Hom-space given in (4.17) is naturally a subspace of the Hom-spaces in (4.18).
+Hence, if (4.17) holds, then (4.18) holds. Conversely, assume (4.18) holds. By Corol-
+lary 4.18 we have that
+                           HomDist(G) (M (λ − εi ), W (λ) ⊗ V ∗ )
+is exactly one dimensional. Choose a nonzero homomorphism f : M (λ − εi ) → W (λ) ⊗
+V ∗ . Since (4.18) holds, we have f (M (λ − εi )) ⊆ L(λ) ⊗ V ∗ and Ker f ⊆ Rad M (λ − εi ).
+Consequently, the map f factors through to give a nonzero f˜ : L(λ − εi ) → L(λ) ⊗ V ∗ .
+This implies the desired result.                                                        
+   Arguing as in the proof of Corollary 4.21 using the map S̃ one obtains the following
+corollary of the previous result.
+Corollary 4.23. Let 1 ≤ i ≤ m + n. Then i is cogood for λ if and only if
+                       dimk HomDist(G) (L(λ + εi ), L(λ) ⊗ V ) = 1.                     (4.19)
+
+                               5. Translation Functors
+5.1. Translation Functors and Irreducible Supermodules. Recall from (2.16)
+the definition of the translation functors Er and Fr for r ∈ Z/pZ. We can now describe
+how these functors act on irreducible Dist(G)-supermodules.
+Lemma 5.1. Let λ ∈ X(T ) and r ∈ Z/pZ. Then there is a filtration
+                               0 = Q0 ⊆ · · · ⊆ Ql = Er L(λ)
+with Qk /Qk−1 a nonzero submodule of W (λ − εik ) and where i1 < · · · < il and
+{i1 , . . . , il } = {i : 1 ≤ i ≤ m + n, i is r-normal for λ}.
+Proof. First, let µ ∈ X(T ). We observe that by Theorem 4.20
+                              HomDist(G) (M (µ), Er L(λ)) 6= 0                           (5.1)
+if and only if µ = λ − εi for some 1 ≤ i ≤ m + n which is normal for λ and wt(λ − εi ) =
+wt(λ) + γr − γr+1 . However, wt(λ − εi ) = wt(λ) − (−1)v i γ(λ+ρ,εi ) + (−1)vi γ(λ+ρ−εi ,εi ) .
+From this we conclude that (5.1) holds if and only if µ = λ − εi for some 1 ≤ i ≤ m + n
+which is r-normal for λ.
+    Recall from (4.14) the filtration of W (λ) ⊗ V ∗ by co-Verma supermodules. Inter-
+secting with L(λ) ⊗ V ∗ and projecting onto Er L(λ), we obtain a filtration
+                             0 = Q0 ⊆ · · · ⊆ Qm+n = Er L(λ)
+of Er L(λ) where each Qk /Qk−1 is a (possibly zero) submodule of a co-Verma module.
+Refining this filtration by requiring strict inclusions, we obtain
+                               0 = Q0 ⊆ · · · ⊆ Ql = Er L(λ)
+32                                    JONATHAN KUJAWA
+
+
+with Qk /Qk−1 a nonzero submodule of W (λ − εik ) and i1 < · · · < il .
+  Now for any µ ∈ X(T ) we have,
+                                              l
+                                              X
+        dimk HomDist(G) (M (µ), Er L(λ)) ≤          dimk HomDist(G) (M (µ), Qk /Qk−1 ).
+                                              k=1
+   If 1 ≤ t ≤ m + n is r-normal for λ, then the left hand side is nonzero for µ = λ − εt .
+However, by Lemma 4.15, the right hand side is one if µ = λ − εik for some k = 1, . . . , l
+and zero otherwise. Consequently, t = ik for some 1 ≤ k ≤ l. On the other hand,
+assume Qk /Qk−1 is nonzero. Applying the functor HomDist(G) (M (λ − εik ), −) to the
+short exact sequence
+                           0 → Qk−1 → Qk → Qk /Qk−1 → 0
+we obtain the long exact sequence
+     0 → HomDist(G) (M (λ − εik ), Qk−1 ) → HomDist(G) (M (λ − εik ), Qk ) →
+         → HomDist(G) (M (λ − εik ), Qk /Qk−1 ) → Ext1Dist(G) (M (λ − εik ), Qk−1 ) → . . .
+By weights we have HomDist(G) (M (λ − εik ), Qk−1 ) = 0 and by Lemma 3.5 we have
+Ext1Dist(G) (M (λ − εik ), Qk−1 ) = 0. Consequently, by Lemma 4.15,
+      0 6= HomDist(G) (M (λ − εi ), Qk /Qk−1 ) ∼
+                                  k            = HomDist(G) (M (λ − εi ), Qk )
+                                                                            k
+
+                                                    ⊆ HomDist(G) (M (λ − εik ), Er L(λ)),
+hence ik is r-normal for λ.                                                                   
+Theorem 5.2. Let λ ∈ X(T ) and r ∈ Z/pZ.
+   (i) Er L(λ) 6= 0 if and only if ε∗r (λ) 6= 0, in which case it is a self-dual indecompos-
+       able module with irreducible socle and cosocle both isomorphic to L(µ) where
+       µ = ẽ∗r (λ). Moreover, Er L(λ) is irreducible if and only if ε∗r (λ) = 1.
+  (ii) Fr L(λ) 6= 0 if and only if ϕ∗r (λ) 6= 0, in which case it is a self-dual indecompos-
+       able module with irreducible socle and cosocle both isomorphic to L(µ) where
+       µ = f˜r∗ (λ). Moreover, Fr L(λ) is irreducible if and only if ϕ∗r (λ) = 1.
+Proof. First we prove (i). Using Corollary 4.22 and arguing as in the proof of the
+previous lemma, we have
+                               HomDist(G) (L(µ), Er L(λ)) 6= 0
+holds if and only if µ = λ − εi for some 1 ≤ i ≤ m + n which is r-good for λ. Also we
+note that if i is r-good for λ, then it is necessarily unique by the definition of r-good.
+    From this we see that if Er L(λ) 6= 0, then the socle of Er (λ) is precisely L(λ − εi ) ∼=
+L(ẽ∗r (λ)) where i is r-good for λ. Therefore, Er L(λ) 6= 0 if and only if ε∗r (λ) 6= 0 and, if
+it is nonzero, it has irreducible socle and is indecomposable. The self-duality statement
+and, hence, the description of the head follows from the fact that L(λ) is self-dual with
+respect to contravariant duality and Er commutes with this duality.
+    Finally, we prove the statement about the simplicity of Er L(λ). If Er L(λ) is simple,
+it is clear that i is r-normal if and only if i is r-good. Consequently, ε∗r (λ) = 1. One the
+other hand, assume ε∗r (λ) = 1 but Er L(λ) is not irreducible. Fix i to be the position
+of the unique − in the reduced r-signature for λ. From Lemma 5.1 we deduce that
+Er L(λ) is a submodule of W (λ − εi ). This implies by the reducibility assumption that
+           CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                            33
+
+
+HomDist(G) (Er L(λ), L(λ − εi )) = 0. However, taking contravariant duals and using
+that i is r-good for λ, we see that
+         HomDist(G) (Er L(λ), L(λ − εi )) ∼
+                                          = HomDist(G) (L(λ − εi ), Er L(λ)) 6= 0.
+This gives the desired contradiction. Therefore Er L(λ) is irreducible.
+   One deduces (ii) from (i) using the map S̃ defined in (4.16) or can be proven directly
+with an argument similar to the one used above.                                        
+   Since
+                          L                                               L
+           L(λ) ⊗ V ∗ =     r∈Z/pZ   Er L(λ)      and        L(λ) ⊗ V =       r∈Z/pZ   Fr L(λ)
+are decompositions into indecomposable summands we obtain the following corollaries.
+Corollary 5.3. Let λ ∈ X(T ). Then,
+   (i) The socle of L(λ) ⊗ V ∗ is precisely
+                                   M
+                                                        L(λ − εi ).
+                                        1≤i≤m+n
+                                      i is good for λ
+
+    (ii) The socle of L(λ) ⊗ V is precisely
+                                     M
+                                                         L(λ + εi ).
+                                         1≤i≤m+n
+                                     i is cogood for λ
+
+In particular, in both cases the socle is multiplicity free and contains no more than p
+irreducible summands.
+Corollary 5.4. Let λ ∈ X(T ). Then,
+   (i) L(λ) ⊗ V ∗ is semisimple if and only if every 1 ≤ i ≤ m + n which is normal is
+       good. That is, if and only if ε∗r (λ) ≤ 1 for every r ∈ Z/pZ.
+  (ii) L(λ) ⊗ V is semisimple if and only if every 1 ≤ i ≤ m + n which is conormal
+       is cogood. That is, if and only if ϕ∗r (λ) ≤ 1 for every r ∈ Z/pZ.
+
+                                     6. Odd Reflections
+     The results of this article depend on our choice of a homogeneous basis for V.
+More precisely, the crystal structure on X(T ) depends on the sequence of parities,
+v 1 , . . . , v m+n , of the vectors we have chosen. In this section, we discuss how to translate
+from one choice to another using Serganova’s odd reflections. Note that it suffices to
+determine how to translate from the fixed homogeneous basis v1 , . . . , vm+n to the
+homogeneous basis v1 , . . . , vi−1 , vi+1 , vi , vi+2 , . . . , vm+n when v i + v i+1 = 1̄ for some
+1 ≤ i ≤ m + n − 1. Let 1 ≤ i ≤ m + n − 1 and let σi : V → V denote the linear map
+defined by sending the first basis to the second. That is,
+                                         σi (vj ) = v(i i+1)j ,
+for all 1 ≤ j ≤ m + n and where (i i + 1) ∈ Sm+n . We then have an automorphism on
+GL(V ) induced by σi which in turn induces an automorphism si : Dist(G) → Dist(G).
+Explicitly,
+                             si : ek,l 7→ e(i i+1)k,(i i+1)l                  (6.1)
+for all 1 ≤ k, l ≤ m + n. We can twist a Dist(G)-supermodule M by si in the usual
+way, where M si = M as a superspace and a.m = si (a)m for all a ∈ Dist(G) and all
+m ∈ M. In particular, L(λ)si is again an irreducible Dist(G)-supermodule of some
+34                                     JONATHAN KUJAWA
+
+
+highest weight. The following lemma allows us to determine the highest weight of
+L(λ)si .
+   Recall that Sm+n acts on X(T ) via x · εj = εxj for x ∈ Sm+n and 1 ≤ j ≤ m + n.
+For 1 ≤ i ≤ m + n − 1, let si : X(T ) → X(T ) be the involution given by
+                    (
+                      (i i + 1) · λ,              if (λ, εi − εi+1 ) ≡ 0 (mod p);
+           si (λ) =                                                                (6.2)
+                      (i i + 1) · λ − εi+1 + εi , if (λ, εi − εi+1 ) 6≡ 0 (mod p);
+where (−, −) is the bilinear form on X(T ) defined in (2.2).
+Lemma 6.1. Let λ ∈ X(T ) and let 1 ≤ i ≤ m + n − 1 satisfying v i + v i+1 = 1̄. Then,
+                              L(λ)si ∼
+                                     = L(si (λ))
+Proof. We observe that by the action of si on Dist(T ), if v ∈ L(λ)µ , then v ∈
+(L(λ)si )(i i+1)·µ . Now let vλ be a Dist(G) primitive vector in L(λ) of weight λ, c.f.
+Lemma 2.2. We observe that the vector ei,i+1 .vλ = ei+1,i vλ ∈ L(λ)si is a Dist(G)
+primitive vector. For if 1 ≤ r < s ≤ m + n, then, unless r = i and s = i + 1, it
+is straightforward to verify that er,s .ei+1,i vλ = 0 by the action of si and by (2.4).
+The final case to check is ei,i+1 .ei+1,i vλ . However, ei,i+1 .ei+1,i vλ = e2i+1,i vλ and since
+ei+1,i = v i + v i+1 = 1̄, e2i+1,i = 0 and so the result follows in this case as well.
+   Now suppose that ei+1,i vλ 6= 0. We get from the previous paragraph that ei+1,i v ∈
+L(λ)si is Dist(G) primitive of weight (i i + 1) · (λ − εi + εi+1 ) = (i i + 1) · λ − εi+1 + εi .
+Hence, L(λ)si ∼    = L((i i + 1) · λ − εi+1 + εi ). On the other hand, if ei+1,i vλ = 0,
+then vλ ∈ L(λ)si is itself already a Dist(G) primitive vector of weight (i i + 1) · λ so
+L(λ)si ∼= L((i i + 1) · λ).
+   Thus, to complete the proof of the lemma, it suffices to show that ei+1,i vλ 6= 0 if and
+only if (λ, εi − εi+1 ) 6≡ 0 (mod p). But ei+1,i vλ 6= 0 if and only if there is some element
+x ∈ Dist(B) such that xei+1,i vλ is a non-zero multiple of vλ . By weights, the only x
+that needs to be considered is ei,i+1 . Finally, ei,i+1 ei+1,i vλ = (−1)vi (λ, εi −εi+1 )vλ . 
+   This result is closely related to the fact that G has non-conjugate Borel subgroups
+and, hence, different labelings of the irreducible Dist(G)-supermodules by highest
+weight. The problem of translating between labelings was first solved by Serganova
+[19] and is also discussed in [4].
+Corollary 6.2. Let 1 ≤ i ≤ m + n with v i + v i+1 = 1̄. Let X(T )1 denote X(T ) with
+the crystal structure lifted (as in subsection 2.7) from the crystal
+                                                                                        
+                 Bv1 ⊗ · · · ⊗ Bvi ⊗ Bvi+1 ⊗ · · · ⊗ Bvm+n , ẽ∗r , f˜r∗ , ε∗r , ϕ∗r , wt ,
+and let X(T )2 denote X(T ) with the crystal structure lifted from the crystal
+                                                                                      
+               Bv1 ⊗ · · · ⊗ Bvi+1 ⊗ Bvi ⊗ · · · ⊗ Bvm+n , ẽ∗r , f˜r∗ , ε∗r , ϕ∗r , wt .
+The map
+                                 si : X(T )1 → X(T )2
+defined in (6.1) gives an isomorphism of crystals.
+Proof. We first prove that wt(si (λ)) = wt(λ). However, in both cases (when (λ, εi −
+εi+1 ) ≡ 0(mod p) and when (λ, εi −εi+1 ) 6≡ 0(mod p)) this follows from straightforward
+arguments using the definition of the function wt and a careful consideration of the
+parities involved.
+           CRYSTAL STRUCTURES ARISING FROM REPRESENTATIONS OF GL(m|n)                              35
+
+
+  We next prove that si (ẽ∗r (λ)) = ẽ∗r (si (λ)) for all λ ∈ X(T ) and all r ∈ Z/pZ. We first
+prove that ẽ∗r (λ) 6= 0 if and only if ẽ∗r (si (λ)) 6= 0. If ẽ∗r (λ) 6= 0, then by Theorem 2.4
+wt(ẽ∗r (λ)) = wt(λ) + γr − γr+1 and, twisting by si and applying Lemma 6.1,
+                        0 6= HomDist(G) (L(ẽ∗r (λ)), L(λ) ⊗ V ∗ )
+                          ∼
+                          = HomDist(G) (L(ẽ∗ (λ))si , L(λ)si ⊗ (V ∗ )si )
+                                               r
+                          ∼
+                          = HomDist(G) (L(si (ẽ∗r (λ))), L(si (λ)) ⊗ V ∗ ).
+By the previous paragraph we have wt(si (ẽ∗r (λ))) = wt(si (λ)) + γr − γr+1 . By Theo-
+rem 2.4 again, we have
+                        HomDist(G) (L(ẽ∗r (si (λ))), L(si (λ)) ⊗ V ∗ ) 6= 0.
+Thus, ẽ∗r (si (λ)) 6= 0. The converse is proven by in an identical manner. We next observe
+that if ẽ∗r (si (λ)) 6= 0, then it is completely determined by the fact that it satisfies the
+following two properties:
+     (1) HomDist(G) (L(ẽ∗r (si (λ))), L(si (λ)) ⊗ V ∗ ) 6= 0,
+     (2) wt(ẽ∗r (si (λ))) = wt(si (λ)) + γr − γr+1 .
+Consequently, by our earlier observations we have si (ẽ∗r (λ)) = ẽ∗r (si (λ)).
+   A similar argument proves si (f˜r∗ (λ)) = f˜r∗ (si (λ)) for all λ ∈ X(T ) and all r ∈ Z/pZ.
+This proves the desired result.                                                             
+   One can also give a purely combinatorial proof of this result.
+
+                                           References
+ [1] J. Brundan, Kazhdan-Lusztig polynomials and character formulae for the Lie superalgebra
+     gl(m|n), J. Amer. Math. Soc. 16 (2003), 185–231.
+ [2] J. Brundan, Modular branching rules and the Mullineux map for Hecke algebras of type A, Proc.
+     London Math. Soc. (3) 77 (1998), 551-581.
+ [3] J. Brundan and A. Kleshchev, On translation functors for general linear and symmetric groups,
+     Proc. London Math. Soc. (3) 80 (2000), 75-106.
+ [4] J. Brundan and J. Kujawa, A new proof of the Mullineux conjecture, J. Alg. Combin. 16 (2003),
+     13–39.
+ [5] R. Carter and G. Lusztig, On the modular representations of the general linear and symmetric
+     groups, Math. Z. 136 (1974), 193-242.
+ [6] V.K. Dobrev and V.B. Petkova, On the group-theoretical approach to extended conformal su-
+     persymmetry: function space realizations and invariant differential operators, Fortschr. d. Phys.
+     35 (1987) 537-572.
+ [7] J. Hong and S. Kang, Introduction to quantum groups and crystal bases, Graduate Studies in
+     Mathematics, vol. 42, AMS, 2002.
+ [8] J. C. Jantzen, Representations of algebraic groups, Academic Press, 1987.
+ [9] V. Kac, Infinite dimensional Lie algebras, third edition, Cambridge University Press, 1995.
+[10] V. Kac, Lie superalgebras, Advances Math. 26 (1977), 8–96.
+[11] M. Kashiwara, On crystal bases, Proc. Canadian Math. Soc. 16 (1995), 155-196.
+[12] A. Kleshchev, Branching rules for modular representations of symmetric groups III, J. London
+     Math. Soc. 54 (1996), 25–38.
+[13] A. Kleshchev, Branching rules for modular representations of symmetric groups II, J. reine angew.
+     Math. 459 (1995), 163–212.
+[14] A. Kleshchev, Branching rules for modular representations of symmetric groups I, J. Alg. 178
+     (1995), 493–511.
+[15] J. Kujawa, The representation theory of the supergroup GL(m|n), PhD thesis, University of
+     Oregon, 2003.
+[16] D.A. Leites, Introduction to the theory of supermanifolds, Russian Math. Surveys 35 (1980),
+     1–64.
+36                                    JONATHAN KUJAWA
+
+
+[17] V. Serganova, Kazhdan-Lusztig polynomials and character formula for the Lie superalgebra
+     gl(m|n), Selecta Math. 2 (1996), 607-651.
+[18] V. Serganova, Kazhdan-Lusztig polynomials for the Lie superalgebra GL(m|n), Adv. Sov. Math.
+     16 (1993), 151–165.
+[19] V. Serganova, Automorphisms of complex simple Lie superalgebras and affine Kac-Moody alge-
+     bras, PhD thesis, Leningrad State University, 1988. Math. USSR Sbornik 51 (1985), 419–427.
+[20] A. Sergeev, Enveloping algebra centre for Lie superalgebras GL and Q, PhD thesis, Moscow State
+     University, Moscow, 1987
+[21] A. Sergeev, The invariant polynomials on simple Lie superalgebras, Represent. Theory 3 (1999),
+     250-280.
+[22] R. Steinberg, Lectures on Chevalley groups, Yale University, 1967.
+
+     Dept. of Mathematics, University of Toronto, Toronto, ON, Canada M5S 3G3
+     E-mail address: kujawa@noether.uoregon.edu
+

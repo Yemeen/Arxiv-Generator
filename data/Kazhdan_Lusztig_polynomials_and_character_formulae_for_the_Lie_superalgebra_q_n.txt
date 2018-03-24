@@ -1,0 +1,2119 @@
+                                                KAZHDAN-LUSZTIG POLYNOMIALS AND CHARACTER
+                                                  FORMULAE FOR THE LIE SUPERALGEBRA q(n)
+arXiv:math/0207024v2 [math.RT] 10 Sep 2002
+
+
+
+
+                                                                          JONATHAN BRUNDAN
+
+
+
+                                                                             1. Introduction
+                                                 The problem of computing the characters of the finite dimensional irreducible
+                                             representations for the classical Lie superalgebras was posed originally by Kac
+                                             in 1977 [K1, K2, K3]. For the family q(n), various special cases were treated
+                                             by Sergeev [S1] (polynomial representations) and Penkov [P1, P3] (typical then
+                                             generic representations), culminating in the complete solution of Kac’ problem
+                                             for q(n) in the work of Penkov and Serganova [PS2, PS3] in 1996. In this
+                                             article, we will explain a different approach to computing the characters of the
+                                             irreducible “integrable” representations of q(n), i.e. the representations that
+                                             lift to the supergroup Q(n).
+                                                 The strategy followed runs parallel to our recent work [B1] on representations
+                                             of GL(m|n), and is in keeping with the Lascoux-Leclerc-Thibon philosophy
+                                             [LLT]. We first study the canonical basis of the representation
+                                                                                        ^n
+                                                                                F n :=     V,
+                                             where V denotes the natural representation of the quantized enveloping algebra
+                                             Uq (b∞ ). This provides a natural Lie theoretic framework for the combinatorics
+                                             associated to the representation theory of Q(n). The idea that b∞ should be
+                                             relevant here is already apparent from [LT, BK1]. Our main theorem shows that
+                                             the transition matrix between the canonical basis and the natural monomial
+                                             basis of F n at q = 1 is transpose to the transition matrix between the bases
+                                             for the Grothendieck group of finite dimensional representations of Q(n) given
+                                             by certain Euler characteristics and by the irreducible representations.
+                                                In order to define the canonical basis of F n , we must also consider the tensor
+                                             space                                     On
+                                                                              T n :=       V.
+                                             Work of Lusztig [L2, ch. 27] shows how to construct a canonical basis for T n .
+                                             We then pass from there to the space F n , which we realize as a quotient of T n
+                                             following Jing, Misra and Okado [JMO]. The entries of the transition matrix
+                                             between the canonical basis and the natural monomial basis of T n should be
+                                             viewed as the combinatorial analogues for the Lie superalgebra q(n) of the
+                                             Kazhdan-Lusztig polynomials of [KL]. We conjecture that these polynomials
+                                             evaluated at q = 1 compute the composition multiplicities of the Verma modules
+                                             in the analogue of category O for q(n), see §4-h for a precise statement.
+                                               Work partially supported by the NSF (grant no. DMS-0139019).
+
+                                                                                      1
+2                                  JONATHAN BRUNDAN
+
+   We now state our main result precisely. Let Zn+ denote the set of all tuples
+λ = (λ1 , . . . , λn ) ∈ Zn such that λ1 ≥ · · · ≥ λn and moreover λr = λr+1 implies
+λr = 0 for each r = 1, . . . , n − 1. For λ ∈ Zn+ , let z(λ) denote the number
+of λr (r = 1, . . . , n) that equal zero. Also let δr denote the n-tuple with rth
+entry equal to 1 and all other entries equal to zero. Given λ ∈ Zn+ , there
+is an irreducible representation L(λ) of Q(n) of highest weight λ, unique up
+to isomorphism. Let Lλ denote the character of L(λ), giving us a canonical
+basis {Lλ }λ∈Zn+ for the character ring of Q(n), see §4-a. There is another basis
+denoted {Eµ }µ∈Zn+ which arises naturally from certain Euler characteristics, see
+§4-b. We can write                        X
+                                    Eµ =         dµ,λ Lλ
+                                            λ∈Zn
+                                               +
+
+for coefficients dµ,λ ∈ Z, where dµ,µ = 1 and dµ,λ = 0 for λ 6≤ µ in the dominance
+ordering. The Eµ ’s are explicitly known: they are multiples of the symmetric
+functions known as Schur’s P -functions. So the problem of computing Lλ for
+each λ ∈ Zn+ is equivalent to determining the decomposition numbers dµ,λ for
+each λ, µ ∈ Zn+ .
+Main Theorem. Let λ = (λ1 , . . . , λn ) ∈ Zn+ . Choose p to be maximal such
+that there exist 1 ≤ r1 < · · · < rp < sp < · · · < s1 ≤ n with λrq + λsq = 0 for
+all q = 1, . . . , p. Let I0 = {|λ1 |, . . . , |λn |}. For q = 1, . . . , p, define Iq and kq
+inductively according to the following rules:
+    (1) if λrq > 0, let kq be the smallest positive integer with λrq + kq ∈            / Iq−1 ,
+         and set Iq = Iq−1 ∪ {λrq + kq };
+    (2) if λrq = 0, let kq and kq′ be the smallest positive integers with kq , kq′ ∈        /
+                         ′                                 ′
+         Iq−1 , kq < kq if z(λ) is even and kq > kq if z(λ) is odd, and set Iq =
+         Iq−1 ∪ {kq , kq′ }.
+                                      ) ∈ {0, 1}p , let Rθ (λ) denote the unique element
+Finally, for each θ = (θ1 , . . . , θpP
+of Z+ that is conjugate to λ + pq=1 θq kq (δrq − δsq ). Then,
+     n
+            (z(λ)−z(µ))/2
+               2               if µ = Rθ (λ) for some θ = (θ1 , . . . , θp ) ∈ {0, 1}p ,
+   dµ,λ =
+               0               otherwise.
+
+   The remainder of the article is organized as follows. In §2, we introduce the
+quantum group of type b∞ , and construct the canonical basis of the tensor space
+T n . In §3, we pass from T n to the quotient F n , and study its canonical basis.
+This time it turns out to be quite easy to compute explicitly. Finally in §4, we
+prove the character formulae. Note there is one difficult place in our proof when
+we need to appeal to the existence of certain homomorphisms between Verma
+modules, see Lemma 4.36. For this we appeal to the earlier work of Penkov
+and Serganova [PS2, Proposition 2.1], which in turn relies upon a special case
+of Penkov’s generic character formula [P3, Corollary 2.2]. It would be nice to
+find an independent proof of this fact.
+Notation. Generally speaking, indices i, j, k will run over the natural numbers
+N = {0, 1, 2, . . . }, indices a, b, c will run over all of Z, and indices r, s, t will run
+over the set {1, 2, . . . , n} where n is a fixed positive integer.
+                               CHARACTER FORMULAE FOR q(n)                                           3
+
+                                     2. Tensor algebra
+
+§2-a. Quantum group of type b∞. Let P be the free abelian group on basis
+ε1 , ε2 , ε3 , . . . , equipped with a symmetric bilinear form (., .) defined by (εi , εj ) =
+2δi,j for all i, j ≥ 1. Inside P , we have the root system {±εi , ±εi ±εj |1 ≤ i < j}
+of type b∞ . We use the following labeling for the Dynkin diagram:
+                                      0       1      2
+                                          c< c         c
+
+We take the simple roots α0 , α1 , . . . defined from
+                           α0 = −ε1 ,             αi = εi − εi+1     (i ≥ 1).
+This choice induces a dominance ordering ≤ on P : β ≤ γ if γ − β is a
+sum of simple roots. The Cartan matrix A = (ai,j )i,j≥0 is defined by ai,j =
+2(αi , αj )/(αi , αi ).
+   We will work over the ground field Q(q), where q is an indeterminate. Let
+qi = q (αi ,αi )/2 , i.e. q0 = q and qi = q 2 for i > 0. Define the quantum integer
+                                                       qin − qi−n
+                                           [n]i =
+                                                       qi − qi−1
+and the associated quantum factorial [n]!i = [n]i [n − 1]i . . . [1]i . There is a field
+automorphism − : Q(q) → Q(q) with q = q −1 . We will call an additive map
+f : V → W between Q(q)-vector spaces antilinear if f (cv) = cf (v) for all
+c ∈ Q(q), v ∈ V .
+   The quantum group U = Uq (b∞ ) is the Q(q)-algebra generated by elements
+Ei , Fi , Ki (i ≥ 0) subject to the relations
+           Ki Ki−1 = Ki−1 Ki = 1,              Ki Kj = Kj Ki ,
+          Ki Ej Ki−1 = q (αi ,αj ) Ej ,        Ki Fj Ki−1 = q −(αi ,αj ) Fj ,
+                                                    Ki − Ki−1
+                         Ei Fj − Fj Ei = δi,j                  ,
+                                                     qi − qi−1
+ 1−ai,j                                       1−ai,j
+  X                   (k)   (1−a −k)
+                                               X               (k)    (1−ai,j −k)
+                 k
+          (−1)       Ei Ej Ei i,j         =            (−1)k Fi Fj Fi               =0   (i 6= j),
+  k=0                                          k=0
+           (r)                       (r)
+where Ei         := Eir /[r]!i and Fi := Fir /[r]!i . Also let
+                                     Yr
+                                 Ki        Ki qi1−s − Ki−1 qis−1
+                                      =                          .
+                                  r
+                                              s=1
+                                                    qis − qi−s
+for each r ≥ 1.
+   We regard U as a Hopf algebra with comultiplication ∆ : U → U ⊗ U
+defined on generators by
+                                 ∆(Ei ) = 1 ⊗ Ei + Ei ⊗ Ki−1 ,
+                                 ∆(Fi ) = Ki ⊗ Fi + Fi ⊗ 1,
+                                 ∆(Ki ) = Ki ⊗ Ki .
+4                                      JONATHAN BRUNDAN
+
+This is the comultiplication used by Kashiwara [Ka2], which is different from
+the one in Lusztig’s book [L2].
+   Let us introduce various (anti)automorphisms of U . First, we have the bar
+involution − : U → U , the unique antilinear algebra automorphism such that
+            Ei = Ei ,                     Fi = Fi ,                     Ki = Ki−1 .      (2.1)
+We will also need the linear algebra antiautomorphisms σ, τ : U → U and the
+linear algebra automorphism ω : U → U defined by
+        σ(Ei ) = Ei ,                  σ(Fi ) = Fi ,                 σ(Ki ) = Ki−1 ,     (2.2)
+        τ (Ei ) =   qi Fi Ki−1 ,       τ (Fi ) =   qi−1 Ki Ei ,      τ (Ki ) = Ki ,      (2.3)
+        ω(Ei ) = Fi ,                  ω(Fi ) = Ei ,                ω(Ki ) = Ki−1 .      (2.4)
+Lemma 2.5. The maps τ and − ◦ σ are coalgebra automorphisms, i.e. we have
+that ∆(ϕ(x)) = (ϕ ⊗ ϕ)(∆(x)) for all x ∈ U and either ϕ = τ or ϕ = − ◦ σ.
+The map ω is a coalgebra antiautomorphism, i.e. ∆(ω(x)) = P ((ω ⊗ ω)(∆(x)))
+where P is the twist x ⊗ y 7→ y ⊗ x.
+   We will occasionally need Lusztig’s Z[q, q −1 ]-form UZ[q,q−1] for U . We recall
+from [L1, §6] that this             −1
+                      is the
+                             Z[q, q ]-subalgebra of U generated by the elements
+  (r)  (r)              Ki
+Ei , Fi , Ki±1 and            for all i ≥ 0, r ≥ 1. It inherits from U the structure
+                         r
+of a Hopf algebra over Z[q, q −1 ].
+§2-b. Tensor space. The natural representation of U is the Q(q)-vector space
+V on basis {va }a∈Z with action defined by
+    E0 va = δa,0 (q + q −1 )v−1 + δa,1 v0 ,         Ei va = δa,i+1 vi + δa,−i v−i−1 ,
+    F0 va = δa,0 (q + q −1 )v1 + δa,−1 v0 ,          Fi va = δa,i vi+1 + δa,−i−1 v−i ,
+                2δa,−1 −2δa,1
+    K0 va = q                   va ,      Ki va = q 2δa,i −2δa,i+1 +2δa,−i−1 −2δa,−i va ,
+                                                                     L
+for all a ∈ Z and i ≥ 1, see for example [J2, §5A.2]. Let T = n≥0 T n be the
+tensor algebra of V , so T n = V ⊗ · · · ⊗ V (n times) viewed as a U -module in
+the natural way.
+   Let Zn denote the set of all n-tuples λ = (λ1 , . . . , λn ) of integers. The
+symmetric group Sn acts on Zn by the rule wλ = (λw−1 1 , . . . , λw−1 n ). We will
+always denote the longest element of Sn by w0 , so w0 λ = (λn , . . . , λ1 ). Given
+λ ∈ Zn , let
+                           Nλ = vλ1 ⊗ · · · ⊗ vλn ∈ T n .                            (2.6)
+                                                           n
+The vectors {Nλ }λ∈Zn obviously give a basis for T . For λ ∈ Z , let z(λ)    n
+
+denote the number of λr (r = 1, . . . , n) that equal zero. We get another basis
+{Mλ }λ∈Zn for T n by defining
+                                             −z(λ)
+                             Mλ = q + q −1          Nλ                               (2.7)
+for each λ ∈ Zn .
+                         CHARACTER FORMULAE FOR q(n)                                5
+
+  Let (., .) be the symmetric bilinear form on T n such that
+                             (Mλ , Nµ ) = q z(λ) δλ,µ                          (2.8)
+for all λ, µ ∈ Zn . Also define an antilinear automorphism σ : T n → T n and a
+linear automorphism ω : T n → T n by
+                                 σ(Nλ ) = q −z(λ) N−λ ,                        (2.9)
+                                 ω(Nλ ) = N−w0 λ                              (2.10)
+for all λ ∈ Zn .
+              The following lemma is checked by reducing to the case n = 1
+using Lemma 2.5.
+Lemma 2.11. The following hold for all x ∈ U and u, v ∈ T n :
+    (i) σ(xv) = τ (σ(x))σ(v);
+   (ii) (xu, v) = (u, τ (x)v);
+  (iii) ω(xu) = ω(x)ω(u).
+
+§2-c. Bruhat ordering. Recall that a vector v in a U -module is said to be
+of weight γ ∈ P if Ki v = q (αi ,γ) v for each i ≥ 0. The weight of the basis vector
+vi of V is εi , where we write ε0 = 0 and ε−i = −εi . Hence the vectors Nλ and
+Mλ have weight
+                          wt(λ) := ελ1 + · · · + ελn ∈ P.                     (2.12)
+More generally, for each r = 1, . . . , n, let
+                          wtr (λ) := ελr + · · · + ελn ∈ P.                   (2.13)
+The Bruhat ordering  on the set      Zn     is defined by λ  µ if wtr (λ) ≤ wtr (µ)
+for each r = 1, . . . , n with equality for r = 1. Here is an equivalent formulation
+of the definition. Write λ ↓ µ if one of the following holds:
+    (1) for some 1 ≤ r < s ≤ n such that λr > λs , we have that µr = λs , µs = λr
+        and µt = λt for all t 6= r, s;
+    (2) for some 1 ≤ r < s ≤ n such that λr + λs = 0, we have that µr =
+        λr − 1, µs = λs + 1 and µt = λt for all t 6= r, s.
+The following lemma has been checked in many examples, but I still have not
+found a proof in general. However, it is not used in an essential way in the
+remainder of the article.
+Lemma 2.14. λ  µ if and only if there exist ν1 , . . . , νk ∈ Zn such that λ =
+ν1 ↓ ν2 ↓ . . . ↓ νk = µ.
+  The degree of atypicality of λ ∈ Zn is defined by
+                                    1X
+                         #λ := n −        |(wt(λ), εi )|.                     (2.15)
+                                    2
+                                           i≥1
+We will say that λ ∈ Zn is typical if #λ ≤ 1. Equivalently, λ is typical if
+λr + λs 6= 0 for all 1 ≤ r < s ≤ n.
+§2-d. Bar involution. We next define a bar involution on T n (actually on
+                cn of T n ) compatible with the bar involution on U , following
+some completion T
+6                                  JONATHAN BRUNDAN
+
+[L2, §27.3]. To begin with, let us recall the definition of Lusztig’s quasi-R-matrix
+Θ, translated suitably since we are working with a different comultiplication.
+   Write U = U − U 0 U + = U + U 0 U − for the usual triangular decompositions
+of U , so U − is generated by all Fi , U 0 is generated by all Ki±1 and U + is
+generated by all Ei . For a weight ν ≥ 0, let Uν+ (resp. Uν− ) denote the subspace
+of U + (resp. U − ) spanned by all monomials Ei1 . . . Eir (resp Fi1 . . . Fir ) with
+αi1 + · · · + αir = ν, so
+                              M                       M
+                        U+=        Uν+ ,      U−=         Uν− .
+                               ν≥0                    ν≥0
+               P               P
+Define tr ν := i≥0 ai if ν = i≥0 ai αi . Let (U ⊗U )∧ denote the completion of
+the vector space U ⊗U with respect to the descending filtration ((U ⊗ U )d )d∈N
+where                     X                                        
+           (U ⊗ U )d =       U − U 0 Uν+ ⊗ U + U ⊗ U + U 0 Uν− .
+                          tr ν≥d
+Exactly as in [L2, §4.1.1], we embed U ⊗ U into (U ⊗ U )∧ in the obvious way,
+then extend the Q(q)-algebra structure on U ⊗ U to (U ⊗ U )∧ by continuity.
+The bar involution on U ⊗ U is defined by x ⊗ y := x ⊗ y, and also extends by
+continuity to (U ⊗U )∧ . Finally, the antiautomorphism σ⊗σ : U ⊗U → U ⊗U
+and the automorphism P ◦ (ω ⊗ ω) : U ⊗ U → U ⊗ U (where P is the twist
+x ⊗ y 7→ y ⊗ x) extend to the completion too.
+Lemma 2.16. There is a unique family of elements Θν ∈ Uν+ ⊗ Uν− such that
+                  P
+Θ0 = 1 and Θ := ν Θν ∈ (U ⊗ U )∧ satisfies ∆(u)Θ = Θ∆(u) for all u ∈ U
+(identity in (U ⊗U )∧ ). Moreover, each Θν belongs to UZ[q,q−1] ⊗Z [q,q−1] UZ[q,q−1 ] .
+Proof. The first part of the lemma is [L2, Theorem 4.1.2(a)]. The second part
+about integrality follows using [L2, Corollary 24.1.6]. Actually loc. cit. applies
+only to finite type root systems but one can pass from bn to b∞ by a limiting
+argument.                                                                       
+Lemma 2.17. The following equalities hold in (U ⊗ U )∧ :
+    (i) ΘΘ = ΘΘ = 1 ⊗ 1;
+   (ii) (σ ⊗ σ)(Θ) = Θ;
+  (iii) (σ ⊗ σ)(Θ) = Θ;
+  (iv) (P ◦ (ω ⊗ ω))(Θ) = Θ.
+Proof. (i) This is [L2, Corollary 4.1.3].
+  (ii) Recall by Lemma 2.5 that the map − ◦ σ = σ ◦ − is a coalgebra automor-
+phism. Using this one checks that
+           ∆(u) = (σ ⊗ σ)(∆(σ(u))),           ∆(u) = (σ ⊗ σ)(∆(σ(u))).
+Now apply the antiautomorphism σ ⊗ σ to the equality ∆(σ(u))Θ = Θ∆(σ(u))
+to get that (σ ⊗ σ)(Θ)∆(u) = ∆(u)(σ ⊗ σ)(Θ). Hence, (σ ⊗ σ)(Θ) = Θ by the
+uniqueness in Lemma 2.16.
+   (iii) Combine (i) and (ii).
+   (iv) Follows easily from the uniqueness and Lemma 2.5.              
+                         CHARACTER FORMULAE FOR q(n)                                7
+
+
+   Let Tcn denote the completion of the vector space T n with respect to the
+descending filtration (Tdn )d∈Z , where Tdn is the subspace of T n spanned by
+                         P
+{Nλ } for λ ∈ Zn with ni=1 iλi ≥ d. We embed T n into T       cn in the natural
+way. Note that T  cn contains all vectors of the form Nλ + (∗) where (∗) is an
+infinite linear combination of Nµ ’s with µ ≺ λ. The action of U on T n extends
+by continuity to Tcn , as does the map ω : T n → T n .
+   Now we are ready to inductively define the bar involution on T     cn . It will
+turn out to satisfy the following properties:
+    (1) − : Tcn → Tcn is a continuous, antilinear involution;
+    (2) xv = x v for all x ∈ U , v ∈ T cn ;
+                    P                                   P
+    (3) Nλ ∈ Nλ + c    µ≺λ Z[q, q −1 ]Nµ and Mλ ∈ Mλ + c      Z[q, q −1 ]Mµ for all
+                                                             µ≺λ
+        λ ∈ Zn ;
+                                cn .
+    (4) ω(v) = ω(v) for all v ∈ T
+If n = 1, the bar involution is defined by setting va = va for each a ∈ Z, then
+extending by continuity. The properties (1)–(4) in this case are easy to check
+directly. Now suppose that n > 1, write n = n1 + n2 for some n1 , n2 ≥ 1,
+and assume we have already constructed bar involutions on T      cn1 and T c n2
+                                                                  c n
+satisfying properties (1)–(4). Because of the way the completion T is defined,
+multiplication by Θ gives a linear map
+                                   c n1 ⊗ T
+                           Θn ,n : T      c n2 → Tcn .                   (2.18)
+                              1   2
+
+Given v ∈ T n1 , w ∈ T n2 , let v ⊗ w := Θn1 ,n2 (v ⊗ w), defining an antilinear
+map − : T n → T cn . The explicit form of Θ from Lemma 2.16 combined with
+the inductive hypothesis implies that
+Nλ = Nλ + (a possibly infinite Q(q)-linear combination of Nµ ’s with µ ≺ λ),
+Mλ = Mλ + (a possibly infinite Q(q)-linear combination of Mµ ’s with µ ≺ λ).
+Each Θν belongs to UZ[q,q−1 ] ⊗Z[q,q−1 ] UZ[q,q−1] by Lemma 2.16, and UZ[q,q−1]
+                                   cn generated by either the Nλ ’s or the Mλ ’s
+leaves the Z[q, q −1 ]-lattices in T
+invariant. Hence, the coefficients actually all lie in Z[q, q −1 ], so property (3)
+holds. Now property (3) immediately implies that bar is continuous, so it
+extends uniquely to a continuous antilinear map − : T   cn → T    cn still satisfying
+(3). The argument in [L2, Lemma 24.1.2] shows that property (2) is satisfied.
+Lemma 2.17(i) gives that bar is an involution, whence property (1) holds, while
+property (4) follows from Lemma 2.17(iv). Note finally that as in [L2, §27.3.6],
+the definition is independent of the initial choices of n1 , n2 .
+                                    c2 is uniquely determined by the fol-
+Example 2.19. The bar involution on T
+lowing formulae.
+         va ⊗ vb = va ⊗ vb                              (a ≤ b, a + b 6= 0)
+         va ⊗ vb = va ⊗ vb + (q 2 − q −2 )vb ⊗ va       (a > b, a + b 6= 0)
+8                                  JONATHAN BRUNDAN
+                             X
+     v0 ⊗ v0 = v0 ⊗ v0 +      (q + q −1 )(q 2 − q −2 )(−q 2 )b+1 vb ⊗ v−b
+                             b<0
+                               X
+    v−a ⊗ va = v−a ⊗ va +       (q 2 − q −2 )(−q 2 )a+1−b v−b ⊗ vb             (a ≥ 1)
+                               b>a
+    va ⊗ v−a = va ⊗ v−a + q (q − q −2 )v−a ⊗ va
+                                2 2
+                                                                               (a ≥ 1)
+                    X
+                 +      (q 2 − q −2 )(−q 2 )b+1−a vb ⊗ v−b
+                     0<b<a
+                   + (q − q −1 )(−q 2 )1−a v0 ⊗ v0
+                     X
+                   +     q 2 (q 2 − q −2 )(−q 2 )b+1−a vb ⊗ v−b
+                     b<0
+
+                                                   cn , we can define a new
+   Now that the bar involution has been defined on T
+                        c n
+bilinear form h., .i on T by setting
+                                    hu, vi = (u, σ(v))                              (2.20)
+               cn , where (., .) and σ are as in Lemma 2.11. Note this makes sense
+for all u, v ∈ T
+even though the map σ and the form (., .) are not defined on the completion.
+Lemma 2.21. h., .i is a symmetric bilinear form with hxu, vi = hu, σ(x)vi for
+                   cn .
+all x ∈ U , u, v ∈ T
+Proof. For the second part of the lemma, we calculate using Lemma 2.11 to get
+that
+           hxu, vi = (xu, σ(v)) = (u, τ (x)σ(v)) = (u, τ (σ(σ(x)))σ(v))
+                   = (u, σ(σ(x)v)) = (u, σ(σ(x)v)) = hu, σ(x)vi.
+Now let us show by induction on n that h., .i is a symmetric bilinear form, this
+being obvious in case n = 1. For n > 1, write P n = n1 + n2 for n1 , n2 ≥ 1. Take
+u1 ⊗ u2 , v1 ⊗ v2 ∈ T n1 ⊗ T n2 . Write Θ = i∈I xi ⊗ yi ∈ (U ⊗ U )∧ . Recall by
+Lemma 2.17(iii) that
+                          X                    X
+                             σ(xi ) ⊗ σ(yi ) =   xi ⊗ y i .
+                             i∈I                  i∈I
+Combining this with the inductive hypothesis, we calculate from the definition
+of the bar involution on T cn :
+                                                           X
+hu1 ⊗ u2 , v1 ⊗ v2 i = (u1 ⊗ u2 , σ(Θn1 ,n2 (v1 ⊗ v2 ))) =  (u1 ⊗ u2 , σ(xi v1 ⊗ yi v2 ))
+                                                            i∈I
+                      X                                   X
+                    =  (u1 , σ(xi v1 ))(u2 , σ(yi v2 )) =  hu1 , xi v1 ihu2 , yi v2 i
+                       i∈I                                 i∈I
+                      X                             X
+                    =  hxi v1 , u1 ihyi v2 , u2 i =  hv1 , σ(xi )u1 ihv2 , σ(yi )u2 i
+                       i∈I                          i∈I
+                      X
+                    =  hv1 , xi u1 ihv2 , yi u2 i = hv1 ⊗ v2 , u1 ⊗ u2 i.
+                       i∈I
+Hence h., .i is symmetric.                                                               
+                              CHARACTER FORMULAE FOR q(n)                                      9
+
+
+§2-e. Canonical basis of T  cn . Now that we have constructed the bar in-
+            cn satisfying the properties (1)–(4) above, we get the following
+volution on T
+theorem by general principles, cf. the proof of [B1, Theorem 2.17].
+Theorem 2.22. There exist unique topological bases {Tλ }λ∈Zn and {Lλ }λ∈Zn
+    cn such that
+for T
+     (i) Tλ = Tλ and Lλ = Lλ ;
+                   P                              P
+    (ii) Tλ ∈ Nλ + cµ∈Zn qZ[q]Nµ and Lλ ∈ Mλ + cµ∈Zn q −1 Z[q −1 ]Mµ ,
+                                                        P
+for all λ ∈ Zn . Actually, we have that Tλ ∈ Nλ + c µ≺λ qZ[q]Nµ and that
+             P
+Lλ ∈ Mλ + cµ≺λ q −1 Z[q −1 ]Mµ . Also, ω(Tλ ) = T−w0 λ and ω(Lλ ) = L−w0 λ .
+Example 2.23. Suppose that n = 2. Using Example 2.19, one checks:
+   T(a,b) = N(a,b)                                                       (a ≤ b, a + b 6= 0)
+                      2
+   T(a,b) = N(a,b) + q N(b,a)                                            (a > b, a + b 6= 0)
+                          2
+ T(−a,a) = N(−a,a) + q N(−a−1,a+1)                                                  (a ≥ 1)
+                          2                                   4
+ T(a,−a) = N(a,−a) + q (N(a−1,1−a) + N(1−a,a−1) ) + q N(−a,a)                       (a ≥ 2)
+                               3
+   T(0,0) = N(0,0) + (q + q )N(−1,1)
+ T(1,−1) = N(1,−1) + qN(0,0) + q 4 N(−1,1)
+Note in this example that each Tλ is a finite sum of Nµ ’s. I conjecture that this
+is true in general. On the other hand, the Lλ ’s need not be finite sums of Mµ ’s
+even for n = 2.
+                                                                 cn and {Lλ }λ∈Zn
+  We call the topological basis {Tλ }λ∈Zn the canonical basis of T
+the dual canonical basis. Let us introduce notation for the coefficients: let
+                       X                          X
+                Tλ =       tµ,λ (q)Nµ ,    Lλ =       lµ,λ (q)Mµ            (2.24)
+                          µ∈Zn                           µ∈Zn
+
+for polynomials tµ,λ (q) ∈ Z[q] and lµ,λ (q) ∈ Z[q −1 ]. We know that tµ,λ (q) =
+lµ,λ (q) = 0 unless µ  λ, and that tλ,λ (q) = lλ,λ (q) = 1.
+Lemma 2.25. For λ, µ ∈ Zn , hLλ , T−µ i = δλ,µ .
+Proof. A calculation using the definition of h., .i shows that
+                                   X
+                     hLλ , T−µ i =      lν,λ (q)t−ν,−µ (q −1 ),                       (2.26)
+                                       µνλ
+                                        X
+                       hT−µ , Lλ i =           lν,λ (q −1 )t−ν,−µ (q).                (2.27)
+                                       µνλ
+
+Hence, hLλ , T−µ i equals 1 if λ = µ and belongs to q −1 Z[q −1 ] if λ 6= µ. Similarly,
+hT−µ , Lλ i equals 1 if λ = µ and belongs to qZ[q] if λ 6= µ. But hLλ , T−µ i =
+hT−µ , Lλ i by Lemma 2.21.                                                           
+                                       P
+Corollary 2.28. For λ ∈ Zn , Mλ = µ∈Zn t−λ,−µ (q −1 )Lµ .
+10                                       JONATHAN BRUNDAN
+                                                P
+Proof. By Lemma 2.25, we can write Mλ = µ∈Zn hMλ , T−µ iLµ . Now a calcula-
+tion from the definition of the form h., .i gives that hMλ , T−µ i = t−λ,−µ(q −1 ). 
+Example 2.29. Suppose that n = 2. Using Example 2.23, one checks:
+     M(a,b) = L(a,b)                                                    (a ≤ b, a + b 6= 0)
+                           −2
+     M(a,b) = L(a,b) + q        L(b,a)                                  (a > b, a + b 6= 0)
+                            −2
+M(−a,a) = L(−a,a) + q            L(−a−1,a+1)                                       (a ≥ 1)
+M(a,−a) = L(a,−a) + q −2 (L(a−1,1−a) + L(−a−1,a+1) ) + q −4 L(−a,a)                (a ≥ 2)
+                           −1
+     M(0,0) = L(0,0) + q        L(−1,1)
+M(1,−1) = L(1,−1) + (q −1 + q −3 )L(0,0) + q −2 L(−2,2) + q −4 L(−1,1)
+I conjecture for arbitrary n that each Mλ is always a finite linear combination
+of Lµ ’s.
+
+§2-f. Crystal structure. Now we describe the crystal structure underlying the
+module T n . The basic reference followed here is [Ka2]. Let A be the subring
+of Q(q) consisting of rational functions having no pole at q = 0. Evaluation at
+q = 0 induces an isomorphism A /qA → Q.
+   Let VA be the A -lattice in V spanned by the va ’s. Then, VA together with
+the basis of the Q-vector space VA /qVA given by the images of the va ’s is a
+lower crystal base for V at q = 0 in the sense of [Ka2, 4.1]. Write Ẽi , F̃i for the
+corresponding crystal operators. Rather than view these as operators on the
+crystal base {va + qVA }a∈Z , we will view them simply as operators on the set
+Z parameterizing the crystal base. Then, the crystal graph is as follows:
+                         2  F̃ 1     0    F̃
+                                          0    F̃
+                                               1    2F̃     F̃    F̃
+            . . . −→ −3 −→ −2 −→ −1 −→ 0 −→ 1 −→ 2 −→ 3 −→ . . . .
+Thus, F̃i (a) equals a + 1 if a = i or a = −i − 1, ∅ otherwise, and Ẽi (a) equals
+a − 1 if a = i + 1 or a = −i, ∅ otherwise. The maps εi , ϕi : Z → N defined by
+        εi (a) = max{k ≥ 0 | Ẽik a 6= ∅},          ϕi (a) = max{k ≥ 0 | F̃ik a 6= ∅}
+only ever take the values 0, 1 or 2 (the last possibility occurring only if i = 0).
+   Since T n is a tensor product of n copies of V , it has an induced crystal struc-
+ture. The crystal lattice is TAn , namely, the A -span of the basis {Nλ }λ∈Zn , and
+the images of the Nλ ’s in TAn /qTAn give the crystal base. Like in the previous
+paragraph, we will view the crystal operators as maps on the underlying set Zn
+parametrizing the crystal base. However, we will denote them by Ẽi′ , F̃i′ , since
+we want to reserve the unprimed symbols for something else later on. In order
+to describe them explicitly, we introduce a little more combinatorial notation.
+Given λ ∈ Zn and i ≥ 0, let (σ1 , . . . , σn ) be the i-signature of λ, namely, the
+                           CHARACTER FORMULAE FOR q(n)                                   11
+
+sequence defined by
+                        
+                        
+                         +         if i 6= 0 and   λr = i or −i − 1,
+                        
+                        
+                        
+                         −         if i 6= 0 and   λi = i + 1 or −i,
+                        
+                          ++        if i = 0 and    λr = −1,
+                   σr =                                                              (2.30)
+                        
+                         −+        if i = 0 and    λr = 0,
+                        
+                        
+                        
+                         −−        if i = 0 and    λr = 1,
+                        
+                          0         otherwise.
+Form the reduced i-signature by successively replacing subwords of (σ1 , . . . , σn )
+of the form +− (possibly separated by 0’s in between) with 0’s until we are left
+with a sequence of the form (σ̃1 , . . . , σ̃n ) in which no − appears after a +. For
+r = 1, . . . , n, let δr be the n-tuple with a 1 in the rth position and 0’s elsewhere.
+Then,
+                   
+         ′             ∅       if there are no −’s in the reduced i-signature,
+      Ẽi (λ) =
+                       λ − δr otherwise, where the rightmost − occurs in σ̃r ,
+                   
+                      ∅        if there are no +’s in the reduced i-signature,
+      F̃i′ (λ) =
+                      λ + δr otherwise, where the leftmost + occurs in σ̃r ,
+       ε′i (λ) = the total number of −’s in the reduced i-signature,
+      ϕ′i (λ) = the total number of +’s in the reduced i-signature.
+We have now described the crystal (Zn , Ẽi′ , F̃i′ , ε′i , ϕ′i , wt) associated to the mod-
+ule T n purely combinatorially.
+Example 2.31. Consider λ = (1, 2, 0, −3, −2, −1, 0, 1) ∈ Z8 . The 1-signature
+is (+, −, 0, 0, +, −, 0, +). Hence the reduced 1-signature is (0, 0, 0, 0, 0, 0, 0, +),
+so we get that Ẽ1′ λ = ∅ and F̃1′ λ = λ + δ8 . On the other hand, the 0-signature
+is (−−, 0, −+, 0, 0, ++, −+, −−), which reduces to (−−, 0, −+, 0, 0, 0, 0, 0), so
+Ẽ0′ λ = λ − δ3 , F̃0′ λ = λ + δ3 .
+  The following lemma is a general property of canonical bases/lower global
+crystal bases. It follows ultimately from [Ka1, Proposition 5.3.1]. See [B1,
+Theorem 2.31] for a similar situation.
+Lemma 2.32. Let λ ∈ Zn and i ≥ 0.
+                                         P                              1−ϕ′ (µ)
+   (i) Ei Tλ = [ϕ′i (λ) + 1]i TẼ ′ (λ) + µ∈Zn uiµ,λ Tµ where uiµ,λ ∈ qqi i Z[q] is
+                                  i
+       zero unless ε′j (µ) ≥ ε′j (λ) for all j ≥ 0.
+                                         P                              1−ε′ (µ)
+                                                i T where v i
+  (ii) Fi Tλ = [ε′i (λ) + 1]i TF̃ ′ (λ) + µ∈Zn vµ,λ   µ        µ,λ  ∈ qqi i Z[q] is
+                                 i
+       zero unless ϕ′j (µ) ≥ ϕ′j (λ) for all j ≥ 0.
+(In (i) resp. (ii), the first term on the right hand side should be omitted if Ẽi′ (λ)
+resp. F̃i′ (λ) is ∅.)
+   Motivated by Lemmas 2.21 and 2.25, we also introduce the dual crystal op-
+erators defined by
+                     Ẽi∗ (λ) = −F̃i′ (−λ),     F̃i∗ (λ) = −Ẽi′ (−λ),               (2.33)
+                        ε∗i (λ) = ϕ′i (−λ),     ϕ∗i (λ) = ε′i (−λ).                  (2.34)
+12                                 JONATHAN BRUNDAN
+
+These can be described explicitly in a similar way to the above: for fixed i ≥ 0
+and λ ∈ Zn , let (σ1 , . . . , σn ) be the i-signature of λ defined according to (2.30).
+First, replace all σr that equal −+ with +−. Now form the dual reduced i-
+signature (σ̃1 , . . . , σ̃n ) from this by repeatedly replacing subwords of (σ1 , . . . , σn )
+of the form −+ (possibly separated by 0’s) by 0’s, until no + appears after a
+−. Finally,
+                
+       ∗           0             if there are no −’s in the dual reduced i-signature,
+    Ẽi (λ) =
+                   λ − δr otherwise, where the leftmost − occurs in σ̃r ,
+                
+                   0             if there are no +’s in the dual reduced a-signature,
+    F̃i∗ (f ) =
+                   λ + δr otherwise, where the rightmost + occurs in σ̃r ,
+      ε∗i (λ) = the total number of −’s in the dual reduced i-signature,
+      ϕ∗i (λ) = the total number of +’s in the dual reduced i-signature.
+In this way, we obtain the dual crystal structure (Zn , Ẽi∗ , F̃i∗ , ε∗i , ϕ∗i , wt).
+Lemma 2.35. Let λ ∈ Zn and i ≥ 0.
+                                     P                               1−ε∗i (λ)
+   (i) Ei Lλ = [ε∗i (λ)]i LẼ ∗ (λ) + µ∈Zn wµ,λi L where wi
+                                                    µ       µ,λ ∈ qq i         Z[q] is
+                             i
+                      ∗           ∗
+       zero unless ϕj (µ) ≤ ϕj (λ) for all j ≥ 0.
+                                     P                              1−ϕ∗ (λ)
+  (ii) Fi Lλ = [ϕ∗i (λ)]i LF̃ ∗ (λ) + µ∈Zn xiµ,λ Lµ where xiµ,λ ∈ qqi i Z[q] is
+                              i
+       zero unless ε∗j (µ) ≤ ε∗j (λ) for all j ≥ 0.
+Proof. Dualize Lemma 2.32 using Lemmas 2.21 and 2.25.                                       
+Remark 2.36. (i) Suppose we are given εi , ϕi ∈ N for all i ≥ 0. One can show
+from the combinatorial description of the maps ε∗i , ϕ∗i above that there exist
+only finitely many λ ∈ Zn with ε∗i (λ) = εi and ϕ∗i (λ) = ϕi for all i ≥ 0.
+   (ii) Using (i), one deduces easily that all but finitely many terms of the sums
+occurring in Lemma 2.35 are zero, i.e. both Ei Lλ and Fi Lλ are finite Z[q, q −1 ]-
+linear combinations of Lµ ’s. We will not make us of this observation in the
+remainder of the article.
+   (iii) If the finiteness conjecture made in Example 2.23 holds, then it is also
+the case that all but finitely many terms of the sums occurring in Lemma 2.32
+are zero, i.e. both Ei Tλ and Fi Tλ are finite Z[q, q −1 ]-linear combinations of
+Tµ ’s, cf. the argument in the last paragraph of the proof of Lemma 3.30 below.
+
+                                 3. Exterior algebra
+
+§3-a. Exterior powers. Define K to be the two-sided ideal of the tensor
+algebra T generated by the vectors
+     va ⊗ va                                                               (a 6= 0)
+     va ⊗ vb + q 2 vb ⊗ va                                      (a > b, a + b 6= 0)
+     va ⊗ v−a + q 2 (va−1 ⊗ v1−a + v1−a ⊗ va−1 ) + q 4 v−a ⊗ va            (a ≥ 2)
+     v1 ⊗ v−1 + qv0 ⊗ v0 + q 4 v−1 ⊗ v1 ,
+for all admissible a, b ∈ Z. These relations are a limiting case of the relations
+in [JMO, Proposition 2.3] (with q replaced by q 2 ), hence K is invariant under
+                          CHARACTER FORMULAE FOR q(n)                                13
+                                                      L
+the action of U . Let F := T /K . Since K = n≥0 K n is a homogeneous
+                                          L
+ideal of T , F is also graded as F = n≥0 F n , where F n = T n /K n . We
+                                                                        V
+view the space F n as a quantum analogue of the exterior power n V in type
+b∞ . As usual, we will write u1 ∧ · · · ∧ un for the image of u1 ⊗ · · · ⊗ un ∈ T n
+under the quotient map π : T n → F n .
+   As in the introduction, let Zn+ denote the set of all tuples λ ∈ Zn such that
+λr > λr+1 if λr 6= 0, λr ≥ λr+1 if λr = 0, for each r = 1, . . . , n − 1. For λ ∈ Zn+ ,
+let
+                      Fλ = π(Nw0 λ ) = vλn ∧ · · · ∧ vλ1 ∈ F n .                 (3.1)
+The following lemma follows from the defining relations for K .       n
+
+Lemma 3.2. For λ ∈ Zn , π(Nw0 λ ) equals Fλ if λ ∈ Z+   n , otherwise π(Nw0 λ ) is
+a qZ[q]-linear combination of Fµ ’s for µ ∈ Zn+ with µ  λ.
+  This shows that the elements {Fλ }λ∈Zn+ span F n . In fact, one can check
+routinely using Bergman’s diamond lemma [Bg, 1.2] that:
+Lemma 3.3. The vectors {Fλ }λ∈Zn+ give a basis for F n .
+       c n be the closure of K n in T
+   Let K                            cn and F cn := Tcn /Kc n , giving a completion
+                                                                              cn .
+of the vector space F n . The vectors {Fλ }λ∈Zn+ give a topological basis for F
+Note that σ : T n → T n leaves K n invariant, hence induces σ : F n → F n .
+Similarly the continuous automorphism ω : T   cn → T cn leaves K  c n invariant, so
+            cn → F
+induces ω : F      cn with ω(Fλ ) = F−w λ .
+                                           0
+
+§3-b. Canonical basis of F cn. Now we construct the canonical basis of F
+                                                                       cn .
+To start with, we need a bar involution.
+Lemma 3.4. The bar involution on T   cn leaves K
+                                               c n invariant, hence induces a
+                                     cn → F
+continuous antilinear involution − : F     cn such that
+   (1) xv = x v for                 cn ;
+                  Pall x ∈ U −1,v ∈ F
+   (2) Fλ ∈ Fλ + µ≻λ Z[q, q ]Fµ for all λ ∈ Zn+ ;
+   (3) ω(v) = ω(v) for all v ∈ Fcn .
+
+Proof. In the case n = 2, all the generators of K 2 are bar invariant by Exam-
+ple 2.23, hence K 2 is bar invariant. In general, K n is spanned by vectors of
+the form v ⊗ k ⊗ w for v ∈ T n1 , k ∈ K 2 , w ∈ T n2 and some n1 , n2 ≥ 0 with
+n1 + n2 + 2 = n. By the definition of the bar involution,
+                     v ⊗ k ⊗ w = Θn1 +2,n2 (v ⊗ Θ2,n2 (k ⊗ w)).
+We have already shown that k ∈ K 2 , and K 2 is U -invariant, hence this
+belongs to K c n . This shows that K n ⊂ K     c n , hence K
+                                                           c n itself is bar invariant
+by continuity. Now properties (1) and (3) are immediate from the analogous
+properties of the bar involution on T  cn . For property (2), take λ ∈ Zn . We know
+                                                                          +
+Nw0 λ equals Nw0 λ plus a Z[q, q −1 ]-linear combination of Nw0 µ ’s with w0 µ ≺ w0 λ,
+or equivalently, µ ≻ λ. By Lemma 3.2, π(Nw0 µ ) is a Z[q, q −1 ]-linear combination
+of Fν ’s with ν  µ. Hence (2) holds.                                               
+14                               JONATHAN BRUNDAN
+
+   We get the following theorem by general principles, just as in Theorem 2.22
+before.
+Theorem 3.5. There exists a unique topological basis {Uλ }λ∈Zn+ for F cn such
+                             P
+that Uλ = Uλ and Uλ ∈ Fλ + cµ∈Zn qZ[q]Fµ , for all λ ∈ Zn+ . Actually, we have
+                                    +
+                P
+that Uλ ∈ Fλ + c      qZ[q]Fµ . Also, ω(Uλ ) = U−w λ .
+                    µ≻λ                              0
+
+Example 3.6. For n = 2, one deduces from Example 2.23 and Lemma 3.8
+below that:
+             U(a,b) = F(a,b)                             (a > b, a + b 6= 0)
+                                  2
+            U(a,−a) = F(a,−a) + q F(a+1,−a−1)                       (a ≥ 1)
+             U(0,0) = F(0,0) + (q + q 3 )F(1,−1)
+                                                                     cn . Write
+     We call the topological basis {Uλ }λ∈Zn+ the canonical basis of F
+                                      X
+                                Uλ =       uµ,λ (q)Fµ                         (3.7)
+                                         µ∈Zn
+                                            +
+
+for polynomials uµ,λ (q) ∈ Z[q]. We know that uµ,λ (q) = 0 unless µ  λ, and
+that uλ,λ (q) = 1. The following lemma explains the relationship between Uλ
+                                      cn constructed earlier.
+and the canonical basis element Tλ of T
+Lemma 3.8. For λ ∈ Zn , we have that
+                                
+                                  Uλ if λ ∈ Zn+ ,
+                    π(Tw0 λ ) =
+                                  0       / Zn+ .
+                                     if λ ∈
+Proof. Suppose first that λ ∈ Zn+ . We know that Tw0 λ equals Nw0 λ plus a qZ[q]-
+linear combination of Nw0 µ ’s with µ ≻ λ. Moreover, by Lemma 3.2, π(Nw0 µ ) is
+a Z[q]-linear combination of Fν ’s with ν  µ. Hence,
+         π(Tw0 λ ) = Fλ + (a qZ[q]-linear combination of Fµ ’s with µ ≻ λ).
+Since it is automatically bar invariant, it must equal Uλ by the uniqueness in
+Theorem 3.5. An entirely similar argument in case λ ∈  / Zn+ shows that
+            π(Tw0 λ ) = (a qZ[q]-linear combination of Fµ ’s with µ ≻ λ)
+                     = (a qZ[q]-linear combination of Uµ ’s with µ ≻ λ).
+Since it is bar invariant, it must be zero.                                        
+Corollary 3.9. The vectors {Tw0 λ }λ∈Z
+                                    / n
+                                                                     c n.
+                                        form a topological basis for K
+                                      +
+
+
+§3-c. Dual canonical basis. For λ ∈ Zn+ , define
+                            X
+                     Eλ =       u−w0 λ,−w0 µ (q −1 )Lµ .                       (3.10)
+                                  µ∈Zn
+                                     +
+
+
+Let E n be the subspace of T cn spanned by the {Eλ }λ∈Zn . Since there are only
+                                                           +
+                     n
+finitely many µ ∈ Z+ with µ  λ, we see that Eλ is a finite linear combination
+of Lµ ’s, and vice versa. So the vectors {Lλ }λ∈Zn+ also form a basis for E n .
+                             CHARACTER FORMULAE FOR q(n)                                       15
+
+Example 3.11. For n = 2, we have by Example 3.6 that:
+           E(a,b) = L(a,b)                                      (a > b, a + b 6= 0)
+         E(a,−a) = L(a,−a) + q −2 L(a−1,−a+1)                               (a ≥ 2)
+                                  −1        −3
+         E(1,−1) = L(1,−1) + (q        +q        )L(0,0)
+          E(0,0) = L(0,0)
+   Let Eb n be the closure of E n in T
+                                     cn . By Corollary 3.9 and Lemma 2.25, Eb n
+and Kc are orthogonal with respect to the bilinear form h., .i. Hence we get
+         n
+
+induced a well-defined pairing h., .i between Eb n and F
+                                                       cn . By Lemmas 3.8 and
+2.25, we have that
+                                hL−w0 λ , Uµ i = δλ,µ                   (3.12)
+for all λ, µ ∈ Zn+ .
+Lemma 3.13. Eb n is a U -submodule of T
+                                      cn .
+Proof. It suffices to show that                               bn                n
+                             P Ei Lλ and Fi Lλ both belong to E for each λ ∈ Z+
+and i ≥ 0. Write Ei Lλ = µ∈Zm bµ,λ (q)Lµ . Apply h., T−µ i to both sides and
+use Lemma 2.25 to get bµ,λ (q) = hLλ , Ei T−µ i. For µ ∈ / Zn+ , T−µ belongs to
+c n . But K
+K           c n is U -invariant, hence Ei T−µ belongs to K c n . So we get that
+bµ,λ (q) = 0 for all µ ∈/ Zn+ by Corollary 3.9. Hence Ei Lλ belongs to Eb n still,
+and similarly for Fi Lλ .                                                      
+  The bilinear form (., .) on T n also induces a pairing (., .) between E n and
+F n , actually by (2.20) we have that
+                                    (u, v) = hu, σ(v)i                                  (3.14)
+for each u ∈ E n , v ∈ F n .
+Lemma 3.15. For all λ, µ ∈ Zn+ , we have that (Eλ , Nµ ) = q z(λ) δλ,µ .
+               P                    P
+Proof. Let Fµ = γ∈Zn vγ,µ (q)Uγ , so γ∈Zn uµ,γ (q)vγ,ν (q) = δµ,ν . Now calcu-
+                   +                      +
+late:
+   (E−w0 λ , N−w0 µ ) = hE−w0 λ , σ(N−w0 µ )i
+                      = q z(µ) hE−w0 λ , Nw0 µ i = q z(µ) hE−w0 λ , Fµ i
+                                X
+                      = q z(µ)        uλ,ν (q −1 )vγ,µ (q −1 )hL−w0 ν , Uγ i = q z(µ) δλ,µ .
+                               ν,γ∈Zn
+                                    +
+
+                                                                                               
+  Now we get the following characterization of the basis {Lλ }λ∈Zn+ in terms of
+the restriction of the bar involution to Eb n .
+Theorem 3.16. For λ ∈ Zn+ , Lλ is the unique element of Eb n such that Lλ = Lλ
+              P
+and Lλ ∈ Eλ + cµ∈Zn q −1 Z[q −1 ]Eµ . Moreover,
+                  +
+                                    X
+                            Lλ =        lµ,λ (q)Eµ ,                     (3.17)
+                                         µ∈Zn
+                                            +
+16                                   JONATHAN BRUNDAN
+
+where lµ,λ (q) is as in (2.24).
+Proof. For each µ P  ∈ Zn+ , (Lλ , Nµ ) = q z(µ) lµ,λ (q). Now apply
+                                                                P Lemma      3.15 to
+deduce that Lλ = µ∈Zn lµ,λ (q)Eµ . Finally, if Lλ ∈ Eλ + µ∈Zn q Z[q −1 ]Eµ
+                                                         ′               −1
+                            +                                         +
+
+is another bar invariant element of Eb n , then Lλ − L′λ is bar invariant and can be
+expressed as a q −1 Z[q −1 ]-linear combination of Lν ’s. Hence it must be zero. 
+  To state the next lemma, we define polynomials aλ,µ (q) ∈ Z[q] for each
+λ ∈ Zn+ , µ ∈ Zn by
+                                   X
+                       π(Nw0 µ ) =    aλ,µ (q)Fλ .                  (3.18)
+                                             λ∈Zn
+                                                +
+
+Recalling Lemma 3.2, we have that aλ,µ (q) = 0 unless λ  µ.
+                                      P
+Lemma 3.19. For each λ ∈ Zn+ , Eλ = µ∈Zn a−w0 λ,−w0 µ (q −1 )Mµ .
+Proof. Applying the antilinear map σ to (3.18) gives that
+                          X
+               π(Nµ ) =       q z(µ)−z(λ) a−w0 λ,−w0µ (q −1 )π(Nλ )
+                               λ∈Zn
+                                  +
+
+for each µ ∈ Zn . Hence, invoking Lemma 3.15, (Eλ , Nµ ) = q z(µ) a−w0 λ,−w0 µ (q −1 )
+for each µ ∈ Zn . The lemma follows.                                               
+   Finally in this subsection, we describe the action of U on the basis {Eλ }λ∈Zn+
+of E n explicitly. In particular, this shows that E n itself is a U -submodule of
+cn , as could also be proved using Lemma 3.13 and Remark 2.36(ii).
+T
+Lemma 3.20. Let λ ∈ Zn+ and i ≥ 0, and let (σ1 , . . . , σn ) be the i-signature of
+λ defined according to (2.30). Then,
+                                               X
+              Ei Eλ = q −(αi ,ελr+1 +···+ελn )      cλ,r (q)Eλ−δr ,
+                                                  r with λ−δr ∈Zn
+                                                                +,
+                                                  σr =−,−+ or −−
+                                                         X
+               Fi Eλ = q (αi ,ελ1 +···+ελr−1 )                       cλ,r (q)Eλ+δr ,
+                                                  r with λ+δr ∈Zn
+                                                                +,
+                                                  σr =+,−+ or ++
+                                    Pz(λ)
+where cλ,r (q) =       (q + q −1 )     s=0 (−q
+                                                 −2 )s   if σr = −− or ++,
+                       1                                 otherwise.
+Proof. We sketch
+             P the proof for Ei . By Lemmas 3.13, 3.15 and 2.11(ii), we may
+write Ei Eλ = µ∈Zn cµ,λ (q)Eµ where
+                        +
+
+             cµ,λ (q) = q −z(µ) (Ei Eλ , Nµ ) = q −z(µ) (Eλ , qi Fi Ki−1 Nµ ).
+The right hand side is computed using Lemma 3.15 and the fact that Eλ is
+orthogonal to K n .                                                   
+
+§3-d. Crystal structure. The crystal structure underlying the canonical basis
+              cn is easily deduced from the results of §2-f and Lemma 3.8. Let
+{Uλ }λ∈Zn+ of F
+                                 CHARACTER FORMULAE FOR q(n)                                                17
+
+us denote the resulting crystal operators on the index set Zn+ parameterizing
+             cn by Ẽi , F̃i , εi , ϕi . By definition,
+the bases of F
+                       Ẽi (λ) = w0 Ẽi′ (w0 λ),             F̃i (λ) = w0 F̃i′ (w0 λ),                 (3.21)
+                             εi (λ) = ε′i (w0 λ),            ϕi (λ) = ϕ′i (w0 λ),                      (3.22)
+where Ẽi′ , F̃i′ , ε′i and ϕ′i are as in §2-f. By properties of the automorphism ω (or
+by directly checking all of the cases listed below), the operators Ẽi , F̃i , εi , ϕi are
+the same as the restrictions to Zn+ of the dual crystal operators Ẽi∗ , F̃i∗ , ε∗i , ϕ∗i
+defined in §2-f, so we will not need the latter notation again.
+   In fact, there are now so few possibilities that we can describe the crystal
+graph explicitly. First suppose that i = 0. Then the possible i-strings in the
+crystal graph are as follows:
+    (1) (· · · );
+                                   F̃                            F̃
+    (2) (· · · , 0r , −1, · · · ) −→0
+                                      (· · · , 0r+1 , · · · ) −→
+                                                               0
+                                                                 (· · · , 1, 0r , · · · );
+                      r
+    (3) (· · · , 1, 0 , −1, · · · ).
+Here, · · · denotes some fixed entries different from 1, 0, −1 and r ≥ 0. Similarly
+for i > 0, the possible i-strings in the crystal are as follows:
+    (1) (· · · );
+                            F̃
+                             i
+    (2) (· · · , i, · · · ) −→ (· · · , i + 1, · · · );
+                                  i F̃
+    (3) (· · · , −i − 1, · · · ) −→ (· · · , −i, · · · );
+                                             F̃
+                                             i
+    (4) (· · · , i, · · · , −i − 1, · · · ) −→ (· · · , i, · · · , −i, · · · )
+                                                                       F̃
+                                                                       i
+                                                                      −→ (· · · , i + 1, · · · , −i, · · · );
+    (5) (· · · , i + 1, · · · , −i − 1, · · · );
+    (6) (· · · , −i, −i − 1, · · · );
+    (7) (· · · , i + 1, i, · · · );
+                                                    i   F̃
+    (8) (· · · , i + 1, i, · · · , −i − 1, · · · ) −→ (· · · , i + 1, i, · · · , −i, · · · );
+                                                i  F̃
+   (9) (· · · , i, · · · , −i, −i − 1, · · · ) −→   (· · · , i + 1, · · · , −i, −i − 1, · · · );
+  (10) (· · · , i + 1, i, · · · , −i, −i − 1, · · · ),
+where again · · · denotes fixed entries different from i, i + 1, −i, −i − 1. A crucial
+observation deduced from this analysis is that all i-strings are of length ≤ 2.
+Lemma 3.23. Let λ ∈ Zn+ and i ≥ 0.
+                                    P         i L where wi             1−εi (λ)
+   (i) Ei Lλ = [εi (λ)]i LẼi (λ) + µ∈Zn wµ,λ     µ           µ,λ ∈ qqi         Z[q] is
+                                         +
+       zero unless ϕj (µ) ≤ ϕj (λ) for all j ≥ 0.
+                                   P                              1−ϕ (λ)
+  (ii) Fi Lλ = [ϕi (λ)]i LF̃i (λ) + µ∈Zn xiµ,λ Lµ where xiµ,λ ∈ qqi i Z[q] is zero
+                                       +
+       unless εj (µ) ≤ εj (λ) for all j ≥ 0.
+Proof. This is a special case of Lemma 2.35, since Ẽi = Ẽi∗ , F̃i = F̃i∗ , . . . .                        
+Lemma 3.24. Let λ ∈              Zn+     and i ≥ 0.
+18                               JONATHAN BRUNDAN
+
+                                          P       i U where y i      1−ϕi (µ)
+      (i) Ei Uλ = [ϕi (λ) + 1]i UẼi (λ) + µ∈Zn yµ,λ µ       µ,λ ∈ qqi        Z[q] is
+                                               +
+          zero unless εj (µ) ≥ εj (λ) for all j ≥ 0.
+                                          P      i U where z i       1−εi (µ)
+     (ii) Fi Uλ = [εi (λ) + 1]i UF̃i (λ) + µ∈Zn zµ,λ µ       µ,λ ∈ qqi        Z[q] is
+                                               +
+          zero unless ϕj (µ) ≥ ϕj (λ) for all j ≥ 0.
+(In (i) resp. (ii), the first term on the right hand side should be omitted if Ẽi (λ)
+resp. F̃i (λ) is ∅.)
+Proof. Dualize Lemma 3.23.                                                          
+Corollary 3.25. Let λ ∈ Zn+ and i ≥ 0.
+   (i) If εi (λ) > 0 then Ei Uλ = [ϕi (λ) + 1]i UẼi (λ) .
+  (ii) If ϕi (λ) > 0 then Fi Uλ = [εi (λ) + 1]i UF̃i (λ) .
+Proof. We prove (i), (ii) being similar. Lemma 3.24 gives us that Ei Uλ =
+                        P      i U where y i               1−ϕi (µ)
+[ϕi (λ) + 1]i UẼi (λ) + µ∈Zn yµ,λ µ      µ,λ belongs to qqi        Z[q] and is
+                             +
+zero unless εj (µ) ≥ εj (µ) for all j ≥ 0. Suppose that yµ,λ i  6= 0 for some µ. By
+assumption, εi (µ) ≥ εi (λ) ≥ 1, so ϕi (µ) ≤ 1 since all i-strings are of length ≤ 2.
+         i
+So 0 6= yµ,λ                i
+             ∈ qZ[q]. But yµ,λ  is bar invariant, so this is a contradiction.      
+
+§3-e. Computation of Uλ’s. Now we explain a simple algorithm to compute
+Uλ . Recall the definition of the degree of atypicality of λ from (2.15). We will
+need the following:
+Procedure 3.26. Suppose we are given λ ∈ Zn+ with #λ ≥ 2. Compute µ ∈ Zn+
+and an operator Xi ∈ {Ei , Fi }i≥0 by following the instructions below starting
+at step (0).
+   (0) Choose the minimal r ∈ {1, . . . , n} such that λr + λs = 0 for some s > r.
+        Go to step (1).
+   (1) If r > 1 and λr = λr−1 − 1, replace r by (r − 1) and repeat step (1).
+        Otherwise, go to step (2).
+   (2) If λr + λs + 1 = 0 for some (necessarily unique) s ∈ {1, . . . , n} go to step
+        (1)′ . Otherwise, set Xi = Eλr and µ = λ + δr . Stop.
+   (1)′ If s < n and λs = λs+1 + 1, replace s by (s + 1) and repeat step (1)′ .
+        Otherwise, go to step (2)′ .
+      ′
+   (2) If λr + λs − 1 = 0 for some (necessarily unique) r ∈ {1, . . . , n} go to step
+        (1). Otherwise, set Xi = F−λs and µ = λ − δs . Stop.
+  The following lemma follows immediately from the nature of the above pro-
+cedure and Corollary 3.25.
+Lemma 3.27. Take λ ∈ Zn+ with #λ ≥ 2. Apply Procedure 3.26 to get µ ∈ Zn+
+and Xi ∈ {Ei , Fi }i≥0 . Then, #µ ≤ #λ and Xi Uµ = Uλ . Moreover, after at
+most (n−1) repetitions of the procedure, the atypicality must get strictly smaller.
+Hence after finitely many recursions, the procedure reduces λ to a typical weight.
+  Lemma 3.27 implies the following algorithm for computing Uλ . If λ is typical
+then Uλ = Fλ , since such λ’s are maximal in the Bruhat ordering. Otherwise,
+                           CHARACTER FORMULAE FOR q(n)                                             19
+
+apply Procedure 3.26 to get µ ∈ Zn+ and Xi ∈ {Ei , Fi }i≥0 . Since the procedure
+always reduces λ to a typical weight in finitely many steps, we may assume Uµ
+is known recursively. Then Uλ = Xi Uµ .
+Example 3.28. Let us compute U(5,3,2,1,0,0,−1,−4,−6) . Apply Procedure 3.26
+repeatedly to get the following sequence of weights:
+            (5, 3, 2, 1, 0, 0, −1, −4, −7),            (6, 3, 2, 1, 0, 0, −1, −4, −7),
+            (6, 3, 2, 1, 0, 0, −1, −5, −7),            (6, 4, 2, 1, 0, 0, −1, −5, −7),
+            (6, 4, 3, 1, 0, 0, −1, −5, −7),            (6, 4, 3, 2, 0, 0, −1, −5, −8),
+            (7, 4, 3, 2, 0, 0, −1, −6, −8),            (7, 5, 3, 2, 0, 0, −1, −6, −8),
+            (7, 5, 4, 2, 0, 0, −1, −6, −8),            (7, 5, 4, 3, 0, 0, −1, −6, −8),
+            (7, 5, 4, 3, 0, 0, −2, −6, −8),            (7, 5, 4, 3, 1, 0, −2, −6, −8).
+Hence,
+U(5,3,2,1,0,0,−1,−4,−6) = F6 E5 F4 E3 E2 E1 F7 E6 F5 E4 E3 E2 F1 E0 F(7,5,4,3,1,0,−2,−6,−8)
+                       = F(5,3,2,1,0,0,−1,−4,−6) + q 2 F(7,5,3,2,0,0,−4,−6,−7)
+                            + (q + q 3 )F(8,5,3,2,1,−1,−4,−6,−8)
+                            + (q 3 + q 5 )F(8,7,5,3,2,−4,−6,−7,−8) .
+Example 3.29. Using the algorithm, one computes for n = 3 that:
+     U(a,b,c) = F(a,b,c)                                                     (a + b, a + c, b + c 6= 0)
+    U(a,b,−b) = F(a,b,−b) + q 2 F(a,b+1,−b−1)                                       (a ≥ b + 2, b 6= 0)
+                                     2
+ U(b+1,b,−b) = F(b+1,b,−b) + q F(b+2,b+1,−b−2)                                                 (b 6= 0)
+                                     2
+  U(a,−a,−b) = F(a,−a,−b) + q F(a+1,−a−1,−b)                                        (b ≥ a + 2, a 6= 0)
+U(a,−a,−a−1) = F(a,−a,−a−1) + q 2 F(a+2,−a−1,−a−2)                                             (a 6= 0)
+                                 2
+   U(a,b,−a) = F(a,b,−a) + q F(a+1,b,−a−1)                                              (a > b > −a)
+     U(a,0,0) = F(a,0,0) + (q + q 3 )F(a,1,−1)                                                 (a ≥ 2)
+                                         3
+     U(1,0,0) = F(1,0,0) + (q + q )F(2,1,−2)
+    U(0,0,−b) = F(0,0,−b) + (q + q 3 )F(1,−1,−b)                                               (b ≥ 2)
+                                             3
+   U(0,0,−1) = F(0,0,−1) + (q + q )F(2,−1,−2)
+     U(0,0,0) = F(0,0,0) + (q − q 5 )F(1,0,−1) + (q + q 3 )F(2,0,−2)
+
+§3-f. Specialization. When we specialize at q = 1, various things become
+simpler to compute. To formalize the specialization process, we will work with
+the Z[q, q −1 ]-lattices
+                                  X                 X
+                      n
+                    EZ[q,q −1 ] =   Z[q, q −1 ]Lλ =   Z[q, q −1 ]Eλ ,
+                                 λ∈Zn
+                                    +                          λ∈Zn
+                                                                  +
+                                     X                         X
+                  n
+                 FZ[q,q −1 ] =               Z[q, q −1 ]Uλ ⊂          Z[q, q −1 ]Fλ .
+                                 λ∈Zn
+                                    +                          λ∈Zn
+                                                                  +
+20                               JONATHAN BRUNDAN
+
+         cn −1 denote the completion of F n −1 , i.e. its closure in F
+Also let F                                                            cn . We
+           Z[q,q ]                          Z[q,q ]
+need this because the element Fλ ∈ F n need not belong to the lattice FZ[q,q
+                                                                       n
+                                                                             −1 ] ,
+
+                            c
+though it always belongs to F n
+                                 −1 . Indeed, the {Fλ }λ∈Zn form a topological
+                                  Z[q,q   ]                       +
+          cn −1 .
+basis for FZ[q,q ]
+
+             n
+Lemma 3.30. EZ[q,q         n              cn
+                   −1 ] , FZ[q,q −1 ] and FZ[q,q −1 ] are modules over UZ[q,q −1 ] .
+
+
+                                  cn generated by {Mλ }λ∈Zn is invariant under
+Proof. The Z[q, q −1 ]-lattice in T
+UZ[q,q−1] . Combining this with Corollary 2.28 and Lemma 3.19, we deduce that
+         (r)
+each Ei Eλ can be expressed as a (possibly infinite) Z[q, q −1 ]-linear combina-
+tion of Eµ ’s. Actually, it is a finite linear combination by Lemma 3.20. Simi-
+               (r)
+larly, each Fi Eλ is a finite Z[q, q −1 ]-linear combination of Eµ ’s. So EZ[q,q
+                                                                              n
+                                                                                  −1 ] is
+
+a UZ[q,q−1 ] -module.
+   Considering instead the Z[q, q −1 ]-lattice in T  cn generated by {Nλ }λ∈Zn and
+passing to the quotient F   cn , we also get easily that each E (r) Fλ and each F (r) Fλ
+                                                               i                 i
+is a finite Z[q, q −1 ]-linear combination of Fµ ’s, hence F  cn −1 is a UZ[q,q−1] -
+                                                              Z[q,q ]
+                                                 (r)                (r)
+module. This means in particular that each Ei Uλ and each Fi Uλ is a (possi-
+                     −1                                                     n
+bly infinite) Z[q, q ]-linear combination of Uµ ’s. Finally to show that FZ[q,q −1 ]
+                                             (r)          (r)
+is a UZ[q,q−1 ] -module we need to show Ei Uλ and Fi Uλ are actually finite
+                                                                        (r)
+Z[q, q −1 ]-linear combination of Uµ ’s. We explain the argument for Ei Uλ only.
+   By the algorithm described in the previous subsection, Uλ is a finite linear
+                             (r)
+combination of Fµ ’s, hence Ei Uλ is a bar invariant, finite linear combination
+of Fµ ’s. Say
+                              (r)
+                                      X
+                            Ei Uλ =       fµ (q)Fµ
+                                              µ∈Zn
+for polynomials fµ (q) ∈ Z[q, q −1 ]. Let d be minimal such that all fµ (q) belong
+to q −d Z[q]. If d < 0 then the right hand side is a qZ[q]-linear combination
+of Fµ ’s, hence since it also a bar invariant combination of Uµ ’s it must be
+zero. Otherwise, define gµ (q) to be the unique
+                                            P       bar invariant polynomial with
+gµ (q) ≡ fµ (q) (mod qZ[q]) and subtract µ gµ (q)Uµ from the right hand side,
+summing over the finitely many µ such that deg gµ (q) = d. The result is a bar
+invariant, finite q 1−d Z[q]-linear combination of Fµ ’s. Now repeat the process to
+reduce the expression to zero after finitely many steps.                         
+     Define
+                                                  n
+                              EZn = Z ⊗Z[q,q−1 ] EZ[q,q −1 ] ,
+                                                 n
+                             FZn = Z ⊗Z[q,q−1 ] FZ[q,q −1 ] ,
+
+                             cn = Z ⊗Z[q,q−1 ] F
+                             F                 cn −1 ,
+                              Z                 Z[q,q ]
+
+where we are viewing Z as a Z[q, q −1 ]-module so that q acts as 1. For λ ∈ Zn+ ,
+we will denote the elements 1 ⊗ Eλ ∈ EZn , 1 ⊗ Lλ ∈ EZn , 1 ⊗ Fλ ∈ F    cn and
+                                                                         Z
+                           CHARACTER FORMULAE FOR q(n)                                      21
+
+1 ⊗ Uλ ∈ FZn by Eλ (1), Lλ (1), Fλ (1) and Uλ (1), respectively. By Lemma 3.30,
+EZn , FZn and Fcn are modules over UZ := Z ⊗Z[q,q−1 ] UZ[q,q−1] . In their action
+                Z
+on these lattices, the elements
+                                                               
+           (r)        (r)    (r)         (r)    Hi             Ki
+         Ei = 1 ⊗ Ei , Fi = 1 ⊗ Fi ,                  =1⊗                  (3.31)
+                                                 r              r
+of UZ satisfy the defining relations of the usual generators of the Kostant Z-form
+for the universal enveloping algebra of type b∞ .
+   We note that at q = 1, the defining relations for FZn simplify to the following:
+           va ∧ va = 0                                                       (a 6= 0)
+           va ∧ vb = −vb ∧ va                                     (a > b, a + b 6= 0)
+                                             a
+         va ∧ v−a = −v−a ∧ va + (−1) v0 ∧ v0                                 (a ≥ 1)
+                    cn is given explicitly by the formulae
+The action of UZ on F Z
+                                   X
+                   Ei Fλ (1) =              bλ,r Fλ−δr (1),                             (3.32)
+                                       r with λ−δr ∈Zn
+                                                     +
+                                       σr =−,−+ or −−
+                                            X
+                         Fi Fλ (1) =                     bλ,r Fλ+δr (1),                (3.33)
+                                       r with λ+δr ∈Zn
+                                                     +
+                                       σr =+,−+ or ++
+
+where (σ1 , . . . , σn ) is the i-signature of λ ∈ Zn+ defined according to (2.30) and
+                                   
+                                      1 + (−1)z(λ) if σr = −+,
+                            bλ,r =
+                                      1             otherwise.
+  The pairing h., .i between Eb n and F
+                                      cn defined earlier induces a pairing at
+q = 1 between EZn and Fcn with
+                         Z
+                               hL−w0 λ (1), Uµ (1)i = δλ,µ                              (3.34)
+for all λ, µ ∈ Zn+ .
+                   Alternatively, as follows immediately from (3.7) and (3.10)
+taken at q = 1, we have that
+                               hE−w0 λ (1), Fµ (1)i = δλ,µ                              (3.35)
+for all λ, µ ∈ Zn+ .
+   The final theorem of the section gives an explicit formula for the coefficients
+uµ,λ (q) at q = 1:
+Theorem 3.36. Let λ ∈ Zn+ and p := ⌊#λ/2⌋. Choose 1 ≤ r1 < · · · <
+rp < sp < · · · < s1 ≤ n such that λrq + λsq = 0 for all q = 1, . . . , p. Let
+I0 = {|λ1 |, . . . , |λn |}. For q = 1, . . . , p, define Iq and kq inductively according
+to the following rules:
+    (1) if λrq > 0, let kq be the smallest positive integer with λrq + kq ∈       / Iq−1 ,
+        and set Iq = Iq−1 ∪ {λrq + kq };
+    (2) if λrq = 0, let kq and kq′ be the smallest positive integers with kq , kq′ ∈    /
+                           ′                                ′
+        Iq−1 , kq < kq if z(λ) is even and kq > kq if z(λ) is odd, and set Iq =
+        Iq−1 ∪ {kq , kq′ }.
+22                                    JONATHAN BRUNDAN
+
+Finally, for each θ = (θ1 , . . . , θp ) ∈ {0, 1}p , let Rθ (λ)Pdenote the unique element
+of Zn+ lying in the same Sn -orbit as the weight λ + pq=1 θq kq (δrq − δsq ). Then,
+                                    X
+                      Uλ (1) =           2(z(λ)−z(Rθ (λ)))/2 FRθ (λ) (1),
+                                       θ
+summing over all θ = (θ1 , . . . , θp ) ∈ {0, 1}p .
+Proof. Use the algorithm explained in §3-e, (3.32)–(3.33) and induction. See
+[B1, Theorem 3.34(i)] for a similar argument.                              
+                                   P
+Corollary 3.37. For all λ ∈ Zn+ , µ∈Zn uµ,λ (1) = 2(#λ−z(λ))/2 3⌊z(λ)/2⌋ .
+                                                   +
+
+Example 3.38. Let us compute U(5,3,2,1,0,0,−1,−4,−6) (1) using the theorem, re-
+call Example 3.28. We have that p = 2 and (i1 , i2 , j2 , j1 ) = (4, 5, 6, 7), then get
+k1 = 6 (hence the entries (1, −1) change to (7, −7) and (k2 , k2′ ) = (8, 9) (hence
+the entries (0, 0) change to (8, −8)). Hence
+     U(5,3,2,1,0,0,−1,−4,−6) (1) = F(5,3,2,1,0,0,−1,−4,−6) (1) + F(7,5,3,2,0,0,−4,−6,−7) (1)
+                             + 2F(8,5,3,2,1,−1,−4,−6,−8) (1) + 2F(8,7,5,3,2,−4,−6,−7,−8) (1).
+For comparison,
+     U(5,3,2,1,0,0,0,−1,−4,−6) (1) = F(5,3,2,1,0,0,0,−1,−4,−6) (1) + F(7,5,3,2,0,0,0,−4,−6,−7) (1)
+                         + 2F(9,5,3,2,1,0,−1,−4,−6,−9) (1) + 2F(9,7,5,3,2,0,−4,−6,−7,−9) (1).
+Example 3.39. We have by the theorem that:
+       U(0,0) (1) = F(0,0) (1) + 2F(1,−1) (1),
+     U(0,0,0) (1) = F(0,0,0) (1) + 2F(2,0,−2) (1),
+ U(0,0,0,0) (1) = F(0,0,0,0) (1) + 2F(1,0,0,−1) (1) + 2F(3,0,0,−3) (1) + 4F(3,1,−1,−3) (1),
+     U(1,−1) (1) = F(1,−1) (1) + F(2,−2) (1),
+ U(1,0,−1) (1) = F(1,0,−1) (1) + F(2,0,−2) (1),
+U(1,0,0,−1) (1) = F(1,0,0,−1) (1) + F(2,0,0,−2) (1) + 2F(3,1,−1,−3) (1) + 2F(3,2,−2,−3) (1).
+Hence by (3.10),
+     E(1,−1) (1) = L(1,−1) (1) + 2L(0,0) (1),
+ E(1,0,−1) (1) = L(1,0,−1) (1),
+E(1,0,0,−1) (1) = L(1,0,0,−1) (1) + 2L(0,0,0,0) (1),
+     E(2,−2) (1) = L(2,−2) (1),
+ E(2,0,−2) (1) = L(2,0,−2) (1) + L(1,0,−1) (1) + 2L(0,0,0) (1),
+E(2,0,0,−2) (1) = L(2,0,0,−2) (1) + L(1,0,0,−1) (1).
+                              CHARACTER FORMULAE FOR q(n)                                          23
+
+                                 4. Character formulae
+
+§4-a. Representations of Q(n). Now we are ready to introduce the super-
+group G = Q(n) into the picture. For the remainder of the article, we will work
+over the ground field C, and all objects (superalgebras, superschemes, . . . ) will
+be defined over C without further mention. We refer the reader to [BK2, B2]
+for a fuller account of the basic results concerning the representation theory of
+G summarized here, most of which were proved originally by Penkov in [P1].
+   By definition [BK2, §3], G is the functor from the category of commutative
+superalgebras to the category of groups defined on a superalgebra A so that
+G(A) is the group of all invertible 2n × 2n matrices of the form
+                                                
+                                          S S′
+                                g=                                            (4.1)
+                                        −S ′ S
+where S is an n × n matrix with entries in A0̄ and S ′ is an n × n matrix with
+entries in A1̄ . The underlying purely even group Gev of G is by definition
+the functor from superalgebras to groups with Gev (A) := G(A0̄ ). In our case,
+Gev (A) consists of all matrices in G(A) of the form (4.1) with S ′ = 0, so Gev ∼                    =
+GL(n). We also need the Cartan subgroup H of G defined on a commutative
+superalgebra A so that H(A) consists of all matrices in G(A) with S, S ′ being
+diagonal matrices, and the negative Borel subgroup B of G defined so that B(A)
+consists of all matrices in G(A) with S, S ′ being lower triangular.
+    Let T = Hev be the usual maximal torus of Gev consisting of diagonal ma-
+trices. The character group X(T ) = Hom(T, Gm ) is the free abelian group on
+generators δ1 , . . . , δn , where δr picks out the rth diagonal entry of a diagonal
+matrix. We will always identifyP                 X(T ) with Zn , the tuple λ = (λ1 , . . . , λn ) ∈ Zn
+corresponding to the character nr=1 λr δr ∈ X(T ). The root system associated
+to Gev is denoted R = R+ ∪ (−R+ ), where R+ = {δr − δs | 1 ≤ r < s ≤ n} ⊂ Zn .
+The dominance ordering on Zn is defined by λ ≤ µ if and only if µ − λ is a
+sum of positive roots. This is not the same as the Bruhat ordering  defined
+in §2-c, though we have by Lemma 2.14 that λ  µ implies λ ≤ µ.
+    A representation of G means a natural transformation ρ : G → GL(M ) for
+some vector superspace M , where GL(M ) is the supergroup with GL(M, A)
+being equal to the group of all even automorphisms of the A-supermodule M ⊗A,
+for each commutative superalgebra A. Equivalently, as with group schemes
+[J1, I.2.8], M is a right k[G]-comodule, i.e. there is an even structure map
+η : M → M ⊗ k[G] satisfying the usual comodule axioms. We will usually
+refer to such an M as a G-supermodule. Let Cn denote the category of all
+finite dimensional G-supermodules. Note we allow arbitrary (not necessarily
+homogeneous) morphisms in Cn . We write Π for the parity change functor, and
+denote the dual of a finite dimensional G-supermodule M by M ∗ . There is
+another natural duality M 7→ M τ on Cn , see e.g. [BK2, §10] for the definition.
+    There are two sorts of irreducible G-supermodule: either type M if EndG (M )
+is one dimensional or type Q if EndG (M ) is two dimensional. For example,
+we have the natural representation V of G, the vector superspace on basis
+v1 , . . . , vn , v1′ , . . . , vn′ , where vr is even and vr′ is odd. For a superalgebra A, we
+24                            JONATHAN BRUNDAN
+
+identify elements of V ⊗ A with column vectors
+                                                         
+                                                      a1
+                                                    .. 
+                                                    . 
+                     Xn                                  
+                                                    a 
+                         (vr ⊗ ar + vr′ ⊗ a′r ) ←→  n′  .
+                                                    a1 
+                     r=1                            . 
+                                                    .. 
+                                                      a′n
+Then, the action of G(A) on V ⊗ A defining the supermodule structure is the
+obvious action on column vectors by left multiplication. The map
+                      J : V → V,       vr 7→ vr′ , vr′ 7→ −vr               (4.2)
+is an odd automorphism of V as a G-supermodule. Hence, V is irreducible of
+type Q.
+   For λ ∈ Zn , we write xλ = xλ1 1 . . . xλnn ∈ Z[x±1           ±1
+                                                    1 , . . . , xn ]. Given an H-
+supermodule M , we let Mλ denote its λ-weight space with respect to the torus
+T . Identifying the Weyl group associated to Gev with the symmetric group Sn ,
+the character                       X
+                           ch M :=        (dim Mλ )xλ
+                                    λ∈Zn
+of a finite dimensional G-supermodule M is naturally Sn -invariant, so is an
+element of the ring Z[x±1           ±1 Sn of symmetric functions.
+                       1 , . . . , xn ]
+                    n
+   For every λ ∈ Z , there is by [BK2, Lemma 6.4] a unique irreducible H-
+supermodule denoted u(λ) with character 2⌊(h(λ)+1)/2⌋ xλ , where h(λ) = n−z(λ)
+denotes the number of r = 1, . . . , n for which λr 6= 0. It is an irreducible H-
+supermodule of type M if h(λ) is even, type Q otherwise. We will often regard
+u(λ) instead as an irreducible B-supermodule via the obvious epimorphism
+B → H. Introduce the induced supermodule
+                  H 0 (λ) := indG         0
+                                B u(λ) = H (G/B, L (u(λ))),                 (4.3)
+see [BK2, §6] and [B2, §2] for the detailed construction. The following theorem
+is due to Penkov [P1, Theorem 4], see also [BK2, Theorem 6.11].
+Theorem 4.4. For λ ∈ Zn , H 0 (λ) is non-zero if and only if λ ∈ Zn+ . In that
+case H 0 (λ) has a unique irreducible submodule denoted L(λ). Moreover,
+     (i) {L(λ)}λ∈Zn+ is a complete set of pairwise non-isomorphic irreducible G-
+         supermodules;
+    (ii) L(λ) is of the same type as u(λ), i.e. type M if h(λ) is even, type Q
+         otherwise;
+   (iii) ch L(λ) = 2⌊(h(λ)+1)/2⌋ xλ + (∗) where (∗) is a linear combination of xµ
+         for µ < λ;
+   (iv) L(λ)∗ ∼= L(−w0 λ) and L(λ)τ ∼   = L(λ).
+
+§4-b. Euler characteristics. Let K(Cn ) denote the Grothendieck group of the
+superadditive category Cn , in the sense of [BK1, §2-c]. So by Theorem 4.4(i),
+                         CHARACTER FORMULAE FOR q(n)                               25
+
+K(Cn ) is the free abelian group on basis {[L(λ)]}λ∈Zn . Since ch is additive on
+                                                     +
+short exact sequences, there is an induced map
+               ch : K(Cn ) → Z[x±1           ±1 Sn
+                                1 , . . . , xn ] ,      [M ] 7→ ch M.
+Theorem 4.4(iii) implies that the irreducible characters are linearly indepen-
+dent, hence this map is injective. By Theorem 4.4(iv), the duality ∗ on finite
+dimensional G-supermodules induces an involution ∗ : K(Cn ) → K(Cn ) with
+[L(λ)]∗ = [L(−w0 λ)]. On the other hand, the duality τ leaves characters invari-
+ant, so gives the identity map at the level of Grothendieck groups.
+  For each λ ∈ Zn , we have the higher cohomology supermodules
+                   H i (λ) := Ri indG         i
+                                    P u(λ) = H (G/P, L (u(λ)))                 (4.5)
+where P is the largest parabolic subgroup of G to which the B-supermodule
+u(λ) can be lifted, we refer to [B2, §4] for details. In particular, it is known that
+each H i (λ) is finite dimensional and is zero for i ≫ 0, so the Euler characteristic
+                                       X
+                             [E(λ)] :=     (−1)i [H i (λ)]                      (4.6)
+                                       i≥0
+is a well-defined element of the Grothendieck group K(Cn ). Its character
+                                     X
+                          ch E(λ) :=    (−1)i ch H i (λ)                  (4.7)
+                                       i≥0
+
+can be computed explicitly by a method going back at least to Penkov [P2,
+§2.3]. We need to recall the definition of Schur’s P -function pλ for λ ∈ Zn+ :
+                                                           !
+                           X               Y 1 + x−1 xj
+                   pλ =          w xλ                 i
+                                                      −1     ,               (4.8)
+                         w∈S /S         1≤i<j≤n
+                                                1 − x i xj
+                              n   λ
+                                             λi >λj
+
+where Sn /Sλ denotes the set of minimal length coset representatives for the
+stabilizer Sλ of λ in Sn . Note that pλ is equal to the Hall-Littlewood symmetric
+function                                                      !
+                               X              Y xi − txj
+                     pλ (t) =        w xλ                      ,            (4.9)
+                                                      xi − xj
+                            w∈Sn /Sλ          1≤i<j≤n
+                                               λi >λj
+evaluated at t = −1, see [M, III(2.2)] and [M, III.8] (actually, Macdonald only
+describes the case when all λi ≥ 0, but everything easily extends to λi ∈ Z).
+We note the following combinatorial lemma.
+                                         P
+Lemma 4.10. (x1 + · · · + xn )pλ = r pλ+δr , where the sum is over all r =
+1, . . . , n such that λ + δr ∈ Zn+ and moreover λr 6= −1 if z(λ) is odd.
+Proof. Let λ ∈ Zn with λ1 ≥ · · · ≥ λn . Following the proof of [M, III(3.2)], one
+shows that
+                                        X
+             (x1 + · · · + xn )pλ (t) =  (1 + t + · · · + tnr )pλ+δr (t),
+                                        r
+where the sum is over all r = 1, . . . , n with λr < λr−1 if r > 1, and nr denotes
+#{s | 1 ≤ s ≤ n, λs = λr + 1}. The lemma follows on setting t = −1.             
+26                             JONATHAN BRUNDAN
+
+  The following theorem is [PS1, Proposition 1], see [B2, Theorem 4.7] for a
+more detailed exposition.
+Theorem 4.11. For each λ ∈ Zn+ , ch E(λ) = 2⌊(h(λ)+1)/2⌋ pλ .
+   This shows in particular that ch E(λ) equals 2⌊(h(λ)+1)/2⌋ xλ + (∗) where (∗)
+is a linear combination of xµ for µ < λ. Comparing with Theorem 4.4(iii), we
+deduce that for each λ ∈ Zn+ , the decomposition numbers dµ,λ defined from
+                                      X
+                            [E(µ)] =      dµ,λ [L(λ)]                     (4.12)
+                                       λ∈Zn
+                                          +
+
+satisfy dµ,µ = 1 and dµ,λ = 0 for λ 6≤ µ. Hence, {[E(λ)]}λ∈Zn gives another
+                                                            +
+natural basis for the Grothendieck group K(Cn ). Also define the inverse de-
+composition numbers d−1µ,λ from
+                                     X
+                            [L(µ)] =    d−1
+                                         µ,λ [E(λ)].                  (4.13)
+                                      λ∈Zn
+                                         +
+
+                                 −1
+Again we have that d−1
+                    µ,µ = 1 and dµ,λ = 0 for λ 6≤ µ.
+
+§4-c. Category On. The Lie superalgebra g of G can be identified with the
+Lie superalgebra q(n) of all matrices of the form
+                                              
+                                       S S′
+                               x=                                  (4.14)
+                                       S′ S
+under the supercommutator [., .], where S and S ′ are n × n matrices over C
+and such a matrix is even if S ′ = 0 or odd if S = 0, see [BK2, §4]. We will
+let er,s resp. e′r,s denote the even resp. odd matrix unit, i.e. the matrix of
+the form (4.14) with the rs-entry of S resp. S ′ equal to 1 and all other entries
+equal to zero. We will abbreviate hr := er,r , h′r := e′r,r . Let h be the Cartan
+subalgebra of g spanned by {hr , h′r | 1 ≤ r ≤ n}, and let b be the positive Borel
+subalgebra spanned by {er,s , e′r,s | 1 ≤ r ≤ s ≤ n}. Note h is the Lie superalgebra
+of the subgroup H, but perversely b is not the Lie superalgebra of B since that
+consisted of lower triangular matrices!
+   For any λ ∈ Zn and an h-supermodule M , we define the λ-weight space Mλ
+of M by
+               Mλ = {m ∈ M | hi m = λi m for each i = 1, . . . , n}.
+When M is an H-supermodule viewed as an h-supermodule in the canonical
+way, the notion of weight space defined here agrees with the earlier one. Let On
+denote the category of all finitely generated g-supermodules M that are locally
+finite dimensional as b-supermodules and satisfy
+                                            M
+                                     M=         Mλ ,
+                                        λ∈Zn
+cf. [BGG]. By [BK2, Corollary 5.7], we can identify the category Cn with the
+full subcategory of On consisting of all the finite dimensional objects.
+Lemma 4.15. Every M ∈ On has a composition series.
+                         CHARACTER FORMULAE FOR q(n)                               27
+
+Proof. Since the universal enveloping superalgebra U (g) of g is Noetherian,
+every finitely generated g-supermodule M admits a descending filtration M =
+M0 > M1 > . . . with each Mi−1 /Mi simple. We need to show this filtration is
+of finite length in case M ∈ On . It suffices for this to show that the restriction
+of M to g0̄ ∼ = gl(n) has a composition series. Since U (g) is a free left U (g0̄ )-
+supermodule of finite rank, M is still finitely generated when viewed as a g0̄ -
+module, and clearly it is locally finite dimensional over b0̄ . Hence the restriction
+of M to g0̄ belongs to the analogue of category On for g0̄ . It is well-known all
+such g0̄ -modules have a composition series.                                        
+  For each λ ∈ Zn , we define the Verma supermodule
+                         M (λ) := U (g) ⊗U (b) u(λ) ∈ On ,                    (4.16)
+where u(λ) is as defined in the previous subsection but viewed now as a b-
+supermodule by inflation from h. By the PBW theorem, we have that
+                                              Y 1 + x−1 xj
+                ch M (λ) = 2⌊(h(λ)+1)/2⌋ xλ               i
+                                                          −1   .    (4.17)
+                                            1≤i<j≤n
+                                                    1 − x i xj
+
+Also note by its definition as an induced supermodule that M (λ) is universal
+amongst all g-supermodules generated by a b-stable submodule isomorphism to
+u(λ). The following theorem is quite standard and parallels Theorem 4.4 above.
+Theorem 4.18. For every λ ∈ Zn , M (λ) has a unique irreducible quotient
+denoted L(λ). Moreover,
+     (i) {L(λ)}λ∈Zn is a complete set of pairwise non-isomorphic irreducibles in
+         category On ;
+    (ii) L(λ) is of the same type as u(λ), i.e. type M if h(λ) is even, type Q
+         otherwise;
+   (iii) ch L(λ) = 2⌊(h(λ)+1)/2⌋ xλ + (∗) where (∗) is a linear combination of xµ
+         for µ < λ;
+   (iv) L(λ) is finite dimensional if and only if λ ∈ Zn+ , in which case it is the
+         same as the supermodule denoted L(λ) before.
+   Let K(On ) be the Grothendieck group of the category On . By Lemma 4.15
+and Theorem 4.18(i), K(On ) is the free abelian group on basis {[L(λ)]}λ∈Zn .
+However the [M (λ)]’s do not form a basis for K(On ). To get round this problem,
+    b n ) be the completion of K(On ) with respect to the descending filtration
+let K(O
+(Kd (On ))d∈Z , where
+                 P Kd (On ) is the subgroup of K(On ) generated by {[L(λ)]}
+for λ ∈ Zn with ni=1 iλi ≥ d. Taking characters induces a well-defined map
+                    b n ) → Z[[x±1 , . . . , x±1 ]],
+               ch : K(O                                [M ] 7→ ch M.
+                                1             n
+By Theorem 4.18(iii), the characters of the irreducible supermodules in On are
+linearly independent, hence the map ch is injective. Moreover, [M (λ)] equals
+[L(λ)] + (∗) where (∗) is a finite linear combination of [L(µ)]’s for µ < λ. So
+             b n ), we can also write [L(λ)] as [M (λ)] + (†) where (†) is a
+working in K(O
+possibly infinite linear combination of [M (µ)]’s for µ < λ. This shows that the
+elements {[M (λ)]}λ∈Zn form a topological basis for K(Ob n ).
+28                           JONATHAN BRUNDAN
+
+§4-d. Central characters. Let Z denote the even center of the universal
+enveloping superalgebra U (g). Sergeev [S2] has constructed an explicit set of
+generators of Z. For each λ ∈ Zn , let χλ be the central character afforded by
+the Verma supermodule M (λ), so z ∈ Z acts on M (λ) as scalar multiplication
+by χλ (z). Also recall the definition of wt(λ) from (2.12), which is an element
+of the weight lattice P of type b∞ as defined in §2-a. As a consequence of
+Sergeev’s description of Z, see e.g. [BK2, Lemma 8.9(ii),(iv)], we have the
+following fundamental fact:
+Theorem 4.19. For λ, µ ∈ Zn , χλ = χµ if and only if wt(λ) = wt(µ).
+  For each γ ∈ P , let Oγ denote the full subcategory of On consisting of
+the objects all of whose irreducible subquotients are of the form L(λ) for λ ∈
+Zn with wt(λ) = γ. As a consequence of Theorem 4.19, we have the block
+decomposition                          M
+                                 On =     Oγ .                           (4.20)
+                                       γ∈P
+Moreover, Oγ is non-zero if and only if γ is a non-trivial weight of the tensor
+space T n of §2-b. Note that given λ ∈ Zn with wt(λ) = γ, h(λ) ≡ (γ, γ)/2
+(mod 2). Hence, recalling Theorem 4.18(ii), all the irreducible supermodules
+belonging to the block Oγ are of the same type. We refer to this as the type of
+the block Oγ : type M if (γ, γ)/2 is even, type Q if (γ, γ)/2 is odd.
+  The block decomposition (4.20) induces the block decomposition
+                                         M
+                               K(On ) =      K(Oγ )                      (4.21)
+                                       γ∈P
+
+of the Grothendieck group, so here K(Oγ ) is the Grothendieck group of the
+category Oγ . Let K(Ob γ ) be the closure of K(Oγ ) in K(O
+                                                        b n ). The elements
+                    n                                            b γ ).
+{[M (λ)]} for λ ∈ Z with wt(λ) = γ form a topological basis for K(O
+   In a similar fashion, we have the block decomposition of the category Cn of
+finite dimensional G-supermodules:
+                                       M
+                                  Cn =     Cγ .                         (4.22)
+                                       γ∈P
+This time, Cγ is non-zero if and only if γ is a non-trivial weight of the dual
+exterior power E n from §3-c. Note moreover that the natural embedding of
+Cn into On embeds Cγ into Oγ . We also get the block decomposition of the
+Grothendieck group:                   M
+                             K(Cn ) =     K(Cγ ).                       (4.23)
+                                       γ∈P
+The elements {[L(λ)]} for λ ∈ Zn+ with wt(λ) = γ form a basis for K(Cγ ).
+               Q          1−x−1 x
+Lemma 4.24. 1≤i<j≤n 1+xi−1 xj ∈ Z[[x−1  i xj | 1 ≤ i < j ≤ n]] can be expressed
+                              i   j
+as an infinite linear combination of xµ ’s for µ ≤ 0 with wt(µ) = 0.
+                          CHARACTER FORMULAE FOR q(n)                                  29
+
+
+Proof. Since the {[M                                                 b
+                   P (µ)]}µ∈Zn ,wt(µ)=0 form a topological basis for K(O0 ), we
+can write [L(0)] = µ≤0,wt(µ)=0 aµ [M (µ)] for some coefficients aµ ∈ Z. Taking
+characters using (4.17) gives
+                                                                 
+                    X                           Y 1 + x−1 xj
+              1=         2⌊(h(µ)+1)/2⌋ aµ xµ              i      .
+                                                           −1
+                    µ≤0                       1≤i<j≤n
+                                                      1 − xi  x j
+                  wt(µ)=0
+
+The lemma follows.                                                                     
+Theorem 4.25. For λ ∈ Zn+ with wt(λ) = γ, the Euler characteristic [E(λ)]
+belongs to the block K(Cγ ).
+Proof. Take λ ∈ Zn+ . By Theorem 4.11 and (4.8), we have that
+                                                                                  
+                           X         λ     Y     1 − x−1         Y    1 + x−1   
+                                                       i xj                 i xj 
+ch E(λ) = 2⌊(h(λ)+1)/2⌋            w
+                                    x                 −1                        
+                       w∈Sn /Sλ           1≤i<j≤n
+                                                  1 + xi xj    1≤i<j≤n
+                                                                       1 − x−1
+                                                                            i xj
+                                           λi =λj
+                           X                    Y    1 − x−1           Y    1 + x−1
+                                                          wi xwj                 i xj
+        = 2⌊(h(λ)+1)/2⌋         (−1)ℓ(w) xwλ              −1                     −1     .
+                       w∈Sn /Sλ              1≤i<j≤n
+                                                     1 + xwi xwj    1≤i<j≤n
+                                                                            1 − xi  x j
+                                               λi =λj
+
+                   wλ
+                      Q                  1−x−1
+                                            wi xwj
+By Lemma 4.24, x          1≤i<j≤n,λi =λj 1+x−1 xwj   is a (possibly infinite) linear com-
+                                            wi
+bination of xµ ’s for µ ≤ wλ with wt(µ) = wt(wλ) = γ. Hence recalling (4.17),
+ch E(λ) is a (possibly infinite) linear combination of ch M (µ)’s for µ ∈ Zn with
+wt(µ) = γ. Working instead in K(O     b n ), we have shown that we can write
+[E(λ)] as a (possibly infinite) linear combination of [M (µ)]’s for µ ∈ Zn with
+                          b γ ). The theorem follows.
+wt(µ) = γ, i.e. [E(λ)] ∈ K(O                                                   
+   The theorem immediately implies that the decomposition numbers dµ,λ de-
+fined in (4.12) and the inverse decomposition numbers d−1
+                                                       µ,λ defined in (4.13) are
+zero whenever wt(µ) 6= wt(λ). In particular:
+Corollary 4.26. The elements {[E(λ)]} for λ ∈ Zn+ with wt(λ) = γ form a
+basis for K(Cγ ).
+
+§4-e. Translation functors. Now we are ready to link the Grothendieck group
+K(Cn ) with the UZ -module EZn constructed in §3-f. We define an isomorphism
+of abelian groups
+              ι : K(Cn ) → EZn ,       [E(λ)] 7→ Eλ (1)        (λ ∈ Z+
+                                                                     n ).         (4.27)
+Using ι, we lift the actions of the generators of UZ on EZn from (3.31) to define
+an action of UZ directly on the Grothendieck group K(Cn ). Note Corollary 4.26
+shows that the block decomposition (4.23) coincides with the usual weight space
+decomposition of K(Cn ) as a UZ -module. Using Lemma 3.20 specialized at
+30                              JONATHAN BRUNDAN
+
+q = 1, we can write down the action of the operators Ei , Fi on K(Cn ) explicitly:
+                                   X
+                   Ei [E(λ)] =              cλ,r [E(λ − δr )],             (4.28)
+                                   r with λ−δr ∈Zn
+                                                 +,
+                                   σr =−,−+ or −−
+                                        X
+                     Fi [E(λ)] =                      cλ,r [E(λ + δr )],          (4.29)
+                                   r with λ+δr ∈Zn
+                                                 +,
+                                   σr =+,−+ or ++
+
+for λ ∈ Zn+ and i ≥ 0. Here, (σ1 , . . . , σn ) is the i-signature of λ defined according
+to (2.30) and
+                         
+                            1 + (−1)z(λ) if σr = −− or ++,
+                  cλ,r =
+                            1                    otherwise.
+The goal in the remainder of this subsection is to give a representation theoretic
+interpretation of the operators Ei and Fi .
+   We need certain “translation functors”
+                                 Tri , Tri : On → On ,
+one for each i ≥ 0, similar to the functors defined by Penkov and Serganova in
+[PS2, §2.3]. Recalling the decomposition (4.22), it suffices to define the functors
+Tri , Tri on the subcategory Oγ for some fixed γ ∈ P , since one can then extend
+additively to get the definition on On itself. We will write prγ : On → Oγ for
+the natural projection functor. Given M ∈ Oγ , let
+             Tri M = prγ−αi (M ⊗ V ),          Tri M = prγ+αi (M ⊗ V ∗ ).         (4.30)
+On a morphism f : M → N in Oγ , Tri f and Tri f are the restrictions of the
+maps f ⊗ id. Obviously these functors send finite dimensional supermodules to
+finite dimensional supermodules, so also give us functors
+                                   Tri , Tri : Cn → Cn
+by restriction.
+Lemma 4.31. For each i ≥ 0, the functors Tri and Tri (on either of the
+categories On or Cn ) are both left and right adjoint to each other, hence both
+are exact functors. Moreover, there are natural isomorphisms
+             (Tri M )∗ ∼
+                       = Tri (M ∗ ),          (Tri M )∗ ∼
+                                                        = Tri (M ∗ ),    (4.32)
+              (Tri M )τ ∼
+                        = Tri (M τ )                   (Tri M )τ ∼
+                                                                 = Tri (M τ )     (4.33)
+for each M ∈ Cn .
+Proof. The first part is a well-known fact about translation functors. For the
+second part, we obviously have natural isomorphisms (M ⊗ V )∗ ∼    = M ∗ ⊗ V ∗,
+         τ ∼    τ
+(M ⊗V ) = M ⊗V . So it suffices to show that ∗-duality maps Cγ into C−γ . and
+that τ -duality maps Cγ into itself. This is immediate from Theorem 4.4(iv). 
+                               CHARACTER FORMULAE FOR q(n)                                     31
+
+Lemma 4.34. For λ ∈ Zn+ and i ≥ 0, and a finite dimensional G-supermodule
+M belonging to the block Cγ for some γ ∈ P , we have that
+                        
+                          Ei [M ] if i = 0 and Cγ is of type M,
+             [Tri M ] =
+                          2Ei [M ] if i 6= 0 or Cγ is of type Q;
+                        
+                          Fi [M ] if i = 0 and Cγ is of type M,
+             [Tri M ] =
+                          2Fi [M ] if i 6= 0 or Cγ is of type Q.
+Proof. We explain the argument for Tri , the case of Tri being similar. Since the
+functor Tri is exact, it induces an additive map also denoted Tri on K(Cn ). By
+Corollary 4.26, the {[E(λ)]} for λ ∈ Zn+ with wt(λ) = γ form a basis for K(Cγ ).
+Therefore it suffices to consider Tri [E(λ)] for such a λ.
+   Observe thatLch V = 2(x1 + · · · + xn ) and that the functor ?⊗ V is isomorphic
+to the functor i≥0 Tri . So a calculation using Theorem 4.11 and Lemma 4.10
+gives that            M                    X
+                           Tri [Eλ ] =             dλ,r [Eλ+δr ]
+                         i≥0                r with λ+δr ∈Zn
+                                                          +
+
+where            
+                 
+                   2 if λr 6= −1, 0,
+                 
+                 
+                 
+                   1   if λr = 0 and h(λ) is even,
+                 
+                    2 if λr = 0 and h(λ) is odd,
+          dλ,r =
+                 
+                   0 if λr = −1 and z(λ) is odd,
+                 
+                 
+                 
+                   2   if λr = −1, z(λ) is even and h(λ) is even,
+                 
+                    4 if λr = −1, z(λ) is even and h(λ) is odd.
+Now apply prwt(λ)−αi to both sides and use Theorem 4.25 and (4.29) to deduce
+that                     
+              i             Fi [E(λ)] if i = 0 and h(λ) is even,
+            Tr [E(λ)] =
+                            2Fi [E(λ)] if i 6= 0 or h(λ) is odd.
+This completes the proof.                                                 
+
+§4-f. Crystal structure. In this section we relate the structure of the su-
+permodules Tri L(λ) and Tri L(λ) for certain weights λ to the crystal operators
+defined in §3-d. The methods employed here are essentially the same as those
+of Penkov and Serganova in [PS2, §2.3]. Throughout the subsection we will
+use the following notation: for supermodules X and Y , X   Y will denote some
+extension of X by Y , and [M : L] will denote the composition multiplicity of
+an irreducible L in M .
+Lemma 4.35. Let λ = (1, 0n−2 , −1). Then [M (λ) : L(0)] ≥ 2.
+Proof. Pick a basis v, v ′ for M (λ)λ such that h′1 v = v ′ , h′1 v ′ = v, h′n v = v ′ , h′n v ′ =
+−v and h′r v = h′r v ′ = 0 for r = 2, . . . , n − 1. Let
+           x = e′2,1 (e′3,2 + e3,2 h′3 ) . . . (e′n,n−1 + en,n−1 h′n )v,   y = h′1 x.
+We claim that hx, yi is a two dimensional indecomposable b-submodule of M (λ).
+The lemma follows immediately form this, since both x and y are of weight 0. To
+prove the claim, we proceed by induction on n. The base case n = 2 follows on
+32                                   JONATHAN BRUNDAN
+
+checking that x = e′2,1 v is annihilated by e1,2 and e′1,2 and that y = h′1 x = h′2 x.
+For n > 2, we set
+                  w = (e′n,n−1 + en,n−1 h′n )v = e′n,n−1 v + en,n−1 v ′ ,
+                 w′ = −(e′n,n−1 + en,n−1 h′n )v ′ = en,n−1 v − e′n,n−1 v ′ .
+Now one checks that h′1 w = w′ , h′1 w′ = w, h′n−1 w = w′ , h′n−1 w′ = −w and that
+h′r w = h′r w′ = 0 for each r = 2, . . . , n − 2, n. Moreover, w, w′ are annihilated
+by er,r+1 , e′r,r+1 for r = 1, . . . , n − 1. Now the result follows from the induction
+hypothesis.                                                                           
+Lemma 4.36. Let λ ∈ Zn+ with λr > 0 and λr +λs = 0 for some 1 ≤ r < s ≤ n.
+Then,                                     
+                                            1 if λr > 1,
+              [M (λ) : L(λ − δr + δs )] =
+                                            2 if λr = 1.
+Proof. We will actually only prove here that the left hand side is ≥ the right
+hand side, since that is all we really need later on. The fact that the left hand
+side actually equals the right hand side can easily be extracted from the proof
+of Lemma 4.39 below. First suppose that λr > 1. By [PS2, Proposition 2.1],
+                             Homg(M (λ − δr + δs ), M (λ)) 6= 0.
+This immediately implies that [M (λ) : L(λ − δr + δs )] ≥ 1. Now assume that
+λr = 1, when we need to show that in fact [M (λ) : L(λ − δr + δs )] ≥ 2.
+Let p be the upper triangular parabolic subalgebra of g of type (1r−1 , s − r +
+1, 1n−s ). Consider the Verma supermodule Mp(λ) = U (p) ⊗U (b) u(λ) over p. By
+Lemma 4.35, it contains Lp(λ − δr + δs ) with multiplicity at least two. Since
+U (g) ⊗U (p) Mp(λ) ∼
+                   = M (λ) and U (g) ⊗U (p) Lp(λ − δr + δs ) ։ L(λ − δr + δs ), the
+lemma follows.                                                                   
+Lemma 4.37. Let λ ∈ Zn . Then M := M (λ) ⊗ V                   has a filtration 0 = M0 <
+M1 < · · · < Mn = M such that
+                
+                
+                  M (λ + δr ) ⊕ ΠM (λ + δr ) if λr            6= −1, 0
+                
+                
+                 M (λ + δr )
+                                               if λr           = 0 and h(λ) even,
+   Mr /Mr−1 = ∼    M (λ +   δr ) ⊕ ΠM (λ + δr ) if λr           = 0 and h(λ) odd,
+                
+                  M (λ+δr )
+                                                if λr           = −1 and h(λ) even,
+                 M (λ+δr )
+                
+                
+                 ΠM (λ+δr ) ⊕ M (λ+δr )
+                         M (λ+δr )              if λ
+                                       ΠM (λ+δr )          r   = −1 and h(λ) odd,
+for each r = 1, . . . , n.
+Proof. Note V ∼  = u(δ1 ) ⊕ · · · ⊕ u(δn ) as an h-supermodule. Now the lemma
+follows by a standard construction, see e.g. [B1, Lemma 4.24] for a similar
+situation, from the observation that
+                     
+                     
+                      u(λ + δr ) ⊕ Πu(λ + δr ) if λr 6= −1, 0
+                      u(λ + δ )
+                                                    if λr = 0 and h(λ) even,
+                     
+                                r
+                   ∼
+     u(λ) ⊗ u(δr ) =   u(λ  +   δr ) ⊕ Πu(λ +   δr ) if λr = 0 and h(λ) odd,
+                     
+                       u(λ+δr )
+                                                     if λr = −1 and h(λ) even,
+                      u(λ+δr )
+                     
+                     
+                      Πu(λ+δr ) ⊕ u(λ+δr )
+                         u(λ+δr )     Πu(λ+δr )      if λr = −1 and h(λ) odd
+                        CHARACTER FORMULAE FOR q(n)                              33
+
+as h-supermodules. We prove this in just two of the situations, the rest being
+similar.
+   First suppose λr = −1 and h(λ) is odd. By character considerations u(λ) ⊗
+u(δr ) has just four composition factors, all isomorphic to u(λ + δr ). Moreover,
+both u(λ) and                                                                  2
+            √ u(δr ) possess odd automorphisms J1 , J2 respectively with Ji =
+−1. The ± −1-eigenspaces of the even automorphism J1 ⊗ J2 of u(λ) ⊗ u(δr )
+decompose it into a direct sum of two factors, and the map J1 ⊗ 1 gives an odd
+isomorphism between the factors. Hence u(λ) ⊗ u(δr ) has the structure given.
+   Second suppose λr 6= −1, 0 and h(λ) is even. In that case, u(λ) is of type M,
+and by character considerations u(λ) ⊗ u(δr ) has just two composition factors,
+both isomorphic to u(λ + δr ) which also has type M. Let J be an odd auto-
+morphism of u(δr ). Then, 1 ⊗ J is an odd automorphism of u(λ) ⊗ u(δr ). If
+u(λ)⊗ u(δr ) was to be a non-split extension of u(λ+ δr ) and Πu(λ+ δr ), it would
+possess a nilpotent odd endomorphism, but no odd automorphism. Hence it
+must split as a direct sum as required.                                          
+   Note on applying the exact functor prwt(λ)−αi to the filtration constructed
+in the lemma, we obtain a filtration of Tri M (λ). Moreover, if λ ∈ Zn+ , L(λ)
+is a finite dimensional quotient of M (λ), so Tri L(λ) is a finite dimensional
+quotient of Tri M (λ). Hence we also get induced a filtration of Tri L(λ) whose
+the factors are finite dimensional quotients of the factors of the filtration of
+Tri M (λ). We refer to this as the canonical filtration of Tri L(λ). Its properties
+are used repeatedly in the proofs of the next two lemmas.
+Lemma 4.38. Suppose λ ∈ Zn+ and i ≥ 0 are such that ϕi (λ) = 1. Then,
+Fi [L(λ)] = [L(F̃i (λ))].
+Proof. We actually prove the slightly stronger statement that
+                     
+             i     ∼    L(µ)             if i = 0 and h(λ) is even,
+          Tr L(λ) =
+                        L(µ) ⊕ ΠL(µ) if i > 0 or h(λ) is odd,
+where µ := F̃i (λ). The lemma follows from this and Lemma 4.34 above. The
+possible cases for λ, µ are listed explicitly in §3-d, in particular we have that
+µ = λ+ δs for some 1 ≤ s ≤ n. By considering the canonical filtration in each of
+the cases, Tri M (λ) ∼
+                     = M (µ) if i = 0 and h(λ) is even, Tri M (λ) ∼
+                                                                  = M (µ)⊕ΠM (µ)
+otherwise. In particular, [Tri M (λ) : L(µ)] = 1 if i = 0 and h(λ) is even,
+[Tri M (λ) : L(µ)] = 2 otherwise. Now, Tri L(λ) is a quotient of Tri M (λ), and
+moreover it is self-dual under the duality τ by Theorem 4.4(iv) and (4.33).
+Hence, Tri L(λ) is necessarily a quotient of L(µ) if i = 0 and h(λ) is even,
+L(µ) ⊕ Π(µ) otherwise. So to complete the proof, we just need to show that
+[Tri L(λ) : L(µ)] = [Tri M (λ) : L(µ)].
+  Suppose for a contradiction that [Tri L(λ) : L(µ)] < [Tri M (λ) : L(µ)].
+Then there must be some composition factor L(λ′ ) 6∼    = L(λ) of M (λ) such that
+   i                                  i
+[Tr L(λ ) : L(µ)] > 0. Hence, [Tr M (λ ) : L(µ)] > 0 for some λ′ < λ with
+        ′                                  ′
+
+wt(λ′ ) = wt(λ). Considering the canonical filtration of Tri M (λ′ ), there must
+exist some 1 ≤ r ≤ n such that µ = λ+δs ≤ λ′ +δr . But then λ−δr +δs ≤ λ′ < λ
+34                                JONATHAN BRUNDAN
+
+and wt(λ′ ) = wt(λ). It is easy to see in each case that there is no such λ′ , giving
+the desired contradiction.                                                          
+Lemma 4.39. Suppose λ ∈ Zn+ and i ≥ 0 are such that ϕi (λ) = 0. Then,
+Fi [L(λ)] = 0.
+Proof. The possibilities for λ are listed explictly in §3-d. In almost all of the
+configurations, we get that Tri L(λ) = 0, hence Fi [L(λ)] = 0, immediately by
+looking at the canonical filtration. There are just two difficult cases in which
+we need to argue further.
+     In the first case, i = 0 and λ = (· · · , 1, 0r−1 , −1, · · · ) for some r ≥ 1, where
+· · · denote entries different from −1, 0, 1. We let µ = (· · · , 0r+1 , · · · ) and ν =
+(· · · , 1, 0r , · · · ), where the · · · are the same entries as in λ. Also let c = 1 if
+h(λ) is even, c = 2 if h(λ) is odd. By considering the canonical filtration, we
+see here that [Tri M (λ) : L(ν)] = 2c. By Lemma 4.36, [M (λ) : L(µ)] ≥ 2,
+hence [Tri M (λ) : L(ν)] ≥ [Tri L(λ) : L(ν)] + 2[Tri L(µ) : L(ν)]. By Lemma 4.38,
+[Tri L(µ) : L(ν)] = c. This shows that [Tri L(λ) : L(ν)] = 0 (and also that
+[M (λ) : L(µ)] = 2, completing the proof of Lemma 4.36 in this case). But
+by the canonical filtration, Tri L(λ) has a filtration where all the factors are
+quotients of M (ν), so it has to be zero.
+     In the second case, i > 0 and λ = (. . . , i+1, . . . , −i−1, . . . ), where . . . denote
+entries different from −i − 1, −i, i, i + 1. We let µ = (· · · , i, · · · , −i, · · · ) and
+ν = (· · · , i + 1, · · · , −i, · · · ), where the · · · are the same entries as in λ. By the
+canonical filtration, Tri M (λ) ∼         = M (ν) ⊕ ΠM (ν), hence [Tri M (λ) : L(ν)] = 2.
+By Lemma 4.36, [M (λ) : L(µ)] ≥ 1, hence [Tri M (λ) : L(ν)] ≥ [Tri L(λ) :
+L(ν)] + [Tri L(µ) : L(ν)]. By Lemma 4.38, [Tri L(µ) : L(ν)] = 2. This shows
+that [Tri L(λ) : L(ν)] = 0 (and also completes the proof of Lemma 4.36 in
+this case). Hence, since Tri L(λ) is a quotient of M (ν) ⊕ ΠM (ν), it has to be
+zero.                                                                                       
+
+§4-g. Injective supermodules. We refer at this point to [J1, I.3] for the gen-
+eral facts about injective modules over a group scheme, all of which generalize
+to supergroups. In particular, for every G-supermodule M , there is an injective
+G-supermodule U , unique up to isomorphism, such that socG M ∼        = socG U . We
+call U the injective hull of M . For λ ∈ Zn+ , let U (λ) denote the injective hull of
+L(λ). Any injective G-supermodule M is isomorphic to a direct sum of U (λ)’s,
+the number of summands isomorphic to U (λ) being equal to the multiplicity of
+L(λ) in socG M .
+Lemma 4.40. Each U (λ) is finite dimensional.
+Proof. Consider the functor indG   Gev := HomU (g0̄ ) (U (g), ?). Since U (g) is a free
+right U (g0̄ )-supermodule of finite rank, this is an exact functor mapping finite
+dimensional Gev -supermodules to finite dimensional G-supermodules. It is right
+adjoint to the restriction functor resG Gev from the category of G-supermodules
+to the category of Gev -supermodules, so sends injectives to injectives. Now take
+λ ∈ Zn+ . Since every Gev -module is injective, we get that indG           G
+                                                                    Gev resGev L(λ) is a
+                          CHARACTER FORMULAE FOR q(n)                              35
+
+finite dimensional injective G-supermodule. Moreover, the unit of the adjunc-
+tion gives an embedding of L(λ) into indG      G
+                                        Gev resGev L(λ). Hence the injective hull
+of L(λ) is finite dimensional.                                                 
+  Let Cn∗ be the category of all finite dimensional injective G-supermodules. The
+block decomposition (4.22) of Cn induces an analogous block decomposition of
+the subcategory Cn∗                        M
+                                     Cn∗ =    Cγ∗ .                         (4.41)
+                                          γ∈P
+Let K(Cn∗ ) (resp. K(Cγ∗ )) be the Grothendieck group of the category Cn∗ (resp.
+Cγ∗ ). By Lemma 4.40, K(Cn∗ ) is the free abelian group on basis {[U (λ)]}λ∈Zn+ , and
+K(Cγ∗ ) is the subgroup generated by the {[U (λ)]} for λ ∈ Zn+ with wt(λ) = γ.
+                          b ∗ ) of the Grothendieck group K(C ∗ ) with respect to
+    Form the completion K(C   n                                   n
+the descending filtration (Kd (CP ∗                     ∗
+                                  n ))d∈Z where Kd (Cn ) is the subgroup generated
+by {[U (λ)]} for λ ∈ Zn+ with ni=1 iλn+1−i ≥ d. The important thing in this
+definition is that vectors of the form [U (λ)] + (∗) make sense whenever (∗) is
+an infinite linear combination of [U (µ)]’s for µ > λ. In particular, the following
+                               b ∗ ) for each λ ∈ Zn :
+are well-defined elements of K(C    n                   +
+                                     X
+                                           −1
+                        [F (λ)] :=        d−w0 µ,−w0 λ [U (µ)],               (4.42)
+                                   µ∈Zn
+                                      +
+
+recall (4.13). By the unitriangularity of the inverse decomposition numbers, the
+                                                       b ∗ ). Note [F (λ)] does not
+elements {[F (λ)]}λ∈Zn+ give a topological basis for K(C  n
+in general belong to K(Cn∗ ) itself.
+   We define a pairing h., .i between the Grothendieck groups K(Cn ) and K(Cn∗ )
+by letting
+                             h[L(−w0 λ)], [U (µ)]i = δλ,µ                    (4.43)
+                   n
+for each λ, µ ∈ Z+ . The pairing h., .i extends by continuity to give a pairing
+also denoted h., .i between K(Cn ) and K(C b ∗ ). In that case, by the definitions
+                                               n
+(4.12), (4.42) and (4.43), we have that
+                            h[E(−w0 λ)], [F (µ)]i = δλ,µ                      (4.44)
+for each λ, µ ∈   Zn+ .We record the following lemma which follows from a
+standard property of injective hulls, see [J1, I.3.17(3)].
+Lemma 4.45. Suppose we are given M ∈ Cn and U ∈ Cγ∗ for some γ ∈ P .
+Then,                 
+                        dim HomG (M ∗ , U )    if Cγ is of type M,
+       h[M ], [U ]i =   1              ∗ , U ) if C is of type Q.
+                        2 dim Hom G (M             γ
+
+   Now recall the definition of the UZ -module F cn from §3-f. We define a con-
+                                                   Z
+tinuous isomorphism
+                  cn → K(C
+             ι∗ : F       b ∗ ),     Fλ (1) 7→ [F (λ)]  (λ ∈ Z+
+                   Z         n                                 n ).      (4.46)
+The following lemma shows that this map ι∗ is the dual map to ι from (4.27)
+with respect to the pairings h., .i:
+36                                JONATHAN BRUNDAN
+
+                                                                        cn .
+Lemma 4.47. hι([M ]), vi = h[M ], ι∗ (v)i for all [M ] ∈ K(Cn ) and v ∈ FZ
+
+Proof. It suffices to check this for [M ] = [E(−w0 λ)] and v = Fµ (1) for λ, µ ∈
+Zn+ , when it follows immediately from (3.35) and (4.44).                      
+                                           cn to the completed Grothendieck
+   As in §4-e, we lift the action of UZ on FZ
+       b n∗ ) through the isomorphism ι∗ . By Lemmas 4.47 and 2.21, we have
+group K(C
+at once that
+         hEi [L], [U ]i = h[L], Ei [U ]i,  hFi [L], [U ]i = h[L], Fi [U ]i,   (4.48)
+                                             b ∗ ). The next lemma gives a purely
+for each i ≥ 0 and all [L] ∈ K(Cn ), [U ] ∈ K(C  n
+representation theoretic interpretation of the operators Ei and Fi on K(C   b n∗ ), cf.
+Lemma 4.34. For the statement, recall by Lemma 4.31 that the functors Tri
+and Tri send injectives to injectives.
+Lemma 4.49. For λ ∈ Zn+ and i ≥ 0, there exist injective G-supermodules
+Ei U (λ) and Fi U (λ), unique up to isomorphism, characterized by
+                     
+                   ∼    Ei U (λ)              if i = 0 and h(λ) is even,
+         Tri U (λ) =
+                        Ei U (λ) ⊕ ΠEi U (λ) if i 6= 0 or h(λ) is odd;
+                     
+                        Fi U (λ)             if i = 0 and h(λ) is even,
+         Tri U (λ) ∼
+                   =
+                        Fi U (λ) ⊕ ΠFi U (λ) if i 6= 0 or h(λ) is odd.
+Moreover, Ei [U (λ)] = [Ei U (λ)] and Fi [U (λ)] = [Fi U (λ)].
+Proof. We just explain the proof for Fi . Take λ ∈ Zn+ and i ≥ 0. Note unique-
+ness of Fi U (λ) is immediate by Krull-Schmidt. For existence, we consider three
+separate cases.
+   Case one. If i = 0 and h(λ) is even, let Fi U (λ) := Tri U (λ).
+   Case two. If h(λ) is odd, L(λ) is of type Q, so possesses an odd automor-
+phism J1 with J12 = −1. This induces an odd automorphism also denoted
+J1 of the injective hull U (λ). Also the natural representation V possesses the
+odd automorphism J defined earlier (4.2). The map J1 ⊗ J √induces an even
+automorphism of the summand Tri U (λ) of U (λ) ⊗ V . Its ± −1-eigenspaces
+decompose Tri U (λ) into a direct sum of two G-supermodules,         √ and the map
+1 ⊗ J is an odd isomorphism between them. Let Fi U (λ) be the −1-eigenspace
+(say), then Tri U (λ) ∼
+                      = Fi U (λ) ⊕ ΠFi U (λ) as required.
+   Case three. If h(λ) is even and i > 0, then the map 1 ⊗ J induces an odd
+automorphism of Tri U (λ), hence also of the socle S of Tri U (λ). All constituents
+of S are of type M, so S must decompose as a G-supermodule as S− ⊕ S+ with
+(1⊗J)S± = S∓ . This decomposition of the socle induces a decomposition of the
+injective supermodule Tri U (λ), say Tri U (λ) = M− ⊕ M+ where socG M± = S± .
+In this case we let Fi U (λ) = M+ (say).
+   It remains to show that Fi [U (λ)] = [Fi U (λ)]. To do this, it suffices to prove
+that h[L(µ)], Fi [U (λ)]i = h[L(µ)], [Fi U (λ)]i for all µ ∈ Zn+ . This is done using
+Lemmas 4.45, 4.34, (4.48) and the adjointness of Tri , Tri from Lemma 4.31. We
+just explain the argument in the case that h(λ) is even and i = 0, the other
+situations being entirely similar. First note by weight considerations that both
+                         CHARACTER FORMULAE FOR q(n)                              37
+
+sides of the identity we are trying to verify are zero unless h(µ) is odd. Now
+compute:
+                                                        1
+          h[L(µ)], Fi [U (λ)]i = hFi [L(µ)], [U (λ)]i = h[Tri L(µ)], [U (λ)]i
+                                                        2
+                                 1
+                               = dim HomG ((Tr L(µ))∗ , U (λ))
+                                                    i
+                                 2
+                                 1
+                               = dim HomG (Tri (L(µ)∗ ), U (λ))
+                                 2
+                                 1
+                               = dim HomG (L(µ)∗ , Tri U (λ))
+                                 2
+                               = hL(µ), [Tri U (λ)]i = hL(µ), [Fi U (λ)]i.
+This completes the proof.                                                         
+Lemma 4.50. Let λ ∈ Zn+ and i ≥ 0.
+    (i) If ϕi (λ) = 0 and εi (λ) > 0 then Ei U (λ) ∼
+                                                   = U (Ẽi (λ)).
+   (ii) If εi (λ) = 0 and ϕi (λ) > 0 then Fi U (λ) = U (F̃i (λ)).
+Proof. We just prove (ii), since (i) follows by applying ∗. We know that Fi U (λ)
+is a direct sum of injective indecomposables. To compute the multiplicity of
+U (µ) for a given µ ∈ Zn+ , it suffices to compute
+          h[L(µ)], [Fi U (λ)]i = h[L(µ)], Fi [U (λ)]i = hFi [L(µ)], [U (λ)]i.
+By block considerations and Lemmas 4.38 and 4.39, that is zero unless µ =
+−w0 F̃i (λ), in which case it is one. Hence Fi U (λ) = U (F̃i (λ)).     
+  Now we can construct the injective supermodules U (λ). If λ is typical, there
+are no problems:
+Lemma 4.51. Suppose that λ ∈ Zn+ is typical. Then U (λ) = H 0 (λ) = L(λ).
+Proof. If λ is typical then there are no other µ ∈ Zn+ with wt(µ) = wt(λ). So
+by the linkage principle [BK2, Theorem 8.10], the induced module H 0 (λ) is
+actually equal to L(λ) in this case. Using this and the observation that u(λ) is
+an injective H-supermodule for typical λ, we get from [BK2, Theorem 7.5] that
+Ext1G (L(λ), L(µ)) = Ext1G (L(µ), L(λ)) = 0 for all µ ∈ Zn+ . In particular, L(λ)
+is injective, hence L(λ) = U (λ).                                              
+   Note in particular that the lemma shows that U (λ) is self-dual with respect
+to the duality τ in the case that λ is typical. Now suppose that λ ∈ Zn+
+is not typical. Apply Procedure 3.26 to get µ ∈ Zn+ and an operator Xi ∈
+{Ei , Fi }. Since this process reduces λ to a typical weight in finitely many steps,
+we may assume inductively that U (µ) has already been constructed, and that
+U (µ) ∼= U (µ)τ . Just like in Lemma 3.27, but applying Lemma 4.50 in place of
+Lemma 3.25, we have that U (λ) ∼    = Xi U (µ). Moreover,
+                     τ ∼           τ ∼
+               U (λ) = (Xi U (µ)) = Xi (U (µ)τ ) ∼ = Xi U (µ) ∼
+                                                              = U (λ),
+hence U (λ) is also self-dual. We obtain in this way an explicit algorithm to
+construct all the injective indecomposables. As a by-product we see that each
+38                              JONATHAN BRUNDAN
+
+U (λ) is actually self-dual with respect to the duality τ , hence is isomorphic to
+the projective cover of L(λ).
+   Now we can prove the main result of the article. It shows that the map ι∗
+from (4.46) maps the canonical basis of FZn to the canonical basis of K(Cn∗ )
+given by the injective indecomposables, and that the map ι from (4.27) maps
+the canonical basis of K(Cn ) given by the irreducible supermodules to the dual
+canonical basis of EZn .
+Theorem 4.52. For each λ ∈ Zn+ , ι∗ (Uλ (1)) = [U (λ)] and ι([L(λ)]) = Lλ (1).
+Proof. In view of Lemma 4.47 and the facts that [L(λ)] is dual to [U (−w0 λ)]
+and Lλ (1) is dual to U−w0 λ (1), it suffices to prove just that ι∗ (Uλ (1)) = [U (λ)].
+If λ is typical, then Uλ (1) = Fλ (1) and [U (λ)] = [F (λ)], since there are no
+other µ ∈ Zn+ with wt(µ) = wt(λ). So the result holds for typical weights. The
+result follows in general because by definition the map ι∗ commutes with the
+operators Ei , Fi and the algorithm for constructing the U (λ)’s explained above
+exactly parallels the algorithm for constructing the Uλ (1)’s from §3-e.            
+     We get by the theorem and (3.7), (3.10) and (3.17) respectively that
+                                X
+                       [E(λ)] =      u−w0 λ,−w0 µ (1)[L(µ)],              (4.53)
+                                    µ∈Zn
+                                       +
+                                    X
+                        [L(λ)] =           lµ,λ (1)[E(µ)],                      (4.54)
+                                    µ∈Zn
+                                       +
+                                    X
+                        [U (λ)] =          uµ,λ (1)[F (µ)],                     (4.55)
+                                    µ∈Zn
+                                       +
+
+for each λ ∈ Zn+ . Note finally that u−w0 λ,−w0 µ (q) = uλ,µ (q), since ω(Fµ ) =
+F−w0 µ and ω(Uµ ) = U−w0 µ by Theorem 3.5. So comparing (4.53) with (4.12)
+gives that dµ,λ = uµ,λ (1). The Main Theorem stated in the introduction follows
+from this statement and Theorem 3.36.
+§4-h. Conjectures. To conclude the article, we make the following conjecture:
+for each λ ∈ Zn , we have that
+                                  X
+                        [M (λ)] =   t−λ,−µ (1)[L(µ)].                  (4.56)
+                                      µ∈Zn
+
+Comparing (2.24) and Corollary 2.28, this conjecture is equivalent to the state-
+ment that                         X
+                       [L(λ)] =       lµ,λ (1)[M (µ)],                    (4.57)
+                                      µ∈Zn
+            b n ). The Nλ ’s in section 2 correspond to the supermodules N (λ)
+equality in K(O
+defined by N (λ) := U (g) ⊗U (b) ũ(λ), where ũ(λ) denotes the projective cover
+of u(λ) in the category of h-supermodules that are semisimple over h0̄ . Note
+at least that [N (λ)] = 2z(λ) [M (λ)] in the Grothendieck group, cf. (2.7) and
+[BK2, (7.1)]. The Tλ ’s in section 2 should correspond to the indecomposable
+tilting modules T (λ) in category On , cf. [B3, Example 7.10]. We recall that for
+                            CHARACTER FORMULAE FOR q(n)                                     39
+
+λ ∈ Zn , T (λ) is the supermodule characterized uniquely up to isomorphism by
+the properties:
+    (1) T (λ) ∈ On is indecomposable;
+    (2) Ext1On (N (µ), T (λ)) = 0 for all µ ∈ Zn ;
+    (3) T (λ) has a filtration where the subquotients are of the form N (µ) for
+        µ ∈ Zn , starting with N (λ) at the bottom.
+Conjecture (4.56) is equivalent to the statement
+                                      X
+                            [T (λ)] =      tµ,λ (1)[N (µ)],              (4.58)
+                                         µ∈Zn
+
+as follows by [B3, (7.12)].
+
+                                       References
+[Bg]  G. Bergman, The diamond lemma for ring theory, Advances Math. 29 (1978), 178–218.
+[BGG] J. Bernstein, I. M. Gelfand and S. I. Gelfand, A category of g-modules, Func. Anal.
+      Appl. 10 (1976), 87–92.
+[B1]  J. Brundan, Kazhdan-Lusztig polynomials and character formulae for the Lie super-
+      algebra gl(m|n), preprint.
+[B2]  J. Brundan, Modular representations of the supergroup Q(n), II, preprint.
+[B3]  J. Brundan, Tilting modules for Lie superalgebras, preprint.
+                                                                                        (2)
+[BK1] J. Brundan and A. Kleshchev, Hecke-Clifford superalgebras, crystals of type A2ℓ and
+      modular branching rules for Sbn , Represent. Theory 5 (2001), 317-403.
+[BK2] J. Brundan and A. Kleshchev, Modular representations of the supergroup Q(n), I, to
+      appear in J. Algebra.
+[J1]  J. C. Jantzen, Representations of algebraic groups, Academic Press, 1986.
+[J2]  J. C. Jantzen, Lectures on quantum groups, Graduate Studies in Math. 6, Amer. Math.
+      Soc., 1996.
+[JMO] N. Jing, K. Misra and M. Okado, q-Wedge modules for quantized enveloping algebras
+      of classical type, J. Algebra 230 (2000), 518–539.
+[K1]  V. G. Kac, Lie superalgebras, Advances in Math. 26 (1977), 8–96.
+[K2]  V. G. Kac, Characters of typical representations of classical Lie superalgebras, Com-
+      mun. in Algebra 5 (8) (1977), 889–897.
+[K3]  V. G. Kac, Representations of classical Lie superalgebras, in: “Differential geometrical
+      methods in mathematical physics II”, Lecture Notes in Math. no. 676, pp. 597–626,
+      Springer-Verlag, Berlin, 1978.
+[Ka1] M. Kashiwara, Global crystal bases of quantum groups, Duke Math. J. 69 (1993),
+      455–485.
+[Ka2] M. Kashiwara, On crystal bases, Proc. Canadian Math. Soc. 16 (1995), 155–196.
+[KL] D. Kazhdan and G. Lusztig, Representations of Coxeter groups and Hecke algebras,
+      Invent. Math. 53 (1979), 165–184.
+[LLT] A. Lascoux, B. Leclerc and J.-Y. Thibon, Hecke algebras at roots of unity and crystal
+      bases of quantum affine algebras, Comm. Math. Phys. 181 (1996), 205–263.
+[LT]  B. Leclerc and J.-Y. Thibon, q-Deformed Fock spaces and modular representations of
+      spin symmetric groups, J. Phys. A 30 (1997), 6163–6176.
+[L1]  G. Lusztig, Quantum groups at roots of 1, Geom. Ded. 35 (1990), 89–114.
+[L2]  G. Lusztig, Introduction to quantum groups, Progress in Math. 110, Birkhauser, 1993.
+[M]   I. G. Macdonald, Symmetric functions and Hall polynomials, Oxford Mathematical
+      Monographs, second edition, OUP, 1995.
+[P1]  I. Penkov, Characters of typical irreducible finite dimensional q(n)-supermodules,
+      Func. Anal. Appl. 20 (1986), 30–37.
+[P2]  I. Penkov, Borel-Weil-Bott theory for classical Lie supergroups, Itogi Nauki i Tekhniki
+      32 (1988), 71–124 (translation).
+[P3]  I. Penkov, Generic representations of classical Lie superalgebras and their localization,
+      Monatsh. Math. 118 (1994), 267–313.
+40                                JONATHAN BRUNDAN
+
+[PS1]   I. Penkov and V. Serganova, Cohomology of G/P for classical complex Lie supergroups
+        G and characters of some atypical G-supermodules, Ann. Inst. Fourier 39 (1989), 845–
+        873.
+[PS2]   I. Penkov and V. Serganova, Characters of irreducible G-supermodules and cohomol-
+        ogy of G/P for the Lie supergroup G = Q(N ), J. Math. Sci. 84 (1997), no. 5, 1382–
+        1412.
+[PS3]   I. Penkov and V. Serganova, Characters of finite dimensional irreducible q(n)-
+        supermodules, Lett. Math. Phys. 40 (1997), no. 2, 147–158.
+[S1]    A. N. Sergeev, Tensor algebra of the identity representation as a module over the Lie
+        superalgebras GL(n, m) and Q(n), Math. USSR Sbornik 51 (1985), 419–427.
+[S2]    A. N. Sergeev, The center of enveloping algebra for Lie superalgebra Q(n, C), Lett.
+        Math. Phys. 7 (1983), 177–179.
+
+     Department of Mathematics, University of Oregon, Eugene, OR 97403, USA
+     E-mail address: brundan@darkwing.uoregon.edu
+

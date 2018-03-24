@@ -1,0 +1,2160 @@
+                                                         AN INTRODUCTION TO PERVERSE SHEAVES
+arXiv:math/0307349v1 [math.RT] 26 Jul 2003
+
+
+
+
+                                                                                KONSTANZE RIETSCH
+
+
+
+
+                                                                                   Introduction
+                                                The aim of these notes is to give an introduction to perverse sheaves with appli-
+                                             cations to representation theory or quantum groups in mind. The perverse sheaves
+                                             that come up in these applications are in some sense extensions of actual sheaves on
+                                             particular algebraic varieties arising in Lie theory (for example the nilpotent cone
+                                             in a Lie algebra, or a Schubert variety, or the moduli space of representations of a
+                                             Dynkin quiver). We will ultimately therefore be interested in perverse sheaves on
+                                             algebraic varieties.
+                                                The origin of the theory of perverse sheaves is M. Goresky and R. MacPherson’s
+                                             theory of intersection homology [13, 14]. This is a purely topological theory, the
+                                             original aim of which was to find a topological invariant similar to cohomology that
+                                             would carry over some of the nice properties of homology or cohomology of smooth
+                                             manifolds also to singular spaces (especially Poincaré duality). While the usual
+                                             cohomology of a topological space can be defined sheaf theoretically as cohomology
+                                             of the constant sheaf, the intersection homology turns out to be the cohomology
+                                             of a certain complex of sheaves, constructed very elegantly by P. Deligne. This
+                                             complex is the main example of a perverse sheaf.
+                                                The greatest part of these notes will be taken up by explaining Goresky and
+                                             MacPherson’s intersection homology and Deligne’s complex. And throughout all
+                                             of that our setting will be purely topological. Also we will always stay over C.
+                                             The deepest result in the theory of perverse sheaves on algebraic varieties, the
+                                             Decomposition Theorem of Beilinson, Bernstein, Deligne and Gabber [1], will only
+                                             be stated. And the notes will end with an application, the intersection cohomology
+                                             interpretation of the Kazhdan-Lusztig polynomials.
+                                                The overriding goal of this exposition (written by a non-expert) is to give a hope-
+                                             fully broadly accessible first introduction to perverse sheaves. It is intended more
+                                             to give the flavor and some orientation without delving too much into technical
+                                             details. The hope is that readers wishing to see something in more detail or greater
+                                             generality should be able to orient themselves very quickly in the existing literature
+                                             to find it. Moreover these lectures are very far from comprehensive, and the bibli-
+                                             ography mostly just reflects the sources that I happened across and found useful.
+                                             Many more pointers in all the different directions of the theory can be found in the
+
+                                                Date: February 1, 2008.
+                                                1991 Mathematics Subject Classification. 55N33; 14F43, 46M20.
+                                                Key words and phrases. perverse sheaves, intersection cohomology.
+                                                 The author was funded by the Violette and Samuel Glasstone Foundation at Oxford through-
+                                             out most of the preparation of these lectures, and is currently a Royal Society Dorothy Hodgkin
+                                             Research Fellow at King’s College, University of London.
+                                                                                           1
+2                                KONSTANZE RIETSCH
+
+
+references themselves. For a particularly nice overview of the many applications of
+perverse sheaves the two ICM addresses [24] and [25] are highly recommended.
+   These notes are based on seven lectures given first at Oxford University in the
+Spring of 2002, and then repeated in condensed form at the Fields Institute, as
+part of the ICRA X conference. I am grateful to the listeners in both places for
+their questions and comments, and to Professor Ringel for instigating these lectures.
+Special thanks go to Kevin McGerty and Catharina Stroppel for each sending me
+their helpful comments on the written notes.
+
+                1. Lecture - local systems, an introduction
+   Let X be a topological space. We will always assume X to be a nice, sensible
+topological space (locally compact, Hausdorff, paracompact, with a countable basis,
+locally simply connected). For example picture your favorite simplicial or CW
+complex, manifold or real/complex algebraic variety. We begin with a quick review
+of sheaves. Good references are for example [18, 19]. Any results from algebraic
+topology we use can be found in most textbooks, such as [10, 26, 27].
+
+1.1. Sheaves. Let K be a field.      A sheaf of K-vector spaces, F , on X is a con-
+travariant functor
+                                                                    
+               open sets in X                      K-vector spaces
+                                     −→
+               and inclusions                      and linear maps
+                      U               7−→                F(U )
+                   V ֒→ U            7−→ rUV    : F (U ) → F (V ) : s 7→ s|V
+obeying the sheaf axiom : For any collection of open sets {Vi }i∈I in X and si ∈
+F (Vi ) that are compatible with one another  S in the sense that si |Vi ∩Vj = sj |Vi ∩Vj
+for all i, j ∈ I there exists a unique s ∈ F( i∈I Vi ) such that s|Vi = si for all i ∈ I.
+The elements of F (U ) are called sections of F over U .
+   Loosely, the sheaf axiom says that sections are determined by their restrictions
+to any open cover. In a way a sheaf is a device for dealing with properties that
+are local in nature and measuring the transition from local to global. We list some
+common examples. These are widely spread, but mostly we will be interested in
+sheaves related to 4. below.
+    (1) The continuous R-valued functions on a topological space X form a sheaf
+            0         0
+          CX  . So CX   (U ) is the vector space of continuous maps U → R and for
+          U ⊂ V , rUV is the usual restriction map.
+                                                   ∞
+    (2) Similarly if X is a smooth manifold CX        is the sheaf of smooth functions
+          on X. A system of differential equations on X determines a subsheaf of
+            ∞
+          CX   with sections given by the local solutions. If X is an analytic manifold
+          (with analytic gluing maps between the charts) then one also has the sheaf
+          of analytic functions on X. For an algebraic variety there is the sheaf of
+          regular (algebraic) functions.
+    (3) A vector bundle E → X gives rise to a sheaf of local sections. For example
+          we have the sheaf of vector fields coming from the tangent bundle, or the
+          sheaf of 1-forms associated to the cotangent bundle.
+    (4) A central role in topology is played by the constant sheaf CX on X, which
+          is defined by
+                     CX (U ) := {locally constant maps U → C}.
+                     AN INTRODUCTION TO PERVERSE SHEAVES                            3
+
+
+        So if U has finitely many connected components we have
+                              ∼ C#{connected components of U} .
+                       C (U ) =
+                        X
+
+         Completely analogously there is a constant sheaf V X for any vector space
+         V . In particular we have the zero-sheaf, 0X , with 0X (U ) = 0 for all U .
+   A morphism F → G between sheaves on X is defined to be a natural transforma-
+tion of the functors, that is, a collection of compatible linear maps F (U ) → G(U )
+for all open sets U in X.
+   We denote the category of sheaves of C-vector spaces on X by Sh(X). This is
+an abelian category. The zero object is given by the zero-sheaf 0X . The direct sum
+F ⊕ G of two sheaves is just given in the obvious way by (F ⊕ G)(U ) = F (U ) ⊕ G(U )
+with the induced restriction maps. Also the kernel of a morphism f : F → G in the
+category may be defined by Ker(f )(U ) = ker(f (U ) : F (U ) → G(U )). Note that
+whether a section in F (U ) is sent to zero under f (U ) is a property that can be
+checked locally, so Ker(f ) is indeed a sheaf.
+   Cokernels are a bit more tricky to define. The definition on individual spaces
+of sections is not local enough and only gives a presheaf (a contravariant functor
+of the same kind but that does not necessarily obey the sheaf axiom). However
+there is a standard way to ‘sheafify’, i.e. turn any presheaf into a sheaf by forcing
+the sheaf axiom, to get the correct definition. We’ll skip the details, but see any
+textbook. In any case, an exact sequence of sheaves may be characterized by being
+exact for small enough neighborhoods, or by being exact on stalks :
+Definition 1.1. Let x ∈ X and F a sheaf (or presheaf) on X. The stalk of F at
+x is the C-vector space
+                            Fx =         lim
+                                          −→
+                                                      F (U ).
+                                   {U⊂X open | x∈U}
+
+In other words an element in Fx can be represented by a pair (U, s) of an open
+neighborhood U of X and a section s ∈ F(U ). And two such pairs represent the
+same element of the stalk if they agree restricted to some small enough neighbor-
+hood of x. This element is the germ of the section s and denoted by sx .
+   Any map of sheaves f : F → G on X induces a map on stalks fx : Fx → Gx . For
+a section s ∈ F(U ) the support of s is defined by Supp(s) = {x ∈ U | sx 6= 0 in Fx }.
+Note, using the definition of sx , that Supp(s) is automatically closed(!) inside U .
+    A sequence, 0X → E → F → G → 0X , in Sh(X) is exact precisely if 0 → Ex →
+Fx → Gx → 0 is an exact sequence of vector spaces for all x ∈ X. In particular the
+functor from Sh(X) to vector spaces of taking stalks is exact. Also for any presheaf
+F̃ , the sheafification F is a sheaf with Fx = F˜x for all x ∈ X.
+Remark 1.2 (Examples). For a sheaf of analytic functions the germs at x can be
+thought of as Taylor series around x. The stalk of the constant sheaf V X at any
+point x is just the vector space V .
+  Let x0 ∈ X. Then another example of a sheaf is the skyscraper sheaf S at x0 .
+Define S(U ) = C precisely if x0 ∈ U and otherwise zero, with the obvious restriction
+maps. Then Sx0 = C while all other stalks vanish.
+1.2. A few functors and exactness. The stalk functor is a special case of a
+restriction functor. Suppose j = jZ : Z ֒→ X is the inclusion of a locally closed
+subset. Then there is an exact functor j ∗ : Sh(X) → Sh(Z) defined by j ∗ (F )(V ) =
+4                                KONSTANZE RIETSCH
+
+
+lim F (U ), where the limit is taken over U ⊃ V which are open in X. When Z is
+−→
+open in X the limit is not required. One also writes j ∗ (F ) = F |Z . This functor
+has the property j ∗ (F )z = Fz for all z ∈ Z.
+  Other important functors that we have straight away are
+      Γ : Sh(X) → (C-vector spaces)            Γc : Sh(X) → (C-vector spaces)
+               F 7→ Γ(X, F ) := F (X),                   F 7→ Γc (X, F ),
+where Γc (X, F ) is the space of compactly supported global sections. For open
+U ⊂ X we also have the functors Γ(U, ) = Γ ◦ jU ∗ and Γc (U, ) = Γc ◦ jU ∗ of
+sections or compactly supported sections over U . These sections functors are in
+general only left exact.
+Remark 1.3. The failure of right exactness of Γ comes from the problem that local
+properties need not be true globally. For example suppose X is a smooth manifold
+and ΩiX the sheaf of smooth i-forms on X, say with complex coefficients. Then the
+complex of sheaves
+                         · · · → 0 → CX → Ω0X → Ω1X → · · ·
+with the usual differential is exact, since this is locally true by Poincaré’s Lemma
+(every closed form on Rn is exact). However applying Γ to the degree ≥ 0 half of
+this complex we obtain the de Rham complex for computing H ∗ (X, C).
+   In other words think of the cohomology of the de Rham complex as giving an
+obstruction for contractibility of a manifold X. Then this example comes down
+to the simple observation that while any manifold is locally contractible, it is not
+necessarily contractible globally.
+1.3. Local systems.
+Definition 1.4. A sheaf L on X is called locally constant if every x ∈ X has a
+neighborhood U such that for all y ∈ U , the canonical map
+                                      L(U ) → Ly
+is an isomorphism. A local system is a locally constant sheaf with finite dimen-
+sional stalks. If X is connected then all these stalks automatically have the same
+dimension. This dimension is called the rank of the local system.
+   Here are some examples.
+     (1) The standard example of a locally constant sheaf is of course the constant
+         sheaf V X for a vector space V .
+     (2) Suppose X is a connected n-manifold. The top degree cohomology with
+         compact supports Hcn (X, C) detects whether X has a coherent orienta-
+         tion or not: if so it is one-dimensional, spanned by a so-called ‘orienta-
+         tion class’, otherwise zero. The orientation sheaf OX may be defined by
+         OX (U ) = Hcn (U, C)∗ . Note that an open inclusion U ֒→ U ′ induces a map
+         Hcn (U, C) → Hcn (U ′ , C) and therefore the dual is required to define a sheaf.
+         OX is a rank one local system which is constant precisely if X is orientable.
+     (3) The local solutions to a homogeneous system of differential equations on a
+         manifold can form a locally constant sheaf. For example fix α ∈ C and take
+         the differential equation,
+                                      df    α
+(∗α )                                    − f = 0,
+                                      dz    z
+                      AN INTRODUCTION TO PERVERSE SHEAVES                                 5
+
+
+        on the punctured plane X = C∗ . Then we may associate to this equation
+        a sheaf Lα on X by
+(1.1)      Lα (U ) = { complex analytic functions on U satisfying (∗α )}.
+        If U is simply connected then any branch of z α gives a solution, and these
+        are related to one another by a scalar multiple. So Lα (U ) = hz α iC . We
+        have that Lα is a rank one local system. Lα is trivial (the constant sheaf)
+                                                         d
+        precisely if α ∈ Z. If the differential operator dz − αz is replaced by ( dz
+                                                                                  d
+                                                                                     − αz )m
+        one obtains a rank m local system. This is the starting point of Riemann-
+        Hilbert correspondence. See for example Chapter 7 of [23] and then [3].
+
+1.4. The monodromy representation. Let π1 (X, x0 ) be the fundamental group
+of X with base point x0 ∈ X. Any local system L gives rise to a representation of
+π1 (X, x0 ) on the stalk Lx0 called the monodromy representation. This representa-
+tion is defined as follows.
+   Let γ : [0, 1] → X be a continuous map, γ(0) = γ(1) = x0 , representing an
+element of π1 (X, x0 ). By compactness the image of γ may be covered with finitely
+many open sets U1 , . . . , Un on which L is trivial. And these may be chosen such
+that Uj ∩ Uj+1 6= ∅ and x0 ∈ Un ∩ U1 . Let xj ∈ Uj ∩ Uj+1 . Then by the definition
+of locally constant sheaf we have a sequence of isomorphisms
+                    ∼          ∼       ∼          ∼      ∼          ∼
+               Lx0 ← L(U1 ) → Lx1 ← L(U2 ) → · · · ← L(Un ) → Lx0 ,
+which defines an automorphism (from left to right) of Lx0 . It follows from the
+definition of locally constant sheaf that this automorphism Lx0 → Lx0 depends only
+on the homotopy type of γ. It is also clear that concatenation of paths corresponds
+to composition of maps, giving a representation of π1 (X, x0 ).
+   The monodromy representation defines a functor,
+                                                                                  
+      local systems on X, as                finite dimensional rep’s of π1 (X, x0 ),
+                                    −→                                                 .
+    full subcategory of Sh(X)                  and equivariant homomorphisms
+The main observation is that most of the time these two categories are equivalent
+(similarly with local systems replaced by locally constant sheaves and the finite
+dimensionality constraint on the right hand side removed).
+Proposition 1.5. If X has a universal cover (i.e. X is path connected, locally
+path connected and locally simply connected), then the monodromy functor is an
+equivalence of categories.
+Proof. Suppose we are given a representation of π1 (X) := π1 (X, x0 ) on some (finite
+dimensional) vector space V . Let p : X̃ → X be the universal cover of X. Then
+π1 (X, x0 ) acts on X̃ by deck transformations and p is the quotient map. Define a
+sheaf by
+       L(U ) := locally constant, π1 (X)-equivariant maps φ : p−1 (U ) → V
+                                                                           	
+
+and the obvious restriction maps (this clearly obeys the sheaf axiom).
+   If x ∈ X and U is a connected, simply connected neighborhood of x, then
+p−1 (U ) ∼
+         = U × π1 (X) with π1 (X) acting from the right by right translation. In
+that case L(U ) ∼
+                = V by φ 7→ φ(u, 1) (independent of u since φ is locally constant).
+The inverse isomorphism comes from reconstructing φ from φ(u, 1) using the group
+action. It follows that L is a locally constant sheaf with stalks isomorphic to
+6                               KONSTANZE RIETSCH
+
+
+V . Moreover, it is easy to see from the construction of L that the monodromy
+representation is the representation we started with.                       
+
+    From now on let us always assume that any topological space X we will consider,
+if it is connected, has a universal cover.
+
+Remark 1.6 (Example). Consider the rank one local system Lα on X = C∗ from
+(1.1). Here π1 (X) ∼
+                   = (Z, +) and the monodromy representation ρα of Lα is deter-
+mined by the action of the generator 1 ∈ Z on a (any) stalk. Then it is easy to
+check that ρα (1) = (exp(2πiα)) ∈ GL1 (C), assuming the generator 1 is represented
+by the path γ in X that winds around the origin once in positive, anti-clockwise,
+orientation.
+
+1.5. Extensions of local systems. Suppose U ⊂ X open and L is a local system
+on U . Then one can immediately ask, when is L the restriction of a (unique) local
+system L̃ on X. For example for Lα ∈ Sh(C∗ ) from (1.1) to come from a local
+system on C it must be constant. This is the case precisely if α ∈ Z as we have
+already observed.
+   In general for L to extend to X it must have trivial monodromy around any
+loop γ in U which is contractible in X. Also U should be large enough in X so
+that π1 (U ) → π1 (X) is surjective. Otherwise even if an extension exists it may
+not be unique. In a manifold this surjectivity is automatic if U has complement of
+codimension ≥ 2.
+
+
+1.6. Outlook : Perverse sheaves and intersection cohomology. We have
+seen in Proposition 1.5 that the category of local systems on X is completely gov-
+erned by the fundamental group π1 (X). A common thing one might do given a
+local system L on X is to compute the cohomology of X with coefficients in L.
+(For example this corresponds to group cohomology of π1 (X) when the universal
+cover X̃ is contractible). When trying to study the topology of a manifold X, the
+standard cohomology comes from the constant sheaf. But it is also common to
+consider the orientation sheaf to get a more useful theory for non-orientable mani-
+folds. The idea of choosing a suitable local system adapted to X when considering
+cohomology can be generalized to the case when X is not a manifold but has some
+singularities.
+   Suppose for example X is a complex algebraic variety, such as the nilpotent cone
+in a Lie algebra. Consider a stratification of X by smooth subvarieties with one open
+dense stratum U . Then associated to any local system L on U there is a natural
+‘perverse sheaf’ on X extending L, which gives rise to an appropriate analogue to
+cohomology with coefficients in L for the singular space X. This extension in a
+way assigns to L a collection of local systems in different degrees on the smaller
+strata by taking into close account the singularities of X and their severity. For
+example, the perverse sheaf extension of CU will not in general agree with CX ,
+unless X is a manifold. And the cohomology of the perverse extension can vary for
+two homotopic but not homeomorphic spaces whereas the cohomology of CX only
+depends on the homotopy type of X. When L is chosen to be the orientation sheaf
+on U this construction gives the intersection homology of X. For a description of
+the perverse sheaf extensions of the Lα from (1.1) see [19, Section 2.9.14].
+                     AN INTRODUCTION TO PERVERSE SHEAVES                            7
+
+
+                    2. Lecture - Intersection Homology
+2.1. Stratified pseudomanifolds. In this section we will give the definition of
+intersection homology of Goresky and MacPherson [13]. Some further references
+are [11, 23, 6]. One wants to deal with topological spaces that are somewhat like
+manifolds, but allowed to have singularities. So we will consider singular spaces
+that are stratified into a union of manifolds.
+Definition 2.1. An n-dimensional stratified pseudomanifold is a topological space
+X with a filtration
+                     X = X0 ⊃ X1 ⊃ X2 ⊃ X3 ⊃ · · · ⊃ Xn ⊃ ∅
+by closed subsets with the following properties.
+     • For any k the stratum Sk := Xk \ Xk+1 is a topological manifold of dimen-
+       sion n−k, or else empty (the index k may be thought of as the codimension).
+       In particular Sn = Xn is a discrete at most countable set.
+     • The stratum S1 = ∅. Therefore X1 = X2 =: Σ, which we think of roughly
+       as the singular locus.
+     • The open stratum S0 = X \ Σ is dense in X.
+     • Local normal triviality along the strata : Any x ∈ Sk has an open neigh-
+       borhood U and a compact stratified pseudomanifold of dimension k − 1,
+       L = L0 ⊃ L2 ⊃ · · · ⊃ Lk−1 , called the link of x, with compatible maps
+                                      ∼
+                            U       −→ Rn−k × cone◦ (L)
+                             ↑                 ↑
+                                     ∼
+                          U ∩ Xi    −→ R n−k
+                                             × cone◦ (Li )
+                             ↑                 ↑
+                                     ∼
+                          U ∩ Xk    −→ Rn−k × {vertex}
+        for any 0 ≤ i < k. Here cone◦ (L) = L × [0, ∞)/(L × 0) is the open cone over
+        L with vertex L × 0/(L × 0). The vertical maps are the obvious inclusions.
+Note that the indexing of the strata and the Xk by codimension differs from the
+one in most references. We use it because it is more clear when keeping track of
+dimensions of intersections. An intersection of a closed submanifold Z ⊂ X with
+an Sk is dimensionally transverse if the dimension of Z is reduced by k (or if it is
+empty).
+2.2. Piecewise linear theory. We begin with the ‘simplicial’ version of intersec-
+tion homology theory, which is the historical route and familiar from usual homology
+theory. For this we need to consider the category of piecewise linear (pl) topological
+spaces.
+   Formally, a pl-space is a topological space X with a class T of locally finite
+triangulations such that for a triangulation T of X in the class any subdivision of
+T again lies in T , and also any T, T ′ ∈ T have a common refinement in T . Think for
+example of a simplicial complex along with all possible refinements. An advantage
+of having a whole class of triangulations is that any open set U ⊂ X inherits a
+pl-structure. This is useful for constructing sheaves later on.
+   A map between pl-spaces (X, TX ) and (Y, TY ) should be a map X → Y for which
+there are triangulations TX ∈ TX and TY ∈ TY such that the image of any simplex
+∆ ∈ TX lies inside a simplex of TY .
+8                               KONSTANZE RIETSCH
+
+
+Definition 2.2. An n-dimensional pl-pseudomanifold is a pl-space which is the
+union of closed n-simplices in some admissible triangulation, and such that any
+(n − 1)-simplex is the face of exactly two n-simplices.
+Proposition 2.3. Any pl-pseudomanifold has a filtration making it a stratified
+pseudomanifold in the category of pl-spaces and maps.
+Remark 2.4. The construction of the stratification is straightforward. Consider the
+triangulation from Definition 2.2. Then define Xk to be the union of the closed
+(n − k)-simplices for k ≥ 2, perforce X1 = X2 . Then Xk \ Xk−1 is obviously
+a manifold. That X \ X2 is also a manifold follows from the pl-pseudomanifold
+condition that any (n − 1)-simplex is the face of exactly two n-simplices. We omit
+the proof of local normal triviality, but see [16] Proposition 1.4.
+2.3. Borel-Moore Homology. Let X be a pl-space from now on. Borel-Moore
+homology (also called homology with closed supports) is to usual homology what
+cohomology H ∗ (X) is to cohomology Hc∗ (X) with compact supports, see for ex-
+ample [11] and [8, Section 2.6]. Following the conventions of [11] we will use the
+otherwise non-standard notation
+      H∗ (X) = Borel Moore homology of X over C,
+      H∗c (X) = usual (e.g. singular or simplicial) homology of X over C.
+The two notions coincide if X is compact.
+Definition 2.5. For a triangulation T of X an i-chain is defined to be a formal
+C-linear combination of (possibly infinitely many) oriented i-simplices. Denote by
+CiT (X) the vector space of all such i-chains. For any refinement T ′ of T there is a
+                   ′
+map CiT (X) → CiT (X) so that we can take the limit
+                               Ci (X) = lim
+                                         −→
+                                            CiT (X).
+                                         T ∈T
+
+The elements of Ci (X) are called geometric i-chains or Borel-Moore chains. The
+usual boundary map defined on individual oriented simplices induces a boundary
+map ∂ : Ci (X) → Ci−1 (X). The Borel-Moore homology H∗ (X) of X is defined to
+be the homology of this complex. We call a geometric i-chain ξ with ∂ξ = 0 an
+i-cycle.
+    A geometric i-chain ξ is represented by an i-chain in some CiT (X). Its support
+|ξ| ⊂ X is the union of all closed i-simplices in T which occur with nonzero coeffi-
+cient in ξ. It is closed in X, which is why Borel-Moore homology is also often called
+‘homology with closed supports’.
+    We may also consider the complex of compactly supported chains Cic (X) ⊂
+Ci (X), which coincides with the limit over compactly supported chains in CiT (X).
+Since taking homology commutes with taking (inductive) limits, its homology com-
+putes the usual simplicial homology H∗c (X) of X. The dual complexes C i (X) :=
+Cic (X)∗ and Cci (X) := Ci (X)∗ then compute the usual cohomology H ∗ (X) and its
+compactly supported version Hc∗ (X), respectively.
+2.4. Poincaré duality. If X is an oriented n-manifold, then there is the well
+known Poincaré duality pairing for the homology of X. That is, there is a well-
+defined intersection product Hj (X)× Hkc (X) → Hn−j−k
+                                                  c
+                                                      (X) such that the resulting
+map
+                                   c
+                         Hi (X) × Hn−i (X) → H0c (X) → C
+                      AN INTRODUCTION TO PERVERSE SHEAVES                              9
+
+
+gives a perfect pairing. Here the final map is the augmentation homomorphism
+H0c (X) → H0c ({pt}) ∼  = C which is induced from mapping X to a point. The
+following two properties go into the definition of the intersection product.
+      • For any two pl-chains, it is possible to replace either one with a homologous
+        one to make its support transversal to that of the other.
+      • For any two homology classes and transversal chains representing them, the
+        class of the intersection is independent of the particular choice of transversal
+        representatives.
+We can see how Poincaré duality fails for pseudomanifolds in an example.
+Remark 2.6 (Example). Let us consider a cylinder X = R × S 1 and a pinched
+cylinder, Y = X/(0 × S 1 ), where the circle at the origin is identified to a single
+point p0 . The homology is easy to compute :
+                 i Hi (X) Hic (X)                          i   Hi (Y )   Hic (Y )
+                 0    0      C                             0     0         C
+                 1   C       C                             1     C          0
+                 2   C       0                             2   C⊕C          0
+We see that Poincaré duality fails badly for Y . Let Σ := {p0 } ⊂ Y . The problem is
+apparent. Any geometric 1-chain representing a generator of H1 (Y ) passes through
+p0 . Hence it cannot be made transversal to Σ.
+    Therefore we need to restrict the allowed chains if there is a singular locus. For
+any geometric i-chain ξ with support |ξ| we impose the first intersection condition :
+(2.1)                             dim |ξ| ∩ Σ ≤ dim |ξ| − 2.
+For singular surfaces (2-dimensional pseudomanifolds) this condition suffices to de-
+fine intersection homology and we get :
+                                     i IHi (Y ) IHic (Y )
+                                     0   0       C⊕C
+                                     1   0         0
+                                     2 C⊕C         0
+2.5. Perversities and intersection homology. So far we have introduced one
+intersection condition. Supposing the singular locus Σ is as large as it can be for
+a pseudomanifold (i.e. codimension 2), then it just says that any allowable chain
+must intersect Σ transversally. This however is just the tip of the iceberg, since
+intersection homology also takes into account the singularities within the singular
+set and so forth. There are different versions of intersection homology depending
+on the strictness of the intersection conditions with the various strata. These are
+encoded in what is called the perversity.
+Definition 2.7. A perversity of a fixed dimension n is a map p : {2, 3, . . . , n} → Z≥0
+such that p(2) = 0 and
+                                                        	
+                       p(k) ∈ p(k − 1) , p(k − 1) + 1 .
+The most important perversities are given by
+             0    =   (0, 0, 0, . . . . . . . . . , 0 )   0-perversity
+             m    =   (0, 0, 1, 1, 2, 2, 3, . . . )       lower middle perversity
+             n    =   (0, 1, 1, 2, 2, 3, 3, . . . )       upper middle perversity
+             t    =   (0, 1, 2, 3, . . . , n − 2)         top perversity.
+10                               KONSTANZE RIETSCH
+
+
+Two perversities p and q are called complementary if p + q = t (e.g. m and n).
+Definition 2.8 (Intersection homology). Let p be a fixed perversity. A geometric
+i-chain ξ ∈ Ci (X) is called p-allowable if
+                        dim(|ξ| ∩ Xk )  ≤      i − k + p(k),
+(∗)p,k
+                        dim(|∂ξ| ∩ Xk ) ≤      i − 1 − k + p(k)
+holds, for all 2 ≤ k ≤ n. Notice that for all p, (∗)p,2 coincides with the first
+intersection condition from (2.1) for ξ and ∂ξ.
+   Let us denote by
+                     Ip Ci (X) = { ξ ∈ Ci (X) | ξ satisfies (∗)p,k }
+the vector space of p-allowable i-chains. The boundary map on geometric chains
+restricts to ∂ : Ip Ci (X) → Ip Ci−1 (X) to define a chain complex. The homology of
+this complex is denoted Ip H∗ (X) and called the intersection homology of X with
+perversity p.
+Remark 2.9. If ξ ∈ I0 Ci , then |ξ| is transversal to all strata Sk of X. This is the
+strictest of the intersection conditions. In general if p < q, then Ip Ci (X) ⊂ Iq Ci (X)
+and we have a map
+                                 Ip Hi (X) −→ Iq Hi (X).
+   In the weakest case, the top perversity t(k) = k − 2, the intersection conditions
+(∗)t,k on a chain ξ are
+                              dim(|ξ| ∩ Xk ) ≤ dim |ξ| − 2,
+                            dim(|∂ξ| ∩ Xk ) ≤ dim |ξ| − 3.
+But for k > 2 these are automatic consequences of the first intersection condition,
+(∗)t,2 . Therefore It C∗ (X) is just the complex of chains ξ with dim(|ξ| ∩ Σ) ≤
+dim |ξ| − 2, and the same condition for ∂ξ.
+2.6. Intersection homology and normality.
+Definition 2.10. An n-dimensional stratified pseudomanifold X is called normal
+if any x ∈ Σ has a distinguished neighborhood Ux such that Ux \ Σ is connected.
+   This definition of normality is a topological analogue of normality for algebraic
+varieties. Any pseudomanifold X has a normalization π : X̃ → X, where X̃ is
+normal, and π is 1-1 on the open stratum S0 and finite to one on any other stratum.
+Explicitly #{π −1 (x)} is the number of connected components of Ux \ Σ. This map
+π also induces a map on chain complexes
+(2.2)                              C∗ (X̃) → C∗ (X).
+Lemma 2.11. Any p-allowable cycle σ of X is the image of a p-allowable cycle σ̃
+of X̃ under the map (2.2).
+Proof. For σ ∈ Ci (X) there exists a geometric i-chain σ̃ ∈ Ci (X̃) such that |σ̃| =
+π −1 (|σ|). It follows from ∂σ = 0 that |∂ σ̃| ⊂ Σ̃. So we have
+                                  |π(∂ σ̃)| ⊂ |σ| ∩ Σ.
+Here the left hand side is (i − 1)-dimensional. But intersecting with Σ should cut
+down the dimension of σ by at least 2, by the first intersection condition. So ∂ σ̃ = 0.
+  Also (∗)p,k for σ implies (∗)p,k for σ̃.                                            
+                     AN INTRODUCTION TO PERVERSE SHEAVES                            11
+
+
+Corollary 2.12. The map (2.2) induces an isomorphism
+                                     ∼ Ip H∗ (X).
+                          Ip H∗ (X̃) =
+   The pinched cylinder from Remark 2.6, for example, is not normal. We have that
+the normalization Ỹ of the pinched cylinder consists of two separate hemispheres
+(the pinched cylinder is divided into two halves at the singular point which is split
+into two). Topologically Ỹ is a disjoint union R2 ⊔R2 . Thus the result in Remark 2.6
+giving the intersection homology of Y is an illustration of Corollary 2.12. From that
+point of view, the example of the pinched cylinder just reduces to a calculation of
+classical homology. But see Goresky and MacPherson’s Chapter III in [11] for a
+more sophisticated sample computation.
+2.7. Top- and 0-perversity intersection homology. For the two extremal per-
+versities intersection homology compares closely with Borel-Moore homology and
+usual cohomology, respectively. We compute the cohomology of X by the cochain
+complex with C i (X) = Cic (X)∗ . One can define two maps,
+(2.3)                           It Ci (X) → Ci (X),
+(2.4)                          C n−i (X) → I0 Ci (X).
+The first one is just the obvious inclusion. The second one is defined by Poincaré’s
+dual cycle map. Any simplex in the support of a cochain is replaced by the com-
+plementary dimensional simplices in the barycentric subdivision which meet the
+center of the original simplex. See for example [26, §65]. The resulting chain is
+then automatically transversal to all the strata, hence lies in I0 Ci (X).
+Proposition 2.13. Suppose X is oriented and normal. The chain maps (2.3) and
+(2.4) induce isomorphisms
+                  ∼
+    (1) It H∗ (X) → H∗ (X),
+                   ∼
+    (2) H n−i (X) → I0 H ∗ (X).
+Remark 2.14. Note that normality implies that X \X3 is still a topological manifold.
+The link L of any point in the stratum S2 must be homeomorphic to S 1 , and
+cone◦ (S 1 ) ∼
+             = R2 . So any actual singularities occur in one codimension higher.
+   Recall that by Remark 2.9, t-allowability just comes down to the first intersection
+condition for ξ and ∂ξ. So Proposition 2.13.(1) basically says that normality gives
+the amount of flexibility required to insure any i-cycle ξ is homologous to one
+transversal enough to Σ = X2 . See for example [13] for the proof. We will prove
+(2) in Remark 4.10.
+2.8. Poincaré duality pairing. There is an analogue of the intersection product
+between intersection homology groups of different perversities.
+Theorem 2.15. [13] Let X be an n-dimensional pl-pseudomanifold.
+  (1) Let p, q, r be three perversities with p + q ≤ r. Then there is a well-defined
+      pairing
+                    ∩ : Ip Hi (X) × Iq Hjc (X) −→ Ir Hn−i−j
+                                                      c
+                                                            (X).
+    (2) If p + q = t, then
+                                    c        ∩
+                    Ip Hi (X) × Iq Hn−i (X) −→ It H0c (X) −→ C.
+        defines a perfect pairing.
+12                               KONSTANZE RIETSCH
+
+
+Remark 2.16. The intersection pairing is defined by intersecting allowable cycles
+that are “sufficiently transverse”. That is, the intersection must be in sufficiently
+general position with respect to each stratum (to give an element of the correct
+Ir C∗ ). Then part (1) of the theorem says that any two homology classes can be
+represented by cycles with this property (for this r is not allowed to be too small),
+and then the homology class of the resulting intersection is independent of the
+choices. If p = 0 and q = t, and X orientable and normal, then Theorem 2.15.(2)
+is just the classical cap product H n−i (X) × Hn−i
+                                                c
+                                                   (X) → C (after applying Propo-
+sition 2.13).
+2.9. Middle intersection homology. If Xk+1 = Xk in the filtration of X, then
+the intersection condition (∗)p,k+1 implies (∗)p,k . So Ip C∗ (X) only depends on
+values p(k) for nonempty strata Sk . For example if all strata are of even dimension
+then the odd values of p do not matter. In particular in that case Im C∗ (X) =
+In C∗ (X), and one can speak of middle intersection homology.
+Corollary 2.17. If X has only even-dimensional strata, then the middle intersec-
+tion homology Im H∗ (X) satisfies Poincaré duality. In other words
+                                    c            ∩
+                    Im Hi (X) × Im Hn−i (X) −→ It H0c (X) −→ C
+is a non-degenerate pairing.
+2.10. Sheaves. One feature of Borel-Moore chains is that for any open U ֒→ X we
+have restriction maps
+                                   Ci (X) → Ci (U )
+                                 Ip Ci (X) → Ip Ci (U ).
+For compactly supported chains Cic one has instead an inclusion Cic (U ) ֒→ Cic (X).
+                                 i         i
+Definition 2.18. Define sheaves DX and Ip CX on X by
+                                    −i
+                                   DX  (U ) := Ci (U ),
+                                     −i
+                                 Ip CX  (U ) := Ip Ci (U )
+                                                          •         •
+for all U ⊂ X open. These sheaves form cochain complexes DX and Ip CX of sheaves
+on X, with differential induced from the boundary maps ∂ over each open set.
+  The original complexes of vector spaces are recovered (up to the change in in-
+dexing) by applying the functors of global sections or global sections with compact
+supports. So we have
+            Hi (X) = H −i (Γ(DX
+                              •
+                                )),                  Hic (X) = H −i (Γc (DX
+                                                                          •
+                                                                            )),
+          Ip Hi (X) = H −i (Γ(Ip CX
+                                  •
+                                    )),           Ip Hic (X) = H −i (Γc (Ip CX
+                                                                             •
+                                                                               )).
+                           i
+     We also have sheaves CX on X defined by
+                              i
+                             CX (U ) = C i (U ) := Cic (U )∗ .
+                                   •
+The corresponding cochain complex CX computes the cohomology of X by
+                                   •                              •
+                 H i (X) = H i (Γ(CX ))   and Hci (X) = H i (Γc (CX )).
+Note that now CX  i
+                    (U ) → CiT,c (U )∗ for any admissible triangulation T . While
+the geometric i-chains were a direct limit over all triangulations, the cochains are
+necessarily an inverse limit.
+                       AN INTRODUCTION TO PERVERSE SHEAVES                                  13
+
+
+ 3. Lecture - Derived functors and the derived category of sheaves
+3.1. Complexes and functors. In the last lecture we introduced complexes of
+          •          •
+sheaves DX  and Ip CX    on a pseudomanifold X. These are the objects we will be
+working with. Let us for the moment view them as objects in the category of
+complexes of sheaves with chain maps. Denote the i-th cohomology (sheaf) of a
+complex F • by Hi (F • ). We are more interested in the cohomology of our complexes
+than the complexes themselves.
+Definition 3.1. A map of complexes
+        F•     : · · · → F m−1       → Fm           → F m+1        →   F m+2   → ···
+        q↓                 ↓            ↓               ↓                ↓
+        G•     : · · · → G m−1       → Gm           → G m+1        →   G m+2   → ···
+                                                                                   ∼
+is called a quasi-isomorphism if it induces isomorphisms Hi (q) : Hi (F • ) → Hi (G • )
+on the cohomology sheaves of the complex.
+   We would like to work in a category (of complexes of sheaves) where two quasi-
+isomorphic complexes are interchangeable. Moreover this category should ‘extend’
+the category of sheaves in the sense that that the functors that one uses in the
+category of sheaves extend to functors between complexes.
+   The problem with these two demands is already apparent in the example of the
+global sections functor Γ. Consider the quasi-isomorphism from Remark 1.3,
+      CX [0]    :   ··· →    0 → CX            →  0        → ···       →  0      → ···
+       q↓                    ↓    ↓               ↓                       ↓
+       Ω•X      :   ··· →    0 → Ω0X           → Ω1X       → ···       → ΩnX    → ··· ,
+and apply Γ to it. The cohomology H        i
+                                               (Γ(Ω•X ))       i
+                                                  = H (X) of the lower complex will
+usually be nonzero in positive degree, for example if X is a compact manifold of
+positive dimension. So Γ(q) is far from being a quasi-isomorphism. However we do
+recover the identity Γ(CX ) = H 0 (X) in degree zero.
+   These properties reflect the fact that Γ is left exact and not exact. The correct
+definition of the extension of a left exact functor to complexes may be illustrated
+by the above example. It says not to apply Γ to arbitrary complexes, but only
+to ones whose objects are ‘Γ-acyclic’. The ΩiX are examples of Γ-acyclic sheaves.
+They are soft for example (see Section 3.8). Γ-acyclic sheaves have good local to
+global behaviour, making Γ act like an exact functor.1 Any other complexes such
+as CX [0] should be replaced by quasi-isomorphic ones such as Ω•X before applying
+Γ. Let us now explain these definitions more formally.
+
+3.2. Right derived functors and D+ (X). Recall that an object I in an abelian
+category is called injective if Hom( , I) is an exact functor. Injective objects have
+the following useful property.
+      • If q : I • → J • is a quasi-isomorphism between complexes of injectives, then
+        there is a quasi-isomorphism p : J • → I • such that p ◦ q : I • → I • is
+        homotopic to the identity.
+
+   1This may sound contradictory, since for example Ωn−1 −→d
+                                                           n
+                                                     X        Ωn
+                                                               X → 0 is exact for an n-manifold
+X, while the global sections can give cohomology in degree n. But that can happen because the
+kernel of dn need not be Γ-acyclic.
+14                               KONSTANZE RIETSCH
+
+
+This implies that any additive functor F will act on injectives as if it were an exact
+functor, that is, preserving quasi-isomorphisms.
+   Let us introduce a slightly better category to work in, the homotopy category
+                                                                               
+                      bounded below cochain complexes of sheaves in Sh(X)
+   K+ (Sh(X)) =                                                                   .
+                        with cochain maps modulo homotopy equivalence
+Any two quasi-isomorphic complexes of injectives are isomorphic in K+ (Sh(X)).
+The (bounded below) derived category of Sh(X) is defined by
+                 D+ (X) := K+ (Sh(X))[ (quasi-isomorphisms)−1 ],
+adjoining an inverse to any quasi-isomorphism in the homotopy category (local-
+ization). The category D+ (X) is no longer abelian but instead a ‘triangulated
+category’. See for example [18] or [33].
+   Let K+ (Inj(X)) ⊂ K+ (Sh(X)) be the full subcategory whose objects are com-
+plexes of injectives. Then we also have an inclusion ι : K+ (Inj(X)) ֒→ D+ (X).
+To formally define a right derived functor of a functor F , we need a functor
+I : D+ (X) → K+ (Inj(X)) assigning to any complex an injective resolution,
+               F• : · · · → 0 → F0           → F1      → F2       → ···
+(3.1)          ↓              ↓    ↓           ↓         ↓
+            I(F • ) : · · · → 0 → I 0        → I1      → I2      → ··· ,
+such that I and ι are inverse equivalences of categories. Such a functor exists for
+the category of sheaves, as we will see in the next section.
+Definition 3.2. Suppose that F : Sh(X) → Sh(Y ) is a left exact functor. Then
+define RF (F • ) := F (I(F • )) for a complex of sheaves F • . This defines a functor
+                              RF : D+ (X) → D+ (Y )
+called a right derived functor of F . The i-th right derived functor
+                              Ri F : D+ (X) → Sh(Y )
+is defined by Ri F = Hi ◦ RF .
+   Given two different injective resolutions of a complex one can always construct
+a quasi-isomorphism between them and uniquely up to homotopy, rendering them
+canonically isomorphic in the homotopy category. So the choice of the functor I
+hardly matters.
+   Suppose F [0] is the complex with F in degree 0 and zero elsewhere. If F is
+a left exact functor, then applying F to the quasi-isomorphism (3.1) induces an
+isomorphism F (F ) ∼= R0 F (F [0]). This is the sense in which RF is an extension of
+the functor F to complexes.
+
+3.3. Injectives in Sh(X). In the category of vector spaces, that is the case of
+Sh({pt}), every object is injective and projective (the dual property) by an appli-
+cation of Zorn’s Lemma. More generally there is the following characterization of
+injective sheaves due to N. Spaltenstein.
+Lemma 3.3. A sheaf F ∈ Sh(X) is injective precisely if for all open subsets V ⊂ U ,
+the restriction map rUV : F (U ) → F (V ) is a surjection.
+                     AN INTRODUCTION TO PERVERSE SHEAVES                           15
+
+
+   This says that for sheaves of vector spaces being injective is equivalent to being
+flabby (any section comes from a global section). See [11, V Lemma 1.13] for a
+more general formulation and the proof of this lemma. In the setting of sheaves of
+modules over a ring, say, one needs also the further requirements that the stalks
+and sections of F should be injective and the restriction maps be split.
+   The category of sheaves has “enough injectives”, meaning that every sheaf em-
+beds into an injective one. Explicitly, we may let F ֒→ I where
+                                           Y
+                                  I(U ) :=     Fx
+                                           x∈U
+
+with the obvious restriction (by projection) maps. Embedding the cokernel of this
+inclusion into another injective and so forth, one obtains an injective resolution
+of F called the Godement resolution. So any sheaf has an injective resolution.
+Viewed inside the derived category this resolution becomes an isomorphism (i.e.
+quasi-isomorphism of complexes)
+                        ··· → 0 → F          → 0       → ···
+                                ↓   ↓          ↓
+                        · · · → 0 → I0       → I1      → ···
+The existence of enough injectives also implies that any complex of sheaves F • is
+quasi-isomorphic to a complex of injectives I(F • ). This quasi-isomorphic complex
+of injectives may be obtained as the total complex of a double complex constructed
+from the injective resolutions of all of the individual F i ’s (the Cartan-Eilenberg
+resolution).
+
+3.4. The bounded derived category. For our purposes it will be more conve-
+nient to consider complexes that are bounded in both directions. These form a
+full subcategory Db (X) in D+ (X) called the bounded derived category of sheaves on
+X. One constructs bounded complexes from unbounded ones by truncation: Let
+τ≤k : D+ (X) → Db (X) be defined on objects by
+                                                        d
+           τ≤k (F • ) = (· · · → F k−2 → F k−1 → ker(d) → 0 → 0 → · · · )
+with the obvious extension to morphisms. τ≤k is called the (right) truncation
+functor at k since                    (
+                         i      •       Hi (F • ) i ≤ k,
+                       H (τ≤k (F )) =
+                                        0         i > k.
+   To define derived functors between bounded derived categories we need bounded
+injective resolutions. These may be obtained as follows. If I • ∈ D+ (X) is an
+injective resolution of F • ∈ Db (X) and X has dimension n, then τ≤n+1 I • is still
+an injective resolution of F • , see [11, V Proposition 1.17].
+   Let us now introduce some explicit functors between derived categories of sheaves.
+
+3.5. Push-forwards. Let f : X → Y be a continuous map. Most interesting
+functors on sheaves are left exact :
+                          Γ, Γc : Sh(X) → (vector spaces),
+                         f∗ , f! : Sh(X) → Sh(Y ).
+16                                KONSTANZE RIETSCH
+
+
+Here the first two functors are the global sections functors introduced in Section 1.2.
+The second are the push-forward (or direct image) functor f∗ and the push-forward
+with proper supports f! . They are defined by
+             f∗ X (U ) = X (f −1 (U )),
+             f! X (U ) = {s ∈ X (f −1 (U )) | f : Supp(s) → U is proper},
+where X is a sheaf on X. Recall that a map between topological spaces is called
+proper if the inverse image of a compact set is compact. For a composition of maps
+f ◦ g the push-forwards are (f ◦ g)∗ = f∗ ◦ g∗ and (f ◦ g)! = f! ◦ g! respectively.
+If f = π : X → {pt}, then we recover π∗ = Γ and π! = Γc . We have the derived
+functors
+                            Rf∗ , Rf! : Db (X) → Db (Y ).
+  In the special case where f = j : X ֒→ Y is an inclusion of a locally closed
+subset,                                (
+                                         0  y∈/X
+                            (j! X )y =            .
+                                         Xy y ∈ X
+This functor is therefore called extension by zero, and it is exact. The extension
+by zero of the constant sheaf C{x0 } from {x0 } ֒→ X is the skyscraper sheaf S from
+Remark 1.2.
+
+3.6. Pull-backs. Any continuous map f : X → Y gives rise to a pull-back (or
+inverse image) functor f ∗ : Sh(Y ) → Sh(X), which takes any Y ∈ Sh(Y ) to the
+sheaf on X associated to the presheaf
+                              U 7→          lim
+                                             −→
+                                                           Y(V ).
+                                     {V open | f (U)⊂V }
+
+The key property of the pull-back is that
+                                     (f ∗ Y)x = Yf (x) .
+The restriction functors from Section 1.2 are pull-backs in the special case where f
+is an inclusion of a locally closed subset. The pull-back f ∗ defines a functor
+                                 f ∗ : Db (Y ) → Db (X)
+directly without needing to be derived, since it is exact. For a composition of maps
+f ◦ g the pull-back is (f ◦ g)∗ = g ∗ ◦ f ∗ .
+   Pull-back and push-forward are adjoint functors. I.e. there is a canonical iso-
+morphism
+                      HomSh(X) (f ∗ Y, X ) ∼  = HomSh(Y ) (Y, f∗ X ).
+For example the adjunction morphism 1 → f∗ ◦ f ∗ is given explicitly (on Y) by
+the natural maps Y(V ) → f ∗ (Y)(f −1 (V )). In the derived category f ∗ becomes
+left adjoint to Rf∗ using the above adjunction morphism together with the natural
+transformation coming from (3.1).
+
+3.7. Shifts. Shifting the indices of a complex to the right defines a functor
+                                 [n] : Db (X) → Db (X).
+This functor takes F • 7→ F • [n], where (F • [n])i = F i+n and the differential of the
+complex is conventionally multiplied by a factor of (−1)n .
+                     AN INTRODUCTION TO PERVERSE SHEAVES                              17
+
+
+3.8. Computing derived functors. Injective sheaves are a good theoretical tool,
+but not always practically useful. For computing right derived functors it tends to
+be more convenient to use resolutions that are not quite injective but still in a sense
+‘flexible enough’ for the functor in question.
+Definition 3.4. Let F be a left exact functor from Sh(X) to Sh(Y ). A sheaf
+A ∈ Sh(X) is called F -acyclic if Ri F (A) = 0 for all i 6= 0.
+  By the spectral sequence
+                         E2ij = H i (Rj F (A• )) ⇒ Ri+j F (A• )
+for computing the cohomology of the Cartan-Eilenberg double complex we see that
+F -acyclic complexes are good enough for computing RF (up to isomorphism). In
+other words, if F • is quasi-isomorphic to an F -acyclic complex A• , then RF (F • ) ∼
+                                                                                     =
+F (A• ) in Db (X).
+Definition 3.5. A sheaf F is called soft if the restriction maps
+                                 Γ(U, F ) → Γ(K, F )
+are surjective for all compact K and open U ⊂ X containing K. Here Γ(K, F ) :=
+Γ(i∗ F ) for the inclusion i : K ֒→ U .
+   In some references the definition of soft requires the surjectivity for all closed K,
+in which case the above version is called c-soft. However if X is a union of countably
+many compact sets (which is always the case for us) then the two definitions are
+equivalent.
+   A soft sheaf F ∈ Sh(X) is automatically Γc -acyclic and Γ-acyclic, and the re-
+striction of a soft sheaf to a locally closed subset is again soft. See for example [18,
+III Theorem 2.7 and IV Theorem 2.2] or [19, II 2.5].
+               •       •    •
+Lemma 3.6. Ip CX (and CX , DX ) are complexes of soft sheaves.
+Proof. Let K and U ⊂ X be as in the definition of softness above. Suppose s ∈
+         −i                                   −i
+Γ(K, Ip CX  ) is represented by ξ ∈ Γ(V, Ip CX   ) for some open neighborhood V of
+K. We may assume V ⊂ U . The problem with ξ is that it might not have closed
+support in U . Choose a triangulation of V fine enough such that there is a closed
+pl-neighborhood N of K entirely in V . Then the intersection of ξ with N lies in
+         −i                                                           •      •
+Γ(U, Ip CX  ) and also represents s, and we are done. The proofs for CX and DX are
+similar.                                                                        
+
+   As a consequence we see that the intersection homology is the hypercohomology
+                                          •
+(derived functor of Γ) of the complex Ip CX ,
+
+                     Ip Hi (X) = R−i Γ(Ip CX
+                                           •
+                                             ) =: H−i (X, Ip CX
+                                                              •
+                                                                ),
+                    Ip Hic (X) = R−i Γc (Ip CX
+                                             •
+                                               ) =: H−i        •
+                                                     c (X, Ip CX ).
+                                •
+   The complex of cochains CX      on a pl-pseudomanifold X introduced in the end
+of Section 2.10 is a soft resolution of the constant sheaf CX [0]. Therefore the
+                   •
+cohomology of Γ(CX   ) is the sheaf cohomology (hypercohomology of a single sheaf)
+of CX ,
+                                  •
+                H i (X) = Ri Γ(CX   ) = Hi (X, CX [0]) =: H i (X, CX ).
+18                                     KONSTANZE RIETSCH
+
+
+  There are many useful formulas and identities for dealing with derived functors.
+We mention below some of the ones that will be needed later on, see for example
+V §10 in [11].
+
+3.9. Push-forward with proper supports. For the projection π : X → {pt} and
+a complex of sheaves X • is on X we have Ri π! (X • ) = Hic (X, X • ), by definition.
+Now let f : X → Y be any continuous map and X a sheaf on X. Then there is a
+natural isomorphism
+                            (f! X )y ∼
+                                     = Γc (f −1 (y), X |f −1 (y) )
+for the stalk of the push-forward with proper supports. Applying this isomorphism
+for the sheaves in I • = I(X • ) in the definition of Rf! (X • ) gives the formula
+(3.2)        (Ri f! X • )y ∼
+                           = H i (Γc (f −1 (y), I • |f −1 (y) )) ∼
+                                                                 = Hic (f −1 (y), X • |f −1 (y) ).
+Here the second isomorphism holds since I • |f −1 (y) is a soft resolution of X • |f −1 (y) .
+
+3.10. Composition of derived functors. The push-forward functor f∗ takes in-
+jectives to injectives (for formal reasons, since it is right adjoint to the exact functor
+f ∗ ). Therefore R(g ◦ f )∗ ∼= Rg∗ ◦ Rf∗ for maps f : X → Y and g : Y → Z. More
+generally, R(G ◦ F ) ∼ = RG ◦ RF if F turns injectives into G-acyclic objects.
+
+3.11. Base change. Suppose we have a Cartesian square, that is, a commutative
+diagram
+                                                  1h
+                                          X1     −→ X2
+                                        f1 ↓        ↓ f2
+                                                  2h
+                                           Y1    −→ Y2
+                              ∼
+such that (f1 , h1 ) : X1 → {(y, x) ∈ Y1 × X2 | h2 (y) = f2 (x)}. Then there is a
+natural isomorphism of functors Db (X2 ) → Db (Y1 ),
+                                   h∗2 ◦ R(f2 )! = R(f1 )! ◦ h∗1 .
+
+        4. Lecture - Local intersection cohomology and Deligne’s
+                                construction
+4.1. Intersection cohomology. We will denote the hypercohomology of the com-
+         •
+plex Ip CX from Section 2.10 by
+                                                           •
+                                  Ip H k (X) := Hk (X, Ip CX ),
+and call it intersection cohomology. This differs from intersection homology only in
+the indexing: Ip H k (X) = Ip H−k (X). Note that in these conventions intersection
+cohomology is concentrated in negative degrees. In the next few sections we want
+to investigate intersection cohomology locally in the neighborhood of a point.
+Definition 4.1. Let F • ∈ D+ (X) and x ∈ X. Then the stalk cohomology functor
+at x is the functor Hxi : D+ (X) → (vector spaces) defined by
+                                       Hxi (F • ) := H i (Fx• ).
+An equivalent description is
+(4.1)               Hxi (F • ) = Hi (F • )x =            lim
+                                                          −→
+                                                                    H i (F • (U )).
+                                                  { U open | x∈U}
+                     AN INTRODUCTION TO PERVERSE SHEAVES                             19
+
+
+Remark 4.2. Intersection cohomology, unlike usual cohomology, can distinguish
+between spaces that are homotopic (but not homeomorphic) to one another. For
+example, as we shall see, even though every point in X has a contractible neigh-
+borhood, the local intersection cohomology and the stalks
+(4.2)                             •
+                        Hx−i (Ip CX )=          lim
+                                                 −→
+                                                          Ip Hi (U )
+                                         {U open | x∈U}
+
+                                      •
+need not be trivial. Accordingly, Ip CX is also not generally quasi-isomorphic to a
+                      •
+single sheaf (unlike CX ).
+   Recall the notations from Definition 2.1 for the stratified pseudomanifold struc-
+ture on X. Let x lie in a stratum Sk . Then we know that x has a distinguished
+neighborhood U ∼   = Rn−k × cone◦ (L), where L is a (k − 1)-dimensional compact
+pseudomanifold. To compute the stalk cohomology (4.2) it suffices to consider
+such distinguished neighborhoods U , since they form a neighborhood basis. Now
+Ip Hi (U ) can be computed in terms of L in two steps.
+
+4.2. Suspension. If X is a n-dimensional stratified pseudomanifold, then R × X
+is an (n + 1)-dimensional stratified pseudomanifold with respect to the filtration
+(R × X)i = R × Xi . There is a natural suspension map
+                           R×     : Ci (X) → Ci+1 (R × X)
+on geometric chains satisfying |R × ξ| = R × |ξ| on supports. Suppose p is an
+(n + 1)-dimensional perversity giving rise to intersection conditions on both X and
+R × X. It is easy to see that the suspension R × ξ of a p-allowable chain is again
+p-allowable. We have the following ‘Künneth formula’, see [11, Chapter II §2].
+Proposition 4.3. The suspension map
+                           R×     : Ci (X) → Ci+1 (R × X)
+                                    ∼
+induces an isomorphism Ip Hi (X) → Ip Hi+1 (R × X).
+
+4.3. Intersection homology of a cone. Let L ⊃ L2 ⊃ · · · ⊃ Lk−1 be a com-
+pact (k − 1)-dimensional stratified pseudomanifold, and Y = cone◦ (L). So Y is a
+stratified pseudomanifold with
+                                (
+                                  cone◦ (Li ) 2 ≤ i < k,
+                          Yi =
+                                  {v}         i = k,
+
+where v is the vertex of the cone. There is a natural map on chains,
+                        cone◦ ( ) : Ci (L) → Ci+1 (cone◦ (L)),
+satisfying |cone◦ (ξ)| = cone◦ (|ξ|) on supports. Let p be a fixed perversity of dimen-
+sion k.
+Lemma 4.4. If ξ ∈ Ip Ci−1 (L), then
+                                            (
+            ◦                ◦                  either    i > k − p(k),
+        cone (ξ) ∈ Ip Ci (cone (L)) ⇐⇒
+                                                or        i = k − p(k) and ∂ξ = 0.
+20                                  KONSTANZE RIETSCH
+
+
+Proof. Note that cone◦ (ξ) always meets the vertex, in other words the most singular
+stratum of Y = cone◦ (L). So the dimension i of cone◦ (ξ) must be big enough for
+this to be p-allowable. That is,
+(4.3)                       0 ≤ dim(|cone◦ (ξ)|) − k + p(k),
+(4.4)                       0 ≤ dim(|∂(cone◦ (ξ))|) − k + p(k).
+This implies the necessary direction of the lemma. All other p-allowability restric-
+tions for cone◦ (ξ) follow from the ones for ξ.                                   
+
+Proposition 4.5. The map cone◦ ( ) : Ci (L) → Ci+1 (cone◦ (L)) from above induces
+a quasi-isomorphism
+                                     ∼
+                          Ip C• (L) −→ τ≤p(k) (Ip C•+1 (cone◦ (L))).
+
+     For a proof of this proposition see [11, Chapter II §3].
+
+4.4. Local intersection cohomology. Let x ∈ Sk ⊂ X and U ∼    = Rn−k ×cone◦ (L)
+be a distinguished neighborhood. Combining Propositions 4.3 and 4.5 one has
+                             (
+                     i         Ip H n−k+1−i (L) −i ≤ −n + p(k),
+                 Ip H (U ) =
+                               0                −i > −n + p(k).
+If V ⊂ U is a compatible distinguished neighborhood of x, then the restriction map
+                                        •            •
+                                    Ip CX (U ) → Ip CX (V )
+is a quasi-isomorphism, essentially since all cohomologically nontrivial cycles come
+from L. Therefore
+                                   •             •
+                               Ip CX (U ) → (Ip CX )x .
+                                                                        •
+is a quasi-isomorphism and we have computed the stalk cohomology of Ip CX .
+Corollary 4.6. Let x ∈ X be a point lying in a stratum Sk with link L. The stalk
+                    •
+cohomology Hxi (Ip CX ) is concentrated in degrees −n ≤ i ≤ −n + p(k), where it is
+determined by the intersection homology of L as shown in the table below.
+                 i            −n        −n + 1           ···        −n + p(k)
+                    •
+           Hxi (Ip CX )   Ip Hk−1 (L) Ip Hk−2 (L)        ···     Ip Hk−p(k)−1 (L)
+4.5. A new beginning. The rest of this lecture will be taken up with a recursive
+stratum by stratum construction of a new complex of sheaves P • with which to
+compute intersection cohomology. This construction is due to Deligne and appears
+in [14]. An immediate advantage the definition of P • has over Ip CX
+                                                                   •
+                                                                     is that it does
+not depend on a pl-structure on X.
+   Let X be a fixed n-dimensional stratified pseudomanifold with all the usual
+notations. So X ⊃ X2 ⊃ X3 ⊃ · · · ⊃ Xn , Σ = X2 is the ‘singular locus’ and
+Sk = Xk \ Xk−1 is the codimension k stratum. Also define open sets
+                               Uk := X \ Xk ,       2 ≤ l ≤ n.
+The smallest of these, U2 , agrees with the open stratum S0 . We have inclusions
+                               ik        jk
+                           Sk ֒→ Uk+1 ←֓ Uk ,       for 2 ≤ k < n
+where ik is a closed embedding and jk an open embedding.
+                      AN INTRODUCTION TO PERVERSE SHEAVES                            21
+
+
+4.6. Extensions of complexes and the attachment map. Let us consider the
+case of an open embedding, j : V ֒→ W , later to be taken to be jk from above.
+Suppose FV• ∈ Db (V ). Then one possible extension of FV• to W is given by Rj∗ (FV• ).
+Here Rj∗ (FV• ) is an extension in the sense that j ∗ (Rj∗ (FV• )) ∼
+                                                                   = FV• .
+       •                               •
+   If FW is any other extension of FV , then it maps to this one by what is called
+the attachment map,
+                                      •
+                                 α : FW  → Rj∗ (FV• ).
+This is just the adjunction morphism 1 → Rj∗ ◦ j ∗ from Section 3.6 applied to
+  •
+FW  . Explicitly, for any U ⊂ W open, Rj∗ (FV• )(U ) = I(FV• )(U ∩ V ), and α(U ) is
+                                        •              •
+the composition of the natural map FW     (U ) → I(FW    )(U ) with the restriction map
+from U to U ∩ V , followed by the isomorphism FW |V → FV• . On V the attachment
+                                                   •
+
+map α is clearly an isomorphism.
+                                               •
+4.7. The Deligne sheaf. The restriction Ip CX    |U2 to the open stratum of X is
+always quasi-isomorphic to the (shifted) orientation sheaf OU2 [n], where n is the
+dimension of X. This is simply because there are no intersection conditions on U2 ,
+and we are in the case of usual Borel-Moore chains. And since the isomorphism
+H n (Rn ) ∼
+          = C in Borel-Moore homology depends on a choice of orientation of Rn , it
+follows that the local Borel-Moore homology H−n (CU• 2 ) on the manifold U2 is the
+orientation sheaf. The other local cohomology groups vanish of course, as they do
+for Rn .
+Definition 4.7. Let L be a local system on the open stratum U2 ⊂ X and p a
+fixed perversity. Define Pk• = Pk• (p, L) ∈ Db (Uk ) inductively as follows.
+    (1) Set P2• := L[n].
+                         •
+    (2) For k ≥ 2 set Pk+1   := τ≤−n+p(k) Rjk ∗ (Pk• ).
+The complex Pp• (L) := Pn+1•
+                               is called the Deligne sheaf corresponding to L and p.
+If L is the orientation sheaf OU2 we may also write Pp• for Pp• (OU2 ).
+Proposition 4.8. The attachment map corresponding to jk : Uk → Uk+1 gives rise
+to a quasi-isomorphism
+                    αk : Ip C • |Uk+1 −→ τ≤−n+p(k) Rjk ∗ (Ip C • |Uk ).
+Proof. Since Ip C • |Uk is soft we have that
+                            jk ∗ (Ip C • |Uk ) → Rjk ∗ (Ip C • |Uk )
+is a quasi-isomorphism. Recall that jk : Uk ֒→ Uk+1 = Uk ⊔ Sk . Let x ∈ Sk and let
+V ⊂ Uk+1 be a distinguished neighborhood with
+                                   ∼
+                        V        −→      Rn−k × cone◦ (L)
+                        ↑                         ↑
+                                ∼
+                      V ∩ Uk   −→ Rn−k × (cone◦ (L) \ {v}).
+                                        ∼ R × L. By a result analogous to Proposi-
+Note that topologically cone◦ (L) \ {v} =
+tion 4.3 (see Chapter II, Proposition 3.4 in [11]) we have isomorphisms
+                         Ip Hi (L) → Ip Hi+1 (cone◦ (L) \ {v})
+induced on chains by ξ 7→ cone◦ (ξ) \ {v}. As a consequence we have a quasi-
+isomorphism
+               Ip C • (L)[n − k + 1] −→ Ip C • (V ∩ Uk ) = (jk ∗ Ip C • )(V )
+22                                     KONSTANZE RIETSCH
+
+
+On the other hand Propositions 4.3 and 4.5 give a quasi-isomorphism
+                    τ≤−n+p(k) (Ip C • (L)[n − k + 1]) −→ Ip C • (V ).
+The resulting diagram
+         τ≤−n+p(k) (Ip C • (L)[n − k + 1])        −→        τ≤−n+p(k) (jk ∗ Ip C • )(V )
+                         ↓                                             ↓
+                                                 αk (V )
+                     Ip C • (V )                  −→       τ≤−n+p(k) (Rjk ∗ Ip C • )(V )
+commutes. Hence αk is an isomorphism in Db (Uk+1 ).                                        
+                                           •
+Corollary 4.9. The complexes        andIp CX      Pp•
+                                            are isomorphic in D (X). In partic- b
+
+ular we have
+                         Ip H ∗ (X) = H∗ (Pp• (OU2 )),
+and intersection cohomology is independent of the choice of pl-structure on X.             
+                          ∗
+   The definition of Ip H (X) can easily be generalized to have coefficients in a local
+system L on U2 . For any simplex ∆ occurring in a p-allowable chain the intersection
+conditions guarantee that ∆ ∩ U2 contains the interior ∆◦ of ∆, so that it makes
+sense to take the coefficient of ∆ in Γ(∆◦ , L). With this definition the corollary
+generalizes to
+                          Ip H ∗ (X, L) = H∗ (Pp• (L ⊗ OU2 )).
+
+Remark 4.10. As another easy application let us give a proof of Proposition 2.13.(2),
+that I0 Hi (X) = H n−i (X) for a normal, oriented pseudomanifold X. Note that since
+                                                                              
+         Pp• (L) = τ≤p(n) ◦ Rjn ∗ ◦ · · · ◦ τ≤p(3) ◦ Rj3 ∗ ◦ τ≤p(2) ◦ Rj2 ∗ (L) [n]
+and τ≤0 ◦ R(jm )∗ = (jm )∗ on Sh(Um ), we have
+                                       P0• (L) = j∗ (L)[n],
+where j : U2 → X is the inclusion into X. So P0• (OU2 ) = j∗ (OU2 )[n]. Since
+U2 is orientable, OU2 = CU2 . Normality of X implies that j∗ (CU2 ) = CX (since
+intersecting open sets with U2 preserves the number of connected components).
+Therefore
+                  I0 Hi (X) = H−i (P0• ) = H−i (CX [n]) = H n−i (X).
+
+                          5. Lecture - Verdier duality
+5.1. The dual of a local system. Recall that a local system L on X (connected)
+corresponds to a representation V of the fundamental group, by monodromy. The
+dual local system L∨ has a natural definition as the local system with monodromy
+representation V ∗ dual to V . Equivalently L∨ may be given by
+(5.1)                         L∨ (U ) = HomSh(U) (L|U , CU ).
+For example C∨ X = CX .
+   This simple definition of duality is just the right one for orientable manifolds M
+in that we have the following version of Poincaré duality:
+                            H i (M, L)∗ ∼
+                                   c     = H m−i (M, L∨ ).
+This isomorphism comes from the usual Poincaré duality pairing just with coeffi-
+cients in taken in the dual local systems L and L∨ , respectively.
+                       AN INTRODUCTION TO PERVERSE SHEAVES                         23
+
+
+5.2. Duality for singular spaces. Let X be a singular pseudomanifold. The
+origin of intersection cohomology’s Poincaré duality on the level of Db (X) is the
+duality functor of Borel and Moore [4] and J.-L. Verdier [32]. In rough outline,
+following Verdier’s approach, this duality takes the following form. Given X one
+constructs a dualizing complex in Db (X), which will turn out to be an injective
+                                                   •                    •
+resolution of the complex of Borel-Moore chains DX   . Let us call it D̂X . Then the
+                      •    b
+dual of a complex F ∈ D (X) is given by
+                                  DX (F • ) = Hom• (F • , D̂X
+                                                            •
+                                                              ),
+with notation Hom• defined in Definition 5.2 below.
+5.3. Versions of the Hom-functor. Let us first define a sheaf from Hom between
+sheaves, following the example of the dual of a local system (5.1).
+Definition 5.1. For F , G ∈ Sh(X), define a Hom(F , G) ∈ Sh(X) by
+                            Hom(F , G)(U ) = HomSh(U) (F |U , G|U )
+with the obvious restriction maps. Homomorphisms between sheaves are locally
+determined, so this is indeed a sheaf. Note that
+(5.2)                               Γ ◦ Hom = HomSh(X) .
+Definition 5.2. For two bounded complexes A• , B • of sheaves let Hom• (A• , B • )
+be the bounded complex associated to the double complex Hom(Ai , B j ). Explicitly,
+                                         Y
+                     Homk (A• , B • ) :=   Hom(Ai , B i+k ),
+                                                 i∈Z
+                        •     •
+        k         k
+where d : Hom (A , B ) → Hom             (A• , B • ) has Hom(Ai , B i+k+1 )-component
+                                           k+1
+                     i+k
+given by d (φ)i = dB ◦ φk + (−1) φk+1 ◦ diA .
+           k                        i+1
+
+    In order to get a well defined bifunctor on the derived category, say A• , B • ∈
+D (X), we need to replace B • by its (bounded) injective resolution I(B • ). So
+  b
+
+
+                            RHom• : Db (X) × Db (X) → Db (X),
+is defined by RHom• (A• , B • ) = Hom• (A• , I(B • )).
+Definition 5.3. The global version
+                  RHom• : Db (X) × Db (X) → Db (vector spaces),
+may be defined by RHom• = RΓ ◦ RHom• .
+  The usual Hom in the derived category is recovered by
+                      Hi (RHom• (F • , G • )) = HomDb (X) (F • , G • [i]).
+Definition 5.4 (Tensor products). For two sheaves F , G on X their tensor product
+F ⊗ G is defined as the sheafification of the presheaf U 7→ F (U ) ⊗ G(U ). Since we
+are dealing with sheaves of vector spaces there are no difficulties withLflatness and
+tensoring with a given sheaf is an exact functor. Setting (A• ⊗B • )k := i+j=k Ai ⊗
+B j with the appropriate differential gives a well-defined bifunctor ⊗ : Db (X) ×
+Db (X) → Db (X).
+Remark 5.5. Hom(F , ) is right adjoint to the exact functor F ⊗ . This implies
+that Hom(F , ) takes injectives to injectives.
+24                                   KONSTANZE RIETSCH
+
+
+5.4. Pull-back with compact support. We will follow the longer scenic route to
+constructing the dualizing complex via the introduction of a new pull-back functor.
+Let f : X → Y be a continuous map. Recall the two notions of push-forward, Rf∗
+and Rf! . The usual pull-back functor f ∗ is related to Rf∗ by the adjunction,
+                     HomDb (X) (f ∗ Y • , X • ) ∼
+                                                = HomDb (Y ) (Y • , Rf∗ X • ).
+   Duality should interchange cohomology with cohomology with proper supports
+and thus, more generally, Rf∗ with Rf! . Assuming that, there should also be a dual
+notion of pull-back and a dual adjunction formula. So we would like to construct a
+functor f ! : Db (Y ) → Db (X) such that
+(5.3)                HomDb (X) (X • , f ! Y • ) ∼
+                                                = HomDb (Y ) (Rf! X • , Y • ).
+
+5.4.1. The case of an open embedding. If j : U ֒→ X is an open inclusion then j ∗
+is already right adjoint to j! ,
+                         HomSh(X) (X , j ∗ Y) ∼
+                                              = HomSh(Y ) (j! X , Y),
+with obvious adjunction morphisms X → j ∗ j! X and j! j ∗ Y → Y. In this case we can
+simply set j ! F • = j ∗ F • . Note that since j ∗ and j! are both exact, the adjunction
+formula implies that j ∗ takes injectives to injectives and j! takes projectives to
+projectives.
+
+5.4.2. The case of a closed embedding. Let us first introduce some simplifying no-
+tation. Suppose F ∈ Sh(X) and jU : U ֒→ X is an open inclusion. Define
+                               FU,X := (jU )! (F |U ) ∈ Sh(X).
+Explicitly, FU,X (W ) = {s ∈ F(U ∩ W ) | Supp(s) is closed in W }. For example
+CU,X (W ) = Cc where c is the number of connected components of W wholly
+contained in U .
+    Suppose f = i : Z → Y is the inclusion of a closed subset. Define a functor
+i′ : Sh(Y ) → Sh(Z) by
+        i′ (Y)(U ) := HomSh(Y ) (i! CU,Z , Y) = {Sections s ∈ Y(V ) supported in Z},
+where V is an open set in Y such that U = V ∩ Z. Then i′ (Y) really is a sheaf,
+since the property of being supported in Z can be checked locally. And i′ is clearly
+left exact. Notice that this definition was engineered to give an adjoint to i! ,
+               HomSh(Z) (CU,Z , i′ (Y)) = i′ (Y)(U ) = HomSh(Y ) (i! CU,Z , Y).
+The pull-back with compact support can be defined by i! = Ri′ .
+
+5.4.3. Construction of f ! for general f . Let f : X → Y be an arbitrary continuous
+map. Then the presheaf defined by
+(5.4)                            U 7→ HomSh(Y ) (f! CU,X , Y)
+is not necessarily a sheaf. For example it may have nontrivial global sections while
+all of its stalks are zero. This is to do with the inflexibility of the sheaf CU,X
+along the fibers of f , which rarely allows for sections with proper support. This
+problem is solved by going over to the derived category and replacing CX with a
+                        •                                                   •
+fixed soft resolution SX  . For example we may take the soft resolution CX    of CX
+from Section 2.10 if X is piecewise linear.
+                      AN INTRODUCTION TO PERVERSE SHEAVES                                  25
+
+
+Theorem 5.6 ([18, VI 1.1], [11, VI]). For f : X → Y , the assignment
+                         f ! (Y • )(U ) := RHom• (Rf! SU,X
+                                                       •
+                                                           , Y •)
+defines a functor f ! : Db (Y ) → Db (X). The functor f ! is (up to isomorphism)
+                                              •
+independent of the choice of soft resolution SX .
+   Note that the discussion around (5.4) implies that the functor f! : Sh(X) →
+Sh(Y ) simply has no right adjoint in general. But f ! does give a right adjoint
+functor to Rf! directly in the derived category. This, in a local version, is the main
+result of Verdier [32], see [18, VII.5 Theorem 5.2].
+Theorem 5.7. Let X • ∈ Db (X) and Y • ∈ Db (X). Then there is a natural iso-
+morphism
+(5.5)         Rf∗ RHom• (X • , f ! Y • ) ∼
+                                         = RHom• (Rf! X • , Y • ).
+  The adjunction formula (5.3) is an immediate consequence.
+Corollary 5.8. Applying H0 to both sides of (5.5) we obtain a natural isomorphism
+                HomDb (X) (X • , f ! Y • ) ∼
+                                           = HomDb (Y ) (Rf! X • , Y • ).
+5.5. The dualizing complex. For the bounded derived category of sheaves on a
+point the dualizing object is just C{pt} viewed as a complex concentrated in degree
+zero.
+                                        •
+Definition 5.9. The dualizing complex D̂X ∈ Db (X) is defined by
+                                      •
+                                    D̂X := π ! (C{pt} ),
+where π = πX : X → {pt} is the projection to a point.
+   Let us compute the dualizing complex from the definition, taking as the soft
+            •                                          •
+resolution SX of CX the complex of geometric cochains CX . We get
+(5.6)   π ! C{pt} (U ) = Hom• (π! CU,X
+                                   •
+                                       , C[0]) = Hom• (Γc (CU,X
+                                                            •                      −• ∗
+                                                                ), C[0]) = Γc (U, CX ) ,
+where we used that C{pt} = C is already injective. This recovers the dual of the
+constant sheaf in the sense of Borel and Moore [4].
+                             •                                             •
+5.6. Comparison with DX         and other properties. The complex DX          of Borel-
+                                                    •
+Moore chains is related to the dualizing complex D̂X by the following map. From the
+               i                                                                  −i
+definition of CX , Section 2.10, one can see that there is a dual pairing Γc (U, CX  )×
+        i
+Γ(U, DX ) → C. Therefore we have an inclusion
+                                  i                 −i ∗
+                                 DX (U ) ֒→ Γc (U, CX )
+     i
+of DX  (U ) into its double dual. Since these complexes have finite dimensional coho-
+mology, the inclusion induces isomorphisms there. So we get a quasi-isomorphism
+  •       •
+DX   → D̂X  .
+   One major advantage the dualizing complex has over the complex of Borel-
+                                                                 •
+Moore chains is that it is a complex of injectives, while DX       was only soft. To
+                                                          −• ∗
+see this intuitively, imagine for the sections of Γc (U, CX ) something like geomet-
+ric chains but no longer necessarily with closed support. Then every restriction
+map is split by an extension by zero, and the corresponding sheaf is injective by
+Lemma 3.3. A proper, more general proof shows that there is a natural isomorphism
+                  −i                  i ∗
+HomSh(X) (A, D̂X     ) = Γc (X, A ⊗ SX  ) generalizing (5.6) (e.g. [18, V Proposition
+26                                KONSTANZE RIETSCH
+
+                     i                                           i
+1.5]). Then since SX    is soft, and flat of course, A 7→ A ⊗ SX   is an exact functor
+taking A to a soft sheaf. Since soft sheaves are Γc -acyclic, the combined functor
+               −i
+HomSh(X) ( , D̂X  ) is exact.
+                              •          •
+   Another advantage of D̂X       over DX   is that it can be defined in more general
+settings. We may choose any soft resolution of CX to define π ! . In particular, X
+need not have a piecewise linear structure.
+   Note also that the dualizing complexes are inherently compatible with pull-back
+with compact supports. For a composition f ◦ g of two continuous maps there is a
+natural isomorphism (f ◦ g)! = g ! ◦ f ! . And therefore
+                f ! (D̂Y• ) = f ! ◦ πY! (C) = (πY ◦ f )! (C) = πX
+                                                                !         •
+                                                                  (C) = D̂X .
+This is analogous to the property f ∗ (CY ) = CX .
+                                                         •
+5.7. Verdier duality. The most important property of D̂X   is that it is a dualizing
+complex in the categorical sense for the duality for (constructible) complexes of
+sheaves introduced by Borel and Moore.
+Definition 5.10. For X • ∈ Db (X) let
+                             DX (X • ) := RHom• (X • , D̂X
+                                                         •
+                                                           ).
+This defines a contravariant functor DX : Db (X) → Db (X) which is called the
+Verdier duality functor.
+     Verdier’s main theorem, the local adjunction formula (5.5), now implies
+(5.7)                    DX (X • ) = RHom• (Rπ! (X • ), C{pt} ),
+where f = π : X → {pt}. The right hand side of (5.7) agrees with the definition of
+a dual of Borel and Moore [4]. Let us rewrite Rπ! as RΓc and also apply Rπ∗ = RΓ
+to (5.7). So
+                    RΓ(DX (X • )) = R Hom• (RΓc (X • ), C{pt} )
+in Db (vector spaces). Then taking H −i on both sides gives the very appealing
+global sense,
+(5.8)                      H−i (X, DX (X • )) = Hic (X, X • )∗ ,
+in which DX (X • ) is dual to X • .
+                                                  • ∼
+   If for example X • = CX , then DX (CX [0]) = D̂X    •
+                                                    = DX . Therefore (5.8) becomes
+                            H−i (X, DX
+                                     •
+                                       )     = Hic (X, CX )∗
+                                 ||                  ||
+                              Hi (X)         =  Hci (X)∗ ,
+which is a special case of the universal coefficient theorem for cohomology.
+Remark 5.11. Here are some basic properties of Verdier duality.
+   (1) DX : Db (X) → Db (X) is a contravariant functor. With respect to shifts,
+       DX (F • [n]) = DX (F • )[−n].
+   (2) Let f : X → Y . Then
+(5.9)                            Rf∗ ◦ DX = DY ◦ Rf! ,
+(5.10)                             DX ◦ f ∗ = f ! ◦ DY .
+                      AN INTRODUCTION TO PERVERSE SHEAVES                               27
+
+
+        In particular, Verdier duality intertwines RΓ = Rπ∗ and RΓc = Rπ! . Here
+        the first formula follows from the adjunction (5.5). For the second one see
+        [11, V §10].
+                                                                              • ∼
+    (3) Suppose L is a local system on an m-dimensional manifold M . Then D̂M    =
+                                                 •        •          •
+        OM [m] and, since L is projective, RHom (L[m], D̂X ) = Hom (L[m], OM [m]).
+        Therefore
+                               DM (L[m]) = L∨ ⊗ OM .
+5.8. Constructibility. For a local system on a manifold M the final property in
+Remark 5.11 implies that DM (DM (L)) ∼ = L. This has an analogue for stratified
+spaces X.
+Definition 5.12. Let σ be a pseudomanifold stratification of X. A complex F • ∈
+Db (X) is called σ-constructible if for each stratum S we have that Hi (F • |S ) is a local
+system. F • is called constructible if it is σ-constructible for some pseudomanifold
+stratification σ of X.
+    Note that all of the complexes we have been studying are constructible for the
+(given) stratification on X. For example the Deligne complex P • is constructible.
+This is essentially because we ‘constructed’ it from the constant sheaf, or a local
+system, using only truncation functors and push-forwards R(jk )∗ , where the inclu-
+sions jk were compatible with the stratification (and the stratification obeys local
+normal triviality).
+                            •
+    The dualizing complex D̂X  is in fact constructible for any pseudomanifold strat-
+ification σ of X. For example if U ⊂ X open is a manifold, then we know that
+                                       •
+                                     D̂X |U ∼
+                                            = OU [n]
+by calculation of the local Borel-Moore homology. Similarly one can deduce that
+  •
+D̂X has finite-dimensional locally constant cohomology along the strata of X, using
+local normal triviality. Moreover, if F • is a σ-constructible complex, then so is
+DX (F • ). See [11, V §8].
+   Finally, if F • ∈ Db (X) is constructible, then the natural map
+                                  F • → DX ◦ DX (F • )
+is an isomorphism in Db (X). See [11, V Theorem 8.10].
+
+6. Lecture - Topological invariance of intersection cohomology and
+                           Poincaré duality
+  The main aim of this section will be to apply the Verdier duality functor to the
+Deligne sheaf.
+
+6.1. Long exact sequences. Suppose F ∈ Sh(X) and X = Z ⊔ U is a decom-
+position of X into a closed subset Z and an open one U . Denote the inclusions
+i : Z ֒→ X and j : U ֒→ X. Let ΓZ (F ) := i! i′ (F ) ∈ Sh(X). So
+                ΓZ (F )(V ) = ΓZ (V, F ) = {s ∈ F(V ) | Supp(s) ⊂ Z}.
+Then the decomposition of X into Z and U gives rise to an exact sequence
+                              0 → ΓZ (F ) → F → j∗ j ∗ F
+which extends to a short exact sequence → 0 if F is injective.
+28                                     KONSTANZE RIETSCH
+
+
+  Suppose now F • is a complex, and I • = I(F • ) ∼
+                                                  = F • its injective resolution.
+Then we get a sequence of chain maps
+                                 0 → i! i! I • → I • → j∗ j ∗ I • → 0
+which is exact in every degree. In the language of triangulated categories, we obtain
+a ‘distinguished triangle’,
+                                    i! i! F •        −→           F•
+(6.1)                                 [1] տ                      ւ   ,
+                                                  Rj∗ j ∗ F •
+where the map on the left hand side is a map to the shifted complex Ri! i! (F • )[1].
+Applying cohomology functors such as H• , H•c , or Hx• gives a long exact sequence.
+For example,
+        · · · → Hi (Z, i! F • ) → Hi (X, F • ) → Hi (U, F • ) → Hi+1 (Z, i! F • ) → · · · .
+     The inclusions i and j also define another distinguished triangle,
+                                                                      [1]
+                           · · · → j! j ! F • → F • → i∗ i∗ F • → · · · .
+
+6.2. Costalks. Let ix : {x} → X be the inclusion of a point. The dual concept to
+the stalk functor i∗x is the functor of costalks i!x : Db (X) → Db ({pt}). Define
+                                      j
+                                     H{x} (F • ) := H j (i!x F • ).
+This is called the local cohomology supported in {x}.
+  Note that the stalk cohomology of F • at x can be described as
+                               Hxj (F • ) =         lim
+                                                     −→
+                                                                Hj (U, F • ),
+                                              {U open | x∈U}
+
+by replacing F by its injective resolution in (4.1). If F • is constructible, then an
+                  •
+
+analogous description,
+                            j
+                           H{x} (F • ) =             lim
+                                                      ←−
+                                                                 Hjc (U, F • ),
+                                                {U open | x∈U}
+
+for the costalk follows by Verdier duality. See also [11, V §3].
+Lemma 6.1. Suppose M is an m-manifold and F • ∈ Db (M ) has finite rank, locally
+constant cohomology. Let x ∈ M and U ⊂ M an open ball containing x. Then
+    (a) Hxj (F • ) = Hj (U, F • ).
+          j
+    (b) H{x}  (F • ) = Hjc (U, F • ) = Hxj−m (F • ).
+In particular one has j ! (F • ) ∼
+                           x      = j ∗ (F • )[−m].
+                                         x
+
+Proof. To see (a), consider the spectral sequence
+                           E2ij : H i (U, Hj F • |U ) ⇒ Hi+j (U, F • ).
+Since Hj (F • |U ) is a constant sheaf, by assumption, the cohomology H i (U, Hj F • |U )
+is trivial for i > 0. Therefore the spectral sequence collapses to give Hj (U, F • ) =
+H 0 (U, Hj (F • )) = Hxj (F • ). The second equality in (b) is proved in a similar way.
+                            j
+   To get the identity H{x}      (F • ) = Hjc (U, F • ) apply Verdier duality to (a), in par-
+ticular (5.8) and (5.10).                                                                  
+                          AN INTRODUCTION TO PERVERSE SHEAVES                                29
+
+
+6.3. Costalks and the Deligne sheaf. As usual let X be an n-dimensional strat-
+ified pseudomanifold with a local system L on the open stratum U2 = X \ Σ, and p
+a fixed perversity. We use the same notation as in Section 4.5. The Deligne sheaf
+P • = Pp• (L) in Db (X) has the following properties (which also characterize it up
+to isomorphism).
+ ( A1 ) P • is constructible for the given stratification on X.
+ ( A2 ) P • |U2 ∼
+                = L[n].
+ ( A3 ) Hxi (P • ) = 0 for i > −n + p(k) and x ∈ Sk .
+                                            jk
+ ( A4 ) Consider the inclusion Uk ֒→ Uk+1 . The attachment map
+                                   αk : P • |Uk+1 → R(jk )∗ (P • |Uk )
+          is a quasi-isomorphism up to degree ≤ −n + p(k).
+
+  Let us prove that P • also satisfies the following ‘dual’ property to (A3) :
+ (A3! ) H{x}
+          i
+             (P • ) = 0 for x ∈ Sk and i < −q(k), where q is the complementary
+        perversity to p.
+
+Lemma 6.2. P • satisfies (A3! )
+Proof. Let Pk• := P • |Uk and consider the inclusions
+                                              j         i
+                                         Uk ֒→ Uk+1 ←֓ Sk .
+Let x ∈ Sk . Applying Hxl to the distinguished triangle (6.1) gives a long exact
+sequence
+        · · · → Hxl (i! Pk+1
+                         •
+                             ) → Hxl (P • ) → Hxl (Rj∗ j ∗ Pk+1
+                                                            •
+                                                                ) → Hxl+1 (i! Pk+1
+                                                                               •
+                                                                                   ) → ···
+To use this long exact sequence, we need to relate the terms Hxl (i! Pk+1
+                                                                      •
+                                                                          ) to costalks.
+Let ix : {x} → Sk denote the inclusion. Then one can use Lemma 6.1 to deduce
+                  Hxl (i! Pk+1
+                           •
+                               ) = H l (i∗x i! Pk+1
+                                                •
+                                                    ) = H l+n−k (i!x i! Pk+1
+                                                                         •
+                                                                             )
+                                   = H l+n−k ((i ◦ ix )! Pk+1
+                                                          •        l+n−k
+                                                              ) = H{x}     •
+                                                                         (Pk+1 ).
+
+  Recall that by property (A3) we have Hxl (P • ) = 0 for all l > m := −n + p(k).
+So let us write down again the long exact sequence,
+                             ···              → Hxm−1 (P • )       → Hxm−1 (Rj∗ j ∗ Pk+1
+                                                                                     •
+                                                                                         )
+                     m+n−k   •
+(6.2)         →     H{x}   (Pk+1 )            →  Hxm (P • )        →    m       ∗ •
+                                                                       Hx (Rj∗ j Pk+1 )
+                    m+n−k+1    •
+              →    H{x}     (Pk+1  )          → Hxm+1 (P • )      = 0.
+
+From the property (A4) of the attachment map we have that the maps Hxl (P • ) →
+Hxl (Rj∗ j ∗ Pk+1
+              •
+                  ) are isomorphisms exactly for l ≤ m. But therefore the long exact
+sequence (6.2) implies that
+                           l+n−k   •
+                          H{x}   (Pk+1 ) = 0 for l < −n + p(k) + 2.
+
+Since q(k) = k − 2 − p(k), this is precisely the condition (A3! ).                           
+
+Proposition 6.3. The Deligne sheaf P • = Pp• (L) ∈ Db (X) is uniquely determined
+up to isomorphism by the properties (A1), (A2), (A3) and (A3! ).
+30                                   KONSTANZE RIETSCH
+
+
+   This is proved basically by reading the proof of Lemma 6.2 in reverse. The
+vanishing of the costalks implies that the attachment map is a quasi-isomorphism
+in the required degrees by the same long exact sequence. So we have properties
+(A1) − (A4). But (A3) and (A4) together with the constructibility property (A1)
+imply that the attachment map gives a quasi-isomorphism
+                                 •
+                                Pk+1 → τ≤−n+p(k) R(jk )∗ Pk• .
+So we recover the inductive construction of P • .
+Theorem 6.4. Let L be a local system on the open stratum U2 of an n-dimensional
+pseudomanifold X. Let p and q be complementary perversities. Then
+(6.3)                        DX (Pp• (L)) ∼
+                                          = Pq• (L∨ ⊗ OU2 )[−n].
+
+  This theorem is proved by using the properties of Verdier duality to show that
+DX (Pp• (L))[n] satisfies (A1), (A2), (A3) and (A3! ) for L∨ ⊗ OU2 and q, and then
+applying Proposition 6.3.
+  If we apply Hi to (6.3), we obtain for the left hand side
+                          H i ◦ RΓ ◦ DX (Pp• (L)) = H−i  •
+                                                     c (Pp (L))
+                                                               ∗
+
+
+using the property RΓ ◦ DX = D{pt} ◦ RΓc from Remark 5.11. And the right hand
+side becomes H−n+i (Pq• (L∨ ⊗ OU2 )).
+   Thus we obtain Theorem 2.15 as a corollary (in a slightly more general form).
+Corollary 6.5 (Poincaré Duality). With notation as above,
+                         Ip Hc−i (X, L ⊗ OU2 )∗ ∼
+                                                = Iq H −n+i (X, L∨ ).
+6.4. Variation of the stratification. Let X be a pseudomanifold without a fixed
+stratification. And let (U, L) be a pair consisting of an open dense submanifold
+U ⊂ X with complement of codimension ≥ 2 and a local system defined on U . We
+may assume U is maximal (by Zorn’s Lemma applied to the set of extensions of L).
+Theorem 6.6 ([11, V 4.15]). Suppose we are given a pair (U, L) as above, and
+assume that U contains the open stratum of some stratification of X.2 Let p be a
+perversity. Then there exists a unique (up to isomorphism) complex P̃ • ∈ Db (X)
+such that
+ ( B1 ) P̃ • is constructible.
+ ( B2 ) P̃ • |V ∼
+                = L|V [n] for some open dense V ⊂ U with codimension ≥ 2 comple-
+        ment.
+ ( B3 ) dim(Supp H−n+i (P̃ • )) ≤ n − p−1 (i), where p−1 (i) := min{k | p(k) ≥ i}.
+ (B3! ) dim(Cosupp H−i (P̃ • )) ≤ n − q −1 (i), where the cosupport of a sheaf is de-
+        fined by Cosupp(F ) := {x ∈ X|F{x} 6= 0}.
+
+   2Borel indicates an example of a pair (U, L) where U is maximal for L and does not contain the
+open stratum U2 of any stratification, see [11, V Remark 4.14]. However the U in the example has
+no universal cover (not locally simply connected), and the definition of local system used seems to
+be as finite-dimensional representation of the fundamental group. For a local system in the locally
+constant sheaf sense I don’t know whether it may not be possible to leave out this condition on
+U.
+                     AN INTRODUCTION TO PERVERSE SHEAVES                             31
+
+
+    Suppose σ is a stratification of X adapted to L, that is, with open stratum
+U2 ⊂ U . Then one can check that the corresponding Deligne sheaf P • = Pp• (L) sat-
+isfies the above conditions. For example, property (A3) in Section 6.3 immediately
+implies that Supp(H−n+i (P • )) cannot contain any stratum Sk having codimension
+less than min{k | p(k) ≥ i}, so property (B3) follows. For (B3! ) it is necessary to
+use also that Verdier duality preserves σ-constructibility.
+    The idea of the proof of Theorem 6.6 is to construct a coarsest possible strat-
+                                                   •
+ification σ and σ-constructible Deligne sheaf Pp,σ   , simultaneously. For any other
+adapted stratification σ , the strata of σ can be made up of unions of strata of σ ′ .
+                         ′
+                             •
+Then one can show that Pp,σ      also satisfies the axioms (A1) − (A3! ) with regard
+to σ ′ (using the σ-constructibility property). Therefore by Proposition 6.3 the two
+versions of the Deligne sheaf must be isomorphic.
+
+Corollary 6.7. The Deligne sheaf Pp• (L) ∈ Db (X) is independent of the stratifica-
+tion of X up to isomorphism. In particular, intersection cohomology is a topological
+invariant.
+
+6.5. Intersection cohomology of varieties and perverse sheaves. Let X be
+a quasi-projective algebraic variety over C. Interesting examples in the context
+of intersection cohomology include affine varieties such as the nilpotent cone N
+in a Lie algebra, or projective varieties such as Grassmannians, flag varieties and
+Schubert varieties.
+     Any quasi-projective variety X has a stratification X ⊃ X2 ⊃ X4 ⊃ · · · ⊃ X2n
+by Zariski closed subsets, such that the strata are smooth. A canonical such strat-
+ification is obtained for example by taking the singular locus of X and the singular
+locus of the singular locus, and so forth. A better stratification, a ‘Whitney strati-
+fication’, which can be shown also to satisfy local normal triviality can be obtained
+by refinement (by a combination of [34] and [11, Part IV], see also [23, §3.2]). As a
+consequence X has a pseudomanifold stratification by closed subvarieties. See also
+[19, Chapter 8] and the nice introduction to Whitney stratifications in [15, Part I
+Chapter 1]. In general references for the theory of perverse sheaves include [1], [19],
+[22], and the encyclopedic [12].
+     Let us restrict our attention to the middle perversity case, m(2k) = k − 1. Since
+X and its strata are all even-dimensional there are better grading conventions to
+which we now switch. Let n := dimC (X) = 21 dimR (X). Then shift the dualizing
+complex and Deligne sheaves by [−n]. These should become concentrated in degrees
+−n ≤ i ≤ n, rather than between −2n and 0. The new version P • = Pm            •
+                                                                                 (L) ∈
+   b
+D (X) of the Deligne sheaf that can be constructed in this setting has the following
+properties.
+ ( C1 ) P • is constructible for a Whitney stratification of X by Zariski closed sub-
+        sets.
+ ( C2 ) P • |U ∼
+               = L[dimC (X)] for some Zariski open dense U ⊂ X.
+ ( C3 ) dimC (Supp−i P • ) < i for all i < dimC (X).
+ (C3! ) dimC (Cosuppi P • ) < i for all i < dimC (X).
+
+Definition 6.8. Let Dcb (X) be the full subcategory of Db (X) of complexes with
+cohomology constructible for a Whitney stratification of X by Zarsiki closed sub-
+sets.
+32                                KONSTANZE RIETSCH
+
+
+     A complex G • ∈ Dcb (X) is called a perverse sheaf if
+(6.4)                            dimC (Supp−i G • ) ≤ i,
+(6.5)                            dimC (Cosuppi G • ) ≤ i,
+for all i ∈ Z. Let M(X) ⊂ Dcb (X) be the full subcategory of perverse sheaves. If
+we fix a stratification σ of X then we may also consider the subcategory Mσ (X)
+of σ-constructible perverse sheaves.
+   This construction of a subcategory of Dcb (X) is akin to the description of Sh(X)
+inside Db (X) as D≤0 (X) ∩ D≥0 (X), complexes of sheaves concentrated in degree 0.
+Here (6.4) and (6.5) define the analogues of D≤0 (X) and D≥0 (X) – they can be
+shown to satisfy the axioms of a ‘t-structure’ in the triangulated category. The
+resulting category M(X) is the ‘core’ of this t-structure and therefore an abelian
+category by general theory. We also have that M(X) and Mσ (X) are preserved
+under Verdier duality, thanks to the change of grading and the choice of middle
+perversity. And the simple objects are known. In summary :
+Theorem 6.9 ([1], [22, Chapter III]). Let X be a quasi-projective algebraic variety
+over C with a Whitney stratification by Zariski closed subsets σ.
+    (1) The categories M(X) and Mσ (X) are abelian categories.
+    (2) The Verdier duality functor defines an anti-equivalence of categories DX :
+        Dcb (X) → Dcb (X) which restricts to give anti-equivalences M(X) → M(X)
+        and Mσ (X) → Mσ (X).
+    (3) For a pair (S, L) where S ⊂ X is a closed irreducible subvariety and L a
+        local system on a smooth Zariski open subset of S define
+                                 IC •S,X (L) := i! Pm
+                                                    •
+                                                      (L),
+          where i : S ֒→ X is the inclusion. If L is an irreducible local system, then
+          IC •S,X (L) is a simple object in M(X). All simple objects in M(X) are
+          isomorphic to IC •S,X (L) for some pair (S, L) with L irreducible.
+
+Definition 6.10. A complex F • ∈ Db (X) is called semisimple if it is of the form
+                      F• ∼
+                            M
+                         =       V k(S,L) ⊗ IC •S,X (L)[k]
+                                 (S,L),k
+
+                                                                                k
+for some finite dimensional Z-graded multiplicity vector spaces V(S,L) = ⊕k∈Z V(S,L)
+which are nonzero for only finitely many pairs (S, L).
+  We may now state the famous theorem of Beilinson, Bernstein, Deligne and
+Gabber [1].
+Theorem 6.11 (Decomposition theorem). If f : X → Y is a proper morphism,
+then Rf∗ CX is semisimple.
+   Note that it is not known whether it is possible in the statement to replace the
+constant sheaf by an arbitrary local system. The only allowable local systems in
+this context are the ones that arise from the constant sheaf on an algebraic covering.
+In other words, suppose p : X̃ → X is an unramified finite morphism. Then p∗ is
+an exact functor, and Rp∗ CX̃ = p∗ CX̃ = L is a local system on X for which the
+decomposition theorem (obviously) holds.
+                     AN INTRODUCTION TO PERVERSE SHEAVES                             33
+
+
+   The original proof [1] of this theorem involves base change to finite charactersitic
+and the study of eigenvalues of the Frobenius map on ℓ-adic cohomology. Another
+reference for the ℓ-adic theory of perverse sheaves (including the decomposition
+theorem) is [22]. A proof of the decomposition theorem without the base change
+was given by M. Saito [28]. We now turn to an application.
+
+                 7. Lecture - Kazhdan-Lusztig polynomials
+   Let W be a Weyl group, for example the symmetric group Sn . Kazhdan and
+Lusztig [21] introduced polynomials Pu,w (q) for pairs u, w ∈ W and conjectured an
+interpretation of their value at 1 in terms of decomposition numbers of Verma mod-
+ules in the representation theory of the corresponding complex Lie algebra. The
+proof of this conjecture was a major mathematical effort connecting these polynomi-
+als with intersection cohomology of Schubert varieties, then using Riemann-Hilbert
+correspondence to turn the intersection cohomology complexes into D-modules on
+the flag variety, and finally relating these to modules of the universal enveloping
+algebra of the Lie algebra by global sections and localization functors.
+   The last two steps in the proof of the conjecture were completed by Beilinson-
+Bernstein [2] and Brylinski-Kashiwara [7]. We will take this section to explain only
+the first step, which was done by Kazhdan and Lusztig in [20]. We follow the
+exposition of Springer [30], see also [29]. Background on algebraic groups can be
+found for example in the textbooks [5, 17, 31].
+7.1. Flag varieties and Schubert varieties. Let G be a reductive linear alge-
+braic group over C with fixed Borel subgroup B and an algebraic torus T ⊂ B.
+The Weyl group is W = NG (T )/T . For GLn we may take B to be the subgroup
+of upper-triangular matrices and T the diagonal matrices. Then W = Sn . Let
+ẇ ∈ NG (T ) be a representative of w ∈ W , for example a permutation matrix in
+GLn . Denote by S ⊂ W the set of simple reflections generating W , so for example
+the adjacent transpositions in the symmetric group. The length ℓ(w) of w ∈ W is
+the minimal number of factors required to write w as a product of simple reflections.
+   The flag variety X of G is defined to be the homogeneous space G/B. It is
+decomposed into B-orbits by the Bruhat decomposition,
+                                       G
+                               G/B =       B ẇB/B,
+                                        w∈W
+
+where the individual orbits are affine cells B ẇB/B ∼
+                                                     = Cℓ(w) .
+  The Schubert varieties are defined to be the closures of the Bruhat cells,
+                                  Xw := B ẇB/B.
+The partial order on the Schubert varieties by inclusion gives rise to a partial order
+on W called the Bruhat order. It is a general fact that all Borel subgroups are
+conjugate to one another, and the normalizer of B is just B. Therefore the elements
+of the flag variety may be identified with Borel subgroups via the correspondence
+                               gB ↔ g · B := gBg −1 .
+   It will be useful to consider also the product X × X. Let G act on X × X
+diagonally. By an application of Bruhat decomposition, the G-orbits in X × X are
+of the form
+                          O(w) := G-orbit of (B, ẇ · B).
+34                                   KONSTANZE RIETSCH
+
+
+We say that two elements B1 , B2 of the flag variety have relative position w if
+                                         w
+(B1 , B2 ) ∈ O(w). Write in this case B1 → B2 . The basic properties of Bruhat
+decomposition imply
+                   s       s                 s
+              B1 → B2 → B3          ⇒ B1 → B3        or B1 = B3 ,
+(7.1)            v    w                  vw
+              B1 → B2 → B3          ⇒ B1 → B3        if ℓ(vw) = ℓ(v) + ℓ(w),
+                                                                     w
+for s ∈ S and v, w ∈ W . The set of B ′ in X such that B → B ′ is just the Bruhat
+cell B ẇ · B.
+
+7.2. The Hecke algebra. Let v be an indeterminate and let H be a Z[v, v −1 ]-
+module with basis indexed by W ,
+
+                               H := Z[v, v −1 ] ⊗ hTw | w ∈ W iZ .
+
+There is a product on H with unit element T1 such that
+
+      Ts Ts   = (v 2 − 1)Ts + v 2 T1 ,        for s ∈ S
+     Tu Tw    = Tuw ,                         for u, w ∈ W with ℓ(uw) = ℓ(u) + ℓ(w).
+
+See for example the construction below, in Section 7.3. The algebra H determined
+by these relations is called the Hecke algebra associated to the Weyl group W .
+When v is specialized to 1 it is clearly just the group algebra Z[W ] of W ,
+
+7.3. Construction over Fq . There is a sense in which the Hecke algebra is the
+deformation of Z[W ] one obtains when replacing W with the flag variety over Fq
+(where q corresponds to v 2 ). Let Ġ, Ḃ, Ẋ be split forms of G, B and X over the
+finite field Fq . For example GLn (Fq ). Then the definitions from Section 7.1 can be
+carried over to this case.
+   Let us consider the convolution algebra Z[Ẋ × Ẋ]Ġ of Ġ-invariant functions on
+Ẋ × Ẋ. Let Tw ∈ Z[Ẋ × Ẋ]Ġ be the characteristic function of the Ġ-orbit Ȯ(w).
+The convolution product on Z[Ẋ × Ẋ]Ġ is
+                                            X
+(7.2)                  S ∗ T (Ḃ1 , Ḃ3 ) =   S(Ḃ1 , Ḃ2 )T (Ḃ2 , Ḃ3 ).
+                                           Ḃ2 ∈Ẋ
+
+So for example if s ∈ S
+                                               
+                                               q
+                                                     Ḃ1 = Ḃ3
+                                                          s
+                         Ts ∗ Ts (Ḃ1 , Ḃ3 ) = q − 1 Ḃ1 → Ḃ3 ,
+                                               
+                                                0     otherwise.
+                                               
+
+                                                                s        s
+since there is a summand (of 1) for every Ḃ2 with Ḃ1 → Ḃ2 → Ḃ3 . Therefore we
+find
+                                   Ts Ts = (q − 1)Ts + qT1 .
+The relation Tu Tw = Tuw if ℓ(u) + ℓ(w) = ℓ(uw) follows in a similar way using
+(7.1).
+                     AN INTRODUCTION TO PERVERSE SHEAVES                          35
+
+
+7.4. The Hecke algebra and perverse sheaves. Above we have recovered the
+relations of the Hecke algebra from the structure of the flag variety and its Bruhat
+decompositions over Fq . We can get a more sophisticated model by replacing con-
+structible functions with semisimple perverse sheaves. We return to working over
+C. The stratification by Bruhat cells of a Schubert variety Xw and the G-orbit
+stratification of O(w) are both Whitney stratifications, see [9, Proposition 1.4].
+   Let A• ∈ Db (X × X) be constructible for the G-orbit stratification of X × X.
+Define                         X X
+                 hX×X (A• ) :=               i
+                                       dim(H(B,        •    i
+                                                ẇB) (A ))v Tw ∈ H.
+                               w∈W i∈Z
+Similarly, for a bounded complex B • on X that is constructible for the Bruhat
+decomposition, define
+                                X X
+                   hX (B • ) :=           i
+                                    dim(HẇB (B • )) v i Tw ∈ H.
+                               w∈W i∈Z
+
+We have of course,
+                     hX×X (CO(w),X×X ) = hX (CB ẇ·B,X ) = Tw .
+For another simple example let w = s be a simple reflection. Then we get that
+Xs = (B ṡ · B) ⊔ (1 · B) ∼
+                          = CP 1 and therefore IC •Xs ,X = CXs ,X [1]. So
+                           hX (IC •Xs ,X ) = v −1 (Ts + T1 ).
+
+Remark 7.1. Consider the projection p1 : O(w) → X given by p1 (B1 , B2 ) = B1 .
+This is a bundle with fiber p−1
+                             1 (B) = Xw (locally trivial by G-equivariance). There-
+fore O(w) looks locally like a product CN × Xw , where N = dimC (X). It follows
+        •
+that IC O(w),X×X  has stalks given by
+                                  
+                          •
+                                          = IC •Xw ,X [N ] v̇B ,
+                                                          
+                       IC O(w),X×X
+                                      (B,v̇B)
+
+by a local application of Proposition 4.3, for example. Therefore
+                              •
+                     hX×X (IC O(w),X×X ) = v −N hX (IC •Xw ,X ).
+
+7.5. Convolution product. Suppose A• , B • ∈ Db (X) are semisimple perverse
+sheaves constructible for the G-orbit stratification. Consider the projections
+                     X ×X
+                               p12
+                               տ
+                                                      p13
+                                     X ×X ×X         −→ X × X.
+                               p23
+                               ւ
+                     X ×X
+Then
+                        A• ◦ B • := R(p13 )∗ (p∗12 A• ⊗ p∗23 B • )
+is again a semisimple perverse sheaf by the decomposition theorem, and con-
+structible for the stratification by G-orbits.
+   For the purpose of simplifying notation let us write w for the element ẇ · B in
+X or (B, ẇ · B) ∈ X × X, when considering stalks at these points.
+36                                     KONSTANZE RIETSCH
+
+
+Lemma 7.2. Suppose A• ∈ Db (X × X) is constructible with respect to G-orbits
+and has Hi (A• ) = 0 for odd i. Then the same holds for CO(s),X×X ◦ A• and
+                      hX×X (CO(s),X×X ◦ A• ) = (Ts + 1) · hX×X (A• ).
+Proof. The coefficient of Tw in (Ts + 1) · hX×X (A• ) is
+              (P
+                        v i (dim Hw
+                                  i
+                                    (A• ) + dim Hsw
+                                                 i−2
+                                                     (A• )) w < sw
+                 Pi∈Z i           i    •          i−2   •
+                    i∈Z v (dim Hsw (A ) + dim Hw (A )) sw < w.
+
+We need to show, therefore, that
+                                               (
+               i                        •
+                                                         i
+                                                    dim Hw (A• ) + dim Hsw
+                                                                        i−2
+                                                                            (A• )        w < sw
+(7.3)     dim(Hw (CO(s),X×X        ◦ A )) =
+                                                    dim Hsw (A ) + dim Hw (A• )
+                                                         i    •          i−2
+                                                                                         sw < w.
+Since p13 is proper, (p13 )∗ = (p13 )! and we have by (3.2) that
+       i
+(7.4) Hw (R(p13 )! (p∗12 CO(s),X×X ⊗ p∗23 A• ))
+                                             = Hic (p−1                ∗               ∗   •
+                                                     13 (B, ẇ · B) , p12 CO(s),X×X ⊗ p23 A ).
+
+Define
+            D = {(B1 , B2 , B3 ) ∈ p−1
+                                    13 (B, ẇ · B) | (B1 , B2 ) ∈ O(s) }.
+        ∼
+Then D = Xs =∼ CP  1
+                     and the  right hand side in (7.4) is simply Hic (D, p∗23 A• ).
+  Let us now prove the identity (7.3) for sw < w. In that case D decomposes into
+                                                                 w
+                          D1 = {(B, B ′ , ẇ · B) ∈ D | B ′ −→ ẇ · B},
+                  D0 = {(B, ṡ · B, ẇ · B)},
+         ∼
+where D1 = C. The inclusions
+                                                j       i
+                                            D1 ֒→ D ←֓ D0
+                                                                              [1]
+give rise to a distinguished triangle, · · · → j! j ! → 1 → i∗ i∗ → · · · , and a corre-
+sponding long exact sequence
+         · · · → Hic (D1 , p∗23 A• |D1 ) → Hic (D, p∗23 A• ) → Hic (D0 , p∗23 A• |D0 ) → · · · .
+Starting from the left, note that p∗23 A• has constant cohomology Hw     ∗
+                                                                           (A• ) along
+D1 . Therefore by Lemma 6.1 we have Hc (D1 , p23 A |D1 ) = Hw (A• ). Next
+                                                i     ∗   •          i−2
+
+Hic (D, p∗23 A• ) = Hw
+                     i
+                       (CO(s),X×X ◦ A• ) as we saw above. Finally, Hic (D0 , p∗23 A• |D0 )
+is trivially equal to Hswi
+                           (A• ). So we have a long exact sequence
+                     i−2
+        · · · → 0 → Hw   (A• ) → Hw
+                                  i
+                                    (CO(s),X×X ◦ A• ) → Hsw
+                                                         i
+                                                            (A• ) → 0 → · · · ,
+using that A• has vanishing cohomology in odd degrees, and where i is assumed
+even. This implies the equality (7.3) in the sw < w case. The other case is
+similar.                                                                   
+Definition 7.3. Let ι : H → H be the anti-involution defined on generators by
+                              v      7 → v −1
+                              Ts    7→ Ts−1 = v −2 Ts + (v −2 − 1).
+Note that ι(Ts + 1) = q −1 (Ts + 1), where q = v 2 .
+                                                                 ′
+Theorem 7.4 ([21]). For any w ∈ W there exists a unique element Cw ∈ H such
+that
+                     AN INTRODUCTION TO PERVERSE SHEAVES                                         37
+
+           ′      ′
+    (1) ι(Cw ) = Cw .
+                      ′
+    (2) The element Cw  is expressed as
+                                             X
+                               ′
+                              Cw = v −ℓ(w)         Pu,w (v 2 )Tu
+                                             u≤w
+
+                                                                           1
+        for polynomials Pu,w ∈ Z[q] satisfying deg(Pu,w ) ≤                2 (ℓ(w)   − ℓ(u) − 1) if
+        u < w and such that Pw,w = 1.
+   The polynomials Pu,w are called the Kazhdan-Lusztig polynomials. They can
+be computed by recursive formulas.
+Theorem 7.5. [20] Cw ′
+                        = hX (IC •Xw ,X ). In particular the Kazhdan-Lusztig poly-
+nomials have nonnegative integer coefficients.
+   The remainder of these notes will be concerned with proving this theorem. In
+other words, we want to show that hX (IC •Xw ,X ) satisfies the conditions in Theo-
+rem 7.4. The main step is to show that the involution ι reflects the action of Verdier
+duality on the complexes of sheaves.
+   Let w be fixed, and with it a reduced expression w = s1 s2 · · · sk of w in terms of
+the simple reflections. Consider the variety
+                Y = {(B1 , . . . , Bk+1 ) ∈ X k+1 | (Bi , Bi+1 ) ∈ O(si )},
+and its subvariety Y0 = {(B1 , . . . , Bk+1 ) ∈ Y | B1 = B}. Then we have projection
+maps
+                        Y0     ֒→    Y              (B1 , . . . , Bk+1 )
+(7.5)                  π0 ↓          π↓                       ↓
+                                i
+                       Xw      ֒→ O(w)                (B1 , Bk+1 ).
+Note that Y and Y0 are smooth. The map π0 is the Bott-Samelson resolution of
+the Schubert variety Xw .
+Lemma 7.6. Rπ∗ (CY ) = CO(s1 ),X×X ◦ CO(s2 ),X×X ◦ · · · ◦ CO(sk ),X×X .
+
+  Note that CY = p∗12 CO(s1 ),X×X ⊗ p∗23 CO(s2 ),X×X ⊗ · · · ⊗ p∗k,k+1 CO(sk ),X×X |Y
+and apply Rπ∗ .
+
+Proof of Theorem 7.5. Firstly we need to prove that hX (IC •Xw ,X ) ∈ H is ι-invariant.
+If w = 1 this is trivial. Also for s ∈ S the Schubert variety Xs ∼    = CP 1 and we know
+ι-invariance by direct calculation. For general w the proof will be by induction. Let
+us assume ι(hX (IC •Xu ,X )) = hX (IC •Xu ,X ) for all u < w.
+   Consider the diagram (7.5). By proper base change and the decomposition the-
+orem,
+                                                         M
+          i∗ Rπ∗ (CY [ℓ(w)]) = Rπ0∗ (CY0 [ℓ(w)]) =            IC •Xu ,X ⊗ V u,i [i]
+                                                        u≤w,i∈Z
+
+for some multiplicity vector spaces Vu,i . The middle expression is Verdier self-dual,
+since π0 is proper and Y0 smooth. On the other hand, the IC •Xu ,X on the right
+hand side are each self-dual. Therefore we must have
+                                      Vu,i ∼
+                                           = Vu,−i .
+38                                    KONSTANZE RIETSCH
+
+
+Also since π0 |π−1 (Xw ) is an isomorphism,
+                                          (
+                                            C, i = 0,
+                                   Vw,i =
+                                                 6 0.
+                                            0, i =
+Therefore
+                                                               X
+            hX (i∗ Rπ∗ (CY [ℓ(w)])) = hX (IC •Xw ,X ) +                hX (IC •Xu ,X )pu (v)
+                                                              u<w
+                                                       −1
+for Laurent polynomials pu with pu (v) = pu (v              ). Now by Lemma 7.2 and Lemma 7.6
+we have
+(7.6)            hX (i∗ Rπ∗ (CY [ℓ(w)])) = v −ℓ(w) (Ts1 + 1) · · · (Tsk + 1).
+Therefore it follows that hX (i∗ Rπ∗ (CY [ℓ(w)])) is invariant under the involution ι.
+Since
+                                                      X
+(7.7)     hX (IC •Xw ,X ) = hX (i∗ Rπ∗ (CY [ℓ(w)])) −    pu (v)hX (IC •Xu ,X )
+                                                              u<w
+
+it follows that  hX (IC •Xw ,X )
+                            is invariant under ι , by the induction hypothesis.
+    It remains to prove that hX (IC •Xw ,X ) satisfies the second condition of Theo-
+rem 7.4. Define polynomials P̃u,w by
+                                                 X
+                       hX (IC •Xw ,X ) = v −ℓ(w)     P̃u,w (v)Tu .
+                                                        u≤w
+
+Clearly, P̃w,w = 1. From the axiom (C3) for the Deligne sheaf on Xw it follows
+that Hu−i (IC •Xw ,X ) = 0 if u < w and −i > −ℓ(w) + 2(ℓ(w) − ℓ(u)). This implies
+that deg(P̃u,w ) ≤ ℓ(w) − ℓ(u) − 1. Moreover,
+                                   v ℓ(w) hX (IC •Xw ,X ) ∈ Z[v 2 ],
+by equations (7.6) and (7.7) and induction. So P̃u,w (v) = Pu,w (v 2 ) where the Pu,w
+are polynomials satisfying the axioms for the Kazhdan-Lusztig polynomials.          
+
+                                           References
+ 1. A. A. Beı̆linson, J. Bernstein, and P. Deligne, Faisceaux pervers, Analysis and topology on
+    singular spaces, I (Luminy, 1981), Soc. Math. France, Paris, 1982, pp. 5–171. MR 86g:32015
+ 2. Alexandre Beı̆ linson and Joseph Bernstein, Localisation de g-modules, C. R. Acad. Sci. Paris
+    Sér. I Math. 292 (1981), no. 1, 15–18. MR 82k:14015
+ 3. A. Borel, P.-P. Grivel, B. Kaup, A. Haefliger, B. Malgrange, and F. Ehlers, Algebraic D-
+    modules, Perspectives in Mathematics, vol. 2, Academic Press Inc., Boston, MA, 1987. MR
+    89g:32014
+ 4. A. Borel and J. C. Moore, Homology theory for locally compact spaces, Michigan Math. J. 7
+    (1960), 137–159. MR 24 #A1123
+ 5. Armand Borel, Linear algebraic groups, second ed., Graduate Texts in Mathematics, vol. 126,
+    Springer-Verlag, New York, 1991. MR 92d:20001
+ 6.          , Introduction to middle intersection cohomology and perverse sheaves, Algebraic
+    groups and their generalizations: classical methods (University Park, PA, 1991), Amer. Math.
+    Soc., Providence, RI, 1994, pp. 25–52. MR 95h:55006
+ 7. J.-L. Brylinski and M. Kashiwara, Kazhdan-Lusztig conjecture and holonomic systems, Invent.
+    Math. 64 (1981), no. 3, 387–410. MR 83e:22020
+ 8. Neil Chriss and Victor Ginzburg, Representation theory and complex geometry, Birkhäuser
+    Boston Inc., Boston, MA, 1997. MR 98i:22021
+ 9. A. Dimca, Singularities and the topology of hypersurfaces, Universitext, Springer-Verlag, 1992.
+                        AN INTRODUCTION TO PERVERSE SHEAVES                                    39
+
+
+10. Albrecht Dold, Lectures on algebraic topology, Springer-Verlag, Berlin, 1995, Reprint of the
+    1972 edition. MR 96c:55001
+11. A. Borel et al, Intersection cohomology, Progress in Mathematics, vol. 50, Birkhäuser Boston
+    Inc., Boston, MA, 1984, Notes on the seminar held at the University of Bern, Bern, 1983,
+    Swiss Seminars. MR 88d:32024
+12. S. I. Gelfand and Yu. I. Manin, Homological algebra, Springer-Verlag, Berlin, 1999, Translated
+    from the 1989 Russian original by the authors, Reprint of the original English edition from
+    the series Encyclopaedia of Mathematical Sciences [Algebra, V, Encyclopaedia Math. Sci., 38,
+    Springer, Berlin, 1994; MR 95g:18007]. MR 2000b:18016
+13. Mark Goresky and Robert MacPherson, Intersection homology theory, Topology 19 (1980),
+    no. 2, 135–162. MR 82b:57010
+14.         , Intersection homology. II, Invent. Math. 72 (1983), no. 1, 77–129. MR 84i:57012
+15.         , Stratified Morse theory, Ergebnisse der Mathematik und ihrer Grenzgebiete (3),
+    vol. 14, Springer-Verlag, Berlin, 1988. MR 90d:57039
+16. André Haefliger, Introduction to piecewise linear intersection homology, Intersection Coho-
+    mology, Progress in Mathematics, vol. 50, Birkaeuser, Boston, 1984, pp. 1–21.
+17. James E. Humphreys, Linear algebraic groups, Springer-Verlag, New York, 1975, Graduate
+    Texts in Mathematics, No. 21. MR 53 #633
+18. Birger Iversen, Cohomology of sheaves, Universitext, Springer-Verlag, Berlin, 1986. MR
+    87m:14013
+19. Masaki Kashiwara and Pierre Schapira, Sheaves on manifolds, Springer-Verlag, Berlin, 1990,
+    With a chapter in French by Christian Houzel. MR 92a:58132
+20. D. Kazhdan and G. Lusztig, Schubert varieties and Poincaré duality, Geometry of the Laplace
+    operator (Proc. Sympos. Pure Math., Univ. Hawaii, Honolulu, Hawaii, 1979), Proc. Sympos.
+    Pure Math., XXXVI, Amer. Math. Soc., Providence, R.I., 1980, pp. 185–203. MR 84g:14054
+21. David Kazhdan and George Lusztig, Representations of Coxeter groups and Hecke algebras,
+    Invent. Math. 53 (1979), no. 2, 165–184. MR 81j:20066
+22. Reinhardt Kiehl and Rainer Weissauer, Weil conjectures, perverse sheaves and l’adic Fourier
+    transform, Springer-Verlag, Berlin, 2001. MR 1 855 066
+23. Frances Kirwan, An introduction to intersection homology theory, Longman Scientific & Tech-
+    nical, Harlow, 1988. MR 90e:55013
+24. George Lusztig, Intersection cohomology methods in representation theory, ICM-90, Math-
+    ematical Society of Japan, Tokyo, 1990, A plenary address presented at the International
+    Congress of Mathematicians held in Kyoto, August 1990. MR 92m:20034
+25. Robert MacPherson, Global questions in the topology of singular spaces, Proceedings of the
+    International Congress of Mathematicians, Vol. 1, 2 (Warsaw, 1983) (Warsaw), PWN, 1984,
+    pp. 213–235. MR 86m:58016
+26. James R. Munkres, Elements of algebraic topology, Addison-Wesley Publishing Company,
+    Menlo Park, CA, 1984. MR 85m:55001
+27. Joseph J. Rotman, An introduction to algebraic topology, Springer-Verlag, New York, 1988.
+    MR 90e:55001
+28. Morihiko Saito, Decomposition theorem for proper Kähler morphisms, Tohoku Math. J. (2)
+    42 (1990), no. 2, 127–147. MR 91j:32042
+29. W. Soergel, On the relation between intersection cohomology and representation theory in
+    positive characteristic, Journal of Pure and Applied Algebra 152 (2000), 311–335.
+30. T. A. Springer, Quelques applications de la cohomologie d’intersection, Bourbaki Seminar,
+    Vol. 1981/1982, Soc. Math. France, Paris, 1982, pp. 249–273. MR 85i:32016b
+31. T. A. Springer, Linear algebraic groups, second edition, Progress in Mathematics, vol. 9,
+    Birkhäuser, Boston, 1998.
+32. Jean-Louis Verdier, Dualité dans la cohomologie des espaces localement compacts, Séminaire
+    Bourbaki, Vol. 9, Soc. Math. France, Paris, 1995, pp. Exp. No. 300, 337–349. MR 1 610 971
+33. Charles A. Weibel, An introduction to homological algebra, Cambridge University Press, Cam-
+    bridge, 1994. MR 95f:18001
+34. H. Whitney, Tangents to an analytic variety, Annals of Mathematics 81 (1965), 496–549.
+
+   King’s College, University of London
+   E-mail address: rietsch@mth.kcl.ac.uk
+

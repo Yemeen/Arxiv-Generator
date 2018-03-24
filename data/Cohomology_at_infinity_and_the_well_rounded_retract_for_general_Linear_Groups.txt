@@ -1,0 +1,1228 @@
+                                                                         COHOMOLOGY AT INFINITY
+                                                                  AND THE WELL-ROUNDED RETRACT
+arXiv:math/9611220v1 [math.RT] 19 Nov 1996
+
+
+
+
+                                                                      FOR GENERAL LINEAR GROUPS
+
+
+
+                                                                         Avner Ash and Mark McConnell
+
+
+                                                                                       Introduction
+                                             (0.1). Let G be a reductive algebraic group defined over Q, and let Γ be an arithmetic
+                                             subgroup of G(Q). Let X be the symmetric space for G(R), and assume X is contractible.
+                                             Then the cohomology (mod torsion) of the space X/Γ is the same as the cohomology of Γ.
+                                             In turn, X/Γ will have the same cohomology as W/Γ, if W is a “spine” in X. This means
+                                             that W (if it exists) is a deformation retract of X by a Γ-equivariant deformation retraction,
+                                             that W/Γ is compact, and that dim W equals the virtual cohomological dimension (vcd)
+                                             of Γ. Then W can be given the structure of a cell complex on which Γ acts cellularly, and
+                                             the cohomology of W/Γ can be found combinatorially.
+                                                Spines have been found for many groups G (see (2.6) below, and [A1] [M-M0] [M-
+                                             M1]). This paper concerns the case where G is the restriction of scalars of a general linear
+                                             group over a number field k with ring of integers O. This means G(Q) = GLn (k). We
+                                             shall take Γ to be a subgroup of finite index in GLn (O), or more generally in GL(P),
+                                             where P is a projective O-module of rank n. In [A3], Ash found a spine W for these
+                                             G, calling W the well-rounded retract. (This generalized [Sou2].) The retract has been
+                                             used in computations: see [Sou1] [A-G-G] [A-M1] [A-M2] [vG-T]. We remark that k = Q,
+                                             Γ ⊆ GLn (Z) for n = 2, 3, 4 still provide our main cases of computational interest. For
+                                             imaginary quadratic fields k and n = 2, see [Men] [S-V] [V]. For real quadratic k and
+                                             n = 2, see [B].
+                                             (0.2). The present paper extends [A3] to deal with the “cusps” of X/Γ, in a way which
+                                             we now describe.
+                                                Borel and Serre [B-S] introduced a bordification X̄ of X such that X̄/Γ is a compactifi-
+                                             cation of X/Γ. The space X̄/Γ has the same homotopy type as X/Γ, and therefore has the
+                                             same homotopy type as W/Γ. The boundary of X̄/Γ is a union of finitely many “faces”,
+                                             one for each equivalence class mod Γ of parabolic Q-subgroups of G.
+
+                                                Research partially supported by NSA grant MDA-904-94-H-2030 (first author) and NSF grants DMS-
+                                             9206659 and 9401460 (second author). This manuscript is submitted for publication with the understand-
+                                             ing that the United States government is authorized to reproduce and distribute reprints.
+
+                                                                                                                             Typeset by AMS-TEX
+                                                                                               1
+2                          AVNER ASH AND MARK MCCONNELL
+
+    The Borel-Serre boundary gives a geometric approach for distinguishing the cuspidal
+cohomology within the whole cohomology of Γ. A cohomology class on X̄/Γ with co-
+efficients in C can be viewed, via the de Rham theorem, as coming from a Γ-invariant
+automorphic form on G(R). If the class has non-zero restriction to the boundary, it is
+certainly not a cusp form. The converse is not completely true, but the difference between
+the “interior cohomology” (the span of classes that restrict to zero on the boundary) and
+the “cuspidal cohomology” (the span of classes whose associated automorphic forms are
+cuspidal) is fairly well understood, thanks to the theory of Eisenstein series. In many
+practical examples, like the GL4 (Z) example mentioned below, there is no difference; to
+compute the cuspidal cohomology in certain degrees, we simply compute the restriction of
+the cohomology to the boundary.
+    A related question is the existence of “ghost classes”—those classes which restrict to
+zero on each face of the boundary, but do not restrict to zero on the whole boundary.
+Harder has given examples of ghost classes [H]; it is of interest to know how widespread
+the phenomenon is.
+    In specific cases, then, one may need to compute the cohomology of the boundary of
+X̄/Γ, the cohomology of individual boundary faces, and the restriction map from H ∗ (X̄/Γ)
+to these groups.
+    This paper builds a technology for these computations, when G is the general linear
+group in (0.1) and W is the well-rounded retract of [A3]. To each Borel-Serre boundary
+face in X̄, we associate a closed subcomplex W ′ of W . Let Γ′ be the stabilizer of W ′ in Γ.
+We prove that the inclusion W ′ /Γ′ ֒→ W/Γ induces the same map on cohomology as the
+inclusion of the corresponding boundary face into X̄/Γ. Our main result, Theorem 9.5, is
+that there is a spectral sequence converging to H ∗ (∂ X̄/Γ) whose E1 term is the direct sum
+of the cohomology of the various W ′ /Γ′ . There are only finitely many terms in this direct
+sum. There is a map of spectral sequences, starting with a natural map from H ∗ (W/Γ)
+to the E1 term, that induces the canonical restriction map H ∗ (X̄/Γ) → H ∗ (∂ X̄/Γ) up to
+canonical isomorphism. There is a dual statement in homology (10.2). We do not assume
+that Γ is torsion-free. We use (co)homology with coefficients in any fixed abelian group.
+    We can also find the maps on (co)homology induced by the inclusion of a single boundary
+face into X̄/Γ, without any spectral sequences (10.3).
+    Each W ′ /Γ′ is a finite cell complex, so its cohomology can be worked out combinatorially.
+See (6.3) for an example. We emphasize that each W ′ is a subcomplex of W , so that we
+can work with it in terms already available once we have computed W in any given case.
+    In a future paper, we will use this method to study the congruence subgroups Γ0 (p) of
+prime level p in GL4 (Z). For a range of p, we will compute H 5 (Γ0 (p), C), and will isolate
+the subspace of classes that restrict to zero on the boundary. We will compute the Hecke
+eigenvalues of these classes, using either the new techniques of Paul Gunnells, or the new
+techniques of R. MacPherson and the second author. We will try to determine whether
+any of the cusp forms we find are functorial lifts from smaller groups such as Sp4 or O4 .
+(0.3). We have long wished to see spelled out in detail the relationship between the well-
+rounded retract and the Borel-Serre compactification. The retraction r : X → W carries
+any x ∈ X into W by a combination of geodesic actions depending on x—see (4.2). Each
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                              3
+
+Borel-Serre boundary component e in X̄ has a tubular neighborhood N̄ , homeomorphic to
+e × [0, 1)l for appropriate l, where the fibers [0, 1)l are given by the geodesic action. The
+retraction r is constant on the interior of each fiber, and carries the interior of N̄ onto the
+corresponding cell complex W ′ .
+   The main idea of the paper is to extend the retraction r : X → W to a continuous
+Γ-equivariant map r̄ : X̄ → W . It is relatively easy to see that the continuous extension
+exists and is Γ-equivariant. However, r = r1 really comes from a deformation retraction
+rt : X × [0, 1] → X, and it is harder to prove that r̄ comes from a deformation retraction
+of X̄ onto W . A simple example will illustrate the problem. The map ft : R × [0, 1] → R
+given by (x, t) 7→ (1 − t) · x is a deformation retraction of R onto {0}. The compactification
+[−∞, ∞] of R certainly has a deformation retraction onto {0}. But ft does not extend to
+the deformation retraction for [−∞, ∞].
+   To fix the problem with [−∞, ∞], we can first use any deformation retraction onto
+[−x0 , x0 ] for some large x0 , and then use the old ft to retract [−x0 , x0 ] to {0}. We do
+something similar to prove r̄ is a deformation retraction. We use Saper’s recent construc-
+tion [S] of a “central tile” X0 ⊂ X and a deformation retraction rt,S of X̄ onto X0 . This
+X0 is a large codimension-zero subset of X, which we may take arbitrarily close to ∂ X̄
+in all directions. We show that composing our rt with Saper’s rt,S gives a deformation
+retraction Rt : X̄ × [0, 1] → X̄ with r̄ = R1 .
+   By what we have said, r̄ gives a homotopy equivalence between X̄/Γ and W/Γ. We
+show it also gives a homotopy equivalence between any Borel-Serre boundary component
+ē/Γ′ and the corresponding cell complex W ′ /Γ′ . It is then routine to show that r̄ gives
+an isomorphism between a standard spectral sequence for H ∗ (∂ X̄/Γ) and the spectral
+sequence described in (0.2). This proves our main theorem.
+   The sections of the paper follow this outline. In Sections 1–4 we summarize basic
+material on algebraic groups, lattices, the well-rounded retract and retraction, and the
+Borel-Serre compactification. None of this material is new, but we must recall it to establish
+our notation, and because we emphasize some less familiar aspects of it—marked lattices,
+the flag of successive minima, the orthogonal scaling group (which is the geodesic action
+from a lattice’s point of view), and the connections between rt and the geodesic action.
+Section 5 summarizes our notation. In Section 6 we define the sets WF (called W ′ in this
+introduction). In Section 7 we define the tubular neighborhoods N̄F (called N̄ here); this
+is the technical heart of the paper, where we explore the connections between the well-
+rounded retraction and the geodesic action. Section 8 summarizes the material from [S]
+that we need, and contains our results on Rt and r̄. In Section 9, we use r̄ to prove our
+main theorem on spectral sequences.
+(0.4). The results in this paper could be extended in several ways. First, [A3] defines W
+for GLn of any finite dimensional division algebra over Q, not necessarily commutative.
+Our results could be generalized to that case, presumably with only technical changes.
+Second, our arguments work for SL as well as GL, with minor changes (10.5). See (10.4)
+for comments on Γ-equivariant cohomology, and (10.6)–(10.7) for other connections with
+reduction theory.
+   Parts (1.6), (2.6), and (6.3) present the case k = Q in more detail. We hope they help
+4                               AVNER ASH AND MARK MCCONNELL
+
+guide the reader through the technicalities that involve structure over k versus structure
+over Q.
+   We are grateful to J. R. Myers and Steve Zucker for helpful conversations. We especially
+thank Chun-Nip Lee and Leslie Saper. We are grateful to the referee for several comments.
+We thank Bob MacPherson and Dan Grayson for introducing us to some of these ideas,
+and Connie Chen for help with the illustration. We thank the NSA and the NSF for
+support.
+
+                       Section 1—Background on Algebraic Groups
+(1.1). We fix a number field k of degree d over Q, with ring of integers O. Let v run
+through the archimedean places of k; the completion kv is either R or C. Let R+ be the
+positive real numbers.
+(1.2). Fix an integer n > 1. The algebraic group GLn is defined over Q, and hence over k.
+Let G be the restriction of scalars of GLn from k down to Q.
+   To see this algebraic group concretely, fix a Q-basis of k. Let k1 be any commutative
+k-algebra. A point of G with entries in k1 is an n × n matrix with non-zero determinant
+                                                      (1)         (d)        (l)
+whose (i, j)-th entry is a d-tuple of coordinates (xij , . . . , xij ) with xij ∈ k1 . The d-
+tuple gives an element of k ⊗Q k1 with respect to the fixed Q-basis of k. Addition and
+multiplication of d-tuples are defined using the corresponding operations in k. We fix such
+a realization of G throughout the paper.
+(1.3). Let S = k ⊗Q R. TheQreal and complex embeddings of k induce a canonical iso-
+morphism of R-algebras S ∼
+                         = v kv . Clearly k ֒→ S by the canonical diagonal embedding.
+   Set G = G(R)Q = GLn (S). Each entry in a matrix of G breaks up as a product over the
+               ∼
+v’s, so that G = v GLn (kv ).
+(1.4). Let Q T be the following maximal Q-split torus of G: if the fixed basis of k over Q
+                                                                    (m)
+has 1 as its first element, then Q T is the subgroup where all the xij are zero except for
+    (1)                                                                       (1)
+xii , i = 1, . . . , n. Write Q T = {diag(a1 , . . . , an )} with ai = xii .
+   The split radical Rd G of G is the subgroup of Q T in which all the ai are equal to
+each other. Let H be the identity component of Rd G(R). These are the positive real
+homotheties: h ∈ H acts by a common positive real scalar on each factor GLn (kv ) of G.
+We identify H ∼     = R+ .
+(1.5). Let a, b ∈ S n . These break up as a product of vectors av , bv ∈ (kv )n . Write av =
+(a1 , . . . , an ) with ai ∈ kv , and write bv similarly. For each v, let h(a1 , . . . , an ), (b1 , . . . , bn )iv =
+Pn               kv
+  i=1 traceR (ai b̄i ), where the bar denotes P complex conjugation when v is complex and                        the
+                                                                                                            n
+identity when v is real. Let ha, bi = v hav , bv iv , a positive-definite
+                                                                      Q               product     on     S    . Let
+Kv be the subgroup of GLn (kv ) preserving h , iv . Let K = v Kv ; this is the largest sub-
+group of G preserving h , i, and is a maximal compact subgroup of G. Let kak = ha, ai1/2.
+Definition. Let X = (HK)\G.
+  In the language of [B-S], X is a homogeneous space for G of type S–Q. It is a symmetric
+Riemannian space for the Lie group H\G.
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                              5
+
+(1.6). Example of GLn (Z). Let k = Q. Then G = GLn (R), the group of n × n invertible
+matrices with real entries. The group Q T consists of the diagonal matrices, and H =
+{diag(h, . . . , h) | h > 0}. The space X is the symmetric space consisting of the real n × n
+symmetric positive-definite matrices mod homotheties. When n = 2, X is isomorphic to
+the upper half-plane (see (2.6)).
+
+           Section 2—Marked Lattices. The Well-Rounded Retract
+   We recall the definition and basic properties of the well-rounded retract for GLn . Except
+for the emphasis on marked lattices, the material comes from [A3]; we specialize this to
+the number field case, and omit the proofs. For the GLn (Z) case, see (2.6).
+(2.1). The space S n of column vectors is an R-vector space. S (and hence k ⊂ S) acts on
+it by coordinate-wise multiplication, and G = GLn (S) acts on it on the left. These module
+structures commute with each other. If A is a subset of S n , the S-module it spans in S n
+is denoted S · A.
+(2.2). A Z-lattice in a vector space V over Q is a finitely generated subgroup of V which
+contains a Q-basis of V . A Z-lattice in a vector space over R is a finitely generated subgroup
+which contains an R-basis that is also a Z-basis.
+   Fix once and for all a Z-lattice L0 in k n . Let O0 be the subset of k which stabilizes L0 .
+Then O0 is an order in k. Let Γ0 be the arithmetic group consisting of the γ ∈ G such
+that γ · L0 = L0 . Let Γ be an arithmetic subgroup of finite index in Γ0 .
+   We shall identify lattices that differ only by a homothety, namely L and hL for h ∈ H.
+Let Y be the set of all Z-lattices in S n that are stable under O0 and are isomorphic to
+L0 as O0 -module. Then we may identify Y with H\G/Γ0 , where for g ∈ G the lattice
+L = gL0 corresponds to the coset gΓ0 . Give Y the topology coming from H\G/Γ0 .
+   For any subset A ⊆ L = gL0 , the S-span S · A is a free S-module whose S-rank equals
+the dimension over k of the k-vector space spanned by g −1 A.
+(2.3). The group K acts on Y , and in fact
+
+                                       K\Y = X/Γ0 ,
+
+since both are (HK)\G/Γ0 . However, the points of view on the two sides of this equation
+are different: K\Y is a space of lattices modulo rotations, while X/Γ0 is a homogeneous
+space modulo an arithmetic group. We now make explicit how to go back and forth between
+the two sides.
+Definition. A marked lattice in S n is a function f : L0 → S n of the form f (x) = gx for
+g ∈ G. We shall identify marked lattices that differ only by a homothety, i.e. f and hf for
+h ∈ H.
+   Let Y ′ = H\G be the set of marked lattices. A marked lattice f gives rise to an
+ordinary lattice L ∈ Y by setting L = f (L0 ). This realizes the projection Y ′ = H\G →
+Y = H\G/Γ0 . On the other hand, f (x) = gx gives a point (HK)g ∈ X, which realizes the
+projection Y ′ = H\G → X = (HK)\G. The right action of g1 ∈ G on Y ′ sends f : x 7→ gx
+6                          AVNER ASH AND MARK MCCONNELL
+
+to x 7→ gg1 x. The left action of k1 ∈ K on Y ′ sends f to k1 · f . Diagram (2.3.1) shows
+these spaces.
+
+
+                                               Y ′ = H\G
+                                             (marked lattices)
+                                      ւ                             ց
+                 X = HK\G                                                 Y = H\G/Γ0
+(2.3.1)
+             (homogeneous space)                                            (lattices)
+                                      ց                             ւ
+                                               X/Γ0 = K\Y
+                                           (arithmetic quotient)
+
+(2.4). Let f be a marked lattice, fixed within its homothety class. Let L = f (L0 ). The
+arithmetic minimum of f is defined to be m(f ) = min{kak | a ∈ L − {0}}. This number is
+positive. The set of minimal vectors of f is defined to be M (f ) = {a ∈ L | kak = m(L)}.
+   The definitions of m(f ) and M (f ) use only the image L of f , so they descend to functions
+m(L) and M (L) on Y . On the other hand, m(f ) and M (f ) are K-equivariant, since K
+preserves k . . . k.
+   Unless otherwise specified, we normalize f (resp. L) in its homothety class so that m(f )
+(resp. m(L)) equals 1.
+
+(2.5). Definition. A marked lattice f is well-rounded if M (f ) spans S n as S-module.
+
+    By the Γ0 -invariance and K-equivariance noted in (2.4), we get a definition of well-
+rounded elements in all the spaces in (2.3.1). For instance, a point in X is well-rounded
+if and only if, for the class of marked lattices f mod K that represents it, one (and hence
+each) of the M (f ) spans S n as S-module. The definitions in X/Γ0 and Y are similar.
+
+Definition. W is the set of well-rounded elements in X. We call this the well-rounded
+retract in X. For any arithmetic group Γ ⊆ Γ0 , W/Γ is called the well-rounded retract in
+X/Γ.
+
+In Section 4, we will explain why these are deformation retracts.
+
+(2.6). Example of GLn (Z). As in (1.6), take k = Q and G = GLn (R). If L0 is the
+standard lattice Zn ⊂ Rn , then Γ0 = GLn (Z), and Y is the set of all rank-n lattices in Rn
+mod homotheties. The product h , i is the standard dot product.
+   Let’s work out the GL2 (Z) case in detail. For each marked lattice f : L0 → R2 ,
+rotate the image until f ((1, 0)) lies on the positive x-axis, and use a homothety tomake
+kf ((1, 0))k = 1. This identifies X with the upper half-plane h by sending x = HK 10 ab
+(with b > 0) to the point a + bi ∈ h. The well-rounded retract W is the tree shown in the
+figure below. The lower branches break in two infinitely many times as they approach the
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                                   7
+
+horizontal axis {b = 0}, which is not pictured.
+
+
+
+
+                                                               
+                                                         1 0
+  The group G is generated by SL2 (R), H, and            0 −1
+                                                                    . Under our identification of X
+with
+     h, SL2 (R) acts on h by linear fractional transformations as usual, H acts trivially, and
+  1 0
+  0 −1
+           acts by a + bi 7→ −a + bi. The well-known fundamental domain for the action of
+SL2 (Z) on h is F = {a+bi ∈ h | |a| 6 21 , a2 +b2 > 1}, shown with hatching. A fundamental
+domain for GL2 (Z) is the right-hand half of F , namely F ∗ = {a + bi ∈ F | a > 0}, shown
+with double hatching. The space X/Γ0 is homeomorphic to F ∗ . The retract W/Γ0 is
+identified with the bottom arc of F ∗ .
+
+                  Section 3—The Borel-Serre Compactification
+   In this section we recall the construction of the Borel-Serre manifold with corners X̄,
+and we summarize facts about flags and parabolic subgroups. The main goal of the section
+is Proposition 3.6, which relates the geodesic action on X to the idea of rescaling a lattice
+in directions given by a fixed flag F .
+
+(3.1). Recall that Q T = {diag(a1 , . . . , an )} is a maximal Q-split torus in G. The set of
+Q-roots of G with respect to Q T is {ai a−1   j | 1 6 i 6= j 6 n}. Fix the fundamental system
+                         −1
+of simple roots ∆ = {ai ai+1 | i = 1, . . . , n − 1}.
+
+(3.2). We recall some facts about parabolic Q-subgroups and flags. Let {e1 , . . . , en } be
+the standard k-basis of k n . Let J ⊆ ∆. Form a graph with vertices in {1, . . . , n} and
+with an edge joining vertices i and i + 1 if and only if ai a−1     i+1 ∈ J. The graph has
+l = #(∆ − J) + 1 connected components. Say the j-th component in order from left to
+right has νj vertices. Consider the flag FJ = {0 $ V1 $ · · · $ Vl = k n } in which Vj is
+spanned by {e1 , . . . , eν1 +···+νj }. The standard parabolic Q-subgroup PJ is the subgroup
+of G such that PJ (Q) is the stabilizer of FJ in G(Q). In the coordinates of (1.2), PJ has
+the usual block upper-triangular form, with diagonal blocks of sizes ν1 × ν1 , . . . , νl × νl .
+Every parabolic Q-subgroup P of G is conjugate by some g ∈ G(Q) to a unique PJ .
+   Let PJ = PJ (R), and P = P(R) in general.
+8                             AVNER ASH AND MARK MCCONNELL
+
+   For g ∈ G(Q), the group of Q-points of g −1 PJ g is the stabilizer of the flag F = g −1 FJ .
+Any flag of the latter form is called a Q-flag. There is a one-to-one correspondence between
+the parabolic Q-subgroups and the Q-flags they stabilize. We write F ′ ⊇ F if every Vj
+belonging to F is also a member of F ′ .
+   For the Q-flag F = {0 $ V1 $ · · · $ Vl = k n }, we set #F = l. Thus #F = n when P
+is a Borel subgroup, #F = 2 for maximal proper P , and #F = 1 when P = G.
+(3.3). Let Q TJ be the subgroup of Q T in which the i-th and (i + 1)-st diagonal entries
+                        −1
+are equal whenever ti ti+1 ∈ J. Let TJ be the identity component of Q TJ (R), and let
+AJ = H\TJ .
+   Let P = g −1 PJ g for g ∈ G(Q). There is a semi-direct product decomposition P =
+MP TP UP . Here UP is the unipotent radical of P , TP = g −1 TJ g, and MP TP is the unique
+Levi subgroup of P which is stable under the Cartan involution of G which fixes g −1 Kg.
+We set AP = H\TP .
+   When P ⊆ P ′ , AP ′ is naturally identified with a subgroup of AP by taking the kernel
+of appropriate roots in ∆.
+(3.4). We recall the definition of the geodesic action [B-S, §3]. Let P = g −1 PJ g for
+g ∈ G(Q). Let Z be the identity component of the center of MP TP . Let y ∈ X. There is
+a p ∈ P with y = HKgp. For any z ∈ Z, define
+
+                                                y o z = HKgzp.
+
+The right side is independent of the choices of g and p. This action of Z is the geodesic
+action on X associated to P . It is a proper and free action, and it commutes with the
+ordinary action of P . The group AP is contained in H\Z, so it operates on X by the
+geodesic action.
+(3.5). We recall the construction of X̄ [B-S, §§5–7]. The roots in ∆ − J determine an
+isomorphism between AJ and (0, ∞)l−1 , sending the point
+
+                    diag(a1 , . . . , a1 , . . . , al , . . . , al )   (aj > 0, mod H)
+                         | {z }                    | {z }
+                                  ν1                      νl
+
+
+to (a1 a−1                −1
+        2 , . . . , al−1 al ) ∈ (0, ∞)
+                                       l−1
+                                           . Let ĀJ be the partial compactification of AJ corre-
+                        l−1
+sponding to [0, ∞)          under this isomorphism. The corner X(PJ ) associated to PJ is the
+fiber product X(PJ ) = X ×AJ ĀJ , where AJ acts on X by the geodesic action. Conjugating
+by an element of G(Q), we define ĀP and a corner X(P ) = X ×AP ĀP for any P .
+   Whenever P ⊆ P ′ , there is a map X(P ′ ) ֒→ X(P ) induced by the inclusion on X;
+we identify X(P ′ ) with its image under this map. As a set, X̄ is the union of the X(P )
+over all P . One puts on X̄ the topology such that the original topology on each corner is
+preserved, X̄ is Hausdorff, and Γ acts properly on X̄ with a compact quotient.
+   Let e(P ) be the set corresponding to X ×AP {0}l−1 in the corner X(P ) = X ×AP ĀP .
+As a set, X̄ is the disjoint union of X and the e(P ) for all proper parabolic Q-subgroups
+P . We call e(P ) the boundary face corresponding to P .
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                                    9
+
+                                                              `
+    Let ē(P ) be the closure of e(P ) in X̄. We have ē(P ) = P ′ ⊆P e(P ′ ). The sets ē(P1 ) and
+ē(P2 ) are disjoint unless P1 ∩P2 is a parabolic Q-subgroup P3 , in which case ē(P1 )∩ē(P2 ) =
+ē(P3 ).
+    Notice that the largest subgroup of Γ which stabilizes X(P ), e(P ), and ē(P ) is Γ ∩ P .
+    Modding out by the geodesic action of AP gives a (Γ ∩ P )-equivariant bundle map
+qP : X(P ) → e(P ). The orbits in X(P ) under MP UP are sections of this bundle called
+the canonical cross-sections.
+(3.6). We now present a central tool of the paper, an interpretation of the geodesic action
+in the setting of marked lattices.
+    Let f be a marked lattice. Let F = {0 = V0 $ · · · $ Vl = k n } be a Q-flag, with
+P = g −1 PJ g the parabolic Q-subgroup determined by F . Throughout the paper, we will
+abuse notation by writing f (Vj ∩ L0 ) ⊗Q R ⊆ S n as f (Vj ); this is an S-linear subspace of
+S n , of S-rank equal to dimk Vj . Set V̌j equal to the orthogonal complement of f (Vj−1 ) in
+f (Vj ) with respect to h, i. We have S n = V̌1 ⊕ · · · ⊕ V̌l as an orthogonal direct sum.
+Definition. Let A∗F,f be the group of R-linear maps S n → S n which act by positive real
+homotheties on each summand V̌j separately. Let AF,f = A∗F,f /H. We call AF,f the
+orthogonal scaling group with respect to F and f .
+   Note that every α ∈ A∗F,f is S-linear. The group AF,f acts on Y ′ via f1 7→ α · f1 .
+However, it does not act on X. (The next proposition will show that AF,f acts on Y ′ =
+H\G as a lift of the action of AP on X = HK\G, but this lift is only determined by an
+arbitrary choice of an element of K. The choice is encoded in f .)
+   Let Ψ : Y ′ = H\G → X = HK\G be the projection. Let y = Ψ(f ). Let ι : AP → AF,f
+be the following map: if z ∈ AP with
+
+(3.6.1)              z = g −1 diag(a1 , . . . , a1 , . . . , al , . . . , al )g   (aj > 0),
+                                   | {z }                    | {z }
+                                              ν1                    νl
+
+
+let ι(z) be the element of AF,f which (for each j = 1, . . . , l) acts on V̌j by the scalar aj . It
+is clear that ι is an isomorphism of groups.
+Proposition. For any z ∈ AP , with ι as above,
+
+(3.6.2)                                       y o z = Ψ(ι(z) · f ).
+
+
+Remark. The proposition is stated in [G, (2.4)], without proof.
+Proof. We use the notation of (3.4). Write y = HKgp and p = g −1 pJ g for pJ ∈ PJ .
+Consider the marked lattice f1 : x 7→ gpx = pJ gx. Since Ψ(f1 ) = y = Ψ(f ), we may
+choose a k1 ∈ K such that f1 = k1 · f .
+  Write z ∈ AP as z = g −1 zJ g for zJ = diag(a1 , . . . , a1 , . . . , al , . . . , al ) ∈ AJ . Then
+
+                                      y o z = HKgzp = HKzJ pJ g.
+10                            AVNER ASH AND MARK MCCONNELL
+
+The marked lattice fz : x → zJ pJ gx descends mod K to y o z.
+   Let IJ be the flag in S n whose j-th member is the coordinate subspace spanned by
+{e1 , . . . , eν1 +···+νj }. (This IJ is essentially FJ ⊗Q R.) The map x 7→ gx carries F to IJ ,
+and the further multiplication by pJ and zJ preserves IJ . Thus for any z ∈ AP , fz (Vj )
+is exactly the j-th member of IJ . (The idea is that, out of the whole K-equivalence class
+of marked lattices representing y o z, fz is a representative for which the fz (Vj ) will be in
+standard position.) The orthocomplement of fz (Vj−1 ) in fz (Vj ) is the coordinate subspace
+Ej spanned by {eν1 +···+νj−1 +1 , . . . , eν1 +···+νj }. The Ej are orthogonal, and zJ acts by the
+map α1 : S n → S n characterized by the property that it acts on each Ej by the scalar aj .
+In short, the left-hand side of (3.6.2) is the projection under Ψ of the marked lattice given
+                         f1       α
+by the composition L0 → S n →1 S n .
+    On the right-hand side of (3.6.2), observe that Ψ(α · f ) = Ψ(k1 α · f ) = Ψ((k1 αk1−1 )f1 ).
+Since f1 = k1 · f , the orthogonal complement of k1 · f (Vj−1 ) in k1 · f (V ) equals that of
+f1 (Vj−1 ) in f1 (Vj ); this says exactly that k1 · V̌j = Ej for all j. It is immediate that
+k1 αk1−1 is the same map as α1 . Thus the right-hand side of (3.6.2) is also Ψ applied to the
+                 f1     α
+composition L0 → S n →1 S n .         
+Note. We will always normalize elements of AP and AF,f in their classes modulo H so
+that a1 = 1.
+(3.7). While AP and AF,f act on different spaces, we use similar notation for the two
+actions. We write
+                          ρ = (ρ1 , . . . , ρl−1 ) ∈ (0, ∞)l−1
+for a point in either group. The ρi are the coordinates coming from the simple roots
+in J: that is, ρj = aj /aj+1 for j = 1, . . . , l − 1. By Proposition 3.6, the point of AF,f
+corresponding to (ρ1 , . . . , ρl−1 ) acts on V̌j by the scalar
+
+(3.7.1)                       aj = (ρ1 · · · ρj−1 )−1   (j = 2, . . . , l).
+
+(Because of our normalizations, the action on V̌1 is by 1.)
+Remark. The ρj ’s are good coordinates for rescaling sublattices within lattices, while the
+aj are the natural coordinates for the geodesic action. Though (3.7.1) is messy, we cannot
+avoid using it, since part of our goal is to relate lattices and the geodesic action. The
+inverses in (3.7.1) arise because the well-rounded retraction goes away from the Borel-
+Serre boundary.
+   Multiplication in AP corresponds to coordinate-wise multiplication of the ρi . As in (3.5),
+the ρj extend to coordinates on ĀP with (ρ1 , . . . , ρl−1 ) ∈ [0, ∞)l−1 . Going to infinity in
+X(P ) means going to zero in the ρj variables. We introduce a partial ordering on AP and
+ĀP , where (ρ1 , . . . , ρl−1 ) 6 (ρ′1 , . . . , ρ′l−1 ) if and only if ρj 6 ρ′j for each j.
+   The action of ρ = (ρ1 , . . . , ρl−1 ) on Y ′ is denoted f 7→ ρ · f . This descends mod Γ0
+to an action L 7→ ρ · L on Y . Descending mod K as in Proposition 3.6, ρ · x denotes the
+geodesic action on points x of X or X/(Γ ∩ P ).
+             COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                               11
+
+(3.8). We will need to consider Q-flags M = {0 $ M (1) ⊆ M (2) ⊆ · · · ⊆ M (n) = k n }
+in which some of the inclusions can be equalities. If F is obtained from M by replacing
+each string of equalities with a single space Vj , we call F the irredundant version of M.
+If A is the orthogonal scaling group with respect to this flag and some f , we always write
+ρ = (ρ1 , . . . , ρl−1 ) ∈ A with reference to F , not M.
+
+                      Section 4—The Well-Rounded Retraction
+   In this section, we define the well-rounded retraction rt . The material comes from [A3],
+though we emphasize different things (marked lattices, the flag of successive minima).
+(4.1). Let f be a marked lattice, with L = f (L0 ). We normalize f up to homothety so
+that m(f ) = 1. If V ⊆ k n is a k-subspace, f (V ) ⊗Q R is abbreviated f (V ).
+   Recall that Y ′ = H\G is the space of marked lattices (2.3). For i = 1, . . . , n, let
+
+                             Yi′ = {f ∈ Y ′ | rankS (S · M (f )) > i}.
+
+Observe that Y ′ = Y1′ ⊃ Y2′ ⊃ · · · , and that Yn′ is the set of well-rounded elements of
+                                                                            (i)
+Y ′ . For i = 1, . . . , n − 1, we will define a deformation retraction rt : Yi′ × [0, 1] → Yi′
+                ′
+with image Yi+1    . The deformation retraction will be equivariant for both the K and Γ0
+actions. For any f ∈ Y ′ , we will also define a Q-flag M = {0 ⊆ M (1) ⊆ · · · ⊆ M (n) = k n }
+depending on f . (This M could have equalities, as in (3.8).) The definitions proceed
+simultaneously by induction on i.
+                                               (i−1)
+    Let f1 = f , and for i > 1 let fi = r1           (fi−1 ) inductively. Let M (i) be the k-span
+of fi−1 (M (fi )). This is a subspace of k n of dimension > i. If fi is in Yi+1    ′
+                                                                                      already, set
+ (i)
+rt (fi ) = fi for all t ∈ [0, 1], and set µi = 1. Otherwise, consider the S-linear maps
+ϕµ obtained by multiplying in fi (M (i) ) by 1 and in the orthocomplement fi (M (i) )⊥ by a
+scalar µ > 0. By [A3, p. 463], there is a unique smallest µi ∈ (0, 1) such that
+
+(4.1.1)                ϕµi · fi still has arithmetic minimum equal to 1.
+
+                        ′              (i)
+This ϕµi · fi lies in Yi+1 . We set rt (fi ) = ϕ1+(µi −1)t · fi . This is continuous in both the
+                                                         (i)                           (i)
+fi and t variables, and defines a homotopy between r0 = (identity on Yi′ ) and r1 : Yi′ ։
+  ′
+Yi+1 .
+Definition. The well-rounded retraction rt on Y ′ is obtained by composing the deforma-
+                  (i)
+tion retractions rt in the order i = 1, . . . , n − 1. More precisely, rt : Y ′ × [0, 1] → Y ′ is
+given by
+                                  (i)              (i−1)            (1)
+                       rt (f ) = rt(n−1)−(i−1) ◦ r1      ◦ · · · ◦ r1 (f ),
+                                         i−1    i
+where i is determined by the rule t ∈ [ n−1  , n−1 ] for i ∈ {1, . . . , n − 1}.
+  Let r = r1 . We will also call this the well-rounded retraction.
+   Notice that M (i+1) ⊇ M (i) by construction. This gives the
+12                          AVNER ASH AND MARK MCCONNELL
+
+Definition. The flag of successive minima for f is the Q-flag M = {0 ⊆ M (1) ⊆ · · · ⊆
+. . . M (n) = k n }.
+  This M is an invariant of f ’s class mod K, and is equivariant for Γ0 . It is a “lower
+semi-continuous” function of f in the sense that for any f ∈ Y ′ , there is a neighborhood
+U of f such that for all f ′ ∈ U , the flag M′ of successive minima for f ′ satisfies M′ ⊆ M.
+(4.2). Remark. Once the inductive construction of r is completed, we obtain the following
+interpretation of r(f ) as the result of applying a geodesic action to f . Let M be the flag
+of successive minima for f , with irredundant version F . Let µ = (µ−1              −1
+                                                                       1 , . . . , µn−1 ) ∈ AF,f
+with the µi depending on f as in (4.1). (As in (3.8), µ−1i is omitted when M (i) = M (i+1) .)
+Then
+                                          r(f ) = µ · f.
+
+(4.3). We now adapt the definition of the well-rounded retraction to the other spaces
+in (2.3.1). In each case, the retraction will still be denoted rt for t ∈ [0, 1], with r = r1 ,
+and will be called the “well-rounded retraction”.
+   The whole construction is Γ0 - and K-equivariant. Hence rt descends to deformation
+retractions of Y onto the set of well-rounded lattices, of X onto W , and of X/Γ onto W/Γ
+for any Γ ⊆ Γ0 of finite index.
+   We recall the main theorem of [A3].
+Theorem. The map rt is a Γ0 -equivariant deformation retraction of X onto W . The
+quotient W/Γ0 is compact. The dimension of W and W/Γ0 is the virtual cohomological
+dimension of Γ0 , which equals dim X − (n − 1). The space W has a natural structure as a
+cell complex on which Γ0 acts cell-wise with finite stabilizers of cells. The first barycentric
+subdivision of the cell structure descends to a finite cell complex structure on W/Γ0 .
+     The example of GL2 (Z) is discussed in (6.3).
+Remark. When the class number h of k is > 1, [A3] defines a whole (h − 1)-dimensional
+family of retracts, depending on a parameter called a set of weights. For simplicity, we
+will use only the trivial set of weights (identically equal to 1). Readers may easily make
+the needed changes if they wish to use a non-trivial set of weights.
+
+                  Section 5—Summary of Notational Conventions
+   The letter f always stands for a marked lattice f : x 7→ gx for g ∈ G, modulo the
+homotheties H. We let L = f (L0 ), sometimes without explicit mention. We let L′ be the
+lattice for f ′ , etc. As in (3.6), f (Vj ∩ L0 ) ⊗Q R ⊆ S n will be written f (Vj ). Let V̌j be the
+orthogonal complement of f (Vj−1 ) in f (Vj ), so that S n = V̌1 ⊕ · · · ⊕ V̌l as an orthogonal
+direct sum. As in (2.4), lattices are always scaled by a homothety so that their shortest
+non-zero vector has length 1.
+   For the rest of the paper, P denotes the real points of a parabolic Q-subgroup. Let
+F = {0 $ V1 $ · · · $ . . . Vl = k n } be the Q-flag for P as in (3.2), and A = AF,f the
+orthogonal scaling group with respect to F and f (see (3.6)–(3.7)).
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                             13
+
+   Whenever we mention P , the letters F and A will refer to the objects corresponding to
+P , and vice versa. The symbol P ′ is associated to F ′ and A′ , etc.
+   From Section 6 on, we will often write f for the point that f determines in X or X/Γ.
+We will speak of marked lattices f “in” X or W , or write L for the point that L determines
+in X/Γ. These abuses are justified because our constructions involving marked lattices are
+K-equivariant.
+
+                                Section 6—The Sets WF
+(6.1). Throughout this section, F = {0 = V0 $ V1 $ · · · Vl = k n } will be a fixed Q-flag.
+Definition. Let WF be the set of all marked lattices f in W such that for all j = 1, . . . , l,
+                                S · (M (L) ∩ f (Vj )) = f (Vj ).
+
+   (WF was called W ′ in the introduction.) Geometrically, WF consists of the lattices
+L = f (L0 ) whose intersection with each subspace f (Vj ) is well-rounded in that subspace.
+By the definition of the cell structure on W [A3, pp. 466–7], WF is a closed subcomplex
+of W and is stable under Γ ∩ P . A cell in WF is said to respect F . If F = γF ′ for γ ∈ Γ,
+then the images of WF and WF ′ in W/Γ are equal. The Q-flags fall into only finitely many
+equivalence classes mod Γ, so only finitely many distinct subcomplexes of W/Γ arise in
+this way.
+   If M is a Q-flag with possible equalities (3.8), and F is the irredundant version of M,
+let WM = WF .
+(6.2). The following is immediate from the definitions in (4.1).
+Lemma. If f has flag of successive minima M, then r(f ) ∈ WM .
+(6.3). Example of GL2 (Z). Refer again to the picture in (2.6). For the standard flag
+F = {0 $ Q · (1, 0) $ Q2 } with associated P , the space WF is the horizontal sequence of
+arcs forming the top of W . The boundary face e(P ) in X̄ (not shown) is the horizontal line
+at b = ∞. The geodesic action by AP flows straight up, pushing X upward to converge
+to e(P ). The well-rounded retraction pulls the region above W straight down onto WF .
+For torsion-free Γ, e(P )/(Γ ∩ P ) and WF /(Γ ∩ P ) are homeomorphic to circles, and the
+well-rounded retraction induces the obvious isomorphism between the cohomology of these
+spaces. (The situation is more complicated for n > 2, when the boundary faces are no
+longer disjoint.)
+Remark. For small n, the WF /(Γ ∩ P ) are all readily computable. See (10.6).
+
+                    Section 7—Neighborhoods of Infinity in X̄
+   We now prove our main results explaining the connection between the well-rounded
+retraction r, the geodesic action, and the topology of the Borel-Serre boundary. Parts
+(7.1)–(7.4) give a chain of propositions that allow us to define a tubular neighborhood N̄F
+of e(P ) (called N̄ and e in the introduction). In (7.5)–(7.6) we prove that r : X → W has
+the continuous extension r̄ : X̄ → W , where (for all F ) r̄ is constant on the fibers of N̄F
+and carries N̄F onto WF .
+14                            AVNER ASH AND MARK MCCONNELL
+
+(7.1). Fix a marked lattice f , with L = f (L0 ). As in (4.1), let M = {0 ⊆ M (1) ⊆ · · · ⊆
+M (n) = k n } be the flag of successive minima for f . Let F be the irredundant version
+of M, with associated P . Let A = AF,f . Let f ′′ = r(f ) be the image of f under the
+well-rounded retraction.
+   The idea of the following lemma is that if f is close enough to e(P ), then the well-
+rounded retraction carries the whole orthant {ρρ ∈ A | ρ 6 1} · f to a single point of
+W . The lemma says that, to know that f is “close enough” to e(P ), it suffices to know
+that f ’s flag of successive minima is the flag F corresponding to P (or at least contains
+this F —see (7.2)).
+Lemma. Let f , M, F , P , and A be as above. For any ρ = (ρ1 , . . . , ρl−1 ) ∈ A with
+ρ 6 (1, . . . , 1), f ′ = ρ · f satisfies r(f ′ ) = r(f ) = f ′′ . The common image f ′′ will lie in
+WM = WF .
+Proof. It suffices to prove the lemma when ρ = (1, . . . , 1, ρj , 1, . . . , 1) for a fixed ρj 6 1;
+the general case follows by applying this for each j. Let i be the unique index such that
+Vj = M (i) and M (i) $ M (i+1) .
+   The marked lattices f and f ′ agree on L0 ∩ M (i) , since ρ acts by 1 in that region. For
+x ∈ L0 with x ∈   / M (i) , no vector f ′ (x) is shorter than the corresponding vector f (x),
+since ρ magnifies lengths in the directions perpendicular to f (M (i) ) by ρ−1        j    > 1. And
+                                                                                        (1)
+f (x) cannot be a minimal vector of f , since the minimal vectors lie in f (M ), which is
+contained in f (M (i) ). It follows that the well-rounded retractions for f and f ′ will proceed
+exactly the same up through the end of the r (i−1) step—that is, if µι and µ′ι (for f and f ′
+resp.) are as in (4.1), then
+
+(7.1.1)                                   µι = µ′ι for all ι < i.
+           (i−1)        (1)                   (i−1)                  (1)
+Set g = r1     ◦ · · ·◦ r1 (f ) and g ′ = r1         ◦ · · ·◦ r1 (f ′ ). It follows from (3.7.1) and (7.1.1)
+                                                        (i)
+that g ′ = (1, . . . , 1, ρ−1
+                           j , 1, . . . , 1) · g. The rt     stage of the retraction will, by definition,
+carry g to
+
+(7.1.2)                               (1, . . . , 1, µ−1
+                                                      i , 1, . . . , 1) · g,
+
+and carry g ′ to
+                                                          −1
+(7.1.3)                              (1, . . . , 1, µ′i        , 1, . . . , 1) · g ′ .
+                                                                                         −1
+However, by the uniqueness statement in (4.1.1), µ−1  i  must equal µ′i ρi . Thus the marked
+                                                  (i+1)
+lattices (7.1.2) and (7.1.3) will coincide. The r       and later stages of the retraction will
+agree on this common lattice, so the final values r(f ) and r(f ′ ) are equal. By (6.2),
+f ′′ ∈ WM . 
+(7.2). We record a corollary of the previous lemma. The idea is that if f ’s flag of successive
+minima refines the flag F ′ for some P ′ , then f is “close enough” to e(P ′ ). After all, if
+f is close enough to e(P ), it should be close enough to any larger Borel-Serre boundary
+component e(P ′ ) that has e(P ) in its closure.
+              COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                                                                 15
+
+Corollary. Let the notation be as in (7.1). Let F ′ be any Q-flag with F ′ ⊆ F , and let A′
+be the orthogonal scaling group for F ′ and f . Then for any ρ ∈ A′ with ρ 6 (1, . . . , 1), ρ · f
+and f map to the same point under the well-rounded retraction. This point lies in WF ′ .
+
+Proof. This is trivial, since A′ is naturally a subgroup of A, and WF ⊆ WF ′ .                                        
+
+(7.3). In (7.1) we took an f close to e(P ) and studied the orthant {ρρ 6 1} · f . Now,
+instead, we take an arbitrary f . We show in (7.3) (actually in the corollary) that there is
+a t ∈ A which pushes f so close to e(P ) that the orthant {ρρ 6 t} · f still has the property
+of (7.1)—namely, r maps it to a single point in WF .
+
+Lemma. Choose any marked lattice f . Fix a Q-flag F = {0 $ V1 $ · · · $ Vl = k n }, and
+let A = AF,f . Then there exists t = (t1 , . . . , tl−1 ) ∈ A, depending on f , such that for any
+ρ ∈ A with ρ 6 t, the flag M′ of successive minima for f ′ = ρ · f satisfies M′ ⊇ F .
+
+                                                                                  ◦
+Proof. Let j ∈ {1, . . . , l − 1}. Let dj = dimk Vj . Let L = f (Vj ∩ L0 ). This is a Z-lattice
+                              ◦                                                                                                   ◦
+in the S-submodule V = f (Vj ⊗Q R) ⊆ S n . Perform the well-rounded retraction on L
+          ◦
+within V . As in (4.1), this involves multiplying by constants µ1 , . . . , µdj −1 6 1 in various
+                  ◦                                                                                   ◦
+subspaces of V . (We must first rescale f by a homothety so that m(L) = 1; this does not
+affect the value of the µi .) Let βj = µ1 · . . . · µdj −1 .
+   The orthogonal projection of L = f (L0 ) onto f (Vj )⊥ is a lattice L† under the restriction
+of the inner product to f (Vj )⊥ . Let αj > 0 be the length of the shortest non-zero vector
+of L† .
+   Let t1 = min(1, 21 α1 β1 ), and inductively let tj = min(1, 21 (t1 · . . . · tj−1 )−1 αj βj ). This
+means (t1 · · · tj )−1 > 2α−1
+                           j βj
+                               −1
+                                  for j = 1, . . . , l − 1.
+   Now let f ′ = ρ ·f for ρ 6 t. Fix j. Let a be any vector of L lying outside f (Vj ∩L0 ). Let
+b = ρ · a be the corresponding vector for f ′ . Notice that ρ multiplies V̌j+1 by (ρ1 · · · ρj )−1 ,
+by (3.7.1). Since ρj 6 1 for all j, ρ multiplies by factors at least as large as (ρ1 · · · ρj )−1
+in each summand of V̌j+1 ⊕ · · · ⊕ V̌l = f (Vj )⊥ .
+                                                                              ◦
+  Imagine performing the well-rounded retraction on L, but carrying out all the retractions
+on L′ = f ′ (L0 ) itself; more precisely, consider the lattice
+
+
+(7.3.1)       (1, . . . , 1, µ−1                                      −1                                −1
+                              dj −1 , 1, . . . , 1) · (1, . . . , 1, µdj −2 , 1, . . . , 1) · . . . · (µ1 , 1, . . . , 1) · L
+                                                                                                                              ′
+
+
+
+                                                   ◦
+where the µi are the constants for L. (The µ−1
+                                            i  is in the ι-th position when the minimal
+              ◦
+vectors of L at the i-th step of the retraction span the ι-th member of the irredundant
+                                                                ◦
+version of the flag of successive minima for L.) Let b(j) be the vector corresponding to b
+16                            AVNER ASH AND MARK MCCONNELL
+
+in (7.3.1). Observe, using (3.7.1), that
+
+          kb(j) k > k(orthogonal projection of b(j) onto f (Vj )⊥ )k
+                 = µ1 · . . . · µdj −1 · k(orthogonal projection of b onto f (Vj )⊥ )k
+                 = βj · k(orthogonal projection of b onto f (Vj )⊥ )k
+                 > βj · (ρ1 · . . . · ρj )−1 · k(orthogonal projection of a onto f (Vj )⊥ )k
+                 > βj · (t1 · . . . · tj )−1 · αj
+                 >2
+                 > 1.
+
+This says that the image of L′ under the well-rounded retraction on L up through the
+                                                            ◦
+r (dj −1) stage is equal to (7.3.1): no vector outside L will affect the stopping times of the
+retraction on L′ , since each will have length > 1 during the entire process leading to (7.3.1).
+In particular, f (Vj ) is a member of M′ , the flag of successive minima of L′ , which is what
+we wanted to prove. 
+Corollary. With notation as in the lemma, the points ρ · f with ρ 6 t map to a common
+point of WF under the well-rounded retraction r.
+Proof. Apply Corollary 7.2 to the marked lattice t · f of the lemma. 
+(7.4). We can now construct neighborhoods of the Borel-Serre boundary component e(P )
+that are well behaved with respect to the well-rounded retraction. Fix a Q-flag F , with
+its associated P .
+   Recall that the corner X(P ) is a fiber bundle with base e(P ) and fiber ĀP . By a
+neighborhood in X near e(P ), we mean an open set in X whose intersection with every
+fiber contains {a ∈ AP | a < a0 } for some a0 ∈ AP depending on the fiber.
+Proposition. There is a neighborhood NF in X near e(P ) such that, on the intersection of
+NF with a fiber of X(P ), the well-rounded retraction r takes a constant value. Furthermore,
+r carries NF surjectively to WF .
+Proof. As in (3.5), let C1 be the canonical cross-section HK ·1·MP UP . Let f1 be a marked
+lattice corresponding to a point in C1 . For this f1 , let A = AF,f1 , and let t1 ∈ A be the
+point constructed in Lemma 7.3. We define
+
+(7.4.1)                                NF = {ρρ1 · f1 | ρ 1 < t1 },
+
+where f1 ranges over all marked lattices representing points of C1 , and t1 depends on f1 .
+For any given f1 , the map r is constant on the set {ρρ1 ·f1 } = NF ∩(fiber), by Corollary 7.3.
+   To prove NF is an open set in X, we must show the tj vary continuously with f1 . The
+µi of (4.1) vary continuously as a function of f , by [A3, §3(i)]. Hence the βj of (7.3) vary
+continuously with f . For any continuous family of lattices (not necessarily normalized
+             COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                                     17
+
+by m(L) = 1), the function m(L) is also continuous in L; applying this to L† (defined
+in (7.3)), we see the αj of (7.3) are continuous in f . Hence the tj are continuous in f .
+    By Corollary 7.2, r carries NF into WF . In the rest of the proof, we prove the map
+is surjective. Let f be a marked lattice representing a point in WF . Let dj = dimk Vj .
+Let f1 be the marked lattice corresponding to the point in C1 in the AP -fiber through
+f ; let ρ · f = f1 . Choose t for f1 as in Lemma 7.3. For a sufficiently small τ ∈ (0, 1),
+τ = (τ, . . . , τ ) satisfies τ < t · ρ , implying τ · f ∈ NF . We will show r carries τ · f back to
+f.
+    The lattice for τ · f is the lattice for f scaled by a factor of 1/τ j−1 on V̌j . The minimal
+vectors of f span their intersection with f (V1 ), by the definition of WF . Since 1/τ > 1, the
+minimal vectors of τ · f are exactly the minimal vectors of f that lie in f (V1 ). Hence the
+minimal vectors of τ · f lie in f (V1 ) and span f (V1 ). This means the steps r (1) , . . . , r (d1 −1)
+of the well-rounded retraction are trivial.
+    The retraction r (d1 ) fixes f (V1 ) and acts by a scalar µd1 6 1 on all orthogonal directions.
+Consider what happens as a scalar µ descends from 1 to µd1 . The marked lattice τ · f
+becomes
+
+(7.4.2)                                  (µ−1 τ, τ, . . . , τ ) · f.
+
+As long as 1/(µ−1 τ ) > 1, there are no new minimal vectors. But when µ−1 τ = 1, the
+minimal vectors of (7.4.2) are exactly the minimal vectors of f that lie in f (V2 ). These
+span f (V2 ) (again by the definition of WF ), which has rank bigger than the rank of f (V1 ).
+So by (4.1.1) for i = d1 , we must have µd1 = τ , and at the end of the r (d1 ) stage we
+have produced (1, τ, . . . , τ ) · f . The well-rounded retraction goes on similarly to produce
+(1, 1, τ, . . . , τ ) · f , . . . , and finally (1, . . . , 1) · f = f . 
+
+(7.5). The neighborhood NF defined in Proposition 7.4 lies in X, the interior of X̄.
+We now extend it to a neighborhood N̄F of e(P ) in the corner X(P ). As in (3.7), the
+identification A = AF,f1 ∼= AP extends to an identification Ā = ĀF,f1 ∼     = ĀP , where Ā
+is obtained from A by allowing one or more of the ρj in (ρ1 , . . . , ρj−1 ) ∈ A to become 0.
+With the notation of (7.4.1),
+
+Definition. N̄F = {f = ρ 1 · f1 | ρ 1 ∈ ĀF,f1 , ρ 1 < t1 }, where f1 ranges over all marked
+lattices representing points of C1 , and t1 depends on f1 as in Lemma 7.3.
+
+   It is clear that N̄F is a tubular neighborhood of e(P ) in X(P ), in the sense that N̄F
+is homeomorphic to e(P ) × [0, 1)l−1 with e(P ) included as e(P ) × (0, . . . , 0). Also, the set
+N̄F is (Γ0 ∩ P )-invariant.
+
+(7.6). We now define a map r̄ : X̄ → W that continuously extends the well-rounded
+retraction r. Choose x ∈ X̄. If x ∈ X, let r̄(x) = r(x). Otherwise, x ∈ e(P ) for a
+unique P with associated F . Hence x ∈ N̄F . Consider the fiber ϕ′ of N̄F over x. By
+Proposition 7.4, r takes a constant value on ϕ′ ∩ X. Define r̄(x) to be this common value
+r(ϕ′ ∩ X).
+18                               AVNER ASH AND MARK MCCONNELL
+
+Proposition. The map r̄ is a continuous Γ-equivariant extension of r to X̄. For any
+Q-flag F , it is constant on the ĀP -fibers of N̄F . It is a retraction X̄ → W (i.e. it fixes W
+pointwise).
+Proof. It suffices to prove r̄ is constant on ϕ′ . For then, the continuity of r̄ on N̄F will follow
+from the tubular neighborhood structure and the continuity of r on NF . The continuity of
+r̄ on X̄ will follow from its continuity on X and on each N̄F , because these form an open
+cover of X̄. The Γ-equivariance of r̄ will follow from that of r.
+    Let y lie on the fiber ϕ′ of N̄F over x, with y 6= x. If y ∈ X, then r̄(x) = r(x) = r̄(y)
+by construction. Next, suppose y ∈ e(P1 ) for some P1 with associated F1 . Then P1 ⊇ P .
+Now AP1 is naturally a subgroup of AP by (3.3), and ĀP1 ⊂ ĀP . So ϕ′ fibers over ē(P1 )
+with fibers given by the action of ĀP1 . Let ϕ′1 be the intersection of ϕ′ with the ĀP1 -fiber
+of N̄F1 over y. Then
+                       r̄(y) = r(ϕ′1 ∩ X)          by def. of r̄(y)
+
+                             = r(ϕ′ ∩ X)          since ϕ′1 ∩ X ⊆ ϕ′ ∩ X, and
+                                                  r is constant on the latter
+                             = r̄(x)         by def. of r̄(x).
+This proves r̄ is constant on the ĀP -fibers of N̄F .
+  Finally, r̄ fixes W pointwise because r does. 
+
+                       Section 8—Extending the Deformation
+                      Retraction to the Borel-Serre Boundary
+(8.1). We recall from [S] some facts about Saper’s tiling of X̄. Saper constructs a Γ-
+equivariant subspace X0 of X called the central tile. This is a codimension-zero submani-
+fold with corners in X. The closed boundary faces ∂ P X0 are in one-to-one correspondence
+with the proper parabolic Q-subgroups P ; inclusions P ⊆ P ′ correspond to inclusions
+             ′
+∂ P X0 ⊆ ∂ P X0 , and conversely. Every y ∈ ∂X0 lies on ∂ P X0 for a unique smallest P .
+There is a Γ-equivariant piecewise-analytic deformation retraction rS : X̄ → X0 ; more
+precisely, rS fits into a piecewise-analytic family rt,S for t ∈ [0, 1] with r0,S =(identity on
+X̄) and r1,S = rS . The retraction rS is uniquely characterized by
+(8.1.1)           rS (y o a) = y        whenever y ∈ ∂ P X0 and a ∈ ĀP , a 6 1.
+The converse of (8.1.1) also holds: if y ∈ ∂ P X0 , and P is the smallest with this property,
+then
+(8.1.2)          rS (y ′ ) = y    implies     ∃a ∈ ĀP , a 6 1, such that y ′ = y o a.
+   For any arithmetic subgroup Γ, the quotient X0 /Γ is compact. Also, for any P and
+given any open neighborhood U of ē(P )/(Γ ∩ P ) in X̄/Γ, we may choose X0 so that
+(8.1.3)                                     ∂ P X0 /(Γ ∩ P ) ⊆ U.
+In fact, given any central tile, we may choose enlargements of it whose complements in X̄,
+modulo Γ, form a fundamental system of neighborhoods of ∂ X̄/Γ in X̄/Γ.
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                                  19
+
+(8.2). We will now fix a certain Γ-invariant open neighborhood B of ∂ X̄ in X̄. There are
+only finitely many classes of Q-flags mod Γ. Let F represent such a class. Let N̄F be the
+tubular neighborhood of e(P ) in X(P ) as in (7.6), and let
+                                             [[
+                                       B=               γ · N̄F .
+                                                F γ∈Γ
+
+
+Clearly B/Γ is an open neighborhood of ∂ X̄/Γ in X̄/Γ.
+  From now on, we fix a central tile X0 with the following properties:
+                  S S
+    (i) ∂ P X0 ⊆ F ′ γ∈Γ∩P (γ · N̄F ′ ) for any proper parabolic Q-subgroup P with as-
+        sociated F , where F ′ runs through a set of (Γ ∩ P )-representatives of Q-flags
+        containing F (the number of such representatives is finite);
+   (ii) ∂X0 ⊆ B, and X0 ∪ B = X̄;
+  (iii) the well-rounded retract W lies in the interior of X0 .
+By (8.1.3), it is possible to arrange for (i). Part (ii) follows from (i), since there are only
+finitely many F mod Γ. To arrange for (iii), recall that W/Γ is compact, so that there is
+a Γ-invariant open neighborhood of ∂ X̄ in X̄ whose closure does not meet W ; enlarge X0
+if necessary so that its boundary lies in this neighborhood.
+(8.3). We now construct the map Rt described in (0.3).
+Definition. The map Rt : X̄ × [0, 1] → X̄ is given as follows. If t ∈ [0, 12 ], let Rt (x) =
+r2t,S (x). If t ∈ [ 12 , 1], let Rt (x) = r2t−1 (rS (x)).
+                                            1
+   The map Rt is well-defined after t =     2
+                                                because the image of rS lies in X (not ∂ X̄), and
+r is defined on X.
+Proposition. The map Rt is a Γ-equivariant deformation retraction of X̄ onto W .
+Proof. Rt is Γ-equivariant, since both rt,S and rt have this property. Since W ⊆ X0 by (iii)
+in (8.2), W is fixed pointwise by rS . We know W is fixed pointwise by r. Hence the image
+of R1 is at least W . On the other hand, the image is contained in W because the image
+of r is W . 
+(8.4). We now show that our global retraction r̄ of (7.6) is really a deformation retraction.
+Theorem. r̄ = R1 .
+Proof. If x ∈ X0 , then rS does not move x, and R1 (x) = r(x) = r̄(x). Next, assume x ∈ X̄
+with x ∈ / X0 . The retraction rS carries x to a point y, and there is a unique smallest P
+such that y lies on the face ∂ P X0 . However, by (8.1.2), x is of the form x = y o a for some
+a ∈ ĀP , a 6 1. By (8.2) part (i), y ∈ N̄F ′′ for some F ′′ ⊇ F . Since ĀP ⊆ ĀP ′′ , we have
+x ∈ N̄F ′′ , and x lies on the same ĀP ′′ -fiber of N̄F ′′ as y. By (7.6) applied to F ′′ , we have
+r̄(x) = r̄(y). But r̄(y) = r(y) = R1 (x) by the definition of Rt . 
+(8.5). Here is a simple consequence of Theorem 8.4.
+20                            AVNER ASH AND MARK MCCONNELL
+
+Corollary. The map r̄ : X̄ → W is a Γ-equivariant homotopy equivalence. X̄/Γ and W/Γ
+have the same homotopy type via the map r̄ mod Γ.
+     We now generalize this corollary to all the boundary components.
+Theorem. Let P be a proper parabolic Q-subgroup, with associated F . Then r̄ induces a
+(Γ ∩ P )-equivariant homotopy equivalence of ē(P ) and WF .
+Proof. We must define a (Γ ∩ P )-equivariant homotopy inverse s̄ for r̄ |ē(P ) . Choose a
+point x ∈ WF , represented by a marked lattice f . Let τ = (τ, . . . , τ ) ∈ A = AF,f . We
+define s̄(x) to be the point of X̄ corresponding to
+
+(8.5.1)                                         lim τ · f.
+                                              τ →0+
+
+For all τ > 0, τ · f lies in a single AP -fiber of X. Let qP be as in (3.5). It is clear that the
+limit in (8.5.1) is qP (x). Thus an equivalent definition is
+
+(8.5.2)                          s̄ is the restriction of qP to WF .
+
+By (8.5.2), s̄ is continuous. Since qP commutes with the action of P , s̄ is (Γ∩P )-equivariant.
+   We now show that r̄◦s̄ is the identity on WF . For a sufficiently small τ0 > 0, (τ0 , . . . , τ0 )·
+f will lie in NF . By (7.6), the value of r̄ on the point (τ, . . . , τ ) · f is the same for all
+τ ∈ [0, τ0 ]. Using (8.5.1), r̄ ◦ s̄(x) = r̄((τ0 , . . . , τ0 )·f ). However, the proof of Proposition 7.4
+shows r̄((τ0 , . . . , τ0 ) · f ) = f .
+   Next, we show s̄ ◦ r̄ |ē(P ) is homotopic to the identity on ē(P ). Consider the family of
+maps
+
+(8.5.3)                           qP ◦ Rt        restricted to ē(P ).
+
+Here Rt is from (8.3), and qP is extended continuously to a neighborhood of ē(P ) in X̄ in
+a natural way [B-S, (5.5)]. (A dangerous mistake would be to assume that the canonical
+cross-sections in X(P ) extend over ē(P ) as cross-sections of qP .) The function in (8.5.3) is
+continuous because the image of ē(P ) under Rt lies in ē(P ) ∪ X, where qP is continuous.
+At t = 0, (8.5.3) is the identity ē(P ) → ē(P ). At t = 1, for any x ∈ ē(P ),
+
+                               qP ◦ R1 (x) = qP (r̄(x))        by (8.4)
+                                             = s̄(r̄(x))     by (8.5.2).
+
+Thus qP ◦Rt affords a (Γ∩P )-equivariant homotopy between s̄◦ r̄|ē(P ) and the identity. 
+Remark. Formula (8.5.3) defines a well-rounded retraction within ē(P ) itself, carrying ē(P )
+onto a subset of e(P ) homeomorphic to WF . We know that ē(P )/(Γ ∩ P ) is a compacti-
+fication of a bundle whose base is a locally symmetric space (perhaps with finite quotient
+singularities) for a group of lower rank, and whose fiber is an arithmetic quotient of UP .
+Accordingly, there is a cellular quotient map from WF /(Γ ∩ P ) to the well-rounded retract
+in the lower-rank locally symmetric space. This map may be constructed by dualizing the
+techniques of [M2]; see (10.7).
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                              21
+
+                             Section 9—The Main Results
+   In (9.5) we establish our main result, as we construct the spectral sequence described
+in the introduction. The bulk of the proofs resides in (9.2)–(9.4). We set up two spectral
+sequences, one (9.2.1) computing the cohomology of the Borel-Serre boundary ∂ X̄/Γ, and
+the other (9.3.1) based on the subcomplexes WF /(Γ ∩ P ) in the well-rounded retract W/Γ.
+Because the map r̄ gives homotopy equivalences on X̄/Γ and all its faces, it induces an
+isomorphism between these spectral sequences, and between their abutments. We set up
+canonical maps H ∗ (X/Γ) → (9.2.1) and H ∗ (W/Γ) → (9.3.1). Finally, we show that the
+map H ∗ (W/Γ) → (9.3.1) computes the canonical restriction map H ∗ (X̄/Γ) → H ∗ (∂ X̄/Γ).
+(9.1). Let Ap,q be any first-quadrant double complex. There are two standard filtrations
+of the double complex, {Ap,q | q > q0 } and {Ap,q | p > p0 }. The spectral sequences these
+give are called respectively the type I and type II sequences for Ap,q . Our main results
+involve type II sequences. The cohomology of the single complex associated to Ap,q is
+called the abutment of (either) spectral sequence.
+   Throughout the paper, (co)homology groups have coefficients in any fixed abelian group.
+(9.2). We set up a Mayer-Vietoris spectral sequence for the cohomology of ∂ X̄/Γ. Let
+Φl be a set of representatives of the Γ-equivalence classes of the Q-flags F = {0 $ V1 $
+· · · $ Vl = k n } (see (3.2)). There are only finitely many such equivalence classes. Let
+E = {ē(P )/(Γ ∩ P ) | F ∈ Φ2 } (corresponding to maximal proper parabolic Q-subgroups).
+This E is a cover of ∂ X̄/Γ. By (3.5), the non-empty (p + 1)-fold intersections of distinct
+members of E are exactly the sets in {ē(P )/(Γ ∩ P ) | F ∈ Φp+2 }. This means we are in
+the correct setting to use the Čech cohomology techniques of [B-T, §15].
+     For 0 6 p 6 n − 2, define
+                                       M
+                               X p,q =      C q (ē(P )/(Γ ∩ P )),
+                                       F∈Φp+2
+
+where C q denotes the singular q-cochains. We make X p,q into a double complex, where the
+vertical maps are (−1)p times the coboundary maps, and the horizontal maps are induced
+as in Čech cohomology from the inclusions ē(P ) ←֓ ē(P ′ ) for F ′ ⊇ F , with the alternating
+sign convention of [B-T, (15.7.1)]. Exactly as in [B-T, (15.7)], we see that the q-th row
+of X p,q is exact, except at the p = 0 position where the kernel equals C q (∂ X̄/Γ). Thus
+the type I spectral sequence for X p,q collapses at E2 to H ∗ (∂ X̄/Γ). Therefore, the total
+complex of X p,q computes H ∗ (∂ X̄/Γ).
+          p,q
+   Let Er,X   be the type II spectral sequence for X p,q . We have
+
+                     p,q
+                               M
+(9.2.1)             E1,X =            H q (ē(P )/(Γ ∩ P )) ⇒ H p+q (∂ X̄/Γ).
+                             F∈Φp+2
+
+(9.3). For 0 6 p 6 n − 2, define
+                                         M
+                              W p,q =            C q (WF /(Γ ∩ P )),
+                                        F∈Φp+2
+22                        AVNER ASH AND MARK MCCONNELL
+
+made into a double complex in the same way as X p,q . (Recall that WF ←֓ WF ′ whenever
+                p,q
+F ′ ⊇ F .) Let Er,W be the type II spectral sequence for W p,q . As above,
+
+                              p,q
+                                       M
+(9.3.1)                      E1,W =            H q (WF /(Γ ∩ P )).
+                                      F∈Φp+2
+
+
+   Let W ∗ denote the single complex associated to W p,q . Thus the abutment of (9.3.1) is
+H p+q (W ∗ ).
+(9.4). We now define a map of double complexes. Consider the single-column double
+complex                          q
+                                 C (X̄/Γ)      if p = 0
+                         Xˆ =
+                           p,q
+                                      0        if p > 0.
+
+There is an obvious map Xˆ p,q → X p,q , where for p = 0 we map ω ∈ C q (X̄/Γ) to the direct
+sum over F ∈ Φ2 of the restriction of ω to C q (ē(P )/(Γ ∩ P )).
+Lemma. The map Xˆ p,q → X p,q is a chain map of double complexes.
+Proof. Let ω ∈ C q (X̄/Γ), and let τ be its image in X 0,q . The only thing to check is that
+the horizontal arrow δ : X 0,q → X 1,q carries τ to 0. But as we have said, the kernel of δ is
+precisely the set of elements that come from a global cochain on ∂ X̄/Γ. And τ does come
+from a global cochain, namely the restriction of ω to ∂ X̄/Γ. 
+  Considering the type I spectral sequences, we see that Xˆ p,q → X p,q induces on the
+abutments the canonical restriction map H q (X̄/Γ) → H q (∂ X̄/Γ).
+  Next, consider                     q
+                              p,q    C (W/Γ)       if p = 0
+                           Ŵ =
+                                         0         if p > 0,
+
+made into a double complex the same way Xˆ was. There is an obvious map ψ : Ŵ p,q →
+W p,q carrying ω ∈ C q (W/Γ) to the direct sum over F ∈ Φ2 of the restrictions of ω to
+C q (WF /(Γ ∩ P )). Again, ψ : Ŵ p,q → W p,q is a chain map of double complexes.
+(9.5). We now give the main result of the paper.
+Theorem. (i) We have a commutative diagram
+
+                                          restriction
+                             H ∗ (X̄/Γ) −−−−−−→ H ∗ (∂ X̄/Γ)
+                                                     
+                                ∼                    ∼
+                                =y                    y=
+                                              ψ∗
+                             H ∗ (W/Γ)    −−−−→         H ∗ (W ∗ )
+
+where the vertical maps are natural isomorphisms and the top map is the canonical restric-
+tion map.
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                              23
+
+  (ii) There is a spectral sequence
+
+                       p,q
+                                 M
+(9.5.1)               E1,W =            H q (WF /(Γ ∩ P )) ⇒ H p+q (W ∗ ),
+                               F∈Φp+2
+
+
+and ψ induces a map of spectral sequences given on the E1 page by the natural restriction
+                  0,q
+map H q (W/Γ) → E1,W  .
+
+Here X is as in (1.5), Γ is any arithmetic subgroup of Γ0 as in (2.2), Φl is as in (9.2), and
+P is the R-points of the parabolic Q-subgroup associated to F as in (3.2). The space WF ,
+a closed subcomplex of the well-rounded retract W , is defined in (6.1). We use any fixed
+abelian group of coefficients.
+Proof. First we observe that the global deformation retraction r̄ : X̄ → W induces a map
+of double complexes X p,q → W p,q . The map r̄ commutes with the vertical maps of these
+double complexes, because any continuous map commutes with the coboundary maps in
+singular cohomology. More importantly, r̄ commutes with the horizontal maps because it
+is defined globally on X̄, and because the horizontal maps are induced from inclusion maps
+on various subspaces of X̄.
+                                                                              p,q     p,q
+    It follows that r̄ induces a homomorphism of spectral sequences Er,X          → Er,W   . The
+                                              q                      q
+map on E1 terms comes from the maps H (ē(P )/(Γ ∩ P )) → H (WF /(Γ ∩ P )) induced for
+all F by r̄. By Theorem 8.5, the latter maps are canonical isomorphisms. By [Br, VII.2.6],
+the right-hand arrow in (i) is an isomorphism.
+    Similarly, r̄ induces a map X̂ p,q → Ŵ p,q . By Corollary 8.4, it gives a canonical isomor-
+phism in cohomology. This is the left vertical arrow in (i).
+    Part (9.4) defined the maps of double complexes that induce the horizontal arrows in (i),
+and it explained why the top arrow is the canonical restriction. This proves (i).
+    The spectral sequence in (ii) is (9.3.1). The assertion about ψ in (ii) is immediate from
+the definition of ψ. 
+
+             Section 10—Practical Comments and Related Results
+(10.1). We make some remarks about how to use the spectral sequence (9.5.1) in practice.
+When we work with the finite cell complex W/Γ, we represent each cell by some piece of
+data. (See (10.6), [M-M0], or [A-G-G].) Since WF is a subcomplex of W , it is tempting to
+imagine representing each cell of WF /(Γ ∩ P ) by some piece of the W/Γ data. However,
+two cells of WF may be equivalent mod Γ and yet inequivalent mod (Γ ∩ P ). An example
+when Γ = GL3 (Z), F = {0 ⊆ (∗, ∗, 0) ⊆ Q3 }, is provided by the two 0-cells of W whose
+minimal vectors are given by the columns of the following matrices (together with their
+negatives):
+                                                                        
+                 1 0      1 0 0       −1               1    0 0 1      1 0
+                0 1      1 0 1        0      and    0    1 0 0      1 1.
+                 0 0      0 1 1        1               0    0 1 1      1 1
+24                          AVNER ASH AND MARK MCCONNELL
+
+The cells are Γ-equivalent. (In the language of [M-M0], their C-configurations are both
+complete quadrilaterals.) But any element of Γ preserving F must carry the left-hand
+matrix to a matrix with three 0’s in its bottom row.
+   In general, each Γ-class of cells of WF will break up into finitely many (Γ ∩ P )-classes.
+So a cell in WF /(Γ ∩ P ) is represented by a piece of data for W/Γ, plus a finite amount
+of extra structure depending on F . Say one has worked out all the classes in (9.5.1)
+as explicit cocycles on the cell complexes WF /(Γ ∩ P ). To compute the d1 and higher
+differentials, one has to work out how the data-with-extra-structure in WF /(Γ ∩ P ) is
+connected with the data-with-extra-structure in WF ′ /(Γ ∩ P ) for F ′ ⊇ F . Sheafhom, a
+suite of object-oriented programs currently under development by the second author, may
+help to automate such computations.
+   Say that Γ is small enough if, whenever F , F ′ are distinct Q-flags and WF ∩ WF ′ 6= ∅,
+there is no element of Γ carrying F to F ′ . When Γ is small enough in this sense, we need
+never worry about the extra structure just described. To see why, assume there were two
+cells Ca , Cb ∈ WF which were not (Γ ∩ P )-equivalent but such that Cb = γ · Ca for some
+γ ∈ Γ. Set F ′ = γ −1 F ; we have F ′ 6= F since γ ∈/ P . Because Cb respects F , Ca must
+            ′
+respect F . Hence Ca ∈ WF ∩ WF ′ . Since Γ was assumed small enough, the existence of
+such a γ is a contradiction.
+   When k = Q and n 6 4, one can use the methods of [M1] to show that the principal
+congruence subgroups Γ(N ) ⊂ GLn (Z) of prime level N > 3 are small enough in the above
+sense. We do not know whether all neat Γ are small enough.
+
+(10.2). For convenience, we record the homology version of our main theorem. We use
+the obvious analogues of the notation of (9.5).
+
+Theorem. (i) We have a commutative diagram
+
+                                               inclusion
+                                 H∗ (∂ X̄/Γ) −−−−−→ H∗ (X̄/Γ)
+                                                       
+                                    ∼                  ∼
+                                    =y                  y=
+                                                  ψ∗
+                                  H∗ (W∗ )     −−−−→ H∗ (W/Γ)
+
+where the vertical maps are natural isomorphisms and the top map is the canonical inclu-
+sion map.
+   (ii) There is a spectral sequence
+                                  M
+                         1
+                        Ep,q =            Hq (WF /(Γ ∩ P )) ⇒ Hp+q (W∗ ),
+                                 F∈Φp+2
+
+
+and ψ induces a map of spectral sequences given on the E1 page by the natural inclusion
+      1
+map E0,q → Hq (W/Γ).
+
+     This is proved by dualizing the constructions of Section 9.
+            COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                            25
+
+(10.3). Consider one Borel-Serre boundary face ē(P )/(Γ ∩ P ). As we mentioned in
+the introduction, our methods allow us to compute the canonical maps H ∗ (X̄/Γ) →
+H ∗ (ē(P )/(Γ ∩ P )) and H∗ (ē(P )/(Γ ∩ P )) → H∗ (X̄/Γ) without any spectral sequences.
+We simply use the cellular map WF /(Γ ∩ P ) → W/Γ.
+   In the application to GL4 (Z) described near the end of (0.2), we are primarily inter-
+ested in the degree-five homology. We believe that in degree five, all the homology of the
+boundary comes from the maximal boundary faces. We could therefore find the image of
+                                                      
+                            M                           
+                                       H5 (WF /(Γ ∩ P )) → H5 (W/Γ)
+                        F for maximal
+                         faces mod Γ
+
+
+without computing any spectral sequences.
+   It would very interesting to find the image of the map H∗ (∂ X̄/Γ) → H∗ (X̄/Γ) without
+having to find H∗ (∂ X̄/Γ) directly, and without having to work out any spectral sequences.
+(10.4). All our results hold for Γ-equivariant cohomology. That is, one may replace
+H ∗ ((. . . )/Γ) with HΓ∗ ((. . . )) in the theorems of Section 9 and throughout the paper. Of
+course, if we use coefficients in a field of characteristic 0 or of characteristic prime to
+the order of any torsion element of Γ, then the two kinds of cohomology are canonically
+isomorphic. All these results hold for homology.
+    In the Γ-equivariant setting, the summands in each column of our spectral sequences
+                              ∗
+would be replaced by H(Γ∩P           ) (WF ), and each of these would have to be computed by a
+spectral sequence in its own right. We would get a spectral sequence of spectral sequences.
+    Both HΓ∗ (X) and H ∗ (X/Γ) are interesting objects from the point of view of number
+theory and automorphic forms. Both have Hecke operators acting on them. In [A4], the
+first author has conjectured that any Hecke eigenclass in HΓ∗ (X; Fp ), for any p, should have
+an attached mod p representation of the absolute Galois group of Q. In [A-M2], we have
+conjectured the same for the Hecke module H ∗ (X/Γ; Fp ). Both papers provide examples.
+(10.5). The method of this paper can easily be extended to SLn . If G were SLn (S), then
+K\G would be the product of the irreducible symmetric spaces for the SLn (kv ). In the
+case G = GLn (S) of this paper,
+                            Q HK\G     is the product of the SLn (kv ) symmetric spaces
+                                   ∼
+and a Euclidean factor H\ ( v R+ ) = R+r1 +r2 −1
+                                                 , where r1 , r2 are the number of real and
+complex places of k, respectively.
+(10.6). Let k = Q, so that Γ ⊆ GLn (Z) or SLn (Z), and let n 6 4. In [M1] and the
+survey article [M-M0], an interpretation of the cell structure on the well-rounded retract
+W is given. There is a one-to-one correspondence in which each cell corresponds to a
+configuration of points and lines (called a C-configuration) in the projective space Pn−1 (Q).
+It is easy to interpret our WF in this language.
+(10.7). Again let k = Q and n 6 4. Let X̆/Γ be any Satake compactification of X/Γ.
+In [M2], one constructs a cell structure on X̆/Γ. Intersecting with X/Γ gives a “locally-
+compact cell structure” on X/Γ that is dual to the well-rounded retract W/Γ inside X/Γ
+26                           AVNER ASH AND MARK MCCONNELL
+
+(see [M1, §2] for definitions and precise statements). There is a cellular map from the
+barycentric subdivision of the boundary of X̆/Γ to the barycentric subdivision of W/Γ.
+This offers an interesting contrast to the present paper.
+
+                                            References
+[A1]    A. Ash, Deformation retracts with lowest possible dimension of arithmetic quotients of self-
+        adjoint homogeneous cones, Math. Annalen 225 (1977), 69–76.
+[A2]            , Cohomology of congruence subgroups of SL(n, Z), Math. Annalen 249 (1980), 55–73.
+[A3]            , Small-dimensional classifying spaces for arithmetic subgroups of general linear groups,
+        Duke Jour. 51 (1984), 459–468.
+[A4]            , Galois representations attached to mod p cohomology of GL(n, Z), Duke Jour. 65 (1992),
+        235–255.
+[A-G-G] A. Ash, D. Grayson, P. Green, Computations of cuspidal cohomology of congruence subgroups of
+        SL(3, Z), Jour. Number Theory 19 (1984), 412–436.
+[A-M1] A. Ash, M. McConnell, Doubly cuspidal cohomology for principal congruence subgroups of GL(3, Z),
+        Math. of Computation 59 (1992), 673–688.
+[A-M2]          , Experimental indications of three-dimensional Galois representations from the cohomol-
+        ogy of SL(3, Z), Jour. Exper. Math. 1 (1992), 209–223.
+[B-S]   A. Borel, J.-P. Serre, Corners and arithmetic groups, Comm. Math. Helv. 48 (1973), 436–491.
+[B-T]   R. Bott, L. W. Tu, Differential forms in algebraic topology, Springer, New York, 1982.
+[Br]    K. Brown, Cohomology of Groups, Springer, New York, 1982.
+[B]     A. Brownstein, thesis (unpublished).
+[G]     D. Grayson, Reduction theory using semistability, Comm. Math. Helv. 59 (1984), 600–634.
+[H]     G. Harder, Some results on the Eisenstein cohomology of arithmetic subgroups of GLn , Coho-
+        mology of Arithmetic Groups and Automorphic Forms (J.-P. Labesse and J. Schwermer, eds.),
+        Springer Lecture Notes 1447, Springer, New York, 1990, pp. 85–153.
+[L-S]   R. Lee, R. H. Szczarba, On the torsion in K4 (Z) and K5 (Z), Duke Jour. 45 (1978), 101–129.
+[M-M0] R. MacPherson, M. McConnell, Classical Projective Geometry and Modular Varieties, Algebraic
+        Analysis, Geometry, and Number Theory: Proceedings of the JAMI Inaugural Conference (J.-I.
+        Igusa, ed.), Johns Hopkins University Press, 1989, pp. 237–290.
+[M-M1]          , Explicit reduction theory for Siegel modular threefolds, Invent. Math. 111 (1993), 575–
+        625.
+[M1]    M. McConnell, Classical projective geometry and arithmetic groups, Math. Annalen 290 (1991),
+        441–462.
+[M2]            , Cell decompositions of Satake compactifications for SL(n, R), preprint.
+[Men]   E. Mendoza, Cohomology of P GL2 over imaginary quadratic integers, Bonner Math. Schriften,
+        no. 128 (1979), Universität Bonn, Mathematisches Institut, Bonn.
+[S]     L. Saper, Tilings and finite energy retractions of locally symmetric spaces, preprint.
+[S-V]   J. Schwermer, K. Vogtmann, The integral homology of S L2 and P SL2 of euclidean imaginary
+        quadratic integers, Comment. Math. Helv. 58 (1983), 573–598.
+[Sou1] C. Soulé, The cohomology of SL(3, Z), Topology 17 (1978), 1–22.
+[Sou2]          , Thèse, Univ. Paris VII.
+[Što]  M. I. Štogrin, Locally quasi-densest lattice packings of spheres, Soviet Math. Doklady 15 (1974),
+        1288–1292.
+[vG-T] B. van Geemen, J. Top, A non-selfdual automorphic representation of GL3 and a Galois repre-
+        sentation, Invent. Math. 117 (1994), 391–401.
+[V]     K. Vogtmann, Rational homology of Bianchi groups, Math. Annalen 272 (1985), 399–419.
+
+     Dept. of Mathematics, Ohio State University, Columbus, OH 43210-1174
+         COHOMOLOGY AT INFINITY AND THE WELL-ROUNDED RETRACT                    27
+
+E-mail address: ash@math.ohio-state.edu
+
+Oklahoma State University, Math, 401 Math Sciences, Stillwater, OK 74078-1058
+E-mail address: mmcconn@math.okstate.edu
+

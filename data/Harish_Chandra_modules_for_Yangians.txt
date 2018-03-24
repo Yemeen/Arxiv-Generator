@@ -1,0 +1,1561 @@
+                                                       HARISH-CHANDRA MODULES FOR YANGIANS
+arXiv:math/0212272v2 [math.RT] 26 Apr 2003
+
+
+
+
+                                                   VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+                                                     Abstract. We study Harish-Chandra representations of the Yangian Y(gl2 )
+                                                     with respect to a natural maximal commutative subalgebra which satisfy a
+                                                     polynomial condition. We prove an analogue of the Kostant theorem showing
+                                                     that the restricted Yangian Yp (gl2 ) is a free module over the corresponding
+                                                     subalgebra Γ and show that every character of Γ defines a finite number of
+                                                     irreducible Harish-Chandra modules over Yp (gl2 ). We study the categories of
+                                                     generic Harish-Chandra modules, describe their simple modules and indecom-
+                                                     posable modules in tame blocks.
+
+
+
+                                               Mathematics Subject Classification 17B35, 81R10, 17B67
+
+                                                                                     Contents
+                                               1. Introduction                                                                        1
+                                               2. Preliminaries                                                                       4
+                                               2.1. Harish-Chandra subalgebras                                                        4
+                                               2.2. Special PBW algebras                                                              5
+                                               3. Freeness of Yp (gl2 ) over Γ                                                        6
+                                               4. Harish-Chandra modules for gl2 Yangians                                             8
+                                               4.1. Weight modules                                                                    9
+                                               5. Γ is a Harish-Chandra subalgebra                                                   13
+                                               6. Universal representation of the Yangian                                            16
+                                               7. Category of Harish-Chandra modules                                                 19
+                                               8. Category of generic Harish-Chandra modules                                         22
+                                               8.1. Category of generic weight modules                                               22
+                                               8.2. Support of irreducible generic weight modules                                    24
+                                               8.3. Indecomposable generic weight modules                                            25
+                                               Acknowledgment                                                                        28
+                                               References                                                                            28
+
+
+
+                                                                                1. Introduction
+                                                Throughout the paper we fix an algebraically closed field k of characteristic 0.
+                                             Consider the pair (U, Γ) where U is an associative k-algebra and Γ is a subalgebra
+                                             of U . Denote by cfs Γ the cofinite spectrum of Γ, i.e.,
+                                                        cfs Γ = {maximal two-sided ideals m of Γ | dim Γ/m < ∞}.
+                                             A finitely generated module M over U is called a Harish-Chandra module (with
+                                             respect to Γ) if                   M
+                                                                          M=         M (m),
+                                                                                      m∈cfs Γ
+                                                                                         1
+2        VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+where
+                 M (m) = {x ∈ M | mk x = 0 for some                   k ≥ 0}.
+   Harish-Chandra modules play a central role in the classical representation the-
+ory; see e.g. Dixmier [Di]. In particular, weight modules over a semisimple Lie
+algebra are Harish-Chandra modules with respect to a Cartan subalgebra. An-
+other important example is provided by the Gelfand–Tsetlin modules [DFO1] over
+the universal enveloping algebra U (gln ) of the general linear Lie algebra gln . They
+are Harish-Chandra modules with respect to the Gelfand–Tsetlin subalgebra of
+U (gln ). The latter is the commutative subalgebra generated by the centers of
+U (glk ), k = 1, . . . , n. A theory of Harish-Chandra modules for general pairs (U, Γ)
+is developed in [DFO2].
+   An irreducible Harish-Chandra module M is said to be extended from m ∈ cfs Γ
+if M (m) 6= 0. A central problem in the theory of Harish-Chandra modules is to
+investigate the existence and uniqueness conditions for such an extension. In the
+case where the extension is unique, the irreducible Harish-Chandra modules are
+parametrized by some equivalence classes of the elements of cfs Γ. It has been
+recently proved in [Ov] that for the case of Gelfand–Tsetlin modules over gln the
+number of pairwise non-isomorphic irreducible modules extended from a given m ∈
+cfs Γ is nonzero and finite.
+   In this paper we begin a detailed study of Harish-Chandra modules over the
+Yangians. The Yangian for gln is a unital associative algebra Y(gln ) over k with
+                                   (1)   (2)
+countably many generators tij , tij , . . . where 1 ≤ i, j ≤ n, and the defining
+relations
+(1.1)            (u − v) [tij (u), tkl (v)] = tkj (u) til (v) − tkj (v) til (u),
+where
+                                            (1)         (2)
+                         tij (u) = δij + tij u−1 + tij u−2 + · · ·
+and u, v are formal variables. This algebra originally appeared in the works on
+the quantum inverse scattering method ; see e.g. Takhtajan–Faddeev [TF], Kulish–
+Sklyanin [KS]. The term “Yangian” and generalizations of Y(gln ) to an arbitrary
+simple Lie algebra were introduced by Drinfeld [D1]. He then classified finite-
+dimensional irreducible modules over the Yangians in [D2] using earlier results of
+Tarasov [T1, T2]. An explicit construction of every such module over Y(gl2 ) is
+given in those papers by Tarasov and also in the work by Chari and Pressley [CP].
+Apart from this case, the structure of a general finite-dimensional irreducible rep-
+resentation of the Yangian remains unknown. In the case of Y(gln ) a description
+of generic modules was given in [M1] via Gelfand–Tsetlin bases. A more general
+class of tame representations of Y(gln ) was introduced and explicitly constructed by
+Nazarov and Tarasov [NT]. Another family of representations has been constructed
+in [M3] via tensor products of the so-called evaluation modules. An important role
+in these works is played by the Drinfeld generators [D2]
+             ai (u),   i = 1, . . . , n,     bi (u), ci (u),    i = 1, . . . , n − 1
+of the algebra Y(gln) which are defined as certain quantum minors of the ma-
+trix T (u) = tij (u) . The coefficients of the series ai (u), i = 1, . . . , n form a
+commutative subalgebra of Y(gln ) which can be regarded as an analogue of the
+Gelfand–Tsetlin subalgebra of U(gln ). We shall consider the Harish-Chandra mod-
+ules for Y(gln ) with respect to this particular subalgebra. So, the Harish-Chandra
+                     HARISH-CHANDRA MODULES FOR YANGIANS                               3
+
+
+modules for Y(gln ) are natural analogues of the Gelfand–Tsetlin modules for gln
+[DFO1]. Note also that the tame modules over Y(gln ) [NT] is a particular case of
+Harish-Chandra modules.
+  In this paper we are concerned with Harish-Chandra modules for the Yangian
+Y(gl2 ). Recall that every irreducible finite-dimensional Y(gl2 )-module contains a
+unique vector ξ annihilated by t12 (u) and which is an eigenvector for the Drinfeld
+generators a1 (u) and a2 (u) defined by
+(1.2)       a1 (u) = t11 (u) t22 (u − 1) − t21 (u) t12 (u − 1),   a2 (u) = t22 (u);
+see [T1, T2] and [CP]. Moreover, there exists an automorphism tij (u) 7→ c(u) tij (u)
+of Y(gl2 ), where c(u) ∈ 1 + u−1 k[[u−1 ]], such that the eigenvalues of ξ become
+polynomials in u−1 under the corresponding twisted action of the Yangian. This
+prompts the introduction of the class of Harish-Chandra polynomial modules over
+Y(gl2 ), i.e., such Harish-Chandra modules where the operators a1 (u) and a2 (u) are
+polynomials. More precisely, due to (1.2), it is natural to require that for some
+positive integer p the polynomials a1 (u) and a2 (u) have degrees 2p and p, respec-
+tively. Note that a1 (u) is the quantum determinant of the matrix T (u) [IK], [KS].
+Its coefficients are algebraically independent generators of the center of Y(gl2 ).
+   We can interpret the definition of Harish-Chandra polynomial modules using
+the algebra Yp (gl2 ) called the Yangian of level p; see Cherednik [C1, C2]. It is
+                                                                                (r)
+defined as the quotient of Y(gl2 ) by the ideal generated by the elements tij with
+r ≥ p + 1. A Harish-Chandra polynomial module over Y(gl2 ) is just a Harish-
+Chandra module over Yp (gl2 ) for some positive integer p. In what follows we shall
+consider Harish-Chandra modules over Yp (gl2 ) with respect to the commutative
+subalgebra Γ generated by the coefficients of a1 (u) and a2 (u).
+   Let us now describe our main results. First, we prove that Yp (gl2 ) is free as a left
+(right) Γ-module (Theorem 3.4). This is an analogue of the well-known Kostant
+theorem [K]. Each character of Γ can therefore be extended to an irreducible
+Yp (gl2 )-module. An important role in our study is played by certain universal
+Harish-Chandra modules over Yp (gl2 ) (Theorem 4.5) such that every irreducible
+module in H(Yp (gl2 ), Γ) is a quotient of the corresponding universal module.
+   Further, we show that Γ is a Harish-Chandra subalgebra (Theorem 5.3) in the
+sense of [DFO2] which allows us to apply the general theory of [DFO2] to the study
+of Harish-Chandra modules for Yp (gl2 ). In particular, it provides an equivalence
+between the category H(Yp (gl2 ), Γ) of Harish-Chandra modules and the category of
+finitely generated modules over a certain category A whose objects are the maximal
+ideals of Γ. We then use this to prove that the number of pairwise non-isomorphic
+extensions of a character of Γ to an irreducible Yp (gl2 )-module is finite (Theo-
+rem 7.2). The full subcategory HW (Yp (gl2 ), Γ) of H(Yp (gl2 ), Γ) which consists of
+modules with diagonalizable action of Γ turns out to be equivalent to the category
+of finitely generated modules over a certain quotient category of A (Section 2.1).
+In Section 8 we study a full subcategory in HW (Yp (gl2 ), Γ) of generic modules,
+this imposes a certain condition on the eigenvalues of a2 (u) while those of a1 (u)
+are arbitrary. In particular, we give a complete description of irreducible mod-
+ules (Theorem 8.5) and indecomposable modules in tame blocks of this category
+(Theorem 8.9).
+4        VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+                                   2. Preliminaries
+2.1. Harish-Chandra subalgebras. In this paper we shall only consider the pairs
+(U, Γ) where the subalgebra Γ of U is commutative. In this case cfs Γ coincides with
+the set Specm Γ of all maximal ideals in Γ.
+    We let U -mod denote the category of finitely generated left modules over an
+associative algebra U . The Harish-Chandra modules for the pair (U, Γ) form a
+full abelian subcategory in U -mod which we denote by H(U, Γ). A Harish-Chandra
+module M is called weight if the following condition holds: for all m ∈ Specm Γ and
+all x ∈ M (m) one has m x = 0. The full subcategory of H(U, Γ) consisting of weight
+modules will be denoted HW (U, Γ). The support of a Harish-Chandra module M is
+the subset Supp M ⊆ Specm Γ which consists of those m which have the property
+M (m) 6= 0. If for a given m there exists an irreducible Harish-Chandra module M
+with M (m) 6= 0 then we say that m extends to M .
+    A commutative subalgebra Γ ⊆ U is called a Harish-Chandra subalgebra of U
+[DFO2] if for any a ∈ U the Γ-bimodule ΓaΓ is finitely generated both as left
+and as right Γ-module. The property of Γ to be a Harish-Chandra subalgebra is
+important for the effective study of the category H(U, Γ). In this case, for any
+finite-dimensional Γ-module X the module U ⊗Γ X is a Harish-Chandra module.
+For any a ∈ U set
+    Xa = {(m, n) ∈ Specm Γ × Specm Γ | Γ/n is a subquotient of ΓaΓ/Γam}.
+Equivalently, (m, n) ∈ Xa if and only if (Γ/n) ⊗Γ ΓaΓ ⊗Γ (Γ/m) 6= 0. Denote by ∆
+the minimal equivalence on Specm Γ containing all Xa , a ∈ U and by ∆(A, Γ) the
+set of the ∆-equivalence classes on Specm Γ. Then for any a ∈ U and m ∈ Specm Γ
+we have
+                         X                             M
+(2.1)      aM (m) ⊆            M (n),     H(U, Γ) =          H(U, Γ, D).
+                        (m,n)∈Xa                          D∈∆(U,Γ)
+
+Define a category A = AU,Γ with the set of objects Ob A = Specm Γ and with the
+space of morphisms A(m, n) from m to n, where
+(2.2)                        A(m, n) = Γn ⊗Γ U ⊗Γ Γm
+                    n
+and Γm = lim Γ/m is the completion of Γ by m ∈ Specm Γ. Then the space
+            ←n
+A(m, n) has a natural structure of Γn −Γm -bimodule. We have the decomposition
+                                      M
+                              A=            A(D),
+                                      D∈∆(U,Γ)
+
+where A(D) is the restriction of A on D. The category A is endowed with the
+topology of the inverse limit while the category of k-vector spaces (k-mod) is en-
+dowed with the discrete topology. Consider the category A-modd of continuous
+functors M : A → k-mod. We call them discrete modules following the terminology
+of [DFO2, Section 1.5]. For any discrete A-module N define a Harish-Chandra
+U -module                                M
+                             F(N ) =           N (m).
+                                       m∈Specm Γ
+Furthermore, for x ∈ N (m) and a ∈ U set
+                                      X
+                              ax =                 an x
+                                       n∈Specm Γ
+                         HARISH-CHANDRA MODULES FOR YANGIANS                                         5
+
+
+where an is the image of a in A(m, n). For any morphism f : M → N in the
+category A-modd set                  M
+                            F(f ) =        f (m).
+                                              m∈Specm Γ
+We thus have a functor F : A-modd → H(U, Γ).
+Proposition 2.1. ( [DFO2], Theorem 17.) The functor F is an equivalence.
+   We will identify a discrete A-module N with the corresponding Harish-Chandra
+module F(N ). For m ∈ Specm Γ denote by m̂ the completion of m. Consider the
+two-sided ideal I ⊆ A generated by the completions m̂ for all m ∈ Specm Γ and
+set AW = A/I. Proposition 2.1 implies the following.
+Corollary 2.2. The categories HW (U, Γ) and AW -mod are equivalent.
+   The subalgebra Γ is called big in m ∈ Specm Γ if A(m, m) is finitely generated
+as a left (or, equivalently, right) Γm -module.
+Lemma 2.3. ( [DFO2], Corollary 19.) If Γ is big in m ∈ Specm Γ then there exist
+finitely many non-isomorphic irreducible Harish-Chandra U -modules M such that
+M (m) 6= 0. For any such module dim M (m) < ∞.
+
+2.2. Special PBW algebras. Let U be an associative algebra over k endowed
+with an increasing filtration {Ui }i∈Z , U−1 = {0}, U0 = k, Ui Uj ⊆ Ui+j . For
+u ∈ Ui \ Ui−1 set deg u = i. Let U = gr U be the associated graded algebra
+                                      M ∞
+                                 U=       Ui /Ui−1 .
+                                              i=0
+
+For u ∈ U denote by u its image in U and for a subset S ⊆ U set S = {s | s ∈ S}
+⊆ U . The algebra U is called a special PBW algebra if any element of U can
+be written uniquely as a linear combination of ordered monomials in some fixed
+generators of U and if U is a polynomial algebra. Such algebras were introduced
+in [FO].
+   Let Λ = k[X1 , . . . , Xn ] be a polynomial algebra. A sequence g1 , . . ., gt ∈ Λ is
+called regular (in Λ) if the class of gi in Λ/(g1 , . . . , gi−1 ) is non-invertible and is not
+a zero divisor for any i = 1, . . . , t.
+   Next proposition contains some properties of regular sequences which will be
+used in the sequel; see e.g. [BH].
+Proposition 2.4.               (1) A sequence of the form X1 , . . . , Xr , G1 , . . . Gt is regular
+       in Λ if and only if the sequence g1 , . . . , gt is regular in k[Xr+1 , . . . , Xn ],
+       where gi (Xr+1 , . . . , Xn ) = Gi (0, . . . , 0, Xr+1 , . . . , Xn ).
+   (2) A sequence g1 g1′ , g2 , . . . , gt is regular if and only if the sequences g1 , g2 , . . . , gt
+       and g1′ , g2 , . . . , gt are regular.
+   The following analogue of Kostant theorem [K] is valid for special PBW algebras.
+Theorem 2.5. [FO] Let U be a special PBW algebra and let g1 , . . ., gt ∈ U be
+mutually commuting elements such that g 1 , . . ., gt is a regular sequence in U, and
+let Γ = k[g1 , . . . , gt ]. Then U is a free left (right) Γ-module. Moreover Γ is a direct
+summand of U .
+6         VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+                                3. Freeness of Yp (gl2 ) over Γ
+  Let p be a positive integer. The level p Yangian Yp (gl2 ) for the Lie algebra gl2
+                                                             (1)         (p)
+[C2] can be defined as the algebra over k with generators tij , . . . , tij , i, j = 1, 2,
+subject to the relations
+                                  1
+(3.1)           [Tij (u), Tkl (v)] = (Tkj (u)Til (v) − Tkj (v)Til (u)),
+                                 u−v
+where u, v are formal variables and
+                                                    p
+                                                    X     (k)
+                       Tij (u) = δij up +                 tij up−k ∈ Yp (gl2 )[u].
+                                                    k=1
+
+Explicitly, (3.1) reads
+                                    min(r,s)
+                   (r) (s)
+                                      X           (a−1) (r+s−a)       (r+s−a) (a−1) 
+                 [tij , tkl ]   =                 tkj  til         − tkj     til     ,
+                                      a=1
+         (0)             (r)
+where   tij= δij and     = 0 for r ≥ p + 1. Note that the level 1 Yangian Y1 (gl2 )
+                        tij
+coincides with the universal enveloping algebra U(gl2 ). Set
+                       (k)
+                 deg tij = k                for    i, j = 1, 2 and k = 1, . . . , p.
+This defines a natural filtration on the Yangian Yp (gl2 ). The corresponding graded
+algebra will be denoted by Y p (gl2 ). We have the following analogue of the Poincaré–
+Birkhoff–Witt theorem for the algebra Yp (gl2 ).
+Proposition 3.1. ( [C2]; see also [M2]) Given an arbitrary linear ordering on the
+                     (k)
+set of generators tij , any element of the algebra Yp (gl2 ) is uniquely written as a
+linear combination of ordered monomials in these generators. Moreover, the algebra
+                                                 (k)
+Yp (gl2 ) is a polynomial algebra in generators tij .
+   Proposition 3.1 implies that Yp (gl2 ) is a special PBW algebra. Denote by D(u)
+the quantum determinant
+                     D(u) = T11 (u)T22 (u − 1) − T21 (u)T12 (u − 1)
+                                = T11 (u − 1)T22 (u) − T12 (u − 1)T21 (u)
+(3.2)
+                                = T22 (u)T11 (u − 1) − T12 (u)T21 (u − 1)
+                                = T22 (u − 1)T11 (u) − T21 (u − 1)T12 (u).
+Clearly, D(u) is a monic polynomial in u of degree 2p,
+(3.3)           D(u) = u2p + d1 u2p−1 + · · · + d2p ,                      di ∈ Yp (gl2 ).
+It was shown in [C1, C2] (see also [M2] for a different proof) that the coefficients
+d1 , . . . , d2p are algebraically independent generators of the center of the algebra
+Yp (gl2 ). Denote by Γ the subalgebra of Yp (gl2 ) generated by the coefficients of
+                                 (k)
+D(u) and by the elements t22 , k = 1, . . . , p. This algebra is obviously commutative.
+We will show later (Corollary 5.3) that Γ is a Harish-Chandra subalgebra in Yp (gl2 ).
+                                      (1)           (p)
+Lemma 3.2. The sequence t22 , . . . , t22 , d1 , . . . , d2p of the images of the generators
+of Γ is regular in Yp (gl2 ).
+                                HARISH-CHANDRA MODULES FOR YANGIANS                                                                   7
+
+
+Proof. Let us set
+       (i)         (i)                                                               (i) (j)       (i) (j)
+ ti = t11 + t22 ,         i = 1, . . . , p           and              ∆i,j = t11 t22 − t21 t12 ,               i, j = 1, . . . , p.
+It follows from (3.3) that
+                                                                      2p
+                                                                      X
+                                                             2p
+                                                D(u) = u          +         di u2p−i ,
+                                                                      i=1
+with
+                                          i−1
+                                          X
+                         di = ti +              ∆j,i−j                for      i = 1, . . . , p         and
+                                          j=1
+                                   p
+                                   X
+                         di =               ∆j,i−j                    for      i = p + 1, . . . , 2p.
+                                  j=i−p
+Hence we need to show that the sequence
+                                                                      p−1
+                                                                      X                  p
+                                                                                         X
+             (1)          (p)
+         t22 , . . . , t22 , t1 , t2 + ∆11 , . . . , tp +                   ∆i,p−i ,            ∆i,p+1−i , . . . , ∆pp
+                                                                      i=1                i=1
+                                                                                                         (1)              (p)
+is regular. We will denote by ∇i the result of the substitution t22 = · · · = t22 = 0
+in di , i = 1, . . . , 2p. By Proposition 2.4 (1), we only need to show the regularity of
+the sequence
+                                         ∇1 , . . . , ∇2p .
+Consider the automorphism φ of Y p (gl2 )/I given by
+               (i)                        (i)      (i)            (i)          (i)
+              t11 7→ ∇i ,                 t21 7→ t21 ,            t12 7→ t12 ,                 for i = 1, . . . , p,
+                                                          (1)           (p)
+where I is the ideal generated by                        t22 , . . . , t22 .
+                                                          Since the regularity of a sequence
+is preserved by automorphisms, it is sufficient to demonstrate the regularity of the
+sequence
+                            (1)           (p)
+                           t11 , . . . , t11 , ∇p+1 , . . . , ∇2p .
+                                                                             (k)
+Since the elements ∇i do not depend on the t11 , Proposition 2.4 (1) implies that
+this is equivalent to the regularity of the sequence ∇p+1 , . . . , ∇2p . For each pair of
+indices k, l ∈ {1, . . . , p} and any index 1 ≤ a ≤ max{k, l}, consider the sequence of
+a elements which occupy the rows of the table s(k, l, a) below
+                               (k) (l)
+                                                                                                               
+                           t21 t12
+                                                                                                              
+                           (k−1) (l)
+                           t21   t12
+                                                  (k) (l−1)
+                                             + t21 t12                                                         
+                                                                                                              
+                                                                                                              
+                           (k−2) (l)
+                           t21 t12           + t21
+                                                  (k−1) (l−1)
+                                                       t12
+                                                                         (k) (l−2)
+                                                                   + t21 t12                                   
+                                                                                                              
+                                                                                                              
+                          ..                                                                                  
+                           .                                                                                  
+                                                                                                              
+                                (k−a+1) (l)          (k−a+2) (l+1)                         (k) (l−a+1)
+                           t21         t12       + t21      t12             + · · · + t21 t12
+Note that when k = l = a = p the rows of the table are exactly the elements ∇i ,
+i = p + 1, . . . , 2p. We will show by induction on a that the sequence of rows of
+                                                                            (k) (l)
+s(k, l, a) is regular. Note that s(k, l, 1) consists of the single element t21 t12 and
+is obviously regular. Now let a > 1. Consider the following two tables which we
+denote by s′ (k, l, a) and s′′ (k, l, a), respectively.
+8             VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+
+       (k)
+                                                                          (l)
+                                                                                                                              
+       t21                                                                 t12
+                                                                                                                           
+       (k−1) (l)
+        t21  t12
+                        (k) (l−1)
+                    + t21 t12                                             (k−1) (l)
+                                                                            t21  t12
+                                                                                             (k) (l−1)
+                                                                                         + t21 t12                            
+                                                                                                                           
+                                                 ,                                                                         
+      ..                                                                ..                                                 
+       .                                                                 .                                                 
+                                                                                                                           
+        (k−a+1) (l)                 (k) (l−a+1)                             (k−a+1) (l)                  (k) (l−a+1)
+       t21     t12     + · · · + t21 t12                                   t21     t12      + · · · + t21 t12
+Due to Proposition 2.4 (2), it is sufficient to verify the regularity of both s′ (k, l, a)
+                                                                  (k)
+and s′′ (k, l, a). Using again Proposition 2.4 (1), substitute t21 = 0 in s′ (k, l, a)
+      (k)
+and t12 = 0 in s′′ (k, l, a). It is easy to see that after this substitution we obtain
+the tables s(k − 1, l, a − 1) and s(k, l − 1, a − 1), respectively. By the induction
+hypothesis, both of them are regular and so is s(k, l, a). In particular, the sequence
+s(p, p, p) is regular which completes the proof.                                        
+                                                         (1)           (p)
+   Using the regularity of the sequence t22 , . . . , t22 , d1 , . . . , d2p we immediately ob-
+tain the following.
+                                               (1)             (p)
+Corollary 3.3. The generators t22 , . . . , t22 , d1 , . . . , d2p of Γ are algebraically in-
+dependent.
+    Combining Lemma 3.2 with Proposition 2.5 we obtain our first main result.
+Theorem 3.4.        (1) Yp (gl2 ) is free as a left (right) module over Γ. Moreover Γ
+      is a direct summand of Yp (gl2 ).
+  (2) Any m ∈ Specm Γ extends to an irreducible Yp (gl2 )-module.
+   For a subset P ⊆ Yp (gl2 ) denote by D(P ) the set of all x ∈ Yp (gl2 ) such that
+there exists z ∈ Γ, z 6= 0 for which zx ∈ P .
+Corollary 3.5. Let P ⊆ Yp (gl2 ) be a finitely generated left Γ-module then D(P ) is
+a finitely generated left Γ-module.
+Proof. Since Γ is a domain then D(P ) is a Γ-submodule in Yp (gl2 ). Using the fact
+that Yp (gl2 ) is a free left Γ-module we conclude that Yp (gl2 ) ≃ FP ⊕ F where FP
+and F are free left Γ-modules, FP has a finite rank and P ⊆ FP . Then D(P ) ⊆ FP
+and hence it is finitely generated as a module over a noetherian ring.            
+
+                     4. Harish-Chandra modules for gl2 Yangians
+   In this section we introduce universal Harish-Chandra modules M (ℓ). We also
+describe their structure in an explicit form in the case of generic parameters ℓ.
+   Let L be a polynomial algebra in the variables b1 , . . . , bp , g1 , . . . g2p . Define a
+k-homomorphism ı : Γ → L by
+                       (k)
+(4.1)               ı(t22 ) = σk,p (b1 , . . . , bp ),          ı(di ) = σi,2p (g1 , . . . , g2p ),
+where σi,j is the i-th elementary symmetric polynomial in j variables. Due to
+Corollary 3.3, ı is injective. We will identify the elements of Γ with their images
+in L and treat them as polynomials in the variables b1 , . . . , bp , g1 , . . . g2p invariant
+under the action of the group Sp × S2p . Set L = Specm L. We will identify L with
+k3p . If
+    β = (β1 , . . . , βp ),      γ = (γ1 , . . . , γ2p )             and          ℓ = (β1 , . . . , βp , γ1 , . . . , γ2p )
+                         HARISH-CHANDRA MODULES FOR YANGIANS                                    9
+
+
+then we shall write ℓ = (β, γ). The monomorphism ı induces the epimorphism
+(4.2)                                    ı∗ : L → Specm Γ.
+If ℓ ∈ L and m = ı∗ (ℓ) then D(ℓ) will denote the equivalence class of m in
+∆(Yp (gl2 ), Γ); see Section 2.1.
+   Let P0 ⊆ L, P0 ≃ Z p , be the lattice generated by the elements δi ∈ k3p for
+i = 1, . . . , p, where
+                            δi = (δi1 , . . . , δi3p ), δij = δij .
+Then P0 acts on L by shifts δi (ℓ) := ℓ + δi . Furthermore, the group Sp × S2p acts on
+L by permutations. Thus the semidirect product W of the groups Sp × S2p and P0
+acts on L and L. Denote by S a multiplicative set in L generated by the elements
+bi − bj − m for all i 6= j and all m ∈ Z and by L the localization of L by S. Note
+that S is invariant under the action of W and hence W acts on L as well.
+   For arbitrary 3p-tuple ℓ = (β, γ) ∈ L set
+             β(u) = (u + β1 ) · · · (u + βp ),             γ(u) = (u + γ1 ) · · · (u + γ2p ).
+Let Iℓ be the left ideal of Yp (gl2 ) generated by the coefficients of the polynomials
+T22 (u) − β(u) and D(u) − γ(u). Define the corresponding quotient module over
+Yp (gl2 ) by
+(4.3)                                    M (ℓ) = Yp (gl2 )/Iℓ .
+We shall call it the universal module. It follows from Theorem 3.4 that Iℓ is a
+proper ideal of Yp (gl2 ) and so M (ℓ) is a non-trivial module. It is clear that if V is
+an arbitrary Harish-Chandra Yp (gl2 )-module generated by a non-zero η ∈ V such
+that D(u)η = γ(u)η and T22 (u)η = β(u)η then V is a homomorphic image of M (ℓ).
+  Set P1 = Specm L ⊆ L, i.e. P1 consists of generic 3p-tuples ℓ = (β, γ) such that
+
+(4.4)                            βi − βj 6∈ Z          for all i 6= j.
+If ℓ ∈ P1 then the modules from the category H(Yp (gl2 ), Γ, D(ℓ)) are called generic
+Harish-Chandra modules.
+4.1. Weight modules. For ℓ = (β, γ) ∈ L the category HW (Yp (gl2 ), Γ, D(ℓ))
+consists of finitely generated weight modules V with central character γ and with
+Supp V ⊆ D(ℓ). We shall denote this category by Rℓ for brevity. If ℓ ∈ P1 then
+the modules from Rℓ will be called generic weight modules.
+   A Yp (gl2 )-module V is an object of Rℓ if V is a direct sum of its weight subspaces:
+             M
+       V =        Vℓ ,   Vℓ = {η ∈ V | T22 (u)η = β(u)η, D(u)η = γ(u)η}.
+               ℓ∈L
+
+   If V ∈ Rℓ then we shall simply write Vβ instead of Vℓ and identify Supp V with
+the set of all β such that the subspace Vβ is nonzero. The next lemma describes
+the action of the Yangian generators on the weight subspaces; cf. (2.1).
+Lemma 4.1. Let V be a generic weight Yp (gl2 )-module and let β = (β1 , . . . , βp ) ∈
+Supp V . Then
+                                p
+                                X                                             p
+                                                                              X
+(4.5)            T21 (u)Vβ ⊆           Vβ+δi         and        T12 (u)Vβ ⊆         Vβ−δi
+                                 i=1                                          i=1
+
+where β ± δi = (β1 , . . . , βi ± 1, . . . , βp ).
+10         VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+Proof. First we show that T21 (−βi )Vβ ⊆ Vβ+δi for all i = 1, . . . , p. Since
+                             T22 (u − 1)T21 (u) = T21 (u − 1)T22 (u)
+we have
+                 T22 (−βi − 1)T21 (−βi ) η = T21 (−βi − 1)T22 (−βi ) η = 0
+for all η ∈ Vβ . Also,
+     T22 (−βj )T21 (−βi ) η = (βi − βj )−1 (T21 (−βi )T22 (−βj ) − T21 (−βj )T22 (−βi )) η
+                              + T21 (−βi )T22 (−βj ) η = 0
+since T22 (−βk ) η = 0 for all k = 1, . . . , p. Using the fact that βi − βj ∈     / Z we
+conclude that T21 (−βi )Vβ ⊆ Vβ+δi for all i = 1, . . . , p. Since T21 (u) is a polynomial
+of degree p − 1 in u and βi 6= βj if i 6= j, we thus get the first containment
+of (4.5). The second is verified in the same way with the use of the identity
+T22 (u)T12 (u − 1) = T12 (u)T22 (u − 1).                                                
+
+Corollary 4.2. If V is indecomposable generic weight module over Yp (gl2 ) and
+β ∈ Supp V then Supp V ⊆ β + Z p .                                           
+Lemma 4.3. If V is a generic weight Yp (gl2 )-module with the central character γ
+then for any β = (β1 , . . . , βp ) ∈ Supp V and any η ∈ Vβ we have
+                        T12 (−βr )T21 (−βs ) η = T21 (−βs )T12 (−βr ) η,
+if s 6= r, and
+                          T12 (−βi − 1)T21 (−βi ) η = −γ(−βi ) η,
+                          T21 (−βi + 1)T12 (−βi ) η = −γ(−βi + 1) η.
+Proof. The first equality follows from the defining relations (1.1). The two remain-
+ing follow from (3.2).                                                            
+
+     The following corollary is immediate from Lemma 4.3.
+Corollary 4.4. Let V be a generic weight Yp (gl2 )-module with the central character
+γ and let β = (β1 , . . . , βp ) ∈ Supp V .
+      (1) If γ(−βi ) 6= 0 then Ker T21 (−βi ) ∩ Vβ = 0.
+      (2) If γ(−βi + 1) 6= 0 then Ker T12 (−βi ) ∩ Vβ = 0.
+      (3) If V is indecomposable and γ(−βi + k) 6= 0 for all k ∈ Z then
+                        Ker T21 (−ψi ) ∩ Vψ = Ker T12 (−ψi ) ∩ Vψ = 0
+          for all ψ = (ψ1 , . . . , ψp ) ∈ Supp V .                                          
+   Since the universal module M (ℓ) is non-trivial, the image of 1 in M (ℓ) is nonzero.
+We shall denote this image by ξ. Assume that β satisfies the genericity condition
+(4.4). For any (k) = (k1 , . . . , kp ) ∈ Z p define the corresponding vector of the
+module M (ℓ) by
+                     Y
+             ξ (k) =     T21 (−βi − ki + 1) · · · T21 (−βi − 1) T21 (−βi )
+                        i, ki >0
+(4.6)                     Y
+                    ×              T12 (−βi − ki − 1) · · · T12 (−βi + 1) T12 (−βi ) ξ.
+                        i, ki <0
+                          HARISH-CHANDRA MODULES FOR YANGIANS                                             11
+
+
+Theorem 4.5. The vectors ξ (k) , (k) ∈ Z p form a basis of M (ℓ). Moreover, we
+have the formulas
+                                                   p
+                                                   Y
+(4.7)                          T22 (u) ξ (k) =           (u + βi + ki ) ξ (k) ,
+                                                   i=1
+
+(4.8)
+                    p
+                    X                   (u + β1 + k1 ) · · · ∧i · · · (u + βp + kp )
+  T21 (u) ξ (k) =         Ai (k)                                                            ξ (k+δi ) ,
+                    i=1
+                                   (β1 − βi + k1 − ki ) · · · ∧i · · · (βp − βi + kp − ki )
+                    Xp
+                                        (u + β1 + k1 ) · · · ∧i · · · (u + βp + kp )
+  T12 (u) ξ (k) =         Bi (k)                                                            ξ (k−δi ) ,
+                    i=1
+                                   (β1 − βi + k1 − ki ) · · · ∧i · · · (βp − βi + kp − ki )
+where                                     (
+                                              1                      if        ki ≥ 0
+                            Ai (k) =
+                                              −γ(−βi − ki )          if        ki < 0
+and                                   (
+                                          −γ(−βi − ki + 1)                if    ki > 0
+                          Bi (k) =
+                                          1                               if    ki ≤ 0.
+The action of T11 (u) is found from the relation
+                                                     
+(4.9)          T11 (u)T22 (u − 1) − T21 (u)T12 (u − 1) ξ (k) = γ(u) ξ (k) .
+
+Proof. We start by proving the formulas for the action of the generators of Yp (gl2 ).
+Formula (4.7) follows by induction with the use of the relations
+                                        u−v+1                    1
+(4.10)           T22 (u) T21 (v) =            T21 (v) T22 (u) −     T21 (u) T22 (v)
+                                         u−v                    u−v
+and
+                                        u−v−1                    1
+(4.11)           T22 (u) T12 (v) =            T12 (v) T22 (u) +     T12 (u) T22 (v)
+                                         u−v                    u−v
+implied by (3.1). By Lemma 4.3 we have: if ki > 0 then
+                      T21 (−βi − ki ) ξ (k) = ξ (k+δi ) ,
+(4.12)
+                      T12 (−βi − ki ) ξ (k) = −γ(−βi − ki + 1) ξ (k−δi ) ;
+if ki < 0 then
+                           T12 (−βi − ki ) ξ (k) = ξ (k−δi ) ,
+(4.13)
+                           T21 (−βi − ki ) ξ (k) = −γ(−βi − ki ) ξ (k+δi ) ;
+and if ki = 0 then
+                                        T12 (−βi ) ξ (k) = ξ (k−δi ) ,
+(4.14)
+                                        T21 (−βi ) ξ (k) = ξ (k+δi ) .
+Applying the Lagrange interpolation formula we obtain the remaining formulas.
+    It is implied by the formulas, that the module M (ℓ) is spanned by the vectors
+ξ (k) . By (4.7) and the genericity assumption, the ξ (k) are eigenvectors for T22 (u)
+12       VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+with distinct eigenvalues. In order to verify their linear independence, suppose first
+that γ(u) satisfies the condition
+(4.15)             γ(−βi − k) 6= 0             for all k ∈ Z       and all i.
+                                                       (k)
+In this case the linear independence of the ξ     follows from the fact that each of
+them is nonzero. This is implied by (4.12)–(4.13) since ξ 6= 0 in M (ℓ).
+                                                                 f(ℓ) as follows. As
+    In the case of general γ(u) let us define a Yp (gl2 )-module M
+                  f                                             e(k)
+a vector space, M (ℓ) is the k-linear span of the basis vectors ξ with (k) running
+over Z p and the action of Yp (gl2 ) is given by the formulas (4.7)–(4.9), where the
+ξ (k) should be replaced with ξe(k) . We have to verify that the operators Tij (u) do
+satisfy the Yangian defining relations (3.1). However, the application of both sides
+of (3.1) to a basis vector ξe(k) amounts to polynomial relations on the coefficients
+of γ(u). By the previous argument, if γ(u) satisfies (4.15) then these relations are
+identities. Therefore, these identities remain hold for an arbitrary γ(u) and thus
+f(ℓ) is well defined.
+M
+    Finally, consider the Yp (gl2 )-module homomorphism
+                                             f(ℓ),
+                             ϕ : Yp (gl2 ) → M               1 7→ ξe(0) .
+Obviously, the ideal Iℓ is contained in the kernel Ker ϕ and so, this defines a homo-
+morphism M (ℓ) → M    f(ℓ) which takes ξ (k) to the corresponding vector ξe(k) . Since
+            e
+the vectors ξ (k)                 f(ℓ) this proves that the vectors ξ (k) are linearly
+                  form a basis of M
+independent.                                                                        
+
+   Let us fix a p-tuple β satisfying the genericity condition (4.4) and introduce the
+elements of Yp (gl2 ) by
+                       Y
+              τ (k) =      T21 (−βi − ki + 1) · · · T21 (−βi − 1) T21 (−βi )
+                       i, ki >0
+                         Y
+                   ×              T12 (−βi − ki − 1) · · · T12 (−βi + 1) T12 (−βi ),
+                       i, ki <0
+
+where (k) runs over Z p .
+Corollary 4.6. The elements τ (k) are linearly independent over Γ in the right
+Γ-module Yp (gl2 ).
+Proof. Suppose that a linear combination of the elements τ (k) with coefficients in
+Γ is zero:
+                          X
+(4.16)                       τ (k) c(k) = 0,  c(k) ∈ Γ.
+                                  (k)
+
+Apply the left hand side to the vector ξ in a module M (ℓ) with ℓ = (β, γ) satisfying
+the assumptions of Theorem 4.5. We get the relation
+                                 X
+                                    c(k) (ℓ) ξ (k) = 0,
+                                         (k)
+
+where c(k) (ℓ) is the evaluation of the polynomial c(k) at T22 (u) = β(u) and D(u) =
+γ(u). Since the vectors ξ (k) form a basis of M (ℓ) this implies that c(k) (ℓ) = 0 for any
+choice of the parameters γ. Therefore, each c(k) does not depend on the generators
+                    HARISH-CHANDRA MODULES FOR YANGIANS                            13
+
+                                      (i)
+di and so it is a polynomial in the t22 . However, due to the Poincaré–Birkhoff–
+Witt theorem for the algebra Yp (gl2 ) (Proposition 3.1), a nontrivial relation (4.16)
+can only hold if the elements τ (k) are linearly dependent over k. But this is not
+the case because the vectors ξ (k) = τ (k) ξ are linearly independent in M (ℓ) by
+Theorem 4.5.                                                                        
+Remark 4.7. One can also produce a family of Γ-linearly independent elements for
+the left Γ-module Yp (gl2 ). They can be obtained as images of the τ (k) under the
+anti-automorphism of the algebra Yp (gl2 ) given by
+                                      (r)    (r)
+(4.17)                               tij 7→ tji .
+For the proof we observe that every generator of Γ is stable under this anti-
+automorphism. With the exception of the case p = 1, the elements τ (k) do not
+apparently constitute a basis of Yp (gl2 ) as a right Γ-module.
+Remark 4.8. Given two monic polynomials α(u) and β(u) of degree p define the cor-
+responding Verma module V (α(u), β(u)) as the quotient of Yp (gl2 ) by the left ideal
+generated by the coefficients of the polynomials T11 (u) − α(u), T22 (u) − β(u) and
+T12 (u); cf. [T1, T2]. Then the same argument as above shows that V (α(u), β(u))
+has a basis {ξ (k) } parameterized by p-tuples of nonnegative integers (k). The for-
+mulas of Theorem 4.5 hold for the basis vectors ξ (k) , where γ(u) should be taken
+to be α(u) β(u − 1) which defines the central character γ of V (α(u), β(u)). In fact,
+V (α(u), β(u)) is isomorphic to the quotient of the corresponding universal module
+M (ℓ), ℓ = (β, γ) by the submodule spanned by the vectors {ξ (k) } such that (k)
+contains at least one negative component ki .
+Corollary 4.9. Let ℓ = (β, γ) ∈ P1 .
+   (1) The module M (ℓ) is a generic weight Yp (gl2 )-module with central character
+       γ, Supp M (ℓ) = Z p and all weight spaces are 1-dimensional.
+   (2) The module M (ℓ) has a unique maximal submodule and hence a unique
+       irreducible quotient.
+   (3) The equivalence class D(ℓ) coincides with the set ℓ + P0 .
+Proof. Statement (1) follows immediately from Theorem 4.5. The sum of all proper
+submodules of M (ℓ) is again a proper submodule implying (2). The statement (3)
+follows immediately from (1).                                                 
+   We will denote the unique irreducible quotient of M (ℓ) by L(ℓ). It follows from
+Corollary 4.9 that all weight spaces of L(ℓ) are 1-dimensional. We can now describe
+all irreducible generic weight Yp (gl2 )-modules.
+Corollary 4.10. Let ℓ = (β, γ) ∈ P1 .
+   (1) There exists an irreducible generic weight Yp (gl2 )-module L(ℓ) with L(ℓ)β 6=
+       0 and with central character γ. Moreover, dim L(ℓ)ψ = 1 for all ψ ∈
+       Supp L(ℓ).
+   (2) Any irreducible weight module over Yp (gl2 ) with central character γ gener-
+       ated by a nonzero vector of weight β is isomorphic to L(ℓ).
+
+                    5. Γ is a Harish-Chandra subalgebra
+  In this section we adapt the results from [DFO2] and [Ov] for the Yangians. In
+particular, we show that Γ is a Harish-Chandra subalgebra.
+14        VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+   We have the following analogue of the Harish-Chandra theorem for Lie algebras
+[Di].
+Proposition 5.1. Let x ∈ Yp (gl2 ) be such that xM (ℓ) = 0 for any ℓ ∈ P1 . Then
+x = 0.
+Proof.
+T      Since M (ℓ) = Yp (gl2 )/Iℓ it will be sufficient to show that the intersection
+    I
+  ℓ ℓ over all ℓ ∈ P1 is zero. By Theorem 3.4 (1), the Yangian Yp (gl2 ) isPfree as a
+right module over Γ. Let xi , i ∈ I be a basis of Yp (gl2 ) over Γ. If x = i∈I xi zi
+for some zi ∈ Γ then x ∈ Iℓ if and only if zi (ℓ) = 0 for all iT∈ I. Since P1 is dense
+in L in Zariski topology it follows immediately that if x ∈ ℓ Iℓ then zi = 0 for all
+i ∈ I and thus x = 0. This completes the proof.                                     
+   For any ℓ0 ∈ P1 the module M (ℓ0 ) has a basis ξ (k) , (k) ∈ Z p with the action
+of generators of Y(gl2 ) defined by formulas (4.7)–(4.9). We will relabel the basis
+elements of M (ℓ0 ) as ξℓ , ℓ ∈ ℓ0 + P0 . It follows from Theorem 4.5 that for every
+x ∈ Yp (gl2 ) there exists a finite subset Lx ⊆ P0 consisting of elements δ such that
+                                                 X
+(5.1)                                x ξℓ =              θ(x, ℓ, δ) ξℓ+δ
+                                                δ∈Lx
+
+for some nonzero coefficients θ(x, ℓ, δ) ∈ k. We can also regard these coeffi-
+cients as the values of the rational functions θ(x, b, δ) ∈ L at b = ℓ, where
+b = (b1 , . . . , bp , g1 , . . . , g2p ). Clearly, the set Lx is Sp × S2p -invariant. Note that for
+a given x this formula does not depend on ℓ0 .
+   We identify the (Γ−Γ)-bimodule structure on Yp (gl2 ) with the corresponding
+Γ ⊗ Γ-module structure. For any z ∈ Γ and any finite S ⊆ L introduce the following
+polynomial
+
+                                                                           |S|
+                               Y                                           X
+        FS,z = FS,z (z, b) =         (z ⊗ 1 − 1 ⊗ z(b + δ)) =                      z i ⊗ ai ,       ai ∈ L.
+                               δ∈S                                          i=0
+
+Proposition 5.2. ( cf. [DFO2, Lemma 25].) Let S be a finite Sp × S2p -invariant
+                                       q
+                                       X
+subset in L, q = |S|, z ∈ Γ and FS,z =   z i ⊗ ai , ai ∈ L. Then
+                                                        i=0
+     (1) ai ∈ Γ, i = 0, . . . , q.
+                                                                              q
+                                                                              X
+     (2) For any x ∈ Yp (gl2 ) such that Lx ⊆ S we have                              z i xai = 0.
+                                                                              i=0
+
+Proof. Since S is Sp × S2p -invariant, the coefficients of the polynomial FS,z are
+Sp × S2p -invariant and hence belong to Γ which proves (1). It is sufficient to check
+the statement (2) for S = Lx since FS,z = FS\Lx ,z FLx ,z . Let ℓ ∈ P1 and let ξℓ be
+a basis element of M (ℓ). Then
+                               q
+                               X                          q
+                                                          X
+                                     z i xai (ξℓ ) =            z i xai (ℓ)(ξℓ )
+                               i=0                        i=0
+                                     q
+                                     X                  X
+                                =          z i ai (ℓ)          θ(x, ℓ, δ)ξℓ+δ
+                                     i=0                δ∈Lx
+                              HARISH-CHANDRA MODULES FOR YANGIANS                                                15
+
+
+                                           X                   q
+                                                               X
+                                     =            θ(x, ℓ, δ)         ai (ℓ)(z i ξℓ+δ )
+                                           δ∈Lx                i=0
+
+
+        X                   q
+                            X                                   X
+  =            θ(x, ℓ, δ)         ai (ℓ)z(ℓ + δ)i ξℓ+δ =               θ(x, ℓ, δ)FLx ,z (z(ℓ + δ), ℓ)ξℓ+δ = 0
+      δ∈Lx                  i=0                                δ∈Lx
+
+since FLx ,z (z(ℓ + δ), ℓ) = 0 for every δ ∈ Lx . Applying Corollary 5.1 we obtain the
+statement of the proposition.                                                       
+
+  The main result of this section is the following theorem.
+
+Theorem 5.3. Γ is a Harish-Chandra subalgebra of Yp (gl2 ).
+
+Proof. Following [DFO2, Proposition 8], it is sufficient to show that a Γ-bimodule
+   (k)
+Γ tij Γ is finitely generated both as left and as right module for every possible
+                                                                                         (k)
+choice of indices i, j, k. This is obvious for i = j = 2 since t22 ∈ Γ. Suppose now
+                                    (k)      (k)
+that i = 2, j = 1. We have di t21 = t21 di by the centrality of di . It follows from
+                                                          (k)
+(4.8) that Lt(k) = {δi | i = 1, . . . , p}. Then for x = t21 we have
+                     21
+
+
+                                                          p−1
+                                                          X
+                              FLx ,t(i) = z p ⊗ 1 +              z l ⊗ al ,        al ∈ Γ
+                                      22
+                                                           l=0
+
+and
+                                                         p−1
+                                                         X
+                                           (i)    (k)         (i)    (k)
+(5.2)                                 (t22 )p t21 +         (t22 )l t21 al = 0
+                                                         l=0
+
+by Proposition 5.2 (2). Hence the elements
+                                       p
+                                       Y   (i)     (k)
+                                         (t22 )ki t21 ,               0 ≤ ki < p
+                                       i=1
+
+                             (k)
+are generators of Γt21 Γ as a right Γ-module. The cases i = 1, j = 2 and i = j = 1
+are treated similarly since
+
+        Lt(k) = {−δi | i = 1, . . . , p}                and          Lt(k) = { δi − δj | i, j = 1, . . . , p}.
+          12                                                           11
+
+
+               (k)
+Thus, Γtij Γ is finitely generated as a right Γ-module. The claim for the left
+module is proved by the application of the anti-automorphism of the algebra Yp (gl2 )
+defined in (4.17) where we note that every element of Γ is stable under this anti-
+automorphism.                                                                     
+
+Example 5.4. We give an explicit form of the relation (5.2) for the particular case
+i = k = p = 2. It reads
+                                                                  
+         (2) 2 (2)   (2) (2)   (2) (1)    (2) (2) 2    (2) (1)   (2)
+        t22 t21 − t22 t21 2 t22 + t22 + t21 t22 + t22 t22 + t22 = 0.
+16         VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+                    6. Universal representation of the Yangian
+   We will denote by K(Γ) the field of fractions of Γ.
+   Let MP0 (L) be the ring of locally finite matrices over L (with a finite number of
+non-zero elements in each row and each column) with the entries indexed by the
+elements of P0 . Any ℓ ∈ P1 defines the evaluation homomorphism χℓ : L → k,
+which induces the homomorphism of matrix algebras Φ(ℓ) : MP0 (L) → MP0 (k).
+For ℓ, ℓ′ ∈ P0 denote by eℓ ℓ′ the corresponding matrix unit in MP0 (L). The group
+W acts on MP0 (L) by the rule: if X = (Xℓ ℓ′ )ℓ,ℓ′ ∈P0 then
+(6.3)                 (w−1 · X)ℓ,ℓ′ = w−1 · Xw(ℓ)w(ℓ′ )               for   w ∈ W.
+     Define the map
+                                G : Yp (gl2 ) → MP0 (L)
+such that for any x ∈ Yp (gl2 ) and any ℓ ∈ P0 , G(x)ℓ ℓ′ = θ(x, b + ℓ, δ) if ℓ′ − ℓ = δ
+and 0 otherwise; see (5.1).
+Lemma 6.1.       (1) G is a representation of Yp (gl2 ).
+  (2) G(x) is W-invariant for any x ∈ Yp (gl2 ). In particular, G(x)0 0 ∈ K(Γ).
+  (3) If x = x(b1 , . . . , bp , g1 , . . . , g2p ) ∈ Γ and ℓ = (l1 , . . . , lp , 0, . . . , 0) ∈ P0 then
+                         G(x)ℓℓ = x(b1 + l1 , . . . , bp + lp , g1 , . . . , g2p ).
+      (4) G(Γ) consists of W-invariant diagonal matrices X such that X0 0 ∈ Γ. In
+          particular, any such matrix X is determined by X0 0 ∈ Γ.
+                                                              (k)
+Proof. Let T be the free associative algebra with generators e
+                                                             tij , where i, j = 1, 2
+and k = 1, . . . , p, and let
+                                                            e(k)    (k)
+                                π : T → Yp (gl2 ),          tij 7→ tij ,
+                                                                         (k)
+be the canonical projection. Define a homomorphism g : T → MP0 (L) by g(e
+                                                                        tij ) =
+     (k)
+G(tij ) for all suitable i, j, k. To prove (1) it is sufficient to show that g(Ker π) = 0.
+Suppose that f ∈ Ker π. Then Φ(ℓ)(g(f )) = 0 and thus g(f )ℓ′ ℓ′′ (ℓ) = 0 for any
+ℓ ∈ P1 . Since P1 is dense in Specm L we conclude that g(f ) = 0 implying (1).
+The image of G is W-invariant since this holds for the generators of Yp (gl2 ); see
+(4.7)–(4.9). For any σ ∈ Sp × S2p we have
+                    (σ −1 · G)(x)0 0 = σ −1 (G(x)σ(0) σ(0) ) = σ −1 (G(x)0 0 ).
+Hence G(x)0 0 is Sp × S2p -invariant proving (2). The statement (3) follows from
+(2) if we apply a shift by ℓ ∈ P0 to an arbitrary x ∈ Yp (gl2 ). The statement (4)
+follows immediately from (2) and (3).                                           
+   The composition rℓ = Φ(ℓ) ◦ G defines a representation of Yp (gl2 ). By the
+construction, this representation provides a matrix realization of the module M (ℓ);
+see Theorem 4.5.
+Proposition 6.2. The representation G : Yp (gl2 )−→ MP0 (L) is faithful.
+Proof. It is clear that                              \
+                                        Ker G ⊆            Ker rℓ .
+                                                    ℓ∈P1
+Hence it is sufficient to prove that the intersection of the kernels is zero. Let ℓ ∈ P1 .
+Then
+T     Ker rℓ = Ann M (ℓ) by definition and so Ker rℓ ⊆ Iℓ . However, the intersection
+ ℓ Iℓ over all ℓ ∈ P1 is zero, as was shown in the proof of Proposition 5.1.           
+                        HARISH-CHANDRA MODULES FOR YANGIANS                            17
+
+
+Corollary 6.3.       (1) Γ is a maximal commutative subalgebra in Yp (gl2 ).
+   (2) If for x ∈ Yp (gl2 ) the matrix G(x) is diagonal then x ∈ Γ.
+Proof. Consider an element x ∈ Yp (gl2 ) which commutes with every z ∈ Γ and such
+that x ∈/ Γ. Suppose that there exist ℓ, ℓ′ ∈ P0 , ℓ 6= ℓ′ such that G(x)ℓℓ′ 6= 0. There
+exists z ∈ Γ such that z(ℓ) 6= z(ℓ′ ) and so G(z)ℓℓ 6= G(z)ℓ′ ℓ′ by Lemma 6.1 (3). Then
+we have
+               G(xz)ℓℓ′ = G(x)ℓℓ′ G(z)ℓ′ ℓ′ = G(zx)ℓℓ′ = G(z)ℓℓ G(x)ℓℓ′
+which contradicts to the assumption. Therefore G(x) is diagonal. To prove the max-
+imality of Γ it is now sufficient to verify part (2) of the corollary. By Lemma 6.1 (2),
+we have G(x)0 0 = f /g ∈ K(Γ) with relatively prime f, g ∈ Γ. Suppose that g 6∈ k.
+By Lemma 6.1 (2) and (4), we derive that G(x)G(g) = G(f ) and hence xg = f by
+Proposition 6.2. This shows that x ∈ Γ due to Theorem 3.4 (1).                        
+
+  Denote by X0 the column matrix defined by
+                                   X
+                            X0 =        L eδ,0 ,
+                                              δ∈P0
+
+where 0 is the zero element of P0 . Note that the W-action (6.3) induces an action
+of Sp × S2p on the free L-module X0 .
+Corollary 6.4. Let p : MP0 (L)→ X0 be the natural projection. Then the compo-
+sition r = p ◦ G : Yp (gl2 ) → X0 is injective. Moreover, the map p commutes with
+the action of Sp × S2p and, in particular, r(Yp (gl2 )) is Sp × S2p -invariant.
+Proof. Note that for any x ∈ Yp (gl2 ) the matrix G(x) ∈ MP0 (L) is determined
+completely by its column p(G(x)). Thus r(x) = 0 implies G(x) = 0 and hence
+x = 0 since G is faithful. This proves that r is injective. The other statements
+follow immediately from the definitions and Lemma 6.1 (2).                    
+
+   As in Section 5, we identify the (Γ−Γ)-bimodule structure on Yp (gl2 ) with the
+corresponding action of Γ ⊗ Γ. Using the embedding (4.1), we can regard the
+elements of Γ ⊗ Γ as polynomials in two families of variables b and b′ which are
+Sp × S2p -invariant.
+Lemma 6.5. Suppose that x ∈ Yp (gl2 ), f ∈ Γ ⊗ Γ, and ℓ, ℓ′ ∈ P0 . Then
+
+                     G(f · x)ℓℓ′ = f (b + ℓ, b + ℓ′ )G(x)ℓℓ′ .
+                P                                        P
+Proof. Let f = i zi ⊗ zi′ ∈ Γ ⊗ Γ. Then G(f · x) = i G(zi )G(x)G(zi′ ) and hence,
+by Lemma 6.1 (4),
+                  X                                            X
+    G(f · x)ℓℓ′ =   G(zi )ℓ ℓ G(x)ℓ ℓ′ G(zi′ )ℓ′ ℓ′ = G(x)ℓ ℓ′   G(zi )ℓ ℓ G(zi′ )ℓ′ ℓ′ =
+                    i                                                i
+                         X
+              G(x)ℓ ℓ′        zi (b + ℓ)zi′ (b + ℓ′ ) = G(x)ℓ ℓ′ f (b + ℓ, b + ℓ′ ).
+                          i
+                                                                                       
+
+Lemma 6.6. Let S ⊆ L be an Sp × S2p -invariant set. Suppose that z ∈ Γ and
+x ∈ Yp (gl2 ) is such that G(x)ℓ ℓ′ = 0 for all ℓ, ℓ′ , ℓ − ℓ′ 6∈ S. Then FS,z · x = 0.
+18       VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+                          P
+Proof. Let F = FS,z =        i   z i ⊗ ai with ai ∈ L. If ℓ − ℓ′ ∈ S then
+                       G(F · x)ℓℓ′ = F (z(b + ℓ), b + ℓ′ ) G(x)ℓ ℓ′
+by Proposition 5.2(1) and Lemma 6.5. Furthermore, observe that h(z, b) = z ⊗ 1 −
+1 ⊗ z(b + ℓ − ℓ′) divides F and that h(z(b + ℓ), b + ℓ′) = 0. Here we regard the result
+of the evaluation of the product of type z ⊗ z ′ (b′ ) at b as the polynomial z(b)z ′ (b′ ).
+This gives F (z(b + ℓ), b + ℓ′ ) = 0. Hence, G(F · x) = 0 implying F · x = 0 by
+Proposition 6.2.                                                                         
+   Let S ⊆ P0 be a finite Sp ×S2p -invariant set. Define YS = {x ∈ Yp (gl2 ) | Lx ⊆ S}.
+Clearly YS is a Γ-subbimodule of Yp (gl2 ). We have the following characterization
+of the bimodule YS .
+Lemma 6.7. Let x ∈ Yp (gl2 ). Then
+  (1) x ∈ YS if and only if the condition G(x)ℓ,ℓ′ 6= 0, for some ℓ, ℓ′ ∈ P0 ,
+      implies that ℓ − ℓ′ ∈ S.
+  (2) FLx \S,z · x ∈ YS for any z ∈ Γ.
+  (3) YS is a finitely generated left (right) Γ-module and YS = D(YS ).
+  (4) Y{0} = Γ.
+Proof. The statement (1) follows from the definition of YS . Let F = FLx \S,z and
+y = F ·x. To prove (2) calculate the matrix element G(y)ℓℓ′ provided that ℓ−ℓ′ 6∈ S.
+By Lemma 6.5,
+                  G(y)ℓℓ′ = G(F · x)ℓℓ′ = F (z(b + ℓ), b + ℓ′ )G(x)ℓℓ′ .
+If ℓ − ℓ′ 6∈ Lx then G(x)ℓℓ′ = 0 and hence G(y)ℓℓ′ = 0. Suppose now that ℓ − ℓ′ ∈
+Lx \ S. Then
+                                      Y
+              F (z(b + ℓ), b + ℓ′ ) =   (z(b + ℓ) − z(b + ℓ′ + δ)) = 0.
+                                        δ∈Lx \S
+
+This proves (2).
+   Let x ∈ D(YS ) and suppose that z ∈ Γ is such that z 6= 0 and zx ∈ YS . Since
+G(zx)ℓℓ′ = z(b + ℓ)G(x)ℓℓ′ by Lemma 6.5, we have G(zx)ℓℓ′ = 0 if and only if
+G(x)ℓℓ′ = 0 implying that x ∈ YS . Hence YS = D(YS ).
+   Consider r(YS ) as a Γ-submodule of X0 where r : Yp (gl2 ) → P  X0 is defined
+in Corollary 6.4. Then r(YS ) belongs to the free L-submodule        ℓ∈S Leℓ 0 of
+X0 of finite rank. Hence L · r(YS ) is finitely generated L-module. Without
+loss of generality we can assume that this module is generated by the elements
+r(x1 ), . . . , r(xs ) ∈ r(YS ). Since D(YS ) = YS we have
+                                         X
+                                          s     
+                                       D     Γxi ⊆ YS .
+                                          i=1
+           S
+Fix x ∈ Y . Then
+                                        s
+                                        X
+                              r(x) =           ti r(xi ),        ti ∈ L.
+                                         i=1
+Note that for any y ∈ YS and any σ ∈ Sp × S2p we have σ · r(y) = r(y) since S is
+Sp × S2p -invariant. Hence
+                                 X                            X      s
+                                                                     X
+           p! (2p)! r(x) =               σ · r(x) =                         (σ · ti ) σ · r(xi )
+                             σ∈Sp ×S2p                      σ∈Sp ×S2p i=1
+                     HARISH-CHANDRA MODULES FOR YANGIANS                               19
+
+
+which can be rewritten as
+                              Xs                                 X
+                         1
+(6.4)       r(x) =                ui r(xi ),   where ui =                 σ · ti .
+                     p! (2p)! i=1
+                                                              σ∈Sp ×S2p
+
+Since each ui is Sp × S2p -invariant, it belongs to the field of fractions K(Γ) for all
+i = 1, . . . , s. Multiplying both parts of (6.4) by the common denominator of the ui
+we obtain from Corollary 6.4 that
+                          Xs                           Xs    
+                   x∈D        Γxi ,      implying      D     Γxi = YS .
+                        i=1                             i=1
+
+Due to Corollary 3.5, we can conclude that YS is finitely generated over Γ. This
+proves (3). By the definition of YS , x ∈ Y{0} if and only if G(x) is diagonal. Hence
+x ∈ Γ by Corollary 6.3 (2).                                                        
+
+                  7. Category of Harish-Chandra modules
+   We will show in this section that each character of Γ extends to a finite number
+of irreducible Harish-Chandra modules over Yp (gl2 ). This is an analogue of the
+corresponding result in the case of a Lie algebra gln which was conjectured in
+[DFO1] and proved in [Ov]. In this section we use the techniques of [DFO2] and
+[Ov].
+   Since Γ is a Harish-Chandra subalgebra of Yp (gl2 ) we can apply all the state-
+ments from Section 2.1. Set A = AYp (gl2 ),Γ . Then by Proposition 2.1, the categories
+A-modd and H(Yp (gl2 ), Γ) are equivalent. Also the full subcategory HW (Yp (gl2 ), Γ)
+consisting of weight modules is equivalent to the module category AW -mod. If
+ℓ ∈ L then the category Rℓ = HW (Yp (gl2 ), Γ, D(ℓ)) is equivalent to the block
+AW (D(ℓ))-mod of the category AW -mod.
+   Let m, n ∈ Specm Γ, ℓm , ℓn ∈ L are such that ı∗ (ℓm ) = m and ı∗ (ℓn ) = n; see
+(4.2). Set
+                S(m, n) = {σ1 ℓn − σ2 ℓm | σ1 , σ2 ∈ Sp × S2p } ∩ P0 .
+Consider the following subset in L
+                P2 = {ℓ ∈ L | ℓi − ℓj 6∈ Z \ {0},       i, j = 1, . . . , p}
+and put Ω = ı∗ (P2 ). We shall also be using the set A(m, n) introduced in (2.2).
+Proposition 7.1.         (1) For any m, n ∈ Specm Γ and any m, n ≥ 0 we have
+                      Yp (gl2 ) = YS + nn Yp (gl2 ) + Yp (gl2 )mm ,
+        where S = S(m, n).
+    (2) A(m, n) is finitely generated as a left Γn -module and as a right Γm -module.
+        In particular, the algebra Γ is big in every n ∈ Ob A.
+    (3) If S(m, n) = {0} then A(m, n) is generated as a left Γn -module and as a
+        right Γm -module by the image of 1 in A(m, n).
+    (4) If S(m, m) = {0} then m ∈ Ω. Moreover, A(m, m) is a quotient algebra
+        of Γm and m extends uniquely to an irreducible Yp (gl2 )-module.
+    (5) If ℓm ∈ P1 then A(m, m) = Γm .
+    (6) Let ℓ ∈ P1 , m = ı∗ (ℓ) and n = ı∗ (ℓ + δi ), i ∈ {1, . . . , p}. Then A(m, n) is
+        a free of rank 1 as a right Γm -module and as a left Γn -module.
+20         VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+Proof. (1) We shall show that for any x ∈ Yp (gl2 ) and any k > 1 there exists xk ∈
+YS such that
+
+                                              k
+                                              X
+(7.1)                            x ∈ xk +           nk−i xmi .
+                                              i=0
+
+The statement will follow if we choose k = m + n + 1. We will use induction on
+k. Suppose that k = 1. If Lx ⊆ S then x ∈ YS and there is nothing to prove.
+Furthermore, by the definition of the set S for any ℓ ∈ Lx \ S the Sp × S2p -orbits
+of ℓn and ℓm + ℓ are disjoint. Hence there exists z ∈ Γ such that z(ℓn ) 6= z(ℓm + ℓ)
+for any ℓ ∈ Lx \ S. Let F = FLx \S,z . Then
+                                    Y
+                  F (z(ℓn ), ℓm ) =      (z(ℓn ) − z(ℓm + ℓ)) 6= 0.
+                                    ℓ∈Lx \S
+
+We can assume that F (z(ℓn ), ℓm ) = 1. Hence we obtain that F = 1 + u where
+u ∈ n ⊗ Γ+ Γ ⊗ m. It follows from Lemma 6.7 (2), that x1 = F · x belongs to YS .
+Hence we have
+     x1 = (1 + u) · x ∈ x + n x Γ + Γ x m           and thus        x ∈ x1 + n x Γ + Γ x m.
+This proves the assertion in the case k = 1. Assume that (7.1) holds for some k ≥ 1.
+Then
+             k
+             X            k
+                          X                     k
+                                                X              k+1
+                                                               X
+ x ∈ xk +      nk−i (xk +   nk−j xmj )mi ⊆ xk +   nk−i xk mi +     nk+1−i xmi .
+             i=0           j=0                             i=0               i=0
+
+                                                          k
+                                                          X
+Since YS is a Γ-bimodule we conclude that xk +                  nk−i xk mi ⊆ YS which implies
+                                                          i=0
+the statement (1). In particular, we have proved that
+                                               k
+                                               X
+(7.2)                        xk+1 − xk ∈             nk−i YS mi .
+                                               i=0
+
+   (2) We prove the statement for the case of left module, the case of right module
+can be treated analogously. By (1) the image x of every x ∈ YS in A(n, m) is
+the limit of the sequence (xk )k>1 , xk ∈ YS . Let y1 , . . . , ym be a finite system of
+generators of YS as a left Γ-module which exists by Lemma 6.7 (3). Then for every
+N > 1 and every i = 1, . . . , m there exists Ni such that
+                                               m
+                                               X
+                                  yi m N ⊆           nNi yj .
+                                               j=1
+                                      T
+Since Γ is noetherian we have that        k   nk YS = 0 and hence there exists the maxi-
+mum value dN such that
+                                               m
+                                               X
+                                  yi m N ⊆           ndN yj
+                                               j=1
+                                                              S
+                                T dNS →k ∞ while N → ∞ since Y Risk aSfinitely
+for all i = 1, . . . , m. Moreover,
+generated right Γ-module and k Y m = 0. By (7.2), xk+1 − xk ∈ n Y where
+                    HARISH-CHANDRA MODULES FOR YANGIANS                             21
+
+
+Rk = min{[k/2], d[k/2] }. We have
+                                          ∞
+                                          X
+                             x = x1 +           (xk+1 − xk )
+                                          k=1
+and thus
+                                  ∞
+                                  X                m
+                                                   X
+                            x∈          nRk YS ⊆            Γn y l .
+                                  k=1                 l=1
+Note that the first sum is well defined since Rk → ∞ when k → ∞. We conclude
+that A(n, m) is finitely generated as a left Γn -module. This completes the proof of
+(2).
+   (3) By Lemma 6.7 (4), Y{ 0} = Γ. Hence A(m, n) is generated (both as a left
+and as a right module) by the image of 1 ∈ Γ by (1).
+   (4) By (3), A(m, m) is 1-generated as a left Γm -module. Then the k-algebra
+homomorphism
+                        ı̂m : Γm →A(m, m),        z 7→ z · 1m ,
+where 1m is a unit morphism, is an epimorphism which shows that A(m, m) is a
+quotient algebra of Γm . The uniqueness of the extension follows from the uniqueness
+of the simple A(m, m)-module and [DFO2, Theorem 18].
+   (5) Let ℓ = ℓm ∈ P1 . Then S(m, m) = ∅ and A(m, m) ≃ Γm /Jm by (4) and thus
+Jm acts trivially on M (m) in any Harish-Chandra module M . Since ℓ ∈ P1 then for
+                                                                k
+any k > 0 there exists a canonical projection π̃k : L−→ L/(ℓ) , where (ℓ)k = ℓk L.
+                                                                                  k
+It induces a homomorphism of the matrix algebras πk : MP0 (L) −→ MP0 (L/(ℓ) )
+and defines a Harish-Chandra module by the following composition
+                              G                   π
+                                             k
+                   Yp (gl2 )−−−−−→MP0 (L) −−−− −→ MP0 (L/(ℓ)k ).
+For any nonzero x ∈ Γ there exists k > 0 such that x 6∈ (ℓ)k and hence πk (G(x)0,0 ) =
+x + (ℓ)k 6= 0. Therefore, there exists a Harish-Chandra module M where x acts
+nontrivially on M (m) implying that Jm = 0. This completes the proof.
+   (6) The proof is analogous to the proof of (5). Let z ∈ Γ, z 6= 0. Suppose
+A(m, n)z = 0. Then by the construction of the equivalence F : A-modd −→ H(U, Γ)
+for any Harish-Chandra module M and any x ∈ Yp (gl2 ) the linear operator xz on
+M induces the zero map between M (m) and M (n). It is sufficient to construct
+a Harish-Chandra module where this is failed. For k ≥ 1 consider as in (5) the
+composition πk ◦ G : Yp (gl2 ) → MP0 (L/(ℓ)k ). It defines a Harish-Chandra module
+structure on a free L/(ℓ)k -module
+                                     X
+                                X=        L/(ℓ)k eδ,0 .
+                                        δ∈P0
+
+Consider x ∈ Yp (gl2 ) such that G(x)δi 0 6= 0 for some i. Then
+                    G(xz)δi 0 = G(x)δi 0 G(z)00 = G(x)δi 0 z 6= 0.
+Choose k such that G(xz)δi 0 6∈ (ℓ)k . Hence (πk · G)(xz)δi ,0 6= 0 and the linear
+operator xz induces a non-zero map between X(m) = L/(ℓ)k and X(n) = L/(ℓ +
+δi )k . The contradiction shows that A(m, n)z 6= 0. The case zA(m, n) = 0 is treated
+in a similar manner.                                                              
+  Now we are in a position to state the main result of this section which follows
+immediately from Lemma 2.3 and Proposition 7.1 (2).
+22       VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+Theorem 7.2. Let m ∈ Specm Γ. Then the left ideal Yp (gl2 )m is contained in
+finitely many maximal left ideals of Yp (gl2 ). In particular, m extends to a finitely
+many (up to an isomorphism) irreducible Yp (gl2 )-modules and for each such module
+M , dim M (n) < ∞ for all n ∈ Specm Γ.
+
+                 8. Category of generic Harish-Chandra modules
+   In this section we study a full subcategory of generic modules in HW (Yp (gl2 ), Γ).
+We give a complete description of irreducible modules and indecomposable modules
+in tame blocks of this category.
+Lemma 8.1. Let ℓ ∈ P1 , ℓ = (β, γ), m = ı∗ (ℓ) ∈ Specm Γ, n = ı∗ (ℓ + δi ),
+i ∈ {1, . . . , p}. If βi 6∈ {γ1 , . . . , γ2p } then the objects of A represented by m and n
+are isomorphic.
+Proof. Choose z1 , z2 ∈ Γ such that
+             z1 (ℓ + δj ) = δij ,        z2 (ℓ + δi − δj ) = δij ,           j = 1, . . . , p.
+             (1)     (1)
+Set z = z2 t12 z1 t21 . Then G(z) is diagonal by Lemma 6.5 and hence z ∈ Γ by
+Corollary 6.3 (2). We will show that the image of z in Γm is invertible. Clearly,
+this is equivalent to the fact that z(ℓ) 6= 0. Formulas (4.7)–(4.9) imply that
+z(ℓ) = γ(−βi ) 6= 0 by assumption. Denote by T1 (respectively T2 ) the genera-
+tor of Γm − Γn (respectively, Γn − Γm )-bimodule A(m, n) (respectively, A(n, m));
+see Proposition 7.1 (6). Then
+                                  (1)                        (1)    ′
+                              z2 t12 = zm T2 ,         z1 t21 = T1 zm
+                ′                                ′
+for some zm , zm   ∈ Γm and hence z = zm T2 T1 zm  . Since z(ℓ) 6= 0 it follows that
+  ′                                      −1    ′ −1
+zm (ℓ) 6= 0, zm (ℓ) 6= 0 and so T2 T1 = zm z(zm ) is invertible in Γm . A similar
+argument shows that T1 T2 is invertible in Γn . Therefore the objects m and n are
+isomorphic.                                                                       
+
+Corollary 8.2. Let ℓ ∈ P1 , ℓ = (β, γ), βi − γj 6∈ Z for all i, j. Then the category
+H(Yp (gl2 ), Γ, D(ℓ)) is hereditary. Moreover,
+                           dim Ext1H(Yp (gl2 ),Γ,D(ℓ)) (L(ℓ), L(ℓ)) = 3p.
+
+Proof. Let m = ı∗ (ℓ) ∈ Specm Γ. By Lemma 8.1 and our assumptions all objects
+of the category A(D(ℓ)) are isomorphic and hence the category A(D(ℓ))-modd
+is equivalent to the category of finite-dimensional modules over Γm . Applying
+Proposition 2.1 we conclude that the category H(Yp (gl2 ), Γ, D(ℓ)) is hereditary.
+Since Γm is an algebra of power series in 3p variables the statement about dim Ext1
+follows.                                                                         
+
+8.1. Category of generic weight modules. Let us fix
+      ℓ ∈ P1 ,      m = ı∗ (ℓ),         n = ı∗ (ℓ + δi ) ∈ Specm Γ,                i ∈ {1, . . . , p}.
+Then AW (m, m) ≃ Γm /Γm m ≃ k by Proposition 7.1 (5) and so, dim AW (m, n) = 1
+by Proposition 7.1 (6). We will give a direct construction of the category AW (D(ℓ)).
+   We shall keep the notation
+         ℓ = (β, γ),         β = (β1 , . . . , βp ) ∈ kp ,         γ = (γ1 , . . . , γ2p ) ∈ k2p .
+                      HARISH-CHANDRA MODULES FOR YANGIANS                               23
+
+
+Since ℓ ∈ P1 then βi − βj ∈/ Z for i 6= j. Consider the following category Kℓ :
+Ob (Kℓ ) = Z p and the morphisms are generated by
+               fi (k) : (k) 7→ (k + δi )     and         ei (k) : (k) 7→ (k − δi ),
+                                                     p
+where i = 1, . . . , p and (k) = (k1 , . . . , kp ) ∈ Z with the following relations:
+                   fj (k + δi ) fi (k) = fi (k + δj ) fj (k),
+                   ej (k − δi ) ei (k) = ei (k − δj ) ej (k),
+                   ei (k + δj ) fj (k) = fj (k − δi ) ei (k)      for i 6= j,
+                    ei (k + δi ) fi (k) = −γ(−βi − ki ) 1(k) ,
+                    fi (k − δi ) ei (k) = −γ(−βi − ki + 1) 1(k) .
+It follows immediately from Lemmas 4.1 and 4.3 that any module in the category Rℓ
+can be naturally viewed as a module over the category Kℓ which defines a functor
+F : Rℓ → Kℓ -mod. Consider the cyclic subalgebra Cℓ (a) = HomKℓ (a, a) for any
+a ∈ Z p . Clearly, Cℓ (a) ≃ k for any a ∈ Z p due to the defining relations of Kℓ . For
+any a = (k1 , . . . , kp ) ∈ Z p we can construct a universal module M (ℓ, a) ∈ Kℓ -mod.
+Consider k as a Cℓ (a)-module with
+                          ei (k + δi ) fi (k) 1 = −γ(−βi − ki ),
+                          fi (k − δi ) ei (k) 1 = −γ(−βi − ki + 1).
+Let Aℓ,a be an algebra of paths in Kℓ originating in a. Now construct a Z p -graded
+Kℓ -module
+                             M (ℓ, a) = Aℓ,a ⊗Cℓ (a) k.
+Clearly, all graded components of M (ℓ, a) are 1-dimensional and M (ℓ, a)a = 1a ⊗ k.
+A module M (ℓ, a) contains a unique maximal Z p -graded submodule which inter-
+sects M (ℓ, a)a trivially and hence has a unique irreducible quotient L(ℓ, a) with
+L(ℓ, a)a ≃ k and dim L(ℓ, a)b ≤ 1 for all b ∈ Z p . If V is another irreducible Kℓ -
+module with Va 6= 0 then there exists a non-trivial Cℓ (a)-homomorphism from k
+to Va which can be extended to an epimorphism from M (ℓ, a) to V . Since V is
+irreducible we conclude that V ≃ L(ℓ, a).
+   Obviously, we can view M (ℓ) as a module over the category Kℓ with a natural
+action of the morphisms of Kℓ and F (M (ℓ)) = M (ℓ, β). Thus a Kℓ -module M (ℓ, β)
+can be extended to a Yp (gl2 )-module M (ℓ). Moreover, the functor F preserves the
+submodule structure of M (ℓ). In particular, F (L(ℓ)) = L(ℓ, β).
+Proposition 8.3. If ℓ ∈ P1 then the categories Kℓ -mod and Rℓ are equivalent.
+Proof. Let ℓ = (β, γ). We already have the functor F : Rℓ → Kℓ -mod. Suppose
+that V ∈ Kℓ -mod. We want to show that V can be extended to a Yp (gl2 )-module.
+Fix v ∈ V(k) \ {0}. Let W ⊆ V be a submodule generated by v. Then W(k) = kv
+and there is an epimorphism from M (ℓ, a) to W , where a = (k1 , . . . , kp ), which
+maps 1a ⊗ 1 to v. Since F (M (ℓ′ )) = M (ℓ, a), where ℓ′ = (β + a, γ), then W can be
+extended to a corresponding quotient of M (ℓ′ ). Since v was an arbitrary element
+of V we conclude that V can be extended to a Yp (gl2 )-module and will denote
+that module by G(V ). Clearly, G defines a functor from Kℓ -mod to Rℓ (action on
+morphisms is obvious). One can easily see that the functors F and G define an
+equivalence between the categories Kℓ -mod and Rℓ .                               
+24          VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+8.2. Support of irreducible generic weight modules. To complete the classi-
+fication of irreducible modules we have to know when two irreducible modules L(ℓ)
+and L(ℓ′ ) are isomorphic. For that we need to describe the support Supp L(ℓ).
+   We shall say that the weight subspaces M (ℓ)ψ and M (ℓ)ψ+δi are strongly iso-
+morphic if γ(−ψi ) 6= 0 where ψ = (ψ1 , . . . , ψp ). This implies
+
+       fi (ψ1 , . . . , ψp ) M (ℓ)ψ 6= 0 and ei (ψ1 , . . . , ψi + 1, . . . , ψp ) M (ℓ)ψ+δi 6= 0.
+
+  The statement below follows immediately from the relations in Kℓ (cf. also
+Corollary 4.4).
+
+Lemma 8.4. If M (ℓ)ψ and M (ℓ)ψ+δi are strongly isomorphic, then M (ℓ)ψ±δj
+and M (ℓ)ψ+δi ±δj are strongly isomorphic for all i, j = 1, . . . , p such that i 6= j.
+Moreover, if
+
+               fi (ψ1 , . . . , ψp ) M (ℓ)ψ = 0          or       ei (ψ1 , . . . , ψp ) M (ℓ)ψ = 0
+
+then
+                         fi (ψ1 , . . . , ψj ± 1, . . . , ψp ) M (ℓ)ψ±δj = 0            or
+                          ei (ψ1 , . . . , ψj + 1, . . . , ψp ) M (ℓ)ψ±δj = 0,
+respectively, for all j 6= i.
+
+     Let ai , a′i ∈ Z ∪ {±∞}, ai ≤ a′i , i ∈ {1, . . . , p}. Denote
+
+      P (a1 , . . . , ap , a′1 , . . . , a′p ) = {(x1 , . . . , xp ) ∈ Z p | ai ≤ xi ≤ a′i , i = 1, . . . , p},
+
+a parallelepiped in Z p . Note that some faces of the parallelepiped can be infinite
+in some directions. In particular, in the case ai = −∞, a′i = ∞ for all i, the
+parallelepiped coincides with Z p .
+
+Theorem 8.5. For any irreducible weight module L(ℓ) over Yp (gl2 ) there exist
+elements ai , a′i ∈ Z ∪ {±∞}, ai ≤ a′i , i ∈ {1, . . . , p} such that
+
+                                Supp L(ℓ) = P (a1 , . . . , ap , a′1 , . . . , a′p ).
+
+Proof. Let ℓ = (β, γ) ∈ P1 . Fix i ∈ {1, . . . , p}. If γ(−βi + k) 6= 0 for all k ∈ Z then
+
+                                 (k1 , . . . , ki + m, . . . , kp ) ∈ Supp L(ℓ)
+
+as soon as (k1 , . . . , kp ) ∈ Supp L(ℓ). This follows immediately from Lemma 8.4. In
+this case we set ai = −∞ and a′i = ∞. Now let γ(−βi + k) = 0 for some k ∈ Z.
+Let m ≥ 0 be the smallest integer (if it exists) such that γ(−βi − m) = 0 and let
+n ≤ 0 be the largest integer (if it exists) such that γ(−βi − n + 1) = 0. It follows
+from Lemma 8.4 that
+
+              Supp L(ℓ) ∩ {β + kδi | k ∈ Z} = {β + nδi , . . . , β, . . . , β + mδi }.
+
+If β + sδj ∈ Supp L(ℓ), j 6= i then
+
+Supp L(ℓ) ∩ {β + sδj + kδi | k ∈ Z} = {β + sδj + nδi , . . . , β + sδj , . . . , β + sδj + mδi }.
+
+In this case we set ai = βi + n and a′i = βi + m. The statement of the theorem now
+follows.                                                                         
+                        HARISH-CHANDRA MODULES FOR YANGIANS                                           25
+
+
+8.3. Indecomposable generic weight modules. Fix ℓ = (β, γ) ∈ P1 . A full
+subcategory S ⊆ Kℓ is called a skeleton of Kℓ provided the objects of S are pairwise
+non-isomorphic and any object of Kℓ is isomorphic to some object of S. In this
+case the categories of Kℓ -mod and S-mod are equivalent.
+   For each i ∈ {1, . . . , p} consider a set Ii = {k ∈ Z | γ(−βi − k) = 0}. Define a
+category Sℓ as a k-category with the set of objects
+                            S0 = {0, . . . , |I1 |} × · · · × {0, . . . , |Ip |}
+and with morphisms generated by
+                      k
+                     r(i1 ,...,ip )
+                                    : (i1 , . . . , ip ) 7→ (i1 , . . . , ik + 1, . . . , ip ),
+                    sk(j1 ,...,jp ) : (j1 , . . . , jp ) 7→ (j1 , . . . , jk − 1, . . . , jp ),
+where k ∈ {1, . . . , p} is such that Ik 6= ∅, ik < |Ik |, jk > 0, subject to the relations:
+
+                                          k
+               sk(i1 ,...,ik +1,...,ip ) r(i1 ,...,ip )
+                                                           k
+                                                        = r(i           sk
+                                                             1 ,...,ip ) (i1 ,...,ik +1,...,ip )
+                                                                                                 =0
+and
+                                           r
+                          xk(a1 ,...,ap ) y(e1 ,...,ep )
+                                                            r
+                                                         = y(c            xk
+                                                               1 ,...,cp ) (e1 ,...,ep )
+
+for all k 6= r and all possible x, y ∈ {r, s} and all ai , ei , ci , with 1 ≤ i ≤ p for which
+this equality makes sense.
+   It follows from the construction that Sℓ is the skeleton of the category Kℓ . Note
+that the corresponding algebra is finite-dimensional. In particular, Sℓ is semisimple
+when Ik = ∅ for all 1 ≤ k ≤ p, i.e. when γ(−βk + r) 6= 0 for all k ∈ Z and all
+i = 1, . . . , p. Hence it is sufficient to describe all indecomposable modules over Sℓ .
+   Fix a ∈ S0 and define a simple Sℓ -module Sa such that Sa (b) = δa,b k for all
+b ∈ S0 and all morphisms are trivial. Since Sℓ defines a finite-dimensional algebra
+we have the following
+Proposition 8.6. Any simple module over Sℓ is isomorphic to Sa for some a ∈ S0 .
+   This is another confirmation of the fact that all weight spaces in any irreducible
+generic weight Yp (gl2 )-module are 1-dimensional. But this need not be the case
+for indecomposable modules. We restrict ourselves to a full subcategory Rℓf ⊆ Rℓ
+which consists of weight modules V with dim Vψ < ∞ for all ψ ∈ Supp V . We will
+establish the representation type of the category Rℓf (finite, tame or wild). For the
+necessary definitions we refer the reader to [Dr].
+   To establish the representation type of the category Rℓf it is sufficient to con-
+sider the category Sℓ -modf of modules over the category Sℓ with finite-dimensional
+weight spaces. Denote Xℓ = {k ∈ {1, . . . , p} | Ik 6= ∅}.
+8.3.1. Indecomposable modules in the case |Xℓ | = 1. In this section we describe
+all indecomposable modules over Sℓ in the case |Xℓ | = 1. Let Xℓ = {i} and let
+|Ii | = r > 0. In this case the category Sℓ has the following quiver A with the
+relations:
+                  1 a1 2       r ar r + 1
+                  ◦ -◦ . . . ◦  - ◦                    ai b i = b i ai = 0
+                       b1         br
+   We denote by Si , i ∈ {1, . . . , r+1}, the simple module corresponding to the point
+i. These modules correspond to all irreducible modules in Rℓf by Proposition 8.6.
+26         VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+Now describe the remaining indecomposable modules for the quiver above. Fix
+integers 1 ≤ k1 < k2 ≤ r + 1 and a function
+                              ξk1 ,k2 : {k1 , k1 + 1, . . . , k2 } → {0, 1}.
+Define the module M = M (k1 , k2 , ξk1 ,k2 ) as follows: M (i) = kei , k1 ≤ i ≤ k2 and
+M (i) = 0 otherwise. Furthermore,
+                       ai ei = ei+1 ,      bi ei+1 = 0         if     ξk1 ,k2 (i) = 1
+
+and
+
+                       ai ei = 0,       bi ei+1 = ei      if        ξk1 ,k2 (i) = 0,
+for all 1 ≤ i < k2 . The proof of the following proposition is standard; see e.g. [GR].
+Proposition 8.7. The modules Si for 1 ≤ i ≤ r + 1 and M (k1 , k2 , ξk1 ,k2 ) with
+1 ≤ k1 < k2 ≤ r + 1 and
+                              ξk1 ,k2 : {k1 , k1 + 1, . . . , k2 } → {0, 1},
+exhaust all non-isomorphic indecomposable modules for A.
+8.3.2. Indecomposable modules in the case |X|ℓ = 2. In this section we describe the
+indecomposable modules for Sℓ when |X|ℓ = 2 and |Ik | = 1 for each k ∈ Xℓ . Then
+Sℓ is isomorphic to the following category B considered in [BB].
+
+                          a1
+                           -
+                    1 ◦     ◦2
+                          b1                   ai bi = bi ai = 0,          i = 0, . . . , 3,
+                        6    6
+     B:             b 0 a0 a2 b 2              ai aj = bl bm for any i, j, l, m ∈ {0, 1, 2, 3},
+                       ? b3- ?                 where possible.
+                    0 ◦ a   ◦3
+                           3
+
+
+By Proposition 8.6, this category has four non-isomorphic simple modules Si where
+i ∈ {0, 1, 2, 3}, with the support in the given point i. The indecomposable modules
+were described in [BB]. For the sake of completeness we repeat here this classifica-
+tion.
+   We will treat the objects of B as elements of Z/4Z. Consider the following three
+families of non-simple indecomposable modules.
+Finite family. Fix i ∈ {0, 1, 2, 3} and define the B-module Mi such that Mi (j) = kej
+for each j = 0, 1, 2, 3 and
+       ai ei = ei+1 ,        ai+1 ei+1 = ei+2 ,        bi−1 ei = ei−2 ,          bi−2 ei−1 = ei−2
+while uj ek = 0 for all other cases of u ∈ {a, b} and j, k = 0, . . . , 3. Obviously, Mi is
+indecomposable module for any i.
+Infinite discrete families. Let n ∈ N, n > 1, and j ∈ Z 4 . Define a B-module
+Mn,j,1 (respectively, Mn,j,2 ) as follows. Consider n elements e1 , . . . , en . A k-basis
+of the vector space Mn,j,1 (l) (respectively, Mn,j,2 (l)) is the set of ek such that
+j + k − 1 ≡ l(mod 4). The elements al and bl−1 act as follows:
+                
+                    ek+1 ,   if l is even (resp., odd), k < n and j + k − 1 ≡ l(mod 4);
+     al e k =
+                    0,       otherwise.
+                           HARISH-CHANDRA MODULES FOR YANGIANS                            27
+
+
+
+              
+                  ek−1 ,     if l is even (resp., odd), k > 1 and j + k − 1 ≡ l(mod 4);
+  bl−1 ek =
+                  0,         otherwise.
+All modules Mn,j,1 and Mn,j,2 , n > 1, 0 ≤ j ≤ 3 are non-isomorphic indecomposable
+B-modules.
+Infinite continuous families. For each λ ∈ k, λ 6= 0, and d ∈ Z, d > 0 define the
+B-modules Md,λ,1 and Md,λ,2 as follows. Set
+                   Md,λ,1 (i) = kd ,
+                  Md,λ,1 (a0 ) = Md,λ,1 (a2 ) = Md,λ,1 (b1 ) = Id ,
+                  Md,λ,1 (b0 ) = Md,λ,1 (b2 ) = Md,λ,1 (a1 ) = Md,λ,1 (a3 ) = 0,
+                  Md,λ,1 (b3 ) = Jd,λ
+and
+                   Md,λ,2 (i) = kd ,
+                  Md,λ,2 (b0 ) = Md,λ,2 (b2 ) = Md,λ,2 (a1 ) = Id ,
+                  Md,λ,2 (a0 ) = Md,λ,2 (a2 ) = Md,λ,2 (b1 ) = Md,λ,2 (b3 ) = 0,
+              Md,λ,2 (a3 ) = Jd,λ ,
+where Jd,λ is the Jordan cell of dimension d with the eigenvalue λ.
+  All modules Md,λ,k , k = 1, 2 are indecomposable and corresponding indecom-
+posable modules in Rℓf have all weight spaces of dimension d.
+Proposition 8.8. ( [BB], Proposition 3.3.1.) The modules Si , Mi , Mn,i,1 , Mn,i,2 ,
+Md,λ,1 , Md,λ,2 where 0 ≤ i ≤ 3, d is a positive integer, λ ∈ k, λ 6= 0, and n ≥ 2 is
+an integer, constitute an exhaustive list of pairwise non-isomorphic indecomposable
+B-modules.
+  The following theorem describes the representation type of Rℓf .
+Theorem 8.9.         (1) If |Xℓ | = 0 then Rℓf is a semisimple category with a unique
+       indecomposable (=irreducible) module;
+  (2) If |Xℓ | = 1 then Rℓf has finite representation type;
+  (3) If |Xℓ | = 2 then Rℓf has tame representation type if and only if |Ik | = 1 for
+       all k ∈ X. Otherwise, Rℓf has wild representation type;
+   (4) If |Xℓ | > 2 then Rℓf has wild representation type.
+Proof. In the case when |Xℓ | = 1 all indecomposable modules for Sℓ are described
+in Proposition 8.7. Hence Rℓf has the finite representation type. If |Xℓ | = 2 and
+|Ik | = 1 for each k ∈ X then all indecomposable modules for Sℓ are described in
+Proposition 8.8. It follows from the definition that Rℓf has the tame representation
+type in this case. If |Ik | > 1 for at least one k then it is easy to construct a family
+of indecomposable modules that depends on two continuous parameters. Hence,
+in this case Rℓf has the wild representation type. Suppose now that |Xℓ | > 2.
+Then Sℓ contains a full subcategory of wild representation type considered in [BB,
+Theorem 1]. We immediately conclude that Rℓf has the wild representation type.
+This completes the proof.                                                             
+Corollary 8.10.      (1) If |Xℓ | = 0 then the category Rℓ is a semisimple category
+       with a unique indecomposable module.
+28        VYACHESLAV FUTORNY, ALEXANDER MOLEV, AND SERGE OVSIENKO
+
+
+     (2) If |Xℓ | = 1 then Rℓ has finite representation type with indecomposable mod-
+         ules as in Proposition 8.7.
+Proof. Since cases |Xℓ | ≤ 1 correspond to the finite representation type then the
+corresponding categories do not admit infinite-dimensional indecomposable mod-
+ules by [A] and hence every indecomposable module belongs to Rℓf .              
+
+                                    Acknowledgment
+   The first author is a Regular Associate of the ICTP and is supported by the
+CNPq grant (Processo 300679/97-1). The first author is grateful to the University
+of Sydney for support and hospitality. The second and the third authors are grateful
+to FAPESP for the financial support (Processos 2001/13973-0 and 2002/01866-7)
+and to the University of São Paulo for the warm hospitality during their visits.
+
+                                         References
+[A] Auslander M., Representation theory of artin algebras II , Comm. Algebra 2 (1974), 269–310.
+[BB] Bavula V., Bekkert V., Indecomposable representations of generalized Weyl algebras,
+     Comm. Algebra, 28 (2000), 5067-5100.
+[BH] Bruns W., Herzog J. Cohen-Macauley rings, Cambrige Studies in Adv. Math. 39, Camb.
+     Univ. Press, 1993.
+[CP] Chari V., Pressley A., Yangians and R-matrices, L’Enseign. Math. 36 (1990), 267–302.
+[C1] Cherednik I.V., A new interpretation of Gelfand–Tzetlin bases, Duke Math. J. 54 (1987),
+     563–577.
+[C2] Cherednik I.V., Quantum groups as hidden symmetries of classic representation theory, in
+     “Differential Geometric Methods in Physics” (A. I. Solomon, Ed.), World Scientific, Singa-
+     pore, 1989, pp. 47–54.
+[Di] Dixmier J., Algèbres Enveloppantes. Paris: Gauthier-Villars, 1974.
+[D1] Drinfeld V.G., Hopf algebras and the quantum Yang–Baxter equation, Soviet Math. Dokl.
+     32 (1985), 254–258.
+[D2] Drinfeld V.G., A new realization of Yangians and quantized affine algebras, Soviet Math.
+     Dokl. 36 (1988), 212–216.
+[Dr] Drozd Yu.A. Tame and wild matrix problem, Springer LNM 832 (1980), 242–258.
+[DFO1] Drozd Yu.A., Ovsienko S.A., Futorny V.M. On Gelfand–Zetlin modules, Suppl. Rend.
+     Circ. Mat. Palermo, 26 (1991), 143-147.
+[DFO2] Drozd Yu.A., Ovsienko S.A., Futorny V.M., Harish - Chandra subalgebras and Gelfand
+     Zetlin modules, in: ”Finite dimensional algebras and related topics”, NATO ASI Ser. C.,
+     Math. and Phys. Sci., 424, (1994), 79-93.
+[FO] Futorny V., Ovsienko S., Kostant theorem for special PBW algebras, Preprint, RT-MAT
+     2002-28.
+[GR] Gabriel P., Roiter A.V., Representations of finite-dimensional algebras, in “Encyclopedia
+     of the Mathematical Sciences”, Vol. 73, Algebra VIII, (A. I. Kostrikin and I. R. Shafarevich,
+     Eds), Berlin, Heidelberg, New York, 1992.
+[IK] Izergin A.G., Korepin V.E., A lattice model related to the nonlinear Schrödinger equation,
+     Sov. Phys. Dokl. 26 (1981) 653–654.
+[K] Kostant B. Lie groups representations on polynomial rings. Amer.J.Math. 85, (1963), 327-
+     404.
+[KS] Kulish P., Sklyanin E., Quantum spectral transform method: recent developments, in “In-
+     tegrable Quantum Field Theories”, Lecture Notes in Phys. 151 Springer, Berlin-Heidelberg,
+     1982, pp. 61–119.
+[M1] Molev A.I., Gelfand–Tsetlin basis for representations of Yangians, Lett. Math. Phys. 30
+     (1994), 53–60.
+[M2] Molev A.I., Casimir elements for certain polynomial current Lie algebras, in “Group 21,
+     Physical Applications and Mathematical Aspects of Geometry, Groups, and Algebras,” Vol.
+     1, (H.-D. Doebner, W. Scherer, P. Nattermann, Eds). World Scientific, Singapore, 1997,
+     172–176.
+                      HARISH-CHANDRA MODULES FOR YANGIANS                                 29
+
+
+[M3] Molev A. I., Irreducibility criterion for tensor products of Yangian evaluation modules,
+     Duke Math. J., 112 (2002), 307–341.
+[NT] Nazarov M., Tarasov V., Representations of Yangians with Gelfand–Zetlin bases, J. Reine
+     Angew. Math. 496 (1998), 181–212.
+[Ov] Ovsienko S. Finiteness statements for Gelfand–Tsetlin modules, In: Algebraic structures
+     and their applications, Math. Inst., Kiev, 2002.
+[TF] Takhtajan L.A., Faddeev L.D., Quantum inverse scattering method and the Heisenberg
+     XY Z-model, Russian Math. Surv. 34 (1979), no. 5, 11–68.
+[T1] Tarasov V., Structure of quantum L-operators for the R-matrix of the XXZ-model, Theor.
+     Math. Phys. 61 (1984), 1065–1071.
+[T2] Tarasov V., Irreducible monodromy matrices for the R-matrix of the XXZ-model and lattice
+     local quantum Hamiltonians, Theor. Math. Phys. 63 (1985), 440–454.
+
+   Institute of Mathematics and Statistics, University of São Paulo,, Caixa Postal
+66281- CEP 05315-970, São Paulo, Brazil
+   E-mail address: futorny@ime.usp.br
+
+   School of Mathematics and Statistics, University of Sydney, NSW 2006, Australia
+   E-mail address: alexm@maths.usyd.edu.au
+
+   Faculty of Mechanics and Mathematics, Kiev Taras Shevchenko University, Vladi-
+mirskaya 64, 00133, Kiev, Ukraine
+   E-mail address: ovsienko@sita.kiev.ua
+

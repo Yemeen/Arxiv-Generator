@@ -1,0 +1,434 @@
+                                                   THE RIEMANN TENSOR FOR NONHOLONOMIC MANIFOLDS
+
+                                                                                         DIMITRY LEITES
+arXiv:math/0202213v1 [math.RT] 21 Feb 2002
+
+
+
+
+                                                     Abstract. For every nonholonomic manifold, i.e., manifold with nonintegrable distribu-
+                                                     tion the analog of the Riemann tensor is introduced. It is calculated here for the contact
+                                                     and Engel structures: for the contact structure it vanishes (another proof of Darboux’s
+                                                     canonical form); for the Engel distribution the target space of the tensor is of dimension 2.
+                                                     In particular, the Lie algebra preserving the Engel distribution is described.
+                                                        The tensors introduced are interpreted as modifications of the Spencer cohomology and, as
+                                                     such, provide with a new way to solve partial differential equations. Goldschmidt’s criteria
+                                                     for formal integrability (vanishing of certain Spencer cohomology) are only applicable to
+                                                     “one half” of all differential equations, the ones whose symmetries are induced by point
+                                                     transformations. Lie’s theorem says that the “other half” consists of differential equations
+                                                     whose symmetries are induced by contact transformations. Therefore, we can now extend
+                                                     Goldschmidt’s criteria for formal integrability to all differential equations.
+
+
+
+                                                                                         Introduction
+                                                Let Wkn be the space of germs of irreducible k-dimensional distributions at the origin of
+                                             R . The orbits of DiffRn -action on Wkn are usually of infinite codimension. As shown in
+                                              n
+
+                                             [VG1], there are 3 types of exceptions: (1) Wkn is a point, (2) codimension 1 distributions
+                                             determined as zero set of α = 0 for the forms α of maximal class (recall that the class of the
+                                             form is the invariant equal to the least number of variables actually involved)
+                                                                               P
+                                                                       dt +
+                                                                                   (pi dqi − qi dpi )   for n = 2r + 1
+                                                                              1≤i≤r
+                                                                   α=            P
+                                                                       dt +
+                                                                                     (pi dqi − qi dpi ) for n = 2r
+                                                                                   1≤i≤r−1
+
+                                             called (usually, for n odd) a contact structure (see [Z]) and (3) the Engel distribution locally
+                                             given by the system of Pfaff equations α1 = 0, α2 = 0, where
+                                                                            α1 = dx4 − x3 dx1 ,       α2 = dx3 − x2 dx1 .                            (E)
+                                             Any 4-dimensional manifold with the Engel distribution (E) will be called an Engel manifold.
+                                                Both contact and Engel manifolds are examples of nonholonomic manifolds (i.e., mani-
+                                             folds with nonintegrable distributions). Recall that the term nonholonomic was coined by
+                                             H. Hertz [H] in his attempts to geometrically describe motions in such a way as to eliminate
+                                             the notion of “force”. For a historical review see [VG2]; see also a very interesting paper
+                                             by Vershik [V] with first rigorous mathematical formulations of nonholonomic geometry and
+                                             indications to various possible applications in various, sometimes unexpected, areas (like
+                                                1991 Mathematics Subject Classification. 17A70 (Primary) 17B35 (Secondary).
+                                                Key words and phrases. Engel distribution, Lie algebra cohomology, Cartan prolongation, Riemann ten-
+                                             sor, nonholonomic manifold.
+                                                Partially supported by an NFR grant. I am thankful to A. Vershik and V. Gershkovich who put the
+                                             problem; to L. Faddeev and A. Reyman and to R. Cianci, U. Bruzzo and E. Massa for hospitality when a
+                                             guest of the Euler IMI in November 1990 and the Genova University in February 1991, respectively, and
+                                             where these results were delivered. They were main ingredient of the theoretical part of my ICTP lectures
+                                             in 1991, cf. [GL1]. I thank P. Grozman who checked my computations with the help of his SuperLie package
+                                             [GL2].
+                                                                                                  1
+2                                        DIMITRY LEITES
+
+optimal control or macro-economics). In [V] Vershik summarizes about 100 years of studies
+of nonholonomic geometry (Hertz, Carathéodory, Vrănceanu, Wagner, Schouten, Faddeev,
+Griffiths, Godbillon, to name a few; to his list I’d add that MathSciNet returns about 700
+entries for nonholonomic, and for synonyms: 70 more for sub-Riemannian,1700 for Finsler,
+several dozens for “cat’s problem” and autoparallel; physics have their own simialr lists with
+thousands of entries because there seems to be more, actually, nonholonomic dynamical
+systems than holonomic ones; finally supergravity is also a nonholonomic structure, albeit
+on supermanifolds — ca 1800 more entries). In [V] Vershik also declares that “it is proba-
+bly impossible to construct an analog of the Riemann tensor for the general nonholonomic
+manifold” though in some particular cases of small dimension they had been constructed
+(Martinet) (and, one can add now, in papers on supergravity).
+   Here I introduce the invariants that characterize “nonflatness” of nonholonomic manifolds,
+i.e., positively solve this old problem. This definition appeared around 1989 but publication
+of this paper was delayed and the definition first (as far as I know) appeared in contetext
+of supergravity in [LP]. For application to SUGRA (supergravity equations) and other
+instances where the N-curvature tensors (the left hand side of SUGRA) are calculated see
+[GL1], [LPS], [LSV].
+   The general definition is illustrated with contact and Engel manifolds. As expected, for
+the contact structure these invariants vanish, thus giving one more proof of the Darboux
+theorem on the canonical form of the contact form; one can show that they vanish for n even
+as well. The Engel manifolds are more rigid: there could be nonflat ones among them.
+   Observe that our invariants, though natural analogs of the curvature and torsion tensors,
+do not coincide on nonholonomic manifolds with the classical ones and bearing the same
+name. Indeed, by definition on any nonholonomic manifold, there is a nonzero classical
+torsion while every contact manifold is flat in our sense. To avoid confusion, we should
+always add adjective “nonholonomic” for the invariants introduced below. Since this is too
+long, we will briefly say N-torsion, N-curvature, etc.
+   For manifolds with a G-structure, the prototypes of the invariants we consider are well-
+known: these are structure functions of the G-structure [St]; an important particular case is
+G = O(n) when the structure function is called the Riemann tensor.
+   A theorem of Lie states that there are two types of differential equations, considered as
+submanifolds in the jet bundles: (1) those whose symmetries are induced by point trans-
+formations and (2) those whose symmetries are induced by contact transformations. For
+equations of the first type Goldschmidt gave criteria for formal integrability [BCG]. The
+notions introduced below — generalizations of Spencer cohomology for nonholonomic case
+— provide with a straightforward generalization of Goldschmidt’s criteria for formal inte-
+grability to the second half of differential equations.
+   Finally, observe that “non-flatness” of distributions with non-linear constraints (such as
+fields of cones [A], foreseen by Vershik in [V], or fields of spheres, like the ones constructed by
+any driver who switched the cruise control ON, can also be tested by invariants I introduce;
+in the case of the fields of solids, however, the Lie algebras involved are of infinite dimension
+(they correspond to “curved Grassmannians” of submanifolds, rather than linear subspaces)
+and feasibility to obtain the final result becomes very doubtful.
+   The waves in plasma is another example of a nonholonomic system with infinite dimen-
+sional algebras involved. This is a pity, since the curvature tensor is known to be responsible
+for stability of the dynamical system expressed by geodesics; so, in principle, we could just
+have computed the N-curvature in this case and settle an intriguing question: “is cold fusion
+possible or not?”.
+                       THE RIEMANN TENSOR FOR NONHOLONOMIC MANIFOLDS                                                  3
+
+                                          §1. Structure functions
+   Let M be a manifold of dimension n over a field K. Let F (M) be the frame bundle over
+M, i.e., the principal GL(n; K)-bundle. Let G ⊂ GL(n; K) be a Lie group. A G-structure
+on M is a reduction of the principal GL(n; K)-bundle to the principal G-bundle. Another
+formulation seems to be clearer: if one can select transition functions from one coordinate
+patch to another so that they belong to G for every intersection pair of patches, then we
+have a G-structure on M.
+   The simplest G-structure is the flat G-structure defined as follows. Let V be Kn with a
+fixed frame. Fix a frame in V . Having identified V with Tv V via parallel translation along
+v, we get a fixed frame in every Tv V . The flat G-structure is the bundle over V whose fiber
+over v ∈ V consists of all frames obtained from the fixed one under the G-action.
+   In textbooks on differential geometry (e.g., in [St]) the obstructions to identification of
+the k-th infinitesimal neighborhood of a point m ∈ M on a manifold M with G-structure
+with that of a point of the manifold V with the above flat G-structure are called structure
+functions of order k. It is also explained there that such an identification is possible provided
+all structure functions of lesser orders vanish.
+   To formulate the precise statement, we need some definitions. Let S i denote the operator
+of the i-th symmetric power. Set
+                                       g−1 = Tm M, g0 = g = Lie(G);
+for any i > 0 and k = 1, . . . , i set:
+  gi = {X ∈ Hom(g−1 , gi−1 ) | X(v1 )(v2 , v3 , ..., vi ) = X(v2 )(v1 , v3 , ..., vi ) for any vk ∈ g−1 }.
+Now, set (g−1 , g0 )∗ = ⊕ gi .
+                            i≥−1
+   Suppose that the g0 -module g−1 is faithful. Then, clearly,
+                  (g−1 , g0 )∗ ⊂ vect(n) = der K[[x1 , . . . , xn ]], where n = dim g−1 .
+It is subject to an easy verification that the Lie algebra structure on vect(n) induces same
+on (g−1 , g0 )∗ . The Lie algebra (g−1 , g0 )∗ will be called the Cartan’s prolong (the result of
+Cartan’s prolongation) of the pair (g−1 , g0 ).
+                                                                              k,s
+   Let Λi be the operator of the i-th exterior power; set C(g                   −1 ,g0 )∗
+                                                                                          = gk−s ⊗Λs (g∗−1 ); we usually
+                                k,s
+drop the subscript of C(g         −1 ,g0 )∗
+                                            or indicate only g0 . Define the differential ∂s : C k,s −→ C k,s+1
+setting for any v1 , . . . , vs+1 ∈ V (as usual, the slot with the hatted variable is ignored):
+                                                 X
+                 (δs f )(v1 , . . . , vs+1 ) =      (−1)i [f (v1 , . . . , v̂s+1−i , . . . , vs+1 ), vs+1−i ].
+                                               i
+
+  As expected, δs δs+1 = 0. The homology of this bicomplex is called Spencer cohomology of
+                                     k,s
+the pair (g−1 , g0 ) and denoted by H(g−1 ,g0 )∗
+                                                 .
+
+Proposition . ([St]) Structure functions constitute the space of the (k, 2)-th Spencer coho-
+mology of the Cartan prolongation of the pair (Tm M, g) where g = Lie(G).
+   The Riemann tensor on an n-dimensional Riemannian manifold is the structure function
+       k,2
+from H(g −1 ,o(n))∗
+                    .
+
+Remark . (cf. [G].)
+                                         k,s
+                                      ⊕ H(g−1 ,g0 )∗
+                                                     = H s (g−1 ; (g−1 , g0 )∗ ).
+                                      k
+4                                          DIMITRY LEITES
+
+   This remark considerably simplifies calculations, in particular, if the Lie algebra (g−1 , g0 )∗
+is simple and finite dimensional: we can apply the Borel-Weil-Bott- . . . (BWB) theorem.
+In the nonholonomic case considered in what follows the remark provides with a compact
+definition1 of structure functions. We can recover the bigrading (explicitly preserved in
+[T]) at any moment but to work with just one grading is much simpler, as with generating
+functions of series instead of individual terms. Moreover, there are a few general theorems
+that help to calculate Lie algebra cohomology and no theorems on Spencer cohomology.
+
+                §2. Structure functions of nonholonomic manifolds
+   To embrace contact-like structures we have to slightly generalize the notion of Cartan
+prolongation: the tangent space to a point of a nonholonomic manifold is naturally rigged
+with a nilpotent Lie algebra structure (e.g., for any odd dimensional contact manifolds this
+is the Heisenberg algebra), cf. [VG].
+
+2.1. Nonholonomic manifolds. ([VG1], [VG2]) Let M n be an n-dimensional manifold
+with a nonintegrable distribution D. Let
+                                   D = D 1 ⊂ D2 ⊂ D3 · · · ⊂ Dd
+be the sequence of strict inclusions, where the fiber of Di at a point x ∈ M is
+                                        Di−1 |x ∪ [D1 , Di−1 ]|x
+(here [D1 , Di−1 ] = {[X, Y ] | X ∈ D1 , Y ∈ Di−1 }) and d is the least number such that
+                                      Dd |x ∪ [D1 , Dd ]|x = Dd |x .
+In case Dd = T M the distribution is called completely nonholonomic. The number d = d(M)
+is called the nonholonomicity degree. A manifold M with a distribution D on it will be
+referred to as nonholonomic one if d(M) 6= 1.
+   Here we will consider nonholonomic manifolds only when they are completely nonholo-
+nomic. This does not diminish generality, actually, since if the distribution in question is
+not completely nonholonomic, we can take the integral manifold corresponding to it; the
+restriction of the same distribution onto this integral manifold is completely nonholonomic,
+all right. If, nevertheless, we have to, for some reason, consider the general case it is easy
+mutatis mutandis; it corresponds to nontransitive Shchepochkina prolongs, cf. below, and
+the general machinery is easily adjusted to them).
+   Let ni (x) = dim Di |x . The distribution D is called a regular one if all the dimensions ni
+are constants on M. In what follows we will only consider regular distributions. This is also
+not a restriction if everything is smooth.
+   The tangent bundle over a nonholonomic manifold (M, D) can be naturally endowed with
+a bundle of nilpotent Lie algebras as follows. Let L be the Lie algebra of vector fields
+preserving the distribution in a neighborhood of some point x ∈ M. Naturally, L is filtered
+and let g be the associated graded Lie algebra. Set
+                                           g− =      ⊕      gi .
+                                                  −d≤i≤−1
+
+Clearly, d, the depth of g− , coinsides with the nonholonomicity degree of D, see [VG2].
+  An analog of G-structure for nonholonomic manifolds is defined to be the pair (g− , g0 ),
+where g0 is a subalgebra of the Lie subalgebra which preserves the Z-grading of g− , i.e.,
+    1
+    Cf. with the problems encountered in the pioneer paper [T], where the case d = 2 for Lie algebras was
+independently introduced.
+                    THE RIEMANN TENSOR FOR NONHOLONOMIC MANIFOLDS                                     5
+
+g0 ⊂ (der g− )0 . If g0 is not indicated explicitely we assume that g0 = (der g− )0 , i.e., is the
+largest one.
+   Thus, we see that with every nonholonomic manifold (M, D) a natural G-structure is
+associated: Lie(G) = (der g− )0 . But the structure functions of this G-structure do not
+reflect the nonholonomic nature of M. Indeed, when we compute the structure functions (be
+                       k,2
+they “traditional” H(g   −1 ,g0 )∗
+                                   , or introduced above H s (g−1 ; (g−1 , g0 )∗ )) we use the fact that
+g−1 is a commutative Lie algebra (partial derivatives commute).
+   To take the nonholonomic nature of M into account we need an analog of the above
+Proposition for the case when the natural basis of the tangent space consists not of partial
+derivatives but rather of covariant derivatives corresponding to the connection determined
+by the same Pfaff forms whose vanishing determines the distribution. Therefore, instead of
+g−1 we have a nilpotent algebra g− .
+   So we have to define
+   (1) the simplest nonholonomic structure — the “flat” one, and
+   (2) the analog of Cartan prolong when g−1 is replaced with g− ,
+   (3) (we have already understood) what is the analog of g0 if it is not mentioned as is
+usually the case (only the distribution is given), but it remains to figure out
+   (4) what is the analog of (g−1 , g0 )∗ ), and, finally,
+                                     k,2
+   (5) what is the analog of H(g       −1 ,g0 )∗
+                                                 .
+   Let us answer these remaining questions.
+   Fix a frame F in Kn . Having identified Tv V with V by means of the transformation that
+preserves D, we fix a frame — the image of F — in each Tv V . The nonholonomic structure
+of the nonholonomic manifold (Kn , D) is the pair of bundles: the frame bundle and the
+distribution D. The nonholonomic structure of (Kn , D) will be considered to be flat if the
+frames over v are obtained from the fixed one by means of the G-action, where G is a group
+whose Lie algebra is (der g− )0 .
+
+2.2. Structure functions of a nonholonomic manifold. Given a pair (g− , g0 ) as above,
+define its k-th Shchepochkina prolong (first published by I. Shchepochkina [Sh] for Lie su-
+peralgebras; see also more accessible [Sh5]) for k > 0 to be:
+
+                           gk = (i(S ∗ (g− )∗ ⊗ g0 ) ∩ j(S ∗ (g− )∗ ⊗ g− ))k ,
+
+where the subscript singles out the component of degree k and where i : S k+1(g−1 )∗ ⊗g−1 −→
+S k (g−1 )∗ ⊗ g∗−1 ⊗ g−1 is a natural embedding and j : S k (g−1 )∗ ⊗ g0 −→ S k (g−1 )∗ ⊗ g∗−1 ⊗ g−1
+a natural map.
+   Similarly to the case when g− is commutative, define (g− , g0 )∗ to be ⊕ gk ; then, as is
+                                                                                  k≥−d
+easy to verify, (g− , g0 )∗ is a Lie algebra. By the same reasons as for the manifolds with G-
+structure ([St]), the space H 2(g− ; (g− , g0 )∗ ) is the space of structure functions — obstructions
+to the identification of the infinitesimal neighborhood of a point on the manifold with a
+nonholonomic structure (given by g− and g0 ) with same on a flat nonholonomic manifold
+with the same g− and g0 .
+   The space H 2 (g− ; (g− , g0 )∗ ) naturally splits into homogeneous components whose degree
+will be called the order of the structure function; the minimal order of structure function
+is equal to 2 − d. As in the case of a commutative g− = g−1 , the structure functions of
+order k can be interpreted as obstructions to flatness of the nonholonomic manifold with
+the (g− , g0 )-structure provided the obstructions of lesser orders vanish. Observe that for a
+nonholonomic manifold the order of structure functions is no more in direct relation with
+6                                         DIMITRY LEITES
+
+the numbers of the infinitesimal neighborhoods of the points we wish to identify: distinct
+partial derivatives bear different “weights”.
+  When I told this to A. Beilinson in 1989 he winced and, as I got this far, he said that
+though he conceeded the idea is of interest, he doubted it can work in the general case: all
+my constructions are graded, whereas with every distribution only filtered algebras g− are
+naturally associated. This incredulity is justified but fortunately, different filtrations on g−
+with the same graded g− are governed precisely by the structure functions of lesser orders
+and all of them must vanish for the N-curvature to be well-defined. So, given a filtered g− ,
+just take the associated graded algebra and proceed as indicated above. This indicates a
+way to study the stable normal forms of Pfaff equations listed in [Z].
+
+                      §3. The Lie algebra e of Engel vector fields
+   Let us describe the Lie algebra e of vector fields that preserve the Engel distribution. Since
+each of the forms α1 and α2 is a familiar contact form, we know enough to demonstrate (we
+leave it as an easy exercise for the reader) the following statement.
+Lemma . A weight basis of the Z-graded Lie algebra e is as follows (indicated are the de-
+grees):
+    −3    −2                −1                           0                         n≥1
+    ∂4 ∂3 + x1 ∂4            ∂1          x1 ∂1 + x2 ∂2 + 2x3 ∂3 + 3x4 ∂4
+                                 1 2                                               xn+2          xn+3
+                    ∂2 + x1 ∂3 + 2 x1 ∂4       x1 ∂1 − x2 ∂2 + x4 ∂4     xn+1
+                                                                          1   ∂2 + n+2
+                                                                                    1
+                                                                                        ∂3 +      1
+                                                                                                 n+3 4
+                                                                                                      ∂
+                                                        2
+                                                       x1       3
+                                                               x1
+                                               x1 ∂2 + 2 ∂3 + 3 ∂4
+  The structure of the Engel algebra e seem to have never been described; so let us do it.
+First, introduce a shorthand for some elements of e:
+                         D3    = ∂3 + x1 ∂4 ;
+                          E    = x1 ∂1 + x2 ∂2 + 2x3 ∂3 + 3x4 ∂4 ;
+                         H     = x1 ∂1 − x2 ∂2 + x4 ∂4 ;
+                                             xn+2      xn+3
+                         Xn    = xn+1
+                                  1   ∂2 +     1
+                                              n+2
+                                                  ∂3 +   1
+                                                            ∂
+                                                        n+3 4
+                                                                for n ≥ −1.
+     Now, it is clear that e is solvable with
+              e/[e, e] = Span(E, H);    e(1) /[e(1) , e(1) ] = Span(∂1 ), where e(1) = [e, e].
+   The negative part, e− plays for e the same role the Heisenberg algebra plays for the contact
+algebra. This negative part was, of course calculated earlier, see, e.g., [G1] where it also bears
+the name of Engel algebra; perhaps one should say the “small” and the “total” ones. It seems
+very strange that the total algebra had never beed desribed; I am sure such a description is
+buried in works of classics.
+   In review to [G1] [MR 96k:58010] it is written “There is a Darboux theorem for Engel
+structures: any two are locally diffeomorphic”. Vershik also quoted this statement as a
+well-known. But I can not place it. Indeed, by Darboux theorem for the contact structure
+I understand the statement that says that the contact form can be locally reduced to a
+canonical form , cf. [Z]. (In contradistinction, a related statement that the nondegenerate
+differential 2-form ω can only be reduced to a canonical form if and only if dω = 0, cf. [P],
+so the statement on reducibility of the nondegenerate closed 2-form, sometimes encountered
+in textbooks on Differential Geometry, is a tautology.)
+   Concerning Engel structures, there is, for example, paper [G2] with examples of several
+non-equivalent Engel structures on R4 . Doesn’t it contradict the statement on an analog of
+                     THE RIEMANN TENSOR FOR NONHOLONOMIC MANIFOLDS                                       7
+
+Darboux theorem? So let us calculate the N-curvature of the contact and Engel structures:
+to find out if these invariants vanish, hence, there are analogs of Darboux theorem for them.
+
+         §4. Structure functions of the contact and Engel structures
+  Éli Cartan worked before “(co)homology” was defined, still, he introduced a notion that
+helps to calculate some of these cohomologies. This notion is involutive Lie algebra of
+vector fields. Serre gave a nice reformulation of this notion ([St]); thanks to Serre’s state-
+ment for the case when (g− , g0 )∗ is a simple vectorial Lie algebra instead of computing
+                               k,2
+H 2 (g−1 ; (g−1 , g0 )∗ ) = ⊕ H(g−1 ,g0 )∗
+                                           , it only suffices to compute the summand with the least
+                          k
+k = 1: only this term might be nonzero because (g− , g0 )∗ is involutive. This really helps, see
+examples in [LPS].
+  Regrettably, Serre’s theorem is only formulated so far for algebras of depth 1. So I cal-
+culated H 2 (g− ; (g− , g0 )∗ ) by hands; later the result was confirmed by independent computer
+calculations up to convincingly high degree:
+4.1. Theorem . The space of nonholonomic structure functions on any Engel manifold is
+of dimension 2. All structure functions are of order 2, their representatives are:
+                        ∂1∗ ∧ X−1
+                               ∗
+                                  ⊗ H + ∂1∗ ∧ X−1
+                                               ∗
+                                                  ⊗ E and ∂4∗ ∧ D3∗ ⊗ ∂4 .
+The first of these cycles is “pure” in the sence that it does not represent its cohomology class
+modulo any coboundary, the coboundaries vanish. The other one is mixed: one can add any
+coboundary to it.
+  The following is another form of the classical theorem (see [LP]):
+4.2. Theorem . (Darboux theorem) The space of nonholonomic structure functions on any
+contact manifold vanishes.
+
+                                             References
+[A]  Agrachev A., Methods of control theory in nonholonomic geometry. Proceedings of the International
+     Congress of Mathematicians, Vol. 1, 2 (Zürich, 1994), 1473–1483, Birkhäuser, Basel, 1995
+[BCG] Bryant R. L., Chern S. S., Gardner R. B., Goldschmidt H. L., Griffiths P. A., Exterior differential
+     systems. Mathematical Sciences Research Institute Publications, 18. Springer-Verlag, New York, 1991.
+     viii+475 pp.
+[G1] Gershkovich V., On simplest Engel structures on 4-manifolds. In: R. P. Agarwal (ed.) Dynamical
+     systems and applications, 279–294, World Sci. Ser. Appl. Anal., 4, World Sci. Publishing, River Edge,
+     NJ, 1995
+[G2] Gershkovich V., Exotic Engel structures on R4 . Russian J. Math. Phys. 3 (1995), no. 2, 207–226
+[G] Goncharov A., Infinitesimal structures related to hermitian symmetric spaces, Funct. Anal. Appl, 15,
+     no. 3 (1981), 23–24 (Russian); a detailed version: id., Generalized conformal structures on manifolds.
+     Selected translations. Selecta Math. Soviet. 6 (1987), no. 4, 307–340
+[GL1] Grozman P., Leites D., Supergravities and N -extended Minkowski superspaces for any N . In: Wess J.,
+     Ivanov E. (eds.) Supersymmetries and quantum symmetries. Proc. International Conference in memory
+     of V. Ogievetsky, June 1997, Lecture Notes in Physics 524, Springer, 1999, 58–67
+[GL2] Grozman P., Leites D., Mathematica-aided study of Lie algebras and their cohomology. From su-
+     pergravity to ballbearings and magnetic hydrodynamics. In: Keränen V. et al. (eds.) The second
+     International Mathematica symposium, Rovaniemi, 1997, 185–192
+[H] Hertz H., The principles of mechanics in new relation. NY, Dover, 1956
+[L] Leites D. Supermanifold Theory. Karelia Branch of the USSR Acad. of Sci., Pertozavodsk, 1983, 200
+     pp. (in Russian; an enlarged version in English is available on the homepage matematik.su.se/˜mleites)
+[LPS] Leites D., Poletaeva E., Serganova V., On Einstein equations on manifolds and supermanifolds, J.
+     Nonlinear Math. Physics, 2002, no. 2, (to appear)
+8                                             DIMITRY LEITES
+
+[LP] Leites D., Poletaeva E., Supergravities and contact type structures on supermanifolds. Second Inter-
+      national Conference on Algebra (Barnaul, 1991), 267–274, Contemp. Math., 184, Amer. Math. Soc.,
+      Providence, RI, 1995
+[LSV] Leites D., Serganova V., Vinel G., Classical superspaces and related structures. In: Bruzzo U. e.a.
+      (eds.) Proc. Intnl. Conf. Diff. Geom. Methods in Physics DGM-IXI, 1990, Springer LN in Phys., 1991,
+      286–297
+[M] Montgomery R., Engel deformations and contact structures. Northern California Symplectic Geometry
+      Seminar, 103–117, Amer. Math. Soc. Transl. Ser. 2, 196, Amer. Math. Soc., Providence, RI, 1999
+[P] Poletaeva E., Structure functions on the usual and exotic symplectic and periplectic supermanifolds.
+      In: C. Bartocci, U. Bruzzo and R. Cianci (eds.) Differential geometric methods in theoretical physics
+      (Rapallo, 1990), 390–395, Lecture Notes in Phys., 375, Springer, Berlin, 1991
+[Sh] Shchepochkina I. Exceptional simple infinite dimensional Lie superalgebras, C.R. Acad. Sci. bulg. 1983,
+      36, n3, 313–314
+[Sh5] Shchepochkina I., The five exceptional simple Lie superalgebras of vector fields, hep-th 9702120; id.,
+      The five exceptional simple Lie superalgebras of vector fields. Sov. J. Funct. Analisys, v.33, 1999, No.3,
+      14 pp.; id., Five exceptional simple Lie superalgebras of vector fields and their fourteen regradings.
+      Representation Theory (electronic journal of AMS), v. 3, 1999, 3 (1999), 373–415
+[St] Sternberg S. Lectures on differential geometry, 2nd ed, Chelsey, 1985
+[T] Tanaka N., On infinitesimal automorphisms of Siegel domains, J. Math. Soc. Japan 22, 1970, 180–212;
+      id., On the equivalence problems associated with simple graded Lie algebras. Hokkaido Math. J., 8
+      (1979), no. 1, 23–84
+[V] Vershik, A. M. Classical and nonclassical dynamics with constraints. (Russian) In: Yu. G. Borisovich
+      and Yu. E. Gliklikh (eds.) Geometry and topology in global nonlinear problems, 23–48, Novoe Global.
+      Anal., Voronezh. Gos. Univ., Voronezh, 1984. English translation in: Yu. G. Borisovich and Yu. E.
+      Gliklikh (eds.), Global analysis—studies and applications. I. A collection of articles translated from
+      the Russian. Lecture Notes in Mathematics, 1108. Springer-Verlag, Berlin-New York, 1984, 278–301
+[VG1] Vershik A., Gershkovich V. An estimate of functional dimension of the space of orbits of germs of
+      generic distributions. Math. USSR Zametki, 1988, 44: 5, 596–603
+[VG2] Vershik A., Gershkovich V. Nonholonomic dinamical systems. In: Fundamental trends, VINITI,
+      Moscow, 1987, 5–85 (translated by Springer in Sov. Math. Encyclop. series “Dynamical systems-7”)
+[VG] Vershik, A. M.; Gershkovich, V. Ya. A bundle of nilpotent Lie algebras over a nonholonomic manifold
+      (nilpotentization). (Russian) Zap. Nauchn. Sem. Leningrad. Otdel. Mat. Inst. Steklov. (LOMI) 172
+      (1989), Differentsialnaya Geom. Gruppy Li i Mekh. Vol. 10,21–40, 169 translation in J. Soviet Math.
+      59 (1992), no. 5, 1040–1053
+[Z] Zhitomirskii, M., Typical singularities of differential 1-forms and Pfaffian equations. Translated from
+      the Russian. Translations of Mathematical Monographs, 113. American Mathematical Society, Provi-
+      dence, RI; in cooperation with Mir Publishers, Moscow, 1992. xii+176 pp.
+
+  Department of Mathematics, University of Stockholm, Kräftriket hus 6, SE-106 91,
+Stockholm, Sweden; mleites@matematik.su.se
+

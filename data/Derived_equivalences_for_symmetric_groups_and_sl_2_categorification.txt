@@ -1,0 +1,2503 @@
+                                                   DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND
+                                                                 sl2 -CATEGORIFICATION
+
+                                                                       JOSEPH CHUANG AND RAPHAËL ROUQUIER
+arXiv:math/0407205v2 [math.RT] 12 Mar 2005
+
+
+
+
+                                                  Abstract. We define and study sl2 -categorifications on abelian categories. We show in partic-
+                                                  ular that there is a self-derived (even homotopy) equivalence categorifying the adjoint action of
+                                                  the simple reflection. We construct categorifications for blocks of symmetric groups and deduce
+                                                  that two blocks are splendidly Rickard equivalent whenever they have isomorphic defect groups
+                                                  and we show that this implies Broué’s abelian defect group conjecture for symmetric groups.
+                                                  We give similar results for general linear groups over finite fields. The constructions extend to
+                                                  cyclotomic Hecke algebras. We also construct categorifications for category O of gln (C) and
+                                                  for rational representations of general linear groups over F̄p , where we deduce that two blocks
+                                                  corresponding to weights with the same stabilizer under the dot action of the affine Weyl group
+                                                  have equivalent derived (and homotopy) categories, as conjectured by Rickard.
+
+
+
+
+                                                                                           Contents
+                                             1. Introduction                                                                                           2
+                                             2. Notations                                                                                              3
+                                             3. Affine Hecke algebras                                                                                  4
+                                             3.1. Definitions                                                                                          4
+                                             3.2. Totally ramified central character                                                                   5
+                                             3.3. Quotients                                                                                            8
+                                             4. Reminders                                                                                             10
+                                             4.1. Adjunctions                                                                                         10
+                                             4.2. Representations of sl2                                                                              13
+                                             5. sl2 -categorification                                                                                 14
+                                             5.1. Weak categorifications                                                                              14
+                                             5.2. Categorifications                                                                                   18
+                                             5.3. Minimal categorification                                                                            19
+                                             5.4. Link with affine Hecke algebras                                                                     20
+                                             5.5. Decomposition of [E, F ]                                                                            23
+                                             6. Categorification of the reflection                                                                    27
+                                             6.1. Rickard’s complexes                                                                                 27
+                                             6.2. Derived equivalence from the simple reflection                                                      28
+                                             6.3. Equivalences for the minimal categorification                                                       28
+                                             7. Examples                                                                                              30
+                                             7.1. Symmetric groups                                                                                    30
+                                             7.2. Cyclotomic Hecke algebras                                                                           34
+                                             7.3. General linear groups over a finite field                                                           35
+                                             Date: February 1, 2008.
+                                                                                                 1
+2                           JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+    7.4. Category O                                                                              37
+    7.5. Rational representations                                                                39
+    7.6. q-Schur algebras                                                                        41
+    7.7. Realizations of minimal categorifications                                               42
+    References                                                                                   43
+
+
+
+                                        1. Introduction
+   The aim of this paper is to show that two blocks of symmetric groups with isomorphic defect
+groups have equivalent derived categories. We deduce in particular that Broué’s abelian defect
+group conjecture holds for symmetric groups. We prove similar results for general linear groups
+over finite fields and cyclotomic Hecke algebras.
+   Recall that there is an action of slˆ p on the sum of Grothendieck groups of categories of
+kSn -modules, for n ≥ 0, where k is a field of characteristic p. The action of the generators
+ei and fi come from exact functors between modules (“i-induction” and “i-restriction”). The
+adjoint action of the simple reflections of the affine Weyl group can be categorified as functors
+between derived categories, following Rickard. The key point is to show that these functors are
+invertible, since two blocks have isomorphic defect groups if and only if they are in the same
+affine Weyl group orbit. This involves only an sl2 -action and we solve the problem in a more
+general framework.
+   We develop a notion of sl2 -categorification on an abelian category. This involves the data of
+adjoint exact functors E and F inducing an sl2 -action on the Grothendieck group and the data
+of endomorphisms X of E and T of E 2 satisfying the defining relations of (degenerate) affine
+Hecke algebras.
+   Our main Theorem is a proof that the categorification Θ of the simple reflection is a self-
+equivalence at the level of derived (and homotopy) categories. We achieve this in two steps.
+First, we show that there is a minimal categorification of string (=simple) modules coming from
+certain quotients of (degenerate) affine Hecke algebras : this reduces the proof of invertibility of
+Θ to the case of the minimal categorification. There, Θ becomes (up to shift) a self-equivalence
+of the abelian category.
+   Let us now describe in more detail the structure of this article. The first part §3 is devoted to
+the study of (degenerate) affine Hecke algebras of type A completed at a maximal ideal corre-
+sponding to a totally ramified central character. We construct (in §3.2) explicit decompositions
+of tensor products of ideals which we later translate into isomorphisms of functors. In §3.3,
+we introduce certain quotients, that turn out to be Morita equivalent to cohomology rings of
+Grassmannians. Part §4 recalls elementary results on adjunctions and on representations of
+sl2 .
+   Part §5 is devoted to the definition and study of sl2 -categorifications. We first define a weak
+version (§5.1), with functors E and F satisfying sl2 -relations in the Grothendieck group. This
+is enough to get filtrations of the category and to introduce a class of objects that control
+the abelian category. Then, in §5.2, we introduce the extra data of X and T which give the
+genuine sl2 -categorifications. This provides actions of (degenerate) affine Hecke algebras on
+powers of E and F . This leads immediately to two constructions of divided powers of E and
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                       3
+
+F . In order to study sl2 -categorifications, we introduce in §5.3 “minimal” categorifications of
+the simple sl2 -representations, based on the quotients introduced in §3.3. A key construction
+(§5.4.2) is a functor from such a minimal categorification to a given categorification, that
+allows to reduce part of the study of an arbitrary sl2 -categorification to this minimal case,
+where explicit computations can be carried out. This corresponds to the decomposition of
+the sl2 -representation on K0 into a direct sum of irreducible representations. We use this in
+§5.5 to prove a categorified version of the relation [e, f ] = h and deduce a construction of
+categorifications on the module category of the endomorphism ring of “stable” objects in a
+given categorification.
+   Part §6 is devoted to the categorification of the simple reflection of the Weyl group. In §6.1, we
+construct a complex of functors categorifying this reflection, following Rickard. The main result
+is Theorem 6.4 in part §6.2, which shows that this complex induces a self-equivalence of the
+homotopy and of the derived category. The key step in the proof for the derived category is the
+case of a minimal categorification, where we show that the complex has homology concentrated
+in one degree (§6.3). The case of the homotopy category is reduced to the derived category
+thanks to the constructions of §5.5.
+   In part §7, we study various examples. We define (in §7.1) sl2 -categorifications on represen-
+tations of symmetric groups and deduce derived and even splendid Rickard equivalences. We
+deduce a proof of Broué’s abelian defect group conjecture for blocks of symmetric groups. We
+give similar constructions for cyclotomic Hecke algebras (§7.2) and for general linear groups
+over a finite field in the non-defining characteristic case (§7.3) for which we also deduce the
+validity of Broué’s abelian defect group conjecture. We also construct sl2 -categorifications on
+category O for gln (§7.4) and on rational representations of GLn over an algebraically closed
+field of characteristic p > 0 (§7.5). This answers in particular the GL case of a conjecture
+of Rickard on blocks corresponding to weights with same stabilizers under the dot action of
+the affine Weyl group. We also explain similar constructions for q-Schur algebras (§7.6) and
+provide morphisms of categorifications relating the previous constructions. A special role is
+played by the endomorphism X, which takes various incarnations : the Casimir in the rational
+representation case and the Jucys-Murphy elements in the Hecke algebra case. In the case of
+the general linear groups over a finite field, our construction seems to be new. Our last section
+(§7.7) provides various realizations of minimal categorifications, including one coming from the
+geometry of Grassmannian varieties.
+   Our general approach is inspired by [LLT], [Ar1], [Gr], and [GrVa] (cf [Rou3, §3.3]), and our
+strategy for proving the invertibility of Θ is reminiscent of [DeLu, CaRi].
+   In a work in progress, we study the braid relations between the categorifications of the simple
+reflections, in the more general framework of categorifications of Kac-Moody algebras and in
+relation with Nakajima’s quiver variety constructions.
+   The first author was supported in this research by the Nuffield Foundation (NAL/00352/G)
+and the EPSRC (GR/R91151/01).
+
+                                          2. Notations
+  Given an algebra A, we denote by Aopp the opposite algebra. We denote by A-mod the
+category of finitely generated A-modules. Given an abelian category A, we denote by A-proj
+the category of projective objects of A.
+4                           JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+   Let C be an additive category. We denote by Comp(C) the category of complexes of objects
+of C and by K(C) the corresponding homotopy category.
+   Given an object M in an abelian category, we denote by soc(M) (resp. hd(M)) the socle
+(resp. the head) of M, i.e., the largest semi-simple subobject (resp. quotient) of M, when this
+exists.
+   We denote by K0 (A) the Grothendieck group of an exact category A.
+   Given a functor F , we write sometimes F for the identity endomorphism 1F of F .
+
+                                  3. Affine Hecke algebras
+3.1. Definitions. Let k be a field and q ∈ k × . We define a k-algebra Hn = Hn (q).
+
+3.1.1. Non-degenerate case. Assume q 6= 1. The affine Hecke algebra Hn (q) is the k-algebra
+with generators
+                                T1 , . . . , Tn−1 , X1±1, . . . , Xn±1
+subject to the relations
+                           (Ti + 1)(Ti − q) = 0
+                                       Ti Tj = Tj Ti (when |i − j| > 1)
+                                  Ti Ti+1 Ti = Ti+1 Ti Ti+1
+                                      Xi X j = Xj Xi
+                                   Xi Xi−1 = Xi−1 Xi = 1
+                                      Xi Tj = Tj Xi (when i − j 6= 0, 1)
+                                    Ti Xi Ti = qXi+1 .
+   We denote by Hnf (q) the subalgebra of Hn (q) generated by T1 , . . . , Tn−1 . It is the Hecke
+algebra of the symmetric group Sn .
+   Let Pn = k[X1±1 , . . . , Xn±1], a subalgebra of Hn (q) of Laurent polynomials. We put also
+P[i] = k[Xi±1 ].
+
+3.1.2. Degenerate case. Assume q = 1. The degenerate affine Hecke algebra Hn (1) is the k-
+algebra with generators
+                                 T1 , . . . , Tn−1 , X1 , . . . , Xn
+subject to the relations
+                                    Ti2 = 1
+                                   Ti Tj = Tj Ti (when |i − j| > 1)
+                              Ti Ti+1 Ti = Ti+1 Ti Ti+1
+                                  Xi Xj = Xj Xi
+                                 Xi Tj = Tj Xi (when i − j 6= 0, 1)
+                                Xi+1 Ti = Ti Xi + 1.
+  Note that the degenerate affine Hecke algebra is not the specialization of the affine Hecke
+algebra.
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                               5
+
+  We put Pn = k[X1 , . . . , Xn ], a polynomial subalgebra of Hn (1). We put also P[i] = k[Xi ].
+The subalgebra Hnf (1) of Hn (1) generated by T1 , . . . , Tn−1 is the group algebra kSn of the
+symmetric group.
+
+                                                                                             ∼
+3.1.3. We put Hn = Hn (q) and Hnf = Hnf (q). There is an isomorphism Hn → Hnopp , Ti 7→
+Ti , Xi 7→ Xi . It allows us to switch between right and left Hn -modules. There is an automor-
+phism of Hn defined by Ti 7→ Tn−i , Xi 7→ X̃n−i+1 , where X̃i = Xi−1 if q 6= 1 and X̃i = −Xi if
+q = 1.
+    We denote by l : Sn → N the length function. We put si = (i, i + 1) ∈ Sn . Given
+w = si1 · · · sir a reduced decomposition of an element w ∈ Sn (i.e., r = l(w)), we put Tw =
+Tsi1 · · · Tsir .
+    We have Hn = Hnf ⊗ Pn = Pn ⊗ Hnf .
+    We have an action of Sn on Pn by permutation of the variables. Given p ∈ Pn , we have [Lu,
+Proposition 3.6]
+                                      (
+                                                       −1 −1
+                                       (q − 1)(1 − Xi Xi+1 ) (p − si (p)) if q 6= 1
+(1)                 Ti p − si (p)Ti =              −1
+                                       (Xi+1 − Xi ) (p − si (p))          if q = 1
+
+Note that (Pn )Sn ⊂ Z(Hn ) (this is actually an equality, a result of Bernstein).
+
+3.1.4. Let 1 (resp. sgn) be the one-dimensional representation of Hnf given by Tsi 7→ q (resp.
+Tsi 7→ −1). Let τ ∈ {1, sgn}. We put
+                                        X
+                                  cτn =     q −l(w) τ (Tw )Tw .
+                                               w∈Sn
+                                             P                           P
+We have cτn ∈ Z(Hnf ). We have c1n = w∈Sn Tw and csgn             n =        w∈Sn (−q)
+                                                                                       −l(w)
+                                                                                             Tw , and c1n csgn
+                                                                                                           n =
+ sgn 1
+cn cn = 0 for n ≥ 2.
+   More generally, given 1 ≤ i ≤ j ≤ n, we denote by S[i,j] the symmetric group on [i, j] =
+                                            f                                  P
+{i, i + 1, . . . , j}, we define similarly H[i,j] , H[i,j] and we put cτ[i,j] = w∈S[i,j] q −l(w) τ (Tw )Tw .
+                                              P
+   Given I a subset of Sn we put cτI = w∈I q −l(w) τ (Tw )Tw . We have
+
+                                       cτn = cτ[Sn /Si ] cτi = cτi cτ[Si \Sn ]
+
+where [Sn /Si] (resp. [Si \ Sn ]) is the set of minimal length representatives of right (resp. left)
+cosets.
+  Given M a projective Hnf -module, then cτn M = {m ∈ M | hm = τ (h)m for all h ∈ Hnf } and
+                                        ∼
+the multiplication map cτn Hnf ⊗Hnf M → cτn M is an isomorphism. Given N an Hn -module, then
+                                   ∼
+the canonical map cτn Hnf ⊗Hnf N → cτn Hn ⊗Hn N is an isomorphism.
+
+3.2. Totally ramified central character. We gather here a number of properties of (de-
+generate) affine Hecke algebras after completion at a maximally ramified central character.
+Compared to classical results, some extra complications arise from the possibility of n! being 0
+in k.
+6                                 JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+3.2.1. We fix a ∈ k, with a 6= 0 if q 6= 1. We put xi = Xi − a. Let mn be the maximal ideal of
+                                                         Sn
+Pn generated by x1 , . . . , xP
+                              n and let nn = (mn )           .
+                                                                       Sn
+  Let em (x1 , . . . , xn ) =   1≤i1 <···<im ≤n xi1 · · · xim ∈ Pn          be the m-th elementary symmetric
+                        n
+                              Pn−1        n+i+1 i
+                                                                                       Ln−1 i
+function. Then, xn =           i=0 (−1)         xn en−i (x1 , . . . , xn ). So, xln ∈     i=0 xn nn for l ≥ n.
+                                             Sn−1
+                                                        Ln−1 i Sn
+Via Galois theory, we deduce that Pn               = i=0 xn Pn . Using that the multiplication map
+  Sj              ∼     Sj
+Pj ⊗ P[j+1,n] → Pn is an isomorphism, we deduce by induction that
+                                                M
+(2)                                 PnSr =                xar+1
+                                                             1
+                                                                · · · xann−r PnSn .
+                                                  0≤ai <r+i
+
+
+3.2.2. We denote by Pd   Sn the completion of P Sn at n , and we put P̂ = P ⊗ S P
+                         n                        n         n          n      n  Pn n
+                                                                                      d
+                                                                                       n
+                                                                                        Sn and
+
+Ĥn = Hn ⊗PnS n Pdn . The canonical map P̂n
+                  Sn                           → PnSn is an isomorphism, since Pd
+                                          Sn ∼ d                                Sn is flat over
+                                                                                n
+PnSn .
+   We denote by Nn the category of locally nilpotent Ĥn -modules, i.e., the category of Hn -
+modules on which nn acts locally nilpotently : an Hn -module M is in Nn if for every m ∈ M,
+there is i > 0 such that nin m = 0.
+   We put H̄n = Hn /(Hn nn ) and P̄n = Pn /(Pn nn ). The multiplication gives an isomorphism
+           ∼
+P̄n ⊗ Hnf → H̄n . The canonical map
+                                    M                     ∼
+                                         kxa11 · · · xann → P̄n
+                                               0≤ai <i
+
+is an isomorphism, hence dimk H̄n = (n!)2 .
+   The unique simple object of Nn is [Ka, Theorem 2.2]
+                                         Kn = Hn ⊗Pn Pn /mn ≃ H̄n cτn .
+It has dimension n! over k. It follows that the canonical surjective map H̄n → Endk (Kn ) is an
+isomorphism, hence H̄n is a simple split k-algebra.
+   Since Kn is a free module over Hnf , it follows that any object of Nn is free by restriction to
+                                                                                        ∼
+Hnf . From §3.1.4, we deduce that for any M ∈ Nn , the canonical map cτn Hn ⊗Hn M → cτn M is
+an isomorphism.
+Remark 3.1. We have excluded the case of the affine Weyl group algebra (the affine Hecke
+algebra at q = 1). Indeed, in that case Kn is not simple (when n ≥ 2) and H̄n is not a simple
+algebra. When n = 2, we have H̄n ≃ (k[x]/(x2 )) ⋊ µ2 , where the group µ2 = {±1} acts on x
+by multiplication.
+3.2.3. Let f : M → N be a morphism of finitely generated P̂nSn -modules. Then, f is surjective
+if and only if f ⊗P̂nS n P̂nSn /n̂n is surjective.
+Lemma 3.2. We have isomorphisms
+                                       n−1
+                                       M          can                         mult
+                        Ĥn cτn   ⊗k         xin k −−→ Ĥn cτn ⊗P̂nS n P̂nSn−1 −−→ Ĥn cτn−1 .
+                                                   ∼                           ∼
+                                       i=0
+
+Proof. The first isomorphism follows from the decomposition of P̂nSn−1 in (2).
+               DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                                                     7
+
+   Let us now study the second map. Note that both terms are free P̂nSn -modules of rank n · n!,
+since Ĥn cτn−1 ≃ P̂n ⊗ Hnf cτn−1 . Consequently, it suffices to show that the map is surjective.
+Thanks to the remark above, it is enough to check surjectivity after applying − ⊗P̂nS n P̂nSn /n̂n .
+   Note that the canonical surjective map k[xn ] → PnSn−1 ⊗PnS n PnSn /nn factors through k[xn ]/(xnn )
+(cf §3.2.1). So, we have to show that the multiplication map f : H̄n cτn ⊗ k[xn ]/(xnn ) → H̄n cτn−1 is
+surjective. This is a morphism of (H̄n , k[xn ]/(xnn ))-bimodules. The elements cτn , cτn xn , . . . , cτn xnn−1
+of H̄n are linearly independent, hence the image of f is a faithful (k[xn ]/(xnn ))-module. It follows
+that f is injective, since H̄n cτn is a simple H̄n -module. Now, dimk H̄n cτn−1 = n · n!, hence f is
+an isomorphism.                                                                                               
+                                                         P
+   Let M be a kSn -module. We put ΛSn M = M/( 0<i<n M si ). If n! ∈ k × , then ΛSn M is the
+largest quotient of M on which Sn acts via the sign character. Note that given a vector space
+V , then ΛSn (V ⊗n ) = Λn V .
+Proposition 3.3. Let {τ, τ ′ } = {1, sgn} and r ≤ n. We have isomorphisms
+                   M                                can                  S         mult
+        Ĥn cτn ⊗k            xan−r+1
+                                 1
+                                      · · · xanr k −−→ Ĥn cτn ⊗P̂nS n P̂n [1,n−r] −−→ Ĥn cτ[1,n−r] .
+                                                                          ∼                                          ∼
+                          0≤ai <n−r+i
+
+There is a commutative diagram
+                                                                                                  S
+                                                                              Ĥn cτn ⊗P̂nS n P̂n [1,n−r]
+                                                                                                      TTT            ′
+                                                                                                           TTT →xycτ[n−r+1,n]
+                                                                                                         TTx⊗y7
+                                                                                       can                    TTT
+                                                                                                                 TTTT
+                    M                                                                                                TTT)
+                                                                                                                           )
+Ĥn cτn   ⊗k                     xan−r+1
+                                    1
+                                           · · · xanr k    ∼    /                                       S
+                                                                    Ĥn cτn ⊗P̂nS n ΛS[n−r+1,n] P̂n [1,n−r]
+                                                                                                                         ∼   /                  ′
+                                                                                                                                 Ĥn cτ[1,n−r] cτ[n−r+1,n]
+                                                          can
+               0≤a1 <···<ar <n
+
+Proof. The multiplication map Hn ⊗Hn−i Hn−i cτn−i → Hn cτn−i is an isomorphism (cf §3.1.4). It
+follows from Lemma 3.2 that multiplication is an isomorphism
+                                                                    n−r
+                                                                    M                    ∼
+                                             Ĥn cτn−r+1    ⊗             xin−r+1 k → Ĥn cτn−r
+                                                                    i=0
+
+and the first statement follows by descending induction on r.
+   The surjectivity of the diagonal map follows from the first statement of the Proposition.
+                                                                                   ′                        ′
+   Let p ∈ P̂nsi . Then, c1[i,i+1] p = pc1[i,i+1] . It follows that cτ[i,i+1] pcτ[i,i+1] = 0, hence cτn pcτ[n−r+1,n] = 0
+whenever i ≥ n − r + 1. This shows the factorization property (existence of the dotted arrow).
+                                                            L                      a1          ar
+   Note that ΛS[n−r+1,n] P̂nSn−r is generated by                                                              Sn
+                                                               0≤a1 <···<ar <n xn−r+1 · · · xn k as a P̂n -module
+(cf (2)). It follows that we have surjective maps
+                    M                                                                                       ′
+    Ĥn cτn ⊗k                 xan−r+1
+                                  1
+                                       · · · xanr k ։ Ĥn cτn ⊗P̂nS n ΛS[n−r+1,n] P̂nSn−r ։ Ĥn cτn−r cτ[n−r+1,n].
+                  0≤a1 <···<ar <n
+                                                                                                            n
+                                                                                                                
+Now the first and last terms above are free P̂n -modules of rank                                            r
+                                                                                                                    , hence the maps are iso-
+morphisms.                                                                                                                                 
+Lemma 3.4. Let r ≤ n. We have cτr Ĥn cτn = P̂nSr cτn , cτn Ĥn cτr = cτn P̂nSr and the multiplication
+                          ∼                                      ∼
+maps cτn Ĥn ⊗Ĥn Ĥn cτr → cτn Ĥn cτr and cτr Ĥn ⊗Ĥn Ĥn cτn → cτr Ĥn cτn are isomorphisms.
+8                                JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+                                               ∼
+Proof. We have an isomorphism P̂n → Ĥn cτn , p 7→ pcτn . Let h ∈ Ĥn . We have cτn hcτn = pcτn for
+some p ∈ P̂n . Since Ti cτn = τ (Ti )cτn , it follows that Ti pcτn = τ (Ti )pcτn . So, (Ti p − si (p)Ti )cτn =
+τ (Ti )(p − si (p))cτn , hence p − si (p) = 0, using the formula (1). It follows that cτn Ĥn cτn ⊆ P̂nSn cτn .
+                                                                         ∼
+    By Proposition 3.3, the multiplication map Ĥn cτn ⊗P̂nS n P̂n → Ĥn is an isomorphism. So,
+                                                      ∼
+the multiplication map cτn Ĥn cτn ⊗P̂nS n P̂n → cτn Ĥn is an isomorphism, hence the canonical map
+                        ∼
+cτn Ĥn cτn ⊗P̂nS n P̂n → P̂nSn cτn ⊗P̂nS n P̂n is an isomorphism. We deduce that cτn Ĥn cτn = P̂nSn cτn .
+    Similarly (replacing n by r above), we have cτn P̂rSr cτr = cτn P̂rSr . Since PnSr = PrSr P[r+1,n] (cf
+§3.2.1), we deduce that
+                    cτn Ĥn cτr = cτn P̂n cτr = cτn P̂r cτr P̂[r+1,n] = cτn P̂rSr P̂[r+1,n] = cτn P̂nSr .
+
+  By Proposition 3.3, cτn Ĥn ⊗Ĥn Ĥn cτr is a free P̂nSr -module of rank 1. So, the multiplication
+map cτn Ĥn ⊗Ĥn Ĥn cτr → cτn Ĥn cτr is a surjective morphism between free P̂nSr -modules of rank 1,
+hence it is an isomorphism.
+  The cases where cτr is on the left are similar.                                                   
+Proposition 3.5. The functors Hn cτn ⊗PnS n − and cτn Hn ⊗Hn − are inverse equivalences of
+categories between the category of PnSn -modules that are locally nilpotent for nn and Nn .
+                                                                                          ∼
+Proof. By Proposition 3.3, the multiplication map Ĥn cτn ⊗P̂nS n P̂n → Ĥn is an isomorphism. It
+follows that the morphism of (Ĥn , Ĥn )-bimodules
+                                                          ∼
+                                 Ĥn cτn ⊗P̂nS n cτn Ĥn → Ĥn , hc ⊗ ch′ 7→ hch′
+is an isomorphism.
+   Since P̂nSn is commutative, it follows from Lemma 3.4 that the (P̂nSn , P̂nSn )-bimodules P̂nSn
+and cτn Ĥn ⊗Ĥn Ĥn cτn are isomorphic.                                                        
+
+3.3. Quotients.
+
+3.3.1. We denote by H̄i,n the image of Hi in H̄n for 0 ≤ i ≤ n. Let P̄i,n = Pi /(Pi ∩ (Pn nn )).
+                                         mult
+We have an isomorphism Hif ⊗ P̄i,n −−→ H̄i,n .
+                                          ∼
+           S[i+1,n]  L                                                           L
+  Since Pn          = 0≤al ≤n−l x1 · · · xai i PnSn (cf (2)), we deduce that Pi = 0≤al ≤n−l xa11 · · · xai i ⊕
+                                  a1
+
+(nn Pi ∩ Pi ) and nn Pi ∩ Pi = nn Pn ∩ Pi , hence the canonical map
+                                         M                         ∼
+(3)                                               xa11 · · · xai i → P̄i,n
+                                            0≤al ≤n−l
+
+is an isomorphism. We will identify such a monomial xa11 · · · xai i with its image in P̄i,n . Note
+                    n!
+that dimk P̄i,n = (n−i)! .
+   The kernel of the action of PiSi by right multiplication on H̄i,n cτi is PiSi ∩nn Pn . By Proposition
+3.5, we have a Morita equivalence between H̄i,n and Zi,n = PiSi /(PiSi ∩ nn Pn ). Note that
+H̄i,n cτi is the unique indecomposable
+                                         projective H̄i,n -module and dimk H̄i,n = i! dimk H̄i,n cτi . So,
+                 1                n
+dimk Zi,n = (i!)   2 dimk H̄i,n = i
+                                      and Zi,n = Z(H̄i,n ).
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                         9
+
+  We denote by P (r, s) the set of partitions µ = (µ1 ≥ · · · ≥ µr ≥ 0) with µ1 ≤ s. Given
+µ ∈ P (r, s), we denote by mµ the corresponding monomial symmetric function
+                                                     X µσ(1)    µ
+                             mµ (x1 , . . . , xr ) =  x1 · · · xr σ(r)
+                                                                     σ
+
+where σ runs over left coset representatives of Sr modulo the      Lstabilizer of (µ1 , . . . , µr ).
+   The isomorphism (3) shows that the canonical map from µ∈P (i,n−i) kmµ (x1 , . . . , xi ) to P̄i,n
+is injective, with image contained in Zi,n . Comparing dimensions, it follows that the canonical
+map
+                                   M                             ∼
+                                          kmµ (x1 , . . . , xi ) → Zi,n
+                                          µ∈P (i,n−i)
+
+is an isomorphism.
+   Also, comparing dimensions, one sees that the canonical surjective maps
+                                                  ∼                                   ∼
+                            Pi ⊗P S i Zi,n → P̄i,n and Hi ⊗P S i Zi,n → H̄i,n
+                                      i                                      i
+
+are isomorphisms.
+
+3.3.2. Let Gi,n be the Grassmannian variety of i-dimensional subspaces of Cn and Gn be the
+variety of complete flags in Cn . The canonical morphism p : Gn → Gi,n induces an injective
+morphism of algebras p∗ : H ∗ (Gi,n ) → H ∗ (Gn ) (cohomology is taken with coefficients in k). We
+identify Gn with GLn /B, where B is the stabilizer of the standard flag (C(1, 0, . . . , 0) ⊂ · · · ⊂
+Cn ). Let Lj be the line bundle associated to the character of B given by the j-th diagonal
+                                            ∼
+coefficient. We have an isomorphism P̄n → H ∗ (Gn ) sending xj to the first Chern class of Lj . It
+multiplies degrees by 2. Now, p∗ H ∗ (Gi,n ) coincides with the image of PiSi in P̄n . So, we have
+obtained an isomorphism
+                                                ∼
+                                         Zi,n → H ∗ (Gi,n ).
+   Since Gi,n is projective, smooth and connected of dimension i(n − i), Poincaré duality says
+that the cup product H j (Gi,n ) × H 2i(n−i)−j (Gi,n ) → H 2i(n−i) (Gi,n ) is a perfect pairing. Via the
+                              ∼
+isomorphism H 2i(n−i) (Gi,n ) → k given by the fundamental class, this provides H ∗ (Gi,n ) with a
+structure of a symmetric algebra.
+   Note that the algebra H̄i,n is isomorphic to the ring of i! × i! matrices over H ∗ (Gi,n ) and it
+is a symmetric algebra. Up to isomorphism, it is independent of a and q.
+
+3.3.3. Let i ≤ j. We have
+                                                           M             a        a
+                              H̄j,n = H̄i,n ⊗                            i+1
+                                                                      kxi+1  · · · xj j ⊗ kTw
+                                                        w∈[Si \Sj ]
+                                                        0≤al ≤n−l
+
+                                                        (n−i)!j!
+hence H̄j,n is a free H̄i,n -module of rank             (n−j)!i!
+                                                                 .
+Lemma 3.6. The Hi -module cτ[i+1,n] Kn has a simple socle and head.
+Proof. By Proposition 3.3, multiplication gives an isomorphism
+                        M                                            ∼
+                             xai+1
+                                1
+                                   · · · xnan−i ⊗ cτ[i+1,n] H[i+1,n] → H[i+1,n] ,
+                            0≤al <l
+10                                JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+hence gives an isomorphism of H̄i,n -modules
+                            M                                        ∼
+                                  xai+1
+                                     1
+                                        · · · xann−i ⊗ cτ[i+1,n] H̄n → H̄n .
+                                    0≤al <l
+
+Since H̄n is a free H̄i,n -module of rank (n−i)!n!
+                                             i!
+                                                   , it follows that hence cτ[i+1,n] H̄n is a free H̄i,n -
+module of rank n! i!
+                     . We have H̄i,n ≃ i! · M as H̄i,n -modules, where M has a simple socle and
+head. Since in addition H̄n ≃ n! · Kn as H̄n -modules, we deduce that cτ[i+1,n] Kn ≃ M has a
+simple socle and head.                                                                                 
+Lemma 3.7. Let r ≤ l ≤ n. We have isomorphisms
+     M                 al−r
+                               M
+           xa11 · · · xl−r  k⊗   mµ (xl−r+1 , . . . , xl )k                                 ∼      /   cτ[l−r+1,l] H̄l,n cτl
+        0≤ai ≤n−i                     µ∈P (r,n−l)                                    a⊗b7→abcτl                  O
+
+                                       ∼ a⊗b7→acτn ⊗b                                                      mult ∼
+                                   M        
+              H̄l−r,n cτl−r ⊗                   mµ (xl−r+1 , . . . , xl )k                  cτ[l−r+1,l] H̄l,n ⊗H̄l,n H̄l,n cτl
+                                µ∈P (r,n−l)
+
+                    L                                                                   a
+Proof. Let L =       µ∈P (r,n−l),0≤ai ≤n−i          mµ (xl−r+1 , . . . , xl )xa11 · · · xl−r
+                                                                                          l−r
+                                                                                              k.
+                                                                                                               S
+   We have L ∩ nn Pn = 0 (cf (3)), hence the canonical map f : L → Pl [l−r+1,l] ⊗P S l Zl,n is
+                             n
+                                    S[l−r+1,l]             Sl               l!
+                                                                                          l
+
+injective. Since dimk Zl,n = l and Pl           is a free Pl -module of rank r! , it follows that f
+is an isomorphism. Now, we have an isomorphism (Lemma 3.4)
+                                        S[l−r+1,l] ∼
+                                      P̂l               → cτ[l−r+1,l]Ĥl cτl , a 7→ acτl .
+Consequently, the horizontal map of the Lemma is an isomorphism.
+  As seen in §3.3.1, the left vertical map is an isomorphism. By Lemma 3.4, the right vertical
+map is also an isomorphism.                                                                 
+
+                                                         4. Reminders
+4.1. Adjunctions.
+
+4.1.1. Let C and C ′ be two categories. Let (G, G∨ ) be an adjoint pair of functors, G : C → C ′
+and G∨ : C ′ → C : this is the data of two morphisms η : IdC → G∨ G (the unit) and ε : GG∨ →
+IdC ′ (the counit), such that (ε1G ) ◦ (1G η) = 1G and (1G∨ ε) ◦ (η1G∨ ) = 1G∨ . We have then a
+canonical isomorphism functorial in X ∈ C and X ′ ∈ C ′
+                                       ∼
+     γG (X, X ′ ) : Hom(GX, X ′ ) → Hom(X, G∨ X ′ ), f 7→ G∨ (f ) ◦ η(X), ε(X ′ ) ◦ G(f ′ ) ←p f ′ .
+Note that the data of such a functorial isomorphism provides a structure of adjoint pair.
+
+4.1.2. Let (H, H ∨) be an adjoint pair of functors, with H : C → C ′ . Let φ ∈ Hom(G, H).
+Then, we define φ∨ : H ∨ → G∨ as the composition
+                                     ηG 1       ∨                1   ∨ φ1   ∨               1   ∨ εH
+                        φ∨ : H ∨ −−−−
+                                    H
+                                     → G∨ GH ∨ −−G−−−H−→ G∨ HH ∨ −−
+                                                                  G
+                                                                   −−→ G∨ .
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                                 11
+
+This is the unique map making the following diagram commutative, for any X ∈ C and X ′ ∈ C ′ :
+                                                                Hom(φ(X),X ′ )
+                             Hom(HX, X ′)                                              /   Hom(GX, X ′ )
+                            γH (X,X ′ ) ∼                                                       ∼ γG (X,X ′ )
+                                                                                                 
+                            Hom(X, H ∨ X ′ )                                       /       Hom(X, G∨ X ′ )
+                                                            Hom(X,φ∨ (X ′ ))
+
+                                                           ∼
+We have an isomorphism Hom(G, H) → Hom(H ∨ , G∨), φ 7→ φ∨ . We obtain in particular
+                                 ∼
+an isomorphism of monoids End(G) → End(G∨ )opp . Given f ∈ End(G), then the following
+diagrams commute
+                                          ∨                                                           ∨
+                                   G          GH                                           GG
+                              η xx
+                                  x<           HH 1 ∨ f                          f 1G∨   vv
+                                                                                           ;  FF
+                                                                                                FF ε
+                                x                HH G                                  vv         FF
+                              xx                   HH                                vv              FF
+                            xx                       HH                             v
+                                                       #                          vv                   #
+                                                            ∨
+                        IdC F                           G
+                                                        ;       G              GG∨H                               IdC ′
+                             FF                       vv                           HH                        x;
+                               F  FF               vvv                               HH
+                                                                                       HH                 xxx
+                              η     FF           vv ∨                            1G f ∨ HH#             xx ε
+                                      "        vv f 1G                                                xx
+                                       G∨ G                                                     GG∨
+
+4.1.3. Let now (G1 , G∨1 ) and (G2 , G∨2 ) be two pairs of adjoint functors, with G1 : C ′ → C ′′ and
+G2 : C → C ′ . The composite morphisms
+                             1G∨ η1 1G2                                                          1G1 ε2 1G∨
+              η2                                                                                                          ε
+             → G∨2 G2 −−−
+         IdC −          2
+                          −−−→ G∨2 G∨1 G1 G2 and G1 G2 G∨2 G∨1 −−−−−−→
+                                                                     1
+                                                                       G1 G∨1 −
+                                                                              →1
+                                                                                 IdC
+give an adjoint pair (G1 G2 , G∨2 G∨1 ).
+                                  dr
+4.1.4. Let F = 0 → F r −     → F r+1 → · · · → F s → 0 be a complex of functors from C to C ′ (with
+F i in degree i). This defines a functor Comp(C) → Comp(C ′ ) by taking total complexes.
+   Let (F i, F i∨ ) be adjoint pairs for r ≤ i ≤ s. Let
+                                                                    (ds−1 )∨
+                                       F ∨ = 0 → F s∨ −−−−→ · · · → F r∨ → 0
+with F i∨ in degree −i. This complex of functors defines a functor Comp(C ′ ) → Comp(C).
+  There is an adjunction (F, F ∨ ) between functors on categories of complexes, uniquely deter-
+                                                                                                     ∼
+mined by the property that given X ∈ C and X ′ ∈ C ′ , then γF (X, X ′ ) : HomComp(C ′ ) (F X, X ′ ) →
+HomComp(C) (X, F ∨X ′ ) is the restriction of
+                 X                   M                      ∼
+                                                              M
+                    γF i (X, X ′ ) :    HomC ′ (F iX, X ′ ) →   HomC (X, F i∨ X ′ ).
+                    i                              i                                        i
+
+  This extends to the case where F is unbounded, under the assumption that for any X ∈ C,
+then F r (X) = 0 for |r| ≫ 0 and for any X ′ ∈ C ′ , then F r∨(X ′ ) = 0 for |r| ≫ 0.
+
+4.1.5. Assume C and C ′ are abelian categories.
+   Let c ∈ End(G). We put cG = im(c). We assume the canonical surjection G → cG splits
+(i.e., cG = eG for some idempotent e ∈ End(G)). Then, the canonical injection c∨ G∨ → G∨
+splits as well (indeed, c∨ G∨ = e∨ G∨ ).
+12                                 JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+ Let X ∈ C, X ′ ∈ C ′ and φ ∈ Hom(cGX, X ′ ). There is ψ ∈ Hom(GX, X ′ ) such that φ = ψ|cGX .
+We have a commutative diagram
+                                             η                     G∨ c                                 G∨ ψ
+                                   X GG / G∨ GX           / G∨ GX
+                                                             9
+                                                                         / G∨ X ′
+                                       GG                rr r             s9
+                                         GG           rr              sss
+                                                    rr ∨             s
+                                        η GGG                      ss ∨
+                                             #   rrr c G         ss c
+                                            G∨ GX G∨ ψ / G∨ X ′
+
+It follows that there is a (unique) map γcG (X, X ′ ) : Hom(cGX, X ′ ) → Hom(X, c∨ G∨ X ′ ) making
+the following diagram commutative
+                                                                  γG (X,X ′ )
+                                  Hom(GX, X ′ )                       ∼
+                                                                                           /    Hom(X, G∨ X ′ )
+                                             O                                                                       O
+
+                                        ?                                                                      ?
+                                                                      ∼
+                              Hom(cGX, X ′ )                                       /       Hom(X, c∨ G∨ X ′ )
+                                                                 γcG (X,X ′ )
+
+where the vertical maps come from the canonical projection G → cG and injection c∨ G∨ → G∨ .
+                                                ′
+  Similarly, one shows there is a (unique) map γcG (X, X ′ ) : Hom(X, c∨ G∨ X ′ ) → Hom(cGX, X ′ )
+making the following diagram commutative
+                                                                 γG (X,X ′ )−1
+                                  Hom(GX, X ′ ) o                     ∼                         Hom(X, G∨ X ′ )
+                                                 O                                                                       O
+
+                                        ?                                                                      ?
+                                                                      ∼
+                              Hom(cGX, X ′ ) o                    ′ (X,X ′ )
+                                                                                           Hom(X, c∨ G∨ X ′ )
+                                                                 γcG
+
+  The maps γcG (X, X ′ ) and γcG
+                              ′
+                                 (X, X ′ ) are inverse to each other and they provide (cG, c∨ G∨ )
+with the structure of an adjoint pair. If p : G → cG denotes the canonical surjection, then
+p∨ : c∨ G∨ → G∨ is the canonical injection.
+
+4.1.6. Let C, C ′ , D and D ′ be four categories, G : C → C ′ , G∨ : C ′ → C, H : D → D ′ and
+H ∨ : D ′ → D, and (G, G∨ ) and (H, H ∨ ) be two adjoint pairs. Let F : C → D and F ′ : C ′ → D ′
+                                             ∼
+be two fully faithful functors and φ : F ′ G → HF be an isomorphism.
+  We have isomorphisms
+                     F′                                         Hom(φ−1 1         ∨ ,F
+                                                                                                ′)
+     Hom(GG∨ , IdC ′ ) −→ Hom(F ′ GG∨ , F ′) −−−−−−−G−−−→ Hom(HF G∨, F ′ )
+                      ∼                                                   ∼
+                                                                                                                             γH (F G∨ ,F ′ )
+                                                                                                                             −−−−−−−→ Hom(F G∨ , H ∨F ′ )
+                                                                                                                                   ∼
+                 ∨        ∨   ′
+and let ψ : F G → H F denote the image of εG under this sequence of isomorphisms.
+  Then, ψ is an isomorphism and we have a commutative diagram
+                                                                      1F ε G
+                                                      F ′ GG∨                          /       FO ′
+                                                     φ1G∨                                            ε H 1F ′
+                                                            
+                                                      HF G∨          1H ψ
+                                                                              /   HH ∨F ′
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                             13
+
+4.2. Representations of sl2 . We put
+                                                              
+                     0 1            0 0                       1 0
+                e=           , f=         and h = ef − f e =         .
+                     0 0            1 0                       0 −1
+  We have                               
+                                  0 1
+                           s=              = exp(−f ) exp(e) exp(−f )
+                                 −1 0
+                                          
+                            −1      0 −1
+                           s =                = exp(f ) exp(−e) exp(f )
+                                    1 0
+  We put e+ = e and e− = f .
+  Let V be a locally finite representation of sl2 (Q) (i.e., a direct sum of finite dimensional
+representations). Given λ ∈ Z, we denote by Vλ the weight space of V for the weight λ (i.e.,
+the λ-eigenspace of h).
+  For v ∈ V , let h± (v) = max{i|ei± v 6= 0} and d(v) = h+ (v) + h− (v) + 1.
+Lemma 4.1. Assume V is a direct sum of isomorphic simple sl2 (Q)-modules of dimension d.
+  Let v ∈ Vλ . Then,
+     • d(v) = d = 1 + 2h± ± λ
+        (j) (j)            
+     • e∓ e± v = h∓j+j · hj± v for 0 ≤ j ≤ h± .
+Lemma 4.2. Let λ ∈ Z and v ∈ V−λ . Then,
+                 h− (v)                                          h+ (v)
+                 X            (−1)r λ+r r                         X            (−1)r
+     s(v) =                            e f (v) and s−1 (v) =                            er f −λ+r (v).
+                            r!(λ + r)!                                      r!(−λ + r)!
+              r=max(0,−λ)                                      r=max(0,λ)
+
+  In the following Lemma, we investigate bases of weight vectors with positivity properties.
+Lemma 4.3. LetL       V be a locally finite sl2 (Q)-module. Let B be a basis of V consisting of weight
+vectors such that b∈B Q≥0 bL       is stable under the actions of e+ and e− . Let L± = {b ∈ B|e∓ b = 0}
+                           ≤r
+and given r ≥ 0, let V = d(b)≤r Qb.
+   Then,
+    (1) Given r ≥ 0, then V ≤r is a submodule of V isomorphic to a sum of modules of dimension
+         ≤ r.
+                                      h (b)
+    (2) Given b ∈ B, we have e±± b ∈ Q≥0 L∓ .
+                                                               h (b)                              h (b)
+    (3) Given b ∈ L± , there is αb ∈ Q>0 such that αb−1 e±± b ∈ L∓ and the map b 7→ αb−1 e±± b
+                               ∼
+         is a bijection L± → L∓ .
+The following assertions are equivalent:
+     (i) Given r ≥ 0, then V ≤r is the sum of all the simple submodules of V of dimension ≤ r.
+    (ii) {ei± b}b∈L± ,0≤i≤h± (b) is a basis of V .
+   (iii) {ei± b}b∈L± ,0≤i≤h± (b) generates V .
+                                         P                                                 P
+Proof. Let b ∈ B. We have eb = c∈B uc c with uc ≥ 0. We have 0 = eh+ (b) eb = c uc eh+ (b) c
+                 L
+and eh+ (b) c ∈ b′ ∈B Q≥0 b′ , hence eh+ (b) c = 0 for all c ∈ B such that uc 6= 0. So, h+ (c) ≤ h+ (b)
+for all c ∈ B such that uc 6= 0. Hence, (1) holds.
+                h (b)     P                                P                            L
+   We have e±± b = c∈B vc c with vc ≥ 0. Since c∈B vc e± c = 0 and e± c ∈ b′ ∈B Q≥0 b′ , it
+follows that e± c = 0 for all c such that vc 6= 0, hence (2) holds.
+14                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+                           h (b)    P                                 h (b) h (b)
+  Let b ∈ L± . We have e±± b = c∈B vc c with vc ≥ 0. We have e∓± e±± b = βb for some
+            P        h (b)
+β > 0. So, c∈B vc e∓± c = βb. It follows that given c ∈ B with vc 6= 0, there is βc ≥ 0 with
+ h (b)                                       h (b) h (b)       h (b)
+e∓± c = βc b. Since h± (c) = h∓ (b), then e±± e∓± c = βc e±± b is a non-zero multiple of c,
+and it follows that there is a unique c such that vc 6= 0. This shows (3).
+   Assume (i). We prove by induction on r that {ei± b}b∈L± ,0≤i≤h± (b)<r is a basis of V ≤r (this
+is obvious for r = 0). Assume it holds for r = d. The image of {b ∈ B|d(b) = d + 1} in
+V ≤d+1 /V ≤d is a basis. This module is a multiple of the simple module of dimension d + 1 and
+{b ∈ L± |d(b) = d + 1} maps to a basis of the lowest (resp. highest) weight space of V ≤d+1 /V ≤d
+if ± = + (resp. ± = −). It follows that {ei± b}b∈L± ,0≤i≤d=h± (b) maps to a basis of V ≤d+1 /V ≤d .
+By induction, it follows that {ei± b}b∈L± ,0≤i≤h± (b)≤d is a basis of V ≤d+1 . This
+                                                                               P proves (ii).
+   Assume (ii). Let v be a weight vector with weight λ. We have v = b∈L± ,2i=λ±h± (b) ub,iei± b
+for some ub,i ∈ Q. Take s maximal such that there is b ∈ L± with h± (b) = s + i and ub,i 6= 0.
+               P                   h (b)                 h (b)
+Then, es± v = b∈L± ,i=h±b −s ub,i e±± b. Since the e±± b for b ∈ L± are linearly independent,
+it follows that es± v 6= 0, hence s ≤ h+ (v). So, if d(v) < r, then h± (b) < r for all b such that
+ub,i 6= 0. We deduce that (i) holds.
+   The equivalence of (ii) and (iii) is an elementary fact of representation theory of sl2 (Q). 
+
+                                   5. sl2 -categorification
+5.1. Weak categorifications.
+5.1.1. Let A be an artinian and noetherian k-linear abelian category with the property that
+the endomorphism ring of any simple object is k (i.e., every object of A is a successive extension
+of finitely many simple objects and the endomorphism ring of a simple object is k).
+   A weak sl2 -categorification is the data of an adjoint pair (E, F ) of exact endo-functors of A
+such that
+      • the action of e = [E] and f = [F ] on V = Q ⊗ K0 (A) gives a locally finite sl2 -
+         representation
+      • the classes of the simple objects of A are weight vectors
+      • F is isomorphic to a left adjoint of E.
+   We denote by ε : EF → Id and η : Id → F E the (fixed) counit and unit of the pair (E, F ).
+We don’t fix an adjunction between F and E.
+Remark 5.1. Assume A = A-mod for a finite dimensional k-algebra A. The requirement that
+E and F induce an sl2 -action on K0 (A) is equivalent to the same condition for K0 (A-proj).
+Furthermore, the perfect pairing K0 (A-proj) × K0 (A) → Z, ([P ], [S]) 7→ dimk HomA (P, S)
+induces an isomorphism of sl2 -modules between K0 (A) and the dual of K0 (A-proj).
+Remark 5.2. A crucial case of application will be A = A-mod, where A is a symmetric algebra.
+In that case, the choice of an adjunction (E, F ) determines an adjunction (F, E).
+  We put E+ = E and E− = F . By the weight space of an object of A, we will mean the
+weight space of its class (whenever this is meaningful).
+  Note that the opposite category Aopp also carries a weak sl2 -categorification.
+  Fixing an isomorphism between F and a left adjoint to E gives another weak categorification,
+obtained by swapping E and F . We call it the dual weak categorification.
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                                15
+
+  The trivial weak sl2 -categorification on A is the one given by E = F = 0.
+
+5.1.2. Let A and A′ be two weak sl2 -categorifications. A morphism of weak sl2 -categorifications
+                                                                                               ∼
+from A′ to A is the data of a functor R : A′ → A and of isomorphisms of functors ζ± : RE±′ →
+E± R such that the following diagram commutes
+
+                                                                      ζ−
+(4)                                                  RF ′                               /       F OR
+                                           ηRF ′                                                  F Rε′
+                                                          
+                                                   F ERF ′             −1 ′
+                                                                                  /   F RE ′ F ′
+                                                                    F ζ+ F
+
+  Note that ζ+ determines ζ− , and conversely (using a commutative diagram equivalent to the
+one above).
+Lemma 5.3. The commutativity of diagram (4) is equivalent to the commutativity of either of
+the following two diagrams
+
+                             s R JJJ                                                          s9 R dJJJ
+                       Rη′
+                         sss        JJ ηR                                                 sss     Rε′  JJ εR
+                      sss             JJ
+                                        JJ                                             sss               JJ
+                                                                                                           JJ
+                     s                                                                s
+                  yss ∼               ∼
+                                            J$                                      ss ∼                 ∼
+                                                                                                               J
+                ′ ′        /      ′       /                                      ′ ′        /        ′       /
+              RF E     ζ− E ′
+                             F RE           F ER   F ζ+
+                                                                               RE F           ERF ζ+ F ′
+                                                                                                               EF R  Eζ−
+
+Proof. Let us assume diagram (4) is commutative. We have a commutative diagram
+                                                                        −1
+                             ηR                                      F ζ+
+               R                           /       F ER                              F RE ′ SS
+                                                                                            /
+                                                                                                  SSS
+                                                                                                     SSSid
+            Rη′                       F ERη′                                     F RE ′ η′               SSS
+                                                                                                             SSS
+                                                                                                             S)
+            RF ′ E ′    ηRF ′ E ′
+                                      /   F ERF ′ E ′                 −1 ′ ′
+                                                                                 / F RE ′ F ′ E ′
+                                                                                                      F Rε′ E ′
+                                                                                                                 / F RE ′
+                                                                                                                   8
+                                                                   F ζ+ F E
+
+
+
+
+                                                                     ζ− E ′
+
+This shows the commutativity of the first diagram of the Lemma. The proof of commutativity
+of the second diagram is similar.
+   Let us now assume the first diagram of the Lemma is commutative. We have a commutative
+diagram
+                                                              id                      ζ−
+                                      RF ′ NN          / RF ′
+                                                          O
+                                                                                                       /   F OR
+                                             NNN
+                                                 NNN        RF ′ ε′
+                                                    N
+                                            Rη′ F ′ NN&
+                                    ηRF ′            RF ′ E ′ FNN′                                           F Rε′
+                                                                                NNN
+                                                                                     NNN
+                                                                                         N
+                                                                              ζ− E ′ F ′ NN'
+                                               
+                                    F ERF ′                            −1 ′
+                                                                                          / F RE ′ F ′
+                                                                    F ζ+ F
+
+So, diagram (4) is commutative. The case of the second diagram is similar.                                                  
+16                           JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+     Note that R induces a morphism of sl2 -modules K0 (A′ -proj) → K0 (A).
+Remark 5.4. Let A′ be a full abelian subcategory of A stable under subobjects, quotients,
+and stable under E and F . Then, the canonical functor A′ → A is a morphism of weak
+sl2 -categorifications.
+5.1.3. We fix now a weak sl2 -categorification on A and we investigate the structure of A.
+
+                                L space of V . Let Aλ be the full subcategory of A of objects
+Proposition 5.5. Let Vλ be a weight
+whose class is in Vλ . Then, A = λ Aλ . So, the class of an indecomposable object of A is a
+weight vector.
+Proof. Let M be an object of A with exactly two composition factors S1 and S2 . Assume S1
+and S2 are in different weight spaces. Then, there is ε ∈ {±} and {i, j} = {1, 2} such that
+                                                     ∼
+hε (Si ) > hε (Sj ). Let r = hε (Si ). We have Eεr M → Eεr Si 6= 0, hence all the composition factors
+     r
+of E−ε   Eεr M are in the same weight space as Si . Now,
+                       r
+                  Hom(E−ε Eεr M, M) ≃ Hom(Eεr M, Eεr M) ≃ Hom(M, E−ε
+                                                                  r
+                                                                     Eεr M)
+and these spaces are not zero. It follows that M has a non-zero simple quotient and a non-zero
+simple submodule in the same weight space as Si . So, Si is both a submodule and a quotient
+of M, hence M ≃ S1 ⊕ S2 .
+   We have shown that Ext1 (S, T ) = 0 whenever S and T are simple objects in different weight
+spaces. The proposition follows.                                                            
+   Let B be the set of classes of simple objects of A. This gives a basis of V and we can apply
+Lemma 4.3.
+   We have a categorification of the fact that a locally finite sl2 -module is an increasing union
+of finite dimensional sl2 -modules:
+Proposition 5.6. Let M be an object of A. Then, there is a Serre subcategory A′ of A stable
+under E and F , containing M and such that K0 (A′) is finite dimensional.
+Proof. Let I be the set of isomorphism classes of simple objects of A that arise as composition
+factors of E i F j M for some i, j. Since K0 (A) is a locally finite sl2 -module, then E i F j M = 0 for
+i, j ≫ 0, hence I is finite. Now, the Serre subcategory A′ generated by the objects of I satisfies
+the requirement.                                                                                      
+     We have a (weak) generation result for D b (A) :
+Lemma 5.7. Let C ∈ D b (A) such that HomDb (A) (E i T, C[j]) = 0 for all i ≥ 0, j ∈ Z and T
+simple object of A such that F T = 0. Then, C = 0.
+Proof. Assume C 6= 0. Take n minimal such that H n (C) 6= 0 and S simple such that
+Hom(S, H n C) 6= 0. Let i = h− (S) and let T be a simple submodule of F i S. Then,
+                                 Hom(E i T, S) ≃ Hom(T, F i S) 6= 0.
+So, HomD(A) (E i T, C[n]) 6= 0 and we are done, since F T = 0.                                       
+   There is an obvious analog of Lemma 5.7 using Hom(C[j], F i T ) with ET = 0. Since E is
+also a right adjoint of F , there are similar statements with E and F swapped.
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                   17
+
+Proposition 5.8. Let A′ be an abelian category and G be a complex of exact functors from A
+to A′ that have exact right adjoints. We assume that for any M ∈ A (resp. N ∈ A′ ), then
+Gi (M) = 0 (resp. Gi∨ (N) = 0) for |r| ≫ 0.
+  Assume G(E i T ) is acyclic for all i ≥ 0 and T simple object of A such that F T = 0. Then,
+G(C) is acyclic for all C ∈ Compb (A).
+Proof. Consider the right adjoint complex G∨ to G (cf §4.1.4). We have an isomorphism
+                      HomDb (A) (C, G∨G(D)) ≃ HomDb (A′ ) (G(C), G(D))
+for any C, D ∈ D b (A). These spaces vanish for C = E i T as in the Proposition. By Lemma
+5.7, they vanish for all C. The case C = D shows that G(D) is 0 in D b (A′ ).           
+Remark 5.9. Let F be the smallest full subcategory of A closed under extensions and direct
+summands and containing E i T for all i ≥ 0 and T simple object of A such that F T = 0. Then,
+in general, not every projective object of A is in F (cf the case of S3 and p = 3 in §7.1). On
+the other hand, if the representation K0 (A) is isotypic, then one shows that every object of A
+is a quotient of an object of F and in particular the projective objects of A are in F .
+              P
+   Let V ≤d = b∈B,d(b)≤d Qb. Let A≤d be the full Serre subcategory of A of objects whose class
+is in V ≤d .
+   Lemma 4.3(1) gives the following Proposition.
+Proposition 5.10. The weak sl2 -structure on A restricts to one on A≤d and induces one on
+A/A≤d.
+   So, we have a filtration of A as 0 ⊆ A≤1 ⊆ · · · ⊆ A compatible with the weak sl2 -structure.
+It induces the filtration 0 ⊆ V ≤1 ⊆ · · · ⊆ V . Some aspects of the study of A can be reduced to
+the study of A≤r /A≤r−1. This is particularly interesting when V ≤r /V ≤r−1 is a multiple of the
+r-dimensional simple module.
+5.1.4. We now investigate simple objects and the effect of E± on them.
+Lemma 5.11. Let M be an object of A. Assume that d(S) ≥ r whenever S is a simple subobject
+(resp. quotient) of M. Then, d(T ) ≥ r whenever T is a simple subobject (resp. quotient) of
+E±i M.
+Proof. It is enough to consider the case where M lies in a weight space by Proposition 5.5. Let
+T be a simple subobject of E±i M. Since Hom(E∓i T, M) ≃ Hom(T, E±i M) 6= 0, there is S a
+simple subobject of M that is a composition factor of E∓i T . Hence, d(S) ≤ d(E∓i T ) ≤ d(T ).
+The proof for quotients is similar.                                                          
+  Let Cr be the full subcategory of A≤r with objects M such that whenever S is a simple
+submodule or a simple quotient of M, then d(S) = r.
+Lemma 5.12. The subcategory Cr is stable under E± .
+Proof. It is enough to consider the case where M lies in a single weight space by Proposition
+5.5. Let M ∈ Cr lie in a single weight space. Let T be a simple submodule of E± M. By Lemma
+5.11, we have d(T ) ≥ r. On the other hand, d(T ) ≤ d(E± M) ≤ d(M). Hence, d(T ) = r.
+Similarly, one proves the required property for simple quotients.                           
+18                                JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+5.2. Categorifications.
+5.2.1. An sl2 -categorification is a weak sl2 -categorification with the extra data of q ∈ k × and
+a ∈ k with a 6= 0 if q 6= 1 and of X ∈ End(E) and T ∈ End(E 2 ) such that
+      • (1E T ) ◦ (T 1E ) ◦ (1E T ) = (T 1E ) ◦ (1E T ) ◦ (T 1E )
+      • (T + 1E 2 ) ◦ (T − ( q1E 2 ) = 0
+                               qX1E         if q 6= 1
+      • T ◦ (1E X) ◦ T =
+                               X1E − T if q = 1
+      • X − a is locally nilpotent.
+   Let A and A′ be two sl2 -categorifications. A morphism of sl2 -categorifications from A′ to A
+is a morphism of weak sl2 -categorifications (R, ζ+ , ζ− ) such that a′ = a, q ′ = q and the following
+diagrams commute
+                                  ζ+                                ζ+ E ′                   Eζ+
+(5)                    RE ′       ∼
+                                           /   ER        RE ′ E ′    ∼
+                                                                                 /   ERE ′    ∼
+                                                                                                   /   EER
+                     RX ′                           XR   RT ′                                               TR
+                                  ∼
+                                                                    ∼                      ∼
+                                                                                                        
+                       RE ′       ζ+
+                                       /       ER        RE ′ E ′   ζ+ E ′
+                                                                             /       ERE ′   Eζ+
+                                                                                                   /   EER
+
+5.2.2. We define a morphism γn : Hn → End(E n ) by
+                                Ti 7→ 1E n−i−1 T 1E i−1 and Xi 7→ 1E n−i X1E i−1 .
+With our assumptions, the Hn -module End(E n ) (given by left multiplication) is in Nn .
+  Let τ ∈ {1, sgn}. We put E (τ,n) = E n cτn , the image of cτn : E n → E n . Note that the canonical
+                    ∼
+map E n ⊗Hn Hn cτn → E (τ,n) is an isomorphism (cf §3.2.2).
+  In the context of symmetric groups, the following Lemma is due to Puig. It is an immediate
+consequence of Proposition 3.5.
+                                                                       ∼
+Lemma 5.13. The canonical map E (τ,n) ⊗PnS n cτn Hn → E n is an isomorphism. In particular,
+E n ≃ n! · E (τ,n) and the functor E (τ,n) is a direct summand of E n .
+   We denote by E (n) one of the two isomorphic functors E (1,n) , E (sgn,n) .
+   Using the adjoint pair (E, F ), we obtain a morphism Hn → End(F n )opp and the definitions
+and results above have counterparts for E replaced by F (cf §4.1.2).
+   We obtain a structure of sl2 -categorification on the dual as follows. Put X̃ = X −1 when
+q 6= 1 (resp. X̃ = −X when q = 1). We choose an adjoint pair (F, E). Using this adjoint
+pair, the endomorphisms X̃ of E and T of E 2 provide endomorphisms of F and F 2 . We take
+these as the defining endomorphisms for the dual categorification. We define “a” for the dual
+categorification as the inverse (resp. the opposite) of a for the original categorification.
+Remark 5.14. The scalar a can be shifted : given α ∈ k × when q 6= 1 (resp. α ∈ k when
+q = 1), then we can define a new categorification by replacing X by αX (resp. by X + α1E ).
+This changes a into αa (resp. α + a). So, the scalar a can always be adjusted to 1 (resp. to 0).
+Remark 5.15. Assume V is a multiple of the simple 2-dimensional sl2 -module. Then, a
+weak sl2 -categorification consists in the data of A−1 and A1 together with inverse equivalences
+           ∼                  ∼
+E : A−1 → A1 and F : A1 → A−1 . An sl2 -categorification is the additional data of q, a and
+X ∈ End(E) ≃ Z(A1 ) with X − a nilpotent.
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                      19
+
+Remark 5.16. As soon as V contains a copy of a simple sl2 -module of dimension 3 or more,
+then a and q are determined by X and T .
+Example 5.17. Take for V the three dimensional irreducible representation of sl2 . Let A−2 =
+A2 = k and A0 = k[x]/x2 . We put Ai = Ai -mod. On A−2 , define E to be induction A−2 → A0 .
+On A0 , E is restriction A0 → A2 and F is restriction A0 → A−2 . On A2 , then F is induction
+A2 → A0 .
+                                        Ind         /                     Res         /
+                                ko                      k[x]/x2 o                         k
+                                        Res                               Ind
+Let q = 1 and a = 0. Let X be the multiplication by x on Res : A0 → A2 and multiplication
+by −x on Ind : A−2 → A0 . Let T ∈ Endk (k[x]/x2 ) be the automorphism swapping 1 and
+x. This is an sl2 -categorification of the adjoint representation of sl2 . The corresponding weak
+categorification was constructed in [HueKho].
+Remark 5.18. Take for V the three dimensional irreducible representation of sl2 . Let A−2 =
+A2 = k[x]/x2 and A0 = k. We put Ai = Ai -mod. On A−2 , then E is restriction A−2 → A0 .
+On A0 , E is induction A0 → A2 and F is induction A0 → A−2 . On A2 , then F is restriction
+A2 → A0 .
+                                              Res         /         Ind         /
+                            k[x]/x2 o                         ko                    k[x]/x2
+                                              Ind                   Res
+
+  This is a weak sl2 -categorification but not an sl2 -categorification, since E 2 : A−2 → A2 is
+(k[x]/x2 ) ⊗k −, which is an indecomposable functor.
+Remark 5.19. Let A−2 = k, A0 = k × k and A−2 = k. We define E and F as the restriction
+and induction functors in the same way as in Example 5.17. Then, V is the direct sum of
+a 3-dimensional simple representation and a 1-dimensional representation. Assume there is
+X ∈ End(E) and T ∈ End(E 2 ) giving an sl2 -categorification. We have End(E 2 ) = Endk (k 2 )
+and X1E = 1E X = a1E 2 . But the quotient of H2 (q) by the relation X1 = X2 = a is zero ! So,
+we have a contradiction (note here it is crucial to exclude the affine Hecke algebra at q = 1).
+So, this is a weak sl2 -categorification but not an sl2 -categorification (note that we still have
+E 2 ≃ E ⊕ E).
+5.3. Minimal categorification. We introduce here a categorification of the (finite dimen-
+sional) simple sl2 -modules.
+   We fix q ∈ k × and a ∈ k with a 6= 0 if q 6= 1. Let n ≥ 0 and Bi = H̄i,n for 0 ≤ i ≤ n.
+                                                     L                           L         Bi+1
+   We put A(n)λ = B(λ+n)/2 -mod and A(n) =              i Bi -mod. We put E =       i<n IndBi   and
+      L         Bi                                 Bi+1                       Bi+1
+F = i>0 ResBi−1 . Note that the functors IndBi = Bi+1 ⊗Bi − and ResBi = Bi+1 ⊗Bi+1 −
+are left and right adjoint.
+   We have EF (Bi ) ≃ Bi ⊗Bi−1 Bi ≃ i(n − i + 1)Bi and F E(Bi ) ≃ Bi+1 ≃ (i + 1)(n − i)Bi as left
+Bi -modules (cf §3.3.3). So, (ef − f e)([Bi ]) = (2i − n)[Bi ]. Now, Q ⊗ K0 (A(n)λ ) = Q[B(λ+n)/2 ],
+hence ef − f e acts on K0 (A(n)λ ) by λ. It follows that e and f induce an action of sl2 on
+K0 (A(n)), hence we have a weak sl2 -categorification.
+                                                                                B
+  The image of Xi+1 in Bi+1 gives an endomorphism of IndBi+1
+                                                          i
+                                                             by right multiplication on Bi+1 .
+Taking the sum over all i, we get an endomorphism X of E. Similarly, the image of Ti+1 in
+                                   B
+Bi+2 gives an endomorphism of IndBi+2
+                                    i
+                                       and taking the sum over all i, we get an endomorphism
+       2
+T of E .
+20                            JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+  This provides an sl2 -categorification. The representation on K0 (A(n)) is the simple (n + 1)-
+dimensional sl2 -module.
+5.4. Link with affine Hecke algebras.
+5.4.1. The following Proposition generalizes and strengthens results of Kleshchev [Kl1, Kl2]
+in the symmetric groups setting and of Grojnowski and Vazirani [GrVa] in the context of
+cyclotomic Hecke algebras (cf §7.1 and §7.2).
+Proposition 5.20. Let S be a simple object of A, let n = h+ (S) and i ≤ n.
+  (a) E (n) S is simple.
+  (b) The socle and head of E (i) S are isomorphic to a simple object T of A. We have iso-
+       morphisms of (A, Hi)-bimodules: soc E i S ≃ hd E i S ≃ T ⊗ Ki .
+   (c) The morphism γi (S) : Hi → End(E i S) factors through H̄i,n and induces an isomorphism
+             ∼
+       H̄i,n → End(E i S).
+                                          Hi I
+                                                     {       II γ (S)
+                                         can {{{               II i
+                                                                 II
+                                                {{                  II
+                                             }{{                      I$
+                                     H̄i,n                        / End(E i S)
+                                                         ∼
+                               n
+                                 
+   (d) We have [E (i) S] − i [T ] ∈ V ≤d(T )−1 .
+The corresponding statements with E replaced by F and h+ (S) by h− (S) hold as well.
+Proof. • Let us assume (a) holds. We will show that (b), (c), and (d) follow.
+   We have E n S ≃ n! · T ′ for some T ′ simple. So, we have E n S ≃ T ′ ⊗ R as (A, Hn )-bimodules,
+where R is a right Hn -module in Nn . Since dim R = dim Kn , it follows that R ≃ Kn .
+   We have E n−i soc E (i) S ⊂ E n−i E (i) S ≃ T ′ ⊗Kn c1i . Since T ′ ⊗Kn c1i has a simple socle (Lemma
+3.6), it follows that E n−i soc E (i) S is an indecomposable (A, Hn−i)-bimodule. If T is a non-zero
+summand of soc E (i) S, then E n−i T 6= 0 (Lemma 5.12). So, T = soc E (i) S is simple. We have
+soc E i S ≃ T ⊗ R for some Hi -module R in Ni . Since dim R = i!, it follows that R ≃ Ki . The
+proof for the head is similar.
+   The dimension of End(E (i) S) is at most the multiplicity p of T as a composition factor of
+E S. Since E (n−i) T 6= 0, it follows that the dimension of End(E
+  (i)
+                                                                         
+                                                                           (i)
+                                                                               S) is at most the number of
+                            (n−i) (i)
+composition factors of E E S. We have E                    E S ≃ i · T . So, dim End(E (i) S) ≤ ni
+                                                      (n−i) (i)        n      ′
+                              n
+and dim End(E i S) ≤ (i!)2 i = dim H̄i,n .
+   Since ker γn (S) is a proper ideal of Hn , we have ker γn (S) ⊂ nn Hn . We have ker γi (S) ⊂
+Hi ∩ ker γn (S) ⊂ Hi ∩ (nn Hn ). So, the canonical map Hi → H̄i,n factors through a surjective
+                                                                                ∼
+map: im γi (S) ։ H̄i,n . We deduce
+                                        that γi(S) is surjective and H̄i,n → End(E i S). So, (c) holds.
+We deduce also that p = ni and that if L is a composition factor of E (i) S with E (n−i) L 6= 0,
+then L ≃ T . So, (d) holds. Since the simple object hd E (i) S is not killed by E (n−i) (Lemma
+5.12), we deduce that hd E (i) S ≃ T . We have now shown (b).
+   • Let us show that (a) (hence (b), (c), and (d)) holds when F S = 0. By Lemma 4.3 (3), we
+have [E (n) S] = r[T ] for some simple object T and r ≥ 1 integer. Since [F (n) E (n) S] = [S], we
+have r = 1, so (a) holds.
+   • Let us now show (a) in general. Let L be a simple quotient of F (r) S, where r = h− (S). Since
+Hom(S, E (r) L) ≃ Hom(F (r) S, L) 6= 0, we deduce that S is isomorphic to a submodule of E (r) L.
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                         21
+
+                                                             n+r
+                                                                 
+Since F L = 0, we know by (a) that E (n) E (r) L ≃ r T for some simple object T . So, E (n) S ≃
+mT for some positive integer m. We have Hom(E (n) S, T ) ≃ Hom(S, F (n) T ). Since ET = 0, we
+deduce that soc F (n) T is simple (we use (b) in its “F ” version). So, dim Hom(S, F (n) T ) ≤ 1,
+hence m = 1 and (a) holds.                                                                     
+Corollary 5.21. The sl2 (Q)-module V ≤d is the sum of the simple submodules of V of dimension
+≤ d.
+Proof. Let S be a simple object of A with r = h− (S). By Proposition 5.20 (a), T = F (r) S is
+simple. We deduce       that S ≃ soc E (r) T by adjunction. Now, Proposition 5.20 (d) shows that
+[E (r) T ] − d(S)
+               r
+                    [S] ∈ V ≤d(S)−1 .
+   We deduce by induction on r that {[E r T ]} generates V , where T runs over the isomorphism
+classes of simple objects killed by F and 0 ≤ r ≤ h+ (T ). The Corollary follows from Lemma
+4.3, (iii)=⇒(i).                                                                               
+Remark 5.22. Let S be a simple object of A and i ≤ h+ (S). The action of Zi,n = Z(H̄i,n ) on
+E i S restricts to an action on E (i) S. Since E i S is a faithful right H̄i,n -module, it follows from
+Proposition 3.5 that E (i) S is a faithful Zi,n -module. Now, dim EndA (E (i) S) = (i!)1 2 dim H̄i,n =
+dim Zi,n , hence the morphism Zi,n → EndA (E (i) S) is an isomorphism.
+  Let us now continue with the following crucial Lemma whose proof uses some of the ideas of
+the proof of Proposition 5.20.
+Lemma 5.23. Let U be a simple object of A such that F U = 0. Let n = h+ (U), i < n, and
+Bi = H̄i,n . The composition of η(E i U) ⊗ 1 : E i U ⊗Bi Bi+1 → F E i+1 U ⊗Bi Bi+1 with the action
+map F E i+1 U ⊗Bi Bi+1 → F E i+1 U is an isomorphism
+                                                             ∼
+                                      E i U ⊗Bi Bi+1 → F E i+1 U.
+Proof. By Proposition 3.5, it is enough to prove that the map   becomes an isomorphism after
+                                                            Ln−i−1
+                       1                              1
+applying − ⊗Bi+1 Bi+1 ci+1 . By (3), we have Bi+1 ci+1 =      a=0    P̄i,n xai+1 c1i+1 . Consider the
+composition
+                                                  n−i−1
+                                                   M
+                      φ = g ◦ (f ⊗ 1) : E (i) U ⊗       kxa → F E (i+1) U
+                                                             a=0
+
+                   η(E (i) U )         1F c1[S           U                               L
+                                             i \S i+1  ]
+where f : E (i) U −−−−−→ F EE (i) U −−−−−−−−→ F E (i+1) U and g : F E (i+1) U ⊗ n−i−1      a=0   kxa →
+F E (i+1) U is given by the action on F . We have to prove that φ is an isomorphism. We
+have [F E (i+1) U] = (n − i)[E (i) U], hence it suffices to prove that φ is injective. In order to
+do that, one may restrict φ to a map between the socles of the objects (viewed in A). Let
+φa : soc E (i) U → F E (i+1) U be the restriction of φ to the socle of E (i) U ⊗ kxa . Since soc(E (i) U)
+is simple (Proposition 5.20), the problem is to prove that the maps φa for 0 ≤ a ≤ n − i − 1
+are linearly independent. By adjunction, it is equivalent to prove that the maps
+                                      xa 1                           c1[S                U
+                                                 (i)                        i \S i+1 ]
+                    ψa : E soc E (i) U −−−soc
+                                          −−E−−→
+                                               U
+                                                 E soc E (i) U −−−−−−−→ E (i+1) U
+are linearly independent.
+  We have soc E i+1 U ≃ S ⊗ Ki+1 as (A, Hi+1 )-bimodules, where S = soc E (i+1) U is simple
+(Proposition 5.20). Consider the right (k[xi+1 ]⊗Hi )-submodule L′ = HomA (S, soc(E soc E i U)))
+22                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+                                                             f                  f
+of L = HomA (S, soc E i+1 U). We have Hi+1 = (Hi ⊗ P[i+1] )Hi+1 , hence L = L′ Hi+1 since L is
+                                  ′ 1       1                       i   1           (i+1)
+a simple right Hi+1 -module. So, L ci+1 = Lci+1 , hence soc(E soc E U))ci+1 = soc E       U. In
+                                      c1[S                 U
+                                             i+1 /S i ]
+particular, the map E soc E U −−−−−−−→ E (i+1) U is injective, since E soc E (i) U has a simple
+                             (i)
+
+socle by Proposition 5.20.
+                                                                                     Xa1                      (i)
+  So, we are left with proving that the maps E soc E (i) U −−−−  soc E
+                                                                   −−−→U
+                                                                         E soc E (i) U are linearly
+                                                                         L
+independent, i.e., that the restriction of γ1 (T ) : H1 → EndA (ET ) to n−i−1
+                                                                           a=0  kX1a is injective,
+where T = soc E (i) U. Let I be the kernel of γn−i(T ) : Hn−i → EndA (E n−i T ). Then, as in
+the proof of Proposition
+               Ln−i−1 5.20,     we have I ⊂ nn−i Hn−i . So, ker γ1 ⊂ H1 ∩ nn−i Hn−i, hence the
+canonical map a=0 kX1 → EndA (E n−i T ) is injective (cf (3)) and we are done.
+                           a
+                                                                                                 
+5.4.2. We fix U a simple object of A such that F U = 0. Let n = h+ (U). We put Bi = H̄i,n
+for 0 ≤ i ≤ n.
+   The canonical isomorphisms of functors
+                                       ∼                                 ∼
+                   E(E i U ⊗Bi −) → E i+1 U ⊗Bi − → E i+1 U ⊗Bi+1 Bi+1 ⊗Bi −
+make the following diagram commutative
+                                                                  E i+1 U ⊗Bi+1 −
+                                       Bi+1 -mod                                      /       AO
+                                                   O
+                                   Bi+1 ⊗Bi −                                                         E
+
+                                           Bi -mod                                        /   A
+                                                                   E i U ⊗Bi −
+
+     The canonical isomorphism of functors from Lemma 5.23
+                                                                   ∼
+                          E i U ⊗Bi Bi+1 ⊗Bi+1 − → F (E i+1 U ⊗Bi+1 −)
+make the following diagram commutative
+                                                                   E i+1 U ⊗Bi+1 −
+                                           Bi+1 -mod                                          /       A
+                              Bi+1 ⊗Bi+1 −                                                                F
+                                                                                                     
+                                             Bi -mod                                              /   A
+                                                                    E i U ⊗Bi −
+
+Theorem 5.24. The construction above is a morphism of sl2 -categorifications RU : A(n) → A.
+Proof. The commutativity of diagram (4) follows from the very definition of ζ− given by Lemma
+5.23. The commutativity of the diagram (5) is obvious.                                      
+Remark 5.25. Let In be the set of isomorphism classes of simple objects U of A such that
+F U = 0 and h+ (U) = n. We have a morphism of sl2 -categorifications
+                                X        M
+                                    RU :      A(n) → A
+                                       n,U ∈In                 n,U ∈In
+
+that is not an equivalence in general but that induces an isomorphism
+                             M                        ∼
+                                 Q ⊗ K0 (A(n)-proj) → Q ⊗ K0 (A)
+                            n,U ∈In
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                 23
+
+giving a canonical decomposition of Q ⊗ K0 (A) into simple summands. In that sense, the
+categorifications A(n) are minimal.
+  The following Proposition is clear.
+Proposition 5.26. Assume Q ⊗ K0 (A) is a simple sl2 -module of dimension n + 1. Let U be
+the unique simple object of A with F U = 0.
+  Then, RU : A(n) → A is an equivalence of categories if and only if U is projective.
+  Note that a categorification corresponding to an isotypic representation needs not be isomor-
+phic to a sum of minimal categorifications (take for example a trivial sl2 -representation).
+5.5. Decomposition of [E, F ].
+5.5.1. Let σ : EF → F E be given as the composition
+                                  EFη1      F  F     1 T1
+                                                        FE                1   ε
+                             EF −−−→ F EEF −−−−→ F EEF −−−→ F E.
+  The following gives the categorification of the relation [e, f ] = h.
+Theorem 5.27. Let λ ≥ 0. Then, we have isomorphisms
+                            λ−1
+                            X                                         L
+                                                                          λ   ∼
+                       σ+          (1F X j ) ◦ η : EF IdA−λ ⊕ IdA−λ → F E IdA−λ
+                             j=0
+
+and
+                             λ−1
+                             X                                                       L
+                                                                 ∼                       λ
+                        σ+          ε ◦ (X j 1F ) : EF IdAλ → F E IdAλ ⊕ IdAλ .
+                             j=0
+
+Proof. By Proposition 5.8, it is enough to check that the maps are isomorphisms after evaluating
+the functors at E i U, where i ≥ 0 and U is a simple object of A−λ−2i (resp. of Aλ−2i ) such
+that F U = 0. Thanks to Lemma 5.3 and Theorem 5.24, we can do this with A replaced by a
+minimal categorification A(n) and this is the content of Proposition 5.31 below.              
+  In the case of cyclotomic Hecke algebras, Vazirani [Va] had shown that the values of the
+functors on simple objects are isomorphic.
+Corollary 5.28. The functors E and F induce an action of sl2 on the Grothendieck group of
+A, viewed as an additive category.
+                   (
+                     (q − 1)a if q 6= 1
+5.5.2. We put γ =
+                     1           if q = 1
+                             P
+                             
+                              j≤d1 <···<di−j−c ≤i−1 Td1 · · · Tdi−j−c if c < i − j
+              and mij (c) = 1                                          if c = i − j
+                             
+                             
+                               0                                       if c > i − j.
+Lemma 5.29. Let j < i and c ≥ 0. We have
+                              Tj Tj+1 · · · Ti−1 xci = γ c mij (c)   (mod mi Hi ).
+In particular, Tj Tj+1 · · · Ti−1 xci ∈ mi Hi if c > i − j.
+24                                    JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+Proof. By (1), we have
+                                        (
+                                         (q − 1)(xi + a)(xc−1        c−2            c−1
+                                                           i−1 + xi−1 xi + · · · + xi   )                if q 6= 1
+              Ti−1 xci − xci−1 Ti−1   =   c−1    c−2               c−1
+                                         xi−1 + xi−1 xi + · · · + xi                                     if q = 1.
+Hence
+            Tj Tj+1 · · · Ti−1 xci = Tj Tj+1 · · · Ti−2 xci−1 Ti−1 + γTj Tj+1 · · · Ti−2 xc−1
+                                                                                          i−1          (mod mi Hi ).
+Since mij (c) = mi−1,j (c − 1) + mi−1,j (c)Ti−1 , the Lemma follows by induction.                                           
+Lemma 5.30. Let j ≤ i, c ≥ 1 and e = inf(c − 1, i − j). Then, we have
+     Tj Tj+1 · · · Ti xci − Tj Tj+1 · · · Ti−1 xci+1 Ti =
+                              c−e−1
+                                                                                           
+                       α γ e xi+1   mij (e) + γ e−1 xc−e                        c−1
+                                                     i+1 mij (e − 1) + · · · + xi+1 mij (0)                (mod mi Hi+1 )
+                (
+                    (1 − q)(xi+1 + a)            if q 6= 1
+where α =
+                    −1                           if q = 1.
+Proof. We have
+                  Tj Tj+1 · · · Ti xci − Tj Tj+1 · · · Ti−1 xci+1 Ti = αTj · · · Ti−1 (xc−1
+                                                                                        i   + · · · + xc−1
+                                                                                                       i+1 )
+
+and the result follows from Lemma 5.29.                                                                                     
+     The following is a Mackey decomposition for the algebras Bi = H̄i,n .
+Proposition 5.31. Let i ≤ n/2. Then, we have an isomorphism of (Bi , Bi )-bimodules
+                                                                   ∼
+                                   Bi ⊗Bi−1 Bi ⊕ Bi⊕n−2i → Bi+1
+                                                                                 n−2i
+                                                                                 X
+                                             ′                              ′               j−1
+                                      (b ⊗ b , b1 , . . . , bn−2i ) 7→ bTi b +          bj Xi+1 .
+                                                                                 j=1
+
+Let now i ≥ n/2. Then, we have an isomorphism of (Bi , Bi )-bimodules
+                                                    ∼
+                                 Bi ⊗Bi−1 Bi → Bi+1 ⊕ Bi⊕2i−n
+                                          b ⊗ b′ 7→ (bTi b′ , bb′ , bXi b′ , . . . , bXi2i−n−1 b′ ).
+Proof. Let us consider the first map. We know already that both sides are free Bi -modules of
+the same rank (cf §5.3), hence it is enough to show surjectivity.
+  Let M = (Pi /mi ) ⊗Pi Bi+1 . This is a right Bi -module quotient of Bi+1 . Let L be the right
+                                         P
+Bi -submodule of M generated by Bi Ti + n−2i−1
+                                            j=0
+                                                      j
+                                                    Xi+1 k. The first isomorphism will follow from
+the proof that M = L. From now on, all elements are viewed in M.
+  We have
+                               n−i−1
+                                X
+                         n−i
+                       xi+1  =       (−1)n−i−1+j xji+1 en−i−j (xi+1 , . . . , xn ).
+                                            j=0
+Given r ≥ 2 and j ≤ n − i − 1, we have
+                 en−i−j (xr , . . . , xn ) = en−i−j (xr−1 , xr , . . . , xn ) − xr−1 en−i−j−1(xr , . . . , xn ).
+                                                                                                   n−i
+Since en−i−j (x1 , . . . , xn ) = 0, it follows that en−i−j (xi+1 , . . . , xn ) = 0. So, we have xi+1 = 0.
+                DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                                                25
+
+  Take 1 ≤ r ≤ i. Then, r ≤ n − i and we have (Lemma 5.30)
+
+  Ti−r+1 Ti−r+2 · · · Ti xin−i =
+   n−i
+                                                                                                       
+  xi+1 Ti−r+1 · · · Ti + α γ r−1 xn−i−r
+                                  i+1   + γ r−2 xn−i−r+1
+                                                 i+1     mi,i−r+1 (r − 2) + · · · + xn−i−1
+                                                                                     i+1   mi,i−r+1 (0) .
+So,
+                                                                                         X
+                        Ti−r+1 Ti−r+2 · · · Ti xin−i + αγ r−1 xn−i−r
+                                                               i+1   ∈                         xn−i−r+1+j
+                                                                                                i+1       Hi .
+                                                                                         j≥0
+       n−i
+Since xi+1 = 0, we deduce by induction on r that xn−i−ri+1    ∈ L for 1 ≤ r ≤ i. So, xai+1 ∈ L for all
+a ≥ 0. We deduce from Lemma 5.30 that xai+1 Tj · · · Ti ∈ L for all 1 ≤ j ≤ i and a ≥ 0. Since
+        L
+Bi+1 = 0≤a≤n−i−1,w∈[Si+1/Si ] P̄i,n xai+1 Tw Hif (cf §3.3.1), we obtain finally M = L and we are
+done.
+  Let us now consider the second isomorphism. Let us fix an adjunction (F, E) with unit η ′
+and counit ε′ and consider the dual categorification A′ of A(n). We denote by X ′ and T ′ its
+                                                             η′ F E                  ET ′ E                 EF ε′
+defining endomorphisms. Define σ ′ : F E −−−→ EF F E −−−→ EF F E −−−→ EF .
+                                                                                      Eε′ F
+  Let G = F E and H = EF . There is an adjoint pair (EF, EF ) with counit εH : EF EF −−−→
+       ε                                                                                  η            F η′ E
+EF −→ Id and an adjoint pair (F E, F E) with unit ηG : Id −
+                                                          → F E −−−→ F EF E. Consider the
+canonical isomorphism
+                                                                          ∼                       ∼
+                   ζ : Hom(F E, EF ) = Hom(G, H) → Hom(H ∨ , G∨ ) → Hom(EF, F E)
+corresponding to these adjunctions. The commutativity of the following diagram shows that
+ζ(σ ′ ) = σ.
+
+           EF
+      ηEF
+                   F η′ EEF                           F Eη′ F EEF
+      F EEF                / F EF EEF                                 /   F EEF F EEF
+          HH SSSS     ′
+                                                                                    VV VVVV
+            HH SSFSη EEF                                                                     VVVV ′EEF
+                                                                                           FVEET
+              HH     S
+                HH SSSSSS                                                                         VVVV
+                                                                                                       VVV*
+                  HH         S)                        F Eη′ F EEF
+                    HH                                                    / F EEF F EEF  F T F F EEF  / F EEF F EEF
+                        HH F EF EEF
+               F EEF H         HH
+                                 HH
+                                   HH       F Eε′ EF                                 F EEF ε′EF                                       F EEF ε′EF
+                                     H#                                                                                 
+                                                        F Eη′ EF
+                                    F EEF UUU           / F EEF EF                                                  F EEF EF
+                                             UUUU
+                                                 UUUU
+                                                     UU          F EEε′F                                                              F EEε′ F
+                                               F EEF UUUUU*                                                                      
+                                                            F EEF                                                   /   F EEF
+                                                                                                      FTF
+                                                                                                                                      F Eε
+                                                                                                                              
+                                                                                                                         FE
+Similarly, using the canonical adjoint pair (Id, Id), we get a canonical isomorphism
+                                                                           ∼                      ∼
+                    ζ ′ : Hom(Id, EF ) = Hom(Id, H) → Hom(H ∨ , Id) → Hom(EF, Id).
+We have ζ ′((1E (X̃ ′ )j ) ◦ η ′ ) = ε ◦ (X j 1F ).
+26                            JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+     We have shown that the adjoint to
+                              λ−1
+                              X                                                  L
+                                                               ∼                     λ
+                        σ+          ε ◦ (X j 1F ) : EF IdAλ → F E IdAλ ⊕ IdAλ
+                              j=0
+
+is
+                      λ−1
+                      X                                               L
+                    ′                                                   λ
+                  σ +     (1F ′ (X̃ ′ )j ) ◦ η ′ : E ′ F ′ IdA′−λ ⊕ IdA′ → F ′ E ′ IdA′−λ .
+                                                                     −λ
+                        j=0
+One checks easily that the first map of the Proposition remains an isomorphism if Xi+1 is
+replaced by X̃i+1 . Since the categorification A′ is isomorphic to A(n), this shows that the map
+      P                                                   Pλ−1
+σ ′ + λ−1           ′ j     ′
+       j=0 (1F ′ (X̃ ) ) ◦ η is an isomorphism, hence σ +
+                                                                       j
+                                                             j=0 ε ◦ (X 1F ) is an isomorphism as
+well.                                                                                          
+5.5.3. Let us fix a family {Mλ ∈ Aλ }λ . Let Mλ be the full subcategoryL of Aλ whose objects
+are finite direct sums of direct summands of Mλ . We assume that M = λ Mλ is stable under
+E and F .                                         L
+  Let A′λ = EndA (Mλ ), A′λ = A′λ -mod and A′ = λ A′λ. We put
+                                  M
+                            E′ =     HomA (Mλ+2 , EMλ ) ⊗A′λ − : A′ → A′
+                                       λ
+                                     M
+                        and F ′ =          HomA (Mλ−2 , F Mλ ) ⊗A′λ − : A′ → A′ .
+                                       λ
+
+  We have HomA (Mλ+2 , EMλ ) ≃ HomA (F Mλ+2 , Mλ ) and F Mλ+2 ∈ Mλ . It follows that
+HomA (Mλ+2 , EMλ ) is a projective right A′λ -module, so E ′ is an exact functor. Similarly, F ′ is
+an exact functor. Also, they send projectives to projectives.
+                             L
+  Consider the functor R = λ Mλ ⊗A′λ − : A′ → A. Its restriction to A′ -proj is an equivalence
+         ∼
+A′ -proj → M. So, the functor G 7→ RG from the category of exact functors A′ → A′ sending
+projectives to projectives to the category of functors A′ → A is fully faithful.
+  The canonical map
+                                                           ∼
+                    Mλ+2 ⊗A′λ+2 HomA (Mλ+2 , EMλ ) → EMλ , m ⊗ f 7→ f (m)
+is an isomorphism, since EMλ ∈ Mλ+2 . The induced map
+                                              ∼
+Mλ+2 ⊗A′λ+2 HomA (Mλ+2 , EMλ ) ⊗A′λ U → E(Mλ ⊗A′λ U), m ⊗ f ⊗ u 7→ E(m′ 7→ m′ ⊗ u)(f (m))
+for U ∈ A′λ -mod is an isomorphism, since it is an isomorphism for U = A′λ .
+                                       ∼                                                          ∼
+    We obtain an isomorphism RE ′ → ER and we construct similarly an isomorphism RF ′ →
+F R.
+    Let X ′ (resp. T ′ ) be the inverse image of X idR (resp. T idR ) via the canonical isomor-
+                   ∼              ∼                          ′  ∼           ′      ∼              ∼
+phisms End(E ′ ) → End(RE ′ ) → End(ER) (resp. End(E 2 ) → End(RE 2 ) → End(ERE ′ ) →
+End(E 2 R)).
+    Proceeding similarly, the adjoint pair (E, F ) gives an adjoint pair (E ′ , F ′) and the functor
+F is isomorphic to a left adjoint of E ′ .
+  ′
+
+
+Theorem 5.32. The data above defines an sl2 -categorification on A′ and a morphism of sl2 -
+categorifications A′ → A.
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                27
+
+Proof. The sl2 -relations in K0 (A′ -proj) hold thanks to Theorem 5.27 applied to the restriction
+of functors to M. The local finiteness follows from the case of A. The commutativity of
+the diagrams of Lemma 5.3 follows immediately from the construction of the adjoint pair
+(E ′ , F ′ ). This shows that A′ is a weak categorification and that R defines a morphism of weak
+categorifications.
+  By construction, this weak categorification is a categorification and the morphism of weak
+categorifications is actually a morphism of categorifications.                                  
+Corollary 5.33. Let M ∈ A. Then, there exists a finite dimensional algebra A, an sl2 -
+categorification on A-mod and a morphism of sl2 -categorifications R : A-mod → A such that
+M is a direct summand of R(A).
+                  L        i j
+Proof. Let N =      i,j≥0 E F M, a finite sum. Let Nλ be the projection of N on Aλ . Now,
+we can apply the constructions and results above, the stability being provided by Corollary
+5.28.                                                                                    
+
+                            6. Categorification of the reflection
+6.1. Rickard’s complexes. Let λ ∈ Z. We construct a complex of functors
+                                      Θλ : Comp(A−λ) → Comp(Aλ ),
+following Rickard [Ri1] (originally, for blocks of symmetric groups).
+   We denote by (Θλ )−r the restriction of E (sgn,λ+r) F (1,r) to A−λ for r, λ + r ≥ 0 and we put
+(Θλ )−r = 0 otherwise.
+   Consider the map
+                                                               1   λ+r−1 ε1F r−1
+                       f : E λ+r F r = E λ+r−1 EF F r−1 −−
+                                                         E
+                                                          −−−−−−−→ E λ+r−1 F r−1.
+We have E (sgn,λ+r) = E λ+r csgn                sgn
+                             [Sλ+r /S[2,λ+r] ] c[2,λ+r] ⊆ E
+                                                            (sgn,λ+r−1)
+                                                                        E and similarly F (1,r) ⊆ F F (1,r−1) ,
+hence f restricts to a map
+                                d−r : E (sgn,λ+r) F (1,r) → E (sgn,λ+r−1) F (1,r−1) .
+  We put
+                                                             d−i
+                                 Θλ = · · · → (Θλ )−i −−→ (Θλ )−i+1 → · · · .
+Lemma 6.1. Θλ is a complex. The map [Θλ ] : V−λ = K0 (A−λ ) → Vλ = K0 (Aλ ) coincides with
+the action of s.
+                                                                                           1 ε1          ε
+Proof. The map d1−r d−r is the restriction of 1E λ+r−2 ε2 1F r−2 , where ε2 : EEF F −−E−−→
+                                                                                         F
+                                                                                           EF −
+                                                                                              → Id.
+Since csgn
+       λ+r = c sgn
+                          c
+               [Sλ+r /S2 ] 2
+                            sgn
+                                and c 1
+                                      r = c 1 1
+                                             c
+                                            2 [S2 \Sr ] , it follows that
+                                E (sgn,λ+r) F (1,r) ⊆ E λ+r−2 E (sgn,2) F (1,2) F r−2 .
+So, in order to prove that d1−r d−r = 0, it is enough to show that the composition
+                                                   csgn c1            ε
+                                           E 2 F 2 −−
+                                                    2  2
+                                                      −→ E 2 F 2 −→
+                                                                  2
+                                                                    Id
+vanishes, where csgn        2     1          2
+                 2 acts on E and c2 acts on F . This composition is equal to the composition
+       (csgn 1
+         2 c2 )1   2        ε
+E 2 F 2 −−−−−−F→ E 2 F 2 −→
+                          2
+                            Id, where csgn 1             2                      sgn 1
+                                       2 c2 acts now on E . We are done, since c2 c2 = 0.
+   The last statement is given by Lemma 4.2.                                              
+28                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+Remark 6.2. Let M ∈ A−λ . Let l = max{r ≥ 0|F r M 6= 0}, a finite integer. Then,
+(Θλ )−i (M) = 0 when i 6∈ [max(0, −λ), l].
+                                                            L
+6.2. Derived equivalence from the simple reflection. Let Θ = λ Θλ .
+  The following Lemma follows easily from Lemma 5.3.
+Lemma 6.3. Let R : A′ → A be a morphism of sl2 -categorifications. Then, there is an
+                                        ∼
+isomorphism of complexes of functors ΘR → RΘ′ .
+     We can now state our main Theorem
+Theorem 6.4. The complex of functors Θ induces a self-equivalence of K b (A) and of D b (A)
+                                                   ∼                          ∼
+and induces by restriction equivalences K b (A−λ ) → K b (Aλ ) and D b (A−λ ) → D b (Aλ ). Further-
+more, [Θ] = s.
+Remark 6.5. In the context of symmetric groups, the invertibility of Θλ when the complex
+has only one (resp. two) non-zero term is due to Scopes [Sco] (resp. Rickard [Ri1]).
+Proof of Theorem 6.4. Since E and F have right adjoints, there is a complex of functors Θ∨λ
+that gives a right adjoint to Θλ (cf §4.1.4). Let ε : Θλ Θ∨λ → Id be the counit of adjunction and
+Z its cone. So, Z is a complex of exact functors A−λ → Aλ .
+   Pick U ∈ A with F U = 0 and E i U ∈ A−λ and put n = h+ (U). The fully faithful functor
+RU : K b (A(n)-proj) → K b (A) commutes with Θλ (Lemma 6.3), hence commutes with Θ∨λ and
+with Z (cf §4.1.6). By Theorem 6.6, we have Z(E i U) = 0. Now, Proposition 5.8 shows that
+Z(M) = 0 in D b (A−λ ) for all M ∈ D b (A−λ). So, ε is an isomorphism in D(A−λ ). One shows
+similarly that Θλ has a left inverse in D b (A−λ ).
+   Let us now prove that ε is still an isomorphism in K b (A−λ). Let M ∈ Compb (A−λ ). By Corol-
+lary 5.33, there is a finite dimensional k-algebra A, an sl2 -categorification on A′ = A-mod and a
+morphism of sl2 -categorifications R : A′ → A such that the terms of M are direct summands of
+R(A). The functor R induces a fully faithful triangulated functor R′ : K b (A′ -proj) → K b (A).
+                                                                                                ∼
+The derived category case of the Theorem shows that ε′ is an isomorphism in K b (A′−λ -proj) →
+D b (A′−λ ). As above, we deduce that ε is an isomorphism in the image of R′ , hence ε(M) is
+an isomorphism in K b (A−λ ). One proceeds similarly to show that Θλ has a left inverse in
+K b (A−λ).                                                                                      
+6.3. Equivalences for the minimal categorification.
+Theorem 6.6. Let n ≥ 0 and A = A(n) be the minimal categorification. Fix λ ≥ 0 and
+let l = n−λ
+         2
+            . The homology of the complex of functors Θλ is concentrated in degree −l and
+   −l         ∼
+H Θλ : A−λ → Aλ is an equivalence.
+Proof. In order to show that the homology of Θλ is concentrated in degree −l, it suffices to
+show that Θλ (Bl c1l ) is homotopy equivalent to a complex concentrated in degree −l, since Bl c1l
+is a progenerator for Bl -mod. This is equivalent to the property that H ∗ (C) = 0 for ∗ =    6 −l,
+             sgn                      1          sgn
+where C = cn−l H̄n−l ⊗Bn−l Θλ (Bl cl ), since cn−l H̄n−l is the unique simple right Bn−l -module and
+C −r = 0 for r > l.
+   We have
+                 C −r = csgn                      sgn               1                    1
+                           n−l H̄n−l ⊗Bn−l Bn−l c[l−r+1,n−l] ⊗Bl−r c[l−r+1,l] Bl ⊗Bl Bl cl .
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                                  29
+
+  Lemma 3.7 gives an isomorphism
+                 ∼
+                                                                                     M
+          C −r → csgn                   sgn          1
+                  n−l H̄n−l ⊗Bn−l Bn−l c[l−r+1,n−l] c[1,l−r] ⊗k                                  mµ (xl−r+1 , . . . , xl )k.
+                                                                                 µ∈P (r,n−l)
+
+  Proposition 3.3 and Lemma 3.4 give isomorphisms
+                      M                  al−r     ∼         S
+                             xa11 · · · xl−r  k −−→ ΛSl−r (Pn−l[l−r+1,n−l] ⊗P S n−l k)
+                                                                   can                                  n−l
+                      0≤a1 <···<al−r <n−l
+
+
+                             S                             ∼
+                ΛSl−r (Pn−l[l−r+1,n−l] ⊗P S n−l k) → csgn                   sgn          1
+                                                      n−l H̄n−l ⊗Bn−l Bn−l c[l−r+1,n−l] c[1,l−r]
+                                               n−l
+
+                                                         y 7→ csgn
+                                                               n−l y
+                                                     ∼               ∼
+and these induce isomorphisms E −r −−→ D −r −−
+                                    −r
+                                              → C −r , where
+                                             −r      φ             ψ
+                                     M                         a
+                                                                               M
+                 E −r =                            xa11 · · · xl−r
+                                                                l−r
+                                                                    k⊗                   mµ (xl−r+1 , . . . , xl )k
+                             0≤a1 <···<al−r <n−l                           µ∈P (r,n−l)
+
+                                          S                                       M
+               and D −r = ΛSl−r (Pn−l[l−r+1,n−l] ⊗P S n−l k) ⊗                               mµ (xl−r+1 , . . . , xl )k
+                                                               n−l
+                                                                               µ∈P (r,n−l)
+
+  Let µ ∈ P (r, n−l) and 0 ≤ a1 < · · · < al−r < n−l. Given a positive integer b, we write b ≺ µ
+when b appears in µ and we denote then by µP       \ b the partition obtained from µ by removing one
+instance of b. We have mµ (xl−r+1 , . . . , xl ) = b≺µ xbl−r+1 mµ\b (xl−r+2 , . . . , xl ). It follows that
+                                                                                             !
+                              al−r
+                                                         X               al−r b
+                  −r a1
+             d−r
+               C ψ (x1 · · · xl−r ⊗ mµ ) = ψ
+                                                  −r+1
+                                                             xa11 · · · xl−r xl−r+1 ⊗ mµ\b .
+                                                                         b≺µ
+                                                                                                                a
+                           n−l
+  Assume b = n − l. Since xl−r+1 ∈ nn−l Pn−l , it follows that xa11 · · · xl−r
+                                                                            l−r b
+                                                                               xl−r+1 is 0 in
+           S
+ΛSl−r+1 (Pn−l[l−r+2,n−l] ⊗P S n−l k). One gets the same conclusion when b ∈ {a1 , . . . , al−r }.
+                               n−l
+  So,
+                                                                                                                              
+                         a
+                                                                               X                           a′       a′
+                                 −r+1 −r+1 
+d−r −r −r a1       l−r
+ C ψ φ (x1 · · · xl−r ⊗ mµ ) = ψ     φ                                                                              l−r+1
+                                                                                                sgn(σb )x11 · · · xl−r+1  ⊗ mµ\b 
+                                                                   b≺µ,b6∈{a1 ,...,al−r ,n−l}
+
+where σb ∈ Sl−r+1 is the permutation such that, putting al−r+1 = b and a′j = aσb (j) , we have
+a′1 < a′2 < · · · < a′l−r+1 .
+  Let L = k n−l , with canonical basis {ei }1≤i≤n−l . The Koszul complex K of L is a bigraded
+k-vector space given by K p,q = Λp L ⊗ S q L, with a differential of bidegree (−1, 1) given by
+                                               p
+                                               X
+                     (ea1 · · · eap ) ⊗ x 7→         (−1)i+p+1 (ea1 · · · eai−1 eai+1 · · · eap ) ⊗ eai x.
+                                               i=1
+
+  Its dual Homk (K, k) is isomorphic to J defined as follows. We put J p,q = Λp (L∗ ) ⊗ S q (L∗ ).
+Let {fi } be the dual basis of L∗ and fµ = fµ(1) · · · fµ(q) ∈ S q (L∗ ) for µ ∈ P (q, n − l). Then, the
+30                             JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+differential dJ : J p,q → J p+1,q−1 is given by
+                                         X
+       (fa1 · · · fap ) ⊗ fµ 7→                                (−1)i+p (fa1 · · · fai fb fai+1 · · · fap ) ⊗ fµ\b .
+                              b≺µ,a1 <···<ai <b<ai+1 <···<ap
+
+   The homology of J is concentrated in bidegree (0, 0) and isomorphic to k. Note that J •,q
+is a graded right Λ(L∗ )-module, with action given by right multiplication. This provides J
+with the structure of a complex of free graded Λ(L∗ )-modules (the degree −q term is J •,q ),
+                                   2
+hence of free graded k[fn−l ]/(fn−l  )-modules by restriction. So, the (−q)-th homology group
+of J ⊗k[fn−l ]/(fn−l
+                 2 ) k is a one-dimensional graded k-vector space which is in degree q.     The
+complexes of vector spaces J ⊗k[fn−l ]/(fn−l
+                                          2 ) k and Jfn−l are isomorphic, with a shift by one
+
+in
+L thei−qgrading.   The complex Jfn−l decomposes as the direct sum (over i) of the complexes
+   qΛ    (L )fn−l ⊗ S q (L∗ ) and the cohomology of such a complex is concentrated in degree −i.
+           ∗
+
+   We have an isomorphism
+             ∼                                                      a
+      E −r → (Λl−r L∗ )fn−l ⊗ S r L∗ ⊆ J l−r+1,r , xa11 · · · xl−r
+                                                                l−r
+                                                                    ⊗ mµ 7→ (fa1 · · · fal−r fn−l ) ⊗ fµ .
+                                                                             L l−r ∗
+This induces an isomorphism between E and the the subcomplex                    r (Λ      L )fn−l ⊗ S r L∗ of
+J l+∗+1,−∗ . It follows that the homology of E is concentrated in degree −l.
+  The complex of functors Θ−λ is given by tensor product by a bounded complex of (Bn−l , Bl )-
+bimodules which are projective as Bn−l -modules and as Bl -modules. The homology of that
+complex is concentrated in the lowest degree where the complex has a non zero component,
+hence the homology M is still projective as a Bn−l -module and as a Bl -module. Lemma 6.1
+shows that M ⊗Bl − sends the unique simple Bl -module to the unique simple Bn−l -module. By
+Morita theory, M induces an equivalence.                                                   
+
+                                                7. Examples
+   In this section §7, the field k will always be assumed to be big enough so that the simple
+modules considered are absolutely simple.
+   In most of our examples, sl2 -categorifications are constructed in families, using the following
+recipe. We start with left and right adjoint functors Ê and F̂ on an abelian category A, together
+with X ∈ End(Ê) and T ∈ End(Ê 2 ) satisfying the defining relations of (possibly degenerate)
+affine Hecke algebras. We obtain for each a ∈ k (with a 6= 0 if q 6= 1) an sl2 -categorification on
+A given by E = Ea and F = Fa , the generalised a-eigenspaces of X acting on Ê and F̂ . While
+we need to check in each example that E and F do indeed give an action of sl2 on K0 (A), it is
+automatic that X and T restrict to endomorphisms of E and E 2 with the desired properties.
+That T restricts is a consequence of the identity (a special case of (1))
+
+     T1 (X2 − a)N − (X1 − a)N T1
+              (
+                (q − 1)X2 [(X1 − a)N −1 + (X1 − a)N −2 (X2 − a) + · · · + (X2 − a)N −1 ]                     if q 6= 1
+            =
+                (X1 − a)N −1 + (X1 − a)N −2 (X2 − a) + · · · + (X2 − a)N −1                                  if q = 1.
+in H2 (q).
+
+7.1. Symmetric groups.
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                          31
+
+7.1.1. Let p be a prime number and k = Fp . The quotient of Hn (1) by the ideal generated
+by X1 is the group algebra kSn . The images of Ti and Xi in kSn are si = (i, i + 1) and the
+Jucys-Murphy element Li = (1, i) + (2, i) + · · · + (i − 1, i).
+   Let a ∈ k. Given M a kSn -module, we denote by Fa,n (M) the generalized a-eigenspace
+                                                                        L
+of Xn . This is a kSn−1 -module. We have a decomposition ReskS  kSn−1 =
+                                                                  n
+                                                                         a∈k Fa,n . There is
+                                      kSn      L
+a corresponding decomposition IndkSn−1 = a∈k Ea,n , where Ea,n is left and right adjoint to
+                     L                     L
+Fa,n . We put Ea = n≥1 Ea,n and Fa = n≥1 Fa,n .
+   Recall the following classical result [LLT].
+Theorem 7.1. The functors Ea and Fa for a ∈ Fp give rise to an action of the affine Lie
+        b p on L
+algebra sl       n≥0 K0 (kSn -mod).
+   The decomposition of K0 (kSn -mod) in blocks coincides with its decomposition in weight
+spaces.
+   Two blocks of symmetric groups have the same weight if and only if they are in the same
+orbit under the adjoint action of the affine Weyl group.
+   In Lparticular for each a ∈ Fp the functors Ea and Fa give a weak sl2 -categorification on
+A = n≥0 kSn -mod.
+   We denote by X the endomorphism of Ea given on Ea,n by right multiplication by Ln
+(on the (kSn , kSn−1)-bimodule kSn ). We denote by T the endomorphism of Ea2 given on
+Ea,n Ea,n−1 by right multiplication by sn−1 (on the (kSn , kSn−2)-bimodule kSn ). This gives an
+sl2 -categorification on A (here, q = 1).
+7.1.2.
+Theorem 7.2. Let R = k or Z(p) . Let A and B be two blocks of symmetric groups over R with
+isomorphic defect groups. Then, A and B are splendidly Rickard equivalent (in particular, they
+are derived equivalent).
+Proof. Two blocks of symmetric groups over k have isomorphic defect groups if and only if
+they have equal weights (cf §7.1.3 below). By Theorem 7.1, there is a sequence of blocks
+A0 = A, A1 , . . . , Ar = B such that Aj is the image of Aj−1 by some simple reflection σaj of
+the affine Weyl group. By Theorem 6.4, the complex of functors Θ associated with a = aj
+induces a self-equivalence of K b (A). It restricts to a splendid Rickard equivalence between Aj
+and Aj+1 . By composing these equivalences, we obtain a splendid Rickard equivalence between
+A and B (note that the composition of splendid equivalences can easily be seen to be splendid,
+cf eg [Rou2, Lemma 2.6]).
+                                                                  Z Sn        L                Z(p) Sn
+   The constructions of E and F lift uniquely to Z(p) : IndZ(p)        Sn−1
+                                                                            =    a∈k Ẽa , Res Z(p) Sn−1 =
+L                                                                  (p)
+
+   a∈k F̃a , where Ẽa ⊗Z(p) k = Ea , where F̃a ⊗Z(p) k = Fa and Ẽa and F̃a are left and right adjoint.
+We denote by T̃ the endomorphism of Ẽa2 given on Ẽa,n Ẽa,n−1 by the action of sn−1 .
+                                                                                    L
+   The construction of Θ in §6.1 lifts to a complex Θ̃ of functors on Ã = n≥0 Z(p) Sn -mod.
+By [Ri3, end of proof of Theorem 5.2], the lift Θ̃ of Θ is a splendid self Rickard equivalence of
+D b (Ã) and we conclude as before.                                                                      
+Remark 7.3. The equivalence depends on the choice of a sequence of simple reflections whose
+product sends one block to the other. If, as expected, the categorifications of the simple
+32                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+                                                                          L
+reflections give rise to a braid group action on the derived category of n≥0 kSn -mod, then
+one can choose the canonical lifting of the affine Weyl group element in the braid group to get
+a canonical equivalence.
+
+Remark 7.4. Theorem 7.2 gives isomorphisms between Grothendieck groups of the blocks
+(taken over Q) satisfying certain arithmetical properties (perfect isometries or even isotypies).
+These arithmetical properties were shown already by Enguehard [En].
+
+Remark 7.5. Two blocks of symmetric groups over k have isomorphic defect groups if and
+only if they have the same number of simple modules, up to the exception of blocks of weights
+0 and 1 for p = 2 — note that a block of weight 0 is simple whereas a block of weight 1 is
+not simple, so two such blocks are not derived equivalent. So, one can restate Theorem 7.2 as
+follows :
+   Let A and B be two blocks of symmetric groups over k. Then, A and B are derived equivalent
+if and only if they have isomorphic defect groups. Assume A and B are not simple if p = 2.
+Then, A and B are derived equivalent if and only if rank K0 (A) = rank K0 (B).
+
+  We can now deduce a proof of Broué’s abelian defect group conjecture for blocks of symmetric
+groups :
+
+Theorem 7.6. Let A be a block of a symmetric group G over Z(p) , D a defect group and B the
+corresponding block of NG (D). If D is abelian, then A and B are splendidly Rickard equivalent.
+
+Proof. By [ChKe], there is a block A′ of a symmetric group which is splendidly Morita equivalent
+to the principal block of Z(p) (Sp ≀ Sw ), where w is the weight of A. We have a splendid Rickard
+equivalence between the principal block of Z(p) Sp and Z(p) N, where N is the normalizer of
+a Sylow p-subgroup of Sp by [Rou2, Theorem 1.1]. By [Ma, Theorem 4.3] (cf also [Rou2,
+Lemma 2.8] for the Rickard/derived equivalence part), we deduce a splendid Rickard equivalence
+between the principal blocks of Z(p) (Sp ≀ Sw ) and Z(p) (N ≀ Sw ). Now, we have an isomorphism
+B ≃ Z(p) (N ≀ Sw ) ⊗ B0 , where B0 is a matrix algebra over Z(p) , hence there is a splendid Morita
+equivalence between B and Z(p) (N ≀ Sw ). So, we obtain a splendid Rickard equivalence between
+B and A′ .
+   By Theorem 7.2, we have a splendid Rickard equivalence between A and A′ and the Theorem
+follows.                                                                                         
+
+Remark 7.7. The existence of an isotypy between A and B in Theorem 7.6 was known by
+[Rou1].
+
+7.1.3. Let us analyze more precisely the categorification.
+   Given λ a partition of m, we denote by |λ| = m the size of λ. Let κ be a p-core and n
+an integer such that p|(n − |κ|) and n ≥ |κ|. We denote by bκ,n the corresponding block of
+kSn (the irreducible characters of that block are associated to the partitions having κ as their
+p-core). The integer n−|κ|
+                       p
+                           is the weight of the block (this notion of weight is not to be confused
+with the weights relative to Lie algebra actions).
+   Let λ be a partition with p-core κ and λ′ a partition obtained from λ by adding an a-node.
+Then, the p-core of λ′ depends only on κ and a and we denote it by ea (κ). Similarly, we define
+fa (κ) by removing an a-node.
+           DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                   33
+
+  We will freely identify a functor M ⊗ − with the bimodule M. We have
+                                         M
+(6)                             Ea,n+1 =   bea (κ),n+1 kSn+1 bκ,n
+                                                   κ
+
+where κ runs over the p-cores such that |κ| ≤ n, |κ| ≡ n (mod p) and |ea (κ)| ≤ n + 1.
+   Let bκ−r ,l , bκ−r+2,l+1 , . . . , bκr ,l+r be a chain of blocks with |fa (κ−r )| > l − 1, |ea (κr )| > l + r + 1
+and fa (κj ) = κj−2 .
+   Put ni = L   l + (i − r)/2 and Bi = kSni bκi ,ni for −r ≤ i ≤ r and i ≡ r (mod 2).
+   Let A = i Bi -mod. The action of E = Ea and F = Fa on K0 (A) gives a representation of
+sl2 . This gives an sl2 -categorification (here, q = 1).
+   The complex of functors Θ restricts to a splendid Rickard equivalence between Bi and B−i .
+   Let us recall some results of the local block theory of symmetric groups (cf [Pu1] or [Br, §2]).
+   Let P be a p-subgroup of Sn . Up to conjugacy, we can assume [1, n]P = [nP + 1, n] for some
+integer nP (we call such a P a standard p-subgroup). Then, CSn (P ) = H × S[nP +1,n] where
+H = CSnP (P ). The algebra kH has a unique block.
+   Given G a finite group and P a p-subgroup of G, we denote by brP : (kG)P → kCG (P ) the
+Brauer morphism (restriction of the morphism of k-vector spaces kG → kCG (P ) which is the
+identity on CG (P ) and 0 on G − CGP    (P )). We denote by BrP : kG-mod P → kCG (P )-mod the
+                                    P            P   Q           P
+Brauer functor given by M 7→ M /( Q<P TrQ M ), where TrQ (x) = g∈P/Q g(x).
+  We will use the following result of Puig and Marichal
+Theorem 7.8. We have
+                                            (
+                                             1 ⊗ bκ,n−nP        if n−nPp −|κ| ∈ Z≥0
+                              brP (bκ,n ) =
+                                             0                  otherwise.
+
+  Note in particular that a standard p-subgroup P is a defect group of bκ,n if and only if P is
+a Sylow p-subgroup of Sn−|κ|. In particular, two blocks of symmetric groups have isomorphic
+defect groups if and only if they have equal weights.
+  So, we deduce from (6) and Theorem 7.8 :
+Lemma 7.9. We have an isomorphism of ((kH ⊗ kSn−nP +i ), (kH ⊗ kSn−nP −1 ))-bimodules
+                                                  ∼
+                Br∆P (Ea,n+i · · · Ea,n+1 Ea,n ) → kH ⊗ Ea,n−nP +i · · · Ea,n−nP +1 Ea,n−nP .
+For i = 1, it is compatible with the action of T .
+  Let P be a non-trivial standard p-subgroup of Sn−i . If brP (bκi ,ni ) is not 0, then
+                          Br∆P (bκ−i ,n−i Θbκi ,ni ) ≃ kH ⊗ bκ−i ,n−i −nP Θbκi ,ni −nP .
+   Note that this Lemma permits to deduce a proof of the Rickard equivalence in Theorem 7.2
+from that of the derived equivalence, by induction on the size of the defect group : By induction,
+bκ−i ,n−i−nP Θbκi ,ni−nP induces a Rickard equivalence. Now, Θ induces a derived equivalence, so,
+it follows from Theorem 7.10 below that Θ induces a Rickard equivalence between Bi and B−i .
+  If a splendid complex induces local derived equivalences, then it induces a Rickard equivalence
+[Rou4, Theorem 5.6] (in a more general version, but whose proof extends with no modification) :
+34                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+Theorem 7.10. Let G be a finite group, b a block of kG and D a defect group of b. We assume
+b is of principal type, i.e., brD (b) is a block of kCG (D). Let H be a subgroup of G containing
+D and controlling the fusion of p-subgroups of D. Let c be the block of kH corresponding to b.
+   Let C be a bounded complex of (kGb, kHc)-bimodules. We assume C is splendid, i.e., the
+                                                              G×H ◦
+components M of C are direct summands of modules Ind∆D              N, where N is a permutation
+∆D-module.
+   Assume
+      • Br∆P (C) induces a Rickard equivalence between kCG (P ) brP (b) and kCH (P ) brP (c) for
+        P a non trivial p-subgroup of D and
+      • C induces a derived equivalence between kGb and kHc.
+   Then, C induces a Rickard equivalence between kGb and kHc.
+7.2. Cyclotomic Hecke algebras.
+7.2.1. We consider here the non-degenerate case q 6= 1. We fix v1 , . . . , vd ∈ k × .
+   We denote by Hn = Hn (v, q) the quotient of Hn (q) by the ideal generated by (X1 −
+v1 ) · · · (X1 − vd ). This is the Hecke algebra of the complex reflection group G(d, 1, n) (cf e.g.
+[Ar2, §13.1]).
+   The algebra Hn is free over k with basis {X1a1 · · · Xnan Tw }0≤ai <d,w∈Sn [ArKo]. In particular
+Hn−1 embeds as a subalgebra of Hn , and Hn is free as a left and as a right Hn−1 -module, for
+the multiplication action. The algebra Hn is symmetric [MalMat].
+7.2.2. Let a ∈ k × . Given M an Hn -module, we denote by Fa,n M the generalized a-eigenspace
+                                                                          L
+of Xn . This is an Hn−1 -module. We have a decomposition ResH      Hn−1 =
+                                                                    n
+                                                                            a∈k × Fa,n . There is
+                                     Hn     L
+a corresponding decomposition IndHn−1 = a∈k× Ea,n , where Ea,n is left and right adjoint to
+                     L                    L
+Fa,n . We put Ea = n≥1 Ea,n and Fa = n≥1 Fa,n .
+                                                                            L
+   Now fix a ∈ k × . The functors E = Ea and F = Fa give an action of sl2 on n≥0 K0 (Hn -mod)
+in which the classes of simple modules are weight vectors [Ar2, Theorem 12.5] (only the case
+where each parameter if a power of q is considered there, but the proof
+                                                                      L extends immediately
+to our more general setting). We obtain an sl2 -categorification on n≥0 Hn -mod, where the
+endomorphism X of E is given on Ea,n by right multiplication by Xn , and the endomorphism
+T of E 2 is given on Ea,n Ea,n−1 by right multiplication by Tn−1 .
+Remark 7.11. Let e be the multiplicative order of q in k × . Fix a0 ∈ k × and let I = {q m a0 |
+                                                                   b e on L
+m ∈ Z}. Then the functors Ea and Fa for a ∈ I define an action of sl        n≥0 K0 (Hn -mod).
+
+7.2.3. Consider here the case d = 1. Then, Hn = Hn (1, q) is the Hecke algebra of Sn . Let
+e be the multiplicative order of q in k. We have a notion of weight of a block as in §7.1.1,
+replacing p by e in the definitions.
+  We obtain a q-analog of Theorem 7.2:
+Theorem 7.12. Assume d = 1. Let A be a block of Hn and B a block of Hm . Then, A and B
+are derived equivalent if and only they are Rickard equivalent if and only if they have the same
+weight.
+Remark 7.13. All of the constructions and results of §7.2 hold for degenerate cyclotomic
+Hecke algebras as well, under the assumption that they are symmetric algebras (which should
+be provable along the lines of [MalMat]).
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                            35
+
+7.3. General linear groups over a finite field.
+7.3.1. Let q be a prime power, n ≥ 0 and Gn = GLn (q). We assume that k has characteristic
+ℓ > 0 and ℓ6 |q(q − 1). Let An = kGn bn be the
+                                             P sum of the unipotentt blocks of kGn .
+                                         1
+   Given H a finite group, we put eH = |H|     h∈H h. We denote by g the transpose of a matrix
+g.
+   We denote by Vn the subgroup of upper triangular matrices of Gn with diagonal coefficients
+1 and whose off-diagonal coefficients vanish outside the n-th column. We denote by Dn the
+subgroup of Gn of diagonal matrices with diagonal entries 1 except the (n, n)-th one.
+                                                                  
+                                1          ∗             1
+                                ...       ..              ..
+                         Vn =              . , D =         .     
+                                                                     
+                                       1 ∗
+                                                    n           1 
+                                                 1                             ∗
+Let i ≤ n. We view Gi as a subgroup of Gn via the first i coordinates.
+  We put
+                 Ei,n = kGn e(Vn ⋊···⋊Vi+1 )⋊(Di+1 ×···×Dn ) ⊗kGi − : Ai -mod → An -mod
+             and Fi,n = e(Vn ⋊···⋊Vi+1 )⋊(Di+1 ×···×Dn ) kGn ⊗kGn − : An -mod → Ai -mod .
+These functors are canonically left and right adjoint. Furthermore, there are canonical isomor-
+                  ∼                      ∼
+           ◦ Ei,j → Ei,n and Fi,j
+phisms Ej,nL                    L◦ Fj,n → Fi,n for i ≤ Lj ≤ n.
+  Let A = n≥0 An -mod, E = n≥0 En,n+1 and F = n≥0 Fn,n+1 .
+  We denote by T the endomorphism of E given on En−2,n by right multiplication by
+                           T̂n−1 = qeVn Vn−1 Dn−1 Dn (n − 1, n)eVn Vn−1 Dn−1 Dn .
+We denote by X the endomorphism of E 2 given on En−1,n by right multiplication by
+                                       X̂n = q n−1 eVn Dn et Vn eVn Dn .
+Lemma 7.14. We have
+       (1E T ) ◦ (T 1E ) ◦ (1E T ) = (T 1E ) ◦ (1E T ) ◦ (T 1E ),      (T + 1E 2 ) ◦ (T − q1E 2 ) = 0
+                                    and      T ◦ (1E X) ◦ T = qX1E .
+Proof. The first statements involving only T ’s are the classical results of Iwahori.
+  Let U be the subgroup of Gn with diagonal coefficients 1 and whose off-diagonal coefficients
+vanish except the (n, n − 1)-th. We have
+         T̂n−1 X̂n−1 T̂n−1 = q n eVn Vn−1 Dn−1 Dn eU (n − 1, n)et Vn−1 (n − 1, n)eU eVn−1 Vn Dn−1 Dn
+                  = q n eVn Vn−1 Dn−1 Dn et Vn eVn Vn−1 Dn−1 Dn = qeVn−1 Dn−1 X̂n eVn−1 Dn−1
+and this induces the same endomorphism of En−2,n as q X̂n .                                             
+   Lemma 7.14 shows that we have a morphism Hn (q) → End(E0,n ) = EndkGn (kGn /Bn ) which
+sends Ti to the endomorphism given by right multiplication by qeBn (i − 1, i)eBn and X1 to the
+identity, where Bn is the subgroup of Gn of upper triangular matrices (cf § 5.2.2). The classical
+result of Iwahori states that the restriction of this morphism to Hnf is an isomorphism. This
+gives us a surjective morphism p : Hn → Hnf whose restriction to Hnf is the identity. Since X1
+36                             JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+maps to 1 in End(E0,n ) and the quotient of Hn by X1 −1 is isomorphic to Hnf , it follows that p is
+the canonical map Hn → Hnf . In particular, the image of Xi is (up to an affine transformation)
+a Jucys-Murphy element :
+                                                                                                             
+     p(Xi ) = q 1−i Ti−1 · · · T1 T1 · · · Ti−1 = 1 + q 1−i (q − 1) T(1,i) + qT(2,i) + · · · + q i−2 T(i−1,i) .
+   We put Rn = HomkGn (kGn eBn , −) = eBn kGn ⊗kGn − : An -mod → Hnf -mod. The multiplica-
+tion maps
+                        eBi kGi ⊗kGi eVn ···Vi+1 Dn ···Di+1 kGn → eBn kGn
+and
+                  eBn kGn eBn ⊗eBi kGi eBi eBi kGi → eBn kGn eVn ···Vi+1 Dn ···Di+1
+are isomorphisms. They induce isomorphisms of functors
+                                 ∼        f                         f     ∼
+                        Ri Fi,n → ResH
+                                     Hf
+                                       n
+                                         Rn         and       IndH
+                                                                 Hf
+                                                                   n
+                                                                     Ri → Rn Ei,n .
+                                          i                         i
+
+Remark 7.15. The constructions carried out here make sense more generally for finite groups
+with a BN-pair and for arbitrary standard parabolic subgroups, the transpose operation corre-
+sponding to passing from the unipotent radical of a parabolic subgroup to the unipotent radical
+of the opposite parabolic subgroup. This produces a very general kind of “Jucys-Murphy ele-
+ment” in Hecke algebras of finite Weyl groups. In type B or C, we should recover the usual
+Jucys-Murphy elements.
+  Given a ∈ k × , let Ea be the generalized a-eigenspace of X acting on E.
+                                                L
+Lemma 7.16. The action of [Ea ] and [Fa ] on n≥0 K0 (An -mod) gives a representation of sl2 .
+Furthermore, the classes of simple objects are weight vectors.
+Proof. Let O be a complete discrete valuation ring with field of fractions K and residue field
+k. We consider the setting above where k is replaced by K. The functor HomKGn (KGn eBn , −)
+induces an isomorphism from the Grothendieck group Ln of the category of unipotent repre-
+sentations of KGn to the Grothendieck group of the category of representations of the Hecke
+algebra of type Sn with parameter q over K. This isomorphism is compatible with the ac-
+tions of Ea and Fa . It follows from §7.2.2 that Ea and Fa give a representation of sl2 on
+L
+   n≥0 Ln and the class of a simple unipotent representation of KGn is a weight vector. Now,
+the decomposition map Ln → K0 (An ) is an isomorphism [Jam, Theorem 16.7] and the result
+follows.                                                                                    
+                                                       L
+   So, we have constructed an sl2 -categorification on    n≥0 An -mod and a morphism of sl2 -
+                 L                 L       f
+categorifications n≥0 An -mod → n≥0 Hn -mod.
+Remark 7.17. Note that we deduce from this that the blocks of An correspond to the blocks
+of Hnf .
+7.3.2. We assume here only that ℓ6 |q. Let O be the ring of integers of a finite extension of Qℓ
+and k be the residue field of O.
+   Let us recall [FoSri] that the ℓ-blocks of GLn (q) are parametrized by pairs ((s), (B1 , . . . , Br ))
+where s is a conjugacy class of semi-simple ℓ′ -elements of GLn (q) and Bi is a block of Hni (q di ),
+where CGLn (q) (s) = GLn1 (q d1 ) × · · · × GLnr (q dr ). Let wi be the ei -weight of the block Bi , where
+ei is the multiplicative order of q di in k × . We define the weight of the block as the family
+{(wi , di)}1≤i≤r .
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                37
+
+Theorem 7.18. Let R = k or O. Two blocks of general linear groups over R with same weights
+are splendidly Rickard equivalent.
+Proof. The results on the local block theory of symmetric groups generalize to unipotent blocks
+of general linear groups [Br, §3] and we conclude as in the proof of Theorem 7.2 that the
+Theorem holds for unipotent blocks.
+  By [BoRou2], a block of a general linear group is splendidly Rickard equivalent to a unipotent
+block of a product GLn1 (q d1 ) × · · · × GLnr (q dr ) ([BoRou1, Théorème B] already provides a
+complex with homology only in one degree inducing a Morita equivalence). Such a block is
+splendidly Rickard equivalent to the principal block of GLe1 w1 (q d1 ) × · · · × GLer wr (q dr ) by the
+unipotent case of the Theorem.                                                                        
+Remark 7.19. Assume l|(q − 1). Then, k GLn (q) has a unique unipotent block, the principal
+block. The number of simple modules for such a block is the number of partitions of n.
+Consequently, a unipotent block of GLn (q) is not derived equivalent to a unipotent block of
+GLm (q) when n 6= m.
+Theorem 7.20. Let A be a block of a general linear group G over R = k or O, let D be a defect
+group and B the corresponding block of NG (D). If D is abelian, then A and B are splendidly
+Rickard equivalent.
+Proof. By the result of [BoRou2] stated above, we may assume that A is a unipotent block.
+Then we proceed as in the proof of Theorem 7.6, using the fact that there is a unipotent block of
+a general linear group with defect group isomorphic to D that is splendidly Morita equivalent
+to the principal block of R(GLe (q) ≀ Sw ) for some w ≥ 0, where e is the order of q in k ×
+[Pu2, Mi, Tu].                                                                                 
+7.4. Category O.
+7.4.1. We construct here sl2 -categorifications on category O of gln . In particular we show
+that the weak sl2 -categorification on singular blocks given by Bernstein, Frenkel and Khovanov
+[BeFreKho] is an sl2 -categorification.
+   We denote by h the Cartan subalgebra of diagonal matrices and n the nilpotent algebra of
+strictly upper trangular matrices of the complex Lie algebra g = gln . We denote by O the BGG
+category of finitely generated U(g)-modules that are diagonalisable for h and locally nilpotent
+for U(n).
+   Let {eij } be the standard basis of g, and let ε1 , . . . , εn be the basis of h∗ dual to e11 , . . . , enn .
+For each λ ∈ h∗ we denote by λ1 , . . . , λn the coefficients of λ with respect to ε1 , . . . , εn . We
+write λ →a µ if there exists j such that λj − j + 1 = a − 1, µj − j + 1 = a and λi = µi for i 6= j.
+   For each λ ∈ h∗ let M(λ) be the Verma module with highest weight λ and let L(λ) be its
+unique irreducible quotient. Recall that M(λ) = U(g) ⊗U (b) Cλ , where b is the subalgebra
+of upper-triangular matrices and Cλ is the one-dimensional b-module on which eii acts as
+multiplication by λi .
+   Let Θ be the set of maximal ideals of the center Z of U(g). For each θ ∈ Θ denote by Oθ the
+full subcategory of O consisting of modules annihilated by some power of θ. The category O
+splits as a direct sum of the subcategories Oθ . Let prθ : O → O denote the projection onto Oθ .
+Each Verma module belongs to some Oθ , and M(λ) and M(µ) belong to the same subcategory
+if and only if λ and µ are in the same orbit in the dot action of the Weyl group of g on h∗ ,
+38                            JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+i.e., if and only if (λ1 , λ2 − 1, . . . , λn − n + 1) and (µ1 , µ2 − 1, . . . , µn − n + 1) are in the same
+Sn -orbit. We write θ →a θ′ if there exist λ, µ ∈ h∗ such that M(λ) ∈ Oθ , M(µ) ∈ Oθ′ and
+λ →a µ.
+   Let V be the natural n-dimensional
+                                 L               representation of g. The functor V ⊗ − : O → O
+decomposes as a direct sum a∈C Ea , where
+                                               M
+                                      Ea =         prθ′ ◦(V ⊗ −) ◦ prθ .
+                                          θ,θ ′ ∈Θ
+                                          θ→a θ ′
+
+Each summand Ea has a left and right adjoint
+                                   M
+                            Fa =       prθ ◦(V ∗ ⊗ −) ◦ prθ′ .
+                                          θ,θ ′ ∈Θ
+                                          θ→a θ ′
+
+   Let λ ∈ h∗ . We have V ⊗ M(λ) = V ⊗ (U(g) ⊗U (b) Cλ ) ≃ U(g) ⊗U (b) (V ⊗ Cλ ), and therefore
+V ⊗ M(λ) has a filtration with quotients isomorphic to the modules M(λ + εi), i = 1, . . . , n.
+Similarly V ∗ ⊗ M(λ) has a filtration with quotients isomorphic to the modules M(λ − εi ),
+i = 1, . . . , n. It follows that
+                                      X                       X
+                          [Ea M(λ)] =   [M(µ)], [Fa M(λ)] =      [M(µ)]
+                                     µ∈h∗                                    µ∈h∗
+                                     λ→a µ                                   µ→a λ
+
+in K0 (O). Hence
+                              [Ea Fa M(λ)] − [Fa Ea M(λ)] = cλ,a [M(λ)],
+where cλ,a = #{i | λi − i + 1 = a} − #{i | λi − i + 1 = a − 1}. Because the classes of Verma
+modules are a basis for K0 (O), we deduce that for each a ∈ C the functors Ea and Fa give a
+weak sl2 -categorification on O in which the simple module L(λ) has weight cλ,a .
+
+7.4.2. Given M a g-module, we have an action map g ⊗ M → M. Let XM ∈ Endg(V ⊗ M)
+be the corresponding adjoint map. This defines
+                                        P      an endomorphism X of the functor V ⊗ −. We
+have XM (v ⊗ m) = Ω(v ⊗ m) where Ω = ni,j=1 eij ⊗ eji ∈ g ⊗ g.
+  Define TM ∈ Endg(V ⊗V ⊗M) by TM (v⊗v ′ ⊗m) = v ′ ⊗v⊗m. This defines an endomorphism
+T of the functor V ⊗ V ⊗ −.
+Lemma 7.21. We have the following equality in Endg(V ⊗ V ⊗ M):
+                             TM ◦ (1V ⊗ XM ) = XV ⊗M ◦ TM − 1V ⊗V ⊗M .
+Proof. We have
+                                             n
+                                             X
+                                 ′
+               XV ⊗M TM (v ⊗ v ⊗ m) =                eij v ′ ⊗ eji(v ⊗ m)
+                                             i,j=1
+                                             X  n                           n
+                                                                            X
+                                                          ′
+                                         =           eij v ⊗ ejiv ⊗ m +             eij v ′ ⊗ v ⊗ eji m
+                                             i,j=1                          i,j=1
+
+                                         = v ⊗ v ⊗ m + TM (1V ⊗ XM )(v ⊗ v ′ ⊗ m).
+                                                      ′
+
+
+                                                                                                          
+          DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                         39
+
+   The lemma implies that for each l we can define a morphism Hl (1) → Endg(V ⊗l ⊗ M) by
+Ti 7→ 1⊗l−i−1
+       V      ⊗ TV ⊗i−1 ⊗M and Xi 7→ 1⊗l−i
+                                      V    ⊗ XV ⊗i−1 ⊗M . Jon Brundan has pointed out to us that
+this coincides up to shift (cf Remark 5.14) with an action described by Arakawa and Suzuki
+[ArSu, §2.2].
+
+7.4.3. We shall now show that X and T restrict to give endomorphisms of the functors Ea
+and Ea2 which define sl2 -categorifications on O. In view of Lemma 7.21, it suffices to identify
+Ea as the generalised a-eigenspace of X acting on V ⊗ −.                         P
+   To this end we observe that Ω = 21 (δ(C) − C ⊗ 1 − 1 ⊗ C), where C = ni,j=1 eij eji ∈ Z
+is the PCasimir element
+                   P      and δ : U(g) →PU(g) ⊗ U(g) is the comultiplication. Furthermore
+         n     2
+C =           e  +           (e − e ) + 1≤i<j≤n eji eij acts on the Verma module M(λ) as
+         i=1 ii         Pn ii2 Pjj
+                     1≤i<j≤n
+multiplication by bλ = i=1 λi + 1≤i<j≤n (λi −λj ). It follows that Ω stabilizes any g-submodule
+of V ⊗ M(λ) = L(ε1 ) ⊗ M(λ) and that the induced action on any subquotientLisomorphic to
+M(λ+εi ) is as multiplication by 12 (bλ+εi −bε1 −bλ ) = λi −i+1. Since V ⊗M(λ) = a∈C Ea M(λ),
+this identifies Ea M(λ) as the generalised a-eigenspace of XM (λ) . We deduce that for any M ∈ O,
+the generalized a-eigenspace of XM is Ea M.
+Remark 7.22. The canonical adjunction between V ⊗ − and V ∗ ⊗ − is given by the canonical
+maps η : C → V ∗ ⊗ V and ε : V ⊗ V ∗ → C, v ⊗ ξ 7→ ξ(v). Let XM ∈ Endg(V ∗ ⊗ M) and
+TM ∈ Endg(V ∗ ⊗ V ∗ ⊗ M) be the induced endomorphisms (cf §4.1.2). Then XM (ϕ ⊗ m) =
+(−Ω − n)(ϕ ⊗ m) and TM (ϕ ⊗ ϕ′ ⊗ m) = ϕ′ ⊗ ϕ ⊗ m.
+7.5. Rational representations.
+
+7.5.1. The construction of sl2 -categorifications in §7.4 works, more or less in the same way, on
+the category G-mod of finite-dimensional rational representations of G = GLn (k), where k is
+an algebraically closed field of characteristic p > 0.
+   Denote by X the character group of the subgroup of diagonal matrices          P in G. We identify
+X with Zn via the isomorphism sending (λ1 , . . . , λn ) ∈ Zn to λ =               i λi εi ∈ X , where εi
+is defined by εi (diag(t1 , . . . , tn )) = ti . This identifies the set X+ of dominant weights with
+{(λ1 , . . . , λn ) ∈ Zn | λ1 ≥ . . . ≥ λn }. For each λ ∈ X+ , let L(λ) be the unique simple G-module
+with highest weight λ.
+   Let B be the Borel subgroup of upper triangular matrices in G. For each λ ∈ X , the cohomol-
+ogy groups H iP      (λ) of the associated line bundle on G/B are objects of G-mod. The alternating
+sums χ(λ) = i≥0 ch(H i (λ)) ∈ Z[X ] span the image of the embedding ch : K0 (G-mod) →
+Z[X ].
+   The Weyl group W = Sn of G acts on X = Zn by place permutations. This extends
+to an action of the affine Weyl group Wp generated by W together with the translations by
+pεi −pεi+1 , 1 ≤ i ≤ n−1. Let Y be the group of permutations of Z generated by d, σ0 , . . . , σp−1 ,
+where md = m + 1 and
+                                          
+                                          
+                                          m + 1 if m ≡ a − 1 (mod p)
+                                  mσa = m − 1 if m ≡ a (mod p)
+                                          
+                                          m          otherwise.
+The action of Wp on X = Zn commutes with the diagonal action of Y .
+40                          JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+Lemma 7.23. Two elements λ, µ ∈ X have the same stabilizer in Wp if and only of they are
+in the same Y -orbit.
+Proof. Both conditions are equivalent to the following: for all i, j, and r, we have λi − λj = pr
+if and only if µi − µj = pr.                                                                   
+
+  We shall use the corresponding ‘dot actions’ obtained by conjugating by the translation by
+ρ = (0, −1, . . . , −n + 1) ∈ X :
+                         w · λ = w(λ + ρ) − ρ,         λ · y = (λ + ρ)y − ρ.
+   Let Θ be the set of orbits of the dot action of Wp on X . For each θ ∈ Θ, let Mθ be
+the full subcategory of G-mod consisting of modules whose composition factors are all of the
+form L(λ) for λ ∈ θ. L    The Linkage Principle [CaLu] implies that G-mod decomposes as a
+direct sum G-mod =         θ∈Θ Mθ . Let prθ : G-mod → G-mod denote the projection onto
+Mθ . Given λ, µ ∈ X and a ∈ 0, . . . , p − 1, we write λ →a µ if there exists j such that
+(λj − j + 1) + 1 = µj − j + 1 ≡ a (mod p) and λi = µi for i 6= j. Note that λ →a µ implies that
+w · λ →a w · µ for all w ∈ Wp . For θ, θ′ ∈ Θ, we write θ →a θ′ if there exist λ ∈ θ and µ ∈ θ′
+such that λ →a µ.
+   Let V be the natural n-dimensional representation of G. The left and right adjoint func-
+                                         ∗
+tors V ⊗ − : G-mod
+L                  L → G-mod and V ⊗ − : G-mod → G-mod decompose as direct sums
+   0≤a≤p−1 Ea and     0≤a≤p−1 Fa , where Ea and Fa are sums of translation functors, defined in
+the same way as in §7.4. The functors Ea and Fa have been studied extensively by Brundan
+and Kleshchev [BrKl].
+   Let ea and fa be the maps on characters induced by Ea and Fa . For each λ ∈ X , we have
+(eg using [Jan, Proposition 7.8])
+
+                                       X                           X
+(7)                        ea χ(λ) =           χ(µ),   fa χ(λ) =           χ(µ)
+                                        µ∈X                         µ∈X
+                                       λ→a µ                       µ→a λ
+
+in Z[X ]. Hence
+                                 ea fa χ(λ) − fa ea χ(λ) = cλ,a χ(λ),
+where cλ,a = #{i | λi − i + 1 ≡ a (mod p)} − #{i | λi − i + 1 ≡ a − 1 (mod p)}. We deduce
+that for each a ∈ {0, . . . , p − 1} the functors Ea and Fa give a weak sl2 -categorification in which
+the simple module L(λ) has weight cλ,a .
+
+7.5.2. These weak sl2 -categorifications can be improved to sl2 -categorifications using the same
+procedure as in the characteristic zero case §7.4. We first define endomorphisms X of V ⊗− and
+T of V ⊗ V ⊗ −. Note that to define X, we first pass from G-modules to modules over Lie(G) =
+gln (k). One small modification to the argument is required when p=2: in order to identify Ea
+with the generalized
+            P        a-eigenspaceP of X, we write Ω = −δ(Z2P   )+1⊗Z2 +Z2 ⊗1+Z1 ⊗Z1 − n(n+1)  2
+                                                                                                ,
+where Z1 = 1≤i≤n eii and Z2 = 1≤i<j≤n (eii −i)(ejj −j)− 1≤i<j≤n ejieij are central elements
+of Dist(G) (cf [CaLu, §2.2]).
+   By composing the derived (and homotopy) equivalences arising from these sl2 -categorifications
+on G-mod, we obtain many equivalences.
+         DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                     41
+
+Theorem 7.24. Let λ and µ be any two weights in X with the same stabilizer under the dot
+action of Wp . Then there are equivalences
+                               ∼                                  ∼
+                  K b (MWp ·λ ) → K b (MWp ·µ ) and D b (MWp ·λ ) → D b (MWp ·µ )
+that induce the map
+                                       χ(w · λ) 7→ χ(w · µ)
+on characters.
+Remark 7.25. Rickard conjectured the existence of such equivalences for any connected re-
+ductive group having a simply-connected derived subgroup and whose root system has Coxeter
+number h < p [Ri2, Conjecture 4.1]. He proved the truth of his conjecture in the case of trivial
+stabilizers (under the weaker assumption h ≤ p). We do not place any restriction on p in
+Theorem 7.24.
+Proof. By Lemma 7.23 we may assume that µ = λ · y where y ∈ {d, σ0 , . . . , σp−1 }. If µ = λ · d,
+                                                          ∼
+then we have an equivalence L(1, . . . , 1) ⊗ − : MWp ·λ → MWp ·µ , given by tensoring with the
+determinant representation, that induces the desired map on characters.
+   Suppose that µ = λ · σa . Using the sl2 -categorification on G-mod provided by E = Ea and
+                                                 b
+F = Fa , we obtain a self-equivalence Θ of KL      (G-mod) and of D b (G-mod) such that [Θ] = s
+(Theorem 6.4). We define an sl2 -module U = i∈Z Zui by eui = ui+1 for i ≡ a−1 (mod p) and
+eui = 0 otherwise, and f ui = ui−1 for i ≡ a (mod p) and f ui = 0 otherwise. Then sui = ui+1 if
+i ≡ a − 1 (mod p), sui = −ui−1 if i ≡ a (mod p), and sui = ui otherwise. Thus on the tensor
+power U ⊗n we have suν = (−1)h− (ν) uνσa , where uν = uν1 ⊗ · · · ⊗ uνn and h− (ν) = #{i | νi ≡ a
+(mod p)}.
+   By (7) we have a homomorphism of sl2 -modules U ⊗n → K0 (G-mod), uν+ρ 7→ χ(ν). It follows
+that sχ(ν) = (−1)h− (ν+ρ) χ(ν ·σa ). Hence sχ(w ·λ) = (−1)h− χ(w ·µ), where h− = h− (w ·λ+ρ) =
+                                                                              ∼
+h− (λ + ρ). We conclude that Θ[−h− ] restricts to equivalences K b (MWp ·λ ) → K b (MWp ·µ ) and
+              ∼
+D b (MWp ·λ ) → D b (MWp ·µ ) that induce the desired map on characters.                        
+7.6. q-Schur algebras. We explain in this part how to obtain sl2 -categorifications, and hence
+derived equivalences, for q-Schur algebras.
+                          L         f
+   Let q ∈ k × . Let Yn = λ IndH Hλf
+                                    n
+                                      k, where λ = (λ1 ≥ · · · ≥ λr ) runs over the partitions of n
+            L
+and Hλf = w∈S[1,λ ] ×···×S[n−λ +1,n] Tw k is the corresponding parabolic subalgebra of Hnf and k
+                     1        r
+corresponds to the representation 1. We define the q-Schur algebra Sn = EndHnf (Yn ).
+   Let Yn be the full subcategory of Hnf -modL whose objects are direct sums of direct summands
+of Yn (“q-Young modules”) and let Y =           n≥0 Yn . Mackey’s formula shows that Y is stable
+                                                               L        f
+under E and F . For each of the sl2 -categorifications on   L n≥0 Hn -mod constructed in §7.2
+we deduce from Theorem 5.32 an sl2 -categorification on n≥0 Sn -mod and a morphism of sl2 -
+                  L                  L
+categorifications n≥0 Sn -mod → n≥0 Hnf -mod. This provides a version of Theorem 7.12 for
+q-Schur algebras.
+Remark 7.26. We go back to the setting of        §7.3 (in particular, q is a prime power). The
+canonical map An → EndHnf opp (kGn eBn )opp is   surjective and its image Sn′ is Morita equiva-
+lent to Sn (“double centralizer Theorem”, cf     [Ta]). This gives by restriction a fully faith-
+                     ∼
+ful functor Sn -mod → Sn′ -mod → An -mod.          Since E(kGn eBn ) ≃ kGn+1 eBn+1 , it follows
+42                           JOSEPH CHUANG AND RAPHAËL ROUQUIER
+     L
+that    n≥0 Sn -mod is stable under E. Mackey’s formula shows  L     that it is also
+                                                                                  L stable un-
+der F . This gives a morphism of weak sl2 -categorifications         S  -mod   →    n≥0 An -mod
+                                          L                L n≥0 f n
+and the composition with the morphism n≥0 An -mod → n≥0 Hn -mod of §7.3.1 is isomor-
+                       L                 L       f
+phic
+L    to  the morphism
+                  L      n≥0 S n -mod →     n≥0 Hn -mod constructed above. One deduces that
+  n≥0 Sn -mod →     n≥0 An -mod is actually a morphism of sl2 -categorifications.
+  Note also that we get another proof of Lemma 7.16 using the fact that the canonical map
+              ∼
+K0 (Sn -mod) → K0 (An -mod) is an isomorphism.
+Remark 7.27. The interested reader will extend the results of §7.5 to the quantum case and
+show that the categorification of q-Schur algebras can be realized as a subcategorification of
+the quantum group case.
+7.7. Realizations of minimal categorifications.
+7.7.1. We now show that the minimal categorification of §5.3 is a special case of the categori-
+fication on representations of blocks of cyclotomic Hecke algebras.
+   Fix a ∈ k × and put v = (v1 , . . . , vn ) = (a, . . . , a). Then Hi = Hi (q, v) is the quotient of Hi
+be the ideal generated by xn1 (where x1 = X1 − a). The kernel of the action of Hi on the simple
+module Ki = Hi ⊗Pi Pi /mi contains xn1 if and only if i ≤ n (cf §3.2.1); let Ai be the block of Hi
+containing Ki for 0 ≤ i ≤ n. A finitely generated Hi -module M is in Ai if and only if ni acts
+nilpotently on M (equivalently mi acts nilpotently on M), and Ki is the unique simple module
+in Ai .
+   We have F M = 0 for M ∈ A0 -mod and F M = ResH               Hi−1 M ∈ Ai−1 -mod for M ∈ Ai -mod and
+                                                                 i
+
+
+0 < i ≤ n.
+   Likewise EM = 0 for M ∈ An -mod. Let M ∈ Ai -mod with 0 ≤ i < n. Consider N a simple
+Hi+1 -quotient of EM. We have Hom(EM, N) ≃ Hom(M, F N) 6= 0. In particular, F N has a
+non-zero Hi -submodule M ′ on which x1 , . . . , xi act nilpotently. Let M ′′ be the (k[xi+1 ] ⊗ Hi )-
+submodule of F N generated by M ′ . Then, x1 , . . . , xi+1 act nilpotently on M ′′ . Now, N is
+a simple Hi+1 -module, hence it is generated by M ′′ as a Hi+1 -module, so x1 , . . . , xi+1 act
+nilpotently on N. We deduce that they act nilpotently on EM as well. So, EM ∈ Ai+1 -mod.
+              L
+   So A =        i Ai -mod is an sl2 -categorification and Q ⊗ K0 (A) is a simple sl2 -module of
+dimension n + 1. Let U = K0 = k, the simple (projective) module for A0 = k. The morphism
+of sl2 -categorifications RU : A(n) → A is an equivalence (Proposition 5.26). In particular H̄i,n
+and Ai are isomorphic, as each has an i!-dimensional simple module.
+7.7.2. We explained in §3.3.2 that H̄i,n is Morita equivalent to its center, which is isomorphic
+to the cohomology of certain Grasmmannian varieties. We sketch here a realization of the
+minimal categorification in that setting. We consider only the case q = 1; the case q 6= 1 can
+be dealt with similarly, replacing cohomology by Gm -equivariant K-theory.
+   Let Gi,j be the variety of pairs (V1 , V2 ) of subspaces of Cn with V1 ⊂ V2 , dim V1 = i and
+dim V2 = j. We put Ai = H ∗ (Gi ). The (Ai+1 , Ai )-bimodule H ∗ (Gi,i+1 ) defines by tensor
+product a functor Ei : Ai -mod →LAi+1 -mod andLswitching sides, a left and right adjoint
+Fi : Ai+1 -mod → Ai -mod. Let E =       Ei and F =       Fi . This gives a weak sl2 -categorification
+that has been considered by Khovanov as a way of categorifying irreducible sl2 -representations.
+It is a special case of the construction of irreducible finite dimensional representations of sln
+due to Ginzburg [Gi].
+           DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION                                    43
+
+  We denote by X the endomorphism of E given on H ∗ (Gi,i+1 ) by cup product by c1 (Li+1 ).
+We have a P1 -fibration π : Gi,i+1 ×Gi+1 Gi+1,i+2 → Gi,i+2 given by first and last projection. It
+induces a structure of H ∗ (Gi,i+2 )-module on H ∗(Gi,i+1 ×Gi+1 Gi+1,i+2 ) = H ∗ (Gi,i+1) ⊗H ∗ (Gi+1 )
+H ∗ (Gi+1,i+2 ). There is a unique endomorphism T of H ∗ (Gi,i+2 )-module on H ∗ (Gi,i+1 ×Gi+1
+Gi+1,i+2 ) satisfying T (c1 (Li+1 )) = c1 (Li+2 ) − 1. This provides us with an endomorphism of
+Ei+1 Ei and taking the sum over all i, we get an endomorphism T of E 2 . One checks easily that
+this gives an sl2 -categorification (with a = 0) that is isomorphic to the minimal categorification.
+   The functor E (1,r) : Ai -mod → Ai+r -mod is isomorphic to the functor given by the bimodule
+H ∗ (Gi,i+r ).
+                                                                                             ∼
+   Take i ≤ n/2 and let us now consider Θ[−i], restricted to a functor D b (H ∗ (Gi )-mod) →
+D b (H ∗ (Gn−i )-mod). It is probably isomorphic to the functor given by the cohomology of the
+subvariety {(V, V ′ )|V ∩ V ′ = 0} of Gi × Gn−i , the usual kernel for the Grassmannian duality
+(cf eg [KaScha, Exercice III.15]).
+
+                                                  References
+[ArSu]     T. Arakawa and T. Suzuki, Duality between sln C and the degenerate affine Hecke algebra, J. Algebra
+           209 (1998), no. 1, 288–304.
+[Ar1]      S. Ariki, On the decomposition numbers of the Hecke algebra of G(m, 1, n), J. Math. Kyoto Univ.
+           36 (1996), no. 4, 789–808.
+[Ar2]      S. Ariki, “Representations of quantum algebras and combinatorics of Young tableaux”, University
+           Lecture Series 26, Amer. Math. Soc., 2002.
+[ArKo]     S. Ariki and K. Koike, A Hecke algebra of (Z/rZ) ≀ Sn and construction of its irreducible represen-
+           tations, Adv. Math. 106 (1994), no. 2, 216–243.
+[BeFreKho] J. Bernstein, I. Frenkel and M. Khovanov, A categorification of the Temperley-Lieb algebra and
+           Schur quotients of U (sl2 ) via projective and Zuckerman functors, Sel. Math. 5 (1999), 199–241.
+[BoRou1] Cédric Bonnafé and Raphaël Rouquier, Catégories dérivées et variétés de Deligne-Lusztig, Publi-
+           cations Mathématiques de l’IHÉS 97 (2003), 1–59.
+[BoRou2] Cédric Bonnafé and Raphaël Rouquier, Catégories dérivées et variétés de Deligne-Lusztig, II, in
+           preparation.
+[Br]       M. Broué, Les ℓ-blocs des groupes GL(n, q) et U(n, q 2 ) et leurs structures locales, Séminaire Bourbaki
+           no 640, Astérisque 133–134, 1986.
+[BrKl]     J. Brundan and A. Kleshchev, On translation functors for general linear and symmetric groups,
+           Proc. London Math. Soc. (3) 80 (2000), no. 1, 75–106.
+[CaRi]     M. Cabanes and J. Rickard, Alvis-Curtis duality as an equivalence of derived categories, in “Modular
+           representation theory of finite groups”, de Gruyter, 157–174, 2001.
+[CaLu]     R. W. Carter and G. Lusztig, On the modular representations of the general linear and symmetric
+           groups, Math. Z. 136 (1974), 193–242.
+[ChKe]     J. Chuang and R. Kessar, Symmetric groups, wreath products, Morita equivalences, and Broué’s
+           abelian defect group conjecture, Bull. London Math. Soc. 34 (2002), 174–184.
+[DeLu]     P. Deligne and G. Lusztig, Duality for representations of a reductive group over a finite field, J.
+           Algebra 74 (1982), 284–291.
+[En]       M. Enguehard, Isométries parfaites entre blocs de groupes symétriques, Astérisque 181–182 (1990),
+           157–171.
+[FoSri]    P. Fong and B. Srinivasan, The blocks of finite general linear and unitary groups, Invent. Math. 69
+           (1982), 109–153.
+[Gi]       V. Ginzburg, Lagrangian construction of the enveloping algebra U (sln ), C. R. Acad. Sci. Paris Sér.
+           I Math. 312 (1991), 907–912.
+[Gr]       I. Grojnowski, Affine slˆ p controls the modular representation theory of the symmetric groups and
+           related Hecke algebras, preprint, math.RT/9907129.
+44                            JOSEPH CHUANG AND RAPHAËL ROUQUIER
+
+[GrVa]     I. Grojnowski and M. Vazirani, Strong multiplicity one theorems for affine Hecke algebras of type
+           A, Transform. Groups 6 (2001), 143-155.
+[HueKho]   R.S. Huerfano and M. Khovanov, A category for the adjoint representation, J. Algebra 246 (2001),
+           514–542.
+[Jam]      G. James, Representations of general linear groups, LMS lecture notes no. 94, Cambridge University
+           Press, 1984.
+[Jan]      J. C. Jantzen, Representations of algebraic groups, Second edition, Amer. Math. Soc., Providence,
+           RI, 2003.
+[Ka]       S. Kato, Irreducibility of principal series representations for Hecke algebras of affine type, J. Fac.
+           Sci. Univ. Tokyo Sect. IA Math. 28 (1981), no. 3, 929–943.
+[KaScha]   M. Kashiwara and P. Schapira, Sheaves on manifolds, Springer Verlag, 1990.
+[Kl1]      A. Kleshchev, Branching rules for modular representations of symmetric groups. II., J. Reine
+           Angew. Math. 459 (1995), 163–212.
+[Kl2]      A. Kleshchev, Branching rules for modular representations of symmetric groups. IV., J. Algebra
+           201 (1998), 547–572.
+[LLT]      A. Lascoux, B. Leclerc and J.-Y. Thibon, Hecke algebras at roots of unity and crystal bases of
+           quantum affine algebras, Comm. Math. Phys. 181 (1996), no. 1, 205–263.
+[Lu]       G. Lusztig, Affine Hecke algebras and their graded version, J. Amer. Math. Soc. 2 (1989), 599–635.
+[MalMat]   G. Malle and A. Mathas, Symmetric cyclotomic Hecke algebras, J. Algebra 205 (1998), 275–293.
+[Ma]       A. Marcus, On equivalences between blocks of group algebras: reduction to the simple components,
+           J. Algebra 184 (1996), 372–396.
+[Mi]       H. Miyachi, Unipotent blocks of finite general linear groups in non-defining characteristic, Ph.D.
+           thesis, Chiba University, 2001.
+[Pu1]      L. Puig, The Nakayama conjecture and the Brauer pairs, in “Séminaire sur les groupes finis”, Publ.
+           Math. Univ. Paris 7, vol. 25, 171–189, 1987.
+[Pu2]      L. Puig, Algèbres de source de certains blocs des groupes de Chevalley, Astérisque 181-182 (1990),
+           221-236.
+[Ri1]      J. Rickard, talk at MSRI, Berkeley, 6 November 1990.
+[Ri2]      J. Rickard, Translation functors and equivalences of derived categories for block of algebraic groups,
+           in Finite-dimensional algebras and related topics (Ottawa, ON, 1992), 255–264, Kluwer Acad. Publ.,
+           Dordrecht, 1994.
+[Ri3]      J. Rickard, Splendid equivalences: derived categories and permutation modules, Proc. London Math.
+           Soc. 72 (1996), 331-358.
+[Rou1]     R. Rouquier, Isométries parfaites dans les blocs à défaut abélien des groupes symétriques et spo-
+           radiques, J. Algebra 168 (1994), 648–694.
+[Rou2]     R. Rouquier, The derived category of blocks with cyclic defect groups, in “Derived equivalences for
+           group rings”, Springer Lecture Notes 1685, 199–220, 1998.
+[Rou3]     R.     Rouquier,     Représentations et catégories dérivées,         research report       (1998),
+           http://www.math.jussieu.fr/∼rouquier/preprints/preprints.html.
+[Rou4]     R. Rouquier, Block theory via stable and Rickard equivalences, in “Modular representation theory
+           of finite groups”, de Gruyter, 101–146, 2001.
+[Sco]      J. Scopes, Cartan matrices and Morita equivalence for blocks of the symmetric groups, J. Algebra
+           142 (1991), 441-455.
+[Ta]       M. Takeuchi, The group ring of GLn (q) and the q-Schur algebra, J. Math. Soc. Japan 48 (1996),
+           259–274.
+[Tu]       W. Turner, Equivalent blocks of finite general linear groups in non-describing characteristic, J.
+           Algebra 247 (2002), 244-267.
+[Va]       M. Vazirani, Filtrations on the Mackey decomposition for cyclotomic Hecke algebras, J. Algebra
+           252 (2002), 205–227.
+
+
+  Joseph Chuang : Department of Mathematics, University of Bristol, University Walk, Bris-
+tol BS8 1TW, UK. E-mail : Joseph.Chuang@bris.ac.uk
+        DERIVED EQUIVALENCES FOR SYMMETRIC GROUPS AND sl2 -CATEGORIFICATION             45
+
+  Raphaël Rouquier : UFR de Mathématiques et Institut de Mathématiques de Jussieu (CNRS
+UMR 7586), Université Paris 7, 2 place Jussieu, 75251 Paris Cedex 05, FRANCE.
+E-mail : rouquier@math.jussieu.fr
+

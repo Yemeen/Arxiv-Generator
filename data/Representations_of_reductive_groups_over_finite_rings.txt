@@ -1,0 +1,997 @@
+                                                             REPRESENTATIONS OF REDUCTIVE
+                                                                 GROUPS OVER FINITE RINGS
+arXiv:math/0208037v1 [math.RT] 5 Aug 2002
+
+
+
+
+                                                                                 G. Lusztig
+
+
+                                                                               Introduction
+                                            0.1. In [L, Sec.4] a cohomological construction was given (without proof) for cer-
+                                            tain representations of a Chevalley group over a finite ring R (arising from the
+                                            ring of integers in a non-archimedean local field by reduction modulo a power of
+                                            the maximal ideal); that construction was an extension of the construction of the
+                                            virtual representations RTθ in [DL] for groups over a finite field. One of the aims
+                                            of this paper is to provide the missing proof. For simplicity we will assume that
+                                            R = Fq,r = Fq [[ǫ]]/(ǫr ) (ǫ is an indeterminate, Fq is a finite field with q elements
+                                            and r ≥ 1). The general case requires only minor modifications. On the other
+                                            hand, we treat possibly twisted groups.
+                                               Let F be an algebraic closure of Fq . Let G be a connected reductive algebraic
+                                            group defined over F with a given Fq -rational structure with associated Frobenius
+                                            map F : G − → G.
+                                               Using a cohomological method, extending that of [DL], we will construct a
+                                            family of irreducible representations of the finite group G(Fq,r ), r ≥ 1, attached
+                                            to a ”maximal torus” and a character of it in general position. In the case where
+                                            r ≥ 2 and G is split over Fq , the representations that we construct are likely
+                                            to be the same as those found by Gérardin [G] by a non-cohomological method
+                                            (induction from a subgroup if r is even; induction from a subgroup in combination
+                                            with a use of a Weil representation, if r is odd, ≥ 3). In any case, since for
+                                            r = 1, the cohomological construction is the only known construction of the generic
+                                            representations, it seems natural to seek a cohomological construction which works
+                                            uniformly for all r ≥ 1; this is what we do in this paper.
+                                               In contrast with the case r = 1, for r ≥ 2 not all irreducible representations of
+                                            G(Fq,r ) appear in the virtual representations that we construct. The study of SL2
+                                            with r = 2 (see §3) suggests that, to remedy this, one has to consider also virtual
+                                            representations attached to double cosets with respect to a ”Borel subgroup” other
+                                            than those indexed by the Weyl group.
+
+                                              Supported in part by the National Science Foundation
+
+                                                                                                              Typeset by AMS-TEX
+                                                                                        1
+2                                            G. LUSZTIG
+
+0.2. Notation. Let ǫ be an indeterminate. If X is an affine algebraic variety
+over F and r ≥ 1, we set Xr = X(F[[ǫ]]/(ǫr )). Thus, if X is the set of common
+zeroes of the polynomials fi : FN −        → F(i = 1, . . . , m), then Xr is the set of all
+                                    r N
+(x1 , x2 , . . . , xN ) ∈ (F[[ǫ]]/(ǫ )) such that fi (x1 , x2 , . . . , xN ) (a priori an element
+of F[[ǫ]]/(ǫr )) is equal to 0 for i = 1, . . . , m. We have X1 = X. For r = 0 we set
+Xr =point. Then X 7→ Xr is a functor from the category of algebraic varieties
+over F into itself. If X ′ is a closed subvariety of X then Xr′ is a closed subvariety of
+Xr . If X is irreducible of dimension d then Xr is irreducible of dimension dr. For
+any r ≥ r ′ ≥ 0 we have a canonical morphism φr,r′ : Xr −               → Xr′ . If r ≥ 1, we have
+naturally X ⊂ Xr (using F ⊂ F[[ǫ]]/(ǫr )). If G is an algebraic group over F then
+Gr is naturally an algebraic group over F. For any r ≥ r ′ ≥ 0, φr,r′ : Gr −             → Gr′ is
+                                                                        r′
+a homomorphism of algebraic groups hence its kernel, Gr , is a normal subgroup
+of Gr . For r ≥ 1 we have naturally G ⊂ Gr . We have
+                           {1} = Grr ⊂ Gr−1
+                                        r   ⊂ . . . G1r ⊂ G0r = Gr .
+                                ′        ′      ′
+For r > r ′ ≥ 0, we set Grr ,∗ = Grr − Grr +1 . We have a partition
+                           Gr = G0,∗  1,∗          r−1,∗
+                                 r ⊔ Gr ⊔ . . . ⊔ Gr     ⊔ {1}.
+We fix a prime number l invertible in F. If X is an algebraic variety over F we
+write Hcj (X) istead of Hcj (X, Q̄l ).
+  For a finite group Γ let Γ̂ = Hom(Γ, Q̄∗l ).
+0.3. If T is a commutative algebraic group over F with a fixed Fq -structure and
+with Frobenius map F : T − → T we have a norm map
+     Fn    Fn
+   NF : T      → T , t 7→ tF (t)F 2 (t) . . . F n−1 (t).
+               −  F
+
+
+                                             1. Lemmas
+Lemma 1.1. Let T , T ′ be two commutative, connected algebraic groups over F
+                                                             → T ,F : T ′ −
+with fixed Fq -rational structures with Frobenius maps F : T −            → T ′.
+           ∼
+Let f : T −→ T ′ be an isomorphism of algebraic groups over F. Let n ≥ 1 be such
+                                           n ∼     n
+                       → T ′ ; thus f : T F −→ T ′F . Let
+that F n f = f F n : T −
+                      H = {(t, t′ ) ∈ T × T ′ ; f (F (t)−1t) = F (t′ )−1 t′ }.
+(A subgroup of T × T ′ containing T F × T ′F .) Let θ ∈ T d           d
+                                                             F , θ′ ∈ T ′F be such that
+
+θ −1 ⊠ θ ′ is trivial on (T F × T ′F ) ∩ H 0 . Then θNFF = θ ′ NFF f ∈ Td
+                                                        n         n
+                                                                          Fn.
+
+   Setting t1 = tF (t) . . . F n−1 (t) ∈ T ,        t2 = f (t)F (f (t)) . . . F n−1 (f (t)) ∈ T ′ for
+t ∈ T , we have
+    f (F (t1 )−1 t1 ) = f (tF n (t)−1 ) = f (t)f (F n(t))−1 = f (t)F n (f (t))−1 = F (t2 )−1 t2 ,
+so that (t1 , t2 ) ∈ H. Now t 7→ (t1 , t2 ) is a morphism T −
+                                                            → H of algebraic varieties
+and T is connected; hence the image of this morphism is contained in H 0 . In
+                        n                  n       n
+particular, if t ∈ T F we have (NFF (t), NFF (f (t))) ∈ (T F × T ′F ) ∩ H 0 hence,
+                           n            n                          n
+by assumption, θ −1 (NFF (t))θ ′ (NFF (f (t))) = 1 for all t ∈ T F . The lemma is
+proved.
+           REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                              3
+
+1.2. Let G be a connected reductive algebraic group over F with a fixed Fq -
+rational structure with Frobenius map F : G −     → G. If r ≥ 1 then F : G −      → G
+induces a homomorphism F : Gr −      → Gr which is the Frobenius map for a Fq -
+rational structure on Gr .
+   Let T, T ′ be two F -stable maximal tori of G and let U (resp. U ′ ) be the
+unipotent radical of a Borel subgroup of G that contains T (resp. T ′ ). Note that
+U, U ′ are not necessarily defined over Fq . Let r ≥ 2. Let T = Trr−1 , T ′ = Tr′ r−1 ,
+
+                    Σ = {(x, x′ , y) ∈ F (Ur ) × F (Ur′ ) × Gr ; xF (y) = yx′ }.
+
+Let N (T, T ′ ) = {ν ∈ G; ν −1 T ν = T ′ }. Then T acts on N (T, T ′ ) by left multipli-
+cation and T ′ acts on N (T, T ′ ) by right multiplication. The orbits of T are the
+same as the orbits of T ′ ; we set W (T, T ′ ) = T \N (T, T ′ ) = N (T, T ′ )/T ′ (a finite
+set). For each w ∈ W (T, T ′ ) we choose a representative ẇ in N (T, T ′ ). We have
+G = ⊔w∈W (T,T ′ ) Gw where Gw = U T ẇU ′ = U ẇT ′ U ′ .
+   Let Gw,r be the inverse image of Gw under φr,1 : Gr −            → G and let Σw =
+{(x, x′ , y) ∈ Σ; y ∈ Gw,r }.
+   Now TrF × Tr′ F acts on Σ by (t, t′ ) : (x, x′ , y) 7→ (txt−1 , t′ x′ t′−1 , tyt′−1 ). This
+restricts to an action of TrF × Tr′ F on Σw for any w ∈ W .
+   If θ ∈ Tc  F   ′   d
+             r , θ ∈ Tr
+                       ′ F and M is a T F × T ′ F -module, we shall write M −1 ′ for
+                                         r     r                                     θ ,θ
+the subspace of M on which TrF × Tr′ F acts according to θ −1 ⊠ θ ′ .
+Lemma 1.3. Assume that r ≥ 2. Let w ∈ W (T, T ′ ). Let θ ∈ Tc     F     ′   d′F
+                                                                  r , θ ∈ Tr .
+               j                                               −1
+Assume that Hc (Σw )θ−1 ,θ′ 6= 0 for some j ∈ Z. Let g = F (ẇ) and let n ≥ 1 be
+such that g ∈ GF . Then Ad(g) carries T F onto T ′F and θ| F ◦ N F ∈ Td
+                 n                           n          n               n
+                                                                             Fn
+                                                                                        T        F
+                        ∈ T[
+                    n
+      ′
+to θ |T ′ F ◦   NFF        ′F n .
+
+   By the definition of Gw,r , the map Ur × G1r × (Tr ẇ) × Ur′ −    → Gw,r given by
+(u, k, ν, u′ ) 7→ ukνu′ is a locally trivial fibration with all fibres isomorphic to a
+fixed affine space. Hence the map
+
+            Σ̃w = {(x, x′ , u, u′ , k, ν) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × G1r × Tr ẇ;
+            xF (u)F (k)F (ν)F (u′ ) = ukνu′ x′ } −
+                                                 → Σw
+
+given by (x, x′ , u, u′ , k, ν) 7→ (x, x′ , ukνu′ ), is a locally trivial fibration with all
+fibres isomorphic to a fixed affine space. This map is compatible with the TrF ×Tr′ F
+actions where TrF × Tr′ F acts on Σ̃w by
+
+(a)       (t, t′ ) : (x, x′ , u, u′ , k, ν) 7→ (txt−1 , t′ x′ t′−1 , tut−1 , t′ u′ t′−1 , tkt−1 , tνt′−1 ).
+                                                          ′
+Hence there exists j ′ ∈ Z such that Hcj (Σ̃w )θ−1 ,θ′ 6= 0. By the substitution
+xF (u) 7→ x, x′ F (u′ )−1 7→ x′ , the variety Σ̃w is rewritten as
+(b)
+{(x, x′ , u, u′ , k, ν) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × G1r × Tr ẇ; xF (k)F (ν) = ukνu′ x′ };
+4                                       G. LUSZTIG
+
+in these coordinates, the action of TrF × Tr′ F is still given by (a). Let
+
+              H = {(t, t′ ) ∈ T × T ′ ; t′ F (t′ )−1 = F (ẇ)−1 tF (t)−1 F (ẇ)}.
+
+(A closed subgroup of Tr × Tr′ .) It acts on the variety (b) by the same formula as
+in (a). (We use the fact that hk = kh for any h ∈ Gr−1    r   , k ∈ G1r .) By [DL, 6.5], the
+                              ′
+induced action of H on Hcj (Σ̃w ) is trivial when restricted to H 0 . In particular, the
+                                                        ′                   ′
+intersection (TrF × Tr′ F ) ∩ H 0 acts trivially on Hcj (Σ̃w ). Since Hcj (Σ̃w )θ−1 ,θ′ 6= 0,
+it follows that θ −1 ⊠ θ ′ is trivial on (TrF × Tr′ F ) ∩ H 0 . Let g = F (ẇ)−1 and let
+                               n                            n             n
+n ≥ 1 be such that g ∈ GF . Then Ad(g) carries T F onto T ′F and (by Lemma
+                                              n                  n
+1.1 with f = Ad(g)) it carries θ|T F ◦ NFF to θ ′ |T ′ F ◦ NFF . The lemma is proved.
+
+Lemma 1.4. Assume that r ≥ 2. Let θ ∈ TcF   ′  d′ F be such that
+                                       r , θ ∈ Tr
+
+
+(a)                                   Hcj (Σ)θ−1 ,θ′ 6= 0
+                                                                 n
+for some j ∈ Z. There exists n ≥ 1 and g ∈ N (T ′ , T )F             such that Ad(g) carries
+θ|T F ◦ NFF ∈ Td
+           n                         n
+                                        [
+               F n to θ ′ | ′ F ◦ N F ∈ T ′F n .
+                           T       F
+
+   The subvarieties Gw of G have the following property: for some ordering ≤
+of W (T, T ′ ), the unions ∪w′ ≤w Gw′ are closed in G. It follows that the unions
+∪w′ ≤w Gw′ ,r are closed in Gr and the unions ∪w′ ≤w Σw′ are closed in Σ. The
+spectral sequence associated to the filtration of Σ by these unions, together with
+(a), shows that there exists w ∈ W (T, T ′ ) and j ∈ Z such that Hcj (Σw )θ−1 ,θ′ 6= 0.
+We can therefore apply Lemma 1.3. The lemma follows.
+1.5. Let Φ be the set of characters α : T −     → F∗ such that α 6= 1 and T acts on
+some line Lα ⊂ LieG via α (in the adjoint action); for such α, let Gα be the one
+dimensional unipotent subgroup of G such that LieGα = Lα . For α ∈ Φ there is
+a unique 1-dimensional torus T α in T such that T α is contained in the subgroup
+                            −1
+of G generated by Gα , Gα . Let T α = (T α )r−1    r   (a one dimensional subgroup of
+        r−1
+T = Tr ).
+   Let χ ∈ TdF . We say that χ is regular if for any α ∈ Φ and any n ≥ 1 such that
+                                             n       n                  n
+F (T ) = T α , the restriction of χ ◦ NFF : T F −
+  n    α
+                                                       → Q̄∗l to (T α )F is non-trivial.
+                                     n
+(It is enough to check that χ ◦ NFF |(T α )F n is non-trivial for any α and for just one
+n such that F n (T α ) = T α for all α.)
+   Let θ ∈ TcF . We say that θ is regular if θ|T F is regular.
+1.6. Let T be an F -stable maximal torus of G. Let U, Ũ , V, Ṽ be unipotent radicals
+of Borel subgroups containing T such that U ∩ V = Ũ ∩ Ṽ = {1}. Let Φ be as in
+1.5. Let
+                Φ+ = {α ∈ Φ; Gα ⊂ Ṽ }, Φ− = {α ∈ Φ; Gα ⊂ Ũ }.
+Then Φ = Φ+ ⊔ Φ− and Φ− = {α−1 ; α ∈ Φ+ }.
+         REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                        5
+
+   For α ∈ Φ+ let ht(α) be the largest integer n ≥ 1 such that α = α1 α2 . . . αn
+with αi ∈ Φ+ .
+                                ′
+   Let x ∈ (Gα )br , x′ ∈ (Gα )cr where α, α′ ∈ Φ and b, c ∈ [0, r].
+   (a) If b + c ≥ r then xx′ = x′ x.
+   (b) If b + c ≤ r and αα′ 6= 1 then xx′ = x′ xu where u is of the form
+Q                                             ′
+                                        αi α′i b+b′
+  i,i′ ≥1;αi α′ i ∈Φ ui,i with ui,i ∈ (G        )r .
+                 ′       ′         ′
+
+(The factors in the last product are written in some fixed order. In the special
+case where b + c = r − 1, these factors commute with each other by (a), since
+r − 1 + r − 1 ≥ r.)
+   (c) If b+c ≥ r −1, b+2c ≥ r and αα′ = 1 then xx′ = x′ xτx,x′ u where τx,x′ ∈ T α
+and u ∈ (Gα )r−1   r   are uniquely determined.
+
+Lemma 1.7. We fix an order on Φ+ . For any z ∈ Ṽr , β ∈ Φ+ , define xzβ ∈
+               Q
+Gβr by z = β∈Φ+ xzβ (factors written using the given order on Φ+ ). Let α ∈
+Φ− , a ∈ [1, r − 1]. Let z ∈ Ṽra be such that xzβ ∈ (Gβ )a+1
+                                                          r   for all β ∈ Φ+ with
+ht(β) > ht(α−1 ). Let ξ ∈ (Gα )r−a−1
+                                 r    . Then ξz = zξτξ,z ωξ,z where τξ,z ∈ T α and
+ωξ,z ∈ Ũrr−1 .
+
+   We argue by induction on Nz = ♯(β ∈ Φ+ ; xzβ 6= 1). If Nz = 0 the result is
+clear. Assume now that Nz = 1 so that z ∈ Gβr with β ∈ Φ+ . If αβ = 1, the
+result follows from 1.6(c). If αβ 6= 1 and ht(β) > ht(α−1 ) then z ∈ (Gβ )a+1       r
+and ξz = zξ by 1.6(b). If αβ 6= 1 and ht(β) ≤ ht(α−1 ) then by 1.6(b) we have
+                        Q                                      i i′
+ξz = zξu where u = i,i′ ≥1;αi β i′ ∈Φ ui,i′ with ui,i′ ∈ (Gα β )r−1 r ; it is enough to
+                                             ′                 ′
+show that if i, i′ ≥ 1, we cannot have αi β i ∈ Φ+ . (If αi β i ∈ Φ+ for some i, i′ ≥ 1
+then αβ ∈ Φ+ hence ht(β) > ht(α−1 ), contradiction.)
+   Assume now that Nz ≥ 2. We can write z = z ′ z ′′ where z ′ , z ′′ ∈ Ṽra , Nz ′ <
+Nz , Nz ′′ < Nz . Using the induction hypothesis we have
+
+                                     ξz = ξz ′ z ′′ = z ′ ξτξ,z ′ ωξ,z ′ z ′′
+
+where τξ,z ′ ∈ T α , ωξ,z ′ ∈ Ũrr−1 . We have ωξ,z ′ z ′′ = z ′′ ωξ,z ′ and τξ,z ′ z ′′ = z ′′ τξ,z ′ .
+Using again the induction hypothesis, we have
+
+                   z ′ ξτξ,z ′ ωξ,z ′ z ′′ = z ′ ξτξ,z ′ z ′′ ωξ,z ′ = z ′ ξz ′′ τξ,z ′ ωξ,z ′
+                    = z ′ z ′′ ξτξ,z ′′ ωξ,z ′′ τξ,z ′ ωξ,z ′ = zξτξ,z ′ τξ,z ′′ ωξ,z ′ ωξ,z ′′ .
+
+Thus, ξz = zξτξ,z ωξ,z where
+
+                                τξ,z = τξ,z ′ τξ,z ′′ , ωξ,z = ωξ,z ′ ωξ,z ′′ .
+
+The lemma is proved.
+6                                              G. LUSZTIG
+
+1.8. In the setup of 1.6, let Z = V ∩ Ṽ . Let Φ′ = {β ∈ Φ; Gβ ⊂ Z}. We have
+Φ′ ⊂ Φ+ . Let X be the set of all subsets I ⊂ Φ′ such that I 6= ∅ and ht : Φ+ −    →N
+is constant on I.
+    To any z ∈ Zr1 − {1} we associate a pair (a, Iz ) where a ∈ [1, r − 1] and Iz ∈ X
+as follows. We define a by the condition that z ∈ Zra,∗ . If xzβ ∈ Gβ are defined as
+in 1.8 in terms of a fixed order on Φ+ , then xzβ ∈ (Gβ )ar for all β ∈ Φ̃ and xzβ = 1
+                                                                               ′
+for all β ∈ Φ+ − Φ̃. Let Iz be the set of all α′ ∈ Φ̃ such that xzα′ ∈ (Gα )a,∗  r  and
+  z       β a+1                +                           ′
+xβ ∈ (G )r        for all β ∈ Φ such that ht(β) > ht(α ). It is easy to see, using
+1.6(a),(b), that the definition of Iz does not depend on the choice of an order on
+Φ+ . For a ∈ [1, r − 1] and I ∈ X let Zra,∗,I be the set of all z ∈ Zr1 − {1} such that
+z ∈ Zra,∗ , I = Iz . Thus we have a partition
+(a)                              Zr1 − {1} = ⊔a∈[1,r−1],I∈X Zra,∗,I .
+
+Lemma 1.9. Let T, T ′ , U, U ′ , r, T , T ′ be as in 1.2. LetPθ ∈ TcF   ′   d′F
+                                                                   r , θ ∈ Tr . Assume
+that θ ′ |T F = χ is regular. Let Σ be as in 1.2. Then j∈Z (−1)j dim Hcj (Σ)θ−1 ,θ′
+is equal to the number of w ∈ W (T, T ′ )F such that Ad(ẇ) : Tr′ F −     → TrF carries θ
+    ′
+to θ .
+   Using the partition Σ = ⊔w∈W (T,T ′ ) Σw we see that it is enough to prove that
+P          j        j                                                     ′F
+  j∈Z (−1) dim Hc (Σw )θ−1 ,θ′ is equal to 1 if F (w) = w and Ad(ẇ) : Tr    → TrF
+                                                                             −
+carries θ to θ ′ and equals 0, otherwise. We now fix w ∈ W (T, T ′ ). We have
+Σw
+= {(x, x′ , y) ∈ F (Ur ) × F (Ur′ ) × Gr ; xF (y) = yx′ , y ∈ Ur G1r ẇTr′ Ur′ = Ur Zr1 ẇTr′ Ur′ }
+where Z = V ∩ ẇV ′ ẇ−1 . Here V (resp. V ′ ) is the unipotent radical of a Borel
+subgroup containing T (resp. T ′ ) such that U ∩ V = {1} (resp. U ′ ∩ V ′ = {1}.
+Let
+            Σ̂w = {(x, x′ , u, u′ , z, τ ′ ) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × Zr1 × Tr′ ;
+            xF (u)F (z)F (ẇ)F (τ ′ )F (u′ ) = uz ẇτ ′ u′ x′ }.
+The map Σ̂w −      → Σw given by (x, x′ , u, u′ , z, τ ′ ) 7→ (x, x′ , uz ẇτ ′ u′ ) is a locally trivial
+fibration with all fibres isomorphic to a fixed affine space. This map is compatible
+with the TrF × Tr′ F -actions where TrF × Tr′ F acts on Σ̂w by
+(a)
+   (t, t′ ) : (x, x′ , u, u′ , z, τ ′ ) 7→ (txt−1 , t′ x′ t′−1 , tut−1 , t′ u′ t′−1 , tzt−1 , ẇ−1 tẇτ t′−1 ).
+Hence
+   P it is enough    to show that
+               j       j                                                        ′F
+      j∈Z (−1)   dim H c (Σ̂w )θ−1 ,θ′ is equal to 1 if F (w) = w and Ad(ẇ) : Tr −→ TrF
+carries θ to θ ′ and equals 0, otherwise.
+By the change of variable xF (u) 7→ x, x′ F (u′ )−1 7→ x′ we may rewrite Σ̂w as
+            Σ̂w = {(x, x′ , u, u′ , z, τ ′ ) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × Zr1 × Tr′ ;
+            xF (z)F (ẇ)F (τ ′ ) = uz ẇτ ′ u′ x′ }
+         REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                      7
+
+with the TrF × Tr′ F -action still given by (a). We have a partition Σ̂w = Σ̂′w ⊔ Σ̂′′w
+where
+
+      Σ̂′w = {(x, x′ , u, u′ , z, τ ′ ) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × (Zr1 − {1}) × Tr′ ;
+      xF (z)F (ẇ)F (τ ′ ) = uz ẇτ ′ u′ x′ },
+
+
+          Σ̂′′w = {(x, x′ , u, u′ , 1, τ ′ ) ∈ F (Ur ) × F (Ur′ ) × Ur × Ur′ × {1} × Tr′ ;
+          xF (ẇ)F (τ ′ ) = uẇτ ′ u′ x′ },
+
+are stable under the TrF × Tr′ F -action. It is then enough to show that
+       P
+   (b) j∈Z (−1)j dim Hcj (Σ̂′′w )θ−1 ,θ′ is equal to 1 if F (w) = w and Ad(ẇ) : Tr′ F −
+                                                                                       →
+  F                  ′
+Tr carries θ to θ and equals 0, otherwise.
+   (c) Hcj (Σ̂′w )θ−1 ,θ′ = 0 for all j.
+We first prove (c). If M is a T ′F -module we shall write M(χ) for the subspace of
+M on which T ′F acts according to χ. Now T ′F acts on Σ̂′w by
+
+                t′ : (x, x′ , u, u′ , z, τ ′ ) 7→ (x, t′ x′ t′−1 , u, t′ u′ t′−1 , z, τ ′ t′−1 ).
+
+Hence Hcj (Σ̂′w ) becomes a T ′F -module. It is enough to show that Hcj (Σ̂′w )(χ) = 0.
+   We shall use the definitions and results in 1.6-1.8 relative to U, Ũ , V, Ṽ where
+Ũ = ẇU ′ ẇ−1 , Ṽ = ẇV ′ ẇ−1 . The partition 1.8(a) gives rise to a partition Σ̂′w =
+⊔a,I Σ̂a,I
+       w indexed by a ∈ [0, r − 1], I ∈ X where
+
+                                    ′      ′      ′      ′
+                        Σ̂a,I                                     a,∗,I
+                          w = {(x, x , u, u , z, τ ) ∈ Σ̂w ; z ∈ Zr     }.
+
+It is easy to see that there is a total order on the set of indices (a, I) such that the
+                                                                         0 0
+union of the Σ̂a,I
+                 w for (a, I) less than or equal than some given (a , I ) is closed
+      ′                       a,I                                    ′F
+in Σ̂w . Since the subsets Σ̂w are stable under the action of T , we see that, in
+order to prove (c), it is enough to show that
+
+(d)                                         Hcj (Σ̂a,I
+                                                   w )(χ) = 0
+
+for any fixed a, I as above. We choose α′ ∈ I. Let α = α′−1 . Then Gα
+                                                                    r ⊂
+         ′ −1
+Ur ∩ ẇUr ẇ .
+   For any z ∈ Zra,∗ , ξ ∈ (Gα )r−a−1
+                                r     we have
+
+                                             ξz = zξτξ,z ωξ,z
+
+where τξ,z ∈ T α , ω(ξ, z) ∈ ẇUr′ r−1 ẇ−1 are uniquely determined. (See 1.7.) More-
+over, the map (Gα )r−a−1
+                     r      → T α , ξ 7→ τ (ξ, z) factors through an isomorphism
+                            −
+                                                                      ∼
+                                λz : (Gα )r−a−1
+                                          r     /(Gα )r−a
+                                                      r   −→ T α .
+8                                              G. LUSZTIG
+
+Let π : (Gα )r−a−1
+             r     → (Gα )r−a−1
+                   −       r    /(Gα )r−a
+                                       r   be the canonical homomorphism. We
+can find a morphism of algebraic varieties
+
+                            ψ : (Gα )r−a−1
+                                     r     /(Gα )r−a
+                                                 r   → (Gα )r−a−1
+                                                     −      r
+
+such that πψ = 1 and ψ(1) = 1. Let
+
+                            H′ = {t′ ∈ T ′ ; t′−1 F (t′ ) ∈ ẇ−1 T α ẇ}.
+
+This is a closed subgroup of T ′ . For any t′ ∈ H′ we define ft′ : Σ̂a,I
+                                                                     w − → Σ̂a,I
+                                                                             w by
+
+
+            ft′ (x, x′ , u, u′ , z, τ ′ ) = (xF (ξ), x̂′ , u, F (t′ )−1 u′ F (t′ ), z, τ ′ F (t′ ))
+
+where
+               ξ = ψλ−1       ′ −1 ′ −1
+                     z (ẇF (t )  t ẇ ) ∈ (Gα )r−a−1
+                                                r     ⊂ Ur ∩ ẇUr′ ẇ−1
+and x̂′ ∈ Gr is defined by the condition that
+
+              xF (ξ)F (z)F (ẇ)F (τ ′ F (t′ )) = uz ẇτ ′ F (t′ )F (t′ )−1 u′ F (t′ )x̂′ .
+
+In order for this to be well defined we must check that x̂′ ∈ F (Ur′ ). Thus we must
+show that
+   xF (ξ)F (z)F (ẇ)F (τ ′ F (t′ )) ∈ uz ẇτ ′ u′ F (t′ )F (Ur′ )
+or that
+   xF (z)F (ξ)F (τξ,z )F (ωξ,z )F (ẇ)F (τ ′ F (t′ )) ∈ uz ẇτ ′ u′ F (t′ )F (Ur′ ).
+Since xF (z) = uz ẇτ ′ u′ x′ F (τ ′ )−1 F (ẇ−1 ), it is enough to show that
+
+            uz ẇτ ′ u′ x′ F (τ ′ )−1 F (ẇ−1 )F (ξ)F (τξ,z )F (ωξ,z )F (ẇ)F (τ ′ F (t′ ))
+             ∈ uz ẇτ ′ u′ F (t′ )F (Ur′ )
+
+or that
+   x′ F (τ ′ )−1 F (ẇ−1 )F (ξ)F (τξ,z )F (ωξ,z )F (ẇ)F (τ ′ F (t′ )) ∈ F (t′ )F (Ur′ ).
+Since x′ ∈ F (Ur′ ), F (ẇ−1 )F (ωξ,z )F (ẇ) ∈ F (Ur′ ), it is enough to check that
+   F (τ ′ )−1 F (ẇ−1 )F (ξ)F (τξ,z )F (ẇ)F (τ ′ F (t′ )) ∈ F (t′ )F (Ur′ ).
+Since F (ẇ−1 )F (ξ)F (ẇ) ∈ F (Ur′ ) it is enough to check that
+   F (τ ′ )−1 F (ẇ−1 )F (τξ,z )F (ẇ)F (τ ′ F (t′ )) ∈ F (t′ )F (Ur′ )
+or that
+   F (ẇ−1 )F (τξ,z )F (ẇ)F (F (t′ )) = F (t′ )
+or that ẇ−1 τξ,z ẇ = F (t′ )−1 t′ or that λz (πz (ξ)) = ẇF (t′ )−1 t′ ẇ−1 . But this is
+clear.
+                                                          ′      ′
+   Thus, ft′ : Σ̂a,Iw −→ Σ̂a,I
+                             w is well defined for t ∈ H . It is clearly an isomorphism
+for any t′ ∈ H′ . In particular, it is a well defined isomorphism for any t′ ∈ H′0 .
+By general principles, the induced map ft∗′ : Hcj (Σ̂a,I           w ) −→ Hcj (Σ̂a,I
+                                                                                   w ) is constant
+when t varies in H . In particular, it is constant when t varies in T ′F ∩ H′0 .
+         ′                ′0                                               ′
+         REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                      9
+
+Now T ′F ⊂ H′ and for t′ ∈ T ′F , the map ft′ coincides with the action of t′ in the
+T ′F -action on Σ̂a,I
+                   w . (We use that ψ(1) = 1.) We see that the induced action of
+  ′F
+T     on Hc (Σ̂w ) is trivial when restricted to T ′F ∩ H′0 .
+            j  a,I
+
+   We can find n ≥ 1 such that F n (ẇ−1 T α ẇ) = ẇ−1 T α ẇ. Then t′ 7→ t′ F (t′ )F 2 (t′ ) . . . F n−1 (t′ )
+is a well defined morphism ẇ−1 T α ẇ −    → H′ . Its image is a connected subgroup
+                                                           n         n
+of H hence is contained in H . If t ∈ (ẇ−1 T α ẇ)F then NFF (t′ ) ∈ T ′F ; thus,
+      ′                          ′0      ′
+    n                                                         n
+NFF (t′ ) ∈ T ′F ∩ H′0 . We see that the action of NFF (t′ ) ∈ T ′F on Hcj (Σ̂a,I    w ) is
+                 ′      −1 α     Fn
+trivial for any t ∈ (ẇ T ẇ) .
+                                                            ′      Fn ′
+   If we assume that Hcj (Σ̂a,I
+                              w )(χ) 6= 0, it follows that t 7→ χ(NF (t )) is the trivial
+                            n
+character of (ẇ−1 T α ẇ)F . This contradicts our assumption that χ is regular.
+Thus, (d) holds. Hence (c) holds.
+   We now prove (b). Let
+
+               H̃ = {(t, t′ ) ∈ Tr × Tr′ ; tF (t)−1 = F (ẇ)t′ F (t′ )−1 F (ẇ−1 )}.
+
+This is a closed subgroup of Tr × Tr′ containing TrF × Tr′ F . Now the action of
+TrF × Tr′ F on Σ̂′′w extends to an action of H̃ given by the same formula. To see this
+consider (t, t′ ) ∈ H̃ and (x, x′ , u, u′ , 1, τ ′ ) ∈ Σ̂′′w . We must show that
+    (txt−1 , t′ x′ t′−1 , tut−1 , t′ u′ t′−1 , 1, ẇ−1 tẇτ ′ t′−1 ) ∈ Σ̂′′w
+that is,
+    txt−1 F (ẇ)F (ẇ−1 )F (t)F (ẇ)F (τ ′ )F (t′−1 ) = tut−1 ẇẇ−1 tẇτ ′ t′−1 t′ u′ t′−1 t′ x′ t′−1
+or that
+    xt−1 F (t)F (ẇ)F (τ ′ )F (t′−1 ) = uẇτ ′ u′ x′ t′−1
+or that xt−1 F (t)F (ẇ)F (τ ′ )F (t′−1 ) = xF (ẇ)F (τ ′ )t′−1
+or that t−1 F (t)F (ẇ)F (t′−1 ) = F (ẇ)t′−1 ; this is clear. Let T∗ , T∗′ be the reductive
+part of Tr , Tr′ (thus T∗ is a torus isomorphic to T ). Let H̃∗ = H̃ ∩ (T∗ × T∗′ ). Then
+H̃∗0 is a torus acting on Σ̂′′w by restriction of the H̃-action. The fixed point set
+          0
+(Σ̂′′w )H̃∗ of the H̃∗0 -action is stable under the action of TrF × Tr′ F and by general
+principles we have
+             X                                         X                            0
+                  (−1)j dim Hcj (Σ̂′′w )θ−1 ,θ′ =          (−1)j dim Hcj ((Σ̂′′w )H̃∗ )θ−1 ,θ′ .
+            j∈Z                                  j∈Z
+
+It is then enough to show that
+        P                                    0
+    (e) j∈Z (−1)j dim Hcj ((Σ̂′′w )H̃∗ )θ−1 ,θ′ is equal to 1 if F (w) = w and Ad(ẇ) :
+Tr′ F −
+      → TrF carries θ to θ ′ and equals 0, otherwise.
+                                        0
+Let (x, x′ , u, u′ , 1, τ ) ∈ (Σ̂′′w )H̃∗ . By Lang’s theorem the first projection H̃∗ −  → T∗
+is surjective. It follows that the first projection H̃∗0 −       → T∗ is surjective. Similarly
+the second projection H̃∗0 −       → T∗′ is surjective. Hence for any t ∈ T∗ , t′ ∈ T∗′ we have
+    txt−1 = x, t′ x′ t′−1 = x′ , tut−1 = u, t′ u′ t′−1 = u′
+                                                        0
+hence x = x′ = u = u′ = 1. Thus, (Σ̂′′w )H̃∗ is contained in
+    (f) {(1, 1, 1, 1, 1, τ ′); τ ′ ∈ Tr′ , F (ẇτ ′ ) = ẇτ ′ }.
+The set (f) is clearly contained in the fixed point set of H̃. Note that (f) is empty
+10                                           G. LUSZTIG
+
+unless F (w) = w. We can therefore assume that F (w) = w. In this case, (f)
+is stable under the action of H̃. In particular it is stable under the action of
+H̃∗0 . Since (f) is finite and H̃∗0 is connected, we see that H̃∗0 must act trivially on
+(f). Thus, (f) is exactly the fixed point set of H̃∗0 . Hence this fixed point can be
+identified with (ẇTr′ )F . From this (e) follows easily. The lemma is proved.
+
+                                   2. The main results
+2.1. Let G, F be as in 1.2. Let T be an F -stable maximal torus in G and let
+U be the unipotent radical of a Borel subgroup of G that contains T . (Note
+that U is not necessarily F -stable.) Let r ≥ 1. Let R(GF      r ) be the group of
+virtual representations of GF
+                            r  over Q̄ l . Let h, i be the standard  inner product
+     F         F
+R(Gr ) × R(Gr ) − → Z. Let
+
+                           ST,U = {g ∈ Gr ; g −1 F (g) ∈ F (Ur )}.
+                                                                 −1
+The finite group GF       F
+                    r × Tr acts on ST,U by (g1 , t) : g 7→ g1 gt    . For any i ∈ Z
+we have an induced action of GF        F      i                   cF
+                                 r × Tr on Hc (ST,U ). For θ ∈ Tr , we denote by
+ i                           i                   F
+Hc (ST,U )θ the subspace of Hc (ST,U ) on which Tr acts according to θ. This is a
+GF                   i
+ r -submodule of Hc (ST,U ). Let
+                                      X
+                        RTθ r ,Ur =         (−1)i Hci (ST,U )θ ∈ R(GF
+                                                                    r ).
+                                      i∈Z
+
+Proposition 2.2. Assume that r ≥ 2. Let (T ′ , U ′ , θ ′ ) be another triple like T, U, θ.
+Let T = Trr−1 , T ′ = Tr′ r−1 .
+   (a) Let i, i′ be integers. Assume that there exists an irreducible GF r -module that
+                                               ∗
+                   F             i                           i
+appears in the Gr -module (Hc (ST,U )θ−1 ) (dual of Hc (ST,U )θ−1 ) and in the GF      r -
+                                                                     n
+           i′                                                  ′   F
+module Hc (ST ′ ,U ′ )θ′ . There exists n ≥ 1 and g ∈ N (T , T )       such that Ad(g)
+carries θ ◦ N | F n ∈ Td
+               Fn
+                                             | ′ F n ∈ T[
+                                           n
+                              n    ′
+                            F to θ ◦ N   F                n
+                                                        ′F .
+              F   T                            F   T
+   (b) Assume P  that there exists an irreducible GF
+                                                   r -module that P
+                                                                  appears in the virtual
+Gr -module i (−1) Hc (ST,U )θ and in the virtual Gr -module i (−1)i Hci (ST ′ ,U ′ )θ′ .
+  F                    i i                             F
+
+There exists n ≥ 1 and g ∈ N (T ′ , T )F such that Ad(g) carries θ◦NFF |T F n ∈ Td
+                                          n                              n
+                                                                                     Fn
+
+to θ ′ ◦ N F | ′ F n ∈ T[
+            n
+                        ′F n .
+         F   T
+
+   We prove (a). Consider the free GF
+                                    r −action on ST,U × ST ′ ,U ′ given by g1 :
+     ′               ′
+(g, g ) 7→ (g1 g, g1g ). The map
+
+             (g, g ′) 7→ (x, x′ , y), x = g −1 F (g), x′ = g ′−1 F (g ′ ), y = g −1 g ′
+
+defines an isomorphism of GF  r \(ST,U × ST ′ ,U ′ ) onto Σ (as in 1.2).
+   The action of Tr × Tr on ST,U × ST ′ ,U ′ given by right multiplication by t−1
+                     F     ′F
+
+on the first factor and by t′−1 on the second factor becomes an action of TrF × Tr′ F
+on Σ given by (x, x′ , y) 7→ (txt−1 , t′ x′ t′−1 , tyt′−1 ). Our assumption implies that
+        REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                      11
+
+                                                  ′
+the GF            i                i
+     r -module Hc (ST,U )θ−1 ⊗ Hc (ST ′ ,U ′ )θ′ contains the unit representation with
+                                                      ′
+non-zero multiplicity. Hence the subspace of Hci+i (GF   r \(ST,U × ST ′ ,U ′ )) on which
+                                                                         ′
+       ′F                     −1     ′
+Tr × Tr acts according to θ ⊠ θ is non-zero. Equivalently, Hci+i (Σ)θ−1 ,θ′ 6= 0.
+  F
+
+We now use Lemma 1.4; (a) follows.
+   We prove (b). By general principles we have
+                 X                               X
+                     (−1)i (Hci (ST,U )θ−1 )∗ =     (−1)i Hci (ST,U )θ .
+                             i                                 i
+
+Hence the assumption of (b) implies that the assumption of (a) holds. Hence the
+conclusion of (a) holds. The proposition is proved.
+Proposition 2.3. We preserve the setup of 2.2. Assume that θ or θ ′ is regular.
+                                  ′
+The inner product hRTθ r ,Ur , RTθ r′ ,Ur′ i is equal to the number of w ∈ W (T, T ′ )F such
+that Ad(ẇ) : Tr′ F −
+                    → TrF carries θ to θ ′ .
+   We may assume that θ ′ is regular. As in the proof of 2.2, we have
+                         ′
+       hRTθ r ,Ur , RTθ r′ ,Ur′ i
+                                         X            ′                          ′             F
+                                    =         (−1)i+i dim(Hci (ST,U )θ−1 ⊗ Hci (ST ′ ,U ′ )θ )Gr
+                                        i,i′ ∈Z
+                                        X
+                                    =       (−1)j dim Hcj (GF
+                                                            r \(ST,U × ST ′ ,U ′ ))θ−1 ,θ′
+                                        j∈Z
+                                        X
+                                    =       (−1)j dim Hcj (Σ)θ−1 ,θ′
+                                        j∈Z
+
+            F
+where ()Gr denotes the space of GF
+                                 r -invariants. It remains to use 1.9.
+
+Corollary 2.4. Assume that r ≥ 2. Let T, U be as in 2.1. Assume that θ ∈ Tc         F
+                                                                                    r
+is regular.
+   (a) RTθ r ,Ur is independent of the choice of U .
+   (b) Assume also that the stabilizer of θ in W (T, T )F is {1}. Then RTθ r ,Ur is ±
+an irreducible GF   r -module.
+
+   We prove (a). Let U ′ be the unipotent radical of another Borel subgroup of G
+containing T . Let R = RTθ r ,Ur , R′ = RTθ r ,Ur′ . By 2.3 we have
+  hR, Ri = hR, R′ i = hR′ , Ri = hR′ , R′ i.
+Hence hR − R′ , R − R′ i = 0, so that R = R′ . This proves (a). In the setup of (b),
+we see from 2.3 that hRTθ r ,Ur , RTθ r ,Ur i = 1. This proves (b).
+
+2.5. Assume that r ≥ 2. Let T be as in 2.1. Assume that θ ∈ Tc    F
+                                                                  r is regular. We
+set
+   RTθ r = RTθ r ,Ur
+where U is chosen as in 2.1. (By 2.4(a), this is independent of the choice of U .)
+12                                   G. LUSZTIG
+
+                                  3. An example
+3.1. Let A = F[[ǫ]]/(ǫ2 ). Define F : A −       → A by F (a0 + ǫa1 ) = aq0 + ǫaq1 where
+a0 , a1 ∈ F. Let V be a 2-dimensional F-vector space with a fixed Fq -rational
+structure with Frobenius map F : V −       → V . Let G = SL(V ). Then G has an Fq -
+rational structure with Frobenius map F : G −          → G such that F (gv) = F (g)F (v)
+for all g ∈ G, v ∈ V . Let V2 = A ⊗F V . Then G2 (see 0.2) may be identified
+with the group of all automorphisms of the free A-module V2 with determinant 1.
+We regard V as a subset of V2 by v 7→ 1 ⊗ v. Any element of V2 can be written
+uniquely in the form v0 + ǫv1 where v0 , v1 ∈ V . The Frobenius map F : V2 −      → V2
+satisfies F (v0 + ǫv1 ) = F (v0 ) + ǫF (v1 ) for v0 , v1 ∈ V .
+    Let d
+        GF2 be the set of isomorphism classes of irreducible representations of G2
+                                                                                      F
+
+over Q̄ . The objects of d
+       l                   GF can be classified using the fact that GF is a semidirect
+                           2                                          2
+product of GF and F3q .
+   The table below shows the number of representations in d  GF2 of various dimen-
+sions assuming that q is odd; the first column indicates the dimension, the second
+column indicates the number of representations of that dimension.
+                                   dim           ♯
+                                     1           1
+                                     q           1
+                                   q+1      (q − 3)/2
+                                (q + 1)/2        2
+                                   q−1      (q − 1)/2
+                                (q − 1)/2        2
+                                   2
+                                  q +q     (q − 1)2 /2
+                                  q2 − q   (q 2 − 1)/2
+                               (q 2 − 1)/2      2q
+The analogous table in the case where q is a power of 2 is
+                                 dim             ♯
+                                   1             1
+                                   q             1
+                                q+1         (q − 2)/2
+                                q−1             q/2
+                                 2
+                               q +q     (q − 1)(q − 2)/2
+                               2
+                            (q + q)/2        2(q − 1)
+                               q2 − q      (q 2 − q)/2
+                            (q 2 − q)/2      2(q − 1)
+                               q2 − 1            q
+3.2. Let B be the set of all A-submodules L ⊂ V2 such that L is a direct summand
+of V2 and L is free of rank 1. Now G2 acts transitively on B. The diagonal action
+on B × B has three orbits O, O′ , O′′ where
+         REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                   13
+
+    O = {(L, L′ ) ∈ B × B; L = L′ },
+    O′ = {(L, L′ ) ∈ B × B; L ∩ L′ = ǫL = ǫL′ },
+    O′′ = {(L, L′ ) ∈ B × B; L ∩ L′ = 0}.
+If L ∈ B then F (L) ∈ B. Thus we obtain a map F : B −             → B, the Frobenius map of
+a Fq -rational structure on B. Let
+    X = {L ∈ B; (L, F (L)) ∈ O},
+    X ′ = {L ∈ B; (L, F (L)) ∈ O′ },
+    X ′′ = {L ∈ B; (L, F (L)) ∈ O′′ }.
+Then X, X ′ , X ′′ form a partition of B into GF       2 -stable subvarieties.
+    We now define some finite coverings of X, X ′ , X ′′ as follows. Let e, e′ be an F-
+basis of V such that F (e) = e, F (e′ ) = e′ . Let T be the subgroup of G consisting
+of the automorphisms e 7→ ae, e′ 7→ a−1 e′ with a ∈ F∗ . (An F -stable maximal
+torus of G.) Let U be the subgroup of G consisting of the automorphisms
+    e 7→ e + be′ , e′ 7→ e′ with b ∈ F∗ .
+Let ν ∈ G be such that ν(e) = e′ , ν(e′ ) = −e. Let h ∈ G be such that he =
+e, he′ = e′ + ǫe. Let
+    X̃ = {g ∈ G2 ; g −1 F (g) ∈ U 2 }/U 2 ,
+    X̃ ′ = {g ∈ G2 ; g −1 F (g) ∈ hU 2 }/(U 2 ∩ hU 2 h−1 ),
+    X̃ ′′ = {g ∈ G2 ; g −1 F (g) ∈ νU 2 }.
+(We use the action of U 2 or U 2 ∩ hU 2 h−1 on G2 by right translation.) Then
+g 7→ Age′ is a well defined morphism X̃ −          → X, X̃ ′ −
+                                                             → X ′ , X̃ ′′ −
+                                                                           → X ′′ . This is a finite
+                                              ′ ′′
+principal covering with group Γ, Γ , Γ respectively (acting by right translation)
+where
+    Γ = TF   2 (of order q − q)
+                                2
+
+    Γ′ = {x ∈ T 2 U 2 ; x−1 hF (x) ∈ hU }/(U ∩ hU h−1 ) ∼      = {±1} × Fq (of order 2q if q
+is odd, of order q if q is a power of 2)
+    Γ′′ = {t ∈ T 2 ; F (t) = t−1 } (of order q 2 + q).
+    For any variety Y with an action of a finite group and any character ω of
+that finite group, let Hcj (Y )ω denote the subspace of Hcj (Y ) on which the fi-
+nite group acts according to ω. Thus, for ω in Γ̂ (resp. Γ̂′ , Γ̂′′ ), Hcj (X̃)ω (resp.
+Hcj (X̃ ′ )ω , Hcj (X̃ ′′ )ω ) is well defined.
+
+3.3. Let Y = {g ∈ G; g −1 F (g) ∈ hU 2 }. We wish to describe Y more explicitly. If
+g ∈ G2 , the condition that g ∈ Y is that
+   F (g)e = ghue = gh(e + xe′ ) = g(e + xe′ + ǫxe),
+   F (g)e′ = ghue′ = gh(e′ ) = g(e′ + ǫe)
+for some x ∈ A. Define a, b, c, d ∈ A by ge = ae + be′ , ge′ = ce + de′ . The condition
+that g ∈ Y is
+   F (a)e + F (b)e′ = ae + be′ + ǫxae + ǫxbe′ + xce + xde′ ,
+   F (c)e + F (d)e′ = ce + de′ + ǫae + ǫbe′
+for some x ∈ A. Thus, we may identify Y with the set of all (a, b, c, d) ∈ A4 such
+that
+14                                               G. LUSZTIG
+
+   F (a) = a+ǫxa+xc, F (b) = b+ǫxb+xd, F (c) = c+ǫa, F (d) = d+ǫb, ad−bc = 1
+for some x ∈ A, or equivalently, such that
+   (F (a) − a)(ǫb + d) = (F (b) − b)(ǫa + c), F (c) = c + ǫa, F (d) = d + ǫb, ad − bc = 1.
+Setting a = a0 + ǫa1 , b = b0 + ǫb1 , c = c0 + ǫc1 , d = d0 + ǫd1 with ai , di ∈ F, we see
+that Y is identified with the set consisting of all (a0 , b0 , c0 , d0 , a1 , b1 , c1 , d1 ) ∈ F8
+such that
+   (a) cq0 = c0 , dq0 = d0 , cq1 = c1 + a0 , dq1 = d1 + b0 ,
+   (b) a0 d0 − b0 c0 = 1, a0 d1 + a1 d0 − b0 c1 − b1 c0 = 0,
+   (c) (aq0 − a0 )d0 = (bq0 − b0 )c0 ,
+   (aq0 − a0 )b0 + (aq0 − a0 )d1 + (aq1 − a1 )d0 = (bq0 − b0 )a0 + (bq0 − b0 )c1 + (bq1 − b1 )c0 .
+Actually the equations (c) are a consequence of the other equations, hence they
+can be omitted. The first equation (b) can be written (using (a)):
+   (cq1 − c1 )d0 − (dq1 − d1 )c0 = 1,
+that is,
+   (c1 d0 − d1 c0 )q − (c1 d0 − d1 c0 ) = 1.
+Setting f = c1 d0 − d1 c0 , we see that Y is identified with the set of all
+   (a0 , b0 , c0 , d0 , a1 , b1 , c1 , d1 , f ) ∈ F9
+such that
+   cq0 = c0 , dq0 = d0 , cq1 = c1 + a0 , dq1 = d1 + b0 ,
+   f q − f = 1, c1 d0 − d1 c0 = f, a0 d1 + a1 d0 − b0 c1 − b1 c0 = 0.
+Now on Y we have a free right action of U 12 = U 2 ∩ hU 2 h−1 , u : g 7→ gu. In terms
+of coordinates, this is (a, b, c, d) 7→ (a + ǫxc, b + ǫxd, c, d), x ∈ F or
+
+     (a0 , b0 , c0 , d0 , a1 , b1 , c1 , d1 , f ) 7→ (a0 , b0 , c0 , d0 , a1 + xc0 , b1 + xd0 , c1 , d1 , f ).
+
+The set of orbits Y /U 12 = X̃ ′ may be identified with the set of all
+   (a0 , b0 , c0 , d0 , c1 , d1 , f ) ∈ F7
+such that
+
+      cq0 = c0 , dq0 = d0 , cq1 = c1 + a0 , dq1 = d1 + b0 , f q − f = 1, c1 d0 − d1 c0 = f.
+
+We consider the obvious projection of this set to the finite set
+    {(c0 , d0 , f ) ∈ F3 ; cq0 = c0 , dq0 = d0 , f q − f = 1, (c0 , d0 ) 6= (0, 0)}.
+The fibre of this projection at (c0 , d0 , f ) ∈ F3 is the affine line {(c1 , d1 ) ∈ F2 ; c1 d0 −
+d1 c0 = f }. Thus, X̃ ′ is a union of (q 2 − 1)q affine lines. Hence Hcj (X̃ ′ ) = 0 for
+j 6= 2 and Hc2 (X̃ ′ ) is a permutation representation of GF                               2
+                                                                          2 of dimension (q − 1)q.
+                                                                    2     ′
+For q odd, it follows easily that, as a GF          2 -module, Hc (X̃ ) is the direct sum of the
+2q irreducible representations of degree (q 2 − 1)/2 (each one with multiplicity 1);
+more precisely, for any ω ′ ∈ Γ̂′ , Hc2 (X̃ ′ )ω′ is irreducible of degree (q 2 − 1)/2 and
+each irreducible representation of degree (q 2 − 1)/2 is obtained for exactly one ω ′ .
+    Similarly, for q a power of 2, Hc2 (X̃ ′ ) is the direct sum of the q irreducible
+representations of degree q 2 − 1 (each one with multiplicity 1); more precisely,
+for any ω ′ ∈ Γ̂′ , Hc2 (X̃ ′ )ω′ is irreducible of degree q 2 − 1 and each irreducible
+representation of degree q 2 − 1 is obtained for exactly one ω ′ .
+        REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                          15
+
+                                                                             4    2
+3.4. Now X̃ is a permutation representation of GF            2 of dimension q − q which
+is easy to analyze. We see that Hcj (X̃) = 0 for j 6= 0 and, for q odd, Hc0 (X̃) is
+the direct sum of all irreducible representations of degree q 2 + q and q + 1 (each
+one with multiplicity 2), those of degree 1, q, (q + 1)/2 (each one with multiplicity
+1) and Hc2 (X̃ ′ )ω′ with ω ′ ∈ Γ̂′ , ω ′2 = 1 (each one with multiplicity q − 1). More
+precisely, if ω ∈ Γ̂ then Hc0 (X̃)ω is
+   irreducible of degree q 2 + q if ω|T 12 F 6= 1;
+   the direct sum of ⊕ω′ ∈Γ̂;ω′2 =1 Hc2 (X̃ ′ )ω′ with an irreducible representations of
+degree q + 1, if ω|T 12 F = 1, ω 2 6= 1;
+   the direct sum of ⊕ω′ ∈Γ̂;ω′2 =1 Hc2 (X̃ ′ )ω′ with the two irreducible representations
+of degree (q + 1)/2, if ω|T 12 F = 1, ω 2 = 1, ω 6= 1;
+   the direct sum of ⊕ω′ ∈Γ̂;ω′2 =1 Hc2 (X̃ ′ )ω′ with the two irreducible representations
+of degree 1 and q, if ω = 1.
+   On the other hand, for q a power of 2, Hc0 (X̃) is the direct sum of all irreducible
+representations of degree q 2 + q and q + 1 (each one with multiplicity 2), those of
+degree 1, q, (q 2 +q)/2 (each one with multiplicity 1) and Hc2 (X̃ ′ )1 (with multiplicity
+q − 1). More precisely, if ω ∈ Γ̂ then Hc0 (X̃)ω is
+   irreducible of degree q 2 + q if ω|T 12 F 6= 1, ω 2 6= 1;
+   the direct sum of two irreducible representations of degree (q 2 + q)/2 if ω 2 =
+1, ω 6= 1;
+   the direct sum of Hc2 (X̃ ′ )1 with an irreducible representations of degree q + 1,
+if ω|T 12 F = 1, ω 6= 1;
+   the direct sum of Hc2 (X̃ ′ )1 with the two irreducible representations of degree 1
+and q, if ω = 1.
+3.5. Let
+
+     S0 = {x0 ∈ V ; x0 ∧ F (x0 ) = e ∧ e′ },    S00 = {x0 ∈ S0 ; F 2 (x0 ) = −x0 }.
+
+Now GF acts on S0 (restriction of the G-action on V ). This restricts to a GF -
+action on S00 . We show that this action is simply transitive. If g ∈ GF keeps
+fixed some x0 ∈ S00 then it also keeps fixed F (x0 ) hence it must be 1 (recall that
+x0 , F (x0 ) form a basis of V ). Thus the GF -action on S00 has trivial isotropy. We
+                                                        2         2
+may identify S00 with {(a, b) ∈ F2 ; abq − aq b = 1, aq = −a, bq = −b}. For such
+(a, b) we have automatically a 6= 0. We make a change of variable (a, b) 7→ (a, c)
+where c = b/a. Then S00 becomes
+                                        2        2
+    {(a, c) ∈ F2 ; aq+1 (cq − c) = 1, aq = −a, cq = c}.
+                                                    2
+The second projection maps this to {c ∈ F; cq = c, cq 6= c} which has q 2 − q
+elements. The fibre at c is {a ∈ F; aq+1 = (cq − c)−1 }. (For such a we have
+                    2               2
+automatically aq = −a since cq = c.) This fibre has exactly q + 1 elements since
+(cq − c)−1 6= 0. We see that ♯(S00 ) = (q + 1)(q 2 − q) = ♯(GF ). It follows that the
+GF -action on S00 is indeed simply transitive.
+16                                     G. LUSZTIG
+
+3.6. We now analyze X̃ ′′ . Let
+
+                           S = {x ∈ V2 ; x ∧ F (x) = e ∧ e′ }.
+                                                       ′
+Now GF  2 acts on S by g1 : x 7→ g1 x. The map g 7→ g(e ) defines an isomorphism
+             ∼
+  ι : X̃ ′′ −→ S.
+We check that this is a well defined bijection. Let g ∈ X̃ ′′ . Then F (g) = gνu for
+some u ∈ U 2 . Let x = ge′ . Then for some u ∈ U 2 we have
+
+     x ∧ F (x) = (ge′ ) ∧ F (ge′ ) = (ge′ ) ∧ F (g)e′ = e′ ∧ g −1 F (g)e′ = e′ ∧ νue′
+      = e′ ∧ νe′ = e′ ∧ (−e) = e ∧ e′ ,
+
+hence x ∈ S and ι is well defined. Now let x ∈ S. We can find g ∈ G2 such that
+ge′ = x. Then
+
+       e ∧ e′ = x ∧ F (x) = (ge′ ) ∧ F (ge′ ) = (ge′ ) ∧ F (g)e′ = e′ ∧ g −1 F (g)e′ .
+
+Hence g −1 F (g)e′ = −e + be′ for some b ∈ A. It follows that g −1 F (g) = u′ νu
+where u, u′ ∈ U 2 . Then (gu′ )−1 F (gu′ ) = νuF (u′ ) hence gu′ ∈ X̃ ′′ . Clearly,
+ι(gu′ ) = x so that ι is surjective. Now assume that g, g ′ ∈ X̃ ′′ satisfy ι(g) = ι(g ′ )
+that is ge′ = g ′ e′ . Then g ′ = gu′ , u′ ∈ U 2 . We have g ′−1 F (g ′ ) = νu with
+u ∈ U 2 hence u′−1 g −1 F (g)F (u′ ) = νu. Also, g −1 F (g) = ν ũ with ũ ∈ U 2 hence
+u′−1 ν ũF (u′ ) = νu so that u′ ∈ νU 2 ν −1 . Thus, u′ ∈ U 2 ∩ (νU 2 ν −1 ) = {1} hence
+u′ = 1 and g ′ = g. Thus, ι is injective hence bijective. It commutes with the
+GF2 -actions.
+   Now S consists of the elements x0 + ǫx1 , with x0 , x1 ∈ V such that
+   (x0 + ǫx1 ) ∧ (F (x0 ) + ǫF (x1 )) = e ∧ e′ ,
+that is
+   x0 ∧ F (x0 ) = e ∧ e′ and x1 ∧ F (x0 ) + x0 ∧ F (x1 ) = 0.
+We have a morphism
+   κ:S−    → S0 , x0 + ǫx1 7→ x0 .
+If x0 ∈ S0 then κ−1 (x0 ) may be identified with
+   {x1 ∈ V ; x1 ∧ F (x0 ) + x0 ∧ F (x1 ) = 0}.
+Note that x0 , F (x0 ) form a basis of V hence F 2 (x0 ) = c0 x0 + c1 F (x0 ) with c0 , c1 ∈
+F. Since x0 ∧ F (x0 ) = e ∧ e′ is F -stable, we have x0 ∧ F (x0 ) = F (x0 ) ∧ F 2 (x0 )
+hence c0 = −1. Let S01 = S0 − S00 . We have a partition S = S∗ ∪ S∗∗ where
+S∗ = κ−1 (S00 ), S∗∗ = κ−1 (S01 ) are GF      2 -stable. If x0 ∈ S0 , then any x1 ∈ V can
+be written uniquely in the form
+   x1 = a0 x0 + a1 F (x0 )
+with a0 , a1 ∈ F. The condition that x0 + ǫx1 ∈ κ−1 (x0 ) is
+   (a0 x0 + a1 F (x0 )) ∧ F (x0 ) + x0 ∧ (aq0 F (x0 ) + aq1 F 2 (x0 )) = 0,
+that is,
+   a0 x0 ∧ F (x0 ) + x0 ∧ (aq0 F (x0 ) − aq1 x0 + aq1 c1 F (x0 )) = 0,
+that is,
+         REPRESENTATIONS OF REDUCTIVE GROUPS OVER FINITE RINGS                                17
+
+    a0 x0 ∧ F (x0 ) + aq0 x0 ∧ F (x0 ) + aq1 c1 x0 ∧ F (x0 ) = 0,
+    or a0 + aq0 + aq1 c1 = 0.
+Thus we may identify κ−1 (x0 ) with {(a0 , a1 ) ∈ F2 ; a0 + aq0 + aq1 c1 = 0}. If c1 6= 0
+(that is if x0 ∈ S01 ) this is isomorphic to the affine line. Thus, κ restricts to an
+affine line bundle S∗∗ −         → S01 .
+    Now the action of Γ on X̃ ′′ corresponds under ι to the action of {λ ∈ A; λF (λ) =
+                               ′′
+
+1} on S by scalar multiplication. Hence the action of {t ∈ Γ′′ ; t ∈ T21 } on X̃ ′′ cor-
+responds to the action of A′ = {λ ∈ A; λF (λ) = 1, λ ∈ 1 + ǫA} on S by scalar
+multiplication. The action of 1 + ǫλ1 ∈ A′ (with λ1 ∈ F) in the coordinates
+(x0 , a0 , a1 ) is (x0 , a0 , a1 ) 7→ (x0 , a0 + λ1 , a1 ). Thus it preserves each fibre of κ.
+    Now S∗∗ is stable under the action of {λ ∈ A; λF (λ) = 1} and the restriction
+of this action to A′ preserves each fibre of S∗∗ −              → S01 (an affine line); hence
+                                          j
+this group acts trivially on Hc () of each such fibre hence it also acts trivially      P      on
+Hcj (S∗∗ ). Thus, Hcj (S) −        → Hcj (S∗ ) is an isomorphism on the part where λ∈A′ λ
+acts as 0.
+    We now study Hcj (S∗ ). If x0 ∈ S00 then κ−1 (x0 ) may be identified with
+{(a0 , a1 ) ∈ F2 ; a0 + aq0 = 0}. Thus, S∗ is an affine line bundle over
+    S00 × {a0 ∈ F; a0 + aq0 = 0}
+which is a transitive permutation representation of GF               2 that is explicitly known
+from
+P      3.5.     It follows    that   H j
+                                       c (S ∗ ) = 0 for   j 6
+                                                            = 2 and  the part of Hc2 (S∗ ) where
+   λ∈A′ λ acts as 0 is the direct sum of the irreducible representations of degree
+q − q (each one with multiplicity 2) and of degree (q 2 − q)/2 (each one with
+ 2
+
+multiplicity 1); note that the latter representations occur only when q is a power
+of 2.
+    We now study the part of Hcj (S) where A′ acts as 1. This is the same as
+Hc (A′ \S). The map (x0 , a0 , a1 ) 7→ (x0 , ã0 , a1 ), ã0 = a0 + aq0 is an isomorphism
+   j
+
+of A′ \S with the set of all (x0 , ã0 , a1 ) ∈ S0 × F × F such that ã0 + aq1 c1 = 0.
+(Here c1 is determined by x0 as above.) Hence the map (x0 , a0 , a1 ) 7→ (x0 , a1 ) is
+                                  ∼
+an isomorphism A′ \S −→ S0 × F. Thus, Hcj (A′ \S) = Hcj−2 (S0 ). Thus, GF                  2 acts
+       j    ′                                     F
+on Hc (A \S) through its quotient G and that action is explicitly known from
+the representation theory of GF .
+    We see that Hc4 (X̃ ′′ ) is the 1 dimensional representation; Hc3 (X̃ ′′ ) is the direct
+sum of all irreducible representations of degree q − 1 (each one with multiplicity
+2) and those of degree (q − 1)/2, q (each one with multiplicity 1); Hc2 (X̃ ′′ ) is
+the direct sum of all irreducible representations of degree q 2 − q (each one with
+multiplicity 2) and of degree (q 2 −q)/2 (each one with multiplicity 1); Hcj (X̃ ′′ ) = 0
+for j ∈/ {2, 3, 4}; note that the representations of degree (q − 1)/2 occur only for q
+odd, while those of degree (q 2 − q)/2 occur only for q a power of 2.
+    More precisely, if ω ∈ Γ̂′′ and q is odd, then
+    Hc4 (X̃ ′′ )ω is irreducible of degree 1 if ω = 1 and is 0 otherwise;
+    Hc3 (X̃ ′′ )ω is irreducible of degree q−1 if ω|Γ′′ ∩T21 = 1, ω 2 6= 1; it is the direct sum
+of two irreducible representations of degree (q −1)/2 if ω|Γ′′ ∩T21 = 1, ω 2 = 1, ω 6= 1;
+18                                           G. LUSZTIG
+
+it it is irreducible of degree q if ω = 1; it is 0 if ω|Γ′′ ∩T21 6= 1;
+    Hc2 (X̃ ′′ )ω is irreducible of degree q 2 − q if ω|Γ′′ ∩T21 6= 1 and is 0 otherwise.
+    Similarly, if ω ∈ Γ̂′′ and q is a power of 2, then
+    Hc4 (X̃ ′′ )ω is irreducible of degree 1 if ω = 1 and is 0 otherwise;
+    Hc3 (X̃ ′′ )ω is irreducible of degree q − 1 if ω|Γ′′ ∩T21 = 1, ω 6= 1; it is irreducible
+of degree q if ω = 1; it is 0 if ω|Γ′′ ∩T21 6= 1;
+    Hc2 (X̃ ′′ )ω is irreducible of degree q 2 − q if ω|Γ′′ ∩T21 6= 1, ω 2 6= 1; it is the direct
+sum of two irreducible representations of degree (q 2 − q)/2 if ω 2 = 1, ω 6= 1; it is
+0 otherwise.
+3.7. We see that any irreducible representation of GF             2 appears in at least one
+of the representations Hcj (X̃)ω , Hcj (X̃ ′ )ω , Hcj (X̃ ′′ )ω . More precisely, the regular
+representation of GF2 is a Q-linear combination of the virtual representations
+               X                       X                          X
+                   (−1)j Hcj (X̃)ω ,       (−1)j Hcj (X̃ ′ )ω ,       (−1)j Hcj (X̃ ′′ )ω .
+               j∈Z                     j∈Z                        j∈Z
+
+
+3.8. Let γ ∈ G be such that γ −1 F (γ) = ν. We set T = γT γ −1 , U = γU γ −1 .
+Then T is an F -stable maximal torus of G and U is the unipotent radical of a
+Borel subgroup of G containing T . Hence ST,U is defined (with r = 2). Now
+g 7→ gγ −1 defines an isomorphism
+          ∼
+   X̃ ′′ −→ ST,U
+                          ∼
+and an isomorphism Γ′′ −→ T2F . Also GF      ′′         ′′
+                                        2 × Γ acts on X̃ by (g1 , t) : g 7→ g1 gt
+                                                                                  −1
+                                                                                     .
+                                     F     F
+This action is compatible with the G2 × T2 -action on ST,U via the isomorphisms
+                                                P
+above. We see that the virtual representations j∈Z (−1)j Hcj (X̃ ′′ )ω of GF
+                                                                           2 are the
+                                      θ
+same as the virtual representations RT,U .
+3.9. We return to the general setup of 1.2. Let B be an F -stable Borel subgroup of
+G with unipotent radical U . For any x ∈ Gr let Xx = {g ∈ Gr ; g −1 F (g) ∈ xU r }.
+Then GF                                                                j
+        r acts on Xx by left translations hence it acts naturally on Hc (Xx ). Note
+that the isomorphism class of the GF            j
+                                   r -module Hc (Xx ) depends only on the (U r , U r )
+double cosetPof x in Gr . We conjecture that any irreducible representation of GF  r
+appears in j∈Z (−1)j Hcj (Xx ) for some x ∈ Gr . This holds for r = 1 (see [DL])
+and also for G = SL2 , r = 2, by the results in this section.
+
+                                         References
+[DL] P. Deligne and G. Lusztig, Representations of reductive groups over finite fields, Ann.
+     Math. 103 (1976), 103-161.
+[G] P. Gérardin, Construction de séries discrètes p-adiques, Lecture Notes in Math., vol. 462,
+     Springer, Berlin, 1975.
+[L] G. Lusztig, Some remarks on the supercuspidal representations of p-adic semisimple groups,
+     Proc.Symp.Pure Math. 33(1) (1979), 171-175, Amer.Math.Soc.
+
+     Department of Mathematics, M.I.T., Cambridge, MA 02139
+

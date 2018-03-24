@@ -1,0 +1,1033 @@
+                       PREHOMOGENEOUS VECTOR
+                    SPACES AND FIELD EXTENSIONS III
+
+                                      Akihiko Yukie     1
+
+
+                                Oklahoma State University
+
+
+Introduction
+   Throughout this paper, k is a eld of characteristic zero, and k is its algebraic
+closure. We rst recall the denition of prehomogeneous vector spaces.
+Denition (0.1) Let G be a connected reductive group, V a representation of
+G, and  a non-trivial character of G, all dened k. Then (G; V; ) is called a
+prehomogeneous vector space if it satises the following properties.
+(1) There exists a Zariski open orbit.
+(2) There exists a polynomial (x) 2 k[V ] such that (gx) = (g)a(x) for a
+certain positive integer a.
+   Such  is called a relative invariant polynomial. We dene V ss = fx 2 V j
+(x) 6= 0g and call it the set of semi-stable points. If (G; V; ) is an irreducible
+representation, the choice of  is essentially unique and we may write (G; V ) as
+well. For x 2 Vkss , let Gx be the stabilizer and G0x its connected component of 1.
+   The orbit space Gk n Vkss for prehomogeneous vector spaces usually parametrizes
+interesting arithmetic objects and has been considered by many people. For exam-
+ple Gauss [1] considered the space of binary quadratic forms to investigate ideal
+classes of quadratic elds. Igusa [3] investigated spinors of dimension up to twelve,
+and these cases turned out to be special cases of prehomogeneous vector spaces.
+Later Igusa [4] formulated the problem in terms of Galois cohomology, and this
+formulation was used to parametrize eld extensions of degree up to ve in [11].
+   Let W = k7 be the standard representation of GL(7) (i.e., the space of seven
+dimensional column vectors), and e1 ;    ; e7 the standard coordinate vectors. We
+use the notation eijk = ei ^ ej ^ ek , etc. We consider the natural representation of
+GL(7) on ^3 W . Let
+                     w = e234 + e567 + e1 ^ (e25 + e36 + e47 ) 2 ^3 W:
+We dene G1 to be the set of g 2 GL(7) such that gw = c(g)w for some c(g) 2
+GL(1). Then G1 becomes a closed subgroup of GL(7), and c : G1 ! GL(1) is a
+character of G both dened over k.
+  In this paper, we consider the following two prehomogeneous vector spaces
+1 The   author is partially supported by NSF grant DMS-9401391
+
+                                                                    Typeset by AMS-TEX
+(1) G = G1 ; V = W ,
+(2) G = G1  GL(2); V = W 
+ k2 .
+Denition (0.2) Exi is the set of isomorphism classes of Galois extensions of k
+which are splitting elds of degree i equations.
+   In x1, we recall the relation between the orbit space Gk n Vkss and Galois coho-
+mology. In xx2,3, we construct a natural map V : Gk n Vkss ! Ex2 for cases (1),
+(2) and prove that V is surjective. For case (2), let Te = Ker(G ! GL(V )). In
+x4 (Theorems (4.4), (4.13)), we determine the ber structure of V and prove the
+following theorem.
+Theorem (0.3) (1) For case (1), the map V is bijective. Moreover, if x 2 Vkss
+corresponds to a quadratic extension k()=k with 2 2 k, G0x    = SU(2; 1).
+(2) For case (2), V 1 (k) consists of a single orbit, and if k()=k is a quadratic
+extension with 2 2 k, V 1 (k())   = (Z=2Z) n k =Nk()=k (k() ) where Z=2Z acts
+on k =Nk()=k (k() ) by s ! s 1 . Moreover, if x 2 V 1 (k()) corresponds
+                                                                            s to
+s 2 k , G0x =Te is the unitary group associated with the Hermitian matrix       1 .
+   For the denition of SU (2; 1), see Denition (2.13). Note that if two non-
+degenerate Hermitian matrices are scalar multiples of each other, the corresponding
+unitary groups are the same. Therefore, we can conclude that case (2) parametrizes
+all the two dimensional unitary groups over all the quadratic extensions of the
+ground eld.
+   There may be two kinds of applications of results in this paper in the future. One
+is of course the zeta function theory of prehomogeneous vector spaces. The above
+theorem says that the zeta function for these cases is the counting function for
+quadratic elds weighted with the Tamagawa number (without the normalization)
+of the group SU(2; 1) for case (1) and the Tamagawa number of two dimensional
+unitary groups. The other is an analogue of the Oppenheim conjecture for preho-
+mogeneous vector spaces. For the zeta function theory, the reader should see [13].
+For an analogue of the Oppenheim conjecture, the reader should see [12].
+x1 Rational orbits and the Galois cohomology
+   In this section we recall the relation between Galois cohomology and the set of
+rational orbits in prehomogeneous vector spaces.
+   We rst recall the denition of Galois cohomology. Let G be an algebraic group
+over k, and k0 =k a nite Galois extension. A 1{cocycle is a function h = fh g
+from Gal(k0 =k) to Gk0 (h is the value of h at  2 Gal(k0 =k)) satisfying the cocycle
+condition h  = h h for all 1 ; 2. If h = fh g; i = fi g are 1{cocycles,
+             1 2      2
+                          2
+
+they are equivalent if there exists g 2 Gk0 such that h = g 1i g for all . This
+                          1
+
+
+
+denes an equivalence relation and H1 (k0 =k; G) is the set of equivalence classes. Let
+g 2 Gk0 . We use the notation g for the 1{cocycle h = fh g dened by h = g 1g
+for all  2 Gal(k0 =k). The cohomology class dened by g does not depend on the
+choice of g and we denote this element by 1.
+   We dene H1 (k; G) to be the projective limit of H1 (k0 =k; G) for all the nite
+Galois extensions k0 . An equivalent denition is to consider continuous func-
+                                          2
+tions fh g from Gal(k=k) to Gk satisfying the same cocycle condition. We dene
+H0(k0 =k; G) = H0 (k; G) = Gk . If G is an abelian group, Hn (k0 =k; G) can be dened
+for all n and has a structure of an abelian group also.
+   Let
+(1:1)                            1 ! G1 ! G2 ! G3 ! 1
+be a short exact sequence of algebraic groups over k. This means that G1 is a
+normal subgroup of G2 , the kernel of G2 ! G3 is G1 , and G2k ! G3k is surjective.
+If G1 ; G2; G3 are abelian and (1.1) is exact, the usual long exact sequence holds.
+   Let g 2 G3k . If k0 =k is a large enough nite Galois extension, there is an element
+f 2 G2k0 which maps to g. For a cohomology class c in H1 (k; G1) dened by a 1{
+cocycle h = fh g, we dene gc 2 H1(k; G1) to be the class dened by the 1{cocycle
+ffh (f  ) 1 g. It is known that this denes an action of G3k on H1 (k; G1). The
+following lemma is an easy consequence of Proposition 38, x5.5 and Corollaire 1,
+x5.5 of [9].
+Lemma (1.2) The sequence
+                     1 ! G3k n H1 (k; G1) ! H1 (k; G2) ! H1(k; G3)
+is exact. Moreover, if (1.1) is split, the last map is surjective.
+    Note that the exactness of the sequence in (1.2) means that the inverse image of
+1 2 H1 (k; G3) is G3k n H1 (k; G1).
+    It is a familiar fact that both H1 (k; GL(n)) and H1 (k; SL(n)) are trivial. Let
+k0 =k be a nite extension. Then as remarked in [9] (see the proof of Theoreme 1,
+x2.2) one has
+                               H1 (k1; G) = H1 (k; Rk =k (G))
+                                                  1
+
+for any algebraic group G over k1 , where Rk =k denotes restriction of scalars. This
+                                              1
+leads at once to the following.
+Lemma (1.3) Let k1 =k be a nite extension, and G = GL(n)k or SL(n)k consid-
+                                                                 1           1
+ered as an algebraic group over k. Then H1 (k; G) = f1g.
+    Let (G; V ) be an irreducible prehomogeneous vector space. For x 2 Vkss, let
+gx be the stabilizer and G0x be the connected component of 1. Since Gx is an
+algebraic group over k, Gx =G0x is a nite algebraic group. Let Si be the group of
+permutations of f1;    ; ig. In the following we make the following assumption.
+Assumption (1.4) There exists an element w 2 Vkss and i such that
+(1) Gal(k=k) acts on Gw =G0w trivially,
+(2) Gw =G0w  = Si ,
+(3) the sequence (1.1) splits for G1 = G0w ; G2 = Gw ; G3 = Si .
+    All the prehomogeneous vector spaces in [11] and [5] satisfy this assumption. For
+prehomogeneous vector spaces in this paper, we prove this assumption in xx2,3.
+    For the rest of this section, we assume Assumption (1.4). With this assumption,
+we have the following exact sequence
+(1:5)            1 ! Si n H1 (k; G0w ) ! H1 (k; Gw ) ! H1 (k; Si) ! 1:
+                                          3
+We denote the surjective map H1(k; Gw ) ! H1(k; Si) by V . The set H1(k; Si) can
+be identied with the set of conjugacy classes of homomorphisms from Gal(k=k)
+to Si. The kernel of the homomorphism determines a eld which belongs to Exi .
+This denes a map H1 (k; Si) ! Exi . Let V be the composition of V and the
+map H1 (k; Si) ! Exi . If i = 1; 2; 3 (i = 2 for prehomogeneous vector spaces in this
+paper), H1 (k; Si) 
+                   = Exi , and the maps V and V can be identied.
+   If x 2 Vkss, we can choose a nite Galois extension k0 =k and g 2 Gk0 such that
+x = gw. Then cx = fg 1g g determines an element of Ker(H1 (k; Gw ) ! H1 (k; G))
+(which is the set of elements which map to 1 2 H1(k; G)). The following theorem
+(which does not require Assumption (1.4)) is due to Igusa [4].
+Theorem (1.6) (Igusa) The correspondence
+                 Gk n Vxss 3 x ! cx 2 Ker(H1 (k; Gw ) ! H1 (k; G))
+is bijective.
+    By the above theorem, we can consider Gk n Vkss as a subset of H1 (k; Gw ). We
+denote the restriction of V ; V to Gk n Vkss also by V ; V .
+    Let x 2 Vkss. We choose an element gx 2 Gk so that x = gx w. Then for
+each element c 2 H1 (k; Gw ) dened by a 1{cocycle fh g, we can associate an
+element cgx 2 H1 (k; Gx ) dened by a 1{cocycle fgx h (gx ) 1 g. Note that since
+(gx ) 1 gx 2 Gw (but may not be in G0w ),
+                        gxh (gx ) 1 = gx (h (gx ) 1 gx)gx 1 2 Gxk :
+It is easy to see that the map H1 (k; Gw ) 3 c ! cgx 2 H1 (k; Gx) is well dened and
+does not depend on the choice of gx . Also a similar construction using gx 1 denes
+a map from H1(k; Gx ) to H1 (k; Gw ). So c ! cgx is a bijective map.
+   Let x 2 Vkss. By the exact sequence
+(1:7)                         1 ! G0x ! Gx ! Gx =G0x ! 1
+and Lemma (1.2), (Gx =G0x )k n H1(k; G0x ) can be considered as a subset of H1 (k; Gx),
+which corresponds bijectively with H1 (k; Gw ). It is easy to see that c 2 H1 (k; Gw )
+maps to the trivial element of H1(k; G) if and only if cgx 2 H1 (k; Gx) maps to the
+trivial element of H1(k; G) by the imbedding Gx  G. So cohomology classes in
+(Gx =G0x )k n H1 (k; G0x) which correspond to rational orbits are those in
+                        Ker((Gx =G0x )k n H1 (k; G0x) ! H1 (k; G)):
+   The proof of Lemma (1.12) [5] works for the following Lemma also and we do
+not repeat the proof here. Note that k = ksep because we assumed ch k = 0. We
+used the notation V here instead of V in [5] for the map Gk n Vkss ! H1 (k; Si)
+because there is a slight dierence between H1(k; Si) and Exi if i  4, but that was
+not the case in [5] because i = 2; 3 in [5].
+Lemma (1.8) (1) If x 2 Vkss,
+             V 1(V (Gk x)) 
+                             = Ker((Gx =G0x )k n H1(k; G0x ) ! H1 (k; G)):
+                                          4
+(2) By this identication, the cohomology class fg 1g g 2 H1 (k; G0x) (g 2 Gk )
+corresponds to the orbit Gk gx.
+x2 The orbit space Gk n Vkss (1)
+   Let G1 ; W; c, etc., be as in the introduction. In this section, we consider the
+prehomogeneous vector space G = G1 ; V = W . We prove that V for this case
+is a map to Ex2 and construct a subset of Gk n Vkss which maps bijectively to Ex2 .
+Also for each point x in this set, we determine the stabilizer Gx .
+   Let x = t (x1 ;    ; x7) be the coordinate of x 2 V with respect to fe1 ;    ; e7g.
+It is known (see [8, p. 135]) that (G; V ) is a prehomogeneous vector space and
+(2:1)                       (x) = x21 4(x2x5 + x3 x6 + x4 x7 )
+is a relative invariant polynomial. It is proved in [10] that V  can be considered
+as the imaginary part of the split octonion algebra (which is also called the split
+Cayley algebra). By , we can identify V with V  and we can regard  as a
+function on V  . The resulting function on V  turns out to be a scalar multiplication
+of the restriction of the norm form of the octonion algebra to the imaginary part.
+Moreover, if ff1 ;    ; f7g is the dual basis of fe1 ;    ; e7g and y = y1f1 +    + y7 f7 ,
+(y) = y12 (y2y5 + y3 y6 + y4 y7).
+    If k is algebraically closed, c is set-theoretically surjective and the kernel of c is
+a semi-simple group of type G2 which is connected modulo scalar matrices (for the
+second part, see [8, p. 85]). So G is a connected reductive group over any ground
+eld k of characteristic zero. If (gx) = (g)(x), c(tI7 ) = t3 ; (tI7 ) = t2 . Since
+c;  are rational characters, so is 0 = c 1 and 0 (tI7) = t. Since G is connected
+and dim G=[G; G] = 1, the group of rational characters is generated by one element.
+Therefore, c = 0 3;  = 0 2.
+    Let w = t ( 1 0    0 ). Then w 2 Vkss because (w) = 1 6= 0. It is proved
+in [8, p. 134] that the Lie algebra of G0w is
+                     80 1 0 0 1                           9
+                     <                                    =
+                     :@ 0 A 0 A A 2 M(3; 3) ; tr( A ) = 0 ;:
+                            t
+                           0 0          A
+   Consider elements of the form
+                                                                    0a b b 1
+             g(a; b; c; A) = g(a; b ; b ; c ; c ; A ; A ; A ; A ) = @ c A A A
+                                                                                 1     2
+(2:2)                               1   2   1   2       1   2   3   4       1     1     2
+                                                                          c2 A3 A4
+for a 2 M(1; 1); b1; b2 2 M(1; 3); c1 ; c2 2 M(3; 1); A1;    ; A4 2 M(3; 3). Let
+              F = fg(a; b; c; A) 2 G j a = 1; b = 0; c = 0; A2 = A3 = 0g:
+Then F is clearly a closed subset of G. For A 2 SL(3), let
+(2:3)                        d(A) = g(1; 0; 0; 0; 0; A; 0; tA 1 ; 0):
+                                                    5
+   It is easy to see that if g(a; b; c; A) 2 F , A1t A4 is a scalar matrix, say dI3 , and
+det A1 = det A4 = d. This implies that det A1 = det A4 = d = 1. Therefore, we get
+the following lemma.
+Lemma (2.4) F = fd(A) j A 2 SL(3)g.
+   The above lemma implies that SL(3) is a closed subgroup of G by the imbedding
+A ! d(A). Clearly, elements of the form d(A) x the point w. Since SL(3) is
+connected, SL(3)  G0w is a closed subgroup. Since they have the same Lie algebra,
+G0wk = SL(3)k (see [2]). Therefore, by Lemma 2 [6, p. 8], SL(3) = G0w as algebraic
+groups over k. In particular, SL(3) is a normal subgroup of Gw .
+   Let
+                        01                  1      01          1
+(2:5)                 =@ 1                 A;  = @          A:
+                                        1                 
+
+Proposition (2.6) The subgroup Gw is generated by Gw = SL(3) and  .
+                                                              0
+
+
+Proof. We may assume that k is algebraically closed by Lemma 2 [6, p. 8] again.
+Note that  2 = 1 and  induces an outer automorphism of SL(3) by conjugation.
+This implies that conjugations by elements of the group generated by G0w and
+ exhaust all the automorphisms of SL(3). Let g 2 Gw . Then by the above
+observation, multiplying an element of SL(3) and  if necessary, we may assume
+that g commutes with elements of SL(3).
+   We dene
+(2:7)               U0 = he1 i; U1 = he2 ; e3; e4 i; U2 = he5 ; e6; e7i
+(h i means the span). Then U0 is the trivial representation of SL(3), U1 is the
+standard representation of SL(3), and U2 is the dual of U1 . As representations of
+SL(3), V = U0  U1  U2 , and U0 ; U1; U2 are inequivalent representations of SL(3).
+Since g commutes with elements of G0w , g(Ui)  Ui for i = 0; 1; 2 and by Schur's
+lemma, g must be of the form g(a; 0; 0; 0; 0; bI3; 0; cI3; 0). It is easy to verify that
+this element xes w if and only if a = b = c = 1. This proves the proposition. 
+   By the above proposition, we have a split exact sequence
+(2:8)                      1 ! SL(3) ! Gw ! Z=2Z ! 1;
+where  maps to the non-trivial element of Z=2Z.
+   Because of the split exact sequence (2.8), H1(k; Z=2Z) = Ex2 can be considered
+as a subset of H (k; Gw ).
+                1
+
+
+Lemma (2.9) The map Ex2 ! H1 (k; G) is trivial.
+Proof. The eld k as the degree one extension of k corresponds to the trivial class of
+H1(k; Z=2Z) and the lemma is trivial for this case. Let k()=k be a quadratic exten-
+sion such that  2= k and 2 2 k. Let  be the non-trivial element of Gal(k()=k).
+                                             6
+Let                  0           0       1       0        0       1           0            0 1
+                     BB          1       1
+                                                 0        0       1
+                                                                              0            0 CC
+                      BB         2
+                                 0
+                                         2
+                                         0       1         1
+                                                                  2
+                                                                  0            1            1 CC
+                  h =B                                                                         CC :
+                                                 2         2                   2            2
+
+                       BB        0       0       1        1
+                                                                  0           1             1
+
+                                                                                           0 C
+                    0                            2        2                   2             2
+
+                        B@       1
+                                 2
+                                         1
+                                         2
+                                                 0        0       1
+                                                                  2
+                                                                              0                 CA
+                         0 0                 0 12 1
+                                                  2
+                                                        1
+                                                        2
+                                                              1
+                                                              2
+                         0 0                 0 12 21
+                                                 1
+                                                 2
+                                                              1
+                                                              2
+
+Then easy computations show that h0 2 G (in fact h0 2 G \ SL(7)).
+  We dene
+                         01                            1
+                          BB                                                              CC
+                           B   1                                                            CC
+(2:10)            g = I BBB7                           1
+                                                                                             CC h : 0
+                            B@                                           1
+                                                                                              CA
+                                                                              1
+                                                                                       
+Then                 00                     0            0                      0            0 1
+                     BB     2
+                                     
+                                     2
+                                             0            0          2
+                                                                                  0            0 C
+                                                                                                C
+                      BB 02          2
+                                     0                              2
+                                                                      0                         CC
+                g = B                                                                            CC :
+                                             2             2                       2            2
+
+                       BB 0          0       1
+                                             2
+                                             0
+                                                          1
+                                                          2
+                                                          0
+                                                                      0           1
+                                                                                  2
+                                                                                  0
+                                                                                                1
+
+                                                                                               0 C
+                                                                                                2
+
+                        B@ 0 1
+                             2
+                              0
+                                     1
+                                     2
+                                              0          
+                                                                      1
+                                                                      2
+                                                                                               C A
+                                     2                     22                 2
+                        0 0 2               2
+                                               0          2
+                                                                             2                2
+                                          2          2     2
+
+  This implies that g = g  . Therefore, the cohomology class in H1(k; Z=2Z)
+which corresponds to the eld k(a) maps to the trivial class fg 1g g2Gal(k=k) in
+H1(k; G). 
+Denition (2.11) w = gw = t 0
+                                                                                                   
+                                           0 0 12 0 0 .
+                                                     2
+                                                     2
+
+   By the correspondence in Theorem (1.7), w 2 Vkss and it corresponds to the
+eld k(). Since (w) = 2 , we get the following proposition.
+Proposition (2.12) k() = k((w) ).             1
+                                                 2
+
+
+   Let R be any k-algebra. We dene R() = R 
+ k(). The non-trivial element
+ 2 Gal(k()=k) acts on R() by (r 
+ x) = r 
+ (x ). For A 2 SL(3)R() , we dene
+A ; A = t A entry-wise. Let
+(2:13)             SU (2; 1)R = fA 2 SL(3)R() j A A = g:
+We dene SU (2; 1) to be the group over k such that the set of R{valued points is
+SU (2; 1)R for any k{algebra R.
+                                                      	
+Proposition (2.14) G0w = gd(A)g 1 A 2 SU (2; 1) = SU (2; 1).
+                                                      7
+Proof. Let R be any k{algebra. Consider R() as above with the action of .
+Regarding Gw  GL(7), we consider the entry-wise action of  for elements in
+G0w R() also. Then
+                        G0w R = fg 2 G0w R() j g = gg:
+   Over R(), we can express elements of G0w R() as gd(A)g 1 where A 2
+SL(3)R(). This element is in G0w R if and only if
+                          gd(A)g 1 = g d(A )(g ) 1
+                                      = g d(A )g 1
+                                      = g d(A 1 )g 1:
+This condition is satised if and only if A 2 SU (2; 1)R. Therefore, the proposition
+follows from Theorem [7, p. 17]. 
+x3 The orbit space Gk n Vkss (2)
+   In this section, we consider case (2) in the introduction. Let G1 ; W; c, etc. be
+as in the introduction, and  as in x2. We dene the prehomogeneous vector space
+(2) more precisely rst.
+   Let G2 = GL(2), and G = G1  G2 . Let V = W 
+ k2 and we consider this space
+as the set of linear forms x = M (v) in two variables v = (v1 ; v2) with entries in W .
+Let W1 = v1 W be the subspace of forms x = M (v) such that M (0; v2) = 0. We
+dene W2 = v2 W similarly. Then W = W1  W2 .
+   We dene an action of g = (g1; g2) 2 G on x = M (v) by gx = g1M (vg2). This
+denes a representation of G on V . Let fe1 ;    ; e7 g be the standard basis of W .
+Considering V = v1 W  v2 W , let ei;j = vi ej for i = 1; 2; j = 1;    ; 7. Then
+fei;j j i = 1; 2; j = 1;    ; 7g is a basis of V . Let x = (xi;j ) be the coordinate of
+x 2 V with respect to this basis. We may also use the notation x = (x1; x2) where
+xi = t ( xi;1    xi;7 ) for i = 1; 2.
+   Let Te = Ker(G ! GL(V ). Then
+                       Te = f(t 1I7 ; tI2) j t 2 GL(1)g 
+                                                        = GL(1);
+and Te is contained in the center of G.
+  Consider the element
+                                   001                001
+                                   BB 1 CC            BB 0 CC
+                                    B 0 CC             BB 0 CC
+(3:1)                          w=v BBB 0 CC + v
+                                     1            2     BB 0 CC :
+                                     B@ 0 CA             B@ 1 CA
+                                        0                   0
+                                          0              0
+   Let  be as in (2.1). For x = (x1; x2) 2 V , we dene
+(3:2)                          Fx (v) = (v1 x1 + v2 x2 ):
+                                              8
+This is a binary quadratic form. It is easy to see that if g = (g1; g2) 2 G,
+                                Fgx(v) = (g1 )Fx (vg2):
+Therefore, the discriminant of Fx (v) is a relative invariant polynomial. Note that
+Fw (v) = 4v1 v2 . So w 2 Vkss.
+Denition (3.3) For A 2 GL(2), we dene d(A) = (d1(A); d2(A)) where
+          01                                           1
+          BB (det A)      1
+                                                       CC             det A         
+  d (A) = B
+   1
+           @                   A                        CA ; d (A) =
+                                                           2
+                                                                             (det A)1  :
+                                    det A
+                                              tA   1
+
+
+                               (det A)            
+                                         0 , GL(2) becomes a closed subgroup of
+                                          1
+   By the imbedding A !           0      A
+SL(3)  G1 . So GL(2) is a closed subgroup of G by the imbedding A ! d(A). It is
+easy to see that elements of the form d(A) x w. Since GL(2) is connected, GL(2)
+is a closed subgroup of G0w . It is known (see [8, p. 136]) that GL(2) and G0w =Te
+have the same Lie algebra. It is easy to see that GL(2) \ Te = f1g. Therefore,
+    = GL(2)  Te. In particular GL(2)  Te is a normal subgroup of Gw .
+G0w 
+   We dene  = (1; 2) where
+                               01                          1
+                1            B
+                               B                        1 CC      1
+(3:4)      =           1 ;  =B
+                               @ 1
+                                1                         C
+                                                           A;  = 1 :
+                                                                  2
+
+
+                                                   
+   Note that we are using dierent denitions for d(A); ;  in this section (1 is 
+in x2.)
+Proposition (3.5) The subgroup Gw is generated by G0w = GL(2)  Te and  .
+Proof. As in x2, we may assume that k is algebraically closed. Suppose U is an
+irreducible representation of GL(2). Then          two integers k; l such that the
+                                        tthere0 exist
+highest weight of elements of the form 0 t 1 is tk and t2 I2 acts by tl2 . Note
+that k  0. Since U is determined by k; l, we say U is of type (k; l).
+   Let
+(3:6)               Ui;0 = hei;1i; Ui;1 = hei;2 i; Ui;2 = hei;3 ; ei;4i;
+                    Ui;3 = hei;5i; Ui;4 = hei;6 ; ei;7i
+for i = 1; 2.
+   Suppose g = (g1; g2) 2 Gw . Then Fw (vg2) is a scalar multiple of Fw (v). Multi-
+plying  if necessary, we may assume that ( 1 0 ) g2; ( 0 1 ) g2 are scalar multiples
+                                              9
+of ( 1 0 ) ; ( 0 1 ) respectively. This implies g2 is a diagonal element and com-
+mutes with d2 (A) for any A 2 GL(2).
+    Since g normalizes GL(2)  Te, the conjugation by g maps the center of GL(2)  Te
+to itself. Since Te is contained in the center of G, the conjugation by g1 induces
+either the identity map or the inverse on the center of GL(2)  G1 (imbedded by
+d1 ) modulo Te. Since g2 commutes with d1(A) for any A 2 GL(2), g1 must induce
+the identity map on the center of GL(2)  G1 modulo Te. Therefore, g commutes
+with the center of GL(2)  G modulo Te.
+    Since g2 is diagonal, g(W1) = W1; g(W2) = W2. Note that Te acts trvially on V .
+So by the above consideration, g does not change the weights with respect to tI2
+of elements in W1 . The types of U1;j for j = 0;    ; 4 are
+                          (0; 2); (0; 0); (1; 3); (0; 4); (1; 1):
+Therefore, g1 must be of the form
+                            0a                                  1
+                            B b                                 CC
+                         g =B
+                          1 B@  A                                CA ;
+                                  b                1
+                                                       tA   1
+
+
+
+where a; b 2 GL(1); A 2 GL(2).
+   Multiplying d(bA 1) and an element of Te, we may assume that b = 1; A = I2 .
+It is easy to see that if
+                             a 0   b 0 
+                          g= 0 I ; 0 c 2G
+                                        6
+
+
+xes w, a = b = c = 1. This proves the proposition. 
+  By the above proposition, we have a split exact sequence
+(3:7)                1 ! GL(2)  GL(1) ! Gw ! Z=2Z ! 1
+where  maps to the non-trivial element of Z=2Z. As in x2,
+                      Gk n Vkss 
+                                = Ker(H1 (k; Gw ) ! H1 (k; G))
+and we have a map H1 (k; Gw )  Ex2 ! H1 (k; G).
+                                          1that12= k and 2 2 k. Let g;1 be the
+  Let k()=k be a quadratic extension such
+matrix dened in (2.10) as g. Let g;2 =   , and g = (g;1; g;2) 2 Gk() .
+Denition (3.8) w = gw.
+  Let  2 Gal(k()=k) the non-trivial element as before. Since g satises the
+condition g = g , we get the following proposition.
+                                            10
+Proposition (3.9) The map Ex ! H (k; G) is trivial, w 2 Vk , and w corre-
+                                   2
+                                             1                        ss
+
+sponds to the eld k().
+   Since the roots of the polynomial Fw (v) are , we get the following corollary.
+Corollary (3.10) The eld k() is generated by roots of the polynomial Fw (v).
+   For A 2 GL(2)k() , we dene  A as in x2.
+Denition (3.11) U(1; 1) = fA 2 GL(2)k() j A A = g.
+   We consider U(1; 1) as an algebraic group over k. The proof of the following
+proposition is similar to that of Proposition (2.15) and is left to the reader.
+                                                        	
+Proposition (3.12) G0w = gd(A)g 1 A 2 U (1; 1)  Te = U (1; 1)  Te.
+x4 The ber structure of V
+   We consider the ber structure of V for prehomogeneous vector spaces (1),
+(2) in this section. In both cases, V is a map to Ex2 , there is a point w 2 Vkss
+which corresponds to the trivial extension k=k, and G0w    = SL(3) or GL(2)  GL(1).
+Since H (k; SL(3)) = H (k; GL(2)  GL(1)) = f1g, V (k) = Gk w in both cases by
+         1                1                               1
+
+Lemma (1.8).
+   Let k()=k be a quadratic extension such that 2 2 k and  2 Gal(k()=k) is the
+non-trivial element throughout this section. We proved in xx2,3 that V is surjective
+and chose a point w = gw which corresponds to the eld k() in both cases. To
+determine the ber over k()=k, we consider the map H1 (k; G0w ) ! H1(k; G).
+   We rst consider case (1). So we use the denitions of G; V; w; d(A); ; ; g; w
+in x2 in (4.1){(4.5).
+   Let F1 = SU (2; 1) and F2 be the restriction of SL(3) from k() to k. For
+g 2 SL(3)k() , we denote the entry-wise action of  by g . We dene g = t g . For
+g 2 Fik() (i = 1; 2), let Fi ()(g) be the action of  induced from the k{structure
+of Fi .
+   We use the notation ik ; ik() for the natural imbeddings F1k ! F2k ; F1k() !
+F2k() . We denote the natural inclusion map Fik ! Fik() by jik() for i = 1; 2.
+Obviously, the following diagram is commutative.
+                                 F1k       j1k()
+                                           F1k()
+                                            !
+                                 ik #      # ik()
+                                   jk F
+                                 F2k !
+                                           2 ( )
+                                             2k ()
+
+  We can identify F1k() 
+                         = SL(3)k(); F2k() 
+                                             = SL(3)k()  SL(3)k(). With this
+identication,
+(4:1) ik() (g) = (g; tg 1 ); j1k() (g) = g; j2k()(g) = (g; g ); ik (g) = g;
+      F ()(g) =  g 1; F ()(g1; g2) = (g2 ; g1 ):
+           1                       2
+
+
+For i = 1; 2, we can consider g ! g as a k{automorphism of the k{group Fi and
+denote it by Fi (). Note that F ()(g1; g2) = (g2; g1) for (g1; g2) 2 F2k() .
+   Let U be the k{vector space of 3  3 Hermitian matrices (with respect to the
+                                       2
+
+
+extension k()=k). Then F2 acts on U by H ! gH t F ()(g). We can identify
+Uk() 
+      = M(3; 3)k() and the action of (g1; g2) 2 F2k() is H ! g1 H t g2. The
+                                                             2
+
+
+
+
+                                              11
+determinant det H is a function on U dened over k. We dene X = fH 2 U j
+det H = 1g.
+   Since Gal(k()=k)  = Z=2Z, any element of H1 (k()=k; F1) is determined by a
+single element h 2 F1k() 
+                          = SL(3)k() satisfying the cocycle condition hF ()(h) =
+   
+                                                                           1
+h h  = 1. So we express such a cohomology class by fhg. Note that the cocycle
+        1
+
+condition for fhg is equivalent to h or h 1  being Hermitian.
+
+Proposition (4.2) (1) Gk n Xk = H (k; F ).
+                                     1
+                                              1
+
+
+(2) Any element of H1(k; F1) is represented by an element of H1 (k()=k; F1).
+(3) If fhg 2 H1 (k()=k; F1), the corresponding Hermitian form is h 1 .
+
+
+Proof. For H 2 Xk , we can nd an element g 2 F2k which maps  to H . Then cH =
+fg 1g g2Gal(k=k) denes a cohomology class in H1 (k; F1). Note that H1 (k; F2) =
+f1g. So by the argument of Igusa [4], the map Gk n Xk 3 H ! cH 2 H1 (k; F1) is
+bijective. This proves (1).
+   For H 2 Xk , put g1 = H  1 . Then det g1 = 1. So if we choose g = (g1; 1),
+g 2 F2k() and it maps  to H . This means that cH is represented by the element
+fg 1g g 2 H1 (k()=k; F1). This proves (2). Also if we express cH = fhg,
+
+
+                    ik() (h) = (g1; 1) 1F ()(g1; 1)
+                                          2
+
+                              = (g1 1; g1 )
+                              = (g1; g1) since H is Hermitian
+                              = ik() (g1 1):
+
+
+
+
+  Therefore, H = g1 = h 1 . This proves (3). 
+
+
+
+Lemma (4.3) If x 2 Vk , there exists g 2 Gk \ SL(7)k such that gx is of the form
+                       ss
+
+( 0 1 0 0 x5 0 0 ).
+                                         12
+Proof. Let
+                                         00 0         0        0    0 2a 2b         2c 11
+                                         BBBB a       0        0    0 0 0           0C C   CC
+                                          BBB b       0        0    0 0 0           0C      C
+              u (a; b; c) = exp B
+                1                         BBBB c      0        0    0 0 0           0C CCCCC
+                                           B@B@ 0     0   c         b 0 0           0C      C
+                                                0     c 0            a 0 0          0 AA
+                                                0      b a          0 0 0           0
+                             01 0                    0         0   2a 2b 2c 1
+                             BB a 1                  0         0   a2 ab ac C
+                              BB b 0                 1         0   ab b2 bc C
+                                                                            C
+                                                                          2 C
+                           =B  BB 0c 00              0         1   ac bc c CC;
+                                @0 c                  c b           1   0 0C
+                                                     0   a          0   1 0A
+                                     0 b             a 0            0   0 1
+                                      00 0           2d 2e         2f   0 0 0 11
+                                      BBBB 0          0        0    0   0 f  eC    C
+                                       BBBB 0         0        0    0         CCCCC
+                                                                         f 0 dC
+              u (d; e; f ) = exp B      BBBBB d0      0        0    0   e d 0 CC
+                                                                        0 0 0C CACCA
+                2
+
+                                         @@ e         0        0    0
+                                                      0        0    0   0 0 0
+                                                f     0        0    0   0 0 0
+                                0 1 2d               2e    2f      0    0 01
+                                BB 0 1               0      0      0    f   eC
+                                 B0 0                1      0       f   0   dC
+                                                                             CC
+                           =B    BB 0 0              0      1      e     d 0C
+                                                                            C :
+                                  B@ d d  de df 1
+                                             2
+                                                                        0 0C    A
+                                     e de e2 ef 0                       1   0
+                                     f df ef f 2 0                      0   1
+   Then u1 (a; b; c); u2(d; e; f ) 2 Gk \ SL(7)k . Let x = t ( x1    x7 ) and (x) 6=
+0. Suppose (x2;    ; x7) 6= 0. Then (x2 ; x3; x4) 6= 0 or (x5; x6; x7) 6= 0. Multiplying
+ if necessary, we may assume that (x2; x3; x4) 6= 0. Multiplying an element of
+SL(3), we may assume that (x2; x3; x4) = (1; 0; 0). Then u2 ( x2 ; 0; 0)x is of the     1
+
+form t ( 0 1    ). Multiplying an element of SL(3), we may assume that x3 =
+x4 = 0. Since (x) 6= 0, x5 6= 0. Multiplying an element of SL(3) again, we may
+assume x6 = x7 = 0.
+   Suppose x2 =    = x7 = 0. Then the second entry of u1 (1; 0; 0)x is non-zero
+and it reduces to the previous case. 
+Theorem (4.4) The map V : Gk n Vk ! Ex is a bijection. If x 2 Vk corre-
+                                                          ss                                    ss
+
+sponds to k() ( 2= k;  2 k), Gx 
+                                                                    2
+                                2
+                                   = SU (2; 1). Moreover, for any x 2 Vk , the
+                                                 0                                               ss
+
+corresponding eld is k((x) ).        1
+                                       2
+
+
+Proof. By the above lemma, any orbit in Gk n Vkss is represented by a point of the
+form ( 0 1 0 0 x5 0 0 ), where x5 2 k . It is easy to see that this element
+                                                          13
+belongs to the orbit Gk w for some  such that 2 2 k. This implies that the orbits
+of w 's which we constructed in x2 exhausts all the orbits in Gk n Vkss . Therefore,
+V is bijective.
+   Finally, the character  is a square of the character 0 . So if x = gw and
+g 2 Gk , the eld corresponding to x is k() and (x) = 0 (g)2(w). This proves
+k((x) ) = k((w) ) = k(). 
+       1
+       2
+                       1
+                       2
+
+
+   This theorem itself was easy to verify and we didn't have to consider Galois
+cohomology. However, this has the following important interpretation in terms of
+Galois cohomology, which we need to deal with more interesting case (2).
+Corollary (4.5) The map H1 (k; SU (2; 1)) ! H1(k; G) is injective.
+   Next we consider case (2). So we use the denitions of G; V; w; d(A); ; ; g; w
+in x3 in (4.6){(4.16). Note that gg 1 2 Gw k . Therefore, we have a split exact
+sequence
+                              1 ! G0w ! Gw ! Z=2Z ! 1:
+Since H1 (k; Te) is trivial, this implies
+               V 1 (k()) = (Z=2Z) n Ker(H1(k; U (1; 1) ! H1 (k; G)):
+   Let Yk be the set of non-degenerate 2  2 Hermitian matrices. As in Proposition
+(3.3), H1 (k; U (1; 1)) is represented by elements of H1(k()=k; U (1; 1)). We ex-
+press elements of H1(k()=k; U(1; 1)) as fhg where h 2 U (1; 1)k() =   GL(2)k() .
+                  1                        1             
+Then fhg ! h  induces a bijection H (k; U(1; 1)) = GL(2)k() n Yk . Moreover,
+the map H1(k; SU (2; 1)) ! H1 (k; U(1; 1)) is identied with
+                                     (det H )       1
+                                                          
+                           Yk 3 H !                      H 2 Xk :
+                                                        (det H )            1
+Lemma (4.6) Suppose H is a 2  2 Hermitian matrix and                H
+                           1 
+is SL(3)k  {equivalent to     . Then there exists s 2 k such that H is
+                         s 
+           ( )
+
+
+GL(2)k() {equivalent to      1 .
+                         aof the Gram{Schmidt process, we can diagonalize H .
+Proof. Note by an analogue
+                                                
+So we may assume H =          b where a; b 2 k . Let Nk()=k be the norm of
+k()=k. By assumption, there exists a non-zero vector x = t ( x1 x2 x3 ) such
+that
+                 1N      (x ) + a N     (x ) + b N     (x ) = 0:
+                  ab   k()=k    1     k()=k    2         k()=k   3
+
+
+  Suppose x1 = 0. Let z = xx . Then
+                                 3
+                                 2
+                                          b
+                                          a    = Nk()=k (z). So
+                           z  z   b 
+                                  
+                              1 H   1 =  b :
+                                          14
+Let
+                         1 1 b          1            1
+                                                               1 1 
+                     A=       1 1                           1     1 1 :
+Then
+                              b   1 
+                           A     b A=
+                                   t
+                                       1 :
+
+                                                                         az1 . Since
+                                                                                               bz        
+  Suppose x1 6= 0. Let z1 =       bx3 ;  z2 =         and A = z
+                                                        ax2 ,                                         2
+                                   x1                    x1         1
+                                                                        z2ab 
+aNk()=k (z1 )+bNk()=k (z2 ) = 1, det A = 1. It is easy to see AH A =       1 . 
+  Suppose fhg 2 H1 (k; U (1; 1)) maps to the trivial element of H1 (k; G). Let H
+         (det H ) 1 2  2 Hermitian matrix. By Corollary
+be the corresponding                                      1 (4.5),
+                                                                the Hermitian
+matrix                 H is SL(3)k(){equivalent to           . Therefore, by
+                                                      s 
+Lemma (4.6), H is equivalent to a matrix of the form        1 .
+  Conversely, we show that elements of the above
+                          s                                1 to orbits in Vk .
+                                              0 sform correspond         1
+                                                                                                               ss
+
+
+
+For s 2 k , let H (s) =      1 and H (s) =
+                                              @         s A. Let
+                                                                                              1
+
+                        s                      0s                                                   1
+(4:7)           h(s) =
+                              1
+
+                                      1 ; h(s) =
+                                                 @                               s     1              A:
+                                                                                                  1
+
+Then fh(s)g 2 H1 (k; U (2; 1)) and fh(s)g 2 SU (2; 1)) correspond to H (s) and
+H (s) respectively. We dene
+                                 0         0 1                  0        0           1
+                                 BB        0 C
+                                            sC
+                                                                BB       0           CC
+                                  BB      1+
+                                             C
+                                            sC
+                                                                 BB      0            CC
+                        w(s) = v B           CC + v               BB                   CC :
+                                            2
+(4:8)                             1
+                                   BB
+                                          1
+                                                            2            0
+                                           0 C                     B@                   CA
+                                            2
+                                                                         0
+                                    @      0 A                          1+
+                                                                         2
+                                                                             s
+                                           0                             1       s
+                                                                           2
+
+
+
+
+Denition (4.9) w (s) = gw(s).
+Lemma (4.10) The class fh(s)g 2 H (k; U (1; 1)) maps to the trivial element in
+                                               1
+
+H1(k; G) and corresponds to the orbit of w (s).
+                                                   15
+Proof. Let
+                            0                        1
+                                                       10            10 s
+                                                                      1          1                          1
+                                                                                                                        1
+                     A(s) = @ 1                        A@            A@                                               1 A
+                                                                      2          2
+                                                                      1         1
+                                                                      2         2
+
+                              01 1                   1
+                                                           1 0   s
+                                                                   1
+                                                                        1                                                 1
+                            @ 1                     1 A@          1 A
+                                                         1            1
+                            0                                 1 1
+                          =@ s                         s        A:
+                                                                 1
+                                       1+            1
+                                         2                   2
+                                       1     s       1       s    1
+
+
+                                       1            
+                                         2                   2
+
+
+Then A(s)H (s)A(s) =                                         
+                                                  . Note that A(s) = A(s). Also
+                                                                     t
+
+                                                0                                                     11
+                                        A(s) = @    1                1+ 1
+                                                                        2
+                                                                           s            1
+                                                                                        2
+                                                                                                s       A:
+                                                                      1   1
+                                                                           s            1        s
+                     1                                     1                                      s 
+                                                                        2               2
+
+
+  Let B1(s) =                           A(s)
+                                                                           , B2(s) =                         1 , and
+                                                     1
+                               
+                                  00 1                                                               1        1
+(4:11)                    B (s) = @@ B (s)                       1
+                                                                                                     A ; B (s)A :
+                                                                                                          2
+                                                                                 B1 (s)         1
+
+
+
+Then
+                     1                                     1             1        1 
+         B1(s)                          B1 (s)                                    
+                                                                           =     A(s)     A(s)
+                 1                                       1
+                           
+                                                                              1 
+                                                                                    =                 H (s) = h(s);
+                                                                                                            1
+
+                                                                                        s       1
+                                                                                                        
+                                        B2(s) 2 B2(s)2 =
+                                                         1
+                                                                                                       s :
+So,
+(4:12)            B (s) 1B (s)  = B (s) 1B (s) = d(h(s)):
+  Therefore, fh(s)g maps to the trivial element and it corresponds to the orbit of
+                          gB (s)g 1w = gB (s)w:
+  Since
+               0                                             11               0                                                   11
+       B (s) = @           s                     s               A ; B (s) = @                               s           s       A;
+                                   1                                                                                          1
+                       1+                1                                                  1           1+            1
+         1                2               2                                     1                        2              2
+                        1    1
+                               s         1+      s                                                       1        s   1+ 1s
+                           2              2                                                                2            2
+
+
+                                                                           16
+it is easy to see that B (s)w = w(s). This proves the proposition. 
+    Now we are ready to determine the ber structure of V for case (2).
+Theorem (4.13) (1) V 1 (k()) = (Z=2Z) n k =Nk()=k (k()).
+(2) If s 2 k , the corresponding orbit is Gk w (s), and the non-trivial element of
+Z=2Z acts by w (s) ! w (s 1).
+(3) If x 2 V 1 (k()), k() is generated by roots of Fx (v).
+Proof. We consider GL(1)k() as a group over k. We can regard the norm
+                             Nk()=k : GL(1)k() ! GL(1)k
+as a k{homomorphism between k{groups. Let T = Ker(Nk()=k ). We can regard
+T as the unitary group of dimension one. So as in the case of SU(2; 1); U(1; 1),
+H1(k; T) is represented by elements of H1(k()=k; T). We can identify Tk()     =
+      
+k() , and so we express cohomology classes as fsg where s 2 k() . Since    
+the action of  induced from the k{structure of T is x ! (x ) 1 , the cocycle
+condition is equivalent to s 2 k and s1 ; s2 2 k are equivalent if and only if
+s1s2 1 2 Nk()=k (k() ). Therefore, H1 (k; T)   = k =Nk()=k (k() ). Moreover,
+the map H1 (k; U(1; 1)) ! H1(k; T) induced by the determinant can be identied
+with fhg ! fdet hg for h 2 GL(2)k()     = U (1; 1)k().
+    It is easy to see that if s1; s2 2 k and s1s2 1 2 Nk()=k (k() ), H (s1); H (s2)
+                                        
+are GL(2)k(){equivalent. This implies that fh(s1 )g = fh(s2)g in H1(k; U (1; 1)).
+So the map
+       f : k =Nk()=k (k()) 3 s ! fh(s)g 2 Ker(H1(k; U (1; 1)) ! H1(k; G))
+is well dened. By Lemma (4.6), f is surjective. Since the composition of f and
+H1(k; U (1; 1)) ! H1(k; T)  = k =Nk()=k (k()) is s ! s 1 , f is bijective.
+    Since d(h(s)) = d(h(s 1)), Z=2Z acts on Ker(H1 (k; U (1; 1)) ! H1(k; G))    =
+k =Nk()=k (k()) by s ! s 1 . This proves (1), (2).
+    By straightforward computations,
+                                   Fw(s)(v) = sv1 v2 :
+So the roots of Fw (s) (v) are . It is easy to see that if g 2 Gk , the roots of
+Fgw (s)(v) and Fw (s) (v) generate the same eld. This proves (3). 
+    Finally we determine G0w (s) .
+Denition (4.14) U(H (s)) = fA 2 GL(2)k() j AH (s)A = g.
+    We consider U (H (s)) as a group over k.
+Proposition (4.15) G0w (s) = U (H (s))  Te.
+Proof. Let R be any k{algebra. We dene R() and the action of  on R() as in
+Proposition (2.14).
+    Any element in G0w (s)R() can be expressed as the product of an element of TeR
+and
+                                 gB (s)d(g)(gB (s)) 1;
+                                         17
+where g 2 GL(2)R() .
+  Since g = g  ,
+  (gB (s)d(g)(gB (s)) 1) = g B (s)d(g )(g B (s)) 1
+                            = gB (s)d(g)B (s) 1g 1
+                            = gB (s)B (s) 1B (s)d(g)B (s) 1B (s)(gB (s)) 1:
+   By straightforward computations using (4.12),
+                               00 1                      1                     1
+(4:16)          B (s) B (s) = @@
+                        1
+                                                   H (s) A ; s
+                                                             1               s A:
+                                                                                1
+
+
+                                             H (s)
+So,
+                B (s) 1B (s)d(g )B (s) 1B (s) = d(H (s) 1g 1 H (s)):
+This implies that
+         (gB (s)d(g)(gB (s)) 1) = gB (s)d(H (s) 1 g 1H (s)))(gB (s)) 1:
+  Therefore, this element belongs to G0w (s)R if and only if g = H (s) 1 g 1H (s).
+This condition is equivalent to g 2 U (H (s))R. This proves the proposition again
+by Theorem [7, p. 17]. 
+                                         References
+ [1] Gauss, C.F. Disquisitiones arithmeticae. Yale University Press, New Haven, London, 1966.
+ [2] Humphreys, J.E. Linear algebraic groups, volume 21 of Graduate Texts in Mathematics.
+     Springer-Verlag, Berlin, Heidelberg, New York, 1975.
+ [3] Igusa, J. A classication of spinors of dimension up to twelve. Amer. J. Math., 92:997{1028,
+     1970.
+ [4] Igusa, J. On a certain class of prehomogeneous vector spaces. J. of Pure and Applied Algebra,
+     47:265{282, 1987.
+ [5] Kable, A.C., and A. Yukie. Prehomogeneous vector spaces and eld extensions II. To appear
+     in Invent. Math.
+ [6] Matsumura, H. Commutative algebra. Mathematics Lecture Note Series. Benjamin, Reading,
+     2nd edition, 1980.
+ [7] Mumford, D. Lectures on curves on an algebraic surface, volume 59 of Annales of Mathe-
+     matical Studies. Princeton University Press, Princeton, New Jersey, 1966.
+ [8] Sato, M., and T. Kimura. A classication of irreducible prehomogeneous vector spaces and
+     their relative invariants. Nagoya Math. J., 65:1{155, 1977.
+ [9] Serre, J.P. Cohomologie galoisienne, volume 5 of Lecture Notes in Mathematics. Springer-
+     Verlag, Berlin, Heidelberg, New York, 1965.
+[10] Witte, D, R. Zierau, and A. Yukie. Prehomogeneous vector spaces and ergodic theory II.
+     Preprint.
+[11] Wright, D.J., and A. Yukie. Prehomogeneous vector spaces and eld extensions. Invent.
+     Math., 110:283{314, 1992.
+
+                                               18
+[12] Yukie, A. Prehomogeneous vector spaces and ergodic theory I. To appear in Duke Math. J.
+[13] Yukie, A. Shintani zeta functions, volume 183 of London Math. Soc. Lecture Note Series.
+     Cambridge University Press, Cambridge, 1993.
+
+Akihiko Yukie
+Oklahoma State University
+Mathematics Department
+401 Math Science
+Stillwater OK 74078-1058 USA
+yukie@math.okstate.edu
+http://www.math.okstate.edu/~yukie
+
+
+
+
+                                            19
+

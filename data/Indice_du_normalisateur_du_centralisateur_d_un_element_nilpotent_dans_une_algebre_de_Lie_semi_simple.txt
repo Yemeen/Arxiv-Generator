@@ -1,0 +1,2948 @@
+                                                   Indice du normalisateur du centralisateur d’un
+                                                     élément nilpotent dans une algèbre de Lie
+                                                                     semi-simple.
+
+                                                                                                Anne Moreau
+
+
+                                                                                                       Abstract
+
+                                                     The index of a complex Lie algebra is the minimal codimension of its coadjoint orbits. Let us suppose g
+arXiv:math/0407277v1 [math.RT] 15 Jul 2004
+
+
+
+
+                                                  semisimple, then its index, ind g, is equal to its rank, rk g. The goal of this paper is to establish a simple general
+                                                  formula for the index of n(gξ ), for ξ nilpotent, where n(gξ ) is the normaliser in g of the centraliser gξ of ξ. More
+                                                  precisely, we have to show the following result, conjectured by D. Panyushev [5] :
+                                                                                             ind n(gξ ) = rk g − dim z(gξ ),
+                                                  where z(gξ )is the center of gξ .
+                                                                                D. Panyushev obtained in [5] the inequality ind n(gξ ) ≥ rg g − dim z(gξ ) and we
+                                                  show that the maximality of the rank of a certain matrix with entries in the symmetric algebra S(gξ ) implies
+                                                  the other inequality. The main part of this paper consists of the proof of the maximality of the rank of this
+                                                  matrix.
+
+
+
+                                             Introduction
+                                                 L’indice d’une algèbre de Lie complexe est la codimension minimale de ses orbites
+                                             coadjointes. Si g est une algèbre de Lie semi-simple complexe, son indice ind g est égal à
+                                             son rang, rg g. Plus généralement, l’indice d’une représentation arbitraire V d’une algèbre
+                                             de Lie complexe q est la codimension minimale de ses orbites sous l’action contragrédiente.
+                                             On le note ind(q, V ).
+                                                 Dans tout ce qui suit, g est une algèbre de Lie semi-simple complexe de groupe adjoint
+                                             G. On identifie g à son image par la représentation adjointe. Pour x dans g, on note gx
+                                             son centralisateur, z(gx ) le centre de gx et n(gx ) le normalisateur dans g du centralisateur
+                                             gx . Le but de cet article est de donner une expression simple de l’indice de n(gξ ), pour
+                                             ξ élément nilpotent de g. L’algèbre n(gξ ) agit sur le sous-espace gξ par la représentation
+                                             adjointe et on établit en outre une formule pour l’indice, ind(n(gξ ), gξ ), du n(gξ )-module
+                                             gξ . Plus précisément, on se propose de montrer les deux résultats suivants, conjecturés par
+                                             D. Panyushev en [5], Conjectures 6.1 et 6.2 :
+                                             Théorème 1 Soit ξ un élément nilpotent de g. Alors
+                                                                                        ind n(gξ ) = rg g − dim z(gξ )·
+                                             Théorème 2 Soit ξ un élément nilpotent de g. Alors
+                                                                                      ind (n(gξ ), gξ ) = rg g − dim z(gξ )·
+                                                Notons que les deux relations précédentes sont indépendantes du choix d’un
+                                             représentant dans l’orbite de ξ sous l’action du groupe adjoint. Dans [5], D. Panyushev
+                                             dresse une liste de cas où ces deux égalités sont satisfaites. Remarquons à ce propos
+                                             qu’il obtient seulement les relations : ind n(gξ ) = ind gξ − dim z(gξ ) et ind (n(gξ ), gξ ) =
+                                             ind gξ − dim z(gξ ). La relation ind gξ = rg g n’est en effet énoncée dans [5] que sous forme
+                                             de conjecture, [5], Conjecture 3.2 d’Elashvili. Cette égalité est démontrée en [1], Théorème
+                                             5.5. Dans tous ses exemples, il obtient ces relations en montrant que le groupe Ng(ξ) a une
+                                                                        ∗
+                                             orbite ouverte dans z(gξ ) , où Ng(ξ) désigne le sous-groupe connexe de G d’algèbre de Lie
+                                             n(gξ ). Cette condition est, comme on aura l’occasion de le voir, suffisante mais ne permet
+                                             pas de traiter tous les cas.
+
+                                                                                                            1
+     La première partie regroupe un certain nombre de résultats autour du normalisateur
+du centralisateur d’un élément nilpotent. On introduit en outre dans cette partie une
+propriété (P ) qui interviendra dans la suite. On montre dans la deuxième partie que le
+théorème 1 est en fait une conséquence du théorème 2 et qu’obtenir l’identité du théorème
+2 équivaut à montrer qu’une certaine matrice à coefficients dans S(gξ ) est de rang maximal.
+On consacre les deux parties qui suivent à la démonstration de ce dernier point dans deux
+cas particuliers : lorsque g est une algèbre de Lie simple classique (partie 3) et lorsque
+l’élément ξ vérifie la propriété (P ) (partie 4). La troisième partie utilise des propriétes
+géométriques des algèbres de Lie classiques tandis que la quatrième partie repose pour
+une large part sur des résultats exposés dans [1] par J.Y. Charbonnel. On étudie dans la
+dernière partie la propriété (P ) pour achever la démonstration des théorèmes 1 et 2 dans
+le cas exceptionnel. La fin de la démonstration consiste à vérifier certaines conditions sur
+un nombre fini de cas à l’aide du logiciel GAP4.
+
+
+1    Résultats préliminaires.
+   Soit ξ un élément nilpotent de g. Puisque ξ est nilpotent, le théorème de Jacobson-
+Morosov assure l’existence de deux éléments ρ et η dans g pour lesquels ξ, ρ, η satisfont les
+relations de sl2 -triplet :
+                        [ρ, ξ] = 2ξ,       [ξ, η] = ρ,      [ρ, η] = −2η·
+Le normalisateur n(gξ ) du centralisateur gξ de ξ est, par définition, l’ensemble des y de g tels
+qu’on ait l’inclusion : [y, gξ ] ⊂ gξ . C’est aussi le normalisateur du centre z(gξ ) de gξ , comme
+on le vérifie facilement. La proposition suivante rassemble un certain nombre de propriétés
+du normalisateur. On en trouve une preuve dans [7], Chapitre XVII, Propositions 5.6 et
+5.12.
+Proposition 1 On a les relations suivantes :
+ 1) n(gξ ) = {y ∈ g | [y, ξ] ∈ z(gξ )}.
+ 2) n(gξ ) = gξ ⊕ [η, z(gξ )].
+    En particulier, dim n(gξ ) = dim gξ + dim z(gξ ) et on a l’égalité [n(gξ ), ξ] = z(gξ ).
+   Si u est un sous-espace de g, on note u⊥ l’orthogonal de u pour la forme de Killing h, i
+de g. On va décrire l’orthogonal de certains sous-espaces. On a la proposition bien connue
+dont la démonstration est rappelée en [1], Lemme 5.6 :
+Proposition 2 L’orthogonal de gξ est le sous-espace [ξ, g] et on a la décomposition
+gξ ⊕ [η, g] = g.
+   Puisque gη⊥ = [η, g], la deuxième relation permet d’identifier le dual de gξ à gη via la
+forme de Killing.
+
+   Soit g′ un sous-espace de gξ stable par adρ. Les sous-espaces gξ et [η, g′ ] ont une
+intersection nulle d’après la proposition 2 et on s’intéresse au sous-espace gξ ⊕ [η, g′ ] de g.
+Son orthogonal est décrit par la proposition suivante :
+Proposition 3 Soit g′ un sous-espace de gξ stable par adρ, alors on a :
+                                                 ⊥         ⊥
+                                    (gξ ⊕ [η, g′ ]) = [ξ, g′ ]·
+Démonstration. Il est clair que gξ est contenu dans l’orthogonal de [ξ, g′⊥ ]. Soit u dans g′ ,
+alors on a :
+                                ⊥                     ⊥                ⊥
+                 h[η, u], [ξ, g′ ]i = h[[η, u], ξ], g′ i = h−[ρ, u], g′ i = {0},
+
+
+                                                 2
+car [ρ, u] appartient à g′ , puisque g′ est stable par adρ. On a ainsi montré que le sous-
+espace gξ ⊕ [η, g′ ] est contenu dans l’orthogonal de [ξ, g′ ⊥ ]. Calculons les dimensions des
+deux sous-espaces :
+                                     ⊥
+               dim (gξ ⊕ [η, g′ ])       = dim g − (dim gξ + dim[η, g′ ])
+                                         = dim g − (dim gξ + (dim g′ − dim(g′ ∩ gη )))
+                                                        ⊥
+                                         = dim g′ − (dim gξ − dim(g′ ∩ gη ))
+et,
+                                             ⊥                  ⊥             ⊥
+                           dim([ξ, g′ ]) = dim g′ − dim(g′ ∩ gξ ) ·
+
+                                                                                         ⊥
+De la démonstration de la propostion 2, il résulte la décompositon g′ = g′ ∩ gξ ⊕ g′ ∩ gη .
+De plus, on a :
+                              ⊥                                 ⊥
+                 dim(g′ ∩ gξ ) = dim g − dim(g′ + gξ )
+                                                                    ⊥             ⊥
+                                     = dim g − (dim g′ + dim gξ − dim(g′ ∩ gξ )
+                                                                              ⊥
+                                     = dim g′ − dim gξ + dim(g′ ∩ gξ )·
+
+De cette égalité et de la décompostion précédente, on déduit la relation :
+                                                                        ⊥
+                   dim g′ = (dim g′ − dim gξ + dim(g′ ∩ gξ )) + dim(g′ ∩ gη ),
+
+ce qui donne : dim(g′ ⊥ ∩ gξ ) = dim gξ − dim(g′ ∩ gη ). Par suite les deux sous-espaces
+gξ ⊕ [η, g′ ] et [ξ, g′⊥ ] sont de même dimension et la proposition s’ensuit.
+
+   À l’aide de la proposition précédente, on retrouve l’orthogonal de sous-espaces connus.
+Lorsque le sous-espace g′ est nul, on retrouve l’orthogonal de gξ . D’après [5], Théorème
+2.4, on dispose de la décomposition z(gξ ) ⊕ [g, gη ] = g. On en déduit que l’orthogonal de
+z(gξ ) est le sous-espace [g, gξ ]. La proposition précédente appliquée à g′ = z(gξ ) permet
+alors de décrire l’orthogonal de n(gξ ) :
+                                         ⊥                              ⊥
+                              n(gξ ) = (gξ ⊕ [η, z(gξ )]) = [ξ, [gξ , g]]·
+On a utilisé la proposition 1 pour la première égalité. Enfin, la proposition 2 et la
+proposition précédente, appliquées à g′ = gξ , donnent l’orthogonal du sous-espace
+gξ ⊕ [η, gξ ]. Ce dernier sous-espace interviendra à plusieurs reprises dans la suite. On a :
+                                                            ⊥
+                                             (gξ ⊕ [η, gξ ]) = [ξ, [ξ, g]]·
+      On termine cette partie par l’introduction d’une propriété (P ) :
+Définition 1 On note W le sous-espace propre de la restriction de adρ à z(gξ ) relativement
+à la plus grande valeur propre. On dira que ξ vérifie la propriété (P ) si, pour tout élément
+non nul v de z(gξ ), le sous-espace W est contenu dans le sous-espace [[η, gξ ], v].
+    Il est clair que si ξ vérifie la propriété (P ), il en est de même de tous les éléments de
+l’orbite de ξ sous l’action du groupe adjoint. On dira qu’une orbite nilpotente de g vérifie la
+propriété (P ) si l’un de ses représentants la vérifie. On dira enfin que g vérifie la propriété
+(P ) si toutes ses orbites nilpotentes distinguées non régulières vérifient la propriété (P ).
+
+
+
+
+                                                            3
+2    Rappels sur l’indice d’une algèbre de Lie et premières
+     réductions.
+    Soit q une algèbre de Lie complexe et ϕ une forme linéaire sur q. On désigne par qϕ
+l’ensemble des x de q tels que ϕ([q, x]) = 0. Autrement dit qϕ = {x ∈ q | (ad∗ x) · ϕ = 0},
+où ad∗ : q → gl(q∗ ) est la représentation coadjointe de q. On rappelle que l’indice de q,
+noté ind q, est défini par :
+                                     ind q = min∗ dim qϕ ·
+                                                  ϕ∈q
+
+L’indice d’une algèbre de Lie q ainsi défini est un entier lié à la représentation adjointe
+de q. Une méthode similaire, appliquée à une représentation de q arbitraire, permet de
+définir l’indice d’une représentation. Soit ρ : q → gl(V ) une représentation de q. On note,
+de manière abusive, s · v à la place de ρ(s)v, pour s dans q et v dans V . De même, pour
+ϕ dans le dual V ∗ de V et pour s dans q, on note s · ϕ au lieu de ρ∗ (s)ϕ où ρ∗ est la
+représentation contragrédiente à ρ. L’entier dim V − max∗ (dim q · ϕ) est appelé l’indice
+                                                                 ϕ∈V
+de V ou l’indice du q-module V . On le note ind(ρ, V ) ou ind(q, V ) et il est clair que
+ind(ad, q) = ind q au sens précédent.
+
+    On considère la forme bilinéaire à valeurs dans V :
+                              K(q, V ) : q × V → V ; (s, v) 7→ s · v ·
+En composant cette application avec un élément ϕ de V ∗ , on obtient une forme bilinéaire
+à valeurs dans C :
+                                                      ϕ
+                            K(q, V )ϕ : q × V → V → C ·
+L’application K(q, V )ϕ peut être vue comme un élément de Hom(q, V ∗ ) et on vérifie
+facilement l’égalité :
+                           ind (q, V ) = dim V − max∗ (rang K(q, V )ϕ )·
+                                                     ϕ∈V
+
+Soit n = dim q et m = dim V . En choisissant une base sur q et V , on peut
+considérer K(q, V ) comme une matrice de taille m × n à coefficients dans V , où
+V est identifié à la composante de degré 1 de l’algèbre symétrique S(V ). Ainsi
+rang K(q, V ) = max∗ (rang K(q, V )ϕ ) et l’on obtient l’égalité :
+                  ϕ∈V
+
+                             ind (q, V ) = dim V − rang K(q, V ).                                     (1)
+
+Pour V = q, on note K(q) au lieu de K(q, q) et il vient :
+                                 ind (q) = dim q − rang K(q).                                         (2)
+
+
+
+    On s’intéresse maintenant à l’algèbre de Lie n(gξ ) et on commence par examiner
+l’identité du théorème 1. On choisit une base e1 , . . . , en de gξ telle que e1 , . . . , em est
+une base de z(gξ ), m ≤ n. Alors la famille {e1 , . . . , en , [η, e1 ], . . . , [η, em ]} est une base de
+n(gξ ) d’après la proposition 1. Dans cette base, la matrice K(n(gξ )) est de la forme
+                                                         
+                                         0     0 D
+                                      0       C E ,
+                                       −D −Et F
+                                           t
+
+
+
+
+                                                    4
+où les matrices carrées D et C sont respectivement d’ordre
+                                                            m et
+                                                                 n − m. On reconnait
+                                                                                    
+                                             ξ   ξ      0  0 D          ξ      0 0
+certains blocs de cette matrice. Ainsi K(n(g ), g ) =             et K(g ) =          .
+                                                        0 C E                  0 C
+D’après (2), on a la relation
+                            ind n(gξ ) = dim n(gξ ) − rang K(n(gξ ))·
+Or la structure de la matrice K(n(gξ )) montre que l’on a l’inégalité
+                           rang K(n(gξ )) ≤ rang C + 2 dim z(gξ )·
+                                     
+                                 0 0
+Par ailleurs, puisque K(gξ ) =          , on a l’égalité :
+                                 0 C
+                            rang C = rang K(gξ ) = dim gξ − ind gξ ·
+Par suite, il vient :
+                    ind n(gξ ) ≥ dim n(gξ ) − dim gξ + ind gξ − 2 dim z(gξ )·
+D’après [1], Théorème 5.5, on a la relation ind gξ = rg g. Par ailleurs, la proposition 1, 2)
+donne dim n(gξ ) = dim gξ + dim z(gξ ). On obtient finalement l’inégalité :
+                                  ind n(gξ ) ≥ rg g − dim z(gξ )·
+Voyons maintenant pourquoi le théorème 2 implique le théorème 1. Il s’agit de prouver la
+proposition suivante :
+Proposition 4 Si l’égalité ind (n(gξ ), gξ ) = rg g − dim z(gξ ) est satisfaite, alors l’égalité
+ind n(gξ ) = rg g − dim z(gξ ) est satisfaite.
+Démonstration. On suppose le théorème 2 démontré. D’après ce qui précède, il suffit
+d’obtenir l’inégalité :
+                                 ind n(gξ ) ≤ rg g − dim z(gξ )·
+Rappelons le résultat suivant, démontré dans [5], Théorème 1.4 :
+Lemme 1 Soit q un idéal d’une algèbre de Lie e    q. Alors
+
+                            ind q + ind e
+                                        q ≤ dim(e
+                                                q/q) + 2 ind(e
+                                                             q, q)·
+.
+    En appliquant ce lemme à l’idéal gξ de n(gξ ), on obtient :
+                    ind gξ + ind n(gξ ) ≤ dim(n(gξ )/gξ ) + 2 ind (n(gξ ), gξ ),
+ce qui donne, en utilisant de nouveau les égalités dim n(gξ ) = dim gξ + dim z(gξ ) et
+ind gξ = rg g,
+                     ind n(gξ ) ≤ 2 ind (n(gξ ), gξ ) − (rg g − dim z(gξ ))·
+Le théorème 2 entraine alors l’inégalité souhaitée.
+
+    On s’intéresse désormais à l’identité du théorème 2. On montre la proposition suivante :
+
+Proposition 5 Le théorème 2 est équivalent à l’assertion suivante : la matrice
+                                                                        
+                                   [[η, e1 ], e1 ] · · · [[η, em ], e1 ]
+                                       ..                   ..        
+                                          .                    .        
+                        D                                               
+                             =  [[η, e1 ], em ] · · · [[η, em ], em ] 
+                        E               ..                     ..       
+                                         .                      .       
+                                  [[η, e1 ], en ] · · · [[η, em ], en ]
+de taille n × m, à coefficients dans S(gξ ), est de rang maximal égal à m = dim z(gξ ).
+
+                                                 5
+    Avant de démontrer la proposition, on étend encore un     peu  la définition de l’indice.
+                                                                  D
+Ceci permettra d’interpréter géométriquement la matrice             . Soit q une algèbre de Lie
+                                                                  E
+complexe, V et V ′ deux espaces vectoriels de dimension finie sur C et soit ρ : q → L(V, V ′ )
+une application linéaire de q dans l’espace des applications linéaires de V dans V ′ . Pour ϕ
+dans (V ′ )∗ , on note qϕ = {s ∈ q | ϕ(ρ(s)v) = 0, ∀v ∈ V } le «stabilisateur de ϕ» et on note
+q·ρ ϕ l’image dans V ∗ de l’application qui à s dans q associe la forme linéaire v 7→ −ϕ(ρ(s)v)
+définie sur V . Lorsqu’il n’y a pas d’ambiguité on omet l’indice ρ. On pose, par analogie
+avec l’indice,
+                            r(q, V, V ′ ) = dim V − max′ ∗ (dim q ·ρ ϕ)·
+                                                      ϕ∈(V )
+
+Notons que ρ n’est pas un morphisme d’algèbres de Lie en général ; l’espace L(V, V ′ ) n’est
+même pas une algèbre de Lie ! En revanche, si V = V ′ et si ρ est une représentation de q
+dans V , on retrouve l’indice ind (q, V ) du q-module V . On considère, toujours par analogie
+avec l’indice, la forme bilinéaire à valeurs dans V ′ :
+                         K(q, V, V ′ ) : q × V → V ′ ; (s, v) 7→ −ρ(s)v ·
+En composant cette application avec un élément ϕ de (V ′ )∗ , on obtient une forme bilinéaire
+à valeurs dans C :
+                                                          ϕ
+                           K(q, V, V ′ )ϕ : q × V → V ′ → C ·
+On vérifie facilement l’égalité :
+                        r(q, V, V ′ ) = dim V − max′ ∗ (rang K(q, V, V ′ )ϕ )·
+                                                 ϕ∈(V )
+
+Cette écriture permet de voir que l’ensemble des formes linéaires ϕ de (V ′ )∗ telles que
+dim q ·ρ ϕ = dim V − r(q, V, V ′ ) est un ouvert dense de (V ′ )∗ . En choisissant des bases
+sur q et V , on peut considérer K(q, V, V ′ ) comme une matrice de taille dim V × dim q à
+coefficients dans V ′ , où V ′ est identifié à la composante de degré 1 de l’algèbre symétrique
+S(V ′ ). Ainsi, on obtient l’égalité :
+                             r(q, V, V ′ ) = dim V − rang K(q, V, V ′ )·
+   Prouvons maintenant la proposition 5 :
+
+Démonstration. D’après la relation (1), on a :
+                          ind (n(gξ ), gξ ) = dim gξ − rang K(n(gξ ), gξ )·
+Or la structure de la matrice K(n(gξ ), gξ ) montre que l’on a l’inégalité :
+
+                             rang K(n(gξ ), gξ ) ≤ rang C + dim z(gξ )·
+En utilisant la relation, déjà vue, rang C = dim gξ − ind gξ = dim gξ − rg g, on obtient
+l’inégalité :
+                             ind (n(gξ ), gξ ) ≥ rg g − dim z(gξ )·
+   Il y a égalité dans la relation précédente si, et seulement si, la condition
+rang K(n(gξ ), gξ ) =rang C +               ξ
+                                   dim z(g ) est satisfaite, autrement dit si, et seulement si, le
+                          0 D
+rang de la matrice                 , à coefficients dans S(gξ ), est égal à rang C + dim z(gξ ). Par
+                          C E
+                                                                                        
+                                                                                      D
+suite, si l’égalité du théorème 2 est satisfaite, nécessairement la matrice           est de rang
+                                                                                      E
+
+
+                                                  6
+maximal égal à m = dim z(gξ ).
+                                                                               
+                                                              D
+   Réciproquement, supposons que le rang de la matrice            soit maximal, égal à
+                                                              E
+m = dim z(gξ ), et montrons la relation du théorème 2. Soit ρ l’application linéaire de
+z(gξ ) dans L([η, gξ ], gξ ) donnée par la relation :
+                                            ρ(s)v = [s, v] ∈ gξ ,
+pour s dans z(gξ ) et v dans [η, gξ ]. Puisque z(gξ ) et gη ont une intersection nulle, il existe
+un supplémentaire r de gη ∩ gξ dans gξ contenant z(gξ ). Posons r = dim r. Alors on a
+m ≤ r ≤ n. On peut supposer que les éléments e1 , . . . , er forment une base de r et que les
+éléments er+1 , . . . , en forment une base de gη ∩ gξ . La famille {[η, e1 ], . . . , [η, er ]} est libre
+dans [η, gξ ] et de cardinal r = dim gξ − dim gη ∩ gξ = dim([η, gξ ]) ; c’est donc une base de
+[η, gξ ]. Dans les bases {e1 , . . . , em } de z(gξ ) et {[η, e1 ], . . . , [η, er ]} de [η, gξ ], la matrice
+K(z(gξ ), [η, gξ ], gξ ) à coefficients dans S(gξ ) est donnée par
+                                                                                          
+                                                  [e1 , [η, e1 ]] · · ·   [em , [η, e1 ]]
+                                                         ..                      ..       
+                                                          .                       .       
+                                                                                          
+                                                [e 1 , [η,  em ]] · · · [e m , [η,  em ]] 
+                   K(z(gξ ), [η, gξ ], gξ ) =                                             ·
+                                               [e1 , [η, em+1 ]] · · · [em , [η, em+1 ]] 
+                                                        ..                      ..        
+                                                         .                       .        
+                                                  [e1 , [η, er ]] · · ·   [em , [η, er ]]
+On dispose des relations :
+                               [[η, ej ], ei ] = [[η, ei ], ej ] = −[ej , [η, ei ]],
+pour i = 1, . . . , n et j = 1, . . . , m. Puisque les vecteurs er+1 , . . . , en sont dans le
+centralisateurgη deη, les crochets [[η, ej ], ei ] sont nuls, pour i = r+1, . . . , n et j = 1, . . . , m,
+                  D
+et la matrice           de la proposition est donnée par :
+                   E
+                                                                                    
+                                     [[η, e1 ], e1 ] · · ·       [[η, em ], e1 ]
+                                             ..                          ..         
+                                              .                           .         
+                                                                                    
+                                  [[η, e1 ], em ] · · ·         [[η, e1 ], em ] 
+                                                                                    
+                              [[η, e1 ], em+1 ] · · · [[η, em ], em+1 ] 
+                          D                 ..                          ..          
+                               =            .                           .          ·
+                                                                                     
+                          E       [[η, e ], e ] · · ·                               
+                                              1   r             [[η, em     ], er ] 
+                                          0              ···           0            
+                                                                                    
+                                           ..                          ..           
+                                            .                           .           
+                                           0              ···           0
+                                                                       
+                                        ξ            ξ    ξ        D
+Par suite les deux matrices K(z(g ), [η, g ], g ) et                           ont le même rang. D’après
+                                                                    E
+                                                  
+                                                 D
+l’hypothèse sur le rang de la matrice                , on en déduit que l’entier max dim z(gξ ) ·ρ ϕ
+                                                 E                                      ϕ∈(gξ )∗
+                    ξ
+est égal à dim z(g ). L’ensemble
+                           Ω′ = {ϕ ∈ (gξ )∗ | dim z(gξ ) ·ρ ϕ = dim z(gξ )}
+est donc un ouvert dense de (gξ )∗ . Par ailleurs, de l’égalité ind gξ = rg g, il résulte que
+l’ensemble
+                     Ω = {ϕ ∈ (gξ )∗ | dim gξ · ϕ = dim gξ − rg g}
+
+                                                        7
+est un ouvert dense de (gξ )∗ , où gξ · ϕ désigne l’orbite coadjointe de ϕ. L’intersection Ω ∩ Ω′
+est donc un ouvert non vide de (gξ )∗ . Soit alors λ une forme linéaire sur gξ appartenant à
+cette intersection. On considère l’orbite n(gξ ) · λ de λ sous l’action naturelle de n(gξ ) dans
+(gξ )∗ . Autrement dit,
+                         n(gξ ) · λ = {v ∈ gξ 7→ −λ([s, v]) | s ∈ n(gξ )}·
+Les sous-espaces gξ et [η, gξ ] ont une intersection nulle d’après la proposition 2 et on
+pose E = gξ ⊕ [η, gξ ]. En identifiant (gξ )∗ , respectivement ([η, gξ ])∗ , au sous-espace de E ∗
+formé des formes linéaires nulles sur [η, gξ ], respectivement gξ , on obtient la décomposition
+suivante :
+                                     E ∗ = (gξ )∗ ⊕ ([η, gξ ])∗ ·
+Par suite, les ensembles gξ · λ et z(gξ ) ·ρ λ peuvent être vus comme deux sous-espaces de E ∗
+dont l’intersection est nulle. En effet le premier est contenu dans (gξ )∗ et le deuxième dans
+([η, gξ ])∗ . On va montrer qu’il existe un isomorphisme d’espaces vectoriels entre n(gξ ) · λ
+et gξ · λ ⊕ z(gξ ) ·ρ λ. Soit s dans n(gξ ). Selon la décomposition 2) de la proposition 1, il
+s’écrit de manière unique s = s1 + [η, s2 ], avec s1 dans gξ et s2 dans z(gξ ). On pose
+                                      Φ(s · λ) = s1 · λ + s2 ·ρ λ·
+L’application Φ définit ainsi une application linéaire de n(gξ ) · λ dans gξ · λ ⊕ z(gξ ) ·ρ λ.
+C’est clairement un isomorphisme d’espaces vectoriels, dont l’inverse est donné par :
+                                 s1 · λ + s2 ·ρ λ 7−→ (s1 + [η, s2]) · λ·
+De cet isomorphisme, on déduit une égalité sur les dimensions,
+                           dim n(gξ ) · λ = dim gξ · λ + dim z(gξ ) ·ρ λ,
+
+car les deux sous-espaces gξ · λ et z(gξ ) ·ρ λ ont une intersection nulle. D’où, puisque λ
+appartient à l’intersection Ω ∩ Ω′ ,
+                          dim n(gξ ) · λ = (dim gξ − rg g) + dim z(gξ )·
+Par suite, on obtient
+
+                        max (dim n(gξ ) · ϕ) ≥ dim gξ − rg g + dim z(gξ ),
+                      ϕ∈(gξ )∗
+
+ce qui donne encore
+                                 ind (n(gξ ), gξ ) ≤ rg g − dim z(gξ )·
+L’inégalité opposée étant déjà connue, on en déduit le théorème 2. L’équivalence de la
+proposition est ainsi démontrée.
+
+    Notons tout d’abord que la condition de la proposition précédente est en particulier
+vérifiée si la matrice D est non singulière. Dire que la matrice D est non singulière signifie
+que l’indice ind (n(gξ ), z(gξ )) du n(gξ )-module z(gξ ) est nul, ce qui se traduit encore en
+disant que le groupe Ng(ξ) a une orbite ouverte dans z(gξ )∗ . On retrouve ainsi la condition
+de D. Panyushev vue en introduction qui lui permet de conclure dans un certain nombre de
+cas. Précisément, il prouve en [5] que la matrice D est non singulière dans les cas suivants :
+    1) si g est isomorphe à l’une des algèbres de Lie sln , so2n+1 ou spn , (Théorème 4.7 (i)),
+    2) pour certains éléments nilpotents de g, si g est isomorphe à so2n , (Théorème 4.7 (ii)),
+    3) si dim z(gξ ) ≤ 2, (Théorème 4.7 (iii)),
+    4) si ξ est un élément nilpotent régulier de g, (Corollaire 5.6).
+
+                                                    8
+Notons que dans les trois premiers cas, D. Panyushev montre une propriété plus forte que
+celle de l’orbite ouverte, à savoir : le groupe Ng(ξ) a un nombre fini d’orbites dans z(gξ ).
+Remarquons enfin qu’il existe des cas où la matrice D est singulière ; par exemple, si ξ est
+un élément nilpotent sous-régulier de so8 , on peut montrer ([5], partie 4) que le groupe
+Ng(ξ) n’a pas d’orbite ouverte dans z(gξ )∗ .
+
+   Soit ξ un élément nilpotent non distingué de g. En raisonnant comme dans [7], Chapitre
+XVII, preuve de la proposition 5.10, on montre qu’il existe une sous-algèbre de Lie semi-
+simple t de g, contenant ξ, et telle que les trois conditions suivantes soient vérifiées :
+  1) t est l’algèbre dérivée du centralisateur d’un élément semi-simple de g,
+  2) z(gξ ) ⊂ z(tξ ) ⊂ tξ ⊂ gξ ,
+  3) ξ est distingué dans t.
+Proposition 6 On suppose que la relation
+                                  ind(n(tξ ), tξ ) = rg t − dim z(tξ )
+est satisfaite. Alors la relation
+                                 ind(n(gξ ), gξ ) = rg g − dim z(gξ )
+est satisfaite.
+Démonstration. Soit {ξ, ρ′, η ′ } un sl2 -triplet dans t contenant ξ. On construit une
+base e1 , . . . , en de gξ telle que e1 , . . . , em soit une base de z(gξ ), e1 , . . . , em′ une base
+de z(tξ ) et e1 , . . . , en′ une base de tξ , avec m ≤ m′ ≤ n′ ≤ n. Comme la relation
+ind(n(tξ ), tξ ) = rg t − dim z(tξ ) est satisfaite, la proposition 5 assure qu’il existe un vecteur
+v de tη tel que la matrice (hv, [[η ′, ei ], ej ]i) 1≤i≤n′ est de rang maximal, car tη s’identifie
+                                                        1≤j≤m′
+
+au dual de tξ via la forme de Killing. On suppose par l’absurde que la matrice
+(hv, [[η ′, ei ], ej ]i) 1≤i≤n n’est pas de rang maximal. Alors il existe des complexes a1 , . . . , am
+                        1≤j≤m
+non tous nuls qui satisfont l’égalité :
+                                                        m
+                                                        X
+                                              ′
+                                      hv, [[η , ei ],         aj ej ]i = 0,
+                                                        j=1
+
+pour i = 1, . . . , n. On a donc aussi la relation :
+                                                        m
+                                                        X
+                                              ′
+                                      hv, [[η , ei ],         aj ej ]i = 0,
+                                                        j=1
+
+pour i = 1, . . . , n′ , car n′ ≤ n. En posant aj = 0 pour j = m + 1, . . . , m′ , on obtient
+encore :
+                                                     m′
+                                                     X
+                                    hv, [[η ′, ei ],    aj ej ]i = 0,
+                                                        j=1
+
+pour i = 1, . . . , n′ . Ceci contredit le fait que la matrice (hv, [[η ′, ei ], ej ]i) 1≤i≤n′ est de rang
+                                                                                      1≤j≤m′
+
+maximal. Par suite, la proposition 5 donne la relation ind(n(g ), g ) = rg g − dim z(gξ ),
+                                                                              ξ   ξ
+
+car cette dernière ne dépend pas du choix d’un sl2 -triplet {ξ, ρ, η} dans g contenant ξ.
+
+   Effectuons enfin une dernière réduction. Une algèbre de Lie complexe semi-simple est
+somme directe d’idéaux simples et il est clair qu’il suffit de démontrer les théorèmes 1 et 2
+pour chaque composante simple de g. On peut supposer désormais que g est une algèbre
+de Lie complexe simple.
+
+                                                         9
+3    Démonstration des théorèmes 1 et 2 dans le cas classique.
+   On suppose que g est une algèbre de Lie simple classique, c’est-à-dire on suppose que
+g = sln , so2n+1 , sp2n ou so2n . Soit ξ un élément nilpotent de g et soit {ξ, ρ, η} un sl2 -
+triplet contenant ξ. On considère le sous-espace z′ de g engendré par les puissances de ξ.
+Autrement dit, on a :
+                                  z′ = {polynômes en ξ} ∩ g·
+Alors clairement z′ est une sous-algèbre de z(gξ ) stable par adρ et on dispose, d’après [4],
+preuve de la proposition 3.2 et proposition 3.3, des résultats suivants :
+Lemme 2 Si g = sln , le sous-espace z′ est engendré par les puissances de ξ. Si g = son
+ou sp2n , le sous-espace z′ est engendré par les puissances impaires de ξ. De plus, on a
+z′ = z(gξ ) sauf dans le cas où g = so2n et où la partition de 2n associée à ξ ne contient
+que deux parties. Dans ce cas, le sous-espace z′ est de codimension 1 dans z(gξ ).
+On reprend les notations de la partie   précédente.
+                                                       On va montrer «directement», à l’aide de
+                                          D
+calculs explicites, que la matrice            est de rang maximal. Dans le cas où z′ = z(gξ ), la
+                                          E
+proposition 7 donne un résultat plus fort. Commençons par quelques calculs préliminaires.
+On dispose des relations suivantes :
+                                             X                      
+                 [ξ k , η] = ξ k η − ηξ k =        ξ α ρξ β et ρ, ξ i = 2i · ξ i ,            (3)
+                                             α+β=k−1
+
+
+  k  i          X                       X                         X
+   ξ ,η ,ξ =                ξ α ρξ β+i −             ξ α+i ρξ β =             ξ α [ρ, ξ i ]ξ β = 2ki · ξ k+i−1. (4)
+                  α+β=k−1                  α+β=k−1                  α+β=k−1
+
+   L’algèbre n(gξ ) agit sur le sous-espace z(gξ ) par la représentation adjointe et l’on dispose
+de la proposition suivante :
+Proposition 7 On suppose z′ = z(gξ ). Alors l’indice ind (n(gξ ), z(gξ )) est nul. En
+particulier, la relation
+                                ind (n(gξ ), gξ ) = rg g − dim z(gξ )
+est satisfaite.
+Démonstration. Notons d le degré du polynôme minimal de ξ. On suppose tout d’abord
+g = sln . Posons ei = ξ i , pour i = 1, . . . , d − 1, alors les éléments e1 , . . . , ed−1 forment une
+base de z′ . Notons D = (Dij )1≤i,j≤d−1 la matrice carrée d’ordre d − 1 donnée par :
+                                             Dij = [[η, ej ], ei ],
+pour i et j dans {1, . . . , d − 1}. D’après la relation (4), on a
+                                      (
+                                        0               si i + j > d,
+                                Dij =           i+j−1
+                                        −2ijξ           sinon.
+
+En particulier on connait D sur l’anti-diagonale. On a Dij = −2ijξ d−1 si i + j = d. Soit ϕ
+une forme linéaire sur z(gξ ). De ce qui précède, il résulte que le déterminant de la matrice
+D évalué en ϕ vaut, au signe près :
+                                  2d−1 × (d − 1)!2 × (hϕ, ξ d−1i)d−1 ·
+C’est donc un élément non nul de S(z(gξ )) ; il suffit en effet de l’évaluer en une forme
+linéaire qui ne s’annule pas en ξ d−1 . Par suite, la matrice D est non singulière.
+
+
+                                                       10
+                                                                              
+     On suppose maintenant g = sp2n , so2n+1 ou so2n . Posons r = d2 . On procède de
+la même façon ; on pose ei = ξ 2i−1 , pour i = 1, . . . , r. D’après le lemme 2, les éléments
+e1 , . . . , er forment une base de z′ . Notons D = (Dij )1≤i,j≤r la matrice carrée d’ordre r
+donnée par :
+                                          Dij = [[η, ej ], ei ],
+pour i et j dans {1, . . . , r}. D’après la relation (4), on a
+                             (
+                               0                               si i + j > r + 1,
+                  Dij =                              2i+2j−3
+                               −2(2i − 1)(2j − 1)ξ             sinon.
+
+En particulier, on connait D sur l’anti-diagonale. On a Dij = −2(2i − 1)(2j − 1)ξ 2r−1 si
+i + j = r + 1. Soit ϕ une forme linéaire sur z(gξ ). De ce qui précède, il résulte que le
+déterminant de la matrice D évalué en ϕ vaut, au signe près :
+                        2r × ((2s − 1) × (2s − 3) × · · · × 1)2 × (hϕ, ξ 2r−1i)r ·
+C’est donc un élément non nul de S(z(gξ )) ; il suffit en effet de l’évaluer en une forme
+linéaire qui ne s’annule pas en ξ 2r−1. Par suite, la matrice D est non singulière.
+
+   Dans tous les cas, on obtient que la matrice D est non singulière. Notons que l’on n’a
+pas encore utilisé l’hypothèse z′ = z(gξ ). On pose maintenant m = dim z′ = dim z(gξ ), d’où
+m = d − 1 dans le cas sln , et m = r sinon. On complète la base {e1 , . . . , em } de z(gξ ) en
+une base {e1 , . . . , en } de gξ . Alors, dans les bases {e1 , . . . , en , [η, e1 ], . . . , [η, em ]} de n(gξ )
+et {e1 , . . . , em } de z(gξ ), on a :
+                                                                     
+                                     K(n(gξ ), z(gξ )) = 0 0 D ·
+
+Puisque D est non singulière, la rang de la matrice précédente est égal à dim z(gξ ) et
+l’indice ind (n(gξ ), z(gξ )) est nul. L’autre assertion résulte des remarques qui suivent la
+proposition 5.
+
+Remarque - La preuve précédente permet en outre de voir que les formes linéaires
+régulières de z(gξ )∗ pour l’action naturelle de n(gξ ) dans z(gξ ) sont exactement celles qui
+ne s’annulent pas sur le vecteur de plus haut poids pour l’action de adρ.
+
+    On déduit de cette proposition le théorème 2 pour tous les éléments nilpotents de
+sln , sp2n et so2n+1 et pour les éléments nilpotents de so2n dont la partition associée possède
+au moins trois parties. En effet dans chacune de ces situations les sous-espaces z′ et z(gξ )
+coı̈ncident d’après le lemme 2. Remarquons que jusqu’ici, on a rien obtenu de nouveau par
+rapport à ce qui a déjà été fait par D. Panyushev dans [5], si ce n’est que l’on a utilisé la
+relation ind gξ = rg g. D’ailleurs, la preuve précédente est, à quelques modifications près,
+celle de D. Panyushev ; elle m’a été suggérée par M. Raı̈s.
+
+   On consacre la fin de cette partie à la preuve du théorème 2 pour g = so2n .
+Proposition 8 . On suppose que g = so2n . Alors on a la relation :
+                                   ind (n(gξ ), gξ ) = rg g − dim z(gξ )·
+Démonstration. On raisonne par récurrence sur le rang n de g. Pour n = 1, g est isomorphe
+à sl2 et le résultat est connu. Soit n ≥ 2. On suppose la proposition démontrée pour
+g = so2k , avec k dans {1, . . . , n − 1}. Il résulte de l’hypothèse de récurrence et de ce qui
+précède que la relation ind (n(tξ ), tξ ) = rg t − dim z(tξ ) est satisfaite pour t et ξ satisfaisant
+
+                                                       11
+les conditions 1), 2) et 3) qui précèdent la proposition 6 et pour t strictement contenue dans
+g, car alors t est produit direct d’algèbres de Lie simples classiques de rang strictement
+inférieur à celui de g. D’après la proposition 6, il suffit donc de prouver le résultat pour les
+éléments nilpotents distingués de g. On peut supposer en outre que ξ n’est pas un élément
+nilpotent régulier de g, d’après les remarques qui précèdent la proposition 6. On suppose
+désormais que ξ est un élément nilpotent distingué non régulier de g.
+
+   D’après [3], Théorème 8.2.14, les orbites nilpotentes distinguées de so2n sous l’action
+du groupe adjoint sont les orbites nilpotentes dont la partition associée n’a que des parties
+impaires n’apparaissant qu’une seule fois. D’autre part, toujours d’après [3] (Proposition
+5.4.1, (iv)), l’orbite nilpotente régulière de so2n est donnée par la partition [2n − 1, 1]. Or,
+d’après la proposition 7 et le lemme 2, il reste seulement à traiter le cas où la partition
+associée à ξ ne possède que deux parties. En résumé, il suffit de prouver la proposition
+pour les orbites nilpotentes associées aux partitions de la forme [2s + 1, 2t + 1], avec
+1 ≤ t < s ≤ n − 2.
+
+   On fixe un élément nilpotent ξ dans so2n associé à une partition de 2n de la forme
+[2s + 1, 2t + 1], avec 1 ≤ t < s ≤ n − 2. Le polynôme minimal de ξ est de degré 2s + 1. La
+dimension de z′ est donc égale à 2s+1    2
+                                               = s et la dimension de z(gξ ) est s + 1, d’après le
+lemme 2. Soit b une forme bilinéaire symétrique non dégénérée sur C. On réalise g comme
+l’ensemble des endomorphismes anti-symétriques de V = C2n relativement à la forme b.
+Comme 2s + 1 est différent de 2t + 1, il résulte de la preuve du lemme 5.1.17 de [3] qu’il
+existe deux sous-espaces orthogonaux V1 et V2 , stables par ξ, et de dimensions respectives
+2s + 1 et 2t + 1. La restriction ξ1 de ξ à V1 est un élément nilpotent régulier dans so2s+1 .
+De même, la restriction ξ2 de ξ à V2 est un élément nilpotent régulier dans so2t+1 . Il existe
+alors deux sl2 -triplets {ξ1 , ρ1 , η1 } et {ξ2 , ρ2 , η2 } dans so2s+1 et so2t+1 contenant ξ1 et ξ2
+respectivement. On note encore, de manière abusive, ξ1 l’élément de g qui coı̈ncide avec ξ1
+sur V1 et qui est nul sur V2 . On adopte la même convention pour ρ1 , η1 , ξ2 , ρ2 et η2 . On
+pose ρ = ρ1 ⊕ ρ2 et η = η1 ⊕ η2 . Le triplet {ξ, ρ, η} forme ainsi un sl2 -triplet dans g. Soit
+B1 et B2 des bases orthonormées de V1 et V2 et soit B la base orthonormée de V obtenue
+en concaténant les bases B1 et B2 . On note X (respectivement X1 , H1 , Y1 et X2 , H2 , Y2 )
+la matrice de ξ (respectivement ξ1 , ρ1 , η1 et ξ2 , ρ2 , η2 ) dans la base B (respectivement B1
+et B2 ). Ainsi,
+                                                                                 
+                      X1 0                           H1 0                      Y1 0
+              X=                   ,       H=                    ,     Y =              .
+                       0 X2                            0 H2                    0 Y2
+
+   Soit A une matrice non nulle de taille (2s+1)×(2t+1) vérifiant les relations X1 A = 0 et
+AX2 = 0. On vérifie aisément qu’une telle matrice existe. C’est necéssairment une matrice
+de rang 1. En effet, commme X1 et X2 sont des matrices nilpotentes régulières, leur noyau
+est de dimension 1. On note w l’élément de g dont la matrice dans la base B est
+                                                    
+                                              0 A
+                                     W =               .
+                                             −At 0
+On a le lemme suivant :
+Lemme 3 L’élément w appartient au centre z(gξ ) et c’est un vecteur propre pour adρ.
+Démonstration. Prouvons d’abord la première assertion. On montre sans difficulté que les
+éléments de g qui commutent avec ξ sont les endomorphismes de g dont la matrice dans
+la base B est de la forme :        2k+1           
+                                     X1        R
+                                                     ,
+                                      −Rt X22l+1
+
+                                                12
+avec k et l deux entiers et R une matrice de taille (2s + 1) × (2t + 1) vérifiant la relation
+X1 R − RX2 = 0. Il est immédiat que la matrice W commute avec les puissances de X1 et
+X2 . Il reste à montrer que W commute avec les matrices de la forme :
+                                                 
+                                          0 R
+                                                    ,
+                                        −Rt 0
+
+où R est une matrice de taille (2s + 1) × (2t + 1) vérifiant la relation X1 R − RX2 = 0.
+Soit Z une telle matrice. Prouvons que le crochet [W, Z] = W Z − ZW est nul. Il s’agit de
+montrer que les deux relations suivantes sont satisfaites :
+                                     
+                                        ARt = RAt
+                                        At R = Rt A
+
+Montrons d’abord la première égalité. Ceci revient à montrer que la matrice carrée ARt
+d’ordre 2s + 1 est symétrique. Si cette matrice est nulle, le résultat est clair. On suppose
+que la matrice ARt n’est pas nulle, alors il en est de même de sa transposée RAt . De
+la relation AX1 = 0, on tire la relation : X1 (ARt ) = 0 et des relations X1 R = RX2 et
+X2 At = 0, on tire la relation : X1 (RAt ) = RX2 At = 0. Les images des deux matrices
+ARt et RAt sont donc contenues dans le noyau de la matrice X1 , qui est de dimension 1.
+Par suite, les deux matrices ARt et RAt sont de rang 1 et ont la même image. On note
+u l’endomorphisme de gl2s+1 dont la matrice dans la base B1 est ARt . Comme RAt est la
+transposée de ARt , la matrice RAt représente l’endomorphisme adjoint u∗ de u dans la base
+B1 . De ce qui précède, il resulte que les endomorphismes u et u∗ s’écrivent sous la forme
+u = ϕv et u∗ = ψv, avec v un vecteur non nul de V1 et ϕ et ψ deux formes linéaires non
+nulles sur V1 . Pour tout x dans V1 , on a l’égalité : b(u(x), x) = b(ϕ(x)v, x) = ϕ(x)b(v, x).
+Or, par définition de l’adjoint, on a la relation : b(u(x), x) = b(x, u∗ (x)) = ψ(x)b(v, x).
+Ainsi, pour tout x non orthogonal à v, on a ϕ(x) = ψ(x). Comme l’ensemble des vecteurs
+x de V1 vérifiant la relation b(x, v) 6= 0 est un ouvert non vide de V1 , les formes linéaires ϕ
+et ψ sont égales. On a obtenu l’égalité souhaitée : ARt = RAt . Un raisonnement similaire
+permet d’obtenir la deuxième relation.
+
+   On en déduit la deuxième assertion. L’élément w appartient au centre z(gξ ) de gξ d’après
+ce qui précède et il est clair que ce n’est pas un polynôme en ξ. Par suite, il résulte du
+lemme 2 que les éléments ξ, ξ 3, . . . , ξ 2s−1 , w forment une base de z(gξ ). Montrons que le
+crochet [H, W ] est colinéaire à W . On a :
+                                                                       
+                                                   0        H1 A − AH2
+                         [H, W ] =                                        .
+                                        −H2 At + At H1
+
+Le crochet [H, W ] est un élément du centre et ses coordonnées en les puissances de X sont
+nulles. Il est donc colinéaire à W et le lemme s’ensuit.
+
+   On note λ la valeur propre associée à w.
+Lemme 4        (i) On a :
+                                                 (
+                                                  −λw    si i = 1,
+                              [[η, w], ξ 2i−1] =
+                                                  0      si i = 2, . . . , s.
+
+   (ii) L’élément [[η, w], ξ2] est non nul dans gξ . On note x cet élément.
+   (iii) Le crochet [[η, ξ 2s−1 ], ξ2] est nul.
+
+
+
+                                                13
+Démonstration. i) Si i = 1, on a [[η, w], ξ 2i−1] = [[η, ξ], w] = −[ρ, w] = −λw. On suppose
+i > 1. En utilisant la relation (3), on montre sans peine que le crochet [[η, w], ξ 2i−1] est
+donné par la matrice :                             
+                                            0     U
+                                                       ,
+                                          −U t 0
+                              P                              P
+où U est la matrice −               X1α H1 X1β A + A              X2α H2 X2β . Dans la somme
+                           α+β=2i−2                      α+β=2i−2
+   P       α     β
+        X1 H1 X1 A, les termes pour lesquel β est strictement positif sont nuls, puisqu’on
+α+β=2i−2
+a la relation X1 A = 0. Il reste le terme X12i−2 H1 A. Comme w est un vecteur propre de adρ
+relativement à la valeur propre λ, on a la relation H1 A = AH2 + λA. D’où :
+                         X12i−2 H1 A = X12i−2 AH2 + λX12i−2 A = 0,
+                                                P
+car X1 A = 0 et car i > 1. Par suite, on a :          X1α H1 X1β A = 0. De même, la relation
+                                             α+β=2i−2
+                                    P
+AX2 = 0 entraine la relation A           X2α H2 X2β = 0. Par suite la matrice U est nulle et
+                                     α+β=2i−2
+le crochet [[η, w], ξ 2i−1] est nul pour i > 1, d’où (i).
+
+   ii) On a la relation x = [[η, w], ξ2] = [[η, ξ2 ], w] = −[ρ2 , w]. On suppose par l’absurde
+que [ρ2 , w] est nul. Il s’agit d’aboutir à une contradiction. De la relation AX2 = 0, on tire
+la relation [ξ2 , w] = 0. Comme le triplet {ξ2, ρ2 , η2 } forme un sl2 -triplet dans g, on déduit
+des égalités [ρ2 , w] = 0 et [ξ2 , w] = 0 la relation [η2 , w] = 0, d’où il vient AY2 = 0. Ainsi, on
+a : X2 At = 0 et Y2 At = 0, donc l’image de la matrice At est contenue dans l’intersection
+des noyaux de X2 et Y2 . Comme X2 est une matrice nilpotente réguliere, cette intersection
+est nulle d’après la théorie des représentations de sl2 . D’où la contradiction car A n’est
+pas nulle.
+
+   iii) Comme ξ22s−1 est nul, le crochet [η, ξ 2s−1] est donné par la matrice
+                                "       P                    #
+                                   −           X1α H1 X1β 0
+                                     α+β=2s−2                   .
+                                             0             0
+Par suite le crochet [[η, ξ 2s−1 ], ξ2 ] est nul.
+
+   On pose ei = ξ 2i−1 , pour i = 1, . . . , s, es+1 = w et es+2 = ξ2 . Comme ξ2 n’appartient
+pas au centre z(gξ ), la famille {e1 , . . . , es+2 } est libre dans gξ . On la complète en une base
+{e1 , . . . , en } de gξ et on note M = (Mij ) 1≤i≤n la matrice de taille n×(s+1), à coefficients
+                                               1≤j≤s+1
+
+dans S(gξ ), donnée par :
+                                              Mij = [[η, ej ], ei ],
+pour i = 1, . . . , n et j = 1, . . . , s + 1. On considère la sous-matrice carrée M′ de M d’ordre
+s + 1 dont les lignes correspondent aux éléments e1 , . . . , es et es+2 et dont les colonnes
+correspondent aux éléments e1 , . . . , es+1 de z(gξ ).
+   Grâce au lemme 4 et aux calculs effectués dans la preuve de la proposition 7, on obtient
+la structure de la matrice M′ :
+                                                                              
+                                         ∗      ···       ∗      µ1 ξ 2s−1 −λw
+                                        ∗      · · · µ2 ξ 2s−1      0      0 
+                                         .                          .      .. 
+                         M′ =           .
+                                          .                          .
+                                                                     .       . 
+                                                                               ,
+                                µ ξ 2s−1 0             ···          0      0 
+                                       s
+                                         ∗      ···       ∗          0      x
+
+
+                                                    14
+où µi = −2 × (2s − (2i − 1)) × (2i − 1), pour i = 1, . . . , s. Soit ϕ une forme linéaire sur
+gξ . D’après la structure de la matrice M′ , l’évaluation en ϕ du déterminant de M′ vaut,
+au signe près :
+
+               2s × ((2s − 1) × (2s − 3) × · · · × 1)2 × hϕ, xi × (hϕ, ξ 2s−1i)s ·
+Si ϕ ne s’annule ni en x, ni en ξ 2s−1 , ce déterminant est non nul. Donc, la matrice M′ est
+                                                                                            
+                                                                                         D
+non singulière. Avec les notations de la proposition 5, la matrice M est la matrice          .
+                                                                                         E
+Cette dernière est donc de rang maximal égal à s + 1 = dim z(gξ ), car la sous-matrice
+carrée M′ d’ordre s + 1 est non singulière. La proposition résulte alors de la proposition
+5.
+
+Remarque - Les calculs de la preuve précédente permettent de donner la structure de la
+matrice D dans le cas où ξ est associé à une partition de la forme [2s + 1, 2t + 1], avec
+1 ≤ t < s ≤ n − 2. On a :
+
+                                                                     
+                                  ∗     ···       ∗     µ1 ξ 2s−1 −λw
+                                 ∗     · · · µ2 ξ 2s−1     0      0 
+                                 ..                        ..     .. 
+                     D =
+                                  .                         .      . 
+                                                                      .
+                         µ ξ 2s−1        0     ···         0      0 
+                           s
+                           −λw            0     ···         0      0
+
+La matrice D est donc singulière dans ce cas et la relation ind(n(gξ ), z(gξ )) = 0 n’a pas
+lieu.
+
+
+
+4    Démonstration du théorème 2 sous l’hypothèse que ξ vérifie
+     la propriété (P ).
+    On suppose que g est une algèbre de Lie complexe simple et que ξ est un élément
+nilpotent non régulier de g. On fixe un sl2 -triplet {ξ, ρ, η} dans g contenant ξ. On note W
+le sous-espace propre de la restriction de adρ à z(gξ ) associé à la plus grande valeur propre
+et on suppose que ξ vérifie la propriété (P ) de la définition 1. Le but de cette partie est
+d’obtenir le corollaire 1 qui servira au cas exceptionnel dans la partie suivante.
+    On va utiliser un certain nombre de notations et de résultats de [1]. On note πξ
+l’application (g, x) 7→ g(x) de G × (ξ + gη ) dans g. D’après [1], corollaire 5.7, il existe un
+voisinage ouvert W de ξ dans ξ + gη tel que la restriction de πξ à G ×W soit un morphisme
+lisse de G × W sur un ouvert G-invariant de g qui contient ξ. On note X l’éclatement en
+ξ de W et σ le morphisme d’éclatement. Ce qui précède montre que l’ouvert non vide
+πξ (G × W ) rencontre l’ouvert dense de g des éléments réguliers de g. Par suite, le sous-
+ensemble de X des points x de X pour lesquels σ(x) est un élément régulier de g est un
+ouvert non vide de X. On note Xr cet ouvert. En particulier, σ −1 ({ξ}) est une hypersurface
+de X, contenue dans X \ Xr , car l’élément ξ n’est pas un élément régulier de g. On note
+enfin X∗ le plus grand ouvert de X auquel l’application x 7→ gσ(x) de Xr dans Grrg g(g) a
+un prolongement régulier noté α. D’après [1], Lemme 2.3, il existe un ouvert affine Y de
+X qui rencontre σ −1 ({ξ}) et qui satisfait les conditions suivantes :
+     1) Y est contenu dans X∗ ,
+     2) Y \ Xr est une hypersurface lisse, irréductible, contenue dans σ −1 ({ξ}) et dont
+      l’idéal de définition dans C[Y ] est engendré par un élément q,
+
+                                               15
+    3) il existe un sous-espace m de g qui est un supplémentaire de α(x) dans g pour tout
+     x dans Y et qui contient un supplémentaire p de gξ dans g.
+
+   Par définition de α, on a l’inclusion α(x) ⊂ gσ(x) , pour tout x dans Y . En particulier,
+on a l’inclusion α(x) ⊂ gξ , pour tout x dans Y \ Xr , car Y \ Xr est contenu dans σ −1 ({ξ}).
+On dispose alors du lemme suivant :
+Lemme 5 Soit x0 un point de Y \ Xr et soit {v1 , . . . , vs } une base d’un supplémentaire n
+de α(x0 ) dans gξ . Alors l’élément det([vi , vj ])1≤i,j≤s est un élément non nul de S(gξ ).
+Démonstration. D’après la proposition 2, [η, g] est un supplémentaire de gξ dans g. Par
+suite, on a les décompositions suivantes :
+                             α(x0 ) ⊕ n = gξ et α(x0 ) ⊕ n ⊕ [η, g] = g·
+On en déduit qu’il existe un ouvert non vide Y ′ de Y contenant x0 tel que, pour tout x′
+dans Y ′ , on ait la décomposition :
+                                          α(x′ ) ⊕ n ⊕ [η, g] = g·
+Puisque α(x′ ) est contenu dans gξ pour tout x′ dans Y ′ \ Xr , on obtient de plus
+                                               α(x′ ) ⊕ n = gξ ,
+pour tout x′ dans Y ′ \ Xr .
+
+   Soit f1 , . . . , ft une base de [η, g]. Il suffit de montrer que l’élément
+                                                                                                
+                                 [v1 , v1 ] · · · [v1 , vs ]
+                                     ..              ..                  0                      
+                                      .               .                                         
+                                                                                                
+                               [vs , v1 ] · · · [vs , vs ]                                      
+                     ∆ = det                                                                    
+                               [f1 , v1 ] · · · [f1 , vs ]  [f1 , f1 ] · · · [f1 , ft ]         
+                                    .                 .         ..               ..             
+                                    ..                ..         .                .             
+                                 [ft , v1 ] · · ·   [ft , vs ]   [ft , f1 ] · · ·   [ft , ft ]
+de S(g) est non nul pour obtenir le lemme.
+
+    Soit i dans {1, . . . , s}. L’application qui à x dans Y associe [σ(x), vi ] est nulle en tout
+point de Y \ Xr car Y \ Xr est inclus dans σ −1 ({ξ}) et gξ contient vi . Puisque q engendre
+l’idéal de définition de Y \ Xr , on en déduit qu’il existe une application régulière µi de
+Y dans g non identiquement nulle sur Y \ Xr et un entier mi ≥ 1 qui satisfont l’égalité
+[σ(x), vi ] = q(x)mi µi (x), pour tout x de Y .
+    Montrons que l’entier mi est égal à 1 pour tout i dans {1, . . . , s}. On suppose par
+l’absurde que mi > 1 pour un certain i dans {1, . . . , s}. Il s’agit d’aboutir à une
+contradiction.
+    Soit T une indéterminée, τ et τ0 les images respectives de T par les applications
+canoniques de l’anneau de polynômes C[T ] dans les quotients de C[T ] par les idéaux
+T mi +1 C[T ] et T 2 C[T ]. Pour ν un C[τ ]-point de X, on note γν l’évaluation en ν de l’anneau
+OX,x où x est l’image de ν par la projection canonique de l’ensemble des C[τ ]-points de
+X sur l’ensemble des C-points de X. Alors γν est un morphisme de l’anneau OX,x dans
+l’anneau C[τ ]. Soit γν′ le morphisme
+                            OX,x ⊗C g → C[τ ] ⊗C g , ϕ⊗u 7→ γν (ϕ)⊗u ,
+où ϕ est dans OX,x et où u est dans g. Puisque σ est le morphisme d’éclatement de W
+centré en ξ, les fibres de σ sont irréductibles et l’espace tangent à W en un point z de W
+
+                                                        16
+est la réunion des images des applications linéaires tangentes à σ en les points de la fibre
+de σ en z. En particulier, puisque Y \ Xr est un ouvert de la fibre σ −1 (ξ) de σ en ξ, la
+réunion des images des applications linéaires tangentes à σ en les points de Y \ Xr contient
+un ouvert non vide de gη .
+    Soit v un vecteur de gη appartenant à cet ouvert. Soit alors x dans Y \ Xr et v ′ un
+vecteur tangent à Y en x tels que l’image de v ′ par l’application linéaire tangente σ ′ (x) à
+σ en x soit égale à v. Soit enfin ν un C[τ ]-point de Y au dessus du C[τ0 ]-point de X défini
+par v ′ . On note q ′ (x) la différentielle de q en x. Puisque l’image de q mi µi par γν′ est égale
+à τ mi q ′ (x)(v ′ )µi (x), de l’égalité :
+                                              [σ(x), vi ] = q(x)mi µi (x) ,
+on tire l’égalité :
+                                        τ [v, vi ] + · · · = τ mi q ′ (x)(v ′ )µi (x) ,
+car le terme de degré 1 en τ de γν′ (σ) est τ v. Puisque mi > 1, on obtient que [v, vi ] est
+nul. Il en résulte que pour tout v dans un ouvert non vide de gη , [v, vi ] est nul. Par suite,
+[v, vi ] est nul pour tout v dans gη . On en déduit que vi appartient au centre z(gη ) de gη .
+Ceci est impossible car z(gη ) et gξ ont une intersection nulle. On a finalement obtenu la
+relation [σ(x), vi ] = q(x)µi (x), pour tout x dans Y .
+
+   Pour x dans Y , la valeur de ∆ en la forme linéaire v 7→ hσ(x), vi est :
+                                                                                                              
+            hσ(x), [v1 , v1 ]i · · · hσ(x), [v1 , vs ]i
+                   ..                       ..                              0                                 
+                    .                        .                                                                
+                                                                                                              
+          hσ(x), [vs , v1 ]i · · · hσ(x), [vs , vs ]i                                                         
+     det                                                                                                      
+          hσ(x), [f1 , v1 ]i · · · hσ(x), [f1 , vs ]i  hσ(x), [f1 , f1 ]i · · · hσ(x), [f1 , ft ]i            
+                  .                        .                  ..                       ..                     
+                  ..                       ..                  .                        .                     
+          hσ(x), [ft , v1 ]i · · ·             hσ(x), [ft , vs ]i  hσ(x), [ft , f1 ]i · · · hσ(x), [ft , ft ]i
+                                                                                                                  
+                     hµ1 (x), v1 i             · · · hµs (x), v1 i
+                            ..                              ..                            0                       
+                             .                               .                                                    
+                                                                                                                  
+                    hµ 1 (x),  vs i           · · · hµs (x), vs i                                                 
+  = (−q(x))s det                                                                                                  ·
+                  hµ1 (x), f1 i               · · · hµs (x), f1 i   hσ(x), [f1 , f1 ]i · · · hσ(x), [f1 , ft ]i   
+                           ..                              ..               ..                       ..           
+                            .                               .                .                        .           
+                     hµ1 (x), ft i             · · · hµs (x), ft i   hσ(x), [ft , f1 ]i · · · hσ(x), [ft , ft ]i
+   Soit ζ la fonction régulière définie sur Y qui à x dans Y associe (−q(x))−s ∆(hσ(x), ·i).
+On suppose par l’absurde que ζ est identiquement nulle sur Y \ Xr . Alors il existe des
+fonctions régulières non toutes identiquement nulles, a1 , . . . , as , b1 , . . . , bt sur Y \ Xr , qui
+satisfont aux égalités :
+                s
+                   P
+               
+                h aj (x)µj (x), vi i = 0, ∀i = 1, . . . , s
+                        j=i
+                   P
+                    s               P
+                                    t
+                 
+                  h aj (x)µj (x) +   bk (x)[σ(x), fk ], fi i = 0, ∀i = 1, . . . , t ,
+                        j=1                     k=1
+
+pour tout x ∈ Y \ Xr . En utilisant les inclusions Y \ Xr ⊂ σ −1 ({ξ}) et n ⊂ gξ , on trouve la
+relation h[σ(x), fk ], wi = 0, pour tout w, x et k dans n, Y \ Xr et {1, . . . , t} respectivement,
+d’où l’égalité :
+                                  P
+                                  s                      P
+                                                         t
+                              h         aj (x)µj (x) +         bk (x)[σ(x), fk ], wi = 0,                     (5)
+                                  j=1                    k=1
+
+
+                                                               17
+pour tout w dans n ⊕ [η, g] et tout x dans Y \ Xr .
+
+   On fixe une base u1 , . . . , un de gη et on note x1 , . . . , xn la base duale. Pour i = 1, . . . , n,
+on désigne aussi par xi la forme affine sur ξ + gη dont la valeur au point ξ + x de ξ + gη
+est la valeur de xi en x. Soit x un point de Y \ Xr . Quitte à changer de base u1 , . . . , un ,
+on peut supposer que l’ensemble des fonctions
+                                                               x2                xn
+                                          y1 = x1 , y2 =          , . . . , yn =
+                                                               x1                x1
+est un système de coordonnées de l’anneau local OX,x de X en x. Puisque x1 engendre
+l’idéal de définition de σ −1 ({ξ}) dans OX,x , la fonction q/x1 est un élément inversible de
+OX,x . L’égalité (5) revient à dire qu’il existe des polynômes p1 , . . . , ps , q1 , . . . , qt en n − 1
+indéterminées, non tous nuls, qui satisfont l’égalité :
+                             P
+                             s
+                         h         pj (y2 , . . . , yn )[ξ + u1 + y2 u2 + · · · + yn un , vj ]
+                             j=1
+                                     P
+                                     t
+                               +          qk (y2 , . . . , yn )[ξ + u1 + y2 u2 + · · · + yn un , fk ], wi = 0,
+                                    k=1
+
+pour tout w dans n ⊕ [η, g]. L’égalité précédente reste valable pour tout w qui centralise
+ξ+u1+y2 u2 +· · ·+yn un . Or pour tout v dans un ouvert non vide de gη , on a la décomposition
+g = gξ+v ⊕ n ⊕ [η, g], car α(x) = gσ(x) , pour tout x dans l’intersection Y ′ ∩ Xr . On en
+déduit que l’élément
+                          P
+                          s
+                                 pj (y2 , . . . , yn )[ξ + u1 + y2 u2 + · · · + yn un , vj ]
+                         j=1
+                                              P
+                                              t
+                                          +         qk (y2 , . . . , yn )[ξ + u1 + y2 u2 + · · · + yn un , fk ]
+                                              k=1
+
+est orthogonal à g, donc est nul. Désignons par d le plus grand des degrés des polynômes
+p1 , . . . , ps , q1 , . . . , qt et par χ la fonction polynomiale sur gη :
+                                  Xs                           Xt                  
+                                d          x2       xn         d          x2       xn
+                               x1     pj      ,...,      vj + x1     qk      ,...,      fk ·
+                                  j=1
+                                           x1       x1
+                                                                 k=1
+                                                                          x1       x1
+
+
+Alors χ(z) centralise ξ + x−1                                                           η
+                                          1 z pour tout z = x1 u1 + · · · + xn un dans g , avec x1 non
+                                                                 η                     ξ+v
+nul. Or pour tout v dans un ouvert non vide de g , les sous-espaces g                      et n ⊕ [η, g]
+de g ont une intersection nulle. Par suite χ est nulle. Ceci est absurde car les polynômes
+p1 , . . . , ps , q1 , . . . , qt ne sont pas tous nuls.
+
+   L’application ζ n’est donc pas identiquement nulle sur Y \ Xr et par conséquent ∆ n’est
+pas un élément nul de S(g). Ceci termine la preuve du lemme.
+
+On en déduit le résultat suivant :
+Proposition 9 On a les inclusions :
+                             z(gξ ) ⊂ α(x) ⊂ gξ , pour tout x dans Y \ Xr ·
+Démonstration. La deuxième inclusion est connue. On s’intéresse à la première. On fixe
+un point x0 dans Y \ Xr et il s’agit de montrer l’inclusion :
+                                                       z(gξ ) ⊂ α(x0 )·
+
+                                                               18
+On suppose par l’absurde que z(gξ ) n’est pas contenu dans α(x0 ). Il existe alors un vecteur
+v ′ de z(gξ ) qui n’appartient par à α(x0 ) et on construit un supplémentaire n′ de α(x0 )
+dans gξ admettant une base {v1′ , . . . , vs′ } telle que v1′ = v ′ . La matrice ([vi′ , vj′ ])1≤i,j≤s a une
+première colonne nulle car v1′ = v ′ appartient au centre z(gξ ) de gξ . Ceci contredit le lemme
+5 appliqué au supplémentaire n = n′ de α(x0 ) dans gξ .
+
+   Soit e1 , . . . , em une base de z(gξ ). D’après la proposition précédente, on a l’inclusion
+z(gξ ) ⊂ α(x), pour tout x dans Y \Xr . Ceci permet de construire une base ε1 (x), . . . , εrg g(x)
+de α(x) pour x dans Y qui vérifie
+                      εi (x) = ei , pour tout x dans Y \ Xr et i = 1, . . . , m·
+Il existe donc des applications régulières εe1 , . . . , εf
+                                                            m sur Y , non identiquement nulles sur
+Y \ Xr , qui vérifient les relations :
+
+                 εi (x) = ei + q(x)mi εei (x), pour tout x dans Y et i = 1, . . . , m,
+où mi est un entier strictement positif.
+Lemme 6 Pour tout i de {1, . . . , m}, l’entier mi est égal à 1.
+Démonstration. On suppose par l’absurde mi > 1 pour un i dans {1, . . . , m}. Il s’agit
+d’aboutir à une contradiction. On raisonne comme dans la démonstration du lemme 5 et
+on reprend les mêmes notations. Puisque l’image de εi = ei + q mi εei par γν′ est égale à
+ei + τ mi q ′ (x)(v ′ )e
+                       εi (x), de l’égalité
+                                             [σ(x), εi (x)] = 0,
+on tire l’égalité
+                             [ξ + τ v + · · · , ei + τ mi q ′ (x)(v ′ )e
+                                                                       εi (x)] = 0,
+car l’image de σ par γν′ est égale à ξ + τ v mod τ 2 . Puisque mi > 1, le terme de degré 1
+en τ du membre de gauche de cette égalité est nul ; donc [v, ei ] est nul. Il en résulte que
+pour tout v dans un ouvert non vide de gη , [v, ei ] est nul. Par suite, [v, ei ] est nul pour
+tout v dans gη . Ceci est absurde car ei est un élément de z(gξ ) et z(gη ) et z(gξ ) ont une
+intersection nulle.
+
+   Du lemme précédent, on déduit la relation εi (x) = ei + q(x)e      εi (x), pour tout x dans Y
+                                                                                             ⊥
+et tout i dans {1, . . . , m}. D’après la proposition 2, on a la décomposition : g = gξ ⊕ gη .
+On note, pour x dans Y et i dans {1, . . . , m}, εf   i,1 (x) et εf
+                                                                  i,2 (x) les composantes de ε ei (x)
+     ξ⊥     η
+sur g et g respectivement.
+Proposition 10 Pour tout x dans un ouvert non vide de Y \ Xr , l’ensemble des éléments
+εf
+ 1,2 (x), . . . , ε
+                  g m,2 (x) est une partie libre de g.
+
+Démonstration. Supposons l’assertion fausse. Il s’agit d’aboutir à une contradiction. Il
+existe des fonctions régulières a1 , . . . , am sur Y , non toutes identiquement nulles sur Y \Xr ,
+qui satisfont l’égalité :
+                              a1 (x)εf
+                                     1,2 (x) + · · · + am (x)ε
+                                                             g m,2 (x) = 0 ,
+
+pour tout x dans Y \ Xr . Soit µ l’application régulière sur Y à valeurs dans z(gξ ) qui à x
+dans Y associe a1 (x)e1 + · · · + am (x)em .
+
+   On reprend les notations de la démonstration du lemme 9 avec mi = 1, autrement dit
+τ = τ0 . Pour v dans gη non nul, on note [v] l’image de v dans P(gη ). L’ensemble des points
+
+                                                      19
+v de gη pour lesquels le point ξ × [v] de (ξ + gη ) × P(gη ) appartient à Y \ Xr est un ouvert
+non vide de gη . Soit v dans gη appartenant à cet ouvert et posons x = ξ × [v] ∈ Y \ Xr .
+Alors il existe un vecteur v ′ tangent à Y en x tel que l’image de v ′ par l’application linéaire
+tangente à σ en x soit égale à v. En effet, on considère la courbe γ qui au complexe t associe
+le point (ξ + tv) × [v] de (ξ + gη ) × P(gη ). Pour t dans un voisinage ouvert de 0, la courbe γ
+est à valeurs dans Y et l’on a γ(0) = x ; par suite la dérivée γ ′ (0) de γ en 0 est un vecteur
+de l’espace tangent à Y en x. Or on vérifie aisément que σ ′ (x)(γ ′ (0)) = v, d’où l’existence
+du vecteur v ′ .
+                                   P
+                                   m           P
+                                               m            P
+                                                            m
+   Puisque l’image de                 aj εj =     aj ej + q    aj εej par γν′      est égale à
+                                               j=1              j=1               j=1
+P
+m                    P
+                     m                                           Pm
+      aj (x)ej + τ         a′j (x)(v ′ )ej + τ q ′ (x)(v ′ )             aj (x)εej (x), de l’égalité
+j=1                  j=1                                           j=1
+
+                                                             m
+                                                             X
+                                                    [σ(x),         aj (x)εj (x)] = 0,
+                                                             j=1
+
+on tire l’égalité
+                        m
+                        X                           m
+                                                    X                                         m
+                                                                                              X
+            [ξ + τ v,          aj (x)ej + τ                a′j (x)(v ′ )ej        ′
+                                                                             + τ q (x)(v )′
+                                                                                                    aj (x)εf
+                                                                                                           j,1 (x)] = 0·
+                         j=1                         j=1                                      j=1
+
+                                                                                               P
+                                                                                               p
+Cela provient des deux égalités suivantes : γν′ (σ) = ξ + τ v et                                  aj (x)εf
+                                                                                                           j,2 (x) = 0. Le terme
+                                                                                              j=1
+de degré 1 en τ du membre de gauche de l’égalité précédente est nul, d’où l’égalité
+                                                    m
+                                                    X                                   m
+                                                                                        X
+                                     ′          ′
+                               [ξ, q (x)(v )               aj (x)εf
+                                                                  i,1 (x)] = −[v,             aj (x)ej ]·
+                                                     j=1                                j=1
+
+                                                  ξ                      ⊥
+      Les applications εf
+                        i,1 sont à valeurs dans g  = [ξ, g] et ce qui précède donne la relation :
+                                         m
+                                         X
+                                  [v,          aj (x)ej ] ∈ [ξ, [ξ, g]] = (gξ ⊕ [η, gξ ])⊥ ,
+                                         j=1
+
+d’après la proposition 3, ce qui signifie encore, par définition de l’application µ,
+                                                hv, [[η, gξ ], µ(x)]i = {0}·
+En résumé, on a montré : pour tout ξ × [v] dans Y \ Xr , on a la relation
+                                                                                   ⊥
+                                                v ∈ [[η, gξ ], µ(ξ × [v])] .                                                (6)
+On note
+                                               Y ′ = {x ∈ Y \ Xr | µ(x) 6= 0}·
+L’ensemble Y ′ est un ouvert non vide de Y \ Xr et comme ξ vérifie la propriété (P ), on a
+l’inclusion :
+                                                  ⊥
+                                  [[η, gξ ], µ(x)] ⊂ W ⊥ ,
+pour tout x dans Y ′ . Comme le sous-espace W est contenu dans gξ , son orthogonal W ⊥
+                                                                    ⊥
+ne contient pas gη ; sinon, ce dernier contiendrait la somme gη ⊕ gξ = g et W serait nul.
+L’ensemble
+                             X ◦ = {ξ × [v] ∈ X \ Xr | v 6∈ W ⊥ }
+
+
+                                                                     20
+est donc un ouvert non vide de X \ Xr et l’intersection Y ′ ∩ X ◦ est non vide. Il en résulte
+                                                                                         ⊥
+que pour tout x = ξ × [v] dans l’intersection Y ′ ∩ X ◦ , le sous-espace [[η, gξ ], µ(x)] n’est
+pas contenu dans W ⊥ , d’après la relation (6). Ceci contredit le fait que x appartient à Y ′ .
+
+
+On en déduit le corollaire suivant :
+Corollaire 1 On note e1 , . . . , en une base de gξ telle que e1 , . . . , em est une base de z(gξ ).
+On suppose que ξ vérifie la propriété (P ). Alors la matrice ([[η, ei ], ej ]) 1≤i≤n à coefficients
+                                                                                              1≤j≤m
+
+dans S(gξ ) est de rang maximal égal à dim z(gξ ).
+Démonstration. On évalue la matrice ([[η, ei ], ej ]) 1≤i≤n en la forme linéaire hσ(x), ·i sur
+                                                                   1≤j≤m
+
+gξ , pour x dans Y :
+                 (hσ(x), [[η, ei ], ej ]i) 1≤i≤n    = (h[σ(x), ej ], [η, ei ]i) 1≤i≤n
+                                         1≤j≤m                                   1≤j≤m
+
+                                                    = −q(x)(h[σ(x), εej (x)], [η, ei ]i) 1≤i≤n .
+                                                                                              1≤j≤m
+
+
+On suppose par l’absurde que, pour tout x dans Y \ Xr , la matrice
+(h[σ(x), εej (x)], [η, ei ]i) 1≤i≤n n’est pas de rang maximal ; autrement dit on suppose que,
+                            1≤j≤m
+pour tout x dans Y \ Xr , les vecteurs à coefficients complexes
+                                                                             
+                 h[σ(x), εe1 (x)], [η, e1 ]i         h[σ(x), εf
+                                                              m (x)], [η, e1 ]i
+                             ..             ,...,             ..             ,
+                               .                                  .
+                 h[σ(x), εe1 (x)], [η, en ]i         h[σ(x), εf
+                                                              m (x)], [η, en ]i
+
+sont liés. Il existe donc des fonctions régulières a1 , . . . , am sur Y \ Xr , non toutes
+identiquement nulles, qui satisfont l’égalité :
+                                              m
+                                              X
+                                    h[σ(x),         aj (x)εej (x)], [η, ei ]i = 0,
+                                              j=1
+
+                                                                                     P
+                                                                                     m
+pour i = 1, . . . , n et x dans Y \Xr . Notons χ l’application χ(x) =                      aj (x)εej (x). L’inclusion
+                                                                                     j=1
+Y \ Xr ⊂ σ −1 ({ξ}) donne la relation
+                                           hχ(x), [ξ, [η, gξ ]]i = {0},
+                                                                                                                  ⊥
+pour tout x dans Y \ Xr . Puisque [ξ, [η, gξ ]] = gξ , on en déduit que χ(x) appartient à gξ ,
+                                                          Pm                  P
+                                                                              m
+pour tout x dans Y \ Xr . Comme χ(x) s’écrit χ(x) =         ai (x)εf
+                                                                    i,1 (x) +   ai (x)εf
+                                                                                       i,2 (x), avec
+                                                                        i=1                  i=1
+P
+m
+                           ξ⊥
+                                              P                                                 ξ      ⊥
+      ai (x)εf
+             i,1 (x) dans g , l’élément          ai (x)εf
+                                                          i,2 (x) appartient à l’intersection g  ∩ gη , donc
+i=1                                          i=1
+est nul. D’après la proposition 10, les éléments εf
+                                                     i,2 (x) sont linéairement indépendants pour
+tout x dans un ouvert non vide de Y \ Xr . On en déduit que les fonctions ai sont toutes
+identiquement nulles sur Y \ Xr , ce qui contredit les hypothèses.
+
+      Par conséquent la matrice (h[σ(x), εej ], [η, ei ]i) 1≤i≤n à coefficients dans S(gξ ) est de rang
+                                                                1≤j≤m
+maximal, pour tout x dans un ouvert non vide de Y \ Xr .
+
+   On en déduit le théorème 2 lorsque ξ vérifie la propriété (P ) de la définition 1. En effet,
+avec les notations de la proposition 5, la matrice du corollaire précédent est la matrice
+
+                                                          21
+    
+   D
+       . Cela résulte des relations, déjà vues, [[η, ej ], ei ] = [[η, ei ], ej ], pour i = 1, . . . , n et
+   E
+j = 1, . . . , m. En outre le théorème 2 est connu pour les éléments nilpotents réguliers de
+g.
+
+Remarque - Sous les hypothèses et avec les notations de la partie 3, il n’est pas difficile
+de montrer que les éléments nilpotents de g vérifient la propriété (P ) lorsque z′ = z(gξ ).
+En revanche, les éléments nilpotents de so2n ne vérifient pas la propriété (P ) en général.
+
+
+5    Étude de la propriété (P ) et démonstration des théorèmes 1
+     et 2 dans le cas exceptionnel.
+   Pour terminer la preuve des théorèmes 1 et 2, il reste essentiellement à étudier la
+propriété (P ) pour les algèbres de Lie simples exceptionnelles. On suppose que g est une
+algèbre de Lie simple exceptionnelle et que ξ est un élément nilpotent distingué non régulier
+de g. Il s’agit de montrer que l’élément ξ vérifie la propriété (P ). On note m1 , . . . , mr les
+valeurs propres de la restriction de adρ au sous-espace z(gξ ). Les entiers m1 , . . . , mr sont
+pairs et on a
+                                    2 = m1 < m2 < · · · < mr ·
+On note V (ml ) le sous-espace propre correspondant à la valeur propre ml , pour l = 1, . . . , r.
+Avec les notations de la définition 1, on a :
+                                                     W = V (mr )·
+
+On choisit une base
+                               1              d1     1              d2             1              dr
+                          B = ξm 1
+                                   , . . . , ξm 1
+                                                  , ξm 2
+                                                         , . . . , ξm 2
+                                                                        , . . . , ξm r
+                                                                                       , . . . , ξm r
+
+                                     1
+de gξ de vecteurs propres telle que ξm  l
+                                                     dl
+                                          , . . . , ξm  l
+                                                          forme une base de V (ml ), pour l = 1, . . . , r
+                                       ξ
+et telle qu’il existe une base de z(g ) formée de vecteurs de B. On peut supposer que
+ 1
+ξm 1
+     = ξ21 = ξ. On fixe un élément non nul v de z(gξ ) et on souhaite montrer que le
+sous-epsace V (mr ) est contenu dans le sous-espace [[η, gξ ], v]. Commençons par prouver la
+proposition suivante :
+                                        1
+Lemme 7 Si la coordonnée de v en ξm      1
+                                            = ξ est non nulle, alors le sous-epsace V (mr ) est
+                                  ξ
+contenu dans le sous-espace [[η, g ], v].
+                                                                                     1
+Démonstration. Soit v un élément non nul de z(gξ ) dont la coordonnée λ de v en ξm 1
+                                                                                         =ξ
+                                                          p
+est non nulle. Soit p dans {1, . . . , dr }. L’élément ξmr de V (mr ) s’écrit
+
+                                              p                 1 p
+                                             ξm   = [[η, −        ξ ], ξ]·
+                                                r
+                                                                mr mr
+D’après [5], (Théorème 2.3), ξ est le seul élément de z(gξ ) de poids 2. Comme mr est le
+                                                   p
+plus haut poids, on en déduit que l’élément ξm    r
+                                                       s’écrit sous la forme :
+
+                                          p                    1
+                                         ξm   = [[η, −             ξ p ], v]·
+                                            r
+                                                             mr × λ mr
+Par suite, on a l’inclusion :
+                                               V (mr ) ⊆ [[η, gξ ], v],
+d’où le lemme.
+
+
+
+                                                              22
+  Soit i1 < · · · < ip dans {1, . . . , r} et k(1,1) , . . . , k(1,δ1 ) , . . . , k(p,1) , . . . , k(p,δp ) des indices tels
+que les éléments
+                             k               k(1,δ1 )            k                k(p,δp )
+                            ξm(1,1)
+                               i1 , . . . , ξmi1      , . . . , ξm(p,1)
+                                                                   ip , . . . , ξmip
+
+
+appartiennent à z(gξ ) et tels que v s’écrive sous la forme
+                            k                      k(1,δ                      k                         k(p,δ
+                  v = α11 ξm(1,1) + · · · + α1δ1 ξmi1 1 + · · · + αp1 ξm(p,1)
+                                                                                                                )
+                                                                              + · · · + αpδp ξmip p ,
+                                                           )
+                             i1                                          ip
+
+
+                                          δ
+avec (α11 , . . . , α1δ1 , . . . , αp1 , . . . , αpp ) dans (C∗ )K où K = δ1 + · · · + δp . D’après la proposition
+précédente, on peut supposer que i1 est strictement plus grand que 1.
+
+   Pour i, j et k dans {1, . . . , r} et s, p et q dans {1, . . . , di }, {1, . . . , dj } et {1, . . . , dk }
+                                                                                         q       s         p
+respectivement, on note λ(mk ,q),(mi ,s),(mj ,p) la coordonnée de l’élément [[η, ξm     k
+                                                                                             ], ξm i
+                                                                                                     ] en ξm j
+                                                                                                               .
+Notons que si λ(mk ,q),(mi ,s),(mj ,p) est non nul, on a la relation mk = mj − mi + 2.
+
+                                                                                                                          P
+                                                                                                                          dr
+                                                                                                                                   p
+    On suppose qu’il existe k1 dans {1, . . . , r} tel que mk1 = mr −mi1 +2. Soit w =                                          bp ξm r
+                                                                                                                         p=1
+                                                                                              dk1
+                                                                                              P
+un élément de V (mr ). On cherche u dans gξ sous la forme u =                                         q
+                                                                                                    aq ξm k
+                                                                                                            tel que
+                                                                                                         1
+                                                                                              q=1
+
+                                                    [[η, u], v] = w·
+                                                                                                                   
+                                                                                a1
+                                                                               a2 
+Ce problème revient à résoudre un système linéaire d’inconnue le vecteur      
+                                                                               ... , de
+                                                                                                                        adk1
+                               
+                    b1
+                   b2 
+second membre 
+                    ..  et de matrice associée la matrice M(v) de taille dr × dk1 dont les
+                      . 
+                   bdr
+coefficients M(v)p,q sont donnés par :
+                                                   δi1
+                                                   X
+                                     M(v)p,q =             α1s λ(mk1 ,q),(mi1 ,s),(mr ,p) ,
+                                                    s=1
+
+pour p dans {1, . . . , dr } et q dans {1, . . . , dk1 }. La matrice M(v) s’écrit aussi de manière
+plus agréable comme une somme de matrices :
+                                                           δi1
+                                                           X              k
+                                              M(v) =             α1s M(ξm(1,s)
+                                                                          i1 )·
+                                                           s=1
+
+Il est clair que si la matrice M(v) est surjective, le sous-espace V (mr ) est contenu dans le
+sous-epsace [[η, gξ ], v]. On s’intéresse désormais à cette condition. Remarquons que cette
+condition ne dépend que des termes de plus bas poids mi1 intervenant dans l’écriture de
+v.
+
+     Pour chaque algèbre de Lie exceptionnelle, on trouve dans [2] une liste de sl2 -triplets
+correspondant aux orbites nilpotentes. Le logiciel GAP4 permet en outre d’effectuer des
+calculs dans les algèbres de Lie. Il permet notamment de calculer le centralisateur d’un
+élément, le centre d’une sous-algèbre, etc. L’étude précédente donne les conditions à vérifier
+
+                                                               23
+pour que tout élément non nul de z(gξ ) vérifie (P ). Grâce aux données de [2] et au logiciel
+GAP4, on exhibe une base B vérifiant les conditions précédentes. Si i1 est un entier
+de {1, . . . , r} tel que V (mi1 ) et z(gξ ) ont une intersection non nulle et si les éléments
+ l1               lδ
+ξm  i1
+       , . . . , ξm  i1
+                        forment une base de l’intersection V (mi1 ) ∩ z(gξ ), on vérifie qu’il existe
+un entier k1 tel que mk1 = mj1 − mi1 + 2, on calcule à l’aide de GAP4 les matrices
+        l1                 lδ
+M(ξm       i
+             ), . . . , M(ξm  i
+                                ) et on vérifie la surjectivité de la matrice
+       1              1
+
+                                               δ
+                                               X
+                                                            ls
+                                     M(v) =          αls M(ξm  i
+                                                                 ),
+                                               s=1
+
+pour tout δ-uplet (αl1 , . . . , αlδ ) non nul. Le lemme 7 permet de ne traiter que le cas où
+mi1 est strictement plus grand que 2. De plus, si mi1 = mr et δ = 1, alors on a :
+1 = δ = dim V (mi1 ) ∩ z(gξ ) = dim V (mr ) et on a clairement l’inclusion V (mr ) ⊆ [[η, gξ ], v],
+            P
+pour v = δs=1 αls ξm  ls
+                         i1
+                            .
+   On donne en annexe les calculs permettant de vérifier ces conditions et par suite la
+propriété (P ). On s’aperçoit que dans la plupart des cas la somme précédente n’a qu’un
+seul terme. L’étude de la surjectivité ne dépend alors d’aucun paramètre, ce qui facilite le
+travail.
+
+    Ces calculs montrent que les algèbres E6 , E7 , E8 et F4 vérifient la propriété (P ). Reste
+le cas de G2 ; dans G2 , il n’y a qu’une seule orbite nilpotente distinguée non régulière
+et pour cette orbite le centre est de dimension 2. Le lemme 7 assure que cette orbite
+vérifie (P ). Par suite G2 vérifie (P ) aussi. Des propositions 5 et 6 et du corollaire 1, il
+résulte que la relation du théorème 2 est satisfaite pour ces cinq algèbres de Lie. Notons ici
+l’importance d’avoir démontré le théorème 2 dans le cas classique avant le cas exceptionnel
+pour appliquer la proposition 6. En effet, les sous-algèbres de Lie semi-simples d’une
+algèbre de Lie exceptionnelle sont isomorphes à des produits finis d’idéaux simples et
+ces composantes simples peuvent être isomorphes à des algèbres de Lie de type A, B, C
+ou D. La démonstration des théorèmes 1 et 2 est ainsi achevée.
+
+
+Annexe
+    On présente dans cette annexe les calculs faits à l’aide du logiciel GAP4 permettant
+de vérifier la propriété (P ) pour E6 , E7 , E8 et F4 . On reprend les notations de la partie
+précédente et la démarche générale est la suivante : on définit l’algèbre de Lie L dans
+laquelle on veut travailler grâce à la commande SimpleLieAlgebra, on définit un système
+de racines (RootSystem), un système de racines positives correspondant (PositiveRoots)
+puis des systèmes de vecteurs «positifs» et «négatifs» associés (PositiveRootVectors
+et NegatitiveRootVectors). La commande CanonicalGenerators donne une base de la
+sous-algèbre de Cartan. On peut désormais faire des calculs dans l’algèbre de Lie L. Il s’agit
+ensuite d’étudier les orbites nilpotentes distinguées non régulières. Pour chacune d’entre
+elles, on définit un sl2 -triplet {e,h,f} grâce aux données de [2]. On calcule ensuite le
+centralisateur g de l’élément positif e avec la commande LieCentralizer puis le centre z
+du centralisateur avec LieCentre. Pour chaque cas, on précise la valeur du plus haut poids
+mr et on donne le nombre de matrices à étudier. Ensuite, pour chacune d’entre elles on
+donne les valeurs de mi1 et mk1 et on fait les calculs necéssaires. Les calculs de la première
+orbite de la première algèbre (il s’agit de l’orbite sous-régulière de E6 ) sont détaillés ; les
+autres le sont un peu moins.
+
+
+
+
+                                                 24
+Cas de E6 .
+On commence par définir L et les générateurs de L :
+> L:=SimpleLieAlgebra("E",6,Rationals);
+<Lie algebra of dimension 78 over Rationals>
+> R:=RootSystem(L);
+<root system of rank 6>
+> P:=PositiveRoots(R);;
+> x:=PositiveRootVectors(R);
+[ v.1, v.2, v.3, v.4, v.5, v.6, v.7, v.8, v.9, v.10, v.11, v.12, v.13, v.14,
+  v.15, v.16, v.17, v.18, v.19, v.20, v.21, v.22, v.23, v.24, v.25, v.26,
+  v.27, v.28, v.29, v.30, v.31, v.32, v.33, v.34, v.35, v.36 ]
+> y:=NegativetiveRootVectors(R);
+[ v.37, v.38, v.39, v.40, v.41, v.42, v.43, v.44, v.45, v.46, v.47, v.48,
+  v.49, v.50, v.51, v.52, v.53, v.54, v.55, v.56, v.57, v.58, v.59, v.60,
+  v.61, v.62, v.63, v.64, v.65, v.66, v.67, v.68, v.69, v.70, v.71, v.72 ]
+> CanonicalGenerators(R)[3]
+[ v.73, v.74, v.75, v.76, v.77, v.78 ]
+Dans E6 , il y a deux orbites nilpotentes distinguées non régulières :
+
+ 1. Caractéristique :
+
+                      2    2        0   2    2
+
+
+                                2
+    On définit les éléments e et f du sl2 -triplet correspondant dans les données de [2] :
+    > e:=x[1]+x[2]+x[5]+x[6]+x[8]+x[9];
+    v.1+v.2+v.5+v.6+v.8+v.9
+    > f:=(12)*y[1]+(8)*y[2]+(-8)*y[3]+(22)*y[5]+(12)*y[6]+(8)*y[8]+
+    (22)*y[9]+(8)*y[10];;
+    On vérifie que le crochet e*f est égal à l’élément neutre de la caractéristique et on
+    pose h :=e*f :
+    > e*f;
+    (12)*v.73+(16)*v.74+(22)*v.75+(30)*v.76+(22)*v.77+(12)*v.78
+    > h:=e*f;;
+    On calcule le centralisateur g de e et on en donne une base Bg. On calcule ensuite le
+    centre z et on donne une base Bz de z :
+    > g:=LieCentralizer(L,Subspace(L,[e]));
+    <Lie algebra of dimension 8 over Rationals>
+    Le centralisateur est de dimension 8 (ce que l’on savait déjà).
+    > Bg:=BasisVectors(Basis(g));;
+    > z:=LieCentre(g);
+    <two-sided ideal in <Lie algebra of dimension 8 over Rationals>,
+    (dimension 5)>
+    Le centre est un idéal de dimension 5 dans g.
+    > Bz:=BasisVectors(Basis(z));
+    [ v.1+v.2+v.5+v.6+v.8+v.9, v.23+(-1)*v.25+v.26,
+      v.27+(-1)*v.29+(-1)*v.30+(-1)*v.31, v.34+v.35, v.36 ]
+
+                                             25
+  On calcule les «poids» de z en évaluant h*Bz[i] pour i = 1, . . . , 5. On sait déjà que
+  h*Bz[1]=(2)*Bz[1] car Bz[1]=e.
+  > h*Bz[2];
+  (8)*v.23+(-8)*v.25+(8)*v.26
+  > h*Bz[3];
+  (10)*v.27+(-10)*v.29+(-10)*v.30+(-10)*v.31
+  > h*Bz[4];
+  (14)*v.34+(14)*v.35
+  > h*Bz[5];
+  (16)*v.36
+  On obtient que les poids sont 2, 8, 10, 14, 16, d’où mr = 16. Il y a donc trois matrices
+  à étudier.
+   (a) mi1 = 8, mk1 = 10. On cherche les éléments de V (10) parmi Bg en calculant
+       h*Bg[i], pour i = 1, . . . , 8 et on effectue le calcul correspondant :
+       > h*Bg[5];
+       (10)*v.27+(-10)*v.29
+       > h*Bg[6];
+       (10)*v.30+(10)*v.31
+       Le sous-espace V (10) est engendré par les vecteurs Bg[5] et Bg[6].
+       > ((f*Bg[5])*Bz[2]);
+       (-20)*v.36
+       > ((f*Bg[6])*Bz[2]);
+       (20)*v.36
+       Notons que v.36 est bien l’élément Bz[5] correspondant au plus haut    poids 16.
+                                                                                        
+       La matrice qu’il faut considérer est M(Bz[2]) ; elle est donnée par −20 20 .
+       C’est une matrice de rang 1.
+
+       Remarque - Lorsque dr = 1, il suffit de trouver un élément de V (mk1 ) qui donne
+       un crochet non nul ; dans la suite on donnera seulement le calcul correspondant
+       à cet élément.
+   (b) mi1 = 10, mk1 = 8.
+       > ((f*Bz[2])*Bz[3]);
+       (-40)*v.36
+   (c) mi1 = 14, mk1 = 4.
+       > h*Bg[2];
+       (4)*v.7+(2)*v.11+(2)*v.12+(2)*v.13+(-2)*v.14+(2)*v.15+(-4)*v.16
+
+       > ((f*Bg[2])*Bz[4]);
+       (14)*v.36
+  Ces trois calculs montrent que les conditions de la partie 5 sont vérifiées pour tout
+  élément non nul de z. Ainsi cette orbite vérifie (P ).
+
+2. Caractéristique :
+
+                    2    0       2   0     2
+
+
+                             0
+
+                                           26
+Définition du sl2 -triplet :
+>e:=x[7]+x[8]+x[9]+x[10]=x[11]+x[19];
+v.7+v.8+v.9+v.10+v.11+v.19
+> f:=(8)*y[7]+(9)*y[8]+(5)*y[9]+(5)*y[10]+(8)*y[11]+y[19];
+(8)*v.43+(9)*v.44+(5)*v.45+(5)*v.46+(8)*v.47+v.55
+> e*f;
+(8)*v.73+(10)*v.74+(14)*v.75+(20)*v.76+(14)*v.77+(8)*v.78
+> h:=e*f;;
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 12 over Rationals>
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 12 over Rationals>,
+  (dimension 4)>
+> Bg:=BasisVectors(Basis(g));;
+> Bz:=BasisVectors(Basis(z));
+[ v.7+v.8+v.9+v.10+v.11+v.19, v.32+(-1)*v.33, v.35, v.36 ]
+> h*Bz[2];
+(8)*v.32+(-8)*v.33
+> h*Bz[3];
+(10)*v.35
+> h*Bz[4];
+(10)*v.36
+Les poids de z sont 2,8,10,10 ; d’où mr = 10. Il y a deux matrices à étudier.
+(a) mi1 = 8, mk1 = 4
+    > h*Bg[4];
+    (4)*v.17+(-4)*v.18+(4)*v.20+(-4)*v.21
+    > h*Bg[5];
+    (4)*v.12+(4)*v.16+(-8)*v.22+(4)*v.24
+    > h*Bg[6];
+    (4)*v.22+(-4)*v.24+(-4)*v.25
+
+    > ((f*Bg[4])*Bz[2]);
+    (-16)*v.35
+(b) mi1 = 10, mk1 = 2
+    > h*Bg[2];
+    (2)*v.1+(2)*v.4+(2)*v.6+(2)*v.13+(2)*v.14+(-6)*v.15
+    > h*Bg[3];
+    (2)*v.19
+
+    > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]); ((f*Bg[3])*Bz[3]);
+    (-10)*v.35
+    (10)*v.36
+    0*v.1
+    > ((f*Bg[1])*Bz[4]); ((f*Bg[2])*Bz[4]); ((f*Bg[3])*Bz[4]);
+    (-9)*v.36
+    (6)*v.35
+    (-1)*v.36
+
+
+                                         27
+         La matrice à étudier est
+                                                             
+                      −10 0 0               0 6 0      −10α −β 0
+                 α                    +β            =               ·
+                         0 10 0            −9 0 −1     −9β 10α −β
+         On vérifie que c’est une matrice de rang 2 pour tout couple (α, β) non nul.
+    La propriété (P ) est vérifiée pour cette orbite.
+
+Conclusion : E6 vérifie (P ).
+
+Cas de E7 .
+Définition de L :
+> L:=SimpleLieAlgebra("E",7,Rationals);
+<Lie algebra of dimension 133 over Rationals>
+> R:=RootSystem(L);
+<root system of rank 7>
+> P:=PositiveRoots(R);;
+> x:=PositiveRootVectors(R);
+[ v.1, v.2, v.3, v.4, v.5, v.6, v.7, v.8, v.9, v.10, v.11, v.12, v.13, v.14,
+  v.15, v.16, v.17, v.18, v.19, v.20, v.21, v.22, v.23, v.24, v.25, v.26,
+  v.27, v.28, v.29, v.30, v.31, v.32, v.33, v.34, v.35, v.36, v.37, v.38,
+  v.39, v.40, v.41, v.42, v.43, v.44, v.45, v.46, v.47, v.48, v.49, v.50,
+  v.51, v.52, v.53, v.54, v.55, v.56, v.57, v.58, v.59, v.60, v.61, v.62,
+  v.63 ]
+> y:=NegativeRootVectors(R);
+[ v.64, v.65, v.66, v.67, v.68, v.69, v.70, v.71, v.72, v.73, v.74, v.75,
+  v.76, v.77, v.78, v.79, v.80, v.81, v.82, v.83, v.84, v.85, v.86, v.87,
+  v.88, v.89, v.90, v.91, v.92, v.93, v.94, v.95, v.96, v.97, v.98, v.99,
+  v.100, v.101, v.102, v.103, v.104, v.105, v.106, v.107, v.108, v.109,
+  v.110, v.111, v.112, v.113, v.114, v.115, v.116, v.117, v.118, v.119,
+  v.120, v.121, v.122, v.123, v.124, v.125, v.126 ]
+> CanonicalGenerators(R)[3];
+[ v.127, v.128, v.129, v.130, v.131, v.132, v.133 ]
+Dans E7 , il y a cinq orbites nilpotentes distinguées non régulières :
+
+  1. Caractéristique :
+
+                       2     2       0    2     2     2
+
+
+                                 2
+    Définition du sl2 -triplet :
+    > e:=x[1]+x[2]+x[3]+x[6]+x[7]+x[9]+x[11];
+    v.1+v.2+v.3+v.6+v.7+v.9+v.11
+    >f:=(26)*y[1]+(22)*y[2]+(50)*y[3]+(22)*y[5]+(40)*y[6]
+    (21)*y[7]+(15)*y[9]+(-15)*y[10]+(57)*y[11];
+    (26)*v.64+(22)*v.65+(50)*v.66+(22)*v.68+(40)*v.69
+    +(21)*v.70+(15)*v.72+(-15)*v.73+(57)*v.74
+    > e*f;
+
+                                                28
+(26)*v.127+(37)*v.128+(50)*v.129+(72)*v.130+(57)*v.131+(40)*v.132+(21)*v.133
+> h:=e*f;;
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 9 over Rationals>
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 9 over Rationals>,
+(dimension 6)>
+> Bg:=BasisVectors(Basis(g));;
+> Bz:=BasisVectors(Basis(z));
+[ v.1+v.2+v.3+v.6+v.7+v.9+v.11, v.33+(2)*v.34+(-1)*v.36+(-1)*v.37
++(-1)*v.38+v.40+(-3)*v.41, v.46+v.47+v.48+v.49+v.50, v.56+(-1)*v.57, v.60,
+  v.63 ]
+> h*Bz[2];
+(10)*v.33+(20)*v.34+(-10)*v.36+(-10)*v.37+(-10)*v.38+(10)*v.40+(-30)*v.41
+> h*Bz[3];
+(14)*v.46+(14)*v.47+(14)*v.48+(14)*v.49+(14)*v.50
+> h*Bz[4];
+(18)*v.56+(-18)*v.57
+> h*Bz[5];
+(22)*v.60
+> h*Bz[6];
+(26)*v.63
+Les poids de z sont 2,10,14,18,22,26 ; d’où mr = 26. Il y a quatre matrices à étudier.
+(a) mi1 = 10, mk1 = 18
+    > ((f*Bz[4])*Bz[2]);
+    (90)*v.63
+(b) mi1 = 14, mk1 = 14
+    > ((f*Bz[3])*Bz[3]);
+    (-98)*v.63
+(c) mi1 = 10, mk1 = 18
+    > ((f*Bz[4])*Bz[2]);
+    (90)*v.63
+(d) mi1 = 18, mk1 = 10
+    > h*Bg[3];
+    (10)*v.33+(20)*v.34+(-10)*v.36+(20)*v.37+(20)*v.38+(10)*v.40
+    > h*Bg[4];
+    (10)*v.37+(10)*v.38+(10)*v.41
+
+    > ((f*Bg[4])*Bz[4]);
+    (-30)*v.63
+    4) mi1 = 22, mk1 = 6
+    > h*Bg[2];
+    (6)*v.19+(4)*v.20+(-2)*v.21+(2)*v.22+(4)*v.23+(-2)*v.24+(-2)*v.25+(-2)*v.28
+
+    > ((f*Bg[2])*Bz[5]);
+    (-22)*v.63
+
+                                        29
+  La propriété (P ) est vérifiée pour cette orbite.
+
+2. Caractéristique :
+
+                     2     2          0   2   0     2
+
+
+                                  2
+  Définition du sl2 -triplet :
+  > e:=x[1]+x[2]+x[3]+x[5]+x[7]+x[9]+x[18];
+  v.1+v.2+v.3+v.5+v.7+v.9+v.18
+  >f:=(22)*y[1]+(3)*y[2]+(42)*y[3]+(15)*y[5]+(17)*y[7]
+  +(28)*y[9]+(-28)*y[10]+(3)*y[12]+(3)*y[13]+(32)*y[18];
+  (22)*v.64+(3)*v.65+(42)*v.66+(15)*v.68+(17)*v.70
+  +(28)*v.72+(-28)*v.73+(3)*v.75+(3)*v.76+(32)*v.81
+  > e*f;
+  (22)*v.127+(31)*v.128+(42)*v.129+(60)*v.130+(47)*v.131+(32)*v.132+(17)*v.133
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 11 over Rationals>
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 11 over Rationals>,
+    (dimension 5)>
+  > Bg:=BasisVectors(Basis(g));;
+  > Bz:=BasisVectors(Basis(z));
+  [ v.1+v.2+v.3+v.5+v.7+v.9+v.18, v.39+(-1)*v.42+(-1)*v.43+(-1)*v.44
+  +(-2)*v.45+v.49, v.51+v.53+v.55+v.57, v.60, v.63 ]
+  > h*Bz[2];
+  (10)*v.39+(-10)*v.42+(-10)*v.43+(-10)*v.44+(-20)*v.45+(10)*v.49
+  > h*Bz[3];
+  (14)*v.51+(14)*v.53+(14)*v.55+(14)*v.57
+  > h*Bz[4];
+  (18)*v.60
+  > h*Bz[5];
+  (22)*v.63
+  Les poids de z sont 2,10,14,18,22 ; d’où mr = 22. Il y a trois matrices à étudier.
+   (a) mi1 = 10, mk1 = 14
+       > h*Bg[7];
+       (14)*v.53+(-14)*v.54
+       > h*Bg[8];
+       (14)*v.51+(14)*v.54+(14)*v.55+(14)*v.57
+
+       > ((f*Bg[7])*Bz[2]);
+       (-70)*v.63
+   (b) mi1 = 14, mk1 = 10
+       > h*Bg[5];
+       (10)*v.42+(10)*v.43+(10)*v.44+(20)*v.45
+
+                                              30
+       > h*Bg[6];
+       (10)*v.39+(10)*v.49
+
+       > ((f*Bg[5])*Bz[3]);
+       (70)*v.63
+   (c) mi1 = 18, mk1 = 4
+       > h*Bg[3];
+       (6)*v.20+(9)*v.21+(-3)*v.22+(-3)*v.27+(-9)*v.28+
+       (3)*v.29+(6)*v.30+(-3)*v.31+(-3)*v.35
+       > ((f*Bg[3])*Bz[4]);
+       (18)*v.63
+  La propriété (P ) est vérifiée pour cette orbite.
+
+3. Caractéristique :
+
+                     2     0          2   0   2     2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[7]+x[8]+x[9]+x[10]+x[11]+x[12]+x[22];
+  v.7+v.8+v.9+v.10+v.11+v.12+v.22
+  > f:=(15)*y[7]+(18)*y[8]+(24)*y[9]+(15)*y[10]+(10)*y[11]+
+  (28)*y[12]+y[22];
+  (15)*v.70+(18)*v.71+(24)*v.72+(15)*v.73+(10)*v.74+(28)*v.75+v.85
+  > e*f;
+  (18)*v.127+(25)*v.128+(34)*v.129+(50)*v.130+(39)*v.131+(28)*v.132+(15)*v.133
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 13 over Rationals>
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 13 over Rationals>,
+    (dimension 5)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.7+v.8+v.9+v.10+v.11+v.12+v.22, v.47+(-3)*v.48+(-1)*v.49+(-2)*v.50,
+    v.58+v.59, v.62, v.63 ]
+  > h*Bz[2];
+  (10)*v.47+(-30)*v.48+(-10)*v.49+(-20)*v.50
+  > h*Bz[3];
+  (14)*v.58+(14)*v.59
+  > h*Bz[4];
+  (16)*v.62
+  > h*Bz[5];
+  (18)*v.63
+  Les poids de z sont 2,10,14,16,18 ; d’où mr = 18. Il y a trois matrices à étudier.
+   (a) mi1 = 10, mk1 = 10
+
+
+                                              31
+       > ((f*Bz[2])*Bz[2]);
+       (-150)*v.63
+   (b) mi1 = 14, mk1 = 6
+       > h*Bg[4];
+       (6)*v.30+(-12)*v.31+(6)*v.32+(6)*v.33+(-6)*v.35
+       > h*Bg[5];
+       (6)*v.36+(-6)*v.37+(-6)*v.40
+
+       > ((f*Bg[4])*Bz[3]);
+       (42)*v.63
+   (c) mi1 = 16, mk1 = 4
+       > h*Bg[3];
+       (4)*v.13+(4)*v.14+(4)*v.18+(-12)*v.26+(8)*v.28+(4)*v.29
+
+       > ((f*Bg[3])*Bz[4]);
+       (12)*v.63
+  La propriété (P ) est vérifiée pour cette orbite.
+
+4. Caractéristique :
+
+                     2     0          2   0   0     2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[8]+x[9]+x[13]+x[16]+x[17]+x[18]+x[29];
+  v.8+v.9+v.13+v.16+v.17+v.18+v.29
+  > f:=(14)*y[8]+(9)*y[9]+(-9)*y[10]+(11)*y[13]+(9)*y[16]
+  +(11)*y[17]+(8)*y[18]+(9)*y[19]+y[29];
+  (14)*v.71+(9)*v.72+(-9)*v.73+(11)*v.76+(9)*v.79
+  +(11)*v.80+(8)*v.81+(9)*v.82+v.92
+  > e*f;
+  (14)*v.127+(19)*v.128+(26)*v.129+(38)*v.130+(29)*v.131+(20)*v.132+(11)*v.133
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 17 over Rationals>
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 17 over Rationals>,
+    (dimension 3)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.8+v.9+v.13+v.16+v.17+v.18+v.29, v.56+(3)*v.57+(2)*v.59, v.63 ]
+  > h*Bz[2];
+  (10)*v.56+(30)*v.57+(20)*v.59
+  > h*Bz[3];
+  (14)*v.63
+  Les poids de z sont 2,10,14 ; d’où mr = 14. Il n’y a qu’une matrice à étudier.
+
+
+                                              32
+   (a) mi1 = 10, mk1 = 6
+       > h*Bg[7];
+       (6)*v.37+(-6)*v.38+(-6)*v.41
+       > h*Bg[8];
+       (6)*v.39+(6)*v.43+(-6)*v.45
+       > h*Bg[9];
+       (6)*v.42+(6)*v.46+(6)*v.49
+
+       > ((f*Bg[7])*Bz[2]);
+       (30)*v.63
+  La propriété (P ) est vérifiée pour cette orbite.
+
+5. Caractéristique :
+
+                     0     0       2    0     0     2
+
+
+                               0
+  Définition du sl2 -triplet :
+  > e:=x[13]+x[14]+x[15]+x[16]+x[17]+x[18]+x[33];
+  v.13+v.14+v.15+v.16+v.17+v.18+v.33
+  >f:=(9)*y[13]+(5)*y[14]+(2)*y[15]+(8)*y[16]+(8)*y[17]
+  +(2)*y[18]+(5)*y[33];
+  (9)*v.76+(5)*v.77+(2)*v.78+(8)*v.79+(8)*v.80+(2)*v.81+(5)*v.96
+  > e*f;
+  (10)*v.127+(15)*v.128+(20)*v.129+(30)*v.130+(23)*v.131+(16)*v.132+(9)*v.133
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 21 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 21 over Rationals>,
+    (dimension 4)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.13+v.14+v.15+v.16+v.17+v.18+v.33, v.61, v.62, v.63 ]
+  > h*Bz[2];
+  (10)*v.61
+  > h*Bz[3];
+  (10)*v.62
+  > h*Bz[4];
+  (10)*v.63
+  Les poids de z sont 2,10,10,10 ; d’où mr = 10. Il n’y a qu’une matrice à étudier.
+   (a) mi1 = 10, mk1 = 2
+       > h*Bg[1];
+       (2)*v.15+(2)*v.18
+       > h*Bg[2];
+       (2)*v.4+(2/3)*v.19+(-4/3)*v.20+(2/3)*v.21+(2/3)*v.22+(-2/3)*v.23
+
+                                              33
+         > h*Bg[3];
+         (2)*v.19+(-4)*v.20+(2)*v.21+(2)*v.22+(4)*v.23+(-6)*v.24
+         > h*Bg[4];
+         (2)*v.7+(-6)*v.9+(4)*v.10+(2)*v.11+(2)*v.26+(-4)*v.27
+         > h*Bg[5];
+         (2)*v.9+(-2)*v.10+(2)*v.29
+         > h*Bg[6];
+         (2)*v.13+(2)*v.14+(2)*v.16+(2)*v.17+(2)*v.33
+
+         > ((f*Bg[1])*Bz[2]);((f*Bg[2])*Bz[2]);((f*Bg[3])*Bz[2]);
+         ((f*Bg[4])*Bz[2]);((f*Bg[5])*Bz[2]);((f*Bg[6])*Bz[2]);
+         (-2)*v.61
+         (8/3)*v.62
+         (2)*v.62
+         (-4)*v.63
+         0*v.1
+         (-8)*v.61
+         > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]); ((f*Bg[3])*Bz[3]);
+         ((f*Bg[4])*Bz[3]);((f*Bg[5])*Bz[3]);((f*Bg[6])*Bz[3]);
+         (-2)*v.62
+         (4/3)*v.63
+         (4)*v.63
+         (2)*v.61
+         (2)*v.61
+         (-8)*v.62
+         > ((f*Bg[1])*Bz[4]); ((f*Bg[2])*Bz[4]); ((f*Bg[3])*Bz[4]);
+         ((f*Bg[4])*Bz[4]);((f*Bg[5])*Bz[4]);((f*Bg[6])*Bz[4]);
+         0*v.1
+         (-10/3)*v.61
+         (-10)*v.61
+         (10)*v.62
+         0*v.1
+         (-10)*v.63
+         La matrice à étudier est
+                                                       
+                              −2α −10/3γ −10γ 2β 2β −8α
+                            −2β −8/3α    2α  10γ 0 −8β  ·
+                                0   4/3β  4β −4α 0 −10γ
+
+         Une étude élémentaire montre que cette matrice est de rang 3 pour tout 3-uplet
+         (α, β, γ) non nul.
+     La propriété (P ) est vérifiée pour cette orbite.
+
+Conclusion : E7 vérifie (P ).
+
+Cas de E8 .
+Définition de L :
+> L:=SimpleLieAlgebra("E",8,Rationals);
+<Lie algebra of dimension 248 over Rationals>
+
+
+                                                 34
+> R:=RootSystem(L);
+<root system of rank 7>
+> P:=PositiveRoots(R);;
+> x:=PositiveRootVectors(R);
+[ v.1, v.2, v.3, v.4, v.5, v.6, v.7, v.8, v.9, v.10, v.11, v.12, v.13, v.14,
+  v.15, v.16, v.17, v.18, v.19, v.20, v.21, v.22, v.23, v.24, v.25, v.26,
+  v.27, v.28, v.29, v.30, v.31, v.32, v.33, v.34, v.35, v.36, v.37, v.38,
+  v.39, v.40, v.41, v.42, v.43, v.44, v.45, v.46, v.47, v.48, v.49, v.50,
+  v.51, v.52, v.53, v.54, v.55, v.56, v.57, v.58, v.59, v.60, v.61, v.62,
+  v.63, v.64, v.65, v.66, v.67, v.68, v.69, v.70, v.71, v.72, v.73, v.74,
+  v.75, v.76, v.77, v.78, v.79, v.80, v.81, v.82, v.83, v.84, v.85, v.86,
+  v.87, v.88, v.89, v.90, v.91, v.92, v.93, v.94, v.95, v.96, v.97, v.98,
+  v.99, v.100, v.101, v.102, v.103, v.104, v.105, v.106, v.107, v.108,
+  v.109, v.110, v.111, v.112, v.113, v.114, v.115, v.116, v.117, v.118,
+  v.119, v.120 ]
+> y:=NegativeRootVectors(R);
+[ v.121, v.122, v.123, v.124, v.125, v.126, v.127, v.128, v.129, v.130,
+  v.131, v.132, v.133, v.134, v.135, v.136, v.137, v.138, v.139, v.140,
+  v.141, v.142, v.143, v.144, v.145, v.146, v.147, v.148, v.149, v.150,
+  v.151, v.152, v.153, v.154, v.155, v.156, v.157, v.158, v.159, v.160,
+  v.161, v.162, v.163, v.164, v.165, v.166, v.167, v.168, v.169, v.170,
+  v.171, v.172, v.173, v.174, v.175, v.176, v.177, v.178, v.179, v.180,
+  v.181, v.182, v.183, v.184, v.185, v.186, v.187, v.188, v.189, v.190,
+  v.191, v.192, v.193, v.194, v.195, v.196, v.197, v.198, v.199, v.200,
+  v.201, v.202, v.203, v.204, v.205, v.206, v.207, v.208, v.209, v.210,
+  v.211, v.212, v.213, v.214, v.215, v.216, v.217, v.218, v.219, v.220,
+  v.221, v.222, v.223, v.224, v.225, v.226, v.227, v.228, v.229, v.230,
+  v.231, v.232, v.233, v.234, v.235, v.236, v.237, v.238, v.239, v.240 ]
+> CanonicalGenerators(R)[3];
+[ v.241, v.242, v.243, v.244, v.245, v.246, v.247, v.248 ]
+Dans E8 , il y a dix orbites nilpotentes distinguées non régulières :
+
+ 1. Caractéristique :
+
+                     2   2       0   2   2    2   2
+
+
+                             2
+    Définition du sl2 -triplet :
+    > e:=x[1]+x[2]+x[3]+x[6]+x[7]+x[8]+x[10]+x[12];
+    v.1+v.2+v.3+v.6+v.7+v.8+v.10+v.12
+    > f:=(72)*y[1]+(60)*y[2]+(142)*y[3]+(68)*y[5]+(132)*y[6]
+    +(90)*y[7]+(46)*y[8]+(38)*y[10]+(-38)*y[11]+(172)*y[12];
+    (72)*v.121+(68)*v.122+(142)*v.123+(68)*v.125+(132)*v.126
+    +(90)*v.127+(46)*v.128+(38)*v.130+(-38)*v.131+(172)*v.132
+    > e*f;
+    (72)*v.241+(106)*v.242+(142)*v.243+(210)*v.244+(172)*v.245+(132)*v.246
+    +(90)*v.247+(46)*v.248
+    > h:=e*f;;
+    Calcul de g, Bg, z et Bz :
+
+                                         35
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 10 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 10 over Rationals>,
+    (dimension 7)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.1+v.2+v.3+v.6+v.7+v.8+v.10+v.12, v.54+(-1/2)*v.57+(-1/2)*v.58
+  +(-1/2)*v.59+(-1/2)*v.60+(-1/2)*v.61+(1/2)*v.62+(-1/2)*v.63,
+    v.84+v.85+(-1)*v.86+(-1)*v.87+(2)*v.88, v.95+(-1)*v.96+v.97+(-1)*v.98+v.99,
+    v.109+(-1)*v.112, v.116, v.120 ]
+  > h*Bz[2];
+  (14)*v.54+(-7)*v.57+(-7)*v.58+(-7)*v.59+(-7)*v.60+(-7)*v.61
+  +(7)*v.62+(-7)*v.63
+  > h*Bz[3];
+  (22)*v.84+(22)*v.85+(-22)*v.86+(-22)*v.87+(44)*v.88
+  > h*Bz[4];
+  (26)*v.95+(-26)*v.96+(26)*v.97+(-26)*v.98+(26)*v.99
+  > h*Bz[5];
+  (34)*v.109+(-34)*v.112
+  > h*Bz[6];
+  (38)*v.116
+  > h*Bz[7];
+  (46)*v.120
+  Les poids de z sont 2,14,22,26,34,38,46 ; d’où mr = 46. Il y a cinq matrices à étudier.
+   (a) mi1 = 14, mk1 = 34
+       > ((f*Bz[5])*Bz[2]);
+       (-119)*v.120
+   (b) mi1 = 22, mk1 = 26
+       > ((f*Bz[4])*Bz[3]);
+       (286)*v.120
+   (c) mi1 = 26, mk1 = 22
+       > ((f*Bz[3])*Bz[4]);
+       (286)*v.120
+   (d) mi1 = 34, mk1 = 14
+       > ((f*Bz[2])*Bz[5]);
+       (-119)*v.120
+   (e) mi1 = 38, mk1 = 10
+       > h*Bg[2];
+       (10)*v.38+(20)*v.39+(-10)*v.41+(-30)*v.42+(20)*v.43+(40)*v.44+(40)*v.45
+       +(10)*v.48+(20)*v.49
+
+       > ((f*Bg[2])*Bz[6]);
+       (190)*v.120
+  La propriété (P ) est vérifiée pour cette orbite.
+
+2. Caractéristique :
+
+                                              36
+                   2     2          0   2   0    2   2
+
+
+                                2
+Définition du sl2 -triplet :
+> e:=x[1]+x[2]+x[3]+x[5]+x[7]+x[8]+x[10]+x[20];
+v.1+v.2+v.3+v.5+v.7+v.8+v.10+v.20
+> f:=(61)*y[1]+(22)*y[2]+(118)*y[3]+(34)*y[5]+(74)*y[7]+(38)*y[8]
++(66)*y[10]+(-66)*y[11]+(22)*y[13]+(22)*y[14]+(108)*y[20];
+(60)*v.121+(22)*v.122+(118)*v.123+(34)*v.125+(74)*v.127+
+(38)*v.128+(66)*v.130+(-66)*v.131+(22)*v.133+(22)*v.134+(108)*v.140
+> e*f;
+(60)*v.241+(88)*v.242+(118)*v.243+(174)*v.244+(142)*v.245+(108)*v.246
++(74)*v.247+(38)*v.248
+> h:=e*f;;
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 12 over Rationals>
+> Bg:=BasisVectors(Basis(g));;
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 12 over Rationals>,
+  (dimension 6)>
+> Bz:=BasisVectors(Basis(z));
+[ v.1+v.2+v.3+v.5+v.7+v.8+v.10+v.20,
+  v.64+v.65+(2)*v.67+v.69+v.71+v.73+v.74+v.76, v.97+(-1)*v.98+v.99+v.100,
+  v.104+v.107+(-1)*v.108+(-1)*v.110, v.117, v.120 ]
+> h*Bz[2];
+(14)*v.64+(14)*v.65+(28)*v.67+(14)*v.69+(14)*v.71+
+(14)*v.73+(14)*v.74+(14)*v.76
+> h*Bz[3];
+(22)*v.97+(-22)*v.98+(22)*v.99+(22)*v.100
+> h*Bz[4];
+(26)*v.104+(26)*v.107+(-26)*v.108+(-26)*v.110
+> h*Bz[5];
+(34)*v.117
+> h*Bz[6];
+(38)*v.120
+Les poids de z sont 2,14,22,26,34,38 ; d’où mr = 38. Il y a quatre matrices à étudier.
+(a) mi1 = 14, mk1 = 26
+    > ((f*Bz[4])*Bz[2]);
+    (-182)*v.120
+(b) mi1 = 22, mk1 = 18
+    > h*Bg[6];
+    (18)*v.81+(36)*v.85+(-18)*v.86+(-18)*v.87+(18)*v.88
+
+    > ((f*Bg[6])*Bz[3]);
+    (-198)*v.120
+
+                                            37
+   (c) mi1 = 26, mk1 = 14
+       > ((f*Bz[2])*Bz[4]);
+       (-182)*v.120
+   (d) mi1 = 34, mk1 = 6
+       > h*Bg[2];
+       (6)*v.23+(9)*v.24+(-3)*v.25+(9)*v.29+(-3)*v.31+(-9)*v.32+(3)*v.33+(6)*v.34
+       +(-3)*v.35+(-3)*v.36+(-3)*v.40
+
+       > ((f*Bg[2])*Bz[5]);
+       (51)*v.120
+  La propriété (P ) est vérifiée pour cette orbite.
+
+3. Caractéristique :
+
+                     2     0          2   0   2     2     2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[7]+x[8]+x[9]+x[10]+x[11]+x[12]+x[13]+x[25];
+  v.7+v.8+v.9+v.10+v.11+v.12+v.13+v.25
+  > f:=(66)*y[7]+(34)*y[8]+(52)*y[9]+(75)*y[10]+(49)*y[11]+(27)*y[12]
+  +(96)*y[13]+y[25];
+  (66)*v.127+(34)*v.128+(52)*v.129+(75)*v.130+(49)*v.131+(27)*v.132
+  +(96)*v.133+v.145
+  > e*f;
+  (52)*v.241+(76)*v.242+(102)*v.243+(152)*v.244+(124)*v.245+(96)*v.246
+  +(66)*v.247+(34)*v.248
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 14 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 14 over Rationals>,
+    (dimension 6)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.7+v.8+v.9+v.10+v.11+v.12+v.13+v.25,
+  v.74+(-2)*v.77+(-1)*v.78+(-1)*v.80
+  +(-1)*v.82, v.104+(-1)*v.105+(-1)*v.106, v.113+v.114, v.117, v.120 ]
+  > h*Bz[2];
+  (14)*v.74+(-28)*v.77+(-14)*v.78+(-14)*v.80+(-14)*v.82
+  > h*Bz[3];
+  (22)*v.104+(-22)*v.105+(-22)*v.106
+  > h*Bz[4];
+  (26)*v.113+(26)*v.114
+  > h*Bz[5];
+  (28)*v.117
+
+                                              38
+  > h*Bz[6];
+  (34)*v.120
+  Les poids de z sont 2,14,22,26,28,34 ; d’où mr = 34. Il y a quatre matrices à étudier.
+   (a) mi1 = 14, mk1 = 22
+       > ((f*Bz[3])*Bz[2]);
+       (-154)*v.120
+   (b) mi1 = 22, mk1 = 14
+       > ((f*Bz[2])*Bz[3]);
+       (-154)*v.120
+   (c) mi1 = 26, mk1 = 10
+       > h*Bg[4];
+       (10)*v.54+(-5)*v.56+(-5)*v.58+(-10)*v.59+(5)*v.61+(-15)*v.63
+       > h*Bg[5];
+       (10)*v.62+(-10)*v.64+(-10)*v.69
+
+       > ((f*Bg[4])*Bz[4]);
+       (-65)*v.120
+   (d) mi1 = 28, mk1 = 8
+       > h*Bg[3];
+       (8)*v.36+(8)*v.39+(8)*v.45+(-24)*v.50+(16)*v.55+(-8)*v.57
+
+       > ((f*Bg[3])*Bz[5]);
+       (24)*v.120
+  La propriété (P ) est vérifiée pour cette orbite.
+
+4. Caractéristique :
+
+                     2     0          2   0   2     0     2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[9]+x[10]+x[11]+x[12]+x[13]+x[14]+x[15]+x[25];
+  v.9+v.10+v.11+v.12+v.13+v.14+v.15+v.25
+  > f:=(44)*y[9]+(50)*y[10]+(28)*y[11]+(36)*y[12]+(54)*y[13]+(26)*y[14]
+  +(28)*y[15]+(14)*y[25];
+  (44)*v.129+(50)*v.130+(28)*v.131+(36)*v.132+(54)*v.133+(26)*v.134
+  +(28)*v.135+(14)*v.145
+  > e*f;
+  (44)*v.241+(64)*v.242+(86)*v.243+(128)*v.244+(104)*v.245+(80)*v.246
+  +(54)*v.247+(28)*v.248
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 16 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+
+                                              39
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 16 over Rationals>,
+    (dimension 5)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.9+v.10+v.11+v.12+v.13+v.14+v.15+v.25, v.86+v.87+v.88+(4)*v.93+(-3)*v.95,
+    v.111+v.115, v.119, v.120 ]
+  > h*Bz[2];
+  (14)*v.86+(14)*v.87+(14)*v.88+(56)*v.93+(-42)*v.95
+  > h*Bz[3];
+  (22)*v.111+(22)*v.115
+  > h*Bz[4];
+  (26)*v.119
+  > h*Bz[5];
+  (28)*v.120
+  Les poids de z sont 2,14,22,26,28 ; d’où mr = 28. Il y a trois matrices à étudier.
+   (a) mi1 = 14, mk1 = 16
+       > h*Bg[10];
+       (16)*v.97+(16)*v.98+(-16)*v.99+(-16)*v.100
+
+       > ((f*Bg[10])*Bz[2]);
+       (-112)*v.120
+   (b) mi1 = 22, mk1 = 8
+       > h*Bg[4];
+       (8)*v.45+(8)*v.47+(-8)*v.57+(-24)*v.58+(24)*v.59+(16)*v.61+(16)*v.62
+       > h*Bg[5];
+
+       > ((f*Bg[4])*Bz[3]);
+       (88)*v.120
+   (c) mi1 = 26, mk1 = 4
+       > h*Bg[2];
+       (4)*v.16+(4)*v.20+(4)*v.22+(-12)*v.30+(8)*v.32+(4)*v.33+(-12)*v.34+(20)*v.35
+
+       > ((f*Bg[2])*Bz[4]);
+       (26)*v.120
+  La propriété (P ) est vérifiée pour cette orbite.
+
+5. Caractéristique :
+
+                     2     0          2   0   0     2     2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[8]+x[9]+x[10]+x[14]+x[18]+x[19]+x[20]+x[33];
+  v.8+v.9+v.10+v.14+v.18+v.19+v.20+v.33
+  > f:=(8)*y[8]+(40)*y[9]+(22)*y[10]+(-22)*y[11]+(50)*y[14]+(35)*y[18]
+  +(37)*y[19]+(21)*y[20]+(35)*y[21]+y[33];
+
+                                              40
+  (26)*v.128+(40)*v.129+(22)*v.130+(-22)*v.131+(50)*v.134+(37)*v.138
+  +(37)*v.139+(21)*v.140+(35)*v.141+v.153
+  > e*f;
+  (40)*v.241+(58)*v.242+(78)*v.243+(116)*v.244+(94)*v.245+(72)*v.246
+  +(50)*v.247+(26)*v.248
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 18 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 18 over Rationals>,
+    (dimension 4)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.8+v.9+v.10+v.14+v.18+v.19+v.20+v.33, v.94+v.95+v.96+v.97, v.116, v.120 ]
+  > h*Bz[2];
+  (14)*v.94+(14)*v.95+(14)*v.96+(14)*v.97
+  > h*Bz[3];
+  (22)*v.116
+  > h*Bz[4];
+  (26)*v.120
+  Les poids de z sont 2,14,22,26 ; d’où mr = 26. Il y a deux matrices à étudier.
+   (a) mi1 = 14, mk1 = 14
+       > ((f*Bz[2])*Bz[2]);
+       (-98)*v.120
+   (b) mi1 = 22, mk1 = 6
+       > h*Bg[4];
+       (6)*v.42+(-12)*v.43+(12)*v.44+(-12)*v.45+(6)*v.46+(-12)*v.49+(6)*v.52
+       +(-6)*v.55
+       > h*Bg[5];
+       (6)*v.50+(-6)*v.51+(-6)*v.57+(-6)*v.61
+
+       > ((f*Bg[4])*Bz[3]);
+       (-66)*v.120
+  La propriété (P ) est vérifiée pour cette orbite.
+
+6. Caractéristique :
+
+                     2     0          2   0   0     2     0
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[9]+x[10]+x[14]+x[15]+x[18]+x[19]+x[20]+x[33];
+  v.9+v.10+v.14+v.15+v.18+v.19+v.20+v.33
+  > f:=(36)*y[9]+(20)*y[10]+(-20)*y[11]+(22)*y[14]+(22)*y[15]+(20)*y[18]
+  +(22)*y[19]+(30)*y[20]+(20)*y[21]+(12)*y[33];
+
+                                              41
+(36)*v.129+(20)*v.130+(-20)*v.131+(22)*v.134+(22)*v.135+(20)*v.138
++(22)*v.139+(30)*v.140+(20)*v.141+(12)*v.153
+> e*f;
+(36)*v.241+(52)*v.242+(70)*v.243+(104)*v.244+(84)*v.245+(64)*v.246
++(44)*v.247+(22)*v.248
+> h:=e*f;;
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 20 over Rationals>
+> Bg:=BasisVectors(Basis(g));;
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 20 over Rationals>,
+  (dimension 4)>
+> Bz:=BasisVectors(Basis(z));
+[ v.9+v.10+v.14+v.15+v.18+v.19+v.20+v.33, v.97+(-1)*v.99+(3)*v.105+(4)*v.108,
+  v.119, v.120 ]
+> h*Bz[2];
+(14)*v.97+(-14)*v.99+(42)*v.105+(56)*v.108
+> h*Bz[3];
+(22)*v.119
+> h*Bz[4];
+(22)*v.120
+Les poids de z sont 2,14,22,22 ; d’où mr = 22. Il y a deux matrices à étudier.
+(a) mi1 = 14, mk1 = 10
+    > h*Bg[7];
+    (10)*v.70+(10)*v.80+(10)*v.81+(10)*v.83
+    > h*Bg[8];
+    (10)*v.75+(10)*v.76+(10)*v.77+(10)*v.86
+    > h*Bg[9];
+    (10)*v.81+(20)*v.83+(10)*v.84+(-10)*v.85+(10)*v.87
+    > h*Bg[10];
+    (10)*v.76+(10)*v.77+(-10)*v.79+(10)*v.82+(10)*v.86+(-10)*v.90
+
+    > ((f*Bg[7])*Bz[2]);
+    0*v.1
+    > ((f*Bg[8])*Bz[2]);
+    0*v.1
+    > ((f*Bg[9])*Bz[2]);
+    (-70)*v.119
+    > ((f*Bg[10])*Bz[2]);
+    (70)*v.120
+    La matrice correspondante est
+                                                     
+                                      0 0 −70 0
+                                                          ·
+                                      0 0 0 70
+    C’est clairement une matrice de rang 2.
+(b) mi1 = 22, mk1 = 2
+    > h*Bg[3];
+
+                                        42
+       (2)*v.9+(2)*v.10+(2)*v.14+(2)*v.15+(2)*v.18+(2)*v.19+(2)*v.20+(2)*v.33
+
+       > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]);((f*Bg[3])*Bz[3]);
+       (-2)*v.119
+       (14)*v.120
+       (-22)*v.119
+       > ((f*Bg[1])*Bz[4]); ((f*Bg[2])*Bz[4]); ((f*Bg[3])*Bz[4]);
+       0*v.1
+       (22)*v.119
+       (-22)*v.120
+       La matrice à étudier est
+                                                
+                                    −2α 22β −22α
+                                                   ·
+                                     0  14α −22β
+       Cette matrice est de rang 2 pour tout couple (α, β) non nul.
+  La propriété (P ) est vérifiée pour cette orbite.
+
+7. Caractéristique :
+
+                     0     0       2    0     0     2     2
+
+
+                               0
+  Définition du sl2 -triplet :
+  > e:=x[8]+x[14]+x[16]+x[17]+x[18]+x[19]+x[20]+x[38];
+  v.8+v.14+v.16+v.17+v.18+v.19+v.20+v.38
+  > f:=(22)*y[8]+(42)*y[14]+(16)*y[16]+(2)*y[17]+(30)*y[18]+(30)*y[19]
+  +(2)*y[20]+(16)*y[38];
+  (22)*v.128+(42)*v.134+(16)*v.136+(2)*v.137+(30)*v.138+(30)*v.139
+  +(2)*v.140+(16)*v.158
+  > e*f;
+  (32)*v.241+(48)*v.242+(64)*v.243+(96)*v.244+(78)*v.245+(60)*v.246
+  +(42)*v.247+(22)*v.248
+  > h:=e*f;;
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 22 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 22 over Rationals>,
+    (dimension 5)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.8+v.14+v.16+v.17+v.18+v.19+v.20+v.38, v.99+(-1)*v.107+(-1)*v.108, v.116,
+    v.118, v.120 ]
+  > h*Bz[2];
+  (14)*v.99+(-14)*v.107+(-14)*v.108
+  > h*Bz[3];
+  (18)*v.116
+  > h*Bz[4];
+
+                                              43
+  (18)*v.118
+  > h*Bz[5];
+  (22)*v.120
+  Les poids de z sont 2,14,18,18,22 ; d’où mr = 22. Il y a deux matrices à étudier.
+   (a) mi1 = 14, mk1 = 10
+       > h*Bg[11];
+       (10)*v.83+(10)*v.89
+       > h*Bg[12];
+       (10)*v.86+(-10)*v.93
+       > h*Bg[13];
+       (10)*v.74+(-10)*v.77+(-10)*v.90+(20)*v.97
+
+       > ((f*Bg[13])*Bz[2]);
+       (-70)*v.120
+   (b) mi1 = 18, mk1 = 6
+       > h*Bg[6];
+       (6)*v.47+(-12)*v.50+(-6)*v.58+(6)*v.59+(12)*v.61+(18)*v.63
+       > h*Bg[7];
+       (6)*v.36+(-6)*v.49+(-3)*v.54+(3)*v.64+(-3)*v.66+(-9)*v.69
+
+       > ((f*Bg[6])*Bz[3]); ((f*Bg[7])*Bz[3]);
+       (-12)*v.120
+       0*v.1
+       > ((f*Bg[6])*Bz[4]); ((f*Bg[7])*Bz[4]);
+       0*v.1
+       (6)*v.120
+                                        
+       La matrice à étudier est −12α 6β ; elle est de rang 1 si le couple (α, β) est
+       non nul.
+  La propriété (P ) est vérifiée pour cette orbite.
+
+8. Caractéristique :
+
+                     0     0          2   0   0     2     0
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[14]+x[15]+x[16]+x[17]+x[18]+x[19]+x[20]+x[38];
+  v.14+v.15+v.16+v.17+v.18+v.19+v.20+v.38
+  > f:=(18)*y[14]+(18)*y[15]+(8)*y[16]+(8)*y[17]+(14)*y[18]+(20)*y[19]
+  +(14)*y[20]+(20)*y[38];
+  (18)*v.134+(18)*v.135+(8)*v.136+(8)*v.137+(14)*v.138+(20)*v.139+(14)*v.140
+  +(20)*v.158
+  > e*f;
+  (28)*v.241+(42)*v.242+(56)*v.243+(84)*v.244+(68)*v.245+(52)*v.246
+  +(36)*v.247+(18)*v.248
+  > h:=e*f;;
+
+
+                                              44
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 24 over Rationals>
+> Bg:=BasisVectors(Basis(g));;
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 24 over Rationals>,
+  (dimension 4)>
+> Bz:=BasisVectors(Basis(z));
+[ v.14+v.15+v.16+v.17+v.18+v.19+v.20+v.38, v.111+v.112, v.119, v.120 ]
+> h*Bz[2];
+(14)*v.111+(14)*v.112
+> h*Bz[3];
+(18)*v.119
+> h*Bz[4];
+(18)*v.120
+Les poids de z sont 2,14,18,18 ; d’où mr = 18. Il y a deux matrices à étudier.
+(a) mi1 = 14, mk1 = 6
+    > h*Bg[5];
+    (6)*v.58+(-6)*v.59+(6)*v.60+(-6)*v.63
+    > h*Bg[6];
+    (6)*v.49+(6)*v.64+(6)*v.65+(-6)*v.66+(-6)*v.67+(6)*v.68
+    > h*Bg[7];
+    (6)*v.64+(12)*v.65+(-6)*v.66+(-6)*v.67+(12)*v.68+(-6)*v.69
+    > h*Bg[8];
+    (6)*v.53+(-6)*v.55+(-6)*v.56+(-6)*v.71+(-6)*v.72+(6)*v.73
+    > h*Bg[9];
+    (6)*v.60+(-3)*v.61+(-3)*v.62+(-3)*v.63+(-3)*v.78
+
+    > ((f*Bg[5])*Bz[2]);
+    (14)*v.119
+    > ((f*Bg[6])*Bz[2]);
+    0*v.1
+    > ((f*Bg[7])*Bz[2]);
+    (14)*v.120
+    > ((f*Bg[8])*Bz[2]);
+    0*v.1
+    > ((f*Bg[9])*Bz[2]);
+    (7)*v.119
+    matrice à étudier est                      
+                                    14 0 0 0 7
+                                                      ·
+                                     0 0 14 0
+    C’est clairement une matrice de rang 2.
+(b) mi1 = 18, mk1 = 2
+    > h*Bg[2];
+    (2)*v.7+(-10)*v.10+(8)*v.11+(2)*v.12+(-4)*v.29+(2)*v.30+(-4)*v.31+(-4)*v.33
+    > h*Bg[3];
+    (2)*v.14+(2)*v.15+(2)*v.16+(2)*v.17+(2)*v.18+(2)*v.19+(2)*v.20+(2)*v.38
+
+    > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]);((f*Bg[3])*bz[3]);
+
+                                     45
+       (-18/5)*v.120
+       0*v.1
+       (-18)*v.119
+       > ((f*Bg[1])*Bz[4]) ;((f*Bg[2])*Bz[4]); ((f*Bg[3])*Bz[4]);
+       0*v.1
+       (18)*v.119
+       (-18)*v.120
+       La matrice à étudier est
+                                                               
+                                                0    18β −18α
+                                                                    ·
+                                              −18/5α 0 −18β
+
+       C’est une matrice de rang 2 pour tout couple (α, β) non nul.
+  La propriété (P ) est vérifiée pour cette orbite.
+
+9. Caractéristique :
+
+                     0     0          2       0   0    0   2
+
+
+                                  0
+  Définition du sl2 -triplet :
+  > e:=x[15]+x[16]+x[17]+x[18]+x[19]+x[20]+x[38]+x[46];
+  v.15+v.16+v.17+v.18+v.19+v.20+v.38+v.46
+  > f:=(8)*y[8]+(16)*y[15]+(2)*y[16]+(12)*y[17]+(2)*y[18]+(12)*y[19]
+  +(22)*y[20]+(-14)*y[28]+(8)*y[38]+(14)*y[46];
+  (8)*v.128+(16)*v.135+(2)*v.136+(12)*v.137+(2)*v.138+(12)*v.139
+  +(22)*v.140+(-14)*v.148+(8)*v.158+(14)*v.166
+  > e*f;
+  (24)*v.241+(36)*v.242+(48)*v.243+(72)*v.244+(58)*v.245+(44)*v.246
+  +(30)*v.247+(16)*v.248
+  >h:=e*f;;
+  Remarque - Il faut préciser pour cette orbite qu’avec les conventions de [2], l’élément
+  X47 correspond à l’élément x[46]=v.46 du logiciel, c’est pourquoi la définition du sl2 -
+  triplet est bien en accord avec [2].
+
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 28 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 28 over Rationals>,
+    (dimension 3)>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.15+v.16+v.17+v.18+v.19+v.20+v.38+v.46, v.119, v.120 ]
+  > h*Bz[2];
+  (14)*v.119
+  > h*Bz[3];
+  (16)*v.120
+
+
+                                                  46
+    Les poids de z sont 2,14,16 ; d’où mr = 16. Il n’y a qu’une matrice à étudier.
+    (a) mi1 = 14, mk1 = 4
+        > h*Bg[3];
+        (4)*v.37
+        > h*Bg[6];
+        (4)*v.42+(-8)*v.44+(4)*v.45+(4)*v.48+(-4)*v.53+(4)*v.55
+        > h*Bg[7];
+        (4)*v.32+(2)*v.47+(2)*v.51+(2)*v.52+(4)*v.59
+        > h*Bg[8];
+        (4)*v.36+(-4)*v.40+(-8)*v.49+(-4)*v.54+(4)*v.57+(-4)*v.64+(4)*v.66
+
+        > ((f*Bg[8])*Bz[2]);
+        (-28)*v.120
+    La propriété (P ) est vérifiée pour cette orbite.
+
+10. Caractéristique :
+
+                       0     0          0   2   0     0     0
+
+
+                                    0
+    Définition du sl2 -triplet :
+    > e:=x[12]+x[21]+x[30]+x[31]+x[33]+x[42]+x[43]+x[53];
+    v.12+v.21+v.30+v.31+v.33+v.42+v.43+v.53
+    > f:=(5)*y[12]+y[21]+(5)*y[30]+(2)*y[31]+(8)*y[33]+(2)*y[42]+(8)*y[43]
+    +(9)*y[53];
+    (5)*v.132+v.141+(5)*v.150+(2)*v.151+(8)*v.153+(2)*v.162+(8)*v.163+(9)*v.173
+    > e*f;
+    (16)*v.241+(24)*v.242+(32)*v.243+(48)*v.244+(40)*v.245+(30)*v.246
+    +(20)*v.247+(10)*v.248
+    > h:=e*f;;
+    Remarque - Ici encore, il faut préciser que l’élément X32 correspond à l’élément
+    x[31]=v.31 du logiciel et la définition du sl2 -triplet est bien en accord avec [2].
+
+    Calcul de g, Bg, z et Bz :
+    > g:=LieCentralizer(L,Subspace(L,[e]));
+    <Lie algebra of dimension 40 over Rationals>
+    > Bg:=BasisVectors(Basis(g));;
+    > z:=LieCentre(g);
+    <two-sided ideal in <Lie algebra of dimension 40 over Rationals>,
+      (dimension 5)>
+    > Bz:=BasisVectors(Basis(z));;
+    Les poids de z sont 2,10,10,10,10 ; d’où mr = 10. Il n’y a qu’une matrice à étudier.
+    (a) mi1 = 10, mk1 = 2
+        > ((f*Bg[1])*Bz[2]); ((f*Bg[2])*Bz[2]); ((f*Bg[3])*Bz[2]); ((f*Bg[4])*Bz[2]);
+        ((f*Bg[5])*Bz[2]); ((f*Bg[6])*Bz[2]); ((f*Bg[7])*Bz[2]);
+        ((f*Bg[8])*Bz[2]); ((f*Bg[9])*Bz[2]); ((f*Bg[10])*Bz[2]);
+
+                                                47
+0*v.1
+0*v.1
+0*v.1
+(-5)*v.120
+(-10)*v.117
+0*v.1
+0*v.1
+(-5)*v.118
+0*v.1
+(-10/3)*v.119
+> ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]); ((f*Bg[3])*Bz[3]); ((f*Bg[4])*Bz[3]);
+((f*Bg[5])*Bz[3]); ((f*Bg[6])*Bz[3]); ((f*Bg[7])*Bz[3]);
+((f*Bg[8])*Bz[3]); ((f*Bg[9])*Bz[3]); ((f*Bg[10])*Bz[3]);
+0*v.1
+(-2)*v.118
+(-2)*v.120
+(-2)*v.117
+(-8)*v.118
+0*v.1
+0*v.1
+v.120
+(4/3)*v.119
+0*v.1
+> ((f*Bg[1])*Bz[4]); ((f*Bg[2])*Bz[4]); ((f*Bg[3])*Bz[4]); ((f*Bg[4])*Bz[4]);
+((f*Bg[5])*Bz[4]); ((f*Bg[6])*Bz[4]); ((f*Bg[7])*Bz[4]);
+((f*Bg[8])*Bz[4]); ((f*Bg[9])*Bz[4]); ((f*Bg[10])*Bz[4]);
+(-1)*v.119
+0*v.1
+0*v.1
+0*v.1
+(-9)*v.119
+0*v.1
+(-2)*v.118
+0*v.1
+(-2)*v.120
+(2)*v.117
+> ((f*Bg[1])*Bz[5]); ((f*Bg[2])*Bz[5]); ((f*Bg[3])*Bz[5); ((f*Bg[4])*Bz[5]);
+((f*Bg[5])*Bz[5]); ((f*Bg[6])*Bz[5]); ((f*Bg[7])*Bz[5]);
+((f*Bg[8])*Bz[5]); ((f*Bg[9])*Bz[5]); ((f*Bg[10])*Bz[5]);
+0*v.1
+(-2)*v.120
+0*v.1
+v.118
+(-8)*v.120
+(-2)*v.118
+(4/3)*v.119
+(-2)*v.117
+0*v.1
+0*v.1
+
+
+
+                            48
+          La matrice à étudier est de taille 4 × 10 :
+                                                                                          
+                 0      0      0     −2β −10α 0         0   −2δ   0    2γ
+               0 −2β          0      δ      −8β −2δ −2γ −5α      0     0                  
+                                                                                          ·
+               −γ      0      0      0      −9γ     0 4/3δ  0  4/3β −10/3α                
+                 0 −2δ −2β −5α −8δ                   0  0    β  −2γ     0
+
+          Une étude élémentaire permet de voir que cette matrice est de rang 4, pour tout
+          4-uplet (α, β, γ, δ) non nul.
+      La propriété (P ) est vérifiée pour cette orbite.
+
+Conclusion : E8 vérifie (P ).
+
+5.1    Cas de F4 .
+Définition de L :
+> L:=SimpleLieAlgebra("F",4,Rationals);
+<Lie algebra of dimension 52 over Rationals>
+> R:=RootSystem(L);
+<root system of rank 4>
+> P:=PositiveRoots(R);;
+> x:=PositiveRootVectors(R);
+[ v.1, v.2, v.3, v.4, v.5, v.6, v.7, v.8, v.9, v.10, v.11, v.12, v.13, v.14,
+  v.15, v.16, v.17, v.18, v.19, v.20, v.21, v.22, v.23, v.24 ]
+> y:=NegativeRootVectors(R);
+[ v.25, v.26, v.27, v.28, v.29, v.30, v.31, v.32, v.33, v.34, v.35, v.36,
+  v.37, v.38, v.39, v.40, v.41, v.42, v.43, v.44, v.45, v.46, v.47, v.48 ]
+> CanonicalGenerators(R)[3];
+[ v.49, v.50, v.51, v.52 ]
+Dans F4 , il y a trois orbites nilpotentes distinguées non régulières. Pour F4 , les conventions
+du logiciel GAP4 sont très différentes de celles adoptées dans [2] ; dans [2], le diagramme
+de Dynkin est :
+
+                     α1     α2       α3   α4
+                                 >
+Il semble que dans GAP4 le diagramme de Dynkin soit plutôt le suivant :
+
+                     α1     α3       α4   α2
+                                 <
+Par conséquent, il est difficile d’utiliser directement les données de [2] dans GAP4.
+On utilise les correspondances suivantes : x[1]=X4 , x[2]=X1 , x[3]=X3 , x[4]=X1 ,
+x[5]=X7 , x[6]=X5 , x[6]=X5 , x[7]=X6 , x[8]=X10 , x[9]=X8 , x[10]=X9 , x[18]=X18 .
+Cependant, même avec ces relations, les sl2 -triplets de [2] ne conviennent pas. On utilise la
+commande FindSl2 qui permet de chercher une sous-algèbre s isomorphe à sl2 et contenant
+e. On s’assure auparavant que l’élémént e est bien nilpotent à l’aide de la commande
+IsNilpotentElement et on vérifie aussi que le sl2 -triplet obtenu correspond bien à la
+caractéristique voulue.
+
+  1. Caractéristique :
+
+
+                                                  49
+                     2     2     0      2
+
+  Définition du sl2 -triplet :
+  > e:=x[2]+x[4]+x[5]+x[7];
+  v.2+v.4+v.5+v.7
+  > IsNilpotentElement(L,e);
+  true
+  > s:=FindSl2(L,a);
+  <Lie algebra of dimension 3 over Rationals>
+  > Bs:=BasisVectors(Basis(s));
+  [ v.2+v.4+v.5+v.7, v.49+(7/5)*v.50+(9/5)*v.51+(13/5)*v.52,
+      v.25+(7/5)*v.26+v.28+v.29+(4/5)*v.31+(-4/5)*v.34 ]
+  L’élément central de cette base est égal au dixième de l’élement neutre correspondant
+  à la caractéristique ; par suite en prenant pour f dix fois le troisième élément de cette
+  base, on obtient un sl2 -triplet pour cette caractéristique.
+  > h:=(14)*H[2]+(26)*H[4]+(18)*H[3]+(10)*H[1];
+  (10)*v.49+(14)*v.50+(18)*v.51+(26)*v.52
+  > f:=(10)*y[1]+(14)*y[2]+(10)*y[4]+(10)*y[5]+(8)*y[7]+(-8)*y[10];
+  (10)*v.25+(14)*v.26+(10)*v.28+(10)*v.29+(8)*v.31+(-8)*v.34
+  > e*f;
+  (10)*v.49+(14)*v.50+(18)*v.51+(26)*v.52
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 6 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 6 over Rationals>,
+  (dimension 3 )>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.2+v.4+v.5+v.7, v.20+v.21+(2)*v.22, v.24 ]
+  > h*Bz[2];
+  (10)*v.20+(10)*v.21+(20)*v.22
+  > h*Bz[3];
+  (14)*v.2
+  Les poids de z sont 2,10,14 ; d’où mr = 14. Il n’y a qu’une matrice à étudier.
+   (a) mi1 = 10, mk1 = 6
+       > h*Bg[3];
+       (6)*v.11+(6)*v.14+(-12)*v.15+(6)*v.16
+
+       > ((f*Bg[3])*Bz[2]);
+       (30)*v.24
+  La propriété (P ) est vérifiée pour cette orbite.
+
+2. Caractéristique :
+
+                     0     2     0      2
+
+
+                                              50
+Définition du sl2 -triplet :
+> e:=x[1]+x[6]+x[5]+x[10];
+v.1+v.5+v.6+v.10
+> IsNilpotentElement(L,e);
+true
+> s:=FindSl2(L,e);
+<Lie algebra of dimension 3 over Rationals>
+> Bs:=BasisVectors(Basis(s));
+[ v.1+v.5+v.6+v.10, v.49+(5/4)*v.50+(7/4)*v.51+(5/2)*v.52,
+   v.25+v.29+(5/2)*v.30+v.31+v.33+(5/2)*v.34 ]
+L’élément central de cette base est égal au huitième de l’élément neutre de la
+caratéristique. Ici Bs[1]*Bs[3]=2*Bs[2] ; on prend alors pour f quatre fois le
+troisième élément de cette base.
+> h:=(10)*H[2]+(20)*H[4]+(14)*H[3]+(8)*H[1];
+(8)*v.49+(10)*v.50+(14)*v.51+(20)*v.52
+> f:=(4)*y[1]+(4)*y[5]+(10)*y[6]+(4)*y[7]+(4)*y[9]+(10)*y[10];
+(4)*v.25+(4)*v.29+(10)*v.30+(4)*v.31+(4)*v.33+(10)*v.34
+> e*f;
+(8)*v.49+(10)*v.50+(14)*v.51+(20)*v.52
+Calcul de g, Bg, z et Bz :
+> g:=LieCentralizer(L,Subspace(L,[e]));
+<Lie algebra of dimension 8 over Rationals>
+> Bg:=BasisVectors(Basis(g));;
+> z:=LieCentre(g);
+<two-sided ideal in <Lie algebra of dimension 8 over Rationals>,
+(dimension 3)>
+> Bz:=BasisVectors(Basis(z));
+[ v.1+v.5+v.6+v.10, v.23, v.24 ]
+> h*Bz[2];
+(10)*v.23
+> h*Bz[3];
+(10)*v.24
+Les poids de z sont 2,10,10 ; d’où mr = 10. Il n’y a qu’une matrice à étudier.
+(a) mi1 = 10, mk1 = 2
+    > h*Bg[2];
+    (2)*v.4+(2)*v.5+(2)*v.6+(-2)*v.7+(2)*v.10
+    > h*Bg[3];
+    (2)*v.5+(2)*v.9+(-2)*v.13
+    > h*Bg[4];
+    (4)*v.8+(4)*v.11+(-4)*v.12+(-4)*v.14+(-4)*v.16
+
+    > ((f*Bg[1])*Bz[2]); ((f*Bg[2])*Bz[2]); ((f*Bg[3])*Bz[2]);
+    (-8)*v.23
+    (-2)*v.23
+    (-2)*v.24
+    > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]); ((f*Bg[3])*Bz[3]);
+    (-2)*v.23
+    (2)*v.23+(-10)*v.24
+    (-8)*v.24
+
+                                      51
+       La matrice à étudier est
+                                                          
+                                −8α − 2β −2α + 2β    0
+                                                             ·
+                                   0      −10β    −2α − 8β
+       Une brève étude de cette matrice montre qu’elle est de rang 2 pour tout couple
+       (α, β) non nul.
+  La propriété (P ) est vérifiée pour cette orbite.
+
+3. Caractéristique :
+
+                     0     2     0      0
+
+  Définition du sl2 -triplet :
+  > e:=x[9]+x[10]+x[8]+x[18];
+  v.8+v.9+v.10+v.18
+  > f:=2*y[9]+2*y[10]+2*y[8]+2*y[18];
+  (2)*v.32+(2)*v.33+(2)*v.34+(2)*v.42
+  > e*f;
+  (4)*v.49+(6)*v.50+(8)*v.51+(12)*v.52
+  > h:=e*f;;
+  Pour cette orbite, les données de [2] conviennent, pour des raisons qui m’échappent.
+
+  Calcul de g, Bg, z et Bz :
+  > g:=LieCentralizer(L,Subspace(L,[e]));
+  <Lie algebra of dimension 12 over Rationals>
+  > Bg:=BasisVectors(Basis(g));;
+  > z:=LieCentre(g);
+  <two-sided ideal in <Lie algebra of dimension 12 over Rationals>,
+  (dimension 3 )>
+  > Bz:=BasisVectors(Basis(z));
+  [ v.8+v.9+v.10+v.18, v.23, v.24 ]
+  > h*Bz[2];
+  (6)*v.23
+  > h*Bz[3];
+  (6)*v.24
+  Les poids de z sont 2,6,6 ; d’où mr = 6. Il n’y a qu’une matrice à étudier.
+   (a) mi1 = 16, mk1 = 2
+       > h*Bg[1]; h*Bg[2]; h*Bg[3]; h*Bg[4]; h*Bg[5];
+       (2)*v.8+(2)*v.9
+       (2)*v.4+(-1)*v.11+v.12
+       (2)*v.12+(-2)*v.13
+       (2)*v.6+(-1)*v.7+v.14
+       (2)*v.14+(-2)*v.15
+       > h*Bg[7];
+       (2)*v.10+(2)*v.18
+
+       > ((f*Bg[1])*Bz[2]); ((f*Bg[2])*Bz[2]); ((f*Bg[3])*Bz[2]);
+       ((f*Bg[4])*Bz[2]); ((f*Bg[5])*Bz[2]); ((f*Bg[7])*Bz[2])
+
+                                              52
+         (-4)*v.23
+         (-2)*v.24
+         (-2)*v.24
+         0*v.1
+         0*v.1
+         (-2)*v.23
+
+         > ((f*Bg[1])*Bz[3]); ((f*Bg[2])*Bz[3]); ((f*Bg[3])*Bz[3]);
+         ((f*Bg[4])*Bz[3]); ((f*Bg[5])*Bz[3]); ((f*Bg[7])*Bz[3])
+         (-4)*v.24
+         0*v.1
+         0*v.1
+         (-2)*v.23
+         (-2)*v.23
+         (-2)*v.24
+         La matrice à étudier est
+                                                       
+                                −4α  0   0  −2β −2β −2α
+                                                          ·
+                                −4β −2α −2α  0   0  −2β
+
+         C’est une matrice de rang 2 pour tout couple (α, β) non nul.
+    La propriété (P ) est vérifiée pour cette orbite.
+
+Conclusion : F4 vérifie (P ).
+
+
+Références
+[1] J. Y. Charbonnel. Propriétés (Q) et (C). Variété commutante. À paraı̂tre dans
+    Bulletin de la Société Mathématique de France.
+[2] G. Grélaud, C. Quitté et P. Tauvel. Bases de Chevalley et sl2 -triplets des Algèbres
+    de Lie Simples Exceptionnelles. Université de Poitiers, 1980.
+[3] D. H. Collinwood et W. M. MacGovern. Nilpotent Orbits in Semisimple Lie
+    Algebra. Van Nostrand Reinhold Mathematics Series, 1992.
+[4] J. F. Kurtzke. Centralizer of Irregular Elements in Reductive Algebraic Groups.
+    Pacific Journal of Mathematics, 1983.
+[5] D. I. Panyushev. The Index of a Lie Algrebra, the Centralizer of a Nilpotent Element,
+    and the Normaliser of the Centraliser. arXiv :math.AG/0107031, 2001.
+[6] M. Raı̈s. Notes sur l’Indice des Algèbres de Lie. Preprint 2004.
+[7] P. Tauvel. Introduction à la Théorie des Algèbres de Lie. Diderot, 1998.
+
+
+
+
+Anne Moreau
+
+
+
+                                                53
+Université Paris 7 - Denis Diderot,
+Institut de Mathématiques de Jussieu,
+Théorie des groupes,
+Case 7012
+2, Place jussieu
+75251 Paris Cedex 05, France.
+
+E-mail : moreaua@math.jussieu.fr
+
+
+
+
+                                         54
+

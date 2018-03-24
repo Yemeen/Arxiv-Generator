@@ -1,0 +1,1128 @@
+                                                   MOTIVIC NATURE OF CHARACTER VALUES OF
+arXiv:math/0403529v1 [math.RT] 31 Mar 2004
+
+
+
+
+                                                        DEPTH-ZERO REPRESENTATIONS
+
+                                                                              JULIA GORDON
+
+
+                                                    Abstract. In the present paper, it is shown that the values of Harish-
+                                                    Chandra distribution characters on definable compact subsets of the
+                                                    set of topologically unipotent elements of some reductive p-adic groups
+                                                    can be expressed as the trace of Frobenius action on certain geometric
+                                                    objects, namely, Chow motives. The result is restricted to a class of
+                                                    depth-zero representations of symplectic or special orthogonal groups
+                                                    that can be obtained by inflation from Deligne-Lusztig representations.
+                                                    The proof works both in positive and zero characteristic, and relies on
+                                                    arithmetic motivic integration.
+
+
+
+
+                                                                             1. Introduction
+                                                Our goal in this paper is to relate the distribution characters of depth-
+                                             zero representations of p-adic groups with geometric objects, namely, Chow
+                                             motives. This is part of an effort, initiated by T.C. Hales in [16], to express
+                                             the concepts of representation theory of p-adic groups in such a way that
+                                             would allow computations to be done without relying on the knowledge of
+                                             the specific value of p (see also [17], [18] and [12]).
+                                                Let G be a p-adic group, for example, G = G(Qp ) for a connected reduc-
+                                             tive algebraic group G, and let π be a representation of G. Harish-Chandra
+                                             [19] introduced the notion of the distribution character Θπ of π and showed
+                                             that it is represented by a locally integrable function θπ on the group G.
+                                             It turned out to be a difficult (and still unsolved in most cases) problem to
+                                             give an explicit formula for the function θπ . There is evidence [22], [15] sug-
+                                             gesting that this difficulty is due to the existence of geometric objects that
+                                             turn out to be non-rational whose number of points over the finite field Fp
+                                             appears in the calculation of the value of the character. This demonstrates
+                                             that harmonic analysis on reductive groups is, in general, non-elementary
+                                             (see [15]), and the best we can hope for is not to obtain explicit formulas
+                                             for character values, but to understand the underlying geometry. The first
+                                             step towards this objective would be to establish the existence of geometric
+                                             objects related to the values of characters in general. This is the step we
+                                             carry out here for a class of depth-zero representations. The methods we use
+                                               1
+                                                 supported in part by the Fields Institute and NSF.
+                                               2
+                                                 Keywords: Harish-Chandra character, Chow motive.
+                                               3
+                                                 2000 Mathematics Subject Classification 22D12, 03C10.
+                                                                                       1
+2                               JULIA GORDON
+
+are completely different from the ones in [15], and based on the new theory
+of arithmetic motivic integration.
+   In 1995, M. Kontsevich introduced the idea of motivic integration, which
+led J. Denef and F. Loeser to develop the theory of arithmetic motivic
+integration. This theory is outlined briefly in the Appendix. Arithmetic
+motivic integration allows to express the classical p-adic volumes of definable
+subsets of p-adic manifolds in terms of trace of p-Frobenius action on virtual
+Chow motives (which is, essentially, a generalization of counting Fp -points
+of algebraic varieties). In [17], T.C. Hales outlined a program that applies
+arithmetic motivic integration in order to relate various quantities arising in
+representation theory of p-adic groups (such as orbital integrals) to geometry.
+   Here we use these ideas to express some averaged values of the charac-
+ter θπ in terms of the Frobenius action on a Chow motive associated with
+the group, the representation, and the set of averaging. So far, such a re-
+sult is restricted to the class of depth-zero supercuspidal representations of
+symplectic or special orthogonal (odd) groups, which can be obtained by
+inflation from Deligne-Lusztig representations. However, we expect that the
+methods should generalize to a much wider class, possibly including most
+supercuspidal representations.
+   Acknowledgment. This work is part of a thesis written under the guid-
+ance of T.C. Hales, to whom I am deeply grateful for all the advice and
+help. I am indebted to Ju-Lee Kim for suggesting the key idea of using the
+double cosets at the early stage of this work. Special thanks to J. Korman
+for all his help in getting this paper to its present shape, to J. Diwadkar for
+sharing her calculations with me, and to J. Adler and L. Spice for helpful
+conversations. I am also very grateful to the referee for suggesting multiple
+improvements.
+
+
+                             2. The statement
+2.1. Notation and assumptions. Throughout the paper, we assume that
+the algebraic group G is a symplectic group G = Sp(2n) or special orthogo-
+nal group G = SO(2n + 1) for some n ∈ N. Specifically, we think of Sp(2n),
+resp., SO(2n + 1) as the closed subgroup of GL(2n), resp., GL(2n + 1), cut
+out by the condition t gJg = J. The matrix J = (Jij ) of the size 2n (resp.,
+2n + 1), in the symplectic case is defined by: Jij = 0 if i + j 6= 2n + 1,
+Ji,2n+1−i = 1 if i ≤ n, and −1 otherwise, and in the orthogonal case J is
+the anti-diagonal matrix with 1’s on the anti-diagonal. The reason we have
+to restrict our attention only to these groups is explained in Section 5.6.
+   The letter ‘F ’ will be reserved for a global field, and the letter ‘E’ – for
+a local field. The symbol O with various subscripts will always be used to
+denote the ring of integers of the corresponding field.
+   We will denote by K the collection of all nonarchimedean completions of
+a global field F . Namely, we consider two cases: if F is a number field, then
+K = {Fv } is the collection of its completions at nonarchimedean places. If
+                   MOTIVIC NATURE OF CHARACTER VALUES                            3
+
+F is a function field, we denote by K the collection of all fields of the form
+Fx ((t)), where x ∈ Spec OF is a closed point.
+   If k is a finite field, and G – an algebraic group as above, we denote by Gk
+the finite group of k-points of G, that is, the subgroup of G(k̄) consisting
+of the points fixed by the Frobenius action (see, e.g., [36, Chapter I] for
+details).
+
+2.2. The representations. Let K be a collection of local fields, as defined
+in Section 2.1. We would like to study the characters of representations of
+the groups G(E), as E ranges over the family K. As stated in the introduc-
+tion, the goal is to obtain an independent of E formula for the character. In
+particular, we need the representations to be, so to say, the “incarnations
+of the same representation” as we let E range over various completions of
+a given global field. To make this precise, we consider a family of repre-
+sentations of the groups G(E) (one representation for each group) that are
+parametrized by the same combinatorial data independent of E.
+   For the group G, G = SO(2n + 1) or G = Sp(2n) as above, the starting
+datum is a partition w of the integer n. For each finite field Fq , w corresponds
+to a conjugacy class of elliptic tori in the finite group GFq [39, Section 5.7]. In
+particular, for each field E ∈ K with ring of integers OE and residue field kE ,
+w corresponds to a conjugacy class of tori in GkE . We pick a torus T = TkE ,w
+from this class. Deligne-Lusztig theory associates a representation RT,χ       GkE
+
+with the data (T, χ) where χ is a character of the torus T . We let the
+character χ be an arbitrary irreducible character of T in general position.
+Such character exists if the characteristic of kE is large enough; it will be
+explained in Section 2.4 why the choice of χ subject to these restrictions
+does not matter. Let ψ = RT,χ      GkE be the Deligne-Lusztig representation
+
+of GkE corresponding to the pair (T, χ) (see Appendix, Section 5.6). It
+is a representation of GkE on a Q̄l -vector space with l 6= charkE , but its
+construction does not depend either on kE or on l. We would like to be able
+to vary E (and with it, kE ). Therefore, let us fix, once and for all, l = 5
+(see Section 5.6 for the explanation of this choice), and only consider the
+local fields in K with the residual characteristic greater than 5 from now on.
+We also embed Q̄5 in C, and replace ψ with the representation ψ̄ on the
+resulting complex vector space.
+   The representation πE,w,χ of the group G(E) associated with the partition
+w and the character χ is constructed as follows. Let KE = G(OE ). The
+group KE is a maximal compact subgroup of G(E). First, we inflate the
+representation ψ̄ to a representation of KE , and then induce the resulting
+representation from KE to G(E) (by means of compact induction). By
+‘inflation’ we mean the following process. Denote by Res : KE → GkE the
+map that acts, coordinate-wise, as reduction modulo the uniformizer of the
+field E. Then define the representation κ : KE → End(V ) by κ(g) :=
+ψ̄(Res(g)), where V is the representation space of ψ̄. The final result of
+4                               JULIA GORDON
+
+this inflation-induction procedure is a depth-zero representation πE,w,χ =
+      G(E)
+c-IndKE κ of the group G(E) on a complex vector space.
+   It is relevant to note here that the construction so far is not quite inde-
+pendent of the field E ∈ K, because of the presence of χ. However, later
+we will see that χ drops out of all calculations of the character values. For
+now, it may be more precise to talk about a “pack” of representations πE,w,χ
+associated with the data (E, w).
+   The following known fact is important for us, so we state it as a lemma,
+but do not include the proof (cf. [27, Proposition 6.8]).
+Lemma 1. The representation πE,w,χ is supercuspidal.
+2.3. The main theorem. Let G, K, w, χ, and πE,w,χ for almost all E ∈ K
+be as in Section 2.2. For almost all E ∈ K the residual characteristic of E
+is large enough so that the construction of the Section 2.2 makes sense.
+   We denote the distribution character of the representation π = πE,w,χ by
+Θw,E , even though it would be more precise to denote it by Θw,χ,E . We are
+omitting χ from the notation because our calculations do not depend on χ.
+We denote the locally summable function that represents the distribution
+Θw,E by θw,E , and also call it the character of π.
+   Let KErtu denote the set of regular topologically unipotent elements in
+KE = G(OE ). Denote by IE the Iwahori subgroup of the group G(E) which
+consists of the elements in KE whose reduction modulo the uniformizer is
+an upper-triangular matrix in the standard representation.
+   To state the main theorem, we need two notions: of Pas’s language, and
+of virtual Chow motives. They are defined in the Appendix: Sections 5.1,
+5.2, and 5.4. The completed ring of virtual Chow motives which “arise from
+varieties” (see Apenndix, Section 5.4) is denoted by K̂0mot (VarF )Q .
+   Let α be a formula in Pas’s language (see Appendix, Section 5.2) defining
+a compact subset Γα,E = Z(α, E) ⊂ KErtu for almost all E ∈ K. Let vol
+stand for the p-adic Haar measure on G = G(E) normalized so that its
+restriction to KE coincides with the Serre-Oesterlé measure (see Appendix,
+Section 5.5).
+Theorem 2. Given G, w and K as above, there exists a virtual Chow motive
+Mα,w ∈ K̂0mot (VarF )Q , such that for almost all E ∈ K, the following equality
+holds:
+                                     Z
+     vol(IE )Θw,E (Γα,E ) = vol(IE )      θw,E (γ) dγ = T rF robE (Mα,w ),
+                                     Γα,E
+
+where F robE is the Frobenius action corresponding to the place of F that
+gave rise to the field E, and Θw,E (Γα,E ) stands for the value of the distri-
+bution Θw,E at the characteristic function of the set Γα,E .
+   As announced in the introduction, this theorem states that the value of
+the distribution character on a definable compact subset of K rtu can be
+recovered from a geometric object (namely, a virtual Chow motive), up to
+                  MOTIVIC NATURE OF CHARACTER VALUES                           5
+
+a factor which is a polynomial in the cardinality of the residue field (the
+volume of the Iwahori subgroup).
+
+2.4. Remarks. 1. A new version of the theory of motivic integration, that
+is about to appear, yields that the ring of virtual Chow motives does not
+need to be completed in order to define the elements Mα,w (see Appendix,
+Section 5.4).
+   2. The reason we restrict our attention only to the topologically unipotent
+elements is the following. Recall that the irreducible character χ of the torus
+in the finite group GkE is part of the construction of the representation π
+which does not have a nice combinatorial parametrization. However, as we
+will see in the next section, the value of θw,E at a topologically unipotent
+element is expressed through the values of the character of Deligne-Lusztig
+representation ψ̄ that gave rise to π at unipotent conjugacy classes. Those
+values, in turn, are expressed by Green polynomials (see Appendix, Section
+5.6, for a brief review and references). We are using the fact that the values
+of the Green polynomials at unipotent elements do not depend on the choice
+of the character χ.
+   3. We are considering the averages of the function θw,E over some defin-
+able subsets of KErtu . The other way of saying this is to say that we look at
+the values of the distribution character Θw,E itself at the characteristic func-
+tions of those subsets. In fact, we would like to study the individual values
+θw,E (γ) at regular elements. Pas’s language, which is one of our main tools,
+does not allow to handle individual elements of p-adic fields or p-adic groups.
+As a function on the set of regular elements in the p-adic group G(E), the
+character θw,E (γ) is locally constant. However, there are no explicit results
+that say “how small” the sets on which θw,E is constant might be. This
+forces us to average θw,E over some sets that we can control. However, the
+actual shape of the sets of averaging is flexible (the only requirement being
+that they are definable, see Section 5.2).
+   The rest of the paper is devoted to the proof of Theorem 2. In the next
+section we do an entirely p-adic calculation which serves as a preparation for
+the proof, and in Section 4 we give it a motivic interpretation, which leads
+to the desired result.
+
+               3. The Character: a p-adic calculation
+   Throughout this section we adhere to a fixed local field E with a uni-
+formizer ̟, ring of integers O, and residue field k = O/(̟). Since the field
+E stays fixed here, we drop the subscript E from all notation for simplicity.
+
+3.1. Character of an induced representation. Let π be a representation
+of G = G(E) obtained from a Deligne-Lusztig representation ψ̄ of Gk by
+the inflation and induction procedure described in Section 2.2. By Lemma
+1, π is supercuspidal.
+   We fix K := KE – a maximal compact subgroup of G, and let I = IE .
+6                                JULIA GORDON
+
+   We denote by ρ the character of the representation ψ̄, and by ρ̃ : K → C
+– the character of its inflation to K. Note that the value ρ̃(g) at g ∈ K
+depends only on the reduction of g modulo ̟.
+   Let Γ be a compact subset of K rtu . By the Frobenius-type formula for
+induced character, [31, Theorem 1.9] and [1, Theorem A.14(ii)] (see also the
+Remark at the end of the Appendix in [1]), the value of the character θw (γ)
+can be expressed as a sum that is finite uniformly for all γ ∈ Γ:
+                                                        
+                              X         X
+(1)               θw (γ) =                   ρ̃(y −1 γy) .
+                             a∈I\G/K    y∈IaK/K
+
+Note that in [31], the double cosets are taken with respect to the same sub-
+group on the left and right; however, the modification we are using here can
+be obtained in the exactly same way. Our version of the formula coincides
+with the formula in [1].
+
+3.2. The double cosets. The indexing set I\G/K in the outer sum in (1)
+can be described using a version of the Iwasawa decomposition.
+   Let A be the split standard torus in G. We can think of the elements of A
+as diagonal matrices of the form diag(ui ̟ λi )i=1,...,r with ui ∈ O∗ and λi ∈ Z
+satisfying the relations forced by the definition of the group (for example,
+in the symplectic case, ui = u−1   r−i and λi = −λr−i ). Then, by a version of
+Iwasawa decomposition, G = IAK [21].
+   Observe that the intersection of the subgroups I and A is exactly the
+intersection of A with K. It follows that every left coset of G modulo K has
+a representative of the form ya with y ∈ I and a ∈ A0 , where A0 is the set of
+elements in A of the form aλ = diag(̟ λi )i=1,...,r , where λ = (λi )i=1,...,r ∈ Zr
+satisfies the conditions mentioned above. In particular, the set of double
+cosets I\G/K is in bijection with the set A0 .
+   Fix a multi-index (λi )i=1,...,r that gives an element aλ ∈ A0 .
+Definition 3. We call the elements y1 , y2 ∈ I λ-equivalent if y1 aλ and y2 aλ
+belong to the same left K-coset (that is, a−1  −1
+                                           λ y1 y2 aλ ∈ K). We denote the
+λ-equivalence class of y ∈ I by [y]λ .
+   As an element of the torus A, aλ may be considered as a lift of an element
+of the extended Weyl group of G. Let lλ be the length of this element. By
+a theorem of Iwahori and Matsumoto [21], the set of λ-equivalence classes
+is in bijection with Alλ (k).
+   The following two simple observations will be used below, so we state
+them as a lemma. We keep the same notation as above, and let q = |O/(̟)|
+denote the cardinality of the residue field.
+Lemma 4. 1. If y1 and y2 are λ-equivalent, then the elements
+(y1 aλ )−1 γ(y1 aλ ) and (y2 aλ )−1 γ(y2 aλ ) are conjugate by an element of K.
+2. All the λ-equivalence classes have equal volumes, equal to vol(I)  q lλ
+                                                                           .
+                  MOTIVIC NATURE OF CHARACTER VALUES                           7
+
+Proof. The first statement is obvious: (y1 aλ )−1 γ(y1 aλ )
+= k(y2 aλ )−1 γ(y2 aλ )k−1 , where k = a−1    −1
+                                           λ y1 y2 aλ ∈ K by definition of λ-
+equivalence.
+   To show the second assertion, note that y and y0 are λ-equivalent if and
+only if y −1 ∈ aλ Ka−1   −1
+                      λ y0 ∩ I. Hence the volume of each equivalence class
+equals the volume of the set I ∩ aλ Ka−1   λ (since the group G is reductive,
+it is unimodular, and therefore the operation of taking an inverse preserves
+the Haar measure). Let us compute this volume. The total number of
+equivalence classes within the Iwahori subgroup I equals q lλ . Hence, the
+volume of each equivalence class is vol(I)
+                                      q lλ
+                                            .                              
+
+3.3. A formula for the character. First, let us introduce some notation.
+Let C be a conjugacy class in the finite group Gk , and let γ ∈ K rtu . For λ ∈
+Zr as in the previous section, denote by NCλ (γ) the number of λ-equivalence
+classes [y]λ of elements of I such that the following conditions are satisfied:
+      i) (ya)−1 γ(ya) ∈ K for any y ∈ [y]λ
+     ii) Res((ya)−1 γ(ya)) ∈ C for any y ∈ [y]λ .
+The condition (i) is well defined by Lemma 4. Let NC (γ) = λ NCλ (γ). We
+                                                                P
+observe that for each element γ ∈ K rtu the sum is finite, because the set of
+classes [y]λ satisfying the condition (i) is nonempty only for a finite set of
+multi-indices λ, by [1, Theorem A.14(ii)].
+   Using the fact that ρ̃ is a lift of the character ρ of the finite group Gk ,
+the sum (1) can be rewritten as a sum over the conjugacy classes C of Gk :
+                     X          X                   X
+(2)         θw (γ) =                        ρ(C) =      NC (γ)ρ(C),
+                     C           (λ,[y]λ )           C
+                         ∀y∈[y]λ(ya)−1 γ(ya)∈K,
+                          Res((ya)−1 γ(ya))∈C
+
+
+where C runs over the conjugacy classes of Gk .
+Lemma 5. 1. If Γ is a compact subset of the set of regular elements in G,
+then there exists a finite set AΓ of indices λ so that NCλ (γ) = 0 for all γ ∈ Γ
+and λ ∈/ AΓ .
+2. If γ is topologically unipotent, only the unipotent conjugacy classes C
+appear in the summation in (1).
+Proof. The first statement is part of the statement of [1, Theorem A.14(ii)].
+(In [1], the Theorem is stated only for GLn and its relatives, but as the
+authors point out at the end of the Appendix, the argument carries over to
+classical groups without any changes.)
+   The second statement is based on the following two simple observations.
+First, the eigenvalues of Res(γ) are obtained from the eigenvalues of γ by
+reduction modulo the uniformizer of the valuation extended to the algebraic
+closure of the field E. Second, it follows, for example, from [2, Lemma 2.2]
+that the eigenvalues of a topologically unipotent element (in the algebraic
+closure of the given local field) are congruent to 1.                      
+8                               JULIA GORDON
+
+3.4. Averages. Let Γ be a compact subset of K = G(O). The goal is to
+express the average Θw (Γ) of the values of θw over the set Γ as the p-adic
+volume of some p-adic object. In the next section we will use Denef and
+Loeser’s “comparison theorem” to relate the resulting p-adic volume to a
+Chow motive. We do it by means of artificially constructing some subsets
+of G × G whose p-adic volumes equal the numbers NC (γ) that appear in
+formula (2), and showing that these subsets are definable.
+   Consider the Cartesian product
+                                X = G ×O G.
+Fix an element a = aλ as above and consider the double coset Da = IaK ⊂
+G. Let WλE (Γ) be the subset of X (O) defined by
+              WλE (Γ) = {(y, γ) | y ∈ I, γ ∈ Γ, a−1 y −1 γya ∈ K}.
+    The set WλE (Γ) is partitioned into subsets
+             E
+            WC,λ (Γ) = {(y, γ) ∈ WλE (Γ) | Res((ya)−1 γ(ya)) ∈ C},
+where C runs over the unipotent conjugacy classes of Gk .
+          E (γ) ⊂ I be the projection onto the first coordinate of the cross-
+   Let WC,λ
+             E (Γ) with fixed γ ∈ Γ.
+section of WC,λ
+   Let vol be the Haar measure on G(E) normalized so that its restriction
+to K coincides with the Serre-Oesterlé measure. Then the space X (O) has
+the natural product measure.
+Main Observation. Up to a normalization factor, the number NCλ (γ)
+                                                  E (γ):
+defined in Section 3.3 is the volume of the set WC,λ
+
+                                     q lλ
+                        NCλ (γ) =               E
+                                           vol(WC,λ (γ)),
+                                    vol(I)
+where q is the cardinality of the residue field k, lλ is an integer that depends
+only on λ, and I is the Iwahori subgroup.
+Proof. Fix a multi-index λ. By definition, NCλ (γ) is the number of equiv-
+alence classes [y]λ of the elements y ∈ I that satisfy the conditions (i) and
+                E (γ) is a disjoint union of these equivalence classes. Recall
+(ii). The set WC,λ
+that by Lemma 3.2, all λ-equivalence classes have equal volumes, equal to
+vol(I)
+  ql
+       . Hence,
+    λ
+
+                                   q lλ
+                        NCλ (γ) =              E
+                                         vol(WC,λ (γ)).
+                                  vol(I)
+In the next section, we will also need the following property of the normal-
+ization factor that appears in the above formula.
+                                      lλ
+                                  q
+Remark 6. The factor p(q) = vol(I)    , as a function of q, is an element of
+Z(x), since the volume of I is a polynomial in q with coefficients in Z that
+depends only on the group G.
+                   MOTIVIC NATURE OF CHARACTER VALUES                                           9
+
+   Consider the average (with respect to the Haar measure vol defined above)
+of the values of θw over the set Γ. In order to get rid of denominators, we
+multiply it by vol(I).
+(3)                       Z                               Z XX
+vol(I)Θw (Γ) = vol(I)             θw (γ) dγ = vol(I)                    NCλ (γ)ρ(C)
+                              Γ                            Γ C      λ
+                  XX                       Z
+(4)           =           ρ(C)q lλ                   E
+                                                vol(WC,λ (γ)) dγ
+                  C   λ                    Γ
+                  XX                       ZZ                       XX
+                                      lλ
+(5)           =           ρ(C)q                          1 dydγ =             ρ(C)q lλ vol(WC,λ
+                                                                                            E
+                                                                                                (Γ)).
+                                                 E (Γ)
+                                                WC,λ
+                  C   λ                                             C     λ
+
+Note that the sum and the integral in the expression (4) can be interchanged
+because the summation over λ, in fact, runs over a finite set AΓ , by Lemma
+5. This equality is the basis for our main result, as the next section shows.
+
+                          4. Motivic interpretation
+4.1. Varying the field. In this section, we complete the proof of Theo-
+rem 2 by associating virtual Chow motives with the subsets WC,λ       E (Γ) from
+
+the previous section using arithmetic motivic integration. This leads to an
+expression of the average value of θw as a trace of Frobenius on a certain
+virtual Chow motive.
+   Throughout this section, we work with the notation and all the assump-
+tions of Theorem 2, so that K is the collection of all nonarchimedean com-
+pletions of a given global field F ; G, π, w are as in Section 2.2, α is a formula
+in Pas’s language, and for E ∈ K, Γα,E is a definable subset of KE defined
+by the formula α. As in Theorem 2, we are assuming that Γα,E is contained
+in the set of regular topologically unipotent elements in KE . In order to
+justify the assumption that a definable set Γα,E can be contained in K rtu ,
+we would like to show that the set K rtu itself is definable.
+Lemma 7. Let E ∈ K be a local field. Let K = KE . Then
+      1. The set K rtu is definable.
+      2. The Iwahori subgroup IE is a definable subset of KE .
+Proof. 1. Let γ be an element of K rtu . We use the standard representation
+of the group G to think of γ as a matrix γ = (xij ), and let the ‘xij ’ be the
+free variables in all our logical formulas. We use the following definition of
+regular [24]. Let n be the dimension of G and l be the rank of G. Then the
+element γ is regular if and only if Dl (γ) 6= 0, where Dl (γ) is defined by the
+following expression:
+                                                              n−1
+                                                              X
+                  det((t + 1)In − Ad(γ)) = tn +                     Dj (γ)tj .
+                                                              j=0
+10                               JULIA GORDON
+
+We observe that Ad(γ) can be thought of as a matrix expression whose en-
+tries are polynomials in xij , and hence Dl (γ) is also a polynomial expression
+in the variables xij . Therefore, ‘Dl (γ) 6= 0’ is a formula in Pas’s language.
+In conjunction with the formulas coming from the equations of the group G
+as an affine variety, and with the Pas’s language formulas ‘ord(xij ) ≥ 0’ for
+each index (i, j), this formula defines the set of regular elements in K.
+   To cut out the subset of topologically unipotent elements, we use Lemma
+5, which implies that γ is topologically unipotent if and only if the element
+Res(γ) is unipotent, and then use the combinatorial (independent of the
+field) parametrization of the set of unipotent conjugacy classes in the finite
+group Gk (where k is the residue field of E). The details are part of the
+proof of Lemma 9 below.
+   2. The Iwahori subgroup I that we are considering is defined by the
+formulas ‘ord(xij ) ≥ 0’, i ≤ j, in conjunction with the formulas ‘ord(xij ) ≥
+1’ for all pairs of indices (i, j) with i > j.                                
+4.2. Preparation: the subsets WC,λ      E (Γ
+                                             α,E ) are definable. We start by
+fixing a multi-index λ, and considering the corresponding double coset Da ,
+as in Section 3.4. Let l = lλ . Recall that α stands for a formula in Pas’s
+language that defines a compact subset Γα,E of KErtu for almost all E ∈ K.
+Since we are keeping α fixed, in this section we drop ‘Γα,E ’ from the notation,
+and denote the sets whose definability we wish to prove simply by WC,λ    E .
+
+Lemma 8. Let λ be a fixed index. Under the assumptions of Theorem 2,
+WλE (Γα,E ) is a definable subset of G × G(E) for E ∈ K.
+Proof. Suppose for a moment that the field E ∈ K is fixed, an element
+y = (yij ) ∈ IE is fixed, and take γ = (γij ) ∈ Γα,E . We observe that each
+matrix coefficient of the matrix y −1 γy is a polynomial, with coefficients in Z,
+homogeneous in the variables yij and linear in the variables γij . We denote
+these polynomials by Pκη (yij , γij ), κ, η = 1, . . . , r. The conjugation by aλ
+multiplies each entry of y −1 γy by an integral power of the uniformizer that
+depends only on the multi-index λ. We denote these powers by nκη .
+   Consider the formulas
+(6)
+  ‘ordPκη (yij , γij ) + nκη ≥ 0’, ‘ord(yij ) ≥ 0’, i ≤ j, ‘ord(yij ) ≥ 1’, i > j.
+   Let φ be the conjunction of all the formulas (6) and the formula α in the
+variables γij that defines Γα,E . Then WλE (Γα,E ) = Z(φ, E) in the notation
+of Section 5.2 of the Appendix.                                            
+                      E are definable.
+Lemma 9. The subsets WC,λ
+Proof. Suppose for a moment that a local field E ∈ K is fixed. All we need
+to show is that the set of topologically unipotent elements y ∈ K such that
+Res(y) ∈ C is definable for each conjugacy class C of the group Gk that
+appears in the summation (3). In order to write a formula that cuts out this
+set, we let the matrix coefficients of y be the free variables, as before.
+                   MOTIVIC NATURE OF CHARACTER VALUES                            11
+
+   First of all, we observe that the symbol ‘Res’ can be used in formulas in
+Pas’s language with the following meaning: if ϕ(y) is an expression in Pas’s
+language with y – a variable of the residue field sort, then we set ϕ(Res(x))
+(where x is a free variable of the valued field sort) to be ϕ1 ∨ ϕ2 , where
+ϕ1 :=‘ord(x) = 0’∧ϕ(ac(x)), and ϕ2 :=‘ord(x) > 0’∧ϕ(0). Also, if x is
+an abbreviation for a matrix or a vector of free variables, we understand
+‘Res(x)’ in a natural way, as the application of the symbol ‘Res’ to each
+component of x, as described above.
+   Since Γα,E , by assumption, is contained in the set of topologically unipo-
+tent elements in G, only the unipotent conjugacy classes C appear in (3), by
+Lemma 5. As described in the Appendix, Section 5.7, the set of unipotent
+conjugacy classes C is in bijection with the set of purely combinatorial data
+{(Λ, (ǫi ))}, where Λ is a partition of r, and ǫi ∈ kE   ∗ /k ∗ 2 (where k is the
+                                                             E            E
+residue field of E). Suppose that the class C corresponds to a pair (Λ, (ǫi )).
+We think of (ǫi ) as a sequence with entries 0 or 1.
+   In order to write down the logical formula φΛ,(ǫi ) cutting out the set of
+elements whose reductions fall into the conjugacy class C, we need to unwind
+the process described in Section 5.7 that associates C with the data (Λ, (ǫi )).
+   First, for y ∈ K, y – topologically unipotent, let Y = (1 − y)(1 + y)−1
+be the Cayley transform of y (note that the matrix 1 + y is invertible, since
+y is assumed to be topologically unipotent). The element Y lies in the
+Lie algebra of G over the given p-adic field. Let Ỹ1 = det(1 + y)Y , and
+let ‘Y1 ’=‘Res(Ỹ1 )’ (so that ‘Y1 ’ in all formulas is treated as a matrix with
+components ranging over the residue field sort, even though, to be precise,
+all the formulas involving ‘Y1 ’ would be conjunctions of formulas with free
+variables ranging over the valued field sort, namely, the matrix coefficients
+of Ỹ1 ). Note that the matrix coefficients of Ỹ1 are polynomials, with Z-
+coefficients, in the matrix coefficients of y. Hence, finally, the abbreviation
+‘Y1 ’ can be used instead of ‘y’ in all subsequent formulas, and we treat it
+just as a matrix with components of the residue filed sort.
+   The first part of the data, Λ, prescribes the set of Jordan blocks of the
+matrix Y , which is the same as the set of Jordan blocks of Y1 . The set of
+all elements Y1 whose Jordan blocks match the partition Λ is defined by
+
+(7)                  ‘∃(gij )i,j=1,...,r : (gij )Y1 (gij )−1 = JΛ ’,
+
+where JΛ is the matrix with entries 0 and 1, consisting of Jordan blocks
+given by the partition Λ. Note, again, that in fact formula (7) has only free
+variables of the valued field sort, that is, the matrix coefficients ‘yij ’ (we see
+that by unwinding the abbreviation ‘Y1 ’). All the variables ranging over the
+residue field sort (that is, ‘gij ’) are bound. Hence, logical formula (7) cuts
+out a definable set.
+   Second, we need to cut out the subset of this definable set that corresponds
+to the given sequence (ǫi ). Recall (from Section 5.7) that the sequence (ǫi )
+comes from a collection of quadratic forms on the vector spaces Vi . Let
+12                                       JULIA GORDON
+
+ci = dim Vi . We will need to introduce separately a few components of the
+final formula that would define WC,λ        E .
+
+   Let us look at one entry ǫi corresponding to the vector space (Vi , qi ).
+   Let ‘li(v1 , . . . , vm )’ be the logical formula with the free variables v11 , . . . , vmr
+that states that the vectors v1 = t (v11 , . . . , v1r ), . . . , vm = t (vm1 , . . . , vmr ) are
+linearly independent (here r = dim V ), see [12].
+   Let ‘kerA (v)’ be the logical formula stating that the vector v is anni-
+hilated by the linear operator A, where ‘A’ is a matrix of logical terms.
+The free variables of this formula are the components of v and the matrix
+coefficients of A. Let ‘q-span(Y1 , v1 , . . . , vm )’ be the formula with free vari-
+ables v1 , . . . , vm and Y1 (each of which is an abbreviation for a vector or
+a matrix, respectively), which is the conjunction of the formulas kerY i (vj ),
+                                                                                          1
+j = 1, . . . , m and the following:
+                                                ‘∀u∃(a1 , . . . , am )    ∧ ∃v ′ ∧ ∃v ′′
+                                                                         m
+                                                                         X
+                         ′                 ′′           ′         ′′
+             kerY i−1 (v ) ∧ kerY i+1 (v )          ∧ v + Y1 v +               ai vi = u’,
+                   1               1
+                                                                         i=1
+
+where aj are scalars, and v ′ , v ′′ , u are abbreviations for r-vectors (all exis-
+tential quantifiers in this formula range over the residue field sort). This
+formula states that the vectors v1 , . . . , vm span ker(Y1i ) modulo ker(Y1i−1 ) +
+Y1 ker(Y1i+1 ). Let J be the matrix of the quadratic form qV , that is, the ma-
+trix from the definition of G as a subgroup of GL(r). Let ‘Gram(v1 , . . . , vc )’
+stand for the matrix of formal expressions that gives the Gram matrix of
+the basis v1 , . . . , vc with respect to the quadratic form defined by the matrix
+t (Y i−1 w)Jw ′ .
+     1
+    If the ǫi given is 1, let ‘ψi (y)’ be the formula:
+                                          ‘∃(v1 , . . . , vci ) ∧ q-span(Y1 , v1 , . . . , vci )
+      ∧li(v1 , . . . , vci ) ∧ ∃(z ∈ k    z 2 = det(Gram(v1 , . . . , vci )) ∧ z 6= 0).’
+     If the ǫi given is 0, let ‘ψi (y)’ be the formula:
+                                          ‘∃(v1 , . . . , vci ) ∧ q-span(Y1 , v1 , . . . , vci )
+      ∧li(v1 , . . . , vci ) ∧ ∄(z ∈ k    z 2 = det(Gram(v1 , . . . , vci )) ∧ z 6= 0).’
+  Finally, it follows from Section 5.7 that the set WC,λ  E is defined by the
+
+conjunction of ψi (y) for all i and the formula defining the set WλE (Γα,E ). 
+
+4.3. Proof of Theorem 2. Let K be the collection of local fields as in the
+statement of the theorem. Let E ∈ K. By the formulas (3) – (5), the value
+vol(I )Θ (Γ ) is a sum over λ of the expressions of the form
+P E wl α,E E
+   C ρ(C)q vol(WC,λ (Γα,E )). We are now ready to write down the corre-
+           λ
+
+sponding motivic expression for each of these terms.
+   Let us fix λ for now. Let X = G × G as before. By Lemmas 8 and 9,
+            E (Γ
+the sets WC,λ    α,E ) are definable subsets of X (E), i.e., there exist formulas
+                    MOTIVIC NATURE OF CHARACTER VALUES                               13
+
+φC,λ in Pas’s language, such that WC,λE (Γ
+                                           α,E ) = Z(φC,λ , E) (in the notation
+of Appendix, Section 5.2). Let MC,λ = µ(φC,λ ) ∈ K̂0mot (VarF )Q be the
+arithmetic motivic volume of the formula φC,λ (see Appendix, Section 5.5).
+   By [37], ρ(C) is a polynomial in q for each C, where q is the cardinality
+of the residue field of E. Denote this polynomial by fC (q), and let M̃C,λ =
+fC (L)Llλ MC,λ , where L is the Lefschetz motive (see Appendix, Section 5.4),
+so that M̃C,λ is also an element of the ring K̂0mot (VarF )Q .
+   Finally, let               X
+                      Mλ =        M̃C,λ ∈ K̂0mot (VarF )Q ,
+                               (Λ,(ǫi ))
+where (Λ, (ǫi )) is the data parametrizing the unipotent conjugacy classes C,
+as in Section 5.7.
+   By Theorem 8.3.1, [9] (respectively, Theorem 8.3.2 in the function field
+case, see also Appendix, Section 5.5),
+                          ZZ
+(8)             q lλ ρ(C)            1 dydγ = T rF robE (MC,λ )
+                              E (Γ
+                             WC,λ α,E )
+
+for almost all completions E of F , and hence the sum of the expressions on
+the left-hand side of (8) over C equals T rF robE (Mλ ) for almost all E.
+   In order to obtain the final result, it remains to sum up both sides of the
+above formula over λ. In order to be able to do this, we need to take care of
+the following subtle “uniformity” issue. For each local field E individually,
+we know that the sum over λ is finite, by Lemma 5. However, we do not
+know whether this finite set of indices λ (denoted by AΓ in Lemma 5) is the
+same for almost all places. Another difficulty (which would be automatically
+resolved if we knew the affirmative answer to the above question) is that for
+each λ, the formula (8) holds for all but a finite number of places. We need
+to show that overall (i.e. for all λ altogether) the set of places that needs to
+be eliminated is finite. These difficulties are taken care of by the following
+Theorem due to T.C. Hales [18, Theorem 2].
+   First, we need to introduce a notation. Let ϑ(m1 , . . . , ml ) be a formula
+in Pas’s language, with free variables ranging over N. Let K be a collection
+of local fields. For E ∈ K, denote by ϑE (m1 , . . . , ml ) the interpretation of ϑ
+in the model for Pas’s language given by the field E.
+Lemma 10. [18, Theorem 2] Let ϑ(m1 , . . . , ml ) be a formula in Pas’s lan-
+guage. Suppose that there exists a finite set of prime numbers S ⊂ N, such
+that for any E ∈ K, if the residual characteristic of E is not in S, then
+{(m1 , . . . , ml ) ∈ Nl | ϑE (m1 , . . . , ml )} is a bounded subset of Nl . Then there
+exists a finite set of primes S ′ , S ⊂ S ′ ⊂ N, and exists a bounded set C ⊂ Nl ,
+such that for any E ∈ K, if the residual characteristic of E is not in S ′ , then
+{(m1 , . . . , ml ) ∈ Nl | ϑE (m1 , . . . , ml )} ⊂ C.
+  For each element of the finite set of parameters corresponding to the
+conjugacy classes C, we apply Lemma 10 to the formula ϑ(λ) :=‘∃x :
+14                               JULIA GORDON
+
+φC,λ (x)’, where φC,λ (x) is the formula of Lemma 9 that defines the sub-
+        E (Γ
+sets WC,λ                      E                                       E
+             α,E ). That is, ϑ (λ) takes the value ‘true’ iff the set WC,λ (Γα,E )
+is not empty (here we understand the symbol λ as an abbreviation for the
+l-tuple of variables (m1 , . . . , ml ).) By Lemma 5, for any E such that the
+notation WC,λE makes sense (that is, for all but finitely many fields E ∈ K),
+
+the set {λ | ϑE (λ)} is finite. Hence, the assumption of Lemma 10 holds. We
+conclude that there exists a finite set of primes S ′ such that whenever the
+residual characteristic of E does not fall in this set, {λ | ϑE (λ)} ⊂ C, where
+                                            l
+                          P subset of N .
+C is a bounded (i.e., finite)
+   Finally, set Mα,w = λ Mλ , where the summation is over the union of
+finite sets C that correspond to the data defining the conjugacy classes C
+(which is a finite union of finite sets, so the sum is finite). This completes
+the proof.
+
+                     5. Appendix: Some Background
+   This section is a compilation of brief reviews of various concepts and
+techniques from logic, algebraic geometry, and representation theory that
+we used above.
+5.1. Pas’s language. We need to deal with families of local fields (e.g. all
+possible nonarchimedean completions of a given number field). Therefore, it
+is necessary to set up a framework that allows to exploit the structure of a
+local field without referring to its individual features such as the uniformizer
+of the valuation, for example. This is achieved by using a formal language
+of logic, which has the terms for the valuation, etc., but does not have the
+term for a uniformizer. This language is called Pas’s language.
+   A sentence in Pas’s language for a valued field E is allowed to have vari-
+ables of three kinds: variables running over the valued field E (the valued
+field sort), variables running over its residue field k (the residue field sort),
+and variables running over Z (the value sort). Formally, it is a three-sorted
+first order language [10].
+   For variables of the valued field sort and for variables of the residue field
+sort, the language has the operations of addition (‘+’) and multiplication
+(‘×’); for variables of the value sort (i.e., for Z), only addition is allowed.
+The value sort, additionally, has symbols ≤, and ≡n for congruence modulo
+each value n ∈ N.
+   The language also has symbols for universal (‘∀’) and existential (‘∃’)
+quantifiers, and standard symbols ∧, ∨, ¬, respectively, for logical con-
+junction, disjunction, and negation. We note that the restriction of Pas’s
+language to the residue field sort coincides with the first order language of
+rings [10].
+   Naturally, there are symbols denoting all the integers in the value sort.
+In the valued field sort, there are symbols ‘0’ and ‘1’, defined as the symbols
+denoting the additive and multiplicative unit, respectively. Once we have
+these, we can formally add to the language the symbols denoting other
+                   MOTIVIC NATURE OF CHARACTER VALUES                           15
+
+integers in the valued field sort. Thus, ‘2’ is the abbreviation for ‘1 + 1’,
+‘−1’ is the abbreviation for ‘∃x, x + 1 = 0’, etc. Notice that there are no
+symbols denoting other elements of the valued field, in particular, there is
+no symbol for the uniformizer. This, of course, agrees with our goal of being
+able to use the same language for any local field within a given family. We
+illustrate the allowed operations with the following example.
+Example 11. We are not allowed to use any symbols for constants in the
+valued field. For example, the expression ‘a1 x + a2 y = 0’ makes sense in
+Pas’s language only if a1 , a2 , x and y are all treated on equal footing, as
+variables of the same sort.
+   The language also contains the following symbols denoting functions: the
+symbol ‘ord’ for the valuation – a function from the valued field sort to the
+value sort, and the symbol ‘ac’ to denote the angular component map from
+the valued field sort to the residue field sort (the role of this map will be
+explained in Section 5.2). We also add the symbol ‘∞’ to the value sort, to
+denote the valuation of 0.
+   There is a theorem due to Pas [29] that this language admits quantifier
+elimination of the quantifiers ranging over the valued field sort and over the
+value sort (this is the reason for the absence of multiplication for the integers:
+otherwise, by Gödel’s theorem, there would be no quantifier elimination).
+This means that every formula in Pas’s language can be replaced by an
+equivalent formula without quantifiers ranging over the valued field sort or
+over the value sort. Further, a theorem due to Presburger [30] states that
+the quantifiers ranging over the residue field can also be eliminated, so that
+every formula in Pas’s language can be replaced by an equivalent formula
+without quantifiers. Ultimately, it is this property that makes arithmetic
+motivic integration possible [9].
+
+5.2. Definable subsets for p-adics. This subsection is, essentially, quoted
+from [9, Sections 8.2, 8.3].
+   Let E be the field of fractions of a complete discrete valuation ring OE
+with finite residue field k. It is possible to think of E as a structure (in
+the sense of logic) for Pas’s language. That is, we can let the variables in
+the formulas in Pas’s language range over E and k respectively, and then
+each formula will have true/false value. In order to match Pas’s language
+with the structure of the field E completely, we need to give a meaning to
+the symbols that express functions in Pas’s language. We fix a uniformizing
+parameter ̟. The valuation on E is normalized so that ord(̟) = 1. If
+x ∈ OE∗ is a unit, there is a natural definition of ac(x) – it is the reduction
+
+of x modulo the ideal (̟). Define, for x 6= 0 in E, ac(x) = ac(̟ −ord(x) x),
+and ac(0) = |0| = 0.
+   Now let us take F – a finite extension of Q with ring of integers OF .
+Following [9], we let R = O[ N1 ], for some non zero integer N which is a
+multiple of the discriminant of F . Let v be a closed point of Spec R. We
+16                               JULIA GORDON
+
+denote by Fv the completion of the localization of R at v, by OFv – its ring
+of integers, and by kv – the residue field. If N equals the discriminant of F ,
+then {Fv } is the family of all completions of F at the places lying over the
+primes in Q that do not ramify in F .
+   In Section 5.1, we formally added to Pas’s language the symbols to denote
+all integers in the valued field sort. In order to work with the family of fields
+K = {Fv }, it is convenient to also add to Pas’s language, for every element
+of the global field F , a symbol to denote this element in the valued field sort.
+This allows to “have constants from F ” in the formulas in Pas’s language.
+We will call this extended language the Pas’s language for the valued field
+F ((t)). The reason for this is that F ((t)) is, naturally, a valued field (t being
+the uniformizer of the valuation), and every logical formula in the extended
+Pas’s language for this field also makes sense as a formula in the extended
+Pas’s language for every completion of the field F . It is through interpreting
+the Pas’s language formulas in the model given by the field F ((t)) that one
+eventually arrives at geometric objects associated with them (see [17, Section
+6.1]).
+Definition 12. Let φ be a formula in the Pas’s language for the valued field
+F ((t)), with m free variables running over the valued field sort and no free
+variables running over the residue field sort or the value sort. For each v – a
+place of F , and E = Fv – the corresponding completion, denote by Z(φ, OE )
+the subset of OE    m defined by the formula φ: Z(φ, O ) = {(x , . . . , x ) ∈
+                                                           E         1      m
+  m
+O | φ(x1 , . . . , xm )} (recall that φ has the values true/false). A subset B ⊂
+OEm is called definable if there exists a formula φ such that B = Z(φ, O ).
+                                                                             E
+
+   For example, if V ֒→ Am is an affine variety, V (Zp ) is a definable subset of
+Zmp (it can be defined by a logical formula with m free variables which does
+not use the symbols ‘ac’ and ‘ord’: just the polynomial relations defining
+the variety V ).
+   So far, we have defined the notion of a definable subset of OE  m = Am (O ).
+                                                                              E
+This definition extends naturally to give a notion of a definable subset of an
+affine variety X over OE .
+   Let X be a smooth variety over F of dimension d. There is a natural d-
+dimensional measure on X (OFv ) for each v, which we shall denote by volX ,Fv .
+This is the Serre-Oesterlé measure, [28], [34]. All definable subsets of X (OFv )
+are measurable with respect to this measure, when F has characteristic 0,
+[5]. This measure is defined by requiring that the fibers of the reduction
+map modulo ̟v have volume q −d , where q is the cardinality of the residue
+field OFv /(̟v ).
+   In the Section 5.5, we describe the theory of arithmetic motivic integration
+which associates algebraic geometric objects with logical formulas. For each
+place v, there is a linear operator (Frobenius) acting on the cohomology
+of these objects, and its trace on the object associated with the formula φ
+equals the Serre-Oesterlé volume of the set Z(φ, OFv ) for almost all v.
+                   MOTIVIC NATURE OF CHARACTER VALUES                           17
+
+5.3. Motivic measures. The purpose of this subsection is twofold. The
+first goal is to outline the context for the ideas from the theory of motivic
+integration that we are using and to give some background references. The
+second objective is to let someone who is an expert in motivic integration
+know exactly to what extent the theory is being used in this paper. All the
+precise definitions and statements that we need are quoted in the next three
+subsections.
+   The term motivic integration first appeared in M. Kontsevich’s lecture
+at Orsay in 1995. Let k be an algebraically closed field of characteristic 0,
+and let X be an algebraic variety over k. Motivic measure lives on the arc
+space of X , i.e. on the “infinite-dimensional variety” whose set of k-points
+coincides with the set of k[[t]]-points of X . It is a measure in every sense
+(i.e., it is additive, it transforms under morphisms in a such a way that
+makes it analogous to measures on real or p-adic manifolds, etc.), but its
+nature is algebraic, and its values are not real or complex numbers, but,
+roughly speaking, equivalence classes of varieties. The theory of motivic
+integration is, in fact, a theory about the motivic measure. The functions
+[on the arc space] that can be integrated against this measure are scarce.
+Due to algebraic nature of the measure, the algebra of measurable subsets
+of the arc space is rather coarse: it is, essentially, generated by the sets
+“growing out” of subvarieties of X . For background information on the
+original motivic integration we refer to [3], [7], [8], and to the Bourbaki talk
+by E. Looijenga [25].
+   The arithmetic motivic integration developed by J. Denef and F. Loeser
+in 1999 [9] uses similar ideas, but it is an independent theory. The main
+difference is that it is adapted to deal with sets of rational points of the given
+variety over various fields, as opposed to the less flexible original theory
+which is suited only to deal with the arc space of the given variety, and not
+its rational points. The arithmetic motivic volume takes values in virtual
+Chow motives.
+   Instead of the arc space itself, the arithmetic motivic volume lives on
+definable subassignments of the functor of its points. This distinction al-
+lows one to work directly at the level of rational points [9]. The definable
+subassignments are, in a sense, a geometric incarnation of logical formulas
+in Pas’s language. We will not need these geometric objects, since all the
+varieties we deal with here are smooth and affine. Hence, we will assign
+“motivic volumes” to logical formulas directly.
+
+
+5.4. The ring K̂0mot (VarF )Q . Here we define the ring of values of the arith-
+metic motivic volume. The volume itself will be defined in the next subsec-
+tion. This section is, essentially, quoted from [9, Section 1.3], with one
+modification: the definition of the ring of values was greatly simplified by
+Denef and Loeser in [6]. Hence, we are using the version of this ring that
+appears in [6] rather than the original one.
+18                              JULIA GORDON
+
+   Let F be a field. Let us denote by MotF the category of Chow motives
+over F , with coefficients in Q. The objects in MotF are, formally, equivalence
+classes of triples (S, p, n), where S is a proper and smooth scheme over F ,
+p is an idempotent correspondence on S with coefficients on Q [that is, an
+algebraic cycle in S × S such that p2 ≃ p, where p2 is the product of p with
+itself], and n ∈ Z. Some details about Chow motives can be found in [32].
+   Even though Chow motives do not form an abelian category, they are
+sufficiently suited for our purposes, because the category MotF is pseudo-
+abelian, and therefore the notion of its Grothendieck group makes sense. We
+denote this Grothendieck group by K0 (MotF ). This is the additive group of
+equivalence classes of formal linear combinations of objects of MotF (with
+the natural notion of equivalence so that if M = A⊕B then [M ] = [A]+[B]).
+Since the category of Chow motives has a tensor product, K0 (MotF ) can
+be given the structure of a ring. There is a natural inclusion of the set of
+objects of the category MotF into its Grothendieck ring (each object can be
+identified with its own equivalence class in K0 (MotF )).
+   Let VarF be the category of algebraic varieties over F . For a smooth
+projective variety S, there is a Chow motive canonically associated with it
+– the triple (S, id, 0). There exists a unique embedding
+                             χc : VarF → MotF
+such that for smooth projective S, χc (S) = (S, id, 0).
+Let L = (Spec F, id, −1) be the Lefschetz motive (see [32] for details). It is
+the image, under the morphism χc , of the affine line A1 (note that the affine
+line is not a projective variety, and this is the reason the integer component
+of the Chow motive associated with it is not 0). The map χc induces the
+morphism of Grothendieck rings [11], [13]:
+                        χc : K0 (VarF ) → K0 (MotF ).
+The object L is invertible (with respect to tensor product) in the category of
+Chow motives. Hence, the map χc extends to the localization of K0 (VarF )
+at [A1 ]. We denote by K0mot (VarF ) the image of this extended map χc .
+Finally, set K0mot (VarF )Q = K0mot (VarF ) ⊗ Q.
+    For more details of the definition of the ring of values of the arithmetic
+motivic volume we refer to [9, Section 1.3] and [6, Section 6.3]. In the next
+subsection, we describe the arithmetic motivic volume, which is a function
+on logical formulas [rather, on definable subassignments as in [9]] taking
+values, roughly, in this ring. More precisely, it is necessary to complete the
+ring K0mot (VarF )Q with respect to a certain dimensional filtration in order
+to have a meaningful “measure theory” with values in it. To define the
+filtration of the ring of virtual Chow motives, we first define a filtration on
+K0 (VarF )loc (where the subscript ‘loc’ stands for localization at [A1 ]). For
+m ∈ Z, let F m K0 (VarF )loc be the subgroup of K0 (VarF ) generated by the
+elements of the form [S]L−i with i − dim S ≥ m. This defines a decreasing
+filtration F m . The image of this filtration under the map χc is a decreasing
+                   MOTIVIC NATURE OF CHARACTER VALUES                            19
+
+filtration on K0mot (VarF ), which naturally induces a filtration on the full ring
+K0mot (VarF )Q . The completion of this ring with respect to this filtration is
+denoted by K̂0mot (VarF )Q .
+Remark 13. It is important to note that the volumes of all the objects that
+we will be dealing with are contained in the image of the ring K0mot (VarF )Q
+in K̂0mot (VarF )Q under the completion map, if we adjoin to it all the ele-
+ments of the form [Li − 1]−1 for positive integers i (see [9, Remark 8.1.2]).
+In fact, there is now new, yet unpublished, version of the theory of mo-
+tivic integration (due to R. Cluckers and F. Loeser), which does not use
+the completion at all. This new theory allows a refinement of our results,
+namely, the virtual Chow motives responsible for the character values should
+automatically lie in the ring K0mot (VarF )Q [Li − 1]i≥1 , rather than in a less
+understood complete ring K̂0mot (VarF )Q .
+    If v is a place of F , there is an action of F robv on the elements of
+K̂0mot (VarF )Q that comes from the Frobenius action on the Chow motives.
+The trace of the Frobenius operator on a Chow motive is the alternating
+sum of the traces of Frobenius acting on its l-adic cohomology groups, and
+it is an element of Q̄l (where l is a prime number), see [9, Section 3.3]. In all
+the cases that we consider (following Denef and Loeser), this number turns
+out to lie in Q (in particular, the choice of l doesn’t matter). It is the trace
+of Frobenius action that allows to relate the values of the motivic measure,
+that are elements of K̂0mot (VarF )Q , with the usual p-adic volumes, that are
+rational numbers.
+5.5. Arithmetic motivic integration. A beautiful very short description
+of the theory of arithmetic motivic integration can be found in [17, Section
+6.1].
+   Let X be a smooth d-dimensional affine variety over F , where F is a
+global field as above. Let φ be a logical formula in Pas’s language for the
+field F ((t)) with m free variables ranging over the valued field sort and no
+bound variables over the value sort. There is a natural notion of the formula
+φ defining a subset of X : suppose that X is embedded in Am in some way.
+Then we can assume that φ(x1 , . . . , xm ) is true only if x1 , . . . , xm satisfy
+the polynomial equations defining X . In other words, this happens when
+Z(φ, OFv ) ⊂ X (Fv ) for almost all places v of F , see [9, Proposition 5.2.1
+and Section 8.3].
+   In [6, Section 6.3] (following the original method of [9, Section 3]), Denef
+and Loeser associate elements of the ring K0mot (V arF )Q to such formulas
+φ. This mapping is additive in a natural sense (see [9, Proposition 3.4.4]).
+This map is unique; it is denoted by χc (φ) in [9], but we will denote it by
+µ(φ). This map eventually extends to the formulas that involve quantifiers.
+In order to define this extension, the authors use the language of definable
+subassignments of the functor of points of L(Am ). The resulting map on
+subassignments is called arithmetic motivic volume, see [9, Section 6]. We
+20                              JULIA GORDON
+
+will not need the precise definition of the arithmetic motivic volume or the
+language of subassignments. We only need its existence, finite additivity, and
+the following two theorems. In the form that we state these theorems, they
+are special cases of Theorems 8.3.1 and 8.3.2 [9], respectively, corresponding
+to the case when the variety X is smooth and affine, and the definable
+subassignment is defined by just one formula on the whole space, in the
+terms of [9].
+Theorem 14. [9, Theorem 8.3.1] Let F be a finite extension of Q with the
+ring of integers O, and R = O[ N1 ], for some non zero integer N . Let X be
+an affine variety over R, and let φ be a logical formula as above. Then there
+exists a non zero multiple N ′ of N , such that, for every closed point v of
+Spec O[ N1 ′ ],                   
+                    Tr Frobv µ(φ) = volX ,Fv (Z(φ, OFv )).
+   In the case when the local fields under consideration are of finite charac-
+teristic, there is a slightly stronger result:
+Theorem 15. [9, Theorem 8.3.2] Let F be a field of characteristic 0 which
+is the field of fractions of a normal domain R of finite type over Z. Let X be
+a variety over R, and let φ be a logical formula. Then there exists a nonzero
+element f of R, such that, for every closed point x of Spec Rf , Z(φ, Fx [[t]])
+is volFx [[t]] -measurable and
+                                  
+                     Tr Frobx µ(φ) = volX ,Fx [[t]] (Z(φ, Fx [[t]])).
+  This completes our survey of arithmetic motivic integration. The next
+two subsections are devoted to a summary of the facts from representation
+theory that we are using.
+5.6. Deligne-Lusztig representations of classical groups. Let G be
+a connected reductive algebraic group defined over F̄, where F = Fq is a
+finite field, q = pm . Deligne and Lusztig [4] constructed a large class of
+representations of groups of the form GF in vector spaces over Q̄l with l 6= p.
+By GF we denote the group of fixed points of G(F̄) under the Frobenius map
+associated with q.
+   These representations are parametrized by pairs (T, χ) where T is a max-
+imal torus in GF defined over F and χ is an irreducible character of T . A
+                                                                 GF .
+representation corresponding to the pair (T, χ) is denoted by RT,χ
+Definition 16. An irreducible representation of GF is called Deligne-Lusztig
+                        GF for some (T, χ).
+if it is equivalent to RT,χ
+   In this paper we deal with representations of p-adic groups that are ob-
+tained from Deligne-Lusztig representations by a certain natural procedure
+described in Section 2.2. The reason we restrict our attention only to
+Deligne-Lusztig representations is the fact that the values of their char-
+acters at unipotent elements in GF are given by polynomials in q. We use
+this fact in an essential way in the proof of our main result.
+                  MOTIVIC NATURE OF CHARACTER VALUES                          21
+
+    More specifically, if u is a unipotent element of GF , the value of the
+                GF at u can be expressed as a sum of values of Green functions
+character of RT,χ
+QG T (u) (see, e.g., [36, Theorem 6.8]) (in particular, it does not depend on
+χ). It was proved by B. Srinivasan in [37] that the values of QG     T (u) are
+polynomials in q (the polynomial itself depends on the conjugacy class of u)
+if G is symplectic or odd special orthogonal, and the characteristic p is odd
+(since everything we do here is only up to a finite number of primes, this is
+not a restriction).
+5.7. Parametrization of unipotent conjugacy classes. Here we review
+the parametrization of nilpotent orbits in the classical p-adic Lie algebras
+given by Waldspurger [38]. We quote it from [38, Sections I.5, I.6]. It is
+used in an essential way in the proof of Lemma 9.
+   Let g be the Lie algebra sp(r) or so(r) with r odd, and let X ∈ g be a
+nilpotent element. Denote by (V, qV ) the underlying vector space of g with
+the quadratic form from the definition of g on it.
+   Consider the set of all partitions Λ = (Λj ) of r with the following prop-
+erties:
+      • In the symplectic case, for all odd i ≥ 1, ci (Λ) is even
+      • In the orthogonal case, for any even i ≥ 2, ci (Λ) is even
+(here ci (Λ) is the number of Λj ’s that equal i).
+   We can associate with X a partition Λ of r: for all integers i ≥ 1, ci (Λ)
+is the number of Jordan blocks of X of length i in the natural matrix rep-
+resentation. This partition automatically satisfies the above conditions.
+   For all i ≥ 1, set Vi = ker(X i )/[ker(X i−1 ) + X ker(X i+1 )]. In the sym-
+plectic (resp, orthogonal) case, define the quadratic form q̃i on ker(X i ), for
+all even i (resp., odd), by:
+                                          i−1
+                     q̃i (v, v ′ ) = (−1)[ 2 ] qV (X i−1 (v), v ′ ).
+Passing to a quotient, we get a non-degenerate form qi on Vi .
+  In the orthogonal case, the forms qi satisfy the condition
+                               M
+                                   qi ∼a qV ,
+                                   i odd
+where ∼a indicates that the two forms have the same anisotropic kernel.
+   The correspondence described above is a bijection between the set of
+nilpotent orbits (under conjugation by elements of G) in g and the set of
+pairs (Λ, (qi )) with Λ – a partition of r and (qi ) – a collection of quadratic
+forms of dimensions ci (Λ) satisfying the conditions mentioned above.
+   The same classification holds for finite fields. We also observe that over
+a finite field Fq , an equivalence class of a quadratic form is determined by
+its rank and discriminant in F∗q /F∗q 2 [33]. The nilpotent orbits in the Lie
+algebra are in bijection with the unipotent conjugacy classes in the group,
+when the characteristic p is large enough [20]. Explicitly, the bijection is
+given by Cayley transform x 7→ (1 − x)(1 + x)−1 .
+22                                  JULIA GORDON
+
+  Let G be a simply connected algebraic group of symplectic or odd or-
+thogonal type.
+  Finally, we see that the unipotent conjugacy classes of GFq are in bijection
+with the following data (cf. also [35, I 2.9] or [26, 11.1]):
+     • a partition Λ of r with certain properties;
+     • a representative (one of the two possible choices) of F∗q /F∗q 2 for each
+       even (resp. odd) ci (Λ).
+
+                                     References
+ [1] C. Bushnell, G. Henniart, Local Tame Lifting for GL(N ) I: Simple Characters, Inst.
+     Hautes Études Sci. Publ. Math. 83 (1996), 105–233.
+ [2] J. W. S. Cassels, Local Fields, Cambridge University Press, 1986.
+ [3] A. Craw, An introduction to motivic integration, preprint
+     http://xxx.lanl.gov/abs/math.AG/9911179
+ [4] P. Deligne, G. Lusztig, Representations of reductive groups over finite fields, Ann.
+     Math. (2) 103 (1976) no. 1, 103 –161.
+ [5] J. Denef p-adic semi-algebraic sets and cell decomposition, J. Reine Angew. Math.
+     369 (1986),154–166.
+ [6] J. Denef, F. Loeser On some rational generating series occuring in arithmetic geom-
+     etry, preprint, http://xxx.lanl.gov/abs/math.NT/0212202.
+ [7] J. Denef, F. Loeser, Motivic integration, quotient singularities and the McKay corre-
+     spondence, Compositio Math. 131 (2002), no. 3, 267–290.
+ [8] J. Denef, F. Loeser,Germs of arcs on singular algebraic varieties and motivic integra-
+     tion, Invent. Math. 135 (1999), no. 1, 201–232.
+ [9] J. Denef, F. Loeser, Definable sets, motives, and p-adic integrals, J. Amer. Math.
+     Soc., 14, (2001) no. 2, 429-469.
+[10] H. B. Enderton, A mathematical introduction to logic. Second edition. Har-
+     court/Academic Press, Burlington, MA, 2001.
+[11] H. Gillet, C. Soulé, Descent, motives and K-theory, J. Reine Angew. Math. 478
+     (1996), 127 – 176.
+[12] J. Gordon, T.C. Hales, Virtual transfer factors, Represent. Theory 7 (2003), 81-100.
+[13] F. Guillén, V. Navarro Aznar, Un critère d’extension d’un foncteur défini sur les
+     schémas lisses, Publ. Math. Inst. Hautes Études Sci. 95 (2002), 1–91.
+[14] M. Greenberg, Schemata over local rings, Ann. Math. 73 (1961), 634-648.
+[15] T. C. Hales, Hyperelliptic curves and harmonic analysis (why harmonic analysis on
+     reductive p-adic groups is not elementary), Contemporary Mathematics, 177 (1994),
+     137–169.
+[16] T. C. Hales, Can p-adic integrals be computed?, lecture at Conference on Automorphic
+     Forms, IAS, April 2001.
+[17] T. C. Hales, Can p-adic integrals be computed?, to appear in a volume dedicated to
+     J. Shalika, http://xxx.lanl.gov/abs/math.RT/0205207.
+[18] T. C. Hales, Orbital integrals are motivic, preprint,
+     http://xxx.lanl.gov/abs/math.RT/0212236
+[19] Harish-Chandra, The characters of reductive p-adic groups. Contributions to algebra
+     (collection of papers dedicated to Ellis Kolchin), 175–182. Academic Press, New York,
+     1977.
+[20] J. Humphreys, Conjugacy Classes in Semisimple Algebraic Groups, Mathematical
+     Surveys and Monographs, v. 43, 1995.
+[21] N. Iwahori, H. Matsumoto, On some Bruhat decomposition and the structure of the
+     Hecke rings of p-adic Chevalley groups. Inst. Hautes Études Sci. Publ. Math. No. 25
+     1965 5–48.
+                      MOTIVIC NATURE OF CHARACTER VALUES                                    23
+
+[22] D. Kazhdan, and G. Lusztig, Fixed Point Varieties on Affine Flag Manifolds, Appen-
+     dix by J. Bernstein and D. Kazhdan, An example of a non-rational variety B̂N for
+     G = Sp(6), Israel Journal of Math. 62:2 (1988), 129–168.
+[23] M. Kontsevich, Lecture at Orsay, 1995.
+[24] A.W. Knapp, Structure Theory of Semisimple Lie Groups, Proc. Symp. Pure Math.,
+     61, Amer. Math. Soc., Providence, RI, 1997.
+[25] E. Looijenga, Séminaire Bourbaki, Vol. 1999/2000. Astérisque No. 276 (2002), 267–
+     297.
+[26] G. Lusztig, Intersection cohomology on a reductive group, Invent. Math. 75 (1984),
+     205 – 272.
+[27] A. Moy, G. Prasad, Jacquet functors and unrefined minimal K-types, Comment. Math.
+     Helv.(1) 71 (1996), 98 – 121.
+[28] J. Oesterlé, Réduction modulo pn des sous-ensembles analytiques fermés de ZN    p , In-
+     vent. Math., 66 (1982), 325 – 341.
+[29] J. Pas, Uniform p-adic cell decomposition and local zeta functions, J. Reine Angew.
+     math. 399 (1989), 137 – 172.
+[30] M. Presburger, On the completeness of a certain system of arithmetic of whole num-
+     bers in which addition occurs as the only operation. Translated from the German and
+     with commentaries by Dale Jacquette. Hist. Philos. Logic 12 (1991), no. 2, 225–233.
+     (the original: Über die Vollständigkeit eines gewissen Systems der arithmetik ganzer
+     Zahlen, in welchem die Addition als einzige Operation hervortritt, Comptes-Rendus
+     du Ier Congrès des Mathématiciens des Payes Slaves, Warsaw, 1929, 395, 99 – 101.)
+[31] P.J. Sally, Jr. Some remarks on discrete series characters for reductive p-adic groups,
+     Representations of Lie Groups, Kyoto, Hiroshima, 1986, 337 – 348, Adv. Stud. Pure
+     Math. 14, Academic Press, Boston, 1988.
+[32] A.Scholl,Classical motives, In Proceedings of Symposia in Pure Mathematics 55 Part
+     1, 163–187 (1994).
+[33] J.-P. Serre, A Course in Arithmetic. Graduate Texts in Mathematics, No. 7. Springer–
+     Verlag, New York–Heidelberg, 1973.
+[34] J.-P. Serre, Quelques applications du théorème de densité de Chebotarev, Inst. Hautes
+     Études Sci. Publ. Math. 54 (1981), 323–401.
+[35] N. Spaltenstein, Classes unipotentes et sous-groups de Borel, Lecture notes in Math-
+     ematics, 946, Springer–Verlag, Berlin–New York, 1982.
+[36] B. Srinivasan, Representations of finite Chevalley groups. A survey. Lecture Notes in
+     Mathematics, 764. Springer–Verlag, Berlin–New York, 1979.
+[37] B. Srinivasan, Green polynomials of finite classical groups, Comm. Algebra, 5 (1977),
+     1241–1258.
+[38] J.-L. Waldspurger, Intégrales orbitales nilpotentes et endoscopie pour les groupes
+     classiques non ramifiés, Astérisque No. 269 (2001).
+[39] J.-L. Waldspurger, Quelques questions sur les intégrales orbitales unipotentes et les
+     algèbres de Hecke. Bull. Soc. Math. France 124 (1996), 1–34.
+
+   Institute for Advanced Study, 1 Einstein Dr., Princeton NJ 08540, USA
+   E-mail address: julygord@math.ias.edu
+

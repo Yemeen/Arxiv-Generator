@@ -1,0 +1,804 @@
+                                                THE SCHUR INDICES OF THE CUSPIDAL UNIPOTENT
+                                               CHARACTERS OF THE FINITE CHEVALLEY GROUPS E7 (q)
+arXiv:math/0306268v1 [math.RT] 18 Jun 2003
+
+
+
+
+                                                                                 MEINOLF GECK
+
+
+                                                     Abstract. We show that the two cuspidal unipotent characters of a finite
+                                                     Chevalley group E7 (q) have Schur index 2, provided that q is an even power
+                                                     of a (sufficiently large) prime number p such that p ≡ 1 mod 4. The proof
+                                                     uses a refinement of Kawanaka’s generalized Gelfand–Graev representations
+                                                     and some explicit computations with the CHEVIE computer algebra system.
+
+
+
+
+                                                                                1. Introduction
+                                                 Throughout this paper, let G be a simple algebraic group of adjoint type E7 .
+                                             Assume that G is defined over the finite field Fq , with corresponding Frobenius map
+                                             F : G → G. There are√precisely two cuspidal unipotent characters of GF denoted
+                                             by E7 [±ξ] where ξ = −q; see the table in [2], §13.9.
+                                                 The purpose of this paper is to determine the Schur index of E7 [±ξ], at least if
+                                             the characteristic of Fq is large enough. Modulo this condition on the characteristic,
+                                             this completes the determination of the Schur indices of the unipotent characters
+                                             of finite groups of Lie type; see [12], [5] and the references there.
+                                                 By [4], Table 1, the character values of E7 [±ξ] generate the field Q(ξ). Further-
+                                             more, by [4], Example 6.4, we already know that the Schur index is 1 if p 6≡ 1 mod 4
+                                             or if q is not a square, where p is the characteristic of Fq . Thus, the remaining task
+                                             is to determine the Schur index when q is a square and p ≡ 1 mod 4.
+                                             Theorem 1.1. Assume that q is an even power of a (sufficiently large) prime p
+                                             such that p ≡ 1 mod 4. Then the characters E7 [±ξ] have Schur index 2.
+                                                Here, p is “sufficiently large” if Lusztig’s results [11] on generalized Gelfand–
+                                             Graev characters hold; it is conjectured that this is the case if p is good for G.
+                                                The idea of the proof is as follows. We have already seen in [5], §4, that E7 [±ξ]
+                                             occur with multiplicity 1 in a generalized Gelfand–Graev character Γu , where u is a
+                                             certain unipotent element in G. Here, we shall use a refinement of the construction
+                                             of Γu to show that, under the given assumptions on p and q, the characters E7 [±ξ]
+                                             occur with odd multiplicity in an induced character which cannot be realized over
+                                             Q(ξ). By standard arguments on Schur indices, this implies that E7 [±ξ] cannot be
+                                             realized over Q(ξ). At some stage, the proof relies on the fact that, in Lusztig’s
+                                             parametrization of the irreducible characters of GF , the function ∆ occurring in
+                                             [10], Main Theorem 4.23, takes value −1 on the labels corresponding to E7 [±ξ].
+                                                Furthermore, we rely on some explicit computations in GF . However, we shall
+                                             only use computations with the root system and the irreducible characters of the
+                                             Weyl group of G, for which the CHEVIE system [6] is a convenient tool.
+
+                                               2000 Mathematics Subject Classification. Primary 20C15; Secondary 20G40.
+                                                                                         1
+2                                            Geck
+
+
+        2. Generalized Gelfand–Graev characters for type E7
+   A short summary of the construction of generalized Gelfand–Graev characters
+is given in [5], §2. Assume that q is a power of a “good” prime p 6= 2, 3. Let Φ
+be the root system of G with respect to a fixed maximally split torus T . Let C
+be the unipotent class of G whose weighted Dynkin diagram d : Φ → Z is given in
+Table 1. (The notation in that table also defines a labelling of the simple roots in
+the root system of G.) The class C is the “unipotent support” of the two cuspidal
+unipotent characters of GF ; see [5], §4, and the references there.
+        Table 1. The weighted Dynkin diagram for the unipotent support
+        of the cuspidal unipotent characters in type E7
+
+                      1             0         1         0         1        0
+             E7        ✇             ✇         ✇         ✇         ✇        ✇
+                      α1            α3   α4             α5        α6       α7
+
+
+                                         0     ✇ α2
+
+   Given the weight function d : Φ → Z specified by the diagram in Table 1, we
+define unipotent subgroups
+                         Y                            Y
+                 Ud,2 :=      Xα     and     Ud,1 :=       Xα ,
+                           α∈Φ+                               α∈Φ+
+                           d(α)>2                             d(α)>1
+
+
+where Xα is the root subgroup in G corresponding to the root α. (It is understood
+that the products are taken in some fixed order.) The generalized Gelfand–Graev
+character associated with an element in C F is obtained by inducing a certain linear
+character from Ud,2F
+                     . We have CG (u)/CG (u)◦ ∼ = Z/2Z for u ∈ C. Thus, C F splits
+into two classes in the finite group GF . By Mizuno [13], Lemma 28, representatives
+of these two GF -classes are given by
+                y74 = x20 (1)x21 (1)x23 (1)x28 (1)x31 (1),
+                y75 = x20 (1)x21 (1)x28 (1)x24 (1)x23 (1)x25 (1)x36 (ζ),
+where ζ is a generator for the multiplicative group of Fq and where the subscripts
+correspond to the following roots in Φ+ :
+       20 : α1 + α2 + α3 + α4 ,               21 : α1 + α3 + α4 + α5 ,
+       23 : α2 + α4 + α5 + α6 ,               24 : α3 + α4 + α5 + α6 ,
+       25 : α4 + α5 + α6 + α7 ,               28 : α2 + α3 + 2α4 + α5 ,
+       31 : α3 + α4 + α5 + α6 + α7 ,          36 : α2 + α3 + α4 + α5 + α6 + α7 .
+(Attention: Here, we use the labelling of the roots as given by the CHEVIE system
+[6], which is slightly different from that of Mizuno.) We note that both y74 and y75
+             F
+lie in C ∩ Ud,2 . Now let us fix
+                                                      F
+                              u ∈ {y74 , y75 } ⊆ C ∩ Ud,2 ;
+the above expressions show that
+                            Y
+                       u=       xα (ηα )            where ηα ∈ Fq .
+                             α∈Φ+
+                             d(α)=2
+                    Schur indices of cuspidal unipotent characters of E7 (q)                      3
+
+                                        F
+Then we define a linear character ϕu : Ud,2 → C× by the formula
+              Y                  X              
+          ϕu         xα (ξα ) = χ         cα ηα ξα    for all ξα ∈ Fq ,
+                 α∈Φ+                      α∈Φ+
+                 d(α)>2                    d(α)=2
+
+
+where cα ∈ Fq are certain fixed constants (independent of the ηα and ξα ) and where
+χ : F+
+     q → C
+            ×
+               is a fixed non-trivial character of the additive group of Fq ; see [5],
+Definition 2.1, for more details. It will actually be convenient to choose χ in the
+following special way. Let χ0 : F+ p → C
+                                           ×
+                                             be a fixed non-trivial character of the
+additive group of Fp . Then we take χ to be
+                                       χ := χ0 ◦ TrFq /Fp
+where TrFq /Fp : F+    +
+                  q → Fp is the trace map. Now we have
+                             F     
+                        IndG             F    F 1/2
+                           U F ϕu = [Ud,1 : Ud,2 ]  · Γu ,
+                                 d,2
+
+
+where Γu is the generalized Gelfand–Graev character associated with u. We have
+seen in [5], Corollary 4.3, that
+                 
+            
+                  E7 [±ξ], Γu GF = 1  for suitable u ∈ {y74 , y75 }.
+(Here, and throughout the paper, we denote by h , iA the standard inner product
+on the character ring of a finite group A.)
+  We will now refine the construction of Γu . The strategy for doing this has already
+been outlined in [5], §4. For this purpose, we shall assume from now on that
+                                  q is an even power of p.
+Since G is simple of adjoint type, we have an Fq -isomorphism
+                  ×
+             h: k     · · × k ×} → T,
+                | × ·{z                          (x1 , . . . , x7 ) 7→ h(x1 , . . . , x7 ),
+                     7 factors
+
+such that αi (h(x1 , . . . , x7 )) = xi for 1 6 i 6 7. In particular, we have T F =
+{h(x1 , . . . , x7 ) | xi ∈ F×
+                             q }. We shall set
+
+                          t := h(ν 1/2 , 1, 1, ν 1/2 , 1, ν 1/2 , 1) ∈ T F
+as in the proof of [5], Lemma 4.1, where ν is a generator for the multiplicative
+group of Fp ⊂ Fq and ν 1/2 is a square root of ν in Fq . (The square root exists
+since q is an even power of p.) Then t has the property that α(t) = ν for all roots
+α involved in the expressions for y74 or y75 as products of root subgroup elements;
+furthermore, we have α(t) = 1 for all roots α such that d(α) = 0. The element t
+has order 2(p − 1) and H := hti normalizes Ud,2 . We set
+                     s1 := h(−1, 1, 1, −1, 1, −1, 1) = tp−1 ∈ T F .
+Note that α(s1 ) = 1 for all roots α ∈ Φ+ which are involved in the expressions of
+y74 and y75 as products of root subgroup elements. Thus, s1 fixes the character
+                                   F
+ϕu and so we can extend ϕu to Ud,2   .hs1 i. Actually, there are two such extensions
+                               ′
+which we denote by ϕ̃u and ϕ̃u . Their values are determined by
+       ϕ̃u (xs1 ) = ϕu (x)       and        ϕ̃′u (xs1 ) = −ϕu (x)                         F
+                                                                             for all x ∈ Ud,2 .
+4                                                       Geck
+
+
+Definition 2.1. Let u ∈ {y74 , y75 }. Then we set
+                             U F .H                                         U F .H        
+                ψu := IndUd,2
+                          F .hs i ϕ̃u
+                               1
+                                                        and        ψu′ := IndUd,2        ′
+                                                                               F .hs i ϕ̃u .
+                                                                                    1
+                               d,2                                             d,2
+
+
+Thus, we have
+           U F .H       
+        IndUd,2
+            F         ϕu = ψu + ψu′               and             F
+                                                                [Ud,1    F 1/2
+                                                                      : Ud,2 ] · Γu = Γ̃u + Γ̃′u ,
+            d,2
+
+
+where
+                                    G      F                       F       
+                          Γ̃u := IndU F                 ϕ̃u = IndG  F .H ψu ,
+                                           d,2 .hs1 i             Ud,2
+                                     G     F                       F       
+                          Γ̃′u := IndU F                ϕ̃′u = IndG       ′
+                                                                  U F .H ψu .
+                                           d,2 .hs1 i                  d,2
+
+
+The following result provides some crucial information concerning ψu and ψu′ .
+
+Proposition 2.2. Recall that q is an even power of p. Then, with the above
+notation, the following hold.
+    (a) Both ψu and ψu′ are irreducible characters of Ud,2
+                                                         F
+                                                           .H.
+    (b) ψu can be realized over Q.
+    (c) ψu′ is rational-valued but cannot be realized over Q. In fact, ψu′ has non-
+        trivial local Schur indices at ∞ and at the prime p.
+
+Proof. (See also the argument of Ohmori [14], p. 154.) Let
+                   Y                                    X
+                                    F
+(1)         x :=        xα (ξα ) ∈ Ud,2 and      γx :=     cα ηα ξα ,
+                      α∈Φ+                                                   α∈Φ+
+                      d(α)>2                                                 d(α)=2
+
+
+where ξα ∈ Fq . Then, as in the proof of [5], Proposition 2.3, we have
+
+                       ϕu (ti xt−i ) = χ(ν i γx )              for 1 6 i 6 2(p − 1).
+
+In particular, this implies StabH (ϕu ) = hs1 i. Hence, by Clifford theory, the induced
+character
+                                  U F .H    
+                               IndUd,2
+                                    F    ϕu = ψu + ψu′
+                                            d,2
+
+
+has inner product 2. Thus, we ψu and ψu′ must be irreducible, proving (a).
+  Next we prove (b). Using Mackey’s formula and relation (1), we have that
+                           2(p−1)                 2(p−1)
+         U F .H            X                      X
+     IndUd,2
+         F        ϕu (x) =        ϕu (ti xt−i ) =        χ(ν i γx )
+          d,2
+                                     i=1                         i=1
+                      2(p−1)                                   
+                       X                                          2(p − 1) if TrFq /Fp (γx ) = 0,
+                  =            χ0 ν i TrFq /Fp (γx ) =
+                                                                     −2     if TrFq /Fp (γx ) 6= 0.
+                       i=1
+
+In particular, this shows that the values are rational integers. Thus, ψu + ψu′ is
+rational-valued. Now assume, if possible, that ψu is not rational-valued. Then the
+characters ψu and ψu′ must be algebraically conjugate. Consequently, ψu and ψu′
+occur with the same multiplicity in every rational-valued character. Now, by the
+                       Schur indices of cuspidal unipotent characters of E7 (q)              5
+
+
+Mackey formula and Frobenius reciprocity, we have
+     D          U F .H    E      D      F
+                                        Ud,2 .H            F
+                                                           Ud,2 .H     E
+       ψu′ , IndHd,2   1H    F
+                               =    Ind  F
+                                        U .hs1 i
+                                                 ϕ̃′
+                                                   u  , IndH       1 H                F .H
+                                 Ud,2 .H              d,2                            Ud,2
+                                                      F
+                                             
+       Ud,2               
+                                           = Reshs1 i       ϕ̃′u , 1hs1 i U F
+                                                                           d,2
+
+                                           = 0,
+since ϕ̃′u (s1 ) = −1. (Here, the symbol 1 stands for the unit character.) By a similar
+argument, since ϕ̃u (s1 ) = 1, we also have
+                             D         U F .H    E
+                               ψu , IndHd,2   1H    F
+                                                        = 1.
+                                                            Ud,2 .H
+
+Thus, ψu and ψu′ do not occur with the same multiplicity in some rational-valued
+character, a contradiction. Thus, our assumption was wrong and so both ψu and
+ψu′ are rational-valued. But then the above multiplicity 1 formula implies that ψu
+can be realized over Q, by a standard argument concerning Schur indices (see Isaacs
+[8], Corollary 10.2).
+    Finally, we prove (c). We begin by showing that the local Schur index at ∞ is
+non-trivial. In other words, we must show that ψu′ cannot be realized over R. For
+this purpose, by a well-known criterion due to Frobenius and Schur (see Isaacs [8],
+Chapter 4), it is enough to show that
+                               1      X
+                              F
+                                           ψu′ (g 2 ) = −1.
+                           |Ud,2 .H|   F    g∈Ud,2 .H
+
+Now, in order to evaluate the above sum, we note that
+                               1     X
+                             F .H|
+                                          ψu (g 2 ) = 1,
+                           |Ud,2      F      g∈Ud,2 .H
+
+since ψu can be realized over Q. Thus, it will be enough to show that
+         1     X           F
+                         Ud,2 .H     2         1     X
+       F .H|
+                      IndU       ϕu  (g ) =   F .H|
+                                                           (ψu + ψu′ )(g 2 ) = 0.
+     |Ud,2       F
+                          d,2
+                                            |Ud,2      F
+                g∈Ud,2 .H                                          g∈Ud,2 .H
+
+           F                                     F
+Let g ∈ Ud,2 .H and write g = xh where x ∈ Ud,2      and h ∈ H. Now the value of
+the above induced character on g 2 is zero unless g 2 ∈ Ud,2
+                                                         F
+                                                             . Thus, we only need to
+consider elements g = xh where h = 1 or h = s1 . So we must show that
+             X       F
+                    Ud,2 .H            X       U F .H    
+                 IndUd,2    ϕu (x2 ) +      IndUd,2
+                                                 d,2
+                                                        ϕu (xs1 xs1 ) = 0.
+                 F
+              x∈Ud,2                                 F
+                                                  x∈Ud,2
+
+               F
+Now, since Ud,2    has odd order, the map x 7→ x2 defines a bijection of Ud,2    F
+                                                                                     onto
+itself. Hence the first sum evaluates to
+        X       U F .H      2                  D     F
+                                                     Ud,2 .H               E
+                                      F
+           IndUd,2
+                 d,2
+                       ϕ u  (x ) = |U d,2 .H| ·   IndUd,2    ϕu  , 1 U F .H
+                                                                      d,2     F
+                                                                                = 0.
+                                                                                  Ud,2 .H
+        F
+     x∈Ud,2
+
+Now consider the second sum. For this purpose, we note that α(s1 ) = 1 for all
+roots α ∈ Φ+ which are involved in the expressions of y74 and y75 as products of
+6                                             Geck
+
+
+root subgroup elements. Thus, if x and γx are as in (1), then we have
+                            X
+                 γ(xs1 )2 =     cα ηα (α(s1 ) + 1)ξα = 2γx = γx2 .
+                              α∈Φ+
+                              d(α)=2
+
+
+Using once more Mackey’s formula as at the beginning of this proof, we see that
+                                    2(p−1)             2(p−1)
+                 F                   X                  X
+                Ud,2 .H      2               i
+             IndUd,2      ϕu (x ) =        χ(ν γx2 ) =        χ(ν i γ(xs1 )2 )
+                                        i=1                   i=1
+                                           F
+                                          Ud,2 .H      
+                                   =   IndUd,2       ϕu (xs1 xs1 )
+             F
+for all x ∈ Ud,2 . Consequently, the second sum also equals 0. Thus, we have shown
+        ′
+that ψu cannot be realized over R. We shall now use some general properties of
+Schur indices; see Feit [3], §2, for references. First, since ψu′ is rational-valued but
+ψu′ cannot be realized over R, the Schur index of ψu′ is 2 (by the Brauer–Speiser
+theorem; see [3], 2.4). Furthermore, there exists at least one prime number ℓ such
+that the ℓ-local Schur index of ψu′ is 2 (by the Hasse sum formula; see [3], 2.15).
+Thus, it will be enough to show that the ℓ-local Schur index of ψu′ is 1, for every
+prime ℓ 6= p. Let ℓ be such a prime. If ℓ 6= 2, then ψu′ is a character of ℓ-defect 0
+     F
+of Ud,2 .H. So the ℓ-local Schur index is 1 by [3], 2.10. Finally, if ℓ = 2, then ψu′
+is a character of 2-defect 1 and, hence, lies in a block with a cyclic defect group of
+order 2. Consequently, that block contains only two irreducible characters and so
+ψu′ remains irreducible as a 2-modular Brauer character. This implies again that
+the local Schur index is 1; see [3], 2.10.                                            
+
+                          3. A subgroup of type D6 × A1
+   Our next aim is to compute the multiplicity of E7 [±ξ] in Γ̃u and Γ̃′u ; see Def-
+inition 2.1. We already know that the multiplicity of E7 [±ξ] in the sum Γ̃u + Γ̃′u
+          F     F 1/2
+equals [Ud,1 : Ud,2 ] , for suitable u ∈ {y74 , y75 }. We shall now try to compute the
+multiplicity in the difference Γ̃u − Γ̃′u . For this purpose, we take a closer look at
+the semisimple element s1 and its centralizer. Let
+         G1 := hT, Xα | α ∈ Φ1 i         where         Φ1 := {α ∈ Φ | α(s1 ) = 1}.
+Using the CHEVIE function ReflectionSubgroup, we check that the root system
+Φ1 has type D6 × A1 ; a system of simple roots in Φ1 is given by
+                          Π1 = {α2 , α3 , α5 , α7 , α14 , α18 , α28 }
+where
+        α14 := α1 +α3 +α4 ,     α18 := α4 +α5 +α6 ,        α28 := α2 +α3 +2α4 +α5 .
+(Here, the numbering of the roots is the same as that given by CHEVIE.) The
+corresponding Dynkin diagram and the restriction of the weight function d to Π1
+are given in Table 2. Furthermore, one can check, using CHEVIE (for example),
+that
+                     NW (W1 ) = {w ∈ W | w(Φ1 ) ⊆ Φ1 } = W1
+where W1 := hwα | α ∈ Φ1 i ⊂ W is the Weyl group of G1 (and where we denote by
+wβ the reflection with root β, for any root β ∈ Φ).
+Lemma 3.1. We have CG (s1 ) = G1 ; in particular, CG (s1 ) is connected.
+                      Schur indices of cuspidal unipotent characters of E7 (q)         7
+
+
+Proof. By Carter [2], § 3.5, we have CG (s1 )◦ = G1 . Hence, G1 is a normal subgroup
+in CG (s1 ). So it is enough to show that NG (G1 ) = G1 . Let g ∈ NG (G1 ). Then
+gT g −1 is a maximal torus in G1 and so there exists some g1 ∈ G1 such that
+gT g −1 = g1 T g1−1 . Thus, we have g1−1 g ∈ NG (T ) and so g ∈ G1 .NG (T ). Hence, we
+may assume without loss of generality that g ∈ NG (T ) ∩ NG (G1 ). Now, for any
+g ∈ NG (T ) ∩ NG (G1 ) and any α ∈ Φ1 , we have gXα g −1 = Xw(α) ⊆ G1 , where w is
+the image of g in W = NG (T )/T . Thus, we have w(Φ1 ) ⊆ Φ1 and so w ∈ W1 (see
+the above remarks). This implies g ∈ G1 , as required.                               
+
+
+         Table 2. The restriction of d to the subsystem of type D6 × A1
+
+                 0           2           0             2         0               2
+   D6 ×A1         ✇           ✇           ✇             ✇         ✇               ✇
+                 α5          α14         α2      α18             α3              α28
+
+
+                                                  0    ✇ α7
+
+
+   Let C1 be the conjugacy class of y74 in G1 and denote by d1 : Φ1 → Z the
+corresponding weighted Dynkin diagram. Using the identification results in [1],
+Theorem 11.3.2, it is straightforward to check that, under the natural matrix rep-
+resentation of a group of type D6 × A1 , the elements y74 and y75 correspond to
+matrices with Jordan blocks of size 1, 1, 2, 5, 5 (where the block of size 2 comes
+from the A1 -factor). Hence, using [2], §13.1, we see that d1 is given by the restric-
+tion of d to Φ1 , as specified in Table 2. Furthermore, we notice that the above roots
+can all be written as sums of roots in Π1 . Thus, we have
+                                    y74 , y75 ∈ C1 ∩ UdF1 ,2 ,
+where Ud1 ,2 is the unipotent subgroup of G1 defined with respect to d1 .
+Lemma 3.2. Let u ∈ {y74 , y75 }. Then we have dim B1u = 4 (where B1u denotes
+the variety of Borel subgroups of G1 containing u) and
+                                       = CG (u)/CG (u)◦ ∼
+                      CG1 (u)/CG1 (u)◦ ∼                = Z/2Z.
+Proof. Let u := y74 . The formula for dim B1u follows from [2], §13.1. To prove the
+remaining statements, we note that
+            s1 ∈ S := {h(x, x−2 , x−2 , x3 , x−2 , x, 1) | x ∈ k × } ⊆ CG1 (u).
+Furthermore, one checks that Z(G1 ) = {t ∈ T | α(t) = 1 for all α ∈ Φ1 } = hs1 i.
+Thus, since S is connected, we have Z(G1 ) ⊆ CG1 (u)◦ .
+   Now let π : G1 → H1 be the adjoint quotient of G1 , where H1 is a semisimple
+group of adjoint type D6 × A1 . Let ū be the image of u in H1 . Then, by Carter [2],
+§13.1, we know that CH1 (ū)/CH1 (ū)◦ ∼
+                                       = Z/2Z. Furthermore, π induces a surjective
+homomorphism
+                   CG1 (u)/CG1 (u)◦ ։ CH1 (ū)/CH1 (ū)◦ ∼
+                                                         = Z/2Z
+with kernel given by the image of Z(G1 ) in CG1 (u)/CG1 (u)◦ . Since Z(G1 ) ⊆
+CG1 (u)◦ , that image is trivial and so the above surjective map is also injective. 
+8                                              Geck
+
+                                               F
+Proposition 3.3. Let u ∈ {y74 , y75 } ⊆ C ∩ Ud,2 . Then, as we already noted, we
+                 F
+have u ∈ C1 ∩ Ud1 ,2 and so the corresponding generalized Gelfand–Graev character
+Γ1u of GF
+        1 is well-defined. We have
+
+              Γ̃u (ys1 ) − Γ̃′u (ys1 ) = Γ1u (y)           for all y ∈ GF
+                                                                        1 unipotent.
+
+Proof. By the Mackey formula, we have
+                           F                    F
+                                                          F           
+         Γ̃u (ys1 ) = ResG
+                         GF  Γ̃u (ys1 ) = ResG G F   IndGU F .hs i ϕ̃u
+                                                                 1
+                                                                          (ys1 )
+                           1                     1         d,2
+                      X                           (U F .hs1 i)z         
+                             GF                                        z
+                    =    Ind(U1F .hs1 i)z ∩GF Res(Ud,2F .hs i)z ∩GF
+                                                           1
+                                                                     ϕ̃u    (ys1 ),
+                                   d,2             1           d,2       1
+                         z
+                                                     F
+where z runs over a set of representatives of the (Ud,2 .hs1 i, GF
+                                                                 1 )-double cosets of G .
+                                                                                         F
+
+Let us fix such a double coset representative, z say. Assume that the value at ys1 of
+the corresponding induced character in the above sum is non-zero. Then ys1 must
+be GF                                                   F        z      F
+     1 -conjugate to an element in the subgroup (Ud,2 .hs1 i) ∩ G1 . Consequently,
+               F
+s1 must be G1 -conjugate to an element in that subgroup. Since hs1 i is a Sylow
+                  F                                                        F
+2-subgroup of Ud,2  .hs1 i, we conclude that all elements of order 2 in Ud,2  .hs1 i are of
+               −1                 F                     −1           −1    −1
+the form xs1 x where x ∈ Ud,2 . Thus, we have c s1 c = z xs1 x z for some
+c ∈ GF                        F
+       1 and some x ∈ Ud,2 . Consequently, x
+                                                    −1 −1
+                                                      zc      ∈ CG (s1 )F = GF  1 and so
+        F        F    F
+z ∈ xG1 c ∈ Ud,2 .G1 . Thus, z represents the trivial double coset and so we can
+take z = 1. Using the fact that
+                                F
+                               Ud,2 .hs1 i ∩ GF    F
+                                              1 = Ud1 ,2 × hs1 i
+
+(where Ud1 ,2 ⊆ G1 is the unipotent subgroup defined with respect to the weighted
+Dynkin diagram d1 : Φ1 → Z) we find that
+                                     GF                      
+                     Γ̃u (ys1 ) = IndU F1 ×hs1 i ϕ1u ⊠ 1hs1 i (ys1 )
+                                           d1 ,2
+
+
+where  ϕ1u denotes the restriction of ϕu to UdF1 ,2 . Since s1 is in the center of G1 , it
+is readily checked that
+                           1               GF             1  GF       
+              Γ̃u (ys1 ) = ϕ̃u (s1 ) IndU F1 ϕ1u (y) = IndU F1 ϕ1u (y).
+                           2                 d1 ,2         2   d1 ,2
+
+By a completely analogous argument, we also obtain that
+                          1               GF               1  GF       
+             Γ̃′u (ys1 ) = ϕ̃′u (s1 ) IndU F1 ϕ1u (y) = − IndU F1 ϕ1u (y).
+                          2                d1 ,2            2   d1 ,2
+
+Thus, it remains to check that
+                                                   GF    
+                                      Γ1u = IndU F1 ϕ1u .
+                                                       d1 ,2
+
+
+For this purpose, we must show that                ϕ1u
+                                             indeed is the linear character of UdF1 ,2
+required in the definition of Γu . Now, the definition of Γ1u requires the choice of a
+                                1
+
+non-degenerate bilinear form and of an oppisition automorphism on the Lie algebra
+of G1 . However, the Lie algebra of G1 is naturally contained in the Lie algebra of
+G, with compatible Cartan decompositions. Thus, the chosen bilinear form and the
+chosen opposition automorphism restrict to the Lie algebra of G1 , and this implies
+that ϕ1u is the required linear character of UdF1 ,2 .                              
+  A formula of this kind has been stated (without proof) by Kawanaka in [9],
+Lemma 2.3.5; see also the Ph. D. thesis of Wings [16], §3.2.1.
+                    Schur indices of cuspidal unipotent characters of E7 (q)          9
+
+
+Remark 3.4. Let g ∈ GF and write g = gs gu = gu gs where gs ∈ GF is semisimple
+and gu ∈ GF is unipotent. Assume that gs is not conjugate to s1 in GF . Then we
+have
+                                   (Γ̃u − Γ̃′u )(g) = 0.
+Indeed, if the value is non-zero, then g must be GF -conjugate to an element in
+  F
+Ud,2 .hs1 i. But then gs will also be GF -conjugate to an element in that subgroup.
+Using a Sylow argument as in the above proof, we see that either gs = 1 or gs is
+GF -conjugate to s1 , as claimed. Furthermore, if gs = 1, then it is readily checked
+that Γ̃u (g) = Γ̃′u (g).
+   Thus, in order to compute the scalar product of E7 [±ξ] with Γ̃u − Γ̃′u , it will be
+enough to know the values of E7 [±ξ] on elements of the form ys1 where y ∈ GF         1
+is unipotent. Furthermore, since E7 [ξ] and E7 [−ξ] are complex conjugate and
+since Γ̃u and Γ̃′u are rational-valued, it will actually be enough to consider the sum
+E7 [ξ] + E7 [−ξ]. Now, by Lusztig [10], Main Theorem 4.23, we have
+                           E7 [ξ] + E7 [−ξ] = R512a − R512′a .
+(Note that the function ∆ occurring in [10], 4.23, takes value −1 on the labels
+corresponding to the characters E7 [±ξ].) Here, 512a , 512′a are the two irreducible
+characters of W of degree 512 and R512a , R512′a are the corresponding “almost
+characters”, as defined by Lusztig [10], (3.7). For any φ ∈ Irr(W ), we have
+                                    1 X
+                           Rφ :=             φ(w) RTw ,1 ;
+                                  |W |
+                                              w∈W
+here, Tw ⊆ G is an F -stable maximal torus obtained from T by twisting with w
+and RTw ,1 is the Deligne–Lusztig generalized character associated with the trivial
+character of TwF . Similarly, for any ψ ∈ Irr(W1 ), we denote by Rψ
+                                                                  1
+                                                                    the corresponding
+                        F
+almost character of G1 .
+Lemma 3.5. Let φ ∈ Irr(W ) and write
+                       X
+         ResW
+            W1 φ =            m(φ, ψ) ψ                  where m(φ, ψ) ∈ Z>0 .
+                           ψ∈Irr(W1 )
+
+Let y ∈ GF
+         1 be a unipotent element. Then we have
+                                    X
+                                                  1
+                       Rφ (ys1 ) =       m(φ, ψ) Rψ (y).
+                                        ψ∈Irr(W1 )
+
+Proof. The character formula for RTw ,1 (see [2], Theorem 7.2.8) shows that
+                                    |CW (w)| X
+                    RTw ,1 (ys1 ) =                 RT1 w1 ,1 (y)
+                                      |W1 | w ∈W
+                                                       1  1
+                                                      w∼w1
+
+
+where the relation ∼ means conjugacy in W . (Here, RT1 w ,1 denotes a Deligne–
+                                                               1
+Lusztig generalized character of GF
+                                  1 .) Thus, we have
+                        1      X       |CW (w)|
+           Rφ (ys1 ) =                          φ(w) RT1 w1 ,1 (y)
+                       |W | w∈W,w ∈W     |W1 |
+                                    1     1
+                                  w∼w1
+
+                          1    X  1 X                  
+                     =                     |CW (w)| φ(w) RT1 w1 ,1 (y)
+                         |W1 |    |W | w∈W
+                               w1 ∈W1
+                                               w∼w1
+10                                          Geck
+
+
+Now, we have φ(w) = φ(w1 ) and |CW (w)| = |CW (w1 )| for all w1 ∈ W1 such that
+w ∼ w1 . Thus, we have
+            1 X                     |CW (w1 )|        X
+                    |CW (w)| φ(w) =            φ(w1 )     1 = φ(w1 ).
+           |W | w∈W                   |W |            w∈W
+                   w∼w1                                      w∼w1
+                   P
+Writing φ(w1 ) =     ψ    m(φ, ψ)ψ(w1 ), we obtain the desired expression.          
+
+Corollary 3.6. With the notation of Proposition 3.3 and Lemma 3.5, we have
+              
+                     X             
+       
+               Rφ , Γ̃u − Γ̃′u GF =        m(φ, ψ) Rψ , Γ1u GF ,
+                                                                       1
+                                         ψ∈Irr(W1 )
+
+for any φ ∈ Irr(W ) and u ∈ {y74 , y75 } ⊆ C1 ∩ UdF1 ,2 .
+Proof. Immediate from Proposition 3.3, Remark 3.4 and Lemma 3.5.                    
+   We now need some explicit information concerning the restriction of characters
+from W to W1 . Using the CHEVIE function InductionTable, we compute that
+     ResW
+        W1 (512a ) ⊗ ε = ([21, 3] ⊠ 1) + sum of ψ where ψ ∈ Irr(W1 ) and aψ > 4,
+
+     ResW      ′
+        W1 (512a ) ⊗ ε = ([2, 31] ⊠ 1) + sum of ψ where ψ ∈ Irr(W1 ) and aψ > 4.
+
+Here, 1 denotes the unit character on the A1 -factor of W1 and ε denotes the sign
+character of W1 . The characters of the D6 -factor are denoted by [λ, µ] where λ and
+µ are partitions such that |λ| + |µ| = 6. The a-invariant of a character is defined as
+in Lusztig [10], (4.1); in CHEVIE, these a-invariants are obtained by the function
+LowestPowerGenericDegrees. We have
+                  aψ = 4        for ψ = [21, 3] ⊠ 1 and ψ = [2, 31] ⊠ 1.
+With these explicit formulas, we can now prove the following result.
+Proposition 3.7. Assume that the characteristic p is large enough, such that
+Lusztig’s formula in [11], Theorem 7.5, for the values of a generalized Gelfand–
+Graev holds for Γ1u . By [5], Corollary 4.3, there exists some u ∈ {y74 , y75 } such
+that hE7 [±ξ], Γu iGF = 1. For this element u, we have
+                            
+                   
+                             E7 [±ξ], Γ̃u − Γ̃′u GF = −1.
+Proof. We have already mentioned in the remarks preceding Lemma 3.5 that
+                             E7 [ξ] + E7 [−ξ] = R512a − R512′a .
+Since Γ̃u and Γ̃′u are rational-valued (see Proposition 2.2), we have
+              
+                         1
+                          
+                E7 [±ξ], Γ̃u − Γ̃′u GF = E7 [ξ] + E7 [−ξ], Γ̃u − Γ̃′u GF
+                                         2
+                                         1
+                         
+                                       = R512a − R512′a , Γ̃u − Γ̃′u GF .
+                                         2
+Now let ψ ∈ Irr(W1 ) be a constituent in the restriction of 512a or 512′a from W
+to W1 . Then, by Corollary 3.6, we must compute the scalar product hRψ , Γ1u iGF1 .
+Let D denote the Alvis–Curtis–Kawanaka duality operation on the character ring
+of GF
+    1 ; see Lusztig [10], (6.8). We have D(Rψ ) = Rψ⊗ε and so
+
+               hRψ , Γ1u iGF1 = hD(Rψ ), D(Γ1u )iGF1 = hRψ⊗ε , D(Γ1u )iGF1 .
+                    Schur indices of cuspidal unipotent characters of E7 (q)          11
+
+
+Now, in order to evaluate the above scalar product, it is enough to know the values
+of Rψ⊗ε on the unipotent elements of GF    1 . By Shoji’s algorithm [15] and by [11],
+Corollary 10.9, we know that Rψ⊗ε (y) = 0 if dim B1y < aψ⊗ε . On the other hand,
+we have D(Γ1u )(y) = 0 if dim B1u < dim B1y . (This follows from [11]; see the remarks
+in [4], (2.4).) Thus, the above scalar product is zero if aψ⊗ε > dim B1u = 4. Taking
+into account the explicit information concerning the restrictions of 512a and 512′a
+from W to W1 , we conclude that
+              
+                       1
+                              
+(1)            E7 [±ξ], Γ̃u − Γ̃′u GF = R[21,3]⊠1 − R[2,31]⊠1 , D(Γ1u ) GF .
+                                       2                                 1
+
+Now [21, 3] ⊠ 1 and [2, 31] ⊠ 1 lie in the same family of characters of W1 ; see [10],
+Chapter 4. The Fourier matrix (which has size 4 × 4) for that family shows that
+                           R[21,3]⊠1 − R[2,31]⊠1 = −ρ1 − ρ2
+where ρ1 and ρ2 are unipotent characters of GF  1 . Now, we can explicitly compute the
+unipotent support of these two characters; see [11], §11, or [7], §3.C. This involves
+the knowledge of the Springer correspondence for G1 . Using the description of that
+correspondence in [2], §13.3, we find that ρ1 and ρ2 have unipotent support C1 .
+Thus, by the formula in [7], Remark 3.8, we have
+      
+                              
+                     
+(2)    ρi , D(Γ1y74 ) + D(Γ1y75 ) GF = D(ρi ), Γ1y74 + Γ1y75 GF = 1 for i = 1, 2.
+                                    1                               1
+
+Note that CG1 (y74 )/CG1 (y74 )◦ ∼ = Z/2Z by Lemma 3.2 and that D(ρ1 ), D(ρ2 ) are
+actual characters in the present situation; see [10], (6.8.2). Now we have u ∈
+{y74 , y75 } and we would like to show that
+                  
+                 
+           
+(3)                 D(ρi ), Γ1u GF = ρi , D(Γ1u ) GF = 1 for i = 1, 2.
+                                1                      1
+
+This can be seen as follows. Fix i ∈ {1, 2}. Since D(ρi ) is an actual character, we
+certainly have hD(ρi ), Γ1u iGF1 > 0. Hence, using (2), the latter scalar product equals
+0 or 1. Assume, if possible, that the scalar product is zero. Then the scalar product
+of −ρ1 − ρ2 with DG (Γ1u ) would be −1 or 0. Consequently, the scalar product in
+(1) would be −1/2 or 0. Thus, the only possibility is that the scalar product in (1)
+equals 0. But this would mean that
+      
+                                        
+            
+       E7 [±ξ], Γ̃u + Γ̃′u GF = [Ud,1
+                                   F     F 1/2
+                                      : Ud,2 ]                         F
+                                                  E7 [±ξ], Γu GF = [Ud,1     F 1/2
+                                                                          : Ud,2 ]
+is an even number, which is not true. So, our assumption was wrong and (3) holds.
+Inserting this into (1), we obtain the desired result.                         
+
+                             4. Proof of Theorem 1.1
+  By [5], Corollary 4.3, the Schur index of E7 [±ξ] is at most 2. Hence, we only
+need to show that E7 [±ξ] cannot be realized over Q(ξ). Now, we have
+                 hE7 [±ξ], Γu iGF = 1         for suitable u ∈ {y74 , y75 }.
+So, using the formulas in Definition 2.1, we obtain that
+          hE7 [±ξ], Γ̃u + Γ̃′u iGF = [Ud,1
+                                       F      F 1/2
+                                           : Ud,2 ] = qm           for some m > 1.
+Combining this with Proposition 3.7 and using Frobenius reciprocity, this yields
+        D      F            ′E           
+                  1
+          ResG F .H E7 [±ξ] , ψu
+             Ud,2                       =  E7 [±ξ], Γ̃ ′
+                                                       u  GF
+                                                             = (q m + 1).
+                                   F .H
+                                 Ud,2                         2
+12                                             Geck
+
+
+Since p ≡ 1 mod 4, we also have q ≡ 1 mod 4 and so the above scalar product is
+an odd number. Now assume, if possible, that E7 [±ξ] can be realized over Q(ξ).
+                                     F
+Then the restriction of E7 [±ξ] to Ud,2 .H can also be realized over Q(ξ). Thus, by
+a standard argument on Schur induces ([8], Corollary 10.2), the Schur index of ψu′
+over Q(ξ) divides the above odd number. Since the Schur index of ψu′ over Q(ξ) is
+                                         be one. Thus, ψu′ can be realized over Q(ξ).
+at most 2 (see Proposition 2.2), it must √
+Now, √since q is a square, we have ξ = −1. Furthermore, since p ≡ 1 mod 4, we
+have −1 ∈ Qp (the field of p-adic numbers). Hence ψu′ can be realized over Qp ,
+contradicting Proposition 2.2(c). Thus, our assumption was wrong and so E7 [±ξ]
+cannot be realized over Q(ξ).
+
+Acknowledgements. I wish to thank Gerhard Hiss for a careful reading of the
+manuscript.
+
+                                         References
+  [1] R. W. Carter, Simple groups of Lie type, Wiley, New York, 1972; reprinted 1989 as Wiley
+      Classics Library Edition.
+  [2] R. W. Carter, Finite groups of Lie type: Conjugacy classes and complex characters, Wiley,
+      New York, 1985; reprinted 1993 as Wiley Classics Library Edition.
+  [3] W. Feit, The computations of some Schur indices, Israel J. Math. 46 (1983), 274–300.
+  [4] M. Geck, Character values, Schur indices and character sheaves, Represent. Theory 7 (2003),
+      19–55.
+  [5] M. Geck, On the Schur indices of cuspidal unipotent characters, preprint (2003), available
+      at http://arXiv.org/math.RT/0306267.
+  [6] M. Geck, G. Hiß, F. Lübeck, G. Malle and G. Pfeiffer, CHEVIE–A system for com-
+      puting and processing generic character tables, in: Computational methods in Lie the-
+      ory, Appl. Algebra Engrg. Comm. Comput. 7 (1996), 175–210; electronically available at
+      http://www.math.rwth-aachen.de/∼CHEVIE
+  [7] M. Geck and G. Malle, On the existence of a unipotent support for the irreducible characters
+      of finite groups of Lie type, Trans. Amer. Math. Soc. 352 (2000), 429–456.
+  [8] I. M. Isaacs, Character theory of finite groups, Academic Press, New York (1976); corrected
+      reprint by Dover Publ., New York, 1994.
+  [9] N. Kawanaka, Shintani lifting and Gelfand-Graev representations, Proc. Symp. Pure Math.
+      47 (1987), 147–163, Amer. Math. Soc.
+ [10] G. Lusztig, Characters of reductive groups over a finite field, Annals Math. Studies, vol.
+      107, Princeton University Press, 1984.
+ [11] G. Lusztig, A unipotent support for irreducible representations, Advances in Math. 94,
+      139–179 (1992).
+ [12] G. Lusztig, Rationality properties of unipotent representations, J. Algebra 258 (2002), 1–22.
+ [13] K. Mizuno, The conjugate classes of unipotent elements of the Chevalley groups E7 and E8 ,
+      Tokyo J. Math. 3 (1980), 391–459.
+ [14] Z. Ohmori, On the Schur indices of certain irreducible characters of reductive groups over
+      finite fields, Osaka J. Math 25 (1988), 149–159.
+ [15] T. Shoji, Green functions of reductive groups over a finite field, Proc. Symp. Pure Math. 47
+      (1987), 289–302, Amer. Math. Soc.
+ [16] E. Wings, Über die unipotenten Charaktere der Chevalley–Gruppen vom Typ F4 in guter
+      Charakteristik, Ph. D. thesis, RWTH Aachen, 1995.
+
+  Institut Girard Desargues, Université Lyon 1, 21 av Claude Bernard, 69622 Villeur-
+banne cedex, France
+  E-mail address: geck@desargues.univ-lyon1.fr
+

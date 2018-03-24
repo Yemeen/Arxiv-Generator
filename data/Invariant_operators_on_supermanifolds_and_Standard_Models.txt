@@ -1,0 +1,2178 @@
+                                                                                                                                         1
+
+                                               INVARIANT OPERATORS ON SUPERMANIFOLDS AND
+arXiv:math/0202193v2 [math.RT] 3 Mar 2002
+
+
+
+
+                                                            STANDARD MODELS
+
+
+                                                                PAVEL GROZMAN, DIMITRY LEITES
+                                                  Department of Mathematics, University of Stockholm, Kräftriket hus 6,
+                                                         SE-106 91 Stockholm, Sweden; mleites@matematik.su.se
+
+                                                                     IRINA SHCHEPOCHKINA
+                                                 The Independent University of Moscow, Bolshoj Vlasievsky per, dom 11,
+                                                       Moscow RU-121 002, Russia; Ira@Paramonova.mccme.ru
+
+                                                Here we continue to list the differential operators invariant with respect to the
+                                                15 exceptional simple Lie superalgebras g of polynomial vector fields. A part of
+                                                the list (for operators acting on tensors with finite dimensional fibers) was earlier
+                                                obtained in 2 of the 15 cases by Kochetkov and in one more instance by Kac and
+                                                Rudakov. Broadhurst and Kac conjectured that some of these structures pertain
+                                                to the Standard Models of elementary particles and the Grand Unified Theories.
+                                                So, GUT, if any exists, will be formulated in terms of operators we found, or
+                                                their r-nary analogs to be found. Calculations are performed with the aid of
+                                                Grozman’s Mathematica-based SuperLie package. When degeneracy conditions
+                                                are violated (absence of singular vectors) the corresponding module of tensor fields
+                                                is irreducible. We also verified some of the earlier findings.
+
+
+
+
+                                            Contents
+                                                     To the memory of Misha Marinov (by D.L.) . . . . . . . . . . .                      2
+
+                                            1 Introduction                                                                               4
+                                              1.1 Veblen’s problem . . . . . . . . . . . . . . . . . . . . . . . . .              .      5
+                                              1.2 Rudakov’s breakthrough (following Bernstein5 ) . . . . . . . .                  .      6
+                                              1.3 Further ramifications of Veblen’s problem . . . . . . . . . . .                 .      8
+                                              1.4 Arity > 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .             .      9
+                                              1.5 Generalized tensors and primitive forms . . . . . . . . . . . .                 .     10
+                                              1.6 Superization leads to new developments . . . . . . . . . . . .                  .     12
+                                              1.7 An infinitesimal version of Veblen’s problem . . . . . . . . . .                .     14
+                                              1.8 Operators invariant with respect to nonstandard realizations                    .     17
+                                              1.9 On description of irreducible L-modules . . . . . . . . . . . .                 .     17
+
+                                            2 Brief description of the exceptional algebras                                             18
+
+                                            3 Singular vectors for g = vle(3|6)                                                         22
+2   P. Grozman, D. Leites and I. Shchepochkina
+
+4 Singular vectors for g = vle(4|3)                                           23
+
+5 Singular vectors for g = mb(4|5) (after Kochetkov)                          26
+
+6 Singular vectors for g = mb(3|8)                                            28
+
+7 Singular vectors for g = ksle(5|10)                                         30
+
+8 Singular vectors for g = ksle(9|11)                                         33
+
+9 Singular vectors for g = ksle(11|9)                                         35
+
+10 Singular vectors for g = kas and g = k(1|n)                                38
+
+11 Singular vectors for g = kas(1|6; 3ξ)                                      40
+
+12 Singular vectors for g = kas(1|6; 3η)                                      41
+
+13 Singular vectors for g = vas(4|4)                                          43
+
+    Acknowledgments                                                           44
+
+    References                                                                44
+
+
+To the memory of Misha Marinov (by D.L.)
+Only one of us knew Misha. It was at the flat of one of my teachers, Felix
+Berezin, that we became acquainted. I was a student then and was bubbling
+with enthusiasm on account of fantastic visions, applications of supersymmetry,
+which at that time was not so clear to most. Misha shared the awe of the beauty
+of the mathematics related with SUSY. Besides this, he was a charming person.
+Moreover, he was writing a review on superstrings. So Misha fascinated me.
+     His review41 illuminated my research for many years ahead (Ref. 16 is just
+a part of the story). Later Misha, being a man of passion, bitterly criticized
+the whole trend as useless waste of many talents of several generations. I did
+not take his vitriolic words at face value. I knew that however strong language
+he used, it was merely rhetoric. He similarly criticized me for not being able to
+quantize the “odd mechanic” (and Ref. 38 is a part of our answer to Misha) nor
+demonstrate the “usefulness” of what was rediscovered several years later by
+Batalin and Vilkovisky under the name antibracket together with the manifest
+demonstrations of its usefulness (cf. Refs. 31 and 10). When the antibracket
+                                     Invariant operators and Standard Models   3
+
+was rediscovered Misha came to me and said, “Do you remember that stuff
+about the two types of mechanics, you told me some time ago? Recently
+Batalin talked a lot about what looks precisely like it, and he is one of the
+rare few who only speaks about what he knows. If I had not known him for a
+long time I’d think he had become crazy. He plans to do almost all gauge field
+theory by means of this new mechanic. So, let me get you acquainted, you two
+talk similar . . . ”
+     Later, before he applied for emigration and while waiting for permission
+(more likely for a refusal, at that time) Misha frequented an informal seminar
+I hosted at home being also ready to quit the regular ways. Some mathe-
+maticians having applied for emigration became personae non grata at official
+seminars; in my flat they could discuss new and old results with those who
+dared. Misha was our physics teacher, he tried to convey to us (J. Bernstein,
+A. Beilinson, me, and occasional “guests”, from students to S. Gindikin) some
+ideas of modern physics.
+     Misha visited me at Stockholm recently. I took him to look at the frescos
+of Täby kyrkan, one of the most interesting churches in Stockholm. The most
+famous of the frescos is currently called “The Knight playing chess with Death”.
+The original title, if it ever existed, is forgotten; the modern title is hardly
+correct: depicted are a chess-board (5×5, to simplify Death’s task even further,
+I presume), Death, and the Knight, smiling his best (as his PR advisor, no
+doubt, taught him) politely inclined towards the ruling party. The Knight
+stands on the same side of the board as Death, so manifestly both are playing
+together against us. Misha, who was restless during the day being anxious not
+to miss his train, suddenly relaxed having seen this fresco. This was the last
+fresco we saw and on the way back we discussed something neutral. He said he
+enjoyed the frescoes. On our way back we got into a traffic jam and missed his
+train by a few minutes. Naturally, I paid the penalty. Misha wrote to me later
+insisting to repay or split the cost, so I answered that I did not change that
+much after emigration, and he should know better. He retorted as in the good
+old days when we all were younger saying, “I regret that Israel is so small, and
+so penalties for missing the train are low. Anyway, I hope to see you one day
+and promise to make you miss the train from Haifa to wherever.” He also gave
+me a reprint of his superstring paper (somebody “borrowed” my copy of the
+reprint he gave me in Moscow) and wrote in Russian: “To DL, as a memory of
+our friendship that I hope not interrupt”. The inscription looked very strange
+to me. Now I understand it: he already knew about his cancer.
+     I think all who knew Misha love him. One can not use past tense with this
+verb. And therefore it is infinitely sad not to be able, ever, to miss the train
+in Misha’s company, this side of the Chess-Board we all try to describe before
+4   P. Grozman, D. Leites and I. Shchepochkina
+
+we meet the ultimate opponent.
+
+
+1   Introduction
+This is a part of an expanded transcript of two talks at the International
+Workshops “Supersymmetry and Quantum Symmetry”: (1) at Dubna, July
+22-26, 1997, we described the case of kas and k(1|6), sketched the case k(1|n)
+and mentioned earlier results of Kochetkov on vle(4|3) and mb(4|5), (2) at
+Karpacz, September 23, 2001, we considered mb(3|8) and ksle(5|10).
+     Broadhurst and Kac observed17 that some of the exceptional Lie superal-
+gebras (listed in Refs. 50, 7) might pertain to a GUT or the Standard Model,
+their linear parts being isomorphic to sl(5) or sl(3) ⊕ sl(2) ⊕ gl(1). Kac demon-
+strated18 that for the Standard Model with su(3) ⊕ su(2) ⊕ u(1) as the gauge
+group a certain remarkable relation between vle(3|6) and some of the known
+elementary particles does take place; it seems that for mb(3|8) there is even
+better correspondence.
+     The total lack of enthusiasm from the physicists’ community concerning
+these correspondences is occasioned, perhaps, by the fact that no real form
+of any of the simple Lie superalgebras of vector fields with polynomial coef-
+ficients has a unitary Lie algebra as its linear part. Undeterred by this, Kac
+and Rudakov calculated19 some vle(3|6)-invariant differential operators. They
+calculated the operators for finite dimensional fibers only. This restriction
+makes calculations a sight easier but strikes out many operators. The amount
+of calculations for mb(3|8) is too high to be performed by hands.
+     The problem we address — calculation of invariant differential operators
+acting in tensor fields on manifolds and supermanifolds with various structures
+— was a part of our Seminar on Supermanifold’s agenda since mid-70’s. Here
+we use Grozman’s code SuperLie14 to verify and correct earlier results and
+obtain new ones, especially when bare hands are inadequate. The usefulness
+of SuperLie was already demonstrated when we calculated the left-hand side of
+N -extended SUGRA equations for any N , cf. Ref. 15. We review the whole field
+with its open problems and recall interesting Kirillov’s results and problems
+buried in the VINITI collection22 which is not very accessible. Another nice
+(and accessible) review we can recommend in addition to Ref. 22 is Ref. 29.
+     What is done
+     (1) We list (degeneracy conditions) all differential operators, or rather
+the corresponding to them singular vectors, of degrees 1, and 2 and, in some
+cases, of all possible degrees (which often are ≤ 2), invariant with respect
+to several exceptional Lie superalgebras of vector fields. When degeneracy
+conditions are violated (absence of singular vectors) the corresponding induced
+                                       Invariant operators and Standard Models   5
+
+and coinduced modules are irreducible. For some exceptions EVERY module
+I(V ) has a singular vector. This is a totally new feature. For vle(3|6) (and
+finite dimensional fibers) the answer coincides with Kac-Rudakov’s one.
+     (2) We observe that the linear parts of two of the W-regradings of mb are
+Lie superalgebras strictly greater than sl(3) ⊕ sl(2) ⊕ gl(1). They (or certain
+real forms of them) are natural candidates for the algebras of The would be
+Standard Models; modern “no-go” theorems do not preclude them.
+
+
+1.1   Veblen’s problem
+The topology of differentiable manifolds has always been related with various
+geometric objects on them and, in particular, with operators invariant with
+respect to the group of diffeomorphisms of the manifold, operators which act
+in the spaces of sections of “natural bundles”,29 whose sections are tensor fields,
+or connections, etc. For example, an important invariant of the manifold, its
+cohomology, stems from the de Rham complex whose neighboring terms are
+bridged by an invariant differential operator — the exterior differential.
+     The role of invariance had been appreciated already in XIX century in
+relation with physics; indeed, differential operators invariant with respect to
+the group of diffeomorphisms preserving a geometric structure are essential
+both in formulation of Maxwell’s laws of electricity and magnetism and in
+Einstein–Hilbert’s formulation of relativity.
+     Simultaneously, invariance became a topic of conscious interest for math-
+ematicians: the representation theory flourished in works of F. Klein, followed
+by Lie and É. Cartan, to name the most important contributors; it provided
+with the language and technique adequate in the study of geometric structures.
+Still, it was not until O. Veblen’s talk in 1928 at the Mathematical Congress
+in Bologna56 that invariant operators (such as, say, Lie derivative, the exterior
+differential, or integral) became the primary object of the study. In what fol-
+lows we rule out the integral and other non-local operators; except in Kirillov’s
+example, we only consider local operators.
+     Schouten and Nijenhuis tackled Veblen’s problem: they reformulated it in
+terms of modern differential geometry and found several new bilinear invariant
+differential operators. Schouten conjectured that there is essentially one unary
+invariant differential operator: the exterior differential of differential forms.
+This conjecture had been proved in particular cases by a number of people, and
+in full generality in 1977–78 by A. A. Kirillov and, independently, C. L. Terng
+(see Refs. 22, 55).
+     Thanks to the usual clarity and an enthusiastic way of Kirillov’s presenta-
+tion he drew new attention to this problem, at least, in Russia. Under the light
+6     P. Grozman, D. Leites and I. Shchepochkina
+
+of this attention it became clear (to J. Bernstein) that in 1973 A. Rudakov43
+also proved this conjecture by a simple algebraic method which reduces Ve-
+blen’s problem for differential operators to a “computerizable” one.
+     Thus, a tough analytic problem reduces to a problem formally understand-
+able by any first year undergraduate: a series of systems of linear equations in
+small dimensions plus induction. The only snag is the volume of calculations:
+to list all unary operators in the key cases requires a half page; for binary
+operators one needs about 50 pages and induction becomes rather nontrivial;
+for r-nary operators with r > 2 only some cases seem to be feasible.
+     Later Rudakov and, for the contact series, I. Kostrikin, classified unary
+differential operators in tensor fields on manifolds invariant with respect to
+each of the remaining three simple infinite dimensional Z-graded Lie algebras
+L of vector fields. In passing, the definition of the tensor field was generalized
+and primitive forms came to foreground.
+
+1.2    Rudakov’s breakthrough (following Bernstein5 )
+Hereafter the ground field K is C or R. Without going into details which will
+be given later, observe that the spaces in which invariant operators act fall into
+two major cases: spaces of tensor fields (transformations depend on the 1-jet
+of diffeomorphism) and spaces depending on higher jets, called HJ-tensors for
+short. We will only study tensors here, not HJ-tensors.
+     1) Instead of considering Diff(U )-invariant operators, where U is a local
+chart, let us consider vect(U )-invariant operators, where vect(U ) is the Lie alge-
+bra of vector fields on U with polynomial coefficients, or its formal completion.
+(A posteriori one proves that the global and the local problems are equivalent,
+cf. Ref. 5). Accordingly, instead of tensor fields with smooth coefficients, we
+consider their formal version: T (V ) = V ⊗ K[[x]], where x = (x1 , . . . , xn ) and
+n = dim U .
+     2) We assume here that V is an irreducible gl(n)-module with lowest weight.
+Observe that while the requirement of lowest weight seems to be “obviously”
+reasonable, that on irreducibility is not, unless we confine ourselves to finite
+dimensional modules V . In super setting we are forced, in the absence of
+complete reducibility, to consider indecomposable representations even for finite
+dimensional modules. Irreducible modules is just the simplest first step.
+     3) Instead of the coinduced module, T (V ), consider the dual induced mod-
+                                          ∂
+ule, I(V ∗ ) = K[∂] ⊗ V ∗ , where ∂i = ∂x   i
+                                              . The reason: formulas for vect(U )-
+                             ∗
+action are simpler for I(V ) than for T (V ). (The results, contrariwise, are
+more graphic in terms of tensor fields.)
+     Observe that each induced module is a “highest weight one” with respect
+                                       Invariant operators and Standard Models     7
+
+to the whole g = vect(U ), i.e., the vector of the most highest weight with
+respect to the linear vector fields from g0 = gl(n) is annihilated by g+ , the
+subalgebra of g consisting of all operators of degree > 0 relative the standard
+grading (deg xi = 1 for all i).
+    In what follows the vectors annihilated by g+ will be called singular ones.
+    4) To every r-nary operator D : T (V1 ) ⊗ · · · ⊗ T (Vr ) −→ T (V ) the dual
+operator corresponds
+     D∗ : I(W ) −→ I(W1 ) ⊗ · · · ⊗ I(Wr ),     where    W = V ∗ , Wi = Wi∗ ,
+
+and, since (for details see Ref. 43) each induced module is a highest weight
+one, to list all the D’s, is the same as to list all the g0 -highest singular vectors
+D∗ ∈ I(W1 ) ⊗ · · · ⊗ I(Wr ). In what follows r is called the arity of D.
+    5) In super setting, as well as for non-super but infinite dimensional one,
+the above statement is not true: the submodule generated by a singular vector
+does not have to be a maximal one; it could have another singular vector of
+the same degree due to the lack of complete reducibility.
+    For unary operators and Lie algebras this nuisance does not happen; this
+was one of the (unreasonable) psychological motivations to stick to the finite
+dimensional case even for Lie superalgebras,6 cf. Ref. 54.
+    6) Rudakov’s paper43 contains two results:
+        (A) description of vect(n)-invariant operators in tensor fields (only the
+exterior differential exists) and (the main bulk of the paper)
+        (B) proof of the fact that between the spaces of HJ-tensors there are
+no unary invariant operators.
+    Problems 1) Describe r-nary invariant operators in the spaces of HJ-
+tensors for r > 1.
+    2) Describe r-nary invariant operators in the superspaces of HJ-tensors.
+    The dual operators Kirillov noticed22 that by means of the invariant
+pairing (we consider fields on M with compact support and tensoring over the
+space F of functions)
+                                                                    Z
+      B : T (V ) × (T (V ∗ ) ⊗F Vol(M )) −→ R, (t, t∗ ⊗ vol) 7→ (t, t∗ )vol
+
+one can define the duals of the known invariant operators. For the fields with
+formal coefficients we consider there is, of course, no pairing, but we consider a
+would be pairing induced by smooth fields with compact support. So the formal
+dual of T (V ) is not T (V ∗ ) because the pairing returns a function instead of a
+volume form to be integrated to get a number, and not T (V )∗ because T (V )∗
+is a highest weight module while we need a lowest weight one. Answer: the
+formal dual of T (V ) is T (V ∗ ) ⊗F Vol(M ).
+8     P. Grozman, D. Leites and I. Shchepochkina
+
+     Possibility to dualize, steeply diminishes the number of cases to consider
+in computations and helps to check the results. Indeed, with every invariant
+operator D : T (V ) −→ T (W ) the dual operator D∗ : T (W ∗ ) ⊗F Vol(M ) −→
+T (V ∗ ) ⊗F Vol(M ) is also invariant. For example, what is the dual of d : Ωk −→
+Ωk+1 ? Clearly, it is the same d but in another incarnation: d : Ωn−k−1 −→
+Ωn−k . Though, roughly speaking, we only have one operator, d, the form of
+singular vectors corresponding to d differs with k and having found several
+“new” singular vectors we must verify that the corresponding operators are
+indeed distinct. This might be not easy.
+     Observe that these arguments do not work when we allow infinite dimen-
+sional fibers (dualization sends the highest module into a lowest weight one,
+so it is unclear if a highest weight module with a singular vector always cor-
+respond to this lowest weight one). Sometimes, being tired of calculations, or
+when the computer gave up, we formulated the description of singular vectors
+“up to dualization”; sometimes even the computer became “tired”. We will
+mention such cases extra carefully; we intend to reconsider these cases on a
+more powerful computer.
+
+1.3    Further ramifications of Veblen’s problem
+Rudakov’s arguments43 show that the fibers of HJ-tensors have to be of infi-
+nite dimension; the same holds for Lie superalgebras, though arguments are
+different. Traditionally, fibers of tensor bundles were only considered to be
+of finite dimension, though even in his first paper on the subject Rudakov43
+digressed from traditions.
+     1o . In the study of invariant operators, one of the “reasons” for confin-
+ing to tensors, moreover, the ones corresponding to finite dimensional fibers,
+is provided by two of Rudakov’s results:43 (1) there are no invariant opera-
+tors between HJ-tensors, (2) starting with any highest weight modules I(V ),
+Rudakov unearthed singular vectors only for fundamental (hence, finite di-
+mensional) representations. Though (1) only applies to unary operators, re-
+searchers were somewhat discouraged to consider HJ-tensors even speaking
+about binary operators.
+     Consider invariant operators of arity > 1 between the spaces of HJ-tensors
+(see Problem above). Is it true that in this case there are no invariant operators
+either?
+     2o . Kirillov proved that (having fixed the dimension of the manifold and
+arity) the degree of invariant (with respect to vect(n)) differential operators is
+bounded, even dim of the space of invariant operators is bounded.
+     There seems to be no doubt that a similar statement holds on superman-
+ifolds ... but Kochetkov’s examples reproduced below and our own ones show
+                                             Invariant operators and Standard Models   9
+
+that these expectations are false in some cases.
+     Problem Figure out the conditions when the dimension of the space
+of invariant operators is bounded. (We conjecture that this is true for all the
+series of simple vectorial Lie superalgebras in the standard grading.)
+     3o . On the line, all tensors are λ-densities and every r-linear differential
+operator is of the form
+
+                  L : (f1 dxλ1 , . . . , fr dxλr ) −→ PL (f1 , . . . , fr )dxλ .
+
+Kirillov shows (with ease and elegance) that invariance of L is equivalent to
+the system
+          Xr                                 
+                 ∂ j+1            ∂j             λPL (t) for j = 0
+               ts j+1 + (j + 1)λs j PL (t) =                              (∗)
+                 ∂t s             ∂t s
+                                                    0     for j > 0
+          s=1
+
+Clearly, differential
+                Pr operators correspond to polynomial solutions PL (t) and in
+this case λ = s=1 λs − deg PL . Kirillov demonstrated that nonpolynomial
+solutions do exist: for r = 2 and λ1 = λ2 = 0 the function
+                                                  t1 − t2
+                                      PL (t) =
+                                                  t1 + t2
+satisfies (∗) for λ = 0.
+     Problem What invariant operator corresponds to this solution? De-
+scribe all (any) of the nonpolynomial solutions of (∗) and the corresponding
+operators.
+     4o . To select a reasonable type of r-nary operators is a good problem.
+Symmetric and skew-symmetric operators, as well as operators on λ-densities
+are the first choices but even in such simple cases there are few results. These
+results, though scanty, are rather interesting: quite unexpectedly, some of them
+are related to calculation of the N. Shapovalov determinant for the Virasoro
+algebra, cf. Ref. 9.
+     5o . Since the real forms of simple vectorial Lie algebras are only trivial ones
+(in the natural polynomial basis replace all complex coefficients with reals), the
+results for R and C are identical. In super cases for nontrivial real forms some
+new operators might appear; we will discuss this in the detailed version of the
+text.
+
+1.4   Arity > 1
+Grozman added a new dimension to Rudakov’s solution of Veblen’s problem:
+in 1978 he described all binary invariant differential operators.11,12 It turned
+10 P. Grozman, D. Leites and I. Shchepochkina
+
+out that there are plenty of them but not too many: modulo dualizations
+and permutations of arguments there are eight series of first order operators
+and several second and third order operators all of which are compositions of
+first order operators with one exception: the 3rd order irreducible Grozman
+operator on the line. There are no invariant bilinear operators of order > 3.
+     Miraculously, the 1st order differential operators determine, bar a few ex-
+ceptions, a Lie superalgebra structure on their domain. (Here Lie superalgebras
+timidly indicated their usefulness in a seemingly nonsuper problem. Other ex-
+amples, such as Quillen’s proof of the index theorem, and several remarkable
+Witten’s super observations followed soon.)
+     Limits of applicability of Rudakov’s method                Though fans of
+Rudakov’s method,a let us point out that its application to simple finite di-
+mensional subalgebras of the algebras of vector fields is extremely voluminous
+computational job; therefore, it is ill applicable, say, to isometries of a Rie-
+mannian manifold or the group preserving the Laplace operator.
+     Fortunately, when Rudakov’s method fails, one can usually apply other
+methods (Laplace-Casimir operators, N. Shapovalov determinant, etc.).
+
+1.5   Generalized tensors and primitive forms
+Rudakov considered also operators invariant with respect to the Lie algebra
+of Hamiltonian vector fields on the symplectic manifold (M 2n , ω).44 Thanks
+to nondegeneracy of ω we can identify Ωi with Ωn−i . So the operator d∗ :
+Ωn−i−1 −→ Ωn−i , dual to the exterior differential d : Ωi −→ Ωi+1 looks like a
+new operator, δ : Ωi+1 −→ Ωi , the co-differential. There are also (proportional
+to each other) compositions δ◦ω◦δ and d◦ω −1 ◦d, where ω −1 is the convolution
+with the bivector dual to ω.
+      A novel feature is provided by the fact that “tensors” now are sections of
+the representation of sp(V ), not gl(V ). Since various representations of sp(V )
+can not be extended to representations of gl(V ) these “tensors” are, strictly
+speaking, new notions.
+      Another novel feature we encounter considering subalgebras g of vect are
+primitive forms. If the vect-module I(V ) contains a singular vector with respect
+to vect, so it does with respect to g. But the irreducible vect0 -module V does
+not have to remain irreducible with respect to submodule of the g0 . The
+g0 -irreducible component with the biggest highest weight in V is called the
+g0 -primitive (usually, just primitive) component. Examples: the primitive
+components appeared in symplectic geometry (we encounter their counterparts
+a Interplay between restriction and induction functors goes back to Frobenius, but discovery
+of each instance deserves an acknowledgement, we presume.
+                                     Invariant operators and Standard Models    11
+
+in finite dimensional purely odd picture as spherical harmonics,46,37 ) contact
+analogues of primitive forms are described in Ref. 32. Spaces of primitive
+differential and integrable forms are just restrictions of the “usual” domain of
+the exterior differential; but other types of primitive tensors are domains of
+really new invariant operators.
+    Further examples A. Shapovalov and Shmelev considered the Lie su-
+peralgebras of Hamiltonian vector fields and (following Bernstein2 who consid-
+ered the non-super case) their central extension, the Poisson Lie superlagebra,
+see Refs. 45, 46 and 52-54. Shmelev also considered the operators invariant
+with respect to the funny exceptional deformation hλ (2|2) of the Lie superalge-
+bra h(2|2) of Hamiltonian vector fields.51 See also Ref. 38 for further description
+of hλ (2|2).
+     By that time I. Kostrikin described singular vectors for the contact Lie
+algebras and found a “new” 2nd order invariant operator. This operator was
+actually well-known in differential geometry as an Euler operatorP(for its de-
+scription see Ref. 39; here we just briefly observe that it is not    xi ∂i , this
+is another Euler operator); it is needed for invariant formulation of Monge-
+Ampére equations, cf. Ref. 40. Leites32 generalized I. Kostrikin’s calculations
+to contact Lie superalgebras and found out that there seem to be no analogue of
+Euler’s operator in supersetting. This makes one contemplate on the following:
+    Problem What are superanalogs of Monge-Ampére equations, if any?
+     In 1977 “odd” analogs of the hamiltonian and contact series were
+discovered.31,1 Batalin and Vilkovisky rediscovered the antibracket related to
+these series and showed its importance, cf. Ref. 10. Kochetkov24−28 undertook
+the task of calculating the corresponding singular vectors. He digressed to con-
+sider two of the three known at that time Shchepochkina’s exceptions23 (and
+named after her with the first Cyrillic letter of her name), one of which was
+recently reconsidered in another realization in Ref. 19. At the last moment we
+have found out more singular vectors (= invariant operators) than in Ref. 23
+, even with finite dimensional fibers; SuperLie is indeed indispensable. After
+the last moment we have considered w2 ; we reproduce Kochetkov’s result for
+comparison. For the lack of resources we left out some possible cases of sin-
+gular vectors, but we are sure they are improbable. Though for vle(4|3) and
+mb(4|5) all degrees can occure, we are sure induction à la Kochetkov (complete
+list of singular vectors) can be performed. Various regradings of ksle seem to
+be a tougher problem.
+12 P. Grozman, D. Leites and I. Shchepochkina
+
+1.6   Superization leads to new developments
+
+The study of invariant differential operators on supermanifolds began in 1976 as
+a byproduct of attempts to construct an integration theory on supermanifolds
+similar to the integration theory of differential forms on manifolds. Bernstein
+and Leites became interested in Veblen’s problem when they tried to construct
+an integration theory for supermanifolds containing an analog of the Stokes
+formula.3,4 At that time there were only known the differential forms which
+are impossible to integrate and the volume forms of the highest degree. Unlike
+the situation on manifolds, no volume form coincides with any differential form
+and there was known no analogs of volume forms of lesser degrees.
+     Having discovered integrable forms3,5 (i.e., the forms that can be inte-
+grated; Deligne calls them integral forms8 ) Bernstein and Leites wanted to be
+sure that there were no other tensor objects that can be integrated. Observe
+several points of this delicate question.
+     (1) The conventional Stokes formula on a manifold exists due to the fact
+that there is an invariant operator on the space of differential forms. The
+uniqueness of the integration theory with Stokes formula follows then from the
+above result by Rudakov and its superization due to Bernstein and Leites.
+     Since there are several superanalogs of the determinant, it follows that on
+supermanifolds, there are, perhaps, several analogs of integration theory, see
+Ref. 34, some of them without Stokes formula. Still, if we wish to construct
+an integration theory for supermanifolds containing an analog of the Stokes
+formula, and, moreover, coinciding with it when the supermanifold degenerates
+to a manifold, we have to describe all differential operators in tensor fields on
+supermanifolds.
+     (2) Bernstein and Leites confined themselves to finite dimensional repre-
+sentations ρ owing to tradition which says that a tensor field is a section of a
+vector bundle with a finite dimensional fiber on which the general linear group
+acts. Even in doing so Bernstein and Leites had to digress somewhat from the
+conventions and consider, since it was natural, ALL finite dimensional irre-
+ducible representations ρ of the general linear Lie superalgebra. Some of such
+representations can not be integrated to a representation of the general linear
+supergroup.
+     Inspired by Duflo, Leites used calculations of Ref. 5 to describe invariant
+differential operators acting in the superspaces of tensor fields with infinite
+dimensional fibers, see Ref. 36. These operators of order > 1 are totally new,
+though similar to fiberwise integration along the odd coordinates. The opera-
+tors of order 1 are also not bad: though they are, actually, the good old exte-
+rior differential d, the new domain is that of semi-infinite forms, certain class
+                                      Invariant operators and Standard Models    13
+
+of pseudodifferential forms. Observe that quite criminally (in V. I. Arnold’s
+words) no example of the corresponding new type homology is calculated yet,
+except some preliminary (but important) results of Shander, see Ref. 33 v. 31,
+Ch. 4, 5.
+     (3) Even under all the restrictions Bernstein and Leites imposed, to say
+that “the only invariant differential operator is just the exterior differential”
+would be to disregard how drastically they expanded its domain (even though
+they ignored semi-infinite possibilities). It acts in the superspace of differential
+forms and in the space of integrable forms, which is natural, since the space of
+integrable forms is just the dual space to the superspace of differential forms.
+Though Bernstein and Leites did not find any new invariant differential oper-
+ator (this proves that an integration theory on supermanifolds containing an
+analog of the Stokes formula can only be constructed with integrable forms),
+they enlarged the domain of the exterior differential to the superspace of pseu-
+dodifferential and pseudointegrable forms. These superspaces are not tensor
+fields on Mm,n unless n = 1, but they are always tensor fields on the superman-
+ifold Mb whose structure sheaf Oc is a completion of the sheaf of differential
+                                  M
+forms on M; namely, the sections of OM  c are arbitrary functions of differentials,
+not only polynomial ones.
+     (4) Bernstein and Leites did not consider indecomposible representations
+ρ which are more natural in both the supersetting and for infinite dimensional
+fibers. The first to consider indecomposible cases was Shmelev;54 his result
+was, however, “not interesting”: there are no totally new operators, just com-
+positions of the known ones with projections. For a review of indecomposible
+representations of simple Lie superalgebras see Ref. 35.
+     Integration and invariant differential operators for infinite di-
+mensional fibers There are new operators invariant with respect to the
+already considered (super)groups of diffeomorphisms or, equivalently, their Lie
+superalgebras, if we let them act in the superspaces of sections of vector bun-
+dles with infinite dimensional fibers. These operators of high order have no
+counterparts on manifolds and are versions of the Berezin integral applied
+fiber-wise. (A year after the talk with these results36 was delivered, I. Penkov
+and V. Serganova interpreted some of these new operators as acting in the
+superspaces of certain tensor fields on “curved” superflag and supergrassmann
+supervarieties.42 )
+     We hope to relate with some of these operators new topological invari-
+ants (or perhaps old, like cobordisms, but from a new viewpoint). Recall that
+since the de Rham cohomology of a supermanifold are the same as those of its
+underlying manifold, the “old type” operators are inadequate to study “topo-
+logical” invariants of supermanifolds. The operators described here and related
+14 P. Grozman, D. Leites and I. Shchepochkina
+
+to vector bundles of infinite rank lead to new (co)homology theories (we prefix
+them with a “pseudo”). These pseudocohomologies provide us with invariants
+different from de Rham cohomology; regrettably, never computed yet.
+     The approach adopted here for the operators in the natural bundles with
+infinite dimensional fibers on supermanifolds prompts us to start looking for
+same on manifolds. From the explicit calculations in Grozman’s thesis,11 it is
+clear that there are some new bilinear operators acting in the spaces of sections
+of tensor fields with infinite dimensional fibers.
+
+1.7   An infinitesimal version of Veblen’s problem
+Denote F = K[[x]], where x = (u1 , . . . , un , ξ1 , . . . , ξm ) so that p(ui ) = 0̄ and
+p(ξj ) = 1̄. Denote by (x) the maximal ideal in F generated by the xi . Define
+a topology in F so that the ideals (x)r , r = 0, 1, 2, . . . are neighborhoods of
+zero, i.e., two series are r-close if they coincide up to order r. We see that F
+is complete with respect to this topology.
+     Denote by vect(n|m) the Lie superalgebra of formal vector fields, i.e., of
+continuous derivations of K[[x]]. By abuse of notations we denote derK[x], the
+Lie superalgebra of polynomial vector fields, also by vect(n|m).
+                                           ∂
+     Define partial derivatives ∂i = ∂x      i
+                                               ∈ vect(n|m) by setting ∂i (xj ) = δij
+with super-Leibniz rule. Clearly, p(∂P   i )  =  p(xi ) and [∂i , ∂j ] = 0. Any element
+D ∈ vect(n|m) is of the form D =             fi ∂i , where fi = D(xi ) ∈ F. We will
+denote vect(n|m) by L. In L, define a filtration of the form L = L−1 ⊃ L0 ⊃
+L1 ⊃ . . . setting
+                     Lr = {D ∈ vect(n|m) | D(F) ⊂ (x)r+1 }.
+This filtration defines a topology on L, the superspaces Lr being the base of
+the topology, open neighborhoods of zero.
+    Denote by L = ⊕Lr , where Lr = Lr /Lr+1 , the associated graded Lie
+superalgebra. Clearly, L0 ≃ gl(n|m) with Eij ←→ xj ∂i .
+    Let ρ be an irreducible representation of the Lie superalgebra L0 = gl(n|m)
+with lowest weight in a superspace V . Define a vect(n|m)-module T (ρ) also
+denoted by T (V ) by setting T (V ) = F ⊗K V . The superspace T (V ) evidently
+inherits the topology of F. To any vector field D, assign the operator LD :
+T (V ) −→ T (V ) — the Lie derivative — such that for f ∈ F and v ∈ V
+                                                 X
+               LD (f v) = D(f )v + (−1)p(D)p(f )    Dij ρ(Eij )(v),      (1.7.1)
+
+where Dij = (−1)p(xi )(p(f )+1) ∂i fj . We will usually write just D instead of LD .
+    The elements t ∈ T (V ) will be called tensor fields of type V . The modules
+T (V ) are topological; their duals are spaces with discrete topology.
+                                     Invariant operators and Standard Models   15
+
+    Observe that even if V is finite dimensional, the elements of T (V ) are
+generalized tensors as compared with the classical notion: the space V might
+not be realized in the tensor product of co- and contra-variant tensors, only
+as a subquotient of such; e.g., unlike the determinant (or trace, speaking on
+the Lie algebra level), the supertrace is not realized in tensors and we have to
+introduce new type of “tensors” — the λ-densities.
+    For any L0 -module V with highest weight and any L0 -module W with
+lowest weight set
+
+       I(V ) = U (L) ⊗U(L0 ) V ;   T (W ) = HomU(L0 ) (U (L), W ),         (1.7.2)
+
+where we have extended the action of L0 to a U (L0 )-action by setting L1 V = 0
+and L1 W = 0. Clearly,
+    a) I(V ) is an L-module with discrete topology.
+    b) I(V )∗ ∼= T (V ∗ )
+    c) definition of the tensor fields with L-action (1.7.1) is equivalent to the
+one given by (1.7.2).
+    Thus, instead of studying invariant maps T (W1 ) −→ T (W2 ) (or T (W1 ) ⊗
+T (W2 ) −→ T (W3 ), etc.) we may study submodules — or, equivalently, singular
+vectors — of I(V ) (resp. of I(V1 ) ⊗ I(V2 ), etc.). They are much easier to
+describe.
+    Further generalization of tensors. The highest weight theorem
+Let
+                          L = L−d ⊃ · · · ⊃ L0 ⊃ L1 ⊃ . . .
+be a Lie superalgebra of vector fields with formal or polynomial coefficients and
+endowed with a Weisfeiler filtration/grading described in what follows (for the
+time being consider a “most natural” grading, like that in vect above). We
+define the space of generalized tensor fields and its dual by the same formula
+(1.7.2) as for the usual tensor fields given any L0 -module V with highest weight
+and any L0 -module W with lowest weight such that L1 V = 0 and L1 W = 0.
+     Observe that for the Lie algebra of divergence-free vector fields the spaces
+T (W ) are the same as for vect. For some other Lie superalgebras the notion of
+tensors we give is different because there are representations of L0 distinct from
+tensor powers of the identity one. For example, for the Lie superalgebra L of
+Hamiltonian vector fields h(2n|m) such is the spinor representation (for n = 0);
+if we consider infinite dimensional fibers such is the oscillator representation
+(for m = 0), and in the general case such is the spinor-oscillator representation,
+cf. Ref. 37.
+     Thus, the first step in the study of L-invariant operators is a description
+of irreducible L0 -modules, at least in terms of the highest/lowest weight. For
+16 P. Grozman, D. Leites and I. Shchepochkina
+
+the majority of the L0 ’s this is not a big deal, but the catch is that for some
+L0 ’s there is no easy highest/lowest weight theorem, even for finite dimensional
+modules. We will encounter this phenomenon with as, the linear part of vas.
+     An aside remark: being interested not only in representations of vecto-
+rial algebras (with polynomial coefficients) but in their stringy analogs (with
+Laurent coefficients), too, observe that vacuum over L0 can be degenerate.
+     Problem For all Weisfeiler gradings of simple vectorial superalgebras L
+describe conditions for the highest (lowest) weight under which the irreducible
+quotient of the Verma module over L0 is finite dimensional and describe the
+corresponding module (say, in terms of a character formula, cf. Ref. 42).
+     Examples of generalized tensor fields Clearly, for L = vect(n|m)
+we have L ≡ T (id), where id = Span(∂i | 1 ≤ i ≤ n + m) is the (space V of
+the) identity representation of L0 = gl(V ) = gl(n|m). The spaces T (E i (id∗ ))
+are denoted by Ωi ; their elements are called differential i-forms and the right
+dual elements to ∂i are denoted by xbi = dxi , where p(xbi ) = p(xi ) + 1̄. In
+particular, let F = Ω0 be the algebra of functions.
+     The algebra Ω     b of arbitrary, not only polynomial, functions in xbi = dxi
+is called the algebra of pseudodifferential forms. An important, as Shander
+showed in Ref. 33 v. 31, Ch. 5, subspace Ω         b (λ) of homogeneous pseudodiffer-
+ential forms of homogeneity degree λ ∈ K is naturally defined as functions of
+homogeneity degree λ with respect to the hatted indeterminates.
+     Define the space of volume forms Vol to be T (str); denote the volume
+element by vol(x) or vol(u|θ). (Observe again that it is a bad habit to denote,
+as many people still do, vol by dn udm θ: their transformation rules are totally
+different, see, e.g., Refs. 5, 8.)
+     The space of integrable i-forms is Σi = HomF (Ωi , Vol). In other words, in-
+tegrable forms are Vol-valued polyvector fields. Pseudointegrable forms are de-
+fined as elements of Σ    b = HomF (Ω,b Vol); the subspace Σ  b (λ) = HomF (Ωb (λ) , Vol)
+of homogeneous forms is also important.
+     Particular cases: a) m = 0. We see that Ωi = 0 for i > n and Σi = 0
+for i < 0. In addition, the mapping vol 7→ x̂1 · · · x̂n defines an isomorphism of
+Ωi with Σi preserving all structures.                                  R
+     b) n = 0. In this case there is an even L-module morphism : Σ−m −→ K
+called the Berezin integral. It is defined by the formula
+          Z                           Z                             Y
+             ξ1 · · · ξm vol = 1, and ξ1ν1 · · · ξm
+                                                  νm
+                                                      vol = 0 if       νi = 0.
+
+                            R                  R
+    We will also denote by     the composition   : Σ−m → K ֒→ Ω0 of the
+Berezin integral and the natural embedding.
+                                          Invariant operators and Standard Models         17
+
+     c) m = 1. We generalize Ωi and Σj to the spaces Φλ of pseudodiffer-
+entional and pseudointegral forms containing Ωi and Σj , where λ ∈ K. Let
+x = (u1 , · · · , un , ξ). Consider a K-graded Ω-module Φ = ⊕Φλ (we assume
+that deg x̂i = 1 ∈ K) generated by ξˆλ , where deg ξ̂ λ = λ and p(ξˆλ ) = 0̄, with
+relations ξˆ · ξ̂ λ = ξ̂ λ+1 . Define the action of partial derivatives ∂i and ∂ˆj for
+1 ≤ i, j ≤ n + 1 via ∂ˆj (xi ) = 0, ∂i (ξˆλ ) = 0, ∂ûi (ξˆλ ) = 0 and ∂ξ̂ (ξˆλ ) = λξˆλ−1 .
+     On Φ, the derivations d, iD and LD consistent with the exterior derivation
+d, the inner product iD and the Lie derivative LD on Ω are naturally defined.
+     It is easy to see that Φ = ⊕Φλ is a supercommutative superalgebra.
+     Clearly, Φ is a superspace of tensor fields and for ΦZ = ⊕r∈ZΦr we have a
+sequence
+                                        α         β
+                               0 −→ Ω −→ ΦZ −→ Σ −→ 0                                     (∗)
+where the maps α and β are defined by
+                        α(ω) = ω ξˆ0 ,    β(û1 · · · ûn ξˆ−1 ) = vol.
+Clearly, the homomorphisms α and β are consistent with the Ω-module struc-
+ture and the operators d, iD and LD . The explicit form of the F-basis in Ω, Σ
+and Φ easily implies that (∗) is exact.
+1.8   Operators invariant with respect to nonstandard realizations
+At the moment the L-invariant differential operators are described for all but
+one series of simple vectorial Lie superalgebras in the standard realization.
+Contrariwise, about operators invariant with respect to same in nonstandard
+realizations almost nothing is known, except for vect(m|n; 1), see Ref. 36.
+     For series, the standard realization is the one for which dim L/L0 is min-
+imal; for exceptional algebras the notion of the standard realization is more
+elusive, and since there are 1 to 4 realizations, it is reasonable and feasible to
+consider all of them. It is also natural to consider hλ (2|2) and hλ (2|2; 1) as
+exceptional algebras, especially at exceptional values of λ.
+1.9   On description of irreducible L-modules
+Having described vect(n|m)-invariant differentialR operators in tensor fields with
+finite dimensional fibers (answer: only d, and if n = 0, m 6= 0), we consider
+the quotients of T (V ) modulo the image of the invariant operator. It could be
+that the quotient also contains a submodule. In the general case there are no
+such submodules (Poincaré lemma), in other cases anything can happen, see
+Refs. 27 and 26,28.
+     Observe that to describe irreducible L-modules, it does not always suffice
+to consider only one realization of L. It is like considering generalized Verma
+18 P. Grozman, D. Leites and I. Shchepochkina
+
+modules induced or co-induced from distinct parabolic subalgebras. Similarly,
+the description of invariant operators must be performed from scratch in each
+realization.
+     Here we do not specifically consider the irreducible L-modules; so far, the
+answers are known for tensors with finite dimensional fibers and in two cases
+only: Ref. 20 (vle(3|6)) and Ref. 32 (k(1|n); weights of singular vectors are
+corrected below).
+2   Brief description of the exceptional algebras
+To save space, we do not reproduce the details of definitions of exceptional su-
+peralgebras, see Ref. 50. Thus,43,26,5 suffice to grasp the details of the theory;50
+to catch on with the list of exceptions we P  consider.
+     Some of the exceptional algebras g = i≥−d gi are isomorphic as abstract
+ones; there are five abstract families altogether. We realize them as Lie super-
+algebras of polynomial vector fields with a particular, Weisfeiler (shortly W-),
+grading or filtration. In any W-grading (a) the sum of the terms of positive
+degree is a maximal subalgebra of finite codimension and (b) the linear part,
+g0 irreducibly acts on g−1 . If depth d = 1, then each g is constructed as the
+Cartan prolong (or its generalization) of the pair (g−1 , g0 ). To construct kas,
+still another generalization of the Cartan prolongation is applied. For these
+generalizations, first described in Refs. 47 and 48, see Ref. 50. In Ref. 7 there
+is given a 15-th regrading we missed in Ref. 50, and a nice interpretation of
+the exceptional algebras in terms of g0̄ and the g0̄ -module, g1̄ . This interpre-
+tation is convenient in some problems, but in interpretations of our results the
+realization of g as (generalized) Cartan prolong is often more useful.
+     We only recall that the classical Cartan prolong (g−1 , g0 )∗ is defined in-
+ductively, as a subalgebra of vector fields in dim g−1 indeterminates with given
+g−1 and the linear part g0 , and where for i > 0
+                   gi+1 = {D ∈ vect(dim g−1 ) | [D, g−1 ] ⊂ gi .
+    Hereafter vect(m|n) is the general vectorial Lie superalgebra on m even and
+n odd indeterminates; svect(m|n) is its divergence-free or special subalgebra;
+k(2m + 1|n) the contact algebra that preserves the Pfaffian equation α = 0,
+where
+                 X                        X                      X
+    α1 = dt +        (pi dqi − qi dpi ) +   (ξj dηj + ηj dξj ) +     θk dθk .
+                1≤i≤m                    j≤r                    k≥n−2r
+
+For f ∈ C[t, p, q, Θ], where Θ = (ξ, η, θ), define the contact field Kf by setting:
+                                           ∂         ∂f
+                        Kf = (2 − E)(f )      − Hf +    E,
+                                           ∂t        ∂t
+                                               Invariant operators and Standard Models               19
+              P        ∂
+where E =          yi ∂y i
+                           (here the yi are all the coordinates except t), and Hf is
+               i
+the hamiltonian field with Hamiltonian f that preserves dα1 :
+                                                                 
+               X ∂f ∂           ∂f ∂                    X ∂f ∂
+          Hf =      (         −         ) − (−1)p(f )            .
+                      ∂pi ∂qi   ∂qi ∂pi                   ∂θj ∂θj
+                       i≤n                                                j≤m
+
+
+Replacement of some of the θ’s in the above formula with ξ, η leads to obvious
+modifications.
+   The “odd” analog of the contact structure is given by the even form
+                                   X
+                      α0 = dτ +         (ξi dqi + qi dξi )
+                                             1≤i≤n
+
+and formula for the vector field Mf — the analogs of Kf — generated by
+the function of τ, ξ, q are similar. The fields Mf span the “odd” contact Lie
+superalgebra, m(n).
+    The regradings are given after the dimension of the supermanifold in the
+standard realization (r = 0, optional, marked by (∗)) after semicolon. Observe
+that the codimension of L0 attains its minimum in the standard realization.
+
+        Lie superalgebra                                  its Z-grading
+         vect(n|m; r),                       deg ui = deg ξj = 1 for any i, j     (∗)
+           0 ≤r ≤ m                                 deg ξj = 0 for 1 ≤ j ≤ r;
+                                               deg ui = deg ξr+s = 1 for any i, s
+
+            m(n; r),                     deg τ = 2, deg qi = deg ξi = 1 for any i     (∗)
+           0 ≤ r ≤ n                    deg τ = deg qi = 2, deg ξi = 0 for 1 ≤ i ≤ r < n;
+           r 6= n − 1                          deg qr+j = deg ξr+j = 1 for any j
+           m(1|n; n)                      deg τ = deg qi = 1, deg ξi = 0 for 1 ≤ i ≤ n
+
+          k(2n + 1|m; r),                                   deg t = 2 ,
+           0 ≤ r ≤ [m]        deg pi = deg qi = deg ξj = deg ηj = deg θk = 1 for any i, j, k   (∗)
+                     2
+      r 6= k − 1 for m = 2k            deg t = deg ξi = 2, deg ηi = 0 for 1 ≤ i ≤ r ≤ [ m ];
+                                                                                        2
+           and n = 0                     deg pi = deg qi = deg θj = 1 for j ≥ 1 and all i
+           k(1|2m; m)                     deg t = deg ξi = 1, deg ηi = 0 for 1 ≤ i ≤ m
+
+
+
+     Now the last notations: hei(2n|m) is the Heisenberg algebra, it is isomor-
+phic to k(2n + 1|m)− , the negative part of k(2n + 1|m); similarly, ab(m) is the
+antibracket algebra, isomorphic to m(m)− .
+     A. Sergeev central extension, as, of spe(4): we represent an arbitrary el-
+ement A ∈ as as a pair A = x + d · z, where x ∈ spe(4), d ∈ C and z is the
+central element. We define the bracket in as in its matrix realization in the
+spinor representation:
+                    ′                          ′           
+   a    b              a    b′      ′         a    b       a     b′
+             +d · z ,            +d   · z  =           ,               +tr cc̃′ ·z ,
+   c −at               c′ −a′t                 c −at       c′ −a′t
+20 P. Grozman, D. Leites and I. Shchepochkina
+
+where ˜ is extended via linearity from matrices cij = Eij − Eji on which
+c̃ij = ckl for any even permutation (1234) 7→ (ijkl).
+      The five types of exceptional W-graded Lie superalgebras are given above
+in their realizations as Cartan’s prolongs (g−1 , g0 )∗ or generalized Cartan’s
+prolongs (g− , g0 )mk
+                   ∗ for g− =     ⊕    gi expressed for d = 2 as (g−2 , g−1 , g0 )mk
+                                                                                  ∗
+                                  −d≤i≤−1
+together with one of the serial Lie superalgebras as an ambient which contains
+the exceptional one as a maximal subalgebra. The regradings R(r) of the
+ambients given below are sometimes not of Weisfeiler type.
+
+     vle(4|3; r) = (Π(Λ(3))/C · 1, cvect(0|3))∗ ⊂ vect(4|3; R),            r = 0, 1, K
+     vas(4|4) = (spin, as)∗ ⊂ vect(4|4)
+     kasξ (1|6; r) ⊂ k(1|6; r),   r = 0, 1ξ, 3ξ
+        ξ
+     kas (1|6; 3η) = (Vol0 (0|3), c(vect(0|3)))∗ ⊂ svect(4|3)
+     mb(4|5; r) = (ab(4), cvect(0|3))m
+                                     ∗ ⊂ m(4|5; R),          r = 0, 1, K
+     ksle(9|6; r) = (hei(8|6), svect(0|4)3,4 )k∗ ⊂ k(9|6; r),    r = 0, 2, CK
+     ksle(9|6; K) = (idsl(5) , Λ2 (id∗sl(5) ), sl(5))k∗ ⊂ svect(5|10; R)
+
+    Certain regradings R(r) of the ambients are so highly nonstandard that
+even the homogeneous fibers are of infinite dimension:
+1) vle(4|3; r) = (Π(Λ(3)/C · 1), cvect(0|3))∗ ⊂ vect(4|3), r = 0, 1, K;
+ r = 0: deg y = deg ui = deg ξi = 1;
+ r = 1: deg y = deg ξ1 = 0, deg u2 = deg u3 = deg ξ2 = deg ξ3 = 1, deg u1 = 2;
+ r = K: deg y = 0, deg ui = 2; deg ξi = 1.
+2) vas(4|4) = (spin, as)∗ ⊂ vect(4|4);
+3) kas ⊂ k(1|6; r), r = 0, 1, 3ξ; kas(1|6; 3η) ⊂ svect(4|3);
+ r = 0: deg t = 2, deg ηi = 1; deg ξi = 1;
+ r = 1: deg ξ1 = 0, deg η1 = deg t = 2, deg ξ2 = deg ξ3 = deg η2 = deg η3 = 1;
+ r = 3ξ: deg ξi = 0, deg ηi = deg t = 1;
+ r = 3η: deg ηi = 0, deg ξi = deg t = 1.
+4) mb(4|5; r) = (ab(4), cvect(0|3))m  ∗ ⊂ m(4),     r = 0, 1, K;
+ r = 0: deg τ = 2, deg ui = deg ξi = 1 for i = 0, 1, 2, 3;
+ r = 1: deg τ = deg ξ0 = deg u1 = 2, deg u2 = deg u3 = deg ξ2 = deg ξ3 = 1;
+ deg ξ1 = deg u0 = 0;
+ r = K: deg τ = deg ξ0 = 3, deg u0 = 0, deg ui = 2; deg ξi = 1 for i > 0.
+5) ksle(9|6; r) = (hei(8|6), svect3,4 (4))k∗ ⊂ k(9|6), r = 0, 2, K, CK;
+ r = 0: deg t = 2, deg pi = deg qi = deg ξi = deg ηi = 1;
+ r = 2: deg t = deg q3 = deg q4 = deg η1 = 2, deg q1 = deg q2 = deg p1 = deg p2
+                                                  Invariant operators and Standard Models              21
+
+  = deg η2 = deg η3 = deg ζ2 = deg ζ3 = 1; deg p3 = deg p4 = deg ζ1 = 0;
+  r = K: deg t = deg qi = 2, deg pi = 0; deg ζi = deg ηi = 1;
+  r = CK: deg t = deg q1 = 3, deg p1 = 0; deg q2 = deg q3 = deg q4 = deg ζ1
+  = deg ζ2 = deg ζ3 = 2; deg p2 = deg p3 = deg p4 = deg η1 = deg η2 = deg η3 = 1.
+     To determine the minimal ambient is important for our problem: every op-
+erator invariant with respect to an algebra is, of course, invariant with respect
+to any its subalgebra.
+     Here is the list of nonpositive terms of the exceptional algebras. Notations:
+c(g) denotes the trivial central extension with the 1-dimensional even center
+generated by z; C[k] is the trivial g0 -module on which the central element z
+from g0 chosen so that z|gi = i·idgi acts as multiplcation by k; a + ⊂ b denotes the
+semidirect product in which a is the ideal; let d determine the Z-grading of g
+and not belong to g, we shorthand g +   ⊃ C(az +bd) to ga,b ; Vol(n|m) is the space
+of volume forms (densities) on the superspace of superdimension indicated,
+subscript 0 singles the subspace with integral 0; T 1/2 is the representation in
+the space of half-densities and T00 is the quotient of Vol 0 modulo constants
+(over divergence-free algebra).
+     Observe that none of the simple W-graded vectorial Lie superalgebras is
+of depth > 3 and only two algebras are of depth 3: mb(4|5; K), for which we
+have
+                             mb(4|5; K)−3 ∼ = Π(idsl(2) ),
+and another one, ksle(9|6; CK) = ck(11|9), for which we have :
+
+                               ck(11|9)−3 ≃ Π(idsl(2) ⊗ C[−3]).
+
+Here are the other terms gi for i ≤ 0 of the 15 exceptional W-graded algebras.
+
+     g            g−2                      g−1                               g0                    r
+
+  vle(4|3)          −                 Π(Λ(3)/C · 1)                      c(vect(0|3))              0
+  vle(5|4)        C[−2]                 id ⊗ Λ(2)                            ⊂ T 1/2 (vect(0|2))
+                                                              c(sl(2) ⊗ Λ(2) +                     1
+  vle(3|6)       idsl(3)         id∗     ⊗ idsl(2) ⊗ C[−1]            sl(3) ⊕ sl(2) ⊕ Cz           K
+                                   sl(3)
+  vas(4|4)          −                      spin                              as                    0
+
+  kas(1|6)        C[−2]                   Π(id)                             co(6)                  0
+  kas(5|5)        Λ(1)           idsl(2) ⊗ idgl(2) ⊗ Λ(1)     (sl(2) ⊕ gl(2) ⊗ Λ(1)) +
+                                                                                     ⊂ vect(0|1)   1ξ
+  kas(4|4)          −                      Λ(3)                         Λ(3) ⊕ sl(1|3)             3ξ
+  kas(4|3)          −                   Vol0 (0|3)                       c(vect(0|3))              3η
+
+  mb(4|5)       Π(C[−2])                 Vol(0|3)                        c(vect(0|3))              0
+  mb(5|6)        Λ(2)/C1              idsl(2) ⊗ Λ(2)                         ⊂ T 1/2 (vect(0|2))
+                                                              c(sl(2) ⊗ Λ(2) +                     1
+  mb(3|8)        idsl(3)       Π(id∗     ⊗ idsl(2) ⊗ C[−1])           sl(3) ⊕ sl(2) ⊕ Cz           K
+                                   sl(3)
+ ksle(9|6)        C[−2]                   Π(T0 0)                       svect(0|4)3,4              0
+ ksle(11|9)    Π(idsl(1|3) )          idsl(2) ⊗ Λ(3)              (sl(2) ⊗ Λ(3))  +
+                                                                                  ⊂ sl(1|3)        2
+ ksle(5|10)         id                  Π(Λ2 (id∗ ))                        sl(5)                  K
+                                                       
+ ksle(9|11)   id∗     ⊗ Λ(1)    idsl(2) ⊗ idsl(3) ⊗ Λ(1)      sl(2) ⊕ (sl(3) ⊗ Λ(1) +
+                                                                                    ⊂ vect(0|1))   CK
+                sl(3)
+22 P. Grozman, D. Leites and I. Shchepochkina
+
+     In what follows, we write just f instead of Mf or Kf , and I instead of
+M1 . So, f · g denotes Mf Mg or Kf Kg , not Mf g or Kf g . We shorthand
+D : I(χ) −→ I(ψ) to χ = (a, b, c, d) −→ ψ = (e, f, g, h). Having selected a
+basis of Cartan subalgebra, we use it for every regrading.
+     The negated degree of the singular vector, i.e, the degree of the corre-
+sponding operator, is denoted by d). We are sure that in some cases there are
+singular vectors (operators) of degree higher than listed ones; in such cases
+we write “in degrees indicated the singular vectors are ...” rather than “the
+following are all possible singular vectors”. In what follows m1 is the nonzero
+highest weight vector of the g0 -module V .
+
+3   Singular vectors for g = vle(3|6)
+We denote the indeterminates by x (even) and ξ (odd); the corresponding
+partial derivatives by ∂ and δ. The Cartan subalgebra is spanned by
+     h1 = −2 x4 ⊗ ∂4 −ξ1 ⊗ δ1 −ξ2 ⊗ δ2 −ξ3 ⊗ δ3 ,               h2 = −x2 ⊗ ∂2 − x3 ⊗ ∂3 − ξ1 ⊗ δ1 ,
+     h3 = −x1 ⊗ ∂1 − x3 ⊗ ∂3 − ξ2 ⊗ δ2 ,                        h4 = −x1 ⊗ ∂1 − x2 ⊗ ∂2 − ξ3 ⊗ δ3
+
+We consider the following negative operators from g0 :
+        a1 = ∂4 ,     a12 = − x4 2 ∂4 − x4 ξ1 δ1 − x4 ξ2 δ2 − x4 ξ3 δ3 + ξ1 ξ2 ∂3 − ξ1 ξ3 ∂2 + ξ2 ξ3 ∂1
+
+
+                    a2 = − x1 ∂1    − x2 ∂2 − x3 ∂3 + x4 ∂4 ,    a3 = x2 ∂2 + x3 ∂3 + ξ1 δ1
+                    a4 = − x2 ∂1    + ξ1 δ2 ,                    a5 = − x3 ∂1 + ξ1 δ3
+                    a6 = − x1 ∂2    + ξ2 δ1 ,                    a7 = x1 ∂1 + x3 ∂3 + ξ2 δ2
+                    a8 = − x3 ∂2    + ξ2 δ3 ,                    a9 = − x1 ∂3 + ξ3 δ1
+                    a10 = − x2 ∂3 + ξ3 δ2 ,                      a11 = x1 ∂1 + x2 ∂2 + ξ3 δ3
+
+
+and the operators from g− :
+                        n1 = δ1 ,           n4 = x4 δ3 − ξ1 ∂2 + ξ2 ∂1 ,       n7 = ∂1
+                        n2 = δ2 ,           n5 = x4 δ2 − ξ1 ∂3 + ξ3 ∂1 ,       n8 = ∂2
+                        n3 = δ3 ,           n6 = x4 δ1 − ξ2 ∂3 + ξ3 ∂2 ,       n9 = ∂3
+
+
+
+The mi are the following elements of the irreducible g0 -module V :
+                     m1 is the highest weight vector            m9 = a4 · a8 · m1
+                     m2 = a12 · m1                              m10 = a8 · a8 · m1
+                     m3 = a4 · m1                               m11 = a5 · m1
+                     m4 = a8 · m1                               m12 = a12 · a12 · a12 · m1
+                     m5 = a12 · a12 · m1                        m13 = a12 · a12 · a4 · m1
+                     m6 = a12 · a4 · m1                         m14 = a12 · a12 · a8 · m1
+                     m7 = a12 · a8 · m1                         m15 = a12 · a4 · a4 · m1
+                     m8 = a4 · a4 · m1                          m16 = a12 · a4 · a8 · m1
+
+
+
+Theorem In I(V ), there are only the following singular vectors of degree d):
+1a) (k, k, l, l) −→ (k + 1, k + 1, l, l): n1 ⊗ m1 ;
+1b) (k, k, k − 1, k − 1) −→ (k + 1, k, k, k − 1): n2 ⊗ m1 + n1 ⊗ m3 ;
+                                         Invariant operators and Standard Models    23
+
+1c) (k − 3, k, k, k − 1) −→ (k − 2, k, k, k): n3 ⊗ m1 + n2 ⊗ m4 + n1 ⊗ m9 ;
+1d) (−k, k − 2, l, 1) −→ (−k − 1, k − 1, l, l), where k 6= 0
+                                k n 6 ⊗ m1 + n 1 ⊗ m2 ;
+
+1e) (−k, k − 2, k − 1, k − 1) −→ (−k − 1, k − 2, k, k), where k 6= 0, −1
+                  k (n5 ⊗ m1 + n6 ⊗ m3 ) − n2 ⊗ m2 + n1 ⊗ m6 ;
+
+1f) (−k, k + 1, k + 1, k) −→ (−k − 1, k + 1, k + 1, k + 1), where k 6= 0
+     k (n4 ⊗ m1 − n5 ⊗ m4 + n6 ⊗ m9 ) + n3 ⊗ m2 + n2 ⊗ m7 + n1 ⊗ m16 ;
+
+2a) (0, −2, k, k) −→ (0, 0, k − 1, k − 1): (n6 ·n1 ) ⊗ m1 ;
+
+2b) (0, −2, 0, 0) −→ (0, −1, 1, 0):
+                       (n5 ·n1 − n6 ·n2 ) ⊗ m1 + (n6 ·n1 ) ⊗ m3
+
+2c) (1, 0, 0, −1) −→ (1, 1, 0, 0):
+−(n8 +n4 ·n1 )⊗m1 +(n3 ·n1 )⊗m2 +(n9 +n5 ·n1 )⊗m4 +(n2 ·n1 )⊗m7 −(n6 ·n1 )⊗m9
+
+2d) (−3, 0, 0, −1) −→ (−3, 1, 0, 0)
+            (n8 + n4 ·n1 − 2 (n6 ·n3 )) ⊗ m1 + (n3 ·n1 ) ⊗ m2
+            − (n9 + n5 ·n1 + 2 (n6 ·n2 )) ⊗ m4 + (n2 ·n1 ) ⊗ m7 − (n6 ·n1 ) ⊗ m9
+
+2e) (0, k, −1, k + 1) −→ (0, k, 1, k + 1) (The dual cases were not calculated.)
+     −k (1 + k) (n5 ·n2 ) ⊗ m1 − k (n5 ·n1 − k n6 ·n2 ) ⊗ m3 + (n6 ·n1 ) ⊗ m8
+
+3a) (k − 2, k, k, k) −→ (k + 1, k + 1, k + 1, k + 1): (n3 ·n2 ·n1 ) ⊗ m1 ;
+3b) (−3, −1, −1, −1) −→ (−2, 0, 0, 0) (The dual cases were not calculated.)
+(n7 ·n1 +n8 ·n2 +n9 ·n3 −n4 ·n2 ·n1 −n5 ·n3 ·n1 −n6 ·n3 ·n2 ) ⊗ m1 − (n3 ·n2 ·n1 ) ⊗ m2
+
+4   Singular vectors for g = vle(4|3)
+Here g = vle(4|3), former w1 . In g0 = c(vect(0|3)) considered in the standard
+grading, we take the usual basis of Cartan subalgebra, ξi ∂∂i , and z we identify
+the g0 -module g−1 with Π(Λ(ξ)/C · 1), by setting
+
+                      ∂i = Π(ξi );     ∂0 = Π(ξ1 ξ2 ξ3 ),
+                      δi = sign(ijk)Π(ξj ξk ) for (i, j, k) ∈ S3 .
+24 P. Grozman, D. Leites and I. Shchepochkina
+
+We consider the following negative operators from g0 :
+                     y1 = −x1 ∂2 + ξ2 δ1              y2 = −x2 ∂3 + ξ3 δ2
+                     y3 = −x0 δ3 − ξ1 ∂2 + ξ2 ∂1      y4 = x1 ∂3 − ξ3 δ1
+                     y5 = x0 δ2 − ξ1 ∂3 + ξ3 ∂1       y6 = x0 δ1 + ξ2 ∂3 − ξ3 ∂2
+
+
+and the basis of Cartan subalgebra:
+                     h0 = x1 ∂1 + x2 ∂2   + x3 ∂3 + x0 ∂0 + ξ1 δ1 + ξ2 δ2 + ξ3 δ3
+                     h1 = x2 ∂2 + x3 ∂3   + ξ1 δ1
+                     h2 = x1 ∂1 + x3 ∂3   + ξ2 δ2
+                     h3 = x1 ∂1 + x2 ∂2   + ξ3 δ3
+
+
+The mi are the following elements of the irreducible g0 -module V :
+                m2 = y1 m1           m17 = y5 m1                  m54 = y2 y3   y4 m1
+                m3 = y2 m1           m26 = y1 y5 m1               m57 = y3 y5   m1
+                m7 = y3 m1           m31 = y3 y4 m1               m82 = y1 y3   y5 m1
+                m8 = y4 m1           m32 = (y4 )2 m1              m94 = y3 y6 m1
+                m12 = y1 y3 m1       m33 = y6 m1                  m148 = y3 y4 y5 m1
+                m15 = y2 y3 m1       m46 = y1 y2 y5 m1            m150 = y5 y6 m1
+
+and m320 = y3 y5 y6 m1 . Observe that our choice of ordering obscures the fact
+that the vectors m129 , m148 , and m150 are proportional.
+Theorem In I(V ) in degrees indicated, there are only the following singular
+vectors:
+    1a) λ −→ λ + (−1, 1, 1, 1), where 2λ1 = λ2 + λ3 + λ4 : ∂0 m1
+    1b) (k, l, l, k − l + 1) −→ (k − 1, l + 1, l + 1, k − l + 1): ∂0 m7 + (k − l)δ3 ) m1
+    1c) (k, k − 1, 1, k) −→ (k − 1, k, 1, k + 1):
+                  ∂0 (m15 + (k − 2)m17 ) − (k − 1)δ2 m1 + δ3 m3
+
+    1d) (k, l, k − l, k − l) −→ (k − 1, l, k − l + 1, k − l + 1):
+∂0 (m26 +m31 +(1−k+2l)m33)+((k−2l)(1+l))δ1 m1 −(l+1)δ2 m2 +(l+1)δ3 m8
+
+   1e) (1, 1, 0, 0) −→ (0, 1, 1, 0):
+−2∂1 m2 + 2∂2 m1 + ∂0 (m82 + 2m94 )+ 2δ1 m7 + 2δ2 m12 + δ3 (m26 − m31 + 2m33 )
+
+    1f) (0, 0, 0, −1) −→ (−1, 0, 0, 0):
+       −∂1 m8 + ∂2 m3 − ∂3 m1
+       +∂0 (m129 + m148 ) + δ1 (2m15 − m17 ) + δ2 (2m31 − m33 ) + δ3 (m46 + m54 )
+
+    2a) λ −→ λ + (−2, 2, 2, 2), where λ1 = λ2 + λ3 + λ4 + 1: ∂02 m1
+    2b) (k, k − 2, k − 2, 3) −→ (k − 2, k, k, 4): ∂02 m7 + 2∂0 δ3 m1
+    2c) (k, k − 2, 2, k − 1) −→ (k − 2, k, 3, k + 1):
+             ∂02 (m15 + (k − 4)m17 ) − 2(k − 3)∂0 δ2 m1 + 2∂0 δ3 m3
+                                        Invariant operators and Standard Models   25
+
+
+    2d) (k, 1, k − 1, k − 1) −→ (k − 2, 2, k + 1, k + 1):
+  ∂02 (m26 + m31 + (3 − k)m33 ) + 2(k − 2)∂0 δ1 m1 − 2∂0 δ2 m2 + 2∂0 δ3 m8
+
+    2e) (2, 1, 1, 1) −→ (0, 2, 2, 2):
+              ∂02 m320 + 2∂1 ∂0 (m26 + m31 ) + 2∂1 δ1 m1 − 2∂1 δ2 m2
+              +2∂1 δ3 m8 − 2∂2 ∂0 m15 + 2∂2 δ2 m1 − 2∂2 δ3 m3
+              +2∂3 ∂0 m7 + 2∂3 δ3 m1 − 2∂0 δ1 m57 + ∂0 δ2 (−m82 + m94 )
+              +∂0 δ3 (m148 + 2m150 ) − 2δ1 δ2 m7 − 2δ1 δ3 m17 + 2δ2 δ3 m33
+
+
+    3a) λ −→ λ + (−3, 3, 3, 3), where λ1 = λ2 + λ3 + λ4 + 2:             ∂03 m1
+    3b) (k, k − 3, k − 3, 4) −→ (k − 3, k, k, 6):     ∂03 m7 + 3∂02 δ3 m1
+    3c) (k, k − 3, 3, k − 2) −→ (k − 3, k, 5, k + 1):
+             ∂03 (m15 + (k − 6)m17 ) − 3(k − 5)∂02 δ2 m1 + 3∂02 δ3 m3
+
+    3d) (k, 2, k − 2, k − 2) −→ (k − 3, 4, k + 1, k + 1):
+  ∂03 (m26 + m31 + (5 − k)m33 ) + 3(k − 4)∂02 δ1 m1 − 3∂02 δ2 m2 + 3∂02 δ3 m8
+
+    3e) (2k, k, k, k) −→ (2k − 3, k + 2, k + 2, k + 2):
+               ∂03 m320 + (k + 1)∂1 ∂02 (m26 + m31 ) + k(k + 1)∂1 ∂0 δ1 m1
+               −k(k + 1)∂1 ∂0 δ2 m2 + k(k + 1)∂1 ∂0 δ3 m8
+               −(k + 1)∂2 ∂02 m15 + k(k + 1)∂2 ∂0 δ2 m1
+               −k(k + 1)∂2 ∂0 δ3 m3 + (k + 1)∂3 ∂02 m7
+               +k(k + 1)∂3 ∂0 δ3 m1 − (k + 1)∂02 δ1 m57
+               +∂02 δ2 (−m82 + km94 ) + ∂0 δ3 (m148 + (k + 1)m150 )
+               −k(k + 1)∂0 δ1 δ2 m7 − k(k + 1)∂0 δ1 δ3 m17
+               +k(k + 1)∂0 δ2 δ3 m33 − (k − 1)k(k + 1)δ1 δ2 δ3 m1
+
+Remarks Cases a) have an obvious generalization to any degree, cf. Ref. 23.
+Some expressions can be shortened by an appropriate ordering of the elements
+of the enveloping algebra, in other words, some vectors represent zero, e.g.,
+m2 , m3 , m8 , m15 in cases 2e) and 3e). Being way behind the deadline, we did
+not always perform such renormalization; the cases 2e) and 3e) are left as they
+are to entertain the reader. The following case — g = mb(4|5) — is strikingly
+similar.
+26 P. Grozman, D. Leites and I. Shchepochkina
+
+5   Singular vectors for g = mb(4|5) (after Kochetkov)
+Here g = mb(4|5), former w2 . Recall that in terms of generating functions we
+identify the g0 -module g−2 with Π(C · 1); we denote by 1 ∈ m(4) the image of
+Π(1); so f 1 denotes Mf M1 . We identify g−1 with Π(Λ(ξ)) by setting
+             x0 = Π(1),          xi = sign(ijk)Π(ξj ξk ) for (i, j, k) ∈ S3 ,
+             η0 = Π(ξ1 ξ2 ξ3 ),        ηi = Π(ξi ).
+Let V be an irreducible finite dimensional g0 -module with highest weight Λ,
+and vΛ the corresponding vector; let f ∈ I(V ) be a nonzero singular vector.
+Theorem (23 ) In I(V ), there are only the following singular vectors:
+1) Λ = ( 12 , 21 , 12 , 3), and m = 1 or 3
+                        P                         P
+           η0m ⊗ v +           η0m−1 xi ⊗ vi +           η0m−1 ηi ⊗ wi + η0m−1 x0 ⊗ vΛ
+                       1≤i≤3                     1≤i≤3
+
+2) Λ = (0, 0, 0; 2) and m = 3
+                             P
+                        η0 (   ηi xi ) ⊗ vΛ + 2η0 1 ⊗ vΛ ;
+                                0≤i≤3
+
+3) Λ = (0, 0, 0; a): ∂02 ⊗ vΛ .
+4) Λ = (0, 0, −1; 0) for m = 1 or 3
+                    X                    X
+     ∂0m ⊗ vΛ +          ∂0m−1 δi ⊗ wi +   ∂0m−1 ∂j ⊗ vj , where v3 = vΛ .
+                 1≤i≤3                           1≤i≤3
+
+Remark In Ref. 23 no description of the vj and wj is given; now we can
+compare the above with our latest result:
+     We give the weights with respect to the following basis of Cartan subalge-
+bra:
+                  h1 = τ ;               h2 = −q0 ξ0 + q1 ξ1 ,
+                   h3 = −q0 ξ0 + q2 ξ2 ,           h4 = −q0 ξ0 + q3 ξ3 .
+    For the negative elements of g0 we take
+
+           y1 = q2 ξ1 ,         y2 = q3 ξ2 ,                  y3 = −q0 q1 + ξ2 ξ3 ,
+           y4 = −q3 ξ1 , y5 = −q0 q2 − ξ1 ξ3 , y6 = −q0 q3 + ξ1 ξ2 .
+The mi are the following elements of the irreducible g0 -module V :
+               m2 = y1 m1 ,
+                                      m17 = y5 m1               m57 = y3 y5 m1
+               m3 = y2 m1 ,
+                                      m24 = y1 y2 y3 m1         m91 = y2 y3 y5 m1
+               m5 = y1 y2 m1
+                                      m30 = y2 y5 m1            m94 = y3 y6 m1
+               m7 = y3 m1 ,
+                                      m31 = y3 y4 m1            m148 = y3 y4 y5 m1
+               m8 = y4 m1 ,
+                                      m33 = y6 m1               m150 = y5 y6 m1
+               m12 = y1 y3 m1
+                                         Invariant operators and Standard Models   27
+
+and m320 = y3 y5 y6 m1 . Observe that our choice of ordering obscures the fact
+that some of the vectors either are proportional or represent zero.
+Theorem In I(V ), there are only the following singular vectors:
+1a) λ −→ λ + (−1, 1, 1, 1), where λ1 = λ2 + λ3 + λ4 : ξ0 m1 .
+1b) (−k + 2l − 2, k, l, l) −→ (−k + 2l − 3, k + 1, l, l): −kq1 m1 + ξ0 m7
+1c) (k, k, k + 1, k + 1) −→ (k − 1, k, k + 2, k + 1):
+
+                             −kq1 m2 − kq2 m1 + ξ0 m12
+
+1d) (2k + 1, k, 0, k + 1) −→ (2k, k, 1, k + 1)
+
+                     q1 m2 − kq2 m1 + ξ0 (m12 − (k + 1)m17 )
+
+1e) (k + 3, k, k, k − 1) −→ (k + 2, k, k, k)
+
+−(k−3)q1 (m5 +m8 )+2(k−3)q2 m3 −2(k−3)q3 m1 +ξ0 (m24 −3m30 +m31 +5m33 )
+
+1f) (2k + 1, k, k, 1) −→ (2k, k, k, 2)
+q1 (m5 +(k−1)m8 )−kq2 m3 +k(k−1)q3 m1 +ξ0 (m24 −(k+1)m30 +(k−1)m31 +(k 2 +1)m33 )
+1g) (3, 1, 1, 1) −→ (2, 0, 0, 0)
+                 q0 m1 − q1 (m132 + m148 ) + q2 m91 − q3 m57 − ξ0 m320
+                 +ξ1 m7 + ξ2 m12 − ξ3 (−m30 + m31 )
+
+2a) λ −→ λ + (−2, 2, 2, 2), where λ1 = λ2 + λ3 + λ4 + 2: ξ02 m1 .
+2b) (2k, −2, k, k) −→ (2k − 2, 0, k + 1, k + 1): ξ02 m7 + 2q1 ξ0 m1 .
+2c) (2k, k − 1, −1, k) −→ (2k − 2, k, 1, k + 1)
+
+                 ξ02 (m12 − (k + 1)m17 ) + 2q1 ξ0 m2 − 2kq2 ξ0 m1
+
+2d) (2k + 2, k, k, 0) −→ (2k, k + 1, k + 1, 2)
+                    ξ02 (−m30 + m31 + (k + 1)m33 ) + q1 ξ0 (m5 + m8 )
+                    −2q2 ξ0 m3 + 2kq3 ξ0 m1
+
+2e) (2k, 0, 0, 0) −→ (2k − 2, 0, 0, 0)
+
+                    ((3 − k) + q0 ξ0 + q1 ξ1 ) + q2 ξ2 + q3 ξ3 ) m1
+
+3a) λ −→ λ + (−3, 3, 3, 3), where λ1 = λ2 + λ3 + λ4 + 4: ξ0 m1 .
+3b) (2k + 1, −3, k, k) −→ (2k − 2, 0, k + 2, k + 2): ξ03 m7 + 3q1 ξ02 m1 .
+3c) (2k + 1, k + 1, −2, k) −→ (2k − 2, k + 4, 1, k + 2)
+
+              ξ03 (m12 − (k + 2)m17 ) + 3q1 ξ02 m2 − 3(k + 1)q2 ξ02 m1
+28 P. Grozman, D. Leites and I. Shchepochkina
+
+3d) (2k + 3, k, k, −1) −→ (2k, k + 2, k + 2, 2)
+               ξ03 (m24 − 2m30 + (3 + k)m33 ) + q1 ξ02 ((2 − k)m5 + (1 + k)m8 )
+               −3q2 ξ02 m3 + 3(1 + k)q3 ξ02 m1
+
+3e) (2, 0, 0, 0) −→ (−1, 1, 1, 1)
+                        (q0 ξ02 + 3ξ03 + q1 ξ0 ξ1 + q2 ξ0 ξ2 + q3 ξ0 ξ3 ) m1
+
+3f) (k + 2, k, k, k) −→ (k − 1, k + 1, k + 1, k + 1)
+          ξ03 m320 + (−2 + k)q0 ξ02 m1 + q1 ξ02 (m132 + m148 + (1 − k)m150 )
+          +q2 ξ02 (−m91 + (−1 + k)m94 ) + (2 − k)q3 ξ02 m57
+          −(−3 + k)(−2 + k)ξ0 m1 + (−2 + k)ξ02 ξ1 m7 ) + (−2 + k)ξ02 ξ2 m12
+          +ξ02 ξ3 ((−2 + k)m30 + (2 − k)m31 ) − (−2 + k)(−1 + k)kq1 q2 q3 m1
+          +q1 q2 ξ0 (m24 − km30 + (−2 + k)m31 + (2 − 2k + k 2 )m33 )
+          +q1 q3 ξ0 ((−2 + k)m12 − (−2 + k)km17 ) − (−2 + k)(−1 + k)q1 ξ0 ξ1 m1
+          −(−2 + k)kq1 ξ0 ξ2 m2 + q1 ξ0 ξ3 ((2 − k)m5 + (−2 + k)km8 )
+          +(−2 + k)(−1 + k)(q2 q3 ξ0 m7 − (−2 + k)(−1 + k)q2 ξ0 ξ2 m1
+          −(−2 + k)(−1 + k)q2 ξ0 ξ3 m3 − (−2 + k)(−1 + k)q3 ξ0 ξ3 m1
+
+
+6     Singular vectors for g = mb(3|8)
+We give the weights with respect to the following basis of Cartan subalgebra:
+
+        H1 = 12 τ + 23 q1 ξ1 − 12 q2 ξ2 − 12 q3 ξ3 − 21 q4 ξ4 ;
+        H2 = −q1 ξ1 + q2 ξ2 ,        H3 = −q1 ξ1 + q3 ξ3 ,        H3 = −q1 ξ1 + q4 ξ4 .
+
+The basis elements of g− are denoted by
+
+                                       q0    q1    q2   q3 ,
+                                       I     ξ1    ξ2   ξ3 ,
+
+and
+          A = −q0 q1 + ξ2 ξ3 ,        B = −q0 q2 − ξ1 ξ3 ,        C = −q0 q3 + ξ1 ξ2 .
+Theorem In I(V ), there are only the following singular vectors calculated
+up to dualization (though some dual vectors are also given):
+1a) (k, 0, l, l) −→ (k + 1, 0, l − 1, l − 1): A ⊗ m1 ;
+1b) (k, l, −k, l + 1) −→ (k − 1, l, −k + 1, l + 1), where k 6= 0, −l
+      k q1 ⊗ (q2 ξ1 ·m1 ) − (k + l) B ⊗ (ξ0 ·m1 ) − k (k + l) q2 ⊗ m1 + A ⊗ (ξ0 ·q2 ξ1 ·m1 ) .
+                                               Invariant operators and Standard Models              29
+
+1c) (k, l, l, 2) −→ (k + 1, l − 1, l − 1, 2), where l 6= 2
+
+               A ⊗ (q2 ξ1 ·q3 ξ2 ·m1 ) − B ⊗ (q3 ξ2 ·m1 ) − (2 − l) C ⊗ m1 .
+
+1d) (k, l, l, 1 − k) −→ (k − 1, l, l, 2 − k), where k + l 6= 1
+              −k q1 ⊗ (q3 ξ1 ·m1 ) − B ⊗ (ξ0 ·q3 ξ2 ·m1 ) − k (1 − k − l) q3 ⊗ m1
+              −(1 − k − l) C ⊗ (ξ0 ·m1 ) − k q2 ⊗ (q3 ξ2 ·m1 ) − A ⊗ (ξ0 ·q3 ξ1 ·m1 ) .
+
+1e) (k, l, 1, l + 1) −→ (k + 1, l − 1, 1, l − 1), where l 6= 1
+
+                             (1 − l) B ⊗ m1 + A ⊗ (q2 ξ1 ·m1 ) .
+
+1f) (k, −k − 1, l, l) −→ (k − 1, −k + 1, l, l), where k 6= 0
+                                  k q1 ⊗ m1 + A ⊗ (ξ0 ·m1 ) .
+
+2a) (0, −1, l, l) −→ (0, 0, l − 1, l − 1): (q1 ·A) ⊗ m1 ;
+2b) (0, −1, 1, 1) −→ (0, −1, 1, 0)
+                           (q2 ·A + q1 ·B) ⊗ m1 + (q1 ·A) ⊗ (q2 ξ1 ·m1 ) .
+
+2c) (2, 0, 0, −1) −→ (2, 0, −1, −1)
+     2 ξ2 ⊗ m1 + 2 ξ3 ⊗ (q3 ξ2 ·m1 ) − 2 (q1 ·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 ) + 2 (q2 ·A) ⊗ (q3 ξ2 ·m1 )
+     −2 (q3 ·A) ⊗ m1 + (B·A) ⊗ (ξ0 ·q3 ξ2 ·m1 ) − (C·A) ⊗ (ξ0 ·m1 )
+
+2d) (−4, 3, 3, 2) −→ (−4, 3, 2, 2)
+       −2 (q1 ·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 ) − ξ2 ⊗ m1 − ξ3 ⊗ (q3 ξ2 ·m1 ) − (C·A) ⊗ (ξ0 ·m1 )
+       −3 ( q1 ·C) ⊗ m1 + (q3 ·A) ⊗ m1 + 3 (q1 ·B) ⊗ (q3 ξ2 ·m1 ) − (q2 ·A) ⊗ (q3 ξ2 ·m1 )
+       + (B·A) ⊗ (ξ0 ·q3 ξ2 ·m1 ) .
+
+2e) (0, k, 0, k + 1) −→ (0, k − 1, 1, k)
+                                         
+                   (q1 ·A) ⊗ (q2 ξ1 )2 ·m1 + (1 − k) (q1 ·B) ⊗ (q2 ξ1 ·m1 )
+                   +(1 − k) (q2 ·A) ⊗ (q2 ξ1 ·m1 ) + (−1 + k) k (q2 ·B) ⊗ m1 .
+
+2f) (0, 1, 0, 2) −→ (0, 0, 0, 2)
+                                  
+     (q1 ·A) ⊗ (q2 ξ1 )2 ·q3 ξ2 ·m1 − (q1 ·B) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 )
+     −2 (q1 ·C) ⊗ (q2 ξ1 ·m1 ) − (q2 ·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 )
+     +2 (q2 ·B) ⊗ (q3 ξ2 ·m1 ) + 2 (q2 ·C) ⊗ m1 − 2 (q3 ·A) ⊗ (q2 ξ1 ·m1 ) + 2 (q3 ·B) ⊗ m1 .
+
+3a) (−3, 2, 2, 2) −→ (−2, 1, 1, 1)
+         − q0 ⊗ m1 − (ξ1 ·A) ⊗ m1 − (ξ2 ·B) ⊗ m1 − (ξ3 ·C) ⊗ m1 − (q1 ·C·B) ⊗ m1
+         + (q2 ·C·A) ⊗ m1 − (q3 ·B·A) ⊗ m1 + (C·B·A) ⊗ (ξ0 ·m1 ) .
+30 P. Grozman, D. Leites and I. Shchepochkina
+
+3a∗ ) (−2, 2, 2, 2) −→ (−3, 2, 2, 2)
+    −4 I ⊗ m1 − 2 q0 ⊗ (ξ0 ·m1 ) + 2 (ξ1 ·q1 ) ⊗ m1 − 2 (ξ1 ·A) ⊗ (ξ0 ·m1 )
+    +2 (ξ2 ·q2 ) ⊗ m1 − 2 (ξ2 ·B) ⊗ (ξ0 ·m1 ) + 2 (ξ3 ·q3 ) ⊗ m1 − 2 (ξ3 ·C) ⊗ (ξ0 ·m1 )
+    −2 (q1 ·C·B) ⊗ (ξ0 ·m1 ) + 2 (q2 ·q1 ·C) ⊗ m1 + 2 (q2 ·C·A) ⊗ (ξ0 ·m1 )
+                                                                                             
+    −2 (q3 ·q1 ·B) ⊗ m1 + 2 (q3 ·q2 ·A) ⊗ m1 − 2 (q3 ·B·A) ⊗ (ξ0 ·m1 ) + C·B·A ⊗ ξ02 ·m1
+
+3b) (1 − k, k, k, k) −→ (−2 − k, k + 1, k + 1, k + 1), where k 6= −1, 0, 1
+                                                          
+      −2 k (1 + k) I ⊗ (ξ0 ·m1 ) − (1 + k) q0 ⊗ ξ0 2 ·m1 + k (1 + k) (ξ1 ·q1 ) ⊗ (ξ0 ·m1 )
+                                    
+      − (1 + k) (ξ1 ·A) ⊗ ξ0 2 ·m1 + k (1 + k) (ξ2 ·q2 ) ⊗ (ξ0 ·m1 )
+                                    
+      − (1 + k) (ξ2 ·B) ⊗ ξ0 2 ·m1 + k (1 + k) (ξ3 ·q3 ) ⊗ (ξ0 ·m1 )
+                                                                    
+      − (1 + k) (ξ3 ·C) ⊗ ξ0 2 ·m1 − (1 + k) (q1 ·C·B) ⊗ ξ0 2 ·m1
+                                                                        
+      +k (1 + k) (q2 ·q1 ·C) ⊗ (ξ0 ·m1 ) + (1 + k) (q2 ·C·A) ⊗ ξ0 2 ·m1
+      −k (1 + k) (q3 ·q1 ·B) ⊗ (ξ0 ·m1 )
+      − (−1 + k) k (1 + k) (q3 ·q2 ·q1 ) ⊗ m1
+                                                                             
+      +k (1 + k) (q3 ·q2 ·A) ⊗ (ξ0 ·m1 ) − (1 + k) (q3 ·B·A) ⊗ ξ0 2 ·m1
+                             
+      + (C·B·A) ⊗ ξ0 3 ·m1
+
+3b∗ ) (k, 2, 2, 2) −→ (k + 3, 0, 0, 0): C·B·A ⊗ m1 .
+4a) (0, 2, 2, 1) −→ (2, 0, 0, 0)
+          (q0 ·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 ) − (q0 ·B) ⊗ (q3 ξ2 ·m1 ) + (q0 ·C) ⊗ m1
+          + (ξ1 ·B·A) ⊗ (q3 ξ2 ·m1 ) − (ξ1 ·C·A) ⊗ m1 + (ξ2 ·B·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 )
+          + (ξ2 ·C·A) ⊗ (q2 ξ1 ·m1 ) − (ξ2 ·C·B) ⊗ m1 + (ξ3 ·C·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 )
+          − (ξ3 ·C·B) ⊗ (q3 ξ2 ·m1 ) + (q1 ·C·B·A) ⊗ (q2 ξ1 ·q3 ξ2 ·m1 )
+          − (q2 ·C·B·A) ⊗ (q3 ξ2 ·m1 ) + (q3 ·C·B·A) ⊗ m1
+
+
+7  Singular vectors for g = ksle(5|10)
+                          P
+We set: δij = ∂θ∂ij +                 θkl ∂m ; e.g.,
+                          even permutations (ijklm)
+
+                                   ∂
+                          δ12 =   ∂θ12
+                                         + θ34 ∂5 + θ45 ∂3 − θ35 ∂4 ,
+                                   ∂
+                          δ13 =   ∂θ13
+                                         + θ25 ∂4 − θ24 ∂5 − θ45 ∂2 ,
+                                   ∂
+                          δ14 =   ∂θ14
+                                         + θ23 ∂5 + θ35 ∂2 − θ25 ∂3 , etc.
+
+The x-part of the elements of g0 = sl(5) is obvious. The negative elements are:
+                                    X
+                      yij = xi ∂j +     θjk δki for i < j
+                                                k
+
+and the basis of Cartan subalgebra is hi = yii − yi+1,i+1 .
+                                                    Invariant operators and Standard Models                       31
+
+     Let us estimate the possible degree of invariant operators. Since g0̄ ≃
+svect(5|0), and the grading is consistent, wee see that the degree of the singular
+vector can not exceed 2 × 2 + 10 = 14: each element from g−1 can only
+contribute once and the degree of singular vector of the svect(5|0) modules can
+not exceed 2; each counted with weight 2. In reality, the degree of singular
+vectors is much lower, even with infinite dimensional fibers. To compute the
+singular vectors directly is possible on modern computers, but hardly on a
+workstation; the inbuilt Mathematica’s restrictions aggravate the problem.
+     Still, even simple-minded direct calculations provide us with several first
+and second order operators. The only “known” operator, the exterior differen-
+tial, is inhomogeneous in the consistent grading and consists of parts of degree
+1 and parts of degree 2. To match these parts with our operators is a problem.
+     The mi are the following elements of the irreducible g0 -module V :
+                      m1 is the highest weight vector
+                                                                m18 = − y53 · m1
+                      m2 = y21 · m1
+                                                                m24 = y21 · y32 · y43 · m1
+                      m3 = y32 · m1
+                                                                m25 = y21 · y32 · y54 · m1
+                      m4 = y43 · m1
+                                                                m30 = − y21 · y42 · m1
+                      m5 = y54 · m1
+                                                                m31 = − y21 · y53 · m1
+                      m7 = y21 · y32 · m1
+                                                                m36 = y32 · y43 · y54 · m1
+                      m8 = y21 · y43 · m1
+                                                                m40 = − y32 · y53 · m1
+                      m9 = y21 · y54 · m1
+                                                                m44 = − y43 · y31 · m1
+                      m11 = y32 · y43 · m1
+                                                                m48 = − y54 · y31 · m1
+                      m12 = y32 · y54 · m1
+                                                                m49 = − y54 · y42 · m1
+                      m14 = y43 · y54 · m1
+                                                                m51 = − y41 · m1
+                      m16 = − y31 · m1
+                                                                m52 = − y52 · m1
+                      m17 = − y42 · m1
+
+
+
+                                                              m175 = − y21 · y32 · y32 · y53 · m1
+        m70 = y21 · y32 · y43 · y54 · m1
+                                                              m181 = − y21 · y32 · y43 · y53 · m1
+        m73 = − y21 · y32 · y42 · m1
+                                                              m184 = − y21 · y32 · y54 · y42 · m1
+        m74 = − y21 · y32 · y53 · m1
+                                                              m187 = − y21 · y32 · y52 · m1
+        m83 = − y21 · y54 · y42 · m1
+                                                              m241 = − y32 · y43 · y54 · y31 · m1
+        m86 = − y21 · y52 · m1
+                                                              m250 = − y32 · y54 · y41 · m1
+        m101 = − y32 · y43 · y53 · m1
+                                                              m254 = y32 · y31 · y53 · m1
+        m115 = − y43 · y54 · y31 · m1
+                                                              m258 = − y32 · y51 · m1
+        m124 = − y54 · y41 · m1
+                                                              m279 = y43 · y31 · y53 · m1
+        m127 = y31 · y42 · m1
+                                                              m291 = y54 · y31 · y42 · m1
+        m128 = y31 · y53 · m1
+                                                              m298 = y31 · y52 · m1
+        m130 = y42 · y53 · m1
+                                                              m301 = y53 · y41 · m1
+        m132 = − y51 · m1
+                                                              m397 = − y21 · y32 · y32 · y43 · y53 · m1
+        m171 = y21 · y32 · y32 · y43 · y54 · m1
+                                                              m539 = y32 · y43 · y31 · y53 · m1
+
+
+The Cartan subalgebra is spanned by
+     h1 = x1 ∂1   − θ12 δ12 − θ13 δ13   − θ14 δ14 − θ15 δ15   − x2 ∂2 − θ12 δ12 − θ23 δ23   − θ24 δ24 − θ25 δ25
+     h2 = x2 ∂2   − θ12 δ12 − θ23 δ23   − θ24 δ24 − θ25 δ25   − x3 ∂3 − θ13 δ13 − θ23 δ23   − θ34 δ34 − θ35 δ35
+     h3 = x3 ∂3   − θ13 δ13 − θ23 δ23   − θ34 δ34 − θ35 δ35   − x4 ∂4 − θ14 δ14 − θ24 δ24   − θ34 δ34 − θ45 δ45
+     h4 = x4 ∂4   − θ14 δ14 − θ24 δ24   − θ34 δ34 − θ45 δ45   − ξ1 ∂5 − θ15 δ15 − θ25 δ25   − θ35 δ35 − θ45 δ45
+
+
+
+Theorem           In I(V ) in degree d), there are only the following singular vectors
+32 P. Grozman, D. Leites and I. Shchepochkina
+
+(computed for degree 2 up to dualization):
+1a) (k, l, 0, 0) −→ (k, l + 1, 0, 0): δ12 ⊗ m1 ;
+1a∗ ) (0, 0, k, l) −→ (0, 0, k − 1, l), where k 6= 0 and k + l + 1 6= 0 b
+
+      2k (1 + k + l) δ45 ⊗ m1 − 2 (1 + k + l) δ35 ⊗ m4
+      +2δ25 ⊗ ((1 + k − l) m11 + 2 l m17 )
+      +2δ15 ⊗ (3 (−1 + k − l) m24 − 2 (−1 + 2 k − 2 l) m44 + 2 (−1 + 2 k − l) m51 )
+      +2δ34 ⊗ (m14 − (1 + k) m18 ) + 2δ24 ⊗ (m36 + (1 + k) m40 − 2 m49 + 2 m52 )
+      −2δ23 ⊗ (m101 + 2 m130 )
+      +2δ14 ⊗(3 m70 + 3 (−1+k) m74 − 4 m115 + 2 m124 − 2 (−1+2 k) m128 − 2 m132 )
+      −2δ13 ⊗ (3 m181 − 4 m279 + 2 m301 ) + δ12 ⊗ (m397 − 4 m539 )
+
+1b) (k, l, −k − 1, 0) −→ (k + 1, l − 1, −k, 0), where l 6= 0
+
+                                 −l δ13 ⊗ m1 + δ12 ⊗ m3
+
+1b∗ ) (0, k, l, −k − 1) −→ (0, k − 1, l + 1, −k), where k 6= 0, −1 and l 6= −1
+
+      k(1 + k)(1 + l)δ35 ⊗ m1 − (1 + k)(1 + l)δ25 ⊗ m3
+      +δ15 ⊗ ((1 + k) (1 + k − l) m7 − (1 + k) (k − 2 l) m16 )
+      +k(1 + l)δ34 ⊗ m5 − (1 + l)δ24 ⊗ m12
+      +δ23 ⊗ (m36 − (1 + k) m40 − (1 + k) m49 − k (1 + k) m52 )
+      +δ14 ⊗ ((1 + k − l) m25 − (k − 2 l) m48 )
+      +δ13 ⊗ (m70 − m74 + (1 + k) m83 + k m86 − 2 m115 + 2 m124 + (2 + k) m128
+                    
+      − 2 + k 2 m132 − δ12 ⊗ (m184 − k m258 − 2 m291 − k m298 )
+
+1c) (k, 0, l, −l − 1) −→ (k + 1, 0, l − 1, −l), where l 6= 0
+
+                         l δ14 ⊗ m1 − δ13 ⊗ m4 + δ12 ⊗ m17
+
+1c∗ ) (k, −k − 1, 0, l) −→ (k − 1, −k, 0, l − 1), where k 6= 0 and l 6= 0
+
+            −k lδ25 ⊗ m1 + l δ15 ⊗ m2 + k δ24 ⊗ m5 − k δ23 ⊗ m18 − δ14 ⊗ m9
+            +δ13 ⊗ m31 + δ12 ⊗ (m86 + (1 + k) m132 )
+
+1d) (k, l, −k − l − 2, 0) −→ (k − 1, l, −k − l − 1, 0), where k 6= 0 and k + l + 1 6= 0
+
+                       k(1 + k + l)δ23 ⊗ m1 − (1 + k + l)δ13 ⊗ m2
+                       +δ12 ⊗ (m7 + (−1 − k) m16 )
+
+b Hereafter in similar statements the reader can check our restrictions: the coefficient of
+⊗ m1 must not vanish.
+                                                       Invariant operators and Standard Models                      33
+
+1d∗ ) (0, k, l, −k − l − 2) −→ (0, k − 1, l, −k − l − 1), where k 6= 0 and k + l + 1 6= 0
+         k(1 + k + l)δ34 ⊗ m1 − (1 + k + l)δ24 ⊗ m3 + δ23 ⊗ (m11 − (1 + k) m17 )
+         +δ14 ⊗ ((1+k−l) m7 + 2 l m16 ) + δ13 ⊗ (m24 + (1 + k) m30 − 2 m44 + 2 m51 )
+         −δ12 ⊗ (m73 − 2 m127 )
+
+1e) (k, 0, 0, l) −→ (k + 1, 0, 0, l − 1), where l 6= 0
+
+                        l δ15 ⊗ m1 − δ14 ⊗ m5 + δ13 ⊗ m18 + δ12 ⊗ m52
+1f) (k, −k − 1, l, −l − 1) −→ (k − 1, −k, l − 1, −l), where k 6= 0 and l 6= 0, −1
+         (k l − 1 − l)δ24 ⊗ m1 + k(1 + l)δ23 ⊗ m4 + l(1 + l)δ14 ⊗ m2
+         − (1 + l) δ13 ⊗ m8 + δ12 ⊗ (m24 + l m30 − (1 + k) m44 + (1 + k) (1 + l) m51 )
+
+2a) (k, 0, 0, 1) −→ (k + 1, 1, 0, 0)
+
+                                  δ15 δ12 m1 − δ14 δ12 m5 + δ13 δ12 m18
+
+2b) (k, −k − 1, 0, 1) −→ (k − 1, −k + 1, 0, 0), where k 6= 0
+
+    −k δ25 δ12 m1 +δ15 δ12 m2 +k δ24 δ12 m5 −δ14 δ12 m9 −k δ23 δ12 m18 +δ13 δ12 m31
+
+8     Singular vectors for g = ksle(9|11)
+Consider the following negative operators from g0 :
+             y1 = x2 ∂1 − θ13 δ23 − θ14 δ24 − θ15 δ25
+                                                               y5 = −x3 ∂1 − θ12 δ23 + θ14 δ34 + θ15 δ35
+             y2 = x3 ∂2 − θ12 δ13 − θ24 δ34 − θ25 δ35
+                                                               y6 = −δ13 − θ25 ∂4 + θ24 ∂5 + θ45 ∂2
+             y3 = δ12 + θ34 ∂5 + θ45 ∂3 − θ35 ∂4
+                                                               y7 = −δ23 − θ14 ∂5 − θ45 ∂1 + θ15 ∂4
+             y4 = x5 ∂4 − θ14 δ15 − θ24 δ25 − θ34 δ35
+
+
+and the operators from g− :
+             n1 = ∂4                                           n10 = ξ1 ∂1 + θ12 δ25 + θ13 δ35 + θ14 δ45
+             n2 = ∂5                                           n11 = x4 ∂2 − θ12 δ14 + θ23 δ34 − θ25 δ45
+             n3 = δ14 + θ23 ∂5 + θ35 ∂2   − θ25 ∂3             n12 = ξ1 ∂2 − θ12 δ15 + θ23 δ35 + θ24 δ45
+             n4 = δ15 + θ24 ∂3 − θ23 ∂4   − θ34 ∂2             n13 = x4 ∂3 − θ13 δ14 − θ23 δ24 − θ35 δ45
+             n5 = δ24 + θ15 ∂3 − θ13 ∂5  − θ35 ∂1              n14 = ξ1 ∂3 − θ13 δ15 − θ23 δ25 + θ34 δ45
+             n6 = δ25 + θ13 ∂4 + θ34 ∂1 − θ14 ∂3               n17 = ∂1
+             n7 = δ34 + θ12 ∂5 + θ25 ∂1 − θ15 ∂2               n18 = ∂2
+             n8 = δ35 + θ14 ∂2 − θ12 ∂4 − θ24 ∂1               n19 = ∂3
+             n9 = x4 ∂1 + θ12 δ24 + θ13 δ34 − θ15 δ45          n20 = δ45 + θ12 ∂3 + θ23 ∂1 − θ13 ∂2
+
+
+    n15 = − ξ1 θ12 ∂3 + ξ1 θ13 ∂2 − ξ1 θ23 ∂1 + 2 θ12 θ13 θ23 ∂4 − θ12 θ13 θ24 ∂3 +
+    θ12 θ13 θ34 ∂2 − θ12 θ14 θ23 ∂3 − θ12 θ23 θ34 ∂1 + θ13 θ14 θ23 ∂2 + θ13 θ23 θ24 ∂1 − ξ1 δ45 +
+    2 θ12 θ13 δ15 + 2 θ12 θ23 δ25 − θ12 θ34 δ45 + 2 θ13 θ23 δ35 + θ13 θ24 δ45 + θ14 θ23 δ45
+
+
+    n16 = − x4 θ12 ∂3 + x4 θ13 ∂2 − x4 θ23 ∂1 + 2 θ12 θ13 δ14 + 2 θ12 θ23 δ24 + θ12 θ35 δ45 +
+    2 θ13 θ23 δ34 − θ13 θ25 δ45 − θ15 θ23 δ45 − 2 θ12 θ13 θ23 ∂5 + θ12 θ13 θ25 ∂3 − θ12 θ13 θ35 ∂2 + θ12 θ15 θ23 ∂3 +
+    θ12 θ23 θ35 ∂1 − θ13 θ15 θ23 ∂2 − θ13 θ23 θ25 ∂1 − x4 δ45
+34 P. Grozman, D. Leites and I. Shchepochkina
+
+    The mi are the following elements of the irreducible g0 -module V :
+  m1 is the highest weight vector   m15 = y5 · m1                  m88 = y4 · y7 · m1
+  m2 = y1 · m1                      m21 = y1 · y2 · y2 · m1        m91 = y1 · y1 · y1 · y1     · y1 · m1
+  m3 = y2 · m1                      m22 = y1 · y2 · y3 · m1        m92 = y1 · y1 · y1 · y1     · y2 · m1
+  m4 = y3 · m1                      m27 = y1 · y6 · m1             m93 = y1 · y1 · y1 · y1     · y3 · m1
+  m5 = y4 · m1                      m31 = y2 · y3 · y4 · m1        m94 = y1 · y1 · y1 · y1     · y4 · m1
+  m7 = y1 · y2 · m1                 m36 = y3 · y5 · m1             m95 = y1 · y1   · y1 · y2   · y2 · m1
+  m9 = y1 · y4 · m1                 m39 = y4 · y5 · m1             m96 = y1 · y1   · y1 · y2   · y3 · m1
+  m10 = y2 · y2 · m1                m41 = y7 · m1                  m97 = y1 · y1   · y1 · y2   · y4 · m1
+  m11 = y2 · y3 · m1                m56 = y1 · y2 · y3 · y4 · m1   m98 = y1 · y1   · y1 · y3   · y4 · m1
+  m12 = y2 · y4 · m1                m65 = y1 · y4 · y6 · m1        m99 = y1 · y1 · y1 · y4 · y4 · m1
+  m13 = y3 · y4 · m1                m82 = y3 · y4 · y5 · m1        m100 = y1 · y1 · y1 · y5 · m1
+
+
+
+Theorem In I(V ) in degree 1) (higher degrees were not considered), there
+are only the following singular vectors:
+1a) λ −→ λ + (0, 0, −2, 1): n16 ⊗ m1 for ANY λ;
+1b) λ −→ λ + (0, 0, −1, −1): −λ4 n15 ⊗ m1 + n16 ⊗ m5 for ANY λ;
+1c) (k, l, 1, 1) −→ (k, l + 1, 0, 0)
+
+                 − n15 ⊗ m4 + 2 n14 ⊗ m1 + n16 ⊗ m13 − 2 n13 ⊗ m5
+
+1d) (k, l, 2, 0) −→ (k, l + 1, 0, 1): n16 ⊗ m4 − 2 n13 ⊗ m1 ;
+1e) (k, −1, 1, 1) −→ (k, 0, 1, 0)
+
+− n15 ⊗ m11 − 2 n12 ⊗ m1 + 2 n14 ⊗ m3 + n16 ⊗ m31 + 2 n11 ⊗ m5 − 2 n13 ⊗ m12
+
+1f) (−1, k, k + 2, 1) −→ (−2, k, k + 2, 0), where k 6= 0
+         − n15 ⊗ (m22 − (1 + k) m27 ) − 2 k n10 ⊗ m1 + 2 k n12 ⊗ m2 + 2 n14 ⊗ m7
+         +n16 ⊗ (m56 − (1 + k) m65 ) + 2 k n9 ⊗ m5 − 2 k n11 ⊗ m9 − 2 n13 ⊗ m23
+
+1g) (k, 0, −k − 1, 1) −→ (k − 1, 0, −k − 1, 0), where k 6= 0, −1
+         − n15 ⊗ (m22 − (k + 2) m27 − (k + 1) m36 − (k + 1)2 m41 )
+         +2 k (k + 1) n10 ⊗ m1 + 2 (k + 1) n12 ⊗ m2
+         +n14 ⊗ (−2(3 + 2 k) m7 − 2 (1 + k) m15 )
+         +n16 ⊗ (m56 − (k + 2) m65 − (k + 1) m82 − (k + 1)2 m88 )
+         −2 k (1 + k) n9 ⊗ m5 − 2 (1 + k) n11 ⊗ m9 + 2 (1 + k) n13 ⊗ (m23 + m39 )
+
+1h) (k, −k − 2, 1, 1) −→ (k − 1, −k − 2, 1, 0), where k 6= 0
+          − n15 ⊗ (m22 − (1 + k) m36 + (1 + k) m41 ) − 2 k n10 ⊗ m1 − 2 n12 ⊗ m2
+          +2 n14 ⊗ (m7 − (1 + k) m15 ) + n16 ⊗ (m56 − (1 + k) m82 + (1 + k) m88 )
+          +2 k n9 ⊗ m5 + 2 n11 ⊗ m9 − 2 n13 ⊗ (m23 − (1 + k) m39 )
+                                                 Invariant operators and Standard Models          35
+
+9   Singular vectors for g = ksle(11|9)
+Here we realize the elements of g, as in Ref. 19, as divergence-free vector fields
+and closed 2-forms with shifted parity. We consider the following negative
+operators from g0 :
+                               y1 = x2 ∂1         y2 = x4 ∂3      y3 = x5 ∂4
+                               y4 = πdx1 dx2      y5 = −x5 ∂3
+
+
+and the elements of Cartan subalgebra
+                  h1 = x1 ∂1 − x2 ∂2                    h2 = − 1 (x1 ∂1 + x2 ∂2 ) + x3 ∂3 ,
+                                                               2
+                  h3 = − 1 (x1 ∂1 + x2 ∂2 ) + x4 ∂4 ,   h4 = − 1 (x1 ∂1 + x2 ∂2 ) + x5 ∂5
+                         2                                     2
+
+
+The mi are the following elements of the irreducible g0 -module V :
+             m2 = y1 m1                m16 = y1 y2 y3 m1             m42 = (y2 )2 (y3 )2 m1
+             m3 = y2 m1                m18 = y1 y5 m1                m45 = y2 y3 y5 m1
+             m4 = y3 m1                m20 = (y2 )2 y3 m1            m49 = y3 y4 m1
+             m6 = y1 y2 m1             m21 = y2 (y3 )2 m1            m50 = (y5 )2 m1
+             m7 = y1 y3 m1             m22 = y2 y5 m1                m74 = y1 y3 y4 m1
+             m8 = (y2 )2 m1            m24 = y3 y5 m1                m85 = y2 y3 y4 m1
+             m9 = y2 y3 m1             m25 = y4 m1                   m89 = (y3 )2 y4 m1
+             m10 = (y3 )2 m1           m34 = y1 (y2 )2 y3 m1         m126 = y1 y2 y3 y4 m1
+             m11 = y5 m1               m36 = y1 y2 y5 m1             m146 = y2 (y3 )2 y4 m1
+             m15 = y1 (y2 )2 m1        m39 = y1 y4 m1                m231 = (y2 )2 (y3 )2 y4 m1
+
+
+
+Theorem         In I(V ) in degrees d), there are only the following singular vectors:
+1a) (2k, −k, l, m) −→ (2k + 1, −k + 32 , l + 1/2, m + 21 ): x3 ∂2 m1 ;
+1b) (2k, l, 1 − k, m) −→ (2k + 1, l + 12 , −k + 52 , m + 21 ):
+
+                              (x3 ∂2 ) m3 + (1 − k − l)(x4 ∂2 ) m1 ;
+
+1c) (2k, l, m, 2 − k) −→ (2k + 1, l + 21 , m + 21 , −k + 72 )
+(x3 ∂2 ) (m11 + (−2 + k + m)m15 ) + (1 − k − l)(x4 ∂2 ) m4 + (−1 + k + l)(−2 + k + m)(x5 ∂2 ) m1
+
+1d) (2k, 3 − k, 3 − k, 2 − k) −→ (2k + 1, 25 − k, 52 − k, 25 − k)
+(πdx1 dx3 ) m11 − (πdx1 dx4 ) m4 + (πdx1 dx5 ) m1 ) − (x3 ∂2 ) m85 + (x4 ∂2 ) m49 ) − (x5 ∂2 ) m25
+
+1e) (2k, k + 1, l, m) −→ (2k − 1, k + 52 , l + 21 , m + 21 ): 2k(x3 ∂1 ) m1 + (x3 ∂2 ) m2
+1f) (2k, l, 2 + k, m) −→ (2k − 1, l + 12 , k + 27 , m + 12 )
+ 2k(x3 ∂1 ) m3 ) + (x3 ∂2 ) m6 + 2k(2 + k − l)(x4 ∂1 ) m1 + (2 + k − l)(x4 ∂2 ) m2
+
+1g) (2k, l, m, 3 + k) −→ (2k − 1, l + 12 , m + 21 , k + 92 )
+          (x3 ∂1 ) (2km9 − 2k(3 + k − m)m11 ) + (x3 ∂2 ) (m16 + (−3 − k + m)m18 )
+          +2k(2 + k − l)(x4 ∂1 ) m4 + (2 + k − l)(x4 ∂2 ) m7
+          +2k(2 + k − l)(3 + k − m)(x5 ∂1 ) m1 + (2 + k − l)(3 + k − m)(x5 ∂2 ) m2
+36 P. Grozman, D. Leites and I. Shchepochkina
+
+
+1h) (2k, 4 + k, 4 + k, 3 + k) −→ (2k − 1, 72 − k, 27 − k, 72 − k)
+    (π dx1 dx3 ) m18 − (π dx1 dx4 ) m7 (π dx1 dx5 ) m2 − 2k(π dx2 dx3 ) m11 2k(π dx2 dx4 ) m4
+    −2k(π dx2 dx5 ) m1 − 2k(x3 ∂1 ) m85 − (x3 ∂2 ) m126 + 2k(x4 ∂1 ) m49 + (x4 ∂2 ) m74 )
+    −2k(x5 ∂1 ) m25 − (x5 ∂2 ) m39
+
+2a) (2k, −k − 1, l, m) −→ (2k + 2, −k + 2, l + 1, m + 1): (x3 ∂2 )2 m1
+2b) (2k, −k − 1, −k + 1, l) −→ (2k + 2, −k + 1, −k + 3, l + 1):
+
+                               (x3 ∂2 )2 m3 + 2x3 ∂2 x4 ∂2 m1
+
+2c) (2k, −k − 1, l, −k + 2) −→ (2k + 2, −k + 1, l + 1, −k + 4)
+(x3 ∂2 )2 (m9 + (−2 + k + l)m11 ) + 2x3 ∂2 x4 ∂2 m4 − 2(−2 + k + l)x3 ∂2 x5 ∂2 m1
+
+2d) (2k, l, −k, m) −→ (2k + 2, l + 1, −k + 3, m + 1)
+   (x3 ∂2 )2 m8 + (−1 + k + l)(k + l)(x4 ∂2 )2 m1 − 2(−1 + k + l)x3 ∂2 x4 ∂2 m3
+
+2e) (2k, l, −k, −k + 2) −→ (2k + 2, l + 1, −k + 2, −k + 4)
+            (x3 ∂2 )2 (m20 − (2m22 )) + (−1 + k + l)(k + l)(x4 ∂2 )2 m4
+            −2(−1 + k + l)x3 ∂2 x4 ∂2 (m9 − m11 ) − 2(−1 + k + l)x3 ∂2 x5 ∂2 m3
+            +2(−1 + k + l)(k + l)x4 ∂2 x5 ∂2 m1
+
+In particular, 2ea) l = 1 − k:
+
+ (x3 ∂2 )2 m22 + (x4 ∂2 )2 m4 − x3 ∂2 x4 ∂2 m9 − 2x3 ∂2 x5 ∂2 m3 + 2x4 ∂2 x5 ∂2 m1
+
+2f) (2k, l, m, −k + 1) −→ (2k + 2, l + 1, m + 1, −k + 4)
+ (x3 ∂2 )2 (m42 + 2(−2 + k + m)m45 + (−2 + k + m)(−1 + k + m)m50 )
+ +(−1 + k + l)(k + l)(x4 ∂2 )2 m10 + (−1 + k + l)(k + l)(−2 + k + m)(−1 + k + m)(x5 ∂2 )2 m1
+ −2(−1 + k + l)x3 ∂2 x4 ∂2 (m21 + (−2 + k + m)m24 )
+ +2(−1 + k + l)(−2 + k + m)x3 ∂2 x5 ∂2 (m9 + (−1 + k + m)m11 )−
+ 2(−1 + k + l)(k + l)(−2 + k + m)x4 ∂2 x5 ∂2 m4
+
+In particular, 2fa) (2k, −k + 1, −k, −k + 1) −→ (2k + 2, −k + 2, −k + 1, −k + 4):
+        (x3 ∂2 )2 (m42 − 4m50 ) + 2(x4 ∂2 )2 m10 + 4(x5 ∂2 )2 m1
+        +4x3 ∂2 x4 ∂2 (−m21 + 2m24 ) + 8x3 ∂2 x5 ∂2 ) (−m9 + m11 ) + 8x4 ∂2 x5 ∂2 m4
+
+2fb) (2k, −k, −k, −k + 1) −→ (2k + 2, −k + 1, −k + 1, −k + 4):
+(x3 ∂2 )2 m45 + (x4 ∂2 )2 m10 + 2(x5 ∂2 )2 m1 − x3 ∂2 x4 ∂2 m21 − 4x3 ∂2 x5 ∂2 m9 + 4x4 ∂2 x5 ∂2 m4
+                                          Invariant operators and Standard Models         37
+
+
+2g) (2k, 3 − k, 3 − k, 1 − k) −→ (2k + 2, 3 − k, 3 − k, 3 − k)
+       (x3 ∂2 )2 m231 + 2(x4 ∂2 )2 m89 + 4(x5 ∂2 )2 m25
+       −4πdx1 dx3 x3 ∂2 m45 + 4πdx1 dx3 x4 ∂2 m24 − 4πdx1 dx3 x5 ∂2 m11
+       +4πdx1 dx4 x3 ∂2 (m21 − m24 ) − 4πdx1 dx4 x4 ∂2 m10 + 4πdx1 dx4 x5 ∂2 m4
+       +4πdx1 dx5 x3 ∂2 (−3m9 + 2m11 ) + 4πdx1 dx5 x4 ∂2 m4 − 8πdx1 dx5 x5 ∂2 m1
+       −2x3 ∂2 x4 ∂2 m146 + 4x3 ∂2 x5 ∂2 m85
+       −4x4 ∂2 x5 ∂2 m49
+
+2h) (−2, 0, k, l) −→ (−2, 3, k + 1, l + 1): (x3 ∂2 )2 m2 − 2x3 ∂1 x3 ∂2 m1
+2i) (2k, −k, l, m) −→ (2k, −k + 2, l + 2, m + 1)
+     (x3 ∂2 )2 m6 + 2kx3 ∂1 x3 ∂2 m3 + 4k(1 + k)x3 ∂2 x4 ∂1 m1 + 2(1 + k)x3 ∂2 x4 ∂2 m2
+
+2j) (2k, k + 1, l, m) −→ (2k, k + 3, l + 2, m + 1)
+  (x3 ∂2 )2 m6 + 2kx3 ∂1 x3 ∂2 m3 − 2k(1 + 2k)x3 ∂1 x4 ∂2 m1
+  +2kx3 ∂2 x4 ∂1 m1 − 2kx3 ∂2 x4 ∂2 m2 − 2(−1 + k + l)(k + l)(−2 + k + m)x4 ∂2 x5 ∂2 m4
+
+In particular, 2ja) (0, 1, 1, m) −→ (0, 3, 3, m + 1):
+
+                            −x3 ∂1 x4 ∂2 m1 + x3 ∂2 x4 ∂1 m1
+
+2k) (2k, −k, l, k + 3) −→ (2k, −k + 2, l + 1, k + 4)
+          (x3 ∂2 )2 (m16 + (−3 − k + l)m18 ) + 2kx3 ∂1 x3 ∂2 (m9 − (3 + k − l)m11 )
+          +4k(1 + k)x3 ∂2 x4 ∂1 m4 + 2(1 + k)x3 ∂2 x4 ∂2 m7
+          +4k(1 + k)(3 + k − l)x3 ∂2 x5 ∂1 m1 + 2(1 + k)(3 + k − l)x3 ∂2 x5 ∂2 m2
+
+2l) (2k, k + 1, l, 2 − k) −→ (2k, k + 3, l + 1, 4 − k)
+         (x3 ∂2 )2 (m16 + (−2 + k + l)m18 ) + 2kx3 ∂1 x3 ∂2 (m9 + (−2 + k + l)m11 )
+         −2k(1 + 2k)x3 ∂1 x4 ∂2 m4 + 2k(1 + 2k)(−2 + k + l)x3 ∂1 x5 ∂2 m1
+         +2kx3 ∂2 x4 ∂1 m4 − 2kx3 ∂2 x4 ∂2 m7
+         −2k(−2 + k + l)x3 ∂2 x5 ∂1 m1 + 2k(−2 + k + l)x3 ∂2 x5 ∂2 m2
+
+In particular, 2la) (0, 1, l, 2) −→ (0, 3, l + 1, 4):
+
+  x3 ∂1 x4 ∂2 m4 − (l − 2)x3 ∂1 x5 ∂2 m1 − x3 ∂2 x4 ∂1 m4 + (l − 2)x3 ∂2 x5 ∂1 m1
+
+2m) (−2, k, 1, l) −→ (−2, k + 1, 4, l + 1)
+  (x3 ∂2 )2 m15 + (−2 + k)(−1 + k)(x4 ∂2 )2 m2 − 2x3 ∂1 x3 ∂2 m8 + 2(−2 + k)x3 ∂1 x4 ∂2 m3
+  +2(−2 + k)x3 ∂2 x4 ∂1 m3 − 2(−2 + k)x3 ∂2 x4 ∂2 m6 − 2(−2 + k)(−1 + k)x4 ∂1 x4 ∂2 m1
+38 P. Grozman, D. Leites and I. Shchepochkina
+
+
+2n) (2k, l, −k + 1, k + 3) −→ (2k, l + 1, −k + 3, k + 5)
+ (x3 ∂2 )2 (m34 − 2(1 + k)m36 ) − (2 + k − l)(−1 + k + l)(x4 ∂2 )2 m7 +
+ 2kx3 ∂1 x3 ∂2 (m20 − 2(1 + k)m22 ) + 2k(−1 + k + l)x3 ∂1 x4 ∂2 (−m9
+ +2(1 + k)m11 ) + 2kx3 ∂2 x4 ∂1 ((3 + k − l)m9 − 2(1 + k)m11 )+
+ 2x3 ∂2 x4 ∂2 (−(−2 + l)m16 + (1 + k)(−2 + k + l)m18 ) + 4k(1 + k)(2 + k − l)x3 ∂2 x5 ∂1 m3
+ +2(1 + k)(2 + k − l)x3 ∂2 x5 ∂2 m6 − 2k(2 + k − l)(−1 + k + l)x4 ∂1 x4 ∂2 m4 −
+ 4k(1 + k)(2 + k − l)(−1 + k + l)x4 ∂2 x5 ∂1 m1 − 2(1 + k)(2 + k − l)(−1 + k + l)x4 ∂2 x5 ∂2 m2
+
+2o) (2k, l, k + 2, −k + 2) −→ (2k, l + 1, k + 4, −k + 4)
+ (x3 ∂2 )2 (m34 + (2k)m36 ) − (2 + k − l)(−1 + k + l)(x4 ∂2 )2 m7 + 2kx3 ∂1 x3 ∂2 (m20 + 2km22 )
+ +2k(−1 + k + l)x3 ∂1 x4 ∂2 (−m9 + m11 ) + 2k(1 + 2k)(−1 + k + l)x3 ∂1 x5 ∂2 m3
+ +2kx3 ∂2 x4 ∂1 ((3 + k − l)m9 + (1 + 5k + 2k 2 − l − 2kl)m11 )
+ +2x3 ∂2 x4 ∂2 (−(−2 + l)m16 + k(3 + k − l)m18 ) − 2k(−1 + k + l)x3 ∂2 x5 ∂1 m3
+ +2k(−1 + k + l)x3 ∂2 x5 ∂2 m6 − 2k(2 + k − l)(−1 + k + l)x4 ∂1 x4 ∂2 m4
+ +2k(1 + 2k)(2 + k − l)(−1 + k + l)x4 ∂1 x5 ∂2 m1 − 2k(2 + k − l)(−1 + k + l)x4 ∂2 x5 ∂1 m1
+ +2k(2 + k − l)(−1 + k + l)x4 ∂2 x5 ∂2 m2
+
+
+10    Singular vectors for g = kas and g = k(1|n)
+The coordinates of the weights are given with respect to the following basis of
+g0 :
+                                                             n
+                       (Kt , Kξ1 η1 , . . . , Kξs ηs ), s = [ ].
+                                                             2
+Theorem In I(V ), there are only the following singular for k(1|3) vectors:
+1a) (k, −k) −→ (k − 1, −k + 1): ξ1 ⊗ m1 ;
+1a∗ ) (k + 1, k) −→ (k, k − 1)
+                      
+                   2
+      ξ1 ⊗ (η1 θ1 ) ·m1 − k (−1 + 2 k) η1 ⊗ m1 + (1 − 2 k) θ1 ⊗ (η1 θ1 ·m1 )
+
+1b) (1, −1) −→ (0, −1): ξ1 ⊗ (η1 θ1 ·m1 ) + θ1 ⊗ m1 ;
+2a) 21 (3, 1) −→ 12 (−1, 1)
+
+                  I ⊗ m1 − 2 (ξ1 ·θ1 ) ⊗ (η1 θ1 ·m1 ) + (η1 ·ξ1 ) ⊗ m1
+
+Theorem In I(V ), there are only the following singular for k(1|4) vectors:
+1a) (k, −k, 0) −→ (k − 1, −k + 1, 0): ξ1 ⊗ m1 ;
+1a∗ ) (k + 1, −1, k) −→ (k, −1, k − 1), where k 6= 1
+                           ξ1 ⊗ (η1 η2 ·m1 ) + (1 − k) η2 ⊗ m1
+                                              Invariant operators and Standard Models    39
+
+1b) (k, −1, 1 − k) −→ (k − 1, −1, 2 − k), where k 6= 2
+                           (−2 + k) ξ2 ⊗ m1 + ξ1 ⊗ (ξ2 η1 ·m1 )
+
+1c) (k + 2, k, 0) −→ (k + 1, k − 1, 0), where k 6= 0
+                                ξ1 ⊗ (η1 η2 ·m1 ) − k η2 ⊗ m1
+
+2a) (1, −1, −1) −→ (−1, 0, 0): (ξ2 ·ξ1 ) ⊗ m1 ;
+2b) (2, −1, 1) −→ (0, 0, 0): (η2 ·ξ1 ) ⊗ m1 ;
+2c) (2, −1, −1) −→ (0, −1, −1)
+            I ⊗ m1 − (ξ2 ·ξ1 ) ⊗ (η1 η2 ·m1 ) + (η1 ·ξ1 ) ⊗ m1 + (η2 ·ξ2 ) ⊗ m1
+
+Theorem In I(V ), there are only the following singular for k(1|6) and kas
+vectors:
+1a) λ = (k, −k, l, l) −→ λ + (−1, 1, 0, 0); kas and k(1|6): ξ1 ⊗ m1 (for k(1|6)
+only if l = 0; for kas without restrictions);
+1a∗ ) λ = (k, l, 1 − k, l + 1) −→ λ + (−1, 0, 1, 0)
+
+                  kas :        (−1 + k + l) ξ2 ⊗ m1 + ξ1 ⊗ (ξ2 η1 ·m1 )
+                  k(1|6) :      the above for l = −1
+
+1b) λ = (k, l, l, 2 − k) −→ λ + (−1, 0, 0, 1), where l + k 6= 2
+
+    kas :       ξ1 ⊗ (ξ2 η1 ·ξ3 η2 ·m1 ) + ξ2 ⊗ (ξ3 η2 ·m1 ) + (−2 + k + l) ξ3 ⊗ m1
+    k(1|6) :     the above for l = −1
+
+1c) λ = (k, l, −l − 2, k − 2) −→ λ + (−1, 0, 0, −1), where l + k 6= 1 and k − l 6= 4
+
+ kas :       ξ1 ⊗ (ξ2 η1 ·η2 η3 ·m1 ) + (−4 + k − l) ξ1 ⊗ (η1 η3 ·m1 )
+             +(−1 + k + l) ξ2 ⊗ (η2 η3 ·m1 ) − (−4 + k − l) (−1 + k + l) η3 ⊗ m1
+ k(1|6) :      the above for l = −1
+    The singular vectors of degree 2 for kas and k(1|6) are the same:
+2a) (3, −1, −1, −1) −→ (1, −1, −1, −1)
+                −2 I ⊗ m1 + (ξ2 ·ξ1 ) ⊗ (ξ3 η2 ·η1 η3 ·m1 ) + (ξ3 ·ξ1 ) ⊗ (η1 η3 ·m1 )
+                + (ξ3 ·ξ2 ) ⊗ (η2 η3 ·m1 ) − (η1 ·ξ1 ) ⊗ m1 − (η2 ·ξ1 ) ⊗ (ξ2 η1 ·m1 )
+                − (η2 ·ξ2 ) ⊗ m1 + (η3 ·ξ1 ) ⊗ (ξ2 η1 ·ξ3 η2 ·m1 )
+                − (η3 ·ξ1 ) ⊗ (ξ3 η1 ·m1 ) − (η3 ·ξ3 ) ⊗ m1
+40 P. Grozman, D. Leites and I. Shchepochkina
+
+2a∗ ) (3, −1, 0, 0) −→ (1, −1, 0, 0)
+         − I ⊗ m1 + (ξ2 ·ξ1 ) ⊗ (ξ3 η2 ·η1 η3 ·m1 ) + (ξ3 ·ξ1 ) ⊗ (η1 η3 ·m1 )
+         + (ξ3 ·ξ2 ) ⊗ (η2 η3 ·m1 ) − (η1 ·ξ1 ) ⊗ m1 − (η2 ·ξ1 ) ⊗ (ξ2 η1 ·m1 )
+         + (η3 ·ξ1 ) ⊗ (ξ2 η1 ·ξ3 η2 ·m1 ) − (η3 ·ξ1 ) ⊗ (ξ3 η1 ·m1 ) − (η3 ·ξ2 ) ⊗ (ξ3 η2 ·m1 )
+
+2b) (3, −1, −1, 1) −→ (1, −1, −1, 1)
+             − I ⊗ m1 + (ξ2 ·ξ1 ) ⊗ (η2 η3 ·ξ3 η1 ·m1 ) − (ξ3 ·ξ1 ) ⊗ (ξ2 η1 ·η2 η3 ·m1 )
+             + (ξ3 ·ξ1 ) ⊗ (η1 η3 ·m1 ) − (η1 ·ξ1 ) ⊗ m1 − (η2 ·ξ1 ) ⊗ (ξ2 η1 ·m1 )
+             − (η2 ·ξ2 ) ⊗ m1 − (η3 ·ξ1 ) ⊗ (ξ3 η1 ·m1 )
+             − (η3 ·ξ2 ) ⊗ (ξ3 η2 ·m1 ) + (η3 ·ξ3 ) ⊗ m1
+
+
+11    Singular vectors for g = kas(1|6; 3ξ)
+Set
+                    m1 is the highest weight vector      m15 = ξ1 η2 (ξ3 η1 )2 m1
+                    m2 = ξ 1 η 2 m1                      m16 = ξ1 η2 ξ3 η1 η3 m1
+                    m3 = ξ 3 η 1 m1                      m18 = ξ1 η2 η1 m1
+                    m4 = η 3 m1                          m23 = η3 ξ3 η2 m1
+                    m6 = ξ 1 η 2 ξ 3 η 1 m1              m25 = −(η2 m1 )
+                    m7 = ξ 1 η 2 η 3 m1                  m34 = ξ1 η2 (ξ3 η1 )2 η3 m1
+                    m9 = ξ 3 η 1 η 3 m1                  m36 = ξ1 η2 ξ3 η1 η1 m1
+                    m10 = ξ3 η2 m1                       m46 = −(ξ3 η1 η2 m1 )
+                    m11 = η1 m1                          m49 = ξ3 η2 η1 m1
+
+
+Theorem In I(V ) in degrees d), there are only the following singular vectors:
+1a) λ −→ λ + (1, 1, 1, 1) for ANY λ: ξ1 ξ2 ξ3 m1 ;
+1b) (k, l − 1, −l − 1, k) −→ (k, l, −l, k): ξ1 ξ2 m1 + ξ1 ξ2 ξ3 m4 ;
+1c) (k, l, k − 1, −l − 1) −→ (k, l, k, −l), where k + l 6= 0
+             ξ1 ξ2 m3 − (k + l)ξ2 ξ3 m1 + ξ1 ξ2 ξ3 (m9 − (k + l + 1)m11 )
+1d) (k + 1, k − 1, l, −l) −→ (k + 1, k − 1, l + 1, −l + 1), where k + l 6= 0, k 6= l + 1
+      ξ1 ξ2 (m6 + (−k + l)m10 ) − (−1+k−l)(k+l)ξ1 ξ3 m1
+      −(k+l)ξ2 ξ3 m2 + ξ1 ξ2 ξ3 (m16 − (k+l+1)m18 + (−k+l)m23 − (k−l)(k+l)m25 )
+1e) (k + 1, k − 1, 0, 0) −→ (k + 1, k − 1, 1, 1), where k 6= 1 (new for k = 0 only)
+                           ξ1 ξ2 (m6 − 2m10 ) + 2(1 − k)ξ1 ξ3 m1
+                           −2ξ2 ξ3 m2 − 2ξ1 ξ2 ξ3 (m18 + m23 + km25 )
+
+2a) λ −→ λ + (1, 2, 2, 1), where λ4 = −2 − λ3 : ξ1 ξ2 · ξ1 ξ2 ξ3 m1 ;
+2b) λ −→ λ + (1, 2, 1, 2), where λ4 = −1 − λ2 , λ2 + λ3 6= −1
+            ξ1 ξ2 · ξ1 ξ2 ξ3 m3 + (−1 − λ2 − λ3 )(ξ2 ξ3 · ξ1 ξ2 ξ3 m1 )
+2c) λ −→ λ + (1, 1, 2, 2), where λ4 = −λ3 , λ2 6= λ3 , λ2 + λ3 6= −1
+           (ξ1 ξ2 · ξ1 ξ2 ξ3 ) (m6 + (−1 − λ2 + λ3 )m10 ) − (λ2 − λ3 )(1 + λ2 + λ3 )
+           ×(ξ1 ξ3 · ξ1 ξ2 ξ3 ) m1 + (−1 − λ2 − λ3 )(ξ2 ξ3 · ξ1 ξ2 ξ3 ) m2
+                                                 Invariant operators and Standard Models          41
+
+2d) (k, l, 0, 0) −→ (k + 1, l + 1, 2, 2), where l 6= 0 (new for l = −1 only)
+             (ξ1 ξ2 · ξ1 ξ2 ξ3 ) m10 + l(ξ1 ξ3 · ξ1 ξ2 ξ3 ) m1 + (ξ2 ξ3 · ξ1 ξ2 ξ3 ) m2
+
+2e) (k, −k, k − 3, k − 1) −→ (k, −k + 2, k − 2, k)
+(ξ1 ξ2 )2 m3 −2ξ2 ·ξ1 ξ2 ξ3 m1 +2ξ1 ξ2 ·ξ2 ξ3 m1 +ξ1 ξ2 ·ξ1 ξ2 ξ3 (m9 −m11 )+2ξ2 ξ3 ·ξ1 ξ2 ξ3 m4
+
+2f) (k, −k, l, l) −→ (k, −k + 2, l + 1, l + 1), where k 6= l
+
+  (ξ1 ξ2 )2 m3 − 4(k − l)ξ2 · ξ1 ξ2 ξ3 m1 − 4ξ1 ξ2 · ξ1 ξ2 ξ3 m11 + 4ξ2 ξ3 · ξ1 ξ2 ξ3 m4
+
+2g) (1 + k, l, −k, 1 + l) −→ (1 + k, l + 1, 2 − k, 2 + l)
+      (k − l)(1 + k − l)(k + l)ξ1 · ξ1 ξ2 ξ3 m1 + (k − l)(1 + k − l)ξ2 · ξ1 ξ2 ξ3 m2
+      +ξ1 ξ2 · ξ1 ξ2 ξ3 (m16 + (k − l)m18 + (−1 − k − l)m23 + (1 + k − l)(1 + k + l)m25 )
+      −(1 + k − l)(k + l)ξ1 ξ3 · ξ1 ξ2 ξ3 m4 + (−1 − k + l)ξ2 ξ3 · ξ1 ξ2 ξ3 m7
+
+2h) (k + 2, k − 2, k, −k) −→ (k + 2, k − 1, k + 1, −k + 2)
+     (ξ1 ξ2 )2 m15 + 2k(−1 + 2k)(ξ2 ξ3 )2 m2 − 2(−1 + 2k)ξ1 · ξ1 ξ2 ξ3 m3
+     −2ξ2 · ξ1 ξ2 ξ3 (m6 + 2km10 ) − 4k(−1 + 2k)ξ3 · ξ1 ξ2 ξ3 m1 + 2(−1 + 2k)ξ1 ξ2 · ξ1 ξ3 m3
+     −2(−1 + 2k)ξ1 ξ2 · ξ2 ξ3 m6 + ξ1 ξ2 · ξ1 ξ2 ξ3 (m34 − 2(1 + k)m36 − 2km46 − 2km49 )
+     −4k(−1 + 2k)ξ1 ξ3 · ξ2 ξ3 m1 + 2(−1 + 2k)ξ1 ξ3 · ξ1 ξ2 ξ3 (m9 − (1 + 2k)m11 )
+     +2ξ2 ξ3 · ξ1 ξ2 ξ3 (−(−1 + k)m16 + (−1 + 2k 2 )m18 + km23 + 2(−1 + 2k)m25 )
+
+2i) (−l + 1, k, k, l + 1) −→ (−l + 2, k + 2, k + 2, l + 2)
+       (k − l)(ξ2 ξ3 )2 m2 − 2(k + l)ξ1 · ξ1 ξ2 ξ3 m3 + 2ξ2 · ξ1 ξ2 ξ3 (−m6 + (1 − k − l)m10 )
+       −2(−1 + k − l)(k + l)ξ3 · ξ1 ξ2 ξ3 m1 + 2ξ1 ξ2 · ξ2 ξ3 (−m6 + m10 )
+       +2ξ1 ξ2 · ξ1 ξ2 ξ3 (m46 + m49 ) + 2ξ1 ξ3 · ξ1 ξ2 ξ3 (−m9 + (k − l)m11 )
+       +2ξ2 ξ3 · ξ1 ξ2 ξ3 (m18 − m23 + (2 − k + l)m25 )
+
+
+12     Singular vectors for g = kas(1|6; 3η)
+The mi are the following elements of the irreducible g0 -module V :
+
+                                     m11 = ξ3 η2 m1
+           m2 = ξ 2 m1                                             m30 = ξ2 ξ1 η2 ξ3 η2 m1
+                                     m13 = ξ2 ξ1 η2 ξ3 η1 m1
+           m3 = ξ 1 η 2 m1                                         m34 = −(ξ2 ξ3 m1 )
+                                     m16 = ξ2 ξ3 η2 m1
+           m4 = ξ 3 η 1 m1                                         m37 = (ξ1 η2 )2 (ξ3 η1 )2 m1
+                                     m18 = (ξ1 η2 )2 ξ3 η1 m1
+           m5 = ξ 2 ξ 1 η 2 m1                                     m41 = ξ1 η2 ξ3 η1 ξ1 m1
+                                     m19 = ξ1 η2 (ξ3 η1 )2 m1
+           m6 = ξ 2 ξ 3 η 1 m1                                     m42 = ξ1 η2 ξ3 η1 ξ3 η2 m1
+                                     m21 = ξ1 η2 ξ3 η2 m1
+           m7 = (ξ1 η2 )2 m1                                       m43 = −(ξ1 η2 ξ3 m1 )
+                                     m23 = ξ3 η1 ξ1 m1
+           m8 = ξ 1 η 2 ξ 3 η 1 m1                                 m48 = ξ1 ξ3 η2 m1
+                                     m24 = ξ3 η1 ξ3 η2 m1
+           m9 = (ξ3 η1 )2 m1                                       m49 = (ξ3 η2 )2 m1
+                                     m25 = −(ξ3 m1 )
+           m10 = ξ1 m1                                             m86 = −(ξ1 ξ3 m1 )
+                                     m27 = ξ2 (ξ1 η2 )2 ξ3 η1 m1
+42 P. Grozman, D. Leites and I. Shchepochkina
+
+Theorem In I(V ) in degrees d), there are only the following singular vectors:
+1a) (k, l, m, −m) −→ (l, l, m − 1, −m − 1): η1 η3 m1 ;
+1b) (k, l, m, −l − 1) −→ (k, l − 1, m, −l − 2): η1 η3 m3 + (−l + m)η2 η3 m1 ;
+1c) (k, l, −l − 2, m) −→ (k, l − 1, −l − 3, m)
+(1+l−m)(2+l+m)η1η2 m1 +η1 η3 (m8 +(−2−l−m)m11)+(−1−l+m)η2η3 m4
+
+1d) (k + 3, −k − 2, k, k − 1) −→ (k + 2, −k − 2, k − 1, k − 1)
+       2kη1 m1 − 2kη3 m4 + 2kη1 η2 m2 + η1 η3 (m13 + m16 ) + 2kη2 η3 m6
+
+1e) (k + 3, k − 1, −k − 1, k − 1) −→ (k + 2, k − 2, −k − 1, k − 1)
+       2kη1 m3 − 4k 2 η2 m1 + 2kη3 (−m8 + (1 + 2k)m11 )
+       +2kη1 η2 (m5 + 2km10 ) + η1 η3 (m27 − 2km30 + 2km41 − 2km43 − 4k 2 m48 )
+       +2kη2 η3 (−m16 − m23 + m25 )
+
+1f) (4, 0, −1, −1) −→ (3, −1, −1, −1)
+                −2η1 m3 ) + 2η2 m1 + η3 (m8 − 2m11 ) − η1 η2 (m5 + m10 )
+                +η1 η3 (m27 + m43 + m48 ) − η2 η3 (2m13 − m16 + m23 )
+
+1g) (4, 0, 0, 0) −→ (2, 0, 0, 0)
+6 m1 +η1 (m5 +3m10 )+3η2 m2 −η3 (m16 +m23 )+η1 η2 m15 +η1 η3 m86 +η2 η3 m34
+
+2a) (k, l, m, 2 − m) −→ (k, l, m − 2, −m): (η1 η3 )2 m1 ;
+2b) (k, l, l + 2, −l − 1) −→ (0, l − 1, l + 1, −l − 3)
+                             (η1 η3 )2 m3 + 2η1 η3 · η2 η3 m1
+
+2c) (k, l − 2, −l, l + 1) −→ (k, l − 3, −l − 2, l), where l 6= − 21
+
+    (η1 η3 )2 (m8 − (1 + 2l)m11 ) − 2(1 + 2l)η1 η2 · η1 η3 m1 + 2η1 η3 · η2 η3 m4
+
+2d) (k, l, m, −l) −→ (k, l − 2, m, −l − 2)
+
+ (η1 η3 )2 m7 + (−1 + l − m)(l − m)(η2 η3 )2 m1 − 2(−1 + l − m)η1 η3 · η2 η3 m3
+
+2e) (k, l − 1, −l − 1, −l + 1) −→ (k, l − 3, −1 − 2, −l)
+        (η1 η3 )2 (m18 − 2m21 ) + 2l(−1 + 2l)(η2 η3 )2 m4 + 2(−1 + 2l)η1 η2 · η1 η3 m3
+        −4l(−1 + 2l)η1 η2 · η2 η3 m1 + 2(−1 + 2l)η1 η3 · η2 η3 (−2m8 + m11 )
+
+2ea) Particular solution for l = 12 :
+
+(η1 η3 )2 m21 + (η2 η3 )2 m4 + 2η1 η2 · η1 η3 m3 − 2η1 η2 · η2 η3 m1 − η1 η3 · η2 η3 m8
+                                               Invariant operators and Standard Models         43
+
+2f) (k, l, −l − 1, m) −→ (k, l − 2, −l − 3, m), where m 6= l, l + 1, −l − 1, −l − 2
+              (l − m)(1 + l − m)(1 + l + m)(2 + l + m)(η1 η2 )2 m1
+              +(η1 η3 )2 (m37 − 2(2 + l + m)m42 + (1 + l + m)(2 + l + m)m49 )
+              +(l − m)(1 + l − m)(η2 η3 )2 m9
+              +2(l − m)(2 + l + m)η1 η2 · η1 η3 (m8 − (1 + l + m)m11 )
+              −2(l − m)(1 + l − m)(2 + l + m)η1 η2 · η2 η3 m4
+              +2(l − m)η1 η3 · η2 η3 (−m19 + (2 + l + m)m24 )
+
+2fa) Particular solution for l = m = 0:
+        4(η1 η2 )2 m1 + (η1 η3 )2 (m37 − 4m49 ) + 2(η2 η3 )2 m9
+        +8η1 η2 · η1 η3 (m8 − m11 ) − 8η1 η2 · η2 η3 m4 + 4η1 η3 · η2 η3 (−m19 + 2m24 )
+
+2fb) Particular solution for l = − 21 , m = 21 :
+                 2(η1 η2 )2 m1 + (η1 η3 )2 m42 + (η2 η3 )2 m9 + 4η1 η2 · η1 η3 m8
+                 −4η1 η2 · η2 η3 m4 − η1 η3 · η2 η3 m19
+
+2g) (4, −3, 1, 0) −→ (3, −3, −1, −1)
+ (η1 η3 )2 (m13 + m16 ) + 2η1 · η1 η3 m1 − 2η3 · η1 η3 m4 + 2η1 η2 · η1 η3 m2 + 2η1 η3 · η2 η3 m6
+
+13    Singular vectors for g = vas(4|4)
+We consider the following negative operators from g0 :
+                       a5 = x2 δ3 + x3 δ2          a14 = −x4 ∂1 + ξ1 δ4
+                       a6 = x3 δ3                  a15 = −2x3 δ4 − ξ1 ∂2 + ξ2 ∂1
+                       a8 = x2 δ4 + x4 δ2          a18 = −x3 ∂2 + ξ2 δ3
+                       a9 = x3 δ4 + x4 δ3          a19 = −x4 ∂2 + ξ2 δ4
+                       a10 = x4 δ4                 a20 = 2x2 δ4 − ξ1 ∂3 + ξ3 ∂1
+                       a12 = −x2 ∂1 + ξ1 δ2        a25 = −x4 ∂3 + ξ3 δ4
+                       a13 = −x3 ∂1 + ξ1 δ3        a26 = −2x2 δ3 − ξ1 ∂4 + ξ4 ∂1
+
+
+For the basis of Cartan subalgebra we take
+                         a11 = − 1 x1 ∂1 + 1 x2 ∂2 + 1 x3 ∂3 + 1 x4 ∂4 + ξ1 δ1 )
+                                 2          2         2         2
+                         a17 = 1 x1 ∂1 − 1 x2 ∂2 + 1 x3 ∂3 + 1 x4 ∂4 + ξ2 δ2
+                               2          2         2         2
+                         a24 = 1 x ∂ +   1          1      1
+                                            x ∂ − x3 ∂3 x4 ∂4 + ξ3 δ3
+                               2 1 1     2 2 2      2      2
+                         a32 = 1 x1 ∂1 + 1 x2 ∂2 + 1 x3 ∂3 − 1 x4 ∂4 + ξ4 δ4 )
+                               2         2         2          2
+
+
+The mi are the following elements of the irreducible g0 -module V :
+                      m1 is the highest weight vector
+                                                            m10 = a8 · m1
+                      m2 = a5 · m1
+                                                            m11 = a20 · m1
+                      m3 = a25 · m1
+                                                            m24 = a26 · a20 · m1
+                      m4 = a26 · m1
+                                                            m27 = − a12 · m1
+                      m8 = a25 · a26 · m1
+
+
+Theorem In I(V ), there are only the following singular vectors:
+1a) (k, l, l, l) −→ (k + 1, l, l, l): δ1 ⊗ m1 ;
+1b) (−1, 0, 0, 0) −→ 12 (−1, 1, 1, −1): ∂4 m1 + δ1 m4
+44 P. Grozman, D. Leites and I. Shchepochkina
+
+1c) 21 (−1, 1, 1, −1) −→ (0, 1, 0, 0):         ∂3 m1 − ∂4 m3 + δ1 m11
+1d) (l, k + l, l, l) −→ (l, k + l + 1, l, l); two particular cases:
+1da) l 6= 0 =⇒ k 6= −1:
+−∂3 (4 l m2 + m4 ) − ∂4 (− m8 + 4 l m10 ) + δ1 (m24 − 4 l m27 ) − 4 (1 + k) l δ2 m1
+1db) l = 0 =⇒ k 6= 0:         ∂3 m2 + ∂4 m10 + δ1 m27 + k δ2 m1
+
+Acknowledgments
+We are thankful for partial financial support: P.G. to TBSS, I.Shch. to RFBR
+grants 99-01-00245 and 01-01-00490a; D.L.: to NFR. D.L. is also thankful to
+Bernstein, Kirillov and Rudakov for teaching and kindness in times of need.
+Larsson’s conjectures and generous discussion of unpublished results30 were
+helpful to us.
+PS. After the deadline for submission to the Marinov Memorial Volume there
+appeared a preprint21 with some singular vectors for mb(3|8) and mb(5|10)
+(finite dimensional fibers). We use the opportunity to add the reference; com-
+parison will be done elsewhere.
+
+References
+   1. Alekseevsky D., Leites D., and Shchepochkina I., “New examples of sim-
+      ple Lie superalgebras of vector fields,” C. R. Acad. Bulg. Sci. 34, no. 9,
+      1187–1190 (1980).
+   2. Bernstein J.N., “Two papers for pedestrians on representations of Lie
+      algebras and Lie superalgebras,” In: Ref. 33, 9/1987-13, 60pp.
+   3. Bernstein J.N. and Leites D.A., “Integral forms and the Stokes formula
+      on supermanifolds,” Funktsional. Anal. i Prilozhen. 11, no. 1, 55–56
+      (1977), (Russian) [English translation: Funct. Anal. Appl. 11, no. 1,
+      45–47 (1977)].
+   4. Bernstein J.N. and Leites D.A., “Integration of differential forms on
+      supermanifolds,” Funktsional. Anal. i Prilozhen. 11, no. 3, 70–71 (1977)
+      [English translation: Funct. Anal. Appl. 11, 219–221 (1977)].
+   5. Bernstein J.N. and Leites D.A., “Invariant differential operators and ir-
+      reducible representations of Lie superalgebras of vector fields,” Selected
+      translations. Selecta Math. Soviet. 1, no. 2, 143–160 (1981).
+   6. Bernstein J.N. and Leites D.A., “Irreducible representations of finite-
+      dimensional Lie superalgebras of series W and S,” C. R. Acad. Bulgare
+      Sci. 32, no. 3, 277–278 (1979);
+      Leites D.A., “Invariant differential operators and irreducible representa-
+      tions of Lie superalgebras of divergence-free vector fields,” Serdica, 8,
+      no. 1, 12–15 (1982), (Russian).
+                                  Invariant operators and Standard Models   45
+
+ 7. Cheng S. and Kac V., “Structure of some Z-graded Lie superalgebras of
+    vector fields,” Transformation groups, 4, 219–272 (1999).
+ 8. Deligne P. et al (eds.), Quantum fields and strings: a course for mathe-
+    maticians, Vols. 1, 2, Material from the Special Year on Quantum Field
+    Theory held at the Institute for Advanced Study, Princeton, NJ, 1996–
+    1997 (AMS, Providence, RI; Institute for Advanced Study (IAS), Prince-
+    ton, NJ, 1999).
+ 9. Feigin B.L. and Fuchs D.B., “Invariant differential operators on the line,”
+    Funktsional. Anal. i Prilozhen. 13, no. 4, 91–92 (1979) [English transla-
+    tion: Funct. Anal. Appl. 13, no. 4, 314–315 (1980))];
+    id., “Cohomology of Lie groups and Lie algebras,” In: Current prob-
+    lems in mathematics. Fundamental directions, 21, 121–209 (1988), Itogi
+    Nauki i Tekhniki, Akad. Nauk SSSR, Vsesoyuz. Inst. Nauchn. i Tekhn.
+    Inform., Moscow, (Russian).
+10. Gomis J., Paris J. and Samuel S., “Antibracket, antifields and gauge-
+    theory quantization,” Phys. Rept. 259, n.1–2, 1–191 (1995).
+11. Grozman P., “Classification of bilinear invariant differential operators on
+    tensor fields,” Funct. Anal. Appl. 14, no. 2, 58–59 (1980). ESI-preprint
+    1114 (2001) [www.esi.ac.at]
+12. Grozman P., “The local invariant bilinear operators on tensor fields on
+    the plane,” Vestnik MGU, no. 6, 3–6 (1980).
+13. Grozman P., “On bilinear invariant differential operators acting on tensor
+    fields on a symplectic manifold,” J. Nonlinear Math. Phys. 8, no. 1, 31–37
+    (2001).
+14. Grozman P. and Leites D., “Mathematica-aided study of Lie algebras
+    and their cohomology. From supergravity to ballbearings and magnetic
+    hydrodynamics,” In: The second International Mathematica symposium,
+    June 1997, eds. Keränen V. et al, Rovaniemi, 185–192.
+15. Grozman P. and Leites D., “ From supergravity to ballbearings,” In:
+    Supersymmetries and quantum symmetries (Proceedings of SQS’97, 22–
+    26 July, 1997), eds. Wess J. and Ivanov E. (Berlin, Germany, Springer-
+    Verlag, 1999), Lecture Notes in Physics, Vol. 524. pp. 58–67.
+16. Grozman P., Leites D. and Shchepochkina I., “Lie superalgebras of string
+    theories,” Acta Mathematica Vietnamica, 26, no. 1, 27–63 (2001) [hep-th
+    9702120].
+17. Kac V., Classification of infinite-dimensional simple linearly compact Lie
+    superalgebras, ESI-preprint 605 (1997), [www.esi.ac.at].
+18. Kac V., “Classification of infinite-dimensional simple groups of supersym-
+    metries and quantum field theory”, GAFA 2000 (Tel Aviv, 1999). Geom.
+    Funct. Anal. Special Volume, Part I, 162–183 (2000) [math.QA/9912235].
+46 P. Grozman, D. Leites and I. Shchepochkina
+
+ 19. Kac V. and Rudakov A., Representations of the exceptional Lie su-
+     peralgebra E(3, 6): I. Degeneracy conditions, ESI-preprint 921 (2000)
+     [www.esi.ac.at, math-ph/0012049].
+ 20. Kac V. and Rudakov A., Representations of the exceptional Lie super-
+     algebra E(3, 6): II. Four series of degenerate modules, ESI-preprint 976
+     (2000) [www.esi.ac.at, math-ph/0012050].
+ 21. Kac V. and Rudakov A., Complexes of modules over exceptional Lie
+     superalgebras E(3, 8) and E(5, 10), math-ph/0112022.
+ 22. Kirillov A.A., “Invariant operators over geometric quantities,” Current
+     problems in mathematics, 16, 3–29 (1980) (Russian), Akad. Nauk SSSR,
+     Vsesoyuz. Inst. Nauchn. i Tekhn. Informatsii, Moscow, 3–29 (1980) [En-
+     glish translation: J. Sov. Math. 18, no. 1, 1–21 (1982)].
+ 23. Kochetkov Yu., “Irreducible representations of Lie superalgebras w1 and
+     w2 ,” In: Problems in group theory and homological algebra, ed. Onishchik
+     A. (Yaroslav. Gos. Univ., Yaroslavl, 1985) pp. 145–147 (Russian).
+ 24. Kochetkov Yu., “Induced representations of Leites superalgebras,” In:
+     Problems in group theory and homological algebra, ed. Onishchik A.
+     (Yaroslav. Gos. Univ., Yaroslavl, 1983) pp. 120–123 (Russian).
+ 25. Kochetkov Yu., “Singular vectors and invariant operators,” Uspekhi Mat.
+     Nauk, 43, no. 5 (263), 201–202 (1988), (Russian) [English translation:
+     Russian Math. Surveys 43, no. 5, 242–243 (1988)].
+ 26. Kochetkov Yu., “Discrete modules for Lie superalgebras of the series Le”,
+     In: Problems in group theory and homological algebra, ed. Onishchik A.
+     (Yaroslav. Gos. Univ., Yaroslavl, 1989) pp. 142–148 (Russian).
+ 27. Kochetkov Yu., “Singular vectors, invariant operators and discrete mod-
+     ules for the Lie algebra of Hamiltonian vector fields H(n),” Uspekhi Mat.
+     Nauk, 44, no. 5 (269), 167–168 (1989), (Russian) [English translation:
+     Russian Math. Surveys, 44, no. 5, 201–202 (1989)].
+ 28. Kochetkov Yu., “Singular vectors of height 2,” In: Problems in group
+     theory and homological algebra, ed. Onishchik A. (Yaroslav. Gos. Univ.,
+     Yaroslavl, 1990) pp. 128–132 (Russian).
+ 29. Kolář I, Michor P. and Slovák J., Natural operations in differential ge-
+     ometry, (Springer-Verlag, Berlin, 1993) vi+434 pp.
+ 30. Larsson T., Structures Preserved by Consistently Graded Lie Superalge-
+     bras, math-ph/0106004.
+ 31. Leites D., “New Lie superalgebras and mechanics,” Soviet Math. Dokl.
+     18, no. 5, 1277–1280 (1977).
+ 32. Leites D., “Lie superalgebras, J. Soviet Mathematics,” 30, no. 6, 2481–
+     2513 (1984).
+ 33. Leites D., (ed.), Seminar on supermanifolds, Vols. 1–34, 1986–90, Re-
+                                  Invariant operators and Standard Models   47
+
+    ports of Dept. of Math. University of Stockholm, 2100 pp.
+34. Leites D., “On unconventional integrations on supermanifolds and cross
+    ratio on classical superspaces,” In: Supersymmetries and quantum sym-
+    metries, eds. Krivonos S. et al (SQS’01, Karpacz, 22–26 September,
+    2001), to appear.
+35. Leites D., “Indecomposable representations of Lie superalgebras,” In:
+    Memorial volume dedicated to Misha Saveliev and Igor Luzenko, ed. Sis-
+    sakian A. N. (JINR, Dubna, 2000) pp. 126–131.
+36. Leites D., Kochetkov Yu. and Vaintrob A., “New invariant differen-
+    tial operators on supermanifolds and pseudo-(co)homology,” In: General
+    topology and its applications, eds. Andima S. et al (LN in pure and
+    applied math, Marcel Decker, NY, 1991) Vol. 134, pp. 217–238.
+37. Leites D. and Shchepochkina I., “Howe’s duality and Lie superalgebras,”
+    In: S. Duplij and J. Wess (eds.) Noncommutative structures in mathe-
+    matics and physics, eds.S. Duplij and J. Wess (Proc. NATO Advanced
+    Research Workshop, Kiev, Kluwer, 2000) pp. 93-112.
+38. Leites D. and Shchepochkina I., How to quantize antibracket, preprint
+    ESI-875 [www.esi.ac.at];
+    Theor. and Math. Physics, 126, no. 3, 339–369 (2001).
+39. Lychagin V.V., “Contact geometry and second-order nonlinear differ-
+    ential equations,” Uspekhi Mat. Nauk, 34, no. 1(205), 137–165 (1979),
+    (Russian) [English translation: Russian Math. Surveys, 34, no. 1, 149–
+    180 (1979)].
+40. Lychagin V., Rubtsov V. and Chekalov I., “A classification of Monge-
+    Ampére equations,” Ann. Sci. École Norm. Sup. (4) 26, no. 3, 281–308
+    (1993).
+41. Marinov M.S., “Relativistic strings and dual models of the strong interac-
+    tions,” Uspehi Fiz. Nauk, 121, no. 3, 377–425 (1977) [English translation:
+    Soviet Physics Uspekhi, 20, no. 3, 179–208 (1977)].
+42. Penkov I. and Serganova V., “Generic irreducible representations of
+    finite-dimensional Lie superalgebras,” Internat. J. Math. 5, no. 3, 389–
+    419 (1994).
+43. Rudakov A.N., “Irreducible representations of infinite dimensional Lie
+    algebras of Cartan type,” Math. USSR Izvestiya, 38, n. 4, 835-866 (1974).
+44. Rudakov A.N., “Irreducible representations of infinite dimensional Lie
+    algebras of types S and H,” Math. USSR Izvestiya 39, n. 3, 496-511,
+    (1975).
+45. Shapovalov A.V., “Finite-dimensional irreducible representations of Ha-
+    miltonian Lie superalgebras,” Mat. Sb. (N.S.), 107(149), no. 2, 259–
+    274, 318, (1978) (Russian) [English translation: Math. USSR-Sb., 35,
+48 P. Grozman, D. Leites and I. Shchepochkina
+
+     no. 4, 541–554 (1979)].
+ 46. Shapovalov A.V., “Invariant differential operators and irreducible rep-
+     resentations of finite-dimensional Hamiltonian and Poisson Lie superal-
+     gebras,” Serdica, 7 (1981), no. 4, 337–342 (1982), (Russian).
+ 47. Shchepochkina I., “Exceptional simple infinite dimensional Lie superal-
+     gebras,” C. R. Acad. Bulgare Sci. 36, no. 3, 313–314 (1983).
+ 48. Shchepochkina I., “Five exceptional simple Lie superalgebras of vector
+     fields,” hep-th/9702121, 1997, 23 pp.;
+     “The five exceptional simple Lie superalgebras of vector fields,” Funkt-
+     sional. Anal. i Prilozhen., 33, no. 3, 59–72, 96 (1999), (Russian. Russian
+     summary) [English translation: Funct. Anal. Appl. 33, no. 3, 208–219
+     (2000)].
+ 49. Shchepochkina I. and Post G., “Explicit bracket in an exceptional simple
+     Lie superalgebra,” Internat. J. Algebra Comput. 8 , no. 4, 479–495 (1998),
+     (English. English summary).
+ 50. Shchepochkina I., “Five exceptional simple Lie superalgebras of vector
+     fields and their fourteen regradings,” Represent. Theory (electronic jour-
+     nal of AMS), 3, 373–415 (1999).
+ 51. Shmelev G.S., “Differential operators that are invariant with respect
+     to the Lie superalgebra H(2, 2; λ) and its irreducible representations,”
+     C. R. Acad. Bulgare Sci. 35, no. 3, 287–290 (1982), (Russian).
+ 52. Shmelev G.S., “Irreducible representations of infinite-dimensional Hamil-
+     tonian and Poisson Lie superalgebras, and invariant differential opera-
+     tors,” Serdica 8 (1982), no. 4, 408–417 (1983), (Russian); id., “Invariant
+     operators on a symplectic supermanifold,” Mat. Sb. (N.S.) 120(162),
+     no. 4, 528–539 (1983), (Russian).
+ 53. Shmelev G.S., “Irreducible representations of Poisson Lie superalgebras
+     and invariant differential operators,” Funktsional. Anal. i Prilozhen. 17,
+     no. 1, 91–92 (1983), (Russian).
+ 54. Shmelev G.S., “Differential H(2n, m)-invariant operators and indecom-
+     posable osp(2, 2n)-representations,” Funktsional. Anal. i Prilozhen. 17,
+     no. 4, 94–95 (1983), (Russian) [English translation: Funct. Anal. Appl.,
+     17, no. 4, 323–325 (1983)].
+ 55. Terng Chuu Lian, “Natural vector bundles and natural differential oper-
+     ators,” Amer. J. Math. 100, no. 4, 775–828 (1978).
+ 56. Veblen O., “Differential invariants and geometry,” Atti del Congresso
+     Internazionale dei Matematici, Bologna, 1928.
+

@@ -1,0 +1,1971 @@
+                                                               GENERALIZED GREEN FUNCTIONS
+                                                                   AND UNIPOTENT CLASSES
+                                                               FOR FINITE REDUCTIVE GROUPS, I
+arXiv:math/0507057v1 [math.RT] 4 Jul 2005
+
+
+
+
+                                                                                 TOSHIAKI SHOJI
+
+
+
+                                                                       Graduate School of Mathematics
+                                                                              Nagoya University
+                                                                     Chikusa-ku, Nagoya, 464-8602, Japan
+
+                                                   Abstract. The algorithm of computing generalized Green functions of a reduc-
+                                                   tive group G contains some unknown scalars occurring from the Fq -structure of
+                                                   irreducible local systems on unipotent classes of G. In this paper, we determine
+                                                   such scalars in the case where G = SLn with Frobenius map F of split type or
+                                                   non-split type. In the case where F is of non-split type, we use the theory of
+                                                   graded Hecke algebras due to Lusztig.
+
+
+
+
+                                                                                0. Introduction
+                                                 Let G be a connected reductive group defined over a finite field Fq with Frobenius
+                                            map F . In [L1], Lusztig classified the irreducible characters of finite reductive groups
+                                            GF in the case where the center of G is connected. Later in [L5], he extended
+                                            his results to the disconnected center case. In the course of the classification, in
+                                            particular in the connected center case, he defined almost characters of GF , which
+                                            forms an orthonormal basis of the space V(GF ) of class functions of GF different
+                                            from the basis consisting of irreducible characters. They are defined as explicit
+                                            linear combinations of irreducible characters, and the transition matrix between
+                                            these two bases are almost diagonal. So, the determination of the character values
+                                            of irreducible characters of GF is equivalent to that of almost characters.
+                                                 On the other hand, Luszitg founded in [L3] the theory of character sheaves, and
+                                            showed that the characteristic functions of character sheaves form an orthonormal
+                                            basis of V(GF ). He conjectured that those functions coincide, up to scalar, with
+                                            almost characters (with an appropriate generalization of almost characters if the
+                                            center is disconnected). Lusztig’s conjecture was proved by the author in [S3] in
+                                            the case where the center is connected. It was also proved for certain groups with
+                                            disconnected center, i.e., for Sp2n and (under a suitable modification for a discon-
+                                            nected group) O2n with ch Fq 6= 2 by Waldspurger [W], for SLn by the author [S4]
+                                            (with ch Fq not too samll), and independently, for SLn and SUn by Bonnafé [B]
+                                            (with q not too small.)
+                                                 If Lusztig’s conjecture is established, the computation of irreducible characters
+                                            of GF is reduced to the computation of characteristic functions of character sheaves,
+                                            and to the determination of scalars involved in Lusztig’s conjecture. In [L3], Lusztig
+                                                                                          1
+2                                         SHOJI
+
+proved that the computation of the characteristic functions of character sheaves
+are reduced to the computation of generalized Green functions of various reductive
+subgroups of GF . Then he showed that there exists a general algorithm of comput-
+ing generalized Green functions. More precisely, he showed that generalized Green
+functions can be expressed as an explicit linear combination of various characteristic
+functions χC ′ ,E ′ of the G-equivariant local system E ′ on a unipotent class C ′ in G. Up
+to scalar, χC ′ ,E ′ can be easily described in terms of the irreducible character of the
+component group AG (u) = ZG (u)/ZG0 (u) for u ∈ C ′ F corresponding to E ′. However,
+this scalar depends on the choice of the isomorphism F ∗ E −      ∼ E for a cuspidal pair
+                                                                  →
+(C, E) on a Levi subgroup L of a parabolic subgroup P of G, and on the intersection
+cohomology complex K induced from E ⊠ Q̄l on C × ZL0 (see (1.2.2)).
+     The purpose of this paper is to determine these scalars occurring in the compu-
+tation of generalized Green functions. In the case of Green functions, this problem
+is equivalent to determining a representative u ∈ C ′ F such that the action of F on
+the l-adic cohomology group H m (Bu , Q̄l ) can be described explicitly, where Bu is
+the variety of Borel subgroups of G containing u, and m/2 = dim Bu . It was shown
+in [S1], [S2] and [BS] that there exists a unipotent element u ∈ C ′ F , in the case
+where GF is of split type, and G is not of type E8 , such that F acts on H m (Bu , Q̄l )
+by a scalar multiplication q m/2 . Such a unipotent element is called a split element.
+Even if the remaining cases, the action of F can be described, and by using this,
+Green functions of exceptional groups (F4 , E6 , E7 and E8 ) were computed explicitly
+by [S1], [BS] for a good characteristic case. The case G2 had been computed by
+Springer [Spr] in an earlier stage. (Green functions of exceptional groups in certain
+bad characteristic case were computed by Malle [M] by a direct computation).
+     In the case of generalized Green functions, one has to consider the cohomology
+group Hcm (Pu , Ė), where Pu is a certain subvariety of parabolic subgroups of G
+conjugate to P , and Ė is a local system on Pu determined from the cuspidal pair
+(C, E) on a Levi subgroup L of P , and m/2 = dim Pu . We need to describe the
+action of F on such cohomology groups. This problem is reduced to the case where
+G is simply connected, and simple modulo center. In this paper, we discuss the
+case where G = SLn with F of split type or non-split type. In the case where
+F is of split type, the method employed here is to compare the Frobenius action
+in the case of SLn with SLn−1 , which is a natural generalization of the method
+in the case of GLn . In the case of GLn with F of non-split type, the Frobenius
+action was determined by investigating the action of F on H ∗ (B, Q̄l ) by making use
+of the F -equivariant surjective map πu : H m (B, Q̄l ) → H m (Bu , Q̄l ) induced from
+the inclusion Bu ֒→ B, where B is the Flag variety of G. However, this argument
+is not generalized to our case. Although we have a counter part Pu1 of B, and
+a natural map πu : Hcm (Pu1 , Ė) → Hcm (Pu , Ė), there does not exist an immersion
+Pu ֒→ Pu1 , and the surjectivity of πu is no longer trivial. In order to overcome such
+difficulties, following the idea of Lusztig, we appeal to the theory of graded Hecke
+algebra developed in [L7], which makes it possible to compare the Frobenius actions
+via the isomorphism Hc0 (Pu1 , Ė) ≃ Hc0 (Pu , Ė) ≃ Q̄l .
+     The remaining cases where G 6= SLn will be treated in a subsequent paper.
+                           GENERALIZED GREEN FUNCTIONS                                 3
+
+    The author is grateful to G. Lusztig for stimulating discussions on graded Hecke
+algebras.
+
+                                     1. Preliminaries
+
+     1.1. Let G be a connected reductive algebraic group over a field k, where k
+is an algebraic closure of a finite filed Fq of characteristic p. Let C be a unipotent
+conjugacy class in G, and E an irreducible local system on C which is G-equivariant
+for the conjugation action. E is called a cuspidal local system on C if the following
+condition is satisfied: for any proper parabolic subgroup P of G with Levi decompo-
+sition P = LUP and for any unipotent element u ∈ L, we have Hcδ (uUP ∩ C, E) = 0,
+where δ = dim C − dim (class of u in L) (cf. [L2, 2.4]). It is known by [L3, V, 23.1],
+that if p is almost good then the above condition is equivalent to the condition that
+Hci (uUP ∩ C, E) = 0 for any i (i.e., E is strongly cuspidal). We also say that (C, E)
+is a cuspidal pair in G.
+     Let NG be the set of pairs (C ′ , E ′ ) up to G-conjugacy, where C ′ is a unipotent
+class in G and E ′ is a G-equivariant irreducible local system on C. We also denote
+by MG the set of triples (L, C, E) up to G-conjugacy, where L is a Levi subgroup
+of a parabolic subgroup of G, and E is a cuspidal local system on a unipotent class
+C of L. In [L2, 6.5], Lusztig has shown that there exists a natural bijection
+                                         a
+(1.1.1)                     NG ≃                   (NG (L)/L)∧ ,
+                                      (L,C,E)∈MG
+
+
+which is called the generalized Springer correspondence between unipotent classes
+and irreducible characters of various Coxeter groups. (For a finite group H, we
+denote by H ∧ the set of irreducible characters of H). Note that NG (L)/L is a
+Coxeter group with standard generators whenever (L, C, E) ∈ MG .
+    1.2. We describe the generalized Springer correspondence more precisely. Take
+                                                               ereg = C · (Z 0 )reg ⊂
+(L, C, E) ∈ MG . Let ZL0 be the connected center of L, and put C            L
+Ce = C · Z 0 , where
+           L
+                         (ZL0 )reg = {z ∈ ZL0 | ZG0 (z) = L}.
+We define a diagram
+                              α1       β1      π
+(1.2.1)                    e ←−
+                           C   −− Yb −−−→ Ye −−−→ Y,
+
+where
+                           [
+                     Y =          ereg x−1 ⊂ G,
+                                 xC
+                           x∈G
+
+                     Ye = {(g, xL) ∈ G × (G/L) | x−1 gx ∈ C
+                                                          ereg },
+                     Yb = {(g, x) ∈ G × G | x−1 gx ∈ C},
+                                                     e
+
+and
+               α1 (g, x) = x−1 gx,     β1 (g, x) = (g, xL),    π(g, xL) = g.
+4                                                  SHOJI
+
+Then Y is a smooth, irreducible subvariety of G, and π is a principal covering of Y
+with group W = NG (L)/L. There is a canonical local system Ee on Ye satisfying the
+property that β1∗ Ee = α1∗ (E ⊠ Q̄l ), where E ⊠ Q̄l is the inverse image of E under the
+natural map Ce = C × Z 0 → C. We define an intersection cohomology complex K
+                            L
+by
+
+(1.2.2)                                         e
+                                  K = IC(Y , π! E)[dim Y]
+
+and regard it as a perverse sheaf on G by extending by 0 outside of Y . Lusztig showed
+that K is a G-equivariant semisimple perverse sheaf on G, and that End K ≃ Q̄l [W].
+It follows that K can be decomposed as
+                                       M
+(1.2.3)                          K≃         V E ⊗ KE ,
+                                            E∈W ∧
+
+
+where KE is a simple perverse sheaf on G such that VE = Hom(KE , K) is an
+irreducible W-module corresponding to E ∈ W ∧ .
+    Let Guni be the unipotent variety of G. Then K[−d]|Guni turns out to be a G-
+equivariant semisimple perverse sheaf on Guni , where d = dim ZL0 = dim Y −dim(Y ∩
+Guni ). Hence it is decomposed as
+                                      M                               ′
+(1.2.4)           K[−d]|Guni =                     V(C ′ ,E ′ ) ⊗ IC(C , E ′)[dim C ′ ],
+                                  (C ′ ,E ′ )∈NG
+
+                                                                                           ′
+where V(C ′ ,E ′ ) is a multiplicity space for the simple perverse sheaf IC(C , E ′ )[dim C ′ ]
+on Guni . Comparing (1.2.3) with (1.2.4), we see that for each E ∈ W ∧ , there exists
+a pair (C ′ , E ′) ∈ NG such that
+                                              ′
+(1.2.5)             KE |Guni ≃ IC(C , E ′ )[dim C ′ + dim ZL0 ].
+                                                      `
+The correspondence E 7→ (C ′ , E ′ ) gives a bijection (L,C,E) (NG (L)/L)∧ → NG in
+(1.1.1).
+
+
+    1.3. We now consider the Fq -structure on G. So assume that G is defined over
+Fq with Frobenius endomorphism F : G → G. Then F acts naturally on the set
+NG and MG by (C ′ , E ′ ) 7→ (F −1 C ′ , F ∗ E ′ ), (L, C, E) 7→ (F −1 L, F −1 C, F ∗E), and the
+map in (1.1.1) is compatible with F -action. Now assume that (L, C, E) ∈ MG is F -
+stable. Then we may choose (L, C, E), as a representative of its G-conjugacy class,
+such that L is an F -stable Levi subgroup of an F -stable parabolic subgroup P of
+G, with F C = C, F ∗E ≃ E. We choose an isomorphism ϕ0 : F ∗ E −             ∼ E which induces
+                                                                             →
+                                                                      F
+a map of finite order on the stalk of E at any point of C . Since the diagram in
+(1.2.1), and so the construction of the complex K is compatible with Fq -structure,
+ϕ0 induces a natural isomorphism ϕ : F ∗ K −          ∼ K. We consider the characteristic
+                                                      →
+function χK,ϕ of K. The restriction of χK,ϕ on Guni gives a GF -invariant function
+on GFuni , which is the generalized Green function QG        L,C,E,ϕ0 (cf. [L3, II]).
+                           GENERALIZED GREEN FUNCTIONS                                  5
+
+      Here F acts naturally on W, which induces a Coxeter group automorphism
+of degree, say c. We consider the semidirect product W      f = W ⋊ (Z/cZ). If an
+irreducible representation VE of W is F -stable, it can be extended to an irreducible
+representation of W, f in c different ways. Assume that E ∈ W ∧ is F -stable. Then
+the corresponding (C ′ , E ′ ) ∈ NG is also F -stable, and we have F ∗ KE −  ∼ KE . A
+                                                                             →
+choice of an isomorphism ϕE : F KE − ∗    ∼
+                                          → KE induces a bijection σE : VE → VE ,
+which makes VE into an irreducible W-module VeE . We choose ϕE so that VeE turns
+                                       f
+out to be a preferred extension of VE (cf. [L3, IV, (17.2)]. By making use of
+ϕE : F ∗ KE ≃ KE , we shall define an isomorphism ψ : F ∗ E ′ −    ∼ E ′ as follows; By
+                                                                   →
+                      a0           ′                  0         ′
+(1.2.5), we have H (KE )|C ′ = E for a0 = − dim ZL − dim C . We define ψ so that
+                                                                   ∼ Ha0 (KE ), where
+q (a0 +r)/2 ψ corresponds to the map defined by ϕE : F ∗ Ha0 (KE ) →
+                                                                   −
+                    r = dim Y = dim G − dim L + dim(C × ZL0 ),
+
+and so
+
+(1.3.1)            a0 + r = (dim G − dim C ′ ) − (dim L − dim C).
+
+    We define a function Yj on GFuni for each j = (C ′ , E ′) ∈ NGF by
+                                 (
+                                   Tr (ψ, g)     if g ∈ C ′ F ,
+                        Yj (g) =
+                                   0                  / C ′F .
+                                                 if g ∈
+
+Then {Yj | j ∈ NGF } gives rise to a basis of the space of GF -invariant functions on
+GFuni . Now the computation of χK,ϕ is reduced to the computation of χKE ,ϕE for each
+F -stable irreducible character E of W. We denote χKE ,ϕE by Xj if E corresponds to
+j = (C ′ , E ′ ) under the generalized Springer correspondence. In [L3, V], Luszitg gave
+a general algorithm of expressing Xi as an explicit linear combination of various Yj .
+Thus the computation of χK,ϕ is reduced to the computation of Yj .
+     We shall describe the functions Yj . Let us choose u ∈ C ′ F , and put AG (u) =
+ZG (u)/ZG0 (u). Then F acts naturally on AG (u), and the set of G-equivariant simple
+local systems on C ′ is in bijective correspondence with the set of F -stable irreducible
+characters of AG (u). Let us denote by ρ the irreducible character of AG (u) corre-
+sponding to E ′. Let σ be the restriction of F on AG (u). Then ρ can be extended to
+an irreducible character of the semidirect group A     eG (u) = AG (u) ⋊hσi. We choose
+                            ′
+an extension ρe of ρ. Eu has a structure of AG (u)-module affording the character
+ρ, which is extended to the A    eG (u)-module affording ρe. We choose an isomorphism
+        ∗ ′ ∼ ′                                                          ′
+ψ0 : F E −  → E by the condition that ψ0 induces an isomorphsim on Eu corresponding
+to the action of σ on ρe.
+     Since E ′ is a simple local system, there exists γ ∈ Q̄∗l (depending on the choice
+of ϕ0 , u and ρe) such that ψ = γψ0 . We define functions Yj0 on the set GFuni in a
+similar way as Yj , but replacing ψ by ψ0 . Then clearly we have Yj = γYj0 . We
+note that the functions Yj0 are described in an explicit way as follows. The set of
+GF -conjugacy classes in C ′ F is in bijective correspondence with the set of F -twisted
+6                                           SHOJI
+
+conjugacy classes in AG (u). We denote by ua a representative in the GF -conjugacy
+class contained in C ′ F corresponding to an F -twisted conjugacy class in AG (u)
+containing a. Then we have
+                           (
+                             ρe(aσ)    if g is GF -conjugate to ua ,
+                 Yj0 (g) =
+                             0              / C ′F .
+                                       if g ∈
+
+      It follows from the above discussion that the computation of generalized Green
+functions is reduced to the determination of the scalar constant γ for each pair
+(C ′ , E ′ ) ∈ NGF . Let us choose v ∈ C F , and let ρ0 be the F -stable irreducible character
+of AL (v) corresponding to E. Then as in the discussion above, the isomorpshims
+ϕ0 : F ∗ E −  →∼ E is given by choosing an extension ρe0 of ρ0 to the semidirect group
+ e
+AL (v) = AL (v) ⋊ hσi. Thus γ is determined by v, ρe0 , u, ρe, which we denote by
+γ = γ(v, ρe0 , u, ρe). The purpose of this paper is to describe the constants γ(v, ρe0 , u, ρe)
+explicitly.
+     1.4. In order to make the Frobenius action more explicit, we shall consider the
+following varieties. Put
+
+(1.4.1)                    Pu = {gP ∈ G/P | g −1ug ∈ CUP },
+                           bu = {g ∈ G | g −1 ug ∈ CUP },
+                           P
+
+and consider the diagram
+                                      α       β
+(1.4.2)                                  bu −−−
+                                  C ←−−− P      → Pu
+with
+                α : g 7→ C-component of g −1 ug ∈ CUP ,          β : g 7→ gP.
+We define a local system Ė on Pu by the property that α∗ E = β ∗ Ė. Then it is known
+by [L3, 24.2.5] that
+
+(1.4.3)                          Hua0 (K) ≃ Hca0 +r (Pu , Ė).
+
+It is also known by [L2, 1.2 (b)] that dim Pu ≤ (a0 + r)/2. Since the left hand side
+of (1.4.3) is non-zero by (1.2.5), we see that
+
+(1.4.4)                            dim Pu = (a0 + r)/2.
+
+                                 bu are F -stable, and the diagram in (1.4.2) is compatible
+      Since P is F -stable, Pu , P
+with Frobenius maps. Moreover, the isomorphism ϕ0 induces an isomorphism ϕ̇0 :
+          ˙ This induces a linear map Φ on V = H a0 +r (Pu , Ė). By (1.4.3), W acts
+       ∼ E.
+F ∗ Ė −
+       →                                                  c
+on V . Also ZG (u) acts naturally on V , where ZG0 (u) acts trivially on it. Then it
+induces an action of AG (u), which commutes with the action of W. Let ρ be an
+F -stable irreducible character of AG (u) corresponding to E ′ as in 1.3, and Vρ the
+ρ-isotipic part of V . Then Φ leaves Vρ stable. The previous discussion shows that
+                             GENERALIZED GREEN FUNCTIONS                                     7
+
+Vρ can be identified with VeE ⊗ Eu′ , and Φ|Vρ coincides with σE ⊗ q (q0 +r)/2 ψ. Thus the
+map ψ can be described by investigating Φ on Hca0 +r (Pu , Ė)ρ .
+
+     1.5. We show that the description of the mixed structure ψ : F ∗ E ′ → E ′ on
+C ′ is reduced to the case where G is simply connected, almost simple. In fact, let
+π : G → G′ = G/ZG0 be the natural homomorphism. Then π induces a bijection
+between MG (resp. NG ) and MG′ (resp. NG′ ) which commutes with their Fq -
+structures. Hence we may assume that G is semisimple. Let π            e : Ge → G be the
+                                                            −1        ∗
+simply connected covering of G. Then (L, C, E) 7→ (e     π (L), C, π e E) gives a bijection
+between the set MG and the subset of MGe on which ker π         e acts trivially. Hence the
+mixed structure ϕ0 : F π   ∗ ∗
+                            e E →π   ∗
+                                    e E for the pair (C, π ∗
+                                                         e E) on Ge determines the mixed
+structure for the pair (C, E) on G. Similarly, π   e induces a bijection between the set
+NG and the subset of NGe on which ker π      e acts trivially, and so the mixed structure
+of the pair (C ′ , E ′) on G is determined by the mixed structure of the pair (C ′ , πe∗ E ′ )
+on G.e The procedure of determining the mixed structure of (C ′ , E ′) from that of
+(C, E) is parallel for G  e and G.
+     It follows from the above discussion that we may assume G is simply connected,
+semisimple. Then G is isomorphic to the direct product of simply connected, almost
+simple groups, with F -action. Now it is easy to see that we are reduced to the case
+where G ≃ G1 × · · · × Gr , with Gi a copy of G1 , and F acts on G as a cyclic
+permutation of all the factors. Then G1 is F r -stable, and the set MFG is in bijective
+                                      r
+correspondence with the set MFG1 , via the correspondence (L, C, E) ↔ (L1 , C1 , E1 ),
+where
+
+                         L = L1 × F −r+1(L1 ) × · · · × F −1 (L1 ),
+                         C = C1 × F −r+1 (C1 ) × · · · × F −1 (C1 ),
+                                            ∗
+                          E = E1 ⊠ F r−1 E1 ⊠ · · · ⊠ F ∗ E1 .
+             r
+                                                                                       ∼ E is
+Moreover, C1F ≃ C F via v1 7→ v = (v1 , F (v1 ), . . . , F r−1 (v1 )). Then ϕ0 : F ∗ E −
+                                                                                       →
+                    r∗  ∼ E1 as
+determined by ϕ1 : F E1 −
+                        →
+                     (ϕ0 )v = (ϕ1 )v1 ⊗ (ϕ1 )F r−1 (v1 ) ⊗ · · · ⊗ (ϕ1 )F (v1 )
+
+on Ev = (E1 )v1 ⊗ (E1 )F r−1(v1 ) ⊗ · · · ⊗ (E1 )F (v1 ) . Similarly, the mixed F -structure of
+(C ′ , E ′ ) ∈ NG is described by the mixed F r -structure of (C ′ 1 , E ′ 1 ) ∈ NG1 .
+      Thus, the determination of the mixed structure of (C ′ , E ′) is reduced to the case
+where G is an F -stable, simply connected, almost simple group.
+
+    1.6. Assume that G is almost simple and simply connected. Let g = Lie G
+be the Lie algebra of G. We further assume that p is good for G unless G is of
+type A, and that p > n if G = SLn . Then by [BR], there exists a logarithm
+map log : G → g satisfying the following properties; log is an Ad(G)-equivariant
+morphism and log(1) = 0, d(log)1 : g → g is the identity map. In particular, for any
+closed subgroup H of G, log(H) ⊂ Lie H ⊂ g. Moreover, log |Guni turns out to be
+an isomorphism Guni → gnil , where gnil is the nilpotent variety of g.
+8                                           SHOJI
+
+     Let L be an irreducible G-local system on a nilpotent orbit C in g. The notion of
+cuspidal local system on C is defined in a similar way as in the case of groups, i.e., L is
+said to be cuspidal or (C, L) is a cuspidal pair if for any proper parabolic subalgebra
+p1 of g with nilpotent radical n1 and any y ∈ p1 , we have Hci ((y + n1 ) ∩ C, L) = 0
+for any i. Then it is easily checked (cf. [L4]) that log∗ gives a bijection between the
+set of cuspidal pairs in G and the set of cuspidal pairs in g.
+     Let (L, C, E) ∈ MG , and (C, L) the corresponding cuspidal pair in l = Lie L,
+where C = log−1 (C), E = log∗ L. We put p = Lie(P ) and nP = Lie UP . Let
+C ′ = log(C ′ ) be a nilpotent orbit in g. For each y ∈ C ′ , put
+
+(1.6.1)                Py = {gP ∈ G/P | Ad(g)−1y ∈ C + nP },
+                       Pby = {g ∈ G | Ad(g)−1 y ∈ C + nP }.
+
+Then by using a similar diagram as in (1.4.2), one can define a local system L̇ on
+                                                     bu ∼ P
+Py . It is easy to see that log gives an isomorphism P     b
+                                                        → y with y = log(u), and
+                                                        −
+so induces an isomorphism Pu −                          ∗     ˙ It follows that we
+                                 ∼ Py . Then we have log L̇ = E.
+                                 →
+have a canonical isomorphism
+
+(1.6.2)                      Hca0 +r (Pu , Ė) ≃ Hca0 +r (Py , L̇).
+
+     In the case where G has an Fq -structure with Frobenius map F , g has also an
+action of F , and we may assume that log is F -equivariant. Then the isomorphism
+(1.6.2) is compatible with Fq -structures. We denote by the same symbol Φ the
+linear map on Hca0 +r (Py , L̇) obtained as in the case of Hca0 +r (Pu , Ė). Hence the
+linear map q (a0 +r)/2 ψ on Eu can be described in terms of the Frobenius action Φ on
+Hca0 +r (Py , L̇)ρ .
+
+                            2. Graded Hecke algebras
+
+     2.1. The graded Hecke algebra H was introduced by Lusztig [L7], which is a
+degenerate version of affine Hecke algebras. In this section, following [L7] we review
+the definition of H and their representations on equivariant K-homology groups. In
+[L7], H are constructed as algebras over C, but here we regard them as algebras
+over Q̄l so that one can relate them to l-adic cohomology groups.
+     Let Φ be a root system with a set of simple roots Π = {α1 , . . . , αm } and W
+the Weyl group of Φ with corresponding simple reflections {s1 , . . . , sm }. We assume
+that the root lattice ZΦ is embedded in a vector space h∗ over Q̄l . The action of W
+on ZΦ makes h∗ into a W -module. (Hence h∗ has a direct sum decomposition, one
+summand being W -invariant, the other having Π as a basis). Let S be the symmetric
+algebra of h∗ ⊕ Q̄l . We denote r = (0, 1) ∈ h∗ ⊕ Q̄l , so that S = S(h∗ ) ⊗ Q̄l [r].
+W acts naturally on S so that r is left invariant by W . We denote by ξ 7→ w ξ the
+action of W on S. Let c1 , . . . , cm be integers ≥ 2 such that ci = cj whenever si
+and sj are conjugate in W . Let e be the neutral element of W . Lusztig showed in
+[L7, Theorem 6.3] that there is a unique structure of associative Q̄l -algebra on the
+Q̄l -vector space H = S ⊗ Q̄l [W ] with unit 1 ⊗ e such that
+                             GENERALIZED GREEN FUNCTIONS                                   9
+
+    (i) ξ 7→ ξ ⊗ e is an algebra homomorphism S → H,
+    (ii) w 7→ 1 ⊗ w is an algebra homomorphism Q̄l [W ] → H,
+    (iii) (ξ ⊗ e) · (1 ⊗ w) = ξ ⊗ w, (ξ ∈ S, w ∈ W ),
+                             si                      ξ − si ξ
+    (iv) (1 ⊗ si )(ξ ⊗ e) − ( ξ ⊗ e)(1 ⊗ si ) = ci r          ⊗ e, (ξ ∈ S, 1 ≤ i ≤ m).
+                                                       αi
+
+    H is called a graded Hecke algebra attached to W with parameters ci . It follows
+from (iv) we see that r is in the center of H.
+
+    2.2. The discussion in [L7] is concerned with algebraic groups over C. Hence
+the equivariant K-homology is defined for the varieties over C. Since we treat
+algebraic groups over finite fields, we need to construct the equivariant K-homology
+based on the l-adic cohomology groups. Fortunately, the basic properties established
+in section 1 in [L7] work well also for our situation, by a suitable modification. We
+give some comments below.
+    Let G be an affine algebraic group over k, and let X be a k-variety on which
+G acts algebraically. As in [L7], for each integer m ≥ 1, there exists a smooth
+irreducible variety Γ with free G-action such that Γ → G\Γ has a locally trivial
+principal G-fibration, and that H i (Γ, Q̄l ) = 0 for i = 1, . . . , m. (As in [L7, 1.1], we
+embed G as a closed subgroup of GLr , and consider the embedding
+
+(2.2.1)                G ⊂ GLr × {e} ⊂ GLr × GLr′ ⊂ GLr+r′ .
+
+Then Γ = ({e}×GLr′ )\GLr+r′ for large r ′ (2r ′ ≥ m+2), with the left action of G on
+Γ , satisfies the required condition.) For a G-variety X, we consider Γ X = G\(Γ ×X)
+(the quotient by the diagonal action of G). Then for an G-equivariant local system
+L on X, there exists a unique local system Γ L on Γ X such that π ∗ (Γ L) = p∗ L, where
+π : Γ × X → G\(Γ × X) is a natural map, and p : Γ × X → X is a projection.
+Then as in [L7], we define
+
+             HGj (X, L) = H j (Γ X, Γ L),       HjG (X, L) = Hc2d−j (Γ X, Γ L∗ )∗ ,
+
+where d = dim(Γ X), and the upper-script * denotes the dual local system or the
+dual vector space. (We understand that HGj (X, L) = H j (X, L) and HjG (X, L) =
+Hc2 dim X−j (X, L∗ )∗ in the case where G = {e}.) We write them as HGj (X), HjG (X)
+if L is a constant sheaf Q̄l . Also we write Hci (X), H i (X) instead of Hci (X, Q̄l ),
+H i (X, Q̄l ).
+                                  L
+     By cup-product, HG∗ (X) = j HGj (X) becomes a graded Q̄l -algebra with 1, and
+                             M                                    M
+              HG∗ (X, L) =        HGj (X, L),      H∗G (X, L) =        HjG (X, L)
+                              j                                    j
+
+
+become graded HG∗ (X)-modules.
+    We write HG∗ , H∗G instead of HG∗ (point), H∗G (point). Then the map X → point
+defines a Q̄l -algebra homomorphism ε : HG∗ → HG∗ (X) preserving the grading. Via
+the map ε, HG∗ (X, L), H∗G (X, L) can be regarded also as HG∗ -modules.
+10                                           SHOJI
+
+     2.3. Let T be a torus and X(T ) be its character group. The arguments in
+1.10 in [L7] do not hold in that form. We modify them as follows. In the case
+where T ≃ Gm is the one dimensional torus, it can be verified directly by the
+definition that HT∗ ≃ Q̄l [x], a polynomial ring with one variable, with x ∈ HT2 .
+          ∗         ∗      ∗                 ∗        ∗
+Since HG×G    ′ ≃ HG ⊗ HG′ , we see that HT ≃ S(V ), the symmetric algebra of a
+
+Q̄l -vector space V ∗ = Q̄l ⊗Z X(T ). In particular, we have
+
+                             HT2j ≃ S j (V ∗ ),      HT2j+1 = 0,
+
+and we may identify HT2 with V ∗ . (S j (V ∗ ) denotes the degree j-part of S(V ∗ )).
+    For χ ∈ X(T ), let kχ be the T -module k with the T -action by (t, z) 7→ χ(t)z.
+Let i : {0} ֒→ k, π : k → {0} be the obvious maps. Then π ∗ is an isomorphism, and
+the composition
+                                     i                 (π ∗ )−1
+                       H∗T ({0}) −−−!
+                                      → H∗T (kχ ) −−−−→ H∗T ({0})
+is HT∗ -linear of degree 2. Since H∗T ({0}) ≃ HT∗ as HT∗ -modules, (π ∗ )−1 ◦ i! is given
+by multiplication by an element c(χ) ∈ HT2 (cf. [L7, 1.10]). The map c : X(T ) →
+HT2 = V ∗ , χ 7→ c(χ) gives an injective group homomorphism.
+    Assume that G is an algebraic group such that G0 is a torus T . Then W = G/G0
+acts naturally on HT∗ , preserving the grading (see [L7, 1.9]). W acts also on X(T ),
+and we have
+(2.3.1) The map c : X(T ) → HT2 = V ∗ is W -equivariant.
+    In fact, take Γ on which G acts freely. Then, for a representative ẇ ∈ G
+of w ∈ W , the map Γ × kχ → Γ × kw(χ) , (g, x) 7→ (ẇg, x) induces a map fw :
+T \(Γ × kχ ) → T \(Γ × kw(χ) ), which makes the following diagram commutative.
+
+                                 i                      (π ∗ )−1
+                    H∗T ({0}) −−−
+                                !
+                                  →        H∗T (kχ ) −−−−→ H∗T ({0})
+                                                             
+                      wy
+                                              ∗ −1           w
+                                              y w
+                                                (f  )          y
+                                 i                      (π ∗ )−1
+                    H∗T ({0}) −−−
+                                !
+                                  → H∗T (kw(χ) ) −−−−→ H∗T ({0}).
+
+(2.3.1) follows from this.
+    It follows from (2.3.1) that we have
+
+(2.3.2)                         HT∗ ≃ S(Q̄l ⊗Z X(T ))
+
+as graded W -modules.
+    We don’t know whether the counter part of 1.11 in [L7] holds in our setting.
+However, the following related fact holds.
+Lemma 2.4. Assume that G is a connected algebraic group. Let Gr be a maximal
+reductive subgroup of G, and T a maximal torus of Gr . Let W = NGr (T )/T be the
+Weyl group of Gr . Then W acts naturally on HT∗ , and the natural map HG∗ → HT∗
+(cf. [L7, 1.4 (g)]) induced from the inclusion T ֒→ G gives an isomorphism
+
+                                             ∼ (HT∗ )W .
+                                         HG∗ −
+                                             →
+                            GENERALIZED GREEN FUNCTIONS                                      11
+
+Proof. By [L7, 1.4 (h)], we know that HG∗ −  ∼ HG∗ . Hence it is enough to show the
+                                             →    r
+lemma in the case where G is reductive. Assume that G = Gr . Let m be a large
+integer and let Γ be an irreducible, smooth variety with a free G-action such that
+H i (Γ ) = 0 for 1 ≤ i ≤ m. We consider the map f : T \Γ → G\Γ , which is a locally
+trivial fibration with fibre isomorphic to T \G. We have a spectral sequence
+
+(2.4.1)                     H p (G\Γ, Rq f∗ Q̄l ) ⇒ H p+q (T \Γ ).
+
+The map f is W -equivariant with respect to the trivial action of W on G\Γ , and
+the left action of W on T \Γ , and so Rq f∗ Q̄l has a structure of W -sheaf, which
+induces an action of W on H p (G\Γ, Rq f∗ Q̄l ). W acts naturally on H p+q (T \Γ ), and
+by taking the W -invariant parts in (2.4.1), we have a spectral sequence
+
+(2.4.2)                   H p (G\Γ, Rq f∗ Q̄l )W ⇒ H p+q (T \Γ )W .
+
+Since f is a locally trivial fibration, Rq f∗ Q̄l is a local system with fibre H q (T \Γ ). We
+may assume that Γ = ({e} × GLr′ )\GLr+r′ as in 2.2. Then f is GLr+r′ -equivariant,
+and so Rq f∗ Q̄l is a GLr+r′ -local system on the space G\Γ (with respect to the right
+action of GLr+r′ ). Now GLr+r′ acts transitively on G\Γ with a stabilizer of a point
+isomorphic to G × GLr′ . Since G is connected, we see that Rq f∗ Q̄l is a constant
+sheaf H q (T \Γ ). It follows that
+
+                       H p (G\Γ, Rq f∗ Q̄l ) ≃ H p (G\Γ ) ⊗ H q (T \G)
+
+and we have
+                  H p (G\Γ, Rq f∗ Q̄l )W ≃ H p (G\Γ ) ⊗ H q (T \G)W
+since W acts trivially on H p (G\Γ ). It is known that H ∗ (T \G) is a graded regular
+W -module, and                           (
+                                          Q̄l     if q = 0,
+                        H q (T \G)W =
+                                          0       otherwise .
+Hence the spectral sequence (2.4.2) collapses, and we have
+
+(2.4.3)                          H p (G\Γ ) ≃ H p (T \Γ )W .
+
+This isomorphism is induced from the natural map H p (G\Γ ) → H p (T \Γ ). Since
+HGp = H p (G\Γ ), and HTp = H p (T \Γ ) by definition, the lemma follows from (2.4.3).
+                                                                                    
+    For later discussion, we note the following.
+Corollary 2.5. Assume that G is connected reductive, and let T, W be as before.
+Let L be a Levi subgroup of a parabolic subgroup of G containing T . Assume further
+that L contains a cuspidal pair as in 1.1. Put W = NG (ZL0 )/L = NG (L)/L. Then
+the image of the natural map HG∗ → HZ∗ 0 coincides with (HZ∗ 0 )W .
+                                            L                         L
+
+Proof. The inclusions ZL0    ֒→ T ֒→ G induces the maps          HG∗
+                                                                 → HT∗ → HZ∗ 0 . Put
+                                                                            L
+V ∗ = Q̄l ⊗Z X(T ), V1∗ =     Q̄l ⊗Z X(ZL0 ). Then by (2.3.2), the map HT∗ → HZ∗ 0 is
+                                                                                         L
+12                                        SHOJI
+
+nothing but the natural map ϕ : S(V ∗ ) → S(V1∗ ) obtained from the restriction map
+X(T ) → X(ZL0 ). Now W, W acts naturally on S(V ∗ ), S(V1∗ ), respectively. Since
+W ≃ NW (WL )/WL , ϕ induces a map ϕ        e : S(V ∗ )W → S(V1∗ )W . By [L7, Proposition
+2.6], ZL0 coincides with a maximal torus of a certain connected reductive subgroup
+H of G, and W is regarded as the Weyl group of H. Thus in view of Lemma
+2.4, it is enough to show that ϕ    e is surjective. This is equivalent to the fact that
+V1 /W → V /W is a closed embedding, where V is the dual space of V ∗ which is
+identified with the Lie algebra of the torus TQ̄l over Q̄l , and similarly for V1 . But by
+using the classification of the triple (L, C, E) ∈ MG , it is checked that V1 /W → V /W
+is a closed embedding. Thus the corollary follows.                                       
+
+    2.6. 1.12 (a), (b) in [L7] were deduced by using 1.11 there. Here we show the
+corresponding facts by using 2.3 as follows.
+(2.6.1) Let G be an algebraic group such that G0 is a central torus in G. Then we
+have
+                                   HG∗ ≃ HG∗ 0 .
+     In fact, by [L7, 1.9 (a)], we have
+                                                    0
+                                   HG∗ ≃ (HG∗ 0 )G/G .
+
+But HG∗ 0 ≃ S(V ∗ ) with V ∗ = HG2 0 , and the action of G/G0 on S(V ∗ ) is determined
+by the action of G/G0 on X(G0 ) by (2.3.2). By our assumption, G/G0 acts trivially
+on X(G0 ), and so on S(V ∗ ). This implies that HG∗ ≃ S(V ∗ ) ≃ HG∗ 0 , and (2.6.1)
+follows.
+(2.6.2) In the same setting as above, let E be an irreducible representation of G/G0
+over Q̄l . Then we have
+                                                        0
+                             H∗G (point, E ⊗ E ∗ ) ≃ H∗G .
+     The proof is similar to [L7, 1.12 (b)], by making use of (2.6.1).
+    2.7.    We return to the setting in 1.1, and consider a connected reductive
+algebraic group G, and its Lie algebra g. We further assume that G is almost
+simple, simply connected. Let Gm be the multiplicative group of k. Then G acts
+on g by the adjoint action, and G × Gm acts on g by (g1 , t) : x 7→ t−2 Ad(g1 )x. For
+x ∈ g, we denote by ZG (x) the stabilizer of x in G, and by MG (x) the stabilizer of
+x in G × Gm . Hence
+
+                    MG (x) = {(g1 , t) ∈ G × Gm | Ad(g1 )x = t2 x}.
+
+    We assume that p is large enough so that Jacobson-Morozov’s theorem and
+Dynkin-Kostant theory hold for g, (e.g., p > 3(h − 1), where h is the Coxeter
+number of W , [C, 5.5]). Then, for each nilpotent element y ∈ g, there exists a Lie
+algebra homomorphism φ : sl2 → g, and elements y − , h ∈ g such that
+                                                           
+                       0 1       −       0 0              1 0
+              y=φ            , y =φ             , h=φ              .
+                       0 0               1 0              0 −1
+                           GENERALIZED GREEN FUNCTIONS                               13
+
+Thus we haveL[h, y] = 2y, [h, y −] = −2y − , [y, y −] = h. Moreover, we have a decom-
+position g = i gi , where gi is the i-eigenspace of ad h : g → g. In particular, note
+that y ∈ g2 , y − ∈ g−2 . One can define an algebra homomorphism ρ′ : Gm → Aut g
+by ρ′ (t)z = ti z for z ∈ gi . Since the identity component of Aut g coincides with
+ad G = G/ZG , ρ′ (Gm ) is a one-dimensional torus in ad G. By taking the identity
+component of π −1 (ρ′ (Gm )) for π : G → ad G, one obtains a one parameter subgroup
+ρ : Gm → G such that ρ′ = π ◦ ρ.
+    We put
+
+          ZG (φ) = ZG (y) ∩ ZG (y − ),
+          MG (φ) = {(g1 , t) ∈ G × Gm | Ad(g1 )y = t2 y, Ad(g1 )y − = t−2 y − }.
+
+It is known that ZG (φ) is a maximal reductive subgroup of ZG (y). It is easy to check
+that (g1 , t) 7→ (g1 ρ(t), t) gives isomorphisms of algebraic groups
+
+(2.7.1)                      ∼ MG (y),
+                 ZG (y) × Gm −
+                             →                             ∼ MG (φ).
+                                               ZG (φ) × Gm −
+                                                           →
+Hence MG (φ) is also a maximal reductive subgroup of MG (y). It also follows from
+(2.7.1) that the embedding ZG (y) ֒→ MG (y) by g1 7→ (g1 , 1) induces an isomorphism
+
+                                           ∼ MG (y)/MG0 (y).
+                            ZG (y)/ZG0 (y) →
+                                           −
+This implies that the G-orbit of x ∈ g is also a G×Gm -orbit, and a G-local system on
+a nilpotent G-orbit in g is automatically a G×Gm -local system. In later discussions,
+we use the notation M(y), M 0 (y), etc. instead of MG (y), MG0 (y), etc. by omitting
+the subscript G if there is no fear of confusion.
+
+
+
+    2.8. Under the setting in 1.1, let p, l, nP be the Lie algebras of P, L, UP so that
+p = l ⊕ nP . Let z the Lie algebra of ZL0 . We assume that (L, C, E) ∈ MG , and let
+(C, L) be the corresponding cuspidal pair on l (cf. 1.6.) Let
+
+(2.8.1)          ġ = {(x, gP ) ∈ g × G/P | Ad(g −1 )x ∈ C + z + nP },
+
+and π : ġ → g be the first projection. G × Gm acts on ġ by (g1 , t) : (x, gP ) 7→
+(t−2 Ad(g1 )x, g1 gP ), and π is G × Gm -equivariant. We consider the diagram
+
+              α                                                   β
+          C ←−−− ḃ
+                 g = {(x, g) ∈ g × G | Ad(g −1)x ∈ C + z + nP } −−−→ ġ,
+
+where α(x, g) = prC (Ad(g −1 )x), β(x, g) = (x, gP ). Here α, β are G×Gm -equivariant
+with respect to the action of G ×Gm on C given by (g1 , t) : x 7→ t−2 x, and the action
+of it on the middle term given by (g1 , t) : (x, g) 7→ (t−2 Ad(g1 )x, g1 g). Since L is
+an L-local system, there exists a unique local system L̇ on ġ such that α∗ L = β ∗ L̇.
+By 2.7, L is L × Gm -equivariant, and so is G × Gm -equivariant with respect to the
+above action. Hence L̇ turns out to be G × Gm -equivariant.
+14                                                SHOJI
+
+    Let L̇∗ be the dual local system of L̇, and consider K = π! (L̇∗ ). Then it is shown
+in [L7, 3.4] that K[δ] is a G × Gm -equivariant perverse sheaf on g with a canonical
+W action, where δ = dim(g/l) + dim(C + z).
+    Let X be an algebraic variety with a given morphism m : X → g. We consider
+the fibre product Ẋ = X ×g ġ with the cartesian diagram
+                                                    ṁ
+                                             Ẋ −−−→ ġ
+                                                    
+(2.8.2)                                             
+                                           πy
+                                            ′       πy
+
+                                                    m
+                                            X −−−→ g
+
+Then m∗ K is a complex with W-action, and it induces a natural W-action on the
+cohomologies
+
+(2.8.3)              Hjc (X, m∗ K) ≃ Hjc (X, π!′ ṁ∗ L̇∗ ) ≃ Hcj (Ẋ, ṁ∗ L̇∗ ).
+
+     We further assume that X is a G′ -variety, where G′ is a connected closed sub-
+group of G × Gm , and that m is compatible with G′ -actions. If we choose a smooth
+irreducible variety Γ with a free G′ -action as in 2.2, the cartesian diagram (2.8.2) is
+lifted to the cartesian diagram
+                                                   Γ ṁ
+                                           Γ Ẋ   −−−→     Γ ġ
+                                                           
+                                                           
+                                         Γπ y             Γ πy
+                                           ′
+
+
+                                                   Γ m
+                                           ΓX     −−−→     Γg
+
+
+As in 2.2, we have a local system Γ L̇∗ on Γ ġ, and a perverse sheaf (up to shift) Γ K
+on Γ g which inherits a W-action from K. Since Γ K = (Γ π)! (Γ L̇∗ ), as in (2.8.3) we
+have natural W-actions on cohomologies
+
+       Hjc (Γ X, (Γ m)∗ (Γ K)) ≃ Hjc (Γ X, (Γ π ′ )! (Γ ṁ)∗ Γ L̇∗ ) ≃ Hcj (Γ Ẋ, (Γ ṁ)∗ Γ L̇∗ ).
+
+Hence we have an action of W on the equivariant homology
+                                    ′
+                                HjG (Ẋ, L̇) = Hc2d−j (Γ Ẋ, Γ L̇∗ )∗ ,
+
+where d = dim(Γ Ẋ). (Here we write ṁ∗ L̇∗ , (Γ ṁ)∗ Γ L̇∗ , etc. as L̇∗ , Γ L̇∗ , etc. by
+abbreviation.)
+    2.9. We fix
+             01
+                 an element x0 ∈ C and a Lie algebra homomorphism φ0 : sl2 → l
+such that φ0 00 = x0 . As in [L7, 2.3 (b)], we have
+
+(2.9.1)                                    ZL0 (φ0 ) = ZL0 .
+
+It follows that ZL0 (φ0 ) is central in ZL (φ). Hence by (2.7.1), we see that
+(2.9.2) ML0 (φ0 ) ≃ ZL0 × Gm , and ML0 (φ0 ) is contained in the center of ML (φ).
+                             GENERALIZED GREEN FUNCTIONS                                   15
+
+    Put h∗ = Q̄l ⊗Z X(ZL0 ). The h∗ is a Q̄l -space of dimQ̄l h∗ = dimk z, on which W
+acts naturally. We define a symmetric algebra S over Q̄l by
+
+                            S = S(h∗ ⊕ Q̄l ) = S(h∗ ) ⊗ Q̄l [r],
+
+where Q̄l [r] is the polynomial ring with an indeterminate r corresponding to (0, 1) ∈
+h∗ ⊕ Q̄l . We now consider the equivariant cohomology HG×G∗
+                                                              m
+                                                                (ġ). As in [L7, Propo-
+sition 4.2], we have an isomorphism
+                                            ∗
+(2.9.3)                                    HG×G m
+                                                  (ġ) ≃ S
+                                    j
+as graded algebras. In particular, HG×G m
+                                          (ġ) = 0 for odd j. For the proof, the
+argument in [L7] implies that
+                                       ∗             ∗
+                                      HG×G m
+                                             (ġ) ≃ HM L (φ0 )
+                                                               .
+
+Then by using (2.6.1) and (2.9.2), combined with (2.3.2), we have
+                            ∗            ∗           ∗
+                           HM L (φ0 )
+                                      ≃ HM 0 (φ ) ≃ HZ 0 ×G
+                                               0            m
+                                                              = S.
+                                                L          L
+
+
+Hence (2.9.3) follows.
+     Let X  e be a G′ -variety (G′ is a connected closed subgroup of G × Gm ), with
+a given G′ -equivariant morphism m     e : X e → ġ. m   e ∗ L̇ is a G′ -local system on X,e
+which we denote by L̇ by abbreviation. Now m       e ∗ induces an algebra homomorphism
+   ∗           ∗  e By combining the natural homomorphism H ∗
+HG′ (ġ) → HG′ (X).                                                                      ∗
+                                                                          G×Gm (ġ) → HG′ (ġ)
+(cf. [L7, 1.4 (g)]), we have a homomorphism HG×G   ∗                    e Since H G′ (X,
+                                                          (ġ) → HG∗ ′ (X).              e L̇)
+                                                        m                             ∗
+             e
+is a HG∗ ′ (X)-module
+                                    ′
+                         by 2.2, H∗G (X, L̇) has a structure of a left HG×G ∗
+                                                                                  (ġ)-module.
+                                                                                m
+                      G e
+                       ′
+Thus by (2.9.3), H∗ (X, L̇) turns out to be an S-module.
+
+     2.10. Let π : ġ → g be as in 2.8. Then for each y ∈ gnil , π −1 (y) coincides with
+Py in (1.6.1). The variety X = {y} is invariant under the action of M 0 (y) ⊂ G×Gm .
+Let G′ be a connected closed subgroup of M 0 (y). By applying 2.8 to the inclusion
+                                                     ′
+m : X ֒→ g together with Ẋ = Py , we see that H∗G (Py , L̇) has a natural W-action.
+By applying 2.9 for X   e = Ẋ, H G′ (Py , L̇) has a natural S-action. It also has a
+                                   ∗
+structure of HG∗ ′ -module by 2.2.
+     We consider the graded Hecke algebra H = S ⊗ Q̄l [W] as defined in 2.1, where
+S is as in 2.9, with a natural action of the Coxeter group W. Lusztig proved the
+following theorem.
+
+Theorem 2.11 (Lusztig [L7, Theorem 8.13]). There is a unique H-module structure
+      M 0 (y)
+on H∗         (Py , L̇) such that the actions of S and W are given as in 2.10. (The
+integers ci are determined according to the cuspidal pair (C, L). See [L7, 2.13] for
+                                                                               ∗
+explicit values for ci ). Moreover, the H-module structure commutes with the HM  0 (y) -
+
+                         M 0 (y)
+module structure on H∗             (Py , L̇).
+16                                                  SHOJI
+
+Remark 2.12. The arguments used in [L7] to prove the theorem are valid also for
+our setting in almost all cases, by taking 2.3 ∼ 2.7 into account. We give further
+comments on the discrepancies of the arguments.
+                                                    ∗           ∗
+    (a) In [L7, 4.3], the property of the image HG×G      → HM    0       is used. For this
+                                                                  L (φ0 )
+                                                        m
+
+we appeal to Corollary 2.5.
+    (b) In the proof of Proposition 7.2 in [L7], a property of simply connected space
+is used, which is not valid in the positive characteristic case. As in 7.1, we consider
+a connected algebraic group M, and an M-variety X, M-equivariant local system E
+on X. Let Γ be an irreducible, smooth variety with a free M-action as before. Let
+f : M\(Γ × X) → M\Γ be the locally trivial fibration. We consider the Leray-Serre
+spectral sequence
+
+                    Hcp (M\Γ, Rq f! (Γ E ∗ )) ⇒ Hcp+q (M\(Γ × X), Γ E ∗ ).
+
+We show that
+
+(2.12.1)             E2p,q = Hcp (M\Γ, Rq f! (Γ E ∗ )) = Hcp (M\Γ ) ⊗ Hcq (X, E ∗ ).
+
+(In [L7], this is obtained as a consequence of the fact that M\Γ can be chosen to
+be simply connected). We consider the cartesian diagram
+                                                   π
+                                        Γ × X −−−→ M\(Γ × X)
+                                                      
+                                                      f
+                                         fy
+                                          e            y
+                                                   π
+                                                   e
+                                           Γ     −−−→       M\Γ.
+
+Now Γ E ∗ on M\(Γ × X) satisfies the property that Q̄l ⊠ E ∗ = π ∗ (Γ E ∗ ). By the
+base change theorem, we have π      e∗ Rq f! (Γ E ∗ ) ≃ Rq fe! π ∗ (Γ E ∗ ). It is easy to see that
+Rq fe! (Q̄l ⊠ E ∗ ) is an M-equivariant constant sheaf, and Rq f! (Γ E ∗ ) is obtained from
+it as the unique quotient. Thus, Rq f! (Γ E ∗ ) is also a constant sheaf with the stalk
+Hcq (X, E ∗ ). This implies (2.12.1).
+     Once this is established, the other parts in the proof of Proposition 7.2 work
+without change.
+
+
+     2.13. We return to the setting in 2.10. Let T (y) be a maximal torus of M 0 (y)
+and W (y) the Weyl group of a maximal reductive subgroup of M 0 (y) with respect
+                                                ∗                                     ∗ W (y)
+to T (y). Then by (2.3.2) and Lemma 2.4, HM       0 (y) can be identified with S(V )          ,
+         ∗                                ∗
+where V = Q̄l ⊗Z X(T (y)). Hence HM 0 (y) may be regarded as the coordinate ring
+of an affine algebraic variety (over Q̄l ) V1 = V /W (y), where V is the dual space of
+V ∗ . Then for each v ∈ V1 , one obtains an algebra homomorphism HM           ∗
+                                                                                0 (y) → Q̄l ,
+                                               ∗
+f 7→ f (v). We denote the thus obtained HM 0 (y) -module Q̄l by (Q̄l )v . It is known
+                          M 0 (y)                                                 ∗
+by [L7, 8.6] that H∗                (Py , L̇) is a finitely generated projective HM 0 (y) -module. It
+
+                M 0 (y)
+follows that H∗           (Py , L̇) may be regarded as a space of sections of algebraic vector
+                             GENERALIZED GREEN FUNCTIONS                                    17
+
+bundle E over V1 , where the fibre of E at v ∈ V1 is given by
+                                                            0 (y)
+(2.13.1)                   Ev = (Q̄l )v ⊗H ∗ 0        H∗M           (Py , L̇).
+                                             M (y)
+
+
+                                                               ∗
+Put M (y) = M( y)/M 0(y). Then the finite group M (y) acts on HM 0 (y) as a Q̄l -
+                                             M 0 (y)
+algebra automorphism, and acts on H∗             (Py , L̇) compatible with the action of
+  ∗                                     M 0 (y)
+HM 0 (y) . Also this action of M(y) on H∗       (Py , L̇) commutes with the action of H.
+                              ∗
+The action of M (y) on HM 0 (y) induces an action of M (y) on V1 , and E turns out
+to be an M(y)-equivariant vector bundle over V1 . For each v ∈ V1 , we denote by
+M (y, v) the stabilizer of v in M(y). Then M(y, v) acts naturally on Ev .
+    Let M (y, v)∧ be the set of irreducible representations of M (y, v) up to isomor-
+phisms. For each ρ ∈ M (y, v)∧, put Ev,ρ = (ρ∗ ⊗ Ev )M (y,v) , where ρ∗ is the dual
+representation of ρ. Then Ev,ρ is an H-module, and Ev is decomposed as
+                                           M
+                                  Ev =                 ρ ⊗ Ev,ρ .
+                                         ρ∈M (y,v)∧
+
+
+     The action of M(y) on Py , L̇, L̇∗ induces an action of M (y) on Hc∗ (Py , L̇),
+                           {e}
+Hc∗ (Py , L̇∗ ), hence on H∗ (Py , L̇) = Hc∗ (Py , L̇∗ )∗ . It is known by [L7, 8.10] that
+                                                                             {e}
+Ev,ρ 6= 0 if and only if ρ occurs in the restriction of M (y)-module H∗ (Py , L̇) to
+M (y, v). The H-modules Ev,ρ are called standard modules.
+Remarks 2.14. (i) Standard modules Ev,ρ are parametrized in [L7] (i.e., in the
+setting that G and g are defined over C) as Eh,r0 ,ρ in terms of the pair (h, r0 ) ∈
+g ⊕ C such that [h, y] = 2r0 y with h semisimple. This is also possible in our
+situation, though we cannot use the Lie algebra g over k. Since p is good, we have
+corresponding objects GC , gC , and the parametrization of nilpotent orbits and the
+structure of M(y) are the same for gC also. If we consider the maximal torus T (y)C
+in M(y)C corresponding to T (y) in M(y), the space V ∗ may be identified (under a
+choice of an isomorphism Q̄l ≃ C) with the dual of the Cartan subalgebra h(y)C of
+a maximal reductive subalgebra m(y)C,r of m(y)C = Lie M(y)C with the action of
+W (y). Then the action of M (y) on S(V ∗ )W (y) coincides with the action of M (y) on
+                              0
+S(h(y)∗C)W (y) ≃ S(m(y)∗C,r )M (y)C . Here
+
+              m(y)C = Lie M 0 (y)C = {(x, r0 ) ∈ gC ⊕ C | [x, y] = 2r0 y}.
+
+Moreover, the action of M (y) on S(m(y)∗C,r ) is induced from the action of M(y)C ,
+(g1 , t) : (x, r0 ) 7→ (t−2 Ad(g1 )x, t−2 r0 ). Hence V1 is identified with the set of semisim-
+ple M 0 (y)C -orbits on m(y)C . This implies, in our case, that Ev,ρ may be expressed
+as Eh,r0 ,ρ , and M(y, v) as M (y, h, r0), if (h, r0 ) is a semisimple orbit in gC ⊕ C
+corresponding to v ∈ V1 .
+      (ii) Standard modules play a crucial role in the representation theory of H. The
+structure of H-module Ev,ρ was studied throughly in [L8], [L9]. However, the result
+in [L7] is enough for our purpose.
+18                                          SHOJI
+
+    In view of the above remarks, the following result of Lusztig can be applied to
+our setting.
+
+Theorem 2.15 ([L7, Theorem 8.17]). Let (h, r0 ) ∈ gC ⊕ C be a semisimple element
+such that r0 6= 0. Then
+      (i) Let Y(h,r0 ) = {x ∈ gC | [h, x] = 2r0 x}. Then Y(h,r0) consists of nilpotent
+          elements, and ZGC (h) acts (by the adjoint action ) on Y(h,r0 ) with finitely
+          many orbits.
+     (ii) Let y be an element in the unique open dense orbit in Y(h,r0 ) . Then (h, r0 ) ∈
+          m(y)C . Let ρ ∈ M(y, h, r0)∧ be such that Eh,r0 ,ρ 6= {0}. Then Eh,r0 ,ρ is a
+          simple H-module.
+
+    2.16. Here we summarize the properties connecting the equivariant homology
+with the ordinary cohomology. Let M be a connected algebraic group, X an M-
+variety and E an M-equivariant local system on X. We consider H∗ML     (X, E). For each
+                            ∗
+i, we define F i as the HM    -submodule of H∗M (X, E) generated by j≤i HjM (X, E).
+Then F i gives a filtration F 0 ⊆ F 1 ⊆ · · · and F i = 0 for i < 0. Put Πi =
+HiM (X, E)/HiM (X, E) ∩ F i−1 . We have a natural injection Πi → F i /F i−1 as Q̄l -
+                                  ∗                                  ∗
+spaces. Since F i /F i−1 is an HM   -module, this is extended to an HM  -linear map
+                                    ∗
+(2.16.1)                           HM ⊗Q̄l Πi → F i /F i−1 .
+                                                      {e}
+The natural homomorphism HiM (X, E) → Hi (X, E) is zero on HiM (X, E) ∩ F i−1 ,
+and it factors through a Q̄l -linear map
+                                                {e}
+(2.16.2)                              Πi → Hi (X, E).
+
+Lusztig showed in [L7, 7.2] that the maps (2.16.1) and (2.16.2) are isomorphisms
+whenever Hcodd (X, E) = 0, and in that case we obtain an isomorphism
+                                          {e}
+(2.16.3)                      ∗
+                             HM                ∼ F i /F i−1.
+                                ⊗Q̄l Hi (X, E) −
+                                               →
+
+     We now consider the case where X = Py , E = L̇ and M = M 0 (y). It is known
+that Hcodd (Py , L̇) = 0 by [L3, V, 24.8], and so the previous argument can be applied.
+                                             ∗
+We consider Ev as in (2.13.1) and HM           0 (y) -module (Q̄l )v . We define an Q̄l -space
+  i         i                       i          i
+Fv by Fv = (Q̄l )v ⊗H ∗ 0 F . Then Fv is naturally identified with a quotient of
+                             M (y)
+L         M 0 (y)
+    j≤i H j       (Py , L̇). We  denote by fi : Fvi−1 → Fvi the natural map induced from
+F i−1 ֒→ F i . It follows from (2.16.3) we have an exact sequence of Q̄l -spaces
+                              fi                      {e}
+(2.16.4)             Fvi−1 −−−→ Fvi −−−→ Hi (Py , L̇) −−−→ 0.
+
+In particular, we have
+                                                {e}
+(2.16.5)                             Fv0 ≃ H0 (Py , L̇).
+                            GENERALIZED GREEN FUNCTIONS                                    19
+
+     2.17.   We consider the Fq -structure on the equivariant homology. Assume
+that G and X are defined over Fq with Frobenius map F , and G acts on X over
+Fq . Let E be an G-equivariant local system on X such that F ∗ E ≃ E. We fix
+an isomorphism ϕ : F ∗ E −  ∼ E. Then ϕ induces natural linear isomorphisms on
+                            →
+   G         ∗
+H∗ (X, E), HG (X, E), etc. In fact, one can choose a G-variety Γ so that Γ is defined
+over Fq . (We may assume that G is an F -stable closed subgroup of some GLr . The
+case where GLr has a split Fq -structure, the construction of Γ in 2.2 works well.
+If GLr is of non-split type, we choose F = σ0 F0 , where F0 is a split Frobenius,
+and σ0 is an automorphism of GLr defined by σ0 (g) = t g −1. By choosing similar
+Frobenius maps for GLr′ and GLr+r′ , the inclusions in (2.2.1) are F -equivariant.
+Hence Γ = {e} × GLr′ \GLr+r′ is defined over Fq .) Then the maps π : Γ × X → Γ X,
+p : Γ × X → X are defined over Fq . Hence Γ E inherits an Fq -structure of E,
+which induces a linear map on HGj (X, E) = H j (Γ X, Γ E). The thus obtained linear
+map is independent of the choice of Γ . In fact, if Γ ′ is another choice, we have
+                              ∼ HΓj ×Γ ′ (Γ ×Γ ′ X, Γ ×Γ ′ E), etc. as in [L7, 1.1], which are
+an isomorphism H j (Γ X, Γ E) →
+                              −
+compatible with the induced F -actions on them.
+
+
+                         3. G = SLn with F of split type
+
+    3.1. In this section, we assume that p is arbitrary, and consider G = SLn
+with the standard Frobenius map F on G, i.e., for g = (gij ) ∈ G, F (g) = (gijq ). Let
+V = k n with the standard basis e1 , . . . , en and we identify SLn with SL(V ).
+    Let g = sln be the Lie algebra of G, and we denote by F the corresponding
+Frobenius map on g. The unipotent classes in G and nilpotent orbits in g are
+parametrized by partitions of n, via Jordan normal form. Let λ = (λ1 , λ2 , . . . , λr )
+be a partition of n, and let Cλ (resp. Cλ ) be the corresponding unipotent class in G
+(resp. nilpotent orbit in g). Each Cλ is F -stable, and we construct a specific nilpotent
+transformation y = yλ ∈ CλF by defining a basis {y afj | 1 ≤ j ≤ r, 0 ≤ a < λj } of V
+obtained from the standard basis as follows;
+
+(3.1.1)               y a fj = ei     with     i = λ1 + · · · λj−1 + a.
+
+Then uλ = yλ + 1 ∈ CλF . The element yλ ∈ CλF (resp. uλ ∈ CλF ) is called the split
+element corresponding to λ.
+    3.2. By [L2], [LS], the generalized Springer correspondence for the case where
+G = SLn is described as follows. Let n′ be the largest divisor of n which is prime to
+p. Then the center ZG is a cyclic group of order n′ . For a divisor d of n′ , consider
+a Levi subgroup L of P of the type Ad−1 × · · · × Ad−1 (n/d-factors). Let C be the
+regular unipotent class in L. Then for v ∈ C, AL (v) = ZL /ZL0 ≃ Z/dZ. Let E be an
+L-equivariant local system on C corresponding to a character ρ0 of AL (v) of order
+d. Then (C, E) is a cuspidal pair on L, and any cuspidal pair on a Levi subgroup
+of a parabolic subgroup of G is obtained in this way. Hence for a Levi subgroup L
+determined by d, there exist exactly ϕ(d) cuspidal pairs in L, where ϕ is the Euler
+function.
+20                                           SHOJI
+
+    Let K be as in (1.2.2) with respect to the cuspidal pair (C, E) on L. Let C ′ be
+a unipotent class in G corresponding to a partition λ = (λ1 , λ2 , . . . , λr ). Then for
+u ∈ C ′ , AG (u) is a cyclic group of order n′λ , where n′λ is the greatest common divisor
+of n′ , λ1 , λ2 , . . . , λr . Let E ′ be the local system on C ′ corresponding to ρ ∈ AG (u)∧ .
+The condition for C ′ such that IC(C ′ , E ′) is a component of K (up to shift) is
+that each λi is divisible by d. In this case n′λ is divisible by d, and we have a
+surjective homomorphism AG (u) → AL (v) which factors through the natural maps
+ZG → AG (u) and ZG → AL (v). Let ρ ∈ AG (u)∧ be the character obtained as the
+pull back of ρ0 ∈ AL (v)∧ . Then IC(C ′ , E ′ ) is the unique component in K whose
+                   ′
+support is C .
+    Now W = NG (L)/L is isomorphic to the symmetric group Sn/d . The irreducible
+                                 ∧
+character E = Eµ ∈ Sn/d               corresponding to (C ′ , E ′) under the generalized Springer
+correspondence is given by µ = (λ1 /d, λ2 /d, . . . ).
+     3.3. We fix an F -stable Borel subgroup B of G and an F -stable maximal
+torus contained in B, where B (resp. T ) is the subgroup of G consisting of upper
+triangular matrices (resp. diagonal matrices). We fix d as in 3.2, and put t = n/d.
+Let P = LUP be the parabolic subgroup of G containing B, where L is the Levi
+subgroup of P containing T of type Ad−1 ×· · ·×Ad−1 , (t-times). Hence P , L and UP
+are all F -stable. Let (C, E) be the cuspidal pair in L corresponding to ρ0 ∈ AL (v)∧
+as in 3.2, and (C, L) the corresponding objects in l. The unipotent class C in L can
+be identified with C1 × · · · × Ct in SLd × · · · × SLd with Ci regular unipotent in
+SLd . We choose v = v0 ∈ C F so that v0 is a product of split elements in CiF , and let
+y0 = v0 − 1 the corresponding element in C F . Let A      eL (v0 ) be as in 1.3. Since AL (v0 )
+is abelian, ρ0 ∈ AL (v)∧ is linear. We choose an extension ρe0 so that ρe0 (σ) = 1. This
+corresponds to an isomorphism ϕ0 : F ∗ E −      ∼ E which induces the identity map on the
+                                                →
+stalk Ev0 .
+     Let λ = (λ1 , . . . , λr ) be a partition of n such that all the λi are divisible by d,
+and u = uλ the split unipotent element in GF . As in the case of (C, E), we choose an
+extension ρe of ρ ∈ AG (u)∧ corresponding to E ′ by the condition that ρe(σ) = 1, and
+consider γ = γ(v, ρe0 , u, ρe) as in 1.3. Passing to the Lie algebra situation, we consider
+y = yλ ∈ gF and y0 ∈ C F . Under this setting, we write γ as γ = γ(y0 , ρe0 , y, ρe). We
+consider the subvariety Py of G/P as given in (1.6.1). As in 1.6, the map ϕ0 induces
+a linear isomorphism Φ on Hca0 +r (Py , L̇). We have
+Theorem 3.4. Assume that p is arbitrary, and let G = SLn with the standard
+Frobenius map F . Then Φ acts on Hca0 +r (Py , L̇) = Hca0 +r (Py , L̇)ρ as q (a0 +r)/2 times
+identity. In particular, we have γ(y0 , ρe0 , y, ρe) = 1.
+
+    3.5. The remainder of this section is devoted to the proof of Theorem 3.4.
+Since the second statement easily follows from the first one, we concentrate to the
+proof of the first statement. First we note that Py may be identified with the set
+Fy of partial flags
+                          D = (Vd ⊂ V2d ⊂ · · · ⊂ V(t−1)d ),
+such that D is y-stable and that y induces a regular nilpotent transformation on
+Vid /V(i−1)d for each i ≥ 1. (Here Vj denotes a subspace of V with dim Vj = j).
+                           GENERALIZED GREEN FUNCTIONS                                21
+
+    Let Gy be the set of d-dimensional subspaces Vd of V such that Vd is y-stable
+and that y acts as a regular nilpotent transformation on Vd . We have a natural
+surjective map p : Fy → Gy by p(D) = Vd . Then Gy is identified with the variety
+P(Ker y d ) − P(Ker y d−1 ); for each v ∈ Ker y d − Ker y d−1, the space spanned by
+v, yv, . . . y d−1 v gives an element in Gy . We have a filtration of Gy
+
+                                 Gy = G0 ⊃ G1 ⊃ · · · ,
+
+where Gi − Gi+1 ≃ As−i with dim Gy = s = d(dim Ker y) − 1. Here Gi is defined by
+P(Ui ) − P(Ker y d−1 ) for a certain subspace Ui of Ker y d containing Ker y d−1 such
+that Ker y d = U0 ⊃ U1 ⊃ · · · . Let us choose a non-zero vector wi ∈ Ui − Ui+1 for
+each i. We can choose some ej as wi . As in the case of Bu for GLn , one can define
+                                    (i)           (i)
+a map f (i) : As−i → ZGe (y), v 7→ fv such that fv · wi = v for v ∈ Ui − Ui−1 , under
+the identification P(Ui ) − P(Ui−1 ) ≃ As−i . (Here G e denotes GLn ). Let V (i) be the
+                                                                            d
+element in Gy corresponding to wi . Then y induces a nilpotent transformation y on
+          (i)
+V = V /Vd , which corresponds to a partition λ′ of n−d obtained from λ by replacing
+                                      (i)
+some λj by λj −d. Moreover, p−1 (Vd ) is isomorphic to Fy , the corresponding variety
+for SL(V ), under the correspondence
+                   (i)
+           D = (Vd ⊂ V2d ⊂ · · · ⊂ V(t−1)d ) 7→ D = (V 2d ⊂ · · · ⊂ V (t−1)d )
+                  (i)
+with V jd = Vjd /Vd . As in the case of GLn , by using the map f (i) : As−i → ZG̃ (y),
+we have an isomorphism
+                    (i)
+(3.5.1)       p−1 (Vd ) × (Gi − Gi+1 ) ≃ p−1 (Gi − Gi+1 ),     (D, v) 7→ fv(i) · D.
+
+Note that Fy and Gy have natural Fq -structures inherited from G/P . Then Gi are
+all F -stable, and the isomorphism in (3.5.1) is F -equivariant.
+
+    3.6. Let Q be the maximal parabolic subgroup of G containing P of type
+An−d−1 × Ad−1 . Let G be the set of subspaces of dimension d in V . Then G may be
+identified with G/Q and Gy is a locally closed subvariety of G. The map p : Fy → Gy
+is obtained from the map G/P → G/Q by restricting it to Py , which we also denote
+               (i)                                                              (i)
+by p. Now, Vd ∈ Gy corresponds to gQ ∈ G/Q for some g = gi ∈ G and p−1 (Vd )
+may be identified with p−1 (gQ), where
+
+                  p−1 (gQ) = {xP ∈ gQ/P | Ad(x)−1 y ∈ C + nP }.
+
+We may choose g so that gP ∈ Py .
+    We note that Q/P is isomorphic to M/PM , where M is the subgroup of G
+isomorphic to SLn−d , and is isogeneous to a component of the Levi subgroup of
+Q containing T . Then PM = P ∩ M is the parabolic subgroup of M of type
+Ad−1 × · · · × Ad−1 , (t − 1 factors), and LM = L ∩ M is the Levi subgroup of PM .
+The regular nilpotent orbit C in l can be written as C = CM × Ct , where CM is the
+regular nilpotent orbit in Lie LM = lM and Ct is the regular nilpotent orbit in the
+22                                           SHOJI
+
+t-th component of l. Since Ad(g)−1y ∈ C + nP , one can write Ad(g)−1y = y ′ + z ′
+with y ′ ∈ m and z ′ ∈ Ct + nQ . (Here m = Lie M and nQ = Lie UQ ). Set
+
+                  PyM′ = {xPM ∈ M/PM | Ad(x)−1 y ′ ∈ CM + nPM },
+                  P̂yM′ = {x ∈ M | Ad(x)−1 y ′ ∈ CM + nPM }.
+
+We note that
+
+
+
+
+(3.6.1) The map xPM 7→ gxP gives an isomorphism PyM′ ≃ p−1 (gQ).
+
+
+
+
+     In fact, since M normalizes Ct UQ , we have Ad(x)−1 z ′ ∈ Ct + nQ . Then the
+condition Ad(gx)−1 y ∈ C + nP is equivalent to the condition Ad(x)−1 y ′ ∈ CM + nPM .
+(3.6.1) follows from this.
+     By (3.6.1), one can define an injective map ι : PyM′ → Py . Similarly, PbyM′ is
+isomorphic to the set {x′ ∈ gM | Ad(x′ )−1 y ∈ C + nP } which is a subset of Pby .
+Hence we have an injective map ι̂ : PbyM′ → Pby . Now it is easy to see that the
+following diagram commutes.
+                                     α             β
+                                C ←−−−        by −−−
+                                              P      → Py
+                                x             x        x
+                                                     ι
+(3.6.2)                      ι′              ι̂      
+                                      ′       β           ′
+                                  α
+                              CM ←−−− PbyM′ −−−→ PyM′ .
+
+Here the left vertical map is an injection ι′ : CM → C, x 7→ (x, y ′′ ), where y ′′ is the
+projection of z ′ ∈ Ct + nQ to Ct , i.e., the projection of Ad(g)−1y ∈ C + nP on Ct . The
+horizontal maps α′ , β ′ are defined in a similar way as α and β by replacing G by M.
+    Let L and L̇ be local systems on C and Py , respectively, as in 1.6. We denote
+by LM and L̇M similar objects for CM and PyM′ as L, L̇ for C and Py . Then LM
+coincides with (ι′ )∗ L. This implies, by (3.6.2), that
+
+(3.6.3)                                   ι∗ L̇ = L̇M .
+
+     Put
+
+                    Yy = {xQ ∈ G/Q | Ad(x)−1 y ∈ m + Ct + nQ },
+                    Ŷy = {x ∈ G | Ad(x)−1 y ∈ m + Ct + nQ }.
+
+Then Yy is isomorphic to Gy . We consider the subset Yi of Yy corresponding to
+                                              (i)
+Gi . Since Gi − Gi+1 coincides with the set {fv · wi | v ∈ As−i }, one can write as
+                                GENERALIZED GREEN FUNCTIONS                                       23
+
+                (i)
+Yi − Yi+1 = {fv gi Q | v ∈ As−i }. Then we have the following commutative diagram
+
+                                    α
+                                    e                            βe
+                           Ct   ←−−−             Yby         −−−→            Yy
+                           x                      x                          x
+(3.6.4)                                                                    
+                                                                           
+                          {yi′′} ←−−− f (i) (As−i )gi −−−→ Yi − Yi+1 .
+
+Here yi′′ = y ′′ is as in (3.6.2), and α̃(x) is the Ct -component of Ad(x)−1 y ∈ m+Ct +nQ ,
+β̃(x) = xQ. All the vertical maps are natural inclusions and the lower horizontal
+arrows are the restrictions of upper ones. Note that the right lower horizontal map
+is an isomorphism since Yi − Yi+1 ≃ As−i .
+    Let Lt be the cuspidal local system on Ct . Then we have a local system L̇t on Yy
+by the condition that α     e∗ Lt = βe∗ L̇t . Since Lt is a local system of rank 1, it follows
+from (3.6.4) that
+
+(3.6.5) The restriction of L̇t on Yi − Yi+1 is the constant sheaf Q̄l .
+
+    We now consider the commutative diagram
+                                   α                                        β
+                      C         ←−−−                   by
+                                                       P                  −−−→             Py
+                      x                                x                                   x
+(3.6.6)                                                                                  
+                                                                                         
+                                   α′′                                     β ′′
+                CM × {yi′′} ←−−− β −1 (p−1 (Yi − Yi+1 )) −−−→ p−1 (Yi − Yi+1 ).
+
+Here all the vertical maps are natural inclusions, and the horizontal maps α′′ and
+β ′′ are the restrictions of α and β. By (3.5.1), we have
+
+(3.6.7)                          p−1 (Yi − Yi+1 ) ≃ PyM′ × (Yi − Yi+1 ),
+                                                    byM′ × f (i) (As−i )gi ,
+                          β −1 (p−1 (Yi − Yi+1 )) ≃ P
+
+and under the above isomorphisms, the maps α′′ , β ′′ are given as
+
+               α′′ (x, fv(i) gi ) = (α′ (x), yi′′ ),        β ′′ (x, fv(i) gi )) = (β ′ (x), v)
+
+for x ∈ PyM′ , v ∈ Yi − Yi+1 ≃ As−i .
+    Now the restriction of L to CM × {yi′′ } is a local system LM ⊠ Q̄l . Hence by
+making use of (3.6.6) and (3.6.7), we have
+
+(3.6.8) Under the isomorphism p−1 (Yi − Yi+1 ) ≃ PyM′ × (Yi − Yi+1 ), the restriction
+of L̇ on p−1 (Yi − Yi+1 ) coincides with L̇M ⊠ Q̄l .
+
+    It follows from (3.6.8) that we have an isomorphism
+                                                                      ′
+(3.6.9)                    Hck (p−1 (Yi − Yi+1 ), L̇) ≃ Hck (PyM′ , L̇M ),
+24                                         SHOJI
+
+where k ≡ k ′ (mod 2). Then using the locally trivial filtration of Py = p−1 (Y0 ) ⊃
+p−1 (Y1 ) ⊃ · · · , and by induction on the rank of G, we see that
+
+(3.6.10)                          Hcodd (p−1 (Yi ), L̇) = 0
+
+for any i ≥ 0.
+    3.7. We are now ready to prove Theorem 3.4. Put m = a0 + r. First we note
+the following.
+(3.7.1) Hcm (Py , L̇) = Hcm (Py , L̇)ρ , and the map Φ acts on Hcm (Py , L̇) as a scalar
+multiplication.
+   In fact, it follows from section 2 that Hcm (Py , L̇) has a natural structure of
+W × AG (y)-module, which is compatible with the isomorphisms (1.4.3) and (1.6.2).
+Hence by the generalized Springer correspondence, it is decomposed as
+                                          M
+                          Hcm (Py , L̇) ≃      Vy,ρ ⊗ ρ′ ,
+                                            ρ′ ∈AG (y)∧
+
+
+where Vy,ρ′ is an irreducible W-module whenever it is non-zero. Now the explicit
+description of the generalized Springer correspondence in the case of SLn (see. 3.2)
+shows that ρ is the unique character such that Vy,ρ 6= 0. Hence Hcm (Py , L̇) =
+Hcm (Py , L̇)ρ . Since AG (y) is abelian, Hcm (Py , L̇) is an irreducible W-module. It is
+easy to see that the map Φ on Hcm (Py , L̇) commutes with the action of W. Hence
+Φ is a scalar multiplication, and so (3.7.1) holds.
+     Note that in the discussion of 3.5 and 3.6, Gy , Yy , etc. have natural Fq -structures.
+We may choose the filtration of Gy and Yy compatible with the Fq -structure, i.e.,
+all the Yi and Yby are F -stable. Then all the diagrams and formulas there hold with
+Fq -structure. We consider the top piece Y0 − Y1 of the filtration of Yy . In this case,
+we may choose g = g0 = 1 in the discussion in 3.6, and so y is decomposed as
+y = y ′ + z ′ with y ′ ∈ m and z ′ ∈ Ct + nQ . Hence y ′ (resp. y ′′ ) is the projection of y
+on m (resp. on Ct ). Since y is a split element, y ′ , y ′′ are also split. Let
+
+                    m′ = (dim M − dim Cy′ ) − (dim LM − dim CM ),
+
+where Cy′ is the nilpotent orbit in m containing y ′. Since C is the regular nilpotent
+orbit in l, we see easily that m = 2 dim By , where By is the variety of Borel subgroups
+whose Lie algebra contains y. Similarly, we have m′ = 2 dim ByM′ . Then by using the
+locally trivial filtration of By , we see that
+
+(3.7.2)                       m − m′ = 2d dim Ker y = 2s.
+
+In fact, assume that y = yλ with λ = (λ1 , . . . , λk ). By using the locally triv-
+ial filtration arising from the maximal parabolic subgroup P1 of G with Levi sub-
+group L1 of type An−2 , one obtains that dim By − dim ByL11 = dim Ker y, where y1
+is a nilpotent element in Lie L1 of type λ′ = (λ1 , . . . , λk − 1). In the same way,
+                           GENERALIZED GREEN FUNCTIONS                                  25
+
+one can find a nilpotent element y2 ∈ Lie L2 with type (λ1 , . . . , λk − 2) such that
+dim ByL11 − dim ByL22 = dim Ker y, where L2 is a Levi subgroup of the maximal par-
+abolic subgroup P2 of L1 . Repeating this procedure, one can find similar formulas
+for L1 ⊃ L2 ⊃ · · · ⊃ Ld with ByLdd = ByM′ . (3.7.2) follows from this.
+    Since Y0 − Y1 ≃ As , we have an isomorphism with Fq -structures
+                                                      ′
+(3.7.3)                Hcm (p−1 (Y0 − Y1 ), L̇) ≃ Hcm (PyM′ , L̇M )[s]
+
+as a special case of (3.6.9), where [s] is the Tate twist. (The compatibility of the
+Frobenius actions comes from the discussion in 3.6 by noticing that y ′′ is a split
+                                             ′
+element in Ct .) Let ΦM be the map on Hcm (PyM′ , L̇M ) defined in a similar way as Φ.
+                                                                           ′
+By induction on the rank of G, we may assume that ΦM acts on Hcm (PyM′ , L̇M ) as
+                              ′
+a scalar multiplication by q m /2 . Then by (3.7.3), Φ acts on Hcm (p−1 (Y0 − Y1 ), L̇) as
+a scalar multiplication by q m/2 . Now by using the cohomology long exact sequence
+with respect to the closed immersion p−1 (Y1 ) ⊂ p−1 (Y0 ) = Pu , together with (3.6.10),
+we see that the natural map
+
+                         Hcm (p−1 (Y0 − Y1 ), L̇) −→ Hcm (Py , L̇)
+
+is injective. This proves the theorem since Φ acts on Hcm (Py , L̇) by a scalar multi-
+plication by (3.7.1).
+
+
+
+                     4. G = SLn with F of non-split type
+
+     4.1. In this section, we assume that G = SLn is as in section 3, and that p is
+large enough so that the argument in section 2 can be applied (e.g., p > 3(n − 1)).
+Let F = σF0 be the twisted Frobenius map on G, where F0 is the standard Frobenius
+map over Fq as in 3.1, and σ is the graph automorphism on G of order 2. Here we take
+σ : G → G defined by σ(g) = w0 t g −1 w0−1 for g ∈ G (w0 is the permutation matrix
+in GLn corresponding to the longest element in Sn , and t g means the transpose of
+the matrix g = (gij )). Then B and T in 3.3 are F and F0 -stable.
+     Unipotent classes in G are all F -stable. In order to describe elements in C F for
+each unipotent class C, we introduce a sesqui-linear form as follows. Let V ≃ k n be
+                      Fq2 -subspace
+as in 3.1, and V0 the P        P of V generated
+                                           P          by {ei }. We define a sesqui-linear
+                                                  q
+form h , i on V0 by h i ai ei , j bj ej i = i ai bn−i . Then it is easy to see that for
+        2
+g ∈ GF0 , g ∈ GF if and only if hgv, gwi = hv, wi for any v, w ∈ V0 . Let g be the Lie
+                                                                2
+algebra of G, on which F acts naturally. Then for x ∈ gF0 , x ∈ gF if and only if
+hxv, wi+hv, xwi = 0 for any v, w ∈ V0 .
+
+    4.2.   For a partition λ = (λ1 , . . . , λr ) of n, we shall construct a nilpotent
+element yλ ∈ gF . First we note that there exist basis vectors
+                               (i)
+                              fj     (1 ≤ i ≤ r, 1 ≤ j ≤ λi )
+26                                               SHOJI
+
+of V0 satisfying the property that
+                           
+                           
+                           1             if i = i′ , j + k = λi + 1 and j 6= k,
+                (i)  (i′ )
+              hfj , fk i = ±1             if i = i′ , j + k = λi + 1 and j = k,
+                           
+                           0             otherwise.
+
+                           (i)
+In fact, we can choose fj = ek for some k if λi is even. If λi is odd, put λi = 2ti + 1.
+         (i)                                                       (i)
+Then fj is of the form ek if j 6= ti + 1, and we can choose fti +1 from one of the
+vectors ek ± 12 en−k+1 with 2k 6= n + 1 (note that p > 2), or el with n = 2l + 1.
+    Put ti = [λi /2] ([ ] is the Gauss symbol) for each λi . We now define a nilpotent
+                          2
+transformation yλ ∈ gF on V0 by
+                                (i)
+                               
+                                fj+1      if 1 ≤ j ≤ ti − 1,
+                               
+                               ε f (i)
+                          (i)     i j+1    if j = ti ,
+                      yλ fj =       (i)
+                               
+                                −fj+1     if ti + 1 ≤ j ≤ λi − 1,
+                               
+                               
+                                 0         if j = λi ,
+
+                                            (i)     (i)
+where εi = 1 if λi is even, and εi = hfj+1 , fj+1 i if λi is odd. Then
+
+                                   (i)
+(4.2.1)                     {yλj f1 | 1 ≤ i ≤ r, 0 ≤ j ≤ λi − 1}
+
+gives a basis of V0 satisfying the relation
+                             (i)           (i)
+(4.2.2)                 hyλj f1 , yλλi −j+1f1 i = (−1)j ai ,   (ai = ±1)
+
+          (i)   (i′ )
+and hyλj f1 , yλk f1 i = 0 for all other pairs. It follows from this that yλ ∈ gF .
+    Let d be as in 3.2, and assume that d ≥ 2. We assume that the partition λ
+satisfies the condition that all the parts λi are divisible by d. We shall construct a
+nilpotent element y1 ∈ gF of type ν = (d, . . . , d) associated to yλ . We define a map
+y1 on V0 by
+                                   (
+                             (i)     0           if j ≡ 0 (mod d),
+(4.2.3)                  y1 fj =         (i)
+                                     yλ fj       otherwise.
+
+Then in view of (4.2.2), it is easy to check that y1 leaves the form h , i invariant, and
+we have y1 ∈ gF .
+
+    4.3. Let L be a Levi subgroup of the standard parabolic subgroup P of G of
+type Ad−1 × · · · × Ad−1 (t = n/d-factors). (Here P and L are as in 3.1 with respect
+to F0 , P is σ-stable, σ permutes the i-th factor and (t − i + 1)-th factor, etc. )
+Thus P and L are F -stable. Let C be the regular nilpotent orbit in l. We choose a
+                                                                  (i)
+representative y0 ∈ C F in the following way; we define a basis {ej | 1 ≤ i ≤ t, 1 ≤
+                   (i)
+j ≤ d} of V0 by ej = e(i−1)d+j . Then in the case where t is even, or t is odd and
+                               GENERALIZED GREEN FUNCTIONS                                    27
+
+i 6= (t + 1)/2, we define
+                              (i)
+                             
+                             ej+1         if 1 ≤ i ≤ [t/2], j 6= d,
+                      (i)
+                  y0 ej     = −e(i)
+                                  j+1      if t − [t/2] + 1 ≤ i ≤ t, j 6= d,
+                             
+                             
+                               0           if j = d
+
+                                                                                        (i)
+If t is odd and i = (t + 1)/2, let V1 be the subspace of V spanned by ej with
+1 ≤ j ≤ d. We define y0 |V1 as a regular nilpotent element yλ ∈ slFd as in 4.2.
+     Let (C, L) be the cuspidal pair in l corresponding to an F -stable character ρ0
+of AL (y0 ). We have a natural homomorphism AL (y0) → AG (y0 ). Since AG (y0) is a
+cyclic group of order d, this gives an isomorphism compatible with F -action. Thus
+ρ0 is regarded as an F -stable character of AG (y0 ). Since y0 and y1 are conjugate
+under G, there exists c1 ∈ AG (y0 ) (up to F -conjugacy) such that y1 is obtained from
+y0 by twisting by c1 . Since ρ0 is F -stable, the value ρ0 (c1 ) is well-defined. This value
+is determined by y1 , hence by yλ , which we denote by ηλ . Let γ(y0 , ρe0 , yλ, ρe) be the
+scalar defined by choosing the extensions ρe0 , ρe in a similar way as the case of split
+F (cf. 3.3). Put m = a0 + r as before. We have the following theorem.
+Theorem 4.4. Assume that p is large enough so that Dynkin-Kostant theory can
+be applied. Let w0 be the longest element in W. Then Φw0 acts on Hcm (Pyλ , L̇) =
+Hcm (Pyλ , L̇)ρ as a scalar multiplication by ηλ (−q)m/2 . In particular, γ(y0 , ρe0 , yλ , ρe) =
+ηλ (−1)m/2 .
+
+    4.5. The remainder of this section is devoted to the proof of the theorem. If
+we notice that the preferred extension VeE of VE is given by defining the action of
+σ∈W  f by the action of w0 ∈ W, the second statement follows easily from the first
+one. So we concentrate the proof of the first statement. For y1 of type (d, . . . , d),
+we construct a sl2 -triple {y1, y1− , h1 } as follows. On each Jordan block, y1 can be
+expressed as a matrix of degree d with respect to the basis in (4.2.1) as
+                                               
+                                       0
+                                       ...     
+                                      1        
+                                   Y = .       .
+                                         .. 0 
+                                             1 0
+
+We define matrices Y − , H of degree d by
+                                                                 
+                         0 1 · (d − 1)
+                                0      2(d − 2)                  
+                                                                 
+                 −                              . .              
+               Y =                         0        .            ,
+                                                .                
+                                                  . . (d − 1) · 1
+                                                           0
+28                                              SHOJI
+                                                                   
+                              1−d
+                                 3−d                               
+                           H=
+                                     ..                            .
+                                                                    
+                                         .
+                                                             d−1
+
+Then [H, Y ] = 2Y, [H, Y − ] = −2Y, [Y, Y − ] = H. Thus by combining these matri-
+ces for all the Jordan blocks, one obtains y1− , h1 ∈ g satisfying the property that
+[h1 , y1] = 2y1, [h1 , y1− ] = −2y1− , [y1 , y1− ] = h1 as asserted. It follows from the con-
+struction, we see easily that y1− , h1 ∈ gF .
+      We define a transversal slice Σ with respect to the orbit through y1 in g by
+Σ = y1 + Zg(y1− ). Hence Σ is F -stable. We have the following lemma.
+Lemma 4.6. Let yλ be as in 4.2. Then we have yλ ∈ Σ F .
+Proof. We write yλ as yλ = y1 + y. It is enough to show that y ∈ Zg(y1− ). Now y is
+a nilpotent transformation on V0 determined by the condition that
+                                             (i)            (i)
+                                   y : yλj f1 7→ yλj+1f1
+                                                     (i)                      (i)         (i)
+for j ≡ 0 (mod d), and it maps all other yλj f1 to 0. Since y1− maps yλj f1 to yλj−1f1
+up to scalar if j 6≡ 1 (mod d), and to 0 if j ≡ 1 (mod d). we see easily check that
+y1− ◦ y = y ◦ y1− = 0 on V0 . Hence y ∈ Zg(y1− ).                                    
+
+    4.7. By using the sl2 -triple {y1 , y1− , h1 }, one can define a Lie algebra homo-
+morphism φ1 : sl2 → g as in 2.7. The construction of sl2 -triple given in 4.5 works
+well for yλ in general, and one gets the sl2 -triple containing yλ . We denote by φλ
+the homomorphism sl2 → g obtained from it. Thus ZG (φ), MG (φ), are defined as in
+2.7 for φ = φ1 , φλ .
+    Let π : ġ → g be as in 2.8. Then Py ⊂ ġ, and the local system L̇ on Py can be
+extended to a local system on ġ (cf. 2.8), which we denote also by L̇ as in 2.8. Put
+K1 = π! L̇. K1 is essentially the same as K = π! L̇∗ in 2.8, and so K1 [δ] is a perverse
+sheaf on g with a canonical W-action, where δ is as in 2.8. By making use of the
+transversal slice Σ, we show the following proposition.
+Proposition 4.8. There exist natural maps of W-modules, which make the following
+diagram commutative.
+
+                                                    π1✲
+                               Hi (g, K1 )                   Hci (Py1 , L̇)
+                                                       ✑
+                                  πλ                  ✑
+                                                     ✑ ξλ
+                                       ❄           ✑
+                                                   ✰
+                                                   ✑
+
+                               Hci (Pyλ , L̇)
+
+Moreover, the map ξλ is equivariant with respect to the actions of Φ on both coho-
+mologies.
+                            GENERALIZED GREEN FUNCTIONS                                    29
+
+Proof. By the inclusion {yλ } ⊂ Σ ⊂ g, we have the canonical maps
+
+
+                                Hi (g, K1 )        ✲       Hi (Σ, K1 )
+                                                  ✑
+(4.8.1)                                          ✑
+                                                ✑
+                                     ❄        ✑
+                                              ✰
+                                              ✑
+                                Hyi λ (K1 )
+
+
+   Since K1 is a W-complex with respect to the trivial action of W on g, the above
+maps are W-equivariant. Since K1 = π! L̇, we have
+
+                                  Hyi λ (K1 ) ≃ Hci (Pyλ , L̇)
+
+by the proper base change theorem. On the other hand, K1 [δ] is a perverse sheaf on
+g. Since the morphism G × Σ → g is smooth with all fibres of pure dimension equal
+to dim ZG (y1 ), by a similar argument as in [L6, 3.2], K1 [dim Σ]|Σ is a perverse sheaf
+                                                       i−2
+                     L the Gm -action (t : x 7→ t x for each x ∈ gi with respect
+on Σ. Σ is stable under
+to the grading g =      gi associated to φ1 : sl2 → g), and contracts to y1 ∈ Σ. Since
+K1 is Gm -equivariant, the canonical map Hi (Σ, K1 ) → Hyi 1 (K1 ) gives rise to an
+isomorphism
+                          Hi (Σ, K1 ) ≃ Hyi 1 (K1 ) ≃ Hci (Py1 , L̇).
+The proposition follows from this.                                                    
+    For the special case where i = 0, we have the following more precise result.
+Lemma 4.9. The maps π1 , πλ in Proposition 4.8 give isomorphisms
+
+                           H0 (g, K1 ) ≃ Hc0 (Py , L̇) ≃ Γ (C, L)
+
+for y = y1 , yλ. In particular, ξλ0 : Hc0 (Py1 , L̇) → Hc0 (Pyλ , L̇) is an isomorphism.
+Proof. We consider the following commutative diagram
+
+                                   α         β             π
+                               C ←−−− gḃ′ −−−→      ġ′ −−−→    g
+                               x        x            x           x
+(4.9.1)                                            j          
+                            j̄      bj                        id
+                                 α      β       π
+                             C ←−−− ḃ
+                                    g −−−→ ġ −−−→ g
+
+where the lower horizontal maps are as in 2.8, and
+
+                 ġ′ = {(x, gP ) ∈ g × G/P | Ad(g −1 )x ∈ C + z + nP },
+                 gḃ′ = {(x, g) ∈ g × G | Ad(g −1 )x ∈ C + z + nP }
+
+and α, β and π are maps defined in a similar way as α, β and π. b  j, j are open
+immersions, and π is proper. Now the local system L̇ on ġ is determined by the
+30                                           SHOJI
+
+condition that α∗ L = β ∗ L̇. Since the square in the left hand side in (4.9.1) is
+cartesian, b
+           j! (α∗ L) ≃ α∗ (j̄! L). The middle square is also cartesian, and we have
+                          ∗
+                         β (j! L̇) ≃ b
+                                     j! (β ∗ L̇) ≃ b
+                                                   j! (α∗ L) ≃ α∗ (j! L).
+
+By the definition of the direct image with compact support, we have π! L̇ = π ∗ (j! L̇).
+Then
+
+                                H0 (g, K1 ) = H0 (g, π! L̇)
+                                             = H0 (g, π∗ (j! L̇))
+                                             ≃ H 0 (ġ′ , j! L̇).
+
+
+Similarly, by using the open immersion
+
+                   j : Py ֒→ P y = {gP ∈ G/P | Ad(g −1 )y ∈ C + nP },
+
+we see that Hc0 (Py , L̇) ≃ H 0 (P y , j! L̇) for y = y1 , yλ. It follows that the maps π1 , πλ
+in Proposition 4.8 for i = 0 are nothing but the restriction Γ (ġ′ , j! L̇) → Γ (P y , j! L̇) of
+                                                                             ∗
+the global section of the sheaf j! L̇ on ġ′ for y = y1 , yλ. But since β (j! L̇) ≃ α∗ (j̄! L),
+we have
+                           Γ (ġ′ , j! L̇) ≃ Γ (C, j̄! L) ≃ Γ (P y , j! L̇).
+Finally, we note that j̄! L ≃ j̄∗ L since L is the cuspidal local system and so is clean
+([L7, 2.2]). Hence
+                             Γ (C, j ! L) ≃ Γ (C, j ∗ L) ≃ Γ (C, L)
+as asserted.                                                                                   
+
+     4.10.
+              Let φ0 : sl2 → l ⊂ g be the Lie algebra homomorphism such that
+φ0 01
+   00
+        = y0 constructed as in 4.3. Thus φ0 is F -equivariant with respect to the
+twisted Frobenius action on sl2 . Put G0 = ZG0 (φ0 ) and T0 = ZL0 (φ0 ). Then G0
+and T0 are F -stable. It is checked that G0 is isomorphic to SLt , and F acts as a
+twisted Frobenius endomorphism on SLt . By (2.9.1) we have T0 ≃ ZL0 , and under
+the identification G0 ≃ SLt , T0 coincides with a maximally split maximal torus of
+SLt , and W = NG (ZL0 )/L is naturally isomorphic to the Weyl group of G0 with
+respect to T0 .
+     F acts naturally on W ≃ St , as a conjugation by w0 ∈ W, where w0 is the
+            L in W. Thus F w0 acts trivially on W. By 2.17, F acts naturally
+longest element
+on HT∗0 = i HT2i0 ≃ S(h∗ ), where h∗ = Q̄l ⊗Z X(T0 ). W also acts on HT∗0 , which
+coincides with the action of W on S(h∗ ) induced from the action of W on X(T0 )
+(cf. (2.3.2)). We have the following lemma.
+Lemma 4.11. F w0 acts on HT2i0 as a scalar multiplication by (−q)i .
+Proof. F w0 commutes with the graded algebra structure of HT∗0 . Since HT∗0 is gen-
+erated by HT20 , it is enough to show that F w0 acts on HT20 as a scalar multiplication
+                            GENERALIZED GREEN FUNCTIONS                                   31
+
+by −q. We show this by modifying the arguments used in the proof of Lemma 2.4.
+Let Γ be as in the proof of Lemma 2.4 (with respect to G0 ). We consider the locally
+trivial fibration f : T0 \Γ → G0 \Γ . We may assume that Γ is defined over Fq , and
+f is F -equivariant. We consider the spectral sequence
+
+(4.11.1)                  H p (G0 \Γ, Rq f∗ Q̄l ) ⇒ H p+q (T0 \Γ ),
+
+which have natural actions of W (cf. 2.4) and of F . Let θ be the reflection repre-
+sentation of W. Then (4.11.1) implies a spectral sequence
+
+                         H p (G0 \Γ, Rq f∗ Q̄l )θ ⇒ H p+q (T0 \Γ )θ ,
+
+where Xθ denotes the θ-isotypic subspace for a W-module X. As in 2.4, we have
+
+                    H p (G0 \Γ, Rq f∗ Q̄l ) ≃ H p (G0 \Γ ) ⊗ H q (T0 \G0 ),
+
+and so
+                 H p (G0 \Γ, Rq f∗ Q̄l )θ ≃ H p (G0 \Γ ) ⊗ H q (T0 \G0 )θ
+                                                                      L 2i
+since W acts trivially on H p (G0 \Γ ). Now it is known that              i H (T0 \G0 ) is a
+graded regular representation of W, and that
+                                        (
+                                          H q (T0 \G0 )    if q = 2,
+                     H q (T0 \G0 )θ =
+                                          0                if q < 2.
+
+Since H ∗ (T0 \Γ ) = HT∗0 ≃ S(h∗ ), we have H 2(T0 \Γ )θ = H 2 (T0 \Γ ). Moreover,
+H 0 (G0 \Γ ) = HG0 = Q̄l be Lemma 2.4. It follows that
+
+                                H 2 (T0 \Γ ) ≃ H 2 (T0 \G0 ).
+
+This isomorphism is compatible with the actions of F and W. It is well-known
+that F w0 acts as a scalar multiplication −q on H 2 (T0 \G0 ) = H 2 (B0 \G0 ), where B0
+is the F -stable Borel subgroup of G0 containing T0 . Hence F w0 acts similarly on
+HT20 = H 2 (T0 \Γ ). This proves the lemma.                                          
+
+                                                          M 0 (y )
+    4.12. We consider the equivariant homology H∗ λ (Pyλ , L̇∗ ), where M 0 (yλ ) =
+MG0 (yλ ). By results in Section 2, the graded Hecke algebra H = S ⊗ Q̄l [W] acts
+      M 0 (y )
+on H∗ λ (Pyλ , L̇∗ ), where S = S(h∗ ) ⊗ Q̄l [r] as defined in 2.9 with S(h∗ ) in 4.10.
+                                                                     M 0 (y )
+We shall construct a standard H-module Ev,ρ′ obtained from H∗ λ (Pyλ , L̇∗ ) for a
+certain pair (v, ρ′ ). Let y be the nilpotent element in gC corresponding to yλ ∈ g.
+We choose y − , h0 ∈ gC such that {y, y −, h0 } forms an sl2 -triple. Put h = h0 , r0 = 1.
+                                                                                    ∗
+Then (h, r0 ) ∈ m(y)C with h semisimple. We denote by v an element in HM              0 (y )
+                                                                                          λ
+                           0
+corresponding to the M (y)-orbit of (h, r0 ). Let ρ be the irreducible character of
+AG (yλ ) as in 4.3. Since AG (yλ ) ≃ M(yλ ) ≃ M (y), one can regard ρ as a character
+of M (y). Let ρ∗ be the dual representation of ρ.
+    Under the notation in Remark 2.14 and Theorem 2.15, we note that
+32                                                      SHOJI
+
+(4.12.1) Let v be as above. Then Ev,ρ′ is a simple H-module, where ρ′ is the
+restriction of ρ∗ on M (y, v).
+    It is enough to show that (h, r0 ) satisfies the property in Theorem 2.15. By
+Dynkin-Kostant theory, y is contained in the open dense orbit in Y(h,r0) = g2 (the
+graded space with respect to h) under the action of ZGC (h). It remains to show
+                   {e}
+that ρ′ occurs in H∗ (Pyλ , L̇∗ ). But this is clear since Hcm (Pyλ , L̇) = Hcm (Pyλ , L̇)ρ .
+Thus (4.12.1) holds.
+     4.13.                                   ∼ L induces a linear isomorphism Φ on
+                The Fq -structure ϕ0 : F ∗ L →
+                                             −
+                                                               M 0 (y )
+Hc∗ (Pyλ , L̇). ϕ0 also induces a linear isomorphism Ψ on H∗ λ (Pyλ , L̇∗ ) satisfying
+the following property; by [L6, 7.2, (d)], there exists a Q̄l -linear isomorphism
+                                            0 (y
+(4.13.1)             Q̄l ⊗H ∗ 0       H∗M          λ)
+                                                        (Pyλ , L̇∗ ) → H∗{e} (Pyλ , L̇∗ ),
+                            M (yλ )
+
+
+                                 ∗                                        ∗           ∗
+where Q̄l is regarded as an HM      0 (y ) -module via the canonical map HM 0 (y ) → H{e} =
+                                        λ                                       λ
+                                ∗                    ∗
+Q̄l . F acts naturally on HM      0 (y ) and on H{e} , and the last map is F -equivariant
+                                       λ
+
+with respect to the trivial action on Q̄l . Thus Ψ induces a linear map Ψ on the left
+hand side of (4.13.1). The Q̄l -linear map in (4.13.1) is compatible with Ψ and the
+               {e}
+map Φ∗ on H∗ (Pyλ , L̇∗) = Hc∗ (Pyλ , L̇)∗ , where Φ∗ is the transposed inverse of Φ.
+     Note that Hcm (Pyλ , L̇) is an irreducible W-module. Since Φw0 commutes with all
+the elements in W, we see that Φw0 acts on Hcm (Pyλ , L̇) as a scalar multiplication.
+Then we have the following lemma.
+Lemma 4.14. Assume that Φw0 acts on Hcm (Pyλ , L̇) by a scalar multiplication by
+ζ. Then Φw0 acts on Hc0 (Pyλ , L̇) by a scalar multiplication by ζ(−q −1 )m/2 .
+                                                     ∗
+Proof. Let v = (h, r0 ) be as in (4.12.1). Let γv : HM 0 (y ) → Q̄l be the algebra
+                                                           λ
+homomorphism corresponding to v (cf. 2.13). Since M 0 (yλ ) is F -stable, F acts
+              ∗                                                    ∗
+naturally on HM 0 (y ) such that Ψ(mx) = F (m)Ψ(x) for m ∈ HM 0 (y ) and x ∈
+                    λ                                                  λ
+     M 0 (y )
+H∗ λ (Pyλ , L̇∗ ). Since MG0 (yλ ) ≃ ZG0 (yλ)×Gm , we have HM
+                                                            ∗             ∗ W1
+                                                              0 (y ) ≃ S(h1 )
+                                                                  λ
+                                                                               ⊗ Q̄l [r],
+                                                       0             ∗
+where W1 is the Weyl group of a reductive group ZG (φλ ) and h1 = Q̄l ⊗Z X(T1 )
+with a maximally split maximal torus T1 of ZG0 (φλ ). We note that
+                                      ∗
+(4.14.1) The maximal ideal Ker γv in HM 0 (y ) is generated by homogeneous polyno-
+                                            λ
+mials.
+                                                                  ∗                 ∗        0
+                                                                                          M (y)
+     In fact, by the previous argument, we may replace HM           0 (y ) by S(m(y)C,r )
+                                                                        λ
+                                                                                                ,
+and v by (h, r0 ) ∈ m(y)C,r . It is enough to show that if a polynomial function f on
+m(y)C,r which is invariant under the action of M 0 (y) vanishes on (h, r0 ), then its
+homogeneous parts also vanish at (h, r0 ). But the Gm -action on m(y)C implies that
+t : (h, r0 ) 7→ (t−2 h, t−2 r0 ). Since f is invariant under M 0 (y), we see that f vanishes
+also on (t−2 h, t−2 r0 ) for any t ∈ C∗ . It follows that each homogeneous part of f also
+vanishes at (h, r0 ) as asserted.
+     Next we note that
+(4.14.2) The maximal ideal Ker γv is F -stable.
+                            GENERALIZED GREEN FUNCTIONS                                   33
+
+    Let w1 be the longest element in W1 . As in Lemma 4.11, F w1 acts on S(h∗1 )i
+(the i-th homogeneous part) as a scalar multiplication by (−q)i . Hence F acts
+on S(h∗1 )Wi
+             1
+               by a scalar multiplication by (−q)i . Also, F acts on Q̄l [r]i as a scalar
+multiplication by q i . Since Ker γv is a homogeneous ideal, F stabilizes Ker γv . Hence
+(4.14.2) holds.
+                                                 M 0 (y )
+    Now Ev,ρ′ is obtained as the quotient of H∗ λ (Pyλ , L̇∗)ρ′ by the H-submodule
+                 M 0 (y )
+Iv = Ker γv · H∗ λ (Pyλ , L̇∗)ρ′ . Since Ker γv is F -stable, we see that Iv is Ψ-stable.
+Thus Ψ induces a linear map on Ev,ρ′ . We consider the filtration F 0 ⊆ F 1 ⊆ · · ·
+     M 0 (y )
+of H∗ λ (Pyλ , L̇∗ ) as in 2.16. Then each F i , as well as its ρ′ -isotypic part Fρi′ , is
+Ψ-stable. Then (Fρi′ )v is also Ψ-stable since it is the quotient of Fρi′ by Fρi′ ∩ Iv . By
+(2.16.5) and by our assumption, Ψw0 acts on the non-zero space Fv0 = (Fρ0′ )v as a
+                                                                    M 0 (y )
+scalar multiplication by ζ −1. This implies that Ψw0 acts on H0 λ (Pyλ , L̇∗ ) modulo
+                                                                          M 0 (y )
+Iv by ζ −1 . On the other hand, since Ev,ρ′ is a simple H-module, H∗ λ (Pyλ , L̇∗ )ρ′
+                     M 0 (y )
+is generated by H0 λ (Pyλ , L̇∗ )ρ′ mod Iv as an H-module. Since r acts as a scalar
+multiplication by r0 on Ev,ρ′ , the action of H on Ev,ρ′ is given by the action of S(h∗ ) =
+                                                                           M 0 (y )
+HT∗0 and of W. Note that Ψw0 (ξx) = F w0 (ξ)Ψw0(x) for ξ ∈ S, x ∈ H∗ λ (Pyλ , L̇∗ ).
+                                               M 0 (y )
+The action of W preserves the grading of H∗ λ (Pyλ , L̇∗ ), and Ψw0 commutes with
+                                                           M 0 (y )
+W. It follows, by Lemma 4.11 that Ψw0 acts on Hm λ (Pyλ , L̇∗ )ρ′ modulo Iv as
+a scalar multiplication by ζ −1(−q)m/2 . Let fm be the map Fvm−1 → Fvm as in 2.16,
+which is M(yλ , v)-equivariant. Since (Fvm )ρ′ /(Im fm )ρ′ is regarded as a natural quo-
+            M 0 (y )
+tient of Hm λ (Pyλ , L̇∗ )ρ′ modulo Iv , Ψw0 acts on (Fvm )ρ′ /(Im fm )ρ′ as ζ −1 (−q)m/2 .
+          {e}
+Since Hm (Pyλ , L̇∗ ) is isomorphic to Fvm / Im fm by (2.16.4), we see that Ψw0 acts
+      {e}
+on Hm (Pyλ , L̇∗ )ρ′ by a scalar multiplication by ζ −1(−q)m/2 , which coincides with
+                                               {e}                  {e}
+the action of Φ∗ w0 on it. We claim that Hm (Pyλ , L̇∗ ) = Hm (Pyλ , L̇∗ )ρ′ . In fact,
+                         {e}
+                        Hm   (Pyλ , L̇∗) = Hc0(Pyλ , L̇)∗ = Γ (C, L)∗
+
+by Lemma 4.9. AL (y0 ) acts on Γ (C, L) by the character ρ0 . Since ρ is the pull back
+of ρ0 under the map AG (yλ ) → AL (y0 ) (cf. 3.2), the action of M (yλ ) = AG (yλ ) on
+Hc0 (Pyλ , L̇) is via ρ0 . Hence Hc0 (Pyλ , L̇) = Hc0 (Pyλ , L̇)ρ and the claim follows.
+                                                {e}
+     Thus Φw0 acts on Hc0 (Pyλ , L̇) = Hm (Pyλ , L̇∗ )∗ by a scalar multiplication by
+ζ(−q −1 )m/2 as asserted.                                                                
+
+     4.15. We are now ready to prove Theorem 4.4. First we note that W acts
+trivially on Hc0 (Py , L̇) for any y = yν such that all the parts of ν are divisible by d. In
+fact, if yν is regular nilpotent, a0 + r = 0 by (1.3.1) since C is also a regular nilpotent
+class in L. It follows, by the generalized Springer correspondence (see 3.2), that
+Hc0 (Pyν , L̇) is the irreducible W-module corresponding to the unit representation.
+Thus by Lemma 4.9, Hc0 (Py , L̇) is also a trivial W-module for any y.
+     Now assume that Φw0 acts on Hcm (Pyλ , L̇) by a scalar multiplication by ζ. Then
+by Lemma 4.14, Φw0 acts on Hc0 (Pyλ , L̇) by a scalar multiplication by ζ(−q −1 )m/2 .
+Since the map Hc0 (Py1 , L̇) → Hc0 (Pyλ , L̇) is Φw0 -equivariant isomorphism by Lemma
+34                                                      SHOJI
+
+4.9 (and Proposition 4.8), we see that Φw0 acts on Hc0 (Py1 , L̇) by a scalar multipli-
+cation by ζ(−q −1 )m/2 . Since w0 acts trivially on it, we see that
+(4.15.1) Φ acts on Hc0 (Py1 , L̇) by ζ(−q −1)m/2 .
+    On the other hand, by a similar argument as in the proof of Lemma 4.9, the
+natural map
+                                Hc0 (Py0 , L̇) ≃ Γ (C, L) → Ly0
+gives an isomorphism. This isomorphism is compatible with the action of Φ and
+of ϕ0 . It follows that Φ acts on Hc0 (Py0 , L̇) as an identity map. Since y1 is in the
+G-orbit of y0 , Hc0(Py0 , L̇) ≃ Hc0 (Py1 , L̇). As discussed in the proof of Lemma 4.14,
+AG (y0 ) acts on Hc0 (Py0 , L̇) via ρ0 . We also note that AL (y0 ) ≃ AG (y0 ). Since y1 is
+GF -conjugate to yc1 , an element twisted by c1 ∈ AG (y0 ) from y0 , we see that
+(4.15.2) Φ acts on Hc0 (Py1 , L̇) by a scalar multiplication by ρ0 (c1 ) = ηλ .
+    Comparing (4.15.1) and (4.15.2), we see that ζ = ηλ (−q)m/2 . This proves the
+theorem.
+     4.16. In order to apply Theorem 4.4, we need to know c1 ∈ AG (y0 ) such that
+y1 = (y0 )c1 . For a given y0 , we shall choose a specific y1 and yλ , and determnie c1
+explicitly. Put λ′ = (λ′1 , . . . , λ′r ) with λ′i = λi /d. Hence λ′ is a partition of t. Let
+  (i)
+{ej } be the basis of V0 as in 4.3. Put d′ = [d/2]. Let us define a subspace W0 of V0
+and define y0 by
+                               (
+                                     (i)
+                                  hed′ +1 | 1 ≤ i ≤ ti      if d is odd,
+                       W0 =
+                                   {0}                      if d is even.
+
+Also we define subspaces W1 , W2 of V0 by
+                                              (i)
+                               W1 = hej | 1 ≤ j ≤ d′ , 1 ≤ i ≤ ti,
+                                              (i)
+                               W2 = hej | d − d′ + 1 ≤ j ≤ d, 1 ≤ i ≤ ti.
+
+                                                                                    (i)
+Clearly we have V0 = W1 ⊕ W0 ⊕ W2 . We define a new basis {hj | 1 ≤ j ≤ d, 1 ≤
+i ≤ t} of V0 satisfying the following conditions.
+          (i)     (i)          (i)
+       (i) hj = ej if ej ∈ W1 .
+                       (i)
+      (ii) The set {hj | d − d′ + 1 ≤ j ≤ d, 1 ≤ i ≤ t} coincides with the set of the
+                   (i)
+           basis {ej } of W2 .
+     (iii) Let z be the number of i such that λ′i is odd. Then
+                  (2i−1)        (2i)
+                hhj           , hd−j+1 i = 1        for 1 ≤ i ≤ (t − z)/2, 1 ≤ j ≤ d,
+                        (i)     (i)
+                      hhj , hd−j+1 i = 1            for (t − z)/2 + 1 ≤ i ≤ t, 1 ≤ j ≤ d′ ,
+                        (i)          (i)
+                  hhd′ +1 , hd′ +1 i = ±1            for (t − z)/2 + 1 ≤ i ≤ t if d: odd,
+                              (i)     (i′ )
+                        hhj , hj ′ i = 0.           for all other cases.
+                                 GENERALIZED GREEN FUNCTIONS                                           35
+
+             (i)
+      (iv) {hd′ +1 } gives a basis of W0 in the case where d is odd.
+                                                    (i)
+The conditions (i) ∼ (iv) determines {hj } uniquely except the vectors contained
+                                                       (i)
+in W0 . We note that one can choose the basis {hj } of W0 so that the transition
+                      (i)         (i)
+matrix between {ej } and {hj } has the determinant ±1 (see the construction of
+  (i)
+fj in 4.2).
+                                                                              (i)      (i)
+      We define a nilpotent transformation y1′ ∈ gF as in 4.2 replacing fj by hj .
+Then it is easy to construct yλ′ ∈ gF such that y1′ is obtained from yλ′ by a similar
+procedure as y1 is obtained from yλ . Clearly, y1′ (resp. yλ′ ) is conjugate to y1 (resp.
+yλ ). The argument in the proof of Theorem 4.4 works well for y1′ , yλ′ . Thus we
+consider y1′ and yλ′ , and write them as y1 , yλ . We shall describe c1 ∈ AG (y0 ) such
+                                                                           e = GLn such
+that y1 = (y0 )c1 . It follows from the construction that there exists g ∈ G
+that Ad(g)y0 = y1 , where g stabilizes the subspaces W0 , W1 , W2 . More precisely, g
+                                                                                      (i)
+acts trivially on W1 , and gives a permutation matrix with respect to the basis {ej }
+                                                           (i)
+up to ±1 on W2 . Thus by our choice of the basis {hj }, we have det g = ±1. Let
+us take α ∈ Fq such that αn = ±1 (if det g = 1, we choose α = 1). We note that
+Ker y0 ⊂ W2 , and that g stabilizes Ker y0 . We denote by g0 the restriction of g on
+Ker y0 . Then we have
+Lemma 4.17. Let the notations be as before. Then we have y1 = (y0 )c1 , where
+                                                                  ∗
+c1 ∈ AG (y0 ) is given, under the identification AG (y0 ) ≃ {x ∈ Fq | xd = 1}, by
+
+                                          c1 = αt(1−q) det g0 .
+
+Proof. Let φ0 : sl2 → g be as in 4.10, and we consider the group ZG (φ0 ). Then
+AG (y0 ) ≃ ZG (φ0 )/ZG0 (φ0 ). We have ZG (φ0 ) ≃ {x ∈ GLt | det xd = 1}, where the
+element g1 ∈ ZG (φ0 ) corresponding to x is given as follows; g1 acts on the subspace
+                          (i)
+Vj of V0 spanned by {ej | 1 ≤ i ≤ t}, for a fixed j, as x ∈ GLt . Now if we can
+find g1 ∈ G such that Ad(g1 )y0 = y1 , then g1−1 F (g1 ) ∈ AG (y0 ), and it leaves Ker y0
+invariant. Moreover, the determinant of the restriction of g1−1 F (g1 ) gives rise to the
+                                               ∗
+corresponding element in AG (y0 ) ≃ {x ∈ Fq | xd = 1}.
+    Now in our situation, if we put g1 = α−1 g, we have g1 ∈ G and Ad(g1 )y0 = y1 .
+Then g1−1 F (g1) = α1−q g −1 F (g). On the other hand, since F (g) = w0 (t g −1 )w0−1 , F (g)
+also stabilizes the subspaces W0 , W1 , W2 . Moreover, it acts on W2 trivially, and on
+                                        (i)
+W1 as a permutaiton of the basis {ej } up to sign. It follows that g −1F (g) acts on
+the space Ker y0 as g0−1 . Thus g1−1F (g1 ) acts on Ker y0 as a map α1−q g0−1, and we
+have det(α1−q g0−1 ) = αt(1−q) det g0 as asserted.                                         
+
+
+
+                                            References
+
+[B]       C. Bonnafé, Sur les caractères des groupes réductifs finis à centre non connex: applications
+          aux groupes spéciaux linéaires et unitaires, preprint.
+36                                             SHOJI
+
+[BR]    P. Bardsley and R.W. Richardson, Étale slices for algebraic transformation groups in
+        characteristic p, Proc. London Math. Soc., 51 (1985), 295-317.
+[BS]    W.M. Beynon and N. Spaltenstein, Green functions of finite Chevalley groups of type En
+        (n = 6,7,8), J. Algebra 88 (1984), 584–614.
+[C]     R. Carter, “Finite groups of Lie type, Conjugacy classes and complex characters,” Wiley-
+        Interscience, New York, 1985.
+[L1]    G. Lusztig, “Characters of Reductive groups over a finite field”, Ann. of Math. Studies,
+        Vol. 107, Princeton Univ. Press, Princeton, 1984.
+[L2]    G. Lusztig, Intersection cohomology complexes on a reductive group, Invent. Math. 75
+        (1984), 205–272.
+[L3]    G. Lusztig, Character sheaves, I Adv. in Math. 56 (1985), 193–237, II Adv. in Math. 57
+        (1985), 226–265, III, Adv. in Math. 57 (1985), 266–315, IV, Adv. in Math. 59 (1986),
+        1–63, V, Adv. in Math. 61 (1986), 103–155.
+[L4]    G. Lusztig, Fourier transforms on a semisimple Lie algebra over Fq , in “Algebraic groups
+        Utrecht 1986”, Lecture Note in Math. 1271, Springer-Verlag, (1987) pp.177–188.
+[L5]    G. Lusztig; On the representations of reductive groups with disconnected centre,
+        Astérisque 168 (1988), 157 - 168.
+[L6]    G. Lusztig, A unipotent support for irreducible representations, Adv. in Math., 94 (1992),
+        139-179.
+[L7]    G. Lusztig, Cuspidal local systems and graded Hecke algebras, I, Publ. Math. I.H.E.S. 67
+        (1988), 145-202.
+[L8]    G. Lusztig, Cuspidal local systems and graded Hecke algebras, II, Representations of
+        groups, ed. B. Alliso and G. Cliff, Canad. Math. Soc. Conf. Proc., Vol 16, Amer. Math.
+        Soc., 1995, pp.217-275.
+[L9]    G. Lusztig, Cuspidal local systems and graded Hecke algebras, III, Representation Theory
+        6 (2002), 202–242 (electronic).
+[LS]    G. Lusztig and N. Spaltenstein, On the generalized Springer correspondence for classical
+        groups, Advanced Studies in Pure Math. Vol. 6 (1985), pp.289–316.
+[M]     G. Malle, Green functions for groups of types E6 and F4 in characteristic 2, Comm. in
+        Algebra, 21 (1993), 747–798.
+[S1]    T. Shoji, On the Green polynomials of Chevalley groups of type F4 , Comm. in Alg. 10,
+        (1982), 505–543.
+[S2]    T. Shoji, On the Green polynomials of classical groups, Invent. Math. 74, (1983), 237–267.
+[S3]    T. Shoji, Character sheaves and almost characters of reductive groups, Adv. in Math. 111
+        (1995), 244 - 313, II, Adv. in Math. 111 (1995), 314 - 354.
+[S4]    T. Shoji, Lusztig’s conjecture for finite special linear groups, preprint.
+[Spr]   T.A. Springer, Trigonometric sums, Green functions of finite groups and representations
+        of Weyl groups, Invent. Math. 36 (1976), 173–207.
+

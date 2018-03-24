@@ -1,0 +1,741 @@
+                                                     TILTING MODULES FOR LIE SUPERALGEBRAS
+arXiv:math/0209235v1 [math.RT] 18 Sep 2002
+
+
+
+
+                                                                          JONATHAN BRUNDAN
+
+
+
+
+                                                                             1. Introduction
+                                                The notion of a tilting module first emerged in Lie theory in the 1980s, see for
+                                             instance [CI] where Collingwood and Irving classified the self-dual modules with
+                                             a Verma flag in category O for a semisimple Lie algebra, generalizing earlier
+                                             work of Enright and Shelton [ES]. Similar looking objects were also considered
+                                             by Donkin [D1] in the representation theory of reductive algebraic groups in
+                                             positive characteristic. The terminology “tilting module” comes instead from
+                                             the representation theory of finite dimensional algebras, via an article of Ringel
+                                             [R] which gives an elegant construction of tilting modules in the setting of quasi-
+                                             hereditary algebras [CPS, DR]. Ringel’s argument was subsequently adapted
+                                             to algebraic groups by Donkin [D2] and to Lie algebras by Soergel [S].
+                                                The goal of the present article is to extend Soergel’s framework to Lie su-
+                                             peralgebras. Our interest in doing this arose from the papers [B1, B2] in which
+                                             we conjectured that the coefficients of certain canonical bases should compute
+                                             multiplicities in ∆-flags of indecomposable tilting modules over the Lie superal-
+                                             gebras gl(m|n) and q(n) respectively. Thus the present article should be viewed
+                                             as a companion to [B1, B2], since we provide the general theory needed to con-
+                                             struct the tilting modules in the first place.
+                                                We stress that the development here is very similar to Soergel’s work: most
+                                             of the proofs carry over unchanged to the Lie superalgebra setting. Like in [S],
+                                             we have also included in the first few sections some other well-known generali-
+                                             ties, most of which have their origins in the classic work of Bernstein, Gelfand
+                                             and Gelfand [BGG]. The main result of the article is best understood from
+                                             Corollary 5.7, which roughly speaking gives a duality between indecomposable
+                                             projective and indecomposable tilting modules. The proof of this involves the
+                                             construction of the “semi-regular bimodule”, see Lemma 5.3.
+                                                At the end of the article, we have given several examples involving the Lie
+                                             superalgebras gl(m|n) and q(n) to illustrate the usefulness of the theory. The
+                                             results may also prove useful in studying the representation theory of the other
+                                             classical Lie superalgebras and affine Lie superalgebras.
+                                             Notation.       L the article, we will work over the ground field C. Suppose
+                                                  L Throughout
+                                             V = d∈Z Vd = d∈Z Vd,0̄ ⊕ Vd,1̄ is a graded vector superspace, i.e. a Z × Z2 -
+                                             graded vector space. To avoid confusion between the two different gradings,
+                                             we use the word degree to refer to the Z-grading, and parity to refer to the Z2 -
+                                             grading. Write deg(v) ∈ Z (resp. v̄ ∈ Z2 ) for the degree (resp. the parity) of a
+                                               Work partially supported by the NSF (grant no. DMS-0139019).
+
+                                                                                      1
+2                               JONATHAN BRUNDAN
+
+homogeneous vector. Given two graded vector superspaces V, W , HomC (V, W )
+denotes the graded vector superspace with
+HomC (V, W )d,p = {f : V → W | f (Vd′ ,p′ ) ⊆ Wd+d′ ,p+p′ for all (d′ , p′ ) ∈ Z × Z2 }
+for each (d, p) ∈ Z × Z2 .
+
+                             2. Graded category O
+    For basic notions regarding Lie superalgebras, see [K1]. Let us recall in
+particular that for a Lie superalgebra g = g0̄ ⊕ g1̄ and g-supermodules M, N ,
+a homomorphism f : M → N means a (not necessarily even) linear map such
+                       ¯
+that f (Xm) = (−1)f X̄ Xf (m) for all X ∈ g, m ∈ M . This formula needs to be
+interpreted additively in the case that f, X are not homogeneous! We will use
+the notation M ≃ N as opposed to the usual M ∼       = N to indicate that there is
+an even isomorphism between M and N .
+    The category of all g-supermodules is not an abelian category, but the un-
+derlying even category consisting of the same objects and only even morphisms
+is abelian. This, and the existence of the parity change functor Π, allows us to
+appeal to all the usual notions of homological algebra. Similar remarks apply
+to the various other categories of g-supermodules that we shall meet.
+    We will be concerned here instead with a gradedL   Lie superalgebra,
+                                                                   L       i.e. a Lie
+superalgebra g with an additional Z-grading g = d∈Z gd = d∈Z gd,0̄ ⊕ gd,1̄
+such that [gd , ge ] ⊆ gd+e for all d, e ∈ Z. A graded g-supermodule
+                                                        L             Lmeans a g-
+supermodule M with an additional Z-grading M = d∈Z Md = d∈Z Md,0̄ ⊕
+Md,1̄ such that gd Me ⊆ Md+e for all d, e ∈ Z. Homomorphisms f : M → N
+between graded g-supermodules are always assumed to satisfy f (Md ) ⊆ Nd for
+each d ∈ Z.
+    Assume from nowLon that we are given a graded  L      Lie superalgebra g. Let
+h = g0 , b = g≥0 =       d≥0 gd , and n = g<0 =      d<0 gd . We write U (g), U (b)
+and U (n) for the corresponding universal enveloping superalgebras, all of which
+inherit a Z-grading from g. We assume:
+   (A1) dim gd < ∞ for each d ∈ Z;
+   (A2) h0̄ is a reductive Lie algebra.
+Fix in addition a maximal toral subalgebra t of h0̄ and an abelian subgroup X of
+t∗ . By an admissible representationL of h0̄ , we mean a locally finite dimensional
+h0̄ -supermodule such that M = λ∈X Mλ , where
+                    Mλ = {m ∈ M | tm = λ(t)m for all t ∈ t}.
+More generally, for any graded subalgebra m of g containing h0̄ , we will say that
+an m-supermodule is admissible if it is admissible on restriction to h0̄ . We must
+also assume:
+  (A3) the adjoint representation g is admissible.
+For any graded subalgebra m of g containing h0̄ , let Cm denote the category
+of all admissible graded m-supermodules. Finally let O be the category of all
+admissible graded g-supermodules that are locally finite dimensional over b.
+This is a graded analogue of the category O of [BGG].
+                   TILTING MODULES FOR LIE SUPERALGEBRAS                             3
+
+Lemma 2.1. Category O and all the categories Cm have enough injectives.
+Proof. We explain the argument for O; the same argument works for each Cm.
+Let Fin be the functor from the category of all graded g-supermodules to O
+sending an object to its largest graded submodule belonging to O. This is right
+adjoint to an exact functor, so sends injectives to injectives. Moreover, the cat-
+egory of all graded g-supermodules has enough injectives since it is isomorphic
+to the category of graded supermodules over the universal enveloping super-
+algebra U (g). Now given any M ∈ O, we embed M into an injective graded
+g-supermodule, then apply the functor Fin.                                      
+   In view of Lemma 2.1, we can compute Exti (M, N ) in category O or any
+of the categories Cm using an injective resolution of N . In the sequel, we are
+often going to make use of the functors U (g)⊗U (b) ? and Homg≤0 (U (g), ?). In
+the latter case, for a graded g≤0 -supermodule M , Homg≤0 (U (g), M ) is viewed
+                                                         ¯      ′
+as a graded g-supermodule with action (uf )(u′ ) = (−1)ūf +ūū f (u′ u), for u, u′ ∈
+U (g), f : U (g) → M . The next lemma is a consequence of the PBW theorem.
+Lemma 2.2. For graded b-, g≤0 - and h-supermodules L, M and N ,
+                                U (g) ⊗U (b) L ≃ U (g≤0 ) ⊗U (h) L,
+                          U (g≤0 ) ⊗U (h) N ≃ S(n) ⊗ N,
+as graded g≤0 - resp. h-supermodules, and
+                    Homg≤0 (U (g), M ) ≃ Homh(U (b), M )
+                          Homh(U (b), N ) ≃ HomC (S(g>0 ), N )
+as graded b- resp. h-supermodules. (Here S(n), S(g>0 ) denote the symmetric
+superalgebras viewed as modules via ad).
+   Applying the lemma and (A3), U (g)⊗U (b) ? (resp. U (g≤0 )⊗U (h) ?) is an exact
+functor from Cb to Cg (resp. from Ch to Cg≤0 ), which is obviously left adjoint to
+the natural restriction functor. Similarly, Homg≤0 (U (g), ?) is an exact functor
+from Cg≤0 to Cg that is right adjoint to restriction.
+Lemma 2.3. For i ≥ 0, L ∈ Cg, M ∈ Ch and N ∈ Cg≤0 , we have that
+                 ExtiCg (L, Homg≤0 (U (g), N )) ≃ ExtiCg            (L, N ),
+                                                               ≤0
+
+                 ExtiCg        (U (g≤0 ) ⊗U (h) M, N ) ≃ ExtiCh (M, N ).
+                          ≤0
+
+Proof. Argue by induction on i using the long exact sequence.                       
+
+                   3. Standard and costandard modules
+   Let Λ be a complete set of pairwise non-isomorphic irreducible admissible
+graded h-supermodules. Each E ∈ Λ is necessarily concentrated in a single
+degree, denoted |E| ∈ Z. Moreover, by the superalgebra analogue of Schur’s
+lemma, the number
+                            dE := dim EndCh (E)                        (3.1)
+is either 1 or 2.
+4                               JONATHAN BRUNDAN
+
+
+Lemma 3.2. Every E ∈ Λ has a finite dimensional projective cover E     b in Ch,
+with cosochE b ≃ E. Moreover, given objects M, P ∈ Ch with P projective, M ⊗P
+is also projective.
+Proof. For a graded h0̄ -supermodule M , we observe that
+                            U (h) ⊗U (h0̄ ) M ≃ S(h1̄ ) ⊗ M
+as graded h0̄ -supermodules. Combining this with (A3) shows that the functor
+U (h)⊗U (h0̄ ) ? maps Ch0̄ to Ch. Since it is left adjoint to an exact functor, it
+maps projectives to projectives. By (A2) and Weyl’s theorem on complete
+reducibility, every object in C(h0̄ ) is projective.
+   Now take E ∈ Λ. Let E       b be any indecomposable summand of U (h) ⊗U (h )
+                                                                                       0̄
+E that maps surjectively onto E under the natural multiplication map. By
+the preceeding paragraph, E      b is a finite dimensional indecomposable projective
+object in Ch mapping surjectively onto E. Now the usual arguments via Fitting’s
+lemma show that E     b is actually a projective cover of E in the category Ch and
+that cosochE   b ≃ E.
+   Finally let P ∈ Ch be an arbitrary projective object. Then, we can find
+Q ∈ Ch and R ∈ Ch0̄ such that P ⊕ Q ∼        = U (h) ⊗U (h0̄ ) R. By the tensor identity,
+(P ⊕ Q) ⊗ M ∼     = U (h) ⊗ U (h0̄ ) (R ⊗ M  ). The latter is projective and P ⊗ M is
+isomorphic to a summand of it, so P ⊗ M is projective too.                             
+    Define the standard and costandard g-supermodules corresponding to E ∈ Λ:
+
+                                 b
+            ∆(E) := U (g) ⊗U (b) E,     ∇(E) := Homg≤0 (U (g), E).          (3.3)
+By Lemma 2.2, both ∆(E) and ∇(E) are admissible, and clearly they are locally
+finite dimensional over b, hence they belong to O. Indeed, letting O≤d denote
+the full subcategory of O consisting of all objects that are zero in degrees > d,
+both ∆(E) and ∇(E) belong to O≤|E| , with ∆(E)|E| ≃ E,     b ∇(E)|E| ≃ E. We
+define
+                             L(E) := cosocg∆(E)                             (3.4)
+for each E ∈ Λ. The following well-known lemma shows in particular that these
+are irreducible.
+Lemma 3.5. The {L(E)}E∈Λ form a complete set of pairwise non-isomorphic
+irreducibles in O. Moreover, L(E) ≃ socg ∇(E).
+                                        b hence cosocg ∆(E) ≃ cosochE
+Proof. Over g≤0 , ∆(E) ≃ U (g≤0 )⊗U (h) E,                             b ≃ E.
+                                                      ≤0
+This immediately implies that L(E) is irreducible in O and cosocg≤0 L(E) ≃ E.
+Hence the {L(E)}E∈Λ are pairwise non-isomorphic irreducibles. Now take any
+irreducible M ∈ O. There exists a non-zero b-homomorphism E → M for some
+E ∈ Λ. This induces by Frobenius reciprocity a non-zero g-homomorphism
+∆(E) → M , hence M ∼   = L(E). The same argument shows that socbL(E) ≃ E.
+Finally, over b, ∇(E) ≃ Homh(U (b), E), so socb∇(E) ≃ E. Hence socg∇(E) ≃
+L(E) too.                                                                  
+Lemma 3.6. Let E, F ∈ Λ.
+                   TILTING MODULES FOR LIE SUPERALGEBRAS                           5
+
+     (i) ∆(E) is the projective cover of L(E) in O≤|E| .
+    (ii) dim HomO (∆(E), ∇(F )) = 0 if E 6= F , dE if E = F .
+   (iii) Ext1O (∆(E), ∇(F )) = 0.
+Proof. For (i), take M ∈ O≤|E| . We have the following sequence of isomor-
+phisms natural in M :
+ HomO      (∆(E), M ) ≃ HomCg (∆(E), M ) ≃ HomC (E,b M ) ≃ HomC (E,b M ).
+        ≤|E|                                             b              h
+
+      b is projective in Ch, this shows that ∆(E) is projective in O≤|E| . The
+Since E
+same argument with M = ∆(E) shows that dim EndO≤|E| (∆(E)) is finite di-
+mensional, so we get that ∆(E) is actually the projective cover of L(E) in O≤|E|
+from Fitting’s lemma. For (ii), (iii), Lemma 2.3 implies for every i ≥ 0 that
+                                                    b F ).
+                      ExtiC (∆(E), ∇(F )) ≃ ExtiC (E,
+                            g                       h
+
+Since Eb is projective with cosochEb ≃ E, the right hand side is zero if i > 0 or
+if E 6= F , and is of dimension dE otherwise. Now we are done since O is a full
+subcategory of Cg.                                                             
+
+                     4. Projective modules and blocks
+  Let M ∈ O. A ∆-flag of M means a filtration
+                                0 = M0 ⊆ M1 ⊆ M2 . . .
+                 S
+such that M = i≥0 Mi and each factor Mi /Mi−1 is either zero or ∼        = ∆(Ei )
+for Ei ∈ Λ. If the filtration stabilizes after finitely many terms we will call it a
+finite ∆-flag. Arguing as in [S, Lemma 5.10], one shows:
+Lemma 4.1. Suppose we have that Ext1O (∆(F ), N ) = 0 for all F ∈ Λ. Then,
+Ext1O (M, N ) = 0 for every M ∈ O admitting a ∆-flag.
+   Applying the lemma to N = ∇(E), one easily deduces that the multiplicity
+of ∆(E) as a subquotient of a ∆-flag of M is equal to dim HomO (M, ∇(E))/dE ,
+for every M ∈ O admitting a ∆-flag. In particular, this multiplicity does not
+depend on the choice of the ∆-flag. We will denote it by (M : ∆(E)).
+Lemma 4.2. A graded g-supermodule M admits a finite ∆-flag if and only if
+M is a graded free U (n)-supermodule of finite rank and its restriction to h is a
+projective object in Ch.
+Proof. (⇒) It suffices to prove this for M = ∆(E). Obviously this is a graded
+free U (n)-supermodule of rank dim E.b Moreover, over h, we have by Lemma 2.2
+                   b
+that M ≃ S(n) ⊗ E. This is projective Lnin Ch by Lemma 3.2.
+   (⇐) We may assume that M =            i=1 U (n) ⊗ Vi is a decomposition of M
+as a graded free U (n)-supermodule, where Vi is a finite dimensional vector
+superspace concentrated in degree di with trivial action of n, and d1 > · · · > dn .
+Note then that 1 ⊗ V1 must be invariant under the action of b, and g>0 acts
+trivially. Hence by the projectivity assumption it decomposes as a direct sum
+                 b as a b-supermodule. Each U (n) ⊗ E
+of finitely many E’s                                      b in this decomposition
+is isomorphic as a graded g-supermodule to ∆(E), and the quotient of M by
+6                              JONATHAN BRUNDAN
+
+U (n) ⊗ V1 is graded free of strictly smaller rank and is still projective over h, so
+we are done by induction.                                                          
+Corollary 4.3. If M admits a finite ∆-flag, so does any summand of M .
+Proof. Any summand of a graded free U (n)-supermodule of finite rank is again
+graded free of finite rank, see [S, Remark 2.4(2)].                        
+    We now come to the basic result on projective objects in category O.
+Theorem 4.4. Every simple object L(E) ∈ O≤n admits a projective cover
+P≤n (E) in O≤n with cosocgP≤n (E) ≃ L(E). Moreover,
+    (i) P≤n (E) admits a finite ∆-flag with ∆(E) at the top;
+   (ii) for m > n, the kernel of any surjection P≤m (E) ։ P≤n (E) admits a
+        finite ∆-flag with subquotients of the form ∆(F ) for m ≥ |F | > n;
+  (iii) L(E) admits a projective cover P (E) in O if and only if there exists
+        n ≫ 0 with P≤n (E) = P≤n+1 (E) = . . . , in which case P (E) = P≤n (E).
+Proof. The proof is essentially the same as [S, Theorem 3.2], so we just sketch
+the construction of P≤n (E) and refer the reader to loc. cit. for everything else.
+For a graded
+           L b-supermodule M , let τ≤n M denote the quotient of M by the
+submodule d>n Md of all homomogeneous parts of degree > n. For E ∈ Λ,
+                                                           b
+                       Q := U (g) ⊗U (b) τ≤n (U (b) ⊗U (h) E)
+is projective in O≤n as in the proof of [S, Theorem 3.2(1)], it is graded free over
+U (n) of finite rank, and it is projective viewed as an object of Ch by Lemma 3.2.
+So Lemma 4.2 shows that Q has a finite ∆-flag. Now Q clearly maps surjectively
+onto L(E). Let P≤n (E) be an indecomposable summand of Q that also maps
+surjectively onto L(E). This has a finite ∆-flag too by Corollary 4.3, and it is a
+projective cover of L(E) in O≤n by a Fitting’s lemma argument, see [S, Lemma
+3.3].                                                                            
+   For M ∈ O, we write [M : L(E)] for the composition multiplicity of L(E)
+in M , i.e. the supremum of #{i | Mi /Mi−1 ∼ = L(E)} over all finite filtrations
+M = (Mi )i of M . This multiplicity is additive on short exact sequences. Now
+we get “BGG reciprocity”:
+Corollary 4.5. (P≤n (E) : ∆(F )) = [∇(F ) : L(E)] for all E, F ∈ Λ and
+n ≥ |E|, |F |.
+Proof. In O≤n , we have that [∇(F ) : L(E)] = dim HomO (P≤n (E), ∇(F ))/dE .
+This equals (P≤n (E) : ∆(F )) by the definition of the latter multiplicity. 
+  Suppose finally in this section that ∼ is an equivalence relation on Λ with
+the property that
+               [∆(F ) : L(E)] 6= 0 or [∇(F ) : L(E)] 6= 0 ⇒ F ∼ E
+for each E, F ∈ Λ. For an equivalence class θ ∈ Λ/ ∼, let Oθ be the full
+subcategory of O consisting of the objects M ∈ O all of whose irreducible
+subquotients are of the form L(E) for E ∈ θ. We refer to Oθ as a block of O, in
+view of the following theorem which is proved exactly as in [S, Theorem 4.2].
+                    TILTING MODULES FOR LIE SUPERALGEBRAS                               7
+
+Theorem 4.6. The functor
+                   Y                                    M
+                       Oθ → O,              (Mθ )θ 7→           Mθ
+                        θ∈Λ/∼                           θ∈Λ/∼
+
+is an equivalence of categories.
+
+           5. Tilting modules and Arkhipov-Soergel duality
+   Next, we discuss the classification of tilting modules in O. The first main
+result is the analogue of [S, Theorem 5.2].
+Theorem 5.1. For any E ∈ Λ, there exists a unique up to isomorphism inde-
+composable object T (E) ∈ O such that
+    (i) Ext1O (∆(F ), T (E)) = 0 for all F ∈ Λ;
+   (ii) T (E) admits a ∆-flag starting with ∆(E) at the bottom.
+    We call T (E) the indecomposable tilting module corresponding to E ∈ Λ.
+The proof given by Soergel is a variation on an argument of Ringel [R], and
+carries over to the present setting virtually unchanged. The main step is to
+show that for any E ∈ Λ with |E| ≥ n, there exists a unique up to isomorphism
+indecomposable object T≥n (E) in O such that
+      (i)′ Ext1O (∆(F ), T≥n (E)) = 0 for all F ∈ Λ with |F | ≥ n;
+     (ii)′ T≥n (E) admits a finite ∆-flag starting with ∆(E) at the bottom and
+           with all other subquotients of the form ∆(F ) for F ’s with |E| > |F | ≥ n.
+Moreover, given |E| ≥ m ≥ n, there exists an inclusion T≥m (E) ֒→ T≥n (E),
+and the cokernel of any such inclusion admits a finite ∆-flag with subquotients
+∆(F ) for m > |F | ≥ n. Given these results, a candidate for the desired module
+T (E) can then be constructed as a direct limit of the T≥n (E)’s as n → −∞.
+Uniqueness then needs to be established separately.
+    To proceed, we need to make two additional assumptions (see [S, Remark
+1.2] for remarks on the first one):
+   (A4) g is generated as a Lie superalgebra by g0 , g1 and g−1 ;
+   (A5) for E ∈ Λ, (E)      ∼E
+                         b ∗=  d # for some E # ∈ Λ.
+
+Under the assumption (A4), an admissible semi-infinite character γ for g is
+defined to be a Lie superalgebra homomorphism γ : h → C such that γ|t ∈ X
+and
+                              γ([X, Y ]) = strh(adX ◦ adY )                         (5.2)
+for all X ∈ g1 , Y ∈ g−1 . (We recall the supertrace of an endomorphism f =
+f0̄ + f1̄ : V → V of a vector superspace is defined by strV f := trV0̄ f0̄ − trV1̄ f0̄ .)
+    In the next lemma, we write U (n)⊛ for the graded dual HomC (U (n), C)
+(where C = C0,0̄ ) viewed as a U (n), U (n)-bimodule with left and right actions
+                                 ¯    ′
+defined by (nf )(n′ ) = (−1)n̄f +n̄n̄ f (n′ n) and (f n)(n′ ) = f (nn′ ) respectively, for
+n, n′ ∈ U (n), f ∈ U (n)⊛.
+Lemma 5.3. Let γ : h → C be an admissible semi-infinite character for g.
+Then there exists a graded U (g), U (g)-bimodule Sγ and an even monomorphism
+ι : U (n)⊛ ֒→ Sγ of graded U (n), U (n)-bimodules such that
+8                              JONATHAN BRUNDAN
+
+      (i) the map U (g) ⊗U (n) U (n)⊛ → Sγ , u ⊗ f 7→ uι(f ) is a bijection;
+     (ii) the map U (n)⊛ ⊗U (n) U (g) → Sγ , f ⊗ u 7→ ι(f )u is a bijection;
+                                          ¯
+    (iii) [H, ι(f )] = ι(f )γ(H) − (−1)H̄ f ι(f ◦ adH) for all H ∈ h and f ∈ U (n)⊛.
+Proof. This is proved in almost exactly the same way as [S, Theorem 1.3].
+However, the signs are rather delicate in the super case. So we describe explicitly
+the construction of Sγ , referring to the proof of [S, Theorem 1.3] for a fuller
+account of the other steps that need to be made. As a graded vector superspace,
+we have that
+                              Sγ = U (n)⊛ ⊗C U (b),
+and the map ι : U (n)⊛ → Sγ is defined by ι(f ) = f ⊗ 1. Note Sγ is a
+U (n), U (b)-bimodule in the usual way. We now extend this structure to make Sγ
+into U (g), U (g)-bimodule. First, there is a natural isomorphism of U (n), U (b)-
+bimodules
+                                           ∼
+                    Sγ = U (n)⊛ ⊗C U (b) −→ U (n)⊛ ⊗U (n) U (g)
+mapping u ⊗ v to u ⊗ v; we get the right action of U (g) on Sγ via this isomor-
+phism. To obtain the left action, we use the natural isomorphisms
+                        ∼                         ∼
+Sγ = U (n)⊛ ⊗C U (b) −→ HomC (U (n), U (b)) ←− HomU (b) (U (g), Cγ ⊗C U (b)).
+For the right hand space, the action of U (b) is the natural left action on U (g),
+and the tensor product of the action on Cγ = C0,0̄ affording the character γ and
+the natural left action on U (b). The first isomorphism maps f ⊗b to the function
+f[⊗ b : n 7→ (−1)b̄n̄ f (n)b. The second isomorphism is given by restriction of
+functions from U (g) to U (n), identifying Cγ ⊗C U (b) with U (b) via 1 ⊗ u 7→ u.
+Now, U (g) acts naturally on the left on the right hand space, by (uf )(u′ ) =
+      ¯      ′
+(−1)ūf +ūū f (u′ u), for u, u′ ∈ U (g) and f : U (g) → Cγ ⊗C U (b). Transferring
+this to Sγ via the isomorphisms gives the left U (g)-module structure on Sγ .
+Now we have to check that the left and right actions of U (g) on Sγ just defined
+commute with one another, so that Sγ is a U (g), U (g)-bimodule. This is done by
+brutal calculation relying on the assumption that γ is a semi-infinite character,
+see the proof of [S, Theorem 1.3] for the detailed argument which generalizes
+routinely to our setting. Once that is done, (i)–(iii) are relatively easy to check
+to complete the proof.                                                           
+   For the remainder of the section, we fix an admissible semi-infinite character
+γ for g and let Sγ be the semi-regular bimodule constructed in Lemma 5.3. Let
+M resp. K be the category of all admissible graded g-supermodules that are
+free resp. cofree of finite rank as graded U (n)-supermodules, i.e. isomorphic to
+direct sums of maybe graded shifted copies of U (n) resp. U (n)⊛. The following
+theorem is the super analogue of [S, Theorem 2.1], which Soergel attributes
+originally to Arkhipov [A].
+Theorem 5.4. The functors M → K, M 7→ Sγ ⊗U (g) M and K → M, M 7→
+HomU (g) (Sγ , M ) are mutually inverse equivalences between the categories M
+and K, such that short exact sequences correspond to short exact sequences.
+                   TILTING MODULES FOR LIE SUPERALGEBRAS                           9
+
+Proof. Take M ∈ M. Recalling Lemma 5.3, the map f ⊗ m 7→ ι(f ) ⊗ m is a
+U (n)-isomorphism U (n)⊛ ⊗U (n) M → Sγ ⊗U (g) M . Hence Sγ ⊗U (g) M is graded
+cofree of finite rank, so in particular it is finite dimensional in each degree.
+Moreover, for f ∈ U (n)⊛, m ∈ M and H ∈ h, we have by Lemma 5.3(iii) that
+                          ¯                                 ¯
+  H(ι(f ) ⊗ m) = (−1)H̄ f ι(f ) ⊗ (H + γ(H))m − (−1)H̄ f ι(f ◦ adH) ⊗ m. (5.5)
+It follows from this and (A3) that Sγ ⊗U (g) M is admissible. Hence Sγ ⊗U (g) ?
+is a well-defined functor from M to K. For the other direction, we note that
+HomU (n) (U (n)⊛, U (n)⊛) ≃ U (n) as a U (n), U (n)-bimodule; an isomorphism
+                                                                         ¯
+maps u ∈ U (n) to u                                      uf )(n) = (−1)ūf f (un)
+                    b ∈ HomU (n) (U (n)⊛, U (n)⊛) where (b
+for each f ∈ U (n)⊛, n ∈ U (n). So for N ∈ K, we deduce that HomU (g) (Sγ , N ) ≃
+HomU (n) (U (n)⊛, N ) is graded free of finite rank over U (n). Moreover, given
+θ ∈ HomU (g) (Sγ , N ),
+                                                        ¯
+       (Hθ)(ι(f )) = (H − γ(H))θ(ι(f )) + (−1)H̄ θ̄+H̄ f θ(ι(f ◦ adH))         (5.6)
+for each H ∈ h and f ∈        U (n)⊛. Using this and (A3) one can check that
+HomU (g) (Sγ , N ) is admissible. Hence, HomU (g) (Sγ , ?) is a well-defined functor
+from K to M. The remainder of the proof is exactly as in the proof of [S,
+Theorem 2.1].                                                                     
+   Finally, let O∆ be the full subcategory of O consisting of all objects admitting
+a finite ∆-flag. We recall from Corollary 4.3 that O∆ is closed under taking
+direct summands. For a graded g-supermodule M , we let M ⋆ denote its graded
+dual, namely, the space HomC (M, C), where C = C0,0̄ , with action defined by
+                      ¯
+(Xf )(m) = −(−1)X̄ f f (Xm) for each X ∈ g, m ∈ M and f : M → C. Recalling
+the assumption (A5), the theorem has the following corollary:
+Corollary 5.7. The functor M 7→ (Sγ ⊗U (g) M )⋆ defines a contravariant equiv-
+alence of categories O∆ → O∆ under which short exact sequences correspond
+to short exact sequences, ∆(C−γ ⊗ E # ) maps to ∆(E) and P≤−n (C−γ ⊗ E # )
+maps to T≥n (E), for every E ∈ Λ and n ≤ |E|.
+Proof. It is easy to see using (5.5) and (A5) that the degree −|E| piece of
+(Sγ ⊗U (g) ∆(E))⋆ ≃ (U (n)⊛⊗E)b ⋆ is isomorphic to C−γ ⊗Ed# as an h-supermodule.
+                                           ⋆
+Moreover, this generates (Sγ ⊗U (g) ∆(E)) freely as a U (n)-supermodule, hence
+(Sγ ⊗U (g) ∆(E))⋆ ∼= ∆(C−γ ⊗E # ). It follows from this and Theorem 5.4 that the
+functor (Sγ ⊗U (g) ?)⋆ maps O∆ to O∆ and sends short exact sequences to short
+exact sequences. Similarly, one shows using (5.6) that HomU (g) (Sγ , ∆(E)⋆ ) ∼    =
+∆(C−γ ⊗ E # ). Hence the functor HomU (g) (Sγ , ?⋆ ) maps O∆ to O∆ . Now it is
+immediate from Theorem 5.4 that our two functors are mutually inverse equiv-
+alences. It just remains to show that (Sγ ⊗U (g) P≤−n (C−γ ⊗ E # ))⋆ ∼= T≥n (E),
+for n ≤ |E|, for which one uses the characterization of T≥n (E) given in (i)′ , (ii)′
+above.                                                                             
+Corollary 5.8. For E, F ∈ Λ, we have that
+               (T (E) : ∆(F )) = [∇(C−γ ⊗ F # ) : L(C−γ ⊗ E # )].
+10                             JONATHAN BRUNDAN
+
+Proof. We have for n ≤ |E|, |F | that
+     (T (E) : ∆(F )) = (T≥n (E) : ∆(F )) = (P≤−n (C−γ ⊗ E # ) : ∆(C−γ ⊗ F # ))
+                    = [∇(C−γ ⊗ F # ) : L(C−γ ⊗ E # )],
+using Corollary 5.7 and Lemma 4.5.                                               
+
+                              6. Some variations
+   We now mention some variations to the general framework considered so
+far. First of all, we recall from [S, §6] how to deduce results about ungraded
+g-supermodules from the graded theory above. To do this, one needs to require
+in addition that
+  (A6) there is an element D ∈ h0̄ such that [D, X] = deg(X)X for all homo-
+         geneous X ∈ g.
+Let O be the category of all admissible (but no longer graded!) g-supermodules
+that are locally finite dimensional over b. Since D necessarilyL belongs to t,
+every M ∈ O resp. M ∈ O decomposes into eigenspaces M = a∈C M (a) with
+respect to the action of D. For a ∈ C, let Oa denote the full subcategory of O
+consisting of all M ∈ O such that M (a+i) = Mi for all i ∈ Z. For ā ∈ C/Z, let
+Oā denote the full subcategory of O consisting of all M ∈ O such that M (b) = 0
+for all b ∈
+          / ā. Then,
+                               Y                Y
+                         O=       Oa ,     O=         Oā .
+                              a∈C              ā∈C/Z
+
+Forgetting the grading gives an isomorphism of categories Oa → Oā , the inverse
+functor being defined on M ∈ Oā by introducing a Z-grading according to the
+rule Mi = M (a+i) . In this way, we can transfer results from O to O.
+   To describe some of the things that can be obtained in this way, let Λ de-
+note a set of representatives for the equivalence classes of E ∈ Λ viewed up to
+degree shifts, so that Λ is a complete set of pairwise non-isomorphic irreducible
+admissible h-supermodules. Also let E  b denote the projective cover of E ∈ Λ in
+the category of admissible h-supermodules. We have the objects L(E), ∆(E)
+and ∇(E) ∈ O obtained from the ones defined before by forgetting the grad-
+ing. Intrinsically, ∆(E) = U (g) ⊗U (b) E, b ∇(E) is the largest submodule of
+HomU (g≤0 ) (U (g), E) that belongs to O, and L(E) = cosocg∆(E) ≃ socg∇(E).
+In particular, {L(E)}E∈Λ is a complete set of pairwise non-isomorphic irre-
+ducible objects in O.
+   The notion of a ∆-flag of an object of O is defined as before. The multiplicity
+(M : ∆(E)) of ∆(E) as a subquotient of a ∆-flag of an object M ∈ O is
+independent of the choice of flag. We have that
+                     (M : ∆(E)) = dim HomO (M, ∇(E))/dE .                    (6.1)
+We also note from Corollary 4.3 that summands of objects with finite ∆-flags
+have finite ∆-flags. We can always choose a partial ordering  on Λ such that
+                [∆(F ) : L(E)] 6= 0 or [∇(F ) : L(E)] 6= 0 ⇒ E  F.
+                    TILTING MODULES FOR LIE SUPERALGEBRAS                        11
+
+Let ∼ be the equivalence relation on Λ generated by the partial order . For
+θ ∈ O/ ∼, let Oθ be the full subcategory of O consisting of the objects M ∈ O
+all of whose irreducible subquotients are of the form L(E) for E ∈ θ. Then
+Theorem 4.6 gives us the block decomposition of O:
+Theorem 6.2. The functor
+                   Y                               M
+                       Oθ → O,         (Mθ )θ 7→           Mθ
+                      θ∈Λ/∼                        θ∈Λ/∼
+
+is an equivalence of categories.
+  Next, we use Theorem 5.1 to define the indecomposable tilting module T (E) ∈
+O for each E ∈ Λ:
+Theorem 6.3. For each E ∈ Λ there exists a unique up to isomorphism inde-
+composable object T (E) ∈ O such that
+    (i) Ext1O (∆(F ), T (E)) = 0 for all F ∈ Λ;
+   (ii) T (E) admits a ∆-flag starting with ∆(E) at the bottom.
+   Let γ be an admissible semi-infinite character for g and construct the semi-
+                                               ∆
+regular bimodule Sγ as in Lemma 5.3. Let O be the full subcategory of O
+consisting of the objects that admit a finite ∆-flag. Then Corollaries 5.7 and
+5.8 give us:
+Theorem 6.4. The functor M 7→ (Sγ ⊗U (g) M )⋆ defines a contravariant equiv-
+                       ∆       ∆
+alence of categories O → O under which short exact sequences correspond
+to short exact sequences and ∆(E) maps to ∆(C−γ ⊗ E # ) for every E ∈ Λ.
+Moreover,
+               (T (E) : ∆(F )) = [∇(C−γ ⊗ F # ) : L(C−γ ⊗ E # )]              (6.5)
+for all E, F ∈ Λ.
+   Still assuming that (A6) holds, we now impose some finiteness conditions.
+First, assume
+  (A7) for each E ∈ Λ, ∇(E) has a composition series.
+                                                                        fin
+Given (A7), it is not hard to show that every object M in the category O of all
+finitely generated admissible g-supermodules that are locally finite dimensional
+over b has a composition series. We remark that (A7) holds automatically if
+the partial ordering  chosen above has the property that for each E ∈ Λ, there
+are only finitely many F ∈ Λ with F  E. Next assume
+                       fin
+  (A8) the category O has enough projectives.
+By Theorem 4.4(iii), (A8) holds automatically if the partial ordering  has the
+property that for each E ∈ Λ, there are only finitely many F ∈ Λ with E  F .
+   Using (A7), (A8) and Fitting’s lemma, one deduces that each L(E) has a
+                                                   fin
+projective cover denoted P (E) in the category O . Moreover, Theorem 4.4
+12                                JONATHAN BRUNDAN
+
+and Corollary 4.5 imply in the present setting that P (E) has a finite ∆-flag
+satisfying BGG reciprocity
+                           (P (E) : ∆(F )) = [∇(F ) : L(E)]                           (6.6)
+for all E, F ∈ Λ. Under the equivalence of categories from Theorem 6.4, P (E)
+gets mapped to T (C−γ ⊗ E # ), so the tilting modules T (E) also all have finite
+                                            fin
+∆-flags, i.e. they belong to the category O too.
+
+                                     7. Examples
+   We now give some examples, beginning with the classical ones to set the
+scene.
+Example 7.1. Let g be a finite dimensional semisimple Lie algebra. Let t ⊂ g
+be a maximal toral subalgebra, and ∆ ⊂ t∗ be a choice of simple roots. Let
+ρ ∈ t∗ be half the sum of the corresponding positive roots. We take the Z-
+grading on g defined so that gα is in degree 1 and g−α is in degree −1 for each
+α ∈ ∆. Clearly this grading is induced by the adjoint action of some D ∈ t,
+and h := g0 = t. Taking the group X of admissible weights to be all of t∗ , the
+             fin
+category O is exactly the category introduced in [BGG].
+   It is easy to see that our assumptions (A1)–(A6) are all satisfied. Moreover,
+by Harish-Chandra’s theorem on central characters, we can choose the equiva-
+lence relation ∼ so that the equivalence classes are the orbits of the finite Weyl
+group W under the dot action. Hence the equivalence classes are finite, so (A7)
+and (A8) automatically hold too. We also note that the usual Verma modules
+M (λ) for λ ∈ h∗ are the standard modules here, and their duals under the du-
+ality of [BGG, §4, Remark] are the costandard modules. The indecomposable
+tilting modules T (λ) are the modules defined originally by Collingwood and
+Irving in [CI].
+   This setup is generalized to an arbitrary symmetrizable Kac-Moody algebra
+in [S, §7], see also [DGK, RCW]. In general, (A7) and (A8) do not hold, so
+                                                                 fin
+it becomes important to work in category O rather than O . Soergel also
+discusses certain parabolic analogues.
+Example 7.2. In the next two examples, we take g to be the Lie superalgebra
+gl(m|n). We recall that g consists of (m + n) × (m + n) matrices over C,
+where we label rows and columns of such matrices by the ordered index set
+{−m, . . . , −1, 1, . . . , n}. Writing ī = 0̄ if i > 0 and 1̄ if i < 0, the parity of
+the ij-matrix unit ei,j ∈ g is ī + j̄, and the superbracket satisfies [ei,j , ek,l ] =
+δj,k ei,l − (−1)(ī+j̄)(k̄+l̄) δi,l ek,j . The subalgebra g0̄ of g is isomorphic to gl(m) ⊕
+gl(n). We will always take the maximal toral subalgebra t to be the subalgebra
+consisting of all diagonal matrices, and the group X of admissible weights to
+be all of t∗ . Let δ−m , . . . , δ−1 , δ1 , . . . , δn be the basis for t∗ dual to the basis
+e−m,−m , . . . , e−1,−1 , e1,1 , . . . , en,n of t.
+   Now there are two natural Z-gradings to consider. First, we discuss the
+principal grading induced by the adjoint action of the matrix D = diag(m +
+n, m + n − 1, . . . , 2, 1) ∈ h, so the degree of ei,j is defined by the equation
+                   TILTING MODULES FOR LIE SUPERALGEBRAS                                 13
+
+[D, ei,j ] = deg(ei,j )ei,j . For this grading, h := g0 coincides with the subalgebra
+t of diagonal matrices and b := g≥0 is the subalgebra of all upper triangular
+                   fin
+matrices. Let O be the resulting category as in section 6. We should check
+that the assumptions (A1)–(A8) all hold, the only difficult ones being (A7) and
+(A8):
+                                          fin                                     fin
+Lemma 7.3. Every object M ∈ O                   has a composition series, and O         has
+enough projectives.
+Proof. Let E be the category of all finitely generated g0̄ -supermodules that are
+locally finite dimensional over b0̄ and semisimple over h. By the PBW theorem,
+U (g) is free of finite rank as a (left or right) U (g0̄ )-module. Hence, the functor
+                                                     fin
+U (g)⊗U (g0̄ ) ? maps objects in E to objects in O , and it is left adjoint to the
+                                    fin
+natural restriction functor from O to E. So it sends projectives to projectives.
+                                                                   fin
+By Example 7.1, E has enough projectives, so we deduce that O does too.
+                                        fin
+Finally, to see that every object M ∈ O has a composition series, note that
+U (g) is Noetherian, so M has a descending filtration M = M0 ≥ M1 ≥ . . . such
+that each Mi /Mi+1 is irreducible. We just need to show that this filtration
+stabilizes after finitely many terms. But every object in E has a composition
+series by Example 7.1 so this follows immediately on restricting M to g0̄ .   
+     The standard modules ∆(λ) in this case are the Verma modules M (λ) :=
+U (g) ⊗U (b) Cλ , where Cλ is the one dimensional b-module with character λ ∈
+h∗ . The costandard modules ∇(λ) are the dual Verma modules M (λ)τ , where
+τ is the duality defined using the “supertranspose” antiautomorphism ei,j 7→
+(−1)ī(ī+j̄) ej,i of g. Finally the indecomposable tilting modules are denoted T (λ)
+and the irreducible modules are denoted L(λ), for λ ∈ h∗ . Like in Example 7.1,
+an admissible semi-infinite character for g with respect to the principal grading
+is given by the character 2ρ, where ρ = mδ−m + · · · + 2δ−2 + δ−1 − δ1 − 2δ2 −
+· · · − nδn . Now we get from (6.5) that
+                  (T (λ) : M (µ)) = [M (−µ − 2ρ) : L(−λ − 2ρ)],                     (7.4)
+for λ, µ ∈h∗ .   A precise conjecture for these multiplicities in the case that λ, µ
+are integral linear combinations of the δi can be found in [B1].
+   It is interesting to note in this example that both (A7) and (A8) hold, despite
+the fact (as seen in [B1]) that the partial ordering  of section 6 always has
+infinite chains.
+Example 7.5. Continuing with g = gl(m|n), we now discuss the second natural
+Z-grading, namely, the compatible grading. This is induced by the adjoint action
+of the matrix D = diag(1/2, 1/2, . . . , 1/2; −1/2, −1/2, . . . , −1/2). Note this
+time that h := g0 = g0̄ , and g−1 ⊕ g1 = g1̄ . This time, as is easy to show, the
+            fin
+category O is precisely the category of all finite dimensional g-supermodules
+that are semisimple over t. The hypothesis (A1)–(A8) are all satisfied, arguing
+as in Lemma 7.3 for (A7) and (A8).
+   Recalling h ∼= gl(m)⊕gl(n), the irreducible finite dimensional h-supermodules
+are parametrized by the set X + of dominant weights, namely, the λ = λ−m δ−m +
+14                                JONATHAN BRUNDAN
+
+· · · + λ−1 δ−1 + λ1 δ1 + · · · + λn δn ∈ h∗ with each λ−m − λ1−m , . . . , λ−2 − λ−1 , λ1 −
+λ2 , . . . , λn−1 − λn being non-negative integers. Given λ ∈ X + , we denote the
+corresponding standard module ∆(λ) instead by K(λ) and call it the Kac mod-
+ule of highest weight λ, since it was first defined by Kac in [K2]. The costandard
+modules are the dual Kac modules K(λ)τ . We also write L(λ) for the unique
+irreducible quotient of K(λ), P (λ) for its projective cover, and U (λ) for the
+indecomposable tilting module of highest weight λ in this finite dimensional
+setting. By (6.6), P (λ) has a finite Kac flag with K(λ) at the top, satisfying
+the BGG reciprocity
+                            (P (λ) : K(µ)) = [K(µ) : L(λ)],                           (7.6)
+as was also proved in [Z, Proposition 2.5].
+   Now let β = n(δ−m + · · · + δ−1 ) − m(δ1 + · · · + δn ) be the sum of the positive
+odd roots. It is easy to check that the unique 1-dimensional representation
+γ : h → C of weight −β is an admissible semi-infinite character for g with
+respect to the compatible grading. In fact in this case, there is an even iso-
+morphism of U (g), U (g)-bimodules between the semi-regular bimodule Sγ from
+Lemma 5.3 and the regular bimodule Πmn U (g). In the notation of Lemma 5.3,
+an isomorphism maps 1 ∈                                                             ⊛
+                          Q U (g) to the element ι(δ) ∈ Sγ , where δ ∈ U (n)
+is the function mapping −m≤i<0<j≤n ej,i to 1 (product taken in some fixed
+order) and all other monomials in the ej,i of strictly smaller length to 0. So in
+this case the duality in Theorem 6.4 is (up to parity change and degree shift)
+just the usual duality ∗ on finite dimensional g-supermodules. In particular,
+                              K(β − w0 λ)∗ ∼= K(λ),                             (7.7)
+                                  P (β − w0 λ)∗ ∼
+                                                = U (λ),                              (7.8)
+where w0 denotes the longest element of the Weyl group W ∼
+                                                         = Sm × Sn of h
+           ∗
+acting on t in the obvious way. The statement (6.5) says
+                      (U (λ) : K(µ)) = [K(β − w0 µ) : L(β − w0 λ)],                   (7.9)
+for λ, µ ∈   X +.   The numbers on the left hand side of this equation are computed
+in [B1].
+Example 7.10. In the final example, we take g = q(n).  Thus, gis the
+                                                                            X Y
+subalgebra of gl(n|n) consisting of all matrices of the form                        . For
+                                                                            Y X
+1 ≤ i, j ≤ n, we will let ei,j resp. e′i,j denote the even resp. odd ma-
+trix unit, i.e. the matrix of the above form with the ij-entry of X resp. Y
+equal to 1 and all other entries equal to zero. The Z-grading on g is defined
+by deg(ei,j ) = deg(e′i,j ) = (j − i). For this grading, h := g0 is spanned by
+{ei,i , e′i,i | 1 ≤ i ≤ n}, and b := g≥0 is spanned by {ei,j , e′i,j | 1 ≤ i ≤ j ≤ n}. We
+also let t = h0̄ and take the group X of admissible weights to be all of t∗ .
+   As explained in [P, §3], the finite dimensional irreducible h-supermodules are
+parametrized by the set t∗ . For λ ∈ t∗ , we write u(λ) for the corresponding
+irreducible h-supermodule. It is constructed in [P] as a certain Clifford module,
+of dimension a power of 2. The assumption (A5) can be checked from this
+                   TILTING MODULES FOR LIE SUPERALGEBRAS                                  15
+
+construction and the fact that Clifford algebras are symmetric: one gets that
+                                       d∗ ∼
+                                       u(λ)   \
+                                            = u(−λ).                                 (7.11)
+The remaining assumptions (A1)–(A4) and (A6) are easy, and one argues like
+in Lemma 7.3 to verify (A7) and (A8).
+                                        fin
+   So now we can consider the category O as in section 6. Let
+           M (λ) := U (g) ⊗    u(λ),    N (λ) := U (g) ⊗   d
+                                                           u(λ),
+                               U (b)                               U (b)
+                                                                           fin
+for each λ ∈ t∗ . Then N (λ) is the standard module ∆(λ) in O , while M (λ)
+is dual to the costandard module ∇(λ) under the duality τ induced by the
+(unsigned) antiautomorphism
+                                       T        
+                           X Y            X    YT
+                                     7→              .
+                           Y X            Y T XT
+One checks that the trivial character 0 : h → C is an admissible semi-infinite
+character for g. So, writing T (λ) resp. L(λ) for the indecomposable tilting
+module resp. the irreducible module corresponding to λ ∈ t∗ , (6.5) shows that
+                        (T (λ) : N (µ)) = [M (−µ) : L(−λ)].                          (7.12)
+A precise conjecture for these decomposition numbers in case λ, µ are integral
+weights is formulated in [B2].
+
+                                       References
+[A]     S. Arkhipov, Semi-infinite cohomology of associative algebras and bar duality, In-
+        ternat. Math. Res. Notices 17 (1997), 833–863.
+[BGG]   J. Bernstein, I. M. Gelfand and S. I. Gelfand, A category of g-modules, Func. Anal.
+        Appl. 10 (1976), 87–92.
+[B1]    J. Brundan, Kazhdan-Lusztig polynomials and character formulae for the Lie su-
+        peralgebra gl(m|n), preprint, University of Oregon, 2002.
+[B2]    J. Brundan, Kazhdan-Lusztig polynomials and character formulae for the Lie su-
+        peralgebra q(n), preprint, University of Oregon, 2002.
+[CPS]   E. Cline, B. Parshall and L. Scott, Finite dimensional algebras and highest weight
+        categories, J. reine angew. Math. 391 (1988), 85–99.
+[CI]    D. Collingwood and R. Irving, A decomposition theorem for certain self-dual mod-
+        ules in the category O, Duke Math. J. 58 (1989), 89–102.
+[DGK]   V. Deodhar, O. Gabber and V. Kac, Structure of some categories of representations
+        of infinite dimensional Lie algebras, Advances in Math. 45 (1982), 92–116.
+[DR]    V. Dlab and C. M. Ringel, Quasi-hereditary algebras, Illinois J. Math. 33 (1989),
+        280–291.
+[D1]    S. Donkin, Finite resolutions of modules for reductive algebraic groups, J. Algebra
+        101 (1986), 473–488.
+[D2]    S. Donkin, On tilting modules for algebraic groups, Math. Z. 212 (1993), 39–60.
+[ES]    T. Enright and B. Shelton, Decompositions in categories of highest weight modules
+        J. Algebra 100 (1986), 380–402.
+[K1]    V. Kac, Lie superalgebras, Advances in Math. 26 (1977), 8–96.
+[K2]    V. Kac, Representations of classical Lie superalgebras, in: “Differential geometrical
+        methods in mathematical physics II”, Lecture Notes in Math. no. 676, pp. 597–626,
+        Springer-Verlag, Berlin, 1978.
+[P]     I. Penkov, Characters of typical irreducible finite dimensional q(n)-supermodules,
+        Func. Anal. Appl. 20 (1986), 30–37.
+[R]     C. M. Ringel, The category of modules with good filtrations over a quasi-hereditary
+        algebra has almost split sequences, Math. Z. 208 (1991), 209–223.
+16                                 JONATHAN BRUNDAN
+
+[RCW]      A. Rocha-Caridi and N. Wallach, Projective modules over graded Lie algebras, Math.
+           Z. 180 (1982), 151–177.
+[S]        W. Soergel, Character formulas for tilting modules over Kac-Moody algebras, Rep-
+           resent. Theory 2 (1998), 432–448.
+[Z]        Y. M. Zou, Categories of finite dimensional weight modules over type I classical Lie
+           superalgebras, J. Algebra 180 (1996), 459–482.
+
+      Department of Mathematics, University of Oregon, Eugene, OR 97403, USA
+      E-mail address: brundan@darkwing.uoregon.edu
+

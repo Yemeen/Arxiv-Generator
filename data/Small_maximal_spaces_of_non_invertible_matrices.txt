@@ -1,0 +1,546 @@
+                                              SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES
+arXiv:math/0407240v1 [math.RT] 14 Jul 2004
+
+
+
+
+                                                                                  JAN DRAISMA
+
+
+
+
+                                                                                    Abstract
+                                                The (generic) rank of a vector space A of n × n-matrices is by definition the
+                                             maximal rank of an element of A. The space A is called rank-critical if any matrix
+                                             space that properly contains A has a strictly higher rank. I present a sufficient
+                                             condition for rank-criticality, and apply this condition to prove that the images of
+                                             certain Lie algebra representations are rank-critical.
+                                                A rather counter-intuitive consequence is that for infinitely many n, there exists
+                                             an 8-dimensional rank-critical space of n × n-matrices having generic rank n − 1, or,
+                                             in other words: an 8-dimensional maximal space of non-invertible matrices. This
+                                             settles the question, posed by Fillmore, Laurie, and Radjavi in 1985, of whether
+                                             such a maximal space can have dimension smaller than n. As another corollary, I
+                                             prove that the image of the adjoint representation of a semisimple Lie algebra is
+                                             rank-critical.
+
+                                                                                   1. Results
+                                                This paper deals with linear subspaces of End(V ), the space of K-linear maps
+                                             from an n-dimensional vector space V over a field K into itself. The (generic) rank
+                                             of such a subspace A, denoted rk A, is by definition the highest rank of an element
+                                             of A, and we call A rank-critical if any linear subspace B of End(V ) that properly
+                                             contains A has rk B > rk A. Note that a space A is maximal among the singular
+                                             spaces—that is, those that only contain non-invertible matrices—if and only if A
+                                             is rank-critical of rank n − 1; in this case we call A a maximal singular space. The
+                                             main results of this paper are the following.
+                                             Theorem 1. Let K be a field of characteristic zero, let m be an integer ≥ 3, and
+                                             let e be a positive integer. Then the image of the representation of slm (K) on the
+                                             space V = K[x1 , . . . , xm ]em of homogeneous polynomials of degree em is a maximal
+                                             singular subspace of End(V ).
+
+                                                In particular, taking m = 3, we find that for every n of the form 3e+2
+                                                                                                                          
+                                                                                                                       2    , e>1
+                                             there exists an 8-dimensional maximal singular space of n × n-matrices.
+                                             Theorem 2. For any semisimple Lie algebra g over a field of characteristic zero,
+                                             ad g is a rank-critical subspace of End(g).
+                                               Theorems 1 and 2 are consequences of the following proposition.
+
+                                               Date: 14 July 2004.
+                                               The author is supported by the Swiss National Science Foundation.
+                                                                                         1
+2                                    JAN DRAISMA
+
+
+Proposition 3. Let A be a subspace of End(V ) and suppose that |K| > rk A =: r.
+Set Areg := {A ∈ A | rk A = r} and define the space
+           RND(A) := {B ∈ End(V ) | B ker A ⊆ im A for all A ∈ Areg }.
+Then RND(A) ⊇ A, and if equality holds, then A is rank-critical. If, moreover, a
+group G acts linearly on V and if A is stable under the conjugation action of G on
+End(V ), then RND(A) is also a G-stable.
+   The proof of Proposition 3 in Section 3 bases on an elementary, but useful
+sufficient condition for maximality of vector spaces in an arbitrary affine variety
+embedded in a vector space. In Section 4, we apply Proposition 3 to images of Lie
+algebra representations; Theorems 1 and 2 are proved there. Section 5 lists some
+computer results on rank-criticality of semisimple Lie algebra representations—in
+particular, Theorem 2 came up as a conjecture using this computer program.
+Acknowledgments. I thank Matthias Bürgin, Arjeh Cohen, Hanspeter Kraft,
+Jochen Kuttler, Martijn Stam, and Nolan Wallach for their help and for their
+interest in the matter of this paper.
+
+                        2. Introduction and Motivation
+  The direct motivation for this paper is the question, posed by Fillmore et al in
+1985 [6], of whether a maximal singular subspace of End(V ) can have dimension
+smaller than n. I briefly review three well-known constructions of maximal singular
+spaces that led them to raise this question.
+Example 4. Fix subspaces W, U of V of dimensions k − 1 and k, respectively, and
+set A := {A ∈ End(V ) | AU ⊆ W }. Then A is a singular space of dimension
+k(k − 1) + (n − k)n = n2 − kn + k 2 − k. Moreover, it not hard to see that A
+is maximal. We follow Eisenbud and Harris [5] in calling A and all its subspaces
+compression spaces, as they ‘compress’ U into W .
+Example 5. Suppose that n is odd, take V = K n , and let A be the space of all
+skew-symmetric matrices. As any skew-symmetric matrix has even rank, the space
+A is singular, and it was observed in [6] that A is maximal for all odd n ≥ 3, under
+the assumption that |K| ≥ 3. It is easy to see that A is not a compression space.
+  In both examples above, the dimension of A is quadratic in n. An ingenious
+construction of smaller maximal singular spaces is the following, attributed to Bob
+Paré in [6] and also appearing in [15].
+Example 6. Take V = K n and fix n skew-symmetric n × n-matrices A1 , . . . , An .
+Let φ be the linear map from K n into the space Mn (K) of n × n-matrices over K
+sending x to the matrix with columns A1 x, A2 x, . . . , An x. Then φ(K n ) is a singular
+space in Mn (K) because xt φ(x) = 0 for all x ∈ K n . Moreover, in the particular
+case where |K| ≥ 3, Ai = Ei,i+1 − Ei+1,i for i < n, and An = En,1 − E1,n , Fillmore
+et al showed that A is maximal [6].
+   Many results in the literature exhibit sufficient conditions for a singular space
+A to be a compression space: Dieudonné [3] showed that every singular space of
+dimension ≥ n2 − n either has a non-trivial common kernel or is dual to a space
+with a common kernel. Under the assumption that |K| is at least 2n − 2, this
+result is sharpened as follows in [6]: if the dimension of A is > n2 − 2n + 2 (which
+               SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES                            3
+
+
+is the dimension of a compression space with k = 2), then A or its dual has a
+common kernel. A condition of a different kind is that A be spanned by rank one
+matrices; then a combinatorial argument shows that is a compression space [15, 10].
+Analogues of these questions for (skew-)symmetric matrices and for rank-critical
+spaces have also been studied extensively in the literature [1, 7, 10, 12, 13, 14, 16].
+   Yet another result of this type is part of the Kronecker-Weierstrass theory of
+matrix pencils [9] for K = C. I give a short proof that is valid for other fields, as
+well.
+Proposition 7. Suppose that |K| ≥ n = dim V . Then any two-dimensional singu-
+lar subspace of End(V ) is a compression space.
+Proof. If A, B ∈ End(V ) are such that KA+KB is singular, then the homogeneous
+polynomial p(s, t) := det(sA+tB) vanishes on all |K|+1 points of P1 (K). As p(s, t)
+has degree n < |K| + 1, it must be identically zero, so that sA + tB has a non-zero
+vector u(s, t) in K[s, t] ⊗K V in its kernel. But then any non-zero homogeneous
+component of u(s, t), say of degree d, is also annihilated by sA + tB; hence we find
+u0 , . . . , ud ∈ V such that (sA + tB)(sd u0 + sd−1 tu1 + . . . + td ud ) = 0, where we may
+assume that u0 6= 0. Taking the of coefficients of sd+1 , sd t, . . . , td+1 , we find
+         Au0 = 0, Au1 = −Bu0 , . . . , Aud = −Bud−1 , and Bud = 0.
+                                                        P
+      P every element of KA + KB maps the space U := i Kui into the space
+But then
+W := i KAui , which is strictly smaller because Au0 = 0 while u0 6= 0. 
+   Example 13 below shows that the condition on |K| in this proposition is nec-
+essary. This proposition, another proof of which is given in [5] for algebraically
+closed fields, shows that if |K| ≥ n > 2, then a maximal singular space cannot have
+dimension 2. On the other hand, Example 6 shows that there do exist maximal
+singular spaces in End(V ) of dimension dim(V ), and this led Fillmore et al to put
+forward their question above.
+
+            3. Maximality of vector spaces in affine varieties
+   Let K be a field and let M be a vector space over K. Denote by L an algebraic
+closure of K and set M (L) := L ⊗K M . Let Z be an affine algebraic variety in
+M (L) defined over K, and let N be a K-vector subspace of M contained in Z(K).
+We want a sufficient condition for N to be maximal among the subspaces of M
+contained in Z(K). Therefore, set
+                         U := {m ∈ M (L) | N (L) + Lm ⊆ Z};
+then U is an affine variety defined over K. We make the following assumption:
+(*)                 ∀m ∈ M (L) : N + Km ⊆ Z(K) ⇒ m ∈ U (K);
+in particular, 0 lies in U (K) and so N (L) ⊆ Z.
+Lemma 8. Suppose that Z is defined by polynomials f1 , . . . , fk ∈ K[M ]. Then
+|K| > maxi deg fi implies (*). If, moreover, the fi of highest degree are homoge-
+neous, then |K| ≥ maxi deg fi already implies (*).
+Proof. Suppose that m ∈ M satisfies N + Km ⊆ Z(K), and let n1 , . . . , nd be a
+K-basis of N . Then we have for all i
+               fi (t1 n1 + . . . + td nd + sm) = 0 for all t1 , . . . , td , s ∈ K.
+4                                     JAN DRAISMA
+
+
+But a polynomial of degree < |K| cannot vanish everywhere on an affine space over
+K unless it is the zero polynomial. Hence if deg fi < |K|, then the left-hand side is
+the zero polynomial in t1 , . . . , td , s and vanishes on Ld+1 , as well. We conclude that
+then m ∈ U ∩ M = U (K), whence the first statement. For the second statement,
+note that a homogeneous polynomial of degree ≤ K cannot vanish everywhere on
+a projective space over K unless it is the zero polynomial.                              
+   By (*), maximality of N among the subspaces of M contained in Z(K) is equiv-
+alent to U (K) = N , and a sufficient condition for this is clearly U = N (L). In
+principle, this condition can be verified using Gröbner basis techniques, but U may
+be hard to compute even for moderately complicated Z. We therefore set out to
+find linear sufficient conditions, as follows: Let Zreg be the set of smooth points of
+Z, and set Nreg := N ∩ Zreg , N (L)reg := N (L) ∩ Zreg . The second assumption we
+make is
+(**)                                      Nreg 6= ∅.
+Now let                                           \
+                              TN (L)reg Z :=                Tn Z
+                                               n∈N (L)reg
+be the intersection of all tangent spaces to Z at points of N (L)reg , where each Tn Z
+is viewed as a vector subspace (through the origin) of M (L). Then we have the
+following lemma.
+Lemma 9. The L-vector space TN (L)reg Z contains U . In particular, if TN (L)reg Z =
+N (L), then N (L) is maximal among the L-subspaces of M (L) contained in Z.
+Proof. For m ∈ U and n ∈ N (L)reg the line {n + tm | t ∈ L} lies in Z, and a
+fortiori m is tangent to Z at n. We conclude that m ∈ TN (L)reg Z, as claimed. The
+second statement is immediate.                                                  
+    We want a K-rational version of this lemma. To this end, we define
+                                \                    \
+              TNreg (Z(K)) :=       ((Tn Z)(K)) = (       Tn Z)(K),
+                                 n∈Nreg                      n∈Nreg
+
+where the second equality follows from the fact that Z, and therefore every Tn Z, is
+defined over K. Note that TNreg (Z(K)) contains (TN (L)reg Z)(K), as the intersection
+is taken over a smaller set.
+Proposition 10. The K-vector space TNreg (Z(K)) contains U (K). In particular, if
+TNreg (Z(K)) = N , then N is maximal among the K-vector subspaces of M contained
+in Z(K).
+Proof. If m ∈ U (K), then by the previous lemma m ∈ (TN (L)reg Z)(K), which space
+is contained in TNreg (Z(K)); this shows the first statement. The second statement
+is now immediate from assumption (*).                                           
+   A randomised algorithm to compute the tangent space TNreg Z(K) bases on the
+following observation.
+Proposition 11. For all non-negative integers l and e, the set of (n1 , . . . , nl ) ∈
+ l
+Nreg for which
+                                \l
+                          dimK     (Tni Z)(K) ≥ e
+                                      i=1
+                SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES                                5
+
+
+is the set of K-rational points of a closed subvariety of N (L)lreg .
+Proof. Let d be the dimension of Z and let γ : Zreg → Grd (M (L)) be the Gauss map
+sending a point of Z to its tangent space. Now the set of all l-tuples (T1 , . . . , Tl ) ∈
+Grd (M (L))l whose intersection has dimension at least e is closed in Grd (M (L))l ,
+hence so is its pre-image under (γ|Nreg )×l . The set of the proposition is the set of
+K-rational points of this pre-image.                                                      
+   For dimension reasons, the space TNreg Z(K) is the intersection of finitely many
+tangent spaces Tni Z(K), i = 1, . . . , m with ni ∈ Nreg . Now if K is large (in
+particular, if K is infinite), then the preceding proposition suggests the following
+randomised algorithm to compute TNreg Z(K): First, find an upper bound on m,
+and second, choose m elements of N at random. These are probably smooth points
+by (**), and by the preceding proposition the intersection of their tangent spaces is
+probably equal to TNreg Z(K). In particular, if this intersection is equal to N , then
+you are sure that N is a maximal vector space in Z(K). This algorithm was used
+to produce computational evidence for Theorem 2, see Section 5. For the second
+half of Proposition 3 we need the following.
+Proposition 12. Suppose that a group G acts K-linearly on M , that N is G-
+stable, and that Z is stable under the corresponding L-linear action on M (L). Then
+TNreg Z(K) is a G-submodule of M .
+Proof. Let m ∈ TNreg Z(K), g ∈ G, and n ∈ Nreg . Then g −1 n ∈ N ∩ Zreg =
+Nreg , and g maps the K-rational tangent space (Tg−1 n Z)(K) isomorphically onto
+(Tn Z)(K). As m lies in the former by assumption, gm lies in the latter. This shows
+that gm ∈ TNreg Z(K).                                                            
+   We will apply Proposition 10 to the setting of Section 1: M = End(V ), where
+V is a vector space over K, N = A is a subspace of End(V ) of generic rank r,
+and Z = Rr is the variety of L-linear maps V (L) → V (L) of rank at most r. The
+following example shows that assumption (*) is not automatic here.
+Example 13. Suppose that K is a finite field with q elements labelled c1 , . . . , cq .
+Then the 2-dimensional subspace A of Mq+1 (K) spanned by the diagonal matri-
+ces A = diag(1, 1, . . . , 1, 0) and B = diag(c1 , c2 , . . . , cq , 1) is singular—i.e., lies in
+Rq (K)—but A(L) is not.
+   We avoid this anomaly as follows: Rr is defined by the (r + 1) × (r + 1)-minors of
+matrices, which are homogeneous polynomials of degree r + 1. Hence, if we assume
+that |K| ≥ r + 1, then assumption (*) is automatically fulfilled by Lemma 8; in
+particular, the rank of A(L) is then also r. Moreover, the smooth points of Rr
+are the linear maps of rank exactly r, and by assumption A contains such maps,
+so that assumption (**) is also satisfied. The space TAreg Rr (K) will be denoted
+RND(A), and its elements will be called rank-neutral directions of A. We recall a
+useful characterisation of the tangent spaces to Rr at smooth points.
+Lemma 14. For A ∈ Rr (K) of rank r, the tangent space (TA Rr )(K) is equal to
+{B ∈ End(V ) | B ker A ⊆ im A}.
+Proof. This is well known [11, Example 14.16]; I only give an intuitive argument:
+For B to lie in TA Rr , it is necessary and sufficient that there be, for every v ∈ ker(A),
+a vector w ∈ V for which (A + ǫB)(v + ǫw) = 0 modulo ǫ2 . The coefficient of ǫ
+6                                       JAN DRAISMA
+
+
+in this expression is Aw + Bv, so that the existence of such a w is equivalent to
+Bv ∈ im(A).                                                                    
+  Proposition 3 is now a direct consequence of Proposition 10, Lemma 14, and
+Proposition 12.
+Example 15. Proposition 3 provides another proof of rank-criticality of compres-
+sion spaces (under the condition |K| ≥ n). Indeed, in the notation of Example 4,
+suppose that B ∈ End(V ) does not map U into W , and let u ∈ U be such that
+Bu 6∈ W . It is not hard to construct an A ∈ A with ker A = Ku and im A 6∋ Bu.
+But then B 6∈ (TA Rn−1 )(K) by Lemma 14 and we conclude that RND(A) = A.
+
+                   4. A construction of rank-critical spaces
+   The singular space of Example 5 is closed under the commutator, and so are
+the compression spaces of Example 4 if W ⊆ U .1 This suggests the study of the
+following situation: Let G be an affine algebraic group defined over K, and let
+ρ : G → GLK (V ) be a finite-dimensional representation defined over K. Let g be
+the Lie algebra of G, and denote the corresponding representation g → End(V )
+also by ρ. Set r := rk ρ(g) and suppose that |K| ≥ r + 1. Now G acts on End(V )
+by gA := ρ(g)Aρ(g)−1 , and both ρ(g) and the variety Rr of linear maps of rank
+≤ r are G-stable. Proposition 3 implies: the rank-neutral directions of ρ(g) form
+a G-module, and if RND(ρ(g)) = ρ(g), then ρ(g) is rank-critical. In the rest
+of this section we assume that char K = 0, so that we can use the well-known
+representation theory of semisimple Lie algebras to construct rank-critical spaces.
+Example 16. Recall Example 5. Here G is the group On of orthogonal matrices,
+g = on , ρ is the identity, and V = K n is the standard on -module. It is well known
+that End(V ) is the direct sum of three irreducible On -modules: the space on of
+skew-symmetric matrices, the scalar multiples of the identity I, and the space of
+symmetric matrices with trace 0. We now use Lemma 14 to show that the last two
+modules are not contained in RND(on ): Choose
+                                                                 
+                                                             0 0
+                   Y := diag(1, −1, 0, . . . , 0) and X :=          ,
+                                                             0 X′
+where X ′ ∈ on−1 has full rank n − 1. Then neither I nor Y maps ker X into
+im X, hence the On -modules that they represent are not contained in RND(on ).
+We conclude that RND(on ) = on , so that on is maximal singular.
+   Suppose now that g is semisimple and that it has a split Cartan subalgebra
+h. Then V is the direct sum of its h-weight spaces Vλ , λ ∈ h∗ , and we have r =
+dim V − dim V0 . Furthermore, we choose a Borel subalgebra b of g containing h.
+We can then compute, for each b-highest weight λ of End(V ), the multiplicity of λ
+among the highest weights in RND(ρ(g)); see Section 5.
+   If, moreover, K is algebraically closed, then the rank-neutral directions of ρ(g)
+can be characterised as follows:
+                                                   M
+(***)      RND(ρ(g)) = {Y ∈ End(V ) | (gY )V0 ⊆        Vλ for all g ∈ G}.
+                                                           λ6=0
+
+    1Note that this property is not preserved under the multiplication from the left and from the
+right with arbitrary invertible matrices—however, deciding whether a given subspace A of End(V )
+is GL(V ) × GL(V )-conjugate to a Lie algebra is easily reduced to a linear problem.
+                SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES                                   7
+
+                                                                                     L
+Indeed, a generic element of ρ(h) has kernel V0 and image V1 :=                         λ6=0 Vλ , so
+that the inclusion ⊆ follows from Lemma 14. On the other hand, if any map
+in the G-orbit of Y maps V0 into V1 , then Y is tangent to Rr at all points of
+{gX | g ∈ G, X ∈ ρ(h) with ker X = V0 and im X = V1 }. This set is dense in
+ρ(g)reg , and because the set {X ∈ ρ(g)reg | Y ∈ TX Rr } is closed in ρ(g)reg , we
+conclude that Y ∈ RND(ρ(g)). We now proceed with the proof of Theorem 1.
+     Let g be the Lie algebra slm (K), let k be a natural number, and let ρ : g →
+End(V ) be the representation of g on the k-th symmetric power V = S k ((K m )∗ )
+of (K m )∗ , i.e., on the homogeneous polynomials on K m of degree k. Let h ⊆ g be
+the Cartan subalgebra of diagonal matrices and let b ⊇ h be the Borel subalgebra
+of upper triangular matrices. The image of ρ is spanned by the (restrictions to V
+                                       ∂                     ∂         ∂
+of the) differential operators xi ∂x     j
+                                           , i 6= j, and xi ∂x i
+                                                                 − xj ∂x j
+                                                                           , where the latter span
+ρ(h). The weight spaces in V are one-dimensional and spanned by the monomials
+xa1 1 · · · xamm with a1 + . . . + am = k. The highest root vector in ρ(g) is xm ∂x         ∂
+                                                                                              1
+                                                                                                . To
+apply Proposition 3, we compute the highest weight vectors in End(V ).
+Lemma 17. The highest weight vectors in End(V ) = V ⊗ V ∗ are precisely the
+            ∂ d
+powers (xm ∂x 1
+                ) for d = 0, . . . , k.
+Proof. It is clear that these are (non-zero) highest weight vectors; that there are
+no others follows by a dimension computation. Alternatively, the lemma is an easy
+application of the Littlewood-Richardson rule [8].                               
+
+    The space ρ(g) is singular if and only if k is a multiple of m, say k = em, and
+then xe1 xe2 . . . xem spans the zero weight space. The space ρ(slm ) has no chance of
+being maximal singular if m = 2 (unless k=2), as then dim(V ) = k + 1 = 2e + 1 is
+odd and SL2 leaves invariant a non-degenerate symmetric bilinear form on V ; ρ(g)
+is then contained in the larger singular space of linear maps that are skew relative
+to this bilinear form. This explains the condition m ≥ 3 in Theorem 1.
+
+Proof of Theorem 1. First, if the image of g is maximal singular over a larger field,
+then it is also maximal singular over K; so it suffices to prove the theorem for K
+algebraically closed. By Proposition 3, Lemma 17, and the characterisation (***)
+of RND(ρ(g)) it suffices to prove that if d 6= 1, then some element of the SLm -orbit
+        ∂ d
+of (xm ∂x 1
+            ) does not map xe1 · · · xem into the space spanned by all other monomials.
+                                                                                   ∂
+This SLm -orbit contains the differential operators of the form (x1 +x2 +x3 )d (α ∂x 1
+                                                                                       +
+   ∂        ∂ d                                                 e     e
+β ∂x2 + γ ∂x3 ) with α + β + γ = 0, and the coefficient of x1 · · · xm in
+                                            ∂      ∂      ∂ d e
+                   (x1 + x2 + x3 )d (α         +β     +γ     ) x1 · · · xem
+                                           ∂x1    ∂x2    ∂x3
+is equal to
+                                                     2
+                            X                 d!
+                                                           (e)a (e)b (e)c αa β b γ c ,
+                                           a! b! c!
+                      a,b,c: a+b+c=d
+
+where (e)p := e(e − 1) · · · (e − p + 1) is the falling factorial. Lemma 18 below shows
+that this polynomial in α, β, and γ is not a multiple of α + β + γ if d 6= 1. In
+particular, for all d 6= 1 there exist α, β, γ ∈ K with α + β + γ = 0 for which the
+coefficient above is non-zero, that is, for which the term xe1 · · · xem does indeed occur
+                        ∂        ∂        ∂ d e
+in (x1 + x2 + x3 )d (α ∂x 1
+                            + β ∂x 2
+                                     + γ ∂x 3
+                                              ) x1 · · · xem ; this concludes the proof. 
+8                                   JAN DRAISMA
+
+
+Lemma 18. For any integers e > 0 and d ∈ {0} ∪ {2, 3, . . . , 3e} the polynomial
+                                           
+                       X           d!    e e e a b c
+    Pd,e (α, β, γ) :=                                α β γ ∈ Z[α, β, γ]
+                                a! b! c! a b c
+                       a,b,c: a+b+c=d
+
+is not divisible by α + β + γ.
+Proof. First, P0,e = 1 is not divisible by α + β + γ; suppose next that d ≥ 2e. Then
+the highest monomial in Pd,e with respect to the lexicographic order with α >
+β > γ is αe β e γ d−2e . Rewriting Pd,e as a polynomial in the elementary symmetric
+polynomials σ1 := α + β + γ, σ2 := αβ + βγ + γα, and σ3 := αβγ will therefore give
+the monomial σ3d−2e σ23e−d a non-zero coefficient. Hence P is not divisible by σ1 .
+   If 1 < d < 2e, then we claim that the coefficient of αd−1 β in Pd,e (α, β, −α − β)
+is non-zero. Indeed, this coefficient is readily seen to equal Qd−1 , where
+                                  d              
+                                 X     d    e     e            a
+          Qd := (e + 1)(d + 1)                         (−1)a       , d ≥ 1.
+                                 a=0
+                                       a    a   d − a        a + 1
+Automatic summation using Zeilberger-Wilf theory and the Maple-package EKHAD8
+[2, 17] yields the following expression for Qd :
+                    (e + k)(e + k − 1) · · · (e − k + 1)
+           
+           (−1)k                                                if d = 2k − 1, and
+           
+           
+     Qd =                     k · ((k − 1)!)2
+                            (e + k)(e + k − 1) · · · (e − k + 1)
+           (−1)k (2e + 1)                                       if d = 2k.
+           
+           
+                                       k · ((k − 1)!)2
+In particular, we find that Qd is non-zero for 1 ≤ k ≤ e, so that the coefficient of
+αd−1 β in Pd,e (α, β, −α − β) is in fact non-zero for 2 ≤ d ≤ 2e + 1. This concludes
+the proof of the lemma.                                                             
+    We now prove rank-criticality of the images of adjoint representations.
+Proof of Theorem 2. Again, it suffices to prove the theorem in the case where K is
+algebraically closed. We will prove RND(ad(g)) = ad(g) and then apply Proposition
+3. Therefore, let A be a rank-neutral direction of ad(g) and let x ∈ g have centraliser
+gx of minimal dimension; then Agx ⊆ [x, g] by Lemma 14. In particular, we find
+that if [x, y] = 0, then the Killing form κ of g vanishes on (x, Ay). As the commuting
+variety of g is irreducible [18], this implies that κ(x, Ay) = 0 for all x, y ∈ g with
+[x, y] = 0, independent of dim gx . Now consider the space
+        M (g) := {A ∈ End(g) | κ(x, Ay) = 0 for all x, y ∈ g with [x, y] = 0};
+we claim
+     L that it is equal to ad(g). First, assume that this is true for simple g, let
+g = i gi be a decomposition ofL  g into simple ideals, let A ∈ M (g), and let y ∈ gi .
+Then Ay is κ-perpendicular to      j6=i gj , so Ay ∈ gi . In other words, every gi is
+A-stable, and of course A|gi ∈PM (gi ). By assumption there exist zi ∈ gi such that
+A|gi = adgi zi , and then A = i adg (zi ).
+   It remains to prove M (g) = ad(g) for simple g. For sl2 this is easy, so we may
+suppose that g has rank ≥ 2. Setting x = y in the condition on A, we see that
+M (g) ⊆ o(κ), the orthogonal Lie algebra defined by κ. Moreover, M (g) is stable
+under conjugation with any automorphism of g, and this implies two things: first,
+that M (g) is a g-module and second, using the Chevalley involution of g, that it is
+self-dual as such. Now the g-module o(κ)/ ad(g) is irreducible if g is not of type A—
+its highest weight can be determined explicitly but is not of interest to us—while it
+               SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES                                 9
+
+
+is a direct sum W ⊕ W ∗ for some non-self-dual module W if g is of type A. In any
+case, M (g) is either ad(g) or o(κ). But M (g) 6= o(κ): choose for instance x, y in (a
+Cartan subalgebra of) g satisfying [x, y] = 0 and κ(x, x) = κ(y, y) = 1 − κ(x, y) = 1
+and let A be the map sending x to y, y to −x, and the κ-orthogonal complement of
+hx, yiK to 0; then A ∈ o(κ)\M (g). We conclude that M (g) = RND(ad(g)) = ad(g),
+as claimed.                                                                         
+
+                              5. Some computer results
+  To compute the G-module RND(ρ(g)), where ρ : g → End(V ) is a finite-
+dimensional representation of a split semisimple Lie algebra g over a field K of
+characteristic 0, we use the following algorithm based on Proposition 11:
+    (1) Compute the non-zero highest weight spaces HWµ of End(V ) relative to a
+        Borel subalgebra b and a split Cartan subalgebra h contained in b; this is
+        elementary linear algebra.
+    (2) For each of them, say HWµ of dimension l, choose l random elements
+        X1 , . . . , Xl ∈ ρ(g), verify that they have maximal rank, and compute the
+        subspace
+                  {Y ∈ HWµ | Y ker Xi ⊆ im Xi for all i = 1, . . . , l}.
+    (3) The dimension of this space is the multiplicity of µ among the highest
+        weights in RND(ρ(g)). Well, more precisely, it is an upper bound to this
+        multiplicity, which with high probability is sharp.
+   If we find that the multiplicity of every highest weight in RND(ρ(g)) is equal
+to its multiplicity in ρ(g), then ρ(g) is rank-critical by Proposition 3. I list some
+examples, found by computer experiments with this algorithm.
+    (1) The images of the adjoint representations of split simple Lie algebras of
+        types A1 , . . . , A4 , B2 , . . . , B4 , C3 , C4 , and G2 were proved rank-critical with
+        this algorithm. This computational evidence led to the formulation of The-
+        orem 2.
+    (2) The image of the 26-dimensional representation of F4 is rank-critical (of
+        rank 24).
+    (3) Let g be split simple of type G2 and let ρ be the 7-dimensional repre-
+        sentation of highest weight [1, 0], with zero weight multiplicity 1. Then
+        RND(ρ(g)) is equal to o7 , which of course is still singular, so ρ(g) is not a
+        maximal singular space.
+    (4) Similarly, if g is of type G2 and ρ is the 27-dimensional representation
+        of highest weight [2, 0] with zero weight multiplicity 3, then RND(ρ(g)) is
+        equal to φ(o7 ), where φ is the representation of o7 of highest weight [2, 0, 0],
+        which restricts to ρ on g. As both ρ(g) and φ(o7 ) have generic rank 24, the
+        former is not rank-critical but the latter is.
+    (5) Let ρ be the 35-dimensional irreducible representation of g = sl3 of highest
+        weight [4, 1]. Then RND(ρ(g)) is a sum of three irreducible modules of
+        highest weights [1, 4], [1, 1], and [4, 1]. Hence, Proposition 3 cannot be ap-
+        plied to conclude rank-criticality. Note that by the results of Dynkin [4] the
+        image of ρ is a maximal subalgebra of sl35 , so that there is no easy argument
+        as in the previous two examples, that shows that ρ(g) is not rank-critical.
+  Theorem 2 was first conjectured on the basis of (1).
+10                                        JAN DRAISMA
+
+
+                       6. Conclusion and further questions
+    Representations of semisimple Lie algebras yield an abundance of rank-critical
+matrix spaces, which suggests that the (commonly believed to be intractable) clas-
+sification of such spaces may in some sense include the classification of Lie algebra
+representations. In particular, among the representations of sl3 we found infin-
+itely many where the image of sl3 is a maximal singular space. The matrix spaces
+A constructed this way actually satisfy an a priori stronger condition than rank-
+criticality, namely: A = RND(A). These results pose many questions for further
+research, of which the following seem most interesting.
+     (1) Directly describe, given the highest weights in a representation ρ of a split
+         semisimple Lie algebra g, the highest weights in the g-module RND(ρ(g)).
+         The present proofs of Theorems 1 and 2 are somewhat ad hoc, and the
+         algorithm of Section 5 is computationally rather intensive, so that it only
+         works for representations of dimensions at most 50 or so.
+     (2) Investigate the discrepancy between rank-criticality and the condition A =
+         RND(A).
+     (3) For mn the minimal dimension of a maximal singular space of n × n-
+         matrices, determine lim inf n→∞ mn (which is larger than 2 and at most
+         8, as we have seen, while—to the best of my knowledge—it was previously
+         believed to be infinite) and lim supn→∞ mn .
+     (4) Investigate whether the maximal singular spaces of Theorem 1 remain max-
+         imal modulo primes, and, more generally, whether rank-critical spaces con-
+         structed in Section 4 remain rank-critical modulo primes.
+
+
+                                          References
+ [1] LeRoy B. Beasley. Null spaces of spaces of matrices of bounded rank. In Current trends in
+     matrix theory, Proc. 3rd Conf., Auburn/Ala. 1986, pages 45–50. North-Holland, New York,
+     1987.
+ [2] Andries Brouwer. Automatic summation using Zeilberger-Wilf theory. Nieuw Arch. Wiskd.
+     (5), 3(4):308–312, 2002.
+ [3] Jean Dieudonné. Sur une généralisation du groupe orthogonal à quatre variables. Arch. Math.,
+     Oberwolfach, 1:282–287, 1949.
+ [4] Eugene B. Dynkin. Maximal subgroups of the classical groups. Am. Math. Soc. Transl., II.
+     Ser. 6:245–378, 1957.
+ [5] David Eisenbud and Joe Harris. Vector spaces of matrices of low rank. Adv. Math., 70(2):135–
+     155, 1988.
+ [6] P. Fillmore, C. Laurie, and H. Radjavi. On matrix spaces with zero determinant. Linear
+     Multilinear Algebra, 18:255–266, 1985.
+ [7] H. Flanders. On spaces of linear transformations with bounded rank. J. Lond. Math. Soc.,
+     37:10–16, 1962.
+ [8] William Fulton and Joe Harris. Representation theory. A first course. Number 129 in Grad-
+     uate Texts in Mathematics. Springer-Verlag, New York, 1991.
+ [9] F.R. Gantmacher. The theory of matrices. Vol. 2. AMS Chelsea Publishing, New York, 1959.
+[10] Boaz Gelbord and Roy Meshulam. Spaces of singular matrices and matroid parity. Eur. J.
+     Comb., 23(4):389–397, 2002.
+[11] Joe Harris. Algebraic geometry. A first course. Number 133 in Graduate Texts in Mathemat-
+     ics. Springer-Verlag, Berlin etc., 1992.
+[12] Bo Ilic and J.M. Landsberg. On symmetric degeneracy loci, spaces of symmetric matrices of
+     constant rank and dual varieties. Math. Ann., 314(1):159–174, 1999.
+[13] Raphael Loewy. Large spaces of symmetric matrices of bounded rank are decomposable.
+     Linear Multilinear Algebra, 48(4):355–382, 2001.
+                SMALL MAXIMAL SPACES OF NON-INVERTIBLE MATRICES                                  11
+
+
+[14] Raphael Loewy and Nizar Radwan. Spaces of symmetric matrices of bounded rank. Linear
+     Algebra Appl., 197-198:189–215, 1994.
+[15] László Lovász. Singular spaces of matrices and their application in combinatorics. Bol. Soc.
+     Bras. Mat., Nova Sér., 20(1):87–99, 1989.
+[16] Roy Meshulam. On two extremal matrix problems. Linear Algebra Appl., 114-115:261–271,
+     1989.
+[17] Marko Petkovšek, Herbert S. Wilf, and Doron Zeilberger. A = B. A. K. Peters, Wellesley,
+     Massachusetts, 1996.
+[18] R. W. Richardson. Commuting varieties of semisimple lie algebras and algebraic groups.
+     Compositio Math., 38(3):311–327, 1979.
+
+   Jan Draisma, Mathematisches Institut der Universität Basel, Switzerland
+   E-mail address: jan.draisma@unibas.ch
+

@@ -1,0 +1,681 @@
+                                             ICM 2002 · Vol. III · 1–3
+
+
+
+
+                                                      Vector Bundles, Linear
+                                               Representations, and Spectral Problems
+arXiv:math/0304325v1 [math.RT] 22 Apr 2003
+
+
+
+
+                                                                              Alexander Klyachko*
+
+                                                                                       Abstract
+
+                                                          This paper is based on my talk at ICM on recent progress in a number of
+                                                   classical problems of linear algebra and representation theory, based on new approach,
+                                                   originated from geometry of stable bundles and geometric invariant theory.
+
+                                                   2000 Mathematics Subject Classification: 14F05, 14M15, 14M17, 14M25, 15A42.
+                                                   Keywords and Phrases: Bundles, Linear representations, Spectral problems.
+
+
+
+
+                                             1. Introduction
+                                                  Theory of vector bundles brings a new meaning and adds a delicate geometric
+                                             flavour to classical spectral problems of linear algebra, relating them to geometric
+                                             invariant theory, representation theory, Schubert calculus, quantum cohomology,
+                                             and various moduli spaces. The talk may be considered as a supplement to that of
+                                             Hermann Weyl [35] from which I borrow the following quotation
+                                                  “In preparing this lecture, the speaker has assumed that he is expected to talk
+                                             on a subject in which he had some first-hand experience through his own work. And
+                                             glancing back over the years he found that the one topic to which he has returned
+                                             again and again is the problem of eigenvalues and eigenfunctions in its various
+                                             ramifications.”
+
+                                             2. Spectra and representations
+                                                  Let’s start with two classical and apparently independent problems.
+                                                  Hermitian spectral problem. Find all possible spectra λ(A + B) of sum
+                                             of Hermitian operators A, B with given spectra
+
+                                                                       λ(A) : λ1 (A) ≥ λ2 (A) ≥ · · · ≥ λn (A),
+                                                                       λ(B) : λ1 (B) ≥ λ2 (B) ≥ · · · ≥ λn (B).
+
+                                                   *Department of Mathematics, Bilkent University, Bilkent 06533, Ankara, Turkey. E-mail:
+                                             klyachko@fen.bilkent.edu.tr
+600                                       A. Klyachko
+
+       Among commonly known restrictions on spectra are trace identity
+                         X                   X                    X
+                              λi (A + B) =             λj (A) +       λk (B)
+                          i                    j                  k
+
+
+and a number of classical inequalities, like that of Weyl [34]
+
+                              λi+j−1 (A + B) ≤ λi (A) + λj (B).                      (2.0)
+
+     Tensor product problem. Find all components Vγ ⊂ Vα ⊗ Vβ of tensor
+product of two irreducible representations of GLn with highest weights (=Young
+diagrams)
+                              α : a1 ≥ a2 ≥ · · · ≥ an
+                                   β : b1 ≥ b2 ≥ · · · ≥ bn .
+
+    In contrast to the spectral problem (2.1) the coefficients of tensor product
+decomposition
+                                       X γ
+                             Vα ⊗ Vβ =     cαβ Vγ                           (2.1)
+                                                       γ
+
+can be evaluated algorithmically by Littlewood–Richardson rule, which may be de-
+scribed as follows. Fill i-th row of diagram β by symbol i. Then cγαβ is equal to
+number of ways to produce diagram γ by adding cells from β to α in such a way
+that the symbols
+        i) weakly increase in rows,
+       ii) strictly increase in columns,
+      iii) reading all the symbols from right to left, and from top to bottom produces
+           a lattice permutation, i.e. in every initial interval symbol i appears at least
+           as many times as i + 1.
+     It turns out that these two problems are essentially equivalent and have the
+same answer. To give it, let’s associate with a subset I ⊂ {1, 2, . . . , n} of cardinality
+p = |I| Young diagram σI in a rectangular of format p × q, p + q = n, cut out by
+polygonal line ΓI , connecting SW and N E corners of the rectangular, with i-th
+unit edge running to the North, for i ∈ I, and to the East otherwise. One can
+formally multiply the diagrams by L-R rule
+                                               X
+                                     σI σJ =            cK
+                                                         IJ σK                       (2.2)
+                                                   k
+
+       K
+where σIJ  := cσσK
+                 I σJ
+                      are L-R coefficients. Geometrically (2.2) is decomposition of
+product of two Schubert cycles in cohomology ring of Grassmannian Gqp of linear
+subspaces of dimension p and codimension q.
+                                Spectral Problems                                    601
+
+Theorem 2.1. The following conditions are equivalent
+    i) There exist Hermitian operators A, B, C = A + B with spectra λ(A), λ(B),
+λ(C).
+    ii) Inequality
+                           λK (C) ≤ λI (A) + λJ (B),                      (IJK)
+
+holds each time L-R coefficient cK
+                                 IJ 6= 0. Here I, J, K ⊂ {1, 2, . . . , n} are subsets of
+                                          P
+the same cardinality p < n, and λI (A) = i∈I λi (A).
+     iii) For integer spectra α = λ(A), β = λ(B), γ = λ(C) the above conditions
+are equivalent to
+                                   Vγ ⊂ Vα ⊗ Vβ .                                   (2.3)
+
+Remarks 2.2. (1) The last claim iii) implies a recurrence procedure to generate
+all α, β, γ with cγαβ 6= 0:
+
+         cγαβ 6= 0 ⇐⇒ Vγ ⊂ Vα ⊗ Vβ ⇐⇒ γK ≤ αI + βJ each time cK
+                                                              IJ 6= 0.
+                   LR                  Th
+
+
+Here cγαβ are Littlewood-Richardson coefficients for group GLn , while cK
+                                                                        IJ are L-R
+coefficient for group GLp of smaller rank p < n. An explicit form of this recur-
+rence has been conjectured by A. Horn [13] in the framework of Hermitian spectral
+problem.
+      (2) Inequalities (IJK) for cK
+                                  IJ 6= 0 define a cone in the space of triplets of
+spectra, and the facets of this cone correspond to cK
+                                                    IJ = 1. P. Belkale [3] was first
+to note that all inequalities (IJK) follows from those with cK
+                                                             IJ = 1, and in recent
+preprint A. Knutson, T. Tao, and Ch. Woodward [23] proved their independence.
+In my original paper [19] condition (2.3) appears in a weaker form
+
+                        VN γ ⊂ VN α ⊗ VN β    for some N > 0,                      (2.3′ )
+
+and its equivalence to (2.3), known as saturation conjecture, was later proved by
+A. Knutson and T. Tao [22], and in more general quiver context by H. Derksen and
+J. Weyman [6].
+      Note that inequalities (IJK), although complete, are too numerous to be prac-
+tical for large n. That is why L-R rule, in its different incarnations [22, 11], often
+provides a more intuitive way to see possible spectra for sum of Hermitian operators.
+Example 2.3. Let A be Hermitian matrix with integer spectrum λ(A) : a1 ≥
+a2 ≥ . . . ≥ an and B ≥ 0 be a nonnegative matrix of rank one with spectrum
+λ(B) : b ≥ 0 ≥ · · · ≥ 0. Viewing the spectra as Young diagrams, and applying L-R
+rule we find out that λ(A) ⊗ λ(B) is a sum of diagrams γ : c1 ≥ c2 ≥ · · · ≥ cn
+satisfying the following intrlacing inequalities
+
+                           c1 ≥ a1 ≥ c2 ≥ a2 · · · ≥ cn ≥ an .
+602                                     A. Klyachko
+
+By Theorem 2.3 this implies Cauchy interlacing theorem for spectra
+
+                λi (A) ≤ λi (A + B) ≤ λi−1 (A),       rkB = 1,   B ≥ 0,
+
+known in mechanics as Rayleigh-Courant-Fisher principle: Let mechanical system
+S ′ is obtained from another one S, by imposing a linear constraint, e.g. by fixing a
+point of a drum. Then spectrum of S separates spectrum of S ′ .
+
+3. Toric bundles
+      Historically Theorem 2.3 first appears as a byproduct of theory of toric vector
+bundles and sheaves, originated in [15, 17]. See other expositions of the theory in
+[21, 30], and further applications in [16, 33]. Vector bundles form a cross point at
+which the diverse subjects of this paper meet together.
+
+3.1. Filtrations
+      To avoid technicalities let’s consider the simplest case of projective plane
+
+                             P2 = {(xα : xβ : xγ )|x ∈ C}
+
+on which diagonal torus
+
+                              T = {(tα : tβ : tγ )|t ∈ C∗ }                       (3.1)
+
+acts by the formula
+                             t · x = (tα xα : tβ xβ : tγ xγ ).
+Orbits of this action are vertices, sides and complement of the coordinate triangle. In
+particular there is unique dense orbit, consisting of points with nonzero coordinates.
+      The objects of our interest are T -equivariant (or toric for short) vector bundles
+E over P2 . This means that E is endowed with an action T : E which is linear on
+fibers and makes the following diagram commutative
+
+                              E@ > t >> E
+                            @V πV V @V V πV             t ∈ T.
+
+                             P2 @ > t >> P2
+
+Let us fix a generic point p0 ∈ P2 not in a coordinate line, and denote by
+
+                                      E := E(p0 )
+
+the corresponding generic fiber. There is no action of torus T on the fiber E.
+Instead the equivariant structure produces some distinguished subspaces in E by
+the following construction. Let us choose a generic point pα ∈ X α in coordinate
+line X α : xα = 0. Since T -orbit of p0 is dense in P2 , we can vary t ∈ T so that tp0
+                                Spectral Problems                                    603
+
+tends to pα . Then for any vector e ∈ E = E(p0 ), we have te ∈ E(tp0 ) and can try
+the limit
+                                     lim (te)
+                                       tp0 →pα
+
+which either exists or not. Let us denote by E α (0) the set of vectors e ∈ E for
+which the limit exists:
+                        E α (0) := {e ∈ E| lim (te) exists}.
+                                            tp0 →pα
+             α
+Evidently E (0) is a vector subspace of E, independent of p0 and pα .
+     An easy modification of the previous construction allows to define for integer
+m ∈ Z, the subspace
+                          (                −m                )
+                 α                         tα
+               E (m) := e ∈ E| lim                · (te) exists .
+                                  tp0 →pα  tβ
+Roughly speaking E α (m) consists of vectors e ∈ E for which te vanishes up to order
+m as tp0 tends to coordinate line X α . The subspaces E α (m) form a non-increasing
+exhaustive Z-filtration:
+                E α : · · · ⊃ E α (m − 1) ⊃ E α (m) ⊃ E α (m + 1) ⊃ · · · ,
+                                E α (m) = 0, for m ≫ 0,                            (3.2)
+                                E α (m) = E, for m ≪ 0.
+Applying this construction to other coordinate lines, we get a triple of filtrations
+E α , E β , E γ in generic fiber E = E(p0 ), associated with toric bundle E.
+ Theorem 3.1. The correspondence
+                                  E 7→ (E α , E β , E γ )                          (3.3)
+establishes an equivalence between category of toric vector bundles on P2 and cate-
+gory of triply filtered vector spaces.
+      We’ll use notation E(E α , E β , E γ ) for toric bundle corresponding to triplet of
+filtrations E α , E β , E γ .
+
+3.2. Stability
+      The previous theorem tells that every property or invariant of a vector bundle
+has its counterpart on the level of filtrations. For application to spectral problems
+the notion of stability of a vector bundle E is crucial. Recall that E → P2 is said to
+be Mumford–Takemoto stable iff
+                                    c1 (F )   c1 (E)
+                                            <                                    (3.4)
+                                     rk F      rk E
+for every proper subsheaf F ⊂ E, and semistable if weak inequalities hold. Here
+c1 (E) = deg det E is the first Chern class. Donaldson theorem [7] brings a deep
+geometrical meaning to this seemingly artificial definition: Every stable bundle
+carries unique Hermit-Einstein metric (with Ricci curvature proportional to metric).
+604                                    A. Klyachko
+
+Theorem 3.2. Toric bundle E = E(E α , E β , E γ ) is stable iff for every proper sub-
+space F ⊂ E the following inequality holds
+               1      X                        1    X
+                           i dim F [ν] (i) <              i dim E [ν] (i)       (3.5)
+             dim F                           dim E
+                     ν=α,β,γ                            ν=α,β,γ
+                       i∈Z                                i∈Z
+
+where F ν (i) = F ∩ E ν (i) is induces filtration with composition factors F [ν] (i) =
+F ν (i)/F ν (i + 1).
+    There is nothing surprising in this theorem since the sums in (3.5) are just
+Chern classes of the corresponding toric bundles and sheaves.
+Remark 3.3. Inequality (3.5) depends only on relative positions of subspace F ⊂
+E with respect to filtrations E α , E β , E γ , which are given by three Schubert cells
+sα , sβ , sγ . Hence we have one inequality each time.
+                                   sα ∩ sβ ∩ sγ 6= ∅.                             (3.6)
+For filtrations in general position (3.6) is equivalent to nonvanishing of the product
+of Schubert cycles σα · σβ · σγ 6= 0 in cohomolgy ring of Grassmannian, and in this
+case stability inequalities (3.5) amount to inequalities (IJK) of Theorem 2.1.
+
+3.3. Back to Hermitian operators
+      Let now E be Hermitian space and H : E → E be Hermitian operator with
+spectral filtration                                      
+                               sum of eigenspaces of H
+                    E H (x) =                               .          (3.7)
+                               with eigenvalues at least x
+The operator can be recovered from the filtration using spectral decomposition
+                                   Z ∞
+                               H=        xdPH (x)
+                                        −∞
+
+where PH (x) is orthogonal projector with kernel E H (x). So in Hermitian space we
+have equivalence
+                       Hermitian operators = R-filtrations.
+Let H α be Hermitian operator with spectral filtration E α . Its spectrum depends
+only on filtration E α , and we define Spec E α := Spec H α .
+Theorem 3.3. Indecomposable triplet of R-filtrations E α , E β , E γ is stable iff there
+exists a Hermitian metric in E such that the sum of the corresponding Hermitian
+operators is a scalar
+                            H α + H β + H γ = scalar.                              (3.8)
+
+     This is a toric version of Donaldson theorem on existence of Hermit–Einstein
+metric in stable bundles. Together with Theorem 3.2 it reduces solution of Hermit-
+ian spectral problem to stability inequalities (3.5), which by remark 3.3 amounts to
+inequalities (IJK) of Theorem 2.1.
+     See also Faltings talk [9] on arithmetical applications of stable filtrations.
+                                    Spectral Problems                                   605
+
+3.4. Components of tensor product
+       In the previous section we explain that stability inequalities (3.5) (⇔ (IJK))
+via toric Donaldson-Yau theorem solve Hermitian spectral problem. To relate this
+with tensor product part of Theorem 2.1 we need another interpretation of the
+stability inequalities via Geometric Invariant Theory [26].
+       Recall, that point x ∈ P(V ) is said to be GIT stable with respect to linear
+action G : V if G-orbit of the corresponding vector x ∈ V is closed and its stabilizer
+is finite. Let
+                                 X = Fα × Fβ × Fγ
+be product of three flag varieties of the same types as flags of the filtrations
+E α , E β , E γ , and Lα be line bundle on the flag variety F α induced by character
+                      ωα : diag(x1 , x2 , . . . , xn ) 7→ xa1 1 xa1 2 · · · xa1 n ,
+where α : a1 ≥ a2 ≥ · · · ≥ an is the spectrum of filtration E α , i.e. spectrum of the
+corresponding operator H α .
+Observation 3.4. Vector bundle E = E(E α , E β , E γ ) is stable iff the corresponding
+triplet of flags
+              x = F α × F β × F γ ∈ F α × F β × F γ = X ֒→ P(Γ(X, L))
+is a GIT stable point w.r. to group SL(E) and polarization L = Lα ⊠ Lβ ⊠ Lγ .
+      This observation is essentially due to Mumford [25]. Notice that by Borel-Weil-
+Bott theorem [5] the space of global sections Γ(F α , Lα ) = Vα is just an irreducible
+representation of SL(E) with highest weight α. Hence Γ(X, L)) = Vα ⊗ Vβ ⊗ Vγ .
+Every stable vector x can be separated from zero by a G-invariant section of LN .
+Therefore triplet of flags in generic position is stable iff [VN α ⊗ VN β ⊗ VN γ ]SL(E) 6= 0
+for some N ≥ 1. This proves the last part of Theorem 2.1, modulo the saturation
+conjecture.
+
+4. Unitary operators and parabolic bundles
+     We have seen in the previous section that solution of the Hermitian spectral
+problem amounts to stability condition for toric bundles. A remarkable ramification
+of this idea was discovered by S. Angihotri and Ch. Woodward [2] for unitary
+spectral problem.
+     Let U ∈ SU(n) be unitary matrix with unitary spectrum
+                           ε(U ) = (e2πiλ1 , e2πiλ2 , . . . , e2πiλn ).
+Let’s normalize exponents λi as follows
+                                
+                                  λ ≥ λ2 ≥ · · · ≥ λn ,
+                                 1
+                       λ(U ) := λ1 + λ2 + · · · + λn = 0,                             (4.1)
+                                
+                                
+                                   λ1 − λn < 1,
+and, admitting an abuse of language, call λ(U ) spectrum of U .
+606                                       A. Klyachko
+
+Unitary spectral problem. Find possible spectra of product λ(U V ), when spec-
+tra of the factors λ(U ), λ(V ) are given.
+     To state the result we need in quantum cohomology H∗q (Grp ) of Grassmannian
+Grpof linear subspaces of dimension p and codimension r. This is an algebra over
+polynomial ring C[q] generated by Schubert cycles σI , I ⊂ {1, 2, . . . , n}, |I| = p,
+n = p + r with multiplication given by the formula
+                                             X
+                                 σI ∗ σJ =         cK      d
+                                                    IJ (d)q σK
+                                             K,d
+
+                                                                      Vp n
+where structure constants cK                                   p
+                           IJ (d) are defined as follows. Let Gq ֒→ P(  C ) be
+Plücker imbedding and
+                                   ϕ : P1 → Grp
+                                                          Vp
+be a rational curve of degree d in Gressmanian Gpq ⊂ P( Cn ). One can check
+that ϕ depends on dim Gpq + nd parameters. For fixed point x ∈ P1 the condition
+ϕ(x) ∈ σI imposes codim σI constraints on ϕ. Hence for
+
+                     codim σI + codim σJ + codim σK = dim Grp + nd
+
+the numbers
+
+      (σI , σJ , σK )d = #{ϕ : P1 → Grp | ϕ(x) ∈ σI , ϕ(x) ∈ σJ , ϕ(x) ∈ σK , deg ϕ = d}
+
+supposed to be finite. They are known as Gromov -Witten invariants and related
+to the structure constants by the formula
+
+                                  cK
+                                   IJ (d) = (σI , σJ , σK ∗ )d
+
+
+where K ∗ = {n + 1 − k | k ∈ K}. For d = 0 they are just conventional Littlewood–
+Richardson coefficients cK
+                         IJ .
+
+Theorem 4.1. The following conditions are equivalent
+    i) There exist unitary matrices W = U V with given spectra λ(U ), λ(V ), λ(W ).
+    ii) The inequality
+                    λI (U ) + λJ (V ) ≤ d + λK (W )                         (IJK)d
+    holds each time cK IJ (d) 6
+                              = 0.
+
+4.1. Parabolic bundles
+     As in the Hermitian case solution of the unitary problem comes from its holo-
+morphic interpretation in terms of vector bundles. To explain the idea let’s start
+with vector bundle E over compact Riemann surface X of genus g ≥ 2. It has unique
+topological invariant c1 (E) = deg det E, which for simplicity we suppose to be zero,
+                                  Spectral Problems                                   607
+
+i.e. E be topologically trivial. Narasimhan-Seshadri theorem [27] claims that ev-
+ery stable bundle carries unique flat metric, and hence defines unitary monodromy
+representation
+                       ρE : π1 (X, x0 ) → SU(E), E = E(x0 ).
+This gives rise to equivalence
+                                                                
+                      stable bundles    irreducible uitary represen-
+            Mg :=                     =                              .               (4.2)
+                      of degree zero    tations ρ : π1 → SU(E)
+
+This theorem is an ancestor of the Donaldson-Yau generalization [7] to higher di-
+mensions, and may be seen as a geometric version of Langlands correspondence.
+     In algebraic terms the theorem describes stable bundles in terms of solution
+of equation
+                          [U1 , V1 ][U2 , V2 ] · · · [Ug , Vg ] = 1
+in unitary matrices Ui , Vj ∈ SU(E). This is not the matrix problem we are
+currently interested in. To modify it let’s consider punctured Riemann surface
+X = X\{p1 , p2 , . . . , pℓ }. It has distinguished classes
+
+                             γα = (small circle around pα )
+
+in fundamental group π1 (X), and we can readily define an analogue of RHS of (4.2):
+
+      Mg (λ(1) , λ(2) , · · · , λ(ℓ) ) = {ρ : π1 (X) → SU(E) | λ(ρ(γα )) = λ(α) },   (4.3)
+
+where λ(α) is a given spectrum of monodromy around puncture pα . C. S. Seshadri
+[31] manages to find an analogue of more subtle holomorphic LHS of (4.2) in terms
+of so called parabolic bundles.
+      Parabolic bundle E on X is actually a bundle on compactification X together
+with R-filtration in every special fiber E α = E(pα ) with support in an interval of
+length ≤ 1. The filtration is a substitution for spectral decomposition of ρ(γα ), cf.
+(4.1). Seshadri also defines (semi)stability of parabolic bundle E by inequalities
+
+                           Par deg F   Par deg E
+                                     ≤           ,       ∀F ⊂ E,                     (4.4)
+                             rk F        rk E
+                                                                        P     (α)
+where the parabolic degree is given by equation Par deg E = deg E + α,i λi .
+Metha-Seshadri theorem [24] claims that every stable parabolic bundle E on X
+carries unique flat metric with given spectra of monodromies λ(γα ) = λ(α) . This
+gives a holomorphic interpretation of the space (4.3)
+                                                                      
+          (1)  (2)       (ℓ)    stable parabolic bundles of degree zero
+    Mg (λ , λ , · · · , λ ) =                                            .   (4.5)
+                                with given types of the filtrations
+
+In the simplest case of projective line with three punctures (4.3) amounts to space
+of solutions of equation U V W = 1 in unitary matrices U, V, W ∈ SU(n) with given
+608                                    A. Klyachko
+
+spectra. By Metha-Seshadry theorem solvability of this equation is equivalent to
+stability inequalities (4.4). In the case under consideration holomorphic vector
+bundle E on P1 is trivial, E = E × P1 , and hence its subbundle F ⊂ E of rank p
+is nothing but a rational curve ϕ : P1 → Gp (E) in Grassmannian. This allows to
+write down stability condition (4.4) in terms of quantum cohomology, and eventually
+arrive at Theorem 4.1.
+
+5. Further ramifications
+     The progress in Hermitian and unitary spectral problems open way for solu-
+tion of a variety of others classical, and not so classical, problems. Most of them,
+however, have no holomorphic interpretation, and require different methods, bor-
+rowed from harmonic analysis on homogeneous spaces, symplectic geometry, and
+geometric invariant theory.
+
+5.1. Multiplicative singular value problem
+      The problem in question is about possible singular spectrum σ(AB) of product
+of complex matrices with given singular spectra σ(A) and σ(B). Recall, that   √singu-
+lar spectrum of complex matrix A is spectrum of its radial part σ(A) := λ( A∗ A).
+      For a long time it was observed that every inequality for Hermitian problem has
+a multiplicative counterpart for the singular one. For example multiplicative version
+of Weyl’s inequality λi+j−1 (A + B) ≤ λi (A) + λj (B) is σi+j−1 (AB) ≤ σi (A)σj (B).
+The equivalence between these two problems was conjectured by R. C. Thompson,
+and first proved by the author [20] using harmonic analysis on symmetric spaces.
+Later on A. Alekseev, E. Menreken, and Ch. Woodward [1] gave an elegant concep-
+tual solution based on Drinfeld’s Poisson-Lie groups [8]. Here is a precise statement
+for classical groups.
+
+Theorem 5.1. Let G be one of the classical groups SL(n, C), SO(n, C), or Sp(2n, C)
+and L be the corresponding compact Lie algebra of traceless skew Hermitian com-
+plex, real, or quaternionic n×n matrices respectively. Then the following conditions
+are equivalent
+      (1) There exist Ai ∈ G with given singular spectra σ(Ai ) = σi and
+
+                                   A1 A2 · · · AN = 1.
+                                                     √
+      (2) There exist Hi ∈ L with spectra λ(Hi ) =    −1 log σi and
+
+                               H1 + H2 + · · · + HN = 0.
+
+
+      Note, however, that neither of the above approaches solve the singular problem
+per se, but reduces it to Hermitian one. Both of them suggest that all three problems
+                                     Spectral Problems                           609
+
+must be treated in one package. More precisely, every compact simply connected
+group G give birth to three symmetric spaces
+     • The group G itself,
+     • Its Lie algebra LG ,
+     • The dual symmetric space HG = GC /G,
+of positive, zero, and negative curvature, and to three “spectral problems” concerned
+with support of convolution of G orbits in these spaces, see [20] for details. For
+G = SU(n) we return to the package of unitary, Hermitian, and singular problems.
+     The first two problems may be effectively treated in framework of vector bun-
+dles with structure group G, as explained in sections 2–4. Many flat, i.e. additive
+“spectral problem” has been solved by A. Berenstein and R. Sjammar in a very
+general setting [4].
+
+5.2. Other symmetric spaces
+     As an example of unresolved problem let’s consider symmetric spaces associ-
+ated with different incarnations of Grassmannian
+     • Compact U (p + q)/U (p) × U (q),
+     • Flat Mat(p, q) = coomplex p × q matrices,
+     • Hyperbolic U (p, q)/U (p) × U (q).
+In compact case the corresponding spectral problem is about possible angles between
+three p-subspaces U, V, W ⊂ Hn in Hermitian space Hn of dimension n = p + q,
+p ≤ q. The Jordan angles
+
+                          d                                       π
+                          U V = (ϕ1 , ϕ2 , . . . , ϕp ),   0≤ϕ≤
+                                                                  2
+between subspaces U, V are defined via spectrum of product of orthogonal projectors
+πUV : U → V and πV U : V → U
+                      √
+                    λ( πUV πV U ) : cos ϕ1 ≥ cos ϕ2 ≥ · · · ≥ cos ϕp ≥ 0.
+
+Yu. Neretin [28] proved Lidskii type inequalities1 for angles U    dV , Vd d
+                                                                         W,W U , and
+conjectured that other inequalities are the same as in the Hermitian case. Note,
+however, that the unitary triplet suggests existence of nonhomogeneous “quantum”
+inequalities, e.g. sum of angles of a spherical triangle is ≤ π.
+     In flat case the problem is about relation between singular spectra of p × q
+matrices σ(A−B), σ(B −C), σ(C −A). This additive singular problem was resolved
+by O’Shea and Sjamaar [29].
+     In hyperbolic case the question is about angles between maximal positive sub-
+spaces U, V, W ⊂ Hpq in Hermitian space of signature (p, q). They are defined by
+equation
+                  √
+                λ( πUV πV U ) : cosh ϕ1 ≥ cosh ϕ2 ≥ · · · ≥ cosh ϕp ≥ 1.
+     1 He   actually deals with real Grassamnnian.
+610                                             A. Klyachko
+
+Again our experience with the unitary triplet suggests that the exponential map
+establishes a Thompson’s type correspondence between O’Shea-Sjamaar inequalities
+for additive singular problem and that of for hyperbolic angles.
+
+5.3. P-adic spectral problems
+      There is also a nonarchimedian counterpart of this theory, which deals with
+classical Chevalley groups Gp = SL(n, Qp ), SO(n, Qp ), or Sp(2n, Qp ) over p-adic
+field Qp and their maximal compact subgroups Kp = SL(n, Zp ), SO(n, Zp ), or
+Sp(2n, Zp ) respectively. Double coset Kp gKp may be treated as a complete invariant
+of lattice L = gL0 , L0 = Zp⊕n with respect to Kp . We call lattice L = gL0
+unimodular, orthogonal or symplectic if respectively g ∈ SL(n, Qp ), g ∈ SO(n, Qp )
+or g ∈ Sp(2n, Qp ).
+      It is commonly known that in the unimodular case there exists a basis ei of
+L0 such that ẽi = pai ei form a basis of L for some ai ∈ Z. We define index (L : L0 )
+by
+               (L : L0 ) = (pa1 , pa2 , . . . , pan ), a1 ≥ a2 ≥ · · · ≥ an .   (5.1)
+Notice that unimodularity g ∈ SL(n, Qp ) implies a1 + a2 + · · · + an = 0.
+      The index (L : L0 ) of an orthogonal or a symplectic lattices has extra symme-
+tries. In orthogonal case we may choose the above basis ei of L0 to be neutral, in
+which case the quadratic form becomes
+                               n−1
+                               X
+                                     xi x−i ,    i≡n−1         mod 2.
+                               1−n
+Then the index takes the form
+                        (L : L0 ) = (pan−1 , pan−3 , . . . , pa3−n , pa1−n ),              (5.2)
+where an−1 ≥ an−3 ≥ . . . ≥ a3−n ≥ a1−n , and a−i = −ai .
+     Similarly, for symplectic lattice L we can choose symplectic basis ei , fj of L0
+such that ẽi = pai ei and f˜j = p−aj fj form a basis of L. In this case we have
+                (L : L0 ) = (pan , pan−1 , . . . , pa1 , p−a1 , . . . , p−an−1 , p−an ),   (5.3)
+with an ≥ an−1 ≥, . . . , ≥ a1 ≥ 0.
+     Notice that the spectra (5.1)-(5.3) have the same symmetry, as singular spec-
+trum σ(A) of a matrix A ∈ G in the corresponding classical complex group.
+Theorem 5.2. The following conditions are equivalent
+  (1) There exists a sequence of (unimodular, orthogonal, symplectic) lattices
+                                  L0 , L1 , . . . , LN −1 , LN = L0
+          of given indices σi = (Li : Li−1 ).
+      (2) The indices σi satisfy the equivalent conditions of Theorem 5.1 for the cor-
+          responding complex group G.
+      We’ll give proof elsewhere. The theorem is known for the unimodular lattices,
+see [10].
+                               Spectral Problems                                  611
+
+5.4. Final remarks
+     In the talk I try to trace the flaw of ideas from the theory of vector bundles
+to spectral problems. It seems C. Simpson [32] was the first to note that vector
+bundles technic has nontrivial implications in linear algebra. He proved that product
+C1 C2 · · · CN of conjugacy classes Ci ⊂ SL(n, C) is dense in SL(n, C) iff
+
+                 dim C1 + dim C2 + · · · + dim CN ≥ (n + 1)(n − 2),
+                                                                                 (5.4)
+                                r1 + r2 + · · · + rN ≥ n,
+
+where ri is maximal codimension of root space of a matrix Ai ∈ Ci . This problem
+was suggested by P. Deligne, who noted that under condition
+
+                    dim C1 + dim C2 + · · · + dim CN = 2n2 − 2
+
+an irreducible solution of equation A1 A2 · · · AN = 1, ai ∈ Ci is unique up to conju-
+gacy, see book of N. Katz [14] on this rigidity phenomenon.
+      I think that inverse applications to moduli spaces of vector bundles are sill
+ahead. One may consider polygon spaces [18, 12] as a toy example of this feedback,
+corresponding to toric 2-bundles. A similar space of spherical polygons in S3 with
+given sides is a model for moduli space of flat connections in punctured Riemann
+sphere. Its description is a challenge problem.
+      There are many interesting results, e.g. infinite dimensional spectral problems,
+which fall out of this survey. I refer to Fulton’s paper [10] for missing details.
+
+References
+[1]   A. Alekseev, E. Meinrenken, & C. Woodward, Linearization of Poisson actions
+      and singular values of matrix product, Ann. Inst. Fourier (Grenoble), 51
+      (2001), no. 6, 1691–1717.
+[2]   S. Angihotri & C. Woodward, Eigenvalues of products of unitary matrices
+      and quantum Schubert calculus, Math. Res. Letters, 5 (1998), 817–836.
+[3]   P. Belkale, Local systems on P1 − S for S a finite set, Compositio Math., 129
+      (2001), no. 1, 67–86.
+[4]   A. Berenstein & R. Sjamaar, Coadjoint orbits, moment polytopes, and the
+      Hilbert–Mumford criterion, J. Amer. Math. Soc., 13 (2000), no. 2, 433–466.
+[5]   R. Bott, Homogeneous vector bundles, Ann. of Math., 66 (1957), 203–248.
+[6]   H. Derksen & J. Weyman, Semi-invariants of quivers and saturation for
+      Littlewood-Richardson theorem, J. Amer. Math. Soc., 13 (2000), no. 3,
+      467–479.
+[7]   S. K. Donaldson, Infinite determinants, stable bundles and curvature, Duke
+      Math. J., 54 (1987), 231–247.
+[8]   V. G. Drinfeld, Quantum groups, Proceedings of the International Congress
+      of Mathematicians, vol. 1,2 (Berkeley, 1986), Amer. Math. Soc., Providence,
+      RI, 1987, 798–820.
+612                                  A. Klyachko
+
+[9]    G. Faltings, Mumford-Stabilität in der algebraischen Geometrie, Proceedings
+       of the International Congress of Mathematiciens, vol. 1,2, (Zürich, 1994),
+       Birkḧauser, Basel, 1995, 648–655.
+[10]   W. Fulton, Eigenvalues, invariant factors, highest weights, and Schubert cal-
+       culus, Bull. Amer. Math. Soc., 37 (2000), no. 3, 209–249.
+[11]   O. Gleizer & A. Postnikov, Littlewood-Richardson coefficients via Yang-Baxter
+       equation, Internat. Math. Res. Notices (2000), no. 14, 741–774.
+[12]   J.-C. Hausmann & A. Knutson, The cohomology ring of polygon spaces, Ann.
+       Inst. Fourier (Grenoble), 48 (1998), no. 1, 281–321.
+[13]   A. Horn, Eigenvalues of sum of Hemitian matrices, Pacific J. Math., 12
+       (1962), 225–241.
+[14]   N. M. Katz, Rigid local systems, Princeton University Press, Princeton, 1996.
+[15]   A. A. Klyachko, Equivariant bundles on toric varieties, Izv. Akad. Nauk
+       SSSR Ser. Mat., 53 (1989), no. 5, 1001–1039 (Russian); Math. USSR-Izv.,
+       35 (1990), no. 2, 63–64.
+[16]   A. A. Klyachko, Moduli of vector bundles and class numbers, Functional. i
+       Priozhen., 25 (1991), 81–83 (Russian); Funct. Anal. Appl., 25 (1991), no. 1,
+       67–69.
+[17]   A. A. Klyachko, Vector bundles and torsion free sheaves on the projective
+       plane, Preprint Max-Planck-Institute fur Mathematik MPI/91-59, (1991).
+[18]   A. A. Klyachko, Spatial polygons and stable configurations of points in the
+       projective line, Algebraic geometry and its applications (Yaroslavl, 1992),
+       Vieweg, Braunschweig, 1994, 67–84.
+[19]   A. A. Kyachko, Stable bundles, repesentation theory and Hermitian opera-
+       tors, Selecta Mathematica, 4 (1998), 419–445.
+[20]   A. A. Klyachko, Random walks on symmetric spaces and and inequalities for
+       matrix spectra, Linear Algebra Appl., 319 (2000), no. 2-3, 37–59.
+[21]   A. Knutson & E. Sharp, Sheaves on toric varieties for physics, Adv. Theor.
+       Math. Phys., 2 (1998), no. 4, 873–961.
+[22]   A. Knutson & T. Tao, The honeycomb model of GL(n, C) tensor products.
+       I. Proof of the saturation conjecture, J. Amer. Math. Soc., 12 (1999), no. 2,
+       1055–1090.
+[23]   A. Knutson, T. Tao & Ch. Woodward, The honecomb model for GL(n, C)
+       tensor products II: Facets of Littlewood–Richardson cone, Preprint (2001).
+[24]   V. B. Metha & C. S. Seshadri, Moduli of vector bundles on curves with
+       parabolic sructure, Math. Ann., 258 (1980), 205-239.
+[25]   D. Mumford, Projective invariants of projective structures, Proc. Int. Con-
+       gress of Math. Sockholm, 1963, Almquist & Wiksells, Uppsala, 1963, 526–530.
+[26]   D. Mumford, J. Fogarty, & F. Kirwan, Geometric invariant theory, Springer,
+       Berlin, 1994.
+[27]   M. S. Narasimhan & C. S. Seshadri, Stable and unitary vector bundles on a
+       compact Riemann surface, Ann. Math., 82 (1965), 540–567.
+                               Spectral Problems                                613
+
+[28]   Yu. Neretin, On Jordan angles and triangle inequality in Grassmannian,
+       Geom. Dedicata, 86 (2001), no. 1-3, 81–92.
+[29]   L. O’Shea & R. Sjamaar, Moments maps and Riemannian symmetric pairs,
+       Math. Ann., 317 (2000), no. 3, 415–457.
+[30]   M. Perling, Graded rings and equivariant sheaves on toric varieties, Preprint
+       Univ. Kaiserslauten, (2001).
+[31]   C. S. Seshadri, Moduli of vectir bundles on curves with parabolic structures,
+       Bull. Amer. Math. Soc., (1977), 124–126.
+[32]   C. T. Sympson, Product of Matrices, Differential geometry, global analysis,
+       and topology, Canadian Math. Soc. Conf. Proc., vol. 12, AMS, Providence
+       RI, 1992, 157–185.
+[33]   C. Vafa & E. Witten, A strong coupling test of S-duality, Nuclear Phys. B,
+       431 (1994), no. 1-2, 3–77.
+[34]   H. Weyl, Das asymptotischer Verteilungsgesetz der Eigenwerte lineare par-
+       tialler Differentialgleichungen, Math. Ann., 71 (1912), 441–479.
+[35]   H. Weyl, Ramifications, old and new, of the eigenvalue problem, Bull. Amer.
+       Math. Soc., 56 (1950), 115–139.
+

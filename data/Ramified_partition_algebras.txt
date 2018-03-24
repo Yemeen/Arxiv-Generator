@@ -1,0 +1,1661 @@
+                                                                     Ramified Partition Algebras
+                                                                            P P Martin and A Elgamal∗
+                                                                          Mathematics Department, City University,
+                                                                        Northampton Square, London EC1V 0HB, UK.
+arXiv:math/0206148v1 [math.RT] 14 Jun 2002
+
+
+
+
+                                                                                         Abstract
+                                                           For each natural number n, poset T , and |T |–tuple of scalars Q, we intro-
+                                                                                               (T )
+                                                       duce the ramified partition algebra Pn (Q), which is a physically motivated
+                                                       and natural generalization of the partition algebra [24, 25] (the partition al-
+                                                       gebra coincides with case |T | = 1). For fixed n and T these algebras, like
+                                                       the partition algebra, have a basis independent of Q. We investigate their
+                                                                                                                               (2)
+                                                       representation theory in case T = 2 := ({1, 2}, ≤). We show that Pn (Q)
+                                                       is quasi–hereditary over field k when Q1 Q2 is invertible in k and k is such
+                                                       that certain finite group algebras over k are semisimple (e.g. when k is al-
+                                                       gebraically closed, characteristic zero). Under these conditions we determine
+                                                                                              (2)
+                                                       an index set for simple modules of Pn (Q), and construct standard modules
+                                                       with this index set. We show that there are unboundedly many choices of
+                                                                       (2)
+                                                       Q such that Pn (Q) is not semisimple for sufficiently large n, but that it is
+                                                       generically semisimple for all n.
+                                                           We construct tensor space representations of certain non–semisimple spe-
+                                                                        (2)
+                                                       cializations of Pn (Q), and show how to use these to build clock model trans-
+                                                       fer matrices [24] in arbitrary physical dimensions.
+
+
+                                             1         Introduction
+                                             For k a ring and Q ∈ k the partition algebras Pn (Q) (n = 1, 2, ..) are a tower of finite
+                                             dimensional unital k-algebras. These algebras first arose in the context of transfer
+                                             matrix algebras in Statistical Mechanics [24, 25], but are also known to play roles
+                                             in invariant theory [21, 28] analogous to that of the Brauer algebra [4, 35, 19], and
+                                             in the study of Schur algebras (see [20, 30] and cf. [11, §4]). They have a rich
+                                             and (for k = C) tractable representation theory [26, 36]. The ramified partition
+                                                         (T )     (T )
+                                             algebras Pn = Pn (Q) are a generalisation depending on a poset T , which is
+                                             again physically motivated (see below), but also natural as an abstract extension,
+                                             as we shall see. In this paper we construct these new algebras (in §2), and describe
+                                             the representation theory of the simplest non–trivial cases (§3).
+                                                 An important tool in our approach is quasi–heredity [8, 9, 10]. When applicable
+                                             this provides a crucial organizational scheme for an algebra, via constructions for a
+                                             set of standard modules (the set of heads of these modules constituting a complete
+                                             set of simple modules [10, §A1]). When, as here, quasi–heredity ‘commutes’ with a
+                                                 ∗
+                                                     Sadly Ahmed died before this work was completed. His memory lives on.
+
+
+                                                                                              1
+globalisation functor [16, §6.2] [5] on a tower of algebras we have a singularly powerful
+representation theoretic tool, even when the algebras are semisimple (indeed in
+semisimple cases it typically reduces to a glorified Jones basic construction [15, 18]).
+       (T )                                      (T )
+Let Pn −mod denote the category of left Pn –modules. We may suppose without
+loss of generality, as we shall see, that the underlying    set of the poset T is {1, 2, .., d}.
+Write Q = (Q1 , Q2 , ..) ∈ k d and set Qπ = t∈T Qt ∈ k. We shall show that for Qπ
+                                               Q
+
+invertible in k there exists an idempotent eT ∈ Pn such that eT Pn eT ∼
+                                                       (T )                 (T )       (T )
+                                                                                    = Pn−1 . It
+                                         (T )            (T )                    (T )
+follows that there are functors F : Pn −mod → Pn−1 −mod and G : Pn−1 −mod →
+  (T )
+Pn −mod, called localisation and globalisation respectively, which port information
+between layers in the tower. Taken in conjunction with quasi–heredity this provides
+the framework for an iterative mechanism of analysis (with the base case n = 1
+being amenable to brute force).1
+    This paper is concerned with the representation theory of the ramified partition
+algebras. This requires no reference to, nor interest in, the physical applications,
+but a remark on the authors’ guiding motivation in constructing and studying these
+algebras is in order (see §4.1 for a more detailed exposition). The guiding motivation
+for this work is the study of Statistical Mechanical lattice models [2, 32] of three
+dimensional physical systems by exact computation [3, 33]. There has been some
+progress in this study using the ordinary partition algebra Pn = Pn (Q) [29], which
+underlies the transfer matrix algebra formalism (see §4.1) for Potts models in high
+dimensions [24, 2]. However, as may be observed from [25, 7] and references therein,
+there is a problem with the ordinary partition algebra approach in descending in
+dimension to a physical lattice capturing 3d (or indeed any finite d > 2) spatial
+geometry. We suggest that a better foundation would be provided by a more general
+algebra of clock models [13, 12] or similar models [1, 14]. That is, one in which the set
+of spin configurations is equipped, though the form of the interaction Hamiltonian
+(see §4.1), with a richer structure than the discrete topology (which is the structure
+effectively provided by the Potts Hamiltonian). Our reasoning is as follows. The
+defining basis of the partition algebra is built from the set N of spatial lattice sites
+(with |N| = n) by forming the set of partitions of N. A partition forms a base for
+a rather crude topology on N (a partition topology). In the partition algebra this
+constrains the spatial geometry and the spin interactions to be very crude — and in
+this sense the two limitations are linked. Accordingly we look here at a generalization
+of the partition algebra suitable for the interactions in clock models. The idea is
+that the set partitions of Pn (Q) should be glorified with a structure interpolating
+between the discrete topology and the metric topology of 3d Euclidean space. The
+challenge is that this structure not destroy the property of associative algebra.
+    The ordinary partition algebra is the case T = {1}, however the representation
+             (T )
+theory of Pn is vastly richer than that of Pn in general, as we will show. The
+simplest interesting new case is T = 2 := ({1, 2}, 1 ≤ 2). In this paper we concen-
+trate mainly on this case. We determine conditions for it to be quasi–hereditary,
+                                                              (2)
+and construct its standard modules. We show that Pn (Q) is generically semisim-
+ple, but (in §4) we also exhibit, for certain values of Q, special representations R
+which may be used to show non–semisimplicity at these values of Q. It is also these
+   1
+     Both globalisation and quasi–heredity apply to the ordinary partition algebra, and are key
+tools in its analysis [26]. The utility of globalisation is a natural consequence of the physical
+context of these algebras (cf. [27]), but it is intriguing to see how often quasi–heredity also occurs
+in this setting [6, 26, 36] (in as much as a physical interpretation is so far lacking).
+
+
+                                                  2
+representations which may be used in clock model transfer matrix computations (cf.
+[24]). Results of these computations for clock models will be presented in a separate
+paper, but to underline the motivation we include a small sample of such results
+here — zeros of the partition function for ZQ –symmetric models (recall that zeros
+converge on the real axis at a phase transition point [24, 31]).
+    The representation R is also the obvious generalization of the ‘Potts’ represen-
+tation of Pn which arises in invariant theory [24, 21, 30]. An analysis of this, and of
+                                        (T )                                 (T )
+the generic representation theory of Pn , is the first step in seeking for Pn a role
+in invariant theory analogous to that of Pn .
+
+
+2     Preliminaries
+Let (T, ≤) be a poset of degree d, k a field, Qt ∈ k for each t ∈ T , and k–algebra
+Pn (Qt ) the ordinary partition algebra. The T –ramifiedNpartition algebra will be
+defined to be a certain subalgebra of the tensor product t∈T Pn (Qt ), depending on
+≤.
+
+                                  (T )
+2.1    Construction of Pn
+First we recall the definition of Pn (Q) [26, §1]. Given a set U we write EU for the set
+of partitions of U (we identify this with the set of equivalence relations on U, writing
+∼a for the relation corresponding to a ∈ EU ). Note that any bijection f : U → V
+naturally underlies a corresponding bijection Ef : EU → EV .
+     For a ∈ EU we write q ∈ a for q ⊆ U a part of a as a partition. For S ⊂ U
+write a|S for the restriction of a to S. Given n ∈ N we write n = {1, 2, . . . , n},
+n′ = {1′ , 2′ , . . . , n′ }, and so on. We set pn = En∪n′ , and kpn the k–space with basis
+pn .
+     Let f : n ∪ n′ → n′ ∪ n′′ be the map i 7→ i′ . Then given a, b ∈ pn we define
+du (ab) ∈ En∪n′ ∪n′′ by identifying with the equivalence relation generated by a and
+Ef (b). Let g : n ∪ n′′ → n ∪ n′ be the map i 7→ i for i ∈ n and i′′ 7→ i′ for i′′ ∈ n′′ .
+Then define d(ab) = Eg (du (ab)|n∪n′′ ) ∈ pn . Fixing Q ∈ k we now define the product
+ab ∈ kpn by
+                                          ab = Qc(a,b) d(ab)                            (1)
+where c(a, b) = #{q ⊆ n′ : q ∈ du (ab)}. In [26, §1] it is shown that this product (k–
+linearly extended) endows kpn with the structure of a unital associative k–algebra,
+which we call the partition algebra, and denote by Pn (Q).
+    Now fix a poset (T, ≤) with T = {1, 2, .., d} but ≤ arbitrary, and an element
+Q = (Q1 , Q2 , .., Qd ) ∈ k d . Our aim is to define the T –ramified partition algebra as
+                     (d)     N
+a subalgebra of Pn =            t∈T Pn (Qt ), depending on the partial order ≤. We will
+often concentrate on the special case T = {1, 2} with 1 ≤ 2 (and where a poset is
+intended, 2 will denote this one, and d the natural ordered generalization), although
+our construction is general.
+    Given a, b ∈ EU we say that a is a refinement of b (see e.g. [22, ch.4 §7]), denoted
+a ≤ b, if each part of b is a union of one or more parts of a; i.e. if i ∼a j implies
+i ∼b j. It is easy to show that
+
+Proposition 1 Let a, b ∈ EU and U ′ ⊆ U. Then a ≤ b implies a|U ′ ≤ b|U ′ .
+
+
+
+                                            3
+   For S = EU we define S (T ) to be the subset of T S given by the elements
+                                                         Q
+a = (at : t ∈ T ) for which t ≤ t′ implies at is a refinement of at′ . We call any such
+                                                                           (2)
+a ∈ S (T ) a T –ramified partition. For example ({{1}, {2}}, {{1, 2}}) ∈ E{1,2} .
+
+                                                                              (T )
+Proposition N2 For any d–tuple Q = (Q1 , .., Qd ) ∈ k d , the set pn                 is a basis for a
+subalgebra of t∈T Pn (Qt ).
+                                                (T )
+Proof: It is enough to show that if a, b ∈ pn then d(at bt ) is a refinement of d(at′ bt′ ) if
+                                                                         (2)
+t ≤ t′ . But if t ≤ t′ then (at , at′ ) and (bt , bt′ ) both appear in pn (where we identify
+                                                                                            (2)
+2 = {1, 2} with {t, t′ }) so we are done if we can show for {(a, b), (c, d)} ⊆ pn
+that d(ac) a refinement of d(bd). Now by proposition 1 it is enough to show that
+du (ac) ≤ du (bd). Suppose i ∼du (ac) j and that the connection is established through
+some sequence of connections alternately within a and c. Each connection within a
+is within b, each connection within c is within d, so i ∼du (bd) j.                          2
+                                                                       (T )  (T )      (T )
+    Fixing Q as above we denote the k–algebra with basis pn by Pn = Pn (Q).
+This is the T –ramified partition algebra.
+    Two posets are isomorphic if there is a bijective homomorphism between the
+underlying sets which preserves the partial order. It will be evident that the con-
+                 (T )
+struction of Pn depends on the partial order, but not on the names of the elements
+of T . Thus Pn is defined for poset T with any underlying set, and T ∼
+                (T )
+                                                                                 = T ′ implies
+             ′
+Pn ∼
+  (T )     (T )
+       = Pn .
+    Not all choices of T are necessarily physically interesting, in the sense of the
+motivation discussed in the introduction. From an abstract point of view, as we will
+see later, the choice of T as the poset of divisors of a natural number gives rise to
+some interesting representations. But we will concentrate largely on T = 2, which
+is among the main motivating examples, captures much of the flavour of the general
+case (consider the proof of proposition 2), and already has a very rich structure.
+    Refinement equips any EU , and in particular pn , with the property of lattice.
+The bottom element {U} is called the trivial partition.
+
+2.2     Examples and notations
+Putting T = {1} we recover the partition algebra itself. Recall from [26, §1] the
+special elements in basis pn denoted 1, Ai , and Aij as follows:
+
+                         1 = {{1, 1′}, {2, 2′}, .., {i, i′ }, .., {n, n′ }}
+
+Ai differs from 1 by {i, i′ } ; {i}, {i′ }; and Aij differs from 1 by {i, i′ }, {j, j ′ } ;
+{i, i′ , j, j ′ } (see also the inner components of figure 2 later). Thus 1 ∈ p1 is {{1, 1′}}
+and A1 ∈ p1 is {{1}, {1′}}. See [26, §1] also for the partition algebra diagram
+calculus.
+     The next simplest case is T = 2. An example of the 2–ramified partition algebra
+product is illustrated in figure 1 (the formal interpretation of this diagram is given
+                              (2)
+shortly). The basis p1 consists of three elements: (1, 1) = ({{1, 1′}}, {{1, 1′}});
+(A1 , 1) = ({{1}, {1′}}, {{1, 1′}}); and (A1 , A1 ) = ({{1}, {1′}}, {{1}, {1′}}). Note
+that {(A1 , A1 )} is a basis for an ideal, as is {(A1 , A1 ), (A1 , 1)} — see later.
+     It is convenient to introduce a ‘serial’ shorthand notation and also a diagram
+                      (d)
+calculus for Pn . The shorthand for a 2–ramified partition is to write out the
+more refined (‘inner’) partition and then to group the parts to indicate the less
+
+                                                 4
+  1        2        3
+
+
+
+
+  1′           2′   3′
+
+
+
+                                = Q1
+
+
+       1       2    3
+
+
+
+
+  1′       2′       3′
+
+
+
+
+                                              (2)
+Figure 1: The algebra product in P3 in an example: ab = Q1 c. Diagrams for a and
+b (drawn one above the other on the left) are juxtaposed to overlay and identify the
+vertices indicated by dotted lines, and these vertices are then removed in exchange
+for an appropriate scalar factor (cf. [26, §1]).
+
+                                                                                  (2)
+refined (‘outer’) partition by using another nest of brackets. Thus in p1 , (1, 1) =
+{{{1, 1′}}}, (A1 , 1) = {{{1}, {1′}}}, and (A1 , A1 ) = {{{1}}, {{1′ }}}. There is an
+obvious generalization for T any chain.
+    The diagram calculus applies the same principle to partition algebra diagrams
+(in these the elements of n,n′ are represented as two rows of vertices arranged with
+i′ vertically below i, so composition involves vertical juxtaposition). Inner parts are
+indicated by ‘hard wiring’ vertices together as in ordinary partition algebra diagrams.
+Outer parts are indicated by drawing ‘islands’ around clusters of connected vertices.
+See figure 1 for some examples. Note by equation (1) that inner (outer) clusters
+isolated from the exterior in composition are replaced by a factor Q1 (resp. Q2 ). As
+for Pn (Q), there will not be a strictly planar representation in general. Consider
+also the elements in figure 2, and note that
+
+ (Ai , Ai )(Aij , Aij )(Ai , Ai ) = (Ai , Ai )
+                                             (Aij , Aij )(Ai , Ai )(Aij , Aij ) = (Aij , Aij ).
+                                                                                             (2)
+                                                     (2)
+    It will be evident from the diagrams that Pn is isomorphic to its opposite
+(indeed this is clearly true for any T ). We denote the image of an element a under
+this isomorphism by ao (as a diagram it is reflected top to bottom).
+
+2.3        Canonical inclusions
+Let Sn denote the symmetric group on n. By Sn ֒→ Pn we denote the natural
+monomorphism (and here, as usual, we write σi for the 2–cycle (i i+1) ∈ Sn , and
+write σij for the 2–cycle (ij)).
+   For t ∈ T define
+
+                                               prt : pn(T ) → pn
+                                       (a1 , a2 , . . . , ad ) 7→ at .
+
+Since a ∈ pn is a refinement of itself we have
+
+
+
+                                                     5
+(1, 1) =                                                                     (Ai , 1) =
+
+
+
+
+(Ai , Ai ) =                                                            (1, Aij ) =
+
+
+
+
+(Aij , Aij ) =                                   (σi , σi ) =
+
+
+
+
+                                                          (2)
+Figure 2: The multiplicative unit in P4 together with various other elements. In
+these examples i = 2 and j = 3. Note that these ‘diagrams’ do not necessarily embed
+in the plane in any natural way, and that care must be taken with interpretation of
+‘crossing’ lines. Over/under information is not relevant, but may appear in diagrams
+as a guide to the eye.
+
+Proposition 3 The diagonal inclusion
+                                          D (T ) : pn → pn(T )
+                                                    a 7→ (a, a, . . . , a)
+(or simply D, where no ambiguity arises) extends to an algebra morphism
+                                          D (T ) : Pn (Qπ ) ֒→ Pn(T ) (Q).
+For example, set eT = D (T ) (An ), then eT eT = Qπ eT .
+                                          (T )       (T )
+   There are various ways to inject Pn−1 into Pn . We treat as inclusion that
+which appends to every basis element a part which is {n, n′ } at every level of T . For
+example, in case T = 2 the map on basis elements is given explicitly by
+                                             a 7→ a ∪ {{{n, n′ }}}.
+                            (T )   (T )                                         (T )      (T )
+NB, including Pn−1 in Pn in this way means that eT Pn−1 = Pn−1 eT , and hence
+         (T )         (T )
+that eT Pn is a left Pn−1 –module.
+                 In   (2)
+    By pn ֒→ pn we denote the inner inclusion of pn , i.e. where the inner partition
+in In(p) is p and the outer partition is trivial.
+    Note that the serial notation for a 2–ramified partition is unique if written out so
+that at each step the numerically lowest possible element not yet written is written
+next (for which purpose take i′ = n + i).
+    Let us now fix the case T = 2 until further notice.
+
+                                           (2)
+3          Structure of Pn
+
+                                                                6
+3.1     Filtration by ideals
+For a partition a ∈ pn (or any restriction thereof) let π(a) be the set of propagating
+parts of a, i.e. those intersecting both n and n′ . Then the propagating number
+                                      (2)
+#P (a) := |π(a)| (see [26]). For a ∈ pn let #P (a) ∈ N0 ×N0 denote (#P (a1 ), #P (a2 )),
+and similarly for any T .
+                (2)
+    For a ∈ pn let the propagating index #− (a) be the list of #P (a1 |q ) over all
+q ∈ π(a2 ) arranged so that #− (a)i ≥ #− (a)i+1 . For example, the three 2–ramified
+partitions illustrated in figure 1 have #− (a) = (1, 1), #− (b) = (1, 0, 0), #− (c) =
+(1, 0). Note that the values taken by the propagating index differ from integer
+partitions only in that there may be zero parts.
+    A generalization of the propagating index may be formulated for other choices
+of T , but we will not pursue the point here.
+                                                (2)                                    (2)
+    For λ a propagating index we denote by pn (λ) the subset of elements a ∈ pn
+such that #− (a) = λ.
+    The propagating envelope #env (a) is i f (#− (a)i ) where f (0) = 1 and f (j) = j
+                                           P
+                                                                                (2)
+otherwise. This number is the minimum n required so that there is some b ∈ pn with
+#− (b) = #− (a). For example #− ({{{1, 2}, {1′, 2′ }}}) = (0), so #env ({{{1, 2}, {1′, 2′}}}) =
+1; and a, b, c from figure 1 have #env (a) = 2, #env (b) = 3, #env (c) = P
+                                                                         2.
+    NB, #P and #env are determined by #− (specifically #P (a1 ) = i #− (a)i and
+                                                                    (2)
+#P (a2 ) is the number of (integer) parts of #− (a)). The basis pn is fixed, and #−
+is invariant, under the opposite isomorphism.
+    We denote by pn (i) the subset of elements a ∈ pn such that #P (a) = i. Recall
+
+Proposition 4 [26] Let a ∈ pn (i) and b ∈ pn (i′ ). Then there exist c, d ∈ pn such
+that a = cbd iff i ≤ i′ .
+
+This is a powerful tool in the analysis of Pn (Q). The next few propositions build up
+to a T = 2 generalization (proposition 8).
+
+Proposition 5 The subset Gn of elements of the types illustrated in figure 2 (or
+equivalently {(A1 , 1), (A1, A1 ), (1, A12 ), (A12 , A12 )}∪{(σi , σi ); i = 1, 2, ..., n−1}) gen-
+         (2)
+erates Pn .
+
+    Proof: Let a be an element of the defining basis. We construct it as a product
+                                                                         (T )
+of elements of Gn as follows. Step 1 is to construct an element of pn with ‘enough’
+propagating connections to act as a base for the construction of a. For non–empty
+q ⊆ n, q ′ ⊆ n′ let l(q ∪ q ′ ) (resp. l′ (q ∪ q ′ )) be the numerically lowest unprimed
+                                                          (2)
+(resp. primed) element of the argument. For a ∈ pn let π1 (a) = π(a1 ) and π2 (a) =
+{q ∈ π(a2 ) | q ∩ r = ∅ ∀r ∈ π(a1 )}. Let Xt (a) = ∪q∈πt (a) {l(q), l′ (q)}, and X o (a) =
+X1 (a) ∪ X2 (a) — the union of the set of low numbered pairs for inner propagating
+parts of a and the set of low numbered pairs for outer propagating parts containing
+no inner propagating parts. Now consider the set of basis elements of the form
+                  D    (T )
+w ∈ Sn ֒→ Pn ֒→ Pn , i.e. those generated by the (σi , σi )s. Note that there is
+always at least one such w which restricts, on X o (a), to the same pairings as a does
+(albeit diagonally). Choose any one such w. Step 2: Apply (Ai , Ai )s so as to cut all
+the connections not on X o (a). Step 3: Take the resultant basis element and make
+all the additional outer connections required for a, i.e. those within n and those
+within n′ , using (1, Aij )s from the left and right as appropriate. Step 4: Make the
+additional inner connections for a using (Aij , Aij )s as appropriate (NB, these will
+
+                                                7
+Iλ =
+
+
+
+
+                                                           (2)
+               Figure 3: The special element Iλ of p14 ((3, 22 , 13 , 0)).
+
+                                                                             (2)
+not make any further outer connections, cf. step 3 and the definition of pn ). Finally
+make the required inner disconnections, i.e. between those pairs in X o (a) referring
+to outer but not inner propagating parts, using (Ai , 1)s.                          2
+                              (T )
+Proposition 6 For a, b ∈ pn
+(i) #P (d(ab))t ≤ min(#P (a)t , #P (b)t ) ∀t ∈ T.
+(ii) If #P (a)t > 0 and t ≤ t′ then #P (a)t′ > 0.
+And for T = 2
+(iii) Let a, b be such that #P (d(ab))2 = #P (a)2 . Then #− (d(ab))i ≤ #− (a)i for all
+suitable i.
+(iv) #env (d(ab)) ≤ #env (a).
+                                                                       (d)    (d)          (T )
+Proof: The first claim is elementary in as much as it holds in Pn , and Pn ⊇ Pn .
+The second and third follow from the fact that each propagating part of a1 is a
+subset of a propagating part of a2 . To demonstrate (iv) let #env
+                                                              0 (a) be the number of
+trouser legs (outer propagating parts) containing no legs (inner propagating parts),
+then #env (a) = #P (a1 ) + #env
+                              0 (a). The first summand is non–increasing in any
+product by (i). The second summand may increase, but by (i) case t = 2 if it does
+so then for each new empty trouser (increase of one) there must be at least one
+non-empty trouser lost, so the first summand must decrease by at least one.       2
+                     −                                           (2)
+   It follows that # provides a means of filtering ideals of Pn .
+                                               (2)
+   Let us pick out a special element Iλ of pn (λ) for each λ as follows. Define
+x0 = {{{1}, {1′}}} and
+
+                        xm = {{{1, 1′}, {2, 2′}, . . . , {m, m′ }}}.
+
+Recall the usual Young subgroup construction whereby Sn × Sm ֒→ Sn+m . We
+                                                                  (T ) (T )
+denote by a × b the analogous combination of elements a ∈ Pn and b ∈ Pm into
+               (T )
+an element of Pn+m . Then
+                                                                 
+                                      n−#env (λ)
+                    Iλ = (×i xλi ) × ×i=1        {{{1}}, {{1′ }}}
+
+where #env (λ), resp. #P (λ), denotes the #env , resp. #P , of any a with #− (a) = λ.
+An example is given in figure 3.
+                                                                                   1   2
+                                                                               λ       λ
+    Let Λ denote the set of possible propagating indices λ. We write λ = (λ1 , λ2 , ...)
+for λ ∈ Λ expressed in the exponent notation (i.e. a repeated component is replaced
+by an exponent recording the number of repeats, thus (1, 1, 1) = (13 ) and so on).
+                                                                               0
+    Note that for each λ ∈ Λ there is an m ∈ N0 such that λ ∈ Nm         0 (N0 is to
+be understood as the empty list). Each Nm     0 has a natural action of Sm upon it
+(permuting the indices), and each Sm orbit in Nm   0 has a unique element which is a
+
+
+                                             8
+            (1, 1)
+
+
+
+
+    (2)              (1, 0)
+
+
+
+
+     (1)             (0, 0)
+
+
+
+
+           (0)
+
+
+
+
+           ()
+
+
+
+
+                              Figure 4: The bottom of (Λ, ≤).
+
+λ. This is called the dominant element. If we equate a λ with an element µ of Nm      0
+we will always intend the dominant element in the orbit of µ.
+     We define a partial order ≤ on Λ as follows. First write a relation λ′ ρλ if
+(0) λ′ = λ; or
+(i) λ′ = (λ1 , λ2 , ..., λi−1 , λi − 1, λi+1 , ...); or
+(ii) λ′ = (λ1 , λ2 , ..., λi−1, λi + λj , λi+1 , ..., λj−1, λj+1, ...).
+Now write λ′ ≤ λ for the transitive completion of this relation (it is manifestly
+antisymmetric). Note that in case (i) #P (λ) − #P (λ′ ) = (1, 0); and in case (ii)
+#P (λ) − #P (λ′ ) = (0, 1).
+     Examples: () ≤ λ for all λ and, fixing n, (1n ) ≥ λ for all λ. The poset is not in
+general a lattice. The Hasse diagram starts as in figure 4.
+                                (2)
+Proposition 7 For a, b ∈ pn , #− (d(ab)) ≤ #− (a).
+
+Proof: It is enough to show the result true for a or b a generator (as in proposition 5).
+But multiplication by a generator only implements one of (0)–(ii) above.               2
+                                (2)         (2)
+Proposition 8 Put P = Pn and p = pn .
+(i) Let a ∈ p(λ) and b ∈ p(λ′ ). Then there exist c, d ∈ p such that a = cbd iff λ ≤ λ′ .
+(ii) ∪λ′ ≤λ p(λ′ ) is a basis for P Iλ P .
+(iii) λ′ ≥ λ if and only if P Iλ′ P ⊇ P Iλ P .
+
+Proof: (i) The only if part follows from proposition 7.
+    For each suitable i, there is an outer part of b with λ′i inner propagating parts.
+For each such i, consider acting on b with (Aj , Aj )s so as to break up inner parts,
+until only the lowest numbered primed and unprimed elements in each inner propa-
+gating part remain connected (i.e., in a total of λ′i primed/unprimed pairs). Note by
+proposition 4 that this process is reversible (for example if j was in the same inner
+part as k then (Ajk , Ajk ) acting on the left would restore the connection). Then act
+with (σij , σij )s until these lowest numbered elements coincide with the correspond-
+ing data for Iλ′ . This step is reversible since σij is an involution. If λ = λ′ then a
+may also be taken reversibly to Iλ′ . To obtain c and d simply compose the series of
+generators taking b to Iλ then the reverses which would take Iλ to a.
+    Finally, by definition, if λ < λ′ then we can move from λ′ to λ by a sequence of
+relations ρ of types (i) and (ii). Note that Iλ′ may be taken to an element of pn (λ)
+by a sequence of multiplications by generators which tracks this.
+    It will be evident that (i) implies (ii) implies (iii).                          2
+    An element a of a k–algebra is a pre–idempotent if there exists α ∈ k such that
+αa is idempotent.
+
+                                            9
+                                        (2)
+    For λ ∈ Λ \ {()} define Iλ′ ∈ pn whose inner partition is given by prinner (Iλ′ ) =
+prinner (Iλ ); and whose outer partition agrees with prouter (Iλ ) except on the tail of
+non–propagating parts (if any), whose elements are instead included in the last (i.e.
+rightmost as in figure 3) propagating part.
+                                         (2)
+Proposition 9 Again put P = Pn and suppose Q1 invertible in k. Then each Iλ′
+is pre–idempotent, and these pre–idempotents commute with each other, and obey
+
+                                         P Iλ′ P = P Iλ P.
+
+Proof: Note that each prinner (Iλ′ ) may be expressed in the form j∈J Aj for some
+                                                                                Q
+J, and hence is pre–idempotent in Pn (Q1 ) provided that Q1 invertible. Further, the
+elements Q  of Pn of this form commute. Meanwhile prouter (Iλ′ ) may be expressed in
+the form (i,j)∈J Aij for some J, and hence is idempotent in Pn (Q2 ). Again, all such
+elements of Pn commute with each other. Thus the set of objects Iλ′ are commuting
+                          (d)                         (2)
+pre–idempotents in Pn , and hence also in Pn .
+     Now Iλ′ differs from Iλ only in the tail (if any) of pairs of parts of the outer
+partition of the form {j}{j ′ }. If λ 6= () then this is preceded by at least one
+propagating part. Let {. . . (j − 1)(j − 1)′ } be the last such. Then A(j−1) j {. . . (j −
+1)(j − 1)′ }{j}{j ′}A(j−1) j = {. . . (j − 1)(j − 1)′ jj ′ } and Aj {. . . (j − 1)(j − 1)′ jj ′ }Aj =
+{. . . (j − 1)(j − 1)′ }{j}{j ′ } establishing the equality of ideals.                              2
+
+3.2     On heredity
+Recall that propagating index determines propagating number. Define Λm ⊂ Λ
+                                                                       (2)
+by λ ∈ Λm implies #P (prinner (a)) + #P (prouter (a)) = m for any a ∈ pn (λ). For
+example, (0, 0), (1) ∈ Λ2 .
+
+Proposition 10 P   There exist idempotents Im such that
+      (2)  (2)             (2)     (2)
+(i) Pn Im Pn = λ∈Λm Pn Iλ′ Pn for all m; and
+       (2)     (2)    (2)      (2)
+(ii) Pn Im+1 Pn ⊃ Pn Im Pn for all m = 1, . . . , 2n − 1.
+
+Proof: Given a pair (ex , ey ), say, of commuting idempotents in an algebra A one may
+construct an orthogonal pair (ex (1 − ey ), ey ) and hence an idempotent ex − ex ey + ey .
+Clearly A(ex − ex ey + ey )A ⊇ Aex (ex − ex ey + ey )A + Aey (ex − ex ey + ey )A =
+Aex A + Aey A (saturating the inequality) — NB, sums inside and outside of brackets
+have different meanings here. Applying this process as many times as necessary to
+the idempotents with λ ∈ Λm (noting proposition 9) we obtain our candidate for Im
+satisfying (i). For (ii), observe that every λ ∈ Λm (m < 2n) obeys λ < λ′ for some
+λ′ ∈ Λm+1 .                                                                            2
+                                                             ′
+    Suppose that Q1 Q2 is invertible in k. Then Iλ and Iλ are pre–idempotent (this
+being so we will not further labour the distinction between Iλ and its idempotent
+form). It is clear in this case that I() is a heredity idempotent in the sense of [8] (or
+see [26]).
+                        (2)
+Proposition 11 Pn is quasi-hereditary with heredity chain (I2n , I2n−1 , . . . , I1 , I() ).
+                          (2)   (2)       (2)
+Proof: Write Pi for Pn /Pn Ii−1 Pn . Given proposition 10 it remains to show: (i)
+that subalgebra Ii Pn Ii is semi–simple in Pi ; and (ii) that Pn Ii ⊗Ii Pn(2) Ii Ii Pn ∼
+                    (2)                                        (2)                   (2)
+                                                                                         =
+  (2)    (2)                                      (2)
+Pn Ii Pn       in Pi . A basis for Pi is ∪λ∈Λi pn (λ). It follows from proposition 7 that
+
+                                                 10
+Figure 5: Constructing an element of Iλ P Iλ in case λ = (3, 22, 13 , 0) (the middle
+two rows of points are here to exhibit membership of Iλ P Iλ — on ignoring these the
+                                           (2)
+diagram becomes an element of the basis p14 ((3, 22 , 13, 0)) ∩ Iλ P Iλ ). The shading
+here is a guide to the eye only.
+
+                                                               (2)
+the product of any two basis elements not from the same pn (λ) is zero in Pi . For
+                                             (2)
+(i), one then notes that the subalgebra Ii Pn Ii will break up as a direct sum with
+                         (2)
+summands of form Iλ Pn Iλ . The basis of this algebra given by its intersection with
+the given basis of Pi (illustrated in figure 5) is closed under multiplication, with
+multiplicative unit Iλ , and invertible elements. Thus this algebra is isomorphic to
+a group algebra. (We will identify the group in section 3.3.)
+    For (ii), one considers the obvious map
+
+                                   (aIi , Ii b) 7→ aIi b
+
+in terms of basis elements. Again, since the {Iλ } are orthogonal (in Pi ) it is enough
+to consider (aIλ , Iλ b) 7→ aIλ b. As written, this requires that the kernel coincides
+                                                               (2)
+with elements of the form (ac, b) − (a, cb) where c ∈ Ii Pn Ii . The kernel clearly
+includes this set, so it is enough to show that it is no larger. The map is realizable
+at the level of basis elements, from which the extent of the kernel is immediate, as
+follows.
+                               (2)
+     Let q be an element of pn (λ) ∩ P Iλ (which set is a basis for P Iλ in Pi ), and a
+                 (2)
+an element of pn (λ) ∩ Iλ P Iλ (similarly a basis for Iλ P Iλ ). Up to a scalar qa is in
+ (2)
+pn (λ) ∩ P Iλ and the map
+
+                           p(2)                (2)
+                            n (λ) ∩ Iλ P Iλ → pn (λ) ∩ P Iλ
+
+given in this way by a 7→ qa is injective for any q (again consider figure 5, for
+                                             (2)
+example). Define an equivalence relation on pn (λ) ∩ P Iλ by q ∼ q ′ if qa = q ′ for
+some a as above. Let q ∼ be a set of representatives of equivalence classes. Then
+
+                                           11
+                    (2)
+each element of pn (λ) ∩ P Iλ may be written uniquely in the form qa where q ∈ q ∼
+(i.e. (q, a) 7→ qa is a bijection).
+    The same argument works on the right.                                       2
+
+3.3     Left ideals, sections and special modules
+      (2)
+Let Pn [λ] denote the λ section in the filtration given by proposition 8(ii) (i.e. with
+       (2)           (2)                              (2)
+basis pn (λ)). Let Pn [λ]′ denote the image of Pn Iλ in this section (cf. [26, §3]).
+                                       (2)                            (2)
+The algebra which is the image of Iλ Pn Iλ in this section acts on Pn [λ]′ from the
+                                          (2)             (2)
+right. So in addition to being a left Pn –module Pn [λ]′ is also a right module
+for the group algebra of a permutation group S[λ] whose action is to permute the
+primed sides of outer propagating parts with the same number of inner propagating
+parts; and to permute the primed elements of inner propagating parts within each
+outer propagating part — thus
+                                         Y
+                                S[λ] =        Sλi ≀ Sλi
+                                                i
+
+(consider the action from below of S1 × S2 × S3 × S1 on outer and S3 × (S2 × S2 ) ×
+                                                            (2)
+(S1 × S1 × S1 ) × S0 on inner parts in figure 3). Indeed, Pn [λ]′S[λ] is a sum of copies
+of the right regular module. Thus if LΘ is a simple left kS[λ]–module we may define
+         (2)
+a left Pn –module
+                          SΘ = SΘ (n) = Pn(2) [λ]′ ⊗kS[λ] LΘ .
+                                                (2)                                             (2)
+This is an indecomposable summand of Pn [λ]′ and hence a standard module of Pn
+(in the quasi–hereditary sense).
+                              (2)                                          (2)
+    Evidently, every simple Pn –module appears as a subquotient of some Pn [λ]′ ,
+and each Pn [λ]′ is a sum of modules of form SΘ , with SΘ ∼ = SΘ′ iff LΘ ∼
+             (2)
+                                                                         = LΘ′ .
+                      (2)
+Thus every simple Pn –module appears as a subquotient of some SΘ . The following
+result is well known.
+Proposition 12 [23, §I.Appendix B] Let G be a group with CG conjugacy classes.
+Then equivalence classes of simple G≀Sn –modules are indexed by CG –tuples of integer
+partitions of total degree n. 2
+It follows that for each λ there is a distinct inequivalent SΘ for each tuple of mul-
+tipartitions (tuples of integer partitions are called multipartitions) in which the ith
+multipartition is as specified in the proposition in case Sλi ≀ Sλi .
+    Let us denote by Γn the set of all such indices Θ unioned over all λ such that
+  env
+# (λ) = n. For example, Γ0 consists of a single label ((), say) corresponding to
+the nominal irreducible representation of a product over an empty set of wreaths
+(it will be evident from the construction that the correct interpretation is as a
+single copy of the ground ring); Γ1 consists of labels, (0), (1), say, corresponding to
+the single irreducible representations of each of S1 ≀ S0 and S1 ≀ S1 respectively; Γ2
+                                  2
+consists of labels, (0(2) ), (0(1 ) ) (the irreducibles of S2 ≀ S0 ), (1, 0) (the irreducible
+                                          2                                                      2
+of (S1 ≀ S1 ) × (S1 ≀ S0 )), (1(2) ), (1(1 ) ) (irreducibles of S2 ≀ S1 ), (1, 1)(2) and (1, 1)(1 )
+(irreducibles of S1 ≀ S2 ), say. See figure 6 for more examples.
+                                                                                  (T )
+    Note that the kS[λ] action may be realized as a subalgebra of Pn in a similar
+way to kSn . The extra structure in kS[λ] is just so that it commutes with Iλ . When
+                                                         (T )
+we confuse elements of kS[λ] with elements of Pn it will be through this realization.
+
+                                                12
+Since kS[λ] is a group algebra we may take it semisimple for k a suitable field of
+characteristic 0 (such as C). Let eΘ then be a primitive idempotent of kS[λ] such
+that kS[λ]eΘ = LΘ and eΘ kS[λ]eΘ = keΘ . We may define an inner product < | >
+on SΘ by
+                                < a|b > eΘ Iλ = ao b
+(to be understood in the λ section, which makes the opposite right module to SΘ
+also a dual).
+    For example, I() = ni=1 (An , An ) and S[()] = S0 which here means the trivial
+                         Q
+group (so there is only one irreducible representation and e() = 1). A basis for
+  (T )                 (T )
+Pn I() is {wx | w ∈ En , x = {{{1′ }}, {{2′}}, ..., {{n′}}}}. Thus the gram matrix
+G() of the inner product with respect to this basis has rows and columns conveniently
+               (T )
+indexed by En . The abth entry of G() is i Qhi i where hi is the number of parts
+                                             Q
+in ai bi (the normal composition of partitions). In particular for n = 2 the λ = ∅
+module has gram matrix computed as follows:
+
+
+
+
+                                   Q2  2         Q1 Q2
+                                    1 Q2             2      Q1 Q2
+
+
+
+
+                                   Q1 Q2
+                                       2         Q1 Q2
+                                                     2
+                                                            Q1 Q2
+
+
+
+
+                                   Q1 Q2         Q1 Q2      Q1 Q2
+
+
+
+
+whereupon
+                                     3 4
+                           |Gn=2
+                             () | = Q1 Q2 (Q1 − 1)(Q2 − 1).
+
+Similarly we have (for the dimension twelve module at n = 3)
+                          12 20                        7        7
+                |Gn=3
+                  () | = Q1 Q2 (Q1 − 2)(Q2 − 2)(Q1 − 1) (Q2 − 1)
+
+and (for the dimension 60 module at n = 4)
+                60 119                       13       11       45       48
+      |Gn=4
+        () | = Q1 Q2 (Q1 − 3)(Q2 − 3)(Q1 − 2) (Q2 − 2) (Q1 − 1) (Q2 − 1) .
+
+What is striking about these results is that the determinants factorise over Z[Q1 ] ∪
+Z[Q2 ] rather than C[Q1 , Q2 ] 2 .
+  2
+    Indeed, computing the determinant of a common or garden 60x60 matrix with entries poly-
+nomial in 2 variables is probably beyond the reach of modern computers. We used the GAP
+package[17], some lucky guesses and some saturated bounds to reduce to a few tens of minutes
+computation on a powerful laptop.
+
+
+                                            13
+Proposition 13 For all n the module S() is generically simple.
+Proof: Consider G() for n arbitrary. It is enough to show that this is non–singular
+on an open subset of parameter space. Recall that the composition of partitions
+required to compute the inner product involves a transitive closure. It follows that
+the diagonal entry in each row of G() is always of (possibly equal) highest total
+degree. Consider the matrix obtained by deleting the rows (and columns) where
+it is uniquely of highest degree. Iterating this procedure (cf. [29]) we arrive at
+the empty matrix. It follows that the determinant of the gram matrix is a finite
+polynomial in Q1 , Q2 . 2
+
+3.4    Modules SΘ (n) with #env (Θ) = n
+Let us extend the definition of #env so #env (Θ) = #env (λ), where λ is the propagat-
+                                                                          (2)
+ing index underlying Θ. Then ‘modules SΘ with #env (Θ) = n’ are the Pn –modules
+SΘ whose canonical basis elements have propagating index which cannot be realized
+     (2)
+in Pn−1 . They also obey
+
+                           D (T ) (Ai )SΘ = D (T ) (Aij )SΘ = 0
+for all i, j, whereas no SΘ with #env (Θ) < n has this property (for, in this case we
+may construct a basis element from a basis element for the equivalent module at
+level n − 1 by a 7→ a ∪ {{{n}}, {{n′}}} — and this is not killed by D (T ) (An )).
+Proposition 14 If #env (Θ) = n and Qinner invertible in k then SΘ (n) is simple.
+Proof: Consider the gram matrix as constructed in the previous section. Because
+of the quotient (we are in the λ section) we may apply the pigeonhole principle to
+see that the inner product < a|b > between any two basis elements is zero unless
+each outer part of a meets only one outer part of bo in the composition. Thus the
+gram matrix breaks up into blocks indexed by the possible arrangements of outer
+parts in the restriction of a to n′ (or equivalently the restriction of bo to n), and
+this arrangement characterizes all the products in the block. Since #env (Θ) = n
+this implies that, in a block, each outer part from a meeting one from bo carries
+the same number of inner propagating lines. Within the block, then, up to overall
+factors of Qinner , the inner product coincides with that of the corresponding simple
+kS[λ]–module. Each block determinant is therefore the same, and non–zero. Hence
+the whole gram matrix is non–singular. 2
+
+3.5    Generic representation theory
+                                                    (T )
+For any T recall that eT commutes with Pn−1 , and that eT eT = Qπ eT . Thus
+                      Q
+Proposition 15 For t∈T Qt invertible in k,
+
+                           eT Pn(T ) eT = Pn−1 eT ∼
+                                           (T )      (T )
+                                                  = Pn−1                          (3)
+is an algebra isomorphism; and
+                                 (T )
+                           G : Pn−1 –mod → Pn(T ) –mod
+                                        M 7→               Pn(T ) eT M
+                        (T )            (T )
+is a full embedding of Pn−1 –mod in Pn –mod [16, §6.2] (cf. [26]).
+
+                                               14
+                   (2)           (2)
+   Note that G(Pn−1 Iλ ) = Pn Iλ (NB, strictly speaking Iλ is a different object on
+each side of this equation, i.e. depending on the level n; it is this ‘globalization’
+identity which justifies omission of the n label).
+   By equation (3), it is the quotient
+
+                                 P [n] := Pn(T ) /Pn(T ) eT Pn(T )
+
+whose representations will be missed in the embedding (or equivalently, those left
+modules M for which eT .M = 0). Thus
+                         (T )
+Proposition 16 If Λn is an index set for the equivalence classes of simple modules
+      (T )
+of Pn then
+        (T )
+(i) |Λ0 | = 1;
+and if Q1 Q2 invertible in k then
+        (2)  (2)
+(ii) Λn = Λn−1 ∪ Γn = ∪0≤i≤n Γi , and
+                         (2)
+(iii) {head SΘ | Θ ∈ Λn } is a complete set of representatives of the equivalence
+                                (2)
+classes of simple modules of Pn .
+
+    In other words, the set of equivalence classes of irreducible representations is
+indexed by the possible values of #− together with the corresponding set of tuples
+of multipartitions described in section 3.3.
+    Recall [27, §2.2] that Pnm is the subalgebra of Pn+m in which each of the nodes
+labelled n + 1, . . . , n + m is identified with its primed partner. The algebras Pnm
+                                               (T )m                       (T ) (T )1
+generalize in a natural way to algebras Pn           (any T ), whereupon Pn ⊂ Pn ⊂
+  (T )                                      (T )
+Pn+1 . The chain of inclusions from P0 upward obtained from this sequence is
+           (T )
+denoted P∗ .
+                                                                          (2)
+    As for restriction rules, it will be clear that the module S() in P2n restricts to
+                                   (2)
+the regular representation of Pn . En route we have the restriction
+                                       (2)
+                                      Pn−1
+                                Res    (2)   S() ∼
+                                                 = S() ⊕ S(0) ⊕ S(1)
+                                      Pn
+
+and so on. The first few layers are depicted in figure 6. We do not need the general
+result here, but see proposition 20.
+                               (T )
+    Given a module M ∈ Pn−1 –mod there is a globalization functor G and, via the
+               (T )       (T )
+injection of Pn−1 into Pn , an induction functor Ind acting on it, so that GM
+                     (T )
+and IndM are in Pn –mod for any n. In writing down such modules, we will not
+generally give an explicit indication of the level n unless it is seems helpful to do so.
+    We now assemble the tools for proving generic semisimplicity. By construction
+(or using [10]) we have
+
+Proposition 17
+                                       GSλ (n) ∼
+                                               = Sλ (n + 1)
+Recall [9]
+
+Proposition 18 Projective modules of quasi–hereditary algebras have filtrations by
+standard modules.
+
+We denote the multiplicity in this filtration by [Pλ : Sµ ]. The following is readily
+proved (cf. [26]):
+
+                                                   15
+0,0
+1
+
+
+
+1,1
+1
+
+
+
+
+0,0   0,1                     1,1
+1     1                       1
+
+
+
+
+1,1   1,2   2,1               2,2
+3     1     1                 1
+
+
+
+
+0,0   0,1         0,2   0,2   1,1                       1,2     2,1   2,1         2,2   2,2
+3     4           1     1     5                         2       1     1           1     1
+
+
+
+
+1,1   1,2   2,1   1,3   1,3   2,2   2,2    3,1   3,1    2,3     3,2   3,2   3,2   3,3   3,3
+12    8     7     1     1     9     2      1     1      2       1     1     2     1     1
+
+
+
+
+0,0   0,1         0,2   0,2   1,1                       1,2     2,1   2,1         2,2   2,2
+                                          OTHERS                                              OTHERS
+12    20          9     9     28                        21      9     9           12    12
+
+
+
+
+1,1   1,2   2,1               2,2
+                                                       OTHERS
+60    59    46                73
+
+
+
+
+0,0   0,1                     1,1
+60    119                     179
+
+
+
+
+1,1
+358
+
+
+
+0,0
+358
+
+
+
+Figure 6: Generic restriction rules for the generic irreducible #P = (0, 0) represen-
+             (2)                                    (2)                     (2)
+tation of P5 through the chain of restrictions P∗ . The top layer is P0 and the
+               (2)                      (2)1
+bottom is P5 . In each layer up to P2 a complete list of irreducible representa-
+tions is given. Thereafter only irreducibles occurring in the restriction are recorded.
+The irreducibles are labelled by their #P index (i.e. ambiguously) and by their
+dimension.
+
+                                                       16
+                               (T )
+Proposition 19 For M ∈ Pn             − mod,
+
+                               Resn+2     ∼    n+1
+                                  n+1 GGM = Indn M
+
+
+
+                                  Ind GM ∼
+                                         = GInd M.                                  (4)
+Thus if Sλ (n) is projective for all n then so is Res Sλ (n). Whereupon
+Proposition 20 [Res Sλ : Sµ ] 6= 0 implies #env (λ) − #env (µ) ∈ {−1, 0, +1}.
+                                        (2)
+                                               (2)
+Proof: Consider the restriction ResPn(2) Pn [λ̂]′ where λ̂ is such that Sλ is a summand.
+                                       Pn−1
+        (2)
+Since Pn [λ̂]′ is a direct sum of Sλ s all with the same #env , it is enough to show an
+equivalent result for this module.
+                      (2)
+    In our basis of Pn [λ̂]′ the elements conform to one of the following possibilities
+for the connectivity of node n (the distinguished node, as it were, on restriction).
+(1a) Node n is the sole unprimed element in a propagating part (inner not outer)
+                                                                 (2)
+— this contributes to a basis for a module isomorphic to Pn−1 [λ′ ]′ with λ′ ρλ̂ via a
+ρ–step of type (i) (i.e. with #env (λ′ ) = #env (λ) − 1).
+(1b) Node n is the sole unprimed element in a propagating part (inner and outer)
+— this means that #P (λ̂) includes a singleton, and the situation is as above except
+that this singleton has disappeared in λ′ . Again #env (λ′ ) = #env (λ) − 1.
+(1c) Node n is the sole unprimed element in a propagating part (outer not inner) —
+this time #P (λ̂) includes a zero element and the situation is as above except that
+this has disappeared in λ′ . Again #env (λ′ ) = #env (λ) − 1.
+(2a) Node n is a singleton both with respect to inner and outer partitions — the set
+                                                               (2)
+of such objects forms a basis for a module isomorphic to Pn−1 [λ̂]′ .
+(2b) Node n is connected, but in such a way that regarding it as primed (for the
+purpose of determining the propagating index) does not change the propagating
+index (i.e. both the inner and outer part in which it lies have other nodes of both
+primed and unprimed type). Again sets of such objects form bases for modules
+                  (2)
+isomorphic to Pn−1 [λ̂]′ , provided we quotient by the modules produced at (1abc)
+above.
+(3a) Node n is in a part (inner not outer) containing only unprimed elements — in
+the restriction there is no action on this node, so, quotienting by all the modules
+discussed so far, it may be regarded much as if it were primed. Thus we can build
+                                   (2)
+a basis for a copy of a module Pn−1 [λ′ ]′ where λ′ is such that one element of #P (λ′ )
+is incremented by 1 compared to #P (λ), and hence #env (λ′ ) = #env (λ) + 1.
+(3b) Node n is in a part (inner and outer) containing only unprimed elements — as
+above, except that #P (λ′ ) has a new singleton element. Again #env (λ′ ) = #env (λ)+
+1.
+(3c) Node n is in a part (outer not inner) containing only unprimed elements — as
+above, except that #P (λ′ ) has a new zero element. Again #env (λ′ ) = #env (λ) + 1.
+2
+                (2)
+Theorem 1 Pn (Q) is generically semisimple.
+
+Proof: Let Propλ be that Sλ = Pλ = Sλ , the simple module, for all n (i.e. this
+module lies in a singleton block). Then we are done if Propλ true for all λ. Suppose
+it is true for all {λ | #env (λ) ≤ m}. Work by induction on m. The base case is
+
+                                               17
+m = 0, which is true generically by proposition 13 using quasi-heredity and Brauer–
+Humphreys reciprocity [9].
+    Applying equation (4) to case M = 1, n = 0 we see that every standard module
+with #env (ν) ≤ m appears in the mth induction (and hence also the mth restriction)
+of S() . Thus for each ν with #env (ν) = m+1 there is a λ with #env (λ) = m such that
+[Res Sλ : Sν ] 6= 0. We now use this λ and the inductive assumptions to establish
+Propν .
+    Consider the Frobenius reciprocity
+
+                      Homn+1 (Ind Sκ , Sλ ) ∼
+                                            = Homn (Sκ , Res Sλ )                    (5)
+
+By proposition 20, if #env (κ) ≥ m + 2 then this space is empty (since it is empty
+on the left by the inductive assumption). On the other hand, by assumption, all
+the indecomposable summands Pχ of Res Sλ are simple except possibly those with
+#env (χ) = m + 1. But suppose some Sφ a submodule of Pχ . Then it is simple
+by equation (5) and quasi–heredity (the only possible maps into it would show up
+in equation (5) for some κ), and so φ = χ, and indeed Pχ is simple by Brauer–
+Humphreys reciprocity and quasi–heredity. Thus in particular our Sν = Pν = Sν .
+2
+
+
+4     Exceptional representations
+Fix Q ∈ N and let VQ denote the k–space with basis {e1 , . . . , eQ }. Then for each
+ordinary partition algebra Pn (Q) there a Qn –dimensional Potts representation R
+acting on V = VQ⊗n . This is described, for example, in [28] (see also below). The
+underlying idea is that each basis element of V is a colouring of the n lattice sites
+({1, ..., Q} being the colours), and that such a colouring is ‘consistent’ with a given
+partition of the sites only if the elements within each part in the partition have
+the
+N same colour. Fixing Q a function from T to N, the tensor product algebra
+   t Pn (Qt ) may be equipped with a corresponding    product representation. It will
+                                         Q      n
+be evident that this representation is ( t Qt ) –dimensional. ThisQis to say, it acts
+on a space isomorphic to thatQof the Potts representation of Pn ( t Qt ) (recall the
+‘diagonal’ isomorphism of Pn ( t Qt ) to a subalgebra of our algebra). We will again
+                                         N                                       (T )
+write R both for this representation of t Pn (Qt ) and for its restriction to Pn .
+                                                                         (T )
+Theorem 2 For any Q ∈ Nd there exists an m ∈ N such that Pn (Q) is non–
+semisimple for all n > m.
+Proof: The proof is a straightforward generalization of the corresponding result for
+the ordinary partition algebra as in [29]. In short, one compares the growth rate
+(as n increases) of dimension of standard module S() with that of the Potts repre-
+sentation R, having established that, if semisimple, the former is a summand of the
+latter (consider R(I() )).                                                        2
+
+
+
+4.1    Application to physical models
+For H a graph let EH (resp. VH ) denote its edge (resp. vertex) set. Define graph Al
+by VAl = {1, 2, .., l} and EAl = {{i, j}|i−j = ±1}, and graph Âl by VÂl = {1, 2, .., l}
+and EÂl = {{i, j}|i − j ≡ ±1 mod. l}, as usual.
+
+                                           18
+    Fix Q ∈ N. A spin configuration on graph H is an element of SH = hom(VH , {1, 2, .., Q})
+(i.e. a colouring of the vertices of H from Q colours). For s ∈ SH let si denote the
+‘colour’ of vertex i.
+    Given a graph H let graph G = H × Al be given by VH×Al = VH × VAl and
+{(a, b), (c, d)} ∈ EH×Al if either a = c and {b, d} ∈ EAl or b = d and {a, c} ∈ EH .
+We may break graph G up in to l ‘lateral’ layers Hk (k = 1, 2, .., l) each isomorphic
+to H, and l − 1 ‘transverse’ layers Hk,k+1 each consisting of the edges between a
+certain pair of lateral layers.
+    A Q–state model on G may be constructed as follows [2, 24]. An edge Hamiltonian
+H is a map from hom(VA2 , {1, 2, .., Q}) to the real numbers (here A2 stands for any
+of the 2 vertex subgraphs of G containing precisely one edge). From this we form
+graph Hamiltonian                        X
+                                 HG =        H(si , sj ).
+                                         {i,j}∈EG
+
+Given such a function and a complex variable β define the partition function
+                                     X
+                         Z = Z(β) =      exp(βHG (s)).
+                                            s∈SG
+
+
+In Statistical Mechanics one wants to know the analytic structure of Z(β). 3 If the
+Hamiltonian H(si , sj ) is integer valued then, regarding Z as a function of exp(β),
+this structure consists of roots. (More generally of limits of distributions of roots as
+l and H grow large in some way.)
+                       (l)
+    For s, t ∈ SH let Tst denote the partition function in case the colours of vertices
+in H1 (resp. Hl ) have been fixed to s (resp. t). Note that, given a bijection
+VH ↔ {1, 2, .., n}, SH is a basis for V in a natural way. Thus T (l) is a matrix in
+End(V ). In case l = 1 the first and last layers are identified, and T (1) is a diagonal
+matrix. We may similarly introduce a matrix T (−) of partition functions associated
+to a single transverse layer Hk,k+1. Here s determines the colour of vertices in layer
+k, and t in layer k + 1. These layer matrices are called transfer matrices. Note that
+we may use them to build up T (l) one layer at a time:
+                                                   l
+                                T (l) = T (1) T (−) T (1) .
+
+Similarly, we can introduce matrices which will build up T (1) and T (−) one edge at
+a time.
+    For certain choices of H(si , sj ) the representation R can be used to build these
+transfer matrices. The representation R of the full tensor product algebra may be
+used to build transfer matrices for models with Q     a significantly greater variety of
+                                                                                   (T )
+Hamiltonian than can the restriction of R to Pn ( t Qt ). The point about Pn is
+that R may be restricted to it without losing the greater variety. A suitable concrete
+example will illustrate these points. Let Q = (Q1 , Q2 ) = (2, 3). Let Dj be the j × j
+matrix with all entries 1, and Ij be the j × j unit matrix. Then
+
+                       R((Ai , Ai )) = I6i−1 ⊗ DQ1 ⊗ DQ2 ⊗ I6n−i−2
+
+                        R((Ai , 1)) = I6i−1 ⊗ DQ1 ⊗ IQ2 ⊗ I6n−i−2
+   3
+    Actually Z will only be physically interesting, within the framework described, for certain
+carefully chosen G and H; and interesting constructions are possible outside of this framework.
+Neither point need concern us here.
+
+                                              19
+(cf. [2, §12.4]).
+    The colour–valued variables si associated to the vertices i of G are called spins.
+Note that R above acts on a space appropriate for a Q1 Q2 =6–state model. Consid-
+ering spins si as taking values from the integers mod. 6, then a Z6 –symmetric model
+[2, 12] is one in which the edge Hamiltonian takes the form H(si , sj ) = f (si − sj ),
+where f may be any real valued even function 4 . Suppose we want to build the
+transfer matrix for such a model with f (0) = 2, f (1) = f (2) = 1, f (3) = 0 (such as
+the model examined in [24, p.305]). Then the transfer matrix factor building in the
+contribution of that edge to the Hamiltonian is
+
+                   R 1 + (eγ − 1)(Aij , Aij ) 1 + (eβ − 1))(1, Aij )
+                                                                     
+
+
+                  = R 1 + (eβ − 1))(1, Aij ) + eβ (eγ − 1)(Aij , Aij )
+                                                                       
+
+if lattice edge (i, j) is in the transfer matrix layer (i.e. it is in some Hk ), and
+
+                      R eβ (eγ − 1)1 + (eβ − 1)(Ai , 1) + (Ai , Ai )
+                                                                      
+
+
+if (i, j) is perpendicular to the transfer matrix layer; where γ = 2, β = −1.
+     The analytic structure of the partition function Z for such models reveals physi-
+cal phase transitions as points on the positive exp(β)–axis which are approached by
+distributions of roots as the system size grows large (see [24] for details). In comput-
+ing this structure we are, at base, using the algebra as nothing more than a formal
+aid to computation (the globalization functor G gives explicit control of the thermo-
+dynamic, i.e. large n, limit as a global algebra limit, but there is no way yet to use
+this in specific calculations). None the less, the results are of considerable interest
+both in the way they model phase transitions and in what they tell us about specific
+physical systems. We will postpone such interpretation to a separate paper but, in
+the renaissance spirit, include a couple of results here (in the form of distributions
+of roots), for illustration. (There has been renewed interest in results of this kind
+recently, although mostly obtained by brute force calculation, see [31].) Figures 7
+and 8 show the roots of Z in exp(β) for Q1 = Q2 = 2 and f (0) = 3, f (1) = 1 and
+f (2) = 0, for various graphs. The results for various different graphs are shown, as
+a rough indication of the sense in which the distribution of roots may approach a
+limit as G becomes large. 5 The graphs concerned are given by (H = Â7 , l = 9) and
+(H = Â8 , l = 9) and (H = Â8 , l = 13) and (H = Â10 , l = 13) (i.e. these examples
+are models of two–dimensional physical systems).
+
+
+5       Discussion
+There remain a number of interesting open problems on the representation theory
+                                                                (2)
+side. We have not determined the exceptional structure of Pn (cf. Pn , where
+complete results are known), nor addressed its representation theory in positive
+characteristic (nothing is known here for Pn either, although it is known to be a
+    4
+     Directed graphs and non–even functions produce chiral models, which have also been studied,
+but need not concern us here.
+   5
+     A better indication is perhaps given by the animated combined version of these figures available
+online from www.city.ac.uk/mathematics/algebra/statinfo/StatMechIntro2.html or from
+PPM’s homepage.
+
+
+
+                                                 20
+                                ++               ++
+                             +++ +                   ++
+                            +
+                           ++        ++ + +           ++
+                         ++             + +
+                                          +    +
+                                               +       ++ +
+                        ++                + +
+                      +                     + +        ++ +
+                     +
+                     +                           ++ +
+                  +
+                   ++
+                   +                          +             ++
+                  +                       ++ +++ + ++   + ++++
+                                                     + ++ +++++
+               +++
+                 +
+                                            +
+                                         ++++ + + ++ +             ++
+                                                                    +++
+              + + ++                   +++   +                        +++
+            +                         ++         +      +++             +
+         +++     +  +               ++           +        +              ++
+        ++     ++++       ++       +
+                                   +
+                                    +            +
+                                                 ++
+                                                        +
+                                                        + +               ++
+                                                                           ++
+                 +      +  +      +
+                                  +             ++     ++                   ++
+        +         +      + +     ++              ++    ++
+                 +
+                 +     + +       +                 +
+                                                  ++ +  +                     +
+        +         + +            +
+                                 +                                            +
+                  +    ++     + +                  +  +                       +
+                  ++ ++         +                  +++                        +
+                   ++
+                   +
+                   +
+                   +  +
+                  +++           +                   ++                        +
+                  + +++       ++                   +
+                                                   +  +                       +
+        +         +    +         +
+                                 +                 + ++
+                                                  ++                          +
+        +        ++ +++
+                 +               +
+                                 ++              ++    ++                     +
+                 +      ++ +      +             ++      +                   ++
+               ++++       ++      ++
+                                   +              + ++                     ++
+        ++                          +            +
+                                                 +      + +               ++
+         ++++    + +                ++           +        +              ++
+                  +                   ++         +      +++             +
+                                                                        +
+              ++ + +   +               ++    +                        ++
+                ++                       ++++ + + ++ +
+                                         +
+                                                                  + +++
+                                                                   ++
+                                            +        + ++ +++  +++
+                                                                 +
+                  +
+                  +                       ++ +++ + ++   + +
+                   + +
+                   ++                         +
+                                                 +  +    + ++
+                     +
+                      +                     ++ +       ++ +
+                        ++                +                 +
+                         ++             + +
+                                          +    +
+                                               +       ++
+                           +         ++ +   +         ++
+                            +
+                            ++     +                 ++
+                              ++
+                                ++               ++
+
+
+
+
+Figure 7: Zeros of the partition function in eβ for 7 × 9 (dots) and 8 × 9 (crosses)
+square lattice systems with Q1 = Q2 = 2.
+
+
+
+
+                                        21
+                                  ++
+                              ++++              +++
+                             ++     +               ++
+                            +
+                            +
+                            +        + +             +++
+                           +
+                           +         +  +             + +
+                         ++
+                          +            +++ ++  +       +
+                         +                +
+                                          +             + +
+                                                        +    +
+                        ++                 ++++             +
+                      ++                    +    +      + ++
+                   ++
+                     +
+                     ++                       + ++ + +
+                                                   + + +++
+                  +
+                  +
+                   +
+                                           + ++
+                                           +   +++ +++  + ++ +++
+                 ++                       ++ +       +   + + ++ +++
+                                                                  ++
+                                                                   ++
+                                                                    +
+                +                         +   ++    +     +    +     +
+                                                                     ++
+              +++++
+                  + +                  ++
+                                        ++
+                                         ++ + ++
+                                            +    +      +
+                                                          ++          ++
+                                                                       ++
+                                                                        ++
+                                                                         +
+            ++    ++                 ++
+                                      ++         +        +
+                                                          +               +
+                                                                          ++
+                                                                           +
+        ++
+       +++ +          + ++           +
+                                     +           +
+                                                 +      ++ +
+                                                           +               ++
+                                                                            +
+       +       +++ +       +        +
+                                    +            +
+                                                 +
+                                                 +      + +                  +
+                                                                             +
+                                                                             +
+              + ++        ++       +
+                                   ++            ++    ++                     +
+                                                                              +
+                                                                              +
+       +                 +
+                         +++
+                           +      ++
+                                   +             +
+                                                 +     ++                      +
+                                                                               +
+                 ++
+                  +     ++        +
+                                  +              ++   + +
+                                                        +                       +
+       +         ++    +          +
+                                  +
+                                  +               +
+                                                  +
+                                                  ++  +                         +
+                                                                                +
+       +          +
+                  +   + +        +
+                                 ++                +  +                          +
+                  +   +
+                      +       +  +                 +  +                          +
+                  +++            +                 ++ +                          +
+                   ++
+                   + +
+                   +
+                   +
+                  +++
+                   + +
+                  +++ +          +
+                                 +                 +
+                                                   +
+                                                    +++                          +
+                                                                                 +
+                  +
+                  + + + +     +  +                 +  +                          +
+       +          +    +         ++
+                                  +               ++  +                         +
+       +         +                +
+                                  +               +
+                                                  + ++  +                       +
+       +         ++
+                  + +++   ++
+                           +
+                                  +
+                                  +
+                                  ++
+                                                 +
+                                                 ++    ++                      +
+                                                                               +
+                                                                                +
+              +  ++      + +       +
+                                   +
+                                   +             +
+                                                 ++    +                      +
+                                                                              +
+       +       ++++       ++        +
+                                    +            +
+                                                 +
+                                                 +      +
+                                                        +                    +
+                                                                             ++
+       + +++                        +            +       +++                ++
+        ++  ++ ++ +++                +
+                                     +
+                                     ++          +      + ++               +
+                                                                           +
+                                                                           ++
+              +   ++
+               ++++
+                                      ++
+                                       ++
+                                        ++  ++ +
+                                                 +
+                                                 +      ++ +           ++
+                                                                        ++
+                                                                         ++
+                                                                          +
+                ++                       ++
+                                          +   ++ +  +     +
+                                                          + + + ++   +
+                                                                     ++
+                                                                      ++
+                                          ++++       + +          ++
+                                                                   ++
+                                                                    +
+                  +
+                  +                        +
+                                           +  +     +++ +  ++ ++
+                                                               +
+                                                               ++
+                                                                +
+                  ++                           +++ + +++
+                   ++++
+                     +++                      +   ++ + +
+                                            +++ ++      ++++
+                        ++                 + +          +
+                         +
+                         ++             +++
+                                          +++ +        ++ +  +
+                          ++           ++               +
+                           ++        ++
+                                     +                ++
+                            +
+                            +                        ++
+                             ++
+                              +++   +              ++ +
+                                 +++            ++
+
+
+
+
+Figure 8: Zeros of the partition function in eβ for 8 × 13 (crosses) and 10 × 13
+(dots) square lattice systems with Q1 = Q2 = 2.
+
+
+
+
+                                        22
+hard problem [30]). As for more exotic posets T , we do not know even the generic
+               (T )
+structure of Pn (indeed we do not even know if it has a generic structure).
+                                                             (2)
+    As a quasi–hereditary algebra, it is natural to ask if Pn has tilting modules [9].
+These have yet to be constructed even for Pn .
+    The assumptions of this paper restrict us to finite T , however there is no serious
+obstruction to relaxing this constraint. Infinite T lacks, for the moment, physical
+motivation, however it offers some intriguing possibilities cf. [34] (and references
+therein) for example.
+
+
+
+Acknowledgements. PPM would like to thank Anton Cox for invaluable discus-
+sions, and EPSRC for partial financial support.
+
+                                               (2)
+Appendix: Rank of Pn
+                (2)                      (2)
+The degree of pn , or the set EN of 2–ramified partitions of any finite set N, may
+be computed as follows. The shape of a partition (of N say) is the list of degrees of
+its parts, expressed as an integer partition. For µ such a shape, let gµ be the number
+of partitions with that shape. Let bn be the number of partitions of n. Then
+                                           X Y
+                                 |p(2)
+                                   n   | =    gµ    bµi
+                                                     µ       i
+
+The first few of these are
+                                                               Q
+                                                          gµ ×           µ
+                              (T )                         1×1         (1, 1)
+                           p1        :
+                                                          P1×2          (2)
+                                                             =3
+                                              Q
+                                         gµ ×                 µ
+                                          1×1             (1, 1, 1)
+                                          3×2              (2, 1)
+                                         P1 × 5             (3)
+                                            = 12
+                                                           Q
+                                                      gµ ×                 µ
+                                                       1×1            (1, 1, 1, 1)
+                                                       6×2             (2, 1, 1)
+                       (T )
+                      p2      :                        4×5              (3, 1)
+                                                     3×2×2              (2, 2)
+                                                     P1 × 15              (4)
+                                                         = 60
+
+
+
+
+                                                     23
+                                      Q
+                                 gµ ×                   µ
+                                  1×1            (1, 1, 1, 1, 1)
+                                 10 × 2           (2, 1, 1, 1)
+                                 10 × 5            (3, 1, 1)
+                               15 × 2 × 2          (2, 2, 1)
+                                 5 × 15              (4, 1)
+                               10 × 2 × 5            (3, 2)
+                                P1 × 52               (5)
+                                   = 358
+These figures may be compared with the summed squares of dimensions of generic
+irreducible representations of the corresponding algebras in figure 6.
+
+
+References
+ [1] J Ashkin and E Teller, Phys Rev 64 (1943), 178–184.
+
+ [2] R J Baxter, Exactly solved models in statistical mechanics, Academic Press,
+     New York, 1982.
+
+ [3] V V Bazhanov and R J Baxter, Star triangle relation for a 3-dimensional model,
+     J Stat Phys 71 (1994), 839–864.
+
+ [4] R Brauer, On algebras which are connected with the semi–simple continuous
+     groups, Annals of Mathematics 38 (1937), 854–872.
+
+ [5] E Cline, B Parshall, and L Scott, Finite-dimensional algebras and highest weight
+     categories, J. reine angew. Math. 391 (1988), 85–99.
+
+ [6]            , Generic and q–rational representation theory, Publ RIMS 35 (1999),
+       31–90.
+
+ [7] S Dasmahapatra and P P Martin, On the algebraic approach to cubic lattice
+     Potts models, Journal of Physics A 29 (1996), 263–278.
+
+ [8] V. Dlab and C.M. Ringel, A construction for quasi-hereditary algebras, Compos.
+     Math. 70 (1989), 155–175.
+
+ [9] S. Donkin, On tilting modules for algebraic groups, Math. Z. 212 (1993), 39–60.
+
+[10]          , The q-Schur algebra, LMS Lecture Notes Series, vol. 253, Cambridge
+       University Press, 1998.
+
+[11]           , Symmetric and exterior powers, linear source modules and representa-
+       tions of Schur superalgebras, Proc LMS 83 (2001), 647–680.
+
+[12] M B Einhorn, R Savit, and E Rabinovici, A physical picture for the phase
+     transition in ZN symmetric models, Nucl Phys B 170 [FS1] (1980), 16.
+
+[13] S Elitzur, R B Pearson, and J Shigemitsu, The phase structure of discrete
+     abelian spin and gauge systems, Phys Rev D 19 (1979), 3698.
+
+[14] C Fan, Phys Lett 39A (1972), 136–136.
+
+                                            24
+[15] F M Goodman, P de la Harpe, and V F R Jones, Coxeter–Dynkin diagrams
+     and towers of algebras, Math Sci Research Inst Publ, Springer–Verlag, Berlin,
+     1989.
+
+[16] J A Green, Polynomial representations of GLn , Springer-Verlag, Berlin, 1980.
+
+[17] The GAP Group, GAP — Groups, Algorithms, and Programming, version 4.2,
+     Aachen, St. Andrews, 1999.
+
+[18] T Halverson and A Ram, Characters of algebras containing a Jones basic con-
+     struction..., Adv Math 116 (1995), 263–321.
+
+[19] P Hanlon and D Wales, A tower construction for the radical in Brauer’s cen-
+     tralizer algebras, J Algebra 164 (1994), 773–830.
+
+[20] A Henke and S Koenig, Relating polynomial gl(n)–representations in different
+     degrees, J reine angew Math (to appear).
+
+[21] V F R Jones, in Subfactors (Singapore), World Scientific, 1994.
+
+[22] H F Mattson Jr., Discrete mathematics with applications, Wiley, Singapore,
+     1993.
+
+[23] I Macdonald, Symmetric functions and Hall polynomials, 2 ed., Oxford, 1995.
+
+[24] P P Martin, Potts models and related problems in statistical mechanics, World
+     Scientific, Singapore, 1991.
+
+[25]           , Temperley–Lieb algebras for non–planar statistical mechanics — the
+       partition algebra construction, Journal Of Knot Theory and its Ramifications
+       3 (1994), no. 1, 51–82.
+
+[26]          , The structure of the partition algebras, J Algebra 183 (1996), 319–358.
+
+[27]          , The partition algebra and the Potts model transfer matrix spectrum in
+       high dimensions, J Phys A 32 (2000), 3669–3695.
+
+[28] P P Martin and G Rollet, The Potts model representation and a Robinson–
+     Schensted correspondence for the partition algebra, Compositio Math 112
+     (1998), 237–254. Corrigendum: multiple substitutions of ⇒ for – symbol!
+
+[29] P P Martin and H Saleur, Algebras in higher dimensional statistical mechanics
+     — the exceptional partition algebras, Lett. Math. Phys. (1994), no. 30, 179–185.
+
+[30] P P Martin and D Woodcock, The partition algebras and a new deformation of
+     the Schur algebras, J Algebra 203 (1998), 91–124.
+
+[31] V Matveev and R Shrock, Complex-temperature phase diagram of the 1D Z(6)
+     clock model and its connection with higher-dimensional models, PHYSICS LET-
+     TERS A 221 (1996), 343–349.
+
+[32] R K Pathria, Statistical Mechanics, Pergamon, 1972.
+
+
+
+
+                                           25
+[33] T Regge and R Zecchina, Combinatorial and topological approach to the 3D
+     Ising model, JOURNAL OF PHYSICS A-MATHEMATICAL AND GENERAL
+     33 (2000), 741–761.
+
+[34] A M Vershik and Yu V Yakubovich, On continuous partition lattice, preprint
+     (St. Petersburg) (1998).
+
+[35] H Weyl, Classical groups, Princeton, Princeton, 1946, ch.III-V.
+
+[36] C. Xi, Partition algebras are cellular, Compositio Mathematica 119 (1999),
+     107–118.
+
+
+
+
+                                        26
+

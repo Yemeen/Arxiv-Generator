@@ -1,0 +1,1326 @@
+                                                              Determining a Semisimple Group
+                                                              from its Representation Degrees
+                                                                                           BY
+
+                                                                               Michael Larsen*
+arXiv:math/0308033v2 [math.RT] 3 Sep 2003
+
+
+
+
+                                                                   Department of Mathematics, Indiana University
+
+                                                                            Bloomington, IN 47405, USA
+
+
+                                                                                      ABSTRACT
+
+                                                   The Lie algebra of a compact semisimple Lie group G is determined by the degrees of
+
+                                                the irreducible representations of G. However, two different groups can have the same
+
+                                                representation degrees.
+
+
+
+                                            0. Introduction
+
+                                              A compact semisimple Lie group G has a finite number of representations of
+                                            any given degree. In this paper we investigate to what extent G is determined
+                                            by the multi-set of degrees of its representations or equivalently, the multi-set
+                                            of degrees of its irreducible representations. This problem arises naturally in at
+                                            least two different ways. On the one hand, following Witten [7], we define the
+                                            zeta-function ζG (s) of a compact semisimple Lie group as the Dirichlet series
+                                                                                         X
+                                                                          ζG (s) =               (dim V )−s .
+                                                                                     V irreducible
+
+                                            The question in this paper then belongs to the familiar class of problems asking
+                                            when two different mathematical objects can have the same zeta-function. On
+                                            the other hand, the multi-set of degrees of the irreducible representations of
+                                            G comprises a (small) part of the data encoded in the representation category
+                                            RepC G. We know [2] that the full structure of neutral Tannakian category on
+                                            RepC G enables us to recover the complexification GC of G and therefore G itself
+                                            (as a maximal compact subgroup of GC ). For semisimple groups, though, there
+                                            are results (see for instance, [5]) showing that RepC G has more data than we
+                                            need to determine G. In this paper we are asking whether the C-linear abelian
+                                            category with fiber functor underlying RepC G already determines G.
+
+                                            * Partially supported by NSF Grant DMS-0100537
+
+                                                                                            1
+ The main theorem of this paper is that ζG (s) determines the Lie algebra of
+G up to isomorphism. Our basic tool is the Weyl dimension formula, which
+expresses the dimension of each irreducible representation of a group G as a
+product over the set of positive roots of G. We try to recover the geometry of
+the root system of G from the factorizations of the representation degrees, the
+basic difficulty being that there are many ways to factor a given degree. Our
+strategy is to choose values of n which have few factorizations or at least few
+factorizations which could possibly arise from Weyl’s formula.
+  The simplest idea is to consider prime powers n = pk . It is an easy consequence
+                                               +
+of Weyl’s formula that dim Vpλ+(p−1)ρ = p|R | dim Vλ , where Vλ is the irreducible
+representation of G of highest weight λ, R+ is the set of positive roots of G,
+and ρ is the half-sum of the elements of R+ . An elaboration of this argument,
+given in §1, shows that the prime power coefficients determine the number of
+irreducible factors of R and the number of roots in each factor. Unfortunately,
+there are infinitely many pairs of distinct irreducible root systems with the same
+number of roots, and prime power coefficients alone are in general insufficient to
+disambiguate further. For example, SO(15) and PSp(14) both have the property
+that the number of their irreducible representations of degree pk is 1 if k ∈ 49Z
+and 0 otherwise (for p ≫ 0, this follows from the discussion in §1, but a computer
+search is needed to confirm it for small primes.)
+  We therefore broaden our search to encompass degrees n in which the largest
+power of some prime p dividing n is not too much smaller than n. To illustrate
+this idea, we consider the case that R is irreducible, and exclude weights λ with
+λ + ρ divisible by p (such weights are not “allowable at p” in the terminology
+of this paper). We compare the size of the logarithm of the largest power of p
+dividing dim Vλ to that of dim Vλ itself and prove that
+                             − log | dim Vλ |p                     log p ordp dim Vλ
+(0.0.1)   lim      sup                         = lim     sup
+          p→∞ λ6=0 allowable   log dim Vλ       p→∞ λ6=0 allowable     log dim Vλ
+approaches a rational limit strictly between 0 and 1 which depends on R. This
+limit is the efficiency of R (defined in §3 directly in terms of the geometry of
+R). A more efficient root system always has allowable representation degrees
+which cannot be achieved by an allowable weight of a less efficient system. Once
+the efficiency is known, we can begin studying the families of representations
+(indexed by p) whose degrees achieve it. It turns out the optimal ones, in a
+sense made explicit below, lie in finitely many one parameter families of the form
+
+                                           2
+p 7→ pµ + ν. For each such family, the degree is given as a polynomial in p, the
+“Weyl polynomial” associated to µ and ν. The Weyl polynomials of a simple
+root system encode enough information, ultimately, to extract the root system
+giving rise to them.
+   The process of excluding non-allowable representations is carried out in §1 and
+is somewhat delicate; because our groups may not be products of almost simple
+factors, we must restrict attention to primes which are congruent to 1 modulo a
+sufficiently divisible integer. Weyl polynomials are introduced in §2 and the basic
+pairs (µ, ν) used in the proof of the main theorem are given. The computation
+of efficiencies occupies much of §3 and is rather involved. There does not seem
+to be a simple formula for the answer: for instance, the efficiency of E8 turns
+          63
+out to be 117 . The proof of the main theorem, by means of a rather complicated
+induction on the number of factors, is given in §4.
+  To show that our result is in some sense sharp, in §5 we give a construction
+of pairs of non-isomorphic compact semisimple Lie groups with the same Wit-
+ten zeta-function. This construction is modelled on a well known theorem of
+F. Gassmann [3] asserting that the Dedekind zeta-function ζK (s) of a number
+field K does not determine K up to isomorphism. The proof of Gassmann’s
+theorem is purely group-theoretic. Namely, there exists a finite group G with
+subgroups H1 and H2 , not conjugate in G, whose elements can be put into one-
+to-one correspondence in such a way that corresponding elements are conjugate
+in G. The fixed fields of H1 and H2 in a Galois extension with group G then
+have the same zeta-function. T. Sunada [6] used the same trick to construct
+pairs of non-isometric isospectral manifolds; here π1 plays the role of the Galois
+group. Like Sunada, we exploit π1 , but our fundamental groups are abelian, so
+there are no inner automorphisms to work with. Instead we make use of outer
+automorphisms. We construct subgroups H1 and H2 of a suitable π1 (G), whose
+elements can be put into one-to-one correspondence in such a way that corre-
+sponding elements always lie in the same orbit of Aut(π1 (G)) but such that the
+groups H1 and H2 as a whole do not. The corresponding covering groups can
+then be shown to have the same representation degrees.
+  This work was initiated during a visit to the Hebrew University in Jerusalem in
+the summer of 2002. I would like to thank the Einstein Institute of Mathematics
+for its hospitality during this visit.
+
+
+
+                                         3
+1. Modifying the zeta-function
+
+  Let G be a compact semisimple group, G̃ its universal cover, and G1 , . . . , Gm
+the almost simple direct factors of G. Let ΛG and ΛG̃ denote the weight lattices
+of G and G̃ respectively, so
+
+                            [ΛG̃ : ΛG ] = | ker(G̃ → G)|.
+
+We write Vλ for the irreducible representation of G̃ with highest weight λ; we
+can regard Vλ as a G-representation if and only if λ ∈ ΛG , and all irreducible
+representations of G arise in this way. We have a direct sum decomposition
+                                            m
+                                            M
+                                   ΛG̃ =          ΛGi ,
+                                            i=1
+
+
+and we write λ = λ1 + . . . + λm . Thus λ is a dominant weight of G̃ if and only
+if λi is a dominant weight of Gi for all i. There is a tensor decomposition
+
+                               Vλ = Vλ1 ⊗ · · · ⊗ Vλm .
+
+Let R (resp. Ri ) denote the root system of G (resp. Gi ). We fix a positive Weyl
+chamber of R (equivalently, positive Weyl chambers for each Ri .) For each root
+                                    2α
+α, we denote the dual root α∨ = kαk    2 , and we write ρ (resp. ρi ) for the half-sum
+
+of positive roots in R (resp. Ri ). The Weyl dimension formula [1] VIII §9 Th. 2
+asserts
+                   Y α∨ (λ + ρ) Ym Y                 m
+                                      α∨ (λi + ρi ) Y
+          dim Vλ =             =                   =   dim Vλi .
+                      α∨ (ρ)            α∨ (ρi )
+                    +
+                   α∈R              +    i=1 α∈R                        i=1
+                                                   i
+
+
+It follows that
+                                                       +
+(1.0.1)                  dim Vpλi +(p−1)ρi = p|Ri | dim Vλi .
+
+Thus,                                                         P     +
+                    dim V (pai −1)ρ1 +···+(pam −1)ρm       = p ai |Ri | .
+
+Note that when p is odd, (pai − 1)ρi lies in the root lattice of Gi , so
+                               m
+                               X
+                                      (pai − 1)ρi ∈ ΛG .
+                                i=1
+
+                                            4
+Therefore, every coefficient of ζG (s) is greater than equal to the corresponding
+coefficient of
+                                m
+                               Y             + −1
+                                    1 − p−|Ri |s    .
+                                i=1
+
+We will see that for fixed G, when p ≫ 0 is a sufficiently large prime, the latter
+expression gives precisely the part of the Dirichlet series ζG (s) consisting of p-
+power terms.
+
+Lemma 1.1: An irreducible root system R cannot be contained in the union of
+two proper subspaces of Span R.
+
+Proof: Let E = Span R and V and W proper subspaces such that R ⊂ V ∪ W .
+We use induction on dim E, the lemma being trivial when dim E = 1. Replacing
+V and W by Span (V ∩R) and Span (W ∩R) respectively, we may assume without
+loss of generality that V ∩ R are W ∩ R are root systems with span V and W
+respectively. If W ⊂ V , then R ⊂ V $ E = Span R, which is absurd; likewise, V
+is not a subspace of W . If W ⊂ V ⊥ , then R = (R ∩ V ) ∪ (R ∩ V ⊥ ), contrary to
+the hypothesis of irreducibility. By the induction hypothesis, there exists a root
+α in W which is neither in V nor in V ⊥ . Thus α⊥ ∩ V is a proper subspace of
+V , and there exists a root β ∈ V ∩ R which is neither in W nor in α⊥ . As α
+and β are neither scalar multiples of one another nor mutually orthogonal, either
+α + β or α − β belongs to R (depending on whether the inner product of α and
+β is positive or negative.) Either way, α + β 6∈ V ∪ W , and the lemma follows by
+induction.                                                                         ⊓
+                                                                                   ⊔
+
+Lemma 1.2: If p ≫ 0, then
+
+                          dim Vλi ∈ pN ⇔ λi + ρi ∈ pN ρi .
+
+
+
+Proof: One direction is trivial. By (1.0.1), it suffices to show dim Vλi ∈ pN implies
+λi = 0 or λi + ρi ∈ pΛGi . If p does not divide λi + ρi , then
+
+                        S = {α∨ ∈ Ri∨ | α∨ (λi + ρi ) ∈ pZ}
+
+is a proper root subsystem of Ri∨ . For p ≫ 0, every root in α∨ ∈ R ∩ Span S
+such that pα∨ ∈ S lies in S itself. (In fact, an examination of all equal-rank
+
+                                         5
+subsystems of all irreducible root systems show that it suffices to take p ≥ 5.)
+Therefore, S is closed. By Lemma 1.1, the complement of S spans Ri∨ , so there
+are finitely many elements µ ∈ ΛGi such that
+                                                 Y
+                             β ∨ (µ + ρi ) ≤            α∨ (ρi )
+                                               α∨ ∈R∨
+                                                    i
+
+
+
+for all β ∨ ∈ Ri∨ \ S. If p ≫ 0, then p ∤ dim Vµ for all µ in this set. Thus
+dim Vµ ∈ pN implies µ = 0.                                                            ⊓
+                                                                                      ⊔
+
+Corollary 1.3: The zeta-function of G determines, for each integer n, the
+number of irreducible factors of the root system of G of cardinality n.
+
+  This is not enough to determine the root system of G. For one thing, the root
+systems Bi and Ci each have 2i2 roots. We also have coincidences with |Ri | = 12
+(A3 and G2 ) |Ri | = 72 (B6 /C6 , and E6 ), |Ri | = 240 (A15 and E8 ), and a sparse
+but infinite set of cases in which a root system of type A has the same number
+of roots of one of type B, C, or D. So we need to refine the method. We note,
+however, that fixing ζG (s) determines the rank of G. We may therefore define
+NG to be the factorial of the number of roots in the root system of G. Thus NG
+depends on the one hand only on the Lie algebra of G and on the other only on
+the zeta-function of G. It also has the property that NG ΛG is contained in the
+root lattice of G. We define
+                                                     m
+                                           Y         Y              +
+                     ∗
+                    ζG (s) = ζG (s)                       (1 − p−|Ri |s ).
+                                      p≡1 (mod NG ) i=1
+
+
+Note that for p ≡ 1    (mod NG ),
+
+λ1 + · · · + λm ∈ ΛG ⇔ λ1 + · · · + λi−1 + (pλi + (p − 1)ρi ) + λi+1 + · · · + λm ∈ ΛG .
+
+
+Definition 1.4: We say that a weight λi is allowable at a prime p if p ∤ λi +ρi .
+
+Definition 1.5: We say that a weight λ1 + . . . + λm ∈ ΛG is allowable if for
+every prime p ≡ 1 (mod NG ) and every positive integer i ≤ m, λi is allowable
+at p. We write Λ∗G for the set of allowable dominant weights of G. Thus,
+                                          X
+                               ∗
+                              ζG (s) =           dim(Vλ )−s .
+                                         λ∈Λ∗
+                                            G
+
+
+
+                                             6
+                             ∗
+  It is easier to work with ζG (s) than with ζG (s) because for λ ∈ Λ∗G , the con-
+dition that dim Vλ is highly divisible by p ≡ 1 (mod NG ) gives substantial infor-
+mation about the structure of the Lie algebra of G, whereas for non-allowable λ,
+the same divisibility condition could hold for essentially trivial reasons.
+
+2. Weyl polynomials
+
+  In this section we consider a fixed simply connected almost simple group G, i.e.,
+G is connected and simply connected, and G/Z(G) is simple. We are interested
+in the dimensions of representations of G belonging to one-parameter families,
+specifically the families p 7→ pµ + ν. We let R denote the root system of G; by
+the weight lattice of R, we mean the weight lattice of G.
+
+Definition 2.1: Given an irreducible root system R and elements µ and ν of
+                                                R
+the weight lattice of R, the Weyl polynomial Pµ,ν (x) ∈ Q[x] is given by the
+formula
+                                          α∨ (µ)x + α∨ (ν + ρ)
+                                 Q                             
+                     R             α∈R+
+                    Pµ,ν (x) =            Q        ∨
+                                                                 .
+                                           α∈R+ α (ρ)
+
+
+
+  When λ = nµ + ν is dominant,
+
+                                            R
+(2.1.1)                           dim Vλ = Pµ,ν (n)
+
+We will always assume that the following two conditions hold:
+
+(2.1.2)                          α∨ (µ) ≥ 0 ∀α ∈ R+
+
+and
+
+(2.1.3)                 α∨ (µ) = 0 ⇒ α∨ (ν) ≥ 0 ∀α ∈ R+ .
+
+This implies that (2.1.1) holds for all n ≫ 0. If p is a prime greater than the max-
+imum of |α∨ (µ)|, |α∨ (ν + ρ)|, and |α∨ (ρ)| for any root α, then ordp (dim Vpµ+ν ) is
+equal to |(ν + ρ)⊥ ∩ R+ |, the multiplicity of 0 as a root of Pµ,ν
+                                                                R
+                                                                   (x). In particular,
+this multiplicity is |R+ | if and only if ν + ρ = 0, which corresponds to the case
+that for all p, pµ + ν is not allowable at p.
+
+
+                                           7
+Proposition 2.2: For every irreducible root system R, there exist weights µ and
+ν satisfying (2.1.2) and (2.1.3) and such that (ν + ρ)⊥ ∩ R is a proper closed root
+subsystem of R of maximal order. Moreover, we can choose µ and ν such that
+µ + ν lies in the root lattice.
+
+Proof: Let ̟i denote the ith fundamental weight in the Bourbaki ordering
+[1] Planches. By definition, α∨
+                              j (̟i ) = δij , so the Dynkin diagram of the root
+system ̟i ⊥ ∩R is obtained from that of R by deleting the ith vertex.
+  All claims made below about Weyl orbits of weights ̟i for exceptional groups
+were checked with [4]. Note that [4] uses the Dynkin root ordering, which differs
+from the Bourbaki ordering for En .
+  For R = An , we may take
+
+                         µ = −ν = ̟2 + ̟3 + · · · + ̟n .
+
+As ν + ρ = ̟1 is the fundamental weight associated to vertex 1, (ν + ρ)⊥ ∩ R is
+of type An−1 .
+   For R = Bn , we may take
+
+                         µ = −ν = ̟2 + ̟3 + · · · + ̟n .
+
+As ν + ρ = ̟1 , (ν + ρ)⊥ ∩ R is of type Bn−1 .
+  For R = Cn , we may take
+
+                   µ = −ν = ̟1 + ̟2 + · · · + ̟n−2 + 2̟n−1 .
+
+As ν + ρ = ̟n − ̟n−1 lies in the Weyl orbit of ̟1 , (ν + ρ)⊥ ∩ R is of type Cn−1 .
+  For R = Dn , we may take
+
+                   µ = −ν = ̟1 + ̟2 + · · · + ̟n−3 + 2̟n−2 .
+
+As ν + ρ = ̟n + ̟n−1 − ̟n−2 lies in the Weyl orbit of ̟1 , (ν + ρ)⊥ ∩ R is of
+type Dn−1 .
+  For R = E6 , we may take
+
+            µ = ̟2 + ̟3 + ̟5 + ̟6 , ν = −̟2 − 2̟3 − 2̟5 − ̟6 .
+
+As ν + ρ = ̟1 − ̟3 + ̟4 − ̟5 lies in the Weyl orbit of ̟1 , (ν + ρ)⊥ ∩ R is of
+type D5 .
+
+                                        8
+  For R = E7 , we may take
+               µ = ̟1 + ̟3 + ̟4 + ̟6 , ν = −̟1 − ̟3 − 2̟4 − 2̟6 .
+As ν + ρ = ̟2 − ̟4 + ̟5 − ̟6 + ̟7 lies in the Weyl orbit of ̟7 , (ν + ρ)⊥ ∩ R
+is of type E6 .
+  For R = E8 , we may take
+       µ = ̟1 + ̟3 + ̟4 + ̟6 + ̟8 , ν = −̟1 − ̟3 − 2̟4 − 2̟6 − 2̟8 .
+As ν +ρ = ̟2 −̟4 +̟5 −̟6 +̟7 −̟8 lies in the Weyl orbit of ̟8 , (ν +ρ)⊥ ∩R
+is of type E7 .
+  For R = F4 , we may take
+                          µ = ̟1 + ̟2 , ν = −̟1 − 2̟2 .
+As ν + ρ = −̟2 + ̟3 + ̟4 lies in the Weyl orbit of ̟4 , (ν + ρ)⊥ ∩ R is of type
+B3 .
+  For R = G2 , we may take
+                                µ = ̟2 , ν = −2̟2 .
+As ν + ρ = ̟1 − ̟2 lies in the Weyl orbit of ̟2 , (ν + ρ)⊥ ∩ R is of type A1 .
+  Except in the exceptional cases, µ + ν = 0, so the root lattice condition is
+trivial. It is likewise trivial for E8 , F4 , and G2 . This leaves E6 and E7 , where
+the claim can be checked by [4].                                                  ⊓
+                                                                                  ⊔
+  We recall that the height of a rational number m/n is max(|m|, |n|), where
+gcd(m, n) = 1.
+Lemma 2.3: If R1 and R2 are irreducible root systems and µi , νi are roots of Ri
+for i = 1, 2, either PµR11,ν1 (x) is a constant multiple of PµR22,ν2 (x) or the height
+                                          P R1 (p) 
+                                            µ1 ,ν1
+                                      ht
+                                           PµR22,ν2 (p)
+goes to ∞ as p increases without bound.
+Proof: More generally, if f (x) is any non-constant rational function over Q, the
+height of f (n) goes to ∞ as n → ∞. Indeed, writing f (x) as aQ(x) bR(x)
+                                                                         , where a
+and b are relatively prime integers and Q(x) and R(x) are monic polynomials
+with integer coefficients, the greatest common divisor of Q(n) and R(n) divides
+the (non-zero) resolvent of the two polynomials. Therefore, if either Q or R is
+different from 1, the height of Q(n)/R(n) (and therefore the height of f (n)) goes
+to infinity.                                                                        ⊓
+                                                                                    ⊔
+
+
+                                          9
+3. Efficiency of root systems
+
+  In this section we give a definition of efficiency purely in terms of root systems
+and compute the efficiency of each simple root system. It is not obvious that this
+coincides with the characterization (0.0.1) given in the introduction, though the
+equivalence can be deduced easily from Proposition 4.3 below.
+
+Definition 3.1: The efficiency eff(R) of an irreducible root system R is the
+              |R′ |               ′      ′′
+supremum of |R|−|R  ′′ | , where R and R    are closed root subsystems of R such that
+                                                              +               |R′ |
+R′ ∩ R′′ = ∅. The level lev(R) is the smallest value of |R′ | for which     |R|−|R′′ |
+achieves eff(R).
+  This definition is connected to the study of Weyl polynomials by the following
+proposition:
+
+Proposition 3.2: Let R be an irreducible root system with half-sum of roots ρ,
+and consider all pairs of weights µ and ν of R satisfying (2.1.2), (2.1.3), and
+ν + ρ 6= 0. The maximum of
+                                            R
+                                   ordx=0 Pµ,ν (x)
+                                          R
+                                    deg Pµ,ν (x)
+
+is given by eff(R∨ ), and this maximum is achieved only when ordx=0 Pµ,ν
+                                                                     R
+                                                                         (x) ≥
+      ∨
+lev(R ).
+   Note that R = R∨ except for the case Bn /Cn when n ≥ 3, and even here, as
+we will see, eff(R) = eff(R∨ ) and lev(R) = lev(R∨ ), so in fact Proposition 3.2
+remains true when all the occurrences of R∨ are replaced with R.
+
+Proof: Let (R∨ )′ = (ν + ρ)⊥ ∩ R∨ , and (R∨ )′′ = µ⊥ ∩ R∨ . As ν + ρ 6= 0,
+(R∨ )′′ is a proper subsystem of R∨ . If µ = 0, Pµ,ν
+                                                 R
+                                                     (x) is a non-zero constant,
+so the maximum will not be achieved by such a choice. Therefore, (R∨ )′ and
+(R∨ )′′ are proper closed root subsystems of R∨ , disjoint by (2.1.3). A factor
+α∨ (µ)x + α∨ (ν + ρ) of Pµ,ν
+                          R
+                             (x) has degree 0 if α ∈ (R∨ )′′ and 1 otherwise. The
+order of this polynomial at 0 is 1 if α ∈ (R∨ )′ and 0 otherwise. Taking the
+product over R+ , we see that
+                                     R
+                             ordx=0 Pµ,ν (x)
+                                    R (x)
+                                             ≤ eff(R∨ )
+                              deg Pµ,ν
+
+for all µ and ν satisfying the hypotheses of the proposition. All the remains to
+be shown is that a pair ((R∨ )′ , (R∨ )′′ ) achieving the bound eff(R) can always
+
+                                         10
+be found by taking a suitable choice of µ and ν. We claim that the choices
+in Proposition 2.2 do the trick. This follows from the explicit computation of
+efficiencies of all irreducible root systems given by the following proposition.
+Proposition 3.3: The efficiencies of root systems of type An , Bn , Cn , Dn , E6 ,
+                           n
+E7 , E8 , F4 , and G2 are n+2 , n−1 , n−1 , n−1 , 10 , 3 , 63 , 3 , and 15 respectively. In
+                                n+1 n+1 n+1 17 5 117 7
+each case the efficiency is achieved only when R′ is a proper closed root subsystem
+                                                                               2
+of maximal order in R. Explicitly, the levels of these root systems are n 2−n ,
+(n−1)2 , (n−1)2 , (n−1)(n−2), 20, 36, 63, 9, and 1 respectively. Two inequivalent
+irreducible root systems with the same efficiency and the same level must be of
+the form Bn and Cn for the same n ≥ 3.
+Proof: We prove that in each case the efficiency is achieved when R′ is the largest
+proper root subsystem and R′′ is as large as possible given R′ ∩R′′ = ∅. It suffices
+to determine R0′ and R0′′ satisfying these conditions and show that if R′ is not
+                           |R′ |          |R′0 |
+of maximal order, then |R|−|R    ′′ | < |R|−|R′′ | . In particular, it suffices to prove
+                                                    0
+|R′ | + |R′′ | ≤ |R0′ | + |R0′′ |.
+  For every closed root subsystem S ⊂ R, there exist choices of basis for R and
+S such that every positive root of S is positive in R and every simple root of S is
+simple in R ([1] VI, §1, Prop. 24). Thus we can regard root subsystems as arising
+from subgraphs of the Dynkin diagram of R. This is convenient, among other
+things, for computing the largest subsystems of the different root systems (which
+are always obtained by removing a single vertex from the Dynkin diagram).
+Explicitly, the proper closed root systems of maximal order for An , Bn , Cn , Dn ,
+E6 , E7 , E8 , F4 , and G2 are An−1 , Bn−1 , Cn−1 , Dn−1 , D5 , E6 , E7 , B3 /C3 , and
+A1 respectively. These give the values for lev(R) stated in the proposition.
+  It is also worth noting that if rank R′ is n − 1, and f is a non-zero linear form
+vanishing on the hyperplane Span R′ , then the Coxeter number h of every simple
+factor of R′′ disjoint from R′ satisfies
+                                                          f (s1 )
+(3.3.1)                          h≤1+         sup                 .
+                                           s1 ,s2 ∈R\R′   f (s2 )
+Indeed, a choice of half-plane with boundary Span R′ determines a basis on R′′ .
+                                                P
+If α1 , . . . , αt are the simple roots and α =   ni αi the highest root of a simple
+factor of R′′ with Coxeter number h, then
+                                             t                 t
+                              f (s1 )       X      f (αi ) X
+                   sup                ≥ sup     ni          ≥     ni = h − 1.
+               s1 ,s2 ∈R\R′   f (s2 )    j
+                                            i=1
+                                                   f (α j )   i=1
+
+                                              11
+The value on the right hand side of (3.3.1) can be computed easily by restricting
+the adjoint representation of a group of type R to U (1) times a group of type R′
+and looking at the U (1)-components of the resulting direct sum.
+  With these general facts in hand, we now examine the cases.
+                                                                                            √
+  For An , we use ε-coordinates, in which the roots are the vectors of length                   2 in
+ker Σ: Z n+1
+            → Z, Σ denoting the sum of coordinates. Let      =          R0′
+                                                                    ∩ An = An−1ε⊥
+                                                                                1
+and R0′′ = {±(ε1 − ε2 )}. We define an equivalence relation on {1, . . . , n + 1} by
+setting i ∼ j if and only if εi −εj ∈ R′ ∪{0}. The equivalence classes I1 , . . . , Ic have
+                                    ak = n + 1 and R′ = ak >1 Aak −1 . Given k 6= l,
+                                  P                     Q
+cardinality a1 , . . . , ac where
+the set {εi − εj ∈ R′′ | i ∈ Ik , j ∈ Il } has at most min(ai , aj ) ≤ (ai − 1)(aj − 1) + 1
+elements since R′ and R′′ are disjoint. Thus
+                              X                X
+           |R′ | + |R′′ | ≤       a2k − ak +          (ak al − ak − al + 2)
+                              k                k6=l
+
+                         = (n + 1)2 − (n + 1) − 2(c − 1)(n + 1) + 2c(c − 1)
+                         = (n + 2 − c)2 + c2 − (n + 2).
+
+Thus |R′ | + |R′′ | < n2 − n + 2 unless c ≤ 2 or c ≥ n. For c ≤ 2, |R′′ | ≤ 2, and for
+c ≥ n, |R′ | ≤ 2, so either way |R′ | + |R′′ | is bounded above by |R0′ | + |R0′′ |.
+  For Bn (resp. Cn ) we use the ε-coordinate system, in which the short (resp.
+long) vectors are εi (resp. 2εi ). Let R0′ = ε⊥                    ⊥
+                                              1 ∩Bn = Bn−1 (resp. ε1 ∩Cn = Cn−1 )
+and R0′′ = {±ε1 } (resp. {±2ε1 }). Let I ′ be the set of i ∈ {1, . . . , n} such that
+εi (resp. 2εi ) lies in R′ and I ′′ the corresponding set for R′′ . As R′ and R′′
+are disjoint, I ′ ∩ I ′′ = ∅, and we let I denote the complement of I ′ ∪ I ′′ . By
+disjointness, ±εi ± εj 6∈ R′′ for i, j ∈ I ′ and ±εi ± εj 6∈ R′ for i, j ∈ I ′′ ; the
+set {±εi ± εj | i ∈ I, j ∈ I ′ }, which is disjoint from R′ , meets R′′ in at most
+2 min(|I|, |I ′ |) elements, and likewise {±εi ± εj | i ∈ I, j ∈ I ′′ }, which is disjoint
+from R′′ , meets R′ in at most 2 min(|I|, |I ′′|) elements. Finally, for each i, j ∈ I,
+i 6= j, the set {±εi ± εj } meets R′ in at most 2 vectors and R′′ in at most 2
+vectors. Combining these facts, we get
+(3.3.2)
+  |R′ | + |R′′ | ≤ (2|I ′ |2 + |I|2 − |I| + 2 min(|I|, |I ′′|))
+                                      + (2|I ′′ |2 + |I|2 − |I| + 2 min(|I|, |I ′|))
+               ≤ (2|I ′ |2 + |I|2 − |I| + |I| + |I ′′ |) + (2|I ′′ |2 + |I|2 − |I| + |I| + |I ′ |)
+                                     1                  1       1
+               = 2|I|2 + 2(|I ′ | + )2 + 2(|I ′′ | + )2 − .
+                                     4                  4       4
+                                                 12
+As |I| + |I ′ | + |I ′′ | = n, for n ≥ 4, this quantity is ≤ |R0′ | + |R0′′ | = 2n2 − 4n + 4
+unless one of |I|, |I ′ |, and |I ′′ | is at least n − 1. If |I| = n − 1, then the first
+inequality of (3.3.2) reads
+
+               |R′ | + |R′′ | ≤ 2n2 − 6n + 8 ≤ 2n2 − 4n + 4 = |R0′ | + |R0′′ |.
+
+If |I| = n, then |R′ | ≤ n2 − n and |R′′ | ≤ n2 − n, with equality only if the systems
+are of type An−1 . If R′ is of type An−1 , the right hand side of (3.3.1) is 3 (resp.
+2), so assuming n ≥ 4, R′′ cannot also be of type An−1 . Thus,
+
+                     |R′ |          n(n − 1)      n−1      |R0′ |
+                               <                =     =               .
+                  |R| − |R′′ |   2n2 − n(n − 1)   n+1   |R| − |R0′′ |
+
+Thus |R′ | + |R′′ | is indeed maximized when R′ is Bn−1 (resp. Cn−1 ). The same
+is true for n = 2 and n = 3 by a simple case analysis.
+    For Dn , we again use the ε-coordinate system, in which the roots are the length
+√
+  2 vectors in Zn . Let R0′ = ε⊥                   ′′
+                               1 ∩ Dn = Dn−1 and R0 = {±ε1 ± ε2 } = D2 . The
+subsystem R′ defines an equivalence relation ∼ on {1, 2, . . . , n}, where i ∼ j if
+i = j or {±εi ± εj } ⊂ R′ . As R′ is a closed root subsystem, there can be at most
+one ∼ equivalence class with 2 or more elements; indeed,
+
+                         {±εi ± εk } ⊂ Span {±εi ± εj , ±εk ± εl }.
+
+Let I ′ denote this class (or the empty set) and I ′′ the corresponding set for R′′ .
+As R′ ∩ R′′ = ∅, |I ′ ∩ I ′′ | ≤ 1. Let I denote the complement of I ′ ∪ I ′′ . Reasoning
+as in the case Bn /Cn , ±εi ± εj 6∈ R′′ for i, j ∈ I ′ and ±εi ± εj 6∈ R′ for i, j ∈ I ′′ ;
+the set {±εi ± εj | i ∈ I, j ∈ I ′ }, which is disjoint from R′ , meets R′′ in at most
+2 min(|I|, |I ′ |) elements, and likewise {±εi ± εj | i ∈ I, j ∈ I ′′ }, which is disjoint
+from R′′ , meets R′ in at most 2 min(|I|, |I ′′|) elements. Again for each i, j ∈ I,
+i 6= j, the set {±εi ± εj } meets R′ in at most 2 vectors and R′′ in at most 2
+vectors, so
+
+    |R′ | + |R′′ | ≤ (2|I ′ |2 − 2|I ′ | + |I|2 − |I| + 2 min(|I|, |I ′′|))
+                                         + (2|I ′′ |2 − 2|I ′′ | + |I|2 − |I| + 2 min(|I|, |I ′|))
+                  ≤ 2|I|2 + 2|I ′ |2 − |I ′ | + 2|I ′′ |2 − |I ′′ |
+                                       1                     1      1
+                  = 2|I|2 + 2(|I ′ | − )2 + 2(|I ′′ | − )2 − .
+                                       4                     4      4
+                                                 13
+Moreover, |I ′ |, |I ′′ | ≤ n−1, |I|+|I ′ | ≤ n, |I|+|I ′′ | ≤ n, and |I|+|I ′ |+|I ′′ | ≤ n+1.
+If
+                       |R′ | + |R′′ | > |R0′ | + |R0′′ | = 2n2 − 6n + 8,
+
+either |I|, |I ′ |, or |I ′′ | is at least n − 1. Now |I| ≥ n − 1 implies I ′ = I ′′ = ∅,
+so either R′ = An−1 or |R′ | ≤ (n − 1)(n − 2), and likewise for R′′ . If |R′ | ≤
+                                                    |R |       ′
+                                                                n−2                |R′ |
+(n − 1)(n − 2) and |R′′ | ≤ (n − 1)(n − 2), then |R|−|R  ′′ | ≤ n+1 < |R|−|R′′ | . If
+                                                                          0
+                                                                            0
+R′ = An−1 , the upper bound (3.3.1) is 2, so R′′ is of the form Ar1 (and vice
+versa). If R′ or R′′ has r mutually orthogonal roots, since they are closed root
+subsystems, the Dynkin diagram of Dn must have r vertices, no two of which
+share an edge, so r ≤ n/2 + 1, and
+
+           |R′ | + |R′′ | ≤ n(n − 1) + n + 2 ≤ 2n2 − 6n + 8 = |R0′ | + |R0′′ |,
+
+as long as n ≥ 5. For n = 4, we check by hand that there do not exist 3 mutually
+orthogonal roots in D4 \ A3 , so (D3 , D2 ) is still optimal.
+  For E8 , |R| = 240. The largest closed subsystem, E7 , has 126 roots, and it
+can be realized as the set of roots orthogonal to a given root α; D7 is next with
+        126       84
+84. As 240−6  > 240−84 , it suffices to prove that the largest closed root subsystem
+of E8 disjoint from E7 = α⊥ ∩ E8 has order 6. The orthogonal projection of
+any root onto Rα is in {−α, − 12 α, 0, 12 α, α}, so the right hand side of (3.3.1) is 3.
+Thus all factors of R′′ are of type A1 or A2 . Moreover, a factor of type A2 must
+contain α itself (which is the only root whose projection onto Rα equals α), so if
+R′′ contains any factor of the form A2 , then R′′ = A2 . Otherwise, R′′ = An1 . We
+look for the largest value such that An1 can be embedded as a closed subsystem
+in E8 with no root orthogonal to α. Equivalently, we fix an embedding of An1 in
+E8 and ask whether any root of E8 fails to be orthogonal to every root of An1 .
+Equivalently, we ask whether the restriction of the adjoint representation of E8
+to An1 has an irreducible summand which is non-trivial on each factor A1 .
+  To construct mutually orthogonal roots in E8 , we start with a root β1 , choose
+β2 ∈ β1⊥ ∩ E8 = E7 , choose β3 ∈ β2⊥ ∩ E7 = D6 , choose β4 ∈ β3⊥ ∩ D6 = A1 × D4 ,
+and so on. All choices are equivalent until β4 , which can be chosen in A1 or in
+D4 . In the first case, A41 ⊂ D4⊥ ∩ E8 = D4 , so the system is not closed. We use
+branching rules [4], starting with the adjoint representation of E8 , restricting to
+A1 × E7 , taking only representations of E7 which appear opposite a non-trivial
+factor in A1 , and so on. We get the (56-dimensional) representation V̟7 of E7 ,
+
+                                              14
+and then the (12-dimensional) representation V̟1 of D6 , then a representation
+of A1 × D4 which is 2-dimensional and therefore trivial on the D4 factor. We
+conclude that A31 can be realized (and it is indeed a closed subsystem of E8
+since no simply laced rank 3 system contains A31 as a proper subsystem), but A41
+cannot.
+  For E7 , |R| = 126. The largest subsystem, E6 , has 72 roots; D6 comes next,
+                                     72       42
+with 60, and then A6 , with 42. As 126−6  > 126−42 , we need only consider the
+cases R′ = E6 and R′ = D6 . Writing E6 as the orthogonal complement of
+the fundamental weight ̟7 the right hand side of (3.3.1) is 2, so we need only
+consider R′′ = Ar1 . We proceed as before, with β1 ∈ E7 , β2 ∈ β1⊥ ∩ E7 = D6 ,
+and β3 ∈ β2⊥ ∩ D6 = A1 × D4 . Applying the branching rules for V̟7 , which we
+have already described, we see that if we choose β3 to be in the factor A1 , the
+restriction of V̟7 to A31 has a summand non-trivial on every factor, so we can
+take R′′ = A31 . Any fourth root β4 mutually orthogonal to the first three must
+lie in the D4 factor, and we know from the E8 analysis that ̟7 cannot be non-
+orthogonal to β1 , β2 , and such a β4 . When R′ = D6 = α⊥ ∩ E7 , the argument for
+E8 shows that either R′′ = A2 or R′′ = An1 where n ≤ 7 for dimension reasons.
+     72      60
+As 126−6 > 126−14 , we see that (E6 , A31 ) is optimal.
+  For E6 , |R| = 72. The largest subsystem, D5 , has 40 roots, the next largest,
+                                                     40      24
+A5 , has 30, and the third largest, D4 , has 24. As 72−4 > 72−24 , we need only
+consider D5 = ̟1⊥ ∩ E6 and A5 = α⊥ ∩ E6 , where α is a root. For R′ = D5 , the
+right hand side of (3.3.1) is 2, so R′′ = An1 . Choose β1 ∈ E6 , β2 ∈ β1⊥ ∩ E6 = A5 ,
+and β3 ∈ β2⊥ ∩ A5 = A3 . In the restriction of V̟1 to A1 × A5 , the only summand
+non-trivial on A1 is 6-dimensional on A5 ; its restriction to A1 × A3 is the a direct
+sum of a representation trivial on A1 and a representation trivial on A3 . It follows
+that the restriction of V̟1 to A21 has a summand non-trivial on both factors but
+the restriction to A31 has no such summand. For R′ = A5 , the right hand side of
+(3.3.1) is 3, so as in the E8 case, R′′ = A2 or R′′ = An1 , and of course n ≤ 5. As
+ 40        30
+72−4
+      > 72−10  , (R′ , R′′ ) = (D5 , A21 ) is optimal.
+  For F4 , |R| = 48, and the largest proper closed root subsystems are obtained
+by deleting an endpoint vertex from the Dynkin diagram. They are of type B3
+and C3 , and are both of order 9; in each case, Span R′ = α⊥ ∩ R for a root
+α, short or long respectively. Either way, the bound on the Coxeter number of
+components of R′′ is 3, so we need only consider A1 , A2 , A1 × A1 , and A2 × A1
+as possibilities for R′′ . In each case, A2 can be realized; for example, if α = ̟4
+
+                                         15
+ with respect to the standard coordinates on F4 , R′′ can be taken to have basis
+ {2̟4 − ̟3 , ̟3 − ̟4 }. In each case, α or −α is the highest vector of the A2 , so
+ A2 × A1 cannot be disjoint from Span R′ (since ±α belong to both). Finally, if
+ R′ is not of type B3 or C3 , it has at most 8 roots, and 8 + 8 < 18 + 6.
+   The case G2 is trivial since any proper root subsystem has rank 1 and therefore
+ order 2.
+                                                                                 ⊓
+                                                                                 ⊔
+
+ Definition 3.4: We say an irreducible root system S is greater than or equal
+ to an irreducible root system T (and write S ≥ T ) if and only if eff(S) > eff(T )
+ or eff(S) = eff(T ) and lev(S) ≤ lev(T ). If S ≥ T but T  S, we say S is
+ strictly greater than T .
+   An immediate consequence of Proposition 3.3 is that S ≥ T and T ≥ S implies
+ S = T or S = T ∨ .
+
+ 4. The main theorem
+
+ Lemma 4.1: Let R be an irreducible root system spanning a Euclidean space E
+ and Q a quadratic form on E such that Q(α) = 0 for all α ∈ R. Then Q = 0.
+
+ Proof: Let B(x, y) = Q(x + y) − Q(x) − Q(y) denote the associated bilinear form.
+ If α and β are roots of R making an obtuse angle, then α + β is again a root, so
+ B(α, β) = 0. Likewise, if α and β make an acute angle, α − β is a root, so again
+ B(α, β) = 0. The roots in R \ α⊥ span E by Lemma 1.1. Therefore, B(α, E) = 0.
+ As every α ∈ R lies in the null space of B, is follows that B and therefore Q
+ must be 0.                                                                  ⊓
+                                                                             ⊔
+
+ Proposition 4.2: If R1 and R2 are irreducible root systems with R1 ≥ R2 , then
+ there exist weights µ1 and ν1 and an integer N such that:
+
+1) µ1 and ν1 satisfy (2.1.2) and (2.1.3);
+2) ν1 + ρ1 6= 0;
+3) µ1 + ν1 lies in the root lattice of R1 ;
+               R
+     ordx=0 Pµ11,ν1 (x)
+4)           R            = eff(R1 );
+      deg   Pµ11,ν1 (x)
+5) If µ2 and ν2 are weights of R2 and c is a positive constant such that
+
+     (4.2.1)                            PµR22,ν2 (x) = cPµR11,ν1 (x),
+
+                                                   16
+  then
+ a) eff(R1 ) = eff(R2 ) and lev(R1 ) = lev(R2 ).
+ b) c ≥ 1, with equality only if R1 = R2 ;
+ c) If p > N and ordp c > 0, then p divides ν2 + ρ2 , i.e., ν2 is not alowable at p.
+
+Proof:
+  First we observe that condition (4) implies that PµR11,ν1 (x) is not a monomial in
+x, so that (4.2.1) implies the same for PµR22,ν2 (x). This implies that ν2 + ρ2 6= 0,
+so
+                              ordx=0 PµR22,ν2 (x)
+                                                    ≤ eff(R2 ).
+                                deg PµR22,ν2 (x)
+The hypothesis eff(R1 ) ≥ eff(R2 ) then implies eff(R1 ) = eff(R2 ). Proposition
+3.2 and equation (4.2.1) then imply
+
+             lev(R2 ) ≤ ordx=0 PµR22,ν2 (x) = ordx=0 PµR11,ν1 (x) = lev(R1 ),
+
+so lev(R2 ) = lev(R1 ).
+   For (b), we choose µ1 and ν1 as in Proposition 2.2. We note that for any
+integer n, whether or not λ2 = nµ2 + ν is dominant, PµR22,ν2 (n) is either zero or
+±1 times the dimension of an irreducible representation of a Lie group of type
+R2 . Indeed, suppose α∨ (λ2 + ρ2 ) 6= 0 for all α. Then defining w in the Weyl
+group of R2 as the unique element such that w(λ2 + ρ2 ) is dominant, and setting
+λ′2 = w(λ2 + ρ2 ) − ρ2 , the weight λ′2 is dominant. Thus,
+                                            α∨ (λ′2 + ρ2 )
+                                    Q
+                                 +
+              dim Vλ2′ = (−1)|R2 | α∈R
+                                              α∨ (ρ2 )
+                                       Q
+                     2
+                                    Q α∈R∨
+                                 +          α (λ2 + ρ2 )
+                        = (−1)|R2 | α∈RQ        ∨
+                                                           = PµR22,ν2 (n)2 .
+                                          α∈R α (ρ2 )
+
+For R1 of type An , Bn , Cn , or Dn , we have PµR11,ν1 (1) = 1, so PµR22,ν2 (1) = c implies
+c ∈ Z and therefore c ≥ 1. The same is true for G2 , since PµR11,ν1 (2) = 1. For F4 ,
+
+                  gcd(PµR11,ν1 (2), PµR11,ν1 (3)) = gcd(52, 340119) = 1,
+
+so again c must be an integer. For E6 , we have
+
+gcd(PµR11,ν1 (2),PµR11,ν1 (3),PµR11,ν1 (4)) = gcd(1728, 3171108447, 71292900343808) = 1,
+
+so again c ∈ Z. For E7 , we have
+
+         gcd(PµR11,ν1 (2), PµR11,ν1 (3)) = gcd(573440, 33940969546604175) = 5,
+
+                                             17
+so 5c ∈ Z. Thus, |PµR22,ν2 (2)| is a positive integer multiple of 573440
+                                                                    5    = 114688.
+However, the lowest degree of any irreducible representation of a Lie group of
+type E7 which is divisible by 114688 is 573440 itself. For E8 ,
+
+   gcd(PµR11,ν1 (2), PµR11,ν1 (3)) = gcd(4096000, 2665014302693985712862760000)
+                                      = 8000,
+
+and the smallest dimension of any irreducible representation of a Lie group of
+type E8 which is divisible by 512 = 4096000
+                                      8000
+                                            is 4096000.
+  To finish proving (b), it suffices to show that if R1 is Bn or Cn , n ≥ 3, R2 = R1∨ ,
+µ1 and ν1 are defined as in Proposition 2.2, and µ2 and ν2 are any weights of R2 ,
+then PµR11,ν1 6= ±PµR22,ν2 . If µ and ν are weights of Bn such that ordx=0 Pµ,ν
+                                                                            Bn
+                                                                                (x)
+achieves the maximum (n − 1)2 , then ν + ρ must be a scalar multiple dεi of an ε-
+basis vector, and writing µ = (a1 , . . . , an ), either ai = ±aj for some j 6= i or some
+aj = 0. We can always replace ν by any linked weight w(ν + ρ) − ρ with the effect
+               Bn
+of changing Pµ,ν  by a factor of ±1, so without loss of generality we may assume µ
+is dominant, which means we may assume either a1 > a2 > · · · > an−1 > an = 0
+(and i = n) or, renumbering, a1 > · · · > ai = ai > · · · > an−1 > 0. In the first
+case,
+                                                                       Qn−1
+                 −(n−1)2    Bn            d2n F (a1 , . . . , an−1 )     i=1   (ai x − d)(ai x + d)
+(4.2.2)      x             Pµ,ν (x)   =
+                                                                       ∆n
+
+where
+                                      Y                        Y
+                            ∆n =             α∨ (ρBn ) =             α∨ (ρCn )
+                                      α∈Bn                    α∈Cn
+
+and
+                                                 n−1
+                                                 Y           n−2
+                                                             Y n−1
+                                                                 Y
+                      F (a1 , . . . , an−1 ) =          ai               (a2i − a2j ).
+                                                  i=1        i=1 j=i+1
+
+                                  2
+In the second case, x−(n−1) Pµ,ν
+                             Bn
+                                 (x) is
+(4.2.3)
+  d2n F (a1 , . . . , an−1 )(ai x + d)(2ai x + d) j6=i ((ai + aj )x + d)((aj − ai )x + d)
+                                                 Q
+
+                                                   ∆n
+                                                                2
+If A is the number of positive roots of x−(n−1) Pµ,ν
+                                                 Bn
+                                                     (x) and B is the number of
+negative roots, then (4.2.2) applies if and only if A = B, and otherwise (4.2.3)
+applies with i = sup(A, B) − (n − 1). In either case, the roots determine the
+
+                                                    18
+vector (a1 , . . . , an−1 , d) up to scalar multiplication by a positive rational number
+                                                                                      2
+and therefore the polynomial itself up to multiplication by an element of (Q∗ )n .
+                          Cn
+  The case analysis for Pµ,ν  (x) is exactly the same, and the formulas (4.2.2) and
+                                                                   2
+(4.2.3) the same except without the factor of 2n . As 2n 6∈ (Q∗ )n , PµR11,ν1 6= PµR22,ν2 .
+  Given two pairs (µ1 , ν1 ) and (µ2 , ν2 ) of weights of an irreducible root system
+R, i = 1, 2, we have maps fi : R+ → Q2 defined by
+
+                                 fi (α) = (α∨ (µi ), α∨ (νi )).
+
+Suppose that PµR2 ,ν2 (x) = cPµR1 ,ν1 (x) 6= 0. Then (0, 0) 6∈ fi (R+ ) and for some
+permutation σ: R+ → R+ , f2 (α) is a scalar multiple of f1 (α) for all α. As there
+are only finitely many possibilities for σ, by making N large enough we may
+assume without loss of generality that σ is the identity. Thus,
+
+                    α∨ (µ1 )α∨ (ν2 + ρ2 ) − α∨ (µ2 )α∨ (ν1 + ρ1 ) = 0
+
+for all α∨ ∈ R∨ . Regarding the above expression as a quadratic form on R∨ ,
+by Lemma 4.1, it is trivial, so (µ2 , ν2 + ρ2 ) = C(µ1 , ν1 + ρ1 ) for some non-zero
+                                              +
+rational number C. Therefore c = C |R | , and claim (c) follows.                         ⊓
+                                                                                         ⊔
+
+Proposition 4.3: Let l ∈ N, e ∈ Q, and G a simply connected almost simple
+Lie group such that for every almost simple factor Gi of G with root system Ri ,
+either eff(Ri ) < e or eff(Ri ) = e and lev(Ri ) ≥ l. Let A(G) denote the set of
+pairs (p, λ), where p is a prime and λ is a dominant weight of G allowable at p.
+Then
+
+(4.3.1)              inf      e log dim Vλ − (log p)ordp dim Vλ > −∞.
+                 (p,λ)∈A(G)
+
+
+Moreover, for every C ∈ R, there exists a finite set
+
+                              LG,e,l,C = {(µ, ν) | µ, ν ∈ ΛG }
+
+such that for all (p, λ) ∈ A(G) such that ordp dim Vλ ≤ l and
+
+(4.3.2)                    e log dim Vλ − (log p)ordp dim Vλ ≤ C,
+
+there exists (µ, ν) ∈ LG,e,l,C such that λ = pµ+ν and either µ = 0, or µ is a non-
+zero weight of an almost simple factor Gi of G with eff(Ri ) = e and lev(Ri ) = l.
+
+                                              19
+Proof: Suppose first that G is almost simple with root system R and Coxeter
+number h. We take advantage of the equalities |R| = |R∨ |, eff(R) = eff(R∨ ),
+and lev(R) = lev(R∨ ) to avoid burdening our notation unnecessarily with                                          ∨
+
+superscripts. Define
+
+(4.3.3)        Si = {α∨ ∈ R∨ : pi |α∨ (λ + ρ)}, Ri′ = R∨ ∩ Span Si
+
+Thus,
+                       R∨ ⊃ R1′ ⊃ R2′ ⊃ · · · ⊃ Rk′ % Rk+1
+                                                       ′
+                                                           = ∅.
+
+An examination of the list of all equal-rank root subsystems of all irreducible
+root systems shows that α ∈ Ri′ implies either 2α or 3α lies in the abelian group
+generated by Si . As λ is allowable at p, Ri′ is a proper subsystem of R∨ except
+possibly when i = 1 and p ≤ 3. Let Ri′′ denote the closed root subsystem of R∨
+generated by the simple roots α∨ such that
+                                                                pi
+(4.3.4)                               0 < α∨ (λ + ρ) <             .
+                                                                3h
+                                                       i
+For any root in Ri′′ , 0 < α∨ (λ + ρ) < p3 , so neither 2α∨ nor 3α∨ lies in the
+abelian group generated by Si , which means Ri′ ∩ Ri′′ = ∅. We have
+                                                        k
+                                                        X
+(4.3.5)                             ordp dim Vλ ≤             |(Ri′ )+ |
+                                                        i=1
+
+with equality if p ≥ 5, and
+                                                               k
+                                                               X
+                                       +
+(4.3.6)      log dim Vλ ≥ −|R | log 3h + log p                       (|R+ | − |(Ri′′ )+ |).
+                                                               i=1
+
+Except possibly when i = 1 and p ≤ 3,
+
+(4.3.7)                      eff(R)(|R+| − |(Ri′′ )+ |) ≥ |(Ri′ )+ |,
+
+so
+                       k
+                       X                                                                      k
+                                                                                              X
+                                +
+(4.3.8) eff(R) log p         (|R | −   |(Ri′′ )+ |)                     +
+                                                      ≥ −eff(R)|R | log 3 + log p                   |(Ri′ )+ |.
+                       i=1                                                                    i=1
+
+By (4.3.6), (4.3.8), and (4.3.5),
+
+     e log dim Vλ − log p ordp dim Vλ ≥ eff(R) log dim Vλ − log p ordp dim Vλ
+                                               ≥ −eff(R)|R+| log 9h.
+
+                                                  20
+This gives (4.3.1).
+  If e > eff(R), then
+
+  e log dim Vλ − log p ordp dim Vλ ≥ (e − eff(R)) log dim Vλ − eff(R)|R+ | log 9h
+
+implies that the left hand side is ≥ C for all but finitely many weights λ, inde-
+pendent of p. We can therefore define LG,e,l,C to be the set of pairs (0, ν), as ν
+ranges over all such λ. If l < lev(R), then for p ≥ 5, (4.3.5) is an equality, and
+so |(Ri′ )+ | < lev(R) for 1 ≤ i ≤ k. It follows that (4.3.7) is strict and that
+
+  eff(R) log dim Vλ − log p ordp dim Vλ
+           ≥ eff(R)(|R+| − |(Ri′′ )+ |) − |(Ri′ )+ | log p − eff(R)|R+| log 9h > C
+                                                   	
+
+
+for p ≫ 0. We therefore obtain an upper bound on p, which then gives an upper
+bound on dim Vλ and consequently a finite set of possible λ, and we can set
+LG,e,l,C to be a set of pairs (0, λ) as before. The only way in which dim Vλ could
+fail to be bounded by the condition (4.3.2) is if eff(R) = e and lev(R) = l and
+moreover |(Ri′ )+ | = lev(R) for all i ≤ k. For p ≥ 5, equality holds in (4.3.5), and
+this last condition implies k = 1.
+  To prove that λ can be written pµ + ν, where µ and ν are drawn from finite
+sets independent of p, we may assume that we have fixed S = R1′ and T = R1′′ .
+The Weyl formula gives
+
+                                  X      α∨ (λ + ρ)        X
+  log dim Vλ ≥ (|S + |) log p +       log              +        log α∨ (λ + ρ)
+                                               p
+                               α∈S +                      α∈T +
+                                                              p     X
+                             + (|R+ | − |S + | − |T + |) log    −        log α∨ (ρ)
+                                                             3h        +
+                                                                  α∈R
+                                                       ∨
+                                            X     α (λ + ρ)        X
+              = (|R+ | − |T + |) log p +         log            +       log α∨ (λ + ρ)
+                                                         p
+                                       α∈S +                      α∈T +
+                                                                   X
+                             − (|R+ | − |S + | − |T + |) log 3h −       log α∨ ,
+                                                                 α∈R+
+
+
+so there are only finitely many possible values for the integers p−1 α∨ (λ + ρ) for
+α ∈ S + and α∨ (λ + ρ) for α ∈ T + which will bound
+
+                                            eff(R) log dim Vλ − log p ordp dim Vλ
+    log dim Vλ − (|R+ | − |T + |) log p =
+                                                            eff(R)
+
+                                            21
+above. For every β ∨ ∈ ZR∨ ∩ Span S ∩ Span T , β ∨ (λ + ρ) is both divisible by p
+and bounded absolutely. Fixing a basis of Span S ∩ Span T in the root lattice of
+R∨ , we conclude that for p ≫ 0, β ∨ (λ + ρ) = 0 for all β ∨ ∈ Span S ∩ Span T .
+As S ∨ and T ∨ generate the root lattice, there exists a unique weight ν such that
+α∨ (ν + ρ) = 0 for all α∨ ∈ S and α∨ (ν + ρ) = α∨ (λ + ρ) for all α∨ ∈ T . Letting
+µ = (λ − ν)/p, we see that α∨ (µ) is an integer for all α∨ ∈ S ∪ T and therefore for
+all roots in R∨ ; it follows that µ is also a weight, and as µ and ν are determined
+independently of p by the values p−1 α∨ (λ + ρ) for α∨ ∈ S + and α∨ (λ + ρ) for
+α∨ ∈ T , there are only finitely many possibilities for (µ, ν). Thus the proposition
+is true when G is almost simple. Note that in every case where µ 6= 0 arises,
+ordp dim Vλ = l, the maximum allowable value.
+   Now consider a general G = G1 × · · · × Gn . Let
+
+                   Bi =       inf        e log dim Vλ − (log p)ordp dim Vλ
+                          (p,λ)∈A(Gi )
+
+Then letting λi denote the ith component of λ,
+                                       X
+   e log dim Vλ − (log p)ordp dim Vλ =   e log dim Vλi − (log p)ordp dim Vλi
+                                                   i
+                                                  X
+                                              ≥        Bi ,
+          P
+so B =     i   Bi is a lower bound for (4.3.1). On the other hand,
+
+                          e log dim Vλ − (log p)ordp dim Vλ ≤ C
+
+implies
+                                                              X
+          e log dim Vλi − (log p)ordp dim Vλi ≤ C −                  Bj , = C − B + Bi
+                                                              j6=i
+
+so there exist sets LGi ,e,l,C−B+Bi such that each λi = pµi + νi for some (µi , νi ) ∈
+LGi ,e,l,C−B+Bi . Letting
+                        nX      X                              o
+             LG,e,l,C =     µi ,  νi  (µi , νi ) ∈ LGi ,e,l,C−B+Bi ,
+                                i         i
+
+we obtain a finite set of pairs (µ, ν) of the desired kind. In particular, for each λ
+satisfying the condition ordp Vλ ≤ l, there can be at most one coordinate i with
+µi 6= 0 because
+                                    ordp dim Vpµi +νi = l
+for each non-zero µi and each p ≫ 0.
+                                                                                         ⊓
+                                                                                         ⊔
+
+
+                                                  22
+Theorem 4.4: The zeta-function of a compact semisimple Lie group G deter-
+mines the Lie algebra of the group up to isomorphism.
+
+Proof: Let G1 and G2 be compact semisimple Lie groups with ζG1 (s) = ζG2 (s)
+but with non-isomorphic Lie algebras. By Corollary 1.3, the number of factors of
+type A1 in G1 and G2 are the same. Let R1i , R2i , . . . be the irreducible factors of
+the root system Ri of Gi . If G1 and G2 have different Lie algebras, by a suitable
+renumbering, we may assume that for some k ≥ 0
+
+                 R11 ≥ R21 ≥ · · · , R12 ≥ R22 ≥ · · · , Ri1 = Ri2 ∀i ≤ k,
+
+                           2      2                         1
+and there is no factor in Rk+1 , Rk+2 , . . . which equals Rk+1 or is strictly greater
+than it. In particular, R1 has at least k + 1 irreducible factors (though R2 might
+                             1
+have only k.) Moreover, Rk+1      is not of type A1 . Under these conditions, we
+                                                          ∗
+will find an integer n such that the nth coefficient of ζG  1 (s) is positive and the
+
+                    ∗
+nth coefficient of ζG2 (s) is zero, which by Corollary 1.3 implies ζG1 (s) 6= ζG2 (s).
+Without loss of generality we may assume that G1 is adjoint and G2 is simply
+connected, so both are products of almost simple factors: Gi = j Gij .
+                                                                 Q
+
+  In fact, we will prove the following stronger statement: under these conditions,
+if r is a fixed positive integer, then there exist primes p1 ≫ · · · ≫ pk , all congruent
+to 1 (mod NG1 = NG2 ) and an allowable weight λ1 of G1 such that
+
+(4.4.1)                ordpi dim Vλ1 = lev(Ri1 ), 1 ≤ i ≤ k + 1
+
+and there is no allowable weight λ2 of G2 such that the following conditions hold:
+
+(4.4.2)               ordpi dim Vλ2 = lev(Ri1 ), 1 ≤ i ≤ k + 1;
+
+
+(4.4.3)                           dim Vλ2 | r dim Vλ1 ;
+
+
+(4.4.4)                           dim Vλ2 ≤ dim Vλ1 .
+
+Explicitly, we may take λ1 = λ11 + · · · + λ1k+1 , where λ1i = pi µ1i + νi1 , and µ1i and
+νi1 are defined by Proposition 2.2 as weights of the factor G̃1i of G̃1 . Note that the
+congruence condition on pi guarantees that each λ1i lies in the root lattice of G̃1i
+and therefore defines a representation of G1i . Note also that we take all primes
+pi in the construction to be larger than the bound N in Proposition 4.2 (which
+
+                                            23
+depends only on the root systems of G1 and G2 .) We also choose each pi large
+                                                    R1
+enough that for each j ≤ k +1, pi > Pµ1j,ν 1 (2); again, this condition depends only
+                                                     j   j
+
+on G1 . By choosing each pj to be congruent to 2 modulo a sufficiently high power
+of pj+1 · · · pk pk+1 , we can guarantee that pi ∤ dim Vλ1j for i > j, and therefore, we
+can guarantee (4.4.1).
+  Suppose the claim does not hold for k = 0. If R11 = A1 , we are done. Otherwise,
+ R1
+Pµ11,ν 1 (x) is not constant. As
+  1   1
+
+                                                                R1
+                                                   ordx=0 Pµ11,ν 1 (x)
+                                     eff(R11 ) =         R1
+                                                                1    1
+                                                                         ,
+                                                    deg Pµ11,ν 1 (x)
+                                                          1 1
+
+we have
+
+(4.4.5)                   eff(R11 ) log dim Vλ11 ≤ lev(R11 ) log p1 + C,
+
+for some constant C depending only on R1 . By (4.4.3),
+
+                  eff(R11 ) log dim Vλ2 ≤ lev(R11 ) log p1 + eff(R11 ) log r + C.
+
+Applying Proposition 4.3 with e = eff(R11 ), l = lev(R11 ), G = G2 , p = p1 , and
+λ2 an allowable weight of G2 satisfying (4.4.2)–(4.4.4), we deduce that λ2 must
+be of the form p1 µ + ν, where µ and ν belong to finite sets independent of p1 .
+     R1
+As Pµ11,ν 1 (x) is not constant, dim Vλ11 → ∞ as p1 → ∞, so for p1 ≫ 0, µ 6= 0.
+          1   1
+Again by Proposition 4.3, µ must be a weight of an almost simple factor G21
+of G2 , and R12 must have the same efficiency and level as R11 . (By hypothesis,
+R12 and R11 cannot be equal, so at this point we must be in the Bn /Cn case,
+though we do not use this fact explicitly.) Writing G2 = G21 × H 2 , we can
+decompose λ2 = λ21 + (λ2 − λ21 ), where the second summand is a weight of H 2 ,
+and λ21 = p1 µ21 + ν12 , where µ21 and ν12 belong to finite sets independent of p1 .
+                                               dim Vλ1
+By (4.3.1) and (4.4.5), the fraction           dim Vλ2
+                                                          1
+                                                              is bounded above, and by (4.4.3), its
+                                                          1
+denominator is bounded above by r, so the height of the fraction is bounded. By
+Lemma 2.3, therefore, dim Vλ2 is the value at p1 of a Weyl polynomial which is
+                      R1
+a scalar multiple of Pµ11,ν 1 (x). By Proposition 4.2, dim Vλ21 > dim Vλ11 , contrary
+                             1   1
+to (4.4.4).
+  The induction step is similar, but we must exercise some additional care. We
+write G1 = G11 × H 1 . We assume p1 is large compared to the degree of the
+representation of dim Vλ1 −λ11 . In other words, the upper bound on
+
+                             eff(R11 ) log dim Vλ1 − lev(R11 ) log p1
+
+                                                     24
+depends on p2 , p3 , . . . , pk+1 , which we regard as constant, but not on p1 , which
+we take as large as we need. Applying Proposition 4.3 and Lemma 2.3 as before,
+there exists a simple factor G21 of G2 , weights µ21 and ν12 of G21 , and a rational
+number c ≥ 1, such that the root system R12 has the same efficiency and level as
+R11 , λ21 = pµ21 + ν12 , and
+                                        R1             R2
+                                     cPµ11,ν 1 (x) = Pµ21,ν 2 (x).
+                                         1   1          1   1
+
+
+Moreover c = 1 implies R11 = R12 . As λ11 and λ21 are allowable, Proposition 4.2
+guarantees that ordpi c = 0 for all i. Writing G2 = G21 × H 2 , λ2 − λ21 is an
+allowable dominant weight of H 2 , and for i ≥ 2,
+
+               ordpi dim Vλ2 −λ21 = ordpi dim Vλ2 − ordpi dim Vλ21
+                                                                         R2
+                                         = ordpi dim Vλ1 − ordpi Pµ21,ν 2 (p1 )
+                                                                         1    1
+
+                                                                     R1
+                                         =   ordpi dim Vλ1 − ordpi Pµ11,ν 1 (p1 )
+                                                                      1 1
+
+                                         =   ordpi dim Vλ2 −λ21 = lev(Ri1 ).
+
+As dim Vλ2 −λ21 divides ht(c)r dim Vλ1 −λ11 , and ht(c)r can be bounded independent
+of the choice of primes pi , we can apply the induction hypothesis to conclude that
+
+                                 dim Vλ2 −λ21 > dim Vλ1 −λ11 .
+
+Therefore
+
+            dim Vλ2 = dim Vλ21 dim Vλ2 −λ21 > dim Vλ21 dim Vλ1 −λ11
+                            R2                                  R1
+                       = Pµ21,ν 2 (p1 ) dim Vλ1 −λ11 ≥ Pµ11,ν 1 (p1 ) dim Vλ1 −λ11
+                             1   1                              1    1
+
+                       = dim Vλ11 dim Vλ1 −λ11 = dim Vλ1 ,
+
+contrary to (4.4.4).                                                                 ⊓
+                                                                                     ⊔
+
+
+5. The Gassmann Phenomenon
+
+  Let G = SU(2)n and Z = Z(G). Irreducible representations of G are indexed
+by ordered n-tuples of non-negative integers: λ = (a1 , . . . , an ). The representa-
+tion associated to λ is
+
+               Vλ = V(a1 ,...,0) ⊗ · · · ⊗ V(0,...,an ) = Wa1 ⊠ · · · ⊠ Wan ,
+
+                                                  25
+where Wi denotes the ith symmetric power of the natural representation of SU(2).
+The restriction of Vλ to Z ∼
+                           = Fn2 is isotypic with character χλ . In coordinates,
+
+
+                          χλ (a1 , . . . , an ) = (−1)a1 z1 +···+an zn .
+
+
+For any character χ ∈ Z ∗ , we write
+
+
+                                Xχ = {λ ∈ Nn | χλ = χ}.
+
+
+Thus, Xχ consists of n-tuples of non-negative integers such that each coordinate
+has prescribed parity.
+     Let Zi (i = 1, 2) denote any subgroup of Z, and let Gi = G/Zi . Then,
+
+                                         X X
+                            ζGi (s) =                    (dim Vλ )−s .
+                                        χ∈Zi⊥ λ∈Xχ
+
+
+Now,
+                                                n
+                                                Y
+                                   dim Vλ =          (ai + 1),
+                                               i=1
+
+so
+                   X
+                         (dim Vλ )−s = (2−s ζ(s))O (ζ(s) − 2−s ζ(s))E ,
+                  λ∈Xχ
+
+
+where O (resp. E) is the number of coordinates which are constrained to be odd
+(resp. even) in Xχ . Thus O + E = n and E − O is the trace of σ(χ), where
+σ: Z ∗ = Fn2 → GLn (C) is defined by
+
+                                                     ∗
+                                               (−1)z1
+                                                                        
+                                                           ···     0
+                     σ(z1∗ , . . . , zn∗ ) =  ...         ..      ..
+                                                                         .
+                                                                        
+                                                               .    .
+                                                                       ∗
+                                                                      zn
+                                                0          · · · (−1)
+
+As long as
+                 |{z ∗ ∈ Z1⊥ | σ(z ∗ ) = c}| = |{z ∗ ∈ Z2⊥ | σ(z ∗ ) = c}|
+
+for all c ∈ Z, we have ζG1 (s) = ζG2 (s).
+
+
+                                               26
+Lemma 5.1: There exists an integer n and two injective homomorphisms
+
+                                    φ1 , φ2 : F32 → Fn2
+
+such that σ(φ1 (F32 )) and σ(φ2 (F32 )) are not conjugate in GLn (C) but for all c ∈ Z,
+
+            |{x ∈ F32 | tr(σ(φ1 (x))) = c}| = |{x ∈ F32 | tr(σ(φ2 (x))) = c}|.
+
+
+
+Proof: To guarantee non-conjugacy of images it suffices to arrange that the
+character of σ ◦φ1 precomposed by any automorphism of F32 is distinct from the
+character of σ ◦φ2 . To achieve this, we fix an injective function
+
+                                      f1 : F32 → 8Z
+
+such that
+                                              X
+                                   f1 (0) ≥          |f (x)|.
+                                              x6=0
+
+By Fourier inversion, f1 is the character of an effective representation ψ1 . Re-
+garding it as a homomorphism to the diagonal matrices in GLn (C), we deduce
+that there exists φ1 such that ψ1 = σ ◦φ1 . Composing any non-linear automor-
+phism of the pointed set (F32 , 0) with f1 we obtain a new function f2 , therefore
+a new representation ψ2 , and therefore a new homomorphism φ2 satisfying the
+conditions of the lemma.                                                   ⊓
+                                                                           ⊔
+
+ Setting Zi = φi (F32 )⊥ and Gi = G/Zi , the lemma implies ζG1 (s) = ζG2 (s).
+Moreover, G1 and G2 cannot be isomorphic; indeed an isomorphism ι would give
+rise to an isomorphism ι̃ between universal covers, and therefore a diagram
+                                              ι̃
+                                G =G̃1     −→ G̃2 = G
+                                    ↓          ↓
+                                            ι
+                                   G1      −→ G2 .
+
+An inner automorphism is trivial on Z, so this means an element of Out(G) = Sn
+sends Z1 to Z2 , contrary to Lemma 5.1. We conclude:
+
+Theorem 5.2: There exist non-isomorphic compact semisimple Lie groups with
+the same Witten zeta-function.
+
+
+
+                                              27
+                                REFERENCES
+[1] Bourbaki, N.: Groupes et algèbres de Lie, Chap. 5–6 (1968), Chap. 7–8 (1975),
+    Hermann, Paris.
+[2] Deligne, Pierre; Milne, James S.; Ogus, Arthur; Shih, Kuang-yen: Hodge
+    cycles, motives, and Shimura varieties. Lecture Notes in Mathematics, 900.
+    Springer-Verlag, Berlin-New York, 1982.
+[3] Gassmann, F.: Bemerkungen zu vorstehenden Arbeit von Hurwitz. Math. Z.
+    25 (1926) 124–143.
+[4] Moody, R. V.; Patera, J.; Rand, D. W.: simpLie Version 2.1, Macintosh Soft-
+    ware for Representations of Simple Lie Algebras.
+[5] Larsen, M.; Pink, R.: Determining representations from invariant dimensions.
+    Invent. Math. 102 (1990), no. 2, 377–398.
+[6] Sunada, T.: Riemannian coverings and isospectral manifolds. Annals of Math.
+    121 (1985) 169–186.
+[7] Witten, E.: On quantum gauge theories in two dimensions. Comm. Math.
+   Phys. 141 (1991), no. 1, 153–209.
+
+
+
+
+                                        28
+

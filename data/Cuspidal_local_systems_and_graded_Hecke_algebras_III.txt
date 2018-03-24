@@ -1,0 +1,2437 @@
+                                                                CUSPIDAL LOCAL SYSTEMS AND
+                                                                GRADED HECKE ALGEBRAS, III
+arXiv:math/0108173v1 [math.RT] 24 Aug 2001
+
+
+
+
+                                                                                  G. Lusztig
+
+                                                  Abstract. We prove a strong induction theorem and classify the tempered and
+                                                  square integrable representations of graded Hecke algebras.
+
+
+
+                                                                                Introduction
+                                                 Let G be the group of rational points of a simple adjoint algebraic group over a p-
+                                             adic field, which is an inner form of a split group. Consider the set of isomorphism
+                                             classes of irreducible admissible representations of G whose restriction to some
+                                             parahoric subgroup contains some irreducible unipotent cuspidal representation
+                                             of that parahoric subgroup modulo its ”unipotent radical”. The classification
+                                             of such ”unipotent” representations of G has been established in [L7] (see also
+                                             [KL] for an earlier special case) in accordance with a conjecture of Langlands
+                                             (refined in [L1]). In the special case considered in [KL], the tempered and square-
+                                             integrable representations were also explicitly described; the main tool to do so was
+                                             an ”induction theorem” [KL, 6.2] for affine Hecke algebras with equal parameters.
+                                             But in the context of [L7] the induction theorem was missing and the problem
+                                             of describing explicitly the unipotent representations that are tempered or square
+                                             integrable representations remained open.
+                                                 One of the techniques used in [L7] was the reduction of the (equivalent) clas-
+                                             sification problem for certain affine Hecke algebras with unequal parameters to
+                                             the problem of classifying the simple modules of certain ”graded” Hecke algebras
+                                             which could be done using methods of equivariant homology. By these methods
+                                             one can reduce the problem of describing the tempered or square integrable unipo-
+                                             tent representations to the analogous problem for graded Hecke algebras. This last
+                                             problem is solved in the present paper. As in [KL] one of the key ingredients is an
+                                             ”induction theorem”. In fact we will prove a strong form of the induction theorem
+                                             (without ”denominators”) inspired by [L8, 7.11] which implies the classification of
+                                             tempered and square integrable representations.
+                                                 In the case where G has small rank, the classification of square integrable unipo-
+                                             tent representations of G has been given in [R].
+
+                                               Supported in part by the National Science Foundation
+
+                                                                                                               Typeset by AMS-TEX
+                                                                                         1
+2                                   G. LUSZTIG
+
+   After this work was completed, I received the preprint [W] where most results
+of the present paper (but not the strong induction theorem) are obtained indepen-
+dently in the case G = SO2n+1 .
+
+                                    Contents
+    1. Preliminaries and statement of results.
+    2. A strong induction theorem and a proof of Theorem 1.17.
+    3. Proof of Theorems 1.15, 1.21, 1.22.
+
+                1. Preliminaries and statement of results
+1.1. Unless otherwise specified, all algebraic varieties are assumed to be over C.
+If X is a subvariety of X ′ we write cl(X) for the closure of X in X ′ . For a Lie
+algebra g let zg be the centre of g. If A is a subset of g, we set z(A) = {x ∈
+g; [x, y] = 0 ∀y ∈ A}; if a is a Lie subalgebra of g, we set za (A) = z(A) ∩ a.
+    For any algebraic group G let G 0 be the identity component of G, let UG be
+the unipotent radical of G 0 and let ZG be the centre of G. Let Ḡ = G/UG and let
+πG : G − → Ḡ be the canonical homomorphism. Let G be the Lie algebra of G. If A
+is a subset of G, we set Z(A) = {g ∈ G; Ad(g)y = y ∀y ∈ A}. Let π G : G −    → Ḡ be
+the map induced by πG . Let Gder be the derived group of G (a closed subgroup if
+G is connected). If x ∈ G is a semisimple element, we denote by hxi the smallest
+torus in G whose Lie algebra contains x.
+1.2. Let G be a connected reductive algebraic group. Let g = G; let gN be the
+variety of nilpotent elements of g. Let gss be the set of semisimple elements of g.
+Let P be the variety of parabolic subgroups of G.
+   A cuspidal datum for G is a triple (P, c, L) where P is a G-orbit on P, c is a
+G-orbit on the set of pairs (x, P ) with P ∈ P, x ∈ P̄ is nilpotent, and L is an
+irreducible G-equivariant local system on c such that for some (or any) P ∈ P,
+the restriction of L to the P̄ -orbit
+
+                             cP = {x ∈ P̄ ; (x, P ) ∈ c}
+
+(a local system that is automatically P̄ -equivariant and irreducible) is cuspidal in
+the sense of [L4, 2.2].
+   A cuspidal triple in G is a triple (L, C, E) where L is a Levi subgroup of a
+parabolic subgroup of G, C is a nilpotent L-orbit in L and E is an irreducible
+L-equivariant local system on C which is cuspidal in the sense of [L4, 2.2].
+   To a cuspidal datum (P, c, L) we attach a cuspidal triple as follows: let P ∈ P,
+let L be a Levi subgroup of P , let C be the nilpotent orbit in L corresponding to
+                                          ∼
+cP under the obvious isomorphism L −→ P̄ and let E be the local system on C
+                                                             ∼
+corresponding to L|cP under the obvious isomorphism C −→ cP . Then (L, C, E) is
+a cuspidal triple in G. Using [L5, 6.8(b),(c)], we see that, conversely, any cuspidal
+triple is obtained as above from a cuspidal datum (P, c, L) where P, c are unique
+and L is unique up to isomorphism.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                           3
+
+1.3. Let (P, c, L) be a cuspidal datum for G and let Q ∈ P be such that Q contains
+some P ∈ P. Then there is an induced cuspidal datum (P ′ , c′ , L) for Q̄, defined
+                                                                      −1
+as follows. Let P ′ be the set of all subgroups P ′ of Q̄ such that πQ   (P ′ ) ∈ P.
+                                                                         ′−1
+Let c′ be the set of all pairs (x′ , P ′ ) where P ′ ∈ P ′ and x′ ∈ P̄ = πQ  (P ′ ) is
+                 −1
+such that (x′ , πQ  (P ′ )) ∈ c. The inverse image of L under the map c′ −
+                                                                         → c given
+     ′   ′        ′   −1     ′                                  ′ ′
+by (x , P ) 7→ (x , πQ (P )) is denoted again by L. Then (P , c , L) is a cuspidal
+datum for Q̄.
+1.4. In the remainder of this paper we fix a cuspidal datum (P, c, L) for G.
+    For each P ∈ P we form the torus P/Pder (resp. the vector space P /[P , P ]). If
+                                                                       ∼
+P, P ′ ∈ P, there is a canonical isomorphism P ′ /Pder            ′
+                                                                      −→ P/Pder (resp.
+                   ∼
+P ′ /[P ′ , P ′ ] −→ P /[P , P ]) induced by Ad(g) where g ∈ G is such that Ad(g)P ′ = P .
+This is independent of the choice of g. Hence we may identify P/Pder (resp.
+P /[P , P ]) for any P ∈ P with a single torus T (resp. a single C-vector space
+                                                                              ∼
+h). Thus, for any P ∈ P we have a canonical isomorphism P/Pder −→ T (resp.
+                ∼
+P /[P , P ] −→ h). Since for P ∈ P we have P /[P , P ] = P/Pder , we have canonically
+h = T.
+1.5. The set
+   {P ′ ∈ P; P ′ contains strictly some P ∈ P and is minimal with this property}
+decomposes into G-orbits (Pi )i∈I . Here I is a finite indexing set.
+   For any J ⊂ I let PJ be the set of all P ′ ∈ P such that P ′ contains some
+member of P and, for i ∈ I, P ′ contains some member of Pi if and only if i ∈ J.
+Then PJ is a G-orbit on P. We have P = P∅ , Pi = P{i} for i ∈ I.
+   The diagonal action of G on P × P has only finitely many orbits; an orbit is
+said to be good if it consists of pairs (P, P ′ ) such that P, P ′ have a common Levi
+subgroup. Let W be the set of good G-orbits on P × P. There is a natural group
+structure on W (see [L5, 7.3]).
+1.6. Let P ∈ P and let L be a Levi subgroup of P . For any J ⊂ I let PJ be the
+unique member of PJ that contains P . For i ∈ I write Pi instead of P{i} . We
+have P∅ = P . Let T = ZL0 ; then T = zL . Let N (T ) be the normalizer of T in G.
+Then W (L) = N (T )/L acts naturally (and faithfully) on T and on T ∗ . We have
+g = ⊕α∈T ∗ gα where
+
+                        gα = {x ∈ g; [y, x] = α(y)x ∀y ∈ T }.
+
+Note that gα is an L-module by the ad action. Let R = {α ∈ T ∗ ; α 6= 0, gα 6= 0}.
+   By [L4, 2.5], R is a (not necessarily reduced) root system in T ∗ with Weyl group
+W (L). (We do not have to specify the set of coroots since they are determined
+uniquely by R and the Weyl group action on T ∗ .) Let Li be the Levi subgroup of Pi
+that contains L. There is a unique αi ∈ R such that gαi ⊂ UP and Li = ⊕n∈Z gnαi .
+Then {αi ; i ∈ I} is a set of simple roots for R.
+4                                    G. LUSZTIG
+
+   Let C be the nilpotent L-orbit in L which corresponds to cP under the obvious
+                  ∼
+isomorphism L −→ P̄ . Let y ∈ C. For i ∈ I let ci be the integer ≥ 2 such that
+   ad(y)ci −2 : gαi ⊕ g2αi −
+                           → gαi ⊕ g2αi is 6= 0,
+   ad(y)ci −1 : gαi ⊕ g2αi −
+                           → gαi ⊕ g2αi is 0.
+Then ci is independent of the choice of P, L and y.
+   We identify W (L) with W by n 7→ G − orbit of (P, nP n−1 ). Via the obvious
+                   ∼
+isomorphism T −→ P /[P , P ] = h, the W (L) action on T and T ∗ becomes a W
+action on h and h∗ (independent of the choice of P, L) and the vectors αi (i ∈ I) in
+T ∗ become vectors in h∗ , denoted again by αi (these are also independent of the
+choice of P, L). The action of W on h∗ is denoted by w, ξ 7→ w ξ. For i ∈ I let si be
+the unique element of W which is a reflection in h∗ such that si (αi ) = −αi . Then
+W together with si (i ∈ I) is a Coxeter group. For J ⊂ I let WJ be the subgroup
+of W generated by {si ; i ∈ J}.
+   For future use we note the following property:
+   (a) Let i ∈ I and let Q ∈ P be such that P ⊂ Q, Pi 6⊂ Q. Then Li ∩ Q =
+⊕n∈N gnαi . In particular, (g−αi ⊕ g−2αi ) ∩ Q = 0.
+1.7. Let H be the associative C-algebra defined by the generators ξ (in 1-1 cor-
+respondence with the elements ξ ∈ h∗ ), si (indexed by i ∈ I) and r, subject to the
+following relations:
+   (a) aξ + a′ ξ ′ = aξ + a′ ξ ′ for any ξ, ξ ′ ∈ h∗ and any a, a′ ∈ C;
+   (b) ξξ ′ = ξ ′ ξ for any ξ, ξ ′ ∈ h∗ ;
+   (c) si (i ∈ I) satisfy the relations of W ;
+                             si
+   (d) si ξ − si ξsi = ci ξ−αi ξ r for any ξ ∈ h∗ and any i ∈ I.
+   (e) r is central.
+                       si
+(In (d) we have ξ−αi ξ ∈ C.) This is the same as the algebra denoted by H in [L4,
+6.3].
+1.8. Let
+                  ġ = {(y, P ) ∈ g × P; y ∈ P ; π P (y) ∈ cP + ZP̄ }.
+Let π : ġ −→ g be the first projection. Now G × C∗ acts on g by (g, λ) :
+y 7→ λ−2 Ad(g)y, on P by (g, λ) : P 7→ gP g −1 and on ġ by (g, λ) : (y, P ) 7→
+(λ−2 Ad(g)y, gP g −1). For y ∈ gN we denote by M (y) or MG (y) the stabilizer of y
+in G × C∗ . Thus,
+
+                     M (y) = {(g, λ) ∈ G × C∗ ; Ad(g)y = λ2 y}.
+
+We also have an action of G×C∗ on c given by (g, λ) : (x, P ) 7→ (λ−2 Ad(g)x, gP g −1).
+Here we regard Ad(g) as a map cP −     → cgP g −1 . The local system L on c is automat-
+ically G × C∗ -equivariant [L5, 7.15]. Let s : ġ −  → c be given by s(y, P ) = (y ′ , P )
+where y ′ ∈ cP , π P (y) − y ′ ∈ ZP̄ . Then L̇ = s∗ L is a G × C∗ -equivariant local
+system on ġ and K = π! (L̇∗ ) is (up to shift) a G × C∗ -equivariant perverse sheaf
+on g, with a canonical action of W , [L4, 3.4].
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                                     5
+
+                                                                                m
+1.9. Let X be an algebraic variety with a given morphism X −→ g. Define
+   m′      ṁ
+X ←− Ẋ −→ ġ by the cartesian diagram
+                                                ṁ
+                                        Ẋ −−−−→ ġ
+                                                 
+                                                π
+                                       ′
+                                                 
+                                      my          y
+                                                m
+                                        X −−−−→ g
+Then m∗ (K) is naturally an object of the bounded derived category of constructible
+sheaves on Ẋ with a W -action inherited from K hence there is a natural W -action
+on the hypercohomology
+
+                    Hcj (X, m∗ (K)) = Hcj (X, m′! L̇∗ ) = Hcj (Ẋ, L̇∗ ).
+
+(We will often denote various local systems obtained from L̇, L̇∗ by some natural
+construction again by L̇, L̇∗ .)
+1.10. If, in addition, X has a given action of a closed connected subgroup G′ of
+G × C∗ and m is compatible with the G′ -actions, and if Γ is a smooth irreducible
+variety with a free G′ -action, we can form the cartesian diagram
+                                                ṁ
+                                       Γ Ẋ   −−Γ−−→   Γ ġ
+                                                         
+                                                     Γπ
+                                       ′                 
+                                     Γm y                 y
+                                                m
+                                       ΓX     −−Γ−−→   Γg
+
+where Y 7→ Γ Y is the functor from algebraic varieties with G′ -action to algebraic
+varieties given by Y 7→ G′ \(Γ × Y ).
+   The local system C⊠ L̇∗ on Γ× ġ is G′ -equivariant hence it descends canonically
+to a local system Γ L̇∗ on Γ ġ. Also, C ⊠ K is (up to shift) a G′ -equivariant perverse
+sheaf with W -action on Γ×g hence it descends to a perverse sheaf (up to shift) Γ K
+with W -action on Γ g. We have canonically Γ K = (Γ π)! (Γ L̇∗ ). Then (Γ m)∗ (Γ K) is
+naturally an object of the bounded derived category of constructible sheaves on
+Γ Ẋ, with a W -action inherited from Γ K hence there is a natural W -action on the
+hypercohomology
+
+ Hc2d−j (Γ X, (Γ m)∗ (Γ K)) = Hc2d−j (Γ X, (Γ m′ )! ((Γ ṁ)∗ (Γ L̇∗ ))) = Hc2d−j (Γ Ẋ, Γ L̇∗ )
+
+where d = dim Ẋ. (We write Γ L̇∗ instead of (Γ ṁ)∗ (Γ L̇∗ ).) We can choose Γ so
+that H n (Γ, C) = 0 for n ∈ [1, m] where m is large compared with j. Taking duals,
+we see that W acts naturally on the equivariant homology
+                                 ′
+                             HjG (Ẋ, L̇) = Hc2d−j (Γ Ẋ, Γ L̇∗ )∗
+
+[L4, 1.1]. This action is independent of the choice of Γ.
+6                                       G. LUSZTIG
+
+1.11. Let S = S(h∗ ⊕ C) = S(h∗ ) ⊗ C[r] where S() denotes the symmetric algebra
+of a C-vector space and r = (0, 1) ∈ h∗ ⊕ C.
+   For any algebraic group G′ we write HG     ∗                ∗
+                                                ′ instead of HG′ (point, C) (equivariant
+
+cohomology). For any surjective homomorphism G′ −         → G′′ of connected algebraic
+                                                               ∗        ∗
+groups we have a canonical algebra homomorphism HG               ′ −
+                                                                   → HG   ′′ . (Using the
+identification [L4, 1.11(a)], this is obtained by associating to a polynomial function
+G′′ −
+    → C its composition with the obvious map G′ −       → G′′ .) In particular, if P ∈ P,
+we have a canonical algebra homomorphism
+                          ∗                ∗
+                         HP/P der ×C
+                                     ∗ = H               → HP̄∗ ×C∗ .
+                                           P̄ /P̄der ×C∗ −
+
+
+Composing this with the algebra homomorphism HP̄∗ ×C∗ −   → HP̄∗ ×C∗ (cP , C) (as
+                                                 ∗
+in [L4, 1.7]) we obtain an algebra homomorphism HP/P der ×C
+                                                              → HP̄∗ ×C∗ (cP , C).
+                                                            ∗ −
+
+By [L4, 1.6, 1.4(e), 1.4(h)] we have canonically
+     ∗                ∗        −1                   ∗                  ∗
+    HG×C ∗ (ġ, C) = HP ×C∗ (π P (cP + ZP̄ ), C) = HP ×C∗ (cP , C) = H
+                                                                       P̄ ×C∗ (cP , C).
+
+                                   ∗               ∗
+We obtain an algebra homomorphism HP/P        ∗ −
+                                                → HG×C ∗ (ġ, C). Using the
+                                       der ×C
+                                       ∼
+canonical isomorphism P/Pder −→ T we obtain an algebra homomorphism
+  ∗           ∗
+HT×C  ∗ −→ HG×C    ∗ (ġ, C). This is in fact an algebra isomorphism (a reformula-
+                                                           ∗          ∗
+tion of [L4, 4.2]). By [L4, 1.10] we have canonically HT×C    ∗ = S(h ⊕ C) = S.
+
+Thus we have an algebra isomorphism
+                                       ∼ ∗
+(a)                                S −→ HG×C ∗ (ġ, C).
+
+
+
+    Assume that X̃ is an algebraic variety with a given action of a closed connected
+subgroup G′ of G × C∗ and with a given morphism m̃ : X̃ −                  → ġ compatible
+with the G′ -actions. We write L̇ instead of m̃∗ L̇ (a local system on X̃). Then
+     ′
+H∗G (X̃, L̇) is an S-module as follows. Let ξ ∈ S, let ξ ′ ∈ HG×C        ∗
+                                                                             ∗ (ġ, C) be the
+                                                          ′′       ∗
+element that corresponds to ξ under (a) and let ξ ∈ HG′ (ġ, C) be the image of
+ξ ′ under the homomorphism HG×C        ∗
+                                            ∗ (ġ, C) −
+                                                         ∗
+                                                      → HG ′ (ġ, C) as in [L4, 1.4(f)]. We
+            ∗ ′′       ∗                       G′
+have m̃ (ξ ) ∈ HG′ (X̃, C). If z ∈ H∗ (X̃, L̇) then ξz is defined as the product
+                     ′
+m̃∗ (ξ ′′ ) · z ∈ H∗G (X̃, L̇) as in [L4, 1.7].
+1.12. Let y ∈ gN . Let
+
+       Py = {P ∈ P; y ∈ P ; π P (y) ∈ cP + ZP̄ } = {P ∈ P; y ∈ P ; π P (y) ∈ cP }.
+
+(The second equality follows from the fact that y is nilpotent.) The second projec-
+tion identifies {y}˙ with Py . Note that {y} and {y}˙ are stable under M (y) hence
+under M 0 (y). By 1.10 applied to X = {y} and by 1.11 applied to X̃ = {y}˙ we see
+                                                                 ′
+that, if G′ is a closed connected subgroup of M 0 (y), then H∗G (Py , L̇) has a natural
+                                                            ∗
+W -action and a natural S-action. It also has a natural HG    ′ -module structure [L4,
+         CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                               7
+
+                                                                           ′
+1.7]. Now there is a unique H-module structure on H∗G (Py , L̇) such that r ∈ H
+acts as r ∈ S, ξ ∈ H acts as ξ ∈ S (for ξ ∈ h∗ ) and si ∈ H acts as si ∈ W (for
+i ∈ I). (In the special case when G′ = M 0 (y), this follows from [L4, 8.13]. The
+case when G′ is not necessarily M 0 (y) can be reduced to the special case using
+the isomorphism
+
+                       ∗                    M 0 (y)               ∼    ′
+(a)                   HG ′ ⊗H ∗
+                                0
+                                        H∗            (Py , L̇) −→ H∗G (Py , L̇)
+                               M (y)
+
+
+as in [L4, 7.5]; that result is applicable in view of [L4, 8.6].) The H-module
+                                ∗                         G′
+structure commutes with the HG    ′ -module structure on H∗ (Py , L̇).
+                                                                                   M 0 (y)
+   Now the finite group M̄ (y) = M (y)/M 0 (y) acts on H∗        (Py , L̇) by [L4,
+1.9(a)]. This action commutes with the H-module structure and is compatible
+            ∗                                          ∗
+with the HM   0 (y) -module structure where we regard HM 0 (y) as being endowed
+
+with the action of M̄ (y) given again by [L4, 1.9(a)].
+1.13. Let G′ be a closed connected subgroup of G × C∗ . Then G′ ⊂ g ⊕ C. By
+                                     ∗                                        ′
+[L4, 1.11(a)], we may identify HG      ′ with the space of polynomials f : G −  → C
+                                                           ′
+that are constant on the cosets by the nil-radical of G and are constant on the
+Ad-orbits of G′ . Let (σ, r) ∈ G′ be a semisimple element. Let Jσ,rG′
+                                                                      be the maximal
+           ∗                                                              ∗    G′
+ideal of HG  ′ consisting of all f such that f (σ, r) = 0. Let Cσ,r = HG′ /Jσ,r . (A
+
+one dimensional C-vector space.)
+   Now assume that G′ ⊂ M 0 (y). Then G′ ⊂ {(x, r) ∈ g ⊕ C; [x, y] = 2ry} =
+   0
+M (y). In particular we have [σ, y] = 2ry.
+   Let f1 : G′ − → C be defined by f1 (x, r) = r. In the HG  ∗
+                                                               ′ -module structure on
+     ′
+  G
+H∗ (Py , L̇), f1 acts as multiplication by r ∈ H. We form
+                                        ′                     ′                ′       ′
+                                                              G
+          Ey,σ,r = Cσ,r ⊗HG∗ ′ H∗G (Py , L̇) = H∗G (Py , L̇)/Jσ,r H∗G (Py , L̇).
+                                    ′
+Then Ey,σ,r inherits from H∗G (Py , L̇) an H-module structure in which r ∈ H acts
+                                                G′
+as multiplication by r (since f1 − r ∈ Jσ,r        ). By 1.12(a), Ey,σ,r defined in terms
+     ′
+of G is the same as Ey,σ,r defined in terms of M 0 (y). For this reason we do not
+include G′ in the notation for Ey,σ,r .
+   Let M (y, σ) = M (y) ∩ (Z(σ) × C∗ ). Let M̄ (y, σ) be the group of connected
+components of M (y, σ). The obvious map M̄ (y, σ) −          → M̄ (y) is injective, since
+M 0 (y) ∩ (Z(σ) × C∗ ) is connected. Clearly, the restriction of the M̄ (y) action on
+  ∗                            M 0 (y)                                       M 0 (y)
+HM  0 (y) to M̄ (y, σ) leaves Jσ,r     stable hence the action of M̄ (y) on H∗       (Py , L̇)
+induces an action of M̄ (y, σ) on Ey,σ,r . This action commutes with the H-module
+structure.
+1.14. Let IrrM̄ (y, σ) be a set of representatives for the isomorphism classes of
+irreducible representations of M̄ (y, σ). For ρ ∈ IrrM̄ (y, σ) let
+
+                            Ey,σ,r,ρ = HomM̄ (y,σ) (ρ, Ey,σ,r ).
+8                                       G. LUSZTIG
+
+Let Irr0 M̄ (y, σ) be the set of those ρ ∈ IrrM̄ (y, σ) such that Ey,σ,r,ρ 6= 0 or,
+equivalently (see [L4, 8.10]) such that ρ appears in the restriction of the M̄ (y)-
+module H∗ (Py , L̇) to M̄ (y, σ). (Equivariant homology or cohomology in which the
+group is not specified is understood to be with respect to the group {1}.)
+Theorem 1.15. (a) Let y, σ, r be as above; assume that r 6= 0. Let ρ ∈ Irr0 M̄ (y, σ).
+Then the H-module Ey,σ,r,ρ has a unique maximal submodule. Let Ēy,σ,r,ρ be the
+simple quotient of Ey,σ,r,ρ .
+   (b) Let r ∈ C∗ . The map (y, σ, ρ) 7→ Ēy,σ,r,ρ establishes a bijection between the
+set of all triples (y, σ, ρ) with y ∈ gN , σ ∈ gss with [σ, y] = 2ry and ρ ∈ Irr0 M̄ (y, σ)
+(modulo the natural action of G) and the set of isomorphism classes of simple H-
+modules in which r acts as multiplication by r.
+  The proof is given in 3.39, 3.41, 3.42. (A bijection as in (b) has already been
+obtained in [L5] by other means since (a) was not known in [L5].)
+1.16. Let J ⊂ I and let Q ∈ PJ . Let Q1 be a Levi subgroup of Q. Let y ∈ Q1
+be nilpotent. Now Q1 carries a cuspidal datum (P ′ , c′ , L) analogous to that of G
+(see 1.3). Here we identify Q1 = Q̄ via πQ . Replacing G by Q1 in the definition of
+                                                                      −1
+W, h, S, H, Py , L̇ we get WJ , h, S, H′, Py′ , L̇. We use P ′ 7→ πQ     (P ′ ) to identify P ′
+with P ∗ = {P ∈ P; P ⊂ Q} and Py′ with Py∗ = {P ∈ Py ; P ⊂ Q}.
+                                        0             0                  C     ∗             ′
+    Let C be a maximal torus of MQ        1 (y) ⊂ M (y). Then H∗ (Py , L̇) is an H -
+
+module (by 1.12 for Q1 = Q̄ instead of G). Using the obvious algebra homo-
+morphism H′ −   → H (taking the generators of H′ to the corresponding generators
+of H) we can form the H-module H ⊗H′ H∗C (Py∗ , L̇). Now the closed imbedding
+j : Py∗ −
+        → Py induces a map j! : H∗C (Py∗ , L̇) −   → H∗C (Py , L̇), (see [L4, 1.4(b)].) From
+the definitions we see that j! is H′ -linear hence it induces an H-linear map
+
+(a)                         H ⊗H′ H∗C (Py∗ , L̇) −
+                                                 → H∗C (Py , L̇).
+
+                                                0
+Let y UQ = coker(ad(y) : UQ −
+                            → UQ ). Define ǫ : MQ 1 (y) −
+                                                        → C (recall that
+ 0
+MQ 1 (y) ⊂ g ⊕ C) by
+
+
+
+                        ǫ(x, λ) = det(ad(x) − 2λ : y UQ −
+                                                        → y UQ ).
+
+               0
+(For (x, r) ∈ MQ 1 (y) we have [x, y] = 2ry hence [ad(x), ad(y)] = 2rad(y) hence
+
+ad(x) : UQ −   → UQ induces a map y UQ −  → y UQ denoted again by ad(x).) The
+restriction of ǫ to C is denoted again by ǫ. By the identification [L4, 1.11(a)] we
+may regard ǫ as an element of HC∗ . Applying HC∗ [ǫ−1 ]⊗HC∗ to (a) we obtain an
+HC∗ [ǫ−1 ]-linear map
+
+(b)       HC∗ [ǫ−1 ] ⊗HC∗ (H ⊗H′ H∗C (Py∗ , L̇)) −
+                                                 → HC∗ [ǫ−1 ] ⊗HC∗ H∗C (Py , L̇).
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                        9
+
+Theorem 1.17 (Induction theorem). The map 1.16(b) is an (H-linear) iso-
+morphism.
+   The proof is given in Section 2 as an application of the ”strong induction the-
+orem” 2.16 which states the existence of an isomorphism similar to 1.16(b) but in
+which no elements of HC∗ need to be inverted.
+                                                               0
+Corollary 1.18. Assume that (σ, r) is a semisimple element of MQ 1 (y) such that
+
+                       ′
+ǫ(σ, r) 6= 0. Define Ey,σ,r like Ey,σ,r but in terms of Q1 instead of G. Choose C
+as in 1.16 such that (σ, r) ∈ C. Then the map 1.16(b) induces an isomorphism of
+                     ′      ∼
+H-modules H ⊗H′ Ey,σ,r     −→ Ey,σ,r .
+1.19. Let I be the collection of all simple finite dimensional g-modules V such
+that for any P ∈ P there exists a P -stable line DP in V (necessarily unique).
+An equivalent condition is that, for any P ∈ P, {v ∈ V ; UP v = 0} is a line
+in V . (Clearly, {v ∈ V ; UP v = 0} is P -stable, hence if the second condition
+holds then the first condition holds. Conversely, let P ∈ P and let b be a Borel
+subalgebra of P . If {v ∈ V ; UP v = 0} is non-zero, then it is a P /UP -module with
+a unique line stable under b/UP , a Borel subalgebra of P /UP , since such a line
+must be b-stable and V is simple. It follows that {v ∈ V ; UP v = 0} is simple as
+a P /UP -module. Hence, if there exists a P -stable line in V (necessarily contained
+in {v ∈ V ; UP v = 0}) then that line must be equal to {v ∈ V ; UP v = 0} so that
+{v ∈ V ; UP v = 0} is a line.)
+   Let V ∈ I. Then V defines an element ξV ∈ h∗ as follows. Let P ∈ P. Then
+xv = u(x)v for x ∈ P , v ∈ DP where u : P −  → C is a Lie algebra homomorphism.
+Then u factors through a linear form on P /[P , P ] = h denoted by ξV . It is
+independent of the choice of P .
+1.20. In the remainder of this section we assume that G is semisimple.
+    Let r ∈ C∗ and let τ : C −  → R be a homomorphism of abstract groups such
+that τ (r) 6= 0. Let E be an H-module of finite dimension over C. We say that E
+is τ -tempered if for any V ∈ I, any eigenvalue λ of ξV on E satisfies τ (λ)/τ (r) ≥ 0.
+We say that E is τ -square integrable if for any V ∈ I, other than C, any eigenvalue
+λ of ξV on E satisfies τ (λ)/τ (r) > 0.
+    The standard basis of the Lie algebra sl2 (C) is denoted as follows:
+
+                                  01            1 0             00
+                           e0 =   00
+                                     , h0   =   0 −1
+                                                     , f0   =   10
+                                                                   .
+
+Theorem 1.21. Assume that r 6= 0. Let y, σ, ρ be as in 1.15(b). The following
+three conditions are equivalent:
+   (i) Ey,σ,r,ρ is τ -tempered.
+   (ii) Ēy,σ,r,ρ is τ -tempered.
+   (iii) There exists a homomorphism of Lie algebras φ : sl2 (C) −   → g such that
+y = φ(e0 ), [σ, φ(h0 )] = 0, [σ, φ(f0)] = −2rφ(f0 ) and any eigenvalue λ of ad(σ −
+10                                      G. LUSZTIG
+
+rφ(h0 )) : g −
+             → g satisfies τ (λ) = 0.
+If these conditions are satisfied, then Ey,σ,r,ρ = Ēy,σ,r,ρ .
+     The proof is given in 3.43.
+Theorem 1.22. Assume that r 6= 0. Let y, σ, ρ be as in 1.15(b). The following
+five conditions are equivalent:
+   (i) y, σ are not contained in a Levi subalgebra of a proper parabolic subalgebra
+of g.
+   (ii) There exists a homomorphism of Lie algebras φ : sl2 (C) −   → g such that
+y = φ(e0 ), σ = rφ(h0 ); moreover, y is distinguished.
+   (iii) Ēy,σ,r,ρ is τ -square integrable.
+   (iv) Ey,σ,r,ρ is τ -square integrable.
+   (v) For any V ∈ I, other than C, any eigenvalue of r −1 ξV on Ey,σ,r,ρ is an
+integer ≥ 1.
+If these conditions are satisfied, then Ey,σ,r,ρ = Ēy,σ,r,ρ .
+     The proof is given in 3.44.
+
+       2. A strong induction theorem and a proof of Theorem 1.17
+2.1. In this section we place ourselves in the setup of 1.16. Thus,
+
+                           J, Q, Q1, H′ , y, P ′ , Py′ , P ∗ , Py∗ , C
+
+are defined. We set q = Q, q1 = Q1 , n = UQ . We can find a Lie algebra homomor-
+phism φ : sl2 (C) −→ q1 such that φ(e0 ) = y and such that C is a maximal torus
+of
+        {(g, λ) ∈ Q1 × C∗ ; Ad(g)φ(e0 ) = λ2 φ(e0 ), Ad(g)φ(f0 ) = λ−2 φ(f0 )}.
+For any P ∈ P we set
+                                     P ! = (P ∩ Q)UQ
+(a parabolic subgroup of Q).
+             → q1 be the projection of q = q1 ⊕ n onto q1 . Let
+   Let f : q −
+
+                   W∗ = {w ∈ W ; w has minimal length in wWJ }.
+
+There are only finitely many orbits for the conjugation action of Q on P. A Q-
+orbit O on P is said to be good if any P ∈ O has some Levi subgroup that is
+contained in Q. For such O and for P ∈ O we have P ! ∈ P ∗ and the G-orbit of
+(P, P ! ) in P × P is good (see 1.5) and indexed by an element w ∈ W∗ . Moreover,
+O 7→ w is a well defined bijection between the set of good Q-orbits on P and W∗ .
+We denote by o(w) the Q-orbit on P corresponding to w ∈ W∗ . Note that P 7→ P !
+is a Q-equivariant morphism o(w) −    → P ∗.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                         11
+
+   If X is a subvariety of g then Ẋ = {(z, P ) ∈ ġ; z ∈ X} (see 1.9) is a subvariety
+of ġ. For any subvariety F on P we set
+
+                              ẊF = {(z, P ) ∈ Ẋ; P ∈ F }.
+
+For w ∈ W∗ we will often write Ẋw instead of Ẋo(w) . Define
+
+                      f˜ : q̇w −
+                               → (q 1 )˙1 = q̇11 , (z, P ) 7→ (f (z), P ! ).
+                0                           S
+   Let S = ZQ     1 . Let w ∈ W∗ . Let o(w)   be the fixed point set of the conjugation
+action of S on o(w). The properties (a),(b) below are easily verified.
+   (a) The map o(w)S −      → P ∗ given by P −→ P ! is an isomorphism.
+   (b) Let z ∈ q and let P ∈ o(w)S . Then we have (z, P ) ∈ ġ if and only if
+(z, P ! ) ∈ ġ.
+The fixed point set of the S-action on q̇w (conjugation on both factors) is q̇1w . The
+                                                ∼
+restriction of f˜ defines an isomorphism q̇1w −→ q̇11 .
+   We choose a homomorphism of algebraic groups χ : C∗ −          → S such that λ 7→
+Ad(χ(λ)) has weights > 0 on n. We define a C∗ -action on q̇w by
+
+                      λ : (z, P ) 7→ (Ad(χ(λ))z, χ(λ)P χ(λ)−1 ).
+
+Then f˜ : q̇w −
+              → q̇11 is C∗ -equivariant where C∗ acts on q̇11 trivially. Let n =
+dim P̄ − dim cP − dim ZP̄ for any P ∈ P.
+Lemma 2.2. (a) q̇w is a smooth variety of pure dimension dim Q − n.
+   (b) Let (z ′ , P ′ ) ∈ q̇w ; define (z, P ) ∈ q̇1w by f˜(z ′ , P ′ ) = f˜(z, P ). Then
+limλ→0 λ(z ′ , P ′ ) exists in q̇w and equals (z, P ).
+   (c) The fixed point set of the C∗ -action on q̇w coincides with the fixed point set
+of the S-action on q̇w .
+   Consider the fibration pr2 : q̇w −→ o(w). Let P ∈ o(w). Let P 1 be a Levi
+subgroup of P that is contained in Q. Let c1 be the nilpotent orbit in P 1 corre-
+                            ∼
+sponding to cP under P 1 −→ P̄ . Then pr2−1 (P ) may be identified with
+   (c1 + ZP 1 + UP ) ∩ q = c1 + ZP 1 + (UP ∩ q)
+and this is smooth irreducible of dimension
+   −n + dim P 1 + dim(UP ∩ Q) = −n + dim(P ∩ Q).
+Now o(w) is smooth, irreducible of dimension dim Q − dim(P ∩ Q) and (a) follows.
+   We prove (b). We have z ′ = z + x with x ∈ n. We have P ′! = P ! and P ′ , P are
+in o(w) hence P ′ = uP u−1 for some u ∈ UQ . Thus,
+
+                λ(z ′ , P ′ ) = (Ad(χ(λ))(z + x), χ(λ)uP u−1 χ(λ)−1 )
+                 = (z + Ad(χ(λ))x, χ(λ)uχ(λ−1 )P χ(λ)u−1 χ(λ)−1 ).
+
+Now limλ→0 χ(λ)uχ(λ−1 ) = 1 and limλ→0 Ad(χ(λ))x = 0 by the choice of χ.
+Hence limλ→0 λ(z ′ , P ′ ) = (z, P ). This proves (b). Now (c) follows immediately
+from (b).
+12                                        G. LUSZTIG
+
+2.3. Let A = y + zq (φ(f0 )),      A1 = A ∩ q1 .
+Lemma 2.4. Let w ∈ W∗ .
+   (a) Ȧw is smooth of pure dimension −n + dim zq (φ(f0 )).
+   (b) Ȧ11 is smooth of pure dimension −n + dim zq1 (φ(f0 )).
+   (c) The map Ȧw −  → Ȧ11 , (z, P ) 7→ (f (z), P ! ) is an affine space bundle with fibres
+of dimension dim zn (φ(f0 )).
+   By [L8, 6.9],
+   (d) the map Q × A −
+                     → q (given by the adjoint action of Q) is smooth with fibres
+of pure dimension dim zq (φ(f0 )).
+We have a cartesian diagram
+                                         pr1
+                                   Ȧw −−−−→ A
+                                            
+                                            
+                                    y        y
+                                              pr1
+                                       q̇w −−−−→ q
+where the vertical maps are the inclusions. This induces a cartesian diagram
+
+                                 Q × Ȧw −−−−→ Q × A
+                                                
+                                                
+                                   y             y
+                                    q̇w     −−−−→       q
+
+where the vertical maps are given by the obvious action of Q. Using (d), it follows
+that Q × Ȧw −    → q̇w (adjoint action) is smooth with fibres of pure dimension
+dim zq (φ(f0 )). Since q̇w is smooth of pure dimension dim Q − n (see 2.2(a)), it
+follows that Q × Ȧw is smooth of pure dimension dim Q − n + dim zq (φ(f0 )). Hence
+Ȧw is as in (a). Now Ȧ11 is the same as Ȧ1 (where g, q are replaced by q1 , q1 ).
+Hence (b) follows from (a).
+    We prove (c). Note that Ȧw is a closed subset of q̇w , stable under the S-action
+(hence under the C∗ -action) on q̇w (as in 2.1). By 2.2(c), the fixed point set of
+the C∗ -action on Ȧw is the same as the fixed point set of the S-action of Ȧw that
+is,
+        ∗
+                                    1          S
+    ȦC
+      w = {(z, P ) ∈ ġ; z ∈ A , P ∈ o(w) }
+and the map Ȧw −      → Ȧ11 (restriction of f˜ : q̇w −   → q̇11 ) restricts to an isomorphism
+     ∗ ∼
+ȦC
+  w −  → Ȧ11 . Using 2.2(b) and the fact that Ȧw is closed in q̇w , we see that
+                                                                                           ∗
+    (e) for any (z ′ , P ′ ) ∈ Ȧw , limλ→0 λ(z ′ , P ′ ) exists in Ȧw and belongs to ȦCw .
+                                                                ∗             ∗
+Let Z be a connected component of Ȧw . Then Z C = Z ∩ ȦC                  w may be identified
+       ˜                                                                   C∗ ∼
+with f (Z) hence is connected (a connected component of Ȧw = Ȧ11 ). Let Z ′ be
+                                                                                       ∗      ∗
+a smooth C∗ -equivariant projective compactification of Z. We have Z C ⊂ Z ′C ;
+                                                         ∗                      ∗
+let Z1′ be the connected component of Z ′C that contains Z C . Let Z2′ be the
+set of all x ∈ Z ′ such that limλ→0 λx exists in Z ′ and belongs to Z1′ . From (e)
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                          13
+
+we see that Z ⊂ Z2′ ; hence Z2′ is dense in Z ′ . By a known result of Bialynicki-
+Birula, Z2′ is locally closed in Z ′ (hence open) and the map f˜′ : Z2′ −
+                                                                        → Z1′ given by
+x 7→ limλ→0 λx is an affine space bundle. Let x ∈ Z C , Z x = {x′ ∈ Z; f˜(x′ ) = x}.
+                                                        ∗
+
+
+We have
+    dim f˜′−1 (x) = dim Z2′ −dim Z1′ = dim Z −dim Z1′ ≤ dim Z −dim Z C ≤ dim Z x .
+                                                                          ∗
+
+
+Since Z x ⊂ f˜′−1 (x) and f˜′−1 (x) is irreducible, we see that we must have Z x =
+f˜′−1 (x) and dim Z C = dim Z1′ . Thus we have a cartesian diagram
+                       ∗
+
+
+
+
+                                      Z       −−−−→ Z2′
+                                                   
+                                                   
+                                      y             y
+                                          ∗
+                                     Z C −−−−→ Z1′
+
+(the horizontal maps are inclusions and the vertical maps are f˜, f˜′ ). It follows
+that f˜ : Z −
+                 ∗
+            → Z C is an affine space bundle with fibres of dimension
+                                                    ∗                          ∗
+           dim Z2′ − dim Z1′ = dim Z − dim Z C = dim Ȧw − dim ȦC
+                                                                 w =
+           − n + dim zq (φ(f0 )) − (−n + dim zq1 (φ(f0 ))) = dim zn (φ(f0 )).
+
+(c) follows. The lemma is proved.
+2.5. Let
+                      A = y + zn (φ(f0 )),      A1 = A ∩ q1 = {y},
+                  A′ = y + zn (φ(f0 )) + t,      A′1 = A′ ∩ q1 = y + t,
+                A′′ = y + zn (φ(f0 )) + tr ,     A′′1 = A′′ ∩ q1 = y + tr ,
+where t = zq1 and tr = {x ∈ t; zg (x) = q1 }. We have A ⊂ A′ ⊃ A′′ , A1 ⊂ A′1 ⊃
+A′′1 . Hence Ȧ ⊂ Ȧ′ ⊃ Ȧ′′ , Ȧ11 ⊂ Ȧ′11 ⊃ Ȧ′′11 . We have
+
+(a)        Ȧ11 = {y} × Py∗ ,   Ȧ′11 = (y + t) × Py∗ ,   Ȧ′′11 = (y + tr ) × Py∗ .
+
+From the definitions we see that, for w ∈ W∗ , we have cartesian diagrams
+
+                                     Ȧw −−−−→       Ȧ
+                                                    
+                                                    
+                                      y              y
+                                     Ȧ11 −−−−→ Ȧ11
+
+                                     Ȧ′w −−−−→      Ȧ
+                                                    
+                                                    
+                                      y              y
+                                     Ȧ′11 −−−−→ Ȧ11
+14                                        G. LUSZTIG
+
+                                        Ȧ′′w −−−−→     Ȧ
+                                                       
+                                                       
+                                         y              y
+                                       Ȧ′′11 −−−−→ Ȧ11
+where the horizontal maps are the obvious inclusions and the vertical maps are
+defined by (z, P ) 7→ (f (z), P ! ). Using this and 2.4(c) we see that
+   (b) the maps
+                       Ȧw −→ Ȧ11 , Ȧ′w − → Ȧ′11 , Ȧ′′w −
+                                                            → Ȧ′′11
+defined by (z, P ) 7→ (f (z), P ! ) are affine space bundles with fibres of dimension
+dim zn (φ(f0 )).
+Lemma 2.6. Let E be a connected algebraic group, let U be a closed normal
+unipotent subgroup of E and let T be a torus in E. Let e, h, e′ be elements of
+E such that [h, e] = 2e, [h, e′ ] = −2e′ , [e, e′ ] = h and such that [d, e] = [d, e′ ] =
+[d, h] = 0 for any d ∈ T . Let u = U . Define Φ : U × zu (e′ ) × T −       → T × u by
+Φ(u, x, d) = (d, Ad(u)(e + x + d) − e − d). Then Φ is an affine space bundle with
+fibres isomorphic to zu (e).
+  Let Z = ZU . We show that there exists a morphism d 7→ L′d , T −→ Hom(Z, Z)
+                             → Hom(Z, ker(ad(e′ ) : Z −
+and a morphism d 7→ L′′d , T −                        → Z)) such that
+
+(a)                               z = [L′d (z), e + d] + L′′d (z)
+
+for any z ∈ Z, d ∈ T . We can find a direct sum decomposition Z = ⊕N      k=1 Vk where
+Vk are vector subspaces of Z and linear forms a1 , . . . , aN on T such that for any k,
+Vk is a simple sl2 (C)-submodule of Z under ad(e), ad(h), ad(e′ ) and [d, v] = ak (d)v
+for any d ∈ T , v ∈ Vk .
+   Let b0,k , b1,k , . . . , bnk ,k be a basis of Vk such that
+
+  ad(e′ )b0,k = 0, ad(e)b0,k = −b1,k , ad(e)b1,k = −b2,k , . . . , ad(e)bnk −1,k = −bnk ,k .
+
+For s < 0 we set bs,k = 0. For s ∈ [0, nk ] we set
+
+        L′d (bs,k ) = bs−1,k + ak (d)bs−2,k + ak (d)2 bs−3,k + · · · + ak (d)s−1 b0,k ,
+        L′d (bs,k ) = ak (d)s b0,k .
+
+This defines uniquely L′d , L′′d . It is clear that (a) holds.
+  Next we construct for any d ∈ T an isomorphism
+                                                             ∼
+  (b) p : {(z ′ , z) ∈ Z × zZ (e′ ); [z ′ , e + d] + z = 0} −→ zZ (e).
+This is by definition a direct sum over k of isomorphisms
+
+         pk : {(v ′ , v) ∈ Vk × ker(ad(e′ ) : Vk −
+                                                 → Vk ); −ad(e + d)(v ′ ) + v = 0}
+           ∼
+          −→ ker(ad(e′ ) : Vk −
+                              → Vk )
+         CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                                  15
+
+given by pk (c0 b0,k + c1 b1,k + · · · + cnk bnk ,k , c′ b0 ) = cn−k bn−k,k .
+    We prove the lemma by induction on dim U . If dim U = 0, the result is trivial.
+Hence we may assume that dim U > 0 and that the result is true when E, U are
+replaced by Ē = E/Z, Ū = U/Z, T is replaced by the image T̄ of T in Ē and
+e, h, e′ are replaced by their images ē, h̄, ē′ under E −      → Ē. (We have dim Z > 0.)
+Let ū = Ū . The obvious map u −        → ū may be regarded as a surjective map of
+sl2 (C)-modules; by the complete reducibility of such modules, this map admits a
+cross section as an sl2 (C)-module; in particular, the induced map zu (e′ ) −         → zu (ē′ )
+is surjective. Let x̄ 7→ x̄˜ be a linear cross section for this last linear map. Let
+      ˜ be an algebraic cross section Ū −
+ū 7→ ū                                      → U for the obvious map U −       → Ū .
+                             ¯
+    Let (d, ξ) ∈ T × u; let ξ be the image of ξ under u −                      ¯
+                                                                  → ū and let d be the image
+                                      ∼
+of d under the isomorphism T −→ T̄ induced by E −               → Ē. We have
+
+          Φ−1 (d, ξ) ∼
+                     = {(u, x) ∈ U × zu (e′ ); Ad(u)(e + x + d) = e + d + ξ}.
+
+By the induction hypothesis,
+                                                                  ¯ = ē + d¯ + ξ}
+               X =: {(ū, x̄) ∈ Ū × zū (ē′ ); Ad(ū)(ē + x̄ + d)            ¯
+
+is an affine space isomorphic to zū (ē). We have an obvious map Ψ : Φ−1 (ξ) −                 →
+X. Its fibre at (ū, x̄) ∈ X is the set of all (u, x) ∈ U × zu (e′ ) × T such that
+Ad(u)(e + x + d) = e + d + ξ and u = ū               ˜ ζ, x = x̄
+                                                               ˜ + z for some ζ ∈ Z, z ∈ zZ (f ).
+                    ˜        ˜
+Note that Ad(ū)(e + x̄ + d) = e + d + ξ + z0 for some z0 ∈ Z. The equation
+Ad(u)(e + x + d) = e + d + ξ can be written as Ad(ū              ˜ ζ)(e + x̄
+                                                                            ˜ + z + d) = e + d + ξ,
+or as Ad(ζ)(e + d + ξ + z0 ) + z = e + d + ξ, or as Ad(ζ)(e + d) + z = e + d − z0 .
+Setting ζ = exp(z ′ ), z ′ ∈ Z, we see that the fibre of Ψ at (ū, x̄) may be identified
+with
+   (c) {(z ′ , z) ∈ Z × zZ (e′ ); Ad(exp(z ′ ))(e + d) + z = e + d − z0 }.
+Since [Z, e + d] ∈ Z, we have [z ′ , [z ′ , e + d]] = 0 for z ′ ∈ Z and (c) becomes
+   {(z ′ , z) ∈ Z × zZ (e′ ); [z ′ , e + d] + z = −z0 }
+or
+   {(z ′ , z) ∈ Z × zZ (e′ ); [z ′ , e + d] + z + [L′d (z0 ), e + d] + L′′d (z0 ) = 0}.
+By the substitution z̃ ′ = z ′ + L′d (z0 ), z̃ = z + L′′d (z0 ), this becomes
+   {(z̃ ′ , z̃) ∈ Z × zZ (e′ ); [z̃ ′ , e + d + z̃ = 0}.
+By the isomorphism (b) this is identified with the vector space zZ (e). We see
+that Φ−1 (ξ) is a vector bundle over X. Since X is an affine space, this vector
+bundle must be trivial (Quillen-Suslin) and therefore Φ−1 (ξ) is itself an affine
+space isomorphic to zZ (e) × zū (ē) ∼        = zu (e). The lemma is proved.
+Lemma 2.7. Let t′ be the Lie algebra of a torus contained in ZQ1 . Let X =
+y + zn (φ(f0 )) + t′ . Let O be a Q-orbit on P. Assume that O is not good. Then
+Hcj (ẊO , L̇∗ ) = 0 for any j ∈ Z.
+  In this proof all local systems are deduced from L∗ and we omit them from the
+notation.
+16                                     G. LUSZTIG
+
+   The assignment P 7→ P ! defines a morphism π : O −    → P ′ where P ′ is a conjugacy
+class of parabolic subgroups of Q. The fibres of π are exactly the UQ -orbits on O.
+It is enough to show that Hci (ẊF , ) = 0 for any fibre F of π and any i ∈ Z, where
+ẊF = {(z, P ) ∈ Ẋ; P ∈ F } (see 2.1). We fix P ∈ F ; let p = P . Let Y = {(z, u) ∈
+g × UQ ; (Ad(u)z, P ) ∈ ġ, z ∈ X}. Define Y −   → ẊF by (z, u) 7→ (z, u−1 P u). This
+is a fibration with fibres isomorphic to UQ ∩ P . It is then enough to show that
+Hci (Y, ) = 0 for any i ∈ Z. Setting z − y = x + d where x ∈ zn (φ(f0 )), d ∈ t′ and
+c̃P = π −1
+         P (cP + ZP̄ ), we identify Y with
+   {(x, d, u) ∈ zn (φ(f0 )) × t′ × UQ ; Ad(u)(y + x + d) ∈ c̃P }.
+This maps to
+   Y ′ = {(d, ν) ∈ t′ × n; y + d + ν ∈ c̃P }
+by (x, d, u) 7→ ν = (d, Ad(u)(y + x + d) − y − d); this is an affine space bundle by
+2.6 applied to E = Q, U = UQ , T = t′ , e = y, h = φ(h0 ), e′ = φ(f0 ). Hence it is
+enough to show that Hci (Y ′ , ) = 0. For any d ∈ t′ let
+   Yd′ = {ν ∈ n; y + d + ν ∈ c̃P }
+be the fibre at d of pr1 : Y ′ −  → t′ . By the Leray spectral sequence for pr1 , it is
+enough to show that Hci (Yd′ , ) = 0 for any d ∈ t′ . If y + d ∈  / n + p then Yd′ = ∅
+and there is nothing to prove. Thus we may assume that y + d + ν0 ∈ p for some
+ν0 ∈ n. Setting ξ = y + d + ν0 ∈ p ∩ q, ν ′ = ν − ν0 , we may identify Yd′ with
+
+              Ỹ ′ = {ν ′ ∈ n; ξ + ν ′ ∈ c̃P } = {ν ′ ∈ n ∩ p; ξ + ν ′ ∈ c̃P }.
+
+Let R = (P ∩ Q)UP (a proper parabolic subgroup of P since O is not good). Let
+R̄ be the image of R under P 7→ P̄ (a proper parabolic subgroup of P̄ ). The
+nil-radical of R is n ∩ p + UP . Hence the nil-radical of R̄ is
+
+                     n1 = (n ∩ p + UP )/UP = (n ∩ p)/(n ∩ UP ).
+
+Let k : n ∩ p −
+              → n1 be the canonical map. Let ξ1 be the image of ξ under p −
+                                                                          → P̄ .
+We have ξ ∈ q hence ξ1 ∈ R̄. Let
+
+                          Y ′′ = {µ ∈ n1 ; ξ1 + µ ∈ cP + ZP̄ }.
+
+We have a cartesian diagram
+                                     Ỹ ′ −−−−→ n
+                                               
+                                     ′
+                                               
+                                    k y        ky
+
+                                     Y ′′ −−−−→ n1
+where the horizontal maps are the inclusions and k ′ is induced by k. Since k is
+an affine space bundle with fibres isomorphic to n ∩ UP , so is k ′ . It is therefore
+enough to show that Hci (Y ′′ , ) = 0. This follows directly from the fact that L∗ is
+a cuspidal local system since n1 is the nil-radical of the proper parabolic algebra
+R̄ of P̄ and ξ1 ∈ R̄. The lemma is proved.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                        17
+
+Lemma 2.8. Let δ = dim zn (φ(f0 )), b = dim t.
+  (a) We have Hcj (Ȧ′ , L̇∗ ) = 0, Hcj (Ȧ′1 , L̇∗ ) = 0 for odd j. For any j we have
+dim Hcj (Ȧ′ , L̇∗ ) = ♯(W∗ ) dim Hcj−2δ−2b (Py∗ , L̇∗ ).
+  (b) We have Hcj (Ȧ, L̇∗ ) = 0, Hcj (Ȧ1 , L̇∗ ) = 0 for odd j. For any j we have
+dim Hcj (Ȧ, L̇∗ ) = ♯(W∗ ) dim Hcj−2δ (Py∗ , L̇∗ ).
+  (c) Let D = dim Ȧ, D′ = dim Ȧ′ . For any j we have
+
+                     dim HjC (Ȧ′ , L̇) = dim Hj+2D−2D
+                                               C
+                                                       ′ +2b (Ȧ, L̇).
+
+
+
+  We can arrange the Q-orbits on P in a sequence O1 , O2 , . . . , On so that Rm =
+O1 ∪ O2 ∪ · · · ∪ Om is closed in P for any m ∈ [1, n]. We set R0 = ∅. For any m
+we have
+
+(d)                           Hcj (Ȧ′Om , L̇∗ ) = 0 for odd j.
+
+(Indeed, if Om is not good, this follows from 2.7; if Om is good then, using
+2.5(a),(b) we see that it is enough to show that Hcj (Py∗ , L̇∗ ) = 0 for odd j. This
+follows from [L4, 8.6].) Using induction on m we deduce that
+
+(e)                           Hcj (Ȧ′Rm , L̇∗ ) = 0 for odd j.
+
+for any m. Taking m = n we obtain the first sentence of (a). For m ∈ [1, n] we
+have a cohomology exact sequence
+
+(f)         → Hcj (Ȧ′Om , L̇∗ ) −
+           0−                    → Hcj (Ȧ′Rm , L̇∗ ) −
+                                                      → Hcj (Ȧ′Rm−1 , L̇∗ ) −
+                                                                             →0
+
+(we use (c),(d)). Using induction on m it follows that
+   dim Hcj (Ȧ′Rm , L̇∗ ) = m′ ∈[1,m] dim Hcj (Ȧ′Om′ , L̇∗ ).
+                           P
+
+Taking m = n we obtain
+   dim Hcj (Ȧ′ , L̇∗ ) = m′ ∈[1,n] dim Hcj (Ȧ′Om′ , L̇∗ ).
+                          P
+
+Using 2.7 and 2.5(a),(b) we obtain the second sentence in (a).
+   The proof of (b) is entirely similar (it is again based on 2.7 and 2.5(a),(b)).
+   We prove (c). The last equality in (c), in the non-equivariant case (that is
+the case where C is replaced by {1}) follows immediately from the equation
+dim Hcj (Ȧ′ , L̇∗ ) = dim Hcj−2b (Ȧ, L̇∗ ) (see (a),(b)). The case where C is present
+can be deduced from the non-equivariant case using the existence of (non canoni-
+cal) isomorphisms of graded vector spaces
+
+          H∗C (Ȧ′ , L̇) ∼
+                         = HC∗ ⊗ H∗ (Ȧ′ , L̇),   H∗C (Ȧ, L̇) ∼
+                                                               = HC∗ ⊗ H∗ (Ȧ, L̇)
+
+which follows from [L4, 7.2(a)] (which is applicable, by (a),(b)). The lemma is
+proved.
+   (g) Remark. The following six conditions are equivalent:
+18                                     G. LUSZTIG
+
+   (1) Hc∗ (Py , L̇∗ ) 6= 0;
+   (2) Hc∗ (Py∗ , L̇∗ ) 6= 0;
+   (3) Hc∗ (Ȧ, L̇∗ ) 6= 0;
+   (4) Hc∗ (Ȧ1 , L̇∗ ) 6= 0;
+   (5) Hc∗ (Ȧ′ , L̇∗ ) 6= 0;
+   (6) Hc∗ (Ȧ′1 , L̇∗ ) 6= 0.
+   Indeed, we have (5) ↔ (2) by (a),(3) ↔ (2) by (b), (6) ↔ (2) and (4) ↔ (2) by
+2.5(a),(b). It remains to show that (1) ↔ (3). Using [L4, 7.2] (which is applicable
+by the odd vanishing (b) and [L4, 8.6]) we see that (1) ↔ (1′ ) and (3) ↔ (3′ )
+where
+   (1’) H∗C (Py , L̇) 6= 0;
+   (3’) H∗C (Ȧ, L̇) 6= 0.
+   It remains to show that (1′ ) ↔ (3′ ). Let PyC , ȦC , nC be the fixed point sets
+                                                          0               C
+of the C-action on Py , Ȧ, n. Since C contains ZQ          1 we have n      = {0} hence
+  C      C
+Py = Ȧ . By the localization theorem [L5, 4.4] (which is applicable by [L4, 8.6]
+and (b)), the canonical HC∗ -linear maps H∗C (PyC , L̇) −  → H∗C (Py , L̇), H∗C (ȦC , L̇) −
+                                                                                           →
+  C
+H∗ (Ȧ, L̇) become isomorphisms after the scalars are extended to the quotient field
+of HC∗ . Hence the canonical HC∗ -linear map H∗C (Py , L̇) −   → H∗C (Ȧ, L̇) becomes an
+isomorphism after the scalars are extended to the quotient field of HC∗ . Since the
+HC∗ -modules H∗C (Py , L̇), H∗C (Ȧ, L̇) are finitely generated, projective (by [L4, 7.2]
+which is applicable by [L4, 8.6] and (b)) it follows that (1′ ) ↔ (3′ ).
+   The previous argument shows also that H∗C (Py , L̇) −      → H∗C (Ȧ, L̇) is injective.
+     For x ∈ g let xs be the semisimple part of x.
+Lemma 2.9. Let Y = {x ∈ q; zg (xs ) ∈ q}.
+   (a) Y is an open dense subset of q.
+   (b) Let z be an element in the image of pr1 : Ẏ −  → Y . There exists a Levi
+subgroup L of Q such that the following holds: for any P ∈ P such that (z, P ) ∈ Ẏ
+we have ZL0 ⊂ P .
+   (c) We have Ẏ = ∪w∈W∗ Ẏw .
+   (d) For any w ∈ W∗ , there is a well defined isomorphism of algebraic varieties
+          ∼
+fw : Ẏw −→ Ẏ1 given by (x, P ) 7→ (x, P ! ).
+   (e) For any w ∈ W∗ , Ẏw is open and closed in Ẏ .
+   We prove (a). Let S be the variety of semisimple classes of q/n. Then Y is the
+inverse image under q −→ q/n −→ S (composition of canonical maps) of a subset Ȳ
+of S. Let c be a Cartan subalgebra of q1 . It is enough to show that Ȳ is non-empty,
+open in S or that the inverse image Ỹ of Ȳ under the canonical open map c −    →S
+is non-empty open in c. Now
+
+                Ỹ = Y ∩ c = {x ∈ c; zg (x) ⊂ q} = {x ∈ c; zg (x) ⊂ q1 }.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                             19
+
+Let R0 (resp. R0′ be the set of roots of g (resp. of q1 ) with respect to c. Then
+R0′ ⊂ R0 and
+
+   Ỹ = {x ∈ c; {α ∈ R0 ; α(x) = 0} ⊂ R0′ } = {x ∈ c; α(x) 6= 0 ∀α ∈ R0 − R0′ }.
+This is non-empty, open in c; (a) is proved.
+    We prove (b). We can find a Levi subgroup L of Q such that zg (zs ) ⊂ L. Let
+P ∈ P be such that (z, P ) ∈ Ẏ . We have z ∈ P , π P (z) ∈ cP + zP̄ hence zs ∈
+P , πP (zs ) ∈ zP̄ . Hence zs ∈ π −1P (zP̄ ), that is zs is contained in a Cartan subalgebra
+     −1
+of π P (zP̄ ). Equivalently, zs ∈ c where c is the centre of a Levi subalgebra P 1 of
+P . Since c is abelian, from zs ∈ c we deduce c ⊂ zg (xs ) hence c ⊂ L. Hence zL is
+contained in zg (c) = P 1 . Thus, zL ⊂ P and (b) follows.
+    We prove (c). Let (z, P ) ∈ Ẏ . Let L, zL be as in the proof of (b). We have zL ⊂
+P . Since z ∈ zq (xs ) ⊂ L, we have z ∈ L hence [zL , z] = 0. Then [π P (zL ), π P (z)] =
+0. By a known property of cuspidal local systems, the centralizer in P̄ of an element
+in cP + zP̄ (in particular, π P (z)) has a unique Cartan subalgebra, namely zP̄ . It
+follows that π P (zL ) (the Lie algebra of a torus) is contained in zP̄ . Thus, zL ⊂
+π −1                                                                   −1
+  P (zP̄ ). Hence zL is contained in a Cartan subalgebra of π P (zP̄ ). Equivalently,
+zL ⊂ c′ where c′ is the centre of a Levi subalgebra of P . It follows that zg (c′ ) (a
+Levi subalgebra of P ) is contained in L hence is contained in q. In particular, the
+Q-orbit of P in P is good. Thus, (z, P ) ∈ Ẏw for some w ∈ W∗ . This proves (c).
+    We prove (d). Let (z, P ) ∈ Ẏw . Let L be as in (b). Then ZL0 ⊂ P . By 2.1(b)
+(with S replaced by ZL0 ) we have (z, P ! ) ∈ Ẏ1 . Hence the morphism fw : Ẏw −      → Ẏ1
+as in (d) is well defined.
+    Assume that (z, P ), (z ′ , P ′ ) in Ẏw have the same image under fw , that is z = z ′
+and P ! = P ′! . Let L be as in (b) (attached to z = z ′ ). Then ZL0 ⊂ P, ZL0 ⊂ P ′ .
+Using 2.1(a) (with S replaced by ZL0 ) we see that P ! = P ′! implies P = P ′ . Thus,
+fw is injective.
+    Now let (z, P1 ) ∈ Ẏ1 . Let P be the unique subgroup in o(w)S (S as in 2.1) such
+that P ! = P1 . By 2.1(b) we have (z, P ) ∈ Ẏw . We have fw (z, P ) = (z, P1 ). Thus
+fw is surjective. We see that fw is bijective. We omit the proof of the fact that
+fw−1 is a morphism.
+    We prove (e). Let us first replace our cuspidal datum (see 1.4) by the cuspidal
+datum (B, {0}, C) where B is the variety of Borel subgroups of G. Let Y ′ , W∗′ , Yw′ ′
+be the analogues of Ẏ , W∗ , Ẏw for this new cuspidal datum (Y is unchanged).
+Now Y1′ = {(z, B); z ∈ Y, B ∈ B, B ⊂ Q, z ∈ B} and pr1 : Y1′ −           → Y is proper since
+                                                                        ′
+{B; B ∈ B, B ⊂ Q} is projective. Using the isomorphism Yw′ −               → Y1′ (as in (d)),
+                            ′                                  ′   ′
+we deduce that pr1 : Yw′ −    → Y is proper for any w ∈ W∗ . Hence in the cartesian
+diagram
+                                    Y ′ ×Y Yw′ ′ −−−−→ Yw′ ′
+                                                             
+                                        ay                pr1 y
+                                                             
+                                                pr1
+                                     Y′       −−−−→ Y
+20                                       G. LUSZTIG
+
+the map a is proper. Hence the image under a of {(ξ, ξ ′) ∈ Y ′ ×Y Yw′ ′ ; ξ ∈ Yw′ ′ }
+(a closed subset of Y ′ ×Y Yw′ ′ ) is closed in Y ′ . But this image is just Yw′ ′ . We see
+that Yw′ ′ is closed in Y ′ .
+    We now return to the cuspidal datum in 1.4. Let m : B −           → P be the morphism
+given by m(B) = P where B ⊂ P . This induces a map from the set of Q-orbits on
+B to the set of Q-orbits on P, which can be viewed as a map m̄ : W∗′ −            → W∗ . Let
+  ′′                                               ′     ′
+Y = {(z, P ); z ∈ Y, P ∈ P, z ∈ P }. Let m : Y −           → Y be given by m′ (z, B) =
+                                                                 ′′
+
+(z, m(B)). It is clear that m is a proper morphism. Now Ẏ is a subvariety of Y ′′ .
+                               ′
+
+The restriction of m′ defines a proper morphism m′′ : m′−1 (Ẏ ) −           → Ẏ . Since Yw′ ′
+is closed in Y ′ , we see that Yw′ ′ ∩ m′−1 (Ẏ ) is closed in m′−1 (Ẏ ) (here w′ ∈ W∗′ ).
+Let w ∈ W∗ . Since ∪w′ ∈W∗′ ;m̄(w′ )=w Yw′ ′ ∩ m′−1 (Ẏ ) is closed in m′−1 (Ẏ ) and m′′ is
+proper, it follows that m′′ (∪w′ ∈W∗′ ;m̄(w′ )=w Yw′ ′ ∩ m′−1 (Ẏ )) is a closed subset of Ẏ .
+It is clear that this subset is just Ẏw . Thus Ẏw is closed in Ẏ . Then ∪w1 ∈W∗ Ẏw1 is
+closed in Ẏ hence its complement Ẏw is open in Ẏ . This proves (e). The lemma is
+proved.
+2.10. Let K̃ be the direct image with compact support of L̇∗ under
+          pr1 : {(z, P ); z ∈ q/n; P ∈ P ∗ , z ∈ P ; π P (z) ∈ cP + ZP̄ } −
+                                                                          → q/n.
+
+Let K̃ ′ be the direct image with compact support of L̇∗ under
+             pr1 : {(z, P ); z ∈ q; P ∈ P ∗ , z ∈ P ; π P (z) ∈ cP + ZP̄ } −
+                                                                           → q̇
+
+By [L4, 3.4(a)] applied to q/UQ instead of g, K̃ is an intersection cohomology
+complex (ICC) supported by
+                 Ȳ0 = {z ∈ q/UQ ; ∃P ∈ P ∗ , z ∈ P ; π P (z) ∈ cP + ZP̄ }
+
+(a closed irreducible subset of q/UQ ) with a canonical WJ -action. Clearly, K̃ ′ is
+                                                          → q/UQ . Hence K̃ ′ is
+the inverse image of K̃ under the obvious vector bundle q −
+an ICC supported by
+                   Y0 = {z ∈ q; ∃P ∈ P ∗ , z ∈ P ; π P (z) ∈ cP + ZP̄ }
+(a closed irreducible subset of q) with a canonical WJ -action.
+   If X is a subvariety of q, then K̃ ′ |Ẋ1 (a complex of sheaves on Ẋ1 ) has a
+WJ -action inherited from K̃ ′ hence there is a natural WJ -action on the hyperco-
+homology
+                           Hcj (X, K̃ ′ |Ẋ1 ) = Hcj (Ẋ1 , L̇∗ ).
+From the definitions we see that, if ι : Ẋ1 −
+                                             → Ẋ is the imbedding, the induced map
+                              ι∗ : Hcj (Ẋ, L̇∗ ) −
+                                                  → Hcj (Ẋ1 , L̇∗ )
+is compatible with the WJ -actions (WJ acts on Hcj (Ẋ, L̇∗ ) as the restriction of the
+W -action 1.9).
+         CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                                    21
+
+2.11. Let
+
+             Y1 = {z ∈ q; ∃P ∈ P ∗ , z ∈ P , πP (z) ∈ cP + ZP̄ , zg (zs ) ⊂ P }.
+
+We have Y1 ⊂ Y0 . We show that
+    (a) Y1 is open dense in Y0 .
+Clearly, Y1 6= ∅. Since X1 = {z ∈ g; ∃P ∈ P, z ∈ P , π P (z) ∈ cP + ZP̄ , zg (zs ) ⊂ P }
+is open in
+    X0 = {z ∈ g; ∃P ∈ P, z ∈ P , π P (z) ∈ cl(cP ) + ZP̄ }
+(see [L5, 7.1]) it follows that X1 ∩ Y0 is open in X0 ∩ Y0 = Y0 . Hence to prove (a)
+it is enough to show that X1 ∩ Y0 = Y1 . The inclusion Y1 ⊂ X1 ∩ Y0 is obvious.
+Conversely, let z ∈ X1 ∩ Y0 . Thus, z ∈ q and there exist P ∈ P, P ′ ∈ P ∗ such that
+    z ∈ P , z ∈ P ′ , π P (z) ∈ cP + ZP̄ , π P ′ (z) ∈ cl(cP ′ ) + ZP̄ ′ , zg (zs ) ⊂ P .
+We have π P (zs ) ∈ ZP̄ , π P ′ (zs ) ∈ ZP̄ ′ ; hence there exists a Levi subalgebra l of
+p and a Levi subalgebra l′ of p′ such that zs ∈ zl , zs ∈ zl′ . Then l ⊂ zg (zs ).
+This, together with zg (zs ) ⊂ P implies l = zg (zs ). We also have l′ ⊂ zg (zs ) and
+dim l′ = dim l = dim zg (zs ) hence l′ = zg (zs ). Thus, l = l′ . Let c be the nilpotent
+                                                          ∼                                   ∼
+orbit in l that corresponds to cP under l −→ P̄ and also to cP ′ under l −→ P̄ ′ .
+Now l is a Levi subalgebra of p ∩ p′ hence z = z ′ + z ′′ where z ′ ∈ l, z ′′ ∈ UP ∩P ′ are
+uniquely determined. We also have z = z1 + z2 + z3 with z1 ∈ c, z2 ∈ zl , z3 ∈ UP
+and z = z1′ + z2′ + z3′ with z1′ ∈ cl(c), z2′ ∈ zl , z3′ ∈ UP ′ . It follows that z3 ∈
+UP ∩ P ′ ⊂ UP ∩P ′ and z3′ ∈ UP ′ ∩ P ⊂ UP ∩P ′ . By uniqueness of the decomposition
+z = z ′ + z ′′ we then have z1 + z2 = z ′ = z1′ + z2′ . Taking nilpotent parts we deduce
+z1 = z1′ . In particular, z1′ ∈ c. We see that
+    z ∈ P ′ , P ∈ P ∗ , π P ′ (z) ∈ cP ′ + ZP̄ ′ , zg (zs ) ⊂ P ′
+hence z ∈ Y1 . This proves (a).
+    Since Y0 is irreducible, from (a) we deduce that Y1 is irreducible. Now Y ∩ Y0
+is closed in Y . Since Y1 ⊂ Y , from (a) we deduce that Y1 is open dense in Y ∩ Y0 .
+In particular, Y ∩ Y0 is irreducible.
+    The image of pr1 : Ẏ −      → Y has image contained in Y0 . (Indeed, by 2.9(c),(d),
+the image of pr1 : Ẏ −        → Y is contained in the image of pr1 : Ẏ1 −           → Y .) Thus
+we have maps pr1 : Ẏ −         → Y ∩ Y0 , pr1 : Ẏw −     → Y ∩ Y0 . Taking the direct image
+                                   ∗
+with compact support of L̇ under pr1 : Ẏ −               → Y ∩ Y0 (resp. pr1 : Ẏw −     → Y ∩ Y0 ),
+we get a complex of sheaves K ′ (resp. Kw              ′
+                                                         ) on Y ∩ Y0 . From 2.9(c),(e) we have
+canonically K ′ = ⊕w∈W∗ Kw         ′
+                                      in the derived category. Since K ′ = K|Y ∩Y0 where
+K (as in 1.8) has a natural W -action, we see that K ′ has a natural W -action. On
+the other hand, W acts on W∗ by w : w1 7→ w ∗ w1 where w ∗ w1 is the element of
+minimal length in ww1 WJ .
+                                            ′      ′
+Lemma 2.12. For w ∈ W and w1 ∈ W∗ we have wKw 1
+                                                = Kw∗w 1
+                                                         .
+   Clearly, K1′ = K̃Y′ ∩Y0 . (Note that Y ∩Y0 is an open dense subset of Y0 since Y is
+open in q and Y ∩Y0 6= ∅.) It follows that K1′ is an ICC supported by Y ∩Y0 . Using
+                                               ′
+2.9(d) we deduce that for any w1 ∈ W∗ , Kw       1
+                                                   is isomorphic to K1′ in the derived
+22                                        G. LUSZTIG
+
+                     ′
+category. Hence Kw     1
+                         is an ICC supported by Y ∩ Y0 . Since K ′ = ⊕w1 ∈W∗ Kw   ′
+                                                                                    1
+we see that K ′ is an ICC supported by Y ∩ Y0 . It is therefore sufficient to check
+                 ′         ′
+the equality wKw   1
+                     = Kw∗w   1
+                                over the open dense subset Y1 of Y ∩ Y0 . Using [L4,
+3.2(a)] we see that
+
+              (Y1 )˙ = {(z, P ); z ∈ Y1 ; zg (zs ) is a Levi subalgebra of P }.
+
+Then W acts freely on (Y1 )˙ by w : (z, P ) 7→ (z, P ′ ) where P ′ ∈ P is defined by the
+condition that zg (zs ) is a Levi subalgebra of P ′ and (P, P ′ ) is in the good G-orbit
+on P × P corresponding to w. The decomposition (Y1 )˙ = ⊔w1 ∈W∗ (Y1 )˙w1 clearly
+satisfies
+   w(Y1 )˙w1 = (Y1 )˙w∗w1
+for any w ∈ W, w1 ∈ W1 . Using the definition of K ′ and of the W -action on it we
+              ′       ′
+see that wKw    1
+                  = Kw∗w  1
+                            holds over Y1 . The lemma is proved.
+Lemma 2.13. Assume that Hc∗ (Py , L̇∗ ) 6= 0. Let ι : Ȧ′′1 −     → Ȧ′′ be the inclusion.
+The linear map
+                  Hcj (Ȧ′′ , L̇∗ ) −
+                                    → C[W ] ⊗C[WJ ] Hcj (Ȧ′′1 , L̇∗ )
+defined by ξ 7→ w∈W∗ w ⊗ ι∗ (w−1 ξ) is an isomorphism.
+               P
+
+   Let z ∈ A′′ . We have z = y + n + t where n ∈ n and t ∈ t.
+   By 2.8(g) we have Hc∗ (Py∗ , L̇∗ ) 6= 0 hence by [L4, 8.6] we have Eu(Py∗ ) 6= 0. The
+set {P ∈ Py∗ , t ∈ P } is the fixed point set of a torus action on Py∗ hence it has the
+same Euler characteristic as Py∗ ; in particular, this set is non-empty.
+   Let P ∈ Py∗ be such that t ∈ P . Since n ⊂ P we have z ∈ P . Since t ∈ t, we
+have [t, x] ∈ UQ ⊂ UP for all x ∈ q. In particular, [t, x] ∈ UP for all x ∈ P hence
+
+(a)                                      π P (t) ∈ ZP̄ .
+
+Thus, π P (z) = π P (y) + π P (t) ∈ cP + ZP̄ so that z ∈ Y0 . Now z and y + t have
+the same image in q/n hence zs and t have the same image in q/n hence zs and
+t are in the same Ad(UQ )-orbit. Since t ∈ tr we have zg (t) ⊂ q hence zg (zs ) ⊂ q
+so that z ∈ Y . Thus, z ∈ Y0 ∩ Y . We see that A′′ ⊂ Y0 ∩ Y . Taking the direct
+image with compact support of L̇∗ under pr1 : Ȧ′′ −     → A′′ (resp. pr1 : Ȧ′′w −
+                                                                                  → A′′ )
+we obtain a complex of sheaves K ′′ (resp. Kw   ′′
+                                                   ) on A′′ . This is the same as K ′ |A′′
+(resp. Kw |A′′ ). Hence we have canonically K ′′ = ⊕w∈W∗ Kw
+          ′                                                         ′′
+                                                                       and from 2.12 we
+deduce that the W -action on K ′′ satisfies wKw   ′′
+                                                     1
+                                                       = K ′′
+                                                           w∗w1 for any  w ∈ W and any
+                              ′′             ′′
+w1 ∈ W∗ . Hence we have K = ⊕w∈W∗ wK1 . It follows that we have canonically
+
+            Hcj (A′′ , K ′′ ) = ⊕w∈W∗ Hcj (A′′ , Kw
+                                                  ′′
+                                                     ) = ⊕w∈W∗ wHcj (A′′ , K1′′ )
+
+that is,
+             Hcj (Ȧ′′ , L̇∗ ) = ⊕w∈W∗ Hcj (Ȧ′′w , L̇∗ ) = ⊕w∈W∗ wHcj (Ȧ′′1 , L̇∗ ).
+The lemma follows.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                           23
+
+Lemma 2.14. Let ι′ : Ȧ′1 −
+                          → Ȧ′ be the inclusion. The linear map
+
+                        Hcj (Ȧ′ , L̇∗ ) −
+                                         → C[W ] ⊗C[WJ ] Hcj (Ȧ′1 , L̇∗ )
+
+defined by ξ 7→             w ⊗ ι′∗ (w−1 ξ) is an isomorphism.
+                  P
+                    w∈W∗
+
+    If Hc∗ (Py , L̇∗ ) = 0 then the linear map above is 0 −
+                                                          → 0, by 2.8(g) and the result
+                                        ∗     ∗
+is obvious. Assume now that Hc (Py , L̇ ) 6= 0. It suffices to prove the similar
+result where the ground field C is replaced by an algebraic closure F̄p of the finite
+field Fp where p is a large enough prime (local systems and cohomology will be
+l-adic, where l is a prime 6= p). We will assume (in this proof) that G has a fixed
+Fq -split rational structure (Fq ⊂ F̄p has q elements) with Frobenius map F , that
+                                                                           ∼
+y, c, Q, Q1 are F -stable and that we are given an isomorphism F ∗ L −→ L which
+induces on any stalk at a point of c(Fq ) a map of finite order. Moreover we assume
+that any nilpotent orbit in g or q is defined over Fq and that any irreducible local
+system over such an orbit is defined over Fq . Using the l-adic analogue of Lemma
+2.13 and taking pure parts we obtain an isomorphism
+
+                                        → Q̄l [W ] ⊗Q̄l [WJ ] Hcj (Ȧ′′1 , L̇∗ )pure
+                  Hcj (Ȧ′′ , L̇∗ )pure −
+
+where Hcj (?, ?)pure is the part of Hcj (?, ?) where the Frobenius map acts with
+eigenvalues λ such that any complex absolute value of λ is q j/2 . It is then enough
+to show that
+
+(a)                            Hcj (Ȧ′′ , L̇∗ )pure = Hcj (Ȧ′ , L̇∗ ),
+
+
+(b)                           Hcj (Ȧ′′w , L̇∗ )pure = Hcj (Ȧ′w , L̇∗ )
+
+for any w ∈ W∗ .
+   We prove (b). Using 2.5(b) (or rather its analogue over F̄p ) we see that it is
+enough to show that
+   Hcj (Ȧ′′11 , L̇∗ )pure = Hcj (Ȧ′11 , L̇∗ ).
+Using 2.5(a) (or rather its analogue over F̄p ) we see that it is enough to show that
+   Hcj ((y + tr ) × Py∗ , L̇∗ )pure = Hcj ((y + t) × Py∗ , L̇∗ ).
+Using Künneth’s theorem, we see that it is enough to show that
+
+(c)                            Hcj (Py∗ , L̇∗ )pure = Hcj (Py∗ , L̇∗ ),
+
+
+(d)                              Hcj (tr , Q̄l )pure = Hcj (t, Q̄l ).
+
+Since tr is the complement in t of a finite set of hyperplanes, the eigenvalues of F
+on Hcj (tr , Q̄l ) are easily seen to be of the form q j−dim t (see [Le]) and (d) follows.
+24                                            G. LUSZTIG
+
+     Now (c) is a special case of
+
+(e)                               Hcj (Px , L̇∗ )pure = Hcj (Px , L̇∗ ),
+
+(for any nilpotent element x ∈ g(Fq )) obtained by replacing G by Q1 . To prove (e)
+is the same as to prove that the eigenvalues of F on the stalk at x ∈ g(Fq ) of the
+j-th cohomology sheaf of K have complex absolute value q j/2 . Now the restriction
+of K to the nilpotent variety of g is of the form ⊕O,E VO,E ⊗ ICC(cl(O), E) where
+O runs over the nilpotent orbits in g and E are irreducible local systems on O that
+are linked to our fixed cuspidal datum by the generalized Springer correspondence
+[L2, Sec. 6]; VO,E are certain multiplicity spaces. It is then enough to prove that
+for any of these ICC(cl(O), E), the eigenvalues of F on the stalk at x ∈ g(Fq ) of the
+j-th cohomology sheaf have complex absolute value q j/2 (this holds by [L3, 24.6])
+and that F acts trivially on each multiplicity space VO,E . These multiplicity spaces
+can be viewed as multiplicity spaces of the various irreducible representations of
+W in the regular representation of W hence F acts on them trivially. This proves
+(e) hence (c) and (b).
+   We prove (a). We can arrange the Q-orbits on P in a sequence O1 , O2 , . . . , On
+as in the proof of 2.8. Thus, Rm = O1 ∪ O2 ∪ · · · ∪ Om is closed in P for any
+m ∈ [1, n]. We set R0 = ∅.
+   To prove (a) it is enough to show that
+
+                                Hcj (Ȧ′′Rm , L̇∗ )pure = Hcj (Ȧ′Rm , L̇∗ ),
+
+for any m ∈ [0, n]. We argue by induction on m. For m = 0 the result is trivial.
+Assume now that m ≥ 1 and that the result is known for m − 1. We have a
+cohomology exact sequence
+
+               → Hcj (Ȧ′′Om , L̇∗ ) −
+              0−                     → Hcj (Ȧ′′Rm , L̇∗ ) −
+                                                           → Hcj (Ȧ′′Rm−1 , L̇∗ ) −
+                                                                                   →0
+
+(we use the fact that Ȧ′′Om is empty if Om is not good, see 2.9(c), and is both
+open and closed in Ȧ′′ if Om is good, see 2.9(e). Taking pure parts in this exact
+sequence gives again an exact sequence
+
+        → Hcj (Ȧ′′Om , L̇∗ )pure −
+       0−                         → Hcj (Ȧ′′Rm , L̇∗ )pure −
+                                                            → Hcj (Ȧ′′Rm−1 , L̇∗ )pure −
+                                                                                        → 0.
+
+This exact sequence together with the exact sequence 2.8(f) are the rows of the
+commutative diagram
+
+0 −−−−→ Hcj (Ȧ′′Om , )pure −−−−→ Hcj (Ȧ′′Rm , )pure −−−−→ Hcj (Ȧ′′Rm−1 , )pure −−−−→ 0
+                                                                    
+                                                                    
+                  y                         y                         y
+0 −−−−→        Hcj (Ȧ′Om , )      −−−−→        Hcj (Ȧ′Rm , )    −−−−→         Hcj (Ȧ′Rm−1 , )   −−−−→ 0
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                             25
+
+where the vertical maps are induced by the obvious open imbeddings and the
+symbol L̇∗ is omitted in the notation. Now the left vertical map is an isomorphism.
+(If Om is good this follows from (b); if Om is not good this follows from the fact
+that Hcj (Ȧ′Om , L̇∗ ) = 0, see 2.7, and that Ȧ′′Om = ∅, see 2.9(c).) The right vertical
+map is an isomorphism by the induction hypothesis. It follows automatically that
+the middle vertical map is an isomorphism. This proves (a). The lemma is proved.
+Lemma 2.15. Let ι′ : Ȧ′1 −
+                          → Ȧ′ be the inclusion. The HC∗ -linear map
+
+(a)                     C[W ] ⊗C[WJ ] H∗C (Ȧ′1 , L̇) −
+                                                      → H∗C (Ȧ′ , L̇)
+
+defined by w ⊗ ξ 7→ wι′! (ξ) is an isomorphism.
+    By [L4, 3.8] (which is applicable in view of 2.8(a)), the two sides of (a) are
+finitely generated projective HC∗ -modules which after applying H{1} ∗
+                                                                        ⊗HC∗ become
+the analogous objects with C replaced by {1}. Now (a) is an isomorphism when C
+is replaced by {1} (we take the transpose of the isomorphism in Lemma 2.14). We
+see that the lemma can be deduced from the following statement which is easily
+verified.
+    Let R be the polynomial algebra over C in the indeterminates x1 , x2 , . . . , xn
+graded by deg(xi ) = 2 for all i. Let I be the ideal of R generated by x1 , x2 , . . . , xn .
+Let M, M ′ be two N-graded free R-modules and let f : M −          → M ′ be an R-
+linear map compatible with the gradings such that f induces an isomorphism
+          ∼
+M/IM −→ M ′ /IM ′ . Then f is an isomorphism.
+    The lemma is proved.
+               → Ȧ be the inclusion. Consider the HC∗ -linear map
+   Let ι : Ȧ1 −
+
+(b)                         H ⊗H′ H∗C (Py∗ , L̇) −
+                                                 → H∗C (Ȧ, L̇)
+
+given by the composition
+
+                                                        1⊗p∗
+  H ⊗H′ H∗C (Py∗ , L̇) = C[W ] ⊗C[WJ ] H∗C (Py∗ , L̇) −−−→ C[W ] ⊗C[WJ ] H∗C (Ȧ1 , L̇)
+(c)
+    a
+   → H∗C (Ȧ, L̇)
+   −
+
+                                                 → By∗ is the affine space bundle
+where a is given by w ⊗ ξ 7→ wι! (ξ) and p : Ȧ1 −
+(z, P ) 7→ P .
+Theorem 2.16 (Strong induction theorem). The W -module structure and S-
+module structure on H∗C (Ȧ, L̇) define an H-module structure on H∗C (Ȧ, L̇). More-
+over, the map 2.15(b) is an H-linear isomorphism.
+  By the argument in 2.8(g), we have a natural HC∗ -linear imbedding H∗C (Py , L̇) −
+                                                                                   →
+ C
+H∗ (Ȧ, L̇) which becomes an isomorphism after the scalars are extended to the
+26                                             G. LUSZTIG
+
+quotient field of HC∗ . Since the W -module structure and S-module structure on
+H∗C (Py , L̇) are known to define an H-module structure, the same must then hold
+for H∗C (Ȧ, L̇) (which is projective over HC∗ ). This proves the first assertion of the
+theorem.
+   To prove the second assertion we may assume by 2.8(g) that Hc∗ (Py , L̇∗ ) 6= 0.
+                                                      pr2
+The composition of C ⊂ G × C∗ with G × C∗ −−→ C∗ is surjective, as we see from
+the Morozov-Jacobson theorem for y ∈ q1 . Hence the image under the induced
+                    ∗
+homomorphism HC          → HC∗ of the generator r is a non-zero element of HC∗ denoted
+                       ∗ −
+
+again by r. It is enough to show that a in 2.15(c) is an isomorphism. Recall from
+2.8 that b = dim t. We show that
+   (a) the map (ι1 )! : HjC (Ȧ1 , L̇) −       C
+                                         → Hj+2b   (Ȧ′1 , L̇) induced by the inclusion ι1 :
+   → Ȧ′ is injective and its image equals rb HjC (Ȧ′1 , L̇).
+Ȧ −
+Recall that
+                   Ȧ′1 = {(z, P ) ∈ ġ; z ∈ y + zn (φ(f0 )) + t, P ⊂ Q},
+
+                           Ȧ1 = {(z, P ) ∈ ġ; z ∈ y + zn (φ(f0 )), P ⊂ Q}.
+We have an isomorphism
+                                                         ∼
+(b)                                         k : Ȧ1 × t −→ Ȧ′1
+
+given by ((y +n, P ), t) 7→ (y +n +t, P ) where n ∈ zn (φ(f0 )), t ∈ t. (We use the fact
+that t ⊂ π −1 (ZP̄ ) + UP for any P ∈ P ∗ , see 2.13(a).) Note that k is C-equivariant
+where the action C × t −      → t is ((g, λ), t) 7→ λ−2 t.
+    This implies, by [L4, 1.10(b)] that the image of (ι1 )! is rb HjC (Ȧ′1 , L̇). Since
+rb 6= 0 in HC∗ and H∗C (Ȧ′1 , L̇) is projective over HC∗ , we have
+    dim rb HjC (Ȧ′1 , L̇) = dim HjC (Ȧ′1 , L̇) = dim HjC (Ȧ1 , L̇).
+(The second equality follows from (b) and [L4, 1.4(e)].) Hence (ι1 )! must be an
+isomorphism onto rb HjC (Ȧ′1 , L̇). This proves (a).
+    As in 2.8(c), let D = dim Ȧ, D′ = dim Ȧ′ . Let D1 = dim Ȧ1 , D1′ = dim Ȧ′1 so
+that D1′ = D1 + b.
+    From 2.15 we have HjC (Ȧ′ , L̇) = w∈W wHj−2D      C                ′                 C
+                                                             ′ +2D ′ (Ȧ1 , L̇) and ι! : H∗ (Ȧ, L̇) −
+                                                                                                     →
+                                            P
+                                                                         1
+
+H∗C (Ȧ′ , L̇) (induced by the inclusion ι : Ȧ −
+                                                → Ȧ′ ) is W -equivariant. Hence from
+(a) we can deduce that
+
+     rb HjC (Ȧ′ , L̇) =                              ′
+                           X                                      X
+                                 wrb Hj−2D
+                                      C
+                                           ′ +2D ′ (Ȧ1 , L̇) ⊂
+                                                1
+                                                                                 C
+                                                                        w(ι1 )! Hj−2D ′ +2D ′ (Ȧ1 , L̇)
+                                                                                           1
+                           w∈W                                    w∈W
+         X
+                    C                                  C
+     ⊂         wι! Hj−2D ′ +2D ′ +2D−2D (Ȧ, L̇) ⊂ ι! Hj−2D ′ +2D ′ +2D−2D (Ȧ, L̇).
+                              1        1                         1        1
+         w∈W
+
+
+Thus,
+                              rb HjC (Ȧ′ , L̇) ⊂ ι! Hj−2D
+                                                      C
+                                                           ′ +2b+2D (Ȧ, L̇).
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                           27
+
+It follows that
+
+          dim rb HjC (Ȧ′ , L̇) = dim HjC (Ȧ′ , L̇) ≤ dim ι! Hj−2D
+                                                               C
+                                                                    ′ +2b+2D (Ȧ, L̇)
+
+                 C
+          ≤ dim Hj−2D ′ +2b+2D (Ȧ, L̇).
+
+
+
+
+These inequalities must be equalities since dim HjC (Ȧ′ , L̇) = dim Hj−2D
+                                                                        C
+                                                                             ′ +2b+2D (Ȧ, L̇)
+
+(see 2.8(c)). It follows that
+   (c) rb HjC (Ȧ′ , L̇) = ι! Hj−2D
+                               C
+                                    ′ +2b+2D (Ȧ, L̇) and ι! is an isomorphism onto its
+
+image.
+From 2.15(a) we deduce
+                                                   ∼
+                  C[W ] ⊗C[WJ ] rb HjC (Ȧ′1 , L̇) −→ rb Hj+2D
+                                                          C               ′
+                                                               ′ −2D ′ (Ȧ , L̇)
+                                                                    1
+
+
+
+which by (a),(c) becomes
+                                                    ∼
+                    C[W ] ⊗C[WJ ] HjC (Ȧ1 , L̇) −→ Hj−2D
+                                                     C
+                                                         1 +2D
+                                                               (Ȧ, L̇).
+
+The theorem is proved.
+2.17. Let V be a finite dimensional C-vector space with an algebraic action of
+C. let [V ] ∈ HC∗ be the element corresponding (as in [L4, 1.11]) to the regular
+function C − → C, ξ 7→ det(ξ, V ). Here ξ : V −  → V is given by the associated
+Lie algebra representation of C on V . Now E = zn (φ(f0 )) is a C-module for the
+restriction of the G × C∗ -action on g. Hence [E] is a well defined element of HC∗ .
+    Note that E = ker(ad(f0 ) : n −  → n) ∼= coker(ad(e0 ) : n − → n) canonically.
+(Indeed, we have n = ker(ad(f0 ) : n − → n) ⊕ Im(ad(e0 ) : f n − → n) since n is an
+sl2 (C)-module.)
+Lemma 2.18. (a) The homomorphism H∗C (Py∗ , L̇) −        → H∗C (Ȧ1 , L̇) induced by the
+inclusion Py∗ ⊂ Ȧ1 is injective.
+   (b) The homomorphism H∗C (Py , L̇) −  → H∗C (Ȧ, L̇) induced by the inclusion Py ⊂
+Ȧ is injective.
+   (c) We have [E]H∗C (Ȧ1 , L̇) ⊂ H∗C (Py∗ , L̇).
+   (d) We have [E]H∗C (Ȧ, L̇) ⊂ H∗C (Py , L̇).
+   (b) has already been noted at the end of 2.8. An entirely similar proof yields
+(a).
+   We prove (c). We have an isomorphism
+                                                        ∼
+                                   zn (φ(f0 )) × Py∗ −→ Ȧ1
+
+given by (n, P ) 7→ (y + n, P ) (we use the fact that zn (φ(f0 )) ⊂ n ⊂ UP for any
+P ∈ P ∗ ). Under this isomorphism, the inclusion Py∗ ⊂ Ȧ1 corresponds to the map
+28                                          G. LUSZTIG
+
+Py∗ −
+    → zn (φ(f0 )) × Py∗ given by P 7→ (0, P ). Now the result follows using [L4,
+1.10(b)].
+   We prove (d). Using 2.16, (c) and the fact that the homomorphism in (b) is
+W -equivariant, we see that
+                                X                   X
+          [E]H∗C (Ȧ, L̇) = [E]   wH∗C (Ȧ1 , L̇) =   w[E]H∗C (Ȧ1 , L̇)
+                                  w∈W                       w∈W
+                X
+            ⊂         wH∗C (Py , L̇)   ⊂   H∗C (Py , L̇).
+                w∈W
+
+The lemma is proved.
+2.19. From 2.18 we see that we have a natural isomorphism
+                                    ∼
+   HC∗ [[E]−1 ] ⊗HC∗ H∗C (Py , L̇) −→ HC∗ [[E]−1 ] ⊗HC∗ H∗C (Ȧ, L̇).
+We combine this with 2.16; theorem 1.17 follows.
+
+                      3. Proof of Theorems 1.15, 1.21, 1.22
+3.1. Until the end of 3.8, let P, L, T, W (L), R, C be as in 1.6. Let R1 = {α ∈
+R; 2α ∈   / R}. Then R1 is (reduced) root system in T ∗ with Weyl group W (L).
+For i ∈ I, the set R1 ∩ {αi , 2αi } consists of a single element; we call it α′i . Then
+                                                          ′
+{α′i ; i ∈ I} is a set of simple roots for R1 . We have gαi ⊂ UP .
+3.2. Let φ0 : sl2 (C) −
+                      → L be a Lie algebra homomorphism such that φ0 (e0 ) ∈ C.
+(Such φ0 exists by the Morozov-Jacobson theorem.) Let Z = Z(Im(φ0 ))0 . (A
+connected reductive subgroup of G.) Then Z = z(Im(φ0 )).
+Lemma 3.3. (a) T is a maximal torus of Z.
+   (b) Let NZ (T ) be the normalizer of T in Z so that NZ (T )/T is the Weyl group of
+Z. The obvious homomorphism NZ (T )/T −      → N (T )/L = W (L) is an isomorphism.
+   (c) We have g ∩ Z = L ∩ Z = T . For any α ∈ R1 we have dim(gα ∩ Z) = 1.
+                   0
+
+Hence R1 is the root system of Z with respect to T .
+   (d) P ∩ Z is a Borel subalgebra of Z.
+   (e) The map J 7→ PJ ∩ Z is a bijection between {J; J ⊂ I} and the set of
+parabolic subalgebras of Z that contain P ∩ Z.
+   (f ) zZ = zg .
+   For (a) see [L4, 2.6(a)]. For (b) see [L6, 11.7(b)]. For (c) see [L4, 2.9]. For (d)
+see [L6, 11.7(a)].
+   We prove (e). The map in (e) is well defined by (d). This is a map between two
+finite sets of the same cardinal, 2♯(I) . To show that it is bijective, it is enough to
+show that it is injective. Let J, J ′ be two subsets of I that satisfy PJ ∩Z = PJ ′ ∩Z.
+We must show that J = J ′ . We have PJ ∩PJ ′ = PJ∩J ′ . Then PJ∩J ′ ∩Z = PJ ∩Z =
+PJ ′ ∩ Z and it is enough to show that J ∩ J ′ = J and J ∩ J ′ = J ′ . Thus we are
+reduced to the case where J ⊂ J ′ . Assume that J 6= J ′ . Let i ∈ J ′ − J. Then
+Pi ⊂ PJ ′ , Pi 6⊂ PJ . Using 1.6(a) with Q = PJ we see that E ∩ PJ = 0 where
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                          29
+
+E = g−αi ⊕g−2αi . Note that E ⊂ PJ ′ . Let E ′ = E ∩Z. We have E ′ ∩(PJ ∩Z) = 0,
+E ′ ⊂ PJ ′ ∩ Z. Since dim(E ′ ) = 1 (by (c)), we deduce that PJ ∩ Z 6= PJ ′ ∩ Z, a
+contradiction. This proves (e).
+   We prove (f). Since zg ⊂ zZ , it is enough to show that the two centres have the
+same dimension. From (a) and (c) we see that dim zZ = dim(T ) − ♯(I). It is easy
+to see that dim zg = dim(T ) − ♯(I). This proves (f). The lemma is proved.
+3.4. Let V ∈ I and let D be the unique P -stable line in V . For any v ∈ D, x ∈ T
+we have xv = ξV (x)v where ξV ∈ T ∗ corresponds under the obvious isomorphism
+    ∼
+T −→ P /[P , P ] = h to the vector of h∗ denoted in 1.19 again by ξV . Now {x ∈
+g; xD ⊂ D} = PK for a well defined K ⊂ I. We then say that V ∈ IK . We say
+            0
+that V ∈ IK   if V ∈ IK and zg acts as 0 on V .
+                                  0
+   Let i ∈ I. Then {ξV ; V ∈ II−{i}   } = {̟i , 2̟i , 3̟i , . . . } where ̟i ∈ T ∗ (or
+̟i ∈ h∗ ) is well defined; we have ̟i = ξΛi where Λi ∈ II−{i}
+                                                          0
+                                                                    is well defined up to
+isomorphism.
+3.5. Let I ′0 be the collection of all simple finite dimensional Z-modules on which
+zZ acts as 0. Let V ′ ∈ I ′0 and let D′ be the unique (P ∩ Z)-stable line in V . There
+is a unique vector ξV′ ′ ∈ T ∗ such that xv = ξV′ ′ (x)v for any v ∈ D′ , x ∈ T . Also
+{x ∈ Z; xD′ ⊂ D′ } = PK ∩ Z for a well defined K ⊂ I (see 3.3(e)). We then say
+that V ′ ∈ I ′0K .
+   Let i ∈ I. We have {ξV ′ ; V ′ ∈ I ′0I−{i} } = {̟i′ , 2̟i′ , 3̟i′ , . . . } where ̟i′ ∈
+T ∗ is well defined; we have ̟i′ = ξΛ′ ′ where Λ′i ∈ I ′0I−{i} is well defined up to
+                                         i
+isomorphism.
+Lemma 3.6. Let i ∈ I. We have ̟i = ni ̟i′ for some ni ∈ N − {0}.
+   Let D be the unique P -stable line in Λi . Then PI−{i} = {x ∈ g; xD ⊂ D}.
+We may regard Λi as a Z-module by restriction. In this Z-module, zZ acts as
+0 (see 3.3(f)) and D is stable under the Borel subalgebra P ∩ Z (see 3.3(d)) of
+Z. Hence the Z-submodule V ′ generated by D is simple. Clearly, {x ∈ Z; xD ⊂
+D} = PI−{i} ∩ Z. Thus, V ′ ∈ I ′0I−{i} . From the definition, we then have ̟i ∈
+{̟i′ , 2̟i′ , 3̟i′ , . . . }. The lemma is proved.
+3.7. Let X = Hom(T, C∗ ) (homomorphisms of algebraic groups). The differential
+gives an imbedding d : X − → h∗ whose image X is a free abelian group such that
+        ∼   ∗
+C ⊗ X −→ h . Let hR = {x ∈ h; ξ(x) ∈ R ∀ξ ∈ X }.
+                                      ∼
+   Under the obvious isomorphism T −→ P /[P , P ] = h, hR corresponds to a subset
+T R of T .
+   We shall need the following variant of a lemma of Langlands.
+Lemma 3.8. Assume that G is semisimple.
+   (a) For any f ∈ hR there is a subset J of I and a decomposition f = 0 f + 1 f
+with 0 f, 1 f ∈ T R such that
+
+                    αi (0 f ) < 0 if i ∈ I − J,   αi (0 f ) = 0 if i ∈ J,
+30                                       G. LUSZTIG
+
+                    ̟i (1 f ) ≥ 0 if i ∈ J,    ̟i (1 f ) = 0 if i ∈ I − J.
+
+Moreover, J, 0 f, 1 f are uniquely determined by f .
+   (b) If f, f ′ ∈ hR satisfy ̟i (f ) ≤ ̟i (f ′ ) for any i ∈ I then ̟i (0 f ) ≤ ̟i (0 f ′ )
+for any i ∈ I.
+                                   ∼
+   Using the isomorphism T −→ h in 3.7, we see that the statement above is
+equivalent to the one where h, hR are replaced by T , T R . Moreover, if αi , ̟i are
+replaced by α′i , ̟i′ , then these statements hold by Langlands’ lemma [BW, IV,
+6.11-6.13] applied to the root system R1 of Z with respect to T . However this
+replacement does not affect the statements since α′i , ̟i′ differ from αi , ̟i only by
+rational > 0 factors (see 3.1, 3.6). The lemma is proved.
+3.9. In the remainder of this section (except in 3.42) we fix y ∈ gN , r ∈ C and
+σ ∈ gss with [σ, y] = 2ry such that
+
+(a)                                     Eu(Pyσ ) 6= 0
+
+where
+                         P σ = {P ∈ P; σ ∈ P }, Pyσ = P σ ∩ Py
+
+and Eu denotes Euler characteristic. Condition (a) is equivalent to each of the
+following conditions.
+
+(b)                                    Euler(Py ) 6= 0,
+
+
+
+(c)                                    H∗ (Py , L̇) 6= 0,
+
+The equivalence of (a),(b) follows from the conservation of Eu by passage to the
+fixed point set of a torus action. The equivalence of (b),(c) follows from the
+vanishing theorem [L4, 8.6].
+   If r 6= 0, conditions (a),(b),(c) are also equivalent to the condition
+
+(d)                                      Ey,σ,r 6= 0.
+
+The equivalence of (c),(d) follows from [L4, 7.2] (which is applicable in view of
+[L4, 8.6]).
+Lemma 3.10. Let Q ∈ P and let Q1 be a Levi subgroup of Q. Assume that y, σ
+are contained in Q1 . Then {P ∈ Pyσ ; P ⊂ Q} =
+                                             6 ∅.
+
+   We may use the argument in the second paragraph of the proof of 2.13 (replacing
+t by σ).
+         CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                       31
+
+3.11. By a variant of the Morozov-Jacobson theorem (see [KL, 2.4(g)]) we can
+find h, ỹ in g such that
+
+                  [σ, ỹ] = −2r ỹ, [y, ỹ] = h, [h, y] = 2y, [h, ỹ] = −2ỹ.
+
+Then [σ, h] = 0.
+  We now assume that r 6= 0. We fix τ : C −
+                                          → R as in 1.20.
+  Let V be a finite dimensional g-module. We have
+
+                    V = ⊕a∈C Va where Va = {x ∈ V ; σx = ax},
+
+                  V = ⊕n∈Z (n V ) where n V = {x ∈ V ; hx = nx}.
+Since [σ, h] = 0, the maps v 7→ σv, v 7→ hv from V to V commute hence
+
+                   V = ⊕n,a;n∈Z,a∈C (n Va ) where n Va = n V ∩ Va .
+
+We have
+                V = ⊕b∈R b V where b V = ⊕n,a;τ (a)/τ (r)=n+b (n Va ).
+These definitions can be applied in particular with V replaced by g with the ad
+action of g. We have
+
+                        y ∈ 2 g2r , h ∈ 0 g0 , y ′ ∈ −2 g−2r , σ ∈ 0 g0 .
+
+From the definition we have
+
+                       x ∈ n ga , v ∈ n′ Va′ =⇒ xv ∈ n+n′ Va+a′ ,
+                                           ′                     ′
+                           x ∈ b g, v ∈ b V =⇒ xv ∈ b+b V.
+3.12. We define Q ∈ P and a Levi subgroup Q1 of Q by
+
+                        Q = ⊕n,a;τ (a)/τ (r)≤n (n ga ) = ⊕b;b≤0 b g,
+
+                       Q1 = ⊕n,a;τ (a)/τ (r)=n (n ga ) = ⊕b;b=0 b g.
+Then
+                         n = ⊕n,a;τ (a)/τ (r)<n (n ga ) = ⊕b;b<0 b g
+
+is the nil-radical of Q. Also, y, h, ỹ, σ are contained in Q1 . Now ad(σ), ad(y) define
+endomorphisms of n whose commutator is 2rad(y). Hence ad(σ) maps
+
+                               yn   = coker(ad(y) : n −
+                                                      → n)
+
+into itself.
+32                                      G. LUSZTIG
+
+Lemma 3.13. ad(σ) − 2r : y n −
+                             → y n is invertible.
+     An equivalent statement is that any eigenvalue of ad(σ) − 2r on
+
+(a)          coker(ad(y) : ⊕n,a;τ (a)/τ (r)<n (n ga ) −
+                                                      → ⊕n,a;τ (a)/τ (r)<n (n ga )
+
+is 6= 0. Now (a) is a quotient of ⊕n,a;n≤0,τ (a)/τ (r)<n (n ga ) which is itself a quotient
+of
+
+(b)                                   ⊕a;τ (a)/τ (r)<0 ga
+
+and it is enough to show that any eigenvalue λ of ad(σ) − 2r on (b) is 6= 0. We
+have λ = a − 2r for some a ∈ C such that τ (a)/τ (r) < 0. Then τ (λ)/τ (r) =
+τ (a − 2r)/τ (r) = τ (a)/τ (r) − 2 < −2. In particular, λ 6= 0.
+Lemma 3.14. Let z ∈ G be such that Ad(z)y = 2cy, Ad(z)σ = σ for some c ∈ C.
+Then z ∈ Q.
+  We must show that Ad(z)x ∈ Q for any x ∈ Q. We may assume that x ∈ n ga
+where τ (a)/τ (r) ≤ n. We have [σ, Ad(z)x] = Ad(z)[σ, x] = Ad(z)(ax) = aAd(z)x.
+Thus, Ad(z)x ∈ Ga . Since Ad(z)y = 2cy for some c, z belongs to the parabolic
+subgroup of G corresponding to ⊕m≥0 (m g). Hence Ad(z)(x) ∈ Ad(z)(n G) ⊂
+⊕m;m≥n (m g). We see that
+
+               Ad(z)(x) ∈ ⊕m;m≥n (m ga ) ⊂ ⊕m;τ (a)/τ (r)≤m (m ga ) ⊂ Q.
+
+The lemma is proved.
+Lemma 3.15. (a) Q is independent of the choice of h, ỹ.
+  (b) We have M (y, σ) ⊂ Q × C∗ .
+   We prove (a). Any other choice of h, ỹ is of the form h′ , ỹ ′ where h′ = Ad(z)h,
+ ′
+ỹ = Ad(z)ỹ for some z ∈ G such that Ad(z)y = y, Ad(z)σ = σ. (See [KL,
+2.4(h)].) Let Q′ be attached to h′ , ỹ ′ in the same way as Q is attached to h, ỹ.
+Then Q′ = zQz −1 . By 3.14 we have z ∈ Q. Hence Q′ = Q.
+   We prove (b). Let (g, λ) ∈ M (y, σ). We can find an element g1 in the one
+parameter subgroup of G corresponding to h such that Ad(g1 )y = λ2 y. Since
+h ∈ Q1 , [σ, h] = 0, we have g1 ∈ Q1 ∩ Z(σ). Replacing (g, λ) by (gg1−1 , 1) we see
+that we are reduced to the case where λ = 1 and g ∈ Z(y) ∩ Z(σ).
+   Since g ∈ Z(σ) we have Ad(g)(ga ) = ga for all a. Since g ∈ Z(y), we have
+Ad(g)(n g) ⊂ ⊕n′ ;n′ ≥n (n′ g). Hence Ad(g)(n ga ) ⊂ ⊕n′ ;n′ ≥n (n′ ga ) for any n, a.
+Using this and the definition of Q (see 3.12) we see that Ad(g)(Q) ⊂ Q. Hence
+g ∈ Q. The lemma is proved.
+Lemma 3.16. Let σ ′ , y ′ , h′ , ỹ ′ be another quadruple like σ, y, h, ỹ. Define Q′ in
+terms of σ ′ , y ′ , h′ , ỹ ′ in the same way as Q was defined in terms of σ, y, h, ỹ. As-
+                                                                               ′
+sume that Q = Q′ = G. Assume that there exist P ∈ Pyσ and P ′ ∈ Pyσ′ such that
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                             33
+
+the image of σ in P /[P , P ] = h coincides with the image of σ ′ in P ′ /[P ′ , P ′ ] = h.
+Then there exists g ∈ G such that Ad(g) carries (σ, y, h, ỹ) to (σ ′ , y ′ , h′ , ỹ ′ ).
+   Replacing (σ ′ , y ′ , h′ , ỹ ′ ) by a G-conjugate we may assume that P ′ = P and
+   πP (σ) = σ1 , πP (σ1 ) = σ1′ , πP (y ′ ) = πP (y) = y1 ,
+   πP (h′ ) = πP (h) = h1 , πP (ỹ ′ ) = πP (ỹ) = ỹ1 ,
+where y1 ∈ cP and
+   [y1 , ỹ1 ] = h1 , [h1 , y1 ] = 2y1 , [h1 , ỹ1 ] = −2ỹ1 ,
+   [σ1 , y1 ] = 2ry1 , [σ1 , ỹ1 ] = −2r ỹ1 ,
+   [σ1′ , y1 ] = 2ry1 , [σ1′ , ỹ1 ] = −2r ỹ1 .
+Moreover σ1 and σ1′ have the same image in P̄ /[P̄ , P̄ ]. Hence x = σ1 − σ1′ ∈ [P̄ , P̄ ].
+We have [x, y1 ] = 0, [x, ỹ1 ] = 0 hence [x, h1 ] = 0. Since y1 is a distinguished
+nilpotent element of P̄ , the centralizer in [P̄ , P̄ ] of y1 , h1 , ỹ1 is 0. Thus, x = 0 so
+that σ1 = σ1′ . Let L be a Levi subgroup of P . Since σ, σ ′ ∈ P , there exist g, g ′ ∈ P
+such that
+
+     Ad(g)σ ∈ L, πP (σ − Ad(g)σ) = 0, Ad(g ′ )σ ′ ∈ L, πP (σ ′ − Ad(g ′ )σ ′ ) = 0.
+
+Hence πP (Ad(g)σ) = σ1 = σ1′ = πP (Ad(g ′ )σ ′ ). Since the restriction of πP to L is
+injective, it follows that Ad(g)σ = Ad(g ′ )σ ′ . Thus, σ, σ ′ are conjugate in G.
+   Replacing (σ ′ , y ′ , h′ , ỹ ′ ) by a G-conjugate we may assume that σ ′ = σ. We show
+that
+   (a) y belongs to the (unique) open orbit of Z(σ) on g2r .
+Let G′ be the connected reductive algebraic subgroup of G such that
+
+                                    G′ = ⊕m∈Z g2mr .
+
+Note that y, h, ỹ are contained in G′ . Let n G′ = n g ∩ G′ . Since in our case,
+Q1 = g, any eigenvalue b of ad(σ − rh) : g −                → g satisfies τ (b) = 0. Hence
+                                                            ′               ′
+n ga 6= 0 =⇒ τ (a)/τ (r) = n. Hence g0 = 0 G and g2r = 2 G . It follows that
+                                                          ′
+Z(σ) is equal to the centralizer C(h) of h in G . We are reduced to the following
+known statement about sl2 -triples in G′ : y belongs to the open orbit of C(h) on
+    ′
+2 G . Thus, (a) holds.
+    Similarly, y ′ belongs to the (unique) open orbit of Z(σ ′ ) on {x ∈ g; [σ ′ , x] =
+2rx}. Since σ = σ ′ , we see that both y and y ′ belong to the unique open orbit of
+Z(σ) on g2r . In particular, y, y ′ are conjugate under an element in Z(σ).
+    Replacing (σ, y ′ , h′ , ỹ ′ ) by a Z(σ)-conjugate we may therefore assume that y =
+  ′
+y . As in the proof of 3.15, we can find z ∈ G such that Ad(z)y = y, Ad(z)σ =
+σ, h′ = Ad(z)h, ỹ ′ = Ad(z)ỹ. Replacing (σ, y, h′ , ỹ ′ ) by its Ad(z −1 )-conjugate we
+may therefore assume that (σ ′ , y ′ , h′ , ỹ ′ ) = (σ, y, h, ỹ). The lemma is proved.
+Lemma 3.17. We have {P ∈ Pyσ ; P ⊂ Q} =
+                                      6 ∅. In particular, Q ∈ PK for a well
+defined K ⊂ I.
+   This follows from 3.10.
+34                                      G. LUSZTIG
+
+3.18. Let V ∈ IJ where J ⊂ I. For any P ∈ P let DP be the unique P -stable
+line in V . If P ∈ P σ , we have necessarily DP ⊂ Va for a unique a ∈ C; we set
+νV (P ) = a. Let
+                             bV = min(b ∈ R; b V 6= 0).
+The following result is closely related to [L1, 2.8, 2.9], [KL, 7.3].
+Lemma 3.19. We preserve the setup of 3.18.
+  (a) If P ∈ P σ , y ∈ P , then τ (νV (P ))/τ (r) ≥ bV .
+  (b) If K = J, P ∈ P σ , y ∈ P , P 6⊂ Q, then τ (νV (P ))/τ (r) > bV .
+  (c) If P ∈ P, P ⊂ Q, then DP ⊂ bV V .
+  (d) If K = J, P ∈ P σ , P ⊂ Q, then τ (νV (P ))/τ (r) = bV .
+     From 3.11 we have
+                                           ′                      ′
+                         nb V ⊂ ⊕b′ ;b′ <b b V, Qb V ⊂ ⊕b′ ;b′ ≤b b V.
+Hence nbV V = 0, QbV V ⊂ bV V .
+      P P be as in (a) and let v ∈ DP − {0}. We have v ∈ VνV (P ) . We write
+    Let
+v = m (m v) where m v ∈ m VνV (P ) . Since v 6= 0, P    there exists n such that n v 6= 0.
+Since y is nilpotent in P , we have yv = 0 hence m y(m v) = 0. Since y ∈ 2 g2r ,
+we have
+                                 y(m v) ∈ m+2 VνV (P )+2r .
+        P                             P
+Since m y(m v) = 0 and the sum m (m+2 gνV (P )+2r ) is direct, we have y(m v) = 0
+for all m. In particular, y(n v) = 0. From y(n v) = 0 and n v 6= 0 we see, using the
+representation theory of sl2 that n ≥ 0. Since n v is a non-zero vector of n VνV (P ) ⊂
+                           ′
+τ (νV (P ))/τ (r)−n
+                    V and b V = 0 unless b′ ≥ bV , we see that τ (νV (P ))/τ (r) − n ≥ bV .
+Since n ≥ 0, we must have τ (νV (P ))/τ (r)) ≥ bV . This proves (a).
+    In the setup of (b), assume that τ (νV (P ))/τ (r) 6> bV . Then, by (a), we have
+τ (νV (P ))/τ (r) = bV . Also, in the proof of (a) we must have n v 6= 0 =⇒ n = 0
+so that v = 0 v ∈ 0 VνV (P ) and v ∈ τ (νV (P ))/τ (r) V = bV V . Thus, DP ⊂ bV V . By
+assumption, V contains a line D such that {x ∈ g; xD ⊂ D} = Q. This implies
+that {v ∈ V ; nv = 0} = D. (See the argument in 1.19.) Since nbV V = 0, it follows
+that bV V ⊂ D. Since DP ⊂ bV V , we have DP ⊂ D hence DP = D. Since DP is
+P -stable, we see that D is P -stable hence by the definition of D we have P ⊂ Q
+so that P ⊂ Q. This proves (b).
+    Next, assume that P is as in (c). Since QbV V ⊂ bV V , we have P bV V ⊂ bV V .
+Let b be a Borel subalgebra of P . Then bbV V ⊂ bV V and, by Lie’s theorem, there
+exists an b-stable line L in bV V . This is necessarily the unique b-stable line in V .
+Since DP is b-stable we must have L = DP hence DP ⊂ bV V . This proves (c).
+    In the setup of (d), V contains a line D such that {x ∈ G; xD ⊂ D} = Q. Now
+D is P -stable, hence DP = D. Since h is contained in the derived subalgebra of
+Q, it acts as zero on the Q-stable line D. Hence D ⊂ 0 V . We have DP ⊂ VνV (P )
+hence D ⊂ VνV (P ) . As in the proof of (b) we have bV V ⊂ D; this must be an
+equality since dim bV V ≥ 1, dim D = 1. From D ⊂ 0 V, D ⊂ VνV (P ) , D = bV V we
+deduce τ (νV (P ))/τ (r) = bV . This proves (d). The lemma is proved.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                        35
+
+Lemma 3.20. In the setup of 3.18, assume that Q = Q1 = G. Let P ′ ∈ PJ ′ where
+J ′ ⊂ J and let L′ be a Levi subgroup of P ′ . Assume that σ, y, h, ỹ are contained in
+L′ . If P ∈ P σ , P ⊂ P ′ , then τ (νV (P ))/τ (r) = bV .
+    Clearly, Q1 b V ⊂ b V for any b. Since Q1 = g, we see that b V is a g-submodule
+of V . Since V is simple, we have V = b V for some b. Since bV V 6= 0, we have
+V = bV V . Since P ′ ∈ PJ ′ , there exists a P ′ -stable line D in V . From our
+assumptions, we have h ∈ [P ′ , P ′ ]. Hence hD = 0 so that D ⊂ 0 V . Since σ ∈ P ′ ,
+we have σD ⊂ D hence D ⊂ Va for some a. Thus, D ⊂ 0 Va ⊂ τ (a)/τ (r) V . Thus,
+τ (a)/τ (r)
+            V 6= 0. Now b V = 0 unless b = bV . Hence τ (a)/τ (r) = bV . Since P ⊂ P ′ ,
+we have P D ⊂ D. Hence DP = D and a = νV (P ). The lemma is proved.
+Lemma 3.21. {P ∈ Pyσ ; P ⊂ Q} is open and closed in Pyσ .
+   (Compare [KL, 7.4].) We can find V ∈ IJ with J = K. In terms of this V we
+define νV : P σ −→ C and bV as in 3.18. Since P σ is compact, νV : P σ −       → C is
+constant on any connected component of P σ , hence it is locally constant. Hence its
+restriction νV : Pyσ −
+                     → C is locally constant. Hence {P ∈ Pyσ ; τ (νV (P ))/τ (r) = bV }
+is open and closed in Pyσ . By 3.19(b),(d), we have
+
+               {P ∈ Pyσ ; τ (νV (P ))/τ (r) = bV } = {P ∈ Pyσ ; P ⊂ Q}.
+
+The lemma follows.
+3.22. Let ψ : P σ −→ h be the morphism whose value at P is the image of σ ∈ P in
+P /[P , P ] = h. This must be locally constant since P σ is compact and h is affine.
+From the definitions, we have
+
+                                 ξV (ψ(P )) = νV (P )
+
+for any V ∈ I, P ∈ P σ .
+Lemma 3.23. If V ∈ IJ , J = K, P ∈ P σ , y ∈ P , P 6⊂ Q and P ′ ∈ P σ , P ′ ⊂ Q,
+then
+                 τ (ξV (ψ(P )))/τ (r) > τ (ξV (ψ(P ′ )))/τ (r).
+  In view of 3.22, an equivalent statement is τ (νV (P ))/τ (r) > τ (νV (P ′ ))/τ (r)
+and this follows from 3.19(b),(d).
+3.24. Since [σ, h] = 0, we have σ − rh ∈ gss . Let P σ−rh = {P ∈ P; σ − rh ∈ P }.
+Lemma 3.25. Let A = {P ∈ P σ−rh ; P ⊂ Q}.
+  (a) We have A 6= ∅.
+  (b) For P ∈ A, let tP be the image of σ − rh in P /[P , P ] = h. Let V ∈ I. We
+have τ (ξV (tP ))/τ (r) = bV .
+  (c) tP ∈ h is independent of the choice of P ∈ A. We denote it by t.
+   We prove (a). We have σ − rh ∈ Q. Hence there exists a Borel subgroup B of Q
+such that σ − rh ∈ B. By 3.17, we have {P ∈ P; P ⊂ Q} = 6 ∅. This is a conjugacy
+36                                       G. LUSZTIG
+
+class of parabolic subgroups of Q hence at least one of its members contains B.
+This proves (a).
+   We prove (b). Let DP be as in 3.18. We have V = ⊕c∈C (c) V where
+                 (c)
+                       V = ⊕n,a;a−rn=c (n Va ) = {x ∈ V ; (σ − rh)x = cx}.
+We have b V = ⊕c;τ (c)/τ (r)=b (c) V . Define ν ′ : P σ−rh −    → C by ν ′ (P ) = c where
+DP ⊂ (c) V . For P ∈ P σ−rh we have ξV (tP ) = ν ′ (P ). By 3.19(c), for P ∈ P, P ⊂
+Q we have DP ⊂ bV V , that is, DP ⊂ ⊕c;τ (c)/τ (r)=bV (c) V . Thus if P ∈ A, then
+ν ′ (P ) = c where τ (c)/τ (r) = bV . Hence ξV (tP ) = c where τ (c)/τ (r) = bV . Hence
+τ (ξV (tP )) = bV τ (r). This proves (b).
+     We prove (c). Let P ′ , P ′′ be two members of A. Let V ∈ I. By (b), we have
+τ (ξV (tP ′ )) = τ (ξV (tP ′′ )). Since this holds for any τ , we have ξV (tP ′ ) = ξV (tP ′′ ).
+Since ξV with V ∈ I span h∗ , it follows that tP ′ = tP ′′ . The lemma is proved.
+Lemma 3.26. Let P ′ ∈ P σ be such that y ∈ P ′ , P ′ ⊂ Q. (Such P ′ exists by
+3.17).
+   (a) If i ∈ I − K then −τ (αi (t))/τ (r) > 0.
+   (b) If i ∈ K then −τ (αi (t))/τ (r) = 0.
+   (c) Let V ∈ I. Then τ (ξV (ψ(P ′ ) − t))/τ (r) ≥ 0.
+   (d) Let V ∈ IJ where K ⊂ J ⊂ I. Then τ (ξV (ψ(P ′ ) − t))/τ (r) = 0.
+    Pick P ∈ A (see 3.25(a)). Since σ − rh is a semisimple element of Q1 ∩ P and
+P ⊂ Q, we can find a Levi subgroup L of P such that L ⊂ Q1 and σ − rh ∈ L. Let
+                                                    ∼
+T = ZL0 . Under the obvious isomorphism T −→ P /[P , P ] = h, t ∈ h corresponds to
+an element t ∈ T such that t = σ −rh+x where x ∈ [P , P ]. Since σ −rh ∈ L, t ∈ L,
+we have x ∈ [P , P ] ∩ L = [L, L]. Let i ∈ I. Now g−αi (defined as in 1.6 in terms of
+our P, L) is an L-module hence tr(x, g−αi ) = 0 (since x ∈ [L, L]). Let z1 , z2 , . . . , zk
+be the eigenvalues of ad(σ − rh) on g−αi .
+    Assume first that i ∈ K. Then Li ⊂ Q1 (notation of 1.6) hence g−αi ⊂ Q1 .
+Using this and the definition of Q1 , we have τ (zj ) = 0 for all j ∈ [1, k]. Then
+tr(σ − rh, g−αi ) = z1 + · · · + zk and τ (tr(σ − rh, g−αi )) = τ (z1 ) + · · · + τ (zk ) =
+0+· · ·+0 = 0. Now t acts on g−αi as −αi (t) times the identity hence tr(t, g−αi )) =
+−kαi (t). Since t = σ − rh + x, we have −τ (kαi (t)) = 0 + 0 = 0 and −τ (αi (t)) = 0.
+    Assume next that i ∈ I − K. Then Pi 6⊂ Q (notation of 1.6). Using 1.6(a) we
+see that (g−αi ⊕ g−2αi ) ∩ Q = 0. Hence g−αi ∩ Q = 0. This implies that τ (zj ) > 0
+for all j ∈ [1, k]. Then tr(σ − rh, g−αi ) = z1 + · · · + zk and τ (tr(σ − rh, g−αi )) =
+τ (z1 ) + · · · + τ (zk ) > 0. Now tr(t, g−αi )) = −kαi (t). Since t = σ − rh + x we have
+−τ (kαi (t)) > 0 and −τ (αi (t)) > 0. This proves (a) and (b).
+    We prove (c). Using 3.25(b) and 3.22 we see that we must prove that
+τ (νV (P ′ ))/τ (r) ≥ bV . This follows from 3.19(a).
+    We prove (d). The subgroup generated by the ξV with V ∈ IK contains any
+ξV with V ∈ PJ where K ⊂ J ⊂ I. Hence it suffices to prove (d) for V ∈ IK .
+Using 3.25(b) and 3.22 we see that we must prove that τ (νV (P ′ ))/τ (r) = bV when
+V ∈ IK . This follows from 3.19(d). The lemma is proved.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                            37
+
+3.27. For x ∈ h define τ x ∈ hR (see 3.7) by γ(τ x) = τ (γ(x))/τ (r) for all γ ∈ X .
+Then x 7→ τ x is a group homomorphism h − → hR . We can now reformulate Lemma
+3.26 as follows.
+Lemma 3.28. Let P ′ ∈ P σ be such that y ∈ P ′ , P ′ ⊂ Q.
+  (a) If i ∈ I − K then −αi (τ t) > 0.
+  (b) If i ∈ K then −αi (τ t) = 0.
+  (c) Let V ∈ I. Then ξV (τ ψ(P ′ ) − τ t) ≥ 0.
+  (d) Let V ∈ IJ where K ⊂ J ⊂ I. Then ξV (τ ψ(P ′ ) − τ t) = 0.
+Lemma 3.29. Assume that G is semisimple. Let P ′ ∈ P σ be such that y ∈ P ′ ,
+P ′ ⊂ Q. Then 0 (τ ψ(P ′ )) = τ t ∈ hR (notation of 3.8(a)).
+   This follows immediately from 3.8(a) and 3.28.
+Lemma 3.30. Let σ ′ , y ′ , h′ , ỹ ′ be another quadruple like σ, y, h, ỹ. Define
+Q′ , Q′1 , t′ ∈ h in terms of σ ′ , y ′ , h′ , ỹ ′ in the same way that Q, Q1 , t ∈ h were
+defined in terms of σ, y, h, ỹ. Define K ′ ⊂ I by Q′ ∈ PK ′ . Assume that there exist
+                                                      ′
+P1 , P2 ∈ Pyσ with P1 ⊂ Q and P1′ , P2′ ∈ Pyσ′ with P1′ ⊂ Q′ , such that
+     (i) the image η of σ in P 1 /[P 1 , P 1 ] = h coincides with the image of σ ′ in
+P ′2 /[P ′2 , P ′2 ] = h and
+     (ii) the image η ′ of σ ′ in P ′1 /[P ′1 , P ′1 ] = h coincides with the image of σ in
+P 2 /[P 2 , P 2 ] = h.
+Then there exists g ∈ G such that Ad(g) carries (σ, y, h, ỹ) to (σ ′ , y ′ , h′ , ỹ ′ ).
+   The general case reduces easily to the case where G is semisimple. We now
+assume that G is semisimple. Applying 3.29 twice (once for σ, y, h, ỹ, P1 and once
+for σ ′ , y ′ , h′ , ỹ ′ , P1′ ) we see that
+
+                                 ( η) = τ t, 0 (τ η ′ ) = τ t′ .
+                                0 τ
+
+
+
+(Notation of 3.8(a).) Applying 3.19(a) (reformulated with the aid of 3.22 and
+3.25(b)) to σ, y, h, ỹ, P2 (where P2 is not necessarily contained in Q) we see that
+
+(a)                                   ξV (τ η ′ − τ t) ≥ 0
+
+for any V ∈ I. Using (a) and 3.8(b) with f = τ t′ , f ′ = τ η we deduce that
+ξΛi (0 (τ η ′ )) ≥ ξΛi (0 (τ t)) for any i ∈ I. Hence ξΛi (τ t′ ) ≥ ξΛi (τ t) for any i ∈ I.
+(We have 0 (τ t) = τ t. Indeed, for any f ∈ hR we have 0 (0 f ) = 0 f .) By symmetry
+we have also ξΛi (τ t) ≥ ξΛi (τ t′ ) for any i ∈ I. Hence ξΛi (τ t) = ξΛi (τ t′ ) for any
+i ∈ I. Thus, the annihilator of τ t − τ t′ in h∗ contains any ξΛi with i ∈ I. Since
+these elements span h∗ , it follows that τ t = τ t′ . Then for any γ ∈ X we have
+τ (γ(t)) = τ (γ(t′ )). Since this holds for any τ , we deduce that γ(t) = γ(t′ ) for any
+γ ∈ X . Since X generates h∗ , it follows that t = t′ .
+    From 3.26 we see that K = {i ∈ I; τ (αi(t)) = 0}. Similarly, K ′ = {i ∈
+I; τ (αi(t′ )) = 0}. Since t = t′ , it follows that K = K ′ . Thus, there exists g1 ∈ G
+38                                        G. LUSZTIG
+
+such that Q′ = g1 Qg1−1 , Q′1 = g1 Q1 g1−1 . Replacing (σ ′ , y ′ , h′ , ỹ ′ ) by a quadruple
+in the same G-orbit, we see that we may assume that Q = Q′ , Q1 = Q′1 .
+   We show that P2′ is automatically contained in Q. Assume that P2′ 6⊂ Q′ = Q.
+Let V ∈ IK . Applying 3.19(b) (reformulated with the aid of 3.22 and 3.25(b))
+to σ ′ , y ′ , h′ , ỹ ′ , P2′ , we see that ξV (τ η) > ξV (τ t′ ). Applying 3.19(d) (reformulated
+with the aid of 3.22 and 3.25(b)) to σ, y, h, ỹ, P1 , we see that ξV (τ η) = ξV (τ t).
+This contradicts the previous inequality since t = t′ . Thus,
+
+(b)                                     P2′ ⊂ Q′ = Q.
+
+Note that all of σ, y, h, ỹ, σ ′ , y ′ , h′ , ỹ ′ are contained in Q1 . We show that these
+elements satisfy the hypotheses of the lemma 3.16 (with G replaced by Q1 ).
+   The analogues of Q, Q′ (when G is replaced by Q1 ) are Q1 , Q1 . Now in Q1 we
+have an analogue of P, namely
+
+                         P ′ = {R; R = P ∩ Q1 , P ∈ P, P ⊂ Q}.
+
+(See 1.3.) Let R1 = P1 ∩ Q1 , R2′ = P2′ ∩ Q1 . Clearly R1 ∈ P ′ ; by (b), we have
+R1 , R2′ ∈ P ′ . Now h defined in terms of Q1 , P ′ is canonically the same as h defined
+in terms of G, P. From (i) and (b) we deduce that
+the image of σ in R1 /[R1 , R1 ] = h coincides with the image of σ ′ in R2′ /[R2′ , R2′ ] =
+h.
+Thus, 3.16 is applicable and (σ, y, h, ỹ), (σ ′ , y ′ , h′ , ỹ ′ ) are conjugate under an ele-
+ment of Q1 . The lemma is proved.
+
+Lemma 3.31. Assume that G is semisimple. The following two conditions on
+(y, σ, r) are equivalent:
+   (i) For any P ∈ Pyσ and any V ∈ I we have ξV (τ ψ(P )) ≥ 0.
+   (ii) Q = G.
+
+   Assume first that Q = G. By 3.28(b) we have αi (τ t) = 0 for all i ∈ I. Hence
+τ
+ t = 0. By 3.28(c), for any P ∈ Pyσ and any V ∈ I we have ξV (τ ψ(P ) − τ t) ≥ 0,
+hence ξV (τ ψ(P )) ≥ 0. Thus (ii) implies (i).
+             P that Q 6= G,
+   Next, assume
+                              ∗
+                                 that is K 6= I. Let i ∈ I − K and let V ∈ II−{i} .
+Then ξV = j∈I zj αj (in h ) where zj ≥ 0 for all j and zi > 0. By 3.28(a),(b) we
+have αj (τ t) ≤ 0 for all j ∈ I and αi (τ t) < 0. Hence
+                                              X
+                                 ξV (τ t) =         zj αj (τ t) < 0.
+                                              j∈I
+
+
+Now let P ∈ Pyσ be such that P ⊂ Q. By 3.28(d) we have ξV (τ ψ(P ) − τ t) = 0
+hence ξV (τ ψ(P )) < 0. Thus (i) implies (ii). The lemma is proved.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                         39
+
+Lemma 3.32. Assume that G is semisimple. The following four conditions on
+(y, σ, r) are equivalent:
+   (i) If P ′ ∈ P and L′ is a Levi subgroup of P ′ such that σ, y are contained in L′ ,
+then P ′ = G.
+   (ii) y is a distinguished nilpotent element of g and there exists ŷ ∈ G−2r such
+that [y, ŷ] = r −1 σ.
+   (iii) For any P ∈ Pyσ and any V ∈ I, V 6= C, we have ξV (ψ(P )) = nr where
+n ∈ N − {0}.
+   (iv) For any P ∈ Pyσ and any V ∈ I, V 6= C, we have ξV (τ ψ(P )) > 0.
+    The fact that (i) implies (ii) is proved in [L1, 2.5].
+    We show that (ii) implies (iii). Assume that (ii) holds. Let s = Cy +Cσ +Cŷ (a
+homomorphic image of sl2 (C)). To prove (iii) it is enough to verify the following
+statement.
+    Let P ∈ Pyσ and let V ∈ I, V 6= C. Let DP be the P -stable line in V . Then σ
+acts on DP as multiplication by rn where n ∈ N − {0}. (Compare [L1, 2.8].)
+From the representation theory of sl2 , we see that σ acts on DP as rn where
+n ∈ N. (Use that y acts as 0 on DP .) Assume that σ acts on DP as 0. Then DP
+must be stable under s which acts on it by 0. Now let P ′ ∈ P be such that P ′ is
+the stabilizer of DP in G (we have P ′ 6= G). Then s ⊂ P ′ hence s is contained
+in a Levi subalgebra of P ′ . Thus, y is not distinguished in G, contradicting (ii).
+Thus (ii) implies (iii).
+    It is clear that (iii) implies (iv).
+    Assume now that (iv) holds and (i) does not hold. Then we can find P ′ ∈ P,
+P 6= G, and a Levi subgroup L′ of P ′ such that σ ∈ L′ , y ∈ L′ . Replacing if
+  ′
+
+necessary P ′ , L′ by a G-conjugate, we may assume that σ, y, h, ỹ are all contained
+in L′ . Let A1 = {P ∈ Pyσ ; P ⊂ P ′ }. By 3.10 (applied to P ′ instead of Q), we
+have A1 6= ∅. We have P ′ ∈ PJ , J 6= I. Since (iv) holds, we see from 3.31 that
+Q = Q1 = G and from its proof, that τ t = 0. Let V ∈ IJ . Then V 6= C.
+Let P ∈ A1 . By 3.20 (reformulated with the aid of 3.22 and 3.25(b)) we have
+ξV (τ ψ(P ) − τ t) = 0. Since τ t = 0, it follows that ξV (τ ψ(P )) = 0. This contradicts
+(iv) since V 6= C. Thus, (iv) implies (i). The lemma is proved.
+3.33. Let E be an S-module of finite dimension over C. There is a canonical
+direct sum decomposition E = ⊕η∈hη E where η E (a weight space) is the set of all
+x ∈ E such that for any ξ ∈ h∗ , ξ : E −
+                                       → E is given on η E by multiplication by
+ξ(η) plus a nilpotent endomorphism of η E.
+3.34. The torus G′ = h(σ, r)i in G × C∗ is well defined (see 1.1). The fixed point
+set of the G′ -action on ġ (restriction of the G × C∗ action) is
+                         ′
+                      ġG = {(y ′ , P ) ∈ ġ; [σ, y ′ ] = 2ry ′ , σ ∈ P }.
+
+Let pt denote a point (y ′ , P ) of ġG . Since σ ∈ P , we have G′ ⊂ P ⊕ C.
+                                       ′
+40                                       G. LUSZTIG
+
+     Let k be the composition
+                    ∗                ∗              ∗
+               S = HG×C ∗ (ġ, C) −
+                                  → HG ′ (ġ, C) −
+                                                 → HG ′ (pt, C) −
+                                                                → Cσ,r
+
+where the first map is as in [L4, 1.4(g)], the second map is j ∗ (see [L4, 1.4(a)]
+attached to the imbedding j : pt −→ ġ and the third map is the quotient defined
+                     ∗
+as in 1.13. For ξ ∈ h (a subset of S) we have from the definitions:
+
+(a)                                     k(ξ) = ξ ′ (σ, r)
+
+where ξ ′ is the linear form on G′ given by the composition G′ −
+                                                               →P −
+                                                                  → P /[P , P ] =
+     ξ
+h−→ C (the unspecified maps are the obvious ones).
+   The image of ψ : P σ −    → h (as in 3.22) is a finite subset D of h. From the
+definitions we have ξ ′ (σ, r) = ξ(ψ(P )) hence (a) can be rewritten as follows:
+
+(b)                                 k(ξ) = ξ(ψ(P )).
+                                    ′
+Now let X̃ be a subvariety of ġG . By 1.11,
+                                ′
+                                            ∗
+                            H∗G (X̃, L̇) = HG ′ ⊗ H∗ (X̃, L̇)
+
+
+
+(see [L5, 1.21]) is naturally an S-module. Hence
+                                                ′
+                      A = Cσ,r ⊗HG∗ ′ H∗G (X̃, L̇) = H∗ (X̃, L̇)
+                        ′
+                  ∗     G
+(where Cσ,r = HG    ′ /Iσ,r is as in 1.13) is again an S-module.
+
+   We have a morphism X̃ −       → D ⊂ h given by (y ′ , P ) 7→ ψ(P ). Consider the
+partition X̃ = ⊔δ∈∆ X̃ δ of X̃ into connected components (∆ is the set of irreducible
+components of X̃.) Now each connected component X̃ δ is mapped by X̃ −      → D to a
+single point of D denoted ψ(δ). Since X̃ is open and closed in X̃ and is G′ -stable,
+                                             δ
+
+we may identify canonically A = ⊕δ∈∆ Aδ where Aδ = H∗ (X̃ δ , L̇). Clearly this
+direct sum decomposition is compatible with the S-module structure.
+Lemma 3.35. For any η ∈ h we have η A = ⊕δ∈∆;ψ(δ)=η Aδ .
+  We may assume that X̃ is connected. Let d ∈ D be defined by d = ψ(P ) for
+any (y, P ) ∈ X̃. Let ξ ∈ h∗ . We must show that ξ − ξ(d) acts nilpotently on A.
+Let ξ˜ be the image of ξ under the composition
+                        ∗                ∗              ∗
+                   S = HG×C ∗ (ġ, C) −
+                                      → HG ′ (ġ, C) −
+                                                     → HG ′ (X̃, C)
+
+                      ∗      ∗
+                   = HG               → Cσ,r ⊗ H ∗ (X̃, C)
+                        ′ ⊗ H (X̃, C) −
+
+
+
+where the first map is as in [L4, 1.4(g)], the second map is m̃∗ (see [L4, 1.4(a)]
+attached to the imbedding m̃ : X̃ −  → ġ, and the third map is induced by the
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                          41
+
+quotient defined as in 1.13. The action of ξ on A is multiplication by ξ˜ ∈ H ∗ (X̃, C)
+on H∗ (X̃, L̇). We have ξ˜ = ξ˜0 + ξ˜> where ξ˜0 ∈ H 0 (X̃, C) and ξ˜> ∈ ⊕n>0 H n (X̃, C).
+Clearly, multiplication by ξ˜> on H∗ (X̃, L̇) is nilpotent. Since X̃ is connected, we
+have ξ˜0 = c1 where c ∈ C and 1 ∈ H 0 (X̃, C) is the unit element of the algebra
+H ∗ (X̃, C) (which acts as the identity on H∗ (X̃, L̇)). It is then enough to show that
+c = ξ(d). Let pt denote a point (y ′ , P ) of X̃. Let j ′ : pt −→ X̃ be the imbedding.
+                           ′∗     ∗
+From the definitions, j : H (X̃, C) −      → H (pt, C) = C carries ξ˜ to k(ξ) (as in
+                                                  ∗
+
+4.2), that is to ξ(ψ(P )) = ξ(d) (see 4.2(b)). It automatically carries ξ˜> to 0 hence
+it carries ξ˜0 to ξ(d). It also preserves unit elements. Hence it carries c1 to c. Since
+ξ˜0 = c1, it follows that c = ξ(d). The lemma is proved.
+3.36. Let G′ = h(σ, r)i ⊂ G × C∗ . Since (σ, r) ∈ M 0 (y), we have G′ ⊂ M 0 (y).
+Let M = Ey,σ,r be as in 1.13 (recall that the choice of G′ in 1.13 is immaterial; in
+particular we may take G′ = h(σ, r)i). For ρ ∈ Irr0 M̄ (y, σ) we set Mρ = Ey,σ,r,ρ .
+   The fixed point set of the G′ -action on Py (restriction of the M (y)-action) is
+just Pyσ . By the localization theorem [L5, 4.4(b)] (which is applicable in view of
+the odd vanishing theorem [L4, 8.6]), the imbedding j : Pyσ −     → Py induces an
+isomorphism
+                                    ′           ∼                  ′
+                j! : Cσ,r ⊗HG∗ ′ H∗G (Pyσ , L̇) −→ Cσ,r ⊗HG∗ ′ H∗G (Py , L̇)
+
+or equivalently
+                                            ∼
+(a)                                       A −→ M.
+
+Here A (as in 3.34) is an S-module and M is an H-module (in particular, an
+S-module via the obvious algebra homomorphism S −     → H). The isomorphism (a)
+is compatible with S-module structures. Now the direct sum decomposition A =
+⊕δ∈∆ Aδ in 3.34 (where (∆ is the set of irreducible components of Pyσ ) correponds
+under (a) to a direct sum decomposition
+
+(b)                                     M = ⊕δ∈∆ Mδ
+
+and we can reformulate 3.35 as follows:
+  (c) For any η ∈ h we have η M = ⊕δ∈∆;ψ(δ)=η Mδ .
+Here η M are the weight spaces of M.
+  Since the M̄ (y, s)-action on M commutes with the H-module structure, each
+weight space η M is M̄ (y, σ)-stable. It follows that for ρ ∈ IrrM̄ (y, σ), we have
+  (d) η (Mρ ) = HomM̄ (y,σ) (ρ, η M).
+Now the M (y)-action on Py restricts to an M (y, σ)-action on Pyσ . Hence M̄ (y, σ) =
+M (y, σ)/M (y, σ)0 acts naturally on ∆. Let ∆   ¯ be the set of M̄ (y, σ)-orbits on ∆
+and let δ 7→ δ̄ be the canonical map ∆ −  → ∆.¯ Let ρ ∈ IrrM̄ (y, σ). We have
+
+                                               ǫ
+                                    Mρ = ⊕ǫ∈∆
+                                            ¯ Mρ
+42                                     G. LUSZTIG
+
+where Mǫρ = HomM̄ (y,σ) (ρ, ⊕δ∈∆;δ̄=ǫ Mδ ). Now ψ : ∆ − → h is constant on M̄ (y, σ)-
+                                   ¯
+orbits hence it induces a map ψ̄ : ∆ −→ h. Then, from (c) and (d) we deduce:
+                                                       ǫ
+   (e) for any η ∈ h we have η (Mρ ) = ⊕ǫ∈∆;¯ ψ̄(ǫ)=η Mρ .
+Let P ∗ = {P ∈ P; P ⊂ Q}. Let ∆1 (resp. ∆2 ) be the set of irreducible components
+of Pyσ that are contained in P ∗ (resp. in P − P ∗ ). By 3.21, we have a partition
+∆ = ∆1 ⊔ ∆2 . Let
+
+                        M1 = ⊕δ;δ∈∆1 Mδ , M2 = ⊕δ;δ∈∆2 Mδ .
+
+Then M = M1 ⊕M2 . Now the summands M1 , M2 of M are stable under M̄ (y, σ)
+(since M (y, σ) ⊂ Q × C∗ , see 3.15). Hence, setting
+   M1ρ = HomM̄ (y,σ) (ρ, M1 ), M2ρ = HomM̄ (y,σ) (ρ, M2 ),
+we have Mρ = M1ρ ⊕ M2ρ .
+Lemma 3.37. (a) Each of M1 and M2 is a sum of weight spaces of M.
+  (b) Each of M1ρ and M2ρ is a sum of weight spaces of Mρ .
+   Using the inclusion Mδ ⊂ ψ(δ) M (see 3.36(c)) we see that
+   (c) M1 ⊂    M(1) , M2 ⊂ M(2) where
+   M(1) = δ;δ∈∆1 ψ(δ) M, M(2) = δ;δ∈∆2 ψ(δ) M.
+             P                         P
+We show that
+   (d) M(1) ∩ M(2) = 0.
+Since the weight spaces of M form a direct sum, it is enough to show that ψ(δ) 6=
+ψ(δ ′ ) for any δ, δ ′ ∈ ∆ such that δ ⊂ P ∗ , δ ′ ⊂ P − P ∗ or equivalently, that
+ψ(P ) 6= ψ(P ′ ) for any P, P ′ ∈ Pyσ such that P ⊂ Q, P ′ 6⊂ Q.
+   Let V ∈ IK . By 3.19(b),(d) we have τ (νV (P ))/τ (r) = bV , τ (νV (P ′ ))/τ (r) >
+bV , hence νV (P ) 6= νV (P ′ ). Hence ξV (ψ(P )) 6= ξV (ψ(P ′ )). Hence ψ(P ) 6= ψ(P ′ ),
+as desired, and (d) is proved.
+   Since M = M1 ⊕ M2 , we see from (c),(d) that M1 = M(1) , M2 = M(2) .
+Since each M(1) , M(2) is a sum of weight spaces of M, (a) follows.
+   We prove (b). Let k ∈ {1, 2}. By (a) we have Mk = ⊕N         n=1 (ηn M) where ηn are
+distinct elements of h. It follows that
+
+      Mkρ = HomM̄ (y,σ) (ρ, Mk ) = ⊕N                            N
+                                    n=1 HomM̄ (y,σ) (ρ, ηn M) = ⊕n=1 (ηn Mρ ).
+
+The lemma is proved.
+3.38. Replacing G, y, σ, r by Q1 , y, σ, r in the definition of W, h, S, H, Py , Pyσ , L̇, M
+we obtain (as in 1.16) WK , h, S, H′, Py′ , P ′σy , L̇, M′ . Since M (y, σ) ⊂ Q, the ana-
+logue of M (y, σ) for Q1 instead of G is a quotient of M (y, σ) by a unipotent normal
+subgroup. Hence M̄ (y, σ) defined in terms of Q1 is the same as that defined in
+terms of G. Hence for ρ ∈ IrrM̄ (σ, y), we can define M′ρ in terms of M′ in the
+same way as Mρ was defined in terms of M. By 1.18 we have an isomorphism
+                                                   ∼
+(a)                              Ψ : H ⊗H′ M′ −→ M.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                     43
+
+Then x 7→ Ψ(1 ⊗ x) is a map M′ −      → M.
+   (b) This is an isomorphism of M′ onto M1 .
+Indeed, using the localization theorem [L5, 4.4(b)], M′ −    → M may be identified
+with the map
+                  ′                              ′
+   Cσ,r ⊗HG∗ ′ H∗G (P ′σy , L̇) −
+                                → Cσ,r ⊗HG∗ ′ H∗G (Pyσ , L̇)
+induced by the obvious inclusion P ′σy ⊂ Pyσ whose image is the open and closed
+subset Pyσ ∩ P ∗ of Pyσ .
+   Now for any ρ ∈ IrrM̄ (σ, y), (a) induces an isomorphism
+                                             ∼
+(c)                             H ⊗H′ M′ρ −→ Mρ
+and (b) induces an isomorphism
+                                         ∼
+(d)                                 M′ρ −→ M1ρ .
+Since H′ −
+         → H is injective and H is a free H′ -module, from (c) we deduce that
+(e)                             M′ρ 6= 0 ↔ Mρ 6= 0.
+3.39. Proof of Theorem 1.15(a). Note that in the setup of 1.15(a) we have
+Ey,σ,r 6= 0 hence we are also in the setup of 3.9.
+    By 3.38(e) we have M′ρ 6= 0. As in the proof of 3.16 we see that y belongs to
+the unique open orbit of Z(σ) ∩ Q1 in g2r ∩ q1 . Hence we may apply [L4, 8.17(b)]
+to Q1 instead of G and conclude that M′ρ is a simple H′ -module.
+    Let F be a proper H-submodule of Mρ . If F ∩ M1ρ = M1ρ then, since M1ρ
+generates Mρ as a H-module (see 3.28(c),(d)) it would follow that F generates
+Mρ as a H-module hence F = Mρ contradicting the assumption that F is proper.
+    Thus we must have F ∩ M1ρ 6= M1ρ . Since M1ρ is a simple H′ -module and
+F ∩ M1ρ is a proper H′ -submodule of M1ρ , it follows that
+    (a) F ∩ M1ρ = 0.
+For any η ∈ h we have η F ⊂ η (Mρ ) and by 3.37(b), η (Mρ ) is contained either in
+M1ρ or in M2ρ . Thus, we have either η F ⊂ M1ρ or η F ⊂ M2ρ . The first alternative
+cannot occur if η F 6= 0 by (a). Thus, we have η F ⊂ M2ρ for any η hence F ⊂ M2ρ .
+It follows that the sum of all proper H-submodules of Mρ is contained in M2ρ and
+thus it is itself a proper submodule (since M1ρ is 6= 0, being isomorphic to M′ρ ).
+This proves 1.15(a).
+3.40. Let ρ ∈ Irr0 M̄ (σ, y). Let Mρ,max be the unique maximal H-submodule of
+Mρ . Recall that Mρ,max ⊂ M2ρ . It follows that
+   (a) The obvious map M′ρ = M1ρ −  → Mρ /Mρ,max is injective.
+Let V ∈ IK . Let
+      X = {η ∈ h; η (Mρ /Mρ,max ) 6= 0, τ (ξV (η))/τ (r) is minimum possible }.
+Note that X is well defined (see the proof of 3.37) and the minimum value in the
+definition of X is bV . From the proof of 3.37
+                                            P we see also that
+   (b) The image of the map in (a) equals η∈X η (Mρ /Mρ,max ).
+44                                          G. LUSZTIG
+
+3.41. Proof of injectivity in Theorem 1.15(b). Let y ! , σ ! , h! , ỹ ! be another
+quadruple like y, σ, h, ỹ (with the same r). Let ρ ∈ Irr0 M̄ (σ, y), ρ! ∈ Irr0 M̄ (σ ! , y ! ).
+Define
+                        Q! , Q1! , M!ρ! , M′!ρ! , M1!ρ! , M!ρ! ,max , ψ ′
+
+in terms of y ! , σ ! , h! , ỹ ! , ρ! in the same way as
+
+                               Q, Q! , Mρ , M′ρ , M1ρ , Mρ,max , ψ
+
+were defined in terms of y, σ, h, ỹ, ρ. Assume that
+
+(a)                             Mρ /Mρ,max ∼
+                                           = M!ρ! /M!ρ! ,max
+
+as H-modules. We show that there exists g ∈ G which conjugates y, σ, h, ỹ, ρ to
+y ! , σ ! , h! , ỹ ! , ρ! .
+      We can find η ∈ h such that η (M′ρ ) 6= 0. By 3.40(a), we have η (Mρ /Mρ,max ) 6=
+0 hence by (a), η (M!ρ! /M!ρ! ,max ) 6= 0.
+      It follows that η M1 6= 0, η (M!ρ! ) 6= 0.
+                                                                                   ′
+    Using 3.36(c) we deduce that there exist P1 ∈ Pyσ and P2′ ∈ Pyσ′ such that
+P1 ⊂ Q and
+    ψ(P1 ) = η = ψ ! (P2′ )
+                                                 ′
+By symmetry, there exist P1′ ∈ Pyσ′ , P2 ∈ Pyσ and η ′ ∈ h such that P1′ ⊂ Q and
+    ψ ! (P1′ ) = η ′ = ψ(P2 ).
+Then the assumptions of 3.30 are verified and we see that there exists g ∈ G which
+conjugates y, σ, h, ỹ to y ! , σ ! , h! , ỹ ! . Thus, we may assume that y ! = y, σ ! = σ, h! =
+h, ỹ ! = ỹ. Then
+
+                       Q! = Q, Q1! = Q1 , M!ρ! = Mρ! , M′!ρ! = M′ρ! ,
+                       M1!ρ! = M1ρ! , M!ρ! ,max = Mρ! ,max , ψ ′ = ψ.
+
+                                                                           ∼
+Let V ∈ IK . Consider an H-linear isomorphism Mρ /Mρ,max −→ Mρ! /Mρ! ,max .
+This clearly carries the subspace
+   P
+      η∈X η (Mρ /Mρ,max )
+(X as in 3.40) onto the subspace
+      η∈X η (Mρ! /Mρ! ,max )
+   P
+
+(here X is as in 3.40, and the analogous set for Mρ! is again X) hence, by 3.40, it
+carries the subspace M1ρ isomorphically onto the subspace M1ρ! . Hence it induces
+                                               ∼
+an isomorphism of H′ -modules M′ρ −→ M1ρ! . As in the proof of 3.16 we see that
+y belongs to the unique open orbit of Z(σ) ∩ Q1 in g2r ∩ q1 . We now apply [L4,
+8.17(c)] to Q1 instead of G and deduce that ρ! = ρ. This completes the proof.
+        CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                           45
+
+3.42. Proof of surjectivity in Theorem 1.15(b). A statement close to the
+surjectivity in Theorem 1.15(b) was stated in [L4, 8.15] but the proof given there
+                                           ∗          ′′
+has an error in line -7 of p.199 (”Since HM  0 (y) /I    is an artinian C-algebra...”). (I
+thank David Vogan for pointing out that error). In the part of the proof preceding
+that line it was shown that:
+   (a) if N is a simple H-module, then there exists y ∈ gN , an ideal J of finite
+                          ∗
+codimension in A = HM       0 (y) and a non-zero H-linear map X/JX −        → N where
+        M 0 (y)
+X = H∗        (Py , L̇).
+We continue the proof starting from (a). We have dimC (X/JX) < ∞ (this can
+be seen from [L4, 7.2] using [L4, 8.6]). Let X/JX −       → X ′ be the largest semisimple
+                                                     ′
+quotient of the H-module X/JX. Then X inherits from X/JX an A-module
+structure. Clearly, there exists a non-zero H-linear map X ′ −        → N . Let XN    ′
+                                                                                         be
+                                                   ′          ′
+the N -isotypical part of the H-module X . Then XN is an A-submodule and
+  ′
+XN   6= 0. Let radJ = {x ∈ A; xn ∈ J for some n ≥ 1}. The elements of rad(J)
+           ′                                                             ′         ′
+act on XN     as commuting nilpotent elements. Hence rad(J)XN               6= XN    (since
+  ′                                                                 ′            ′
+XN 6= 0). Hence there exists a non-zero H-linear map XN /rad(J)XN −                  → N.
+        ′              ′
+Now XN    /rad(J)XN      is a direct summand of the H-module X ′ /rad(J)X ′ hence
+there exists a non-zero H-linear map X ′ /rad(J)X ′ −        → N . The canonical map
+                     ′            ′
+X/rad(J)X −   → X /rad(J)X is surjective hence there exists a non-zero H-linear
+map X/rad(J)X −      → N . Since rad(rad(J)) = rad(J) we see that we may assume
+that J = rad(J). Then the commutative algebra A/JA is a finite direct sum of
+copies of C. Let I1 , . . . , Ik be the maximal ideals of A that contain J. We have
+       ∼
+A/J −→ A/I1 ⊕ . . . ⊕ A/Ik and X/JX = X/I1 X ⊕ . . . X/Ik X (as H-modules).
+Hence there exists j ∈ [1, k] and a non-zero H-linear map X/Ij X −       → N . Hence we
+may assume that J is a maximal ideal of A. Then there exists a semisimple element
+                                     M 0 (y)
+(σ, r) ∈ M 0 (y) such that J = Jσ,r          (see 1.13). Then X/JX = Ey,σ,r and we see
+that there exists a non-zero H-linear map Ey,σ,r −      → N . Now Ey,σ,r = ⊕ρ ρ⊗Ey,σ,r,ρ
+where ρ runs over Irr0 M̄ (y, σ). Hence there exists ρ ∈ Irr0 M̄ (y, σ) and a non-zero
+H-linear map Ey,σ,r,ρ −    → N . This map is surjective since the H-module N is
+simple. It follows that the induced map Ēy,σ,r,ρ −       → N is an isomorphism. This
+completes the proof of Theorem 1.15.
+3.43. Proof of Theorem 1.21. Assume that 1.21(iii) holds. Replacing h, ỹ by
+φ(h0 ), φ(f0 ), we see that G = Q1 = Q. Using 3.31 we see that 3.31(i) holds. Using
+3.36(c) we deduce that for any η ∈ h such that η M =  6 0 and any V ∈ I we have
+τ (ξV (η))/τ (r) ≥ 0. Hence M is τ -tempered. Hence Mρ is τ -tempered and 1.21(i)
+holds.
+    Clearly, if 1.21(i) holds, then 1.21(ii) holds.
+    Assume now that 1.21(iii) does not hold. Using 3.31 we see that Q 6= G that is
+i ∈ I − K. Let V ∈ II−{i} . Let η ∈ h be such that η M′ρ 6= 0. Then, by 3.40(a), we
+have η (Mρ /Mρ,max ) 6= 0. We can find P ∈ Pyσ such that P ⊂ Q and η = ψ(P ).
+By the second paragraph in the proof of 3.31 we have τ (ξV (ψ(P )))/τ (r) < 0 hence
+τ (ξV (η))/τ (r) < 0. It follows that Mρ /Mρ,max is not τ -tempered. Thus 1.21(ii)
+46                                     G. LUSZTIG
+
+does not hold.
+   Thus the three conditions in 1.21 are equivalent. If these conditions are satisfied
+then, as we have seen above, we have G = Q. As in the proof of 3.16 we see that y
+belongs to the unique open orbit of Z(σ) in g2r . Hence we may apply [L4, 8.17(b)]
+and conclude that Mρ is a simple H-module. This completes the proof of 1.21.
+3.44. Proof of Theorem 1.22. The equivalence of 1.22(i) and 1.22(ii) follows
+from 3.32.
+   Assume that 1.22(ii) holds. Using 3.32 we see that 3.32(iii) holds. Using 3.36(c)
+we deduce that for any η ∈ h such that η M =     6 0 and any V ∈ I, V 6= C we have
+ξV (η) = nr where n ∈ {1, 2, 3, . . . }. Hence 1.22(v) holds.
+   Clearly, if 1.22(v) holds, then 1.22(iv) holds.
+   By 1.21, conditions 1.22(iii) and 1.22(iv) are equivalent.
+   Assume that 1.22(iv) holds and that 1.22(i) does not hold. Then we can find
+P ′ ∈ P, P ′ 6= G and a Levi subgroup L′ of P ′ such that y ∈ L′ , σ ∈ L′ . We
+may assume that h ∈ L′ , ỹ ∈ L′ . By 3.10, we have {P ∈ Pyσ ; P ⊂ P ′ } 6= ∅. In
+particular, P ′ ∈ PJ for some J ⊂ I, J 6= I. In particular L′ inherits a natural
+cuspidal datum (as in 1.3) and in terms of this we can define H̃, M̃ in the same
+way as H, M were defined in terms of the cuspidal datum of G. We have a natural
+imbedding
+                                      j0 : M̃ −
+                                              → M.
+Let n′ = UP ′ and let y n′ = coker(ad(y) : n′ −→ n′ ). We show that
+   (a) ad(σ) − 2r : y n′ −
+                         → y n′ is invertible.
+By 1.21 (and its proof) we have Q = Q1 = G. Thus, n ga 6= 0 =⇒ τ (a)/τ (r) = n.
+We must show that any eigenvalue of ad(σ) − 2r on coker(ad(y) : n′ −    → n′ ) is 6= 0.
+Now the last cokernel is a quotient of ⊕n,a;n≤0 (n ga ). Hence it suffices to show
+that if n ga 6= 0 and n ≤ 0 then a − 2r 6= 0. But
+   τ (a − 2r)/τ (r) = (nτ (r) − 2τ (r))/τ (r) = n − 2 ≤ −2
+hence a − 2r 6= 0, as required. This proves (a).
+   We see that 1.18 is applicable (with P ′ , L′ instead of Q, Q1 ). We deduce that
+   (b) j0 (M̃) generates the H-module M.
+                                                                                        j0
+We can find a surjective H-linear map p : M −    → Mρ . The composition M̃ −→
+    p
+M−  → Mρ is non-zero. (Otherwise, j0 (M̃) would be contained in the proper H-
+submodule Ker(p) of M contradicting (b).) Since pj0 is S-linear, it follows that
+                                  6 0 and η Mρ 6= 0. Hence there exists P ∈ Pyσ
+there exists η ∈ h such that η M̃ =
+                  ′
+such that P ⊂ P and ψ(P ) = η. By the argument in the last paragraph of the
+proof of 3.32, we have τ (ξV (ψ(P )))/τ (r) = 0, that is, τ (ξV (η))/τ (r) = 0 where
+V ∈ IJ . This contradicts 1.22(iv) since V 6= C. We have proved that if 1.22(iv)
+holds then 1.22(i) holds.
+   This completes the proof of 1.22.
+
+                                      References
+[BW] A. Borel and N. Wallach, Continuous cohomology, discrete subgroups and representations
+         CUSPIDAL LOCAL SYSTEMS AND GRADED HECKE ALGEBRAS, III                              47
+
+     of reductive groups, Ann.Math.Stud., vol. 94, Princeton Univ. Press, 1980.
+[KL] D. Kazhdan and G. Lusztig, Proof of the Deligne-Langlands conjecture for Hecke algebras,
+     Inv.Math. 87 (1987), 153-215.
+[Le] G. I. Lehrer, l-adic cohomology of hyperplane complements, Bull.Lond.Math.Soc. 24 (1992),
+     76-82.
+[L1] G. Lusztig, Some examples of square integrable representations of semisimple p-adic
+     groups, Trans.Amer.Math.Soc. 227 (1983), 623-653.
+[L2] G. Lusztig, Intersection cohomology complexes on a reductive group, Inv. Math 75 (1984),
+     205-272.
+[L3] G. Lusztig Character Sheaves,V, Adv. Math. 61 (1986), 103-155.
+[L4] G. Lusztig, Cuspidal local systems and graded Hecke algebras,I, Publ. Math. I.H.E.S. 67
+     (1988), 145-202.
+[L5] G. Lusztig, Cuspidal local systems and graded Hecke algebras,II, Representations of groups,
+     ed. B.Allison and G.Cliff, Canad.Math.Soc.Conf.Proc., vol. 16, Amer.Math.Soc., 1995,
+     pp. 217-275.
+[L6] G. Lusztig, Study of perverse sheaves arising from graded Lie algebras, Adv.Math. 112
+     (1995), 147-217.
+[L7] G. Lusztig, Classification of unipotent representations of simple p-adic groups, Int. Math.
+     Res. Notices (1995), 517-589.
+[L8] G. Lusztig, Bases in equivariant K-theory,II, Represent. theory 3 (1999), 281-353.
+[R]  M. Reeder, Formal degrees and L-packets of unipotent discrete series of exceptional p-adic
+     groups, J.Reine Angew.Math. 520 (2000), 37-93.
+[W] J.-L. Waldspurger, Représentations de réduction unipotente pour SO(2n + 1): quelques
+     conséquences d’un article de Lusztig, preprint 2001.
+
+   Department of Mathematics, M.I.T., Cambridge, MA 02139
+

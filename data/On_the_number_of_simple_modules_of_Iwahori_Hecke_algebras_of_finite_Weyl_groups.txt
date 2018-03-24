@@ -1,0 +1,549 @@
+arXiv:math/0405555v1 [math.RT] 28 May 2004
+
+
+
+
+                                                                   To Maria Pop on her 60th birthday
+
+
+                                             On the number of simple modules of Iwahori–Hecke
+                                                      algebras of finite Weyl groups
+                                                                               Meinolf Geck
+
+
+
+                                                                                 Abstract
+                                                      Let Hk (W, q) be the Iwahori–Hecke algebra associated with a finite
+                                                   Weyl group W , where k is a field and 0 6= q ∈ k. Assume that the
+                                                   characteristic of k is not “bad” for W and let e be the smallest i > 2
+                                                   such that 1+q+q 2 +· · ·+q i−1 = 0. We show that the number of simple
+                                                   Hk (H, q)-modules is “generic”, i.e., it only depends on e. The proof
+                                                   uses some computations in the CHEVIE package of GAP and known
+                                                   results due to Dipper–James, Ariki–Mathas, Rouquier and the author.
+
+
+                                             1    Introduction
+                                             Let Γ be one of the graphs in Table 1. Let S be the set of nodes of Γ.
+                                             For s, t ∈ S, s 6= t, we define an integer m(s, t) as follows. If s, t are not
+                                             joined in the graph, then m(s, t) = 2; if s, t are joined by an unlabelled
+                                             edge, then m(s, t) = 3. Finally, if s, t are joined by an edge with label m,
+                                             we set m(s, t) = m. We then define a group W = W (Γ) by the following
+                                             presentation:
+
+                                                 W = hs ∈ S | s2 = 1 for s ∈ S and (st)m(s,t) = 1 for s, t ∈ S, s 6= ti.
+
+                                             It is known that the groups defined in this way are all finite and that they
+                                             are precisely the Weyl groups arising in the theory of complex simple Lie
+                                             algebras or linear algebraic groups; see [2]. For example, if Γ is the graph An ,
+                                             then W is isomorphic to the symmetric group Sn+1 , where the generator si ∈
+                                             S attached to the node labelled by i corresponds to the basic transposition
+                                             (i, i + 1) for 1 6 i 6 n.
+                                                 1991 Mathematics Subject Classification. Primary 20C20. Secondary 20G05.
+
+
+                                                                                      1
+Geck: Number of simple modules                                                                      2
+
+
+                           Table 1: Graphs of finite Weyl groups
+
+    An       1t       2t    3t     ♣ ♣ ♣    nt                    t1
+    n>1
+                                                                  ❅
+                                                           Dn       ❅3t         4t   ♣ ♣ ♣     nt
+                                                           n>4
+    Bn       1    4   2t    3t              nt
+    n>2
+             t                     ♣ ♣ ♣                          t
+                                                                       2
+
+                                                                 E6        1t   3t   4t   5t   6t
+             1t 6 2t                   1t   2t 4 3t   4t
+    G2                            F4
+                                                                                     t2
+
+    E7       1t       3t    4t    5t   6t   7t        E8    1t    3t       4t   5t   6t   7t   8t
+
+                             t2                                            t2
+
+
+
+   Now let k be any field and q ∈ k be any non-zero element which has a
+square root in k. Then we define an associative k-algebra H = Hk (W, q)
+(with identity 1H ) by a presentation with
+
+   generators: Tw , w ∈ W,
+   relations:  Ts2 = q 1H + (q − 1)Ts for all s ∈ S,
+               Tw Tw′ = Tww′ for w, w′ ∈ W with l(ww′ ) = l(w) + l(w′ ).
+
+Here, the length function l : W → N0 is defined as follows. Any element
+w ∈ W can be written in the form w = s1 · · · sm with s1 , . . . , sm ∈ S; if m is
+as small as possible, we set l(w) := m. It is known that {Tw | w ∈ W } is in
+fact a k-basis of H and that we have the following multiplication rules. Let
+s ∈ S and w ∈ W . Then we have l(sw) = l(w) ± 1 and
+                    
+                              Tsw            if l(sw) = l(w) + 1,
+            Ts Tw =
+                       qTsw + (q − 1)Tw      if l(sw) = l(w) − 1;
+
+see [10, Chapter 4]. These algebras play an important role, for example, in
+the representation theory of finite groups of Lie type (see [2] and [4]) or in
+the theory of knots and links (see [10, Chapter 4]).
+    Now the structure of H is relatively well-understood in the case where
+Hk (W, q) is split semisimple. Then Lusztig (see [12] and the references
+there) has constructed a canonical isomorphism from H onto the so-called
+asymptotic algebra which itself is isomorphic to the group algebra of W
+Geck: Number of simple modules                                               3
+
+
+over k (if the characteristic of k does not divide the order of W ). The case
+where Hk (W, q) is not semisimple is much more difficult and far from being
+solved. Let Irr(Hk (W, q)) be the set of simple Hk (W, q)-modules modulo
+isomorphism. The purpose of this paper is to establish the following result.
+
+Theorem 1.1 Let ℓ > 0 be the characteristic of k. Assume that
+              ℓ 6= 2          if W is of type Bn or Dn ;
+              ℓ 6= 2, 3       if W is of type G2 , F4 , E6 or E6 ;
+              ℓ 6= 2, 3, 5    if W is of type E8 .
+
+Let e be the smallest i > 2 such that 1 + q + q 2 + · · · + q i−1 = 0. (We set
+e = ∞ if no such i exists.) Then we have
+
+                      |Irr(Hk (W, q))| = |Irr(HC (W, ζe ))|,
+
+where ζe ∈ C is a primitive eth root of unity. (We set ζ∞ = 1.) In particular,
+|Irr(Hk (W, q))| only depends on e, but not on the particular choice of k or q.
+
+   The above result is already known in the following cases.
+ An : In this case, |Irr(Hk (W, q))| is the number of e-regular partitions of
+      n+1; see Dipper–James [5]. A partition of n+1, written in exponential
+      form (1n1 , 2n2 , . . .), is called e-regular if ni < e for all i.
+ Bn : In this case, |Irr(Hk (W, q))| is the number of so-called Kleshchev bi-
+      partitions of n; see Ariki–Mathas [1] for the proof and the precise
+      definition.
+Dn : In this case, the problem of computing |Irr(Hk (W, q))| can be reduced
+     to the analogous problem for type Bn (but one has to consider an
+     algebra of type Bn with unequal parameters); see Geck [8].
+For the exceptional types G2 , F4 and E6 , the numbers |Irr(Hk (W, q))| are
+explicitly known by work of Geck and Lux without any restriction on the
+characteristic, but assuming that ℓ = 0 or that q lies in the prime field of k;
+see [4, §3.4] and the references there.
+    Consequently, we will only have to prove Theorem 1.1 for the exceptional
+types G2 , F4 , E6 , E7 and E8 . In Section 2, we present a result (originally
+due to Geck–Rouquier [11]), which reduces that proof to the verification
+of a finite number of cases. These finitely many cases will be settled by
+some explicit computations in Section 3, using the CHEVIE package [9] of
+the computer algebra system GAP [13]. The numbers |Irr(HC (W, ζe ))| (for
+W of exceptional type) are printed in the table in [10, 11.5.13].
+Geck: Number of simple modules                                                 4
+
+
+Remark 1.2 The conditions on ℓ in Theorem 1.1 mean that ℓ is a “bad
+prime” for W in the sense of [2, p. 28]. Simple examples show that, in
+general, we will have |Irr(Hk (W, q))| < |Irr(HC (W, ζe ))| if the characteristic
+of k is bad for W ; see, for example, type G2 in [4, Ex. 3.11] and the remarks
+at the end of this paper.
+
+
+2    The generic algebra and its specializations
+We keep the setting and the notation of Section 1. In order to get hold of
+Irr(Hk (W, q)), we will work with the generic Iwahori–Hecke algebra associ-
+ated with W and use specialization arguments. For this purpose, we have
+to introduce some notation. We use [10] as a standard reference for general
+facts about finite Weyl groups and Iwahori–Hecke algebras.
+    Let A = Z[v, v −1 ] be the ring of Laurent polynomials in an indeter-
+minate v; let u = v 2 . Then we define the generic Iwahori–Hecke algebra
+H = HA (W, u) in a similar way as Hk (W, q) was defined in Section 1. Al-
+though now we are not working over a field, it is still true that H is free
+as an A-module, with basis {Tw | w ∈ W }; see [10, Chapter 4]. Let K be
+the field of fractions of A and HK = K ⊗A H be the K-algebra obtained by
+extending scalars from A to K; we have HK = HK (W, u) canonically. It is
+known that the algebra HK is split semisimple; see [10, 9.3.5].
+    Let τ : H → A be the A-linear map defined by τ (T1 ) = 1 and τ (Tw ) = 0
+for 1 6= w ∈ W . Then, by [10, 8.1.1], τ is a symmetrizing trace on H and
+H is a symmetric algebra. Let Irr(HK ) be the set of simple HK -modules,
+up to isomorphism. Let cV ∈ K be the Schur element corresponding to
+V ∈ Irr(HK ); see [10, §7.2]. Since HK is split semisimple, we have cV 6= 0
+for all V . Since A is integrally closed in K, we have cV ∈ A; see [10, 7.3.8].
+We shall need the following fact, which is a combination of [2, p. 75], [10,
+9.3.6] and the remarks in [12, 3.4], [7, 2.4].
+                   X
+(2.1) Let PW =          ul(w) . Then we have a factorization
+                 w∈W
+
+                                |S|
+                                Y
+                       |S|
+               (u − 1) PW     =     (udi − 1),     where di > 1.
+                                i=1
+
+The di > 1 are called the degrees of W ; we have |W | = d1 · · · d|S| . Each
+Schur element cV lies in Q[u, u−1 ] and divides PW . The denominators in
+the coefficients of cV are divisible by bad primes only.
+Geck: Number of simple modules                                                   5
+
+
+    Now let k be a field and 0 6= q ∈ k be such that q has a square root in k.
+Then there is a unique ring homomorphism θ : A → k such that θ(u) = q
+(and v is mapped to a chosen square root of q in k). Regarding k as an
+A-module via θ, we can extend scalars from A to k and obtain a k-algebra
+Hk = k ⊗A H which is canonically isomorphic to Hk (W, q). Thus, it will be
+sufficient to work with H and its specializations. We can now settle a large
+number of cases occurring in Theorem 1.1.
+Lemma 2.2 Assume that the characteristic of k satisfies the conditions in
+Theorem 1.1. Then, if q di 6= 1 for all i (where the di are the degrees of
+W ), the algebra Hk is split semisimple and we have |Irr(Hk )| = |Irr(HK )| =
+|Irr(HC (W, 1))|.
+Proof. Using (2.1), the above conditions on k and q imply that θ(cV ) 6=
+0 for all V ∈ Irr(HK ). Consequently, by [10, 9.3.9], the algebra Hk is
+split semisimple. Then Tits’ Deformation Theorem (see [10, 7.4.6]) applies
+and we have |Irr(Hk )| = |Irr(HK )|. Applying the same argument to the
+specialization A → C, u 7→ 1, we obtain |Irr(HK )| = |Irr(HC (W, 1))|.
+    Thus, from now on, we assume that the conditions in Theorem 1.1 on
+the characteristic of k are satisfied and that q is a root of unity. Let k0 ⊆ k
+be the field of fractions of the image of θ. Then, by [7, 3.6], the algebra Hk0
+is split. So the scalar extension from k0 to k defines a bijection between
+Irr(Hk0 ) and Irr(Hk ); see [10, Lemma 7.3.4]. Thus, we may assume without
+loss of generality that k = k0 .
+    It will be further convenient to take the following point of view. Let p be
+the kernel of θ. Then p ⊂ A is a prime ideal and, identifying k with the field
+of fractions of A/p, we may regard θ as the natural map A → A/p ⊆ k. Let
+e be the smallest i > 2 such that 1 + q + q 2 + · · · + q i−1 = 0 and Φe (u) ∈ Z[u]
+be the eth cyclotomic polynomial. Then we have Φe (q) = 0 in k and so
+Φe (u) = Φe (v 2 ) ∈ p. Now we have
+                    Φe (v 2 ) = Φ2e (v)          if e is even,
+                         2
+                    Φe (v ) = Φe (v)Φ2e (v)      if e is odd.
+Thus, choosing a suitable square root of q in k, we can assume that Φ2e (v) ∈
+p. Let q ⊂ A be the prime ideal generated by Φ2e (v); we have 0 6= q ⊆ p ⊂ A
+and A/q = Z[ζ2e ], the ring of algebraic integers in the field F = Q[ζ2e ] ⊂ C;
+see [3, (4.5)]. Then, as above, we see that HF = HF (W, ζe ) is split and the
+scalar extension from F to C defines a bijection Irr(HF ) ↔ Irr(HC (W, q)).
+(2.3) Factorization of decomposition maps. In the above set-up, the
+natural map A → A/p ⊆ k induces a well-defined decomposition map
+Geck: Number of simple modules                                             6
+
+
+dp : R0 (HK ) → R0 (Hk ) between the Grothendieck groups of HK and Hk ;
+see [10, 7.4.3]. Similarly, the map A → A/q ⊆ F induces a decomposition
+map de : R0 (HK ) → R0 (HF ). Since A/q is integrally closed in F , we have
+the following factorization (see [6, 2.6]):
+                                                dp
+                          R0 (HK )                     ✲ R0 (Hk )
+                                 ◗                       ✑✑
+                                                          ✸
+                                  d◗
+                                   e ◗                  ✑ dep
+                                      s
+                                      ◗                ✑
+                                            R0 (HF )
+
+Here, dep is the decomposition map induced by the natural map A/q → A/p.
+Now, since dp and de are surjective by [7, 3.3], we conclude that |Irr(Hk )|
+equals the rank of dp and the above factorization implies that
+
+                 |Irr(Hk )| 6 |Irr(HF )| = |Irr(HC (W, ζe ))|.
+
+Note that, if q = p, then Theorem 1.1 is now clear since Hk = HF .
+    Thus, we are finally reduced to the situation where q 6= q. In this case,
+p is a maximal ideal containing Φ2e (v) and a prime number ℓ > 0. (See the
+description of all prime ideals of A in [10, Exercise 7.9], for example.)
+    In order to proceed, we shall need some facts about the center of H,
+which we denote by Z(H). Let Cl(W ) be the set of conjugacy classes of W .
+For each C ∈ Cl(W ), consider the element
+                               X
+                        zC =       u−l(w) fw,C Tw ∈ H,
+                               w∈W
+
+where fw,C (u) ∈ Z[u] are the class polynomials defined in [10, §8.2]. By
+[10, 8.2.4] (see also [11]), we have zC ∈ Z(H) and {zC | C ∈ Cl(W )} is an
+A-basis of Z(H).
+
+Definition 2.4 (Geck–Rouquier) Consider the natural map A → A/q ⊆
+F and the corresponding decomposition map de : R0 (HK ) → R0 (HF ). For
+M ∈ Irr(HF ), we define PM : Z(HK ) → K by
+                          X          dV,M
+          PM (zC ) =                      ωV (zC )     for C ∈ Cl(W ),
+                                      cV
+                       V ∈Irr(HK )
+
+where dV,M are the decomposition numbers and ωV is the central character
+associated with V . By [10, 7.5.3], we have
+
+                   PM (zC ) ∈ Aq          for all C ∈ Cl(W ).
+Geck: Number of simple modules                                                     7
+
+
+Note that, since q is a principal ideal, the localization Aq ⊂ K is a discrete
+valuation ring, with residue field F .
+                                 P        −l(w)
+    For C ∈ Cl(W ), let z C := w∈W ζe           fw,C (ζe )Tw ∈ HF . Then z C ∈
+Z(HF ) and {z C | C ∈ Cl(W )} is an F -basis of Z(HF ); see [10, 8.2.5]. Thus,
+we obtain an induced function
+
+               P M : Z(HF ) → F,         P M (z C ) = PM (zC ) mod q.
+
+      In a slightly different form, the following results appeared in [11, 3.3].
+
+Lemma 2.5 Assume that each Schur element cV can be expressed as
+
+(∗)         cV = Φ2e (v)dV fV (v)   where dV > 0 and fV (v) ∈ A \ p.
+
+Then we have PM (zC ) ∈ Ap for all M ∈ Irr(HF ) and C ∈ Cl(W ).
+
+Proof. Let M ∈ Irr(HF ). Consider the ideal I of all g(v) ∈ Q[v, v −1 ] such
+that g(v)PM (zC ) ∈ Q[v, v −1 ] for all C ∈ Cl(W ). Since Q[v, v −1 ] is a principal
+ideal domain, I is generated by a polynomial g0 (v) ∈ Q[v, v −1 ]. Now, since
+PM (zC ) ∈ Aq for all C ∈ Cl(W ), there exists a polynomial h(v) ∈ I which
+is not divisible by Φ2e (v). Thus, Φ2e (v) does not divide g0 (v).
+    On the other hand, Definition 2.4 shows that the product of all cV lies
+in I (note that ωP V (zC ) ∈ A since A is integrally closed in K). So, using (∗)
+and setting d := V dV > 0, we find that
+                                                   Y
+         Φ2e (v)d f (v) ∈ I     where f (v) =              fV (v) ∈ A \ p.
+                                               V ∈Irr(HK )
+
+
+Since Q[v, v −1 ] is a factorial ring, the fact that Φ2e (v) does not divide
+g0 (v) implies that g0 (v) divides f (v). Consequently, we have f (v)PM (zC ) ∈
+Q[v, v −1 ] for all C ∈ Cl(W ).
+    Now (2.4) actually shows that Φ2e (v)d f (v)PM (zC ) ∈ A for all C ∈
+Cl(W ). Therefore, since f (v) ∈ A and Φ2e (v) is monic, we conclude that
+
+                     f (v)PM (zC ) ∈ A      for all C ∈ Cl(W ).
+
+Thus, since f (v) ∈ A \ p, we have PM (zC ) ∈ Ap for all C ∈ Cl(W ).
+
+Proposition 2.6 (Geck–Rouquier) In the above set-up, assume that the
+condition (∗) in Lemma 2.5 holds. Then we have |Irr(HF )| = |Irr(Hk )|.
+Geck: Number of simple modules                                                8
+
+
+Proof. Consider the natural map Ap → k and the corresponding decomposi-
+tion map dp : R0 (HK ) → R0 (Hk ). For V ∈ Irr(HK ), let χV : HK → K
+be the character afforded by V . Since A is integrally closed in K, we
+have χV (Tw ) ∈ A for all w ∈ W . Thus, we obtain an induced function
+χ̃V : Hk → k such that χ̃V (Tw ) = χV (Tw ) mod p. By the definition of dp,
+the function χ̃V is a k-linear combination of the characters afforded by the
+simple Hk -modules. Hence, we certainly have
+                      |Irr(Hk )| > dimk hχ̃V | V ∈ Irr(Hk )ik .
+On the other hand, consider the decomposition map de induced by Aq → F .
+Let B ⊆ Irr(HK ) be such that the matrix of decomposition numbers dV,M ,
+where V ∈ B and M ∈ Irr(HF ), is square and invertible over Z. Such a
+subset B exists by [7, Theorem 3.3]. We have already seen in (2.3) that
+|B| = |Irr(HF )| > |Irr(Hk )|. Hence it is enough to show that
+(†)                 {χ̃V | V ∈ B} is linearly independent.
+                                                      P
+To prove (†), assume that we have a linear relation V ∈B λV χ̃V = 0 with
+λV ∈ k.
+    Now we consider once more the function PM : Z(HK ) → K introduced
+in Definition 2.4. By Lemma P  2.5, we have PM (zC ) ∈ Ap for all C ∈ Cl(W ).
+To simplify notation, for h = w∈W aw (v)Tw ∈ H with aw (v) ∈ A, we write
+h̃ := w∈W aw (q 1/2 )Tw ∈ Hk , where q 1/2 is the chosen square root of q.
+      P
+Then, again by [10, 8.2.5], we have z̃C ∈ Z(Hk ) and {z̃C | C ∈ Cl(W )} is a
+k-basis of Z(Hk ). Thus, we obtain an induced function
+                 P̃M : Z(Hk ) → k,      P̃M (z̃C ) = PM (zC ) mod p.
+For each V ∈ Irr(HK ), let χ∗V be the unique element in Z(HK ) such that
+ωV (χ∗V ′ ) = cV δV,V ′ for all V ′ ∈P  Irr(HK ). Such an element exists by [10,
+7.2.6]; explicitly, we have χ∗V = w∈W u−l(w) χV (Tw )Tw−1 . Since A is inte-
+grally closed in K, we have χ∗V ∈ Z(H). Thus, we obtain a corresponding
+element χ̃∗V ∈ Z(Hk ). The defining equation in (2.4) now yields that
+                     X        dV ′ ,M
+   PM (χ∗V ) =                        ωV ′ (χ∗V ) = dV,M for all M ∈ Irr(HF ).
+                               cV ′
+                V ′ ∈Irr(HK )
+
+Applying this to the above linear relation, we obtain
+                                λV d˜V,M , where d˜V,M = dV,M mod p.
+         X                    X
+    0=       λV P̃M (χ̃∗V ) =
+          V ∈B                 V ∈B
+
+But B was chosen such that the matrix (dV,M ) is invertible over Z. Hence
+(d˜V,M ) is invertible over k and so λV = 0 for all V ∈ B, proving (†).
+Geck: Number of simple modules                                                  9
+
+
+3     Proof of Theorem 1.1
+By the discussion in Section 2, in order to complete the proof of Theorem 1.1,
+it remains to consider the following situation. The field k is the field of
+fractions of A/p, where p is a maximal ideal containing a prime number ℓ > 0
+which is not bad for W . In particular, k is a finite field of characteristic ℓ.
+Furthermore, p contains the cyclotomic polynomial Φ2e (v) ∈ Z[v], where
+e > 2 divides some di as in (2.1). The number e is minimal such that
+1 + q + q 2 + · · · + q e−1 = 0 in k and there is a square root of q which is also
+a root of Φ2e (v) in k. Under these conditions, we must show:
+
+(E)      |Irr(Hk )| = |Irr(HF (W, ζe ))|,      where F = Q[ζ2e ] ⊂ C.
+
+We shall need the following well-known property of cyclotomic polynomials.
+
+Lemma 3.1 Assume that Φd (q) = 0 for some d > 2. If q = 1, then d = ℓn
+for some n > 1. If q 6= 1, then e is the order of q in k× and d = eℓn for
+some n > 0.
+
+Proof. Let us write d = d′ ℓn where ℓ does not divide d′ . Now Φd (u) certainly
+               n
+divides Φd′ (uℓ ). Since, furthermore, taking ℓth powers is an automorphism
+of k, we conclude that Φd′ (q) = 0. If d′ = 1, this means that q = 1 and
+e = ℓ. So the assertion is true in this case. Now assume that q 6= 1. Then e
+is minimal such that q e − 1 = 0, i.e., e is the multiplicative order of q. Hence
+e divides the order of k× and so is coprime to ℓ. Then Φd′ (q) = 0 implies
+   ′
+q d = 1 and so e divides d′ . Assume, if possible, that e 6= d′ . Then we can
+write            ′
+              ud − 1
+                      = a(u)Φe (u)Φd′ (u)        where a(u) ∈ Z[u].
+               u−1
+Differentiating with respect to u and applying the natural map A → A/p ⊆ k
+yields that d′ = 0 in k, contradicting the fact that d′ is coprime to ℓ.
+    The following result (first established in [11]) provides a general proof
+of (E), but under a condition on ℓ which is more restrictive than that in
+Theorem 1.1.
+
+Theorem 3.2 (Geck–Rouquier) Assume that ℓ 6= 2 and that eℓ does not
+divide any degree di of W . (This condition is satisfied, for example, if ℓ
+does not divide |W |.) Then condition (∗) in Lemma 2.5 is satisfied and (E)
+holds.
+Geck: Number of simple modules                                             10
+
+
+Proof. By Proposition 2.6, it is enough to verify that condition (∗) in
+Lemma 2.5 is satisfied. Using (2.1), we can write cV = Φ2e (v)dV fV (v),
+where dV > 0 and fV (v) ∈ Z[v, v −1 ] is a product of an integer divisible
+by bad primes only, an integral power of u, Φe (v) (if e is odd) and vari-
+ous cyclotomic polynomials Φd (u), where d 6= e and d > 2 divides some
+degree di .
+    Now consider the natural map θ : A → A/p ⊆ k. Assume, if possible,
+that θ(fV (u)) = 0 for some V ∈ Irr(HK ). Since the characteristic of k is
+not a bad prime, we must have θ(Φe (v)) = 0 (if e is odd) or θ(Φd (u)) = 0
+for some d 6= e where d > 2 divides a degree di . The second possibility
+cannot occur by Lemma 3.1 and our assumption. Hence e must be odd and
+θ(Φe (v)) = 0. As in the proof of Lemma 3.1, we write (v 2e − 1)/(v − 1) =
+b(v)Φe (v)Φ2e (v) with some b(v) ∈ Z[v], differentiate with respect to v and
+obtain the conclusion that θ(2e) = 0, i.e., ℓ divides 2e. This contradicts the
+fact that ℓ 6= 2 and e is the order of q.
+    In Section 1, we have already remarked that Theorem 1.1 is known to
+hold for W of type An , Bn and Dn . Thus, it remains to consider the finitely
+many exceptional types. For each of these types, we need to know the prime
+divisors of |W |, the bad primes and the degrees di . This information is
+provided in Table 2. (The information in this table is obtained by inspection
+of the tables in [10, Appendix E] and [2, p. 75].)
+
+        Table 2: Bad primes and degrees for the exceptional types.
+
+           Type      |W |        ℓ bad        degrees di
+            G2      22 · 3        2, 3             2, 6
+            F4       7
+                    2 ·3  2       2, 3         2, 6, 8, 12
+            E6    27 · 34 · 5     2, 3      2, 5, 6, 8, 9, 12
+            E7  210 · 34 · 5 · 7  2, 3  2, 6, 8, 10, 12, 14, 18
+                 14    5    2
+            E8 2 · 3 · 5 · 7 2, 3, 5 2, 8, 12, 14, 18, 20, 24, 30
+
+
+    Now, given W , e and ℓ, the CHEVIE function in Table 3 computes the
+number of simple Hk -modules. This is done by computing the rank of the
+character table of HK under the specialization A → A/p ⊆ k. That this
+rank indeed equals the cardinality of |Irr(Hk )| follows from [10, 7.5.7 and
+8.2.9] and the fact that dp is surjective (see [7, 3.3]). Note also that the
+character tables for all HK are explicitly known and available in CHEVIE.
+    By Theorem 3.2, we still have to consider all primes ℓ which divide |W |
+but are not bad and all e such that e and eℓ divide some degree di . Thus,
+Geck: Number of simple modules                                              11
+
+
+if W is of type G2 or F4 , then all prime divisors of |W | are bad and there
+is nothing more to prove. If W is of type E6 , we only have to consider the
+prime ℓ = 5. But the only degree divisible by 5 is 5 itself, hence we are
+done. If W is of type E7 or E8 , then 2 is the only possible value for e such
+that e and eℓ (with ℓ bad) divide some di . Hence it remains to consider the
+following cases:
+ E7 : e = 2 and ℓ = 5, 7, where we obtain |Irr(Hk )| = 12.
+ E8 : e = 2 and ℓ = 7, where we obtain Irr(Hk )| = 23.
+These results are in accordance with the corresponding values in character-
+istic 0 printed in [10, 11.5.13]. Thus, Theorem 1.1 is proved.
+
+Table 3: A CHEVIE program for computing the number of simple modules.
+
+  gap>   RequirePackage("chevie");
+  gap>   NumberSimples := function( W, e, ell )
+  gap>      local H, i, z;
+  gap>      if Gcd( ell, e ) = 1 then
+  gap>        # find i such that GF(ell^i) has an element z
+  gap>        #of order 2e
+  gap>        i:=1;
+  gap>        while not IsInt( ( ell^i-1 )/( 2*e )) do
+  gap>           i := i+1;
+  gap>        od;
+  gap>        z := Z( ell^i )^( ( ell^i-1 )/( 2*e ) );
+  gap>      elif e = ell and ell>2 then
+  gap>        z := Z( ell )^( ( ell-1 )/2 );
+  gap>      elif e = ell and ell=2 then
+  gap>        z := Z( ell );
+  gap>      fi;
+  gap>      # define the Iwahori-Hecke algebra with parameter z^2
+  gap>      H := Hecke( W, z^2, z );
+  gap>      # return the rank of the specialized character table
+  gap>      return RankMat( CharTable( H ).irreducibles );
+  gap>   end;
+  gap>   NumberSimples( CoxeterGroup( "E", 8 ), 2, 5 ); # an example
+  22
+
+
+
+Remark 3.3 Using the above program we find that if e = ℓ is a bad prime,
+then |Irr(Hk )| < |Irr(HF )|. So, in general, the assertion in Theorem 1.1 will
+not hold if ℓ is a bad prime. (Another example is given in Table 3.)
+Geck: Number of simple modules                                                        12
+
+
+References
+  [1] S. Ariki and A. Mathas, The number of simple modules of the Hecke algebras
+      of type G(r, 1, n), Math. Z. 233, 601–623.
+
+  [2] R. W. Carter, Finite groups of Lie type: Conjugacy classes and complex charac-
+      ters, Wiley, New York (1985).
+
+  [3] C. W. Curtis and I. Reiner, Methods of representation theory Vol. I and II,
+      Wiley, New York, 1981 and 1987.
+
+  [4] R. Dipper, M. Geck, G. Hiss and G. Malle, Representations of Hecke alge-
+      bras and finite groups of Lie type. In: Algorithmic algebra and number theory
+      (Heidelberg, 1997), pp. 331–378, Springer Verlag, Berlin/Heidelberg, 1998.
+
+  [5] R. Dipper and G. D. James, Representations of Hecke algebras of the general
+      linear groups, Proc. London Math. Soc. 52 (1986), 20–52.
+
+  [6] M. Geck, Representations of Hecke algebras at roots of unity, Séminaire Bourbaki,
+      50ème année, 1997-98, Astérisque No. 252 (1998), Exp. 836, 33–55.
+
+  [7] M. Geck, Kazhdan–Lusztig cells and decomposition numbers, Represent. Theory
+      2 (1998), 264–277 (electronic).
+
+  [8] M. Geck, On the representation theory of Iwahori–Hecke algebras of extended
+      finite Weyl groups, Represent. Theory 4 (2000), 370–397 (electronic).
+
+  [9] M. Geck, G. Hiß, F. Lübeck, G. Malle, and G. Pfeiffer, CHEVIE – A
+      system for computing and processing generic character tables for finite groups of
+      Lie type, Weyl groups and Hecke algebras, AAECC 7 (1996), 175–210.
+
+ [10] M. Geck and G. Pfeiffer, Characters of finite Coxeter groups and Iwahori–
+      Hecke algebras, London Math. Soc. Monographs, New Series 21, Oxford University
+      Press, New York 2000. xvi+446 pp.
+
+ [11] M. Geck and R. Rouquier, Centers and simple modules for Iwahori-Hecke al-
+      gebras. In: Finite reductive groups: Related structures and representations (ed.
+      M. Cabanes), pp. 251–272. Birkhäuser, Basel, 1997.
+
+ [12] G. Lusztig, Leading coefficients of character values of Hecke algebras, Proc. Symp.
+      Pure Math. 47, Amer. Math. Soc., Providence, RI, 1987, pp. 235–262.
+
+ [13] M. Schönert et al., GAP – Groups, Algorithms, and Programming, Lehrstuhl
+      D für Mathematik, RWTH Aachen, Germany, fourth ed., (1994).
+
+   Institut Girard Desargues, bat. 101, Université Claude Bernard Lyon 1,
+43 bd du 11 novembre 1918, F–69622 Villeurbanne cedex, France
+   E-mail address: geck@desargues.univ-lyon1.fr
+

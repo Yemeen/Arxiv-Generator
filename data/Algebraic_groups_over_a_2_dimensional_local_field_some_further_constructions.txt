@@ -1,0 +1,1718 @@
+                                                  ALGEBRAIC GROUPS OVER A 2-DIMENSIONAL LOCAL FIELD:
+                                                             SOME FURTHER CONSTRUCTIONS
+arXiv:math/0406282v4 [math.RT] 19 Oct 2005
+
+
+
+
+                                                                       DENNIS GAITSGORY AND DAVID KAZHDAN
+
+                                                                          Dedicated to A. Joseph on his 60th birthday
+
+
+
+
+                                                                                      Introduction
+                                             0.1. Let K be a local field, G a split reductive group over K, and G((t)) the corresponding
+                                             loop group, regarded as a group-indscheme. In [GK] we suggested a categorical framework in
+                                             which one can study representations of the group G((t))(K) = G (K((t))).
+                                                The main point is that G := G((t))(K) admits no interesting representations on vector spaces,
+                                             and we have to consider pro-vector spaces instead. In more detail, we regard G as a group-
+                                             like object in the category Set := Ind(Pro(Ind(Pro(Set0 )))), where Set0 denotes the category of
+                                             finite sets. We observe that Set has a natural pseudo-action on the category Vect = Pro(V ect) of
+                                             pro-vector spaces, and we define the category Rep(G) to consist of pairs (V, ρ), where V ∈ Vect,
+                                             and ρ is an action map G × V → V in the sense of the above pseudo-action, satisfying the usual
+                                             properties.
+                                                In [GK] several examples of objects of Rep(G) were considered. One such example is the
+                                             principal series representation Π, considered by M. Kapranov in [Ka]. Combining the results
+                                             of loc. cit. and the formalism of adjoint functors developed in [GK] we showed that the
+                                             endomorphism algebra of Π could be identified with the Cherednik double affine Hecke algebra.
+                                                Another example is the ”left regular” representation, corresponding to functions on G, with
+                                             respect to the action of G on itself by left translations, denoted M (G). The main feature of
+                                             M (G) is that the right action develops an anomaly: instead of the action of G we obtain an
+                                             action of the Kac-Moody central extension G  b 0 of G by means of the multiplicative group Gm ,
+                                             induced by the adjoint action of G on its Lie algebra.
+
+                                             0.2. In the present paper we continue the study of the category Rep(G). It is natural to
+                                             subdivide the contents into three parts:
+                                                In the first part, which consists of Sections 1 and 2, we prove some general results about
+                                             representability of various covariant functors on the category Rep(G). These results are valid
+                                             when G is replaced by an arbitrary group-like object on Set. We also introduce the pro-vector
+                                             space of distributions on an object of Set with values in a pro-vector space; this notion is used
+                                             in order to construct actions on invariants and coinvariants of representations of G.
+                                                The second part occupies Sections 3, 4, and Sect. 5. We study representations of a central
+                                             extension Gb of G by means of Gm with a fixed central character c : Gm → C∗ ; the correspond-
+                                                                             b and (G
+                                             ing category is denoted Repc (G),      b ′ , c′ ) denotes the opposite extension with its central
+                                             character, cf. [GK], Sect. 5.9.
+
+                                               Date: June 2004.
+                                                                                              1
+2                            DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+    Our goal here is to study the functor of semi-invariants
+                                ∞
+                                2
+                                          b × Repc′ (G
+                                ⊗ : Repc (G)         b ′ ) → Vect,
+                                G
+
+which couples the categories of representations at opposite levels. The motivation for the
+existence of such functor is provided by the semi-infinite cohomology functor on the category
+of representations of a Kac-Moody Lie algebra.
+                         ∞
+                         2
+    The construction of ⊗ presented here follows the categorical interpretation of semi-infinite
+                         G
+cohomology, developed by L. Positselsky (unpublished).
+   We use the functor of semi-invariants to prove the main result of the present paper, Theo-
+rem 3.3. This theorem describes for any quasi pro-unipotent subgroup H of G (cf. Sect. 2.6)
+the ring of endomorphisms of the functor CoinvH : Rep(G) → Vect, as the algebra of endomor-
+                                                                 b 0.
+phisms of a certain object in the category of representations of G
+   In particular, we obtain a functorial interpretation of the double affine (Cherednik) algebra
+in terms of the category Rep(G), as the algebra of endomorphisms of the functor of coinvariants
+with respect to the maximal quasi pro-unipotent subgroup of G.
+   The third part consists of Sections 7 and 8, preceded by some preliminaries in Sect. 6. We
+construct some more examples of objects of Rep(G), this time using the moduli stack of bundles
+on an algebraic curve X over K, when we think of the variable t as a local coordinate near
+some point x ∈ X.
+   In particular, we show in Theorem 7.9 that in this way one naturally produces a pro-vector
+space, endowed with an action of G × G, such the space of bi-coinvariants with respect to
+the maximal quasi pro-unipotent subgroup I00 of G is a bi-module over Cherednik’s algebra,
+isomorphic to the regular representation of this algebra.
+
+0.3. Notation. We keep the notations introduced in [GK]. In particular, for a category C we
+denote by Ind(C) (resp., Pro(C)) its ind- (resp., pro-) completion.
+   For a filtering set I and a collection Ai of objects of C indexed by I, we will denote by
+”lim” Ai the resulting object of Ind(C) and by lim Ai := limInd(”lim” Ai ) ∈ C the inductive
+    −→                                           −→                  −→
+    I                                             I                   I
+limit of the latter, if it exists. The notation for inverse families is similar.
+   As was mentioned above Set0 denotes the category of finite sets. We use the short-hand
+notation Set = Ind(Pro(Set0 )) and Set = Ind(Pro(Set)). We denote by V ect0 the category
+of finite-dimensional vector space, V ect ≃ Ind(V ect0 ) is the category of vector spaces, and
+Vect := Pro(V ect) is the category of pro-vector spaces.
+0.4. Acknowledgements. We would like to thank A. Shapira for pointing out two mistakes
+in the previous version of the paper.
+   The research of D.G. is supported by a long-term fellowship at the Clay Mathematics Insti-
+tute and a grant from DARPA. He would also like to thank the Einstein Institute of Mathematics
+of the Hebrew University of Jerusalem and IHES, where this work was written. The research
+of D.K. is supported by an ISF grant.
+
+0.5. A correction to [GK]. As was pointed out by A. Shapira, Lemma 2.13 of [GK] is wrong.
+Namely, he explained to us a counter-example of a pro-vector space V, acted on by a discrete
+set X (thought of as an object of Set), such that the action of every element of X on V is
+trivial, whereas the action of X on V in the sense of the pseudo-action of Set ⊂ Set on Vect
+is non-trivial. Namely, V = ”lim” Functc (Z≥n ) and X = N, such that i ∈ N acts on each
+                                ←−
+                                n∈N
+                             ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                        3
+
+
+Functc (Z≥n ) by
+         (
+             f (xn , xn+1 , ...) 7→ f (xn , xn+1 , ..., xi + 1, ...) − f (xn , xn+1 , ..., xi , ...), i ≥ n
+             f (xn , xn+1 , ...) 7→ 0, i < n.
+   However, we have the following assertion. Let G be as in [GK], Sect. 1.12 let and Π1 =
+(V1 , ρ1 ), Π2 = (V2 , ρ2 ) be two objects of Rep(G, Vect). Assume that V1 is strict as a pro-vector
+space, i.e., that it can be represented as ”lim” V1i , where the maps in the inverse systesm
+                                                       ←−
+V1j → V1i are surjective. Let φ : V1 → V2 be a map in Vect, which intertwines the actions of
+the set G(F) = Gtop on V1 and V2 .
+Lemma 0.6. Under the above circumstances, the map φ is a map in Rep(G, Vect).
+Proof. We will prove a more general assertion, when we do not require V1 and V2 to be rep-
+resentations of G on Vect, but just objects of endowed with an action of G, regarded as an
+object of Set. We claim that a map V1 → V2 compatible with a point-wise action of Gtop is
+compatible with an action of G as an object of Set, under the assumption that V1 is strict.
+   We represent G as ”lim” Xk , Xk ∈ Pro(Set), and for each k, Xk ≃ ”lim” Xlk , such the maps
+                             −→                                                         ←−
+    ′
+(Xlk )top → (Xlk )top are surjective. The assertion of the lemma reduces immediately to the case
+when V2 = W ∈ V ect, and G is replaced by Xk . In this case
+                              Hom(Xk ⊗ V2 , W) ≃ lim Hom(Xk ⊗ V2i , W).
+                                                           −→
+                                                            i
+
+However, by the assumption on the inverse system {V1i }, for every i the map
+                           Hom((Xk )top × V1i , W) → Hom((Xk )top × V1 , W)
+is injective. This reduces us to the case when V1 = V is an object of V ect. The rest of the
+proof proceeds as in Lemma 2.13 of [GK].
+                                                                                          
+
+                            1. The pro-vector space of distributions
+1.1. Let X be an object of Set and V ∈ Vect. Consider the covariant functor on Vect that
+assigns to W the set of actions X × V → W. We claim that this functor is representable. We
+will denote the representing object by Distrc (X, V) ∈ Vect; its explicit construction is given
+below. It is clear from the definition that covariant functor V → Distrc (X, V) is right exact.
+   We begin with some preliminaries of categorical nature:
+Lemma 1.2. The category Vect is closed under inductive limits.
+Proof. Since Vect is abelian, it is enough to show that it is closed under direct sums.
+  Let Vκ be a collection of pro-vector spaces, Vκ ≃ ”lim” Viκκ with iκ running over a filtering
+                                                                    ←−
+set I κ . Consider the set Π I κ , whose elements can be thought of as families {ϕ(κ) ∈ I κ , ∀κ}.
+                            κ
+This set is naturally filtering, and
+                                                          
+                                     ⊕Vκ ≃ ”lim” ⊕Vφ(κ) κ
+                                                             ,
+                                           κ          ←−        κ
+
+where the inverse system is taken with respect to Π I κ .
+                                                                κ
+                                                                                                              
+4                            DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+1.3. Let us now describe explicitly the pro-vector space Distrc (X, V),
+   If X is a finite set and V is a finite-dimensional vector space, let Distrc (X, V ) be the set of
+V -valued functions on X, thought of as distributions. If X0 ∈ Pro(Set0 ) equals ”lim” Xi with
+                                                                                       ←−
+Xi ∈ Set0 and V is as above, set
+                           Distrc (X0 , V ) = ”lim” Distrc (Xi , V ) ∈ Vect.
+                                               ←−
+                  0
+Set also Distr(X , V ) = lim Distrc (Xi , V ) ∈ V ect, i.e.
+                           ←−
+
+                              Distr(X0 , V ) = limP roj Distrc (X0 , V ).
+  If X is an object of Set equal to ”lim” Xj , Xj ∈ Pro(Set0 ) and V ∈ V ect is ”lim” Vm with
+                                     −→                                          −→
+Vm ∈ V ect0 , set
+                         Distrc (X, V ) = lim Distrc (Xj , Vm ) ∈ Vect,
+                                              −→
+                                              j,m
+
+where the inductive limit is taken in Vect. Set also
+                            Distrc (X, V ) = lim Distrc (Xj , Vm ) ∈ V ect.
+                                             −→
+                                             j,m
+
+
+When V is finite-dimensional, the latter is the vector space, which is the topological dual of
+the topological vector space Functlc (X, V ∗ ) of locally constant functions on X with values in
+V ∗ . Note that Distrc (X, V ) is not isomorphic to limP roj Distrc (X, V ) even if V is finite-
+dimensional.
+   For X0 ∈ Pro(Set) equal to ”lim” Xl with Xl ∈ Set and V is a pro-vector space equal to
+                               ←−
+”lim” Vn , set
+    ←−
+                           Distr c (X0 , V) = lim Distrc (Xl , Vn ) ∈ Vect.
+                                              ←−
+                                              l,n
+
+                                        k
+Finally, for X ∈ Set equal to ”lim” X and V ∈ Vect, set
+                                 −→
+
+                                 Distrc (X, V) = lim Distrc (Xk , V).
+                                                    −→
+                                                    k
+
+
+Lemma-Construction 1.4. For Distr c (X, V) ∈ Vect constructed above, there exists a natural
+isomorphism
+                  HomVect (Distr c (X, V), W) ≃ Hom(X ⊗ V, W).
+Proof. By the definition of both sides, we can assume that X ∈ Pro(Set) and W = W ∈ V ect.
+We have the following (evident) sublemma:
+Sublemma 1.5. If U = lim Um , where the projective limit is taken in the category Vect, then
+                           ←−
+for any X ∈ Pro(Set) and W ∈ V ect,
+                            Hom(X ⊗ U, W) ≃ lim Hom(X ⊗ Um , W).
+                                                    −→
+
+  The sublemma implies that we can assume that V = V ∈ V ect. By applying again the
+construction of Distrc (X, V), we reduce the assertion of the lemma further to the case when
+X = X ∈ Set, i.e., we have to show that
+                         HomVect (Distrc (X, V), W) ≃ Hom(X ⊗ V, W).
+  By the construction of Distrc (X, V) and the definition of the action, we can assume that
+X ∈ Pro(Set0 ) and V is finite-dimensional. In this case the assertion is evident.
+                                                                                         
+                            ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                    5
+
+
+Remark. For fixed X and V as above we can also consider the contravariant functor on Vect,
+given by W 7→ Hom(X × W, V). It is easy to see that this functor is ind-representable, but
+Lemma 1.8 shows that it is not in general representable. We will denote the resulting object of
+Ind(Vect) by Funct(X, V).
+
+1.6. Let now X, Y be two objects of Set. The associativity constraint of the pseudo-action of
+Set and Vect gives rise to a map
+(1)                          Distr c (X × Y, V) → Distr c (X, Distr c (Y, V)).
+   Let us now recall the following definition from [GK], Sect. 2.10:
+An object X ∈ Set is said to satisfy condition (**) if it can be represented as ”lim” Xk with
+                                                                                            −→
+each Xk ∈ Pro(Set) being weakly strict. We remind (cf. [GK], Sect. 1.10) that an object
+X′ ∈ Pro(Set) is said to be weakly strict if it can be represented as ”lim” X′i , X′i ∈ Set, such
+                                                                                 −→
+that the transition maps X′i → X′j are weakly surjective; in the case of interest when all X′i ’s are
+locally compact, the latter condition means that the map of topological spaces X′ top i   → X′j top
+has dense image.
+   As was shown in [GK], Sect. 2.12, if G is an algebraic group over K, then the corresponding
+object G ∈ Set satisfies condition (**).
+                                                                                                    1
+Proposition 1.7. If X ∈ Set satisfies condition (**), then the map in (1) is surjective.
+   This map is not in general an isomorphism. To construct a counter-example, it suffices to
+take V = C–the 1-dimensional vector space, and Y a discrete set Y ∈ Set ≃ Ind(Set0 ), regarded
+as an object of Set by means of Set0 → Pro(Set).
+
+Proof. We need to show that for a pro-vector space W, the map
+(2)                    Hom(X ⊗ Distrc (Y, V), W) → Hom((X × Y) ⊗ V, W)
+is injective. We will repeatedly use the facts that the functor limInd : Ind(V ect) → V ect is
+exact and the functor limP roj : Pro(V ect) → V ect is left-exact.
+   By assumption, X can be written as ”lim” Xk with Xk ∈ Pro(Set) being weakly strict. Set
+                                               −→
+also W = ”lim” Wj , Wj ∈ V ect. Both sides of (2) are projective limits over k and j of the
+           ←−
+corresponding objects with X replaced by Xk and W replaced by Wj . So, we can assume that
+X is a weakly strict object of Pro(Set) and W = W ∈ V ect.
+   Let us write now Y = ”lim” Yk′ with Yk′ ∈ Pro(Set), in which case Distrc (Y, V) ≃
+                                  −→
+lim Distrc (Yk′ , V), and
+−→
+
+                      Hom((X × Y) ⊗ V, W) ≃ lim Hom((X × Yk′ ) ⊗ V, W).
+                                                    ←−
+
+Lemma 1.8. If U = lim Um , the inductive limit taking place in Vect, then for an object
+                            −→
+X ∈ Set, satisfying condition (**), and W ∈ Vect, the natural map
+                              Hom(X ⊗ U, W) → lim Hom(X ⊗ Um , W)
+                                                    ←−
+
+is injective. If X ∈ Set, then this map is an isomorphism.
+
+   1We are grateful to Alon Shapira who discovered an error in the previous version of the paper, where the
+(**) assumption on X was omited.
+6                            DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+Proof. As above, we can assume that W = W ∈ V ect, and X is a weakly strict object of
+Pro(Set). Assume first that X = X ∈ Set. In this case the assertion of the lemma follows from
+the description of inductive limits in Vect given in Lemma 1.2.
+   Thus, let X be represented as ”lim” Xl , Xl ∈ Set, with the transition maps Xl′ → Xl being
+                                    ←−
+weakly surjective. Then
+            Hom(X ⊗ U, W) ≃ lim Hom(Xl ⊗ U, W) ≃ lim lim Hom(Xl ⊗ Um , W),
+                                   −→                     −→ ←−
+                                    l                      l m
+
+and
+                        lim Hom(X ⊗ Um , W) ≃ lim lim Hom(Xl ⊗ Um , W).
+                        ←−                        ←− −→
+                        m                         m   l
+   However, by the assumption, the transition maps Hom(Xl ⊗ Um , W) → Hom(Xl′ ⊗ Um , W)
+are injective. Therefore, the natural map
+                     lim lim Hom(Xl ⊗ Um , W) → lim lim Hom(Xl ⊗ Um , W)
+                     −→ ←−                          ←− −→
+                      l m                           m   l
+
+is injective.
+                                                                                                
+
+   Hence, we are reduced to the case when Y is also an object of Pro(Set). Using Sublemma 1.5,
+we reduce the assertion further to the case when V = V ∈ V ect and Y = Y ∈ Set.
+   If X = ”lim” Xl then both sides of (2) are inductive limits over l of the corresponding objects
+           ←−
+with X replaced by Xl . Thus, from now on we will assume that X = X ∈ Set, and we have to
+show that the map
+(3)                   Hom(X ⊗ Distrc (Y, V), W) → Hom((X × Y) ⊗ V, W)
+is injective, where on the left-hand side Hom is understood in the sense of the pseudo-action
+of Set ⊂ Set on Vect.
+    By applying Lemma 1.8, we reduce the assertion to the case when Y ∈ Pro(Set0 ) and V is
+finite-dimensional. It is clear that when Y belongs to Set0 , the map in (3) is an isomorphism.
+Consider now the case when Y = ”lim” Yi with Yi ∈ Set0 and X = ”lim” Xn with Xn ∈
+                                        ←−                                  −→
+Pro(Set0 ). Then, by Sublemma 1.5
+           Hom(X ⊗ Distr c (Y, V), W) ≃ lim Hom(X ⊗ Distr c (Yi , V), W) ≃
+                                             −→
+                                              i
+           lim lim Hom(Xn ⊗ Distrc (Yi , V), W) ≃ lim lim Hom((Xn × Yi ) ⊗ V, W).
+           −→ ←−                                     −→ ←−
+            i  n                                      i  n
+
+    We also have and identification
+Hom((X × Y) ⊗ V, W) ≃ lim Hom((Xn × Y) ⊗ V, W) ≃ lim lim Hom((Xn × Yi ) ⊗ V, W).
+                              ←−                              ←− −→
+                               n                               n  i
+
+  Since Yi are finite sets, we can assume that the transition maps Yi′ → Yi are surjective.
+Therefore, the map
+                lim lim Hom((Xn × Yi ) ⊗ V, W) → lim lim Hom((Xn × Yi ) ⊗ V, W)
+                −→ ←−                               ←− −→
+                 i  n                                n  i
+
+is injective.
+                                                                                                
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                 7
+
+
+1.9. As an application of Proposition 1.7, we will prove the following result.
+   Let ρ : X × V → W be an action map. We can consider ker(ρ) and coker(ρ) as functors on
+Vect:
+       ker(ρ)(U) = {φ : U → V | ρ ◦ φ = 0} and coker(ρ)(U) = {ψ : W → U | ψ ◦ ρ = 0}.
+   As in [GK], Proposition 2.8, one shows that coker(ρ) is always representable, and ker(ρ) is
+representable if condition (**) is satisfied.
+Corollary 1.10. Let Y × V → V and Y × W → W be actions commuting in the natural sense
+with ρ. Then, if Y satisfies (**), we have an action of Y on coker(ρ), and if X satisfies condition
+(**), we have an action of Y on ker(ρ).
+   This corollary will be used when V = W, and both X = G and Y = H are group-like objects
+in Set, whose actions on V commute. In this case we obtain that G acts on both invariants and
+coinvariants of H on V.
+
+Proof. Let us first prove the assertion about the cokernel. Note that coker(ρ) is isomorphic
+to the cokernel of the map Distrc (X, V) → W obtained from ρ. We need to show that the
+composition
+                                Distrc (Y, W) → W → coker(ρ)
+factors through Distrc (Y, coker(ρ)). By the right-exactness of the functor Distrc (Y, ·),
+                                                                                   
+            Distrc (Y, coker(ρ)) ≃ coker Distrc (Y, Distr c (X, V)) → Distrc (Y, W) ,
+and it is enough to show that the composition
+                            Distr c (Y, Distr c (X, V)) → W → coker(ρ)
+vanishes.
+  However, using Proposition 1.7, we can replace Distrc (Y, Distrc (X, V)) by Distrc (Y × X, V),
+and the required assertion follows from the commutative diagram:
+                                         ρ
+                     Distrc (X, V)    −−−−→         W         −−−−→ coker(ρ)
+                          x                         x
+                                                   
+                                                   
+                                         ρ
+                   Distrc (Y × X, V) −−−−→ Distrc (Y, W).
+  The proof for ker(ρ) is similar. We have to show that the composition
+                       Distrc (X, Distr c (Y, ker(ρ))) → Distrc (X, V) → W
+vanishes. Using Proposition 1.7, it is sufficient to show that the composition
+                          Distrc (X × Y, ker(ρ)) → Distrc (X, V) → W
+vanishes, which follows from the assumption.
+                                                                                                 
+
+                     2. Existence of certain left adjoint functors
+2.1. In what follows G will be group-like object in Set satisfying assumption (**). Following
+[GK], we will denote by Rep(G) the category of representations of G on Vect.
+Proposition 2.2. The forgetful functor Rep(G) → Vect admits a left adjoint.
+8                                   DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+Proof. We have to prove for any W ∈ Vect the representability of the functor on Rep(G) given
+by Π = (V, ρ) 7→ HomVect (W, V). This functor obviously commutes with projective limits in
+Rep(G); so, by Proposition 1.2 of [GK] (with Ind replaced by Pro), it is enough to show that
+it is pro-representable.
+    Consider the category of pairs (Π, α), where Π = (V, ρ) is an object in Rep(G) and α : W → V
+is a map in Vect. For any such pair we obtain an action map G × W → V, and hence a map
+Distrc (G, W) → V. Since for an object of Vect the class of its quotient objects is clearly a set,
+the sub-class of those (Π, α), for which the above map Distrc (G, W) → V is surjective, is also
+a set. This set is naturally filtered, and let us denote it by A(W); it is endowed with a functor
+to Rep(G) given by (Π, α) 7→ Π.
+    We claim that lim Π is the object on Pro(Rep), which pro-represents our functor.
+                          ←−
+                       (Π,α)∈A(W)
+
+        Indeed, for Π′ = (V′ , ρ′ ) ∈ Rep(G), the map
+            HomPro(Rep(G)) (    lim       Π, Π′ ) =     lim        HomRep(G) (Π, Π′ ) → HomVect (W, V′ )
+                                ←−                       −→
+                             (Π,α)∈A(W)               (Π,α)∈A(W)
+
+
+is evident. Vice versa, given a map W → V′ consider the induced map Distrc (G, W) → V′ , and
+let U be its image. We claim that the action map G × U → V′ factors through U; this would
+mean that Π := (U, ρ′ |U ) is a sub-object of Π′ , and we obtain a morphism from lim Π to
+                                                                                                    ←−
+                                                                                                 (Π,α)∈A(W)
+    ′
+Π.
+  Consider the commutative diagram:
+                           Distrc (G × G, W) −−−−→ Distrc (G, Distrc (G, W))
+                                                              
+                                                              
+                               multy                           y
+                               Distrc (G, W)                           Distr c (G, U)
+                                                                            
+                                                                            
+                                     y                                       y
+                                U          −−−−→              V′
+We need to show that the image of the vertical map Distrc (G, U) → V′ is contained in U. Since,
+by construction, the morphism Distrc (G, W) → U is surjective, and the functor Distrc (G, ·) is
+right-exact, it suffices to show that the image of the composed vertical map is contained in U.
+   However, by Proposition 1.7, it is sufficient to check that the composed map
+                                             Distrc (G × G, W) → V′
+has its image contained in U, but this follows from the above diagram.
+                                                                                                              
+
+2.3. Let us now derive some corollaries of Proposition 2.2. We will denote the left adjoint
+constructed above by V 7→ Free(V, G).
+Corollary 2.4. Let G1 → G2 be a homomorphism of group-objects of Set. Then the natural
+forgetful functor Rep(G2 ) → Rep(G1 ) admits a left adjoint.
+Proof. Let Π1 be an object of Rep(G1 ). The functor on Rep(G2 ) given by Π 7→ HomG1 (Π1 , Π)
+commutes with projective limits. Therefore, by Lemma 1.2 of [GK] it suffices to show that it
+is pro-representable.
+   Let V1 be the pro-vector space underlying Π1 . We have an injection HomG1 (Π1 , Π) ֒→
+HomVect (V1 , V), where V is the pro-vector space underlying Π.
+                          ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                              9
+
+
+   By Proposition 2.2 we know that the functor Π 7→ HomVect (V1 , V) is representable. There-
+fore, the assertion of the proposition follows from Proposition 1.4 of [GK].
+                                                                                           
+   We will denote the resulting functor Rep(G1 ) → Rep(G2 ) by Π 7→ CoindG
+                                                                         G1 (Π) and call it
+                                                                          2
+
+
+the coinduction functor.
+Corollary 2.5. The category Rep(G) is closed under inductive limits.
+Remark. Note that if G = G is a group-object in Set, then the proof of Lemma 1.2 shows that
+the category Rep(G, Vect) is closed under inductive limits. Moreover, the forgetful functor
+Rep(G, Vect) → Vect commutes with inductive limits.
+   For an arbitrary G ∈ Set, the latter fact is not true, and we need to resort to Proposition 2.2
+even to show the existence of inductive limits. We will always have a surjection from the
+inductive limit of underlying pro-vector spaces to the pro-vector space, underlying the inductive
+limit.
+Proof. Let Πi = (Vi , ρi ) be a filtering family of objects of Rep(G). Consider the covariant
+functor F on Rep(G) given by
+                                  Π 7→ lim HomRep(G) (Πi , Π).
+                                        ←−
+                             ′
+Consider also the functor F that sends Π = (V, ρ) to lim HomVect (Vi , V).
+                                                        ←−
+   By Proposition 2.2 and Lemma 1.2, the functor F′ is representable. Hence, by Proposition 1.4
+of [GK], we conclude that F is pro-representable. Since F obviously commutes with projective
+limits in Rep(G), it is representable by Lemma 1.2 of [GK].
+                                                                                             
+2.6. Inflation. Let us call a group-object H of Set quasi-unipotent if it can be presented as
+”lim” Hi , where Hi are group-objects of Pro(Set0 ) and transition maps being homomorphisms,
+ −→
+cf. [GK].
+   Let us call a group-object H ∈ Pro(Set) quasi pro-unipotent if it can be presented as
+                                                                                        ′
+”lim” Hl , where Hl are quasi-unipotent group-objects of Set, and the transition maps Hl → Hl
+ ←−
+being weakly surjective homomorphisms, cf. [GK], Sect. 1.10.
+   According to Lemma 2.7 of [GK], if H is quasi pro-unipotent, the functor of H-coinvariants
+                                 CoinvH : Rep(H, Vect) → Vect
+is exact.
+Proposition 2.7. If H is quasi pro-unipotent, the functor CoinvH admits a left adjoint.
+   We will refer to the resulting adjoint functor as ”inflation”, and denote it by V 7→ Inf H (V).
+
+2.8. Proof of Proposition 2.7. Let us first take H to be a quasi-unipotent group-object of
+Set, isomorphic to ”lim” Hi , where Hi are group-objects in Pro(Set0 ).
+                     −→
+  Let us show that for a vector space V, the functor Rep(H, V ect) → V ect given by Π 7→
+Hom(V, ΠH ) is pro-representable.
+   For an index i, consider the object CoindH  Hi (V) ∈ Rep(H, Vect), where V is regarded as a
+trivial representation of Hi , and Coind is as in Corollary 2.4. Using Proposition 2.4 of [GK],
+we obtain that CoindH Hi (V) is a well-defined object of Pro(Rep(H, V ect)), which pro-represents
+the functor Π 7→ ΠHi .
+10                          DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+  Note that if H is locally compact, and Hi ⊂ H is open, then CoindH
+                                                                   Hi (V) belongs in fact to
+Rep(H, V ect), and is isomorphic to the space of compactly supported V-valued distributions
+on H/Hi , i.e., to the ordinary compact induction.
+     Since Hi is compact, we have ΠHi ≃ ΠHi . Therefore, for j > i we have natural maps
+                                    CoindH             H
+                                         Hj (V) → CoindHi (V).
+
+Therefore, we can consider the object
+                             lim CoindH
+                                      Hj (V) ∈ Pro(Rep(H, V ect)),
+                             ←−
+where the projective limit is taken in the category Pro(Rep(H, V ect)).
+  For Π ∈ Rep(H, V ect) we have:
+                         Hom(lim CoindH
+                                      Hi (V), Π) ≃ lim Hom(V, ΠHi ).
+                               ←−                        −→
+     Since ΠH ≃ lim ΠHi , the RHS of the above expression is not in general isomorphic to
+                   −→
+Hom(V, ΠH ), except when V is finite-dimensional. In the latter case we set Inf H (V) :=
+lim CoindH
+         Hi (V).
+←−
+     For general V, isomorphic to lim Vk with Vk ∈ V ect0 , we set
+                                    −→
+
+                                     Inf H (V) = lim Inf H (Vk ),
+                                                 −→
+where the inductive limit is taken in Pro(Rep(H, V ect)), cf. Lemma 1.2.
+   Now, the existence (and construction) of the functor Inf H follows from Proposition 2.4
+of [GK]. Namely, if H = ”lim” Hl with Hl being group-objects in Set as above, and V =
+                          ←−
+”lim” Vm , we set
+ ←−
+                                                         l
+                                    Inf H (V) = lim Inf H (Vm ),
+                                                ←−
+                                                l,m
+where the projective limit is taken in the category Rep(H, Vect) ≃ Pro(Rep(H, V ect)), and each
+     l
+Inf H (Vm ) is regarded as a representation of H via H → Hl .
+
+                              3. The functor of coinvariants
+3.1. From now on we will assume that the group-like object G is obtained from a split reductive
+group G over K, as in [GK], Sect. 2.12. More generally, we will consider a central extension Gb
+                                                        b                                     b
+of G((t)) as in Sect. 2.14 of [GK], and denote by Repc (G) the category of representations of G
+at level c.
+   Let H be a quasi pro-unipotent group-object in Pro(Set). Let H → G be a homomorphism,
+                                                                          b H . In particular,
+and we will assume that we are given a splitting of the induced extension G|
+                                    b → Rep(H, Vect).
+we have the forgetful functor Repc (G)
+   Consider the functor
+                                             b → Vect,
+                                       Repc (G)
+given by Π 7→ CoinvH (Π). Let E(G, H)c denote the algebra of endomorphisms of this functor.
+Remark. One can regard E(G, H)c as an analogue of the Hecke algebra of a locally compact
+subgroup with respect to an open compact subgroup. Indeed, if G is a locally compact group-
+like object in Set and H ⊂ G is open and compact, the corresponding Hecke algebra, which
+by definition is the algebra of H-bi-invariant compactly supported functions on G, can be
+interpreted both, as the algebra of endomorphisms of the representation CoindG
+                                                                             H (C), where C is
+                          ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                 11
+
+
+the trivial representation, and as the algebra of endomorphisms of the functor Π 7→ CoinvH (Π) :
+Rep(G, V ect) → V ect.
+3.2. Recall now the representation Mc (G), introduced in Sect. 5.6 of [GK]. According to the
+                                                b
+main theorem of loc.cit., the structure of G-representation          on Mc (G) extends naturally to a
+structure of Gb ×Gb ′ -representation, where G  b ′ is the group-object of Set corresponding to the
+central extension Gb′ of G((t)), the latter being the Baer sum of G      b and the canonical extension
+ b
+G0 , corresponding to the adjoint action of G on its Lie algebra. The action of G     b ′ of Mc (G) has
+                   ′
+central character c , given by the formula in Sect. 5.9 of [GK].
+   In what follows we will call objects of Repc′ (G    b ′ ) ”representations at the opposite level” to
+               b We will refer to the G
+that of Repc (G).                        b ′ -action on Mc (G) as the ”right action”.
+                                                                              b ′ , we obtain
+  Using Corollary 1.10, by taking H-coinvariants with respect to H mapping to G
+                   b which we will denote by Mc (G, H). By construction, we have a natural
+an object of Repc (G)
+map
+                               E(G, H)c′ → EndVect (Mc (G, H)).
+However, since the Gb and Gb actions on Mc (G) commute, from Lemma 0.6 we obtain that
+                             ′
+
+                                                                             b
+endomorphisms of Mc (G, H), resulting from the above map, commute with the G-action.
+  Hence, we obtain a map
+(4)                            E(G, H)c′ → EndRep        b     (Mc (G, H)).
+                                                       c (G)
+
+   We will prove the following theorem:
+Theorem 3.3. The map in (4) is an isomorphism.
+3.4. Let us consider a few examples. Suppose first that the group H is trivial. As a corollary
+of Theorem 3.3 we obtain:
+Theorem 3.5. The algebra E(G)c of endomorphisms of the forgetful functor Repc (G)b → Vect
+                                                                            b ).
+is isomorphic to the algebra of endomorphisms of the object Mc (G) ∈ Repc′ (G ′
+
+
+   Let now H be a thick subgroup of G[[t]] (see [GK], Sect. 2.12). Note that in this case, the
+                                                                 b
+object Mc (G, H) is isomorphic to the induced representation iG  H (C) of [GK], Sect. 3.3, where C
+is the trivial 1-dimensional representation of H.
+    In particular, let us take H to be I00 , the subgroup of I equal to the kernel of the natural
+map I → T → Λ, where I ⊂ G[[t]] is the Iwahori subgroup and Λ is the lattice of cocharacters
+of T , regarded as a quotient of T by its maximal compact subgroup.
+                                                 b
+    The corresponding induced representation iG  H (C) is isomorphic to Kapranov’s representation,
+denoted in Sect. 4 of [GK] by Vc . Assume now that G is semi-simple and simply-connected.
+In this case it follows from Corollary 4.4 of [GK] that the algebra End(Vc ) is isomorphic to the
+                     ··
+Cherednik algebra Hq,c′ . From Theorem 3.3 we obtain:
+                                           ··
+Corollary 3.6. The Cherednik algebra Hq,c′ is isomorphic to the algebra of endomorphisms of
+                                     b → Vect.
+the functor Π → CoinvI00 (Π) : Repc (G)
+3.7. Note that by combining Proposition 2.7 and Corollary 2.4, we obtain that the above
+                       b → Vect admits a left adjoint:
+functor CoinvH : Repc (G)
+                                                   b
+                                       V 7→ CoindG     H
+                                                 H (Inf (V)).
+
+   Of course, the algebra of endomorphisms of this functor is isomorphic to E(G, H)oc .
+12                           DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+                                  b → V ect obtained by composing CoinvH with the functor
+   Consider now the functor Repc (G)
+limP roj : Vect → V ect. Let E(G, H)c be the algebra of endomorphisms of this latter functor.
+We have a natural map E(G, H)c → E(G, H)c .
+
+Proposition 3.8. (a) The map E(G, H)c → E(G, H)c is injective.
+                                                            b
+                                                                          
+(b) The algebra E(G, H)oc is isomorphic to EndRep (G)
+                                                   b    CoindG
+                                                             H (Inf H
+                                                                      (C))  .
+                                                       c
+
+
+  We do not know under what conditions on H one might expect that the above map
+E(G, H)c → E(G, H)c is an isomorphism.
+Proof. To prove the first assertion of the proposition, note that by Theorem 3.3, the evaluation
+map E(G, H)c → EndVect (CoinvH (Mc (G))) is injective.
+   By construction, the pro-vector space Mc (G) can be represented as a countable inverse limit
+with surjective restriction maps. Hence, by Proposition 2.5 of [GK], CoinvH (Mc (G)) ∈ Vect
+will also have this property. We have:
+Lemma 3.9. For any pro-vector space, which can be represented as a countable inverse limit
+with surjective restriction maps, the morphism limP roj(V) → V is surjective.
+     This lemma implies that the map EndVect (V) → EndV ect (limP roj(V)) is injective.
+   To prove the second assertion, we must analyze the endomorphism algebra of the functor
+              b given by
+V ect → Repc (G)
+                                                   b
+                                      V 7→ CoindG     H
+                                                H (Inf (V)).
+  However, as every left adjoint, this functor commutes with inductive limits. Therefore, its
+enough to consider its restriction to the subcategory V ect0 . This implies the proposition.
+                                                                                             
+
+                             4. The functor of semi-invariants
+4.1. Our method of proof of Theorem 3.3 in based on considering the functor of G-semi-
+invariants
+                           ∞
+                           2
+                                      b ′ ) × Repc (G)
+                           ⊗ : Repc′ (G             b → Vect,
+                                 G
+where c and c′ are opposite levels. The construction of this functor mimics the construction of
+the semi-infinite cohomology functor for associative algebras by L. Positselsky, [Pos].
+                    b Πc′ ∈ Rep ′ (G
+     For Πc ∈ Repc (G),            b ′ ) consider the pro-vector spaces
+                               c
+
+                                 Πc′ ⊗ Πc and Πc′ ⊗ Mc (G) ⊗ Πc .
+We consider the former as acted on by the diagonal copy of G[[t]], and the latter by two mutually
+                                                                              b
+commuting copies of G[[t]]: one acts diagonally on Πc′ ⊗ Mc (G) via the left G-action  on Mc (G);
+the other copy acts diagonally on Mc (G) ⊗ Πc via the right action. Consider the object
+                                  (Πc′ ⊗ Mc (G) ⊗ Πc )G[[t]]×G[[t]] .
+We will construct two natural maps
+(5)                     (Πc′ ⊗ Πc )G[[t]] ⇒ (Πc′ ⊗ Mc (G) ⊗ Πc )G[[t]]×G[[t]] .
+   To construct the first map recall from Lemma 5.8 of [GK] that
+                                                                      
+                                                   b       b
+(6)                        (Mc (G) ⊗ Πc )G[[t]] ≃ iG       G
+                                                   G[[t]] rG[[t]] (Πc ) .
+                            ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                  13
+
+                                                b                                               eG b
+Since G/G[[t]] is ind-compact, the functor iG    G[[t]] is isomorphic to the induction functor, iG[[t]] .
+                                       b
+Therefore, we obtain a morphism of G-representations
+                                                    
+                               b          b
+(7)                     Πc → iGG[[t]]   r G
+                                         G[[t]] (Πc )   ≃ (Mc (G) ⊗ Πc )G[[t]]
+                                     G     b         G    b
+by adjunction from the identity map rG[[t]] (Πc ) → rG[[t]] (Πc ).
+  The first map in (5) comes from (7) by tensoring with Πc′ and taking G[[t]]-coinvariants.
+                                                                                 fc (G) be a
+   To construct the second map in (5) we will use the following observation. Let M
+representation of Gb ×G ′                                             b × G,
+                      b , obtained from the representation Mc′ (G) of G ′  b by flipping the
+         b     b ′
+roles of G and G . We have:
+Proposition 4.2.
+                                     b ×G
+(1) We have a natural isomorphism of G  c′ -representations M
+                                                            fc (G) ≃ Mc′ (G).
+(2) The resulting two morphisms
+                                                       
+                             Mc (G) ⇒ Mc (G) ⊗ Mc (G) G[[t]]
+one, coming from (7), and the other from interchanging the roles of c and c′ , coincide.
+Remark. It will follow from the proof, that statement (2) of the proposition fixes the isomor-
+phism of statement (1) uniquely.
+   The proof will be given in Sect. 5. Using this proposition we construct the second map in
+(5) by simply interchanging the roles of c and c′ .
+                                          ∞
+                                          2
+4.3. For Πc , Πc′ as above, we set Πc′ ⊗ Πc to be the equalizer (i.e., the kernel of the difference)
+                                          G
+of the two maps in (5). Note that since the functor of G[[t]]-coinvariants is only right-exact,
+                        ∞
+                        2
+the resulting functor ⊗ is a priori neither right nor left exact.
+                        G
+                                                        b but carries an additional commuting
+   Suppose now that Πc is not only a representation of G,
+action of some group-object H ∈ Set, which satisfies condition (**). In this case it follows from
+                            ∞
+                            2
+Corollary 1.10 that Πc′ ⊗ Πc is an object of Rep(H).
+                            G
+
+   The key assertion describing the behavior of the functor of semi-invariants is the following:
+                                                            b we have a natural isomorphism
+Proposition 4.4. For Mc (G), regarded as an object of Repc (G),
+      ∞
+    2
+                                                                       b
+Πc′ ⊗ Mc (G) ≃ Πc′ . Moreover, this isomorphism is compatible with the G-actions.
+      G
+
+Proof. Consider the following general set-up. Let C1 and C2 be two abelian categories, G : C1 →
+C2 be a functor, and F : C2 → C1 its right adjoint. By composing with F ◦ G on the left and on
+the right, the adjunction map IdC1 → F ◦ G gives rise to two maps
+(8)                                      F ◦ G ⇒ F ◦ G ◦ F ◦ G,
+such that IdC1 maps to thei equalizer.
+Lemma 4.5. Assume that the functor G is exact and faithfull. Then the map
+                                IdC1 → Equalizer (F ◦ G ⇒ F ◦ G ◦ F ◦ G)
+is an isomorphism.
+14                              DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+Proof. By assumption o G, it is enough to show that
+                           G → Equalizer (G ◦ F ◦ G ⇒ G ◦ F ◦ G ◦ F ◦ G)
+is an isomorphism, but this happens for any pair of adjoint functors.                                   
+                                         b ′ ), C2 = Rep(G[[t]], Vect) with F = iG , G = rG .   b   b
+   We apply this lemma to C1 = Repc′ (G                                               G[[t]]     G[[t]]
+To prove the Proposition it is sufficient to show that for Πc′ ∈ Repc′ (G    b ′ ) the terms and maps
+in (5) are equal to the corresponding ones in (8).
+   First, by (6) and Proposition 4.2(1), for Πc′ as above, F ◦ G(Πc′ ) is indeed isomorphic to
+(Πc′ ⊗ Mc (G))G[[t]] . Furthermore, by applying the functor F ◦ G to the adjunction map Πc′ →
+F ◦ G(Πc′ ) we obtain the second of the two maps from (5).
+                                                              b         b
+   Let us now calculate the adjunction map IdRep ′ (Gb ′ ) → iG         G
+                                                              G[[t]] ◦ rG[[t]] applied to
+                                                             c
+
+                                    F ◦ G(Πc′ ) ≃ (Πc′ ⊗ Mc (G))G[[t]] .
+By construction, it is obtained from the adjunction map
+                        Mc (G) → F ◦ G(Mc (G)) ≃ (Mc (G) ⊗ Mc (G))G[[t]]
+by tensoring with Πc′ and taking G[[t]]-coinvariants. Therefore, by Proposition 4.2(2), it coin-
+cides with the first map from (5).
+                                                                                              
+                                                                                            ∞
+                                                                                            2
+Remark. Note that by Proposition 4.2(2), the two identifications Mc (G) ⊗ Mc (G) ≃ Mc (G),
+                                                                                            G
+one coming from Proposition 4.4 applied to Πc′ = Mc (G), and the other from interchanging
+the roles of c and c′ as in Proposition 4.2(1), coincide.
+
+4.6. Proof of Theorem 3.3. Let Πc′ be an object of Repc′ (G     b ′ ), and let Πc be an object of
+       b carrying an additional commuting action of a group-object H ∈ Set, which is quasi
+Repc (G),
+pro-unipotent. Then, using Corollary 1.10 and the fact that the functor CoinvH is exact (Lemma
+2.7 of [GK]), we obtain an isomorphism:
+                                   ∞                ∞     
+                                    2                 2
+                               Πc′ ⊗ (Πc )H ≃ Πc′ ⊗ Πc        .
+                                            G                    G       H
+
+     Applying this for Πc = Mc (G), we obtain a functorial isomorphism:
+                                                ∞
+                                                2
+(9)                                     Πc′ ⊗ Mc (G, H) ≃ (Πc′ )H .
+                                                G
+
+     Therefore, we obtain a map
+(10)                               EndRep       b   (Mc (G, H)) → E(G, H)c′ .
+                                            c (G)
+
+     The fact that the composition
+                  EndRep    b     (Mc (G, H)) → E(G, H)c′ → EndRep             b     (Mc (G, H))
+                          c (G)                                              c (G)
+
+is the identity map follows from the remark following the proof of Proposition 4.4.
+  Therefore, to finish the proof of the theorem it suffices to show that the map of (4) is injective.
+For that note, that for any Πc′ ∈ Repc′ (G  b ′ ) we have an injection Πc′ ֒→ (Πc′ ⊗ Mc (G))G[[t]]
+                                                             b       b
+(coming from the above adjunction IdRep ′ (Gb ′ ) → iG         G
+                                                     G[[t]] ◦ rG[[t]] ) and a surjection Πc ⊗ Mc (G) ։
+                                                                                           ′
+                                           c
+                                          b ′
+(Πc′ ⊗ Mc (G))G[[t]] of objects of Rep ′ (G ).
+                                            c
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                               15
+
+
+                                                                                      b ′ ).
+Lemma 4.7. Suppose an element α ∈ E(G, H)c′ annihilates (Πc′ )H for some Πc′ ∈ Repc′ (G
+Then α annihilates all objects of the form (V ⊗ Πc′ )H for V ∈ Vect.
+
+Proof. Suppose that V = ”lim” Vi , Vi ∈ V ect. Then V ⊗ Πc′ ≃ lim (Vi ⊗ Πc′ ), where the
+                              ←−                                 ←−
+projective limit is taken in the category Vect.
+  Using Corollary 2.6 of [GK], we have: (V ⊗ Πc′ )H ≃ lim (Vi ⊗ Πc′ )H . This shows that we
+                                                        ←−
+can assume that V is a vector space, which we will denote by V.
+  Let us write V = lim Vi , where Vi ∈ V ect0 .
+                     −→
+
+Sublemma 4.8. For V = lim Vi and W ∈ Vect the natural map
+                            −→
+
+                                 lim (Vi ⊗ W) → (lim Vi ) ⊗ W
+                                  −→                 −→
+
+is surjective.
+
+   Therefore, we have a surjection
+
+                                   lim (Vi ⊗ Πc′ ) ։ V ⊗ Πc′ ,
+                                     −→
+
+and, hence, a surjection on the level of coinvariants.
+   Since by assumption, α annihilates every (Vi ⊗ Πc′ )H , and the functorCoinvH commutes   
+with inductive limits (cf. Corollary 1.10), we obtain that α annihilates also lim (Vi ⊗ Πc′ ) .
+                                                                               −→              H
+Hence, by the above, it annihilates also (V ⊗ Πc′ )H .
+                                                                                                
+
+  Using this lemma and the exactness of the functor of H-coinvariants, we obtain that any
+α ∈ ker(E(G, H)c′ → End(Mc (G, H)) annihilates all (Πc′ ⊗ Mc (G))H , and hence (Πc′ )H for any
+Πc′ .
+
+Remark. Note that the same argument proves the following more general assertion. Let H1 , H2
+be two quasi pro-unipotent groups endowed with homomorphisms to G.       b Then the space of
+                                                                       b
+natural transformations between the functors CoinvH1 , CoinvH2 : Repc (G) → Vect is isomorphic
+to HomRep ′ (Gb ′ ) (Mc (G, H1 ), Mc (G, H2 )).
+           c
+
+
+
+
+                                 5. Proof of Proposition 4.2
+5.1. We will repeatedly use the following construction:
+   Let Z1 → Z2 be a map of schemes of finite type over K, such that Z1 is principal bundle
+with respect to a smooth unipotent group-scheme H on Z2 . Let L be the line bundle on Z2 ,
+given by z 7→ det(hz ), where hz is the fiber at z ∈ Z2 of the sheaf of Lie algebras corresponding
+to H. Let Z b1 be the total space of the pull-back of the resulting Gm -torsor to Z1 .
+
+Lemma 5.2. Under these circumstances we have a natural map
+                                             
+                          Functlc
+                               c  (Zb 1 ) ⊗ C   → Functlc
+                                                       c (Z2 ),
+                                                Gm
+
+                                                            17→q
+where Gm acts on C via the standard character Gm → Z → C∗ .
+16                           DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+5.3. Let us recall the construction of Mc (G), following [GK], Sect. 5. To simplify the expo-
+sition, we will first assume that c = 1, in which case we will sometimes write M (G) instead of
+Mc (G).
+    Consider the set of pairs (i, Y ), where Y is a sub-scheme of G((t)), stable under the right
+action of the congruence subgroup Gi . Note that in this case the quotient Y /Gi is a scheme of
+finite type over K.
+    The above set is naturally filtered: (i, Y ) < (i′ , Y ′ ) if i′ ≥ i and Y ⊂ Y ′ . Note also that
+      ′                                                                      ′
+Y /Gi → Y /Gi is a principal bundle with respect to the group Gi /Gi .
+    Let Y/G denote the object of Set, corresponding to the scheme Y /Gi . Consider the vector
+             i
+
+space V(i, Y ) := Functlc           i             i
+                         c (Y/G )⊗µ(G[[t]]/G ), cf. [GK], Sect. 3.2, where for a locally compact
+group H, we denote by µ(H) the space of left-invariant Haar measures on it.
+    Whenever (i, Y ) < (i′ , Y ′ ), we have a natural map V(i′ , Y ′ ) → V(i, Y ). It is defined as the
+                                                      i′                    i′
+composition of the restriction map Functlc         ′                 lc
+                                              c (Y /G ) → Functc (Y/G ), followed by the map
+                                        ′                     ′
+                         Functlc    i       i  i         lc    i
+                              c (Y/G ) ⊗ µ(G /G ) → Functc (Y/G ),
+                                                 ′                            ′
+coming from Lemma 5.2, using µ(G[[t]]/Gi ) ≃ µ(G[[t]]/Gi ) ⊗ µ(Gi /Gi ).
+     We have:
+                                      M (G) = ”lim” V(i, Y ),
+                                                     ←−
+                                                     (i,Y )
+
+as a pro-vector space.
+   Let us now describe the action of G × G b 0 on M (G). For our purposes it would suffice to do
+so on the level of groups of K-valued points of the corresponding group-indschemes.
+   For g ∈ G((t))(K) acting on M (G) on the left, we define V(i, Y ) → V(i, g · Y ) to be the
+natural map. In this way we obtain an action of g on the entire inverse system.
+   To define the right action, for (i, Y ) as above, let j be a large enough integer, so that
+Adg−1 (Gj ) ⊂ Gi . Then the right multiplication by g defines a map of schemes,
+                                            Y /Gj → Y · g/Gi ,
+such that the former is a principal Gi / Adg−1 (Gj )-bundle over the latter.
+                                                     b0 defines an identification µ(G[[t]]/Gj ) ≃
+                          b of the central extension G
+   A lift of g to a point g
+                    j
+µ(G[[t]]/ Adg−1 (G )). Hence, by Lemma 5.2, we obtain a map
+                                       V(j, Y ) → V(i, Y · g),
+                         b on the inverse system.
+and, hence, an action of g
+
+5.4. Let now G b and c be general. We modify the above construction as follows. For each
+Y ⊂ G((t)) as above, let Yb be its pre-image in G.
+                                                 b Set
+                                                      
+                                            j b
+                   Vc (j, Y ) := Functlcc (G  \ Y) ⊗ C   ⊗ µ(G[[t]]/Gj ),
+                                                                  Gm
+
+where Gm                      b and by the character c on C. We have:
+            acts naturally on Y
+                                     Mc (G) = ”lim” Vc (j, Y ),
+                                                     ←−
+                                                     (j,Y )
+
+
+                  b ×G
+and the action of G  b ′ is described in the same way as above.
+                                     fc′ (G) is the same as Mc′ (G), viewed as a representation
+   By definition, the representation M
+   b   b ′    b ′   b
+of G × G ≃ G × G. Explicitly it can be written down as follows. Consider the set of pairs
+                         ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                  17
+
+
+(j, Y ), where Y ⊂ G((t)) is stable under the action of Gj on the left; let Yb ′ be the preimage of
+Y in G b′ . We have:
+                                    fc′ (G) = ”lim” V
+                                    M               e c′ (j, Y ),
+                                                    ←−
+                                                    (j,Y )
+
+where                                                     
+                     V                            b ′) ⊗ C
+                     e c′ (j, Y ) := Functlc (Gj \Y                   ⊗ µ(G[[t]]/Gj ),
+                                          c
+                                                                Gm
+
+where Gm acts naturally on Y     b and by the character c′ on C. In this presentation, the right
+action of Gb ′ is defined in an evident fashion, and the left action of G
+                                                                        b is defined as in the case
+                         b
+of the right action of G0 on M (G).
+
+5.5. We shall now construct the sought-for map M   fc′ (G) → Mc (G). Let us mention that when
+G is the multiplicative group Gm the sought-for isomorphism amounts to simply to the inversion
+on the group.
+   For a pair (i, Y ) as in the definition of Mc (G), there exists an integer j large enough so that
+Ady−1 (Gj ) ⊂ Gi for y ∈ Y (K). In particular, over Y /Gi we obtain a group-scheme, denoted
+Gi,j                                 i          j
+ Y , whose fiber over y ∈ Y is G / Ady −1 (G ), and we have a map
+
+(11)                                         Gj \Y → Y /Gi ,
+such that the former scheme is a principal Gi,jY -bundle over the latter.
+   Note that the fiber of Yb over a given point y ∈ Y identifies with det(Ady (g[[t]]), g[[t]]), where
+g is the Lie algebra of G. Hence, we obtain a natural map
+                                          e c′ (j, Y ) → Vc (i, Y )
+                                          V
+from Lemma 5.2.
+   Thus, we obtain a map M   fc′ (G) → Mc (G), and from the construction, it is clear that this
+                             b
+map respects the action of G(K)    ×Gb′ (K). Now Lemma 0.6 implies that the constructed map
+is a morphism of G b ×Gb -representations.
+                         ′
+
+   The map in the opposite direction: Mc (G) → M   fc′ (G) is constructed similarly, and by the
+definition of the transition maps giving rise to the inverse systems Mc (G) and M  fc′ (G), it is
+clear that both compositions Mc (G) → M  fc′ (G) → Mc (G) and Mfc′ (G) → Mc (G) → M  fc′ (G) are
+the identity maps.
+   This proves point (1) of Proposition 4.2.
+
+5.6. Following [GK], let us denote by M (G[[t]]) the pro-vector space
+                             ”lim” Functlc         i              i
+                                        c (G[[t]]/G ) ⊗ µ(G[[t]]/G ),
+                                  ←−
+
+where the transition maps are given by fiber-wise integration. This space carries an action of
+the group G[[t]] × G[[t]]. The convolution product defines an isomorphism
+(12)                         (M (G[[t]]) ⊗ M (G[[t]])G[[t]] ≃ M (G[[t]]),
+where G[[t]] acts diagonally.
+                                           b under the left action, Mc (G) identifies with
+   By construction, as a representation of G
+ b
+ G
+iG[[t]] (M (G[[t]])). Therefore,
+
+(13)             HomRep     b     (M                             fc′ (G), M (G[[t]])).
+                                   fc′ (G), Mc (G)) ≃ HomG[[t]] (M
+                          c (G)
+18                          DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+The map Mfc′ (G) → Mc (G) constructed above corresponds to the natural restriction morphism
+fc′ (G) → M (G[[t]]).
+M
+Remark. From the latter description it is not immediately clear why this map is compatible
+               b ′ -action.
+with the right G
+   Note also that the map M  fc (G) → Mc′ (G) can be described by a similar adjunction property
+                            b
+with respect to the right G′ -action.
+                                                                                          b ×G
+   Let us prove now point (2) of Proposition 4.2. For any Π, which is a representation of G  b′
+               ′
+at levels (c, c ) we have:
+                                                    
+            HomG×
+               b Gb′   Π, (M c (G) ⊗ f
+                                     M c ′ (G))G[[t]] ≃ HomG[[t]]×G[[t]] (Π, M (G[[t]]),
+
+with the isomorphism being given by the restriction map
+                              fc′ (G))G[[t]] → (M (G[[t]]) ⊗ M (G[[t]]))G[[t]] ,
+                    (Mc (G) ⊗ M
+followed by the map of (12).
+   Let us apply this to Π = Mc (G). It is clear that both maps appearing in Proposition 4.2(2),
+correspond under the above isomorphism to the restriction map Mc (G) → M (G[[t]]). Therefore,
+these two maps coincide.
+
+
+                                6. Distributions on a stack
+6.1. First, let X be a locally compact object of Set. Recall that Functlc (X) denotes the corre-
+sponding (strict) object in Vect (cf. [GK], Sect. 3.2), and Functlc (X) = limP roj Functlc (X).
+The vector space Distrc (X) introduced in Sect. 1.3 identifies with HomVect (Functlc (X), C), or,
+which is the same, with the space of linear functionals Functlc (X) → C, continuous in the
+topology of projective limit.
+   Suppose now that X = X(K), where X is a smooth algebraic variety over K. In this case
+we can introduce the subspace Distrlcc (X) of locally constant distributions on X (cf., e.g., [GK],
+Sect. 5.1).
+   Indeed, it is well-known that a choice of a top differential form ω on X defines a measure
+µ(ω) on X, i.e., a functional on the space Functlc             ′
+                                                  c (X). For ω = ω · f , where f is an invertible
+                              ′
+function on X, we have: µ(ω ) = µ(ω) · |f |. Hence, the subset of elements in Distrc (X), which
+can be (locally) written as µ(ω) · g, where g is a locally constant function on X with compact
+support, is independent of the choice of ω. This subset is by definition Distrlc
+                                                                               c (X).
+   Although the following is well-known, we give a proof for the sake of completeness:
+
+Proposition 6.2. Let f : X1 → X2 be a smooth map between smooth varieties over K. Then
+(1) The push-forward map Distrc (X1 ) → Distrc (X2 ) sends Distrlc              lc
+                                                                c (X1 ) to Distrc (X2 ).
+
+(2) If X1 (K) → X2 (K) is surjective, then f! : Distrlc             lc
+                                                     c (X1 ) → Distrc (X2 ) is also surjective.
+
+Proof. Statement (1) is local in the analytic, and a fortiori in the Zariski topology on X1 .
+                                                                    f′             f ′′
+Therefore, we can assume that our morphism f factors as X1 → X2 × Z → X2 , where Z is
+another smooth variety, with f ′ being étale, and f ′′ being the projection on the first factor.
+  Since an étale map induces a local isomorphism in the analytic topology, it is clear that f!′
+maps Distrlc               lc
+           c (X1 ) to Distrc (X2 × Z).
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                19
+
+
+  From the definition of Distrlc
+                              c (·), it is clear that
+                                                        ∼
+                       Distrlc             lc                 lc
+                            c (Z1 ) ⊗ Distrc (Z2 ) −−−−→ Distrc (Z1 × Z2 )
+                                                                
+(14)                                                            
+                                    y                            y
+                       Distrc (Z1 ) ⊗ Distrc (Z2 ) −−−−→ Distrc (Z1 × Z2 ).
+
+  So the map f!′′ : Distrlc
+                         c (X2 × Z) → Distrc (X2 ) can be identified with
+                                                        R
+                                                            × id
+                           Distrlc           lc             lc
+                                c (Z) ⊗ Distrc (X2 ) → Distrc (X2 ),
+
+implying assertion (1) of the proposition.
+
+   We will prove a slight strengthening of assertion (2). Note that since f is smooth, the image
+of X1 in X2 is open, and hence, also closed in the analytic topology. We will show that f1 maps
+Distrlc                                             lc
+     c (X1 ) surjectively onto the subspace of Distrc (X2 ), consisting of distributions, supported
+on the image.
+   The assertion is local in the analytic topology on X2 . Let x2 ∈ X2 (K) be a point, and let
+x1 ∈ X1 (K) be some its pre-image. Then the local factorization of f as f ′′ ◦ f ′ as above makes
+the assertion manifest.
+                                                                                                 
+
+ 6.3. In what follows we will need a relative version of the above notions. For a smooth
+ morphism g : X → Z let ωrel be a relative top differential form on X. It defines a relative
+ measure µ(ωrel ) : Functlc              lc
+                          c (X) → Functc (Z). As in the absolute situation, by multiplying µ(ωrel )
+ by locally constant functions on X, whose support is proper over Z, we obtain a pro-vector
+                                                                                          lc
+ sub-space inside HomFunctlc (Z) (Functlc             lc
+                                        c (X), Functc (Z)), which we will denote by Distr c (X/Z).
+Note that when X = X ′ × Z, we have: Distrlc                      lc   ′         lc
+                                                   c (X/Z) ≃ Distrc (X ) ⊗ Funct (Z) (the tensor
+                                                                         lc
+product being taken in the sense of Vect). We will denote by Distrc (X/Z) the vector space
+limP roj Distrlc c (X/Z).
+     When f : X1 → X2 is a smooth map of schemes smooth over Z, as in Proposition 6.2
+we have a push-forward map f! : Distrlc                       lc
+                                            c (X1 /Z) → Distr c (X2 /Z), which is surjective if f :
+ X1 (K) → X2 (K) is; moreover, in this case the map f! : Distrlc                         lc
+                                                                      c (X1 /Z) → Distrc (X2 /Z)
+Ris also easily  seen to be surjective. In the particular case when X2 = Z we obtain a map
+    : Distrlc                lc
+            c (X/Z) → Funct (Z).
+     If Y is another scheme over Z, consider the Cartesian diagram
+                                                   f′
+                                        X × Y −−−−→ X
+                                            Z
+                                                   
+(15)                                               
+                                         g′ y      gy
+
+                                                   f
+                                          Y     −−−−→ Z.
+We have a pull-back map f ∗ : Distrlc             lc
+                                   c (X/Z) → Distrc (X × Y/Y).
+                                                                   Z
+
+   Suppose now that the scheme Z is itself smooth, and X is smooth over Z as above. In this
+case the spaces Distrlc             lc
+                     c (X) and Distrc (Z) are well-defined, and we have an isomorphism
+
+                        Distrlc           lc
+                             c (X) ≃ Distrc (X/Z)             ⊗        Distrlc
+                                                                            c (Z).
+                                                        Functlc (Z)
+20                            DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+If in the situation of (15) Y is also smooth over Z, and ξY ∈ Distrlc                 lc
+                                                                   c (Y), ξX/Z ∈ Distrc (X/Z),
+                                             lc
+consider the element f ∗ (ξX/Z ) ⊗ ξY ∈ Distrc (X × Y). We have:
+                                                          Z
+
+(16)                 f!′ (f ∗ (ξX/Z )   ⊗ ξY ) = ξX/Z ⊗ f! (ξY ) ∈ Distrlc
+                                                                        c (X), and
+
+(17)                 g!′ (f ∗ (ξX/Z ) ⊗ ξY ) = f ∗ (g! (ξX/Z )) · ξY ∈ Distrlc
+                                                                            c (Y).
+  Finally, let us assume that both maps f and g induce surjections on the level of K-valued
+points.
+Lemma 6.4. The maps f! , g! induce an isomorphism
+                                                                    
+              lc                   lc        (f!′ ,−g!′ ) lc    lc
+         Distrc (Z) ≃ coker Distrc (X × Y) −→ Distrc (X) ⊕ Distrc (Y) .
+                                                  Z
+
+Proof. Let (ξX , ξY ) ∈ Distrlc
+                             c (X) ⊕ Distrlcc (Y) be an element such that f! (ξX ) = g! (ξY ). We
+need to find an element ξ ∈ Distrlc
+                           ′
+                                    c (X  1 ×  Y), such that f!′ (ξ ′ ) = ξX and g! (ξ ′ ) = ξY . Using
+                                            Z
+Lemma 6.2, we can assume that ξX = 0.                        R
+   Let ξX/Z be an element in Distrlc   c (X/Z), such that       ξ = 1 ∈ Funct(Z). Then ξ ′ :=
+ ∗
+f (ξX/Z ) ⊗ ξY satisfies our requirements, by (16).
+                                                                                                     
+  Let now X and Y be smooth varieties, and f : Z ×X → Y a map, such that the corresponding
+map f ′ : Z × X → Z × Y is smooth.
+Lemma-Construction 6.5. Under the above circumstances we have a natural action map
+                                        Z × Distrlc           lc
+                                                 c (X) → Distrc (Y).
+Proof. Consider the map
+                           f!′ : Distrlc                 lc
+                                      c (Z × X/Z) → Distrc (Z × Y/Z).
+
+By composing it with · ⊗ 1 : Distrlc           lc
+                                  c (X) → Distrc (Z × X/Z) we obtain a map
+
+                               Distrlc           lc           lc
+                                    c (X) → Distrc (Y) ⊗ Funct (Z).
+
+The latter is, by definition, the same as an action map Z × Distrlc           lc
+                                                                 c (X) → Distrc (Y).
+                                                                                                     
+6.6. Let Y be an algebraic stack. We will say that Y is K-admissible (or just admissible) if
+there exists a smooth covering Z → Y, such that for any map X → Y, the corresponding map
+of schemes
+                                        X ×Z →X
+                                                   Y
+is surjective on the level of K-points.
+    If Y is admissible, a covering Z → Y having the above property will be called admissible. It
+is clear that the class of admissible coverings is closed under Cartesian products. It is also clear
+that if Y is admissible, and Y′ → Y is a representable map, then Y′ is also admissible.
+Lemma 6.7. Suppose that Y is a stack, which is locally in the Zariski topology has the form
+Z/G, where Z is a scheme, and G is an affine algebraic group. Then Y is admissible.
+Proof. First, we can assume that G = GLn . Indeed, by assumption, there is an embedding
+G → GLn , and consider the scheme Z ′ := Z × GLn . Then Y = Z ′ /GLn .
+                                                      G
+  Now the assertion follows from Hilbert’s 90: for y ∈ Y(K) its pre-image in Z is a GLn -torsor,
+which is necessarily trivial.
+                                                                                              
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                 21
+
+
+   From now on, we will assume that Y is admissible. Assume in addition that Y is smooth.
+We will now define the space, denoted, Distrlc c (Y), of locally constant compactly supported
+distributions on Y.
+   Namely, given two admissible coverings Z1 , Z2 → Y we define
+                                                                               
+                  lc                  lc                    lc            lc
+             Distrc (Y) := coker Distrc (Z1 × Z2 ) → Distrc (Z1 ) ⊕ Distrc (Z2 ) .
+                                               Y
+
+    Lemma 6.4, combined with Proposition 6.2(2), implies that Distrlc   c (Y) is well-defined, i.e.,
+is independent of the choice of Z1 , Z2 .
+    If f : Y1 → Y2 is a smooth representable map of (smooth admissible) stacks, from Proposi-
+tion 6.2(1) we obtain that there exists a well-defined map f! : Distrlc               lc
+                                                                     c (Y1 ) → Distrc (Y2 ).
+
+  Assume now that Y = Z/G, where G is an algebraic group acting on Z. By Lemma 6.5, we
+have an action of G on the vector space Distrlc
+                                             c (Z). From Lemma 6.4 we obtain:
+
+Corollary 6.8. For Y as above,
+                                Distrlc                   lc
+                                     c (Y) ≃ CoinvG (Distrc (Z)).
+
+6.9. Relative version. Assume now that Y is a stack, endowed with a smooth map to a scheme
+Z. For a pair of admissible coverings X1 , X2 → Y, we define the pro-vector space Distr lc
+                                                                                        c (Y/Z)
+as                                                                           
+               coker Distrlc                    lc               lc
+                          c (X1 × X2 /Z) → Distrc (X1 /Z) ⊕ Distrc (X2 /Z) .
+                                   Y
+
+A relative version of Lemma 6.4 shows that this is well-defined, i.e., independent of the choice
+of X1 and X2 .
+   Finally, the assertion of Lemma-Construction 6.5 remains valid, where Z is a scheme, Y, Y′
+are smooth stacks, and the map f : Z × Y → Y′ is such that the corresponding map f ′ : Z × Y →
+Z × Y′ is smooth and representable.
+
+                     7. Induction via the moduli stack of bundles
+7.1. Let X be a (smooth complete) algebraic curve over K, x ∈ X a rational point, and let t
+be a coordinate near x.
+   If G be a split reductive group, let BunG denote the moduli stack of principal G-bundles on
+X. For i ∈ Z, let Buni,x G denote the stack classifying bundles equipped with a trivialization
+on the i-th infinitesimal neighbourhood of x. By construction, Buni,x                        i
+                                                                    G is a principal G[[t]]/G -
+bundle over BunG .
+   If Y ⊂ BunG is an open sub-stack of finite type, we let Yi,x denote its pre-image in Buni,x
+                                                                                            G .
+The following is well-known:
+Lemma 7.2. For any Y ⊂ BunG of finite type and i large enough, the stack Yi,x is a scheme
+of finite type.
+  For Y as above, we let Y∞,x denote the object of Pro(Schf t ) equal to ”lim” Yi,x . We let
+                                                                                 ←−
+Bun∞,x
+   G   denote the object
+                                 ”lim” Y∞,x ∈ Ind(Pro(Schf t )).
+                                   −→
+                                    Y
+
+  Another basic fact is that G((t)), viewed as a group-object of Ind(Pro(Schf t )), acts on
+Bun∞,x
+   G   in the sense of the tensor structure on Ind(Pro(Schf t )).
+22                           DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+7.3. By Lemma 6.7, the stacks Yi,x are admissible. Set WY  i
+                                                             = Distrlc
+                                                                    c (Y
+                                                                         i,x
+                                                                             ). For Y1 ֒→ Y2 we
+                                                                i        i
+have a natural push-forward map on the level of distributions WY1 → WY     2
+                                                                             . Set
+                                     Wi := lim WY
+                                                i
+                                                  ∈ V ect.
+                                             −→
+                                              Y
+
+  For a fixed Y and j > i we have a smooth representable map of stacks Yj,x → Yi,x ; hence
+                   j      i
+we obtain a map WY   → WY    and, finally, a map Wj → Wi .
+  We define the pro-vector space
+                                       WX,x := ”lim” Wi .
+                                                  ←−
+                                                   i
+     Now we are ready to state:
+Theorem 7.4. The pro-vector space WX,x carries a natural action of the group G, such that
+CoinvGi (WX,x ) ≃ Wi .
+     Note that by construction we have:
+Corollary 7.5. The G-representation WX,x is admissible.
+     Indeed, the coinvariants CoinvGi (WX,x ) ≃ Wi all belong to V ect.
+7.6. Proof of Theorem 7.4. Let G((t)) = ”lim” Zk with Zk = ”lim” Zkl , where Zkl are
+                                                     −→                   ←−
+                                                      k                    l
+schemes of finite type.
+   To define an action
+                                     G × WX,x → WX,x
+we need to give for every k and i a map
+                                          Zlk × Wj → Wi
+defined for j and l sufficiently large.
+   For k and i as above let j be such that AdZk (Gj ) ⊂ Gi . The action of G((t)) on Bun∞,xG
+yields a map of stacks Zk × Bunj,x              i,x                    l
+                                     G → BunG , which factors through Zk for some l. Moreover,
+for every sub-stack Y ⊂ BunG of finite type, there exists another sub-stack Y′ of finite type,
+such that we have a map
+                                           Zkl × Yj,x → Y′j,x .
+   We claim that for i, j, k, l, Y, Y′ as above, we have a map
+                                               j    j
+(18)                                    Zlk × WY → WY ′.
+
+
+This follows from the stack-theoretic version of Lemma-Construction 6.5, cf. Sect. 6.9. The fact
+that the resulting action map G×WX,x → WX,x respects the group law on G is a straightforward
+verification.
+   To compute CoinvGi (WX,x ) note that G[[t]], and hence all Gi , act on each Bunj,x
+                                                                                  G individu-
+ally.
+   Hence,
+                       CoinvGi (WX,x ) ≃ ”lim” CoinvGi /Gj (Wj ).
+                                               ←−
+                                               j≥i
+  We claim that for j ≥ i, CoinvGi /Gj (Wj ) ≃ Wi . Indeed, since each Yj,x is stable under
+G /Gj , we have:
+ i
+
+                                                         j
+                   CoinvGi /Gj (Wj ) ≃ lim CoinvGi /Gj (WY          i
+                                                           ) ≃ lim WY ≃ Wi ,
+                                       −→                       −→
+                                        Y                        Y
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                23
+
+
+where the middle isomorphism follows from Corollary 6.8.
+7.7. Variants and Generalizations. Recall that the stack BunG is endowed with a canonical
+line bundle LBunG , with the basic property that the G-action on Bunx,∞
+                                                                     G   extends to an action
+                       b on the pull-back of LBun to Bunx,∞ .
+of a central extension G                          G       G
+   By the same token, we consider now a representation c
+                                                       WX,x of G,b and for every c : Gm → C∗
+the object
+                             WX,x,c := (c
+                                        WX,x ⊗ C)Gm ∈ Rep (G). b
+                                                                   c
+
+    Note that instead of a single point x we could have considered any finite collection x =
+x1 , ..., xn of rational points. By repeating the construction we obtain a pro-vector space WX,x ,
+acted on by the product Π G      b x , where each G
+                                                  b x identifies with G
+                                                                      b once we identify the local
+                                    k                k
+                            k
+ring of X at xk with F.
+                                                                                    b x , denoted
+   Again, for a choice of a character c : Gm → C∗ , we obtain a representation of Π G  k
+                                                                                    k
+WX,x,c , such that the center Gkm acts via the multiplication map Gkm → Gm .
+7.8. From now on we will suppose that X is isomorphic to the projective line P 1 , and the
+number of points is two, which we will denote by x1 , and x2 , respectively. Assume also that G
+is semi-simple and simply connected.
+   Consider the representation c                    b x1 × G
+                                 WP 1 ,x1 ,x2 ,c of G      b x2 . Let us take its coinvariants with
+             00    b
+respect to Ix1 ⊂ Gx1 . By Corollary 1.10, on the resulting pro-vector space we will have an
+          b x ; we will denote this representation by Πthick , i.e.,
+action of G  2                                             c
+
+                                 Πthick
+                                  c     = CoinvI00
+                                                x
+                                                   (c
+                                                    WP 1 ,x1 ,x2 ,c ).
+                                                    1
+
+                                  ··
+  By Theorem 3.3, the algebra Hq,c′ acts on Πthick
+                                             c     by endomorphisms. Consider now
+                      Uc := CoinvI00  00 (c
+                                          WP 1 ,x1 ,x2 ,c ) ≃ CoinvI00 (Πthick ).
+                                  x ×Ix1   2                        x    c
+                                                                         2
+
+                                                                                         ··
+  By Corollary 7.5, this is a vector space, endowed with two commuting actions of Hq,c′ . We
+have:
+Theorem 7.9. There exists a canonically defined vector 1Uc ∈ Uc , which freely generates Uc
+                       ··
+under each of the two Hq,c′ -actions.
+
+                                   8. Proof of Theorem 7.9
+8.1. Let Waf f be the affine Weyl group corresponding to G. Since G was assumed simply
+connected, Waf f is a Coxeter group.
+                                          b denote the corresponding sub-minimal parahoric; let
+   If α is a simple affine root, let Iα ⊂ G
+N (Iα ) denote the (pro)-unipotent radical of Iα , and Mα := Iα /N (Iα ) the Levi quotient.
+   By definition, Mα is a reductive group of semi-simple rank 1, with a distinguished copy of Gm
+in its center; we will denote by Mα′ the quotient Mα /Gm . Let Bα denote the Borel subgroup
+of Mα , and B0α the kernel of
+                                          Bα → T → Λ.
+       α
+Let Πc be the quotient of the principal series representation of Mα , given by the condition that
+Gm ⊂ Mα acts by the character c, i.e.,
+                                                                
+                                              lc
+(19)                            Παc  =  Funct c  (M α /B 0
+                                                         α ) ⊗ C   .
+                                                                   Gm
+24                               DENNIS GAITSGORY AND DAVID KAZHDAN
+
+                        ·
+   Let us denote by Hα
+                     q,c the corresponding affine Hecke algebra of Mα , i.e., the algebra of
+endomorphisms of the functor CoinvB0α : Rep(Mα , V ect)c → V ect, or which is the same,
+the algebra of endomorphisms of Πα c as a Mα -representation. It is well-known that Uα :=
+                                               ·
+CoinvB0α (Πα                         α
+           c ), as a bi-module over Hq,c , is isomorphic to the regular representation. In a sense,
+Theorem 7.9 generalizes this result to the affine case.
+                                          b can be factored into two steps. We first apply the
+   The functor Π 7→ CoinvI00 (Π) on Repc (G)
+functor
+                   b                                 CoinvNα
+                   G
+                  rM           b
+                     α : Repc (G) → Repc (Iα , Vect)   −→ Repc (Mα , Vect),
+where the first arrow is the forgetful functor, and then apply
+                                       CoinvB0α : Repc (Mα , Vect) → Vect.
+In particular, endomorphisms of the latter functor map to endomorphisms of the composition.
+                                                              ·          ··
+As a result, we obtain the canonical embedding Hα
+                                                q,c′ → Hq,c .
+                                                                                                   ··
+     Recall also that the group-algebra C[Λ] is canonically a subalgebra in Hq,c , contained in each
+·
+Hα
+ q,c′ .
+
+8.2. The strategy of the proof of Theorem 7.9 will be as follows. We will endow the vector
+space Uc with an increasing filtration
+                                                   Uc =     ∪       Uw
+                                                          w∈Waf f
+
+with Uw1 ⊂ Uw2 if and only if w1 ≤ w2 in the Bruhat order. This filtration will be stable
+                                  ··
+under the action of C[Λ] ⊂ Hq,c with respect to both actions of the latter on Uc .
+  The subquotients
+                                    Uw := Uw / ′∪ Uw′
+                                                             w <w
+                                                                                                        ··
+will be free Λ-modules of rank 1 (with respect to each of the actions of Hq,c ). In particular,
+for w = 1, the space U1 ≃ U1 will contain a canonical element 1U1 ∈ U1 , which generates U1
+under each of the Λ-actions. This will be the element 1Uc of Theorem 7.9.
+  Moreover, the following crucial property will be satisfied. Suppose that w is an element of
+Waf f , and sα is a simple affine reflection, such that sα · w > w (resp., w · sα > w). Then the
+subquotient
+(20)               Usα ·w /                ∪       Uw′ , (resp., Uw·sα /             ∪             Uw′ )
+                              w ′ <sα ·w,w ′ 6=w                              w ′ <w·sα ,w ′ 6=w
+                                       ·                                                                     ··
+is stable under the action of Hα
+                               q,c , embedded into the first (resp., second) copy of Hq,c , and as
+     ·                                         ·
+a Hα                                 α      w
+   q,c -module, it is isomorphic to Hq,c ⊗ U .
+                                                   C[Λ]
+   The existence of a filtration with the above properties clearly implies the assertion of the
+theorem.
+
+8.3. Let I 0 denote the (pro)-unipotent radical of I; we have I00 /I0 ≃ T0 , where T0 ⊂ T is
+the maximal compact subgroup of T.
+                                      ∞,x1 ,x2
+   Consider the scheme GG := BunG              /Ix2 , called the thick Grassmannian of G. By defi-
+nition, it classifies principal G-bundles on X = P 1 , endowed with a trivialization at the formal
+neighbourhood of x1 and a reduction to B of their fiber at x2 . Consider also the base affine
+                        ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                               25
+
+
+space GeG := Bun∞,x1 ,x2 /I 0 , which is a principal T -bundle over GG . The loop group G((t)),
+                  G        x2
+where t is the coordinate near x1 acts naturally on both GG and G  eG .
+   It is well-known that GG can be written as a union of open sub-schemes GG,w , w ∈ Waf f ,
+each being stable under the action of Ix1 = I ⊂ G((t)), such that GG,w1 ⊂ GG,w2 if and
+only if w1 < w2 in the Bruhat order. Let us denote by Gw       G the locally closed sub-scheme
+GG,w − ′∪ GG,w′ , and by G    eG,w , G
+                                     ew the corresponding sub-schemes in G.e It is well-known
+                                      G
+        w <w
+that the group I 0 (resp., I) acts transitively on each Gw            ew
+                                                            G (resp., GG ) with finite-dimensional
+                                                  e w
+unipotent stabilizers. Choosing a point in each GG , we will denote by Nw its stabilizer in I, or,
+which is the same, the stabilizer in I 0 of the projection of this point to Gw
+                                                                             G.
+
+  Consider the stack
+                                          ∞,x1 ,x2
+                         BunxG1 ,x2 := BunG                          eG /I 0 .
+                                                   /(Ix01 × Ix02 ) ≃ G
+By definition, it classifies G-bundles on X = P 1 with a reduction to the maximal unipotent at
+x1 and x2 , and it carries a natural action of the group T × T . From the above discussion, we
+                 x1 ,x2
+obtain that BunG        can be canonically written as a union of open sub-stacks of finite type
+                                        BunxG1 ,x2 =      ∪      Yw
+                                                       w∈Waf f
+
+with Yw1 ⊂ Yw2 if and only if w1 ≤ w2 .
+  Consider the locally-closed sub-stack Yw := Yw − ′∪ Yw′ . We obtain that Yw is isomorphic
+                                                          w <w
+to T × (pt /Nw ), where Nw is as above. The first copy of T acts via multiplication on the first
+factor, and the action of the second copy is twisted by the projection of w to the finite Weyl
+group, acting by automorphisms on T .
+   We will denote by Ybw , Y
+                           bw the pull-back of the total space of the Gm -torsor corresponding
+to LBunG to these sub-stacks.
+
+8.4. We have:                                                  !
+                           Uc ≃        lim Distrlc b
+                                       −→       c (Yw )   ⊗C                    .
+                                        w
+                                                                   T0 ×T0 ×Gm
+Set
+(21)                          Uw := (Distrlc b
+                                          c (Yw ) ⊗ C)T0 ×T0 ×Gm .
+
+   We claim that each Uw maps injectively into Uc ; and the images of Uw define a filtration
+with the required properties. One thing is clear, however: by construction, Uw carries an action
+of Λ × Λ, and its map to Uc is compatible with this action.
+
+8.5. To proceed we need to introduce some more notation. Let Z be a smooth scheme, and
+                                   ◦
+let L be a line bundle on Z. Let L denote the total space of the corresponding Gm -torsor over
+Z. We will denote by Distrlc
+                           c (Z)L the space
+                                                    
+                                               ◦
+                                     Distrlc
+                                          c  (L) ⊗ C     ,
+                                                              Gm
+
+                                                                      17→q
+where Gm acts on C via the standard character Gm → Z −→ C∗ .
+  Let now Z1 ⊂ Z be a smooth closed sub-scheme, and let Z2 be its complement. We have:
+26                               DENNIS GAITSGORY AND DAVID KAZHDAN
+
+
+Lemma 8.6. There exists a natural short exact sequence:
+                     0 → Distrlc              lc            lc
+                              c (Z2 )L → Distrc (Z)L → Distrc (Z1 )L⊗Ln → 0,
+
+where Ln is the top power of the normal bundle to Z1 inside Z.
+Proof. Note that by definition we have
+                                          Distrlc             lc
+                                               c (Z)L0 ≃ Functc (Z),
+
+where L0 is the inverse of the line bundle of top forms on Z. The assertion of the lemma follows
+now from the fact that for any Z1 ⊂ Z we have a short exact sequence for the corresponding
+spaces of locally constant functions with compact support:
+                        0 → Functlc             lc           lc
+                                 c (Z2 ) → Functc (Z) → Functc (Z1 ) → 0.
+
+                                                                                                                        
+   For each w < w′ , the open embedding Yw ֒→ Yw′ can be covered by an open embedding of
+schemes Zw ֒→ Zw′ , such that Yw′ = Zw′ /N , Yw = Zw /N with N being a unipotent algebraic
+group. Therefore, by Lemma 6.8 and the exactness of the functor CoinvN , the map Uw → Uw′
+is an embedding. Hence, Uw → Uc is also an embedding.
+   Moreover, we claim that from Lemma 8.6 we obtain a (non-canonical) isomorphism
+(22)                                       Uw ≃ (Distrlc  w
+                                                      c (Y )T0 ×T0 ,
+
+compatible with the Λ × Λ-action.
+                                        
+  Indeed, a priori, Uw ≃ (Distrlc
+                                c (Yw
+                                      )L                            for a certain T × T -equivariant line bundle L
+                                                           T0 ×T0
+       w                                               w
+on Y . However, from the description of Y as T ×(pt /Nw ), this line bundle is (non-canonically)
+trivial. Note, however, that this line bundle is canonically trivial for w = 1.
+   Now, the same description of Yw implies that Distrlc    w            lc
+                                                       c (Y ) ≃ Functc (T), with the first action
+of T being given by multiplication, and the second action is twisted by w. This implies that
+Uw ≃ (Functlc c (T))T0 ×T0 ≃ C[Λ].
+
+8.7. We will now study the subquotient Usα ·w /                            ∪             Uw′ , where sα is a simple affine
+                                                                    w ′ <sα ·w,w ′ 6=w
+reflection such that sα · w > w. (The case w · sα > w is analyzed similarly.)
+                                                             w′       ′    sα ·w ′
+   Note first of all that for any w′ ∈ Waf f , we have Iα · GG  ⊂ Gw G ∪ GG        . Hence, the open
+                                                                 ′
+subset GG,sα ·w is Iα -stable, and so is the union ′  ∪ ′ Gw    G  . Therefore,    the subquotient in
+                                                               w <sα ·w,w 6=w
+                 ·
+(20) is indeed  Hα
+                 q,c′ -stable.
+                                                            ∞,x1 ,x2
+   We will consider two additional stacks. One is ′ Y := BunG        /(N (Iα )x1 × Ix02 ), on which
+                       ′
+we have an action of Mα . We will denote by pr the projection
+                                                  pr
+                                           ′
+                                               Y −→ ′ Y/Nα ≃ BunxG1 ,x2 ,
+where Nα := Bα ∩ I 0 .
+     Another stack is the quotient
+                                                  ∞,x1 ,x2
+                                     ′′
+                                          Y := BunG        /(Mα′ × I 0 ).
+   The stack ′′ Y can be written as a union of open sub-stacks ′′ Yw numbered by left cosets
+{1, sα }\Waf f ; we will denote by ′′ Yw the corresponding locally closed sub-stacks. Let also ′ Yw
+and ′ Yw denote the pre-images of the corresponding sub-stacks in ′ Y, and ′ Y  bw , ′ Y
+                                                                                       bw the total
+spaces of the Gm -torsors, corresponding to the pull-backs of the line bundle LBunG .
+                          ALGEBRAIC GROUPS OVER A 2-DIM LOCAL FIELD                                   27
+
+
+   If w is an element of Waf f we have:
+                                      ′ w
+(23)                                   Y = pr−1 (Yw ∪ Ysα ·w ).
+
+   Using Lemma 8.6, the subquotient (20) is isomorphic to
+                                              
+                                    ′ bw
+                           Distrlc
+                                c  (  Y  ) ⊗ C   0     0
+                                                                            .
+                                                      (Bα )x1 ×(T )x2 ×Gm
+                               
+                         ′ bw
+The vector space Distrlc
+                      c ( Y )⊗C                       is naturally a representation of the group Mα .
+                                        (T0 )x2 ×Gm
+We claim that as such,
+                                               
+                                         ′ bw
+(24)                             Distrlc
+                                      c ( Y )⊗C                     ≃ Πα
+                                                                       c.
+                                                      (T0 )x2 ×Gm
+                                                                                      ·
+  Clearly, the above isomorphism implies our assertion about the action of Hα
+                                                                            q,c′ on the sub-
+quotient in (20).
+8.8. To prove (24) let us observe that ′′ Y ≃ ′ Y/Mα′ and that ′′ Yw ≃ pt /Nw,α , where Nw,α is a
+unipotent group, so that the Cartesian product
+                                               pt × ′ Yw
+                                                 ′′ Yw
+
+
+is isomorphic to Mα′ , and the action of Nw,α on Mα′ comes from a surjective homomorphism
+Nw,α → Nα and the action of the latter on Mα′ by right multiplication. Hence,
+                                                                    
+                            ′ bw
+                  Distrlc                lc
+                         c ( Y ) ≃ Distrc (Mα )    ≃ Distrlc
+                                                           c (Mα /Nα ) ,
+                                                         Nα
+implying (24).
+
+                                             References
+[GK] D. Gaitsgory, D. Kazhdan, Representations of algebraic groups over a 2-dimensional local field,
+     math.RT/0302174, GAFA 14 (2004), 535–574.
+[Ka] M. Kapranov, Double affine Hecke algebras and 2-dimensional local fields, JAMS 14 (2001), 239–262.
+[Ka1] M. Kapranov, The elliptic curve in the S-duality theory and Eisenstein series for Kac-Moody groups,
+     math.AG/0001005.
+[Pos] Positselsky, Private communications
+
+   D.K.: Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Givat Ram,
+Jerusalem, 91904, Israel.
+
+   D.G: Department of Mathematics, The University of Chicago, 5734 University Ave., Chicago IL
+60637, USA.
+   E-mail address: kazhdan@math.huji.ac.il; gaitsgde@math.uchicago.edu
+

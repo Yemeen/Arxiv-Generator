@@ -1,0 +1,1021 @@
+                                               THE GENERALIZED SEGAL-BARGMANN TRANSFORM AND
+                                                              SPECIAL FUNCTIONS
+arXiv:math/0307343v1 [math.RT] 25 Jul 2003
+
+
+
+
+                                                                     MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+                                                     Abstract. Analysis of function spaces and special functions are closely related to
+                                                     the representation theory of Lie groups. We explain here the connection between
+                                                     the Laguerre functions, the Laguerre polynomials, and the Meixner-Pollacyck poly-
+                                                     nomials on the one side, and highest weight representations of Hermitian Lie groups
+                                                     on the other side. The representation theory is used to derive differential equations
+                                                     and recursion relations satisfied by those special functions.
+
+
+
+
+                                                                                       Introduction
+                                             The broad subject of special functions is closely related to the representation theory
+                                             of Lie groups and arises very naturally in analysis, number theory, combinatorics,
+                                             and mathematical physics. The classical texts [51, 52] by Vilenkin and Vilenkin and
+                                             Klimyk well document this interplay. The interested reader is also referred to [9] by
+                                             Dieudonné and the recent text [1] by Andrews, Askey, and Roy. It is not our aim to
+                                             add to this discussion in a general way, but mainly to concentrate on our specific work
+                                             [5, 6, 7, 8] on the Meixner-Pollacyck polynomials, Laguerre functions, and Laguerre
+                                             polynomials defined on symmetric cones. It is in the interplay among the various
+                                             function spaces that model unitary highest weight representation for a Hermitian
+                                             group that new results involving difference equations, differential equations, recursion
+                                             formulas, and generating functions arise.
+                                                The classical Laguerre polynomials Lαn (x) can be defined in several different ways.
+                                             One of the oldest definitions is in terms of the generating function
+                                                                                                ∞
+                                                                                                  X
+                                                                   −α−1              xw
+                                             (0.1)       (1 − w)          exp                 =         Lαn (x)w n ,   |w| < 1, −1 < α .
+                                                                                    w−1           n=0
+
+
+                                               Another way is to use the Rodriguez type formula
+
+
+                                                                                            ex x−α dn −x n+α
+                                             (0.2)                              Lαn (x) =            (e x ) .
+                                                                                              n! dxn
+
+
+                                                Key words and phrases. Laguerre functions and polynomials, Meixner-Pollacyck polynomials,
+                                             holomorphic discrete series, highest weight representations, bounded symmetric domains, real
+                                             bounded symmetric domains, orthogonal polynomials, Laplace transform.
+                                                Research by G. Ólafsson supported by NSF grant DMS 0070607 and DMS 0139783.
+                                                                                                   1
+2                       MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+Finally, they are special cases of hypergeometric functions:
+                                      n
+                                      X Γ(n + α + 1)       (−x)k
+(0.3)                 Lαn (x)   =
+                                      k=0
+                                            Γ(k + α + 1) k!(n − k)!
+                                      Γ(n + α + 1)
+(0.4)                           =                  1 F1 (−n, α + 1; x) .
+                                        Γ(n + 1)
+    The polynomials
+                            s
+                                  Γ(n + 1)
+                                             Lαn (x),          n ∈ N,
+                                Γ(n + α + 1)
+form an orthonormal basis for the L2 -Hilbert space L2 (R+ , e−x xα dx), or otherwise
+stated:
+Theorem 0.1. The functions
+(0.5)                                  ℓαn (x) = Lαn (2x)e−x
+form an orthonormal basis for L2 (R+ , dµα), where dµα (x) = xα dx.
+    As was noted in [7], Theorem 3.1, a simple calculation shows that the functions
+                                            {ℓαn , n ∈ N}
+have Laplace transform
+           Z ∞                                       n
+                 −xz α             Γ(n + α + 1) z − 1
+                e ℓn (x) dµα (x) =                       (z + 1)−(α+1)
+            0                        Γ(n + 1)    z+1
+which forms a basis for the space of SO(2)-finite vectors in a holomorphic discrete
+series of a conjugate version of SL(2, R). These representation theoretic relationships
+are the basic starting point in [8] and will be described in the following sections. In
+short let Ω ⊂ Rd be a symmetric cone and let T (Ω) = Ω + iRd be the corresponding
+tube domain. Let Gc be a connected semisimple Lie group, locally isomorphic to the
+connected component containing the identity of the group of holomorphic automor-
+phisms of T (Ω). We use a natural orthogonal set of K-finite vectors in the Hilbert
+space, Hν (T (Ω)), of holomorphic functions corresponding to a highest weight repre-
+sentation of Gc and the generalized Segal-Bargmann transform, Lν , defined in [39]
+to define an orthogonal set {ℓνm (x)}m on the space L2 (T (Ω), dµν ) for an appropriate
+measure dµν (x). A generalization of (0.3) was used in [15], p. 343, to define Laguerre
+polynomials, Lνm , for arbitrary symmetric cones and the following relationship was
+obtained:
+(0.6)                               ℓνm (x) = e− Tr(x) Lνm (2x) .
+Applying the same ideas to the bounded realization of T (Ω) gives a natural general-
+ization of the Meixner-Pollacyck polynomials, [8], Section 5. Most of the main results
+in [6, 7, 8] concern the differential and difference relations among these special func-
+tions. Several authors have used the relation between highest weight modules and the
+Meixner-Pollacyck polynomials/Laguerre polynomials. In particular, we would like
+to mention [17, 18, 25, 28, 29, 33, 55, 56, 57] as related references, but as far as the
+authors know, the first time the Laguerre polynomials show up as coefficient functions
+                  THE GENERALIZED SEGAL-BARGMANN TRANSFORM                              3
+
+of a representation of a Lie group was in [51], p. 430–434, where Vilenkin relates the
+Laguerre polynomials to coefficient functions of representations of the group
+                                                         
+                          1 a b                            
+                           0 c c  | a, b, c, d ∈ R, c 6= 0 .
+                                                           
+                             0 0 1
+  This overview article is based on the presentation of the second author at the
+conference Representations of Lie Groups, harmonic analysis on homogeneous spaces
+and quantization, at the Lorentz Center, University of Leiden, December 9 – 13, 2002.
+The second author would like to thank the organizers G. van Dijk and V.F. Molchanov,
+as well as the staff at the Lorentz Center for for the invitation and hospitality during
+his stay in Leiden.
+
+                               1. Tube type domains
+In this section we introduce the necessary notation and facts related to Hermitian
+Lie groups and bounded symmetric domains D, containing the origin 0 ∈ Cd . Even
+if much of what we say is valid for all bounded symmetric domains in Cd we will
+assume from the beginning, as our applications will be restricted to that case, that
+D is isomorphic to a tube type domain T (Ω). There exists a connected semisimple
+Lie group that acts transitively on D. For simplicity we will assume that G is simple.
+The general situation can be reduced to this case by considering direct products. Let
+K = {g ∈ G | g ·0 = 0} . Then K is a maximal compact subgroup of G and D ≃ G/K.
+Furthermore there exists an involution θ : G → G, a Cartan involution, such that
+                            K = Gθ = {g ∈ G | θ(g) = g} .
+In particular D is a Riemannian symmetric space. In this case Rd has the structure
+of an Euclidean Jordan algebra with identity element e, [15], and Ω = {x2 | x ∈
+Rd }0 where the subscript 0 stands for the connected components containing e. The
+isomorphism D ≃ T (Ω) is then given by the Cayley transform
+                                                        e+z
+                            c(z) = (e + z)(e − z)−1 =        .
+                                                        e−z
+Let gC = g⊗R C denote the complexification of g and denote by GC a simply connected
+and connected complex Lie group with Lie algebra gC . Then g · z is well defined for
+g ∈ GC and almost all z ∈ Cd and (g1 g2 )·z = g1 ·(g2 ·z) whenever defined. In particular
+there exists an element c ∈ GC such that c · z = c(z) for all z ∈ D. Assuming that
+G ⊂ GC we set Gc = cGc−1 . Then Gc acts transitively on T (Ω) and the stabilizer of
+e ∈ Ω is given by K c = cKc−1 . Finally, there exists a conjugation σ : Cd → Cd which
+lifts to an involution τ : GC → GC such that, with H = Gτ0 , we have
+                               DR := {z ∈ D | σ(z) = z}
+is a totally real Riemannian subsymmetric space, isomorphic to H/H ∩ K. We can
+choose σ so that the Cayley transform maps DR bijectively onto Ω. Notice that θ and
+τ commute and hence
+                               g = k⊕p=h⊕q
+                                 = hk ⊕ hp ⊕ q k ⊕ q p
+4                       MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+where p = {X ∈ g | θ(X) = −X}, q = {X ∈ g | τ (X) = −X}, and a subscript k
+(respectively p ) indicates intersection with k (respectively p). Everything is now set
+up so that τ (g) = c2 (g)(c−1)2 , gc = Ad(c)g, and the Lie algebra of Gc is given by
+                                gc = hk ⊕ ihp ⊕ iqk ⊕ qp .
+We note that K c := cKc−1 = HC ∩ Gc and H c = cHc−1 = KC ∩ Gc .
+   The fact that D is an irreducible bounded symmetric domains implies that zk, the
+center of k, is one dimensional. We can choose Z0 ∈ izk such that ad(Z0 ) : gC → gC
+has eigenvalues 0, 1 and −1. The 0-eigenspace is exactly kC . Define p+ to be the
+1-eigenspace and p− to be the −1-eigenspace. Then p+ and p− are both abelian Lie
+algebras, normalized by KC , and gC = p+ ⊕ kC ⊕ p− . Denote by P + = exp(p+ ) the
+closed Lie subgroup of GC with Lie algebra p+ and similarly P − = exp(p− ). Then
+P + × KC × P − ∋ (p, k, q) 7→ pkq ∈ GC is a diffeomorphism onto an open dense subset
+of GC . Furthermore G ⊂ P + KC P − . For g ∈ P + KC P − we denote by p(g) ∈ P + ,
+kC (g) ∈ KC , and q(g) ∈ P − the inverse of the above diffeomorphism. Then the
+bounded realization of G/K inside p+ is given by
+                         G/K ∋ gK 7→ (exp |p+ )−1 (p(g)) ∈ p+ .
+  We will also need some basic information about roots. Let ak be a maximal abelian
+subspace of qk . Then ak is in fact maximal abelian in q. Let ∆ be the set of roots of
+(ak )C in gC and let ∆k be the set of roots of (ak )C in kC . Then
+                               ∆k = {α ∈ ∆ | α(Z0 ) = 0}
+Set ∆n = {α ∈ ∆ | α(Z0 ) 6= 0}. Then ∆n = ∆+    −
+                                           n ∪ ∆n , disjoint union, where
+
+                             ∆±
+                              n = {α ∈ ∆ | α(Z0 ) = ±1} .
+
+Recall that two roots α, β ∈ ∆ are called strongly orthogonal if α ± β 6∈ ∆. In our
+situation there are only two root lengths. Choose a maximal set {γ1 , . . . , γr } of long
+strongly orthogonal roots in ∆+n . Notice that r = dim ak . The above set of roots can
+now be described as:
+                                                    1
+(1.1)               ∆±n   = ±[{γ1 , . . . , γr } ∪ { (γi + γj ) | i < j}]
+                                                    2
+                                1
+(1.2)               ∆k = ±{ (γi − γj ) | i < j}]
+                                2
+We choose the ordering such that γ1 > . . . > γr > 0. Then the positive set of roots
+are those with a ‘ +’ in the above equations. For α ∈ ∆ let
+                                                  2(γ, α)
+                                  sα : γ 7→ γ −           α
+                                                  (α, α)
+denote the corresponding Weyl group reflection. Here (·, ·) denotes a Weyl group
+invariant inner product on ia∗k such that (γ1 , γ1) = 1. Notice that s(γi −γj )/2 (γi ) = γj
+and sγi ((γi + γj )/2) = −(γi − γj )/2. It follows that all the root spaces (gC )γj have the
+same dimension, which is in fact one, and also the spaces (gC )(γi ±γj )/2 have the same
+dimension, which we denote by a.
+    Let Hj ∈ iak be such that γi (Hj ) = 2δij . Then iak = ⊕rj=1 RHj and Z = 21 (H1 +
+. . . + Hr ). Let a = Ad(c)(ak ) = Ad(c)−1 ak . Then a is maximal abelian in hp and p.
+                  THE GENERALIZED SEGAL-BARGMANN TRANSFORM                                    5
+
+The roots of a in g are given by ∆a = ∆ ◦ Ad(c). We set:
+                             ξj = Ad(c)−1 Hj
+                              ξ = ξ1 + . . . + ξr = 2Ad(c)−1 Z0
+                             βj = γj ◦ Ad(c) .
+           Lr
+Then a =     j=1 Rξj   and ξ is central in h. We use β1 , . . . , βr to identify a∗C with Cr by
+                              (λ1 , . . . , λr ) 7→ λ1 β1 + . . . + λr βr .
+We also embed C into a∗C by λ 7→ λ(β1 + . . . + βr ).
+  If G is simple, then by the classification the triple (G, K, H) is locally isomorphic
+to one of the following:
+
+            G           K              H         K ∩H     r   a
+         Sp(n, R)     U(n)         GL(n, R)+      O(n)   n    1
+         SU(n, n) U(n) × U(n)      GL(n, C)+      U(n)   n    2
+            ∗                        ∗       +
+         SO (4n)      U(2n)       SU (2n)R       Sp(2n)  2n   4
+                                               +
+         SO(2, k) S(O(2) × O(k)) SO(1, k − 1)R SO(k − 1) 2n k − 2
+          E7(−25)      E6 T        E6(−26) R+      F4     3   8
+
+  Here the subscript    +   stands for the real and positive determinant.
+Example 1.1 (Symmetric Matrices). Let Rd = Sym(n, R), d = n(n + 1)/2, be the
+real space of n × n real symmetric matrices. The complexification of Rd is then the
+space of n × n complex symmetric matrices Sym(n, C). Obviously Sym(n, C) is a
+complex Jordan algebra, where the product is given by X · Y := (XY + Y X)/2.
+Furthermore,
+                           Ω = {X ∈ Sym(n, R) | X > 0} ,
+where > stands for positive definite. The action of GL(n, R) on Sym(n, R) is given
+by
+                                   g · X = gXg T .
+The orbits are parametrized by the signature. In particular, the cone of positive
+definite matrices is homogeneous. The identity element is just the usual identity
+matrix In ∈ Ω and the stabilizer of In is SO(n).
+  Write an element g ∈ Sp(n, R) as
+                                              
+                                          A B
+                                   g=            .
+                                          C D
+Then the action of Sp(n, R) on T (Ω) is given by
+(1.3)                          g · Z = (AZ + B)(CZ + D)−1 .
+Notice that (1.3) in fact defines an almost everywhere defined action of Sp(n, R)C =
+Sp(n, C) on Sym(n, C). We have
+                            D = {X ∈ Sym(n, C) | In − Z ∗ Z > 0}
+and the Cayley transform is given by
+                                                                         
+                                                   −1        −2n    In In
+                 c(Z) = (In + Z)(In − Z)                =2                  ·Z.
+                                                                   −In In
+6                      MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+Define σ : Sym(n, C) → Sym(n, C) to be the usual complex conjugation. Then
+DR = {Z ∈ Sym(n, R) | In − Z 2 > 0} and a simple calculation shows that c(X) ∈ Ω
+for X ∈ DR as was to be expected.
+   The case Rd = {Z ∈ M(n, C) | Z ∗ = Z}, G = SU(n, n) and H = GL(n, C)+ is
+treated is the same way. Notice that in this case the complexification of Rd is given by
+RdC = M(n, C) as every complex matrix can be written in an unique way as Z = X +iY
+with X = X ∗ and Y + Y ∗ . Simply set X = 1/2(Z + Z ∗ ) and Y = 1/(2i)(Z − Z ∗ ).
+   We refer to [15, 32, 50] for further information on the structure of bounded sym-
+metric domains and the relation between bounded symmetric domains and Jordan
+algebras. For the more group theoretical description we refer to [21, 30, 31]. The
+connection between Hermitian symmetric spaces and causal symmetric spaces G/H
+is described in [23].
+
+                      2. Highest weight representations
+The unitary highest weight representations of G are well understood unitary repre-
+sentations that can be realized in a Hilbert space of holomorphic functions on D.
+The idea described in this section is to use the Restriction principle, introduced in
+[39] (see also [36, 41]), to construct the Berezin transform and generalized Segal-
+Bargmann transform and to transfer information known from the highest weight
+representations to extract information about L2 (DR ) and L2 (Ω, dµν ), where µν is a
+measure on Ω to be introduced in a moment. Thus: We want to use the highest
+weight representations to do harmonic analysis on bounded real domains and sym-
+metric cones. It should be noted that almost all Riemannian symmetric spaces can
+be realized as a real form of a Hermitian symmetric spaces. We will in this section
+give a brief introduction to the theory of highest weight representations. We refer to
+[13, 14, 20, 22, 24, 34, 40, 46, 45, 53] for more information.
+   Let p = 2d/r, and let J(g, z) be the complex Jacobian determinant of the action
+of G on D. If we are discussing the tube type realization, then we will use the
+same notation for the complex Jacobian determinant of the action of Gc on T (Ω).
+The map (g, z) 7→ J(g, z) can be expressed in terms of the KC -projection (g, z) 7→
+kC (g exp(z)) ∈ KC and
+                                                           
+                   1 X                      1      a(r − 1)
+             ρn =         dim((gC )α )α =      1+             (γ1 + . . . + γr )
+                   2 α∈∆                    2          2
+                        n
+
+as
+                  J(g, z) = det Ad(kC (g exp z))|p+ = kC (g exp z)2ρn .
+Let ∆ be the determinant function on the Jordan algebra, Rd , and Tr the trace
+functional. In the case Rd = Sym(n, R) this is just the usual determinant function and
+trace. We denote by ∆j the principal minors. Recall that ∆r = ∆. For (α1 , . . . , αr ) ∈
+Cr let
+(2.1)               ∆α (w) := ∆1 (w)α1 −α2 ∆2 (w)α2 −α3 . . . ∆r (w)αr
+and
+                                         Z
+(2.2)                         ψα (x) =         ∆α (kx) dk .
+                                         K∩H
+                  THE GENERALIZED SEGAL-BARGMANN TRANSFORM                               7
+
+Let h(z, w) = ∆(e − z w̄). Finally, we define the Gindikin-Koecher gamma function
+by
+                             Z
+(2.3)              ΓΩ (λ) :=     e− Tr(x) ∆λ (x)∆−d/r dx, λ ∈ C .
+                                   Ω
+
+We have
+                                                  r
+                                                  Y
+                                        (d−r)/2             a
+                       ΓΩ (λ) = (2π)                  Γ(λj − (j − 1)) ,
+                                                  j=1
+                                                            2
+where Γ is the usual Γ-function. For m ∈ Λ := {(m1 , . . . , mr ) ∈ Nr0 | m1 ≥ m2 ≥
+. . . ≥ mr } denote by τm the irreducible K ∩ H-spherical representation with lowest
+weight −m. Denote by P (Cr ) the space of polynomial functions on Cr , Then τm can
+be realized (with multiplicity one) in a subspace Pm (Cr ) ⊂ P (Cr ). Furthermore (see
+[47])
+                                           M
+                                 P (Cr ) =    Pm (Cr ) .
+                                              m∈Λ
+
+   There is a canonical series of highest weight representations (or weighted Bargmann
+spaces in some cases)
+                                    n a          a      o   a
+                (πν , Hν (D)) ν ∈ 0, , . . . , (r − 1) ∪ ( (r − 1), ∞),
+                                         2       2          2
+the so-called Berezin-Wallach set. To simplify the notation for the moment write Hν
+for Hν (D). The space Hν is a Hilbert space of holomorphic functions on D. For
+ν > a(r − 1) + 1 the norm is given by
+                           Z
+                   2                                       1     ΓΩ (ν)
+              kF kν = αν      |F (z)|2 h(z, z)ν−p dz, αν = d               .
+                            D                              π ΓΩ (ν − d/r)
+In this case, if we assume that the center of G is finite, the representation (πν , Hν )
+can be realized as a discrete summand in L2 (G) ([20]) and L2 (G/H) ([37, 38]). For
+ν < a(r − 1) + 1 we use analytic continuation of this norm. The representation of G
+on Hν is given by
+                                                        ν
+(2.4)                        πν (g)F (z) = J(g −1 , z) p F (g −1 z) .
+  The facts that we will need are:
+Theorem 2.1. Let the notation be as above. Then the following holds:
+  (1) Hν is a reproducing kernel Hilbert space with reproducing kernel
+                    Kw (z) = K(z, w) = h(z, w)−ν = ∆(e − z w̄)−ν .
+   (2) If ν > (r − 1) a2 then the space of polynomials P (Cd ) is dense in Hν . More
+       specifically, the space of K-finite vectors (Hν )K can be naturally identified with
+       P (Cd )
+   (3) All of the K-representations (τm , Pm (Cd )) are K ∩ H-spherical and
+                                    Pm (Cd )K∩H = Cψm .
+                 L
+   (4) HK∩H
+        ν   ≃        m∈Λ   Cψm .
+8                        MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+     (5) The norm of the function ψm is given by
+                                                   d
+                                                    
+                                                   r m
+                                    kψm k2 = d−1
+                                              m
+                                                   (ν)m
+         where dm = dim Pm (Cd ).
+  Notice that (1) means that the point evaluations are continuous linear functionals
+on Hν and
+                         F (z) = (F |Kz ) for all F ∈ Hν .
+
+       3. The Berezin transform and generalized Segal-Bargmann
+                               transform
+In this section we recall the basic facts about the Berezin transform and generalized
+Segal-Bargmann transform. We refer to [2, 12, 10, 11, 19, 27, 35, 36, 39, 41, 48, 49]
+for further information. We define a map, the restriction map, (see [39]) Rν : Hν →
+C ∞ (DR ) by
+                                                ν
+                                Rν F (x) = h(x) 2 F (x),
+where h(x) = h(x, x). Then Rν is injective. Since the invariant measure dη on DR is
+                p
+dη(x) = h(x)− 2 dx (and a few other things) we get
+Lemma 3.1. Rν F ∈ L2 (DR , dη) for all F ∈ P (Cd ) if and only if ν > a2 (r − 1).
+    Thus the restriction map
+                           Rν : (Hν )K = P (Cd) → L2 (DR , dη)
+is defined for all ν in the continuous part of the Berezin-Wallach set. We collect the
+important properties in the following theorem (see [8], section 3):
+Theorem 3.2. Assume that ν > a2 (r − 1). Then the following hold:
+  (1) Rν (P (Cd )) is dense in L2 (DR , dη).
+  (2) Rν : Hν → L2 (DR , dη) is closed.
+  (3) The Berezin transform Rν Rν∗ is given by
+                       Z        ν      ν
+             ∗             h(y) 2 h(x) 2
+        Rν Rν f (y) =                    f (x) dη(x) = Dν ⋆ f (h) (y = h · 0),
+                        DR   h(y, x)ν
+                                ν
+         where Dν (h) = J(h, 0) p .
+     (4) If ν > a(r − 1) then Rν Rν∗ : L2 (DR , dη) → L2 (DR , dη) is continuous with norm
+         ||Rn Rn∗ ||2 ≤ ||Dν ||L1 < ∞.
+     (5) If ν > a(r − 1) then Rν Rν∗ : L∞ (DR , dη) → L∞ (DR , dη) is continuous with
+         norm ||Rn Rn∗ ||∞ ≤ ||Dν ||L1 < ∞.
+   We are thus able to apply Rν Rν∗ to bounded spherical functions! The proof of (3)
+is standard:
+                         Rν∗ f (z) = (Rv∗ f |Kz )
+                                   = (f |Rv Kz )
+                                     Z
+                                                   ν
+                                   =     f (x)h(x) 2 h(y, x)−ν dη.
+                    THE GENERALIZED SEGAL-BARGMANN TRANSFORM                          9
+
+This implies                              Z
+                                                        ν        ν
+                       Rν Rν∗ f (y)   =       f (x)h(y) 2 h(x) 2 h(y, z)−ν dη.
+In particular, this shows that the restriction principle defined in [39] results in the
+Berezin transform.
+  For ν > a2 (r − 1), the restriction map Rν : Hν → L2 (DR , dη) is closed with dense
+image. We can therefore define a unitary isomorphism Uν : L2 (DR , dη) → Hν by
+polarization. Thus Uν satisfies
+                                            p
+                                    Rν∗ = Uν Rν Rν∗ .
+The map Uν is the generalized Segal-Bargmann transform. Let c(ν) denote the Harish-
+Chandra c-function, W the Weyl group corresponding to the root system ∆(a, h),
+w = #W , and F the Harish -Chandra/ Helgason spherical Fourier transform
+                                                 1 dλ W
+                    F : L2 (DR , dη)H∩K → L2 (a,           )
+                                                 ω |c(λ)|2
+                                           Z
+                                      F 7→     F (x)ϕλ (x)dη(x)
+                                                            DR
+
+where ϕλ is the spherical functions on H/H ∩ K ≃ DR given by
+                     ϕλ (x) = ψiλ+ρ ((e + x)(e − x)−1 ) = ψiλ+ρ (c(x)) .
+Here ρ is half the sum of the positive roots for H/(H ∩ K). Then the above discussion
+results in a unitary isomorphism
+                                                          1 dλ W
+                   F ◦ Uν∗ : P (Cr )K∩H = HH∩K
+                                            ν    → L2 (a,           )
+                                                          w |c(λ)|2
+and we get:
+Theorem 3.3. If ν > a2 (r − 1) then the functions
+                                          {F ◦ Uν∗ (ψm )}m≥0
+form an orthogonal basis for L2 (a, w1 |c(λ)|
+                                         dλ
+                                              2)
+                                                 W
+                                                   .
+
+                              4. The Polynomials pν,m (λ)
+The next obvious task is to understand the functions F ◦ Uν∗ (ψm ). For that we define
+the polynomials pν,m (λ) by
+                                                                     ν
+(4.1)                pν,m (λ) = kψm k−2 ψm (∂x )[∆(e − x2 )− 2 φλ (x)]x=0 ,
+  We have:
+Lemma 4.1 ([8], Lemma 4.1).
+                                          ν
+                                                      X
+                          ∆(e − x2 )− 2 φλ (x) =             pν,m (λ)ψm (x).
+                                                        m
+
+  We define the constants cν and bν by
+                     cν = kDν kL1         and      Rν Rν∗ (ϕλ ) = c−1
+                                                                   ν bν (λ)ϕλ .
+
+The numbers cν and bν (λ) have been evaluated by Zhang, [56].
+10                         MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+Theorem 4.2 ([8], Proposition 4.3). Assume ν > a2 (r − 1). Then
+                                     −1 p
+                   F (Uν∗ ψm )(λ) = cν 2 bν (λ)kψm k2ν pν,m (λ) .
+     The numbers cν and bν (λ) have been computed by Zhang.
+
+                                  5. Example: G = SU(1, 1)
+                                                                      
+                                                                   a b
+Let D = {z ∈ C | |z| < 1}. Whenever defined we write for g =              ∈ GL(2, C)
+                                                                   c d
+and z ∈ D:
+                                           az + b
+                                   g·z =          .
+                                           cz + d
+Then, restricted to SU(1, 1), this defines a transitive action of SU(1, 1) on D. In
+this case we take the conjugation σ as the usual complex conjugation z 7→ z̄. Then
+DR = (−1, 1) and ψm (x) = xm . Notice that
+                                                          
+                                    cosh(t) sinh(t)
+                      H = ht =                         |t∈R
+                                    sinh(t) cosh(t)
+and ht (0) = tanh(t). In particular K ∩ H = {Id} is trivial. As (1 + x)(1 − x)−1 is real
+and positive for all x ∈ (−1, 1) we can define
+                                                 ν 1 + x
+                           Gν,λ (x) = (1 − x2 )− 2 (       )iλ .
+                                                     1−x
+Then we can expand Gν,λ as
+                                           ∞
+                                           X
+                                Gν,λ (x) =    pn,ν (λ)xn ,
+                                                n=0
+
+with pn,ν (λ) =  ( ν2
+                   +    iλ)n 2 F1 ( ν2
+                              −          iλ, −n, − ν2
+                                            − iλ − n + 1, 1), the Meixner-Pollacyck
+polynomials.
+  The Hilbert space Hν is given as the space of holomorphic functions F : D → C
+such that
+                                Z
+                  2  1 Γ(ν)
+              kF k =              |F (x + iy)|2(1 − (x2 + y 2))2ν−2 dxdy
+                     π Γ(ν − 1)
+                                   
+                                a b
+and, whenever defined for g =         we have
+                                c d
+                               πν (g)F (z) = (−bz + a)−2ν f (g · z)
+                                                                                       
+                                                                                  0 1
+  The connection to the representation πν is as follows. We have ξ =                        ∈h
+                                                                                  1 0
+                 
+         1   1 0
+and Z0 = 2          ∈ k. Thus
+             0 −1
+                           πν (ξ)f (x) = νxf (x) − (1 − x2 )f ′ (x) ,
+                             πν (ξ)z m = (ν + m)z m+1 − mz m−1 ,
+                           πν (ξ)Gν,λ = −2iλGν,λ .
+     The last item follows from the simple calculation
+(5.1)             2iλpν,n (λ) = (n + 1)pν,n+1 (λ) − (ν + n − 1)pν,n−1 (λ) .
+                        THE GENERALIZED SEGAL-BARGMANN TRANSFORM                                11
+
+    Now using the following facts that
+                                 πν (−Z0 )f (x) = xf ′ (x) ,
+                                   πν (−Z0 )z m = mxm ,
+                                                  X∞
+                                        ′
+                                     xGν,,λ (x) =       mpm,ν (x)xm .
+                                                         m=0
+we get
+                                      ν                     ν
+(5.2)           −(ν + 2n)pν,n (λ) = (− + iλ)pν,n (λ + i) − ( + iλ)pν,n (λ − i) .
+                                      2                     2
+                                       6. Difference Relations
+The general recurrence relation corresponding to (5.1) and difference relation gen-
+eralizing (5.2) are as follows: Choose Z0 ∈ zkC as before, i.e., such that ad(Z0 ) has
+eigenvalues 0, 1, and −1. As before set ξ = Ad(c)(−2Z0 ) = Ad(c)−1 (2Z0 ). Denote by
+ek the standard basis vector of Rr with a 1 in each k-th position and 0’s elsewhere.
+For n an r-tuple define
+                                           Y nk − nj + a (j − k − 1)
+                    n              a                      2
+                           := (nk + (r − k))                 a
+                 n − ek            2              nk − nj + 2 (j − k)
+                                             j6=k
+
+and
+                                             Y nk − nj − a (j − k − 1)
+                                                          2
+                                 cn (k) =                   a          .
+                                             j6=k
+                                                  nk − nj − 2
+                                                              (j − k)
+Then
+Theorem 6.1 ([8],Theorem 5.2). With the above notation we have:
+                 Xr                  Xr
+                        m                            a
+     πν (−ξ)ψm =               ψm−ej −    (ν + mj − (j − 1))cm (j)ψm+ej .
+                      m − ej                         2
+                          j=1                            j=1
+
+  Let qm,ν (z) = ∆(z + e)−ν ψm ((z − e)(z + e)−1 ). Since ξ = −2Ad(Z0 ) and Z0 is
+central in k it follows, by some calculations, that:
+         πν (ξ)qm,ν = (rν + 2km|)qm,ν
+                      Xr                     Xr
+                              m                             a
+    πν (−2Z0 )qm,ν =                qm−ej ,ν −     (ν + nj − (j − 1))cm (j)qm+ej ,ν .
+                           m − ej                           2
+                      j=1                      j=1
+
+Putting those pieces together we get:
+Theorem 6.2 ([8], Theorem 5.6). We have the following difference relations amongst
+the pν,m (λ):
+
+    r
+    X                            r 
+                                 X      
+                                    m+e          j                        a
+2         (iλj +ρj )pν,m (λ) =                       pν,m+ej (λ)−(ν+mj −1− (j−1))cm−ej pν,m−ej (λ) .
+                                             m                            2
+    j=1                          j=1
+
+Theorem 6.3 ([8], Theorem 6.1). We have
+                        Xr                  
+                                iλ + ρ − ν2
+−(rν + 2|m|)pν,m(λ) =                          p −
+                             iλ + ρ − ν2 − ej ν,m
+                                       j=1
+12                      MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+                                  Xr
+                                       ν            a
+                                      ( + iλj + ρj − (j − 1))ciλ+ρ− ν2 (j)pν,m (λ − iej ).
+                                  j=1
+                                       2            2
+
+                          7. The Unbounded Realization
+In this section we discuss the unbounded realization D ≃ T (Ω) = iRd + Ω. This can
+be used to study recurrence and differential equations for Laguerre polynomials and
+functions on Ω. We refer to [8, 15, 44] for further references.
+   From now on ν ∈ C is identified with ν(β1 + . . . + βr ) ∈ a∗ . Using the Cayley
+transform we get a space of holomorphic functions on T (Ω), Hν (T (Ω)) = πν (c)Hν ,
+and get an orthonormal basis
+                                                       z−e
+                            qm,ν (z) = ∆(z + e)−ν ψm (     )
+                                                       z+e
+                                                                              m
+    e H∩K . Notice that these functions correspond to the functions z → (z−i)ν+m
+for H                                                                            on
+        ν                                                                        (z+i)
+the upper half plane in the case G = SL(2, R). Let us describe this in more detail,
+as the standard normalization for the unbounded realization is usually different from
+the one in the bounded realization. For ν > 1 + a(r − 1) let Hν (T (Ω)) be the space
+of holomorphic functions F : T (Ω) → C such that
+                             Z
+                     2
+(7.1)            kF kν := βν      |F (x + iy)|2∆(y)ν−2d/r dxdy < ∞
+                                 T (Ω)
+
+where
+                                                2rν
+(7.2)                            βν =                       .
+                                         (4π)d ΓΩ (ν − d/r)
+Then Hν (T (Ω)) is a non-trivial Hilbert space. For ν ≤ 1 + a(r − 1) this space reduces
+to {0} and analytic continuation is again used to define the norm [44]. If ν = 2d/r
+this is the Bergman space.
+  Instead of using the H c -invariant measure on the cone Ω we use a weighted measure
+dµν (x) = ∆(x)ν−d/r dx corresponding to the measure xν−1 dx on R+ . Thus we get the
+weighted L2 -spaces
+                                                        d
+                              L2ν (Ω) = L2 (Ω, ∆(x)ν− r dx).
+In this normalization the restriction map is simply Rν F = F |Ω and the unitary part
+becomes the Laplace transform Lν . We define Lν on the domain
+                                        Z
+                            2
+                    {f ∈ Lν (Ω, dµν ) |    e−(ω,x) |f (x)|dµν (x) < ∞}
+                                            Ω
+for all ω ∈ Ω by                            Z
+                            Lν (f )(z) :=       e−(z,x) f (x)dµν (x) .
+                                            Ω
+Note that by the Cauchy-Schwarz inequality, the condition f ∈ L2ν (Ω) implies, since
+|e−(s+it,x) | = e−(s,x) , that Lν f is a well-defined function on T (Ω). To simplify notation
+we sometimes write R for Rν and L for Lν . Denote by LΩ = Rν ◦ Lν . Then LΩ is a
+self-adjoint positive operator L2 (Ω, dµν ) → L2 (Ω, dµν ).
+Theorem 7.1. Let the notation be as above. Assume that ν > 1 + a(r − 1). Then
+the following hold:
+                  THE GENERALIZED SEGAL-BARGMANN TRANSFORM                           13
+
+   (1) The space Hν (T (Ω)) is a reproducing kernel Hilbert space.
+   (2) The map
+                               1
+                    Ψν := p          πν (c)−1 : Hν (T (Ω)) → Hν (D)
+                              ΓΩ (ν)
+       is a unitary isomorphism.
+   (3) The reproducing kernel of Hν (T (Ω)) is given by
+                            Kν (z, w) = ΓΩ (ν)∆ (z + w̄)−ν
+   (4) If ν > (r − 1) a2 then there exists a Hilbert space Hν (T (Ω)) of holomorphic
+       functions on T (Ω) such that Kν (z, w) defined in (2) is the reproducing kernel
+       of that Hilbert space and the universal covering group of Gc acts unitarily and
+       irreducibly on Hν (T (Ω)).
+   (5) The map
+                         L2ν (Ω) ∋ f 7→ F = Lν (f ) ∈ Hν (T (Ω))
+       is a unitary isomorphism and
+   (6) If ν > (r − 1) a2 then the functions
+                                                        
+                                       −ν         z−e
+                   qm,ν (z) := ∆(z + e) ψm                   ,   m ∈ Λ,
+                                                  z+e
+        form an orthogonal basis of Hν (T (Ω))L , the space of L-invariant functions in
+        Hν (T (Ω)).
+   The proof of (5) follows from a restriction principle argument. Let f ∈ L2ν (Ω) be
+in the domain of RR∗ , then
+                     RR∗ f (y) = R∗ f (y)
+                              = (R∗ f | Ky )Hν (T (Ω))
+                              = (f, RKy )L2ν (Ω)
+                                Z
+                              =     f (x)K(x, y) dµν (x)
+                                 Ω
+                                        Z
+(7.3)                         = ΓΩ (ν) f (x)∆(x + y)−ν dµν (x)
+                                         Ω
+                                Z
+                              =     f (x)LΩ (e−(y,·) )(x) dµν (x)
+                                ZΩ
+                              =     e−(y,x) ∆(x)ν−d/r LΩ (f )(x) dx
+                                  Ω
+                              = LΩ (LΩ f )(y),
+and
+                           (LΩ f, LΩ f ) = (R∗ f, R∗ f ) < ∞.
+Thus f is in the domain of (LΩ )2 and RR∗ = (LΩ )2 . Therefore (LΩ )2 is a self-adjoint
+extension of RR∗ , which is also self-adjoint by the von Neumann theorem.
+  Consider the inverse operator R−1 acting on the image of R. For a function g in
+the image of R, R−1 g is the unique extension of g to a holomorphic function on T (Ω).
+14                       MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+Thus R−1 LΩ = Lν . Letting R−1 act on the previous equality (7.3) we get
+                                         R∗ f = Lν LΩ f.
+This proves the polar decomposition formula. Since R∗ is densely defined and R is
+an injective closed operator we have that the unitary part Lν extends to a unitary
+operator. Thus we get the well known fact, first proved by Rossi and Vergne [44] for
+the full Wallach set:
+Theorem 7.2. Let ν > a(r − 1)/2. Then the Laplace transform L : L2 (Ω, dµν ) →
+Hν (T (Ω)                     Z
+                          L(f )(z) =         e−(z,x) f (x)∆(x)ν−d/r dx
+                                         Ω
+is an unitary isomorphism.
+  Combinging Theorem 7.2 and Theorem 7.1, part 2, we get the following simple,
+but usefull fact:
+Lemma 7.3. The map Ξ = Ξν : L2 (Ω, dµν ) → H(D)ν ,
+                                  1
+                    Ξ(f )(w) = p        πν (c)−1 L(f )(w)
+                                 ΓΩ (ν)
+                               s        Z
+                                  2rν
+                             =              e−(cw,x)f (x)∆(x)ν−d/r dx
+                                 ΓΩ (ν) Ω
+is a unitary isomorphism.
+
+                  8. The Laguerre Polynomials and Functions
+In this section ν will stand for a complex number identified with the element ν(β1 +
+. . . + βr ) ∈ a∗ . We define, as in [15] (c.f. equation (0.3) in the Introduction), the
+Laguerre polynomials by
+                                          X m 1
+                           ν
+                         Lm (x) = (ν)m                   ψ (−x)
+                                                 n (ν)n n
+                                             |n|≤|m|
+
+and the Laguerre functions
+                                  ℓνm (x) = e−Tr(x) Lνm (2x)
+where
+                                                ΓΩ (λ + m)
+                                   (ν)m =                  .
+                                                  ΓΩ (λ)
+Then
+Theorem 8.1 ([8] Theorem 7.8).
+                                Lν (ℓνm ) = ΓΩ (m + ν)qm,ν .
+In particular, it follows that {ℓνm }m is an orthogonal basis for L2 (Ω, dµν )H∩K .
+                                          ( dr )m
+     It follows from the fact kψm k2 =   dm (ν)m
+                                                    and Lemma 7.3, that
+                  THE GENERALIZED SEGAL-BARGMANN TRANSFORM                                   15
+
+Lemma 8.2.                                                
+                                                        d
+                                                Γ Ω (ν) r m
+                                       kℓνm k2 = rν         .
+                                                 2 dm (ν)m
+  Furthermore the action πν (2Z0 ) and πν (ζ) translates into:
+Theorem 8.3 ([8], Theorem  7.9).    
+                      P  r       m                                P
+  (1) −(νr+2E)ℓνm = j=1                (mj −1+ν− a2 (j−1))ℓνm−ej + rj=1 cm (j)ℓνm+ej
+                              m − ej
+             ν               ν
+  (2) πν (ζ)ℓm = (rν + 2|m|)ℓm .
+   There are some things that remain to be done. First, one can show that gC ≃
+sl(2, C) ≃ CX − ⊕ CX + ⊕ CZ0 , where X − ∈ p+ corresponds to an annihilating
+operator, X + ∈ p− corresponds to a creation operator, and Z0 ∈ kC corresponds to
+the Laguerre operator, when viewed as operators on L2 (Ω, dµν ). The problem is to
+find explicit formula as second order differential operators and the full representation
+of gC on L2 (Ω, dµν ). This has been worked out for G = SU(n, n)[6].
+Theorem 8.4 ([6], Theorem 6.1). For the cone of positive definite Hermitian matrices
+we have
+   (1) tr(−s∇∇ − v∇ + s)ℓνm = (rν + |m|)ℓνm                  
+       1
+                                             Pr          m
+                                        ν
+   (2) 2 tr(s∇∇ + (νI + 2s)∇ + (vI + s)ℓm = j=1                 (mj − 1 + ν − a2 (j −
+                                                      m − ej
+       1))ℓνm−ej
+                                                  P
+   (3) 21 tr(−s∇∇ + (−νI + 2s)∇ + (vI − s))ℓνm = rj=1 cm (j)ℓνm+ej .
+  These formulas generalize the classical relations
+   (1) (tD 2 + νD − t)ℓvn = −(2n + ν)ℓνn
+   (2) (tD 2 + (2t + ν)D + (t + ν))ℓνn = −2(n + ν − 1)ℓνn−1
+   (3) (tD 2 − (2t − ν)D + (t − ν))ℓνn = −2(n + 1)ℓνn+1 .
+
+        9. The generating function for the Laguerre polynomials
+Recall equation (0.1)
+                                                  ∞
+                                                    X
+                     −α−1              xw
+(9.1)      (1 − w)          exp                 =         Lαn (x)w n ,   |w| < 1, −1 < α .
+                                      w−1           n=0
+
+from the introduction. Let us rewrite this using our notation ν = α + 1 and ℓαm (x) =
+Lαm (2x)e−x . By replacing in (9.1) x by 2x and multiplying both sides by exp(−x) we
+obtain
+                                              X  ∞
+                                ν       1+w
+(9.2)                   (1 − w) exp x           =     ℓνm (x)w m
+                                        1−w       m=0
+
+We will now show how to generalize (9.2) using the connection with the highest weight
+modules.
+   Suppose H is an arbitrary highest weight space for a unitary representation of G
+                              +
+isomorphic to Hν . Let V = Hp be the lowest K-type. In other words
+                        V = {v ∈ H | X · v = 0, for all X ∈ p+ } .
+16                            MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+In this case V = Cv◦ is one dimensional and we can thus identify H and C. Assume
+v◦ has norm 1. For each T ∈ p+ we define a map qT : H → H by the formula
+                                         X∞
+                                             Tn · v
+                                qT (v) =            .
+                                         m=0
+                                              n!
+We have the following
+Theorem 9.1 ([4] Theorems 5.1, 7.1 and 7.2).
+  (1) The series that defines qT converges in H if and only if T ∈ D.
+  (2) The map Ξ : H → Hν given by
+                                       Ξξ(T ) = qT∗ ξ,     T ∈D
+         is a unitary isomorphism that intertwines the G-actions.
+     (3) In the case H = Hν we have V = C1, where 1 is the constant function, and
+                              (qT 1, F ) = (1, F (T )) = F (T ),     T ∈ D.
+  In the case where H = L2 (Ω, dµν ) the map Ξ is given in Lemma 7.3:
+                                   1
+                 Ξ(f )(w) = p            πν (c)−1 L(f )(w)
+                                  ΓΩ (ν)
+                               s         Z
+                                   2rν
+                            =                e−(cw,x)f (x)∆(x)ν−d/r dx
+                                  ΓΩ (ν) Ω
+                                                   q rν
+The highest weight space is H = Cℓν◦ . Let v◦ = Γ2Ω (ν) ℓν◦ . Then v◦ has norm 1 and
+Ξv◦ is the constant function 1 on D.
+Theorem 9.2 ([5]). Let E be a closed subspace of L2 (Ω, dµν ), {eα } an orthonormal
+basis of E, and Eα = Ξ(eα ) ∈ Hν for each α. Let prE be the orthogonal projection of
+L2 (Ω, dµν ) onto E. Then we have for w ∈ D and x ∈ Ω:
+                                                      X
+                    βν ∆(e − w)−ν prE (e−(c(w),x) ) =   Eα (w)eα (x),
+                                                                α
+               q
+                    2rν
+where βν =         ΓΩ (ν)
+                            and the convergence is with respect to the Hilbert space norm in
+ 2
+L (Ω, dµν ).
+Proof. First we have
+                                                    X
+                                prE (qw (v◦ )) =         (qw (v◦ ), eα )eα
+                                                     α
+                                                    X
+                                               =         (Ξqw v◦ , Ξeα )eα
+                                                     α
+                                                    X
+                                               =         (qw Ξv◦ , Eα )eα
+                                                     α
+                                                    X
+                                               =         (1, Eα (w))eα
+                                                     α
+                                                    X
+                                               =         Eα (w)eα
+                                                     α
+                    THE GENERALIZED SEGAL-BARGMANN TRANSFORM                                    17
+
+On the other hand,
+                   (qw v◦ , f ) = (Ξqw v◦ , Ξf )
+                                = (qw 1, Ξf )
+                               = Ξf (w)
+                                                      Z
+                               = βν ∆(e −      w)−ν           e−(cw,x) f (x) dµν (x)
+                                                          Ω
+
+                               = βν ∆(e −      w)−ν (e−(cw,x), f )
+From this it follows that
+
+                             qw v◦ (x) = βν ∆(e − w)−ν e−(c(w),x) .
+and                                                           X
+                     βν ∆(e − w)−ν prE (e−(c(w),x) ) =              Eα (w)eα (x) .
+                                                                α
+                                                                                                
+  We now specialize to the case where E = L2 (Ω, dµν )K∩H with orthonormal basis
+                                 s
+                                        2rν dm
+                           em =                    ℓνm .
+                                   ΓΩ (ν) dr m (ν)m
+The orthogonal projection prE : L2 (Ω, dµν ) → E is given by
+                                        Z
+                            prE (f ) =        f (kx) dk.
+                                               K∩H
+The above theorem immediately gives:
+Theorem 9.3 ([5]). Let w ∈ D and x ∈ Ω. Then
+                   Z                             X
+               −ν                                         1
+                        e−(k·x,(1+w)(1−w) ) dk =     dm n ψm (w)ℓνm (x).
+                                         −1
+      ∆(e − w)
+                    K∩H                          m∈Λ
+                                                       ( r )m
+  This formula is the generating function for the Laguerre functions on symmetric
+cones and generalizes equation (9.2) (cf [14] p.347 and the references given there).
+
+                                         References
+ [1] G. Andrews, R. Askey, and R. Roy, Special Functions, Encyclopedia of Mathematics and its
+     Applications, The University Press, Cambridge, 1999.
+ [2] F.A. Berezin: Connection between con- and contravariant symbols of operators on the classical
+     complex symmetric spaces, Dokl, Akad. Nauk USSR 241 (1978), 15–17
+ [3] I. Cherednik, Nonsymmetric Macdonald polynomials, Intern. Math. Res. Notices (1995), no. 10,
+     483–515.
+ [4] M. Davidson and R. Fabec: Geometric realizations for highest weight representations. In: (t.
+     Ton-That, K.I. Gross, D.St.P. Richards, and P.J. Sally, Jr. eds) Representation Theory and
+     Harmonic Analysis, Contemporary Mathematics 191/ AMS 1995, pp. 13–31
+ [5]        :Laguerre functions, the generating function, and representation theory. In preparation
+ [6] M. Davidson, G. Ólafsson, Differential Recursion Relations for Laguerre Functions on Hermit-
+     ian Matrices, Integral Transforms and Special Runctions, (to appear)
+ [7] M. Davidson, G. Ólafsson, and Genkai Zhang, Laguerre Polynomials, Restriction Principle, and
+     Holomorphic Representations of SL(2, R), Acta Appl. Math. 71(2002), no. 3, 261–277.
+18                         MARK DAVIDSON AND GESTUR ÓLAFSSON
+
+ [8] M. Davidson, G. Ólafsson, and Genkai Zhang, ,
+ [9] J. Dieudonné: Special functions and linear representations of Lie groups. CBMS regional con-
+     ference series in mathematics 42, AMS, 1980
+[10] G. van Dijk and S.C. Hille: Maximal degenerate representations, Berezin kernels, and canonical
+     representations. In: Lie groups and Lie algebras, their representations, generalizations and
+     applications. Kluer Academic Press, 1997
+[11] G. van Dijk, and V.F. Molchanov: Berezin forms on line bundles over complex hyperbolic spaces,
+     Integral Equations and Operator Theory 45 (2003), 177–230
+[12] G. van Dijk and M. Pevzner, Berezin kernels on tube domains, J. Funct. Anal. 181 (2001),
+     189-208.
+[13] T.J. Enright, R. Howe, and N. Wallach: A classification of unitary highest weight modules. In:
+     (P.C. Trombi ed.) Representation Theory of Reductive Groups. Progress in Mathematics, 40,
+     Birkhäuser, Boston 1983, 97–143
+[14] J. Faraut and A. Koranyi, Function spaces and reproducing kernels on bounded symmetric
+     domains, J. Funct. Anal. 88 (1990), 64–89.
+[15]         , Analysis on symmetric cones, Oxford University Press, Oxford, 1994.
+[16] S. G. Gindikin, Analysis on homogeneous domains, Uspekhi Mat. Nauk, 19, 1964, 3—92; Rus-
+     sian Math. Surveys, 19, no. 4, 1–89
+[17] W. Groenevelt:       Laguerre functions and representations of su(1, 1). Preprint, 2003,
+     aXiv:math.CA/0302342v1
+[18] W. Groenevelt, E. Koelink: Meixner functions and polynomials related to Lie algebra represen-
+     tations. J. Phys. A: Math. Gen. 35 (2002), 65–85
+[19] L.I. Grosheva, and V.F. Molchanov: Canonical and boundary representations on the Lobachevsky
+     plane, Acta Appl. Math. 73 (2002), 59–77
+[20] Harish-Chandra: Representations of semisimple Lie groups, VI, Amer. J. Math. 78 (1956),
+     564–628
+[21] S. Helgason,Groups and Geometric Analysis, Academic Press, 1984.
+[22] J. Hilgert, and G. Ólafsson: Analytic extensions of representations, the solvable case, Japan. J.
+     Math. (N.S.) 18 (1992), 213–289
+[23] J. Hilgert and G. Ólafsson, Causal Symmetric Spaces, Geometry and Harmonic Analysis, Per-
+     spectives in Math. 18, Academic Press, 1997
+[24] H.P. Jakobsen: Hermitian symmetric spaces and their unitary highest weight modules, J. Funct.
+     Anal. 52 (1983) 385–412
+[25] J. Van der Jeught, R. Jagannathan: Realizations of su(1, 1) and Uq (su(1, 1)) and generating
+     functions for orthogonal polynomials, J. Math. Phys. 39 (1998), 5062–5078
+[26] P. E. T. Jorgensen, G. Ólafsson, Unitary Representations of Lie Groups with Reflection Sym-
+     metry, J. Func. Anal. 158 (1998), 26-88
+[27] P.E.T. Jorgensen, G. Ólafsson, Unitary representations and Osterwalder–Schrader Duality, In:
+     The Mathematical Legacy of Harish-Chandra (Balt, MD, 1998), 233-401, Proc. Sympos. Pure
+     Math., 68, Amer. Math. Soc., Prov, RI, 2000.
+[28] E. Koelink: Spectral theory and special functions, preprint 2001, math.CA/0107036
+[29] K.T. Koelink, J. Van der Jeught: Convolutions for orthogonal polynomials from Lie and quan-
+     tum algebra representations, SIAM J. Math. Anal. 29 (1998), 794–822
+[30] A. Korányi, and J.A. Wolf: Realizations of Hermitian symmetric spaces as generalized half-
+     planes, Ann. of Math. 81 (1965), 265–288
+[31]         :Generalized Cayley transformations of bounded symmetric domains, Amer. J. Math. 87
+     (1965), 899–939
+[32] O. Loos, Bounded symmetric domains and Jordan pairs, University of California, Irvine, 1977.
+[33] D. R. Masson, J. Repka: Spectral theory of Jacobi matrices in ℓ2 (Z) and the su(1, 1) Lie algebra,
+     SIAM J. Math. Anal. 22 (1991), 1131–1146
+[34] K-H. Neeb: Holomorphy and convexity in Lie Theory, Expositions in Mathematics, de Gruyter,
+     Berlin, 1999
+                     THE GENERALIZED SEGAL-BARGMANN TRANSFORM                                     19
+
+[35] Yu. Neretin, Matrix analogs of the integral B(α, ρ − α) and Plancherel formula for Berezin
+     kernel representations, (1999), preprint, math.RT/9905045.
+[36] G. Ólafsson, Analytic Continuation in Representation Theory and Harmonic Analysis. In: Ed.
+     J. P. Bourguignon, T. Branson, O. Hijazi, Global Analysis and Harmonic Analysis, Seminares
+     et Congres 4, (2000), 201–2333. The French Math. Soc.
+[37] G. Ólafsson and B. Ørsted: The holomorphic discrete series for affine symmetric spaces, I, J.
+     Funct. Anal. 81 (1988), 126–159
+[38]         : The holomorphic discrete series of an affine symmetric space and representations with
+     reproducing kernels, Trans. Amer. Math. Soc. 326 (1991), 385–405
+[39]         : Generalizations of the Bargmann transform, Lie theory and its applications in physics.
+     Proceedings of the international workshop, Clausthal, Gemany, August 14–17, 1995. (H.-D.
+     Doebner et al, ed.), World scientific, Singapore, 1996, pp. 3–14, MR. 99c:22017
+[40] G.I. Ol’shanskii: Invariant cones in Lie algebras, Lie semigroups, and the holomorphic discrete
+     series, Functional Anal. Appl. 15 (1981), 275–285
+[41] B. Ørsted and G. Zhang, Weyl quantization and tensor products of Fock and Bergman spaces,
+     Indiana Univ. Math. J. 43 (1994), 551–582.
+[42]         , Generalized principal series representations and tube domains, Duke Math. J 78 (1995),
+     335–357.
+[43] J. Repka, Tensor products of holomorphic discrete series representations, Can. J. Math.
+     31(1979), 836-844.
+[44] F. Ricci and A. Vignati, Bergman spaces on some tube-type domains and Laguerre operators on
+     symmetric cones, J. Reine Angew. Math., 449 (1994), 81–101.
+[45] H. Rossi and M. Vergne Analytic continuation of the holomorphic discrete series of a semisimple
+     Lie group, Acta Math.. 136 (1976), 1-59.
+[46] R.J. Stanton: Analytic extension of the holomorphic discrete series, Amer. J. Math. 108 (1986),
+     1411-1424
+[47] W. Schmid, Die Randwerte holomorpher Funktionen auf hermitesch symmetrischen Räumen,
+     Invent. Math 9 (1969), 61–80.
+[48] A. Unterberger and H. Upmeier, The Berezin transform and invariant differential operators,
+     Comm. Math. Phys. 164 (1994), 563–597.
+[49] H. Upmeier, Toeplitz operators on bounded symmetric domains, Trans. Amer. Math. Soc. 280
+     (1983), 221–237.
+[50] H. Upmeier, Jordan Algebras in Analysis, Operator Theory, and Quantum Mechanics, Regional
+     Conference Series in Mathematics, 67, AMS 1987
+[51] N.J. Vilenkin: Special Functions and the Theory of Group Representations. Translations of
+     Mathematical Monographs, 32, AMS , Rhode Island, 1968
+[52] N.J. Vilenkin, A.U. Klimyk: Representations of Lie groups and special functions, Vol 1. Kluwer
+     Academi Publisher, Dorderecht, 1991
+[53] N. Wallach, The analytic continuation of the discrete series, I, II, Trans. Amer. Math. Soc.
+     251 (1979), 1-17; 19-37.
+[54] G. Zhang, Tensor products of weighted Bergman spaces and invariant Ha-plitz operators, Math.
+     Scand., 71(1992), 85-95.
+[55] G. Zhang, Tensor products of minimal holomorphic representations , Representation Theory,
+     5(2001), 164-190.
+[56] G. Zhang, Berezin transform on real bounded symmetric domains, Trans. Amer. Math. Soc.,
+     353 (2001), no. 9, 3769–3787
+[57] G. Zhang, Branching coefficients of holomorphic representations and Segal-Bargmann transform
+     , J. Functional Analysis, 195 (2002), no. 2, 306-349.
+
+  Department of Mathematics, Louisiana State University, Baton Rouge, LA 70803,
+USA
+  E-mail address: davidson@math.lsu.edu
+  E-mail address: olafsson@math.lsu.edu
+

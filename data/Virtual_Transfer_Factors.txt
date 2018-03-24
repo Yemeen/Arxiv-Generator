@@ -1,0 +1,1060 @@
+                                                               VIRTUAL TRANSFER FACTORS
+arXiv:math/0209001v1 [math.RT] 30 Aug 2002
+
+
+
+
+                                                                JULIA GORDON AND THOMAS C. HALES
+
+
+                                                    Abstract. The Langlands-Shelstad transfer factor is a function defined
+                                                    on some reductive groups over a p-adic field. Near the origin of the
+                                                    group, it may be viewed as a function on the Lie algebra. For classical
+                                                    groups, its values have the form q c sign, where sign ∈ {−1, 0, 1}, q is
+                                                    the cardinality of the residue field, and c is a rational number. The sign
+                                                    function partitions the Lie algebra into three subsets. This article shows
+                                                    that this partition into three subsets is independent of the p-adic field
+                                                    in the following sense. We define three universal objects (virtual sets in
+                                                    the sense of Quine) such that for any p-adic field F of sufficiently large
+                                                    residue characteristic, the F -points of these three virtual sets form the
+                                                    partition.
+                                                       The theory of arithmetic motivic integration associates a virtual
+                                                    Chow motive with each of the three virtual sets. The construction in this
+                                                    article achieves the first step in a long program to determine the (still
+                                                    conjectural) virtual Chow motives that control the behavior of orbital
+                                                    integrals.
+
+
+
+
+                                                                             0. Introduction
+                                             0.1. The Langlands-Shelstad transfer factor. Langlands and Shelstad
+                                             have introduced a function, called the transfer factor, on certain reductive
+                                             groups over a p-adic field. The definition of the transfer factor involves the
+                                             theory of endoscopy and various constructs of local class field theory.
+                                                The transfer factor is expected to figure prominently in the development
+                                             of the Langlands program. The fundamental lemma, a conjectural system of
+                                             identities between orbital integrals, is expressed by means of transfer factors.
+                                             A proof of the fundamental lemma is needed for many applications of the
+                                             trace formula.
+                                                The definition of the transfer factor has been simplified in special contexts
+                                             by Hales [6], Kottwitz [8], and Waldspurger [14]. This article follows Wald-
+                                             spurger’s treatment of transfer factors and draws heavily from [14]. He gives
+                                             a simple definition of transfer factors in the special case of classical groups
+                                             defined by quadratic or hermitian forms. He makes mild restrictions on the
+                                             characteristic of the residue field. Near the identity element of the group,
+                                             the transfer factor can be expressed as a function on the Lie algebra. Wald-
+                                             spurger gives an elementary definition of the transfer factor, as a function
+                                             on the Lie algebra. He proves that it is equivalent to the Langlands-Shelstad
+
+                                               Date: August 23, 2002.
+                                                                                        1
+2                   JULIA GORDON AND THOMAS C. HALES
+
+definition ([14, X]). The list of classical Lie algebras that we consider appears
+in Section 1.3. Waldspurger’s definition will be recalled in Section 2.2.
+   In the case of the transfer factors that we consider, each value of the
+transfer factor is of the form
+                                    q c sign,
+
+where sign ∈ {−1, 0, 1}, q is the order of the residue field, and c is a rational
+number. The definition of the rational number c is elementary, given as the
+valuation of a certain explicit discriminant factor. The entire complexity of
+the transfer factor resides in its sign.
+   The main purpose of this article is to show that the Langlands-Shelstad
+transfer factor on the classical Lie algebras is given by a formula in the
+first order language of rings. At first glance, the result may appear to be
+obvious. (Can we not view the Langlands-Shelstad definition as a formula
+for the transfer factor?) The force of our result comes from the restrictive
+nature of the language we use. Most of the fundamental structures of p-adic
+analysis cannot be expressed in this language. In this language, there are no
+field extensions or residue fields, no Galois theory or local class field theory,
+no functions apart from addition and multiplication, no additive or multi-
+plicative characters, no valuation or norm, and no uniformizing elements.
+In fact, there are no sets at all in this language. It is remarkable that the
+Langlands-Shelstad transfer factor can be expressed without any reference
+to Zermelo Fraenkel set theory.
+   Set theory is so entrenched in our usual way of talking about harmonic
+analysis on p-adic groups, that we are forced to make a long series of prelim-
+inary statements about the “set-free” definition of standard constructs such
+as Lie algebras, centralizers, orbits of elements, linear spaces, bases, norms,
+projection operators, and so forth.
+   The theory of arithmetic motivic integration allows us to associate a Chow
+motive over Q to formulas in the first order language of rings. In this way,
+we show that the Langlands-Shelstad transfer factor is motivic in the sense
+of Section 1.11. The construction in this article achieves the first step in a
+lengthy program to determine the (still conjectural) virtual Chow motives
+that control the behavior of orbital integrals. The influence of Denef and
+Loeser’s work on motivic integration should be apparent throughout this
+article [1].
+
+
+0.2. The first order language of rings. The first order language of rings
+is a formal language in the first order predicate calculus. The concepts
+of logic and model theory that we require in this article can be found in
+Enderton [2] or Fried and Jarden, [3]. In brief, each element of a language
+is a finite sequence of letters from a fixed alphabet. The letters of the
+alphabet include countably many variable symbols xi , constants symbols ck
+indexed by a set K, symbols for equality, negation, disjunction, existential
+                          VIRTUAL TRANSFER FACTORS                                 3
+
+quantification, comma, parentheses, and brackets:
+                                  = ¬ ∨ ∃
+                                  , ( ) [ ]
+   There are additional letters in the alphabet for each of a specified set of
+function symbols and relation symbols. The finite sequences in the language
+are called expressions. For a finite sequence of letters in the alphabet to
+belong to the language, it must satisfy various syntactic constraints. The
+syntax is built in stages: symbols combine in terms, terms combine into
+atomic formulas, atomic formulas combine into formulas.
+   In the case of the first order language of rings, there are two constants (0
+and 1) and two binary function symbols + (addition) and × (multiplication).
+   We allow familiar abbreviations in writing formulas in the language of
+rings. We drop parentheses when they can be reinserted unambiguously.
+We write + as an infix operator rather than in the usual prefix notation of
+first-order logic:
+                              ‘0 + 1’ for ‘ + (0, 1)’.
+We write ‘2’, ‘3’, and so forth for ‘1 + 1’, ‘1 + 1 + 1’, and so forth. We drop
+the multiplication symbol and indicate multiplication as a juxtaposition of
+terms. Additive inverses may be introduced: ‘a − b’ for ‘a + (−1)b’, where
+‘ − 1’ is given through an existential quantifier
+(1)                                ∃x(x + 1 = 0).
+(Every formula with ‘−1’ can be rewritten without ‘−1’ by replacing −1 with
+a variable symbol x and conjoining the given formula with (1).) Division may
+be introduced in a similar manner. We use standard logical abbreviations
+such as the universal quantifier, conjunction, implication, biconditional:
+                        ‘∀x’      for        ‘¬∃x¬’
+                       ‘a ∧ b’    for     ‘¬(¬a ∨ ¬b)’
+                      ‘φ ⇒ ψ’     for       ‘¬φ ∨ ψ’
+                      ‘φ ⇔ ψ’     for ‘(φ ⇒ ψ) ∧ (ψ ⇒ φ)’
+   We often use variable symbols that are more suggestive of meaning than
+the variable symbols xi provided by the language. For example, if the con-
+text is an n × n matrix, we use variable symbols xij , yij , and so forth rather
+than labeling the variable symbols sequentially x1 , x2 , . . . . We will occasion-
+ally use a multi-indexing notation. For example if X is the matrix (xij ) of
+variable symbols, then ∃X is an abbreviation of
+                                 ∃x11 ∃x12 · · · ∃xnn .
+   We write φ(x1 , . . . , xn ) to indicate a formula in the first order language of
+rings such that all free variables are among the variable symbols x1 , . . . , xn .
+We use a multi-index notation here as well, for instance, writing φ(X), for
+φ(x11 , . . . , xnn ), when X is a matrix of variable symbols xij .
+4                         JULIA GORDON AND THOMAS C. HALES
+
+0.3. First order language of rings with involution. We will also have
+occasion to use the first order language of rings with involution. It is con-
+structed in the same way as the first order language of rings, except that it
+has an additional unary function symbol. We write this function symbol as
+a bar t̄ over the term t to which the function symbol is applied.
+
+0.4. Virtual sets. The language of first order rings is a highly restrictive
+language with no notion of sets. In particular, the set membership predicate
+∈ is absent. Following Quine, we introduce virtual sets into the language as
+abbreviations of various logical formulas.1 Let φ be a formula in the first
+order language of rings. We write
+                                  ‘y ∈ {x : φ(x)}’ for ‘φ(y).’
+The construct {x : φ(x)} is called a virtual set. Here, x is allowed to be a
+multi-variable symbol: x = (x1 , . . . , xn ), so that we have
+       ‘(y1 , . . . , yn ) ∈ {(x1 , . . . , xn ) : φ(x1 , . . . , xn )}’ for ‘φ(y1 , . . . , yn )’
+When we write x ∈ A, it is to be understood that x is a vector of variable
+symbols, and that the length of that vector is the number of free variables
+in the defining formula of A.
+   If A and B are virtual sets defined by formulas φ(x) and ψ(x) respectively,
+we have a notion of subset, union, and intersection:
+                           ‘A ⊂ B’         for     ‘∀x(φ(x) ⇒ ψ(x))’
+                           ‘A ∩ B’         for     ‘{x : φ(x) ∧ ψ(x)}’
+                           ‘A ∪ B’         for     ‘{x : φ(x) ∨ ψ(x)}’
+In the language there is a single sort of quantifier, a quantifier of ring sort.
+It is impermissible to write an expression such as ∀A, where A is a virtual
+set. (There are no variables ranging over virtual sets; variables range over
+elements of virtual sets.) The letters ‘A’ and ‘B’ above are meta-variables,
+which lie outside the formal language. Furthermore, it is impermissible to
+write one virtual set as an element of another.
+   Let φ(y, x) be a formula with free variables limited to y = (y1 , . . . , yn )
+and x = (x1 , . . . , xk ). We define a virtual set with parameters x by
+                               ‘u ∈ {y : φ(y, x)}’ for ‘φ(u, x)’
+where u = (u1 , . . . , un ). (The usual cautions about the capture of free
+variables apply here.) We may speak of inclusion, intersections, and unions
+of virtual sets with parameters.
+   1
+     Quine himself calls them virtual classes. He tends to use the word ‘class’ in contexts
+that mathematicians prefer the word ‘set.’ In Quine’s system, “Basically, ‘set’ is simply
+a synonym of ‘class’ that happens to have more currency than ‘class’ in mathematical
+contexts.. . . My own tendency will be to favor the word ‘class’ where ‘class’ or ‘set’ would
+do, except for calling the subject set theory [11, pages3-4].” Quine’s virtual classes and
+classes are related to what others call classes and sets, respectively. See, for example, [13,
+page 10].
+                           VIRTUAL TRANSFER FACTORS                               5
+
+   In this article, all formulas are taken to be formulas in the first order
+language of rings (or rings with involution). All virtual sets are understood
+as given by formulas in this language.
+Remark 1. It is customary practice to adopt a realist point-of-view in the
+discussion of set theory. That is, mathematical discourse is framed as a
+discussion of sets as things, rather than as well-formed expressions in a
+formal language. We follow a similar practice in this paper with respect
+to the well-formed expressions in our formal language, and adopt a realist
+stance. That is, we write this paper as if the formal language names objects
+(such as Lie algebras, centralizers, and orbits).
+
+                       1. Virtual Transfer Factors
+1.1. Linear algebra.
+Definition 2. If V is a virtual set, we let lin(V) be the formula
+              ∀λ1 ∀λ2 ∀x1 ∀x2 (x1 , x2 ∈ V ⇒ λ1 x1 + λ2 x2 ∈ V).
+That is, lin(V) asserts that V is a linear space. Here λ1 and λ2 are variable
+symbols and x1 and x2 are vectors of variable symbols. The length of the
+vectors must equal the number of free variables of the virtual set V.
+
+Definition 3. (linear independence) If V is a virtual set with N free vari-
+ables, and if ei , for i = 1, . . . , n, are vectors of terms, where each vector has
+length N , we let lin.ind(e1 , . . . , en , V) be the formula
+                                    Xn
+                  ∀c1 , . . . , cn (   ci ei = 0 ⇒ c1 = · · · = cn = 0)
+                               i=1
+That is, the formula asserts the linear independence of the elements e1 , . . . , en
+in V.
+
+Definition 4. (span) If V is a virtual set, we let span(e1 , . . . , en , V) be the
+formula
+                                                n
+                                                X
+                   ∀v ∈ V ∃λ1 , . . . , λn (v =    λi ei ).
+                                                        i=1
+The formula asserts that e1 , . . . , en span V. The length of the vectors ei
+must equal the number of free variables in V. We write basis(e1 , . . . , en , V)
+for the conjunction
+                 lin.ind(e1 , . . . , en , V) ∧ span(e1 , . . . , en , V).
+
+Definition 5. If V a virtual set, we let dim(V, n) be the conjunction of the
+two formulas
+                  lin(V),
+                  ∃e1 , . . . , en ∈ V : basis(e1 , . . . , en , V).
+That is, dim(V, n) asserts that V is a linear space of dimension n.
+6                     JULIA GORDON AND THOMAS C. HALES
+
+Definition 6. We let Ln be the virtual set
+                       Ln = {(x1 , . . . , xn ) : φ(x1 , . . . , xn )}
+where φ is any formula with free variables x1 , . . . , xn such that
+                             ∀x1 · · · ∀xn (φ(x1 , . . . , xn ))
+is valid. For example, take
+              ‘φ(x1 , . . . , xn )’ to be ‘(x1 = x1 ) ∧ · · · ∧ (xn = xn )’.
+We view this virtual set as the standard linear space of dimension n. (We
+use the notation Ln because under the Denef-Loeser map from formulas to
+motives, the virtual set Ln is mapped to the nth power of the Lefschetz
+motive L.)
+1.2. Polynomials. We distinguish between two types of polynomials. Poly-
+nomials in the variable symbols appear as terms in the first order language
+of rings. This type of polynomial is not of direct interest to us in this
+subsection.
+   The second type of polynomial is a polynomial in a meta-variable with
+coefficients that are terms in the first order language of rings. The properties
+of such polynomials are developed in this subsection.
+   We will have need to work with polynomials whose coefficients are terms in
+the first order language of rings. We let the n+1-tuple of terms, (a0 , . . . , an ),
+represent the polynomial             X
+                                         ai λi .
+Here, λ is a meta-variable, serving as a place holder for the terms ai . We
+may then identify the virtual set monic(n) of monic polynomials of degree
+n with Ln . There is no virtual set of polynomials of arbitrary degree. If f ,
+f1 , and f2 are monic polynomials, then we write
+                                        f = f1 f2
+for the conjunction of identities obtained by equating coefficients:
+                                      X
+                               ak =       bi cj .
+                                            k=i+j
+Similarly, we write
+                                f = f1 f2 · · · fℓ
+for a conjunction of identities of coefficients.
+   An expression such as
+                                  ∃f1 ∃f2     f = f1 f2 ,
+for monic polynomials f , f1 , f2 is to be interpreted as a disjunction
+           _
+                ∃f1 ∈ monic(n1 ) ∃f2 ∈ monic(n2 ) (f = f1 f2 ).
+          n1 +n2 =n
+A constraint on the degrees such as
+                            f = f1 f2 with deg(f1 ) ≥ 2
+                           VIRTUAL TRANSFER FACTORS                             7
+
+should be interpreted as a constraint on the corresponding disjunction:
+                                    _
+
+                                     n1 +n2 =n, n1 ≥2
+The formula
+                             ∃f ∈ monic(n) φ(f )
+is itself to be interpreted as a statement about its coefficients ai :
+                         ∃a0 , . . . , an−1    φ(a0 , . . . , an−1 ).
+
+Definition 7. If f ∈ monic(n), we let irred(f ) be the negation of the for-
+mula
+              ∃f1 ∃f2 , f = f1 f2 with deg f1 ≥ 1, deg f2 ≥ 1.
+irred(f ) asserts the irreducibility of f . Note that for each n, irred(f ) is a
+different formula. In particular the number of free variables depends on n.
+
+Definition 8. (even) If f ∈ monic(2n), we let
+                                     even-poly(f )
+be the formula a1 = a3 = · · · = a2n−1 = 0 asserting that f is an even
+polynomial.
+1.3. Lie algebras.
+Definition 9. The virtual Lie algebra gl(n): let
+                              gl(n) = {(xij ) : φ(xij )},
+where φ is a formula in n2 free variables such that
+                                      ∀xij (φ(xij ))
+is valid, and i, j range from 1 to n.
+   In order to define the virtual classical Lie algebras, we consider a vector
+of variable symbols (to be understood as the underlying linear space) and a
+bilinear form (presented as a matrix of terms in the language). The classical
+Lie algebras will be defined as appropriate virtual subsets of the virtual set
+of endomorphisms of the linear space.
+Definition 10. The virtual Lie                algebra so(n): If n is odd, let J =
+(qij )1≤i,j≤n be given by
+                        
+                              i+1
+                        (−1) /2,
+                                             if i + j = n + 1, i 6= j,
+                  qij = 0,                    if i + j 6= n + 1,
+                          (−1)i+1 ,
+                        
+                                              if i = j = (n + 1)/2.
+                        
+
+If n is even, set
+                         
+                         0,
+                                             if i + j 6= n + 1,
+                    qij = (−1)i+1 /2,         if i + j = n + 1, i < j,
+                          (−1)j+1 /2,
+                         
+                                              if i + j = n + 1, j < i.
+                         
+8                   JULIA GORDON AND THOMAS C. HALES
+
+The matrix J is to be understood as a matrix of constant symbols in the
+formal language. Let X be an n × n matrix of variable symbols xij . Define
+the virtual orthogonal Lie algebra to be the virtual set
+                       so(n) = {X : t XJ + JX = 0}.
+
+Definition 11. The virtual Lie algebra sp(2r) is defined in the same
+way:
+                     sp(2r) = {X : t XJ + JX = 0}
+by means of the matrix J = (qij )1≤i,j≤r with qij = (−1)i if i + j = 2r + 1,
+and zero otherwise.
+
+Definition 12. The virtual Lie algebra u(r) is defined similarly. It is a
+virtual set in the first order language of rings with involution t 7→ t̄. Let
+                        u(r) = {X : t X̄J + JX = 0}
+where J is the r × r matrix of constant symbols given by J = (qij ), with
+qij = 2(−1)i+1 , if i + j = r + 1 and qij = 0, otherwise.
+
+Remark 13. In general, we follow Waldspurger closely in our definitions,
+including our choices of bilinear forms [14, X.3]. However, in the hermitian
+case, Waldspurger introduces a p-adic element η in a quadratic extension
+of the p-adic field. Such an element is not definable in the language of
+rings with involution, and we are forced to make some slight adjustments in
+definitions.
+  The symbol g will be reserved for one of the classical virtual Lie algebras
+that we have defined, or for a direct sum of such algebras. In general, the
+bold script in notation indicates that we are talking about virtual sets.
+1.4. Centralizers. Let g be a virtual Lie algebra, and let X = (xij ) ∈ g.
+Let PX be the characteristic polynomial
+                           PX (λ) = det(λ Id − X),
+where the determinant is expanded as an explicit polynomial in xij .
+Definition 14. (regular semisimple) The virtual set greg of regular semisim-
+ple elements inside each classical Lie algebra except for the even orthogo-
+nal algebra is the virtual set defined by the property that the matrix X
+has distinct eigenvalues. Explicitly, it is given by the polynomial condition
+res(PX , PX′ ) 6= 0, where res(f, g) stands for the resultant of two polynomials
+f and g (see, e.g., [5], Section 5.4).
+   The virtual set of regular semisimple elements inside so(2r) is the union
+of two virtual subsets: the set of matrices in so(2r) with distinct eigenvalues
+and the set B of matrices in so(2r) with 0 as an eigenvalue of multiplicity 2
+and other eigenvalues distinct:
+         B = {X ∈ so(2r) : PX = λ2 f ∧ res(f, f ′ ) 6= 0 ∧ f (0) 6= 0}.
+                        VIRTUAL TRANSFER FACTORS                              9
+
+Definition 15. We may define stable orbits Ost (X) as virtual sets with
+parameters X ∈ greg as follows. For the unitary, symplectic, and odd or-
+thogonal Lie algebras, we define
+                       Ost (X) = {Y ∈ g : PX = PY }.
+  In the case of the even orthogonal Lie algebra, if X ∈ so(2r)reg , then
+JX is a skew symmetric matrix of variable symbols. A skew matrix has a
+Pfaffian pf(JX) [4, page 627]. We then have
+            Ost (X) = {Y ∈ g : PX = PY ∧ pf(JX) = pf(JY )}.
+
+Definition 16. Define the centralizer C(X) depending on the parameter
+X ∈ gl(n) by
+                     {Y ∈ gl(n) : XY − Y X = 0}.
+Similarly, for X ∈ g, define
+                    Cg(X) = {Y ∈ g : XY − Y X = 0}.
+1.5. Lie algebras considered. Let g ⊕ h be one of the following virtual
+Lie algebras.
+      so(2r + 1) ⊕ so(2a + 1) ⊕ so(2b + 1), with a + b = r,
+      sp(2r) ⊕ sp(2a) ⊕ so(2b), with a + b = r, (b =6 1)
+      so(2r) ⊕ so(2a) ⊕ so(2b), with a + b = r, (a = 6 1, b 6= 1, r 6= 1)
+      u(n) ⊕ u(a) ⊕ u(b), with a + b = n.
+Each Lie algebra is split except in the unitary case. In each case, the Lie
+algebra is a sum of three factors. We write (X, Y, Z) for an ordered triple
+of matrices of variable symbols corresponding to this direct sum decompo-
+sition. We refer to these four cases as the odd orthogonal, symplectic, even
+orthogonal, and unitary cases, respectively. We write g for the first factor
+(so(2r + 1), sp(2r), and so forth), and h for the sum of the last two factors.
+Remark 17. The origin of this list of Lie algebras is the following. Let F
+be a p-adic field. Let G be a classical quasi-split adjoint group over F and
+let H be an elliptic endoscopic group of G. Then the Lie algebras listed
+above are the Lie algebras of products G × H. (In general, H is a product
+of two factors.) The list is not exhaustive. In particular, it does not include
+the non-split even orthogonal groups.
+
+Remark 18. As the introduction to this article explains, the Langlands-
+Shelstad transfer factor for classical groups is a function on the (Lie algebra
+of) G × H taking values in the set
+                                {−1, 0, 1}q Q .
+The transfer factor thus partitions the Lie algebra of G × H into three sub-
+sets, corresponding to the possible values (−1, 0, 1) of the sign. By defini-
+tion, the transfer factor is zero on elements that are not regular semisimple.
+10                  JULIA GORDON AND THOMAS C. HALES
+
+We will realize these three subsets as virtual subsets of the virtual Lie alge-
+bras. These virtual subsets are what we take as the definition of the virtual
+transfer factor.
+1.6. The nonzero part of the transfer factor. We define a virtual subset
+of g⊕h corresponding to the set on which the transfer factor is nonvanishing.
+Let greg be the virtual subset of regular semisimple elements of g.
+Definition 19. The virtual ±-set of the virtual transfer factor is defined to
+be the virtual subset (g ⊕ h)± of g ⊕ h given by
+                   {(X, Y, Z) ∈ greg ⊕ hreg : PX = PY PZ }
+in the unitary and symplectic cases, by
+                  {(X, Y, Z) ∈ greg ⊕ hreg : λPX = PY PZ }
+in the odd orthogonal case, and by
+ {(X, Y, Z) ∈ greg ⊕ hreg : PX = PY PZ ∧ pf(JX) = (−1)ab pf(JY )pf(JZ)}
+in the even orthogonal case (h = so(2a) ⊕ so(2b)). The matrices J are of
+appropriate size (symmetric, skew, or hermitian, as appropriate), adapted
+to the size of the matrices X, Y, Z as given in Section 1.3.
+  The virtual 0-set (g ⊕ h)0 is defined to be the complement of the ±-set in
+g ⊕ h.
+
+1.7. Projection operators. If X ∈ gl(n), then we have the virtual set
+C(X) depending on parameters X. Let proj(X) be the virtual set (with
+parameter X)
+     proj(X) = {P = (pij ) : ∀Y ∈ C(X)(P Y ∈ C(X) ∧ P P Y = P Y )}.
+That is, it is the virtual set of matrices P (acting on the same underlying
+linear space as gl(n)) such that P acts as a projection operator on C(X).
+Remark 20. Return for a moment to the world of set theory, rings, and
+modules. Let T be a linear transformation of Cn with distinct eigenvalues,
+let PT ∈ C[λ] be the characteristic polynomial. Let λi be an eigenvalue. Let
+P (i) be the characteristic polynomial of T divided by the factor (λ − λi ).
+Then
+                               P (i) (λ)/P (i) (λi )
+is a polynomial, which when evaluated at T , defines the projection operator
+onto the λi -eigenspace. This polynomial is uniquely characterized modulo
+multiples of PT by this property.
+   More generally,
+                            X
+                               P (i) (λ)/P (i) (λi )
+                             i∈S
+                          VIRTUAL TRANSFER FACTORS                                11
+
+yields the projection operator onto the direct sum of the eigenspaces of i ∈ S.
+This polynomial is expressed by means of the resultant res in the form
+                                       Π(λ, f, f˜)
+                                       res(f, f˜)
+for some
+                   Π(λ, f, f˜) ∈ Z[λ, a1 , . . . , as , b1 , . . . , bu ],
+where
+                                                              Y
+                f (t) = ts + as−1 ts−1 + · · · + a0 =                (t − λi ),
+                                                              i∈S
+and
+                f˜(t) = tu + bu−1 tu−1 + · · · + b0 =
+                                                              Y
+                                                                     (t − λi ).
+                                                              i6∈S
+
+The polynomial Π(λ, f, f˜) depends on T only through the coefficients of f
+and f˜.
+  Return to the world of virtual sets and formal languages. If f ∈ monic(s)
+and f˜ ∈ monic(u), and X = (xij ) are variable symbols, we have the matrix
+
+                                       Π(X, f, f˜)
+whose coefficients are terms in xij , ai (the coefficients of f ), and bi (the
+coefficients of f˜).
+
+1.8. The +1-set of sign. In this section we define the virtual +1-set of
+the transfer factor. The definition is slightly different for each case. In
+the unitary case, we must include the involution t 7→ t̄. To increase the
+uniformity of presentation, we define
+                                          t 7→ t̄
+to be the identity map whenever g is not the unitary Lie algebra.
+Definition 21. If X is a matrix of terms, let τ be the involution
+                               τ (X) = (J −1 ) (t X̄)J.
+The matrix J is that which enters into the definition of g.
+  The lie algebra g can be identified with the fixed point set of X 7→ −τ (X).
+Let gl(n) be the linear space containing g in a natural way.
+Definition 22. For each k ≥ 1, let evenk be a boolean polynomial in k
+variables that is true iff an even number of the arguments are false. For
+example,
+                   even2 (b1 , b2 ) = (b1 ∧ b2 ) ∨ (¬b1 ∧ ¬b2 ).
+12                        JULIA GORDON AND THOMAS C. HALES
+
+   In the odd orthogonal case, the characteristic polynomial of a semisimple
+element is an odd polynomial, but in the symplectic and even orthogonal
+cases, the characteristic polynomial is even. Again, for the sake of uniform
+presentation, for any matrix Z of terms, define
+                             (
+                              PZ (λ)/λ, g odd orthogonal
+                  PZ,0 (λ) =
+                              PZ (λ),      otherwise.
+
+Definition 23. (norms) Let X ∈ greg be a matrix of terms, and f a monic
+polynomial. Let norm(X, f, U ) be the formula
+     ∃f˜∃X1 
+            ∈ C(X)                                                       
+              PX = f f˜ ∧ U ∈ C(X) ∧ Π(X, f, f˜)X1 τ (X1 ) = Π(X, f, f˜)U .
+
+It asserts that the ‘f -component’ of U ∈ C(X) is a norm.
+
+Definition 24. (trace form) Let trace-form(X, c) be the formula
+                  ∃e1 , . . . , en ∀x1 , . . . , xn , x′1 , . . . , x′n
+                                   basis(e1 ,P  . . . , en , P
+                                                             C(X)) ∧ c ∈ C(X)∧
+                                   trace(τ ( xi ei )( x′j ej )c) = t x̄Jx′
+Here, trace is the matrix trace. The formula asserts that there is a basis
+e1 , . . . , en of C(X), for which the trace form on C(X) (with constant c ∈
+C(X)) is in agreement with the form defining g.
+
+Definition 25. (even parity) Let φ(f, . . . ) be a formula (or more accurately,
+a family of formulas indexed by the degree of f ) whose free variables include
+a monic polynomial f . Let
+                                       even-parity(f, φ)
+be the formula given by
+  W
+       ℓ                    ∃f1 , . . . , fℓ f = f1 · · · fℓ ∧
+           ∧ℓi=1 deg fi ≥ 1 ∧ℓi=1 irred(fi ) ∧ evenℓ (φ(f1 , . . . ), . . . , φ(fℓ , . . . )).
+It asserts the even parity of the number of irreducible factors of f that fail
+to satisfy φ.
+  In the case of symplectic and odd orthogonal groups, we define the formula
+φ(f, . . . ) = φ(f, X, c′ ) to be
+                        even-poly(f ) =⇒ norm(X, f, PX′ (X)c′ ).
+For even orthogonal, we take φ(f, X, c′ ) to be
+     even-poly(f ) =⇒ ∃X ′ ∈ C(X)               XX ′ = 1 ∧ norm(X, f, PX′ (X)c′ X ′ ).
+  If X ∈ u(n), then we work systematically with the characteristic poly-
+nomial of Xǫ rather than that of X, where ǭ = −ǫ. The characteristic
+                         VIRTUAL TRANSFER FACTORS                               13
+
+polynomial of Xǫ has the property that each of its coefficients is fixed by
+the involution. For unitary, we take φ(f, X, c′ , ǫ) to be
+                            norm(Xǫ, f, PX′ (X)c′ ).
+   For symplectic and orthogonal groups, we define the virtual +1-set (g ⊕
+h)+ to be the virtual subset of (g ⊕ h)± given by (X, Y, Z) satisfying the
+formula
+                    ∃c, c′ ∈ C(X)
+
+                         c c′ = 1                           ∧
+                         τ (c) = χc                         ∧
+                         trace-form(X, c)                   ∧
+
+                         even-parity(PZ,0 , φ(·, X, c′ ))
+The constant χ is ±1. It is +1 in each case except for g = sp(2r) and even
+unitary. For sp(2r) and even unitary, take χ = −1.
+  In the unitary case, we replace ‘even-parity(PZ,0 , φ(·, X, c′ ))’ with
+          ‘∃ǫ   ǫ 6= 0 ∧ ǭ = −ǫ ∧ even-parity(PZǫ , φ(·, X, c′ , ǫ)).’
+  This completes the definition of the virtual +1-set. We define the virtual
+−1-set (g⊕h)− by the complement of the +1-set in the ±-set. This completes
+our definition of the virtual transfer factor.
+
+1.9. Structures. There are structures (in the sense of model theory) for
+the first order theory of rings for every p-adic field. Let F be a p-adic field of
+characteristic zero. The domain of the structure is F . The binary operations
++ and × become addition and multiplication in F . A structure with domain
+F attaches a set A(F) to every virtual set A (the set of F -points of A, so
+to speak).
+   If we take the first order theory of rings with involution, then we have
+structures corresponding to separable quadratic extensions of p-adic fields
+E/F . In the domain E, the involution t 7→ t̄ becomes the nontrivial auto-
+morphism of E/F . If A is a virtual set, and F is a p-adic field with uniquely
+defined unramified quadratic extension E, we write A(F ) for the elements
+of the interpretation of A in the domain E with involution coming from
+E/F .
+Remark 26. We write A(F ) (rather than A(E)) for the sake of uniformity
+of notation, as well as to suggest the analogy with the F -points of a va-
+riety (such as the F -points of the unitary group splitting over a quadratic
+extension E).
+1.10. The Main Theorem. For the even orthogonal Lie algebra, the set
+of regular elements X with eigenvalue 0 is somewhat exceptional, and will
+be excluded from the following theorem. Such elements are excluded by
+restricting to elements X whose image in gl(n) is regular.
+14                    JULIA GORDON AND THOMAS C. HALES
+
+Theorem 27. Assume F is a p-adic field of characteristic zero of suffi-
+ciently large residue field characteristic. Let g ⊕ h be one of the Lie algebras
+introduced in Section 1.3. Let ∆(X, Y, Z) be the transfer factor. The set
+          {(X, Y, Z) ∈ g(F ) ⊕ h(F ) : ∆(X, Y, Z) = σ ∧ X ∈ gl(n)reg }
+equals
+                    {(X, Y, Z) ∈ (g ⊕ h)σ (F ) : X ∈ gl(n)reg }
+for σ ∈ {−1, 0, 1}.
+     This theorem will be proved in Section 3.2.
+
+1.11. Motivic interpretation. By the theory of arithmetic motivic inte-
+gration, developed by Denef and Loeser in [1], we may associate virtual Chow
+motives with virtual sets. (The word virtual is used here in two different
+senses.)
+   Let A be a virtual set defined by a formula φ. The formula φ can be
+viewed as a formula in Pas’s language, which is an extension of the first
+order language of rings. This extension has additional function symbols ac
+and ord, corresponding to the angular component function and the valuation
+function in p-adic analysis. For details, see [10].
+   A construction of Denef and Loeser [1, Section 6] attaches a virtual Chow
+motive to formulas in Pas’s language. Orbital integrals are expected to
+count points on virtual Chow motives (see [7]). These virtual Chow motives
+are designed to be independent of the p-adic field. The construction in this
+article achieves the first step in a lengthy program to determine the virtual
+Chow motives that control the behavior of orbital integrals.
+   Denef and Loeser’s construction gives the following corollary. A ring of
+virtual Chow motives K0v (MotQ,Q̄ ) ⊗ Q over Q is defined in [1]. For any
+number field K, and virtual Chow motive M , we obtain MK by base change
+from Q to K. Let Kv be the completion of K at the place v. Let Ov be the
+ring of integers of Kv . The virtual set (g ⊕ h)± is a subvariety (in the sense
+of being defined by polynomial equations) of g ⊕ h and it follows that there
+is a canonically defined Serre-Oesterlé measure volso on the set
+                                   (g ⊕ h)± (Ov ).
+(See [9].)
+Corollary 28. Let g be symplectic or orthogonal. There exist virtual Chow
+motives M (σ) over Q, for σ ∈ {−1, 1}, such that for all number fields K
+and almost all places v of K we have
+             volso ((g ⊕ h)(Ov ) ∩ (g ⊕ h)σ (F )) = trace Frobv M (σ)K .
+
+Remark 29. The trace of Frobenius is to be interpreted as the alternating
+trace on the ℓ-adic cohomology of the motive.
+                         VIRTUAL TRANSFER FACTORS                             15
+
+Proof. Let M be the virtual Chow motive attached to the virtual set
+                                   (g ⊕ h)σ
+in [1, 3.4]. The corollary is now the comparison theorem of Denef and Loeser,
+which states that the Serre-Oesterlé measure of definable sets is given by the
+trace of Frobenius against the corresponding motive [1, 8.3.1].
+
+1.12. Motives attached to unitary Lie algebras. In the case of the
+unitary Lie algebra, we obtain a similar statement, but we must work with
+the first order language of rings with involution. For simplicity, we will take
+the p-adic extensions E/F defining the unitary Lie algebras to be unramified.
+   We must confront the fact that the unitary Lie algebras are not definable
+in the first order language of rings. If E/F is an unramified quadratic
+extension of p-adic fields of characterisitic zero, we may fix ǫ in E such that
+Galois conjugation in E/F negates ǫ:
+                                    ǭ = −ǫ.
+That is, ǫ is pure imaginary. With ǫ in hand, we may identify E (basis 1,
+ǫ) with the vector space F 2 (basis (1, 0), (0, 1)). Addition and multiplica-
+tion are replaced with addition and multiplication expressed in components.
+Any formula in E that involves addition, multiplication, and conjugation
+can be replaced with a formula in twice the number of variables involv-
+ing component-wise addition, multiplication expressed in components, and
+negation on the second factor of each pair (x, y) in F 2 representing x + yǫ
+in E.
+   A similar approach allows us to replace a formula in the first-order theory
+of rings with involution with a formula in Pas’s language. A formula in n
+free variables (z1 , . . . , zn ) becomes a formula in 2n + 1 variables:
+                                zi 7→ xi + yi ǫ
+By equating real and imaginary parts, we may eliminate the variable ǫ from
+the equations, leaving only formulas involving u = ǫ2 . The free variables of
+the resulting formula are u, xi , and yi .
+   It is not possible to constrain u within the first order language of rings to
+be a particular element that is not a square. (−1, for example, is a square
+in some rings and not in others, and we do not want to restrict the p-adic
+domains by assuming that it is a square.) But within Pas’s language, we
+can constrain u to lie within a given definable set of nonsquares. Thus, we
+define φ(u) to be the formula with quantifier ∀ξ of the residue field sort:
+
+                       ∀ξ(ξ 2 6= ac(u)) ∧ (ord(u) = 0).
+This constrains
+            √ u within a set that yields isomorphic unramified field ex-
+tensions F ( uF ) for all interpretations uF of u in F . The involution-free
+formula in 2n + 1 variables defines a 1-parameter family of structures. The
+16                     JULIA GORDON AND THOMAS C. HALES
+
+unitary Lie algebra, for example, is replaced by a 1-parameter family of iso-
+morphic Lie algebras. Although each algebra is not individually definable,
+the 1-parameter family is.
+   To the formula in 2n + 1 variables in Pas’s language (conjoined with the
+constraint φ(u)), we attach a virtual Chow motive as before over Q. The
+trace of Frobenius against this motives computes the Serre-Oesterlé measure
+within the 1-parameter family of isomorphic objects.
+
+
+
+
+                                2. p-adic theory
+   Let F be a p-adic field; following Waldspurger, we assume that the residue
+field characteristic p is sufficiently large (p ≥ 3 dim(g) + 1).
+   In contrast to the previous section, here we consider the Lie algebras over
+the field F , not their virtual counterparts. We will use the notation of set
+theory in its traditional meaning here. We still think of the classical Lie
+algebras as defined by means of the same matrices J as in 1.3; however, in
+this section, elements are to be understood as actual matrices with entries
+in the p-adic field, not formal symbols.
+
+
+2.1. Parametrization of regular semisimple orbits. We will need a
+parametrization of regular semisimple orbits in the classical Lie algebras.
+Here we quote it in detail from Waldspurger, [14, I.7].
+   Denote by (V, qV ) the vector space on which g acts by endomorphisms,
+with the quadratic form preserved by g. First, consider the case g =
+sp(2r, F ) or g = so(2r + 1, F ). Let X be a regular semisimple element
+in g(F ). Then the orbit of X corresponds to the following data:
+     •   a finite set I
+     •   a finite extension Fi# of F for each i ∈ I,
+     •   a 2-dimensional Fi# -algebra Fi ,
+     •   an element ai ∈ Fi× ,
+     •   a collection of elements ci ∈ Fi× , i ∈ I,
+subject to the following conditions:
+     • For i, j ∈ I, i 6= j, there is no F -linear isomorphism between Fi and
+       Fj taking ai to aj
+     • ai generates Fi over F
+     • For all i ∈ I, denote by τi the unique nontrivial automorphism of
+       Fi /Fi# . Then τi (ai ) = −ai .
+       P                                                            P
+     •     i∈I [Fi : F ] = dim V = 2r in the case g = sp(2r),         i∈I [Fi : F ] =
+       dim V − 1 = 2r in the case g = so(2r + 1)
+     • τi (ci ) = −ci in the symplectic case; τi (ci ) = ci in the orthogonal case
+                          VIRTUAL TRANSFER FACTORS                               17
+                                    L
+   • In the symplectic case: setPW = i∈IP Fi and let XW be the element
+     of end W defined by XW ( i∈I wi ) = i∈I ai wi . Then (V, qV ) is iso-
+     morphic to the space W endowed with the form
+                                 !
+                  X        X       X
+                               ′
+             qW       wi ,   wi =     traceFi /F (τi (wi )wi′ ci ).
+                    i∈I     i∈I         i∈I
+
+     The isomorphism between V and W allows to identify end W with
+     end V , and XW is identified with some X ∈ g(F ). (Note that our
+     constants ci differ from the ones in [14] by a factor of [Fi : F ]−1 .)
+        In the odd orthogonal case, define (W, qW ) as in the previous case.
+     There is an additional requirement that there exists a one-dimensional
+     orthogonal space (W0 , q0 ) over F , such that (W0 ⊕ W, q0 ⊕ qW ) is iso-
+     morphic to (V, qV ). The action of the element XW on W is defined as
+     above, and XW acts by zero on W0 .
+   • In the orthogonal case, when the space (W0 , q0 ) exists, its class is
+     determined uniquely.
+   A different choice of the isomorphism between (V, qV ) and (W, qW ) would
+identify XW with an element in the same F -conjugacy class. The orbit O(X)
+is well-defined and is denoted O(I, (ai ), (ci )). The correspondence between
+the orbits and the data is one-to-one if we identify the triples (I, (ai ), (ci ))
+and (I ′ , (a′i ), (c′i )) subject to the following conditions.
+   • There is a bijection φ : I → I ′
+                                                           ′
+   • For all i ∈ I there is an F -linear isomorphism σi : Fφ(i) → Fi such that
+          ′
+     σi (aφ(i) ) = ai
+   • For all i ∈ I, denote by sgnFi /F # the quadratic character of Fi# asso-
+                                        i
+     ciated with the algebra Fi . Then sgnF /F # (ci σi (c′φ(i) −1 )) = 1. (Notice
+                                                i   i
+     that by definition of the ci and c′i , the product ci σi (c′φ(i) −1 ) is stable
+     under τi , and therefore lies in Fi# ).
+   The stable orbit of X does not depend on the constants ci .
+   In the case g = so(2r), the parametrization of the orbits needs to be
+modified as follows. The data (I, (ai ), (ci )) are defined in the same way as
+in the odd orthogonal case. However, the correspondence between the data
+(I, (ai ), (ci )) and the orbits is no longer one-to-one. First, the construction
+gives only the orbits that do not have the eigenvalue 0. Second, depending
+on the choice of the isomorphism between (W, qW ) and (V, qV ), the element
+XW maps into one of the two distinct orbits, which remain distinct even
+over the algebraic closure of F . They will be denoted by O+ (I, (ai ), (ci ))
+and O− (I, (ai ), (ci )). Their union is denoted by O(I, (ai ), (ci )).
+   Suppose X ∈ so(2r, F ), X ∈ O(I, (ai ), (ci )) for some data (I, (ai ), (ci )).
+It is possible to tell whether X ∈ O+ or X ∈ O− , using the Pfaffian of the
+matrix JX. Assume that A is skew-symmetric. Recall the properties of
+Pfaffian that we need [4, B.2.6]:
+18                    JULIA GORDON AND THOMAS C. HALES
+
+   • pf(A)2 = det A.
+   • If g ∈ GL(2r, F ), then pf(t gAg) = det(g)pf(A).
+   • Let A and B be two skew-symmetric matrices of sizes 2a and 2b, re-
+     spectively. Let A ⊕ B be the block-diagonal matrix with the diagonal
+     blocks A and B. Then pf(A ⊕ B) = pf(A)pf(B).
+  We will also need the following embedding ψ of so(2a, F ) ⊕ so(2b, F ) into
+so(2(a + b), F ): for A ∈ so(2a, F ), B ∈ so(2b, F ) let ψ(A, B) be the block
+matrix
+                             
+                    B1 0 B2                                
+                  0 A 0  , where B = B1 B2
+                                                    B3 B4
+                    B3 0 B4
+
+Lemma 30. 1. The function θ(X) = pf(JX) is constant on each one of
+the sets O+ (I, (ai ), (ci )) and O− (I, (ai ), (ci )) in so(2r, F ), and takes distinct
+values on these two sets.
+   2. Let ψ be the embedding of so(2a, F ) ⊕ so(2b, F ) into so(2(a + b), F ).
+Then θ(ψ(A, B)) = θ(A)θ(B)(−1)ab .
+  Proof. 1. Suppose X, X ′ ∈ O(I, (ai ), (ci )), and suppose X = g −1 X ′ g.
+Then JX = Jg−1 X ′ g = t gJX ′ g, so pf(JX) = det(g)pf(JX ′ ). Hence,
+pf(JX) = pf(JX ′ ) if and only if det g = 1. That is, X and X ′ are conjugate
+within the special orthogonal group.
+  2. In order to use the properties of the Pfaffian, we need to bring the
+matrix ψ(A, B) to block-diagonal form. This is done by conjugating in
+GL2a+2b (F ) by the permutation matrix
+                                                   
+                               0     Id2a×2a    0
+                       σ = Idb×b       0       0 .
+                               0        0     Idb×b
+Note J2a+2b = ψ((−1)b J2a , J2b ) by Definition 10. Then
+       θ(ψ(A, B)) = pf(J2a+2b ψ(A, B)) = pf(ψ((−1)b J2a A, J2b B))
+                  = det σ pf((−1)b J2a A ⊕ J2b B) = θ(A)θ(B)(−1)ab ,
+since det σ = 1.
+   The remaining case is the case of the unitary group, g = u(n). The orbits
+in u(n) are parametrized similarly, with the data (I, (ai ), (ci )). However,
+Fi is obtained by a different construction. Fi# is an extension of the base
+field F as before, but Fi now equals the algebra Fi# ⊗F E, where E is the
+quadratic extension of F , used to define the given unitary Lie algebra. In
+the unitary case, our form differs from that in Waldspurger by a constant
+η ∈ E that he chooses. Our constant ci also differs from his by a factor of
+η.
+   As before, in the unitary case the parameters ai and ci lie in Fi× ; they
+are subject to the following conditions:
+    • For any i ∈ I, ai generates Fi over E
+                           VIRTUAL TRANSFER FACTORS                                19
+
+   • There is no E-linear isomorphism of Fi onto Fj taking ai to aj for i 6= j
+   • Let x →  7 x̄ denote the unique nontrivial element of Gal(E/F ); and for
+     each i ∈ I let τi be the automorphism id ⊗ (·).     ¯ Then τi (ai ) = −ai ,
+     τi (ci ) = ci , i ∈ I.
+     P
+   •     i∈I [Fi : E] = r.
+                                      L
+  As in the other cases, set W = i∈I Fi . It is a vector space over E. The
+hermitian form qW on W is defined by
+                       X         X  X
+                  qW        wi ,  wi′ =  traceFi /E (τi (wi )wi′ ci ).
+                     i∈I     i∈I         i∈I
+
+Note that as before, our ci differ from Waldspurger’s by a factor of [Fi : E].
+The rest of the construction remains the same; it gives all orbits, and the
+correspondence is one-to-one with the same definition of data (I, (ai ), (ci ))
+and (I ′ , (a′i ), (c′i )) as in the symplectic case, except to change ‘F -linear iso-
+morphism’ to ‘E-linear isomorphism’.
+2.2. The function sign. Recall the Waldspurger’s description of the sign
+function in detail. Here we are again quoting from [14, X.8]. Let PX ∈ F [λ]
+be the characteristic polynomial of X, as before. Let sign be the function
+on g ⊕ h from the definition of the transfer factor.
+   The function sign(X, Y, Z) takes the value 0 unless X ∈ g and (Y, Z) ∈ h
+are regular semisimple, and the stable conjugacy classes of X and Y corre-
+spond. This means that the condition of Definition 19 is fulfilled (cf. Lemma
+30).
+   Suppose that X and (Y, Z) are regular semisimple elements of g(F ) and
+h(F ), respectively, and their stable conjugacy classes correspond. Suppose
+that Y ∈ O(I1 , (ai,1 ), (ci,1 )), Z ∈ O(I2 , (ai,2 ), (ci,2 )) (Section 2.1). Let I =
+I1 ∪ I2 , and let (ai ) be the join of the lists (ai,1 ) and (ai,2 ). Since the stable
+conjugacy classes of (Y, Z) and X correspond, there exists a family (ci ), such
+that X ∈ O(I, (ai ), (ci )). Define constants Ci (upper case) by
+                        (
+                          c−1  −1 ′
+                           i ai PX (ai ) if g is even orthogonal
+                Ci =                                                    .
+                          c−1   ′
+                           i PX (ai )      otherwise.
+
+The elements Ci lie in Fi# for all i ∈ I.
+Theorem 31. (Waldspurger, [14], Section X.8)
+                                 Y
+                sign(X, Y, Z) =      sgnF /F # (Ci ),
+                                                   i   i
+                                          i∈I2∗
+
+where I2∗ is the set of all indices i ∈ I2 such that Fi /Fi# is a field extension.
+
+                      3. Proof of the main theorem
+3.1. A few p-adic lemmas. As above, let F be a p-adic field, I – a finite
+set, Fi# , i ∈ I – a collection of finite extensions of F , Fi – a 2-dimentional
+Fi# -algebra for every i ∈ I. Let τi be the unique nontrivial automorphism of
+20                   JULIA GORDON AND THOMAS C. HALES
+
+
+Fi /Fi# , and let sgnFi /F # be the quadratic character of Fi# associated with
+                         i
+the algebra Fi . The indexing set I is a union of two sets I ∗ and I 0 , where
+Fi is a field extension of F for i ∈ I ∗ , and Fi is a direct sum of two copies
+of Fi# for i ∈ I 0 . For i ∈ I ∗ , τi is the nontrivial Galois automorphism of
+Fi /Fi# ; for i ∈ I 0 , τi exchanges the two copies of Fi# in Fi . We observe that
+the character sgnFi /F # is nontrivial if and only if i ∈ I ∗ .
+                L          i
+   Let W = i∈I Fi . Let φ be the isomorphism from Section 2.1 between
+(W, qW ) (or, in the odd orthogonal case, (W ⊕ W0 , qW ⊕ qW0 )) and (V, qV ).
+Let φ∗ be the isomorphism φ∗ : end W → end V induced by φ. The map φ∗
+induces an isomorphism from centralizer of XW in end W onto C(X).
+   Let Li : Fi → end(Fi ) be the linear map that takes w ∈ Fi to the operator
+that acts by multiplication by w on the left on Fi . (Generally, end should
+be understood as endF ; except, in the unitary case, where it should be
+understood as endE .) Let L : W → end W be the direct sum of the maps
+Li .
+
+Definition 32. Let X be a regular semisimple element in a classical Lie
+algebra g. Define the involution τ on C(X) by τ (g) = (J −1 )t gJ with the
+appropriate matrix J in the symplectic and orthogonal cases, and by τ (g) =
+(J −1 )t ḡJ in the unitary case.
+
+Lemma 33. Let τi be the involutions on Fi from Section 2.1. Let τW be
+the involution on W that acts by τi on each Fi , i ∈ I. For all a ∈ W ,
+
+                         φ∗ ◦ L(τW (a)) = τ (φ∗ ◦ L(a)).
+
+Proof. First, observe that dim W = dim C(X). It follows that φ∗ ◦ L is an
+isomorphism of F -algebras (E-algebras in the unitary case). Consider the
+two involutions on C(X): τ and τ∗ = (φ∗ ◦ L) ◦ τW ◦ (φ∗ ◦ L)−1 . We show
+that they coincide.
+   It will be more convenient to consider −τ and −τ∗ . It suffices to show
+that the involutions have the same set of fixed points. The set of fixed points
+of −τ is precisely Cg(X). Let Y ∈ C(X) be a fixed point of −τ∗ , and let
+a = (φ∗ ◦ L)−1 (Y ). Then τW (a) = −a, since Y is a fixed point of −τ∗ . By
+definition of the form qW , the condition τW (a) = −a is equivalent to the
+condition
+        qW (L(a)w′ , w′′ ) + qW (w′ , L(a)w′′ ) = 0   for all   w′ , w′′ ∈ W.
+
+Since φ(qW ) = qV , the latter condition is equivalent to τ (Y ) = −Y ; that is,
+to the condition Y ∈ Cg(X).
+   We will need the following observation.
+
+Remark 34. Let w = (ci )i∈I ∈ W be part of the data from Section 2.1.
+Then c = φ∗ ◦L(w) is an invertible element in C(X), possessing the following
+property.
+                           VIRTUAL TRANSFER FACTORS                                 21
+
+  There exists a basis e1 , . . . , er of C(X) such that for all x = (x1 , . . . , xr )
+and x′ = (x′1 , . . . , x′r )
+                                 r           r
+                                                      !
+                                X           X
+                                               xi ei c = t xJx′
+                                                ′
+                                                    
+                        trace τ      xi ei
+                                i=1        i=1
+(or t x̄Jx,if unitary). Indeed, the existence of the basis is the same condition
+as the existence of the isomorphism φ. The matching of the quadratic forms
+follows from the definition of φ, the previous lemma, and the fact that trace
+of an element of a field is equal to the trace of the endomorphism defined by
+left multiplication by that element. The invertibility of c follows from the
+nondegeneracy of the quadratic form defined above.
+
+Lemma 35. Let I be part of the data for C(X) as above, and let i ∈ I.
+Let z = zi ∈ Fi# be an arbitrary element. Then the following conditions are
+equivalent:
+  1. sgnF /F # (zi ) = 1
+          i  i
+  2. Let w be an arbitrary element of W such that wi = zi . Let P be the
+     projector from C(X) onto φ∗ ◦ L(Fi ). Then there exists X1 ∈ C(X)
+     such that P X1 τ (X1 ) = P (φ∗ ◦ L)(w).
+Proof. If Fi /Fi# is a field extension and if zi ∈ Fi# , then sgnF /F # (zi ) = 1
+                                                                   i  i
+if and only if zi is a norm of an element of Fi . The condition that an element
+zi is a norm can be written as ∃y ∈ Fi : zi = τi (y)y. In the case when Fi
+is an algebra, both conditions sgnF /F # (zi ) = 1 and zi = τi (y)y for some
+                                       i i
+y ∈ Fi hold for all zi ∈ Fi .
+   Suppose the condition (1) holds. Then let yi be the element of Fi such
+that τi (yi )yi = zi . Let y be the element of W whose j-th component is yi
+if j = i, and 0 if j ∈ I \ {i}. Let X1 = φ∗ ◦ L(y). Then, by Lemma 33,
+τ (X1 ) = φ∗ ◦ L(τW (y)). Hence, τ (X1 )X1 = φ∗ ◦ L(τW (y)y). The observation
+that P (φ∗ ◦L)(τW (y)y) = P (φ∗ ◦L)(w) since τW (y)y and w have the same i-
+th component, completes the proof of the implication (1)⇒(2). The converse
+is proved by reversing all the steps.
+3.2. Proof of the Main Theorem. Let g ⊕ h be a virtual Lie algebra
+as in Section 1.3. Let F be a p-adic field of sufficiently large residue field
+characteristic. Let g(F ) ⊕ h(F ) be the Lie algebra over F attached to the
+virtual Lie algebra g⊕h. The transfer factor ∆(X, Y, Z) is defined on g(F )⊕
+h(F ).
+   First, consider the zero set of ∆, that is, σ = 0. It is immediately clear
+by comparison of the definition of the transfer factor in Section 2.2 with
+Definiton 19 that ∆(X, Y, Z) 6= 0 if and only if (X, Y, Z) satisfies all the
+conditions of Definition 19, that is, (X, Y, Z) ∈
+                                                / (g ⊕ h)0 (F ).
+   Now let σ = 1. Suppose that (X, Y, Z) ∈ (g ⊕ h)± (F ). We need to check
+that sign(X, Y, Z) = 1 if and only if the formula from Section 1.8 evaluated at
+(X, Y, Z) is true in the interpretation provided by F . The virtual centralizer
+22                   JULIA GORDON AND THOMAS C. HALES
+
+C(X) becomes the actual centralizer of the element X in gl(n, F ). We keep
+the notation of Section 2.1.
+   Let Y ∈ O(I1 , (ai,1 ), (ci,1 )), Z ∈ O(I2 , (ai,2 ), (ci,2 )). Recall from Section
+2.2 that then there exists an element (ci ) ∈ W such that X ∈ O(I, (ai ), (ci )),
+where I = I1 ∪ I2 , and (ai ) is the direct sum of (ai,1 ) and (ai,2 ) as elements
+of the vector space W .
+   By Lemma 33 and Remark 34, the existence of (ci )i∈I such that X ∈
+O(I, (ai ), (ci )) and the ci satisfy all the requirements of Section 2.1, is equiv-
+alent to the conjunction of the following statements:
+    • The elements ci satisfy τi (ci ) = χci , where χ = −1 if g is symplectic or
+      even unitary, and χ = 1 otherwise. Let c = φ∗ ◦ L((ci )i∈I ). By Lemma
+      33, this condition is equivalent to τ (c) = χc.
+    • There exists w = (ci ) ∈ W and a basis e1 , . . . , en of C(X), satisfying
+      the conditions of Remark 34. This condition can be written in the
+      terms of logic as
+                          ∃c ∈ C(X) trace-form(X, c)
+     Now we need to check that the condition of Waldspurger
+                            Y
+                                sgnF /F # (Ci ) = 1
+                                        i   i
+                              i∈I2∗
+
+is equivalent to our condition even-parity(PZ,0 , φ(·, X, c′ )).
+   In the unitary case, observe that we may take the product over all of
+I2 instead of I2∗ , since the sgn character is trivial if Fi /Fi# is not a field
+extension. Let XW = (ai )i∈I ∈ W . In the non-unitary case, an irreducible
+factor of PZ,0 is an even polynomial iff the corresponding algebra Fi is a
+field. Thus, the antecedent
+                              even-poly(f ) =⇒ · · ·
+correctly distinguishes between I2∗ and I2 .
+  Since φ∗ ◦ L is an isomorphism of F -algebras (E-algebras in the unitary
+case), we have (φ∗ ◦ L)(p(XW )) = p(φ∗ ◦ L(XW )) for any polynomial p with
+coefficients in F . We will use this observation with p = PX′ .
+  Let M = φ∗ ◦ L((Ci )i∈I ) (it is well defined since Ci ∈ Fi# ). In the
+symplectic, unitary, and odd orthogonal cases,
+                   M = φ∗ ◦ L((c−1 ′                ′ ′
+                                i PX (ai ))i∈I ) = c PX (X).
+The last equality holds by the definition of c, c′ , and X = φ∗ ◦ L((ai )i∈I ).
+In the even orthogonal case, the right hand side of the above formula will
+have an extra factor          −1
+                   Q of X .
+   Suppose that i∈I2 sgn(Ci ) = 1. Then sgn(Ci ) = −1 for an even number
+of indices i ∈ I2 . Let PZ,0 (λ) = f1 . . . fm (here m equals the cardinality of I2 )
+be the factorization of the characteristic polynomial of Z into irreducibles.
+By Lemma 35, for each i = 1, . . . , m, the condition sgnFi /F # (Ci ) = 1 is
+                                                                     i
+equivalent to the existence of a matrix Xi such that Π(X, fi , f˜i )τ (Xi )Xi =
+                             VIRTUAL TRANSFER FACTORS                                       23
+
+Π(X, fi , f˜i )M . The calculation of M shows that sgnF /F # (Ci ) = 1 if and
+                                                               i i
+only if the condition norm(X, f, . . . ) holds, where c′ c = 1. By definition of
+the condition even-parity(PZ,0 , φ(. . . )), it holds if and only if the number of
+norm(X, f, . . . ) that fail is even, that is, if and only if ∆(X, Y, Z) is positive.
+(In the unitary case, we must take the factorizations to be of PXǫ and PZǫ .)
+This completes the proof.
+
+                                       References
+ [1] J. Denef, F. Loeser, Definable sets, motives, and p-adic integrals, Journal of the AMS,
+     14, No. 2, 429-469 (2001).
+ [2] H. B. Enderton, A mathematical introduction to logic. Second edition. Har-
+     court/Academic Press, Burlington, MA, 2001.
+ [3] M. D. Fried, M. Jarden, Field arithmetic. Ergebnisse der Mathematik und ihrer Gren-
+     zgebiete (3) [Results in Mathematics and Related Areas (3)], 11. Springer-Verlag,
+     Berlin, 1986.
+ [4] R. Goodman, N. R. Wallach, Representations and Invariants of the Classical Groups,
+     Encyclopedia of mathematics and its applications, v. 68, Cambridge University Press,
+     1998.
+ [5] N. Jacobson, Basic Algebra I, W.H. Freeman and Co., New York, 1996.
+ [6] T. C. Hales, A Simple Definition of Transfer Factors for Unramified Groups, Con-
+     temporary Math., 145, (1993) 109-134.
+ [7] T. C. Hales, Can p-adic integrals be computed?, math.RT/0205207, to appear.
+ [8] R. Kottwitz, Transfer factors for Lie algebras, Representation Theory 3, (1999) 127–
+     138.
+ [9] J. Oesterlé, Réduction modulo pn des sous-ensembles analytiques fermés de ZN   p , Inv.
+     Math. 66, (1982) 325–341.
+[10] J. Pas, Uniform p-adic cell decomposition and local zeta functions. J. Reine Angew.
+     Math. 399 (1989), 137–172.
+[11] W. V. O. Quine, Set Theory and its Logic, Harvard University Press, Cambridge,
+     MA 1969.
+[12] J.-P. Serre, Quelques applications du théorème de densité de Chebotarev, Inst. Hautes
+     Études Sci. Publ. Math., 54 (1981) 323-401.
+[13] G. Takeuti, W. M. Zaring, Introduction to Axiomatic Set Theory. Second edition.
+     Graduate Texts in Mathematics, 1. Springer-Verlag, New York, 1982.
+[14] J.-L. Waldspurger, Intégrales orbitales nilpotentes et endoscopie pour les groupes
+     classiques non ramifiés. Astérisque No. 269 (2001).
+

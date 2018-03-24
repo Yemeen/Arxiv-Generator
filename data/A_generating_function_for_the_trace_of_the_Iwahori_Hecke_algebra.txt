@@ -1,0 +1,1162 @@
+                                               A GENERATING FUNCTION FOR THE TRACE OF
+                                                     THE IWAHORI-HECKE ALGEBRA
+arXiv:math/0101006v1 [math.RT] 31 Dec 2000
+
+
+
+
+                                                                           ERIC M. OPDAM
+
+                                                    Abstract. The Iwahori-Hecke algebra has a “natural” trace τ .
+                                                    This trace is the evaluation at the identity element in the usual
+                                                    interpretation of the Iwahori-Hecke algebra as a sub-algebra of the
+                                                    convolution algebra of a p-adic semi-simple group. The Iwahori-
+                                                    Hecke algebra contains an important commutative sub-algebra C[θx ],
+                                                    that was described and studied by Bernstein, Zelevinski and Lusztig.
+                                                    In this note we compute the generating function for the value of τ
+                                                    on the basis θx .
+
+
+
+
+                                                Date: February 1, 2008.
+                                                1991 Mathematics Subject Classification. 20C08, 22D25, 22E35.
+                                                The author would like to thank Erik van den Ban, Gerrit Heckman and Klaas
+                                             Slooten for many useful remarks and fruitful discussions.
+                                                                                    1
+                               Contents
+  1. Notations and main result                                           2
+  1.1. The root datum                                                    3
+  1.2. The affine Weyl group                                             3
+  1.3. The length function                                               4
+  1.4. Root labels                                                       5
+  1.5. The Iwahori-Hecke algebra                                         7
+  1.6. The Bernstein-Zelevinski basis                                    8
+  1.7. The main result                                                   9
+  2. The minimal principal series and their Intertwining operators      11
+  2.1. Definition of the minimal principal series                       11
+  2.2. The intertwining operators                                       11
+  2.3. A nondegenerate sesquilinear pairing                             14
+  2.4. Matrix elements of the minimal principal series                  15
+  2.5. Macdonald’s spherical function                                   17
+  3. Eisenstein series for the Hecke algebra                            19
+  3.1. Convergence in H∗                                                20
+  3.2. Meromorphic continuation of Et                                   22
+  3.3. Proof of the main theorem                                        24
+  3.4. A disintegration of the trace                                    25
+  References                                                            26
+
+
+
+1. Notations and main result
+   The goal of this paper is to derive a disintegration formula which
+could serve as a starting point for the spectral analysis of the Iwahori-
+Hecke algebra. However, I have decided to postpone the treatment of
+the more spectral analytic aspects of this formula to another paper.
+The formula has a certain interest in its own right, and as a first ap-
+plication we will give an explicit formula for the value of the trace on
+the maximal Abelian subalgebra of the Hecke-algebra.
+   I hope to help the reader (and myself) by reviewing the setup and
+definition of the Hecke-algebra, and the elementary theory of its mini-
+mal principal series representations. This is mainly to fix the notations,
+but also to give the reader an impression of the logical order of the basic
+facts that are involved in the proof of the main formula of this paper.
+At the same time, this hopefully provides a convenient basis for further
+papers in this direction. As a drawback, the material in the first sec-
+tion, and parts of the second section is (very) classical and well known
+to specialists.
+                                     2
+  In the first section we review the definition of the Iwahori-Hecke
+algebra. We basically follow Lusztig’s paper [3] in this discussion.
+
+1.1. The root datum
+   Let R = (X, Y, R0 , R0∨ , F0 ) be a reduced root datum (I apologize for
+the subscripts, but I have decided to reserve the notation R for the
+affine root system which has to be introduced later). This means that
+  (a) X and Y are lattices, with a given perfect pairing
+                           (·, ·) : X × Y → Z,
+  (b) R0 ⊂ X, R0∨ ⊂ Y are finite subsets with a given bijection R0 →
+       R0∨ , denoted by α → α∨ . (The elements of R0 are called “roots”,
+       those of R0∨ are called “coroots”.)
+  (c) F0 ⊂ R0 (called the set of fundamental roots).
+  (d) (α, α∨) = 2 for all α ∈ R0 .
+  (e) For any α ∈ R0 , the reflection sα ∈ GL(X) given by sα (x) =
+       x − (x, α∨ )α maps R0 to itself. Similarly, sα ∈ GL(Y ) given by
+       sα (y) = y − (α, y)α∨ maps R0∨ to itself.
+   (f) F0 is linearly independent, and R0 ⊂ Z≥0 F0 ∪ Z≤0 F0 . (The set
+       R0,+ = R0 ∩ Z≥0 F0 is called the set of positive roots.)
+  (g) For all α ∈ R0 , 2α 6∈ R0 .
+Put Q = ZR0 and Q∨ = ZR0∨ for the root lattice and the coroot
+lattice respectively. The weight lattice P of R is by definition the
+dual P = Hom(Q∨ , Z). It follows from the definitions that there is
+a natural map X → P whose restriction to Q ⊂ X is the natural
+inclusion Q ⊂ P .
+   The group generated by the reflections sα is called the Weyl group of
+R, denoted W0 . The set S0 = {sα | α ∈ F } is called the set of simple
+reflections. It is well known that S0 generates W0 , and that (W0 , S0 ) is
+a finite Coxeter group.
+   We define the so called dominance (partial) ordering on Y by:
+                      y ≥ y ′ ⇔ y − y ′ ∈ Z≥0 R0,+
+                                               ∨
+                                                   .
+
+1.2. The affine Weyl group
+  The affine Weyl group W is the semi-direct product
+                             W = W0 ⋉ X.
+The elements of W are denoted wtx , with the multiplication rule wtx ·
+w ′tx′ = ww ′tw′ −1 x+x′ . Clearly W acts on the set X. When we think of
+Y × Z as a set of affine linear functions on X, we get the natural dual
+                                     3
+action of W on Y × Z, defined by (wf )(x) := f (w −1x). Explicitly, this
+amounts to:
+                   wtx (y, k) := (w(y), k − (x, y)).
+The affine root system R is by definition the set R0∨ × Z ⊂ Y × Z. It
+is the a W -invariant set in Y × Z containing the set of coroots R0∨ . It
+is easy to see that R = R+ ∪ R− = R+ ∪ −R+ where:
+     R+ = {(α∨, k) | k > 0 and α ∈ R0 } ∪ {(α∨ , 0) | α∨ ∈ R0,+
+                                                            ∨
+                                                                }.
+Let S m ⊂ R0 be the set of roots so that {S m }∨ is the set of minimal
+coroots (with respect to the dominance ordering). It is clear that R+
+is a simplicial cone, generated over Z≥0 by the set
+             F = {(α∨ , 1) | α ∈ S m } ∪ {(α∨, 0) | α ∈ F0 }.
+This is called the set of fundamental affine roots. For every affine root
+a = (α∨ , k) we define a corresponding affine reflection sa : X → X by
+the formula
+                            sa (x) = x − a(x)α,
+where a(x) = (x, α∨ ) + k. This is an element of W since sa = sα tkα .
+We put
+                          S = {sa | a ∈ F },
+the set of affine simple reflections.
+   It follows easily that the subgroup of W generated by S equals W0 Q.
+This is a normal subgroup in W , which is an affine Coxeter group with
+S as set of simple reflections. We shall sometimes think of S as the set
+of vertices of the affine Coxeter diagram of (W0 Q, S).
+
+1.3. The length function
+  The length function l, defined on elements w of W0 Q as the mini-
+mal length of a word in the alphabet S representing w, has a natural
+extension to W . The extension is defined as follows:
+(1.1)
+    l(wtx ) =#{a ∈ R+ | wtx (a) ∈ R− }
+                  X                              X
+            =               |(x, α∨) + 1| +             |(x, α∨ )|.
+            α∈R0,+ ∩w −1 (R0,− )             α∈R0,+ ∩w −1 (R0,+ )
+
+Indeed, the length of an element sa ∈ S corresponding to a ∈ F is
+equal to 1, since R+ ∩ sa (R− ) = {a}. It follows that for all w ∈ W ,
+                          
+                              l(w) + 1 if w −1 (a) ∈ R+ .
+(1.2)           l(sa w) =
+                              l(w) − 1 if w −1 (a) ∈ R− .
+                                    4
+From 1.2 it is standard to derive that the restriction of l to W0 Q indeed
+coincides with the length function of this Coxeter group with respect
+to the set of generators S.
+   Put X + = {x ∈ X | (x, α∨ ) ≥ 0, ∀α ∈ F0 }, the set of dominant
+elements of X. Observe that 1.1 implies that for all x ∈ X + , w ∈ W0 :
+                        l(wtx ) = l(w) + l(tx )
+(1.3)
+                                = l(w) + 2(x, ρ∨ )
+where ρ∨ ∈ P ∨ is defined by
+                                    1 X ∨
+                             ρ∨ =         α .
+                                    2 α∈R
+                                         0,+
+
+
+Similarly, when x ∈ X ++ is strongly dominant and w ∈ W0 we have
+the formula
+                        l(tx w) = −l(w) + l(tx ).
+
+Corollary 1.1. The length is an additive function on the Abelian half-
+group consisting of tx , x ∈ X + .
+  Proof.   Clear from 1.3.                                              
+  It is easy to see from the above description of the length function
+that an element w ∈ W has length 0 if and only if it maps F to itself.
+Thus the set of elements in W having length 0 is a subgroup Ω of W .
+Using 1.2 it is clear that this is a complement for the normal Coxeter
+subgroup W0 Q. Hence Ω is Abelian, and isomorphic to the quotient
+X/Q.
+
+1.4. Root labels
+  In order to define the Iwahori-Hecke algebra we need to fix a length-
+multiplicative function q on W . In principle q may take its values in any
+Abelian half-group, but for our purposes it is appropriate to assume
+that q takes its values in R>1 . In other words, we consider a function
+                               q : W → R>1
+such that q(ww ′) = q(w)q(w ′) whenever l(ww ′) = l(w) + l(w ′ ).
+   Note that q is identically equal to 1 on the group Ω of elements
+of length 0. The function q is therefore completely determined by its
+values on the set S of elements of length 1. On the other hand, any
+function q on S can be extended length-multiplicatively provided that
+qs = qs′ whenever s, s′ ∈ S are conjugate in W .
+                                     5
+  We associate to such a function q on W a W -invariant set of root
+labels on the affine root system R by the following rules. First observe
+that a translation tx with x ∈ X maps a = α∨ + k ∈ R to a − (x, α∨ ).
+Hence a is in the orbit of α∨ , except when α∨ ∈ 2Y and k is odd. Let
+a = α∨ + k ∈ F . If α∨ 6∈ 2Y , we simply put
+                                qa := q(sα ).
+When α∨ ∈ 2Y , let S(a) ⊂ S denote the connected component of the
+Coxeter graph of the affine Coxeter group (W0 Q, S). As Lusztig ([3],
+Lemma 1.7) remarks, S(a) is of affine type Cnaff , and the correspond-
+ing root datum R(a) of type (Q(Bn ) = Zn , P (Cn ) = Zn , Bn , Cn , {e1 −
+e2 , . . . , en−1 − en , en }) is a direct summand of R. Let ωa be the unique
+nontrivial diagram automorphism of S which is trivial on the comple-
+ment of S(a). We now define
+                              qa := q(sωa (a) ).
+Explicitly, we define for these fundamental roots in S(a): q1−2e1 =
+q(s2en ) and q2en = q(s1−2e1 ). We extend the affine root labels W -
+invariantly to all of R. It is clear that the affine root labels determine
+q.
+   Finally, we can also describe q by means of a W0 -invariant set of root
+labels qα∨ , where α runs over the roots of the possibly non-reduced root
+system Rnr defined by
+                   Rnr := R0 ∪ {2α | α∨ ∈ R0∨ ∩ 2Y }.
+We do this by restricting the affine root labels to R0∨ , and when α∨ ∈ 2Y
+we define:
+                                       q1+α∨
+                             qα∨ /2 :=       .
+                                        qα∨
+                                                ∨
+It is clear that this set of root labels on Rnr    also contains the same
+information as the function q. These definitions of root labels are in
+compliance with Macdonald [4], except for the fact that we call roots
+what he calls coroots!
+   We list some direct consequences of our notations:
+Corollary 1.2. For all w ∈ W ,
+                                       Y
+                         q(w) =                   qa+1 .
+                                  a∈R+ ∩w −1 R−
+
+
+Corollary 1.3. For all w ∈ W0 ,
+                                       Y
+                       q(w) =                         qα∨ .
+                                α∈Rnr,+ ∩w −1 Rnr,−
+
+                                      6
+Definition 1.4. The Haar modulus δ = δq is the character on on X
+given by
+                                   Y (x,α∨ )
+                  δ(x) = δq (x) :=    qα∨ .
+                                        α∈Rnr,+
+
+
+Corollary 1.5. When x ∈ X + ,
+                             q(tx ) = δ(x).
+
+1.5. The Iwahori-Hecke algebra
+  Now we are ready to define the Iwahori-Hecke algebra H associated
+to a root datum R and a set of root labels qα∨ with α ∈ Rnr .
+Definition 1.6. The Iwahori-Hecke algebra H = H(R, q) is the com-
+plex associative algebra with basis Tw , w ∈ W , and relations induced
+by the following rules:
+  (a) If l(ww ′ ) = l(w) + l(w ′) then Tw Tw′ = Tww′ .
+  (b) If s ∈ S then (Ts + 1)(Ts − q(s)) = 0.
+
+Remark 1.7. It is well known that such an object exists.
+   This algebra can be equipped with a ∗ operator, which is the anti-
+linear anti-involution defined by
+                              Tw∗ = Tw−1 .
+It is straightforward to check that this indeed extends to an anti-
+involution on H.
+   The object of study in this note is the canonical trace function τ ,
+which is by definition the linear functional on H that has the following
+values on the basis elements Tw :
+                                  
+                                      1 if w = e.
+                        τ (Tw ) =
+                                      0 else.
+This functional corresponds to the evaluation at the identity element
+when the Hecke algebra is interpreted as a subalgebra of the convolution
+algebra of a semi-simple group of p-adic type. Therefore the following
+lemma is natural:
+Proposition 1.8. The trace τ is central and positive.
+ Proof.    Both statements are clear from the following obvious for-
+mula:
+(1.4)                   τ (Tw∗ Tw′ ) = δw,w′ q(w).
+                                    7
+                                                                                        
+  The associated Hermitian inner product on H is given by the formula
+                             (h, h′ ) := τ (h∗ h′ ).
+Observe that the basis Tw is orthogonal with respect to this inner prod-
+uct because of 1.4.
+
+1.6. The Bernstein-Zelevinski basis
+  The Hecke algebra H contains a large commutative subalgebra. For
+x ∈ X + we define
+                             θx = δ(−x)1/2 Ttx .
+These elements form an Abelian half-group isomorphic to X + because
+of Corollary 1.1. By 1.5 they are orthonormal. For general x ∈ X we
+define:
+                                    θx = θy θz−1
+where y, z ∈ X + are such that x = y − z.
+  The following result is very important, and due to Bernstein and
+Zelevinski (unpublished work).
+Theorem 1.9. (a) The elements Tw θx , w ∈ W0 , x ∈ X form a basis
+     of H.
+ (b) The elements θx Tw , w ∈ W0 , x ∈ X also form a basis of H.
+ (c) In particular, the subalgebra A = C[θx ] ⊂ H is isomorphic to the
+     group algebra of X via x → θx .
+  The next result is due to Bernstein and Zelevinski in a special case,
+and to Lusztig in the general case. It tells us how the multiplication
+works in terms of the basis just described in the above theorem.
+Theorem 1.10. Let x ∈ X and α ∈ F0 . Let s = sα . Then
+(1.5)
+ θx Ts − Ts θs(x) =
+                                        θx −θs(x)
+       (
+                          (qα∨ − 1)      1−θ−α
+                                                                       if 2α 6∈ Rnr .
+   =                               1/2                     θx −θs(x)
+            ((qα∨ /2 qα∨ − 1) +   qα∨ /2 (qα∨   −   1)θ−α ) 1−θ−2α     if 2α ∈ Rnr .
+   One important consequence of this theorem is the precise description
+of the center Z of H. This result is also due to Bernstein and Zelevinski.
+Theorem 1.11. The subalgebra A ⊂ H is a W0 module via the action
+of W0 on X. In this sense, the center Z equals Z = AW0 .
+                                          8
+  The behavior of the elements θx with respect to the ∗ operator is not
+very complicated:
+Proposition 1.12. Let w0 ∈ W0 denote the longest element.
+                               θx∗ = Tw0 θ−w0 (x) Tw−1
+                                                     0
+                                                       .
+   Proof.    We may assume that x ∈ X + . We need to show that
+Tt−x Tw0 = Tw0 Tt−w0 (x) . This is obvious since l(w0 t−w0 (x) ) = l(w0 ) + l(tx )
+(see 1.3) and w0 t−w0 (x) = t−x w0 .                                           
+
+
+1.7. The main result
+   Let T = Hom(X, C× ) be the complex torus of characters of X. Let
+us introduce the c-function, following Macdonald [4]. For α ∈ Rnr and
+t ∈ T define
+                                              −1/2
+                                     1 − qα∨ /2 qα−1∨ t(−α)
+                       c(α, t) :=              −1/2
+                                                              .
+                                       1 − qα∨ /2 t(−α)
+(In this notation it is understood that qβ∨ = 1 whenever β 6∈ Rnr , and
+that we take the positive root of qα∨ /2 ). When α ∈ R0 we put
+                            c0 (α, t) = c(α, t)c(2α, t).
+It is convenient to introduce the reduced root system R1 = {α ∈ Rnr |
+2α 6∈ Rnr }. We define for α ∈ R1 :
+                            c1 (α, t) = c(α, t)c(α/2, t).
+Clearly, when α ∈ R0 ∩ R1 we have c0 (α, t) = c1 (α, t). On the other
+hand, when α ∈ R0 − R1 , then 2α ∈ R1 , and c0 (α, t) = c1 (2α, t). We
+have for α ∈ R0 :
+                                    −1
+                  
+                                1−qα ∨ t(−α)
+                  
+                                  1−t(−α)
+                                                         if 2α 6∈ Rnr .
+      c0 (α, t) =       −1/2             −1/2 −1
+                   (1+qα∨ /2 t(−α))(1−qα∨ /2 qα∨ t(−α)) if 2α ∈ R .
+                                      1−t(−2α)                        nr
+
+With these notations we define:
+Definition 1.13.
+                Y           Y             Y
+        c(t) :=   c(α, t) =   c0 (α, t) =   c1 (β, t).
+                  α∈Rnr,+              α∈R0,+               β∈R1,+
+
+  We introduce a partial ordering < on the real split part Trs =
+Hom(X, R+ ) of T by
+                   t1 < t2 ⇔ ∀α ∈ R0,+ : t1 (α) < t2 (α).
+                                          9
+Here is the main result of this paper, a generating function for the
+values of τ on A:
+Theorem 1.14. We have the following identity of formal Laurent se-
+ries (t ∈ T ):
+               X                                 −1
+                 τ (θx )t(−x) = q(w0 )c(t)c(t−1 ) exp,+ .
+                 x∈X
+The right hand side of the equality means the expansion of the rational
+function 1/(q(w0 )c(t)c(t−1 )) as a power series in ti = t(αi ), where F0 =
+{α1 , . . . , αn }. Notice that this expansion is convergent on {t ∈ T |
+Re(t) < δ −1/2 }.
+
+Remark 1.15. In particular, this implies that τ (θx ) = 0 unless x ∈
+Q− .
+
+Example 1.16. The simplest possible case is when the root datum is
+of type A1 , i.e. R = (Z, Z, {±2}, {±1}, {2}). Put S0 = {s}, q = q(s),
+and ω = t1 s. Notice that ω ∈ Ω, the group of elements of length 0 in
+W . Now consider θ = q −1/2 Tt1 = q −1/2 Tω Ts . The above theorem states
+that τ (θn ) = 0 unless n = −2k with k ∈ Z≥0 , and when k > 0 we have
+          (q − 1)(q k − q −k )
+τ (θ−2k ) =                    = (q + q −1 − 2)(q k−1 + q k−3 + · · · + q 1−k ).
+                q+1
+The reader is invited to verify this formula directly.
+
+Lemma 1.17. Let α ∈ Rnr and k ∈ Z≥0 . We define a rational func-
+                 1/2
+tion d(α; k) in qα∨ /2 and qα∨ by
+                ∞
+                X                                         −1
+                       d(α; k)tk = qα∨ c(α, t)c(α, t−1)    exp,+
+                                                                   .
+                 k=0
+
+Then d(α; 0) = 1, and for k > 0 we have:
+                                                                       
+                                             1/2          1/2
+             (qα∨ − 1)(qα∨ /2 qα∨ − 1) (qα∨ /2 qα∨ )k − (qα∨ /2 qα∨ )−k
+   d(α; k) =
+                                  (qα∨ /2 qα2 ∨ − 1)
+Corollary 1.18. We can reformulate the main result as follows. Let
+x ∈ X.P We call π = (πα )α∈Rnr,+ a partition of x if (1) πα ∈ Z≥0 and (2)
+x = α∈Rnr,+ πα α. Then the trace of θx can be written as a weighted
+partition function:
+                               X Y
+(1.6)                τ (θx ) =            d(α; πα ),
+                                   π   α∈Rnr,+
+
+where the sum is taken over all the partitions π of −x.
+                                        10
+Corollary 1.19. Suppose that q(s) > 1, ∀s ∈ S. Then τ (θ−κ ) > 0,
+for all κ ∈ Q+ .
+
+2. The minimal principal series and their Intertwin-
+   ing operators
+2.1. Definition of the minimal principal series
+  The holomorphic minimal principal series are simply defined by in-
+duction from A. Let t ∈ T denote a character of X.
+Definition 2.1. The (holomorphic) minimal principal series It is the
+induced module It = IndH
+                       A (t) = H ⊗A Ct (where Ct denotes the one
+dimensional module of A corresponding the character t).
+  As an H0 module, It ≃ H0 via Tw ⊗ 1 → Tw (w ∈ W0 ). (Here H0 is
+the subalgebra of H generated by Ts , s ∈ S0 .)
+Definition 2.2. The image of an element h ∈ H in End(It ) is called
+its Laplace transform ĥ(t). By the natural identification of It with H0
+we will always consider ĥ(t) as an element of End(H0 ).
+  We list some basic properties of It :
+Proposition 2.3. (a) The center Z ≃ AW0 acts by scalars on It ,
+     according to the character t of A.
+ (b) Every irreducible module over H is a quotient of some It .
+ (c) If ĥ(t)(Te ) = 0 for all t in some Zariski-dense subset of T , then
+     h = 0.
+  Proof. (a) and (b) are trivial, and (c) follows directly from Theorem
+1.9.                                                                  
+  To study the modules It more seriously, we need to involve inter-
+twining operators.
+
+2.2. The intertwining operators
+  The action of W0 on A can “almost” be realized by inner automor-
+phisms of H. Here the word “almost” means that one needs to pass
+to some formal completion of H in order to make certain elements of
+H invertible. The elements which realize this W0 -action by means of
+conjugation (in a completion of H) are called intertwining elements.
+We do not want to study the formal completions of H here, since the
+non-invertibility of the intertwiners in H is at the heart of the study of
+representations of H.
+                                    11
+  Let us first discuss the construction of the intertwining elements
+themselves. Their definition is closely related to Lusztig’s relation 1.10.
+Definition 2.4. When s = sα ∈ S0 (with α ∈ F0 ), we define the
+intertwining element Rs as follows:
+   Rs =
+                        (1 − θ−α )Ts + (1 − qα∨ )                   (2α 6∈ Rnr )
+     
+   =                                          1/2
+        (1 − θ−2α )Ts + ((1 − qα∨ /2 qα∨ ) + qα∨ /2 (1 − qα∨ )θ−α ) (2α ∈ Rnr )
+                        Ts (1 − θα ) + (qα∨ − 1)θα                   (2α 6∈ Rnr )
+     
+   =                                            1/2
+        Ts (1 − θ2α ) + ((qα∨ /2 qα∨ − 1)θ2α + qα∨ /2 (qα∨ − 1)θα ) (2α ∈ Rnr )
+
+Definition 2.5. We introduce the following notation. Let ±W0 be the
+group W0 ∪ −W0 . Assume R is a ring equipped with ±W0 -action ±w :
+f → f ±w . Suppose we are given an equivariant set of elements fβ of
+R (i.e. f±wβ = fβ±w ), indexed by the roots β ∈ R1 . When w ∈ W0 , we
+put
+                                    Y
+                        fw :=                fβ .
+                               β∈R1,+ ∩w −1 R1,−
+
+We simply write f instead of fw0 , where w0 denotes the longest element
+of W0 .
+
+Example 2.6. When we define q̃β = qβ ∨ q2β ∨ ∈ R+ (with the triv-
+ial action of ±W0 ), then we get the usual q(w) = q̃w . We apply the
+notation of Definition 2.5 frequently to the following cases:
+  (1) ∆β := 1 − θ−β ∈ A,
+  (2) cβ := c1 (β, ·) ∈ C(T ),
+  (3) nβ := q̃β ∆−β (·)c−β (·) ∈ C[T ] (hence we may and will consider nβ
+      as an element of A, by sending the character x of T to θx ∈ A),
+  (4) Dβ = nβ n−β .
+
+Lemma 2.7. In the situation of Definition 2.5 we have the following
+simple rules:
+                                              −1
+  (1) When l(uv) = l(u) + l(v), then fuv = fuv fv .
+  (2) In particular, fww0 w fw−1 = fw0 = f .
+  (3) fww0 w fw−e−1 = fww0 = f w .
+  (4) fww = fw−e−1 .
+
+Theorem 2.8. Let s = sα ∈ S0 with α ∈ F0 , and let β ∈ R1 be the
+unique element of R1 which is a positive multiple of α. (For conve-
+nience, we shall write s = sβ with β ∈ F1 in the sequel). Then:
+                                    12
+  (1) Rs θx = θs(x) Rs .
+  (2) The Rs (s ∈ S0 ) satisfy the braid relations corresponding to the
+      Coxeter graph S0 .
+  (3) Rs2 ∈ A, and in fact Rs2 = Ds .
+  Proof. (1) is a direct reformulation of Theorem 1.10. (3) is proved
+by (tedious, but straightforward) direct computation, and is left to the
+reader. To prove (2) we need to show that if w = s1 . . . sm is a reduced
+word in W0 , then the element Rw := Rs1 . . . Rsm ∈ H indeed only
+depends on w, and not on the chosen reduced word representing w. Let
+us suppose Rw′ is obtained in the same way as Rw , but using a different
+reduced word for w. Let t ∈ T and define rw (t) = R̂w (t)(Te ) ∈ H0 , and
+similarly rw′ (t). By Proposition 2.3(c), in order to show Rw = Rw′ , it
+suffices to show that rw (t) = rw′ (t) for generic t ∈ T . Now observe that
+both rw (t) and rw′ (t) are of the form
+                                         X
+(2.1)                     ∆w (t−1 )Tw +      cu,x Tu .
+                                          u<w
+
+On the other hand, both rw (t) and rw′ (t) are in the A weight space of
+It with eigenvalue w(t), by (1). Since the dimension of It is |W0 |, it
+is clear that these weight spaces all have dimension equal to 1 when
+t ∈ T reg . Therefore rw (t) and rw′ (t) are scalar multiples of each other.
+But then they have to be equal by 2.1.                                    
+
+Definition 2.9. Let w ∈ W0 , and let w = s1 . . . sm be a reduced word.
+Define Rw = Rs1 . . . Rsm ∈ H, and rw (t) = R̂w (t)(Te ) ∈ H0 . Notice
+that (see Example 2.6):
+                      rw−1 (wt)rw (t) = nw (t)nw (t−1 )
+                                      = Dw (t).
+
+Corollary 2.10. From the above proof we conclude that for every w ∈
+W0 , the weight space Itwt of weight wt in It has dimension 1 when t is
+regular. The elements rw (t) ∈ H0 (with w ∈ W0 ) form a basis of H0 in
+this case.
+
+Corollary 2.11. We have the relation
+                         Rw θx Rw−1 = Dw−1 θwx .
+
+Definition 2.12. When nw (t) 6= 0, we introduce normalized intertwin-
+ing elements rw0 (t) ∈ H0 by
+(2.2)                    rw0 (t) = (nw (t))−1 rw (t).
+                                     13
+Corollary 2.13. The elements rw (w ′ t) ∈ H0 (w, w ′ ∈ W0 ) are well
+defined if n(t)n(t−1 ) 6= 0. They satisfy the W0 -cocycle relation (u, v ∈
+W0 arbitrary):
+(2.3)                        ru0 (vt)rv0 (t) = ruv
+                                                0
+                                                   (t).
+
+Definition 2.14. Define, for w ∈ W0 , t ∈ T , and x ∈ H0 ≃ It ,
+                      R(w, t) : It →   Iwt
+                                x → xrw−1 (wt)
+
+Corollary 2.15. This defines intertwining maps such that
+ (1) R(w −1 , wt)R(w, t) = Dw (t)IdH0 . In particular, R(w, t) is an iso-
+     morphism when Dw (t) 6= 0.
+ (2) R(u, vt)R(v, t) = R(uv, t) when l(uv) = l(u) + l(v). (Equiva-
+     lently, ru (vt)rv (t) = ruv (t) in this situation.)
+ (3) By Corollary 2.13,
+                                       nu (vt)nv (t)
+                     ru (vt)rv (t) =                 ruv (t).
+                                          nuv (t)
+        Therefore we have:
+                                        nu (vt)nv (t)
+                 R(u, vt)R(v, t) =                    R(uv, t).
+                                           nuv (t)
+
+Corollary 2.16. When t is regular and Dw0 (t) 6= 0, then It is irre-
+ducible. (In fact the following stronger result due to S. Kato [2] holds:
+∀t ∈ T , It is irreducible if and only if Dw0 (t) 6= 0. This is much deeper,
+but we shall not need this fact.)
+
+2.3. A nondegenerate sesquilinear pairing
+  We identify the module It with H0 by Tw ⊗ 1 → Tw (w ∈ W0 ), as we
+did before. We define a nondegenerate sesquilinear pairing between It
+and It̄−1 by
+                      It̄−1 × It → C
+(2.4)
+                      x       y → (x, y) := τ (x∗ y)
+where x, y ∈ H0 .
+Corollary 2.17. This pairing satisfies (x, yz) = (xz ∗ , y) = (y ∗ x, z)
+when x, y and z are in H0 .
+
+Lemma 2.18. The element rw (t) ∈ H0 satisfies rw (t)∗ = rw−1 (w t̄−1 ).
+Hence the intertwining operator R(w, t) satisfies: R(w, t)∗ = R(w −1 , w t̄−1 ).
+                                        14
+  Proof. It is sufficient to prove this for w ∈ S0 , and in this case it is
+an easy direct computation. Use Corollary 2.17.                          
+
+Theorem 2.19. The pairing between It̄−1 and It respects the ∗ opera-
+tor: ∀x ∈ H, y, z ∈ H0 we have
+                          (xˆ∗ (t̄−1 )y, z) = (y, x̂(t)z).
+    Proof.      When x ∈ H0 . this is just Corollary 2.17. Hence it is
+enough to verify the relation when x ∈ A. It suffices to do so for t
+in some Zariski-dense set, and thus we may and will assume that t
+is regular. By Corollary 2.10, (rw (t))w∈W0 is a basis of eigenvectors of
+θˆx (t), with eigenvalues x(wt). Likewise, using Proposition 1.12, we have
+that Tw0 rw0 v (t̄−1 ) is θˆx∗ (t̄−1 ) eigenvector with eigenvalue v t̄(x). Hence
+we just need to show that for v 6= w:
+                          (Tw0 rw0 v (t̄−1 ), rw (t)) = 0.
+But, using Corollary 2.15 and Lemma 2.18, we have:
+           (Tw0 rw0 v (t̄−1 ), rw (t)) = τ (rv−1 w0 (w0 vt)Tw0 rw (t))
+(2.5)                                = τ (rw (t)rv−1 w0 (w0 vt)Tw0 )
+                                     = const.τ (rwv−1 w0 (w0 vt)Tw0 ).
+By equation 2.1 this last expression is 0 when v 6= w, as was claimed.
+
+
+Proposition 2.20. In addition to the proof of the previous theorem
+we see that, since l(w) + l(w −1 w0 ) = l(w0 ),
+(2.6)            (Tw0 rw0 v (t̄−1 ), rw (t)) = δv,w q(w0 )∆(wt).
+
+2.4. Matrix elements of the minimal principal series
+  We denote by H∗ the linear dual of H, the space of all complex linear
+functionals on H. Given an endomorphism ψ ∈ End(H0 ) we define the
+corresponding matrix element E(ψ, t) ∈ H∗ of the minimal principal
+series module It by
+(2.7)                     E(ψ, t)(h) := trH0 (ψ ĥ(t)).
+The character χ(It ) of It is by definition the matrix element E(Id, t).
+The intertwiners and the pairing discussed above give rise to two func-
+tional equations for the matrix elements:
+Proposition 2.21. (1) E(ψ ∗ , t̄−1 )(h∗ ) = E(ψ, t)(h).
+ (2) E(R(w, t)ψR(w −1, wt), wt) = Dw (t)E(ψ, t).
+                                         15
+  With the pairing of the previous subsection at our disposal, we define
+an important collection of matrix elements of the minimal principal
+series modules.
+Definition 2.22. For u, v ∈ W0 we define the linear functional Eu,v
+on H by (h ∈ H):
+(2.8)              Etu,v (h) = (Tw0 rw0 u (t̄−1 ), ĥ(t)rv (t)).
+In other words, Eu,v = E(ψu,v (t), t) where ψu,v (t) ∈ End(H0 ) is defined
+by ψu,v (t)(h) = (Tw0 rw0 u (t̄−1 ), h)rv (t).
+
+Proposition 2.23. (1) The function t → Etu,v (h) is a regular func-
+     tion on T , for all u, v and h.
+ (2) Etu,v (θx1 hθx2 ) = u(t)(x1 )v(t)(x2 )Etu,v (h).
+ (3) When t is regular and c(t)c(t−1 ) 6= 0, {Etu,v } ⊂ H∗ is a collection
+     of linearly independent linear functionals on H.
+ (4) If the stabilizer Wt of t is generated by reflections, then the dimen-
+     sion of the linear space Ht∗ = {φ ∈ H∗ | φ(zh) = z(t)φ(h), ∀z ∈
+     Z, h ∈ H} is equal to |W0 |2 . In particular, {Etu,v } ∈ H∗ is a
+     basis for this space when t is regular and c(t)c(t−1 ) 6= 0.
+    Proof. (1) is obvious, (2) is straightforward, and (3) follows from
+(2), if we know in addition that Etu,v 6= 0 when t is regular and
+c(t)c(t−1 ) 6= 0. This follows from the multiplication rules in Corol-
+lary 2.13 for the normalized intertwining elements ru0 (t) (u ∈ W0 ), and
+equation 2.6.
+    (4). Note that Ht∗ can be identified with the dual of H/(It H),
+where It denotes the ideal in Z of elements vanishing in t ∈ T . But
+H/(It H) ≃ H0 ⊗ A/(It A), thus it is sufficient to show that A/(It A)
+has dimension |W0 | if the stabilizer of t is generated by reflections. For
+t′ ∈ W0 t, let mt′ denote the maximal ideal of t′ in A, and let M =
+                                     k
+Q
+    t′ ∈W0 t mt′ . Note that It A ⊃ M for suitably large k, because the ring
+A/It A is finite dimensional over C. Hence A/It A ≃ ÂM /It ÂM , where
+ÂM denotes the M-adic completion of A. By the chinese remainder
+theorem, ÂM ≃ ⊕t′ ∈W0 t Âmt′ . Furthermore, we have It Âmt′ ≃ Jt′ Âmt′ ,
+where Jt′ denotes the ring of Wt′ -invariant elements of A vanishing in
+t′ . Given f ∈ Jt′ and any k ∈ N, it is possible to find a F ∈ It such
+that ef ∈ F + mkt′ with e ∈ Âmt′ invertible. This implies the claim,
+since mkt′ is contained in both It Âmt′ and Jt′ Âmt′ if k is sufficiently
+large.
+    Since Wt′ is generated by reflections, we see by the theorem of Cheval-
+ley that the dimension of Âmt′ /Jt′ Âmt′ equals |Wt′ | = |Wt | for each
+t′ ∈ W0 t. Whence the result.                                             
+                                        16
+  We now list some straightforward consequences of Proposition 2.20,
+Proposition 2.21 and Corollary 2.15.
+Proposition 2.24. P          (1) Etu,v (Te ) = δu,v q(w0 )∆(ut).
+ (2) χ(It ) = q(w0 )−1 w∈W0 ∆(wt)−1 Etw,w .
+ (3) Etu,v (h) = Et̄w−10 v,w0 u (Tw−1
+                                    0
+                                      h∗ Tw0 ).
+              n (t)n −1 (wt) uw −1 ,vw −1
+ (4) Etu,v = nuv (t)nuw−1        E
+                            (wt) wt
+                                              .
+                     vw
+
+
+
+Definition 2.25. The element Ete,e ∈ H∗ plays a predominant role,
+and will be denoted by Et .
+
+Corollary 2.26. The character χ(It ) equals q(w0 )−1                      ∆(wt)−1 Ewt .
+                                                               P
+                                                                   w∈W0
+
+
+2.5. Macdonald’s spherical function
+   Let T0+ denotes the central idempotent of H0 corresponding to the
+trivial representation Tw → q(w). In other words,
+                                        X
+                         T0+ = P0 (q)−1    Tw ,
+                                              w∈W0
+
+where P0 is the so called Poincaré polynomial
+                                    X
+                           P0 (q) =     q(w)
+                                         w∈W0
+
+of the Weyl-group W0 . Macdonald’s spherical function φt ∈ Ht∗ is the
+matrix coefficient E(ψ + , t) for the endomorphism
+                          ψ + (h) = P0 (q)(T0+ , h)T0+ .
+Note that the chosen normalization is such that φt (Te ) = TrH0 (ψ + ) = 1.
+It is not difficult to express φt in terms of the basis Etu,v we introduced
+in the previous subsection.
+Lemma 2.27. (1) ∀w ∈ W0 , T0+ rw0 (t) = T0+ .
+ (2) T0+ = q(w 0)             0
+                  P
+           P0 (q)  w∈W0 c(wt)rw (t).
+
+  Proof. (1) is a simple direct computation.
+(2) Write
+                              X
+(2.9)                  T0+ =       bw (t)rw0 (t).
+                                    w∈W0
+
+Using (1) we find that bw (t) = bw0 (w0 wt). We compute bw0 by the
+remark that the only summand on the right hand side of 2.9 that
+                                         17
+contributes to the coefficient of Tw0 , is bw0 (t)rw0 0 (t). Now recall that,
+modulo the space spanned by Tw with w 6= w0 ,
+                                               ∆(t−1 )
+                                 rw0 0 (t)   =         Tw0 .
+                                                n(t)
+Comparing coefficients leads to the required result.                       
+  Clearly, φt is completely determined by its values on the subalgebra
+H = T0+ HT0+ . This important ∗-subalgebra of H is isomorphic to the
+  +
+
+center of H by the so-called Satake-isomorphism, via the map
+                                        Z → H+
+(2.10)
+                                        z → T0+ z
+It is also clear that the elements θx+ = T0+ θx T0+ with x ∈ X + form a
+linear basis of H+ . Let us determine the spherical function by com-
+puting its values on this basis. The result is the well known formula of
+Macdonald for the spherical function.
+Theorem 2.28. (Macdonald [4]) When x ∈ X + ,
+                           q(w0 ) X
+               φt (θx+ ) =            c(wt)wt(x).
+                           P0 (q) w∈W
+                                                     0
+
+
+  Proof.       Use the above lemma.                                        
+  It is now easy to relate φt to the matrix element Et :
+Proposition 2.29.
+                                               q(w0 )n(t−1 )
+                         Et (T0+ hT0+ ) =                    φt (h).
+                                                  P0 (q)
+  Proof.
+         Et (T0+ hT0+ ) = (Tw0 rw0 (t̄−1 ), T0+ ĥ(t)T0+ )
+                        = (T0+ Tw0 rw0 (t̄−1 ), ĥ(t)T0+ )
+                        = q(w0)n(t−1 )(T0+ rw0 0 (t̄−1 ), ĥ(t)T0+ )
+                        = q(w0)n(t−1 )(T0+ , ĥ(t)T0+ ) by Lemma 2.27(1)
+                          q(w0)n(t−1 )
+                        =              φt (h).
+                             P0 (q)
+                                                                           
+   The basis θx+ (x ∈ X + ) of H+ is orthogonal. We need the following
+(standard) notation to formulate the result. When x ∈ X + , let Wx
+denote the stabilizer of x in W . Let W x be the set of shortest length
+                                                18
+representatives for the right cosets of Wx in W0 . It is well known that
+q(uv) = q(u)q(v) and that Tuv = Tu Tv when u ∈ W x and v ∈ Wx .
+Definition 2.30. Let Px (q) = w∈Wx q(w), and P x (q) = w∈W x q(w).
+                                P                            P
+
+Note that P0 = P x Px . Likewise, define Tx+ = Px (q)−1 w∈Wx Tw and
+                                                          P
+
+T x,+ = P x (q)−1 w∈W x Tw . Then T0+ = T x,+ Tx+ . Finally we write wx
+                 P
+for the longest element in Wx , and w x ∈ W x for the element such that
+w0 = w x wx .
+
+Proposition 2.31. When x, y ∈ X + , we have:
+                                           δx,y q(w x )
+                         (θx+ , θy+ )   =               .
+                                          P0 (q)P x (q)
+   Proof. Notice that θx+ is a linear combination of elements of the
+form Tutx v with u ∈ W0 and v ∈ W x . In fact we have:
+                  θx+ = δ(−x)1/2 T0+ Ttx T0+
+                      = δ(−x)1/2 T x,+ Ttx T0+
+(2.11)
+                        δ(−x)1/2 q(w x )     X
+                      =                            Tutx v
+                          P0 (q)P x (q) u∈W x ,v∈W
+                                                            0
+
+To verify the last line, notice first that the sum on the right hand side
+is invariant for multiplication by T0+ on either side. So we only need
+to check the coefficient of one, suitably chosen element Tutx v . Choose
+Twx tx w0 . With the above expression for θx+ at our disposal, it is easy to
+compute (θx+ , θy+ ) = δ(−y)1/2 (θx+ , Tty ).                             
+
+
+3. Eisenstein series for the Hecke algebra
+                                               P
+  Consider the vector space of formal sums w∈W cw Tw . Notice that
+this vector space carries a natural structure of a left and right H mod-
+ule, since multiplication (on the left or the right) with finite sums is
+always well defined. Also the trace τ has P  a natural extension to the
+vector space of formal sums. When φ = w∈W cw Tw , we shall thus
+define a linear functional φ on H by φ(h) = τ (φh). In other words,
+we define φ(Tw ) = q(w)cw−1 . In this way we will identify the algebraic
+dual H∗ with the vector space of formal sums. We equip H∗ with the
+weak topology.
+  Now let us consider, for t ∈ T , the sum
+                                 X
+                            Et =     t(−x)θx .
+                                    x∈X
+                                          19
+If this sum is convergent in H∗ , it will clearly satisfy:
+                      Et (θx h) = Et (hθx ) = t(x)Et (h).
+By Proposition 2.23 this implies that
+                                 Et = f (t)Et ,
+provided that the left hand side converges. We want to compute the
+function f , but let us first treat the question of convergence.
+
+3.1. Convergence in H∗
+Lemma 3.1. Let u, v ∈ W0 , and x ∈ X. Then
+ (1) τ (Tu θx Tv ) = 0 unless x ∈ Q− .
+ (2) ∀ǫ > 1, ∃Cǫ > 0 such that ∀x ∈ Q− ,
+                                              1/2
+(3.1)                   |τ (Tu θx Tv )| ≤ Cǫ δǫq  (−x).
+  Proof. (1) When x ∈ X + it is clear that Tu θx Tv will be a linear
+combination of Tw with w in the double coset W0 tx W0 . Hence this will
+not have a constant term, unless x = 0. For general x ∈ X, we denote
+by C+ (x) the convex hull of the W0 orbit of x, intersected with the
+cone x + Q+ . We claim that for every x ∈ X:
+                                 X
+(3.2)               Tu θx Tv ∈          H0 θy H0 .
+                                  y∈X + ∩C+ (x)
+
+Let us prove 3.2. When x 6∈ X + , we can choose a fundamental root
+α ∈ F0 such that (x, α∨ ) < 0. Apply Lusztig’s formula (Theorem 1.10)
+with s = sα∨ , and we see that we can express θx as follows:
+                                X
+                       θx ∈            H0 θy H0 .
+                              y∈C+ (x), y6=x
+
+When there still are elements y ∈ X\X + in this sum, we repeat this
+procedure for those y. After k steps, we have expressed θx as an element
+in the sum of double coset spaces H0 θy H0 , with y either in the set
+X + ∩ C+ (x), or otherwise in {y ∈ C+ (x) | (y − x, ρ∨ ) ≥ k}. By the
+finiteness of C+ (x), this last set will be empty if k is sufficiently large.
+(2) We use induction on the height −(x, ρ∨ ) for x ∈ Q− . First we
+choose N ∈ N such that ∀α ∈ F0 :
+(3.3)
+                                 ǫqα∨ qα∨ /2 (qα∨ − 1) + qα∨ qα∨ /2 − 1
+  (2qα∨ qα∨ /2 − 1)(ǫqα∨ )−N +                                          ≤ 1.
+                                              ǫ2 qα2 ∨ qα∨ /2 − 1
+                                      20
+We use the usual convention that qα∨ /2 = 1 if α∨ 6∈ 2Y , in which case
+condition 3.3 reduces to
+                                        qα∨ − 1
+(3.4)            (2qα∨ − 1)(ǫqα∨ )−N +          ≤ 1.
+                                       ǫqα∨ − 1
+  Write ρ∨ = α∈F0 lα α∨ . Choose M ∈ N such that
+              P
+
+                              M > N|F0 |max{lα }α∈F0 .
+Consequently, if −(x, ρ∨ ) ≥ M then ∃α ∈ F0 such that −(x, α∨ ) ≥ N.
+In order to start the induction, choose Cǫ > 0 such that equation
+3.1 holds ∀x ∈ Q− for which −(x, ρ∨ ) < M (a finite subset of Q− ).
+Let x ∈ Q− with −(x, ρ∨ ) ≥ M, and assume by induction that 3.1
+holds ∀y ∈ Q− such that (y, ρ∨) > (x, ρ∨ ). Choose α ∈ F0 such that
+−(x, α∨ ) ≥ N, which is possible by our choice of M, and let s = sα∨ .
+We write (assuming α∨ ∈ 2Y , the other case being similar and easier):
+(3.5)
+ Tu θx Tv =
+     = Tu Ts (Ts−1 θx Ts )Ts−1 Tv
+                    (x,α∨ )
+     = Tu Ts (θx θ−α )Ts−1 Tv +
+                                                     1 − θ(x,α∨ )
+                                     1/2                       −α
+         + Tu (qα∨ /2 qα∨ − 1) + qα∨ /2 (qα∨ − 1)θ−α θx              Ts−1 Tv
+                                                           1 − θ−2α
+Now we note that
+(3.6)
+           
+                                 Tus                 if l(us) = l(u) + 1
+   Tu Ts =
+                 (qα∨ qα∨ /2 − 1)Tu + qα∨ qα∨ /2 Tus if l(us) = l(u) − 1
+and that, similarly,
+(3.7)
+           
+    −1                              Tsv                       if l(sv) = l(v) − 1
+  Ts Tv =
+                (qα−1∨ qα−1∨ /2 − 1)Tv + qα−1∨ qα−1∨ /2 Tsv   if l(sv) = l(v) + 1
+Now 3.5 leads directly to the desired result when we use the simple
+equations 3.6 and 3.7, together with the induction hypothesis, the fact
+that −(x, α∨ ) ≥ N, and the inequality 3.3.                          
+
+Corollary 3.2. Et is weakly convergent if Re(t) < δ −1/2 . Here we use
+the ordering on the space Trs = Hom(X, R+ ) of real characters of X,
+given by t1 < t2 ⇔ t1 (α) < t2 (α)∀α ∈ R0,+ .
+  Proof.     On a basis element Tu θy we have to show that
+                          X
+                             |t(y − x)||τ (Tu θx )|
+                               x∈X
+                                           21
+is convergent. By Lemma 3.1 it is enough to check the convergence of
+                       X
+                                      1/2
+                           Re(t)(x)δǫq    (x).
+                              x∈Q+
+
+This is clear when we choose ǫ sufficiently small.                               
+
+Definition 3.3. The series Et ∈ H∗ will be called “the Eisenstein se-
+ries” for H.
+
+3.2. Meromorphic continuation of Et
+  The formal series Et has meromorphic continuation to T , and is in
+fact a rational function. This simple fact is proved in the next lemma.
+Lemma 3.4. Recall the notations of Example 2.6. The functional
+D(t)Et (with Re(t) < δ −1/2 ) can be written as:
+                               X
+                   D(t)Et =         Dww0 w Rw Etw Rw−1 ,
+                                   w∈W0
+
+where
+                                     X
+                         Etw =                  t(−wx)θx .
+                                 x∈X + :w∈W x
+
+In particular, ∀h ∈ H, t → D(t)Et (h) extends to a regular function on
+T.
+  Proof.     This is clear from the relation given in Corollary 2.11, since
+           D(t)Et = DEt
+                    X                          X
+                  =     Dww0 w Dw−1                      t(−wx)θwx
+                      w∈W0                x∈X + :w∈W x
+                                                                    !
+                      X                        X
+                  =          Dww0 w Rw                   t(−wx)θx       Rw−1 .
+                      w∈W0                x∈X + :w∈W x
+
+                                                                                 
+
+Theorem 3.5. Recall Definition 2.25 of the matrix element Et . We
+have:
+                     D(t)Et = ∆(t−1 )Et .
+   Proof. As we already remarked in the beginning of this section, it
+is clear that Et and Et are proportional. In order to find the ratio of
+proportionality, we project both of them onto Macdonald’s spherical
+function φt . In the case of Et this was done in Proposition 2.29.
+                                          22
+  Now let us concentrate on Et . We write
+            D(t)Et (θx+ ) = DEt (θx+ )
+                         = τ (T0+ DEt T0+ θx )
+(3.8)                       X
+                         =       τ (T0+ Dww0 w Rw Etw Rw−1 T0+ θx ).
+                            w∈W0
+
+  Before we continue, it is convenient to introduce some more notation.
+Let f and g be elements in H∗ . We say that f and g are asymptotically
+equal if there exists an N ∈ N such that f (Twtx ) = g(Twtx ), ∀w ∈ W0
+and ∀x ∈ X that satisfy the condition: ∀α ∈ R, |(x, α∨ )| ≥ N. This is
+an equivalence relation on H∗ , which we shall denote by f ∼ g. Note
+that ∼ is respected by the left and right H module structure of H∗ ,
+and that the equivalence class of 0 ∈ H∗ contains H ⊂ H∗ .
+  Given t ∈ T , we introduce a right and a left evaluation map, denoted
+h → h(t) and h → (t)h respectively, from H to H0 . These maps are
+defined on basis elements by:
+                            (Tw θx )(t) = t(x)Tw
+and
+                            (t)(θx Tw ) = t(x)Tw .
+Of course, the right (left) evaluation is the unique homomorphism of
+left (right) H0 modules extending the usual evaluation map θx → t(x)Te
+on A.
+   With these notations it is clear that
+        Dww0 w Rw Etw Rw−1 ∼ Dw0 w (w −1t)Rw (w −1 t)Etw (w −1 t)Rw−1
+                                                                      
+
+Moreover, using the Definitions 2.4 and 2.9 we easily find:
+                          Rw (w −1t) = rw (w −1 t)
+and
+                                                  Y
+             (w −1 t)Rw−1 = rw−1 (t−1 )                       (−t(β)).
+                                              β∈R1,+ ∩wR1,−
+
+After this simplification we can deal with the left and right multiplica-
+tion by T0+ that occurs in 3.8. We can use the fact that T0+ is central
+in H0 , and that, by Lemma 2.7 and Lemma 2.27, we have:
+                       T0+ rw (w −1 t) = nw−1 (t−1 )T0+
+and
+                      rw−1 (t−1 )T0+ = T0+ nw−1 (t−1 ).
+                                         23
+Now continue equation 3.8, to obtain for x ∈ X + very far from walls:
+D(t)Et (θx+ ) =
+   X
+=        τ (T0+ Dww0 w Rw Etw Rw−1 T0+ θx )
+    w∈W0
+    X           Y
+=          {             (−t(β))}Dw0 w (t)nw−1 (t−1 )2 τ (T0+ Etw T0+ θx )
+    w∈W0 β∈R1,+ ∩wR1,−
+     X           Y
+=          {              (−t(β))}{nw0w (w −1 t)nw−1 (t−1 )}
+    w∈W0 β∈R1,+ ∩wR1,−
+                                                                X
+                               {nw0 w (w −1 t−1 )nw−1 (t−1 )}           t(−wy)τ (θy+ θx )
+                                                                y∈X +
+
+     q(w0) X        Y
+=               {                      (−t(β))}nw (t)n(t−1 )(w0 w −1 t)(x)
+     P0 (q)2 w∈W β∈R ∩wR
+                  0      1,+     1,−
+
+               (using Lemma 2.7 and Proposition 2.31)
+  q(w0 )3        −1
+                           X
+=         ∆(t)∆(t   )c(t)     c(wt)wt(x)
+  P0 (q)2                 w∈W           0
+           2
+  q(w0 )
+=         ∆(t)∆(t−1 )c(t)φt (θx+ )
+   P0 (q)
+  q(w0 )
+=        ∆(t−1 )n(t−1 )φt (θx+ )
+  P0 (q)
+Comparing this result with Proposition 2.29 finally gives the desired
+result.                                                            
+
+Remark 3.6. Surprisingly, the result of the above computation is cor-
+rect for all strongly dominant x in D(t)Et (θx+ ). This is better than one
+would expect, at first sight, from this method of computation!
+
+3.3. Proof of the main theorem
+  By Theorem 3.5 we may write, when Re(t) < δ −1/2 :
+                                                           
+              X                  Et                1
+(3.9)    Et =     t(−x)θx =
+              x∈X
+                              q(w0 )∆(t)    q(w0 )c(t−1 )c(t)
+
+The main Theorem 1.14 follows by taking the trace τ in formula 3.9,
+using Proposition 2.24.
+
+                                            24
+3.4. A disintegration of the trace
+   The formula for the trace we have now derived is only a simple
+formal consequence of formula 3.9. Formula 3.9 is itself of fundamental
+interest, since it is the starting point for the spectral analysis of H. This
+may be illustrated by the following obvious disintegration formula : if
+t0 ∈ Trs ∈ Hom(X, R+ ), the split real form of T , with t0 < δ −1/2 , then
+                                XZ
+                          Te =             t(−x)θx dt
+                                    x∈X   t∈t0 Tc
+(3.10)                              Z
+                                =              Et dt.
+                                     t∈t0 Tc
+Thus, when we use 3.9, and interpret formula 3.10 as a weak integral
+of a function with values in H∗ , we obtain:
+Theorem 3.7.
+                                                   
+                                       Et                      dt
+                    Z
+(3.11)         τ=                                                         .
+                      t∈t0 Tc       q(w0 )∆(t)          q(w0 )c(t−1 )c(t)
+   Here Tc = Hom(X, S 1 ), the compact form of the algebraic torus T ,
+and dt denotes the holomorphic n-form on T which restricts to the
+normalized Haar measure on Tc . This formula might be called “the
+Laplace inversion formula” for H. In order to refine this formula to
+the level of a spectral resolution of τ , we need to carry out a contour
+shift, sending t0 to e ∈ Trs . The resulting formula will be an integral
+of tempered characters of H, against a positive measure. This refine-
+ment of Theorem 3.7 requires several techniques, and will be discussed
+elsewhere.
+   Macdonald’s spectral resolution [4] of the trace function of the al-
+gebra H+ can be recovered easily from Theorem 3.7, by applying the
+projection onto the spherical function as in Theorem 3.5. We find:
+                               Z
+                      τ |H+ =           T0+ Et T0+ dt
+                                t∈t0 Tc
+                                 1                    dt
+                                        Z
+(3.12)                      =                   φt −1
+                               P0 (q) t∈t0 Tc c(t )
+                                 1                  dt
+                                        Z
+                            =                 φt −1
+                               P0 (q) t∈Tc c(t )
+We can send t0 to e in Trs without meeting poles of the integrand,
+because the projection of Et onto φt created a “window” in the set of
+poles. This step is crucial, and explains the simplicity of the spherical
+harmonic analysis. In particular there is only continuous spectrum in
+this case.
+                                               25
+  We resume the computation of 3.12:
+
+                      1       X Z          dt
+         τ |H+ =                      φt
+                 |W0 |P0 (q) w∈W t∈Tc c(wt−1 )
+                                0
+                                                !
+                      1                               dt
+                             Z        X
+               =                  φt      c(wt)
+                 |W0 |P0 (q) t∈Tc    w∈W0
+                                                  c(t)c(t−1 )
+                      1                dt
+                             Z
+               =                  φt          .
+                 |W0 |q(w0 ) t∈Tc c(t)c(t−1 )
+
+  More difficult is the formula that one obtains after projection onto
+the anti-spherical function φ−                    −         −         −
+                              t defined by φt (h) = P0 (q)(T0 , ĥ(t)T0 ),
+       −
+with T0 the central idempotent of H0 corresponding to the sign repre-
+sentation Tw → (−1)l(w) of H0 . Here one obtains:
+                             Z
+                     τ |H− =          T0− Et T0− dt
+                              t∈t0 Tc
+(3.13)
+                                 1                    dt
+                                        Z
+                           =       −1
+                                                 φ−t      .
+                             P0 (q ) t∈t0 Tc         c(t)
+
+This time, the window in the set of poles of the integrand is in the
+direction of the positive chamber of Trs , so we cannot avoid the poles
+when we shift the contour. Nonetheless, the structure of the set of
+poles which one has to deal with, is essentially simpler than in the case
+of Theorem 3.7. The anti-spherical case was dealt with in [1]. It gives
+insight in the anti-spherical Plancherel measure, in particular in the
+formal degrees of the discrete spectrum (with anti-spherical vector!).
+   We expect that it is possible to find similar information for the full
+tempered spectrum, starting from Theorem 3.7.
+
+
+References
+ [1] G.J. Heckman, E.M. Opdam, Harmonic analysis for affine Hecke algebras,
+     Current Developments in Mathematics (S.-T. Yau, editor), 1996, Intern. Press,
+     Boston.
+ [2] S. Kato, Irreducibility of principal series representations for Hecke algebras,
+     Inv. Math. 87, (1983), 929-943.
+ [3] G. Lusztig, Affine Hecke algebras and their graded version, J. Amer. Math.
+     Soc. 2 (1989), no. 3, pp. 599–635.
+ [4] I.G. Macdonald, Sperical functions on a group of p-adic type, Publ. Ramanujan
+     Institute 2 (1971).
+ [5] R. Steinberg, On a theorem of Pittie, Topologie 14 (1975), 173-177.
+                                        26
+  Korteweg-De Vries Institute for Mathematics, Universiteit van Am-
+sterdam, Plantage Muidergracht 24, 1018 TV Amsterdam, The Nether-
+lands.
+  E-mail address: opdam@wins.uva.nl
+
+
+
+
+                                27
+

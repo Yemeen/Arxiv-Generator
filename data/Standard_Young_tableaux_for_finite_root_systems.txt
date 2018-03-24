@@ -1,0 +1,1765 @@
+                                                                      Standard Young tableaux for finite root systems
+
+                                                                                              Arun Ram∗
+arXiv:math/0401325v2 [math.RT] 27 Feb 2004
+
+
+
+
+                                                                                       Department of Mathematics
+                                                                                          Princeton University
+                                                                                          Princeton, NJ 08544
+                                                                                       rama@math.princeton.edu
+                                                                                        Preprint: March 26, 1998
+
+                                             Abstract. The study of representations of affine Hecke algebras has led to a new notion of shapes
+                                             and standard Young tableaux which works for the root system of any finite Coxeter group. This
+                                             paper is completely independent of affine Hecke algebra theory and is purely combinatorial. We
+                                             define generalized shapes and standard Young tableaux and show that these new objects coincide
+                                             with the classical ones for root systems of Type A. The classical notions of conjugation of shapes,
+                                             ribbon shapes, axial distances, and the row reading and column reading standard tableaux, have
+                                             natural generalizations to the root system case. In the final section we give an interpretation of
+                                             the shapes and standard tableaux for root systems of Type C which is in a form similar to classical
+                                             theory of shapes and standard tableaux.
+
+                                             0. Introduction
+                                                  In my recent work on representations of affine Hecke algebras [Ra1] I have been led to a
+                                             generalization of standard Young tableaux. These generalized tableaux are important in the context
+                                             of representation theory because the standard tableaux model the internal structure of irreducible
+                                             representations of the affine Hecke algebra. In fact, most of the time the number of tableaux of
+                                             a given shape is the same as the dimension of the corresponding irreducible representation of the
+                                             affine Hecke algebra.
+                                                  In this paper I introduce and study generalized shapes and standard tableaux purely combina-
+                                             torially. The main theorem is that the generalized standard tableaux of a given shape describe the
+                                             connected components of a certain graph, the calibration graph. It is this graph which is intimately
+                                             connected to the structure of representations of affine Hecke algebras.
+                                                  In the Type A case the generalized shapes can be converted into “placed configurations of
+                                             boxes”. This conversion is nontrivial and is the subject of Section 3. In the cases where this placed
+                                             configuration of boxes is a placed skew shape the generalized standard tableaux coincide with the
+                                             classical standard tableaux of a skew shape. The generalized skew shapes play a major role in the
+                                             results on representations of affine Hecke algebras which are obtained in [Ra1].
+                                                  In Section 1 I give definitions of
+                                                   (a)   skew shapes,
+                                                   (b)   ribbon shapes,
+                                                   (c)   axial distances,
+                                                   (d)   conjugation of shapes, and
+                                                  ∗
+                                                      Research supported in part by National Science Foundation grant DMS-9622985 and a Postdoctoral Fellowship at
+                                             the Mathematical Sciences Research Institute.
+2                                             arun ram
+
+     (e) row reading and column reading tableaux,
+in the generalized setting. In Section 4 it is shown that these definitions yield the classical versions
+of these objects in the Type A case. The last section of this paper explains how one can convert
+the generalized shapes and standard tableaux for the Type C case into configurations of boxes and
+fillings. In this form the shapes and standard tableaux for Type C look similar to the classical
+standard Young tableaux.
+      It is my hope that others will also take up the study of the generalized shapes and standard
+tableaux introduced in this paper. There are many more problems than there is time for solving
+them and every combinatorial fact which can be proved about these objects says something about
+the structure of representations of affine Hecke algebras. One hopes that everything that is known
+about classical standard Young tableaux will have an analogue in this more general setting. Al-
+though I have uncovered some of these generalizations, there are many facets of classical tableaux
+theory which still need to be generalized.
+      From a representation theoretic point of view, one expects that there might exist generaliza-
+tions of
+       (a) the Robinson-Schensted-Knuth correspondence,
+      (b) the Littlewood-Richardson coefficients,
+       (c) the Kostka-Foulkes polynomials,
+      (d) major index and descents of tableaux,
+       (e) charge of tableaux,
+       (f) Jacobi-Trudi formulas.
+Any solutions to these problems would be extremely helpful for understanding the underlying
+representation theory. It is possible that some of the generalizations might be obtained simply by
+understanding how to do them for the Type C tableaux given in the last section of this paper.
+This approach is attractive since the form of the Type C tableaux given in the last section looks
+so similar to classical tableau theory.
+
+Remarks on the results in this paper
+(1) Recently, it has become clear to me that one of the reasons that skew Schur functions play
+    such a important role in the classical theory of symmetric functions is because the skew shapes
+    describe particularly well behaved irreducible representations of the affine Hecke algebra of
+    type A. Since these nice representations exist in all types it seems reasonable that the many
+    wonderful identities involving skew Schur functions should have general type analogues in
+    terms of the generalized skew shapes defined in this paper. An example of a skew Schur
+    function identity that has a particularly nice generalization to all types is the identity in [Mac
+    I §5 Ex. 21b].
+(2) A remark similar to (1) can be made concerning ribbon shapes. This special class of shapes
+    has a good generalization to all types and the representation theory associated to ribbon
+    shapes has special features [Ro], [Mat, 4.3.5]. This fact seems to give some philosophical
+    “reason” why there is such an amazing theory of ribbon Schur functions. The theory of
+    ribbon Schur functions has been developed in the last decade by Lascoux, Leclerc, Thibon,
+    Krob, Reutenauer, Malvenuto and others [GK] [La1-2]. I am sure that there is much to learn
+    about the representation theory of affine Hecke algebras from what is already known in the
+    ribbon (and noncommutative) Schur function theory.
+(3) The theory of generalized shapes gives rise to some strange new shapes even in the type A
+    case, see Section 3.6. To my knowledge these shapes have not been studied before but they do
+    retain many of the combinatorial properties that skew shapes have. In particular, standard
+                        standard young tableaux for root systems                                      3
+
+    tableaux make perfectly good sense for these shapes and these strange standard tableaux do
+    have representation theoretic meaning.
+(4) There seem to be strong connections between the combinatorics in this paper, the combina-
+    torics of the Shi arrangements (see [St1-2], [AL], [He], [ST]) and the combinatorics of sign
+    types developed by Shi [Sh3]. These connections need to be better understood.
+(5) I do not think that there is a connection between the generalized standard Young tableaux
+    introduced in this paper and the generalized tableaux of P. Littelmann [Li1-2]. Littelmann’s
+    analogue of tableaux are really a generalization of column strict tableaux not of standard
+    tableaux. Column strict tableaux give information about the representations of GLn (C) and
+    standard tableaux give information about the representations of the symmetric group Sn .
+    There is an analogous dichotomy in the generalized case; Littelmann’s generalized column
+    strict tableaux model the representations of complex semisimple Lie groups and my generalized
+    standard tableaux model the representations of affine Hecke algebras. At the moment, I do
+    not believe that there is any connection between the representation theories of the complex
+    Lie groups and the affine Hecke algebras which would allow one to transfer information from
+    one side to the other (except in the type A case, where one has a Schur-Weyl type duality.)
+
+Acknowledgements
+     This paper is only a part of a large project [Ra1-3] [RR1-2] on representations of affine Hecke
+algebras which I have been working on intensely for about a year. During that time I have benefited
+from conversations with many people. To choose only a few, there were discussions with S. Fomin,
+M. Vazirani, L. Solomon, F. Knop and N. Wallach which played an important role in my progress.
+There were several times when I tapped into J. Stembridge’s fountain of useful knowledge about
+root systems. G. Benkart was a very patient listener on many occasions. R. Simion, T. Halverson,
+H. Barcelo, P. Deligne, and R. Macpherson all gave large amounts of time to let me tell them my
+story and every one of these sessions was helpful to me in solidifying my understanding. I thank
+C. Kriloff for her amazing proofreading.
+     I single out Jacqui Ramagge with special thanks for everything she has done to help with
+this project: from the most mundane typing and picture drawing to deep intense mathematical
+conversations which helped to sort out many pieces of this theory. Her immense contribution is
+evident in that some of the papers in this series on representations of affine Hecke algebras are
+joint papers.
+     A portion of this research was done during a semester stay at Mathematical Sciences Research
+Institute where I was supported by a Postdoctoral Fellowship. I thank MSRI and National Science
+Foundation for support of my research.
+
+1. Generalized shapes and standard Young tableaux
+
+(1.1) Notations.       Let W be a finite Coxeter group and let R be the root system of W . The
+root system R spans a real vector space which we shall denote Rn . There is an inner product on
+Rn via which W is a group generated by reflections. Fix a system R+ of positive roots in R and
+write α > 0 if α ∈ R+ . If w ∈ W the inversion set of w is
+
+                                     R(w) = {α > 0 | wα < 0 }.
+
+Let {α1 , . . . , αn } be the simple roots in R+ and let s1 , . . . , sn denote the corresponding simple
+reflections in W . The positive roots determine a fundamental chamber C = {x ∈ Rn | hx, αi >
+0 for all α ∈ R+ }. An element x ∈ Rn is dominant if x ∈ C, the closure of the chamber C.
+4                                               arun ram
+
+(1.2) Placed shapes and standard tableaux.  If γ ∈ C define
+
+           Z(γ) = α ∈ R+ | hγ, αi = 0
+                                     	
+                                        and    P (γ) = {α ∈ R | hγ, αi = 1} .
+
+The set Z(γ) ∪ −Z(γ) is a (parabolic) root subsystem of R and is generated by the simple roots
+that it contains. The stabilizer Wγ of γ in W is the Weyl group of the subsystem Z(γ) and the
+set P (γ) is stable under the action of Wγ .
+
+Remark. The sets Z(γ) and P (γ) appear in Heckman and Opdam [HO, Definition 2.1] and im-
+plicitly in other works [K1, Theorem 2.2].
+
+     A placed shape is a pair (γ, J ) where γ ∈ C and J ⊆ P (γ). A standard tableau of shape (γ, J )
+is an element w ∈ W such that
+
+                               R(w) ∩ Z = ∅         and     R(w) ∩ P = J.
+
+In Theorem 3.5 we shall show that this is a generalization of the classical notion of standard Young
+tableau. Let
+                         F (γ,J) = { standard tableaux of shape (γ, J )}.
+
+Examples
+(1) If γ is a generic element of Rn then Z(γ) = P (γ) = ∅. In this case the only possibility for J
+                       (γ,∅)
+    is J = ∅ and  PF         = W.
+               1
+(2) Let ρ = 2 α>0 α∨ , where α∨ = 2α/(α, α). Then Z(ρ) = ∅ and P (ρ) = {α1 , . . . , αn }. If
+    J ⊆ {α1 , . . . , αn } we have
+
+                  F (ρ,J) = {w ∈ W | D(w) = J },           where D(w) = {αi | wsi < w}
+
+     is the right descent set of w ∈ W .
+
+(1.3) A nonemptiness condition.          I feel that the following conjecture should have a simple
+slick proof. The =⇒ direction is easy and it may be possible to prove the other direction by using
+[Bou, Ch. VI §1, Prop. 22]. For Type A the conjecture is true and is a consequence of Theorem
+4.5 of section 4.
+
+Conjecture. Let (γ, J ) be a shape. The set F (γ,J) is non-empty if and only if J satisfies the
+condition
+                       If β ∈ J , α ∈ Z and β − α ∈ R+ then β − α ∈ J .
+
+(1.4) Placed skew shapes.           If γ ∈ Rn view γ as the function on the root system R given by
+
+                                           γ:   R   −→      R
+                                                α   7−→   hγ, αi
+
+The element γ is regular if hγ, αi =    6 0 for all α ∈ R, and is integral if hγ, αi ∈ Z for all α ∈ R. For
+each subset K ⊆ {α1 , . . . , αn } let RK be the root system generated by K and let WK be the Weyl
+group of RK . Let γ K denote the function γ restricted to RK .
+    A placed shape (γ, J ) is a placed skew shape if for all w ∈ F (γ,J) ,
+                                          
+     (a) for each simple root αi , wγ  {αi }
+                                                is regular, and
+                       standard young tableaux for root systems                                    5
+
+                                roots {αi , αj }
+     (b) for each pair of simple
+              either        wγ {α ,α } is regular
+                                i j
+                  or        wγ 
+                               {αi ,αj }
+                                        is in the W{α   -orbit of
+                                                     i ,αj }
+
+                           the function τ given by hτ, αi i = 1 and hτ, αj i = 0,
+                           where αi is long and αj is short.
+
+Remark. In the type A case, a definition of skew shape similar to the one given above has also been
+given by Fomin [Fo] in connection with his approach to the theory of seminormal representations
+of the symmetric group.
+
+
+(1.5) Ribbon shapes.       A placed shape (γ, J ) is a placed ribbon shape if Z(γ) = ∅. All placed
+ribbon shapes are placed skew shapes.
+Example. Suppose that (γ, J ), is a ribbon shape and γ is integral. Then Z(γ) = ∅, P (γ) ⊆
+{α1 , . . . , αn } and
+                             F (γ,J) = {w ∈ W | L(w) ∩ P = J },
+where, as in Example 2 of (1.2), L(w) is the left descent set of w.
+
+(1.6)     Although we shall not define the affine Hecke algebra or discuss its representation theory
+in this paper it is important to note that the definition of placed skew shape is motivated by the
+following theorem of [Ra1].
+
+Theorem. Let R be the root system of a finite Weyl group and let H̃ be the corresponding
+affine Hecke algebra. There is a one-to-one correspondence between placed skew shapes (γ, J )
+and irreducible really calibrated representations H̃ (γ,J) of the affine Hecke algebra H̃. Under this
+correspondence
+                     dim(H̃ (γ,J) ) = ( # of standard tableaux of shape (γ, J )).
+
+
+
+(1.7) Conjugation.        Let (γ, J ) be a placed shape and let Wγ be the stabilizer of γ in W .
+Define the conjugate placed shape to be
+
+                                   (γ, J )′ = (−uγ, −u(P (γ) \ J )),
+
+where u is the minimal length coset representative of w0 Wγ ∈ W/Wγ and w0 is the longest element
+of W .
+    It will be useful to note the following:
+
+    (a) P (−uγ) = −uP (γ),                 (b) Z(−uγ) = uZ(γ),           (c) R(u) = R+ \Z(γ).
+
+The proofs are as follows:
+(a) Since γ is dominant, −uγ = −w0 γ is dominant and thus h−uγ, −uαi = 1 only if −uα > 0.
+    With this in mind P (−uγ) = −uP (γ) follows from the equation h−uγ, −uαi = 1 ⇐⇒ hγ, αi =
+    1.
+(b) Let v ∈ Wγ such that w0 = uv. (By [Bou IV §1 Ex. 3], v is unique.) Then R+ ⊇ −w0 Z(γ) =
+    −uvZ(γ) = uZ(γ), and it follows that
+
+             Z(−uγ) = R+ ∩ {α ∈ R | huγ, αi = 0} = R+ ∩ (uZ(γ) ∪ −uZ(γ)) = uZ(γ).
+6                                               arun ram
+
+(c) Let R− = −R+ be the set of negative roots in R. Let v ∈ Wγ such that w0 = uv. Then v is
+    the longest element of Wγ and R(v) = Z(γ). Thus
+
+                       R(u) = {α ∈ R | α ∈ R+ , w0 vα ∈ R− }
+                             = {α ∈ R | α ∈ R+ , vα ∈ R+ },         since w0 R− = R+ ,
+                             = R+ \R(v) = R+ \Z(γ).
+
+
+(1.8) Proposition. Conjugation (γ, J ) ←→ (γ, J )′ is a well defined involution on placed shapes.
+
+Proof.
+(a) The weight −uγ = −uvγ = −w0 γ is dominant (i.e. −uγ ∈ C) and −u(P (γ)\J ) ⊆ P (−uγ)
+    since −uP (γ) = P (−uγ). This shows that (γ, J )′ is well defined.
+(b) Write w0 = uv where where v is the longest element of Wγ . Similarly, write w0 = u′ v ′ where
+    u′ is the minimal length coset representative of w0 Ww0 γ and v ′ is the longest element in Ww0 γ .
+    Conjugation by w0 is an involution on W which takes simple reflections to simple reflections
+    and Ww0 γ = w0 Wγ w0 . It follows that v ′ = w0 vw0 . This gives
+
+                                   u′ u = (w0 v ′ )(w0 v) = w0 w0 vw0 w0 v = 1.
+
+    Then, using fact (1.7a) above,
+
+    −u′ (P (−uγ)\(−u(P (γ)\J ))) = −u′ (−uP (γ)\(−u(P (γ)\J ))) = P (γ)\(P (γ)\J ) = J.
+
+In (4.4) we shall show that this involution is a generalization of the classical conjugation operation
+on partitions.
+
+Remark. In type A, the conjugation involution seems to coincide with the duality operation for
+representations of p-adic GL(n) defined by Zelevinsky [Ze]. Zelevinsky’s involution has been been
+studied further in [MW] and [KZ] extended to general Lie type by Kato [K2] and Aubert [Au].
+
+(1.9) Proposition. The conjugation of shapes involution extends to an involution on standard
+tableaux given by                         1−1          ′
+                                  F (γ,J) ←→ F (γ,J)
+                                    w     ←→ wu−1
+where u is the minimal length coset representative of the coset w0 Wγ .
+
+Proof. Let w ∈ F (γ,J) and let w′ = wu−1 . We must show that R(w′ ) ∩ Z(−uγ) = ∅ and
+R(w′ ) ∩ P (−uγ) = −u(P (γ \ J )). Let R− = −R+ be the set of negative roots. We shall use the
+facts in (1.7) freely.
+(a) Since R(w) ∩ Z(γ) = ∅, we get
+
+      u−1 R(wu−1 ) ∩ Z(γ) = {β ∈ R | uβ ∈ R(wu−1 ), β ∈ Z(γ)}
+                            = {β ∈ R | uβ ∈ R+ , wu−1 uβ ∈ R− , β ∈ Z(γ)}
+                            = {β ∈ R | β ∈ u−1 R+ , wβ ∈ R− , β ∈ Z(γ)}
+                            = {β ∈ R | β ∈ u−1 R+ , β ∈ R(w), β ∈ Z(γ)},          since Z(γ) ⊆ R+ ,
+                            = {β ∈ R | β ∈ u−1 R+ , β ∈ R(w) ∩ Z(γ)}
+                            = ∅,
+                       standard young tableaux for root systems                                     7
+
+and it follows that
+               R(w′ ) ∩ Z(−uγ) = R(wu−1 ) ∩ uZ(γ) = u u−1 R(wu−1 ) ∩ Z(γ) = ∅.
+                                                                         
+
+(b) Assume that w ∈ W is such that R(w) ∩ P (γ) = J . Then
+    −u−1 R(wu−1 ) ∩ P (γ) = {β ∈ R | − uβ ∈ R(wu−1 ), β ∈ P (γ)}
+                           = {β ∈ R | − uβ ∈ R+ , −wu−1 uβ ∈ R− , β ∈ P (γ)}
+                           = {β ∈ R | uβ ∈ R− , wβ ∈ R+ , β ∈ P (γ)}
+                           = {β ∈ R | β ∈ R(u), β ∈ R+ \R(w), β ∈ P (γ)},       since P (γ) ⊆ R+
+                           = {β ∈ R | β ∈ R+ \Z(γ), β ∈ R+ \R(w), β ∈ P (γ)}
+                           = {β ∈ R | β ∈ R+ \Z(γ), β ∈ P (γ)\J },     since R(w) ∩ P (γ) = J ,
+                           = P (γ)\J,    since Z(γ) and P (γ) are disjoint.
+This yields
+R(w′ ) ∩ P (−uγ) = R(wu−1 ) ∩ −uP (γ) = −u −u−1 R(wu−1 ) ∩ P (γ) = −u (P (γ)\J ) .
+                                                                
+
+
+
+(1.10) Axial distances.          Let (γ, J ) be a placed shape and let w ∈ F (γ,J) be a standard
+tableaux of shape (γ, J ). Let α ∈ R be a root. The α-axial distance for w is the value
+                                          dα (w) = hwγ, αi.
+These numbers are crucial to the construction of irreducible representations of the affine Hecke
+algebra which is given in [Ra1]. In (4.1) we shall see that they are analogues of the axial distances
+used by A. Young [Y] in his constructions of the irreducible representations of the symmetric group.
+
+(1.11) Row reading and column reading tableaux.              If w ∈ W let R(w) be the inversion
+set of w. The weak Bruhat order is the partial order on W given by
+                                   v≤w        if    R(v) ⊆ R(w).
+This definition is not the usual definition of the weak Bruhat order but is equivalent to the usual
+one by [Bj, Prop. 2].
+     Let (γ, J ) be a placed shape. A column reading tableau of shape (γ, J ) is a minimal element
+of F (γ,J) in the weak Bruhat order. A row reading tableau of shape (γ, J ) is a maximal element of
+F (γ,J) in the weak Bruhat order.
+     A set of positive roots K is closed if α, β ∈ K, α + β ∈ R+ implies that α + β ∈ K. The
+closure K of a subset K ⊆ R+ is the smallest closed subset of R+ containing K.
+     The following conjecture says that if γ is integral and F (γ,J) is nonempty then F (γ,J) contains
+a unique column reading tableau and a unique row reading tableau. A proof of the conjecture in
+the type A case is given in Theorem 4.5.
+
+Conjecture. Let (γ, J ) be a placed shape such that γ is dominant and integral. If F (γ,J) 6= ∅
+then
+                                                        c
+      R(wmin ) = J,       R(wmax ) = (P (γ) \ J ) ∪ Z(γ) ,     and      F (γ,J) = [wmin , wmax ],
+where K c denotes the complement of K in R+ and [wmin , wmax ] denotes the interval between wmin
+and wmax in the weak Bruhat order.
+
+
+2. Calibration graphs
+8                                                arun ram
+
+     The following graphs arise naturally in the study of representations of affine Hecke algebras,
+see [Ro], [Rg, Prop. 3.5], and [Ra1]. Let γ ∈ Rn . The calibration graph Γ(γ) is the graph with
+
+                         Vertices:         Wγ
+                           Edges:       wγ ←→ si wγ,         if      hwγ, αi i =
+                                                                               6 ±1.
+
+
+(2.1) Theorem. Assume that γ ∈ Rn is dominant and let Γ(γ) be the corresponding calibration
+graph. The connected components of Γ(γ) are described by the sets
+
+                        F (γ,J)      such that     J ⊆ P (γ) and F (γ,J) 6= ∅,
+
+where F (γ,J) is the set of standard tableaux of shape (γ, J ) defined in (1.2).
+
+
+(2.2)    This theorem will become almost obvious once we change our point of view. The root
+system R determines a (central) hyperplane arrangement
+
+                    A = {Hα | α ∈ R},        where      Hα = {x ∈ Rn | hx, αi = 0}.
+
+The set of chambers (connected components) of Rn \(
+                                                         S
+                                                            α     Hα ) is
+
+            C = {wC | w ∈ W },          where      C = {x ∈ Rn | hx, αi > 0 for all α > 0}
+
+is the fundamental chamber. A chamber C̃ ∈ C is on the positive side (resp. negative side) of the
+hyperplane Hα , α ∈ R+ , if hx, αi > 0 (resp. hx, αi < 0) for all x ∈ C̃. The following Proposition
+allows us to view the calibration graph Γ(γ) in terms of chambers in Rn . Example 2.7 at the end
+of this section illustrates the conversion.
+
+Proposition. Assume that γ ∈ Rn is dominant. Let Z(γ) and P (γ) be as defined in (1.2) and let
+Γ(γ) be the calibration graph containing γ.
+(a) The map
+                           n                                                             o
+                     1−1
+              W γ ←→         C̃ ∈ C | C̃ is on the positive side of Hα for every α ∈ Z(γ)
+
+               wγ     ←→                                  w−1 C
+
+    is a bijection.
+(b) Two vertices uγ and vγ in Γ(γ)        are connected by an edge if and only if the corresponding
+    chambers u−1 C and v −1 C share       a face and the hyperplane Hα containing this face satisfies
+    α 6∈ P (γ).
+(c) The map
+                                                                                              
+                                           C̃ is on the positive side of Hα for α ∈ Z(γ), 
+                                          
+                          
+                     1−1
+            F (γ,J) ←→       C̃ ∈ C        C̃ is on the positive side of Hα for α ∈ P (γ)\J ,
+                                          
+                                              C̃ is on the negative side of Hα for α ∈ J ,
+                                                                                             
+
+              w        ←→                                       w−1 C
+
+    is a bijection.
+                       standard young tableaux for root systems                                      9
+
+Proof. (a) Since γ is dominant the stabilizer Wγ of γ is a parabolic subgroup of W . It is generated by
+the simple reflections si for αi ∈ Z(γ). The statement will follow from the following identifications:
+                1−1
+         Wγ     ←→     W/Wγ
+                1−1
+                ←→     {minimal length coset representatives of W/Wγ }
+                1−1
+                ←→     {wC | w minimal length coset representative of W/Wγ }
+                1−1
+                ←→     {wC | ℓ(wsi ) > ℓ(w) for every αi ∈ Z(γ)}
+                1−1            −1
+                                                                                       	
+                ←→      wC  | w    C is on the positive side of H α for every α ∈ Z(γ)
+                1−1     −1
+                        w C | w−1 C is on the positive side of Hα for every α ∈ Z(γ) ,
+                                                                                         	
+                ←→
+
+where C = {x ∈ E | hx, αi > 0 for all α > 0} is the fundamental chamber. Let us give a step by
+step explanation.
+ (1) There is a natural bijection between W γ and W/Wγ .
+ (2) Since each coset in W/Wγ has a unique coset representative of minimal length (see [Bou, IV.1,
+     Exercise 3] or [Hum, Proposition 1.10c]) we may identify W γ with the set of minimal length
+     coset representatives of W/Wγ .
+ (3) The chambers of Rn \(∪α Hα ) are the regions wC, w ∈ W and thus we can identify W γ with
+     the set {wC | w is a minimal length coset representative of W/Wγ } .
+ (4) An element w ∈ W is a minimal length coset representative of W/Wγ if ℓ(wsi ) > ℓ(w) for
+     every i such that αi ∈ Z(γ).
+ (5) So w is a minimal length coset representative if and only if, for any x ∈ C, hw−1 x, αi i > 0
+     for every αi ∈ Z(γ). Since Z(γ) ∪ −Z(γ) is a root subsystem generated by the simple roots
+     that it contains we have that w is a minimal length coset representative if and only if, for
+     any x ∈ C, hw−1 x, αi > 0 for every α ∈ Z(γ). Thus, we 	may identify W γ with the set
+       wC | w−1 C is on the positive side of Hα for every α ∈ Z(γ) .
+     
+
+ (6) The final step is to replace each chamber wC by the chamber w−1 C.
+     (b) Recall that uγ and vγ are connected by an edge in Γ(γ) if uγ = si vγ and hvγ, αi i =   6 ±1.
+If u and v are minimal length coset representatives of W/Wγ , then the chambers u−1 C and v −1 C
+should be connected by an edge if u = si v and hγ, v −1 αi i =
+                                                             6 ±1. The condition that u = si v means
+that u C = v si C. Since C and si C share a face, it follows that u−1 C = v −1 si C and v −1 C
+       −1       −1
+
+share a face. This face is contained in the hyperplane Hv−1 αi = Hu−1 αi since the face that C and
+si C share is contained in the hyperplane Hαi . Finally, the condition hγ, v −1 αi i =
+                                                                                     6 ±1 is the same
+                 −1                 −1
+as saying that v αi 6∈ P (γ) and u αi 6∈ P (γ).
+     (c) If w ∈ W , α > 0, x ∈ C and wα < 0 then hw−1 x, αi = hx, wαi < 0. Thus
+
+                      R(w) = α > 0 | w−1 C is on the negative side of Hα .
+                                                                       	
+
+
+So the condition R(w) ∩ Z(γ) = ∅ is equivalent to the condition that w−1 C is on the positive side
+of Hα for all α ∈ Z(γ). Similarly the condition R(w) ∩ P (γ) = J is equivalent to the condition
+that w−1 C be on the negative side of Hα for all α ∈ J and on the positive side of Hα for all
+α ∈ P (γ) \ J .
+
+     Parts
+         S(a) and (b) of Proposition 2.2 allow us to view the calibration graph in terms of chambers
+in Rn \ ( α Hα ). The vertices correspond to the chambers on the positive side of the hyperplanes
+Hα , α ∈ Z(γ). The edges of the graph are now the walls between the chambers. The only time that
+a wall between two chambers does not form an “edge of the graph” connecting the two chambers
+(vertices) is when that wall is contained in a hyperplane Hα with α ∈ P (γ).
+10                                             arun ram
+
+(2.3) Proof of Theorem 2.1 From parts (a) and (b) of Proposition 2.2 we get that the connected
+components of the graph Γ(γ) correspond to the connected components of the intersection of
+                                                                                     
+      n                                                   o                  [
+        C̃ | C̃ is on the positive side of Hα for α ∈ Z(γ)  with   Rn \          Hα  .
+                                                                                 α∈P (γ)
+
+
+Proposition 2.2 (c) says that the standard tableaux of shape (γ, J ) correspond to the chambers
+which are on the positive side of Hα for α ∈ Z(γ) ∪ (P (γ) \ J ) and on the negative side of Hα
+for α ∈ J . The points
+                    in the chambers which satisfy these conditions form a connected subset of
+  n
+        S
+R \      α∈P (γ) Hα since the conditions describe them as the points in the intersection of half-
+                                                                                  S             
+spaces in Rn . Finally, one only needs to note that the connected components Rn \    α∈P (γ) H α
+are determined by which subset of hyperplanes in P (γ) they are on the negative side of. This
+completes the proof of Theorem 2.1.
+
+
+(2.4) Invariance properties for calibration graphs.
+Invariance property (1): As unlabeled graphs, Γ(γ) = Γ(wγ) for all w ∈ W .
+Invariance property (2): If Z(γ) = Z(κ) and P (γ) = P (κ) then Γ(γ) = Γ(κ).
+Property (1) is immediate from the definition of Γ(γ). From the definition of the calibration graph
+one sees that the edges of Γ(γ) are controlled by the set P (γ). Since the vertices W γ can be
+identified with the set W/Wγ , where Wγ is the stabilizer of γ, it follows that the graph Γ(γ)
+depends only on Wγ and the set P (γ). Since Wγ is the group generated by the reflections sα for
+α ∈ Z(γ), it follows that the structure of Γ(γ) is dependent only on the sets Z(γ) and P (γ). This
+establishes invariance property (2).
+
+(2.5) Intersections and shapes.         Let A be the arrangement of (affine) hyperplanes given by
+
+                                                             Hα = {x ∈ Rn | hx, αi = 0},
+          A′ = {Hα−δ , Hα , Hα+δ | α ∈ R+ },    where      Hα+δ = {x ∈ Rn | hx, αi = 1},
+                                                           Hα−δ = {x ∈ Rn | hx, αi = −1}.
+
+The intersection lattice L(A′ ) is the set of intersections, I = Hβ ∈B Hβ , B ⊆ A′ , partially ordered
+                                                                T
+
+by inclusion (as subsets of Rn ). Since A′ is symmetric under the Weyl group L(A′ ) also carries a
+Weyl group symmetry. The quotient L(A′ )/W is constructed by identifying intersections I1 and I2
+if there is a w ∈ W such that wI1 = I2 . It follows from the invariance properties of the calibration
+graphs that the distinct calibration graphs are in one-to-one correspondence with the elements of
+the quotient L(A′ )/W . In particular, the number of distinct calibration graphs is finite.
+     Let (γ, J ) and (η, K) be two placed shapes. We shall say that (γ, J ) and (η, K) have the same
+underlying shape if there is a w ∈ W such that
+
+                     Z(wγ) = Z(η),       P (wγ) = P (η),       and     wJ = K.
+
+When (γ, J ) and (η, K) are placed shapes with the same underlying shape then the calibration
+graphs Γ(γ) and Γ(κ) are the same and there is a natural bijection
+                                                1−1
+                                        F (γ,J) ←→ F (η,K) .
+                                 standard young tableaux for root systems                                                                                                                                                                                                                                                                                                11
+
+(2.6)      It would be interesting to determine the size of L(A′ )/W , i.e. the number of distinct
+calibration graphs. A. Postnikov has explained that in the Type A case the numbers f (n) =
+Card(L(A′ )/Sn ) have the following generating function
+                                   Y             k−1   X
+                                      (1 − q k )2    =   f (n)q n .
+                                                                                                     k≥1                                                                                                     n≥1
+
+One can prove this by counting the number of ways of constructing the configurations of boxes
+described in Section 3.
+    The arrangement A′ is very similar to the Shi arrangement
+
+                                                                                                        A′′ = {Hα , Hα+δ | α ∈ R+ }.
+
+C. Athanasiadis has told me that, for the type A case, the number of elements of the intersection
+lattice L(A′′ ) which contain a dominant weight is equal to
+                                                                                                                                     n    
+                                                                                                                                     X  n−1
+                                                                                                                                                                                                            F2k−1
+                                                                                                                                                                    k−1
+                                                                                                                                     k=1
+
+where F1 = 1, F3 = 2, F5 = 5, . . . are the odd Fibonacci numbers. The Shi arrangement has been
+an object of intense recent study, see [Sh3], [St1], [AL]. There are many indications [Sh3], [Xi,1.11,
+2.6] that there should be a strong connection between the work in this paper and the combinatorics
+of the Shi arrangement.
+
+(2.7) Example.        Consider the root system of type C2 where R+ = {α1 , α2 , α1 + α2 , α1 + 2α2 }.
+Realize this root system in R2 by letting α1 = 2ε1 and α2 = ε2 −ε1 , where {ε1 , ε2 } is an orthonormal
+basis of R2 . Let γ ∈ R2 be given by hγ, α1 i = 0 and hγ, α2 i = 1. Then γ is dominant (i.e. in C)
+and integral and
+                          Z(γ) = {α1 }      and     P (γ) = {α2 , α1 + α2 }.
+
+                                                                                                                                    .                                                                                                            .
+                                                                                                                                         .
+                              Hα1 +α2 ........
+                                                                                                                                             .
+                                                                                                                                                  .
+                                                                                                                                                                                Hα1                                                .
+                                                                                                                                                                                                                                        .
+                                                                                                                                                                                                                                            .
+                                                                                                                                                                                                                                                                                                              H
+                                                                                                                              .                                         ...                                                                               .                                                                                     ....       α2
+                                            .....                                                                                .                                        ...                                                                       .                                                                                       .....
+                                                 .....                                                                                .                                     ...                                                              .                                                                                          ....
+                                                      .....                                                                                .                                  .                                                       .                                                                                           ...
+                                                                                                                                                                                                                                                                                                                                    .....
+                                                          .....                                                                                                               ...                                                                                                                                              ..
+                                                              .....                                                                             .                               ...                                               .                                                                                       .....
+                                                                   .....                                                                               .                                                                       .                                                                                     .....
+                                                                       .....                                                                                 . .... .                                                                                                                                            .....
+                                                                             .....
+                                                                                  .....
+                                                                                       .....
+                                                                                                                                                                    . ... .
+                                                                                                                                                                     ....
+                                                                                                                                                                                 γ•                                                                                                              ....
+                                                                                                                                                                                                                                                                                                       .
+                                                                                                                                                                                                                                                                                                     ...
+                                                                                                                                                                                                                                                                                                         .......
+                                                                                           .....                                                                  . ... .                                                                                                                   .....
+                                                                                               .....                                                       . .... .                                                                                                                      ....
+                                                                                                   .....
+                                                                                                       ..                                            .                            ...                                           .                                               .... ....
+                              .                                                                         .....                                                                       ...                                                                                         .                                                                           .
+                                                                                                            .....                             .                                                                                    .                                       .....
+                                .                                                                               .....                    .                                            ...                                               .                             .....                                                                               .
+                                  .                                                                                 .....          .                                                    ...                                                     .                 .....                                                                                 .
+                                    .                                                                                   ..... .                                                           ...                                                         . ........                                                                                      .
+                                      .                                                                                     ....                                                            ...                                                           ..                                                                                        .
+                                          .                                                                             . .........                                                                                                                   .....                                                                                    .
+                                                                                                                                                                                              ...                                                ..... . .
+                   H   α1 +2α2 +δ
+                                                .
+                                                       .
+                                                             .
+                                                                                                              .
+                                                                                                                   .                .....
+                                                                                                                                        .....
+                                                                                                                                             ..
+                                                                                                                                              ......
+                                                                                                                                                                                                ...
+                                                                                                                                                                                                  ...                              .
+                                                                                                                                                                                                                                   ........
+                                                                                                                                                                                                                                            ....
+                                                                                                                                                                                                                                                                           .
+                                                                                                                                                                                                                                                                                                                               .
+                                                                                                                                                                                                                                                                                                                                    .
+                                                                                                                                                                                                                                                                                                                                          .
+                                                                                                        .                                           ..... .... ........                                                                                                         .
+                                                                  .                                 .                                                    ..... ... .....                                                                                                              .                                  .
+                                                                       .                       .                                                               ..... .. .....                                                                                                               .                      .
+                                                                              . .                                                                                  .. . .                                                                                                                        . .
+
+                                                                             s s γ•                                                                                                                                                                                •s γ
+                                      ..................................................................................................................................................................................................................................
+                                                                              . .                                                                                .... . ....                                                                                                                     . .          H                                            α1 +2α2
+                                               1 2. .                                          .                                                            ..... .. ......                                                                                                                 .                      2
+                                                                                                                                                                                                                                                                                                                   .
+                                                                                                    .                                                 ..... ..... ........                                                                                                            .
+                                                             .                                          .                                     . ......                                              .
+                                                                                                                                                                                                    ...                          ..
+                                                                                                                                                                                                                                  ..
+                                                                                                                                                                                                                                   .....                                        .
+                                                                                                                                                                                                                                                                                                                         .
+                                                                                                                                                                                                                                                                                                                               .
+                                                                                                                                            ...
+                                                       .                                                      .                         ....                                                                                            .....                              .                                                        .
+                   H   α1 +2α2 −δ . .                                                                              .
+                                                                                                                        . .......
+                                                                                                                              ..
+                                                                                                                                   .....                                                              .....
+                                                                                                                                                                                                          ...
+                                                                                                                                                                                                                                              .....
+                                                                                                                                                                                                                                                   ..... .
+                                                                                                                                                                                                                                                       .....
+                                                                                                                                                                                                                                                                     .                                                                    .
+                                                                                                                                                                                                                                                                                                                                               .
+                                      .                                                                                     .
+                                                                                                                            ..
+                                                                                                                           .. .                                                                             .
+                                                                                                                                                                                                            ...                                            ......                                                                                   .
+                                    .                                                                                   .
+                                                                                                                        ..
+                                                                                                                         .                                                                                                                            .         .                                                                                     .
+                                  .                                                                               ...
+                                                                                                                    ....           .                                                                          .
+                                                                                                                                                                                                              .                                 .                .....
+                                                                                                                                                                                                                                                                     ..                                                                                 .
+                                .                                                                            .....
+                                                                                                               .                         .                                                                    ...                       .                              .....
+                                                                                                                                                                                                                                                                           ......                                                                         .
+                              .                                                                         .
+                                                                                                        .....                                 .                                                                 ..
+                                                                                                                                                                                                                 .                 .                                            ......                                                                      .
+                                                                                                   .....
+                                                                                                     .                                               .                                                           ...            .                                                     ..
+                     H                                                                   . ...
+                                                                                           .
+                                                                                              ..
+                                                                                               ....                                                        . ... .
+                                                                                                                                                                  . ... .
+                                                                                                                                                                                                                                                                                        .....
+                                                                                                                                                                                                                                                                                            ......
+                                                                                                                                                                                                                                                                                                 .            H                                            α  1 +α2 +δ
+                         α2 +δ
+                                                                       . .....
+                                                                               ....
+                                                                                   .....
+                                                                                        .                                                                            ...
+                                                                                                                                                                    . ... .
+                                                                                                                                                             . .... .2 1 2
+                                                                                                                                                                                         •s s s γ                                                                                                 ......
+                                                                                                                                                                                                                                                                                                       .....
+                                                                                                                                                                                                                                                                                                             .....
+                                                                                                                                                                                                                                                                                                                   .
+                                                                     ...                                                                                                                                                                                                                                            ..
+                                                                                                                                                                                                                                                                                                                     .
+                                                                  ...                                                                                  .                                                           ...         .                                                                                      .....
+                                                              .....                                                                             .                                                                                 .                                                                                        .....
+                                                          .....                                                                                                                                                      .....                                                                                                      .....
+                                                     .....                                                                                 .
+                                                                                                                                                                                                                         ..
+                                                                                                                                                                                                                                      .                                                                                             .....
+                                              ......
+                                                .                                                                                     .                                                                                   .
+                                                                                                                                                                                                                          ...
+                                                                                                                                                                                                                                             .                                                                                          .....
+                                                                                                                                                                                                                                                                                                                                            .....
+                                        .
+                                        .....                                                                                    .                                                                                                                  .                                                                                           .....
+                                      ..                                                                                      .                                                                                             ..                            .
+                                                                                                                         .                                                                                                                                    .
+                                                                                                                    .                                                                                                                                               .
+                                                                                                                .                                                                                                                                                        .
+                                                                                                          .                                                                                                                                                                   .
+                                                                                            Hα2 −δ Hα1 −δ                                                                                                  Hα1 +δ Hα1 +α2 −δ
+
+                                                                                                                               The arrangement A′
+12                                                                                                                                          arun ram
+
+
+                                                                                      γ•
+                                                                                                                                                                                                                                J =∅
+
+
+
+
+                   s1 s2 γ •                                                                                                                                        •s γ                                                        J = {α2 }
+                          ...............................................................................................................................................
+                                                                                                                                                                      2
+
+
+
+
+                                                                                              •s s s γ                                                                                                                          J = {α2 , α1 + α2 }
+                                                                                                2 1 2
+
+
+
+                                  The calibration graph Γ(γ)
+When we convert to regions in R2 \ ( α Hα ) we get the picture
+                                    S
+
+                                 .....
+                                      .....
+                                          .....                                                                                   H                    α1                    J =∅.
+                                                                                                                                                                                         .
+                                                                                                                                                                                             .
+                                                                                                                                                                                               .
+                                                                                                                                                                                                    .
+                                                                                                                                                                                                         .
+                                                                                                                                                                                                              .
+                                                                                                                                                                                                                  .
+                                                                                                                                                                                                                      .
+                                                                                                                                                                                                                            .
+                                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                    .
+                                                                                                                                                                                                                                        .       . ....
+                                                                                                                                                                                                                                            . ........
+                                                                                                                                                                                                                                                      .
+                                               .....                                                                                                                             .           .      .         .       .         .       . ........
+                        H   α1 +α2 ...........
+                                                   .....
+                                                                                                                                                                                         .     .         .        .         .                 .
+                                                                                                                                                                                                                                    . ....... .      Hα2
+                                                                .....                                                                                                            .           .      .         .       .         . ........ .
+                                                                    .....                                                                                                                                                             .
+                                                                         .....                                                                                                           .     .         .        .         . ........ .           .
+                                                                             .....
+                                                                                  .....
+                                                                                      .....
+                                                                                                                                                                               C .
+                                                                                                                                                                                         .
+                                                                                                                                                                                             .
+                                                                                                                                                                                               .
+                                                                                                                                                                                                    .
+                                                                                                                                                                                                         .
+                                                                                                                                                                                                              .       .
+                                                                                                                                                                                                                  . ....    ..
+                                                                                                                                                                                                                             .
+                                                                                                                                                                                                                               .
+                                                                                                                                                                                                                              ..
+                                                                                                                                                                                                                              .
+                                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                .... .
+                                                                                                                                                                                                                                    .       .
+                                                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                                   .
+                                                                                           .....                                                                                                                         ..
+                                                                                                .....                                                                            .           .      .         . ...... .                .       .
+                                                                                                     .....                                                                               .     .         . ........ .               .       .      .
+                                                                                                           .....                                                                                                .
+                                                                                                                .....                                                                                          ..
+                                                                                                                    .....
+                                                                                                                        .....
+                                                                                                                                                                                 .           .      . .....
+                                                                                                                                                                                                          ... .
+                                                                                                                                                                                                               .      .         .       .       .
+                                                                                                                                                                                                                                                     J = {α2 }
+                                                                                                                             .....
+                                                                                                                                  .....
+                                                                                                                                      .....
+                                                                                                                                                                                 .
+                                                                                                                                                                                         .     .       ..
+                                                                                                                                                                                                        .
+                                                                                                                                                                                             . ........ .
+                                                                                                                                                                                                         .
+                                                                                                                                                                                                         .
+                                                                                                                                                                                                           s C        . 2
+                                                                                                                                                                                                                            .
+                                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                    .
+                                                                                                                                                                                                                                        .
+                                                                                                                                                                                                                                            .
+                                                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                                   .
+
+                                                                                                                                           .....                                         . ......... .            .         .       .       .      .
+                                                                                                                                               .....                             . ........ .                 .       .         .       .       .
+                                                                                                                                                   .....
+                                                                                                                                                       .....                             ... .
+                                                                                                                                                            .....                  .......               .        .         .       .       .      .
+                                                                                                                                                                  ..... ..... .                     .         .       .         .       .       .
+                                                                                                                                                                      ..........
+                                                                                                                                                                           .             .     .         .        .         .       .       .      .
+                                                                                                                                                                    ..............
+                                                                                                                                                                      .
+                                                                                                                                                              .....              ..... .            .         .       .         .       .       .
+                                                                                                                                                     . .
+                                                                                                                                                       ......                        .....
+                                                                                                                                                                                         ...   .         .        .         .       .       .      . Hα1 +2α2
+                                                                                                                                                 .....                           . ......... .                .       .         .       .       .
+                                                                                                                                             .....                                       . ......... .
+                                                                                                                                      .......                                                                     .         .       .       .      .
+                                                                                                                                .....
+                                                                                                                                     .                                           .           . ......... .            .         .       .       .
+                                                                                                                    ...
+                                                                                                                      .....
+                                                                                                                           .....                                                         .            s s C
+                                                                                                                                                                                               . ......... . 2
+                                                                                                                                                                                                            ..
+                                                                                                                                                                                                    . ...... .
+                                                                                                                                                                                                                            . 1     .       .      .
+                                                                                                               .....                                                             .           .
+                                                                                                                                                                                                                .
+                                                                                                                                                                                                                                .       .       .
+                                                                                                         .....                                                                           .     .         . ........ .               .       .      .
+                                                                                                 .......                                                                         .           .      .         .     .
+                                                                                                                                                                                                                    ..
+                                                                                                                                                                                                                     ...... .           .       .
+                                                                                             ....
+                                                                                     ........                                                                                            .     .         .        . ......... .             .      .
+                                                                                    .
+                                                                               .....                                                                                             .           .      .         .       . ......... .             .
+                                                                    .
+                                                                    ......
+                                                                          .....                                                                                             s s s C      . 2. 1 . 2 .                       . ........ .
+                                                                                                                                                                                                                                      .
+                                                                                                                                                                                                                                                   .
+                                                             .....
+                                                                   .                                                                                                             .           .      .         .       .         . ........ .
+                                                         .....                                                                                                                                                                            .
+                                                                                                                                                                                                                                    . ........ .
+                                                    ..
+                                                     .....                                                                                                                               .     .         .        .         .
+                                                                                                                                                                                                                                              .
+                                                                                                                                                                                                                                              ..
+                                                   .                                                                                                                             .           .      .         .       .         .       . ......
+                                              .....
+                                          ....                                                                                                                                           .     .         .        .         .       .       . .........
+                                     .....                                                                                                                                                                                                      . .....
+                                 ....                                                                                                                                            .           .      .         .       .         .       .
+                                                                                                                                                                    J = {α2 , α1 + α2 }
+
+The dashed line is the hyperplane corresponding to the root in Z(γ) and the solid lines are the
+hyperplanes corresponding to the roots in P (γ).
+
+
+3. Type A and configurations of boxes
+
+
+(3.1) The root system.             Let {ε1 , . . . , εn } be an orthonormal basis of Rn so that each sequence
+γ = (γ1 , . . . , γn ) ∈ Rn is identified with the vector γ = i γi εi . The root system of type An−1 is
+                                                                    P
+given by the sets
+
+                 R = {εj − εi | 1 ≤ i, j ≤ n}                                                                                                 and R+ = {εj − εi | 1 ≤ i < j ≤ n} .
+
+The Weyl group is W = Sn , the symmetric group, acting by permutations of the εi .
+                       standard young tableaux for root systems                                    13
+
+(3.2) Partitions, skew shapes, and (classical) standard tableaux.             A partition λ is a
+collection of n boxes in a corner. We shall conform to the conventions in [Mac] and assume that
+gravity goes up and to the left.
+
+
+
+
+Any partition λ can be identified with the sequence λ = (λ1 ≥ λ2 ≥ . . .) where λi is the number
+of boxes in row i of λ. The rows and columns are numbered in the same way as for matrices. In
+the example above we have λ = (553311).
+     If λ and µ are partitions such that µi ≤ λi for all i we write µ ⊆ λ. The skew shape λ/µ
+consists of all boxes of λ which are not in µ. Let λ/µ be a skew shape with n boxes. Number the
+boxes of each skew shape λ/µ along major diagonals from southwest to northeast and
+
+                             write boxi to indicate the box numbered i.
+
+See Example 3.4 below. A (classical) standard tableau of shape λ/µ is a filling of the boxes in the
+skew shape λ/µ with the numbers 1, . . . , n such that the numbers increase from left to right in
+each row and from top to bottom down each column. Let F λ/µ be the set of standard tableaux of
+shape λ/µ. Given a standard tableau t of shape λ/µ define the word of t to be permutation
+                                                                           
+                                                   1       ···      n
+                                   wt =
+                                                t(box1 )   ...   t(boxn )
+
+where t(boxi ) is the entry in boxi of t.
+
+(3.3) Placed skew shapes         Let λ/µ be a skew shape with n boxes. Imagine placing λ/µ on
+a piece of infinite graph paper where the diagonals of the graph paper are indexed consecutively
+(with elements of Z) from southeast to northwest. The content of a box b is the number c(b) of
+the diagonal that b is on. Let
+                                            Xn
+                                        γ=     c(boxi )εi ,
+                                                    i=1
+
+which we identify with the sequence γ = (c(box1 ), c(box2 ), . . . , c(boxn )). The pair (γ, λ/µ) is a
+placed skew shape. It follows from the definitions in (1.2) that
+
+           Z(γ) = {εj − εi | j > i and boxj and boxi are in the same diagonal},       and
+           P (γ) = {εj − εi | j > i and boxj and boxi are in adjacent diagonals}.
+
+Define                                                                       
+                                    j>i
+                                   
+                                                                             
+                   J = εj − εi       box  and  box  are in adjacent diagonals   ,
+                                   
+                                       j         i
+                                     boxj is northwest of boxi
+                                                                            
+
+where northwest means strictly north and weakly west.
+14                                                   arun ram
+
+(3.4) Example.       The following diagrams illustrate standard tableaux and the numbering of
+boxes in a skew shape λ/µ.
+
+                              10 12 13 14                                            3 4 9 12
+                            6 8 11                                                1 5 10
+                            5 7 9                                                 7 13 14
+                        4                                                     2
+             2 3                                                    6 8
+             1                                                      11
+             λ/µ with boxes numbered                            A standard tableau t of shape λ/µ
+
+The word of the standard tableau t is the permutation wt = (11, 6, 8, 2, 7, 1, 13, 5, 14, 3, 10, 4, 9, 12)
+(in one-line notation).
+     The following picture shows the contents of the boxes in the placed skew shape (γ, λ/µ) with
+γ = (−7, −6, −5, −2, 0, 1, 1, 2, 2, 3, 3, 4, 5, 6).
+
+                                                             3 4 5 6
+                                                           1 2 3
+                                                           0 1 2
+                                                     -2
+                                        -6 -5
+                                        -7
+                                     Contents of the boxes of (γ, λ/µ)
+
+In this case J = {ε2 − ε1 , ε6 − ε5 , ε8 − ε7 , ε10 − ε8 , ε10 − ε9 , ε11 − ε9 , ε12 − ε11 }.
+
+
+(3.5)      The following theorem shows how the generalized standard tableaux defined in (1.2)
+reduce to the classical standard Young tableaux in the type A case.
+
+Theorem. Let (γ, λ/µ) be a placed skew shape and let J be as defined in (3.3). Let F λ/µ be the
+set of standard tableaux of shape λ/µ and let F (γ,J) be the set of generalized standard tableaux
+of shape (γ, J ) as defined in (1.2). Then the map
+                                                          1−1
+                                             F λ/µ    ←→        F (γ,J)
+                                               t      ←→         wt ,
+
+where wt is as defined in (3.2), is a bijection.
+
+Proof. If w = (w(1) · · · w(n)) is a permutation in Sn then
+
+                            R(w) = {εj − εi | j > i such that w(j) < w(i) }.
+
+The theorem is a consequence of the following chain of equivalences:
+The filling t is a standard tableau if and only if for all 1 ≤ i < j ≤ n
+(a) t(boxi ) < t(boxj ) if boxi and boxj are on the same diagonal,
+(b) t(boxi ) < t(boxj ) if boxj is immediately to the right of boxi , and
+                          standard young tableaux for root systems                                                 15
+
+(c) t(boxi ) > t(boxj ) if boxj is immediately above boxi .
+These conditions hold if and only if
+(a) εj − εi 6∈ R(w(t)) if εj − εi ∈ Z(γ),
+(b) εj − εi 6∈ R(w(t)) if εj − εi ∈ P (γ) \ J ,
+(c) εj − εi ∈ R(w(t)) if εj − εi ∈ J ,
+which hold if and only if
+
+(a) α 6∈ R(w(t)) if α ∈ Z(γ), (b) α 6∈ R(w(t)) if α ∈ P (γ) \ J ,               and (c) α ∈ R(w(t)) if α ∈ J .
+
+Finally, these are equivalent to the conditions R(w(t)) ∩ Z(γ) = ∅ and R(w(t)) ∩ P (γ) = J .
+
+
+(3.6) Placed configurations           We have described how one can identify placed skew shapes
+(γ, λ/µ) with pairs (γ, J ). One can extend this conversion to associate placed configurations of
+boxes to more general pairs (γ, J ). The resulting configurations are not always skew shapes.
+     Let (γ, J ) be a pair such that γ = (γ1 , . . . , γn ) is a dominant integral weight and J ⊆ P (γ).
+(The sequence γ is a dominant integral weight if γ1 ≤ · · · ≤ γn and γi ∈ Z for all i.) If J satisfies
+the condition
+                        If β ∈ J , α ∈ Z(γ), and β − α ∈ R+ then β − α ∈ J
+then (γ, J ) will determine a placed configuration of boxes. As in the placed skew shape case, think
+of the boxes as being placed on graph paper where the boxes on a given diagonal all have the
+same content. (The boxes on each diagonal are allowed to slide along the diagonal as long as they
+don’t pass through the corner of a box on an adjacent diagonal.) The sequence γ describes how
+many boxes are on each diagonal and the set J determines how the boxes on adjacent diagonals
+are placed relative to each other. We want
+                                                     n
+                                                     X
+                                                γ=          c(boxi )εi ,
+                                                      i=1
+
+and
+       (a) If εj − εi ∈ J then boxj is northwest of boxi , and
+      (b) If εj − εi ∈ P (γ)\J then boxj is southeast of boxi ,
+where the boxes are numbered along diagonals in the same way as for skew shapes, southeast means
+weakly south and strictly east, and northwest means strictly north and weakly west.
+      If we view the pair (γ, J ) as a placed configuration of boxes then the standard tableaux are
+fillings t of the n boxes in the configuration with 1, 2, . . . , n such that for all i < j
+ (a) t(boxi ) < t(boxj ) if boxi and boxj are on the same diagonal,
+ (b) t(boxi ) < t(boxj ) if boxi and boxj are on adjacent diagonals and boxj is southeast of boxi ,
+      and
+ (c) t(boxi ) > t(boxj ) if boxi and boxj are on adjacent diagonals and boxj is northwest of boxi .
+As in Theorem 3.5 the permutation in F (γ,J) which corresponds to the standard tableau t is
+w(t) = (t(box1 ), . . . , t(boxn )). The following example illustrates the conversion.
+
+Example. Suppose γ = (−1, −1, −1, 0, 0, 0, 1, 1, 1, 2, 2, 2) and
+
+      J = {ε4 − ε1 , ε4 − ε2 , ε4 − ε3 , ε5 − ε2 , ε5 − ε3 , ε7 − ε5 , ε7 − ε6 , ε8 − ε6 , ε10 − ε9 , ε10 − ε8 ,
+             ε10 − ε7 , ε11 − ε9 , ε11 − ε8 , ε11 − ε7 , ε12 − ε9 } .
+16                                                        arun ram
+
+The placed configuration of boxes corresponding to (γ, J ) is as given below.
+
+                2                                 10                                 3
+                   2                                 11                                4
+                0 1                                4 7                               1 5
+               -1 0                                1 5                               2 6
+                  -1       1 2                       2           8 12                  9        7 8
+                        -1 0 1                                 3 6 9                        10 11 12
+
+              contents of boxes                numbering of boxes                  a standard tableau
+
+
+
+(3.7) Books of placed configurations.                The most general case to consider is when γ =
+                                               n
+(γ1 , . . . , γn ) is an arbitrary element of R and J ⊆ P (γ). This case is handled as follows. First
+group the entries of γ according to their Z-coset in R. Each group of entries in γ can be arranged
+to form a sequence
+
+ β + Cβ = β + (z1 , . . . , zk ) = (β + z1 , . . . , β + zk ),      where 0 ≤ β < 1, zi ∈ Z and z1 ≤ · · · ≤ zk .
+
+Fix some ordering of these groups and let
+
+                                          ~γ = (β1 + Cβ1 , . . . , βr + Cβr )
+
+be the rearrangement of the sequence γ with the groups listed in order. Since ~γ is a rearrangement
+of γ, the calibration graphs Γ(γ) and Γ(~γ ) are the same (see Invariance Property (1) in (2.4)). This
+means that it is sufficient to understand the standard tableaux corresponding to ~γ .
+     The decomposition of ~γ into groups induces decompositions
+                        [                         [                                              [
+             Z(~γ ) =        Zβi ,    P (~γ ) =        Pβi ,    and, if J ⊆ P (~γ ), then   J=        Jβi ,
+                        βi                        βi                                             βi
+
+
+where Jβi = J ∩ Pβi . Each pair (Cβ , Jβ ) is a placed shape of the type considered in the previous
+subsection and we may identify (~γ , J ) with the book of placed shapes ((Cβ1 , Jβ1 ), . . . , (Cβr , Jβr )).
+We think of this as a book with pages numbered by the values β1 , . . . , βr and with the placed
+configuration determined by (Cβi , Jβi ) on page βi . In this form the standard tableaux of shape
+(~γ , J ) are fillings of the n boxes in the book with the numbers 1, . . . , n such that the filling on each
+page satisfies the conditions for a standard tableau in (3.6).
+
+Example. If γ = (1/2, 1/2, 1, 1, 1, 3/2, −2, −2, −1/2, −1, −1, −1, −1/2, 1/2, 0, 0, 0) then one possi-
+bility for ~γ is
+
+                 ~γ = (−2, −2, −1, −1, −1, 0, 0, 0, 1, 1, 1, −1/2, −1/2, 1/2, 1/2, 1/2, 3/2).
+
+In this case β1 = 0, β2 = 1/2,
+
+β1 + Cβ1 = (−2, −2, −1, −1, −1, 0, 0, 0, 1, 1, 1)              and β2 + Cβ2 = (−1/2, −1/2, 1/2, 1/2, 1/2, 3/2).
+                          standard young tableaux for root systems                                                 17
+
+If J = Jβ1 ∪ Jβ2 where Jβ2 = {ε14 − ε13 , ε17 − ε16 } and
+
+    Jβ1 = {ε3 − ε2 , ε4 − ε2 , ε5 − ε2 , ε6 − ε3 , ε6 − ε4 , ε6 − ε5 , ε9 − ε7 , ε9 − ε8 , ε10 − ε7 , ε10 − ε8 }
+
+then the book of shapes is
+
+                           0       1
+
+                     -2    -1                                             -1    0
+
+                                  -1          1                                 -1        0   1
+
+                                        -1    0                                               0
+
+                                        -2         0     1
+
+                                        0                                           1/2
+
+where the numbers in the boxes are the contents of the boxes. The filling
+
+                           1       8
+
+                     2     4                                              3     6
+
+                                   5         11                                 7      10     14
+
+                                        9    13                                               16
+
+                                        12         15    17
+
+                                        0                                           1/2
+
+is a standard tableau of shape (~γ , J ). This filling corresponds to the permutation
+
+        w = (2, 12, 4, 5, 9, 1, 13, 15, 8, 11, 17, 3, 7, 6, 10, 16, 14)    in F (~γ,J) ⊆ S16 .
+
+
+4. Skew shapes, ribbons, conjugation, etc. in Type A
+     As in the previous section let R be the root system of Type An−1 as given in (3.1). For clarity,
+we shall state all of the results in this section for placed shapes (γ, J ) such that γ is dominant and
+integral, i.e. γ = (γ1 , . . . , γn ) with γ1 ≤ · · · γn and γi ∈ Z. This simplification is mathematically
+unimportant, the reason for it is that it allows us to avoid the notational difficulties which arise
+when one wants to use books of placed shapes with several pages.
+
+(4.1) Axial distance Let (γ, J ) be a placed shape such that γ is dominant and integral. Let
+w ∈ F (γ,J) and let t be the corresponding standard tableau as defined by the map in Theorem 3.5.
+Then it follows from the definitions of γ and wt in (3.2) and (3.3) that
+
+                                hwγ, εi i = hγ, w−1 εi i = c(boxw−1 (i) ) = c(t(i)),
+18                                                       arun ram
+
+where t(i) is the box of t containing the entry i.
+     In classical standard tableau theory the axial distance between two boxes in a standard tableau
+is defined as follows. Let λ be a partition and let t be a standard tableau of shape λ. Let 1 ≤ i, j ≤ n
+and let t(i) and t(j) be the boxes which are filled with i and j respectively. Let (ri , ci ) and (rj , cj )
+be the positions of these boxes, where the rows and columns of λ are numbered in the same way
+as for matrices. Then the axial distance from j to i in t is
+
+                                                dji (t) = cj − ci + ri − rj ,
+
+(see [Wz]). This may seem confusing at first but it is simpler if we rewrite it in terms of the
+corresponding placed shape (γ, J ) where γ is the sequence in Rn determined by some placing of λ
+on infinite graph paper. Then one gets
+
+                        dji (t) = c(t(j)) − c(t(i)) = hwγ, εj − εi i = dεj −εi (w),
+
+where w ∈ F (γ,J) is the permutation corresponding to the standard tableau t (see (3.2)) and dα (w)
+is the generalized axial distance defined in (1.10). This shows that the axial distance defined in
+(1.10) is a generalization of the classical notion of axial distance.
+
+(4.2) Skew shapes.       The following proposition shows that, in the case of a root system of type
+A, the definition of generalized skew shape coincides with the classical notion of a skew shape.
+
+Proposition. Let (γ, J ) be a placed shape such that γ is dominant and integral. Then the
+configuration of boxes associated to (γ, J ) is a placed skew shape if and only if (γ, J ) is a skew
+shape as defined in (1.4).
+
+
+Proof. ⇐=: We shall show that if the placed configuration corresponding to the pair (γ, J ) has any
+2 × 2 blocks of the forms
+                                                                             .       .                       .       .
+                                                                         .       .                       .       .
+                                                                             .       .                       .       .
+                            a               b            a               .       .       a               .       .
+                                .       .                                                    .       .
+                            .       .                                                    .       .
+                                .       .                                                    .       .
+                            .       .       c            b               c               .       .       b
+
+                            Case (1)                     Case (2)                        Case (3)
+         
+then wγ K is not regular for some appropriate w ∈ F (γ,J) and subsystem RK in R. This will show
+that the placed configuration must be a placed skew shape if (γ, J ) is a generalized skew shape. In
+the pictures above the shaded regions indicate the absence of a box and, for notational reference,
+we have labeled the boxes with a, b, c.
+Case (1): Create a standard tableau t such that the 2 × 2 block is filled with
+
+                                                        i−1 i
+                                                             .       .
+                                                         .       .
+
+                                                         .
+                                                             .
+                                                                 .
+                                                                     .   i+1
+
+
+by filling the region of the configuration strictly north and weakly west of box c in row reading
+order (sequentially left to right across the rows starting at the top), putting the next entry in box
+c, and filling the remainder of the configuration in column reading order (sequentially down the
+                      standard young tableaux for root systems                                   19
+
+columns beginning at the leftmost available column). Let w = w(t) be the permutation in F (γ,J)
+which corresponds to the standard tableau t. Let t(i) denote the box containing i in t. Then, using
+the first identity (4.1),
+
+                hwγ, αi + αi+1 i = hwγ, εi+1 − εi−1 i = c(t(i + 1)) − c(t(i − 1)) = 0,
+                                                                                   
+since the boxes t(i + 1) and t(i − 1) are on the same diagonal. It follows that wγ {α ,α } is not
+                                                                                      i+1 i
+regular.
+Case (2): Create a standard tableau t such that the 2 × 2 block is filled with
+                                                                   .       .
+                                                               .       .
+                                               i−1 .               .
+                                                                       .
+                                                                           .
+
+
+
+                                                   i i+1
+
+
+by filling the region weakly north and strictly west of box c in column reading order, putting the
+next entry in box c, and filling the remainder of the configuration in row reading order. Using this
+standard tableau t, the remainder of the argument is the same as for case (1).
+Case (3): Create a standard tableau t such that the 2 × 2 block is filled with
+
+
+                                                                   .       .
+                                                               .       .
+                                               i−1 .               .
+                                                                       .
+                                                                           .
+                                                   .       .
+                                               .       .
+                                               .
+                                                   .
+                                                       .
+                                                           .       i
+
+
+by filling the region strictly north and strictly west of box b in column reading order, putting
+the next entry in box b, and filling the remainder of the configuration in row reading order. Let
+w = w(t) be the permutation in F (γ,J) corresponding to t and let t(i) denote the box containing i
+in t. Then
+                        hwγ, αi i = hwγ, εi − εi−1 i = c(t(i)) − c(t(i − 1)) = 0,
+                                                                         
+since t(i) and t(i − 1) are on the same diagonal. It follows that wγ {α } is not regular.
+                                                                            i
+     =⇒: Let γ ∈ Zn and λ/µ describe a placed skew shape (a skew shape placed on infinite
+graph paper). Let (γ, J ) be the corresponding (generalized) placed shape as defined in (3.3). Let
+w ∈ F (γ,J) and let t be the corresponding standard tableau of shape λ/µ. Consider a 2 × 2 block
+of boxes of t. If these boxes are filled with
+
+
+
+                                           i       j
+
+                                          k        ℓ
+
+
+then either i < j < k < ℓ or i < k < j < ℓ. In either case we have i < ℓ − 1 and it follows that
+ℓ − 1 and ℓ are not on the same diagonal. Thus
+
+                                hwγ, αℓ i = c(t(ℓ)) − c(t(ℓ − 1)) 6= 0,
+20                                               arun ram
+          
+and so wγ {α } is regular.
+             ℓ
+    The same argument shows that one can never get a standard tableau in which ℓ and ℓ − 2
+occur in adjacent boxes of the same diagonal and thus it follows that wγ {α ,α } is regular for
+                                                                                      ℓ−1   ℓ
+
+all w ∈ F (γ,J) .
+     Thus (γ, J ) is a placed skew shape in the sense of (1.4).
+
+
+
+(4.3) Ribbon Shapes.        In classical tableaux theory a border strip (or ribbon) is a skew shape
+which contains at most one box in each diagonal. Although the convention, [Mac, I §1 p. 5], is to
+assume that border strips are connected skew shapes we shall not assume this.
+     Recall from (1.5) that a placed shape (γ, J ) is a placed ribbon shape if γ is regular, i.e.
+hγ, αi =
+       6 0 for all α ∈ R.
+
+Proposition. Let (γ, J ) be a placed ribbon shape such that γ is dominant and integral. Then
+the configuration of boxes coresponding to (γ, J ) is a placed border strip.
+
+Proof. Let (γ, J ) be a placed ribbon shape with γ dominant and regular. Since γ = (γ1 , . . . , γn )
+is regular, γi 6= γj for all i 6= j. In terms of the placed configuration γi = c(boxi ) is the diagonal
+that boxi is on. Thus the configuration of boxes corresponding to (γ, J ) contains at most one box
+in each diagonal.
+
+Example. If γ = (−6, −5, −4, 0, 1, 3, 4, 5, 6, 7) and J = {ε2 − ε1 , ε5 − ε4 , ε7 − ε6 , ε9 − ε8 , ε10 − ε9 }
+then the placed configuration of boxes corresponding to (γ, J ) is the placed border strip
+
+                                                             7
+                                                             6
+                                                           4 5
+                                                           3
+                                                       1
+                                                       0
+
+                                            -5 -4
+                                            -6
+
+
+
+where we have labeled the boxes with their contents.
+
+
+
+(4.4) Conjugation of Shapes.                  Let (γ, J ) be a placed shape with γ dominant and integral
+(i.e. γ = (γ1 , . . . , γn ) with γ1 ≤ · · · ≤ γn and γi ∈ Z) and view (γ, J ) as a placed configuration
+of boxes. In terms of placed configurations, conjugation of shapes is equivalent to transposing the
+placed configuration across the diagonal of boxes of content 0. The following example illustrates
+this.
+                       standard young tableaux for root systems                                             21
+
+Example. Suppose γ = (−1, −1, −1, 0, 0, 1, 1) and J = (ε4 − ε2 , ε4 − ε3 , ε6 − ε5 , ε7 − ε5 ). Then the
+placed configuration of boxes corresponding to (γ, J ) is
+
+                                              -1        0               1
+                                                                        .       .
+                                                                    .       .
+                                                        -1          .
+                                                                        .
+                                                                            .
+                                                                                .       1
+
+                                                                        -1              0
+
+
+in which the shaded box is not a box in the configuration.
+    The minimal length representative of the coset w0 Wγ is the permutation
+                                                                                                   
+                                              1    2     3              4           5       6   7
+                                    u=                                                                  .
+                                              5    6     7              3           4       1   2
+
+We have −uγ = −w0 γ = (−1, −1, 0, 0, 1, 1, 1) and
+
+               −u(P (γ) \ J ) = −u {ε4 − ε1 , ε5 − ε1 , ε5 − ε2 , ε5 − ε3 , ε6 − ε4 , ε7 − ε4 }
+                               = − {ε3 − ε5 , ε4 − ε5 , ε4 − ε6 , ε4 − ε7 , ε1 − ε3 , ε2 − ε3 }
+                               = {ε5 − ε3 , ε5 − ε4 , ε6 − ε4 , ε7 − ε4 , ε3 − ε1 , ε3 − ε2 } .
+
+Thus the configuration of boxes corresponding to the placed shape (γ, J )′ is
+
+                                                   1
+
+                                                   0            1
+                                                                .       .
+                                                            .       .
+                                                   -1       .
+                                                                .
+                                                                    .
+                                                                        .           1
+
+                                                                -1                  0
+
+
+
+
+(4.5) Row reading and column reading tableaux.             Let (γ, J ) be a placed shape such that
+γ is dominant and integral and consider the placed configuration of boxes corresponding to (γ, J ).
+The minimal box of the configuration is the box such that
+   (m1 ) there is no box immediately above,
+   (m2 ) there is no box immediately to the left,
+    (m3 ) there is no box northwest in the same diagonal, and
+    (m4 ) it has the minimal content of the boxes satisfying (m1 ), (m2 ) and (m3 ).
+There is at most one box in each diagonal satisfying (m1 ), (m2 ), and (m3 ). Thus, (m4 ) guarantees
+that the minimal box is unique. It is clear that the minimal box of the configuration always exists.
+     The column reading tableaux of shape (γ, J ) is the filling tmin which is created inductively by
+ (a) filling the minimal box of the configuration with 1, and
+(b) if 1, 2, . . . , i have been filled in then fill the minimal box of the configuration formed by the
+     unfilled boxes with i + 1.
+22                                             arun ram
+
+The row reading tableau of shape (γ, J ) is the standard tableau tmax whose conjugate (tmax )′ is the
+column reading tableaux for the shape (γ, J )′ (the conjugate shape to (γ, J )).
+    Recall the definitions of the weak Bruhat order and closed subsets of roots given in (1.11).
+
+Theorem. Let (γ, J ) be a placed shape such that γ is dominant and integral (i.e. γ = (γ1 , . . . , γn )
+with γ1 ≤ · · · ≤ γn and γi ∈ Z). Let tmin and tmax be the column reading and row reading tableaux
+of shape (γ, J ), respectively, and let wmin and wmax be the corresponding permutations in F (γ,J) .
+Then
+                                                           c
+      R(wmin ) = J,       R(wmax ) = (P (γ) \ J ) ∪ Z(γ) ,       and     F (γ,J) = [wmin , wmax ],
+
+where K c denotes the complement of K in R+ and [wmin , wmax ] denotes the interval between wmin
+and wmax in the weak Bruhat order.
+
+Proof. (a) Consider the configuration of boxes corresponding to (γ, J ). If k > i then either
+c(boxk ) > c(boxi ), or boxk is in the same diagonal and southeast of boxi . Thus when we create
+tmin we have that
+
+        If k > i then boxk gets filled before boxi if and only if boxk is northwest of boxi ,
+
+where the northwest is in a very strong sense: There is a sequence of boxes
+
+                              boxi = boxi0 , boxi1 , . . . , boxir = boxk
+
+such that boxim is either directly above boxim−1 or in the same diagonal and directly northwest of
+boxim−1 . In other words,
+
+             If k > i then tmin (boxk ) < tmin (boxi )   ⇐⇒     boxk is northwest of boxi .
+
+So, from the formula for wt in (3.2) we get
+
+                       If k > i then wmin (k) < wmin (i)       ⇐⇒   εk − εi ∈ J,
+
+where wmin is the permutation in F (γ,J) which corresponds to the filling tmin and J is the closure
+of J in R. It follows that
+                                          R(wmin ) = J .
+                                                                                     c
+    (b) There are at least two ways to prove that R(wmax ) = (P (γ) \ J ) ∪ Z(γ) . One can mimic
+the proof of part (a) by defining the maximal box of a configuration and a corresponding filling.
+Alternatively one can use the definition of conjugation and the fact that R(w0 w) = R(w)c . The
+permutation wmin is the unique minimal element of F (γ,J) and the conjugate of wmax is the unique
+                           ′
+minimal element of F (γ,J) . We shall leave the details to the reader.
+    (c) An element w ∈ W is an element of F (γ,J) if and only if R(w)∩P (γ) = J and R(w)∩Z(γ) =
+∅. Thus F (γ,J) consists of those permutations w ∈ W such that
+                                                                    c
+                                   J ⊆ R(w) ⊆ (P (γ) \ J ) ∪ Z(γ) .
+
+Since the weak Bruhat order is the ordering determined by inclusions of R(w), it follows that F (γ,J)
+is the interval between wmin and wmax .
+                               standard young tableaux for root systems                                                                           23
+
+Example. Suppose γ = (−1, −1, −1, 0, 0, 1, 1) and J = {ε4 − ε2 , ε4 − ε3 , ε6 − ε5 , ε7 − ε5 }. The
+minimal and maximal elements in F (γ,J) are the permutations
+                                                                                                                                       
+                       1       2   3   4           5    6   7                                   1       2           3       4   5   6 7
+        wmin =                                                        and       wmax =                                                        .
+                       1       3   4   2           7    5   6                                   1       5           6       2   7   3 4
+
+The permutations correspond to the standard tableaux
+
+                           1       2       5                                            1           2           3
+                                           .       .                                                            .       .
+                                       .       .                                                            .       .
+                                   3   .
+                                           .
+                                               .
+                                                   .   6                                            5       .
+                                                                                                                .
+                                                                                                                    .
+                                                                                                                        .   4
+
+                                           4           7                                                        6           7
+                                                                      and                                                       .
+
+
+
+5. Standard tableaux for type C in terms of boxes
+
+
+(5.1) The root system.           Let {ε1 , . . . , εn } be an orthonormal basis of Rn so that each sequence
+                          n
+                                                                   P
+γ = (γ1 , . . . , γn ) ∈ R is identified with the vector γ = i γi εi . The root system of type Cn is
+given by the sets
+
+            R = {±2εi , εj ± εi | 1 ≤ i, j ≤ n}                      and R+ = {2εi , εj − εi | 1 ≤ i < j ≤ n} .
+
+The simple roots are given by α1 = 2ε1 , αi = εi − εi−1 , 2 ≤ i ≤ n. The Weyl group W = W Cn is
+the hyperoctahedral group of permutations of −n, . . . , −1, 1, . . . , n such that w(−i) = −w(i). This
+groups acts on the εi by the rule wεi = εw(i) , with the convention that ε−i = −εi .
+
+(5.2) Rearranging γ.        The analysis in this case is analogous to the method that was used in
+(3.7) to create books of placed configurations in the type A case. For clarity, we recommend that
+the reader compare the machinations below with the case done in (3.7).
+     Let γ ∈ Rn . By applying an element of the Weyl group to γ we can rearrange the entries of γ
+in increasing order (0 ≤ γ1 ≤ γ2 ≤ · · · ≤ γn ). Then, if γi ∈ (x, x + 1/2) for some integer x, replace
+γi with −γi . Next group the elements of γ in terms of their Z-cosets and rearrange each group to
+be in increasing order. There are three kinds of groups which can occur:
+
+   β + Cβ      =               (β + z1 , β + z2 , . . . , β + zk ),                           with β ∈ (x + 1/2, x + 1) for some x ∈ Z,
+                                                                                                       zi ∈ Z≥0 and z1 ≤ . . . ≤ zk ,
+     C0        =             (z1 ≤ z2 ≤ · · · ≤ zk ),                                         with zi ∈ Z≥0 and z1 ≤ . . . ≤ zk ,
+1/2 + C1/2     =       (1/2 + z1 ≤ 1/2 + z2 ≤ · · · ≤ 1/2 + zk ),                             with zi ∈ Z≥0 and z1 ≤ . . . ≤ zk .
+
+Choose some ordering on the groups and let
+
+                                                       ~γ = (β1 + Cβ1 , . . . , βr + Cβr ).
+
+Because these changes are obtained by applying elements of the Weyl group, the calibration graphs
+corresponding to ~γ and the γ are the same. Thus it is sufficient to study the standard tableaux
+corresponding to ~γ .
+24                                                         arun ram
+
+(5.3) Books of placed configurations.                      As in the type A case, we have set partitions
+                                [                                    [
+                       Z(~γ ) =   Zβi ,                    P (~γ ) =   Pβi , and,
+                                         βi                        βi
+
+for any J ⊆ P (~γ ),                          [
+                                     J=            Jβi ,   where Jβi = J ∩ Pβi .
+                                              βi
+
+Each pair (β + Cβ , Jβ ) is a placed shape and we may identify (~γ , J ) with the book of placed shapes
+                                   ((β1 + Cβ1 , Jβ1 ), . . . , (βr + Cβr , Jβr )) .
+We think of this as a book with pages numbered by the values β1 , . . . , βr and with a placed
+configuration determined by (βi + Cβi , Jβi ) on page βi . One determines the placed configurations
+as follows.
+
+(5.4) Page β, β 6= 12 , 0:   As in the type A case we will place boxes on a page of infinite graph
+paper which has the diagonals numbered consecutively with the elements of Z, from bottom left
+to top right. For each 1 ≤ i ≤ n, place boxi on diagonal ~γi − β. The boxes on each diagonal are
+arranged in increasing order from top left to bottom right. Then
+              Pβ = {εj − εi | j > i and boxi and boxj are in adjacent diagonals}                    and
+              Zβ = {εj − εi | j > i and boxi and boxj are in the same diagonal} .
+If Jβ ⊆ Pβ arrange the boxes on adjacent diagonals according to the rules
+    (aβ ) if εj − εi ∈ Jr place boxj northwest of boxi , and
+    (a′β ) if εj − εi ∈ Pr \Jr place boxj southeast of boxi .
+A standard tableau t is a filling of the boxes with distinct entries from the set {−n, . . . , −1, 1, . . . , n}
+such that if i appears then −i does not appear and
+ (a) if j > i and boxj and boxi are in the same diagonal then t(boxi ) < t(boxj ),
+(b) if j > i, boxi and boxj are in adjacent diagonals and boxj is northwest of boxi then t(boxi ) >
+     t(boxj ),
+ (c) if j > i, boxi and boxj are in adjacent diagonals and boxj is southeast of boxi then t(boxi ) <
+     t(boxj ).
+
+Example. Suppose β + Cβ = β + (0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3) and
+     Jβ = {ε4 − ε1 , ε4 − ε2 , ε4 − ε3 , ε5 − ε2 , ε5 − ε3 , ε7 − ε5 , ε7 − ε6 , ε8 − ε6 , ε10 − ε9 , ε10 − ε8 ,
+             ε10 − ε7 , ε11 − ε9 , ε11 − ε8 , ε11 − ε7 , ε12 − ε9 } .
+The placed configuration of boxes corresponding to (β + Cβ , Jβ ) is as given below.
+
+               3                                    10                                -11
+                 3                                     11                                 -10
+               1 2                                   4 7                              -12 -2
+               0 1                                   1 5                               -9 -8
+                 0       2 3                           2       8 12                        -7      1 6
+                       0 1 2                                 3 6 9                              -5 3 4
+
+              contents of boxes                    numbering of boxes              a standard tableau
+                                          standard young tableaux for root systems                                      25
+
+(5.5) Page 12 :    We will place boxes on a page of infinite graph paper which has the diagonals
+numbered consecutively with the elements of 21 + Z, from bottom left to top right. For each
+1 ≤ i ≤ n such that ~γi ∈ 12 + C 12 , place boxi on diagonal ~γi and box−i on diagonal −~γi . The boxes
+on each diagonal are arranged in increasing order from top left to bottom right. With this placing
+of boxes we have
+                                                                                            
+               εj − εi , such that j > i and boxi and boxj are in adjacent diagonals 
+        P 21 = εj + εi , such that boxj and boxi are both in diagonal 1/2                      ,
+                  2εi ,     such that boxi is in diagonal 1/2
+                                                                                            
+
+
+               Z 12 = { εj − εi ,                  such that j > i and boxi and boxj are in the same diagonal } .
+If J 12 ⊆ P 12 arrange the boxes on adjacent diagonals according to the rules:
+     (a 21 ) If εj − εi ∈ J 12 place boxj northwest of boxi and box−i northwest of box−j .
+     (a′1 ) If εj − εi ∈ P 12 \J 21 place boxj southeast of boxi and box−i southeast of box−j .
+         2
+
+      (b 21 ) If εj + εi ∈ J 12 (j ≥ i) place boxj northwest of box−i and boxi northwest of box−j .
+      (b′1 ) If εj + εi ∈ P 12 \J 21 (j ≥ i) place boxj southeast of box−i and boxi southeast of box−j .
+         2
+
+A standard tableau t is a filling of the boxes with distinct entries from the set {−n, . . . , −1, 1, . . . , n}
+such that
+                                           t(boxi ) = −t(box−i )
+and
+(a) If j > i and boxj and boxi are in the same diagonal then t(boxi ) < t(boxj ),
+(b) If j > i, boxi and boxj are in adjacent diagonals and boxj is northwest of boxi then t(boxi ) >
+    t(boxj ),
+(c) If j > i, boxi and boxj are in adjacent diagonals and boxj is southeast of boxi then t(boxi ) <
+    t(boxj ).
+
+                                    1                  1 1 1 1 3 3 3 3 5 5 7
+                                                                                 
+Example. Suppose                    2
+                                         + C 12 =       , , , , , , , , , ,
+                                                       2 2 2 2 2 2 2 2 2 2 2
+                                                                                     and
+
+      J 21 = {ε11 − ε10 , ε10 − ε8 , ε9 − ε7 , ε9 − ε8 , ε7 − ε3 , ε7 − ε4 , ε6 − ε2 , ε6 − ε3 , ε6 − ε4 , ε5 − ε4 ,
+                   ε5 − ε3 , ε5 − ε2 , ε1 + ε2 , ε1 + ε3 , ε1 + ε4 , 2ε1 } .
+
+The placed configuration of boxes corresponding to ( 12 + C 12 , J 21 ) is as given below.
+
+       1
+       2                                                         1                                 -11
+ - 32 - 12         3
+                   2                                         -8 -4     5                        -7 -6     -10
+ - 52        - 21         3
+                          2
+                                5
+                                2                           -10    -3     6 9                   -5     -4     -9 -8
+ - 27        - 23 - 12    1
+                          2
+                                3
+                                2
+                                               7
+                                               2            -11    -7 -2 2 7     11             -3     -2 -1 1 2       3
+             - 25 - 32          1
+                                2
+                                               5
+                                               2                   -9 -6    3    10                     8 9       4    5
+                         - 32            1
+                                         2
+                                               3
+                                               2                         -5    4 8                            10    6 7
+                                        - 12                                  -1                                    11
+
+       contents of boxes                                       numbering of boxes                  a standard tableau
+26                                                   arun ram
+
+(5.6) Page 0:          We will place boxes on a page of infinite graph paper which has the diagonals
+numbered consecutively with the elements of Z, from bottom left to top right. For each 1 ≤ i ≤ n
+such that ~γi ∈ C0 ,
+ (1) place boxi on diagonal 0 if ~γi = 0, and
+ (2) if ~γi 6= 0 place boxi on diagonal ~γi and box−i on diagonal −~γi .
+The boxes on each diagonal are arranged in increasing order from top left to bottom right. With
+this placing of boxes we have
+                                                                                         
+                    εj − εi , such that j > i and boxi and boxj are in adjacent diagonals
+           P0 =                                                                             ,
+                    εj + εi , such that boxj is in diagonal 1 and boxi is in diagonal 0
+                                                                                         
+                  εj − εi , such that j > i and boxi and boxj are in the same diagonal 
+           Z0 = εj + εi , such that j > i and boxj and boxi are in diagonal 0               .
+                      2εi ,   such that boxi is in diagonal 0
+                                                                                         
+
+If J0 ⊆ P0 then arrange the boxes on adjacent diagonals according to:
+    (a0 ) if εj − εi ∈ J0 place boxj northwest of boxi and if boxi is not on diagonal 0 place box−i
+            northwest of box−j ,
+        ′
+    (a0 ) if εj − εi ∈ P0 \J0 place boxj southeast of boxi and if boxi is not on diagonal 0 place
+            box−i southeast of box−j ,
+     (b0 ) if εj + εi ∈ J0 place boxi northwest of box−j ,
+     (b′0 ) if εj + εi ∈ P0 \J0 place boxi southeast of box−j .
+A standard tableau t is a filling of the boxes with distinct entries from the set {−n, . . . , −1, 1, . . . , n}
+such that
+                        t(boxi ) = −t(box−i ), if boxi is not on the zero diagonal,
+                             t(boxi ) > 0,       if boxi is on the zero diagonal,
+and
+ (a) if j > i and boxj and boxi are in the same diagonal then t(boxi ) < t(boxj ),
+(b) if j > i, boxi and boxj are in adjacent diagonals and boxj is northwest of boxi then t(boxi ) >
+     t(boxj ),
+ (c) if j > i, boxi and boxj are in adjacent diagonals and boxj is southeast of boxi then t(boxi ) <
+     t(boxj ).
+
+Example. Suppose C0 = (0, 0, 0, 1, 1, 1, 2) and
+      J0 = {ε4 − ε1 , ε4 − ε2 , ε4 − ε3 , ε5 − ε1 , ε5 − ε2 , ε5 − ε3 , ε6 − ε1 , ε6 − ε2 , ε6 − ε3 , ε7 − ε6 ,
+              ε6 + ε1 , ε5 + ε1 , ε5 + ε2 , ε4 + ε1 , ε4 + ε2 } .
+The placed configuration of boxes corresponding to (C0 , J0 ) is as given below.
+             1                                  4                                 -6
+                 1 2                                5 7                                -5 -4
+                    1                                  6                                  -2
+                    0                                  1                                   1
+                   -1 0                               -6 2                                 2 3
+                   -2 -1                              -7 -5                                4 5
+                            -1 0                                -4 3                               6 7
+
+             contents of boxes                 numbering of boxes                 a standard tableau
+                         standard young tableaux for root systems                                            27
+
+(5.7)         Using the above rules one produces a book of placed configurations corresponding to
+(~γ , J ) = ((β1 + Cβ1 , Jβ1 ), . . . , (βr + Cβr , Jβr )). A standard tableau t for this book of configurations
+is a filling of the boxes with distinct elements of {−n, . . . , −1, 1, . . . , n} such that the filling on each
+page satisfies the conditions for a standard tableau for that page. Let
+
+                                            F ((Cβ1 ,Jβ1 ),...,(Cβr ,Jβr ))
+
+denote the set of such fillings.
+    The proof of the following Theorem is similar to the proof of Theorem (3.5).
+
+Theorem. Given a standard tableau t for the book of configurations ((Cβ1 , Jβ1 ), . . . , (Cβr , Jβr ))
+define wt ∈ W Cn by wt (i) = t(boxi ). Then the map
+
+                                  F ((Cβ1 ,Jβ1 ),...,(Cβr ,Jβr ))   ←→ F (~γ ,J)
+                                                t                   7−→  wt
+
+is a bijection.
+ 28                                            arun ram
+
+
+
+                                             References
+
+
+ [AL] C. Athanasiadis and S. Linusson, A simple bijection for the regions of the Shi arrangement
+      of hyperplanes, Discrete Math., to appear.
+ [Au] M. Aubert, Dualité dans le groupe de Grothendieck de la categorie des représentations lisses
+      de longueur finie d’un groupe réductif p-adique, Trans. Amer. Soc. 347 (1995), 2179–2189.
+ [Bj] A. Björner, Orderings of Coxeter groups, Combinatorics and Algebra (Boulder, Colo. 1983),
+      Contemp. Math. 34, Amer. Math. Soc., Providence 1984, 175–195.
+[Bou] N. Bourbaki, Groupes et algèbres de Lie, Chapitres 4,5 et 6, Elements de Mathématique,
+      Hermann, Paris 1968.
+ [Fo] S. Fomin, Lecture notes, MIT, Fall 1996.
+[GK] I.M. Gelfand, D. Krob, A. Lascoux, B. Leclerc, V. Retakh, J.-Y. Thibon, Non-
+     commutative symmetric functions, Adv. Math. 112 (1995), 218–348.
+ [He] P. Headley, On a family of hyperplane arrangements related to the affine Weyl groups, J.
+      Algebraic Combinatorics 6 (1997), 331–338.
+[HO] G.J. Heckman and E.M. Opdam, Harmonic analysis for affine Hecke algebras, Current
+     Developments in Mathematics, 1996, International Press, Boston.
+ [Hu] J.E. Humphreys, Reflection Groups and Coxeter Groups, Cambridge Studies in Mathematics
+      29, Cambridge Univ. Press 1990.
+ [K1] S. Kato, Irreducibility of principal series representations for Hecke algebras of affine type, J.
+      Fac. Sci. Univ. Tokyo sec 1A 28 (1981), 929–943.
+ [K2] S. Kato, Duality for representations of a Hecke algebra, Proc. Amer. Math. Soc. 119 (1993),
+      941–946.
+[KZ] H. Knight and A.V. Zelevinsky, Representations of quivers of type A and the multisegment
+     duality, Adv. in Math., to appear.
+[La1] A. Lascoux, B. Leclerc, J.-Y. Thibon, Ribbon tableaux, Hall-Littlewood functions, quan-
+      tum affine algebras, and unipotent varieties, J. Math. Phys. 38 (1997), 1041–1068.
+[La2] A. Lascoux, P. Pragacz, Ribbon Schur functions, European J. Combin. 9 (1988), 561–574.
+[Li1] P. Littelmann, Paths and root operators in representation theory, Ann. of Math. (2) 142
+      (1995), 499–525.
+[Li2] P. Littelmann, The path model for representations of symmetrizable Kac-Moody algebras,
+      Proceedings of the International Congress of Mathematicians, Vol. 1 (Zürich, 1994), 298–308,
+      Birkhauser, Basel, 1995.
+[Mac] I.G. Macdonald, Symmetric functions and Hall polynomials, Second edition, Oxford Math-
+      ematical Monographs, Oxford Univ. Press, New York, 1995.
+[Mat] H. Matsumoto, Analyse harmonique dans les systems de Tits bornologiques de type affine,
+      Lect. Notes in Math. 590, Springer-Verlag, 1977.
+                        standard young tableaux for root systems                                29
+
+[MW] Moeglin and Waldspurger, L’involution de Zelevinski, J. Reine Angew. Math. 372
+     (1986), 136–177.
+[Ra1] A. Ram, Calibrated representations of affine Hecke algebras, in preparation.
+[Ra2] A. Ram, Irreducible representations of rank two affine Hecke algebras, in preparation.
+[Ra3] A. Ram, Skew shape representations are irreducible, in preparation.
+[RR1] A. Ram and J. Ramagge, Jucys-Murphy elements come from affine Hecke algebras, in
+      preparation.
+[RR2] A. Ram and J. Ramagge, Calibrated representations and the q-Springer correspondence, in
+      preparation.
+ [Ro] F. Rodier, Decomposition de la série principale des groups reductifs p-adic, in Noncommu-
+      tative Harmonic analysis and Lie Groups, Lect. Notes in Math. 880, Springer-Verlag, 1981.
+ [Rg] J. Rogawski, On modules over the Hecke algebra of a p-adic group, Invent. Math. 79 (1985),
+      443–465.
+[Sh1] J.-Y. Shi, The number of ⊕-sign types, Quart. J. Math. Oxford Ser. (2) 48 (1997), 93–105.
+[Sh2] J.-Y. Shi, Left cells in affine Weyl groups, Tôhoku Math. J. (2) 46 (1994), no. 1, 105–124.
+[Sh3] J.-Y. Shi, Sign types corresponding to an affine Weyl group, J. London Math. Soc. (2) 35
+      (1987), 56–74.
+ [ST] L. Solomon and H. Terao, The double Coxeter arrangement, preprint 1997.
+ [St1] R. Stanley, Hyperplane arrangements, interval orders, and trees, Proc. Nat. Acad. Sci.
+       U.S.A. 93 (1996), 2620–2625.
+ [St2] R. Stanley, Hyperplane arrangements, parking functions and tree inversions, in Mathemat-
+       ical Essays in Honor of Gian-Carlo Rota, Birkhäuser, Boston, 1998.
+  [Xi] N. Xi, Representations of affine Hecke algebras, Lect. Notes in Math. 1587, Springer-Verlag,
+       Berlin, 1994.
+ [Wz] H. Wenzl, Hecke algebras of type An and subfactors, Invent. Math. 92 (1988), 349–383.
+  [Y] A. Young, On quantitative substitutional analysis (sixth paper), Proc. London. Math. Soc.
+      (2) 34 (1931), 196–230.
+ [Ze] A. Zelevinsky, Induced Representations of p-adic groups II: On Irreducible Representations
+      of GL(n), Ann. Scient. Éc. Norm. Sup. 4e sèrie, 13 (1980), 165–210.
+

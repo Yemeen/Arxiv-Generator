@@ -1,0 +1,1156 @@
+                                                              CATEGORIFICATION OF THE BRAID GROUPS
+
+                                                                                   RAPHAËL ROUQUIER
+
+
+
+                                                                                    1. Introduction
+arXiv:math/0409593v1 [math.RT] 30 Sep 2004
+
+
+
+
+                                                Actions of braid groups on triangulated categories are quite widespread. They arise for
+                                             instance in representation theory, for constructible sheaves on flag varieties and for coherent
+                                             sheaves on Calabi-Yau varieties (cf [RouZi] and [SeiTho] for early occurrences). In this work,
+                                             we suggest that not only the self-equivalences are important, but that the morphisms between
+                                             them possess some interesting structure.
+                                                Let W be a Coxeter group and C a triangulated category. We consider gradually stronger
+                                             actions of W or its braid group BW :
+                                                  (i) W acting on K0 (C)
+                                                 (ii) a morphism from BW to the group of isomorphism classes of invertible functors of C
+                                                (iii) an action of BW on C.
+                                                We construct a strict monoidal category BW categorifying (conjecturally) BW and we propose
+                                             an even stronger form of action :
+                                                (iv) a morphism of monoidal categories BW → Hom(C, C)
+                                                The first section is devoted to a construction of a self-equivalence of a triangulated category,
+                                             generalizing various constructions in representation theory and algebraic geometry. This should
+                                             be viewed as a categorification of an action of Z/2.
+                                                In section §3, we construct a monoidal category categorifying (a quotient of) the braid group.
+                                             It is a full subcategory of a homotopy category of complexes of bimodules over a polynomial
+                                             algebra. The setting here is that of Soergel’s bimodules.
+                                                Section §4 is devoted to the category O of a semi-simple complex Lie algebra. There are
+                                             classical functors that induce an action of type (i). We show how to use the constructions of
+                                             §3, via results of Soergel, to get a genuine action of the braid group and even the stronger type
+                                             (iv).
+                                                The case of flag varieties is considered in §5. There again, there is a classical action up to
+                                             isomorphism of the braid group on the derived category of constructible sheaves (type (ii)).
+                                             Using a result of Deligne and checking some compatibilities for general kernel transforms (Ap-
+                                             pendix in §6), one gets a genuine action of the braid group (type (iii)). Now, using the link
+                                             with modules over the cohomology ring, we get another proof of this and even the stronger (iv).
+                                                In a work in preparation we study presentations by generators and relations, homological
+                                             vanishings and relation with the cohomology of Deligne-Lusztig varieties.
+                                                A few talks have been given in 1998–2000 on the main results of this work (Freiburg, Paris,
+                                             Yale, Luminy) and I apologize for the delay in putting them on paper.
+                                                I would like to thank I. Frenkel, M. Kashiwara, M. Khovanov and W. Soergel for useful
+                                             discussions.
+                                               Date: Septembre 2004.
+                                                                                              1
+2                                      RAPHAËL ROUQUIER
+
+                                    2. Self-equivalences
+   We describe a categorification of the notion of reflection with respect to a subspace. The
+ambient space is K0 of a triangulated category, the subspace is another triangulated category
+and the embeddings and projections are given by functors. We actually allow an automorphism
+of the “subspace” category, which allows to categorify the q-analog of a reflection.
+   We present here how a functor from a given triangulated category gives rise to a self-
+equivalence of that category, when the functor satisfies some conditions. Then, we give three
+special “classical” cases. The first one concerns constructible sheaves on a P1 -fibration (it oc-
+curs typically with flag varieties, cf §5). The second one deals with the case where the target
+category is the derived category of vector spaces, where we recover the theory of spherical ob-
+jects and twist functors (it arises as counterparts of Dehn twists via mirror symmetry). The
+last application essentially concerns derived categories of finite dimensional algebras (it occurs
+in particular within rational representation theory, cf §4).
+
+   All functors between additive (resp. triangulated) categories are assumed to be additive
+(resp. triangulated).
+   Given an additive category C, we denote by K(C) the homotopy category of complexes of
+objects of C.
+   Given an algebra A over a field k, we denote by A-mod the category of finitely generated left
+A-modules. We put Aen = A ⊗k Aopp , where Aopp is the opposite algebra.
+   Given a graded algebra A, we denote by A-modgr the category of finitely generated graded
+A-modules.
+
+
+2.1. A general construction.
+
+
+2.1.1. This section can probably be skipped in a first reading.
+   We will be working here with algebraic triangulated categories (following Keller), a simple
+setting that provides functorial cones.
+   Let E be a Frobenius category (an exact category with enough projective and injective objects
+and where injective and projective objects coincide). Let Compacyc (E-proj) be the category of
+acyclic complexes of projective objects of E. Let Frob be the 2-category of Frobenius categories,
+with 1-arrows the exact functors that send projectives to projectives and 2-arrows the natural
+transformations of functors.
+   The construction E 7→ Compacyc (E-proj) is an endo-2-functor of Frob. The 2-functor from E
+to the 2-category of triangulated categories that sends E to its stable category E¯ factors through
+the previous functor.
+   The important point is that the category Compacyc (E-proj) has functorial cones. Given F, G :
+Compacyc (E-proj) → Compacyc (E ′ -proj) and φ : F → G, then we have a well defined cone C(φ)
+of φ and we have morphisms G → C(φ) and C(φ) → F [1] such that F → G → C(φ) → F [1]
+gives a distinguished triangle of functors from Ē to E¯′ .
+   Note that if φ0 : F0 → G0 is a morphism of functors (exact, preserving projectives) between
+E and E ′ , then we get via Compacyc (−) a morphism of functors φ : F → G, with F, G :
+Compacyc (E-proj) → Compacyc (E ′ -proj).
+                           CATEGORIFICATION OF THE BRAID GROUPS                                                                     3
+
+   The category of functors (exact, preserving projectives) Compacyc (E-proj) → Compacyc (E ′-proj)
+is a Frobenius category. We define the category AlgTr(E, E ′) to be its stable category. Its ob-
+jects are the exact functors Compacyc (E-proj) → Compacyc (E ′ -proj) and HomAlgTr(E,E ′ ) (F, G) is
+the image of Hom(F, G) in HomFun(Ē,E¯′ ) (F̄ , Ḡ).
+   This defines the 2-category of algebraic triangulated categories AlgTr, with objects the Frobe-
+nius categories E. We have a 2-functor from AlgTr to the 2-category of triangulated categories
+obtained by sending E to Ē. It is 2-fully faithful.
+2.1.2. Let C and D be two algebraic triangulated categories, F : C → D, G : D → C be two
+functors and Φ be a self-equivalence of C. Let there be given also two adjoint pairs (F, G) and
+(G, F Φ). We have four morphisms (units and counits of the adjunctions)
+                                   η : 1D → F ΦG,                                  ε : GF Φ → 1C
+                                η ′ : 1C → GF, ε′ : F G → 1D .
+Let Υ be the cocone of ε′ and Υ′ be the cone of η : there are distinguished triangles of functors
+          ε′                 η
+Υ → F G −→ 1D      and 1D −→ F ΦG → Υ′ .
+  Assume
+                                                η′                              εΦ−1           0
+(1)                                          → GF −−−→ Φ−1
+                                          1C −
+is a distinguished triangle.
+Proposition 2.1. The functors Υ and Υ′ are inverse self-equivalences of D.
+Proof. Let γ be the map F ΦG → Υ′ in the triangle above, i.e., we have the distinguished
+             η          γ
+triangle 1D −→ F ΦG −  → Υ′ . We have a commutative diagram with horizontal and vertical
+distinguished triangles
+                                                                   O
+                                                                   O
+                                                              O
+                                                         O
+                                               6     F OG
+                                            lll
+                                     id llll
+                                     ll                                 F εG
+                                lllll
+                               l F Gη                                                  F Gγ
+                        FG                  /   F GFO ΦG                                             /   F GΥ′ /o /o /o /
+                                           F η′ ΦG
+
+                                                 F ΦG
+                                                                                                          ∼
+The octahedral axiom shows that (F Gγ) ◦ (F η ′ ΦG) : F ΦG → F GΥ′ is an isomorphism.
+  We have a commutative diagram
+                                      F η′ ΦG                                                 F Gγ
+                          F ΦG RR                    /   F GF ΦG                                              /   F GΥ′
+                                    RRR
+                                       RRR
+                                           RRR                                   ε′ F ΦG                                   ε ′ Υ′
+                                        id    RRR                                                                     
+                                                 )
+                                                                        F ΦG                   γ
+                                                                                                                  /   Υ′
+                                                                        ε ′ Υ′
+The distinguished triangle ΥΥ′ → F GΥ′ −−→ Υ′          gives a distinguished triangle ΥΥ′ →
+     γ
+     → Υ′ , hence ΥΥ′ ≃ 1D .
+F ΦG −
+  The case of Υ′ Υ is similar — note that the triangle (1) shows that GF ≃ idD ⊕Φ−1 , hence
+Φ commutes with GF .                                                                      
+4                                       RAPHAËL ROUQUIER
+
+                                                             ∼                                     ∼
+Remark 2.2. One sees easily that ηF + F Φη ′ : F ⊕ F Φ → F ΦGF and Gη + η ′ ΦG : G ⊕ ΦG →
+GF ΦG are isomorphisms. One can show that the requirement that ηF G + F Φη ′ G : F G ⊕
+F ΦG → F ΦGF G and F Gη + F η ′ ΦG : F G ⊕ F ΦG → F GF ΦG are isomorphisms, instead of
+the stronger requirement that (1) is a distinguished triangle, is enough to get Proposition 2.1.
+2.1.3. Let us recall a version of Barr-Beck’s Theorem ([Mac, §VI.7, exercice 7], [De2, §4.1]).
+   Let C be a category. A comonad is the data of a functor H : C → C, of c : H → H 2 and
+ε : H → id such that (cH) ◦ c = (Hc) ◦ c and (εH) ◦ c = (Hε) ◦ c. Note that ε is determined
+by c.
+   A coaction of (H, c, ε) on an object M of C is the data of ρ : M → H(M) such that
+ε(M) ◦ ρ = idM and c ◦ ρ = F (ρ) ◦ ρ. The category (H, c, ε)-comod has objects the pairs (M, ρ)
+and a morphism (M, ρ) → (M ′ , ρ′ ) is a morphism f : M → M ′ such that ρ′ f = H(f )ρ.
+   Let A and B be two abelian (resp. algebraic triangulated categories), T : A → B an exact
+functor (resp. a triangulated functor). Assume T has a right adjoint U. Put H = T U, denote by
+ε : H → idB and η : idA → UT the counit and unit of adjunctions and let c = T ηU : H → H 2 .
+   We have a functor T̃ : A → (H, c, ε)-comod given by M 7→ (T M, T η(M)).
+   The following Theorem is an easy application of Barr-Beck’s general result to abelian and
+triangulated categories.
+                                              ∼
+Theorem 2.3. If T is faithful, then T̃ : A → (H, c, ε)-comod is an equivalence.
+
+  We deduce from this Theorem that the category C, together with the functors F , G and
+the adjunctions, is determined by D, Θ = F G and c = F η ′ G : Θ → Θ2 . We view this as a
+categorical version of the “fixed points” construction.
+Remark 2.4. Let V = K0 (D), U = K0 (C), f = [F ] : U → V and g = [G] : V → U. Assume
+[Φ] = idU . Then, gf = 2 idU and θ = [Θ] : x 7→ x − f g(x) : V → V is an involution. One
+recovers U (up to unique isomorphism) from θ acting on V as V θ .
+2.2. Applications.
+2.2.1. We consider schemes of finite type type over an algebraic closure of a finite field Fq
+(the case of complex algebraic varieties is similar). Let π : X → Y be a smooth projective
+morphism already defined over Fq . Assume the geometric fibers are projective lines.
+  Let Λ be a field of coefficients (=an extension of Qℓ for ℓ 6 | q a prime number). Put C = D b (Y )
+and D = D b (X) (bounded derived categories of constructible sheaves of Λ-vector spaces). Take
+F = π ∗ , G = Rπ∗ and Φ =?(1)[2]. We have a canonical isomorphism (projection formula)
+             ∼
+? ⊗ Rπ∗ ΛX → Rπ∗ π ∗ . Via this isomorphism, η ′ becomes id ⊗η ′ (ΛY ) and ε becomes id ⊗t,
+where t : Rπ∗ ΛX → ΛY (−1)[−2] is the trace map (an isomorphism on H2 ).
+                                                                  η′ (ΛY )       t
+  So, the triangle (1) is obtained from the triangle ΛY −−−−→ Rπ∗ ΛX −     → ΛY (−1)[−2]      by
+applying ?⊗. This is indeed a distinguished triangle, for it is so at geometric fibers.
+  Let L be a relative ample sheaf for π and c ∈ H 2 (X, Λ(1)) be its first Chern class. The hard
+                                                       η′ (ΛY )              c          t(1)[2]
+Lefschetz Theorem states that the composition ΛY −−−−→ Rπ∗ ΛX −    → Rπ∗ ΛX (1)[2] −−−→ ΛY is
+an isomorphism. It follows that the connecting map in the triangle above is zero.
+  Thus, we are in the setting of §2.1.2 and we get a self-equivalence of D b (X).
+  This can be also constructed as a kernel transform. Let α, β : X ×Y X → X be the first
+and second projections. Let i : ∆X → X ×Y X be the closed immersion of the diagonal and
+                             CATEGORIFICATION OF THE BRAID GROUPS                                                   5
+
+j : Z → X ×Y X be the open immersion of the complement of ∆X. Denote by ε̃ : 1Db (X×Y X) →
+i∗ i∗ and η̃ : Rj! j ∗ → 1Db (X×Y X) the adjunction morphisms. One checks easily that there is a
+commutative diagram where the rows are distinguished triangles
+                                                                           ε′
+                                Υ                      /   π ∗ Rπ∗                   /   1D /o /o /o /o /o /
+                                                                  ∼                            ∼
+                                                                                          
+                           Rβ∗ Rj! j ∗ α∗          /       Rβ∗ α∗            /   Rβ∗ i∗ i∗ α∗ /o /o /o /
+                                            Rβ∗ η̃α∗                  Rβ∗ ε̃α∗
+
+where the middle vertical map is the base change isomorphism.
+  Denote by p, q : Z → X the first and second projections. Then, Υ ≃ Rp! q ∗ and Υ′ ≃ Rp∗ q ! .
+2.2.2. Assume we are in the setting of §2.1.2 with C = D b (k-mod) where k is a field and
+the categories and functors involved are k-linear. There is an integer n such that Φ =?[n].
+Let E = F (k). Then, F ≃ E⊗k ? and G ≃ R Hom(E, ?). The morphism ε comes from
+t : Hom(E, E[n]) → k.                                                          L
+   The morphism ε is the counit of an adjoint pair (G, F Φ) if and only if dimk i Hom(E, M[i]) <
+∞ for all M ∈ D and Hom(E, M) × Hom(M, E[n]) → k, (f, g) 7→ t(gf ) is a perfect pairing for
+all M ∈ D.                                                        L                t
+   The triangle (1) is distinguished if and only if 0 → k · id → i Hom(E, E[i]) −  → k → 0 is an
+exact sequence.
+   In other words, E is an n-spherical object and Υ, Υ′ are the corresponding twist functors of
+Seidel and Thomas [SeiTho, §2b]. So, the framework above corresponds exactly to the twist
+functor theory when C ≃ D b (k-mod).
+Remark 2.5. The case C = D b (k d -mod) also leads to interesting examples.
+Remark 2.6. It would be interesting to see if the construction of §2.1.2 can be used to construct
+automorphisms of derived categories of Calabi-Yau varieties corresponding, via Kontsevich’s
+homological mirror symmetry conjecture, to graded symplectic automorphisms on the mirror
+associated to Lagrangian submanifolds more complicated than spheres.
+2.2.3. Let us consider here two abelian categories A and B and F̃ : A → B, G̃ : B → A and
+Φ̃ a self-equivalence of A. We assume we have two adjoint pairs (F̃ , G̃) and (G̃, F̃ Φ̃). So, we
+have four morphisms (units and counits of the two adjunctions)
+                                    η̃ : 1B → F̃ Φ̃G̃,                ε̃ : G̃F̃ Φ̃ → 1A
+                                      ′
+                                    η̃ : 1A → G̃F̃ ,                  ε̃′ : F̃ G̃ → 1B .
+                                          ε̃′                                                                  η̃
+    Let Υ̃ be the complex 0 → F̃ G̃ −→ 1B → 0 and Υ̃′ the complex 0 → 1B −→ F̃ Φ̃G̃ → 0 (with
+F̃ G̃ and F̃ Φ̃G̃ in degree 0). We put C = K(A) and D = K(B) and we denote by F , G, etc...
+the extensions of F̃ , G̃, etc... to C and D.
+    Assume B is artinian and noetherian (every object is a finite extension of simple objects).
+If we have the equality [G̃F̃ ] = [id] + [Φ̃−1 ] as endomorphisms of K0 (A) (or more generally, if
+[F̃ Φ̃G̃F̃ G̃] = [F̃ G̃F̃ Φ̃G̃] = [F̃ G̃] + [F̃ Φ̃G̃] in End(K0 (B))), then, the conclusion of Proposition
+2.1 remains valid.
+    Let us justify this, following ideas of Rickard [Ri, §3]. There is an adjoint pair (Υ′ , Υ), hence
+there is a map u : id → ΥΥ′ that doesn’t vanish on a non-zero object of B. One shows that
+ΥΥ′ is homotopy equivalent to a complex of functors with only one non-zero term, R, in degree
+6                                           RAPHAËL ROUQUIER
+
+0 and R is an exact functor. The assumption on classes shows that [R] = [id]. So, R sends a
+simple object to itself, for a simple object is characterized amongst objects of B by its class in
+K0 (B). In particular, u : id → R is an isomorphism on simple objects. So, u is an isomorphism.
+
+                                         3. The 2-braid group
+3.1. Coxeter group action.
+                                                                        L
+3.1.1. Let (W, S) be a Coxeter system (with S finite) and V =             s∈S kes be the reflection
+representation of W over a field k. We assume the representation is faithful (this is always the
+case if the characteristic is 0). Given s, t ∈ S, we denote by mst the order of st. We assume
+that 2mst is invertible in k, for all s, t ∈ S such that mst is finite. We denote by {αs }s∈S the
+dual basis of {es }s∈S (so that ker(s − id) = ker αs for s ∈ S). Let BW be the braid group of W .
+This is the group generated by S = {s}s∈S with relations
+
+                                                | {z· ·}· ≃ tst
+                                                sts         | {z· ·}·
+                                             mst terms      mst terms
+
+for any s, t ∈ S such that mst < ∞
+   Let A = k[V ] be the algebra of polynomial functions on V . All A-modules considered in this
+section are graded.
+   We will sometimes identify an object M of K b (Aen -modgr) with the corresponding endofunc-
+tor M ⊗A − of K b (A-modgr). In particular, we will sometimes omit the symbols ⊗A when
+taking tensor products of bimodules for the sake of clarity.
+
+3.1.2. The action of W on V induces an action on A, hence on A-modgr and on D b (A-modgr) :
+the element w ∈ W acts by Aw ⊗A − where Aw is the (A, A)-bimodule equal to A as a left
+A-module, with right action of a ∈ A given by right multiplication by w(a). We have an
+                                                           ∼
+isomorphism of (A, A)-bimodules, id ⊗1 : Aw → k[∆w ], where ∆w = {(w(v), v)}v∈V ⊂ V × V .
+                                                                 ∼
+   We have a canonical isomorphism Aw ⊗A Aw′ → Aww′ given by multiplication. Let x =
+(x1 , . . . , xm ) and y = (y1 , . . . , yn ) be sequences of elements of S such that x1 · · · xm = y1 · · · yn =
+                                                 ∼
+w. We denote by cx,y : Ax1 · · · Axm → Ay1 · · · Ayn the isomorphism obtained by composing the
+                                             ∼                                                                  ∼
+multiplication map Ax1 · · · Axm → Aw with the inverse of the multiplication map Ay1 · · · Ayn →
+Aw .
+
+3.2. Braid group action. Let us now construct a non-obvious lift of the action of W on
+D b (A-modgr) to an action of BW on K b (A-modgr).
+
+3.2.1. For s ∈ S, we define the complex of (A, A)-bimodules
+                                                          s         ε′
+                                   Fs = Fs = 0 → A ⊗As A −→ A→0
+where A is in degree 1 and ε′s is the multiplication.
+  Since A = As ⊕ As αs , the morphism of Aen -modules
+                               As → A ⊗As A(1), a 7→ a ⊗ αs − aαs ⊗ 1
+induces an isomorphism
+                                            ∼
+                                   fs : As → Fs (1) in D b (Aen -modgr).
+                             CATEGORIFICATION OF THE BRAID GROUPS                                        7
+                                S
+3.2.2. For w ∈ W , let ∆≤w = w′ ≤w ∆w′ and Dw = k[∆≤w ]. Note that Ds = A ⊗As A for
+s ∈ S.
+  Given w ′ ≤ w, we have a canonical quotient map Dw → Dw′ given by restriction of functions.
+We have                                      (
+                                               k · can if w ′ ≤ w
+                           Hom(Dw , Dw′ ) =
+                                               0       otherwise
+3.2.3. In the next lemma, 0 → L → M → 0 denotes a complex with L in degree 0.
+Lemma 3.1. Assume W is a finite dihedral group, i.e., dim V = 2, S = {s, t} and mst < ∞.
+Let x ∈ W such that tx > x. Then,
+                     can                                           id                              can
+    (i) Ds (0 → Dtx −−→ Dx → 0) ≃ (0 → Dx (−1) −
+                                               → Dx (−1) → 0) ⊕ (0 → Dstx −−→ Dx → 0).
+                         id
+   (ii) Fs Dx ≃ (0 → Dx −
+                        → Dx → 0) ⊕ (0 → Dx (−1) → 0 → 0).
+Proof. Let us recall some constructions and results of Soergel [Soe4, Lemma 4.5, Proposition
+4.6 and their proofs]. Since 2mst is invertible, then given u, u′ two distinct reflections of W , we
+have ker(u + id) 6= ker(u′ + id).
+   Given I an ideal of A ⊗ A invariant under s × 1, we put ((A ⊗ A)/I)+ = ((A ⊗ A)/I)(s×1) .
+   Let r be the reflection of W such that rx < x and rx 6< tx. Then, ∆x + ∆rx is a hyperplane
+of V × V and let β ∈ V ∗ × V ∗ be a linear form with kernel this hyperplane. Let M (resp. N)
+be the (As ⊗ A)-submodule of Dtx generated by the image of the elements β (resp 1) of A ⊗ A.
+                                                   +
+Then, Dtx = M ⊕ N, M ≃ Dx+ (−1) and N ≃ Dstx          as (As ⊗ A)-modules.
+   Let M ′ (resp. N ′ ) be the (As ⊗ A)-submodule of Dx generated by αs ⊗ 1 (resp. 1). Then,
+Dx = M ′ ⊕ N ′ , M ′ ≃ Dx+ (−1) and N ′ = Dx+ as (As ⊗ A)-modules. Denote by p : Dx → M ′ the
+projection.
+   Let us show now that β 6∈ (V ∗ )s × V ∗ . Equivalently, we need to show that (∆x + ∆rx ) ∩
+(kαs × 0) = 0. This amounts to proving that im(id −r) 6= kαs . But this holds, since r 6= s.
+   Let us now come to our problem. Since β 6∈ (V ∗ )s × V ∗ , it follows that the image of β
+in (A ⊗ A)/(As ⊗ A) is a generator as (As ⊗ A)-module. Consequently, the restriction of
+pf : Dtx → M ′ to M is surjective, hence it is an isomorphism (we denote by f : Dtx → Dx the
+canonical map).
+                                                      ∼
+
+
+                                                 f                    p           (
+                           M bEb     /D
+                                         tx cG
+                                                       //D
+                                                           OO x
+                                                                                   //   MO ′
+                                EE            c GG                                        O
+                                  EE              GG
+                                    EE              GG
+                                      EE              GG
+                                        EE
+                                          EE
+                                             EE        A ⊗O A           //   A ⊗ A/As ⊗ A
+                                               EE                           o7 7
+                                                 EE                    ooooo
+                                                   EE                oo
+                                                     E 
+                                                         ?        ooo
+                                                       s
+                                                      A βA
+                                                       ∼
+ Finally, the multiplication map A⊗As Dy+ → Dy is an isomorphism for any y ∈ W with sy < y.
+                                              can
+We have shown that the complex A⊗As (0 → Dtx −−→ Dx → 0) is isomorphic to the direct sum of
+                             id                                                                φ
+the complex 0 → Dx (−1) −  → Dx (−1) → 0 and a complex D = 0 → Dstx −   → Dx → 0. Note that
+                                                                                    can
+φ = r · can for some r ∈ k and we need to prove that r 6= 0. The complex 0 → Dtx −−→ Dx → 0
+has zero homology in degree 1, hence the same is true for D. It follows that r 6= 0.
+8                                                         RAPHAËL ROUQUIER
+
+   Let us now prove the second assertion. The multiplication map A ⊗As Dx+ → Dx is an
+isomorphism. Since Dx = Dx+ ⊕ M ′ and M ′ ≃ Dx+ (−1), we obtain the second part of the
+Lemma.                                                                              
+Proposition 3.2. Take s 6= t ∈ S with mst < ∞. We have braid relations
+                                                      F F F ··· ≃ F F F ···
+                                                      | s t{zs } | t s{zt }
+                                                          mst terms             mst terms
+      b
+in K (A ⊗ A).
+Proof. We have a decomposition V = V1 ⊕V2 under the action of hs, ti, with V1 = V hs,ti . For the
+(A, A)-bimodules involved in the Proposition, the right and left actions of k[V1 ] are identical.
+So, we get the Proposition for V from the Proposition for V2 by applying the functor k[V1∗ ]⊗k −.
+It follows we can assume dim V = 2. So, we assume W is finite dihedral with S = {s, t}. We
+put s+ = s and s− = t.
+   Let m = mst and consider i ≤ m and ε ∈ {+, −}. Let σiε = sε s−ε sε · · · (i terms) and
+Diε = Dσiε . We put D ε = Dsε . Consider the simplicial scheme over V × V :
+                    a                    a                           a
+         ∆1 ⇉ ∆≤s+      ∆≤s− ⇉ ∆≤s+ s−      ∆≤s− s+ ⇉ · · · ⇉ ∆≤σi−1
+                                                                  ε         −ε → ∆≤σ ε
+                                                                        ∆≤σi−1         i
+
+
+where the maps are the inclusions.
+   We now define Fiε as the complex of (A, A)-bimodules coming from the structural complex
+of sheaves of this simplicial scheme :
+                                                               
+                      +                                   +   −
+                      +                    −ε             +   −
+                                                              −ε                       (+ − )
+    Fiε = 0 →   Diε −−−→            ε
+                                   Di−1 ⊕ Di−1         ε
+                                               −−−−−→ Di−2 ⊕ Di−2 → · · · → D + ⊕ D − −−−−−→ D1 → 0
+where the sign denotes the multiple of the canonical map considered (we put Diε in degree 0).
+We have H r (Fiε ) = 0 for r > 0, since ∆≤σr+ ∩ ∆≤σr− = ∆≤σr−1
+                                                           +   ∪ ∆≤σr−1
+                                                                    −   and we have an exact
+sequence
+                                                 
+                                                 +
+                                                 +          (+ − )
+          0 → k[∆≤σr+ ∪ ∆≤σr− ] −−−→ k[∆≤σr+ ] ⊕ k[∆≤σr− ] −−−−−→ k[∆≤σr+ ∩ ∆≤σr− ] → 0.
+
+  The complex F1ε is isomorphic to Fsε . We will now show by induction on i that Fsε Fi−ε is
+                         ε
+homotopy equivalent to Fi+1 for ε = ±. This will prove the Proposition, since Fm+ ≃ Fm− .
+  Let us consider the complex C = Fsε Fi−ε . This is the total complex of the double complex
+                                                   −ε                                     −ε
+          D ε Di−ε             /   D ε Di−1
+                                        ε
+                                            ⊕ D ε Di−1                /   D ε Di−2
+                                                                               ε
+                                                                                   ⊕ D ε Di−2     /       ···        /   D ε D1
+
+                                                                                                                           
+                                                     −ε                                   −ε
+            Di−ε                     /    ε
+                                         Di−1   ⊕   Di−1                    /    ε
+                                                                                Di−2   ⊕ Di−2         /   ···            /   D1
+                                                                      can
+    By Lemma 3.1, the complex 0 → D ε Dr−ε −−→ D ε Dr−1
+                                                    ε
+                                                        → 0 is isomorphic to the direct sum
+        ε           ε     id                 ε        ε                                     can
+of 0 → Dr−1 (−1) −
+                 → Dr−1 (−1) → 0 and of 0 → Dr+1 −−→ Dr−1 → 0. Also, the complex
+                    can                                                                                         id
+0 → D ε Drε −−→ Drε → 0 is isomorphic to the direct sum of 0 → Drε −    → Drε → 0 and of
+0 → Drε (−1) → 0 → 0. It follows that C is homotopy equivalent to a complex
+                                    C ′ = 0 → Di+1
+                                               ε
+                                                   → Diε ⊕ Di−ε → · · · → D1 → 0,
+                                 CATEGORIFICATION OF THE BRAID GROUPS                                   9
+
+where the maps remain to be determined. Since Fsε has non zero homology only in degree 0
+and that homology is free as a right A-module, it follows that the homology of C vanishes in
+degrees > 0.
+  To conclude, we have to show that a complex X with the same terms as Fiε and with zero
+homology in degrees > 0 is actually isomorphic to Fiε . We have
+                                                      
+                   ai                      ai−1   bi−1
+                   ci    −ε                ci−1−ε di−1                  (c1 d1 )
+X = 0 → Diε −−−→ Di−1
+                  ε
+                      ⊕ Di−1            ε
+                             −−−−−−−−→ Di−2 ⊕ Di−2 → · · · → D + ⊕ D − −−−−−→ D1 → 0
+where the coefficients are in k and the maps are corresponding
+                                                                   multiples of the canonical maps.
+                                                             ar br
+   Take r ≤ i minimal such that there is an entry of cr dr that vanishes. Assume for example
+cr = 0. Then, ar−1 ar = 0, hence ar = 0. We have br cr+1 = dr cr+1 = br dr+1 = dr dr+1 = 0.
+If br = dr = 0, then X is the sum of the subcomplex with zero terms in degrees ≤ i − r and
+the subcomplex with zero terms in degrees > i − r. Otherwise, cr+1 = dr+1 = 0, hence X
+                                                           ε        −ε
+splits as the direct sum of the subcomplex · · · → Dr+1        ⊕ Dr+1    → Drε → 0 and the subcomplex
+                         −ε                                                    −ε
+0 → Dr−ε → Dr−1 ε
+                    ⊕ Dr−1    → · · · . Now, a morphism Dr−ε → Dr−1    ε
+                                                                          ⊕ Dr−1  is never injective, for
+the support of the left term is strictly larger than the support of the right term. Consequently,
+the complex X has non-zero homology in degree i−r, which is a contradiction. We have proven
+that none of the coefficients ar , br , cr , dr can be zero.
+   Let Z be the  closed subvariety of the affine space of coefficients ar , br , cr , dr that define a
+                  ar br     ar+1 br+1                     0
+complex (i.e., cr dr cr+1         dr+1 = 0) and let Z be its open subset corresponding to non-
+                                                                   ∼
+zero coefficients. We have an isomorphism Z 0 → (Gm )2i−1 , h : (ar , br , cr , dr )r 7→ (ar , cr )r . The
+action of (Gm )2i on the terms of the complex induce an action on Z. The corresponding action
+on Z 0 ≃ (Gm )2i−1 has a unique orbit. It follows that X is isomorphic to Fiε .                         
+
+3.2.4. Let us define the complex of Aen -modules
+                                                              ηs
+                                    Fs−1 = 0 → A −→ A ⊗As A(1) → 0
+where A is in degree −1 and ηs (a) = aαs ⊗ 1 + a ⊗ αs .
+Lemma 3.3. The complexes Fs and Fs−1 are inverse to each other in K b (Aen -modgr).
+Proof. Let C = K b (As -modgr) and D = K b (A-modgr). Let F = A⊗As ?, G = A⊗A ? and
+Φ =?(1). The morphisms of (As , As )-bimodules
+                        εs : A(1) → As , 1 7→ 0 and αs 7→ 1 and ηs′ : As → A, 1 7→ 1
+together with ηs and ε′s previously defined give rise to adjoint pairs (F, G) and (G, F Φ).
+  We have a split exact sequence of (As , As )-bimodules
+                                                         η′            ε
+                                           0 → As −
+                                                  →s
+                                                     A−
+                                                      →s
+                                                         As → 0,
+hence we deduce the Lemma from Proposition 2.1.                                                        
+   By Proposition 3.2 and Lemma 3.3, we have already obtained an action “up to isomorphism”
+of BW on K b (A) :
+Proposition 3.4. The map s 7→ Fs extends to a morphism from BW to the group of isomor-
+phism classes of invertible objects of K b (Aen -modgr).
+10                                               RAPHAËL ROUQUIER
+
+3.3. Rigidification. The key point here is that the rigidification of the braid relations at
+the homotopy category level is equivalent to the one at the derived category level, where the
+problem is trivial, since we have a genuine action of W .
+3.3.1. Consider the morphism of Aen -modules A ⊗As A → As that sends 1 ⊗ 1 to 1. It induces
+                                ∼
+a quasi-isomorphism Fs−1 (−1) → As . We denote its inverse (a morphism in D b (Aen -modgr))
+by fs−1 .
+   Now, let v ∈ BW and v = t1 · · · tm = u1 · · · un be two decompositions in elements of S ∪ S−1 .
+By Proposition 3.4, the invertible objects Ft1 · · · Ftm and Fu1 · · · Fun of K b (Aen -modgr) are
+isomorphic, hence
+                      Hom(Ft1 · · · Ftm , Fu1 · · · Fun ) ≃ End(A) = k,
+where  ∈ {K (A -modgr), D b (Aen -modgr)}. It follows that the canonical morphism
+               b  en
+
+                                                             ∼
+        HomK b (Aen -modgr) (Ft1 · · · Ftm , Fu1 · · · Fun ) → HomDb (Aen -modgr) (Ft1 · · · Ftm , Fu1 · · · Fun )
+is an isomorphism.
+   So, we have a unique isomorphism
+                               γt,u ∈ HomK b (Aen -modgr) (Ft1 · · · Ftm , Fu1 · · · Fun )
+such that the induced element in HomDb (Aen -modgr) (Ft1 · · · Ftm , Fu1 · · · Fun ) corresponds to
+                                                                         ∼
+                                 c(t1 ,...,tm ),(u1 ,...,un) : At1 · · · Atm → Au1 · · · Aun
+via the quasi-isomorphisms ft1 · · · ftm and fu1 · · · fun .
+  We now define Gv as the limit of the functors Ft1 · · · Ftm , where t = (t1 , . . . , tm ) runs over
+the decompositions of v in S ∪ S−1 , with the transitive system of isomorphisms γt,u .
+                                                        ∼                                      ∼
+  There are unique isomorphisms mv,v′ : Gv Gv′ → Gvv′ for v, v ′ ∈ BW and m1 : G1 → A in
+K b (Aen -modgr) that are compatible with the isomorphisms ct,u , in D b (Aen -modgr). So, we get
+the following result :
+Theorem 3.5. The family (Gv , mv,v′ , m1 ) defines an action of BW on K b (A-modgr).
+     This means we have a monoidal functor from
+       • the strict monoidal category with set of objects BW , with only arrows the identity maps
+          and with tensor product given by multiplication
+       • to the strict monoidal category of endofunctors of K b (A-modgr).
+Remark 3.6. Using tensor products on the right, one obtains a right action of BW on
+K b (A-modgr). This action commutes trivially with the left action of BW , so, we have an
+                opp
+action of BW × BW   on K b (A-modgr).
+3.3.2. We denote by BW the full subcategory of K b (Aen -modgr) with objects the Gv for v ∈
+BW . The product Gv ⊠Gv′ = Gvv′ provides BW with the structure of a strict monoidal category.
+Define G∗v as Gv−1 .
+  We have obtained our “categorification” of the braid group :
+Theorem 3.7. The category BW is a strict rigid monoidal category. Its “decategorification” is
+a quotient of BW .
+Conjecture 3.8. The decategorification of BW is equal to BW .
+Remark 3.9. One can show that the conjecture is true in type An , as a consequence of
+[KhovSei, Corollary 1.2].
+                           CATEGORIFICATION OF THE BRAID GROUPS                                  11
+
+3.3.3. Let C = A/(A · AW    + ) be the coinvariant algebra. Then, we get by restriction of functors
+an action of BW on K (C-modgr) and on K b (C-mod). We get as well monoidal functors
+                          b
+
+from BW to the category of self-equivalences of K b (C-modgr) or K b (C-mod). Note that we
+                                                                           opp
+get also right actions, and this gives a monoidal functor from BW × BW         to the category of
+self-equivalences of K b (C-modgr) or K b (C-mod).
+Remark 3.10. Let C be the smallest full subcategory of (A ⊗ A)-modgr containing the objects
+A ⊗As A and closed under finite direct sums, direct summands and tensor products. This is a
+monoidal subcategory of (A ⊗ A)-modgr which is a categorification of the Hecke algebra of W ,
+according to Soergel. The quotient C¯ of C by the smallest additive tensor ideal subcategory
+containing the A ⊗Ahs,ti A, where s, t ∈ S and mst 6= ∞, is a categorification of the Temperley-
+Lieb quotient of the Hecke algebra.
+  When W has type An , an action of C¯ on an algebraic triangulated category is the same as
+the data on an An -configuration of spherical objects [SeiTho, §2.c].
+
+              4. Principal block of a semi-simple complex Lie algebra
+4.1. Review of category O.
+
+4.1.1. Let g = Lie G, h ⊆ b a Cartan and a Borel subalgebra. Let O be the Bernstein-
+Gelfand-Gelfand category of finitely generated g-modules which are diagonalizable for h and
+locally finite for b. Denote by Z the center of the enveloping algebra U of g. Let P ⊂ h∗ be
+the weight lattice, Q ⊂ h∗ be the root lattice, R (resp. R+ ) be the set of roots (resp. positive
+roots) and Π the set of simple roots.
+                                         L
+4.1.2. We have a decomposition O = θ Oθ , where Oθ is the subcategory of modules with
+central character θ. Let D be a duality on O that fixes simple modules (up to isomorphism).
+   Let ∆(χ) = U ⊗U (b) Cχ be the Verma module associated to χ ∈ h∗ . It has a unique simple
+quotient L(χ). We denote a projective cover of L(χ) by P (χ). We put ∇(χ) = D∆(χ).
+   Consider the dot action of W on h∗ , w · λ = w(λ + ρ) − ρ (we denote by Ẇ the group W
+acting via the dot action on h∗ ), where ρ is the half-sum of the positive roots.
+   Given λ ∈ h∗ , let ξ(λ) be the character by which Z acts on L(λ) and mλ be its kernel, an
+element of Specm Z, the maximal spectrum of Z. The morphism h∗ → Specm Z, λ 7→ mλ
+                                   ∼                                                      ∼
+induces an isomorphism h∗ /Ẇ → Specm Z, i.e., an isomorphism of algebras h : Z → AẆ
+where A = C[h∗ ]. The simple objects in Oθ are those L(λ) with ξ(λ) = θ.
+
+4.1.3. Consider B the set of intersections of orbits of Ẇ and of Q on h∗ . For d ∈ B, we denote
+by Od (or by
+           L Oµ for a µ ∈ d) the thick subcategory of O generated by the L(λ) for λ ∈ d.
+Then, O = d∈B Od is the decomposition of O into blocks.
+  Let Λ ∈ h∗ /P and λ ∈ Λ. We have a root system RΛ = {α ∈ R|hλ, α∨i ∈ Z} with set of
+simple roots ΠΛ ⊂ R+ , Weyl group WΛ = {w ∈ W |w(λ) − λ ∈ Q} and set of simple reflections
+SΛ (they depend only on Λ). Note that RΛ = R if and only if Λ = P . We define
+                          Λ+ = {λ ∈ Λ|hλ + ρ, α∨ i ≥ 0 for all α ∈ Πλ }
+                         Λ++ = {λ ∈ Λ|hλ + ρ, α∨i > 0 for all α ∈ Πλ }.
+Then, Λ+ is a fundamental domain for the action of ẆΛ on Λ. The module L(λ) is finite
+dimensional if and only if λ ∈ P ++ .
+12                                            RAPHAËL ROUQUIER
+
+4.1.4. We define a translation functor between Od and Od′ when d, d′ ∈ B are in the same
+P -orbit. Take Λ ∈ h∗ /P and λ, µ ∈ Λ+ . Let ν be the only element in W (µ − λ) ∩ Λ++ . Then,
+we define Tλµ : Oλ → Oµ , M 7→ prµ (M ⊗ L(ν)) where prµ : O → Oµ is the projection functor.
+Since −w0 ν ∈ Λ++ and L(ν)∗ ≃ L(−w0 ν), it follows that the functors Tλµ and Tµλ are left and
+right adjoint to each other.
+   Let d ∈ B containing 0. The corresponding block O0 = Od is the principal block of O. Note
+that d = W · 0 is a regular W -orbit and we put L(w) = L(w · 0), etc...
+   For s ∈ S, we fix µ ∈ P + with stabilizer {1, s} in Ẇ . We put T s = T0µ and Ts = Tµ0 and
+Θs = Ts T s : O0 → O0 .
+
+                                                                                    ε′
+4.1.5. Let Fs = Fs be the complex of functors on O0 given by 0 → Θs −→         s
+                                                                                 id → 0 where ε′s is
+the counit of adjunction (id is in degree 1).
+                         ηs
+   Let Fs−1 = 0 → id −   → Θs → 0, where ηs is the unit of the other adjunction. Then, Rickard
+[Ri, Proposition 2.2] proved that Fs and Fs−1 are inverse self-equivalences of K b (O0 ) (this
+follows from §2.2.3 by the classical character calculation [T s Ts ] = 2[id]).
+   It is easy and classical that the Fs induce an action of W on K0 (O0 ) (the reflection s ∈ S
+acts as [Fs ]). This realizes the regular representation of W . A permutation basis for this action
+is provided by {[∆(w)]}w∈W .
+   It seems difficult to check directly that the Fs satisfy the braid relations. Using the equiva-
+lence between O0 and perverse sheaves on the flag variety, this can be deduced from §5.
+
+4.2. Link with bimodules.
+
+4.2.1. We start by recalling results of Soergel [Soe1, Soe2, Soe3] relating the category O to
+modules over the coinvariant algebra.
+  Let Λ ∈ h∗ /P . We denote by CΛ = A/(A · AW        + ) the coinvariant algebra of (WΛ , SΛ )
+                                                       Λ
+
+
+and pΛ : A → CΛ the canonical surjection. Let λ ∈ Λ+ . We denote by tλ : A → A the
+translation by λ, given by f 7→ (z 7→ f (z + λ)) We have Soergel’s Endomorphismensatz [Soe1,
+Endomorphismensatz 7] :
+                                                                                h    t   pΛ
+Theorem 4.1. The image of the composite morphism Z −→ AẆ ֒→ A −→    λ
+                                                                        A −→ CΛ is CΛWλ
+and the canonical morphism Z → End(P (w0 · λ)) factors through this morphism Z → CΛWλ .
+                               ∼
+The induced morphism σλ : CΛWλ → End(P (w0 · λ)) is an isomorphism.
+     Let us now recall Soergel’s Struktursatz [Soe1, Struktursatz 9] :
+
+Theorem 4.2. The functor Hom(P (w0 · λ), −) : Oλ -proj → CΛWλ -mod is fully faithful.
+  Let µ ∈ Λ be regular (i.e., with trivial stabilizer in WΛ ).
+                                               ∼
+  There is an isomorphism φ : Tλµ P (w0 · λ) → P (w0 · µ). Any such isomorphism φ induces a
+commutative diagram [Soe1, Bemerkung p.431]
+                                                   inclusion
+                                     CΛWλ                             /   CΛ
+                                     σλ                                        σµ
+                                                   φ∗ Tλ0                 
+                                End(P (w0 · λ))              /   End(P (w0 · µ))
+                          CATEGORIFICATION OF THE BRAID GROUPS                                        13
+
+  This gives us an isomorphism, via the adjunction (Tλµ , Tµλ) :
+                                           ∼                                             ∼
+         ResCΛWλ Hom(P (w0 · µ), ?) → Hom(Tλµ P (w0 · λ), ?) → Hom(P (w0 · λ), Tµλ(?))
+             CΛ
+
+between functors Oµ → CΛWλ -mod. So, we have a commutative diagram, with fully faithful
+horizontal functors
+                                               Hom(P (w0 ·µ),?)
+                              Oµ -proj                                /           CΛ -mod
+                               Tµλ                                                       Res
+                                                                                    
+                                               Hom(P (w0 ·λ),?)
+                              Oλ -proj                            /   CΛWλ -mod
+4.2.2. From the last commutative diagram, we deduce
+Proposition 4.3. There is a commutative diagram with fully faithful horizontal arrows
+                                                 Hom(P (w0 ),−)
+                          K b (O0 -proj)                                  /       K b (C-mod)
+                              Fs                                                                 Fs
+                                                Hom(P (w0 ),−)
+                                                                                             
+                          K b (O0 -proj)                                      /   K b (C-mod)
+  So, we deduce from Theorem 3.5 the following : given v ∈ BW and v = t1 · · · tm = u1 · · · un
+                                                                                  ∼
+two decompositions in elements of S ∪ S−1 , there is an isomorphism Ft1 · · · Ftm → Fu1 · · · Fun
+between functors on D b (O0 ) coming by restriction from the isomorphism between functors on
+K b (A-modgr). These form a transitive system of isomorphisms, i.e.
+Theorem 4.4. The functors Fs induce an action of BW on D b (O0 ).
+  More precisely,
+Theorem 4.5. There is a monoidal functor from BW to the category of self-equivalences of
+D b (O0 ) sending Gs to Fs .
+Remark 4.6. One has a similar statement for the deformed category O.
+   Note that we deduce from §3.3.3 that there is also a right action of BW on D b (O0 ). We
+leave it to the reader to check that this corresponds to the actions using Zuckerman functors,
+or equivalently, Arkhipov functors.
+   In the graded setting (mixed perverse sheaves for example), the left and right actions of
+BW should be swapped by the self-Koszul duality equivalence, cf [BerFreKhov] (and [BeiGi,
+Conjecture 5.18] for an analog in the equivariant case).
+   Various constructions have been given of weak actions of braid groups on D b (O0 ), cf [AnStr,
+Ar, KhomMaz, MazStr, Str].
+                                           5. Flag varieties
+5.1. Classical results. Let G be a semi-simple complex algebraic group with Weyl group W .
+  Let W = {w}w∈W . The braid group BW of W is isomorphic to the group with set of
+generators W and relations ww′ = w′′ when ww ′ = w ′′ and l(w ′′ ) = l(w) + l(w ′ ).
+  Let B be the flag variety of G. We decompose
+                                             a
+                                     B×B =       O(w)
+                                                       w∈W
+14                                         RAPHAËL ROUQUIER
+
+into orbits for the diagonal G-action. Consider the first and second projections
+
+                                                       O(w)
+                                                      z           DD
+                                              pw    zz              DDqw
+                                                   z                  DD
+                                                 zz                     DD
+                                             z| z                         "
+                                        B                                          B
+Then, we have a functor
+                                Fw = R(pw )! (qw )∗ : D b (B) → D b (B)
+where D b (B) is the derived category of bounded complexes of constructible sheaves of C-vector
+spaces over B.
+  First and last projections induce an isomorphism
+                                       ∼
+                     O(w) ×B O(w ′ ) → O(ww ′) when l(ww ′) = l(w) + l(w ′ ).
+This induces an isomorphism (cf §6.2)
+                                        ∼
+                        γw,w′ : Fw Fw′ → Fww′ when l(ww ′) = l(w) + l(w ′ ).
+   For s ∈ S, then Fs is obtained as in §2.2.1 for the canonical morphism πs : B → Ps , where Ps is
+the variety of parabolic subgroups of type s. So, Fs is invertible, with inverse Fs−1 = R(ps )∗ (qs )! .
+It follows that Fw is invertible for w ∈ W , with inverse Fw−1 = R(pw )∗ (qw )! , hence we get a
+morphism from BW to the group of isomorphism classes of invertible functors on D b (B).
+
+5.2. Genuine braid group action. We have a commutative diagram
+
+                                                          γx,y Fz
+                                            Fx Fy Fz                /   Fxy Fz
+                                       Fx γy,z                                    γxy,z
+                                                                             
+                                            Fx Fyz        γx,yz
+                                                                        /   Fxyz
+
+  for x, y, z ∈ W such that l(x) + l(y) + l(z) = l(xyz), by Theorem 6.2.
+  Let b ∈ BW and b = t1 · · · tm = u1 · · · un with ui ∈ W ∪ W−1. Applying braid relations and
+                                                                              ∼
+the corresponding isomorphisms γ, we get various isomorphisms Ft1 · · · Ftm → Fu1 · · · Fun . By
+Deligne [De3], they are all equal. Let us denote by γt· ,u· their common value.
+  We now define
+                                     F̃b = lim Ft1 · · · Ftn
+                                                 (t1 ,··· ,tn )
+
+where (t1 , · · · , tn ) runs over the set of sequences of elements of W ∪ W−1 such that b = t1 · · · tn
+and where we are using the transitive system of isomorphisms γt· ,s· .
+  We have now the following result
+Theorem 5.1. The assignment b 7→ F̃b defines an action of BW on D b (B).
+Remark 5.2. Deligne [De3] defines a variety Ob with two morphisms pb , qb : Ob → B for any
+     +
+b ∈ BW . Then, the action of b on D b(B) is given by pb ! qb∗ .
+5.3. Link with bimodules.
+                           CATEGORIFICATION OF THE BRAID GROUPS                                 15
+
+5.3.1. Fix a Borel subgroup B of G. We consider the setting of §3 with k = C and V ∗ the
+complexified character group of B. In this section, we will consider the algebra A with double
+grading, i.e., V ∗ is in degree 2.
+          ∼
+  Let C → H ∗ (B, C) be the Borel isomorphism (send a character of B to the Chern class of
+the corresponding line bundle) and denote by β its inverse.
+  Let I be a subset of S, WI the subgroup of W generated by I, W I be the set of min-
+imal right coset representatives of W/WI and PI the parabolic subgroup of G of type I
+containing L
+           B. Put PI = G/PI . Denote    L     by πI : B → PI the canonical morphism. The
+map πI∗ :    i Hom(C   PI , C PI [i]) →  i Hom(C B , CB [i]) induces, via β, an isomorphism βI :
+L                       ∼    WI
+  i Hom(CPI , CPI [i]) → C        .
+
+5.3.2. Consider the full subcategory Dσb (PI ) of D b (PI ) of complexes whose cohomology sheaves
+are smooth along B-orbits. Given w ∈ W I , let Lw be the perverse     L sheaf corresponding to
+the intersection cohomology complex
+                                  L of BwPI /PI . Let LI =               w∈W I Lw . The dg-algebra
+R End(LI ) is formal and let RI = i Hom(LI , LI [i]). We have an equivalence LI ⊗? from the
+category RI -dgperf
+                L of perfect differential graded RI -modules to Dσb (PI ).
+  The functor i Hom(CPI , ?[i]) : Dσ (PI ) → C WI -modgr restricts to a fully faithful functor
+                                     b
+
+on the full subcategory containing the LI [i]. So, we get a fully faithful functor RI -dgperf →
+K(C WI -dgmod), hence a fully faithful functor HI : Dσb (PI ) → K(C WI -dgmod), where we
+denote by K(C WI -dgmod) the homotopy category of differential graded C WI -modules.
+  As in §4.2, we get a commutative diagram
+                                                H
+                                  Dσb (B)                        /   K(C-dgmod)
+                                 RπI∗                                            Res
+                                                                            
+                                  Dσb (PI )     HI
+                                                     /           K(C WI -dgmod)
+
+and we deduce
+Proposition 5.3. Let s ∈ S. There is a commutative diagram with fully faithful horizontal
+arrows
+                                                H
+                                   Dσb (B)               /       K(C-dgmod)
+                                    Fs                                       Fs
+                                                                        
+                                   Dσb (B)      H
+                                                             /   K(C-dgmod)
+
+   In particular, we get a monoidal functor from BW to the category of self-equivalences of
+Dσb (B).
+Remark 5.4. We believe the monoidal functor above is the restriction of a functor with values
+in D b (B).
+
+                  6. Appendix : associativity of kernel transforms
+6.1. Classical isomorphisms.
+16                                                              RAPHAËL ROUQUIER
+
+6.1.1. We consider here
+      • schemes of finite type over a field of characteristic p ≥ 0 and the derived category of
+        constructible sheaves of Λ-modules, where Λ is a torsion ring with torsion prime to p or
+        Λ is a Qℓ -algebra, for l prime to p
+          or
+      • locally compact topological spaces of finite soft c-dimension and the derived category of
+        constructible sheaves of C-vector spaces.
+  We will quote results pertaining to either of the two settings above, depending on the con-
+venience of references. The maps involved will be concatenations of canonical isomorphisms.
+  We denote a derived functor with the same notation as the original functor : we write ⊗ for
+  L
+⊗ , f! for Rf! , etc...
+
+6.1.2. Let f : Y → X and g : Z → Y be two morphisms. There are canonical isomorphisms
+[KaScha, 2.6.6 and 2.3.9]
+                                                                ∼                             ∼
+                                                       (f g)! → f! g! and (f g)∗ → g ∗f ∗ .
+     These isomorphisms satisfy a cocycle property (cf [De1, Théorème 5.1.8] for the case (−)! ) :
+                                                   w            v            u
+Lemma 6.1. Consider X3 −→ X2 −→ X1 −→ X0 . Then, the following diagrams are commu-
+tative
+                w ∗ v ∗ u∗ / w ∗ (uv)∗      u! v! w!     / (uv)! w!
+
+
+                                                                                                           
+                                        (vw)∗ u∗          /   (uvw)∗                        u! (vw)!   /   (uvw)!
+
+ We will take the liberty to identify the functors v ∗ u∗ and (uv)∗ through the canonical iso-
+morphism.
+     There are canonical isomorphisms [KaScha, 2.6.18]
+                                           ∼                                                           ∼
+                    f ∗ (−1 ⊗ −2 ) → (f ∗ −1 ) ⊗ (f ∗ −2 ) and (−1 ⊗ −2 ) ⊗ −3 → −1 ⊗ (−2 ⊗ −3 )
+  We identify the bifunctors f ∗ (−1 ⊗ −2 ) and (f ∗ −1 ) ⊗ (f ∗ −2 ) through the canonical isomor-
+phism. Given Ai ∈ D b (X), i ∈ {1, 2, 3}, we identify (A1 ⊗ A2 ) ⊗ A3 with A1 ⊗ (A2 ⊗ A3 ) and
+we denote this object by A1 ⊗ A2 ⊗ A3 .
+                       g′
+     Let    X′              /   X       be a cartesian square. Then, there is the canonical base change isomor-
+           f′                       f
+                               
+        S′ g / S
+phism [KaScha, 2.6.20] :
+                                                                              ∼       ∗
+                                                                        g ∗f! → f!′ g ′ .
+     We have a canonical isomorphism [KaScha, 2.6.19]
+                                                                             ∼
+                                                        −1 ⊗ (f! −2 ) → f! (f ∗ −1 ⊗−2 ).
+
+6.2. Kernel transforms.
+                                       CATEGORIFICATION OF THE BRAID GROUPS                                                     17
+
+6.2.1. Let us define a 2-category K.
+      • The 0-arrows are the varieties.
+      • 1-arrows : Hom(X, Y ) is the family of (K, U) where U is a variety over Y × X and
+        K ∈ D b (U).
+                                                                               ∼
+      • 2-arrows : Hom((K, U), (K ′ , U ′ )) is the set of (φ, f ) where f : U → U ′ is an isomorphism
+                                           ∼
+        of (Y × X)-varieties and φ : K → f ∗ K ′ .
+  We define the composition of 1-arrows. Consider the following diagram where the square is
+cartesian
+(2)                                                                  V ×Y U
+                                                                          HH
+                                                               β   vv       HH α
+                                                                vvv           HH
+                                                              vv                 HH
+                                                            zv
+                                                            v                      H$
+                                                        V   II                           u U @@
+                                              p4   ~~         II p3
+                                                                II              p2    uuu      @@p1
+                                                ~~~               II               uu
+                                                                                     u           @@
+                                              ~                    II            u                @
+                                              ~                       $       uz u
+                                         Z                                Y                            X
+Let K ∈ D b (U) and L ∈ D b (V ). We put L ⊠ K = β ∗ L ⊗ α∗ K. The composition (L, V )(K, U)
+is defined to be (L ⊠ K, V ×Y U).
+   Let us consider now the diagram with all squares cartesian
+                                                     W ×Z V ×YP U
+                                                       nn            PPP
+                                                            b nnnn       PPPa
+                                               nn n                          PPP
+                                           vnnn                                 PP(
+                                     W ×Z VQ                                      V ×Y U
+                                                                                       HH
+                                      u      QQQ γ                        β mmmm
+                                                                                 m
+                                 δ uuu           QQQ                       m
+                                                                                         HH α
+                                                                                           HH
+                               uuu                  QQQ
+                                                       Q              mmmm                    HH
+                            zuu                         Q Q        mm                           H$
+                                                           Q(   vmm
+                          W JJ                            mm  V Q QQQ                              U@
+                p6      }
+                        }      J  JJp5                mmm  p4 mm      Q              QQQp3     uu    @      p2 uu   @@p1
+                      }}            JJ                    mmm
+                                                             m                          QQQ                   u       @@
+                   }}}                 JJ               mm                                 QQQ             uuu          @
+                ~ }                      J$           mm                                      QQ(       zuu
+                                                   v m
+                                                    m
+            T                                 Z                                                     Y                       X
+and take M ∈ D b (W ). We have
+                                                                          ∼
+      (M ⊠ L) ⊠ K = b∗ (δ ∗ M ⊗ γ ∗ L) ⊗ (αa)∗ K → (δb)∗ M ⊗ a∗ (β ∗ L ⊗ α∗ K) = M ⊠ (L ⊠ K).
+This provides the associativity isomorphisms for K. With our conventions, we will write M ⊠
+L ⊠ K for the objects in the isomorphism above. It is straightforward to check that K is indeed
+a 2-category.
+
+6.2.2. We put ΦK = ΦpK2 ,p1 = p2 ! (K ⊗ p∗1 −) : D b (X) → D b (Y ).
+                   ∼
+  Let cL,K : ΦL ΦK → ΦL⊠K be defined as the composition
+
+                            p4 ! (L ⊗ p∗3 p2 ! (K ⊗ p∗1 −)) → p4 ! (L ⊗ β! α∗ (K ⊗ p∗1 −))
+                                                                   → p4 ! β! (β ∗ L ⊗ α∗ (K ⊗ p∗1 −))
+                                                                   → (p4 β)! ((β ∗L ⊗ α∗ K) ⊗ α∗ p∗1 −)
+                                                                   → (p4 β)! ((β ∗L ⊗ α∗ K) ⊗ (p1 α)∗ −).
+18                                                        RAPHAËL ROUQUIER
+
+     Let (φ, f ) ∈ HomK ((K, U), (K ′ , U ′ )). We have a commutative diagram
+
+
+                                                                                             U
+                                                                                                    00
+                                                                                               f ∼000
+                                                                                                       00
+                                                                                     p2             ′      0p
+                                                                                                 U A 00 1
+                                                                                        }}            AA 00
+                                                                                       }}                 AA 0
+                                                                                                             A 0
+                                                                                ~} }} p′2           p′1 AA 0
+                                                                   Y                                              X
+
+
+and we define Φ(φ, f ) as the composition
+
+
+                                                     ∼                                                        ′                 ∼             ′
+                      p2! (K ⊗ p∗1 −) → p′2! f! (f ∗ K ′ ⊗ f ∗ p1∗ −) → p′2! (K ′ ⊗ p1∗ −).
+
+Theorem 6.2. Φ is a 2-functor from K to the 2-category of triangulated categories.
+ We have cM ⊠L,K ◦ (cM,L ΦK ) = cM,L⊠K ◦ (ΦM cL,K ), i.e., the following diagram commutes :
+
+
+                                                     ΦM ΦL ΦK                                        /       ΦM ⊠L ΦK
+
+                                                                                                                   
+                                                         ΦM ΦL⊠K                                         /   ΦM ⊠L⊠K
+
+6.2.3. The next two Lemmas deal with composition of base change isomorphisms.
+  For the first Lemma, see [De1, Lemme 5.2.5] :
+
+                               f2                    f1
+Lemma 6.3. Let         X2           /       X1             /       X be a diagram with all squares cartesian. Then, the
+                      h2            h1                         h
+                                                                     
+                        S2     g2
+                                        /   S1       g1
+                                                               /   S
+following diagram commutes
+
+
+                                    (g1 g2 )∗ h!                                                                        /   h2! (f1 f2 )∗
+                                                                                                                                     O
+
+                                                 
+                                            g2∗g1∗ h!                                /   g2∗ h1! f1∗                        /   h2! f2∗ f1∗
+
+
+     The second Lemma is [De1, Lemme 5.2.4] :
+                                                    CATEGORIFICATION OF THE BRAID GROUPS                                                                                                     19
+
+                                                   g2
+Lemma 6.4. Let                     X2′                      /   X2                    be a diagram with all squares cartesian. Let A ∈ D b (S ′ ).
+                       f2′                                              f2
+                                                  g1               
+                                   X1′                      /   X1
+                       f1′                                              f1
+                                                                   
+                     S′ g / S
+Then, the following diagram commutes
+
+              A ⊗ g ∗ (f1 f2 )! −                                                 /   A ⊗ (f1′ f2′ )! g2∗ −                  /   (f1′ f2′ )! ((f1′ f2′ )∗ A ⊗ g2∗ −)
+                                                                                                                                                                  O
+
+                           
+               A ⊗ g ∗ f1 ! f2 ! −                                                                                                   f1!′ f2!′ (f2′ ∗ f1′ ∗ A ⊗ g2∗−)
+                                                                                                                                                              O
+
+                               
+               A ⊗ f1!′ g1∗ f2 ! −                                       /   f1′ ! (f1′ ∗ A ⊗ g1∗ f2 ! −)                             /   f1′ ! (f1′ ∗ A ⊗ f2′ ! g2∗ −)
+
+Lemma 6.5. Let f : Y → X and A, B ∈ D b (X) and C ∈ D b (Y ). Then, the following diagram
+commutes
+
+                                                            A ⊗ B ⊗ f! C                                        /   f! (f ∗ (A ⊗ B) ⊗ C)
+
+                                                                                                                                
+                                                    A ⊗ f! (f ∗ B ⊗ C)                                      /       f! (f ∗ A ⊗ f ∗ B ⊗ C)
+
+Proof. The corresponding statement for f! replaced by f∗ is easy, the key point is that the
+                  f ∗η          εf ∗
+composition f ∗ −−→ f ∗ f∗ f ∗ −−→ f ∗ is the identity of f ∗ , where η and ε are the unit and counit
+of the adjoint pair (f ∗ , f∗ ). The Lemma follows easily from this (in the algebraic case, we
+have only to check in addition the trivial case where f is an open immersion thanks to the
+transitivity of Lemma 6.4, whereas in the topological case we use the embedding f! C ⊂ f∗ C
+for C injective).                                                                                  
+
+                                               g′
+Lemma 6.6. Let             X′                           /   X be a cartesian square. Let A ∈ D b (S) and B ∈ D b (X). Then,
+                       f′                                           f
+                                                               
+                    S′ g / S
+the following diagram commutes
+
+        g ∗ A ⊗ g ∗ f! B                       /   g ∗ A ⊗ f!′ g ′ ∗ B                            /   f!′ (f ′ ∗ g ∗ A ⊗ g ′∗ B)                     /   f!′ (g ′ ∗ f ∗ A ⊗ g ′ ∗ B)
+
+                                                                                                                                                                              
+        g ∗(A ⊗ f! B)                                                                                  /   g ∗ f! (f ∗ A ⊗ B)                             /           f!′ g ′∗ (f ∗ A ⊗ B)
+20                                                        RAPHAËL ROUQUIER
+
+Proof. As in the previous Lemma, one reduces to proving the analog of the Lemma with ?!
+replaced by ?∗ . This follows then from the easily checked commutativity of the two diagrams
+
+                          f ′ ∗ g ∗f∗         /   f ′ ∗ f∗′ g ′ ∗                     g∗              /   g ∗f∗ f ∗
+
+                                                                                                             
+                          g ′ ∗ f ∗ f∗               /   g ′∗                     f∗′ f ′ ∗ g ∗   /       f∗′ g ′∗ f ∗
+
+where we have used the units and counits of the adjoint pairs (f ∗ , f∗ ) and (f ′ ∗ , f∗′ ).                                 
+
+Proof of the Theorem. We will show the commutativity of the following diagram
+
+                                                                ΦpM6 ,p5 ΦL⊠K
+                                                                          p4 β,p1 α
+
+                                            ΦM cL,K kkkk
+                                                                k5
+                                                              SSS
+                                                                 SSScM,L⊠K
+                                                  k                  SSS
+                                               kkk                     ζSSS
+                                          kkkkk                           SSS
+                                         k                      cδ∗ M,L⊠K      )
+                                                 p6 δ,γ β,p1 α
+                        ΦM ΦL ΦKS              Φδ∗ M ΦL⊠K                    / ΦM ⊠L⊠K
+                                                                                 5
+                                 SSS
+                                    SSS                 O                  kkk
+                                       SSS                            kkkkk
+                                          S           ξ              k
+                                   cM,L ΦK SSSS)                 kkkc
+                                                              kkk M ⊠L,K
+                                                                 p6 δ,p3 γ p2 ,p1
+                                                                ΦM  ⊠L ΦK
+
+where ζ is the composition
+     p6 ! (M ⊗ p∗5 (p4 β)! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −)) → p6 ! (M ⊗ p∗5 p4 ! β! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −))
+                                                                      → p6 ! (M ⊗ δ! γ ∗ β! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −))
+                                                                      → p6 ! δ! (δ ∗ M ⊗ γ ∗ β! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −))
+                                                                      → (p6 δ)! (δ ∗ M ⊗ γ ∗ β! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −))
+and ξ the composition
+
+
+     (p6 δ)! (δ ∗ M ⊗ γ ∗ L ⊗ (p3 γ)∗ p2 ! (K ⊗ p∗1 −)) → (p6 δ)! (δ ∗ M ⊗ γ ∗ L ⊗ γ ∗ p∗3 p2 ! (K ⊗ p∗1 −))
+                                                                     → (p6 δ)! (δ ∗ M ⊗ γ ∗ (L ⊗ p∗3 p2 ! (K ⊗ p∗1 −)))
+                                                                     → (p6 δ)! (δ ∗ M ⊗ γ ∗ (L ⊗ β! α∗ (K ⊗ p∗1 −)))
+                                                                     → (p6 δ)! (δ ∗ M ⊗ γ ∗ (L ⊗ β! (α∗ K ⊗ α∗ p∗1 −)))
+                                                                     → (p6 δ)! (δ ∗ M ⊗ γ ∗ (L ⊗ β! (α∗ K ⊗ (p1 α)∗ −)))
+                                                                     → (p6 δ)! (δ ∗ M ⊗ γ ∗ β! (β ∗ L ⊗ α∗ K ⊗ (p1 α)∗ −))
+     Let u and v be the compositions
+         u : p6 ! (M ⊗ p∗5 p4 ! −) → p6 ! (M ⊗ δ! γ ∗ −) → p6 ! δ! (δ ∗ M ⊗ γ ∗ −) → (p6 δ)! (δ ∗ M ⊗ γ ∗ −)
+and
+v : L⊗p∗3 p2 ! (K⊗p∗1 −) → L⊗β! α∗ (K⊗p∗1 −) → β! (β ∗ L⊗α∗ (K⊗p∗1 −)) → β! (β ∗ L⊗α∗ K⊗(p1 α)∗ −).
+     Then, one has trivially
+                 ζ(ΦM cL,K ) = u(L ⊗ p∗3 p2 ! (K ⊗ p∗1 −)) ◦ p6 ! (M ⊗ p∗5 p4 ! v) = ξ(cM,L ΦK ).
+                             CATEGORIFICATION OF THE BRAID GROUPS                                           21
+
+   The equality cM,L⊠K = cδ∗ M,L⊠K ζ follows from Lemma 6.4 applied to g = p5 , g1 = γ, g2 = a,
+f1 = p4 , f2 = β, f1′ = δ, f2′ = b and A = M and from Lemma 6.1 applied to u = p6 , v = δ and
+w = b.
+
+   The equality cM ⊠L,K = cδ∗ M,L⊠K ξ follows from Lemma 6.3 applied to f1 = α, f2 = a, g1 = p3 ,
+g2 = γ, h = p2 , h1 = β and h2 = b, from Lemma 6.5 applied to f = b, A = δ ∗ M, B = γ ∗ L and
+C = (αa)∗ (K ⊗ p∗1 −) and from Lemma 6.6 applied to f = β, g = γ, f ′ = b, g ′ = a, A = L and
+B = α∗ (K ⊗ p∗1 −).                                                                           
+
+
+
+                                              References
+[AnStr]        H.H. Andersen and C. Stroppel, Twisting functors on O, Representation Theory 7 (2003),
+               681–699.
+[Ar]           S. Arkhipov, Algebraic construction of contragradient quasi-Verma modules in positive charac-
+               teristic, preprint math.AG/0105042.
+[BeiBer]       A. Beilinson and J. Bernstein, Localisation de g-modules, C. R. Acad. Sci. Paris Sr. I Math. 292
+               (1981), 15–18.
+[BeiBezMi]     A. Beilinson, R. Bezrukavnikov and I. Mirkovic, Tilting exercices, preprint math.RT/0301098.
+[BeiGi]        A. Beilinson and V. Ginzburg, Wall-crossing functors and D-modules, Represent. Theory 3
+               (1999), 1–31.
+[BerFreKhov]   J. Bernstein, I. Frenkel and M. Khovanov, A categorification of the Temperley-Lieb algebra and
+               Schur quotients of U (sl2 ) via projective and Zuckerman functors, Sel. math. 5 (1999), 199–241.
+[De1]          P. Deligne, Cohomologie à supports propres, exposé XVII, in “SGA4 Théorie des topos et coho-
+               mologie étale des schémas”, Springer Lecture Notes in Math. 305, 1973.
+[De2]          P. Deligne, Catgories tannakiennes, in The Grothendieck Festschrift, Vol. II, 111–195,
+               Birkhäuser 1990.
+[De3]          P. Deligne, Action du groupe des tresses sur une catégorie, Inv. Math. 128 (1997), 159–175.
+[KaScha]       M. Kashiwara and P. Schapira, Sheaves on manifolds, Springer Verlag, 1990.
+[KhomMaz]      O. Khomenko and V. Mazorchuk, On Arkhipov’s and Enright’s functors, to appear in Math. Z.
+[KhovSei]      M. Khovanov and P. Seidel, Quivers, Floer cohomology, and braid group actions, J. Amer. Math.
+               Soc. 15 (2002), 203–271.
+[Mac]          MacLane “Categories for the working mathematician”, Graduate Texts in Mathematics, Vol. 5.
+               Springer-Verlag, 1971.
+[MazStr]       V. Mazorchuk and C. Stroppel, Translation and shuffling of projectively presentable modules
+               and a categorification of a parabolic Hecke module, to appear in Trans. Amer. Math. Soc.
+[Ri]           J. Rickard, Translation functors and equivalences of derived categories for blocks of algebraic
+               groups, in “Finite dimensional algebras and related topics”, Kluwer, 255–264, 1994.
+[RouZi]        Raphaël Rouquier and Alexander Zimmermann, Picard groups for derived categories, J. London
+               Math. Soc. 87 (2003), 197-225.
+[SeiTho]       P. Seidel and R. Thomas, Braid group actions on derived categories of coherent sheaves, Duke
+               Math. J. 108 (2001), 37–108.
+[Soe1]         W. Soergel, Kategorie O, perverse Garben und Moduln über den Koinvarienten zur Weylgruppe,
+               J. Amer. Math. Soc. 3 (1990), 421–445.
+[Soe2]         W. Soergel, The combinatorics of Harish-Chandra bimodules, J. reine angew. Math. 429 (1992),
+               49–74.
+[Soe3]         W. Soergel, Combinatorics of Harish-Chandra modules, in “Representation theories and alge-
+               braic geometry”, 401–412, Kluwer, 1998.
+[Soe4]         W. Soergel, Kazhdan-Lusztig-Polynome und unzerlegbare Bimoduln über Polynomringen,
+               preprint, March 2004.
+[Str]          C. Stroppel, Categorification of the Temperley-Lieb algebra, Tangles and cobordisms via projec-
+               tive functors, preprint, October 2003.
+22                                 RAPHAËL ROUQUIER
+
+  Raphaël Rouquier, Institut de Mathématiques de Jussieu — CNRS, UFR de Mathématiques,
+Université Denis Diderot, 2, place Jussieu, 75005 Paris, FRANCE
+  E-mail address: rouquier@math.jussieu.fr
+

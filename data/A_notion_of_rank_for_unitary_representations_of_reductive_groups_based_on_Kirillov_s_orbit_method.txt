@@ -1,0 +1,1874 @@
+                                                A NOTION OF RANK FOR UNITARY REPRESENTATIONS OF
+                                               REDUCTIVE GROUPS BASED ON KIRILLOV’S ORBIT METHOD
+arXiv:math/0504363v2 [math.RT] 21 Aug 2006
+
+
+
+
+                                                                                      HADI SALMASIAN
+
+
+
+
+                                                    Abstract. We introduce a new notion of rank for unitary representations of semisim-
+                                                    ple groups over a local field of characteristic zero. The theory is based on Kirillov’s
+                                                    method of orbits for nilpotent groups over local fields. When the semisimple group is a
+                                                    classical group, we prove that the new theory is essentially equivalent to Howe’s theory
+                                                    of N -rank [Hw1], [Li1], [Sca]. Therefore, our results provide a systematic generalization
+                                                    of the notion of a small representation (in the sense of Howe) to exceptional groups.
+                                                    However, unlike previous works which used ad-hoc methods to study different types of
+                                                    classical groups (and some exceptional ones [Ws], [LS]), our definition is simultaneously
+                                                    applicable to both classical and exceptional groups. The most important result of this
+                                                    paper is a general “purity” result for unitary representations, which demonstrates how
+                                                    similar partial results in the previous authors’ works should be formulated and proved
+                                                    for an arbitrary semisimple group in the language of Kirillov’s theory. The purity result
+                                                    is a crucial step towards studying small representations of exceptional groups. New
+                                                    results concerning small unitary representations of exceptional groups will be published
+                                                    in a forthcoming paper [Sa].
+
+
+
+                                                                                          Contents
+                                               1. Introduction                                                                                    1
+                                               2. Heisenberg group and Weil representation                                                        5
+                                               3. Construction of H-tower groups                                                                  6
+                                               4. Rankable representations of H-tower groups                                                     12
+                                               5. Main theorems                                                                                  15
+                                               6. Relation with the old theory                                                                   28
+                                               References                                                                                        37
+
+
+
+                                                                                     1. Introduction
+                                             1.1. Background. The theory of N-rank [Hw1], [Li1], [Sca] provides an effective tool
+                                             for studying “small” unitary representations of classical semisimple groups. It is based
+                                             on analysing the restriction of a unitary representation to large commutative subgroups
+                                             of such groups. The study of the notion of N-rank began in [Hw1] where the theory
+                                             was developed for the metaplectic group. Roughly speaking, one can attach equivalence
+                                             classes of bilinear symmetric forms to unitary representations, and these equivalence
+                                             classes canonically correspond to orbits of the adjoint action of the Levi component of
+                                               Date: August 28 2005.
+                                               2000 Mathematics Subject Classification. 22E46,22E50,11F27.
+                                               Key words and phrases. Unitary representations, Kirillov’s method of orbits.
+                                                                                                1
+2                                    HADI SALMASIAN
+
+the Siegel parabolic on its unipotent radical. Later on, the theory was extended by J.
+S. Li [Li1] and R.Scaramuzzi [Sca] to classical groups, and an intrinsic connection with
+the theta correspondence was also found in [Li2]. Representations which correspond to
+degenerate classes are called singular representations. They form a large class of non-
+tempered representations and therefore their study is essentially complementary to that
+of the tempered representations. It turns out that this class of representations is quite
+well-behaved. In fact Howe gave a construction of a large class of such representations
+[Hw3], and they are applied in construction of automorphic forms [Hw4],[Li3].
+
+  The lack of a theory of N-rank which applies to the exceptional groups is in a sense
+a defect of this theory due to substantial interest in the small representations of these
+groups. Aside from some generalizations in the works of Loke and Savin [LS] and Sahi,
+most recently Weissman [Ws] provides an analogue for p-adic split simply-laced groups
+excluding E8 using the representation-theoretic analogue of a Fourier-Jacobi functor.
+
+   Here we develop a theory of rank which can also be applied to (almost) all exceptional
+groups. The word “almost” will be explained more precisely in the remark after Propo-
+sition 3.1.1. Our theory relies on the structure of unipotent radicals of certain parabolic
+subgroups which are naturally expressible as a sequence of extensions by Heisenberg
+groups. In this paper these unipotent radicals are called H-tower groups (see Definition
+3.2.5).
+
+   The main point of this work is to show that although the abelian nilradicals in terms of
+which rank was defined for classical groups are usually not available in exceptional cases,
+the maximal unipotent subgroups of all semisimple groups have a common feature which
+enables us to define a similar notion of rank, which is essentially equivalent to the older
+one for classical groups. This result, apart from being interesting itself, provides the
+main tool needed to study small representations of exceptional groups. One interesting
+application of this result is that it enables us to obtain sharp bounds on the behaviour
+of matrix coefficients of unitary representations of exceptional groups, a problem studied
+in [LZ], [Oh] and [LS]. Results along this line of research will be published elsewhere [Sa].
+
+  It is also possible to generalize Theorem 4.2 of [Hw1], which is the next step to-
+wards classification of small representations of exceptional groups. However, there does
+not seem to be any strong connection between the “exceptional theta correspondences”
+which result from the author’s work and the ones that already exist in the literature (see
+[DS], [MS] or [GRS] for instance). This makes the classification problem both harder
+and more interesting at the same time. This is a work still in its preliminary stages.
+
+   This manuscript is organized as follows. Section 1.2 is devoted to the notation used
+throughout the article. In section 2 we recall some basics about the Heisenberg groups
+and the Weil representation. In section 3 we define a specific unipotent subgroup of a
+simple group with regard to which our rank is defined. The “rankable” representations
+of this unipotent group are defined and studied briefly in section 4. Section 5 is devoted
+to the statement and proof of the main theorems, which essentially assert that rank is a
+nontrivial invariant of a representation. Section 6 shows why our new theory generalizes
+the older one.
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                              3
+
+Acknowledgement. This paper is part of the author’s thesis written under Roger
+Howe’s supervision. The author thanks him for his support and encouragement. The
+author thanks Igor Frenkel, Gopal Prasad, Gordan Savin, Siddhartha Sahi, Jeb Willen-
+bring and Gregg Zuckerman for fruitful conversations/communications, and especially
+the anonymous referee for providing the author with several extremely helpful sugges-
+tions and for mentioning the inaccuracies which existed in section 5 of an earlier version
+of the paper.
+1.2. Notation. In this section we introduce some notation which will be used through-
+out this article. Throughout this paper, we will be working with a local field F which is
+either R, C or a finite extension of Qp , p 6= 2. Let F be the algebraic closure of F, and G
+be the F-points of an absolutely simple, simply connected linear algebraic group defined
+over F, and GF be the group of F-rational points of G. We assume G is F-isotropic.
+By the Kneser-Tits conjecture, which holds in the case of local fields (see Proposition
+7.6 and Theorem 7.6 in [PR, §7.2]), GF is equal to the group generated by its unipotent
+elements. (In the archimedean case, GF is a connected Lie group.) Let G be a finite
+topological central extension of GF . (For the definition of a topological central extension,
+the reader is referred to [Mo2, Chapter 1].)
+
+   Take a maximally split Cartan subgroup H of G (which is also defined over F), and
+let A be the maximal split torus inside H. Let A be the inverse image of AF in G.
+
+  We denote the Lie algebras of the groups G, H, A, G, A by g, h, a, gF , aF respectively.
+More precisely, g, h, a are F-Lie algebras and gF and aF are F-forms of the corresponding
+algebras.
+
+  Let ∆ be an absolute root system associated to h, and let Σ be the restricted (or rel-
+ative, as some people call it) root system associated to a. The root space corresponding
+to any α ∈ ∆ is denoted by gα , and the coroot for α is denoted by Hα .
+
+   We fix a G-invariant symmetric bilinear form (·, ·) on g, normalized in such a way that
+if for any two roots β, γ we define (β, γ) to be (Hβ , Hγ ), then (β, β) = 2 for any long root
+β. All roots of simply-laced root systems are considered as long ones. For hF = h ∩ gF
+we have
+                                         hF = aF ⊕ tF
+where tF is the orthogonal complement of aF in hF with respect to the invariant symmet-
+ric bilinear form (·, ·) introduced above.
+
+  As usual, ∆+ and Σ+ denote the set of positive roots. We assume ∆+ , when restricted
+to a, contains Σ+ . Let ∆B and ΣB denote the bases for positive roots in the correspond-
+ing root systems such that ∆B , when restricted to a, contains ΣB .
+
+   The choice of a positive system determines a fixed Borel subalgebra b of g (or a minimal
+parabolic pmin of gF ). A parabolic subalgebra of g (respectively, of gF ) is called standard
+if it contains b (respectively, pmin ). We identify the standard parabolic subgroups and
+subalgebras of g (respectively of gF ) by subsets of ∆B (respectively of ΣB ) they naturally
+correspond to. More precisely, for any subset Φ ⊆ ∆B , by pΦ we mean the standard
+4                                         HADI SALMASIAN
+
+parabolic subalgebra of g which contains all root spaces gα for any α ∈ ∆+ as well as any
+g−α′ such that α′ ∈ ∆+ is in the semigroup generated by Φ. The definition will be similar
+for the parabolic subalgebra (this time of gF ) corresponding to any Φ ⊆ ΣB . Later on,
+when there is no risk of confusion between the parabolics of g and gF , we use the more
+concise notation pΦ for both situations. Also, again for simplicity and when there is no
+risk of ambiguity, Lie subalgebras of both g and gF may be denoted by Gothic letters in
+a similar way; i.e. without a subscript “F” in the case of a Lie subalgebra of gF .
+
+  The standard parabolic subgroups of G and G are denoted by PΦ and PΦ respectively.
+Note that a parabolic subgroup of G means the inverse image of a parabolic subgroup of
+GF in G. In other words, if the short exact sequence
+                                            i           p
+(1.1)                      1 −−−→ F −−−→ G −−−→ GF −−−→ 1
+(where F is a finite subgroup of the center of G) represents our topological central
+extension, then a parabolic P of G is of the form P = p−1 (PF ) for an F-parabolic P of
+G. It follows from [Du, II 11 Lemme] (or from an explicit construction of the universal
+central extension by Deodhar [De, Section 1.9]) that topological central extensions of
+semisimple groups over local fields are split over the unipotent subgroups 1 and therefore
+one can have an analogous “Levi” decomposition in G as well; i.e. if P = p−1 (PF ) and
+P = LN is a Levi decomposition of P (with L being the reductive factor and N being
+the unipotent radical) then one can express P as P = LN, where:
+     1. L = p−1 (LF ).
+
+      2. N ⊆ p−1 (NF ) is a normal subgroup of P and the map
+                                            p : N 7→ NF
+         is an isomorphism of topological groups. (Existence of N is what follows from
+         the results of Duflo or Deodhar cited above.)
+   We may as well drop the subscript Φ of the standard parabolics PΦ and PΦ when there
+is no risk of confusion about the identifying subset Φ of simple positive roots. Moreover,
+whenever a parabolic subgroup or subalgebra is standard, we assume that the Levi de-
+composition considered above is also standard.
+
+   Let K be an arbitrary locally compact group. Then the center of K will be denoted
+by Z(K). Unitary representations of K are defined in the usual way (see [Mac1]) and
+denoted by Greek letters. The unitary dual of K (which is the set of equivalence classes of
+the irreducible unitary representations of K endowed with the Fell topology) is denoted
+by K̂. Now suppose K ′ is a closed subgroup of K and let σ, σ ′ be unitary representations
+                                                        K ′
+of K, K ′ respectively. Then, as usual, ResK
+                                           K ′ σ and IndK ′ σ mean restriction and unitary
+induction. If there is no ambiguity about K, we use the simpler notation σ|K ′ instead of
+ResKK ′ σ.
+
+
+    Suppose l is an arbitrary Lie algebra. Then the center of l is denoted by z(l).
+
+    1In
+      fact an abstract (and hence topological) universal central extension of GF splits over the maximal
+unipotent subgroup. I am indebted to Gopal Prasad for pointing to reference [De].
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                    5
+
+                   2. Heisenberg group and Weil representation
+2.1. Heisenberg groups and algebras. Let n be a positive integer. An F-Heisenberg
+group (or simply a Heisenberg group) Hn is a two-step nilpotent 2n + 1-dimensional
+F−group which is isomorphic to the subgroup of GLn+2 (F) of unipotent, upper-triangular
+matrices which do not have nonzero elements outside the diagonal, the first row and the
+last column. This group has a one-dimensional center. We denote the Lie algebra of Hn
+by hn . Since Hn ⊂ GLn+2 (F), hn sits in the usual way inside gln+2 (F).
+
+  The Lie algebra hn of Hn can also be described more abstractly as
+                                           hn = Wn ⊕ z
+with the Lie bracket introduced below, where Wn is a 2n-dimensional space endowed with
+a nondegenerate symplectic form < ·, · >, and z is the center of hn , a one-dimensional Lie
+subalgebra. We fix a Lie algebra isomorphism between z and F, and denote the element
+in z corresponding to 1 ∈ F by Z. The Lie bracket on Wn is defined as follows:
+                      for every X, Y ∈ Wn ,          [X, Y ] =<X, Y >Z.
+   Viewing hn as a subalgebra of gln+2 (F), the exponential map of GLn+2 (F) gives a bijec-
+tion between hn and Hn , and Z(Hn ) is equal to exp(z). This bijection is the exponential
+map of Hn .
+
+2.2. Stone-von Neumann theorem. We briefly mention the structure of irreducible,
+infinite-dimensional unitary representations of a Heisenberg group. For a more detailed
+discussion, the reader can study [Hw2], [CG] or [Tay, Chapter 1] for instance.
+
+  The Stone-von Neumann theorem states that for any nontrivial unitary character of
+Z(Hn ), up to unitary equivalence there is a unique infinite-dimensional irreducible uni-
+tary representation of Hn having this central character. We will describe an explicit
+realization (the so-called Schrödinger model) for this representation below.
+
+  Consider an arbitrary polarization of Wn , i.e. a decomposition of Wn as a direct sum
+(2.1)                                      Wn = xn ⊕ yn
+of maximal isotropic subspaces. It is possible to choose bases {X1 , . . . , Xn } and {Y1 , . . . , Yn }
+of xn and yn respectively such that
+(2.2)                                    < Xi , Yj >= δi,j .
+There is an isomorphim
+(2.3)                                       e : xn ≈ y∗n
+obtained via the symplectic form. Z(Hn ) ≈ exp(F) and any nontrivial multiplicative
+(unitary) character of Z(Hn ) is equal to χ ◦ exp−1 , for some χ, where χ can be any
+nontrivial additive (unitary) character of z(hn ) ≈ F. Such characters χ are in one-to-one
+correspondence with elements of F − {0}. √    For example, if F = R, χ will be of the form
+         ixy
+χ(x) = e for some y ∈ R − {0} (here i = −1). This follows from the well-known fact
+that the unitary dual of a local field is identifiable to itself (see [We1]).
+6                                      HADI SALMASIAN
+
+  The (irreducible) representation ρ of Hn with central character χ may be realized on
+the Hilbert space
+                                      Hρ = L2 (yn )
+                   Pn
+as follows. Let y = i=1 yi Yi ∈ yn . Then Hn acts on Hρ as
+                                (ρ(etXi )f )(y) = χ(−tyi )f (y)
+(2.4)                           (ρ(etYi )f )(y) = f (y + tYi )
+                                 (ρ(etZ )f )(y) = χ(t)f (y).
+This representation is irreducible and unitary with respect to the usual inner product of
+Hρ .
+
+Notation. Henceforth, whenever a locally compact group N is isomorphic to a Heisen-
+berg group, we denote the subset of N̂ consisting of the family of the infinite-dimenional
+representations constructed above by N̂◦ .
+2.3. The Weil representation. Let Sp(Wn ) be the symplectic group associated to Wn .
+When F = C, take Mp(Wn ) = Sp(Wn ), and otherwise let Mp(Wn ) be the (metaplectic)
+double covering of Sp(Wn ) (see [We2]). Mp(Wn ) acts through Sp(Wn ) on Hn ≈ exp(hn )
+(or equivalently on hn ) as follows. For any w ⊕ z ∈ Wn ⊕ z,
+                                    g : w ⊕ z → g · w ⊕ z.
+One can consider the semidirect product Mp(Wn ) ⋉ Hn . We have (see [We2]):
+Proposition 2.3.1. Let χ be any nontrivial additive character of F. Then the irreducible
+unitary representation ρ of Hn with central character χ can be extended to a unitary
+representation (still denoted by ρ) of Mp(Wn ) ⋉ Hn ; i.e. for any g ∈ Mp(Wn ) and any
+h ∈ Hn :
+                               ρ(g)ρ(h)ρ(g −1 ) = ρ(ghg −1 ).
+
+                        3. Construction of H-tower groups
+3.1. The Heisenberg parabolic. We use the notation of section 1.2. Let β̃ be the
+highest root in ∆ with respect to the positive system chosen in section 1.2 and let Hβ̃ be
+the coroot for β̃. Let (·, ·) denote the G-invariant symmetric bilinear form introduced in
+that section; i.e. (β̃, β̃) = 2. One obtains a grading
+                                               M
+                                          g=      gj
+                                                 j∈Z
+
+where gj is the j-eigenspace of ad(Hβ̃ ); i.e.
+                                gj = {X ∈ g : [Hβ̃ , X] = jX}.
+Note that in fact gk = {0} for |k| > 2. The Jacobi identity implies [gi , gj ] ⊆ gi+j . Note
+that g1 = g−1 = {0} if and only if g = sl2 .
+
+  In the next proposition and at some points of this paper, we will consider g as above
+such that:
+(3.1)                       ⋄    g 6= sl2 and β̃ is defined over F.
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                7
+
+Condition (3.1) is not a crucial assumption. In fact the author believes that it can be
+removed. See the discussion in the remark after Proposition 3.1.1.
+Proposition 3.1.1. Let g satisfy condition (3.1). Then
+     1. g0 ⊕ g1 ⊕ g2 is a parabolic subalgebra, g1 ⊕ g2 is its nilradical, and
+                                      [[g0 , g0 ], g2 ] = {0}.
+        The nilradical is a Heisenberg Lie algebra with center g2 and symplectic space
+        g1 . One can describe the symplectic form <·, ·>1 on g1 using the Lie bracket as
+        follows: fix X2 ∈ g2 − {0} and let <·, ·>1 be such that
+                      for every X, Y ∈ g1 ,       [X, Y ] =<X, Y >1 ·X2 .
+        Then <·, ·>1 will be nondegenerate, and the (adjoint) representation of [g0 , g0 ] on
+        g1 will be a symplectic representation with respect to <·, ·>1 .
+
+     2. When g is not of type Al (l > 1), the parabolic of part 1 is characterized by
+        the subset ∆B − {β} of ∆B for the unique simple root β ∈ ∆B which satisfies
+        (β, β̃) 6= 0. For type Al (l > 1), there are two such simple roots β ′, β ′′ , and the
+        parabolic corresponds to ∆B − {β ′ , β ′′ }.
+
+     3. When g is not of type Al (l > 1), β corresponds to a simple restricted root (still
+        denoted by β). For g of type Al (l > 2) and gF non-split, the pair {β ′, β ′′ } corre-
+        sponds to a simple restricted root β in the restricted root system.
+
+Let the sets S ⊂ ∆B and T ⊂ ΣB be defined as follows. Set S = {β} when g is not of
+type Al (l > 1) and S = {β ′, β ′′ } otherwise. Also, set T = {β ′ , β ′′ } when gF is split and
+g is of type Al (l > 1), and T = {β} otherwise.
+
+     4. The parabolic p∆B −S is defined over F, and (p∆B −S )F = pΣB −T . Its nilradical is
+        a Heisenberg algebra. p∆B −S is a maximal parabolic when g is not of type Al ,
+        (l > 1).
+Proof. See [GW, §2] and [Tor, §10].                                                           
+
+Remark. The assumption that g satisfies condition (3.1) holds for all but a very small
+class of Lie algebras g. Fox example, when F = R, the cases where β̃ is not defined over R
+are f4(−20) , e6(−26) , sp(p, q), and sl(n, H). The notion of rank in this paper is based on the
+existence of a unipotent subgroup of G which is expressible as a tower of extensions by
+Heisenberg groups (see Definition 3.2.5), and therefore it is not applicable to the groups
+mentioned above. However, in all of these groups there does exist a similar structure
+which is called an OKP subgroup in [HRW]. Therefore in principle the main results of
+this paper (especially Theorem 5.3.2) should generalize to groups associated with these
+real forms. However, addressing the technical problems which arise with including those
+cases in this paper makes it much more technical. To keep our presentation as simple
+and uniform as possible, we do not include those special cases in this paper. The author
+intends to deal with those cases elsewhere.
+8                                    HADI SALMASIAN
+
+Definition 3.1.2. The parabolic subalgebras p∆B −S of g and pΣB −T of gF or their corre-
+sponding parabolic subgroups P∆B −S of G and PΣB −T = (P∆B −S )F of GF (or the parabolic
+of G which corresponds to PΣB −T ) are called the Heisenberg parabolics.
+  We tend to drop their identifying subscripts for simplicity when there is no risk of
+confusion.
+
+  Table I below demonstrates the structure of g1 as a representation of [g0 , g0 ]. Here V̟
+denotes the representation with highest weight ̟ and ̟i denotes the i-th fundamental
+weight of the corresponding Lie algebra. We use the notation of [Bou, Planche I] for
+numbering fundamental weights. See also [Ti] for more explicit information.
+
+                       g             [g0 , g0 ]      g1
+                       Al (l ≥ 3)     Al−2       V̟1 ⊕ V̟∗1
+                       B2              A1           V̟ 1
+                       B3           A1 × A1          ˆ ̟1
+                                                 V̟1 ⊗V
+                       Bl (l ≥ 4)  A1 × Bl−2         ˆ ̟1
+                                                 V̟1 ⊗V
+                       C2              A1           V̟ 1
+                       Cl (l ≥ 3)     Cl−1          V̟ 1
+                       D4                          ˆ ̟1 ⊗V
+                                  A1 × A1 × A1 V̟1 ⊗V    ˆ ̟1
+                       D5           A1 × A3          ˆ ̟2
+                                                 V̟1 ⊗V
+                       Dl (l ≥ 6)  A1 × Dl−2         ˆ ̟1
+                                                 V̟1 ⊗V
+                       E6              A5           V̟ 3
+                       E7              D6           V̟ 6
+                       E8              E7           V̟ 7
+                       F4              C3           V̟ 3
+                       G2              A1           V3̟1
+                                         Table I
+
+3.2. The H-tower subgroup NΓ of G. Let g be as in condition (3.1). In this section
+we describe a nilpotent subalgebra of g (and another one of gF ) which is fundamental to
+our definition of rank. The construction of these nilpotent subalgebras is based on what
+is usually referred to as Kostant’s Cascade. We show that this nilpotent Lie subalgebra
+is actually the nilradical of a parabolic subalgebra (see Propositions 3.2.3 and 3.2.4).
+The unipotent subgroup of G which corresponds to this nilpotent subalgebra will play
+an important role in the rest of the paper.
+
+   First assume that g splits over F; i.e. all roots of g are defined over F. Let p = l ⊕ n
+be the Heisenberg parabolic of g, obtained by Proposition 3.1.1, with the usual Levi
+decomposition; i.e. l is the Levi factor and n is the nilradical of p. In the case of
+orthogonal algebras the commutator [l, l] is not a simple Lie algebra. In fact when g is
+of types Bl (l ≥ 3) or Dl (l > 4), the commutator [l, l] is a direct sum of the form
+(3.2)                                 [l, l] = sl2 ⊕ s
+where s is simple. When g is of type D4 , we have
+                                  [l, l] = sl2 ⊕ sl2 ⊕ sl2 .
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                             9
+
+Definition 3.2.1. Let m be defined as follows:
+    I. If g is of types Dl (l > 4) or Bl (l > 3) then m is equal to the summand s given
+       in (3.2).
+
+    II. If g is of types A2 , A3 , B2 = C2 , B3 , D4 or G2 then m = {0}.
+
+   III. Otherwise, m = [l, l].
+   One can repeatedly apply Proposition 3.1.1 as follows. First we apply it to m. If m
+is nonzero, then m 6= sl2 and Proposition 3.1.1 guarantees the existence of a Heisenberg
+parabolic in m. Let p′ be this parabolic of m, and let l′ be the Levi factor of p′ . Let
+m′ be the subalgebra of [l′ , l′ ] which is defined in the same way that m was defined as
+a subalgebra of [l, l] in Definition 3.2.1. Then we apply Proposition 3.1.1 to m′ , and so
+on. This process can be repeated as long as Proposition 3.1.1 can be applied. As a
+result, we obtain a sequence S1 , . . . , Sr of subsets of ∆B , where each Si , defined as in
+part 2 of Proposition 3.1.1, contains either a simple root or a pair of simple roots. Each
+Si corresponds to the “highest root” β̃i obtained in the i-th step. We also denote the
+sequence of Heisenberg parabolics by p1 , . . . , pr , with the Levi decomposition
+(3.3)                                   pj = lj ⊕ nj .
+Therefore, p1 is the Heisenberg parabolic of g, p2 is the Heisenberg parabolic of m, and
+                                        ′                           ′
+so on. Each nj is normalized by any lj for j ′ ≥ j and hence by nj . For a similar reason,
+  ′
+nj acts trivially on the center of nj . Each nj is isomorphic to a Heisenberg algebra hdi
+for some di . Therefore the Lie algebra n1 ⊕ · · · ⊕ nr is a tower of successive extensions
+by Heisenberg F-algebras. The following proposition is obvious.
+Proposition 3.2.2. n1 ⊕ · · · ⊕ nr is equal to the nilradical of the parabolic subalgebra pΓ
+of g where
+
+                                 Γ = ∆B − (S1 ∪ . . . ∪ Sr ).
+  Now assume g satisfies condition (3.1) but it is not necessarily F-split. Recall that the
+positive system for Σ is compatible with the one for ∆. We can apply Proposition 3.1.1
+repeatedly again. Note that the number of possible iterations for a non-split F-form of
+g is often smaller than the number of possible iterations in the split case. (In certain
+groups with small rank, they may be equal.) This is because the successive Levi factors
+may fail to satisfy condition (3.1).
+
+    Part 3 of Proposition 3.1.1 yields a sequence T1 , . . . , Ts of subsets of ΣB (for some
+s ≤ r) where each Tj contains a simple restricted root or a pair of them. Again we
+obtain a nested sequence
+                                       p1 ⊃ · · · ⊃ ps
+of Heisenberg parabolics (this time inside gF ) and the nilradical of any pi is normalized
+                            ′
+by the nilradical of any pi when i < i′ . Therefore p1 is the Heisenberg parabolic subal-
+gebra of gF . We warn the reader that the new pi ’s are different from those which appear
+immediately before Proposition 3.2.2; in fact the older pi ’s are obtained from the newer
+pi ’s by an extension of scalars.
+10                                                      HADI SALMASIAN
+
+      gF                         mF            s           gF                      mF            s
+      A2,2                       –             1           A3,3                    –             1
+                                                            2 (1)
+      Ar,r           (r   ≥ 4)   Ar−2,r−2     ⌊ 2r ⌋         A3,2                  –             1
+       2 (1)                      2 (1)                     2 (1)
+        A2r−1,r      (r   ≥ 3)     A2r−3,r−1 r − 1           A2,1                  –             1
+       2 (1)                      2 (1)                     2 (1)
+        A2r,r        (r   ≥ 2)     A2r−2,r−1   r             A3,1                  –             1
+       2 (1)                      2 (1)
+        A2r+1,r      (r   ≥ 2)     A2r−1,r−1   r           B3,3                    –             1
+      B4,4                       C2,2          2           Br,r        (r ≥ 4)     Br−2,r−2     ⌊ 2r ⌋
+      B3,2                       –             1           B4,3                    –             1
+                                              r−1
+      Br,r−1         (r ≥ 5)     Br−2,r−3    ⌊ 2 ⌋         C2,2                    –             1
+                                                            1 (1)
+      Cr,r           (r ≥ 3)     Cr−1,r−1    r−1             D4,4                  –             1
+       1 (1)                                                1 (1)                   1 (1)       r−1
+        D5,5                     A3,3          2             Dr,r      (r ≥ 6)       Dr−2,r−2 ⌊ 2 ⌋
+       1 (1)                                                1 (1)
+        D4,2                     –             1             D5,3                  –             1
+       1 (1)                      1 (1)                     2 (1)
+        Dr+2,r       (r ≥ 4)       Dr,r−2     ⌊ 2r ⌋         D4,3                  –             1
+       2 (1)                      2 (1)                     2 (1)                   2 (1)       r−1
+        D5,4                       A3,2        2             Dr+1,r    (r   ≥ 5)     Dr−1,r−2 ⌊ 2 ⌋
+       1 (2)                                                1 (2)                   1 (2)
+        D4,2                     –             1             D2r,r     (r   ≥ 3)     D2r−2,r−1 r − 1
+       1 (2)                                                1 (2)                   1 (2)
+        D5,1                     –             1             D2r+3,r   (r   ≥ 2)     D2r+1,r−1   r
+       2 (2)                      2 (1)                     2 (2)                   2 (2)
+        D5,2                       A3,1        2             D2r+1,r   (r   ≥ 3)     D2r−1,r−1   r
+       2 (2)                                                2 (2)                   2 (2)
+        D4,1                     –             1             D2r+2,r   (r   ≥ 3)     D2r,r−1     r
+       3 2                                                  6 2
+        D4,2                     –             1             D4,2                  –             1
+       1 16                                                 1 0
+        E6,2                     –             1             E6,6                  A5,5          3
+       2 2                        2 (1)                      9                      1 (2)
+        E6,4                       A5,3        3           E7,4                      D6,3        3
+        0                         1 (1)                      0                       0
+      E7,7                         D6,6        3           E8,8                    E7,7          4
+        0
+      F4,4                       C3,3          3           G02,2                   –             1
+                                                    Table II
+
+ gF                                 mF                   s      gF                               mF                 s
+ sl3 (R)                            –                    1      sl4 (R)                          –                  1
+ sln (R)                  (n ≥ 5)   sln−2 (R)            2 ⌋
+                                                     ⌊ n−1      su(1, q)                 (q > 1) –                  1
+ su(2, 2)                           –                    1      su(r, q)             (2 ≤ r < q) su(r − 1, q − 1)   r
+ su(q, q)                 (3 ≤ q)   su(q − 1, q − 1) q − 1      so(1, q)                 (q ≥ 4) –                  1
+ so(2, q)                 (q ≥ 3)   –                    1      so(3, q)                 (q ≥ 3) –                  1
+ so(4, 4)                           –                    1      so(4, q)                 (q ≥ 5) so(2, q − 2)       2
+                                                                                                                   q−1
+ so(r, q)            (5 ≤ r < q)    so(r − 2, q − 2)   ⌊ 2r ⌋   so(q, q)                 (5 ≤ q) so(q − 2, q − 2) ⌊ 2 ⌋
+ sp4 (R)                            –                    1      sp2n (R)                 (n ≥ 3) sp2n−2 (R)       n−1
+ so∗ (6)                            –                    1      so∗ (8)                          –                  1
+ so∗ (2r)                 (r ≥ 5)   so∗ (2r − 4)     ⌊ r−1
+                                                         2 ⌋    (e6 , sp4 )                      sl6 (R)            3
+ (e6 , su6 × su2 )                  su(3, 3)             3      (e6 , so(10) × u(1))             su(1, 5)           2
+ (e7 , su8 )                        so(6, 6)             3      (e7 , so(12) × su2 )             so∗ (12)           3
+ (e7 , e6 × u(1))                   so(2, 10)            2      (e8 , so(12))                    (e7 , su8 )        4
+ (e8 , e7 × su2 )                   (e7 , e6 × u(1))     3      (f4 , sp3 × su2 )                sp6 (R)            3
+ (g2 , su2 × su2 )                  –                    1
+
+                                                   Table III
+                     A NOTION OF RANK FOR UNITARY REPRESENTATIONS                            11
+
+   Tables II and III explain how Proposition 3.1.1 is applied iteratively to gF . For sim-
+plicity, the real and the p-adic cases are separated: Table II is for the p-adic case and
+Table III is for the real case.
+
+   The column gF in Table II shows the Tits index of gF and the column mF shows the
+Tits index of mF . For any gF the number s is given too. Real exceptional Lie algebras
+in Table III are identified by the symmetric pairs (gR , kR ). The only F-forms of g which
+appear in the columns gF of both of the tables are those for which g satisfies condition
+(3.1). If an entry in the column corresponding to mF is equal to “–”, this means either
+that the Lie algebra m is equal to {0} or that the Lie algebra m is semisimple but it does
+not satisfy condition (3.1), i.e. the highest root of m is not defined over F. Therefore one
+can use Tables II and III to see how many times Proposition 3.1.1 can be applied to a
+particular F-form of g.
+
+     We denote the nilradical of the parabolic pj of gF by hj . It is an F-Heisenberg algebra.
+
+
+Proposition 3.2.3. The nilpotent Lie subalgebra h1 ⊕ · · · ⊕ hs of gF is equal to the
+nilradical of the parabolic subalgebra pΓ of gF where
+                                   Γ = ΣB − (T1 ∪ . . . ∪ Ts ).
+   Moreover, we have the following proposition, which describes the relationship between
+n ’s and hi ’s.
+ i
+
+
+Proposition 3.2.4. Let pΓ be the parabolic subalgebra of gF defined in Proposition 3.2.3
+with Levi decomposition pΓ = lΓ ⊕ nΓ . Then
+                                    nΓ ⊗ F = n1 ⊕ · · · ⊕ ns
+(where the nj ’s are the same as those which appear in Proposition 3.2.2) and thus nΓ ⊗ F
+is equal to the nilradical of the parabolic pΓ′ of g where
+                                  Γ′ = ∆B − (S1 ∪ . . . ∪ Ss ).
+   Therefore PΓ′ is an F-parabolic of G and (PΓ′ )F = PΓ , where PΓ is the parabolic of
+G which is associated to the set Γ ⊆ ΣB defined in Proposition 3.2.3. PΓ will play a
+significant role in the rest of the paper. Its Levi decomposition can be written as
+(3.4)                                     PΓ = LΓ NΓ .
+Definition 3.2.5. Let U be the group of F-points of a unipotent linear algebraic F-group
+U. U is said to be an “H-tower” group if and only if it satisfies one of the properties I
+or II below.
+     I. U = {1}; i.e. U is trivial.
+    II. U is isomorphic to a semidirect product U ′ ⋉ U ′′ where
+           i. U ′′ is an F-Heisenberg group and is the group of F-points of an algebraic
+              F-subgroup U′′ of U.
+          ii. U ′ is the group of F-rational points of an algebraic subgroup U′ of U and the
+              action of U ′ on U ′′ in the semidirect product U ′ ⋉U ′′ comes from an algebraic
+              action (defined over F) of U′ on U′′ by group automorphisms of U′′ (which,
+12                                          HADI SALMASIAN
+
+                  a fortiori, leave elements of Z(U′′ ) invariant and act on the symplectic space
+                  U′′ /Z(U′′ ) via symplectic operators) 2.
+             iii. U ′ is an H-tower group.
+     Therefore an H-tower group U can be expressed as a tower of successive extensions:
+
+(3.5)                  U = H 1 · H 2 · · · H t = H 1 ⋊ (· · · ⋊ (H t−1 ⋊ H t ) · · · )
+where each H j is a Heisenberg group; i.e. H j = Hdj for some dj (see section 2.1).
+
+Remarks.
+1. The name “H-tower” is chosen so that it reminds the reader that the group is a tower
+of extensions by Heisenberg groups.
+
+2. Real H-tower groups form a subclass of OKP groups defined in [HRW].
+
+3. The number t in (3.5) is referred to as the height of the tower of extensions. It will
+be denoted by ht(U).
+
+4. Consider an H-tower group U which is expressed as in (3.5). for any j ∈ {1, ..., ht(U)}
+we denote the quotient group H j · · · H ht(U ) ≈ U/H 1 · · · H j−1 by Uj . Uj is also an H-tower
+group.
+
+     If in (3.5) we take U = NΓ and H j = exp hj , then by Proposition 3.2.3 we have
+Proposition 3.2.6. NΓ is an H-tower group and ht(NΓ ) = s, where s is as in Proposition
+3.2.3.
+                   4. Rankable representations of H-tower groups
+4.1. Oscillator extension and rankable representations. Fix an H-tower group U,
+expressed as a tower of successive extensions as in (3.5). Let χ1 be a nontrivial additive
+character of F, and consider the unitary representation ρ1 of H 1 with central character
+χ1 (see section 2.2). When restricted to the inverse image (in the metaplectic group) of
+the maximal unipotent subgroup of the symplectic group, the Weil representation factors
+through a representation of the maximal unipotent subgroup of the symplectic group.
+(In fact the two-fold central extension of the symplectic group splits over the maximal
+unipotent subgroup and, more importantly, this splitting is unique. This holds because
+any two splittings would differ by a finite-order character, whereas the maximal unipotent
+subgroup is a divisible group and therefore it does not have such characters.) Therefore,
+any representation ρ of any Heisenberg group Hn with central character χ (see section
+2.2) is extendable to the unipotent radical of any Borel subgroup of the symplectic group
+Sp(Wn ). This implies that the representation ρ1 of H 1 is extendable (in at least one
+way) to U. We still denote this extension by ρ1 . Note that the extension of ρ1 is not
+necessarily unique, as one can for example twist it by a one dimensional representation
+of U which is trivial on H 1 . However, since the extension of ρ to the metaplectic group
+is unique, we can distinguish the extension of ρ1 obtained by the restriction of the Weil
+     2This
+        means that there is an F-homomorphism of algebraic groups Φ : U′ 7→ Sp (U′′ /Z(U′′ )) and
+consequently Φ(U ′ ) ⊆ Sp (U ′′ /Z(U ′′ )) .
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                               13
+
+representation without ambiguity. Let ρ1 mean this specific extension.
+
+  In a similar fashion, for any j > 1 one can construct a representation of
+                            Uj = U/H 1 · · · H j−1 ≈ H j · · · H ht(U )
+as follows. We take an arbitrary nontrivial additive character χj of F, and the represen-
+tation ρj of H j with central character χj . As before, we use the Weil representation to
+extend ρj to Uj . Since
+                                  Uj ≈ U/H 1 · · · H j−1 ,
+this representation can be extended to U, trivially on H 1 · · · H j−1 . Thus using ρj we have
+constructed a representation of U. We still keep the notation ρj for this representation.
+Definition 4.1.1. Let U be an H-tower group described as in (3.5). A representation of
+U is called “rankable” if and only if it is unitarily equivalent to a tensor product of the
+form
+                                    ρ1 ⊗ ρ2 ⊗ · · · ⊗ ρk
+for some k ≤ ht(U), where ρj is the representation of U which is obtained (using the Weil
+representation) by extending the irreducible representation of H j with central character
+χj . The rank of a k-fold tensor product (including the case k = 0, i.e. the trivial
+representation) is defined to be k. If σ is a rankable representation of rank k, we write
+rank(σ) = k
+Remark. It follows from Corollary 4.2.3 that rank(σ) is well-defined; i.e. it is an
+invariant of the unitary equivalence class of σ.
+4.2. Kirillov theory for rankable representations. We denote the coadjoint orbit
+attached to an irreducible unitary representation σ of a nilpotent group by Oσ∗ . (See
+[Kr1], [Kr2, Chapter 3], [CG] or [Ki, §2.2] for elaborated treatments of Kirillov’s orbital
+theory.) In his seminal paper [Kr1], Kirillov developed his method of orbits for simply
+connected nilpotent real Lie groups. However, later in his 1966 ICM lecture he explained
+that essentially the same theory can be applied to algebraic unipotent groups over p-adic
+fields. See also [Mo1, §4] for more details.
+
+Lemma 4.2.1. Let N be the group of F-rational points of a unipotent linear algebraic F-
+group N. Let σ be an irreducible unitary representation of N and let Oσ∗ be the coadjoint
+orbit attached to it. Then Oσ∗ is an analytic manifold in the sense of [Se, Chapter III,
+§2].
+Proof. The lemma follows immediately from [PR, §3.1, Corollary 2].                            
+  Lemma 4.2.1 implies that one can speak of the dimension of a coadjoint orbit. (The
+transitivity under the group action implies that the dimension is the same around every
+point.) For any coadjoint orbit O∗ , let dim O∗ denote its dimension.
+Lemma 4.2.2. Let N be a unipotent algebraic group such that N = N′ ⋉ N′′ as algebraic
+F-groups (and the action of N′ on N′′ is defined over F) and let N = N ′ ⋉N ′′ be the group
+of F-rational points of N (where N ′ , N ′′ are the F-points of N′ , N′′ ). Let the Lie algebras
+of N ′ , N ′′ be n′ , n′′ respectively. The Lie algebra of the semidirect product N = N ′ ⋉ N ′′
+is n = n′ ⊕ n′′ as a vector space, and we have a canonical isomorphism of dual spaces
+14                                       HADI SALMASIAN
+
+n∗ = n′ ∗ ⊕ n′′ ∗ . Let σ ′ , σ ′′ be irreducible unitary representations of N ′ , N ′′ respectively,
+such that
+    1) σ ′ is an irreducible unitary representation of N ′ , extended trivially on N ′′ to a
+       representation σ̃ ′ of N.
+    2) σ ′′ is an irreducible unitary representation of N ′′ which extends to a unitary rep-
+       resentation σ̃ ′′ of N. (In other words, ResN             ′′  ′′
+                                                          N ′′ σ̃ = σ .)
+  Then σ̃ ′ ⊗ σ̃ ′′ is an irreducible representation of N and
+
+                              dim Oσ̃∗ ′ ⊗σ̃′′ = dim Oσ∗ ′ + dim Oσ∗ ′′ .
+Proof. Consider the map j defined as the composition
+                            N 7→ N × N 7→ N/N ′′ × N ≈ N ′ × N
+where the leftmost map is the diagonal embedding and the middle map (i.e. the map
+N × N 7→ N/N ′′ × N) is projection onto the first factor (i.e. it is given by (n1 , n2 ) 7→
+(n1 N ′′ , n2 )). Observe that
+
+                                                        ′
+                                                        ×N ′ ˆ ′′
+(4.1)                              σ̃ ′ ⊗ σ̃ ′′ = ResN
+                                                     j(N ) σ ⊗σ̃ .
+
+  It is easily seen by Mackey theory [Mac1, Theorem 3.12] that σ̃ ′ ⊗ σ̃ ′′ is irreducible.
+Now take a maximal chain of analytic subgroups
+                           N ′ × N = N 0 ⊃ N 1 ⊃ N 2 ⊃ · · · ⊃ j(N)
+such that each N j has codimension 1 in N j−1 . It follows from (4.1) that if σ ′ ⊗ σ̃ ′′ is
+considered as a representation of N j−1 , then
+                                                  j−1
+                                               N
+                                            ResN j σ ′ ⊗ σ̃ ′′
+is an irreducible representation of N j . Now it follows from the statement of Theorem
+2.5.1 of [CG] that for any such j we are in the situation of part (b) of that theorem. But
+then Proposition 1.3.4 of [CG] implies that in this case, the dimension of the coadjoint
+orbit of σ ′ ⊗ σ̃ ′′ considered as a representation of N j is the same as the dimension of the
+coadjoint orbit of σ ′ ⊗ σ̃ ′′ considered as a representation of N j−1 . Consequently,
+                                   dim Oσ∗ ′ ⊗σ̃         ∗
+                                             ˆ ′′ = dim Oσ̃′ ⊗σ̃′′ .
+
+     Now consider the map q such that
+                                     q : N ′ × N ′′ 7→ N ′ × N
+which is defined to be the identity map N ′ 7→ N ′ in the first component and the injection
+N ′′ ⊂ N in the second component. Then
+                                        ′
+                                     N ×N           ′ ˆ ′′  ′ ˆ ′′
+                                  Resq(N ′ ×N ′′ ) σ ⊗σ̃ = σ ⊗σ
+
+
+which is an irreducible representation. Again a similar argument (taking a maximal
+chain, etc.) proves that
+                                  dim Oσ∗ ′ ⊗σ̃         ∗
+                                                           ˆ ′′ .
+                                            ˆ ′′ = dim Oσ′ ⊗σ
+But the coadjoint orbit Oσ∗ ′ ⊗σ              ∗     ∗
+                              ˆ ′′ equals Oσ′ × Oσ′′ , which completes the proof. 
+  One can apply Lemma 4.2.2 to any H-tower group iteratively and obtain the following
+result.
+                  A NOTION OF RANK FOR UNITARY REPRESENTATIONS                           15
+
+Corollary 4.2.3. Let U be an H-tower group as in (3.5). Let
+                                  σ = ρ1 ⊗ ρ2 ⊗ · · · ⊗ ρk
+be a rankable representation of U. (Recall that ρj is extended from a representation of
+H j with central character χj .) Then σ is irreducible. Moreover, as an analytic manifold,
+the coadjoint orbit Oσ∗ has dimension 2(n1 + · · · + nk ), where
+                                            dimhj − 1
+                                     nj =             .
+                                               2
+                                  5. Main theorems
+5.1. Technical issues of central extensions. Let G, G, g be as in section 1.2 such
+that g satisfies condition (3.1). Let P be the Heisenberg parabolic of G (see Definition
+3.1.2). Suppose P = LN is the Levi decomposition of P . Therefore N is a Heisenberg
+group. As in section 2.2 let ρ be the irreducible unitary representation of N with an ar-
+bitrary nontrivial central character χ. Let NΓ be the H-tower subgroup of G constructed
+in section 3.2 and assume ht(NΓ ) > 1.
+
+   This section is mainly devoted to a technical issue which arises with central extensions
+of G. The main result is Proposition 5.1.1. To avoid being distracted from the main
+point of the paper, the reader may assume Proposition 5.1.1 and go on to section 5.2.
+
+   Proposition 3.1.1 implies that the adjoint action provides a group homomorphism
+[L, L] 7→ Sp(N/Z(N)). Our next aim is to somehow apply Proposition 2.3.1 and extend
+ρ to a representation of a larger group which at least contains NΓ . One natural candidate
+could be [P, P ]. However, when F 6= C, in order to extend the representation ρ of N to
+[P, P ] we need to know that indeed the group homomorphism [L, L] 7→ Sp(N/Z(N)) is
+a composition of a group homomorphism into the metaplectic group, i.e.
+                                 [L, L] 7→ Mp(N/Z(N)),
+and the projection map
+                             Mp(N/Z(N)) 7→ Sp(N/Z(N)).
+This issue was also dealt with in [Tor] (see [GS, Section 3.3]). We will explain it more
+clearly below. In fact it can be seen that in some cases, if PF = LF NF is the Heisenberg
+parabolic of GF , then [LF , LF ] does not act as a subgroup of the metaplectic group, and
+therefore extending ρ to [PF , PF ] may not be possible. An obvious example is when GF
+is the symplectic group. A less obvious example is the split group of type F4 . (Actually,
+in both cases the extension is possible if we use the metaplectic covers. This may be
+seen after some simple calculations. For real groups one can use the results of [Ad] which
+tell us when a covering of a real simple Lie group splits over embedded root subgroups
+SL2 (R). However, here we do not rely on such calculations.)
+
+   To overcome this difficulty, we will see below that we have to consider an appropriate
+finite (topological) central extension of G instead of G itself. Note that a representa-
+tion of G can trivially be considered as a representation of its central extension, and we
+can always study this extension instead of the original G because the central extension
+has an H-tower subgroup too, which is identical to NΓ and is essentially obtained by
+16                                    HADI SALMASIAN
+
+exponentiating the corresponding nilpotent subalgebra nΓ of gF . This follows from what
+was explained in section 1.2 as well, that a universal topological central extension of GF
+splits over the maximal unipotent subgroup (see [Du, II 11 Lemme] or [De, Section 1.9]).
+(In fact the splitting is unique because any two splittings would differ by a finite-order
+character, whereas any unipotent subgroup is a divisible group and therefore it does not
+have such characters.) Therefore, as far as it concerns the main results of this work, we
+can substitute G with such a “good” central extension of G, without any loss of generality.
+
+  To show the existence of this “good” central extension for an arbitrary G, first we
+show its existence for the group GF . That is to say, we show that we can find a finite
+topological central extension G̃F of GF in which the representation ρ of N can be ex-
+tended to a larger subgroup. We warn the reader that we may (and will) think of N as
+a subgroup of both GF and G̃F at the same time, since the latter group has a subgroup
+identical to the subgroup N of the former one.
+
+   Note that once we find G̃F , a simple argument implies that the required extension
+exists for G as well. In fact the existence of a universal topological central extension of
+GF implies that there will be a finite topological central extension which covers both G
+and G̃F . This extension will be the one in which the extension of ρ to a larger subgroup
+is possible.
+
+     Next we show that we can find G̃F . Let
+                                       î            p̂
+                        1 −−−→ F −−−→ G̃F −−−→ GF −−−→ 1
+be a finite topological central extension of GF . Let P = LN be the Heisenberg parabolic
+of G with its usual Levi decomposition. Let L = p̂−1 (LF ) and let N be the unipotent
+radical of P = p̂−1 (PF ). The group [L, L], the derived subgroup of L, is a product of
+isotropic and anisotropic factors (see [Tor, §8.19]). Let Lis be the isotropic factor of
+[L, L]. Let M be the simply connected subgroup of [L, L] whose Lie algebra is equal
+to m, where m is the Lie algebra introduced in Definition 3.2.1. (The simply connect-
+edness of M follows from [Tor, §8.19].) It follows from ht(NΓ ) > 1 that M ⊆ Lis . Let
+M = p̂−1 (MF ).
+
+     Recall that the adjoint action provides a map
+                                    M 7→ Sp(N/Z(N)).
+(See Proposition 3.1.1.) Let us call the inverse image of any subgroup M ′ of M inside
+the metaplectic group Mp (N/Z(N)) the metaplectic extension of M ′ . It follows from
+[Tor, §8.25 and §9.3] that if the F-points of the minimal nilpotent G-orbit of g contain
+a G̃F -admissible orbit (see [Tor, §3.17] for the definition of an admissible orbit), then
+there exists a closed subgroup M ′ of M, which is a normal subgroup of L, such that
+p̂(M ′ ) ⊇ M+            +
+            F (where MF is the subgroup of MF generated by its F-rational unipotent
+elements) and the metaplectic extension of M ′ is trivial. (Note that in fact p̂(M ′ ) ⊇ MF ,
+because by [Tor, §8.19], M is simply connected and therefore M+  F = MF (see [PR, §7.2]).)
+This means that one can extend ρ to M ′ · N. We keep the notation ρ for such an ex-
+tension. We will see below that the extension of ρ is actually uniquely determined on a
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                17
+
+slightly smaller group, and therefore using ρ to denote the extension is not ambiguous.
+
+   Tables in the end of [Tor] determine which groups GF have finite topological central
+extensions G̃F with admissible orbits. Among all F-forms of groups G whose Lie algebras
+g satisfy condition (3.1), the only groups which do not have coverings with admissible
+orbits are groups of Tits index Br,r and Br,r−1 in the nonarchimedean case and SU(p, q)
+and SO(p, q) when p + q is odd in the archimedean case. In these cases, however, the
+metaplectic extension of MF is trivial by [Li2, Lemma 2.2] and [Kaz, Lemma 7]. Therefore
+if M ′ = MF then ρ extends to M ′ . This settles the issue of existence of an appropriate
+covering for GF .
+
+   For a general G we can take G̃ as a finite topological central extension which cov-
+ers both G and G̃F . Let M0 be the inverse image of M ′ in G̃. Obviously extending
+ρ to M0 · N is possible. M0 has a closed finite-index subgroup M1 which is perfect
+(i.e. [M1 , M1 ] = M1 ). M1 is found as follows. Define the sequence M (0) = M0 and
+M (i) = [M (i−1) , M (i−1) ]. Then each M (i) is a subgroup of M ′ of finite index and the
+indices are uniformly bounded (in fact one upper bound is the size of the kernel of the
+map G̃ 7→ GF ). Therefore there is some i◦ such that M (i◦ ) = M (i◦ +1) ; i.e. M (i◦) is perfect.
+Let M1 = M (i◦ ) , the closure of M (i◦ ) inside M ′ . Then M1 is perfect by [Tor, §8.11].
+
+  The extension of ρ to M1 · N is unique. In fact the projective representation of M1 is
+uniquely determined by the relation
+               ρ(m)ρ(n)ρ(m−1 ) = ρ(mnm−1 )             for any n ∈ N, m ∈ M1
+and since M1 is perfect, this projective representation lifts to a linear representation of
+M1 in a unique way.
+
+  The discussion in the previous paragraph proves the following result.
+Proposition 5.1.1. Let G be as in section 1.2 such that g satisfies condition (3.1). Let
+G be a finite topological central extension of GF represented as in (1.1). Let P, L, N, ρ be
+as in the beginning of section 5.1. Then there exists a finite topological central extension
+G̃ of GF which covers G as in
+                                           ĩ         p̃
+                          1 −−−→ F̃ −−−→ G̃ −−−→ G −−−→ 1
+and a (closed) subgroup P1 = M1 · Ñ of G̃ such that
+     i. p ◦ p̃(M1 ) = MF and p ◦ p̃(Ñ ) = NF .
+
+    ii. Ñ is the unipotent radical of p̃−1 (P ); i.e. p̃ : Ñ 7→ N is an isomorphism.
+
+    iii. The representation ρ (which can naturally be thought of as a representation of Ñ
+         too) can be extended in a unique way to a representation of P1 .
+
+    iv. M1 is perfect; i.e. [M1 , M1 ] = M1 .
+
+     v. P1 is a normal subgroup of p̃−1 (P ).
+18                                   HADI SALMASIAN
+
+5.2. Mackey analysis. In this section we assume that the notation is the same as in
+section 5.1. We also assume (without loss of generality) that
+(5.1) ⋄ G is equal to the extension G̃ of Proposition 5.1.1 and [G, G] is dense in G.
+Note that if [G, G] is dense in G, then from [Tor, §8.11] it follows that in fact [G, G] = G.
+The assumption [G, G] = G is not a crucial one. This is because one can always find a
+closed finite-index subgroup G1 of G such that G1 is perfect and G = G1 · Z(G), and once
+a representation π of G is understood on G1 , It is easy to describe it as a representation
+of G.
+
+  Assume condition (5.1) holds. Let P1 ⊂ G be the subgroup given in the statement of
+Proposition 5.1.1. Then we can write P1 = M1 · N, where M1 is defined in Proposition
+5.1.1 and N ≈ Ñ is the unipotent radical of the Heisenberg parabolic P of G which
+appears in parts ii and iii of Proposition 5.1.1.
+
+  Let π be a unitary representation of G, without nonzero G-invariant vectors. Consider
+the restriction of π to P . Recall that Z(N) means the center of N. By Howe-Moore
+theorem [HM], π does not have a nonzero Z(N)-invariant vector either. Therefore in
+the direct integral decomposition of π as a representation of N, the spectral measure is
+supported on N̂◦ (see the notation introduced at the end of section 2.2).
+
+   Elements of P1 commute with elements of Z(N). Therefore under the coadjoint action
+of P on the unitary characters of Z(N), P1 lies within stabP (χ), the stabilizer (inside P )
+of any nontrivial additive unitary character χ of Z(N). In fact all these stabilizers are
+identical groups. We denote this common stabilizer group by J.
+
+  The action of P on Z(N) (and also on its unitary characters) has only a finite number of
+orbits. Consequently, since π has no nonzero G-invariant vectors, by elementary Mackey
+theory (see Theorems 3.11 and 3.12 of [Mac1]) the restriction of π to P can be expressed
+as a finite direct sum                    M
+                                    π|P =     IndPJ σi
+                                             i
+where each σi is a representation of J which, when restricted to N, is a direct integral of
+representations isomorphic to the representation ρi of N (defined in section 2.2) with some
+central character χi . However, each ρi extends in exactly one way to a representation
+of P1 . We still denote this extension by ρi . Again by Mackey theory we can write the
+restriction of σi to P1 as
+                                      σi|P1 = νi ⊗ ρi
+where νi is indeed a representation of M1 extended trivially on N to P1 . Therefore we
+have proved the following result.
+Lemma 5.2.1. Let G, P, L and N be as in the beginning of section 5.1 so that G satisfies
+condition (5.1). Let π be a unitary representation of G without a nonzero G-invariant
+vector. Then π can be written as a finite direct sum
+                                          M
+(5.2)                              π|P =      IndPJ σi
+                                             i
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                               19
+
+where each σi is a representation of J such that
+(5.3)                                     σi|P1 = νi ⊗ ρi
+and νi factors to a representation of M1 . (In other words, νi is trivial on N.)
+   Recall the construction of the H-tower subgroup U = NΓ (see (3.4)). In the notation
+of (3.5) we have H 1 = N. The quotient group U2 = NΓ /N is identical to the H-tower
+subgroup which is constructed for M. By Proposition 5.1.1, the latter H-tower group
+should lie within M1 .
+Lemma 5.2.2. Let ρ be the extension to P1 of the irreducible representation of N (which
+is also denoted by ρ) with an arbitrary nontrivial central character χ (see section 2.2).
+Let NΓ be as in (3.4). Then the restriction of the representation ρ to NΓ is supported on
+rankable representations of NΓ of rank one.
+Proof. The uniqueness of extension of ρ to P1 implies that on M1 , this extension should
+be identical to the extension obtained by restriction of extension of ρ to the metaplectic
+group acting on N/Z(N). Therefore the lemma follows from Definition 4.1.1.
+                                                                                        
+Notation. Let K be an arbitrary (abstract) group and let K ′ be a subgroup of K. Let
+σ be a representation of K ′ on a vector space H. Let a ∈ K. Then by σ a we mean a
+representation of the subgroup Ka′ = aK ′ a−1 on H defined as follows:
+(5.4)                       for every x ∈ Ka′ , σ a (x) = σ(a−1 xa).
+In particular, if K ′ = K, then σ a is a representation of K.
+
+  At this point we recall Mackey’s subgroup theorem. We will use it in sections 5.4
+and 5.5. Giving a precise statement would require some definitions and would distract
+us from the main point of this paper. Therefore, for a detailed discussion we refer the
+reader to [Mac1, Theorem 3.5] or [Mac2, Theorem 12.1].
+Theorem 5.2.3. (Mackey’s Subgroup Theorem) Let K be a locally compact group and
+let K ′ , K ′′ be its closed subgroups. Assume that K, K ′ , K ′′ are “nice” (see the above refer-
+ences for details). Let σ be an irreducible representation of K ′ . Then the representation
+                                                     K
+                                          ResK
+                                             K ′′ IndK ′ σ
+
+has a direct integral decomposition supported on representations τv , v ∈ K, where
+                                              ′′        K′
+                                  τv = IndK                       v
+                                          K ′′ ∩Kv′ ResK ′′ ∩Kv′ σ .
+                                                        v
+
+
+
+Here
+                                          Kv′ = vK ′ v −1
+and σ v is defined as in (5.4).
+  The following elementary lemma, which essentially follows from Mackey theory too,
+will help us in sections 5.4 and 5.5
+Lemma 5.2.4. Let K ′ ⊂ K be two arbitrary locally compact groups such that K ′ is a
+closed normal subgroup of K. Let σ be a unitary representation of K which acts on the
+Hilbert space H. Suppose
+                                 ResKK ′ σ = σ1 ⊕ σ2
+20                                      HADI SALMASIAN
+
+where σ1 and σ2 are unitary representations of K ′ such that for any a ∈ K, we have
+                                     HomK ′ (σ1a , σ2 ) = {0}.
+(Here σ1a is defined as in (5.4) and HomK ′ (σ1a , σ2 ) means the space of K ′ -intertwining
+operators from σ1a to σ2 .) For i ∈ {1, 2}, let Hi be the closed σ(K ′ )-invariant subspace
+of H which corresponds to the summand σi . Then each Hi is actually invariant under
+σ(K).
+Proof. Let a ∈ K. Then the linear operator T defined as
+                              T : H1 →
+                                     7 H
+                               T (w) = σ(a)w for all w ∈ H1
+is an element of HomK ′ (σ1a , σ). The orthogonal projection P of H onto H2 is an element
+of HomK ′ (σ, σ2 ). By the hypothesis of the lemma, one should have P ◦ T = 0. Therefore
+σ(a)H1 ⊆ H1 .
+                                                                                       
+
+5.3. Statement of the main theorems. We state the main theorems in this section
+and prove them in sections 5.4 and 5.5.
+
+  Throughout this section, we assume G, GF and g are as in section 1.2 and g satisfies
+condition (3.1). Moreover, we assume NΓ is the H-tower subgroup of G (see equality
+(3.4)), described as in (3.5).
+
+Theorem 5.3.1. Let π be a unitary representation of G. Then in the direct integral
+decomposition
+                                     Z ⊕
+                              π|NΓ =     τ dµ(τ )
+                                                N̂Γ
+the support of the spectral measure µ is inside the subset of rankable representations of
+NΓ .
+  In the next theorem the subset of rankable representations of rank k of NΓ will be
+denoted by N̂Γ (k).
+Theorem 5.3.2. Let π be a unitary representation of G on a Hilbert space Hπ . Consider
+the direct integral decomposition
+                                         Z ⊕
+                                  π|NΓ =     τ dµ(τ )
+                                                N̂Γ
+
+and let Pµ be the projective measure corresponding to this decomposition. Let N̂Γ (π) be
+the support of π in this direct integral decomposition. Set
+                 Hπj = Pµ (N̂Γ (j) ∩ N̂Γ (π)) · Hπ     for any 0 ≤ j ≤ ht(NΓ ).
+Then for every j such that
+                                   j ∈ {0, 1, 2, ..., ht(NΓ )},
+Hπj    is a G-invariant subspace of Hπ . The direct sum of all these subspaces is equal to
+Hπ .
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                21
+
+Remark. It is clear that for Pµ (N̂Γ (j) ∩ N̂Γ (π)) to make sense we need to show that
+the sets N̂Γ (j) ∩ N̂Γ (π) are indeed Borel subsets of N̂Γ . In fact one can show that the
+set of rankable representations of a given rank of an H-tower group U = H 1 · · · H t can
+be constructed with a finite number of set-theoretic operations on open and closed sets
+of the unitary dual of U. Here is a sketch of the proof. Any rankable representation σ is
+a tensor product of the form
+                                       ρ1 ⊗ · · · ⊗ ρt
+such that ρ1 , ..., ρrank(σ) are extensions of representations (with nontrivial central char-
+acters) of H 1, ..., H rank(σ) respectively, and the rest of the ρj ’s are trivial. The first
+requirement imposes open conditions on the subset of rankable representations of a given
+rank, whereas the second requirement imposes a closed condition.
+Definition 5.3.3. Let π be any unitary representation of G. π is called “pure-rank” if
+its restriction to NΓ is a direct integral of rankable representations of a fixed rank. The
+common rank of these rankable representations is called the rank of π.
+  Although Theorem 5.3.2 is slightly stronger than Corollary 5.3.4 below, we would like
+to state it in order to clarify the analogy between our new theory and the older one.
+Corollary 5.3.4. Let π be an irreducible representation of G. Then π is pure-rank.
+5.4. Proof of Theorem 5.3.1. In this section we prove Theorem 5.3.1. Without loss
+of generality we can assume that condition (5.1) holds. Theorem 5.3.1 is proved by in-
+duction on ht(NΓ ). Let NΓ be described as in (3.5). By Howe-Moore’s theorem [HM],
+when ht(NΓ ) = 1 there is nothing to prove. Now let ht(NΓ ) > 1. Let P, L, M and N be
+as in section 5.1. Let P1 , M1 be as in Proposition 5.1.1. The H-tower subgroup which
+is associated to M is N2 = NΓ /N and it lies within M1 . But ht(N2 ) = ht(NΓ ) − 1, and
+therefore Theorem 5.3.1 holds for M1 .
+
+    Without loss of generality, we can assume π has no nonzero G-fixed vectors. Let
+σi ’s be the representations which appear in the decomposition of π using Lemma 5.2.1.
+By a straightforward application of Mackey’s subgroup theorem (see Theorem 5.2.3), or
+even more directly (with only little difficulty) by writing the definition of the induced
+representation IndPJ σi explicitly, one can see that the representation
+                                            ResPP1 IndPJ σi
+is supported on representations of the form
+                                         ResJP1 σix    x∈P
+where σix is defined as in (5.4); i.e.
+(5.5)                         for any y ∈ J, σix (y) = σi (x−1 yx).
+Note that J is a normal subgroup of P because it contains [P, P ].
+
+   By (5.3), ResJP1 σix is unitarily equivalent to νix ⊗ ρxi where νix and ρxi are defined similar
+to (5.5). Theorem 5.3.1 follows from Lemma 5.2.2 applied to ρxi , the fact that by induction
+hypothesis νix is supported on rankable representations of N2 = NΓ /N, and Definition
+4.1.1.
+22                                    HADI SALMASIAN
+
+5.5. Proof of Theorem 5.3.2. We will now proceed towards proving Theorem 5.3.2.
+Without loss of generality, we can assume that condition (5.1) holds. Let P, L, N and
+M be as in section 5.1. Let P1 , M1 be as in Proposition 5.1.1. The main idea behind
+the proof is that the Kirillov orbits of representations of different rank have different
+dimensions. We will apply some basic Kirillov theory.
+
+  Recall from section 5.3 that G, g, gF are as in section 1.2 and g satisfies condition (3.1).
+Let Σ, Σ+ and ΣB be as in section 1.2 too. Let β̃ be the highest root of g (see section
+1.2) and β be a simple restricted root such that (β, β̃) = 1. Recall that
+(5.6)                                 P{β} = L{β} N{β}
+is a standard parabolic subgroup of G associated to {β} (see section 1.2). Let NΓ be the
+H-tower subgroup of G and suppose nΓ is its Lie algebra. Let N{β} be as in equation
+(5.6) and suppose n{β} is its Lie algebra. We consider nΓ and n{β} as subalgebras of gF .
+Recall that for any γ ∈ Σ, (gF )γ denotes the restricted root subspace of gF associated to
+γ. Our next aim is to define a subgroup NΓβ of NΓ in case ht(NΓ ) > 1.
+
+     Let LΓ be as in equation (3.4), with Lie algebra lΓ where lΓ ⊂ gF , and
+                                 ΣL = {γ ∈ Σ | (gF )γ ⊂ lΓ }.
+Define
+                                               M
+(5.7)                                  nβΓ =          (gF )γ
+                                               γ∈SΓ
+
+where
+(5.8)                SΓ = {γ ∈ Σ+ | (gF )γ ⊂ nΓ ∩ n{β} and γ − β ∈
+                                                                 / ΣL }.
+One can see that nβΓ is a Lie subalgebra of gF . To see this, assume γ, γ ′ ∈ SΓ and
+γ + γ ′ ∈ Σ+ . Then since both nΓ and n{β} are Lie algebras, (gF )γ+γ ′ ⊂ nΓ ∩ n{β} .
+Moreover, if γ + γ ′ − β ∈ ΣL , then either γ ∈ ΣL or γ ′ ∈ ΣL which is a contradiction.
+Consequently γ + γ ′ ∈ SΓ .
+
+  The group NΓβ is defined as the subgroup of NΓ ∩ N{β} with Lie algebra nβΓ . (It is
+worth mentioning that NΓβ is a proper subgroup of NΓ ∩ N{β} if and only if Γ contains
+an element which is not orthogonal to β in Σ.)
+
+Lemma 5.5.1. Let ht(NΓ ) > 1 and L{β} be as in equation (5.6). Let M{β} = [L{β} , L{β} ],
+the commutator subgroup of L{β} . Then M{β} normalizes NΓβ .
+Proof. It suffices to show that for any γ ∈ SΓ , if γ + β ∈ Σ (respectively γ − β ∈ Σ) then
+γ + β ∈ SΓ (respectively γ − β ∈ SΓ ). Note that γ − β cannot be zero.
+
+   Assume γ ∈ SΓ and γ + β ∈ Σ. Since (gF )γ ⊂ n{β} , we have (gF )γ+β ⊂ n{β} too. Simi-
+                                / ΣL and (γ +β)−β = γ ∈
+larly, since (gF )γ ⊂ nΓ , γ +β ∈                     / ΣL which imply that γ +β ∈ SΓ .
+
+  Next assume γ ∈ SΓ and γ − β ∈ Σ. Note that γ − β ∈ Σ implies γ − β ∈ Σ+ since
+γ ∈ Σ+ . Again since (gF )γ ⊂ n{β} , we have (gF )γ−β ∈ n{β} . Moreover, by the definition of
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                23
+
+nβΓ , γ − β ∈
+            / ΣL and therefore (gF )γ−β ⊂ nΓ . Finally, if (γ − β) − β ∈ ΣL , then γ = 2β + γ1
+where γ1 ∈ ΣL . This means that (γ, β̃) = 2, i.e. γ is the highest root. Since any simple
+restricted root appears in the highest root with a positive coefficient, it follows that ΣB
+consists of β and the elements of Γ. Consequently, there is only one simple restricted
+root outside Γ, which implies that ht(NΓ ) = 1, which contradicts our assumption.
+                                                                                            
+
+Proposition 5.5.2. Let G be as in Theoreom 5.3.2, NΓ be the H-tower subgroup of G and
+ht(NΓ ) > 1. Let NΓβ be defined as in equation (5.7). Then the restriction of a rankable
+representation σ of rank k of NΓ to NΓβ is a direct integral of irreducible representations of
+NΓβ whose attached coadjoint orbits have the same dimension equal to 2(n1 + · · ·+ nk − c),
+where c is the codimension of NΓβ in NΓ , and ni ’s are defined as in Corollary 4.2.3.
+
+Proof. Throughout the proof we assume F = R for simplicity. The proof for other local
+fields is essentially similar.
+
+  We will analyze
+                                     ResN
+                                        Nβ
+                                          Γ
+                                            (ρ1 ⊗ · · · ⊗ ρk )
+                                             Γ
+
+
+
+with the ρi ’s as in Definition 4.1.1. It is easy to see that NΓβ ⊃ H 2 · · · H ht(NΓ ) , so when
+j > 1 the restriction of ρj to NΓβ is irreducible. It remains to understand the restriction
+of ρ1 to NΓβ . The group H 1 ∩ NΓβ is a direct product of a Heisenberg group of dimension
+2(n1 − c) + 1 and a c-dimensional abelian group whose Lie algebra corresponds to the
+direct sum of restricted root spaces (gR )β̃−γ , such that (γ, β̃) > 0 but γ ∈/ SΓ . To see why
+these restricted root spaces form an isotropic subspace of the Heisenberg nilradical of gR ,
+suppose β̃ − γ1 , β̃ − γ2 are given such that for any i ∈ {1, 2}, (γi , β̃) > 0 but γi ∈  / SΓ . If
+(β̃ −γ1 )+(β̃ −γ2 ) = β̃, then β̃ = γ1 +γ2 . But for any i ∈ {1, 2}, γi = β +γi′ where γi′ ∈ ΣL
+or γi′ = 0. Therefore β̃ = 2β+γ1′ +γ2′ , which implies that ΣB consists of β and the elements
+of Γ. (See the proof of Lemma 5.5.1.) Consequently ht(NΓ ) = 1, which is a contradiction.
+
+  Let the decomposition of H 1 ∩ NΓβ as a direct product be H β × Rc , where H β is the
+2(n1 − c) + 1-dimensional Heisenberg group and Rc is the abelian factor. We will denote
+the irreducible representation of H β with central character χ1 by ρβ1 .
+
+Lemma 5.5.3. Under the foregoing assumptions,
+                                         Z
+                            NΓ
+                        ResH 1 ∩N β ρ1 =   ρβ1 ⊗ψ
+                                               ˆ s dµ(s)
+                                         Γ           Rc ∗
+
+
+where each ψs (t), given by ψs (t) = eis(t) for some s ∈ Rc ∗ , the vector-space dual of Rc , is
+a unitary character of Rc .
+
+Proof. Clearly
+                         NΓ                      1 NΓ               1
+                      ResH       ρ = ResH
+                           1 ∩N β 1
+                                                               H
+                                        H β ×Rc ResH 1 ρ1 = ResH β ×Rc ρ1 .
+                                Γ
+24                                          HADI SALMASIAN
+
+The space Hρ of any representation ρ of the Heisenberg group H 1 = Hn1 introduced in
+section 2.2 can be written as
+             Hρ = L2 (y) = L2 (SpanR {Y1 , . . . , Yc } ⊕ SpanR {Yc+1, . . . , Yn1 }) =
+                                                                       Z ⊕
+                            2   c ˆ 2
+                           L (R )⊗L (SpanR {Yc+1, . . . , Yn1 }) ≈             L2s dµ(s)
+                                                                             Rc ∗
+where  each L2s                   2                                            c
+                   is equal to L (SpanR {Yc+1 , . . . , Yn1 }) on which R acts via the character
+          is(x)
+χs (x) = e      . In fact L2s is a representation of H β × Rc . Lemma 5.5.3 is proved.        
+  Next we show that Rc ⊂ Z(NΓβ ). To see this, take a restricted root space (gR )β̃−γ
+which lies inside Rc . It suffices to show that for any γ ′ ∈ SΓ , (β̃ − γ) + γ ′ ∈
+                                                                                  / Σ. But we
+know that γ = β + γ1 where γ1 ∈ ΣL or γ1 = 0. Therefore (β̃ − γ) + γ ′ = β̃ − β − γ1 + γ ′ .
+Consequently, if (β̃ − γ) + γ ′ ∈ Σ, then either γ ′ ∈ ΣL or γ ′ − β = γ1 ∈ ΣL . However,
+none of these is possible for γ ′ by the definition of SΓ in (5.8).
+
+   We have shown that Rc ⊂ Z(NΓβ ) and the action of Rc on each L2s is by a distinct
+character ψs (see Lemma 5.5.3). Hence the restriction of ρ1 to NΓβ breaks into a direct
+integral of a c-parameter family of irreducible representations. Consequently the same
+thing happens to any rankable representation
+                                          σ = ρ1 ⊗ · · · ⊗ ρk .
+By Theorem 2.5.1 of [CG] and Lemma 4.2.2 applied to NΓβ which is a semidirect product
+of H β × Rc and N2 , it follows that the projection of the coadjoint orbit Oσ∗ onto the Lie
+algebra of NΓβ is foliated by subvarieties of codimension 2c, which are indeed coadjoint
+orbits of the constituents of the rankable representations in the restriction of σ to NΓβ .
+Proposition 5.5.2 is proved.                                                             
+  We will now concentrate on finishing the proof of Theorem 5.3.2. Theorem 5.3.2 is
+proved by induction on the height ht(NΓ ) of the H-tower group NΓ . If ht(NΓ ) = 1 then
+there is nothing to prove. Let ht(NΓ ) > 1. Then the H-tower subgroup of M1 is equal to
+N2 , where
+                                       N2 = NΓ /N.
+Clearly ht(N2 ) = ht(NΓ ) − 1.
+
+   Without loss of generality we can assume π has no nonzero G-invariant vectors. Con-
+sider the decomposition of π given in (5.2). Applying induction hypothesis to M1 , which
+contains the H-tower subgroup N2 , we can refine this decomposition by expressing each
+νi as a direct sum of its M1 -invariant pure-rank parts (where the rank for a representation
+of M1 is naturally defined with respect to N2 ). Conseqently, as a representation of M1 ,
+                                   νi = νi,0 ⊕ νi,1 ⊕ · · · ⊕ νi,ht(N2 ) .
+Here νi,j denotes the part of νi supported on rankable representations of N2 of rank j.
+(Note that some of the νi,j ’s may be trivial, but this fact does not affect our proof.)
+Therefore we have
+                        σi|P1 = (νi,0 ⊗ ρi ) ⊕ · · · ⊕ (νi,ht(N2 ) ⊗ ρi ).
+Let H be the Hilbert space of the representation σi . For any j ∈ {0, 1, 2, ..., ht(N2 )}, let
+Hj be the subspace of H which corresponds to νi,j ⊗ ρi . Our next task is to prove that
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                25
+
+each Hj is in fact invariant under σi (J). (See Lemma 5.2.1.) This follows from Lemma
+5.2.4 once we prove the following lemma.
+Lemma 5.5.4. Let η = νi,j ⊗ ρi and η ′ = νi,j ′ ⊗ ρi where j 6= j ′ . Let a ∈ J. Then
+                                      HomP1 (η a , η ′ ) = {0}
+where η a is a representation of P1 defined on Hj defined as in (5.4); i.e.
+                             η a (x) = η(a−1 xa)     for all x ∈ P1 .
+Proof. We actually prove more; i.e. that
+(5.9)                         HomNΓ (ResPN1Γ η a , ResPN1Γ η ′ ) = {0}.
+We claim that ResPN1Γ η a is a direct integral supported on rankable representations of NΓ
+of rank j + 1. The claim implies (5.9) because if j 6= j ′ , then it implies that ResPN1Γ η a and
+ResPN1Γ η ′ are supported on disjoint subsets of N̂Γ . We prove this claim below.
+
+  By Lemma 5.2.2, ρai is supported on rankable representations of NΓ of rank one. Next
+              a
+we show that νi,j is supported on rankable representations of N2 = NΓ /N of rank j.
+
+   As we know, G is a central extension of GF . Suppose this extension is represented as
+in (1.1).
+
+   First let a ∈ N. Then a ∈ NΓ and consequently ResPN1Γ η a is unitarily equivalent to
+ResPN1Γ η. Since J ⊂ P and any element of P is a product of an element of N and an
+element of p−1 (LF ), it follows that it suffices to assume that p(a) ∈ LF .
+
+   It follows from p(a) ∈ LF that p(a)MF p(a−1 ) = MF . The group p(PΓ ) is the F-points
+of the F-parabolic PΓ′ of G. Now Pm = PΓ′ ∩ M is an F-parabolic of M. Since
+p(a) ∈ LF , p(a)Pm p(a−1 ) is another F-parabolic of M, and therefore by [Bor, Theorem
+20.9] these two parabolics are conjugate under an element p(b) of MF where b ∈ M1 (re-
+call from Proposition 5.1.1 that p(M1 ) ⊇ MF ). This means that p(ba)Pm p(ba)−1 = Pm .
+If Um is the unipotent radical of Pm , then p(ba)Um p(ba)−1 = Um , which implies that
+baN2 a−1 b−1 = N2 .
+
+   Let c = ba. Then c ∈ P . Let n2 ⊂ nΓ be the Lie algebra of N2 . Consider Ad∗ (c) as a
+linear map from the dual of the Lie algebra of P to itself. Obviously Ad∗ (c)(n∗2 ) = n∗2 .
+Let τ be an irreducible unitary representation of N2 and let Oτ∗ be the coadjoint orbit
+associated to τ . Then the coadjoint orbit associated to τ c is Ad∗ (c)(Oτ∗ ). This fact fol-
+lows for instance from [Du, III 11]. A short proof of this fact can be obtained by an
+adaptation of the proof of Lemma 5.5.6.
+
+  For simplicity let ν = νi,j for fixed i, j. The representation ResM
+                                                                    N2 ν is supported on
+                                                                      1
+
+
+rankable representations of N2 whose associated coadjoint orbits have dimension
+                                        n2 + · · · + nj+1 .
+(See Corollary 4.2.3 for the definition of ni ’s.)
+26                                     HADI SALMASIAN
+
+  Let ν a , ν b , ν c be representations of M1 defined as in (5.4). (Note that aM1 a−1 = M1
+because P1 is normal in p−1 (PF ).) Since b ∈ M1 , any representation θ of M1 is obviously
+unitarily equivalent to θb . Therefore ν c is unitarily equivalent to ν a . Since the action of
+Ad∗ (c) on n∗2 is linear, it does not change the dimension of coadjoint orbits, and therefore
+ResM 1 c
+   N2 ν is supported on unitary representations of N2 whose associated coadjoint orbits
+have dimension n2 + · · · + nj+1 .
+
+   Since ν c is a unitary representation of M1 , by Theorem 5.3.1 all representations in
+the support of its restriction to N2 should be rankable. Therefore ResM     1 c
+                                                                          N2 ν is supported
+on rankable representations of N2 of rank j. Now ν is unitarily equivalent to ν c as a
+                                                       a
+
+representation of M1 , and hence as a representation of N2 . Therefore ν a is also supported
+on rankable representations of N2 of rank j. Definition 4.1.1 completes the proof of our
+claim. The proof of Lemma 5.5.4 is complete.
+                                                                                          
+  As mentioned before, Lemma 5.5.4 implies that each of the subspaces Hj (which cor-
+responds to the representation νi,j ⊗ ρi of P1 ) is invariant under σi (J).
+Lemma 5.5.5. There is a P -invariant direct sum decomposition of π such as
+                                  π|P = π1 ⊕ · · · ⊕ πht(NΓ )
+where each πi is of pure NΓ -rank i.
+
+Proof. The invariance of the spaces Hj under σi (J) means that one can actually decom-
+pose σi as a direct sum
+                              σi = σi,1 ⊕ σi,2 ⊕ · · · ⊕ σi,ht(NΓ )
+such that each σi,j is a representation of J and
+                                     σi,j |P1 = νi,j−1 ⊗ ρi .
+Now an application of Mackey’s subgroup theorem (see Theorem 5.2.3) immediately
+implies that the representation
+                                     ResPNΓ IndPJ σi,j
+is supported on rankable representations of NΓ of rank j. (See the argument of Theorem
+5.3.1 and Lemma 5.5.4.) Lemma 5.5.5 is proved.                                       
+   Recall from Lemma 5.5.1 that the group NΓβ is normalized by M{β} . A version of the
+following lemma was mentioned in the proof of Lemma 5.5.4.
+Lemma 5.5.6. Let τ be a unitary representation of NΓβ and let g ∈ M{β} . Let τ g be
+defined as in (5.4). Then the coadjoint orbits associated to τ and τ g (in the sense of
+Kirillov’s orbital theory) have the same dimension.
+Proof. The proof follows immediately from the fact that the coadjoint orbit attached to
+τ g is Ad∗ (g)(O∗ ), which follows from [Du, III 11]. We would like to give a short proof of
+this fact for the reader’s convenience. Let nβΓ be the Lie algebra of NΓβ . Fix an additive
+character χ of F as done in [Mo1, §4]. (When F = R or C, χ(t) = eiRe(t) where Re(t)
+means the real part of t, and when F is p-adic, χ will be an unramified character given by
+Tate.) Let the coajoint orbit associated to τ be Oτ∗ ⊂ nβΓ . By Kirillov’s orbital theory we
+know that τ is constructed as follows. One chooses an arbitrary element λ ∈ Oτ∗ and a
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                              27
+
+maximal subalgebra q of nβΓ subordinate to λ, which exponentiates to a closed subgroup
+Q of NΓβ . Then
+                                            Nβ
+                                  τ = IndQΓ (χ ◦ λ ◦ log).
+For any g ∈ M{β} , let (χ ◦ λ ◦ log)g be defined as in (5.4). Then
+                      Nβ                             Nβ       ∗
+             τ g = IndgQg
+                       Γ                  g
+                          −1 (χ ◦ λ ◦ log) = IndgQg −1 (χ ◦ Ad (g)(λ) ◦ log).
+                                                 Γ
+
+
+
+Since Ad(g)(q) is a maximal subalgebra subordinate to Ad∗ (g)(λ), the coadjoint orbit
+attached to τ g is
+                                      Ad∗ (g)(O∗ ).
+Since the action of Ad∗ (g) is linear on nβΓ , it does not change the dimension of the
+coadjoint orbit.                                                                    
+  To prove Theorem 5.3.2, we show that each of the components πi given in Lemma
+5.5.5 is G-invariant as well. To this end, we first prove the following lemma.
+Lemma 5.5.7. The P -invariant decomposition in Lemma 5.5.5 is preserved by the action
+of M{β} , where
+                                 M{β} = [L{β} , L{β} ]
+and L{β} is the Levi component of the standard parabolic P{β} with β as in Proposition
+5.5.2.
+Proof. For any 1 ≤ j ≤ ht(NΓ ), the representation
+                                           ResPN β πj
+                                                 Γ
+
+is a direct integral of representations which correspond to coadjoint orbits of dimension
+2(n1 + · · · + nj − c). However, n1 , ..., nht(NΓ ) > 0. Therefore, if we define πja (for any
+a ∈ M{β} ) as in (5.4), then Lemma 5.5.6 implies that for any j ′ 6= j, the dimension of
+the coadjoint orbits associated to the irreducible representations of NΓβ in the support of
+ResPNΓ πja is different from the dimension of the coadjoint orbits assoiated to the irreducible
+representations of NΓβ in the support of ResPNΓ πj ′ . This means that
+                            HomN β (ResPN β πja , ResPN β πj ′ ) = {0}.
+                                   Γ        Γ             Γ
+
+Now we apply Lemma 5.2.4 with K = [P{β} , P{β} ], K ′ = NΓβ , σ = π, σ1 = πi and
+                                       M
+                                 σ2 =       πi .
+                                                 i6=j
+
+It follows that each πj is invariant under the action of M{β} . Lemma 5.5.7 is proved.
+                                                                                             
+   To finish the proof of Theorem 5.3.2, we note that the parabolic subgroup P in G is
+maximal, therefore the group generated by M{β} and P will be equal to G. (This follows
+from the Bruhat-Tits decomposition.) The decomposition of π given in Lemma 5.5.5 is
+preserved by both P and M{β} , and hence by the group generated by them. Therefore
+the decomposition of Lemma 5.5.5 is G-invariant.
+
+Remark. Let G be as in Theorem 5.3.1, such that the central extension identifying
+G is as in (1.1). Let NΓ be the H-tower subgroup of the group G. Let π be a unitary
+28                                     HADI SALMASIAN
+
+representation of G of pure rank k, where k ≤ ht(NΓ ). Consider the subgroup Ak of
+G defined as follows. Ak = p−1 (A′F ), where A′ is an F-torus inside the maximal split
+F-torus A whose Lie algebra is spanned by the coroots Hβ̃1 , ..., Hβ̃k . Let τ be a rankable
+representation of NΓ of rank k. The stabilizer Sτ of τ inside Ak is a finite subgroup of
+Ak . Moreover, under the action of Ak there are only a finite number of orbits of rankable
+representations of rank k. By Mackey theory, the restriction of π to Ak ⋉ NΓ is a direct
+integral of representations of the form
+(5.10)                                    IndA k ⋉NΓ
+                                             Sτ ⋉NΓ στ
+
+where στ is irreducible and στ |NΓ = nτ τ for some nτ ∈ {1, 2, 3, ..., ∞}. Moreover, by
+                                                               Sτ ⋉NΓ
+Frobenius reciprocity, στ will be a subrepresentation of IndN    Γ
+                                                                      τ . Since Sτ is a finite
+group, there are only a finite number of possibilities for στ . Since the number of orbits
+(and hence stabilizers) of rankable representations of rank k under the action of Ak is
+finite, the number of representations of the form (5.10) is finite as well. This implies the
+following result.
+Proposition 5.5.8. Let π be a unitary representation of G of pure rank k. Then there
+exists a finite family {τ1 , ..., τt } of irreducible representations of Ak ⋉ NΓ , independent of
+π, such that
+                                      π|Ak ⋉NΓ = n1 τ1 + · · · + nt τt
+where ni ∈ {1, 2, 3, ..., ∞} for each i.
+
+                          6. Relation with the old theory
+6.1. Outline of the old theory. In this section we show how the notion of rank defined
+in the past sections relates to the existing theory for classical groups. To this end, we
+show that for the real forms of classical groups, the two notions of rank (the one defined
+in [Li1] and the one defined in Definition 5.3.3) are equivalent. Here we give a brief out-
+line of the old theory. In classical cases, rank of a representation of the real semisimple
+group G is defined in terms of its restriction to the centers of nilradicals of maximal
+parabolic subgroups. One can characterize each of these parabolics with a node in the
+Dynkin diagram of the restricted root system in a natural way. It turns out that there is
+a (not necessarily unique) standard parabolic which provides the most refined informa-
+tion about the rank. We will devote this section to exhibiting the coincidence of the two
+notions of rank on this parabolic. Really the main idea is some slight modification of
+the fact that the nilradical of the rank parabolic subalgebra contains a maximal isotropic
+subspace of each of the Heisenberg algebras in the H-tower NΓ . Our presentation of the
+results follows the notation of older literature [Hw1], [Li1], [Sca].
+
+   The notation used in this section is chosen independent of other sections in order to
+simplify matters and be more coherent with older works. For simplicity we only consider
+the case F = R. The general case is essentially the same and will only be more technical.
+It is more convenient to consider classical groups of different types (in the sense of [Hw5])
+separately. Here we quickly review the definition of classical groups of types I and II over
+a local field, but later we will retain our assumption that F = R.
+
+  Let F be a local field, D a division algebra over F with an involution, and V a left vector
+space over D of dimension n. A classical group G is said to be of type II if G = GLD (V ).
+                     A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                 29
+
+From now on, by (·, ·) we mean a Hermitian or skew-Hermitian sesquilinear form (·, ·) on
+V . A classical group G of type I is the connected component of identity of the stabilizer
+subgroup of (·, ·) inside GLD (V ). The real groups of type I which are of our interest
+here, i.e. those which satisfy the assumptions of Proposition 3.1.1, correspond to the
+cases where F = R and D = R, C or H with their usual involutions.
+
+
+6.2. Groups of type I. A typical maximal parabolic of these groups can be described
+as follows. Take a maximal polarization inside V , i.e. a maximal set of vectors
+                                        {e1 , . . . , er , e∗1 , . . . , e∗r }
+in V which satisfy
+                                    (ei , ej ) = (e∗i , e∗j ) = 0
+                                          (ei , e∗j ) = δi,j .
+In fact r is equal to the split rank of G. For any k let
+                    Xk = SpanD {e1 , . . . , ek } ,            Xk∗ = SpanD {e∗1 , . . . , e∗k }
+and define Vk to be Xk ⊕Xk∗ . Let Pk be the subgroup of G that consists of elements which
+leave the subspace Xk∗ invariant. Pk is a parabolic subgroup and the Levi decomposition
+of Pk looks like
+(6.1)                                 Pk = GLD (Xk∗ )G(Vk⊥ )Nk
+where by G(Vk⊥ ) we mean the stabilizer of (·, ·) as a form on Vk⊥ . Here Nk is the unipo-
+tent radical of Pk .
+
+  Pr is the parabolic which provides the most refined information about the rank (in the
+sense of [Hw1],[Li1]).
+Definition 6.2.1. Let r be the split rank of G. The parabolic Pr or its Lie algebra are
+called the rank parabolic.
+
+   The unipotent radical Nk is a two-step nilpotent simply connected Lie group and there-
+fore it can be identified with its Lie algebra via the exponential map. From now on, we
+think of any Nk through this identification, and although slightly ambiguous, we use the
+same notation for its Lie subgroups and their Lie algebras. This is done in order to avoid
+complicated notation and to keep the presentation as close to the style used in the papers
+of Howe and Li. We will make it clear whether or not we are using a Lie group or a Lie
+algerba wherever necessary.
+
+  As in [Li1], we have the following exact sequence of Lie algebras:
+                         0 −→ ZNk −→ Nk −→ HomD (Vk⊥ , Xk∗ ) −→ 0
+where ZNk is the center of Nk . ZNk is isomorphic to
+                                             Hominv      ∗
+                                                D (Xk , Xk )
+
+where Hominv      ∗                                                  ∗
+         D (Xk , Xk ) is the F-subspace of elements T of HomD (Xk , Xk ) satisfying
+
+                         ∀i, j ∈ {1, 2, . . . , k}, (T ei , ej ) + (ei , T ej ) = 0.
+30                                         HADI SALMASIAN
+
+Thus as an F−vector space, the Lie algebra Nk can be expressed as
+(6.2)                      Nk = HomD (Vk⊥ , Xk∗ ) ⊕ Hominv      ∗
+                                                       D (Xk , Xk ).
+
+     The isomorphism of HomD (Vk⊥ , Xk∗ ) into the Lie algebra Nk can be depicted as
+(6.3)                        ˜: HomD (Vk⊥ , Xk∗ ) 7→ HomD (V, V )
+
+                                                    T 7→ T̃
+     where T̃ is defined as follows:
+
+                                       T̃ v = T v    for   v ∈ Vk⊥
+                                        T̃ v = 0     for   v ∈ Xk∗
+                                    T̃ v = T t v     for   v ∈ Xk .
+Here T t ∈ HomD (Xk , Vk⊥ ) is defined uniquely by
+                      ∀ v ∈ Vk⊥ , x ∈ Xk            (T v, x) + (v, T t x) = 0.
+  It turns out that the Heisenberg parabolic P of G is Pk1 , where k1 = 2 for G = SOp,q
+and k1 = 1 for all other classical cases under consideration. Let P = LN be the Levi
+decomposition of P . Let M be the appropriate simple isotropic factor of [L, L]; i.e. we
+drop the redundant factor of [L, L] which, in (6.1), corresponds to GLD (Xk∗1 ). Let m be
+the Lie algebra of M. For any k define
+                      Yk = Span{ek , . . . , er } ,     Yk∗ = Span{e∗k , . . . , e∗r }.
+The center of the nilradical of the rank parabolic of m is identical to
+                                        Hominv           ∗
+                                           D (Yk1 +1 , Yk1 +1 ).
+
+The Lie algebra Hominv             ∗
+                     D (Yk1 +1 , Yk1 +1 ) acts on the Lie algebra Nk1 through the adjoint
+action of m. By Theorem 3.1.1 this action will be trivial on ZNk1 . The following simple
+lemma describes this action more explicitly.
+Lemma 6.2.2. Let X ∈ Hominv              ∗                     ⊥   ∗
+                             D (Yk+1 , Yk+1 ). Let Y ∈ HomD (Vk , Xk ). Then the adjoint
+action of m on n = Nk is described as
+                                          adX (Ỹ ) = −(Y˜X)
+where Y˜X is defined as in (6.3).
+Remark. Note that we think of −Y X as an element of HomD (Vk⊥ , Xk∗ ) which is zero on
+Vr⊥ and Yk+1
+          ∗
+             .
+
+   The restriction of (·, ·) to Vr⊥ is a definite form. Without loss of generality, we may
+assume that the form is positive definite. Let {f1 , . . . , fn−2r } be an orthonormal basis
+for Vc = Vr⊥ ; consequently Vc = SpanD {f1 , . . . , fn−2r }. One can see that HomD (Vk⊥ , Xk∗ )
+is equal to
+(6.4)               HomD (Yk+1 , Xk∗) ⊕ HomD (Yk+1
+                                                ∗
+                                                   , Xk∗ ) ⊕ HomD (Vc , Xk∗ ).
+We consider the direct sum decomposition (6.4) inside Nk (see (6.2) ) We observe that:
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                            31
+
+Lemma 6.2.3. In the direct sum decomposition (6.4), the third summand commutes
+with the first two summands, and the adjoint action of Hominv         ∗
+                                                          D (Yk+1 , Yk+1 ) on the third
+summand is trivial.
+
+
+  Now take k = k1 . Then the direct sum
+(6.5)          HomD (Yk1+1 , Xk∗1 ) ⊕ HomD (Yk∗1 +1 , Xk∗1 ) ⊕ Hominv       ∗
+                                                                  D (Xk1 , Xk1 )
+
+is a Lie subalgebra of Nk1 , and also a Heisenberg algebra with a polarization given
+by the first two summands in (6.5). We denote the Lie algebra in (6.5) (and also its
+corresponding Lie group) by N k1 . The Lie bracket when restricted to the polarization is
+described as follows.
+Lemma 6.2.4. Let X ∈ HomD (Yk1 +1 , Xk∗1 ) and Y ∈ HomD (Yk∗1 +1 , Xk∗1 ). Then [X̃, Ỹ ] is
+an element of Hominv       ∗
+                 D (Xk1 , Xk1 ) given by
+
+                                     [X̃, Ỹ ] = XY t − Y X t
+where X t ∈ HomD (Xk1 , Yk∗1 +1 ) and Y t ∈ HomD (Xk1 , Yk1 +1 ) are uniquely determined as
+follows
+                  ∀ i ≤ k1 and ∀ j > k1 , (X t ei , ej ) + (ei , Xej ) = 0
+                     ∀ i ≤ k1 and ∀ j > k1 , (Y t ei , e∗j ) + (ei , Y e∗j ) = 0.
+
+Proof. Follows immediately from [X̃, Ỹ ] = X̃ Ỹ − Ỹ X̃ where X̃ and Ỹ are defined as in
+(6.3).                                                                                   
+   The adjoint action of Hominv            ∗
+                             D (Yk1 +1 , Yk1 +1 ) on N k1 is given by Lemma 6.2.2. This ac-
+tion normalizes N k1 and takes HomD (Yk∗1 +1 , Xk∗1 ) to HomD (Yk1+1 , Xk∗1 ).
+
+  At this point we come back to nilpotent groups and their representations. Consider
+an irreducible representation ρ1 of the Heisenberg group Nk1 with (nontrivial) central
+character χ1 . From the orthogonal decomposition obtained in (6.5) it follows that the
+restriction of ρ1 to the group N k1 decomposes into a direct integral of representations of
+this latter Heisenberg group with the same central character. We study the restriction
+of a rankable representation of rank one of the H-tower unipotent radical of G to its
+subgroup
+                               N k1 ⋊ Hominv            ∗
+                                          D (Yk1 +1 , Yk1 +1 ).
+This restriction is a direct integral of representations of the latter group obtained by
+extending the irreducible representation of N k1 with central character χ1 to N k1 ⋊
+Hominv             ∗
+     D (Yk1 +1 , Yk1 +1 ) as suggested by Proposition 2.3.1. This is because Lemma 6.2.3
+implies that as subspaces of Nk1 ,
+                       [Hominv           ∗                   ∗
+                           D (Yk1 +1 , Yk1 +1 ), HomD (Vc , Xk1 )] = {0}
+
+and the Weil representation is functorial. (See (1.15) of [Hw1] for a precise meaning of
+functoriality.)
+
+  Since Hominv         ∗
+             D (Y1 , Y1 ) is an abelian Lie group, any unitary representation of this group
+can be described as a direct integral of unitary characters. Hominv          ∗
+                                                                   D (Y1 , Y1 ) is isomorphic
+32                                        HADI SALMASIAN
+
+to some Rp ; so its group of unitary characters can be naturally identified to Hominv  ∗
+                                                                                  D (Y1 , Y1 )
+via the F-bilinear form
+(6.6)                                   β(A, B) = tr(AB).
+Definition 6.2.5. The rank of a character of Hominv          ∗
+                                                   D (Y1 , Y1 ) is the F-rank of the element
+       inv ∗
+in HomD (Y1 , Y1 ) which corresponds to it via the bilinear form in (6.6).
+Definition 6.2.6. (See [Hw1],[Li1]) Let π be a unitary representation of G. π is said to
+have rank k if and only if π|Hominv     ∗ decomposes into a direct integral of characters of
+                                D (Y1 ,Y1 )
+rank equal to k.
+     The following proposition is a key result of this section.
+Proposition 6.2.7. The restriction of a rankable representation of rank one to
+                                          Hominv       ∗
+                                             D (Y1 , Y1 )
+
+is supported on characters whose rank is equal to k1 .
+Proof. The polarization for the group N k1 has the structure of a D-vector space. There-
+fore, similar to (2.5), we can realize the representation ρ1 of N k1 on
+                                      L2 (HomD (Yk∗1 +1 , Xk∗1 ))
+and then extend it to Hominv            ∗
+                          D (Yk1 +1 , Yk1 +1 ). In Lemma 6.2.8 below, we denote elements
+of the Lie algebras by X, Y, ... and the corresponding elements in the Lie groups by
+eX , eY ,....
+Lemma 6.2.8. The action of the extension of ρ1 is described as below.
+  (a) For any X ∈ HomD (Yk1 +1 , Xk∗1 ), Y ∈ HomD (Yk∗1 +1 , Xk∗1 )
+                                 (ρ1 (eX )f )(Y ) = χ1 (e[Y,X] )f (Y )
+      (b) For any X ∈ Hominv           ∗                   ∗       ∗
+                         D (Yk1 +1 , Yk1 +1 ), Y ∈ HomD (Yk1 +1 , Xk1 )
+                                                         1
+                               (ρ1 (eX )f )(Y ) = χ1 (e 2 [Y,Y X] )f (Y )
+      (c) For any X ∈ Hominv       ∗                 ∗       ∗
+                         D (Xk1 , Xk1 ), Y ∈ HomD (Yk1 +1 , Xk1 )
+
+                                  (ρ1 (eX )f )(Y ) = χ1 (eX )f (Y ).
+Proof. This is an almost immediate consequence of the Schrödinger model for the real-
+ization of Weil representation. See [Hw6].                                          
+     Let X ∈ Hominv           ∗                      ∗       ∗
+                D (Yk1 +1 , Yk1 +1 ) and Y ∈ HomD (Yk1 +1 , Xk1 ). For all i ≤ k1 and j > k1 ,
+
+                          (ej , (Y X)t ei ) = −(Y Xej , ei ) = (Xej , Y t ei )
+                             = −(ej , XY t ei ) = (ej , −XY t ei )
+which implies that (Y X)t = −XY t . Thus the equation in part (b) of Lemma 6.2.8 can
+be simplified as
+                                                         t
+                            (ρ1 (X)f )(Y ) = χ1 (e−Y XY )f (Y ).
+  We would like to have a single formula instead of parts (a), (b) and (c) of Lemma
+6.2.8. To this end, we define the linear operator S = S(Y ) such that
+                                           S : Y1∗ 7→ Xk∗1
+                    A NOTION OF RANK FOR UNITARY REPRESENTATIONS                       33
+
+by
+                                      Se∗i = e∗i if i ≤ k1
+                                     Se∗i = Y e∗i if i > k1 .
+We have the following lemma.
+Lemma 6.2.9. Let X ∈ Hominv       ∗
+                        D (Y1 , Y1 ). Let f be a function such that
+
+                                  f ∈ L2 (HomD (Yk∗1 +1 , Xk∗1 )).
+Then
+                                                            t
+                             ρ1 (eX )f (Y ) = χ1 (e−SXS )f (Y )
+where S t is defined as in Lemma 6.2.4.
+Proof. Applying (ei , Se∗j ) + (S t ei , e∗j ) = 0, one can see that for any i ≤ k1
+                                       S t ei = −ei + Y t ei
+and thus for any X ∈ HomD (Yk1 +1 , Xk∗1 )
+                            −SXS t ei = −S X̃(−ei + Y t ei ) =
+                                (−S)(−X t )ei − SXY t ei =
+                                 Y X t ei − XY t ei = [Y, X]ei
+which proves −SXS t = [Y, X].
+
+  For any X ∈ Hominv           ∗
+                 D (Yk1 +1 , Yk1 +1 ) we have
+
+                  −SXS t ei = −S X̃(−ei + Y t ei ) = −SXY t ei = −Y XY t ei
+which proves −SXS t = −Y XY t .
+
+  Finally, when X ∈ Hominv       ∗
+                       D (Xk1 , Xk1 )
+
+                        −SXS t ei = −SX(−ei + Y t ei ) = SXei = Xei
+which proves −SXS t = X. This completes the proof.                                     
+   To complete the proof of Proposition 6.2.7, note that via the identification described
+                                          t
+in (6.6), the character χ(eX ) = χ1 (e−S XS ) corresponds to an element
+                                  a
+(6.7)                           − S tV S         a ∈ iR − {0}
+                                 k1
+where
+                                       V : Xk∗1 7→ Xk1
+is defined as
+                      V e∗l = (−1)l+1 e∗k1 −l+1 for any 1 ≤ l ≤ k1 .
+It is easy to see that (6.7) is an element of Hominv  ∗
+                                                 D (Y1 , Y1 ) of rank k1 , even when its
+domain is restricted to Xk1 .                                                         
+  The following theorem shows that in groups of type I, the two notions of rank are
+essentially the same.
+Theorem 6.2.10. Let π be an irreducible representation of a classical group G of type
+I. Let NΓ be the H-tower subgroup of G (see (3.4)).
+34                                     HADI SALMASIAN
+
+       • Assume that the rank of π in the sense of Definition 6.2.6 is less than ht(NΓ )×k1 .
+         Then π has rank k in the sense of Definition 5.3.3 if and only if π has rank kk1
+         in the sense of Definition 6.2.6.
+       • If the rank of π in the sense of Definition 5.3.3 is equal to ht(NΓ ), then rank of
+         π in the sense of Definition 6.2.6 is ht(NΓ ) × k1 or higher.
+Proof. Since π is supported on rankable representations, the only thing we have to show
+is that a rankable representation of rank k (in the sense of Definition 4.1.1), when re-
+stricted to Hominv   ∗
+                D (Y1 , Y1 ), decomposes as a direct integral of characters of rank kk1 . By
+Proposition 6.2.7, this is true when k = 1.
+
+     Next consider a rankable representation ρ of rank k > 1, say
+                                       ρ = ρ1 ⊗ · · · ⊗ ρk .
+Elementary properties of tensor product imply that the restriction of ρ to Hominv       ∗
+                                                                              D (Y1 , Y1 )
+is a direct integral of characters of the form
+                                             φ1 · φ2
+where the characters φ1 and φ2 are constituents of the direct integral decomposition of ρ1
+and ρ2 ⊗ · · · ⊗ ρk , when restricted to Hominv        ∗
+                                             D (Y1 , Y1 ), respectively. But if φi (i ∈ {1, 2})
+                            inv  ∗
+corresponds to Ai ∈ HomD (Y1 , Y1 ) via (6.6), then φ1 · φ2 corresponds to A1 + A2 . Since
+ρ2 ⊗ · · · ⊗ ρk and therefore any possible φ2 is a trivial representation when restricted
+to Nk1 , any possible A2 is really an element of Hominv        ∗
+                                                          D (Yk1 +1 , Yk1 +1 ) which is extended
+trivially on Xk1 to Y1∗ . However, at the end of the proof of Proposition 6.2.7 it was shown
+that any such character φ1 corresponds to some element of Hominv                ∗
+                                                                          D (Y1 , Y1 ) which is of
+rank k1 even when its domain is restricted to Xk∗1 . It is now easy to show that we have
+                  rank(A1 + A2 ) = rank(A1 ) + rank(A2 ) = k1 + rank(A2 ).
+An induction on k completes the proof.                                                         
+Example. Let G = SO(6, 6). Let π be an irreducible unitary representation of G. Then
+the rank of π in the sense of Definition 6.2.6 can be 0, 2, 4 or 6. The rank of π in the sense
+of Definition 5.3.3 can be 0, 1 or 2. The following chart shows how the ranks correspond
+to each other:
+                              Definition 6.2.6 Definition 5.3.3
+                                             0 0
+                                             2 1
+                                             4 2
+                                             6 2
+   Now let G = SO(5, 11). Then we have a similar chart for the rank of π.
+                              Definition 6.2.6 Definition 5.3.3
+                                             0 0
+                                             2 1
+                                             4 2
+Therefore the correspondence of ranks may or may not be one to one. It is an easy
+exercise to determine in which cases the correspondence is actually one to one.
+                   A NOTION OF RANK FOR UNITARY REPRESENTATIONS                             35
+
+6.3. SLl+1 (R). Let G = SLl+1 (R), the group of linear transformations on the l + 1-
+dimensional vector space V with a fixed basis
+                                         {e1 , . . . , el+1 }.
+Set r = ⌊ l+1
+           2
+              ⌋. For any k let Pk be the maximal parabolic of G which is represented by
+matrices of the form                              
+                                          A B
+                                          0 C
+where
+               A ∈ GLk (R) , C ∈ GLl+1−k (R) , and B ∈ Mk×(l+1−k) (R).
+Therefore
+                           Pk = S(GLk (R) × GLl+1−k (R)) · Nk
+where
+                  Nk = Hom(Span({ek+1 , . . . , el+1 }), Span({e1 , . . . , ek })).
+The parabolic of G which gives the most refined rank is Pr , and henceforth we focus our
+attention to Pr . Let
+               Xk = Span({e2 , . . . , ek })      ,        Yk = Span({ek , . . . , el }).
+The Heisenberg parabolic subgroup of G is P1 ∩ Pl , and a polarization of the Lie algebra
+of its unipotent radical N is a direct sum of
+                             Hom(Xr , Re1 ) ⊕ Hom(Rel+1 , Yr+1 )
+and
+                          Hom(Yr+1 , Re1 ) ⊕ Hom(Rel+1 , Xr ).
+The second summand lies inside the nilradical of the Lie algebra of Pr . Its center is
+isomorphic to
+                                   Hom(Rel+1 , Re1 ).
+As before we are interested in description of the restriction of a representation ρ1 of N
+to
+                   Hom(Span({er+1 , . . . , el+1 }), Span({e1 , . . . , er })).
+We identify the dual of
+                     Hom(Span({er+1 , . . . , el+1 }), Span({e1 , . . . , er }))
+with itself via the bilinear form
+                                      β(X, Y ) = tr(X t Y ).
+The rank of a unitary character of
+                     Hom(Span({er+1 , . . . , el+1 }), Span({e1 , . . . , er }))
+is defined to be the rank of the linear transformation which corresponds to it via the
+bilinear form β.
+
+  We write any
+                        Y ∈ Hom(Xr , Re1 ) ⊕ Hom(Rel+1 , Yr+1 )
+naturally as Y = Y1 ⊕ Y2 . Define
+                            Y1+ ∈ Hom(Span({e1 , . . . , er }), Re1 )
+36                                         HADI SALMASIAN
+
+by
+                                  Y1+ e1 = e1
+                                  Y1+ ej = Y1 ej        for any j > 1.
+Similarly,
+                            Y2+ ∈ Hom(Rel+1 , Span({er+1 , . . . , el+1 }))
+is defined to be
+                                     Y2+ el+1 = −Y2 el+1 + el+1 .
+We can prove the following version of Lemma 6.2.9.
+Lemma 6.3.1. Let ρ1 be a representation of N with central character χ1 realized on
+                          H = L2 (Hom(Xr , Re1 ) ⊕ Hom(Rel+1 , Yr+1 ))
+as in section 2.1.
+For any
+                     X ∈ Hom(Span({er+1 , . . . , el+1 }), Span({e1 , . . . , er })),
+we have
+                                                             +
+                                                                 XY2+
+                                  ρ1 (X)f (Y ) = χ1 (eY1                )f (Y ).
+Proof. We will write Y as Y1 ⊕ Y2 according to the polarization given in the statement
+of the lemma. Based on the Schrödinger model, if X ∈ Hom(Yr+1, Xr ), then the action
+of X on the function f at a point Y is multiplication by the character
+                                           1
+                                    χ1 (e− 2 [Y,Y X] ) = χ1 (e−Y1 XY2 ).
+If X = X1 ⊕ X2 ∈ Hom(Yr+1 , Re1 ) ⊕ Hom(Rel+1 , Xr ) then [X, Y ] = −X1 Y2 + Y1 X2 and
+the action of X is by the character
+                                           χ1 (e−X1 Y2 +Y1 X2 )
+and if X belongs to the center of N then clearly the action will be by the character
+                                                 χ1 (eX ).
+The statement of the lemma follows by a simple calculation.                                 
+  One can see that by the duality provided via bilinear form β, The restriction of a
+representation of rank one to the nilradical of Pr is a direct integral of characters which
+correspond to linear operators of the form Y2+ Y1+ , which have rank one (in the usual
+sense) even when the domain is restricted to Rel+1 . Proof of the following theorem
+(which shows the equivalence of the two notions of rank) is similar to that of Theorem
+6.2.10.
+Theorem 6.3.2. Let G = SLl+1 (R). Then the restriction of a pure-rank representation
+of G of rank k (in the sense of Definition 5.3.3) to the abelian nilradical of Pr is supported
+on unitary characters of rank k.
+Remark. Note that when l is even, the maximum rank of the unitary characters is 2l ,
+which is the same as the height of the H-tower subgoup of G. However, for odd l, the
+maximum rank of unitary characters exceeds the height of the H-tower group by one.
+                     A NOTION OF RANK FOR UNITARY REPRESENTATIONS                                     37
+
+                                            References
+[AV] Adams, J. and Vogan, D. (Editors) Representation theory of Lie groups, Lectures from the Grad-
+      uate Summer School held in Park City, UT, July 13–31, 1998. IAS/Park City Mathematics Series,
+      8, 2000.
+[Ad] Adams, J. Non-linear covers of real groups, preprint, 2004.
+[Bor] Borel, A., Linear algebraic groups, Springer-Verlag, New York, 1991.
+[Bou] Bourbaki, N., Lie groups and Lie algebras. Chapters 4–6. Translated from the 1968 French original
+      by Andrew Pressley. Elements of Mathematics (Berlin). Springer-Verlag, Berlin, 2002.
+[Br] Brown, I. D., Dual topology of a nilpotent Lie group, Ann. Sci. de l’E.N.S. 4e serie, no. 6, (1973),
+      pp 407-411.
+[CG] Corwin, L. J. and Greenleaf, F. P., Representations of nilpotent Lie groups and their applications,
+      Cambridge university press, 1990.
+[De] Deodhar, Vinay V. On central extensions of rational points of algebraic groups, Amer. J. Math.
+      100 (1978), no. 2, 303–386.
+[Du] Duflo, M., Théorie de Mackey pour les groupes de Lie algébrique, Acta Math. 149 (1982), 152–213.
+[DS] Dvorsky, A and Sahi, S., Tensor products of singular representations and an extension of the
+      θ-correspondence. Selecta Math. (N.S.) 4 (1998), no. 1, 11–29.
+[GS] Gan, W. T. and Savin, Gordan On minimal representations, Representation Theory 9 (2005),
+      46–93.
+[GRS] Ginzburg, David and Rallis, Stephen and Soudry, David, A tower of theta correspondences for
+      G2 . Duke Math. J. 88 (1997), no. 3, 537–624.
+[GW] Gross, B. H. and Wallach, N. R., On quaternionic discrete series representations, and their con-
+      tinuations, J. Reine Angew. Math. 481 (1996), 73–123.
+[Hel] Helgason, S. Differential geometry, Lie groups, and symmetric spaces, AMS, 2000.
+[Hw1] Howe, R., On a notion of rank for unitary representations of the classical groups, Harmonic
+      analysis and group representations, 223–331, Liguori, Naples, 1982.
+[Hw2] Howe, R. On the role of the Heisenberg group in harmonic analysis., Bull. Amer. Math. Soc.
+      (N.S.) 3 (1980), no. 2, 821–843.
+[Hw3] Howe, R. Small unitary representations of classical groups, Group representations, ergodic theory,
+      operator algebras, and mathematical physics (Berkeley, Calif., 1984), 121–150, Math. Sci. Res.
+      Inst. Publ., 6, Springer, New York, 1987.
+[Hw4] Howe, R., Automorphic forms of low rank, Noncommutative harmonic analysis and Lie groups
+      (Marseille, 1980), pp. 211–248, Lecture Notes in Math., 880, Springer, Berlin-New York, 1981.
+[Hw5] Howe, R., θ-series and invariant theory, Automorphic forms, representations and L-functions
+      (Proc. Sympos. Pure Math., Oregon State Univ., Corvallis, Ore., 1977), Part 1, pp. 275–285
+[Hw6] Howe, R., Oscillator representation, analytic preliminaries, unpublished notes, 1977.
+[HM] Howe, R. and Moore, C. Asymptotic properties of unitary representations, J. Funct. Anal. 32
+      (1979), no. 1, 72–96.
+[HRW] Howe, R., Ratcliff, G. and Wildberger, N., Symbol mappings for certain nilpotent groups, Lie
+      group representations, III (College Park, Md., 1982/1983), 288–320, Lecture Notes in Math.,
+      1077, Springer, Berlin, 1984.
+[Hu] Humphreys, J. E., Linear algebraic groups, Graduate Texts in Mathematics 21, Springer-Verlag,
+      New York-Heidelberg, 1975.
+[Jo] Joseph, A. A preparation theorem for the prime spectrum of a semisimple Lie algebra, J. Algebra
+      48 (1977), no. 2, 241–289.
+[Kaz] Kazhdan, David, Some applications of the Weil representation. J. Analyse Mat. 32 (1977), 235–
+      248.
+[Kr1] Kirillov, A. A., Unitary representations of nilpotent Lie groups (Russian), Uspehi Mat. Nauk 17
+      1962 no. 4 (106), 57–110.
+[Kr2] Kirillov, A. A., Lectures on the orbit method, Graduate Studies in Mathematics 64, American
+      Mathematical Society, Providence, RI 2004.
+[Ki] Kirillov, A. A. Jr., Merits and demerits of the orbit method, (English. English summary) Bull.
+      Amer. Math. Soc. (N.S.) 36 (1999), no. 4, 433–488.
+38                                          HADI SALMASIAN
+
+[Li1] Li, J.-S., Singular unitary representations of classical groups, Invent. Math. 97 (1989), no. 2,
+      237–255.
+[Li2] Li, J. -S., On the classification of irreducible low rank unitary representations of classical groups,
+      Compositio Math. 71 (1989), no. 1, 29–48.
+[Li3] Li, J. -S., Automorphic forms with degenerate Fourier coefficients, Amer. J. Math. 119 (1997),
+      no. 3, 523–578.
+[LZ] Li, J. S., Zhu, C. B., On the decay of matrix coefficients for exceptional groups, Math. Ann. 305,
+      no. 2, 249–270 (1996).
+[LS] Loke, H. Y. and Savin, G., Rank and matrix coefficents for simply-laced groups, preprint, 2005.
+[Mac1] Mackey, G. W., The theory of unitary group representations, University of Chicago Press, 1976.
+[Mac2] Mackey, G. W., Induced representations of locally compact groups I, Ann. of Math. (2) 55, (1952).
+      101–139.
+[MS] Magaard, K. and Savin, G., Exceptional Θ-correspondences. I. Compositio Math. 107 (1997), no.
+      1, 89–123.
+[Mo1] Moore, Calvin C., Decomposition of unitary representations defined by discrete subgroups of nilpo-
+      tent groups, Ann. of Math. (2) 82 1965 ,146–182.
+[Mo2] Moore, Calvin C., Extensions and low dimensional cohomology theory of locally compact groups
+      I, II. Trans. Amer. Math. Soc. 113 1964 40–63.
+[Oh] Oh, H., Uniform pointwise bounds for matrix coefficients of unitary representations and applica-
+      tions to Kazhdan constants, Duke Math. J. 113 no. 1, 133–192 (2002).
+[PR] Platonov, V. and Rapinchuk, A., Algebraic groups and number theory. Translated from the 1991
+      Russian original by Rachel Rowen. Pure and Applied Mathematics, 139. Academic Press, Inc.,
+      Boston, MA, 1994.
+[Sa] Salmasian, H., Isolatedness of minimal representations and minimal decay of matrix coefficients,
+      submitted.
+[Sca] Scaramuzzi, R., A notion of rank for unitary representations of general linear groups, Trans.
+      Amer. Math. Soc. 319 (1990), no. 1, 349–379.
+[Se] Serre, J. P., Lie algebras and Lie groups, Lecture Notes in Mathematics 1500, Springer, Berlin,
+      1992.
+[Tay] Taylor, M. E., Noncommutative harmonic analysis, AMS Mathematical Surveys and Monographs,
+      no. 22, 1986.
+[Tor] Torasso, P. Méthode des orbites de Kirillov-Duflo et représentations minimales des groupes simples
+      sur un corps local de caractéristique nulle (French), Duke Math. J. 90 (1997), no. 2, 261–377.
+[Ti] Tits, Jacques Tabellen zu den einfachen Lie Gruppen und ihren Darstellungen (German), Lecture
+      Notes in Mathematics 40, Springer-Verlag, Berlin-New York 1967.
+[We1] Weil, A., Basic number theory. Third edition. Die Grundlehren der Mathematischen Wis-
+      senschaften, Band 144. Springer-Verlag, New York-Berlin, 1974.
+[We2] Weil, A. Sur certains groupes d’opérateurs unitaires, Acta Math. 111 (1964), 143-211.
+[Ws] Weissman, M.H., The Fourier-Jacobi map and small representations, Represent. Theory 7 (2003),
+      275–299.
+
+
+  Queen’s University, Department of Mathematics and Statistics, Jeffery Hall, Uni-
+versity Avenue, Kingston, Ontario K7L 3N6, Canada
+  E-mail address: hadi@mast.queensu.ca
+

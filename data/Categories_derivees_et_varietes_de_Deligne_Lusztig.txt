@@ -1,0 +1,2664 @@
+                                              CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG
+arXiv:math/0201146v1 [math.RT] 16 Jan 2002
+
+
+
+
+                                                                     CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+
+
+
+                                                                              Table des matières
+                                             1. Introduction                                                  2
+                                             2. Notations générales                                         4
+                                             2.1. Groupes, monoı̈des                                          4
+                                             2.2. Anneaux, corps                                              4
+                                             2.3. Catégories dérivées                                      4
+                                             2.4. Algèbres                                                   5
+                                             2.5. Groupes finis                                               5
+                                             2.6. Groupes algébriques                                        5
+                                             2.7. Faisceaux                                                   5
+                                             3. Variétés et groupes finis                                   6
+                                             3.1. Définitions                                                6
+                                             3.2. Foncteurs                                                   6
+                                             3.3. Composition                                                 7
+                                             4. Préliminaires sur les groupes réductifs finis               7
+                                             4.1. Groupes réductifs                                          8
+                                             4.2. Racines, groupe de Weyl, groupe de tresses                  9
+                                             4.3. Suites d’éléments de W                                   10
+                                             4.4. Tores et caractères                                       10
+                                             5. Variétés de Deligne-Lusztig généralisées                18
+                                             5.1. Comparaison de modèles                                    18
+                                             5.2. Définition                                                20
+                                             5.3. Liens entre les groupes G, G̃ et Ĝ                        22
+                                             6. Recollements                                                 24
+                                             6.1. Construction                                               24
+                                             6.2. Le cas général                                           25
+                                             6.3. Recollement de recollements                                26
+                                             6.4. Remarques                                                  27
+                                             7. Calculs de monodromie                                        28
+                                             8. Induction de Deligne-Lusztig et séries rationnelles         31
+                                             8.1. Orthogonalité                                             31
+                                             8.2. Profondeur                                                 33
+                                             Date: Décembre 2001.
+                                                                                       1
+2                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+    9. Engendrement de ΛGF -parf                                                                35
+    9.1. Engendrement de catégories de complexes parfaits.                                     35
+    9.2. Décomposition en séries                                                              36
+    10. Foncteurs de Lusztig                                                                    38
+    10.1. Définition                                                                           38
+    10.2. Transitivité et séries rationnelles                                                 39
+    10.3. Equivalence de Morita                                                                 40
+    11. Changement de point de vue                                                              43
+    11.1. Notations                                                                             43
+    11.2. Rapport avec les groupes Lv̇F  I                                                      44
+    11.3. Séries rationnelles                                                                  45
+    11.4. Equivalence de Morita                                                                 46
+    11.5. Décomposition de Jordan                                                              47
+    12. Appendice : quelques lemmes géométriques                                              48
+    12.1. Autour de la formule de Künneth                                                      48
+    12.2. Quasi-affinité                                                                       49
+    12.3. Diviseurs à croisements normaux                                                      50
+    Références                                                                                51
+
+
+
+                                      1. Introduction
+   Les classes de conjugaison d’un groupe G réductif connexe sur un corps fini se décrivent à
+partir d’une classe d’éléments semi-simples et une classe d’éléments unipotents du central-
+isateur d’un élément semi-simple (décomposition de Jordan). Deligne et Lusztig ont con-
+struit une décomposition analogue des caractères irréductibles de G : ils sont paramétrés
+par une classe semi-simple du groupe dual et un caractère unipotent du centralisateur
+d’un élément de cette classe. Nous démontrons ici un résultat du même type pour des
+représentations modulaires de G.
+   Choisissons un nombre premier ℓ différent de la caractéristique du corps de définition du
+groupe. Broué et Michel ont montré que la décomposition en ℓ-blocs des caractères raffine
+la décomposition suivant la ℓ′ -partie de la classe semi-simple associée à un caractère. Broué
+[Br] a conjecturé que les foncteurs d’induction de Deligne-Lusztig devaient produire une
+équivalence de Morita entre la réunion des blocs associés à un ℓ′ -élément semi-simple s
+du groupe dual et la réunion des blocs unipotents du groupe dual du centralisateur de s
+(lorsque ce dernier est un sous-groupe de Levi).
+   La motivation de ce travail est la preuve de cette conjecture sur la décomposition de
+Jordan des blocs. Nous démontrons qu’un bloc d’un groupe réductif connexe sur un corps
+fini (en caractéristique transverse) est Morita-équivalent à un bloc quasi-isolé d’un sous-
+groupe de Levi.
+   Comme l’avait montré Broué, le problème est géométrique. On dispose de foncteurs d’in-
+duction de Deligne-Lusztig, qui envoient représentations sur complexes de représentations.
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                         3
+
+Le problème est de démontrer que, sous certaines hypothèses, les complexes qui intervien-
+nent sont concentrés en un degré. Broué a ramené le problème à établir la concentration en
+degré moitié de la cohomologie de certains faisceaux localement constants sur des variétés
+de Deligne-Lusztig. Ce problème a été résolu, dans le cas de faisceaux modérément ramifiés
+associés à des caractères de tores, par Deligne et Lusztig [DeLu] et notre travail consiste
+à résoudre ce problème en général (théorème 10.7).
+   Le problème qui se pose est double. D’abord, les variétés concernées X sont associées
+à des variétés de drapeaux paraboliques et on manque d’une compactification lisse avec
+diviseurs à croisements normaux. Ensuite, les systèmes locaux F en jeu sont sauvagement
+ramifiés. Du coup, il ne suffit plus de montrer que le faisceau ne s’étend pas à l’infini dans
+une bonne compactification pour déduire que sa cohomologie est concentrée en degré
+moitié.
+    Nous parvenons à contourner ces difficultés en deux étapes.
+    Tout d’abord, nous introduisons des variétés fi : Xi → X au-dessus de X et des
+systèmes locaux modérément ramifiés Fi sur Xi tels que F est dans la sous-catégorie tri-
+angulée de D b (X) engendrée par les R(fi )∗ Fi . Nous déduisons cela d’un résultat présentant
+un intérêt indépendant : la catégorie des complexes parfaits de modules pour G est en-
+gendrée par les images des foncteurs de Deligne-Lusztig (§9).
+   Ensuite, une étude précise de la ramification à l’infini des faisceaux Fi nous permet
+de conclure. Plus précisément, on dispose d’une immersion ouverte ji : Xi → Yi et d’un
+morphisme propre Yi → X̄, où j : X → X̄ est une compactification de X (singulière
+en général). L’étude de la ramification montre que (R(ji )∗ Fi )|f −1 (X̄−X) ) = 0, ce qui suffit
+                                                                      i
+pour établir que le morphisme canonique j! F → Rj∗ F est un quasi-isomorphisme.
+   Pour comprendre précisément comment les systèmes locaux Fi associés à des caractères
+de tores se ramifient à l’infini (§7), nous construisons de nouvelles variétés de type Deligne-
+Lusztig (§6). Le recollement de revêtements repose sur la construction d’isomorphismes
+canoniques entre quotients de tores. C’est l’objet de la partie §4.4, où nous obtenons aussi
+une nouvelle approche de la conjugaison rationnelle de caractères de tores.
+   Les résultats principaux sont contenus dans les parties §10 et §11. Dans les parties
+§7 et §8.2, nous supposons que l’anneau de coefficients Λ est un corps. L’appendice §12
+regroupe quelques résultats géométriques.
+   Le lecteur verra sans peine l’importance considérable de notre dette à l’égard de l’ar-
+ticle fondateur de Deligne et Lusztig [DeLu]. Nous utilisons aussi certaines techniques
+développées par Digne et Michel [DiMiRo] (variétés associées à des suites d’éléments du
+groupe de Weyl et compactifications partielles).
+   Dans un second travail, nous aborderons les applications à la théorie locale des blocs
+(morphisme de Brauer, équivalences splendides, finitude des algèbres de source, engen-
+drement de la catégorie dérivée, variation du sous-groupe parabolique, groupes non con-
+nexes).
+   Nous remercions Marc Cabanes et Michel Enguehard pour leurs nombreux commen-
+taires et suggestions.
+4                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+                                 2. Notations générales
+2.1. Groupes, monoı̈des. Soit G un groupe. Nous noterons Gop le groupe opposé à
+G. Pour M un G-ensemble, on note M op le Gop -ensemble, restriction de M à travers
+                        ∼
+l’isomorphisme Gop → G, g 7→ g −1 .
+    Pour g ∈ G, nous noterons (g) (ou (g)G s’il y a confusion possible) la classe de conju-
+gaison de g dans G. Si g et g ′ sont deux éléments de G nous écrirons g ∼ g ′ (ou g ∼G g ′ )
+pour dire que g et g ′ sont conjugués dans G.
+    Si X est une partie de G stable par conjugaison, X/ ∼ (ou X/ ∼G ) désignera l’ensemble
+des classes de conjugaison de G contenues dans X. Si π est un ensemble de nombres
+premiers (ou un nombre premier) nous noterons Xπ (respectivement Xπ′ ) l’ensemble des
+π-éléments (respectivement π ′ -éléments) de X. Si g ∈ G est d’ordre fini, nous noterons gπ
+et gπ′ les uniques éléments de Gπ et Gπ′ respectivement tels que g = gπ gπ′ = gπ′ gπ .
+   Si E est un ensemble, nous noterons Σ(E) le monoı̈de libre sur l’ensemble E, c’est-à-dire
+l’ensemble des suites finies d’éléments de E muni de la loi de concaténation. Son élément
+neutre sera noté (). Si σ est un endomorphisme de E, nous noterons parfois σ e l’élément
+σ(e).
+2.2. Anneaux, corps. Dans cet article, nous fixons une fois pour toutes deux nombres
+premiers distincts p et ℓ. Nous noterons F une clôture algébrique du corps fini à p éléments
+Fp . Nous fixons une puissance q de p et notons Fq le sous-corps de F à q éléments.
+Nous appellerons variété (respectivement groupe algébrique) une variété algébrique quasi-
+projective définie (respectivement un groupe algébrique défini) sur le corps F.
+   Nous fixons aussi une extension algébrique K du corps ℓ-adique Qℓ . Soit R son anneau
+d’entiers sur Zℓ et soit k le corps résiduel de R : c’est une extension algébrique du corps
+fini à ℓ éléments Fℓ . Nous notons l l’idéal maximal de R. Nous supposerons que le corps
+K est “assez gros”, c’est-à-dire que, pour tout groupe fini H rencontré dans cet article,
+K contient les racines e-ièmes de l’unité, où e est l’exposant de H.
+   Nous fixons une fois pour toutes un isomorphisme
+                                                   ∼
+                                      ı : (Q/Z)p′ −→ F×
+ainsi qu’un morphisme injectif
+                                                        ×
+                                       : (Q/Z)p′ ֒→ Qℓ ,
+où Qℓ est une clôture algébrique de K. Soit
+                                                            ×
+                                   κ =  ◦ ı−1 : F× ֒→ Qℓ .
+    Dans tout cet article, Λ sera l’un des anneaux K ou R/ln (n ≥ 0).
+2.3. Catégories dérivées. Si A est une catégorie additive, nous noterons K(A) son
+groupe de Grothendieck et K b (A) la catégorie homotopique des complexes bornés d’objets
+de A.
+   Si C est une catégorie abélienne, nous noterons K(C) son groupe de Grothendieck,
+D b (C) (respectivement D − (C)) la catégorie dérivée des complexes à cohomologie bornée
+(respectivement bornée supérieurement) et C-parf la catégorie de ses complexes parfaits ;
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                        5
+
+K(C) est aussi le groupe de Grothendieck de la catégorie triangulée D b (C). Si E est un
+ensemble d’objets d’une catégorie triangulée D, nous appellerons sous-catégorie de D
+engendrée par E la plus petite sous-catégorie triangulée pleine de D stable par facteurs
+directs et contenant E. Nous identifierons C avec la sous-catégorie pleine de D b (C) des
+complexes concentrés en degré 0 via le foncteur canonique.
+   Lorsque C a assez de projectifs, étant donnés C et C ′ deux objets de D b (C), nous
+noterons R Hom• (C, C ′) le complexe total associé au complexe double des homomor-
+phismes d’une résolution projective de C vers C ′ .
+
+2.4. Algèbres. Soient A et B deux Λ-algèbres. Nous noterons Aop l’algèbre opposée à
+A. Par un A-module, nous entendrons un module à gauche pour A. Tous les modules
+considérés seront de type fini. Nous noterons A-mod la catégorie des A-modules. On
+identifie la catégorie des (A, B)-bimodules à celle des (A ⊗Λ B op )-modules. Nous noterons
+K(A), D b (A), D − (A) et A-parf les constructions obtenues pour C = A-mod.
+   Pour M un complexe borné de A-modules, nous définissons le complexe de A-modules
+à droite M ∗ = R Hom•Λ (M, Λ).
+   Nous noterons A-proj la sous-catégorie additive pleine de A-mod formée par les A-
+modules projectifs.
+
+2.5. Groupes finis. Si G est un groupe fini, nous désignerons par IrrK G l’ensemble de
+ses caractères irréductibles sur K. Nous identifierons alors K(KG) avec Z IrrK G, le Z-
+module libre de base IrrK G. Le produit scalaire sur K(KG) faisant de IrrK G une base
+orthonormale sera noté h·, ·iG. Si θ : G → Λ× est un caractère linéaire de G, nous noterons
+Λθ le ΛG-module sur lequel un élément g ∈ G agit par multiplication par θ(g), et eθ (ou
+eΛ,θ , ou eG
+           Λ,θ s’il est nécessaire de préciser) l’idempotent primitif central de ΛG qui agit
+comme l’identité sur Λθ .
+
+2.6. Groupes algébriques. Soit H un groupe algébrique. On désignera par H◦ sa com-
+posante neutre et Hsem l’ensemble de ses éléments semi-simples. Si h ∈ H, nous noterons
+  ◦
+CH  (h) la composante neutre de son centralisateur dans H. Si H est abélien et si F est
+                                                                                  n−1
+un endomorphisme de H, alors nous notons NF n /F : H → H, h 7→ h F h . . . F h le
+morphisme norme de F n à F (où n ∈ N∗ ).
+
+2.7. Faisceaux. Soit X une variété et soit A une Λ-algèbre. Nous noterons DA? (X) la
+sous-catégorie pleine de la catégorie dérivée de la catégorie des faisceaux de A-modules sur
+X formée des complexes à cohomologie constructible, bornée si ? = b, bornée supérieurement
+si ? = −.
+   Notons πX : X → Spec F le morphisme canonique. Un A-module M sera identifié avec
+                                                                                     ∗
+le A-faisceau constant sur Spec F associé à M. Nous posons alors MX = πX             M : c’est le
+A-faisceau constant sur X associé au A-module M. De même, un complexe de A-modules
+C sera identifié avec le complexe de faisceaux constants sur Spec F correspondant et nous
+                   ∗
+noterons CX = πX     C.
+6                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+  Nous noterons RΓ(X, C) = R(πX )∗ (C) (respectivement RΓc (X, C) = R(πX )! (C)) le
+complexe de cohomologie (respectivement de cohomologie à support compact) d’un com-
+plexe C ∈ DAb (X). Nous écrirons RΓ(X) (respectivement RΓc (X)) pour RΓ(X, ΛX) (re-
+spectivement RΓc (X, ΛX)). Pour G un groupe fini agissant sur X de telle sorte que les
+stabilisateurs des points de X sont des sous-groupes de G d’ordre inversible dans Λ, alors
+RΓc (X) est un complexe parfait de ΛG-modules [DeLu, §3.8].
+
+                              3. Variétés et groupes finis
+
+   Les variétés de Deligne-Lusztig sont munies d’actions à gauche et à droite de groupes
+réductifs finis. Leur cohomologie permet alors de définir des foncteurs entre catégories de
+représentations. Nous rappelons ici dans un cadre général comment définir ces foncteurs
+ainsi que quelques-unes de leurs propriétés élémentaires.
+
+3.1. Définitions. Nous fixons trois groupes finis G, H et K. Une G-variété (respective-
+ment une variété-G) est une variété sur laquelle G agit à gauche (respectivement à droite).
+Une G-variété-H est à la fois une G-variété et une variété-H, les actions de G et H com-
+mutant. Si X est une variété-G et si Y est une G-variété, nous noterons X ×G Y la variété
+quotient de X × Y par G, le groupe G agissant à gauche sur X × Y par
+                               G × (X × Y) −→     X×Y
+                                (g, (x, y)) 7−→ (xg −1 , gy).
+Une G-variété, ou une variété-G, est dite régulière si le groupe G agit librement.
+
+3.2. Foncteurs. Soit X une G-variété-H. Les complexes RΓc (X) et RΓ(X) sont des
+complexes de (ΛG, ΛH)-bimodules. Ils induisent donc deux foncteurs
+                                   −
+                         RG
+                          H (X) : D (ΛH) −→    D − (ΛG)
+                                     C   7−→ RΓc (X) ⊗LΛH C
+
+                          G
+                         SH (X) : D − (ΛH) −→    D − (ΛG)
+et
+                                      C    7−→ RΓ(X) ⊗LΛH C.
+On considérera aussi le foncteur
+                          FHX : D − (ΛH) −→      DΛ− (X/H)
+                                   M     7−→ π∗ ΛX ⊗LΛH MX/H .
+où π : X → X/H est le morphisme quotient.
+
+
+Remarque 3.1. Supposons que X est une variété-H régulière. Alors, le foncteur FHX
+envoie un ΛH-module sur un Λ-système local sur la variété X/H. En outre, les foncteurs
+RG        G         X
+  H (X), SH (X) et FH se restreignent en des foncteurs entre catégories dérivées bornées.
+                CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                     7
+
+Lemme 3.2. On a des isomorphismes canoniques de foncteurs de D b (ΛH) vers D − (ΛG),
+
+                                 R(πX/H )! ◦ FHX ≃ RG
+                                                    H (X)
+
+
+                                                    G
+                                 R(πX/H )∗ ◦ FHX ≃ SH (X).
+  Si les stabilisateurs de points de X sous l’action de H sont d’ordre inversible dans Λ,
+alors, pour M un ΛH-module, on a un isomorphisme canonique
+
+                                FHX M ≃ π∗ ΛX ⊗ΛH MX/H
+
+
+
+Démonstration. Puisque R(πX/H )! ◦ π∗ ≃ R(πX/H )! ◦ Rπ! ≃ R(πX )! , (noter que π∗ = π! est
+un foncteur exact car π est un morphisme fini), la commutativité du premier diagramme
+est équivalente à la propriété suivante :
+                                        ∗
+                 R(πX/H )! (π∗ ΛX ⊗LΛH πX/H −) ≃ (R(πX/H )! π∗ ΛX ) ⊗LΛH −.
+
+Cela résulte du lemme 12.1.
+  La commutativité du deuxième diagramme se démontre de la même manière mais en
+utilisant cette fois le lemme 12.2 au lieu du lemme 12.1.
+  Pour la dernière partie du lemme, on utilise que les fibres de π∗ ΛX sont des ΛH-modules
+projectifs.
+
+3.3. Composition. Soit maintenant Y une H-variété-K. La variété X ×H Y est une
+G-variété-K et la formule de Künneth montre que
+
+                           RΓc (X) ⊗LΛ RΓc (Y) ≃ RΓc (X × Y).
+
+   Supposons jusqu’à la fin du §3.3 que les stabilisateurs des points de X × Y sous l’action
+diagonale de H sont d’ordre inversible dans Λ. Alors, RΓc (X × Y) ⊗LΛH Λ ≃ RΓc (X ×H Y)
+(cf lemme 3.2). On en déduit, après application du foncteur − ⊗LΛH Λ à la formule de
+Künneth, que
+
+(3.3)                     RΓc (X) ⊗LΛH RΓc (Y) ≃ RΓc (X ×H Y).
+
+dans D b (ΛG ⊗ ΛK). En particulier, on obtient
+
+(3.4)                       RG        H        G
+                             H (X) ◦ RK (Y) ≃ RK (X ×H Y).
+
+
+
+                4. Préliminaires sur les groupes réductifs finis
+8                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+4.1. Groupes réductifs. Dorénavant, et ce jusqu’à la fin de cet article, nous fixons un
+groupe réductif connexe G muni d’une isogénie F : G → G dont une puissance F δ est
+l’endomorphisme de Frobenius sur G associé à une structure rationnelle sur Fq . Il est à
+noter que les entiers q et δ ne sont pas uniquement déterminés par la donnée de G et
+F . Cependant, le réel positif q 1/δ l’est. Soit B un sous-groupe de Borel F -stable de G et
+soit T un tore maximal F -stable de B. Le radical unipotent de B sera noté U. On note
+(G∗ , T∗ , F ∗ ) un triplet dual de (G, T, F ) [DeLu, définition 5.21].
+   Le sujet général de cet article est l’étude des représentations modulaires du groupe
+fini GF . Pour s’y préparer, nous fixons dans ce §4 quelques notations (racines, groupe
+de Weyl...), avant d’établir quelques résultats combinatoires sur les tores F -stables de
+G (cf §4.4). Nous introduisons tout d’abord deux groupes réductifs connexes, du même
+type que G, qui joueront le rôle d’auxiliaires techniques. Ils seront utiles dans certaines
+constructions (séries rationnelles, recollement de variétés de Deligne-Lusztig...) et leur
+usage facilitera certaines démonstrations.
+
+
+Remarque 4.1. Si H est un sous-groupe fermé connexe distingué de G (mais non
+nécessairement F -stable), et si on pose K = {g ∈ G | g −1 F (g) ∈ H}, alors il est immédiat
+que K est un sous-groupe fermé de G contenant GF . De plus,
+                                         K = GF · K◦ .
+En effet, l’application de Lang G → G, g 7→ g −1F (g) est un morphisme fini surjectif, donc
+l’image de K◦ par cette application est une sous-variété irréductible fermée de dimension
+dim K◦ = dim K = dim H de H. Or, H est ici supposé connexe, donc l’image de K◦
+est H. Le résultat découle alors du fait que les fibres de l’application de Lang sont des
+GF -orbites (pour l’action de GF par multiplication à gauche).
+
+
+
+4.1.1. On sait [DeLu, preuve du corollaire 5.18] qu’il existe un groupe réductif connexe
+G̃ muni d’une isogénie F : G̃ → G̃ telle que F δ soit l’endomorphisme de Frobenius sur
+G̃ associé à une Fq -structure et vérifiant les conditions suivantes :
+    (1) G est un sous-groupe fermé F -stable de G̃, contenant le groupe dérivé de G̃ ;
+    (2) le centre Z(G̃) de G̃ est connexe.
+On a alors G̃ = G · Z(G̃). Nous noterons T̃ (respectivement B̃) l’unique tore maximal
+(respectivement sous-groupe de Borel) de G̃ contenant T (respectivement B). D’autre
+part, nous noterons (G̃∗ , T̃∗ , F ∗ ) un triplet dual de (G̃, T̃, F ). L’inclusion G ֒→ G̃ induit
+un morphisme surjectif de groupes algébriques i∗ : G̃∗ → G∗ commutant avec F , dont le
+noyau est un tore central de G̃∗ et tel que i∗ (T̃∗ ) = T∗ . Ce morphisme i∗ est bien défini
+                                                ∗
+à conjugaison près par un élément de T∗F .
+                CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                       9
+
+4.1.2. De manière duale, il existe un groupe réductif connexe Ĝ muni d’une isogénie
+F : Ĝ → Ĝ telle que F δ soit l’endomorphisme de Frobenius sur Ĝ associé à une Fq -
+structure et un tore central F -stable C de Ĝ vérifiant les deux propriétés suivantes :
+  (1) G = Ĝ/C ;
+  (2) Toute coracine α∨ : F× → Ĝ relative à un tore maximal de Ĝ est injective.
+   Notons que si le groupe dérivé de G est simplement connexe, alors toute coracine est
+injective.
+Nous noterons ρ : Ĝ → G la projection canonique. Nous noterons T̂ (respectivement B̂) le
+tore maximal (respectivement le sous-groupe de Borel) de Ĝ égal à ρ−1 (T) (respectivement
+ρ−1 (B)).
+ Plus généralement, nous noterons ˜? (respectivement ˆ?) l’objet associé à G̃ (respective-
+ment Ĝ) défini de la même façon que l’objet ? associé à G.
+
+
+4.2. Racines, groupe de Weyl, groupe de tresses. Soit W le groupe de Weyl de
+G relatif à T, soit n 7→ n̄ le morphisme canonique NG (T) → W , soit Φ le système de
+racines de G relatif à T et soit Φ∨ le système de coracines. Soit Φ+ (respectivement
+∆) le système de racines positives (respectivement la base) de Φ associé (respectivement
+associée) à B. Si α ∈ Φ, nous noterons α∨ sa coracine, Tα∨ le sous-tore de T image de α∨ ,
+Uα le sous-groupe unipotent à un paramètre normalisé par T associé à α, sα la réflexion
+de W par rapport à α et Gα le sous-groupe de G engendré par Uα et U−α . Nous noterons
+φ : Φ → Φ la bijection définie par F Uα = Uφ(α) pour tout α ∈ Φ. Nous noterons Y (T) le
+réseau des sous-groupes à un paramètre de T.
+    Soit S l’ensemble des réflexions simples de W et soit S̄ = S ∪ {1}. Si w ∈ W , nous
+noterons l(w) la longueur de w relativement à S (c’est aussi le cardinal de l’ensemble
+{α ∈ Φ+ | w(α) ∈ −Φ+ }). On notera encore l la fonction sur NG (T) donnée par l(n̄)
+pour n ∈ NG (T). L’ordre de Bruhat sur W associé à S sera noté ≤. Si v et w sont deux
+éléments de W , nous écrirons v < w pour dire que v ≤ w et v 6= w.
+    Nous noterons B le groupe de tresses associé à (W, S), de générateurs {sα }α∈∆ . Soit
+f : B → W le morphisme canonique (il vérifie f (sα ) = sα pour tout ∈ ∆). Il existe alors
+une et une seule application (qui n’est pas un morphisme de groupes) σ : W → B vérifiant
+   – σ(vw) = σ(v)σ(w) si v et w sont deux éléments de W tels que l(vw) = l(v) + l(w) ;
+   – σ(sα ) = sα pour tout α ∈ ∆.
+  Cette application vérifie f ◦ σ = IdW .
+
+
+  Nous fixons un morphisme de groupes ϕ̂ : B → NĜ (T̂) vérifiant les propriétés suivantes :
+10                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+     (1) Le diagramme
+                                                 ϕ̂     //
+                                      BC                     NĜ (T̂)
+                                        C  CC
+                                             CC
+                                               CC
+                                                 CC
+                                                   CC
+                                                f CCCC
+                                                      CC
+                                                        C!! 
+                                                               W
+est commutatif. (Dans ce diagramme, la flèche verticale est la surjection canonique.)
+     (2) Pour tout α ∈ ∆, ϕ̂(sα ) appartient au sous-groupe de Ĝ engendré par Ûα et Û−α .
+
+
+   L’existence d’un tel morphisme de groupes est assurée par [Ti, §4.6]. Grâce à la propriété
+(1), il existe un prolongement de ϕ̂ en un morphisme de groupes ϕ̂ : B T̂ → NĜ (T̂) qui
+est l’identité sur T̂. Ici, B T̂ désigne le produit semi-direct B ⋉ T̂, l’action de B sur T̂
+s’effectuant via le morphisme f : B → W et l’action naturelle de W sur T̂. Nous noterons
+ϕ : BT → NG (T) le morphisme induit par ϕ̂.
+   Si w ∈ W , posons ẇ = ϕ(σ(w)). Alors, ẇ est un représentant de w dans NG (T). De
+plus, si v et w sont deux éléments de W tels que l(vw) = l(v) + l(w), alors ẋ = v̇ ẇ, où
+x = vw. Remarquons aussi que 1̇ = 1. Si n ∈ NG (T) et si w désigne sa classe dans W ,
+alors il existe un unique élément t ∈ T tel que n = ẇt. On pose alors σ̇(n) = σ(ẇ)t ∈ BT.
+
+4.3. Suites d’éléments de W . Pour w = (w1 , . . . , wr ) ∈ Σ(W ) (cf §2.1), nous posons
+ẇ = (ẇ1 , . . . , ẇr ) ∈ Σ(NG (T)). Pour n = (n1 , . . . , nr ) ∈ Σ(NG (T)), on pose n̄ =
+(n̄1 , . . . , n̄r ).
+   Dans la suite, nous noterons σ : Σ(W ) → B et l : Σ(W ) → (N, +) les uniques
+morphismes de monoı̈des prolongeant σ et l respectivement. En d’autres termes, σ(w) =
+σ(w1 ) . . . σ(wr ) et l(w) = l(w1 ) + · · · + l(wr ). Le nombre entier l(w) est appelé la longueur
+de w. De même, nous noterons σ̇ : Σ(NG (T)) → BT l’unique morphisme de monoı̈des
+prolongeant σ̇.
+   Si w = (w1 , . . . , wr ) et v = (v1 , . . . , vr′ ) sont deux éléments de Σ(W ), nous dirons que
+v ≤ w si r = r ′ et vi ≤ wi pour tout 1 ≤ i ≤ r.
+   Nous noterons encore w (respectivement n) l’automorphisme de T induit par la con-
+jugaison par ϕσ(w) (respectivement ϕσ̇(n)). Nous avons ainsi prolongé les actions de W
+et de NG (T) sur T aux monoı̈des libres correspondants.
+
+
+
+4.4. Tores et caractères. Pour étudier les représentations du groupe GF , nous aurons
+besoin de quelques résultats de nature combinatoire sur les groupes TwF . Leur énoncé et
+leur preuve font l’objet des prochains paragraphes.
+                    CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                     11
+
+4.4.1. Conjugaison géométrique, séries rationnelles. Nous fixons maintenant un entier
+naturel non nul d multiple de δ tel que tout tore maximal F -stable de G soit déployé sur
+                                                                        d/δ
+le corps Fqd/δ . En d’autres termes, on a (wF )d (t) = F d (t) = tq pour tout w ∈ W et
+                                                                            d
+pour tout t ∈ T. Il est à noter que NF d /wF induit une surjection TF −→ TwF . De plus,
+                                                          d
+si t ∈ T est tel que NF d /wF (t) ∈ TwF , alors t ∈ TF . Pour finir, remarquons que F d agit
+trivialement sur W et que, pour tout w ∈ W , on a wF (w) . . . F d−1 (w) = 1.
+                                                 ∼
+   Soit ζ = ı(1/(q d/δ − 1)), où ı : (Q/Z)p′ −→ F× est l’isomorphisme choisi dans le §2.2
+(ζ est un générateur du groupe cyclique F×  q d/δ
+                                                    ). Si w est une suite d’éléments de W , soit
+
+                                   Nw : Y (T) −→        TwF
+                                          λ   7−→ NF d /wF (λ)(ζ).
+Alors, Nw est un morphisme surjectif de groupes et la suite
+
+(4.2)                                      wF − 1 //         Nw
+                0             //   Y (T)             Y (T)           //   TwF          //   0
+
+est exacte [DiMi, proposition 13.7 (ii)].
+  Nous noterons ∇(T, W, F ) (ou ∇Λ (T, W, F )) l’ensemble des couples (w, θ) où w est une
+suite finie d’éléments de W et θ : TwF → Λ× est un caractère linéaire d’ordre inversible
+dans Λ.
+                                                                               ∼
+  L’identification de W au groupe de Weyl de G̃ relatif à T̃ (c’est-à-dire W → NG̃ (T̃)/T̃),
+permet de définir l’application
+                           Res : ∇(T̃, W, F ) −→ ∇(T, W, F )
+                                                            wF
+                                   (w, θ̃)    7−→ (w, ResT̃
+                                                         TwF θ̃).
+
+Nous dirons alors que Res(w, θ̃) est la restriction de (w, θ̃) à G, ou que (w, θ̃) est une
+extension de Res(w, θ̂) à G̃.
+  Deux éléments (w, θ) et (w′ , θ′ ) de ∇(T, W, F ) sont géométriquement conjugués si les
+                                                            d
+caractères linéaires θ ◦ NF d /wF et θ′ ◦ NF d /w′ F de TF sont conjugués sous W . D’autre
+part, les couples (w, θ) et (w′ , θ′ ) appartiennent à la même série rationnelle (ce que nous
+noterons par (w, θ) ≡W (w′ , θ′ )) s’il existe des extensions de (w, θ) et (w′ , θ′ ) à G̃ qui
+sont géométriquement conjuguées.
+Remarque 4.3. Si deux éléments de ∇(T, W, F ) sont dans la même série rationnelle,
+alors ils sont géométriquement conjugués. La réciproque n’est pas vraie en général, comme
+le montre l’exemple du groupe SL2 (F) pour F de caractéristique différente de 2.
+   La réciproque est néanmoins correcte pour G̃ : deux éléments de ∇(T̃, W, F ) sont
+géométriquement conjugués si et seulement si ils appartiennent à la même série rationnelle.
+En particulier, la relation d’équivalence ≡W sur ∇(T, W, F ) ne dépend pas du choix du
+groupe réductif G̃ à centre connexe choisi (voir le théorème 4.8 pour une approche ne
+faisant pas intervenir G̃).
+12                            CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+4.4.2. Sous-groupes de TwF . Nous fixons ici, et ce jusqu’à la fin du paragraphe 4.4, quatre
+suites finies d’éléments de S̄,
+       v = (s′1 , . . . , s′r ) ≤ x = (t′1 , . . . , t′r ) ≤ y = (t1 , . . . , tr ) ≤ w = (s1 , . . . , sr ).
+  Soit 1 ≤ i ≤ r. Si si 6= 1, nous notons αw,i l’unique racine simple telle que si = sαw,i .
+Lorsque si = 1, nous posons αw,i = 0.
+  Soit Iw,v = {1 ≤ i ≤ r | s′i 6= si }. On pose
+                                          (
+                                            αw,i si i ∈ Iw,v
+                                 αw,v,i =
+                                            0    sinon.
+On a (si − s′i )Y (T) ⊂ Zαw,i
+                          ∨
+                              pour tout i. Par ailleurs, nous posons
+                        ∨                       ∨           ∨                     ∨
+                       βw,v,i = s1 . . . si−1 (αw,v,i ) et βw,i = s1 . . . si−1 (αw,i ).
+   Nous allons étudier ici quelques propriétés du sous-réseau Yw,v de Y (T) engendré par
+      ∨
+les (βw,v,i )i .
+Proposition 4.4. Avec les hypothèses et notations ci-dessus, alors
+  (1) on a (w − y)Y (T) ⊂ Yw,v ;
+                                                                   ∨
+  (2) le groupe Yw,v est engendré par la famille (t1 . . . ti−1 (αw,v,i ))i ;
+  (3) on a (wF − 1)Y (T) + Yw,v = (vF − 1)Y (T) + Yw,v ;
+  (4) les morphismes Nw et Ny induisent un isomorphisme
+                                   TwF /Nw (Yw,v ) ≃ TyF /Ny (Yw,v ).
+Démonstration. Démontrons tout d’abord (1). Puisque Yw,y ⊂ Yw,v , il suffit de démontrer
+que (w − y)Y (T) ⊂ Yw,y , ce que nous faisons par récurrence sur m = |Iw,y |.
+  Si m = 0, alors w = y et le résultat en découle. Supposons maintenant que m = 1. On
+a alors Iw,y = {i}. On pose a = (s1 , . . . , si−1 ), s = (si ) et b = (si+1 , . . . , sr ). Alors,
+                                                            ∨         ∨
+     (w − y)Y (T) = (asb − ab)Y (T) = a((s − 1)Y (T)) ⊂ a(Zαw,i ) = Zβw,i = Yw,y .
+   Supposons maintenant que m ≥ 2 et que le résultat est vrai pour tout couple (w′ , y′ )
+tel que y′ ≤ w′ et mw′ ,y′ < m. On écrit
+                                             Iw,y = {i1 , . . . , im }
+où i1 < · · · < im . On note y′ l’unique suite telle que y′ ≤ w et
+                                            Iw,y′ = {i2 , . . . , im }.
+On a
+                          (w − y)Y (T) ⊂ (w − y′ )Y (T) + (y′ − y)Y (T).
+Or, par hypothèse de récurrence, (w − y′ )Y (T) ⊂ Yw,y′ et (y′ − y)Y (T) ⊂ Yy′ ,y . Le choix
+que nous avons fait pour y′ implique que βy∨′ ,i1 = βw,i
+                                                      ∨
+                                                         1
+                                                           , donc Yw,y′ + Yy′ ,y = Yw,y . Cela
+termine la démonstration de (1).
+                   CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                             13
+
+  Démontrons maintenant (2). Il suffit de démontrer que, pour tout i ∈ Iw,v , il existe une
+famille (µj )j∈Iw,v ,j<i d’entiers tels que
+                                                              X
+                                               ∨        ∨           ∨
+                               t1 . . . ti−1 (αw,i ) = βw,i +   µj βw,j
+                                                            j∈Iw,v
+                                                             j<i
+
+c’est-à-dire tels que
+                                                                      X
+                                                           ∨                      ∨
+                         (s1 . . . si−1 − t1 . . . ti−1 )(αw,i )=−            µj βw,j
+                                                                     j∈Iw,v
+                                                                      j<i
+
+Cela résulte de (1) appliqué dans le cas où w = (s1 , . . . , si−1 ) et y = v = (t1 , . . . , ti−1 ).
+  Pour finir la démonstration de la proposition 4.4, il suffit de remarquer que (3) découle
+immédiatement de (1) tandis que (4) résulte de (3) et de la suite exacte 4.2.
+Corollaire 4.5. On a Yw,v = Yw,y + Yy,v .
+                                                                                                     ∨
+                                         `                                  P
+Démonstration. On a Iw,v = Iw,y Iy,v . Tout d’abord, Yy,v = i∈Iy,v Zt1 · · · ti−1 (αw,i                 )
+      ∨                    ∨
+car βy,i = t1 · · · ti−1 (αw,i
+                            P) pour i ∈ Iy,v . La∨ proposition 4.4 (2)Pappliquée au cas v∨ =
+y montre que Yw,y =            i∈Iw,y Zt1 · · · ti−1 (αw,i ). Enfin, Yw,v =  i∈Iw,v Zt1 · · · ti−1 (αw,i )
+d’après la proposition 4.4 (2).
+Corollaire 4.6. Soit θ un caractère linéaire de TwF qui est trivial sur Nw (Yw,v ). Notons
+θy le caractère linéaire de TyF trivial sur Ny (Yw,v ) défini via l’isomorphisme de la propo-
+sition 4.4 (4) (c’est-à-dire tel que θy ◦ Ny = θ ◦ Nw ). Alors, les paires (w, θ) et (y, θy )
+sont dans la même série rationnelle.
+Démonstration. Pour démontrer le corollaire 4.6, on peut se ramener au cas où G = G̃ :
+c’est alors immédiat.
+
+    Fixons maintenant un caractère linéaire θ : TwF → Λ× et notons I(w, θ) l’ensemble
+des w′ ≤ w tels que θ est trivial sur Nw (Yw,w′ ). L’ensemble I(w, θ) admet un plus petit
+élément, noté wθ = (s1,θ , . . . , sr,θ ), qui est défini par
+                                                                ∨
+                                             
+                                                1 si θ(Nw (βw,i   )) = 1,
+                                   si,θ =
+                                                si sinon.
+On a donc
+                           I(w, θ) = {x ∈ Σ(S̄) | wθ ≤ x ≤ w}.
+D’après la proposition 4.4 (4), si y ∈ I(w, θ), alors θ définit un caractère linéaire θy de
+TyF trivial sur Ny (Yw,wθ ). Notons que θw = θ.
+Corollaire 4.7. Supposons que y ∈ I(w, θ). Alors
+                            I(y, θy ) = {w′ ∈ I(w, θ) | wθ ≤ w′ ≤ y}.
+En d’autres termes, yθy = wθ .
+14                            CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Démonstration. Pour tout x ≤ y, on a
+                                 θ ◦ Nw (Yw,x ) = θ ◦ Nw (Yw,y + Yy,x )
+d’après le corollaire 4.5. Or, θ ◦ Nw (Yw,y ) = 1 car y ∈ I(w, θ). Enfin, θ ◦ Nw = θy ◦ Ny ,
+ce qui montre que
+                                 θ ◦ Nw (Yw,x ) = θy ◦ Ny (Yy,x ),
+donc que x ∈ I(w, θ) si et seulement si x ∈ I(y, θy ).
+  On dit que (w, θ), (w′, θ′ ) ∈ ∇(T, W, F ) sont élémentairement équivalents si l’une des
+deux conditions suivantes est réalisée :
+     1. il existe v ∈ W tel que f (σ(w′ )) = vf (σ(w))F (v)−1 et θ = θ′ ◦ v (W -conjugaison)
+     2. w ∈ Σ(S), w′ = wθ et θ′ = θwθ .
+On définit la relation d’équivalence ∼W sur ∇(T, W, F ) comme la clôture transitive (et
+symétrique) de la relation d’équivalence élémentaire.
+  Le théorème suivant fournit une nouvelle caractérisation de la conjugaison rationnelle
+de caractères de tores, qui ne fait pas intervenir de groupe G̃.
+Théorème 4.8. Deux couples (w, θ) et (w′ , θ′ ) sont ∼W -équivalents si et seulement si
+ils sont dans la même série rationnelle.
+Démonstration. Grâce au corollaire 4.6, il est clair que la relation ∼W est plus fine que la
+relation ≡W . Par conséquent, le théorème 4.8 est conséquence du lemme suivant.
+Lemme 4.9. Soient w, w ′ ∈ W et ((w), θ) et ((w ′), θ′ ) deux éléments de ∇(T, W, F )
+vérifiant les propriétés suivantes :
+    (1) ((w), θ) et ((w ′ ), θ′ ) sont dans la même série rationnelle ;
+    (2) ((w), θ) et ((w ′ ), θ′ ) sont minimaux (pour les longueurs de (w) et (w ′ )) dans leurs
+classes respectives pour la relation ∼W .
+   Alors, ((w), θ) et ((w ′ ), θ′ ) sont conjugués sous W .
+Démonstration. Tout comme dans le corollaire 4.6, on peut se ramener au cas où le centre
+de G est connexe. Posons
+           Φ∨w,θ = {α∨ ∈ Φ∨ | θ ◦ Nw (α∨) = 1} et Φ∨+     ∨       ∨       +
+                                                   w,θ = Φw,θ ∩ {α | α ∈ Φ }.
+
+Le sous-ensemble Φ∨w,θ de Φ∨ est clos et symétrique. C’est un donc un sous-système de Φ∨
+dont Φ∨+ w,θ est un système de coracines positives. On note Ww,θ le groupe engendré par les
+sα avec α∨ ∈ Φ∨w,θ . C’est aussi le stabilisateur de θ ◦ Nw (cela résulte de la connexité du
+centre de G et de [DeLu, théorème 5.13]).
+   Il est clair que wφ stabilise Φ∨w,θ . Nous allons montrer que l’hypothèse (2) implique que
+wφ stabilise Φ∨+     w,θ . Pour cela, choisissons une décomposition réduite (s1 , . . . , sr ) de w où
+les si sont dans S et notons αi la racine simple associée à si . Alors les s1 . . . si−1 (αi∨) sont
+les coracines positives rendues négatives par l’action de w −1 . Par minimalité de ((w), θ),
+on a (s1 , . . . , sr )θ = (s1 , . . . , sr ). Donc s1 . . . si−1 (αi∨ ) n’appartient pas à Φ∨w,θ . Cela montre
+que φ−1 w −1(Φ∨+             +
+                    w,θ ) ⊂ Φ . Finalement, on a bien que wφ stabilise Φw,θ .
+                                                                                      ∨+
+                   CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                                 15
+
+   D’autre part, (1) montre qu’il existe x ∈ W tel que θ ◦ Nw = θ′ ◦ Nw′ ◦ x. Par conséquent
+x(Φ∨w,θ ) = Φ∨w′ ,θ′ , donc il existe un élément a ∈ Ww′ ,θ′ tel que ax(Φ∨+        ∨+              ∨+
+                                                                            w,θ ) = Φw ′ ,θ ′ . Or, Φw,θ
+est wφ-stable, et Φ∨+                  ′                          −1
+                         w ′ ,θ ′ est w φ-stable. Donc axwF (ax) φφ w
+                                                                       −1 ′−1
+                                                                               = axwF (ax)−1 w ′−1
+stabilise Φ∨+
+            w ′ ,θ ′ .
+   Or, θ ◦ Nw′ ◦ axwF (ax)−1 w ′−1 = θ ◦ Nw ◦ wF (ax)−1 w ′−1 . Soit λ ∈ Y (T). Alors
+         ′
+
+                                  −1 w ′−1                                        −1 F −1 w ′−1
+             θ ◦ NF d /wF ( wF (ax)          λ(ζ)) = θ ◦ NF d /wF ( wF ( (ax)                     λ(ζ)))
+                                                                         (ax)−1 F −1 w ′−1
+                                                      = θ ◦ NF d /wF (                       λ(ζ))
+                                                                    F −1 w ′−1
+                                                      = θ′ ◦ Nw′ (      λ(ζ))
+                                                         ′
+                                                      = θ ◦ Nw′ (λ(ζ)).
+Ici, F −1 est vu comme un automorphisme du groupe T. Ceci montre que axwF (ax)−1 w ′−1
+est dans Ww′ ,θ′ . Puisqu’il stabilise Φ∨+                                                ′           −1
+                                        w ′ ,θ ′ , il est trivial. Par conséquent, on a w = axwF (ax) .
+En outre, θ′ = θ ◦ ax car la norme est surjective.
+Remarque 4.10. La preuve montre aussi qu’un couple minimal correspond à un couple
+maximalement déployé au sens de Deligne et Lusztig [DeLu, définition 5.25]. Lorsque le
+centre de G est connexe, il est démontré dans [DeLu, proposition 5.26] que deux couples
+((w), θ) et ((w ′ ), θ′ ) appartenant à une même série rationnelle et maximalement déployés
+sont conjugués sous W , cas particulier du lemme 4.9.
+4.4.3. Une application. L’objet de ce paragraphe est la définition et l’étude d’un groupe
+diagonalisable qui interviendra dans la construction de recollements de variétés de Deligne-
+Lusztig au §6.
+  Fixons tout d’abord quelques notations. Définissons
+Sw,v = (a1 , . . . , ar ) ∈ Tr | a−1 si            ∨
+                                                         pour 1 ≤ i ≤ r−1 et a−1 sr F          ∨
+                                                                                                    	
+                                  i     ai+1 ∈ Im αw,v,i                      r       a1 ∈ Im αw,v,r
+et
+                                 µy : T −→            Tr
+                                      a 7−→ (a, a, . . . , tr−1 ...t1 a).
+                                               t1
+
+
+Proposition 4.11. Avec les notations ci-dessus, on a :
+  (1) µy (TyF ) ⊂ Sw,v .
+  (2) Sw,v = µy (TyF ) · S◦w,v .
+  (3) µy (Ny (Yw,v )) ⊂ S◦w,v et le diagramme suivant est commutatif
+                                              TyF /Ny (Yw,v )
+                                         Ny     p77        PPP
+                                                              PPPµy
+                                           ppppp                 PPP
+                                         pp                         PPP
+                                      ppp                              ((
+                            Y (T)                                      Sw,v /S◦w,v
+                                                                     nn66
+                                      NNN
+                                         NNN                      nnn
+                                            NN                  nn
+                                         Nw NNN''             nn µw
+                                                           nnn
+                                              TwF /Nw (Yw,v )
+     (4) Si les coracines de G sont injectives, alors µy (TyF ) ∩ S◦w,v = µy (Ny (Yw,v )).
+16                        CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Démonstration. Posons G′ = Gr , T′ = Tr et W ′ = W r . Dans cette preuve, les suites v,
+y et w seront vues comme des éléments de W ′ . Posons d’autre part
+                                T′w,v = Im αw,v,1
+                                            ∨                   ∨
+                                                  × · · · × Im αw,v,r .
+On a alors
+(∗)                                         w
+                                                t yt−1 ∈ T′w,v
+pour tout t ∈ T′ . Pour finir, notons
+                         F′ :          G′            −→              G′
+                                 (g1 , . . . , gr ) 7−→ (g2 , . . . , gr , F (g1)).
+Alors F ′rδ est un endomorphisme de Frobenius sur G′ qui munit ce dernier d’une structure
+rationnelle sur Fq . Avec ces notations, le groupe diagonalisable Sw,v peut être défini ainsi :
+                                                           wF ′
+                                Sw,v = {t ∈ T′ | t−1              t ∈ T′w,v }.
+D’après (∗), cette caractérisation est équivalente à la suivante :
+                                                           yF ′
+                                Sw,v = {t ∈ T′ | t−1              t ∈ T′w,v }.
+                                                                   ′                  ′
+Compte tenu de cette dernière définition, on a T′yF ⊂ Sw,v et Sw,v = T′yF · S◦w,v (voir
+                                                    ′
+remarque 4.1). Or, un calcul facile montre que T′yF = µy (TyF ), ce qui termine la preuve
+de (1) et (2).
+  Démontrons maintenant (3). On a, pour tout w ′ ∈ W ′ , (w ′ F ′ )rd = F ′rd , et F ′rd est un
+endomorphisme de Frobenius déployé sur T′ . On définit alors
+                                                                       ′   ′
+                            Nw′ ′ : Y (T′ ) −→         T′w F
+                                       λ    7−→ NF ′rd /w′ F ′ (λ(ζ)).
+   Remarquons tout d’abord que NF ′rd /yF ′ (T′w,v ) est contenu dans Sw,v car yF ′ ◦NF ′rd /yF ′ =
+F ′rd est déployé donc stabilise T′w,v . Puisque NF ′rd /yF ′ (T′w,v ) est connexe, il est en fait
+contenu dans S◦w,v . D’autre part, le noyau de NF ′rd /yF ′ étant fini (il est contenu dans
+     ′rd
+T′F ), on a
+                         dim T′w,v = dim NF ′rd /yF ′ (T′w,v ) = dim Sw,v .
+Par conséquent,
+(a)                                   S◦w,v = NF ′rd /yF ′ (T′w,v ).
+Ce résultat étant vrai pour tout y compris entre v et w, on a aussi
+(a′ )                                S◦w,v = NF ′rd /wF ′ (T′w,v ).
+                                             ′
+   Pour simplifier les notations, posons Yw,v   = Y (T′w,v ). C’est un sous-réseau facteur
+direct de Y (T′ ). On a alors, d’après (a),
+                                                           
+(b)                    Y (Sw,v ) = Q ⊗Z NF ′rd /yF ′ (Yw,v ) ∩ Y (T′ ).
+                            ◦                          ′
+
+
+De même, d’après (a’), on a
+                                                             
+(b′ )                   Y (S◦w,v ) = Q ⊗Z NF ′rd /wF ′ (Yw,v
+                                                         ′
+                                                             ) ∩ Y (T′ ).
+                     CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                                    17
+
+L’égalité (b) montre en particulier que
+(c)                                                   Ny′ (Yw,v
+                                                            ′
+                                                                ) ⊂ S◦w,v .
+De même (b’) montre que
+(c′ )                                                 Nw′ (Yw,v
+                                                            ′
+                                                                ) ⊂ S◦w,v .
+D’autre part, si λ′ ∈ Y (T′ ), alors il existe µ′ ∈ Q ⊗Z Y (T′ ) tel que λ′ = (wF ′ − 1)(µ′ ).
+Par suite,
+        NF ′rd /wF ′ (λ′ ) − NF ′rd /yF ′ (λ′ )
+   = NF ′rd /wF ′ ◦ (wF ′ − 1)(µ′ ) − NF ′rd /yF ′ ◦ (yF ′ − 1)(µ′) − NF ′rd /yF ′ ◦ (y − w) ◦ F ′ (µ′ )
+   = (q d/δ − 1)µ′ − (q d/δ − 1)µ′ − NF ′rd /yF ′ ◦ (y − w) ◦ F ′ (µ′ )
+   = −NF ′rd /yF ′ ◦ (y − w) ◦ F ′ (µ′ ).
+Or, (y − w) ◦ F ′ (µ′ ) ∈ Q ⊗Z Yw,v     ′
+                                           , donc
+                                                                         
+       NF ′rd /wF ′ (λ′ ) − NF ′rd /yF ′ (λ′ ) ∈ Q ⊗Z NF ′rd /yF ′ (Yw,v
+                                                                     ′
+                                                                         ) ∩ Y (T′ ) = Y (S◦w,v ).
+Cela montre que le diagramme
+                                                          ′
+                                                  T′yF /Ny′ (Yw,v
+                                                              ′
+                                                                  )
+                                            Ny′
+                                                   77              PPP
+                                              ppppp                   PPP
+                                                                         PPP
+                                           ppp                              PPP
+                                        ppp                                    ((
+                              Y (T′ )                                          Sw,v /S◦w,v
+                                        NNN                                   n66
+                                           NNN
+                                               NNN                       nnnnn
+                                           Nw′    NN''                nnn
+                                                                   nnn
+                                                          ′   ′
+                                                  T′wF /Nw′ (Yw,v )
+est commutatif.
+    Pour déduire (3), il faut encore comparer µy ◦ Ny et Ny′ . Soit p1 la première projection
+  ′
+T → T. On a
+         p1 ◦ Ny′ (0, . . . , 0, λ, 0, . . . , 0) = NF d /yF (t1 · · · ti−1 (λ)(ζ)) = Ny (t1 · · · ti−1 (λ)),
+où le terme λ a été placé en i-ème position. Puisque p1 ◦ µy est l’identité, on a
+                     p1 ◦ µy ◦ Ny (t1 . . . ti−1 (λ)) = p1 ◦ Ny′ (0, . . . , 0, λ, 0, . . . , 0).
+                                                  ′
+Or, Ny′ (0, . . . , 0, λ, 0, . . . , 0) ∈ T′yF = µy (TyF ), donc
+(d)                        µy ◦ Ny (t1 . . . ti−1 (λ)) = Ny′ (0, . . . , 0, λ, 0, . . . , 0).
+   L’inclusion µy (Ny (Yw,v )) ⊂ S◦w,v découle de (c), (d) et de la proposition 4.4, (2). La com-
+mutativité du diagramme dans (3) résulte de la commutativité du diagramme précédent
+et de (d).
+   Passons enfin à (4). Compte tenu de (a), (d) et de la proposition 4.4, (2), il suffit de
+montrer que
+                                                         ′
+                             NF ′rd /yF ′ (T′w,v ) ∩ T′yF = Ny′ (Yw,v
+                                                                  ′
+                                                                      ).
+18                       CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+                                     ′                                  ′rd
+Or, si t ∈ T′ , NF ′rd /yF ′ (t) ∈ T′yF si et seulement si t ∈ T′F . Par conséquent,
+                                                       ′                      ′rd
+                        NF ′rd /yF ′ (T′w,v ) ∩ T′yF = NF ′rd /yF ′ (T′F
+                                                                      w,v ).
+
+Il suffit donc de prouver que
+                                         ′rd
+                                   T′F                 ′
+                                    w,v = {λ(ζ) | λ ∈ Yw,v }.
+
+Mais
+                            ′rd                    d                                d
+                        T′F         ∨
+                         w,v = (Im αw,v,1 )
+                                            F                ∨
+                                              × · · · × (Im αw,v,r )F .
+Puisque les coracines de G sont injectives et que l’endomorphisme F d de T est un endo-
+morphisme de Frobenius déployé sur Fqd/δ , on a
+                                       ∨       d   ∨
+                                  (Im αw,v,i )F = αw,v,i (F×
+                                                           q d/δ
+                                                                 )
+pour 1 ≤ i ≤ r. Cela montre que
+                            ′rd
+                        T′F     ∨       ×                  ∨       ×
+                         w,v = αw,v,1 (Fq d/δ ) × · · · × αw,v,r (Fq d/δ ).
+
+La preuve du (4) est maintenant complète.
+Remarque 4.12. La proposition précédente donne une autre construction de l’isomor-
+phisme de la proposition 4.4 (4), montrant au passage qu’elle est indépendante des choix
+des isomorphismes de §2.2.
+
+                   5. Variétés de Deligne-Lusztig généralisées
+
+
+5.1. Comparaison de modèles. Nous commençons cette partie par un résultat géomé-
+trique concernant une classe de variétés qui contient les variétés de Deligne-Lusztig. Les
+hypothèses ont été choisies pour les applications des parties à venir.
+   Fixons un élément n de G, un sous-groupe parabolique P de G de radical unipotent
+V et soit L un complément de Levi nF -stable ((nF )δ est alors un endomorphisme de
+Frobenius relatif à une Fq -structure sur L).
+   Fixons aussi un sous-groupe fermé connexe nF -stable H de L, un sous-groupe distingué
+H′ de H (non nécessairement nF -stable) et posons
+                                  K = {h ∈ H | h−1         nF
+                                                                h ∈ H′ }.
+Puisque H′ est distingué dans H, K est un sous-groupe fermé de H. D’autre part,
+HnF ⊂ K.
+  Posons maintenant
+                       Y = {gV ∈ G/V | g −1 F (g) ∈ H′ · (Vn F V)}
+
+et                X = {gH · V ∈ G/(H · V) | g −1F (g) ∈ H · (Vn F V)}.
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                    19
+
+Alors, le groupe GF agit par translation à gauche sur Y et X, le groupe K agit librement
+par translation à droite sur Y et le morphisme
+                                    π:         Y −→     X
+                                               gV 7−→ gH · V
+est GF -équivariant. De plus, ses fibres sont des K-orbites.
+
+                                                                          ∼
+Proposition 5.1. Le morphisme π induit un isomorphisme Y/K → X.
+
+
+Démonstration. Tout d’abord,
+                Y/K = {gK · V ∈ G/(K · V) | g −1F (g) ∈ H′ · (Vn F V)}.
+Notons
+                                 π′ :          Y/K −→      X
+                                              gK · V 7−→ gH · V.
+Il s’agit de montrer que π ′ est un isomorphisme de variétés. Nous allons pour cela con-
+struire un inverse explicite.
+   L’application
+                              H × Vn F V −→ H · (Vn F V)
+                                 (h, x)   7−→       hx
+est un isomorphisme de variétés. Nous noterons λ : H · (Vn F V) → H le composé de
+l’inverse de cet isomorphisme avec la première projection.
+   D’autre part, l’application de Lang H → H, g 7→ g nF g −1 est un morphisme étale, donc
+                                         ∼
+elle induit un isomorphisme γ0 : H/HnF → H. Nous noterons γ le morphisme composé
+                                  γ0−1
+                             H           //   H/HnF     //   G/(K · V),
+où la deuxième flèche est l’application canonique.
+   Pour finir, posons
+                         X′ = {g ∈ G | g −1 F (g) ∈ H · (Vn F V)},
+et notons
+                           µ : X′ −→        Y/K
+                                           −1
+                               g 7−→ gγ(λ(g F (g)))K · V.
+Montrons que µ est bien défini. Prenons g ∈ X′ et posons h = λ(g −1 F (g)). On a
+
+              (gγ0−1(h))−1 F (gγ0−1 (h)) ∈ γ0−1 (h)−1 h nF γ0−1 (h)Vn F V = Vn F V
+ce qui montre que µ est bien défini — c’est de plus un morphisme de variétés. Pour g ∈ X′ ,
+h ∈ H et v ∈ V, on a
+                      γ0−1 (λ((ghv)−1F (ghv))) = h−1 γ0−1 (λ(g −1 F (g))).
+20                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+On en déduit que µ(ghv) = µ(g). Par passage au quotient, µ induit un morphisme de
+variétés µ′ : X′ /H · V = X → Y/K. C’est l’isomorphisme inverse de π ′ . Cela complète la
+preuve de la proposition.
+5.2. Définition. Pour w ∈ W (respectivement n ∈ NG (T)) et pour g et h deux éléments
+de G, nous écrirons gB w hB (respectivement gU n hU) pour dire que g −1h ∈ BwB
+(respectivement g −1 h ∈ UnU). Pour w = (w1 , . . . , wr ) ∈ Σ(W ) et pour n = (n1 , . . . , nr ) ∈
+Σ(NG (T)), nous posons
+                                              w1           w2      wr−1       wr
+  X(w) = (g1 B, . . . , gr B) ∈ (G/B)r | g1 B
+           
+                                                   g2 B       ···        gr B     F (g1 )B}
+et
+                                                        n1               n2             nr−1           nr
+ Y(n) = (g1 U, . . . , gr U) ∈ (G/U)r | g1 U
+       
+                                                                g2 U              ···           gr U        F (g1 )U}.
+
+Supposons w = n̄. Alors, le groupe TwF agit à droite sur Y(n) de la manière suivante :
+si (g1 U, . . . , gr U) ∈ Y(n) et si t ∈ TwF , alors
+                                                           −1                              −1
+                  (g1 U, . . . , gr U).t = (g1 tU, g2 n1 tU, . . . , gr (n1 ...nr−1 ) tU).
+Notons que cette action est libre. D’autre part, GF agit diagonalement sur Y(n) par
+multiplication à gauche et cette action commute avec celle de TwF . Cela fait de Y(n) une
+GF -variété-TwF .
+
+  Nous noterons Y G (n) ou Y G,F (n) (respectivement XG (w) ou XG,F (w)) la variété
+Y(n) (respectivement X(w)) lorsque nous aurons besoin de préciser le groupe ambiant,
+voire l’isogénie considérée.
+Remarque 5.2. Posons G′ = Gr , B′ = Br , U′ = Ur , T′ = Tr , W ′ = W r et
+                          F′ :         G′            −→              G′
+et
+                                 (g1 , . . . , gr ) 7−→ (g2 , . . . , gr , F (g1)).
+Alors, F ′ est une isogénie sur G′ , F ′rδ définit une Fq -structure sur le groupe G′ et n
+s’identifie à un élément du groupe NG′ (T′ ). On vérifie que les applications
+                                        ∼           ′
+                                 TnF → T′nF
+                                                 −1                           −1
+                                      t 7→ (t, n1 t, . . . , (n1 ...nr−1 ) t)
+                                        ∼       ′
+                                  GF → G′F
+                                     g 7→ (g, . . . , g)
+sont des isomorphismes de groupes et que l’application
+                                                                         ′    ′
+                                  Y G,F (n)        −→    Y G ,F (n)
+                              (g1 U, . . . , gr U) 7−→ (g1 , . . . , gr )U′
+                                                                 ′   ′
+est un isomorphisme de GF -variétés-TnF , où Y G ,F (n) est vue comme une GF -variété-
+TnF via les isomorphismes précédents.
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                        21
+
+  Une interprétation analogue s’en déduit pour les variétés XG,F (w). Cela montre que les
+variétés de Deligne-Lusztig généralisées ne sont en fait que des variétés de Deligne-Lusztig
+ordinaires pour un groupe différent.
+     Le morphisme canonique
+                          πn :          Y(n)            −→       X(w)
+                                   (g1 U, . . . , gr U) 7−→ (g1 B, . . . , gr B)
+induit un isomorphisme de GF -variétés
+                                                          ∼
+(5.3)                                        Y(n)/TwF → X(w).
+Pour voir cela, il faut se ramener au cas où r = 1 en utilisant la remarque 5.2, puis
+appliquer la proposition 5.1 dans le cas où P = B, L = H = T, n = n1 et H′ = {1}.
+
+   Puisque Y(n) est une GF -variété-TwF , elle induit deux foncteurs entre catégories
+dérivées qui seront notés
+                        Rn : D b (ΛTwF ) −→       D b (ΛGF )
+                                   C     7−→ RΓc (Y(n)) ⊗LΛTwF C
+
+                         Sn : D b (ΛTwF ) −→      D b (ΛGF )
+et
+                                    C     7−→ RΓ(Y(n)) ⊗LΛTwF C.
+                            F                      F
+Ce sont les foncteurs RG                  G
+                         TwF (Y(n)) et STwF (Y(n)) de §3.2.
+  Le foncteur Rn induit une application linéaire entre les groupes de Grothendieck des
+catégories D b (ΛTwF ) et D b (ΛGF ). Cette application sera notée
+                                     Rn : K(ΛTwF ) −→ K(ΛGF ).
+
+   Les variétés X(w) et Y(n) ne dépendent, à isomorphisme près, que des images de w
+et n dans B [DiMiRo] :
+Proposition 5.4. Soient v et w deux suites d’éléments de W telles que σ(v) = σ(w).
+Alors, les GF -variétés X(w) et X(v) sont isomorphes. En particulier, une décomposition
+réduite de σ(w) dans B fournit une suite v ∈ Σ(S) telle que X(w) est isomorphe à X(v).
+   De même, soient m et n deux suites d’éléments de NG (T) telles que σ̇(m)T = σ̇(n)T.
+Alors, on a un isomorphisme de GF -variétés-TnF entre Y(m) et Y(n). Par conséquent,
+il existe w ∈ Σ(S) telle que Y(n) est isomorphe à Y(ẇ).
+Démonstration. Soit i tel que l(n̄i n̄i+1 ) = l(n̄i ) + l(n̄i+1 ). Alors, on a un isomorphisme de
+GF -variétés-TwF
+
+                                         ∼
+(5.5)                            Y(n) → Y(n1 , . . . , ni−1 , ni ni+1 , ni+2 , . . . , nr ),
+                  (g1 U, . . . , gr U) 7→ (g1 U, . . . , gi−1 U, gi+1 U, . . . , gr U).
+Ceci montre que Y(n) et Y(m) sont isomorphes lorsque σ̇(m) = σ̇(n).
+22                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+   Supposons maintenant nr ∈ T. Soit t ∈ T tel que t−1                   nF
+                                                                              t = nnr . Alors, on a un
+isomorphisme de GF -variétés-TwF
+                                      ∼
+                              Y(n) → Y(n1 , . . . , nr−1 ),
+                                                      −1                 −1     −1
+                  (g1 U, . . . , gr U) 7→ (g1 tU, g2 n1 tU, . . . , gr−1 nr−2 ···n1 tU).
+On en déduit donc que Y(n) et Y(m) sont isomorphes lorsque σ̇(m)T = σ̇(n)T. Puisque
+X(w) ≃ Y(n)/TwF , lorsque w est l’image de n, on en déduit aussi la première partie de
+la proposition.
+Remarque 5.6. D’après la proposition 5.4, l’étude des variétés X(w) et Y(ẇ) où w ∈
+Σ(W ) se ramène au cas où w ∈ Σ(S).
+Proposition 5.7. La variété Y(n) est quasi-affine, lisse et purement de dimension l(n).
+Les stabilisateurs des points de Y(n) dans GF × TnF sont des p-groupes.
+Démonstration. La remarque 5.2 ramène la preuve de la proposition au cas de variétés de
+Deligne-Lusztig ordinaires. Alors, la quasi-affinité est due à Haastert [Ha, théorème 2.3]
+et les autres propriétés sont faciles [DeLu, §1.3].
+Remarque 5.8. Il est connu que les variétés Y(n) sont affines pour q 1/δ assez grand
+[DeLu, théorème 9.7], mais ce résultat demeure inconnu pour q 1/δ quelconque.
+Remarque 5.9. Pour n ∈ NG (T), posons
+                  Y ∗ (n) = {g(U ∩ nU) ∈ G/(U ∩ nU) | g −1 F (g) ∈ nU}.
+Alors, l’application canonique Y ∗ (n) → Y(n), g(U ∩ nU) 7→ gU est un isomorphisme
+de GF -variétés-TnF . On trouve dans la littérature indifféremment l’un ou l’autre de ces
+modèles.
+Remarque 5.10. Puisque la variété X(w) est lisse, la dualité de Poincaré fournit un
+isomorphisme fonctoriel de ΛGF -modules
+(5.11)                        ((Rn M)∗ )op ≃ Sn ((M ∗ )op ) [−2l(w)]
+pour tout tout ΛTwF -module M, libre sur Λ.
+5.3. Liens entre les groupes G, G̃ et Ĝ. En identifiant les groupes de Weyl de G, G̃ et
+Ĝ relatifs à T, T̃ et T̂ respectivement, nous noterons, lorsque w est une suite d’éléments
+de W , X̃(w) et X̂(w) les variétés définies grâce aux groupes G̃ et Ĝ respectivement. De
+même, si n est une suite d’éléments de NG̃ (T̃) ou de NĜ (T̂), on définit des variétés Ỹ(n)
+et Ŷ(n) et nous noterons R̃n et R̂n les foncteurs associés aux variétés Ỹ(n) et Ŷ(n)
+respectivement.
+  Dans ce paragraphe, nous allons rappeler les liens entre ces variétés. Dans le cas des
+variétés X(w), X̃(w) et X̂(w), la comparaison est facile. Les morphismes canoniques
+                                                            ∼                  ∼
+G → G̃ et Ĝ → G induisent des isomorphismes G/B → G̃/B̃ et Ĝ/B̂ → G/B, d’où
+Proposition 5.12. Soit w une suite d’éléments de W . Alors, les GF -variétés X(w),
+X̃(w) et X̂(w) sont canoniquement isomorphes.
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                       23
+
+  Les relations entre les variétés Y(n), Ỹ(n) et Ŷ(n), sont un peu plus compliquées.
+Commençons par les variétés Ỹ(n).
+                                                                     ∼
+  Le produit fournit des isomorphismes canoniques G̃F ×GF GF → G̃F et GF ×TwF
+     ∼
+T̃wF → G̃F . On en déduit :
+Proposition 5.13. Soit n une suite d’éléments de NG (T). Alors on a des isomorphismes
+canoniques
+                          ∼                   ∼
+                   Ỹ(n) → G̃F ×GF Y(n) → Y(n) ×TwF T̃wF .
+Démonstration. Grâce à la remarque 5.2, on peut supposer que n = (n1 ), où n1 ∈ NG (T).
+Dans ce cas, la preuve est par exemple analogue à [Bo, lemme 2.1.2 (b)].
+  Soit n une suite d’éléments de NG (T). La proposition 5.13 a des conséquences au niveau
+des foncteurs Rn et R̃n . En effet, on en déduit que
+             RΓc (Ỹ(n)) ≃ ΛG̃F ⊗ΛGF RΓc (Y(n))              dans D b (ΛG̃F ⊗ ΛTwF )
+et que
+           RΓc (Ỹ(n)) ≃ RΓc (Y(n)) ⊗ΛTwF ΛT̃wF              dans D b (ΛGF ⊗ ΛT̃wF ).
+Par suite, on a
+                                              wF         F
+(5.14)                            R̃n ◦ IndT̃       G̃
+                                           TwF ≃ IndGF ◦ Rn
+
+et
+                                             wF          F
+(5.15)                            Rn ◦ ResT̃       G̃
+                                          TwF ≃ ResGF ◦ R̃n .
+
+Remarque 5.16. Les isomorphismes (5.14) et (5.15) induisent les égalités
+                                              wF         F
+(5.17)                             R̃n ◦ IndT̃       G̃
+                                            TwF = IndGF ◦ Rn
+
+et
+                                             wF          F
+(5.18)                            Rn ◦ ResT̃       G̃
+                                          TwF = ResGF ◦ R̃n .
+
+  Concernant les rapports entre les variétés Ŷ(n̂) et Y(n), nous avons le résultat suivant
+(rappelons que ρ : Ĝ → G désigne la projection canonique) :
+Proposition 5.19. Soit n̂ = (n̂1 , . . . , n̂r ) une suite finie d’éléments de NĜ (T̂) et posons
+n = (ρ(n̂1 ), . . . , ρ(n̂r )). Alors, l’application ρ induit des isomorphismes de GF -variétés-
+TwF
+                                         ∼                          ∼
+                             Ŷ(n̂)/CF → Y(n) et CF \ Ŷ(n̂) → Y(n).
+Démonstration. Encore une fois, comme pour la proposition 5.13, on peut supposer que
+n est une suite formée d’un seul élément. Dans ce cas, il suffit d’appliquer la proposition
+5.1, en remplaçant le groupe G par Ĝ, P par B̂, L par T̂, n par n̂1 , le groupe H par
+C, et le groupe H′ par {1}. Dans ce cas, la variété qui était notée Y devient la variété
+Ŷ(n̂), tandis que X devient Y(n) et K = CF . Cela complète la preuve de la proposition
+5.19.
+24                        CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+         G F
+                 b   F       b   F
+   Si ResĜ F : D (ΛG ) −→ D (ΛĜ ) désigne le foncteur de restriction à travers ρ, alors
+la proposition 5.19 montre que
+                                             wF           F
+(5.20)                           R̂n̂ ◦ ResT
+                                           T̂wF
+                                                ≃ ResG
+                                                     ĜF
+                                                         ◦Rn .
+Remarque 5.21. Tous les résultats énoncés dans ce §5.3 restent vrais même lorsque le
+centre de G̃ n’est pas connexe ou lorsque les coracines de Ĝ ne sont pas injectives. D’autre
+part, si Ǧ est un groupe algébrique muni d’une isogénie F : Ǧ → Ǧ telle que F δ soit
+l’endomorphisme de Frobenius associé à une Fq -structure sur Ǧ, et si γ : Ǧ → G est
+un morphisme de groupes algébriques commutant avec F et induisant un isomorphisme
+de groupes, alors les groupes finis ǦF et GF sont isomorphes via γ et γ induit des
+équivalences équivariantes de sites étales entre les variétés Y Ǧ (ň) et Y G (n) (avec des
+                                                       TnF         GF
+notations évidentes). En particulier, on a RǦň ◦ ResŤňF = ResǦF ◦Rn .
+                                                                            G
+
+
+
+                                     6. Recollements
+
+
+6.1. Construction. Dans ce paragraphe 6.1, et dans ce paragraphe seulement, nous sup-
+poserons que G = Ĝ. Soient v et w deux suites d’éléments de S̄ telles que v ≤ w. Nous
+noterons w = (s1 , . . . , sr ) et v = (s′1 , . . . , s′r ). Posons
+                                                             a
+                                      X(w; v) =                  X(y).
+                                                  v≤y≤w
+               `
+Puisque BsB B est une sous-variété fermée lisse de G pour tout s ∈ S (c’est même
+un sous-groupe parabolique de G), X(w; v) est une sous-variété localement fermée lisse
+de (G/B)r . Nous allons ici construire un revêtement étale (en général non trivial) de la
+variété X(w; v) en recollant des quotients des variétés Y(ẏ) pour v ≤ y ≤ w.
+  Soit α ∈ ∆. Alors, Uṡα U = Uṡα Uα (U ∩ sα U). Cela montre que
+                                  a
+                       Uṡα UTα∨     UTα∨ = Gα (U ∩ sαU) = Gα U.
+En particulier, c’est une sous-variété lisse localement fermée de G. Pour 1 ≤ i ≤ r, on
+pose                                     
+                                    (i)    Gαw,i U si i ∈ Iw,v ,
+                                  Uw,v =
+                                           Uṡi U    sinon
+où Iw,v a été défini au §4.4.2.
+   On définit alors la variété
+  Y ′ (w; v) = (g1 U, . . . , gr U) ∈ (G/U)r | gi−1gi+1 ∈ Uw,v
+                                                           (i)
+                 
+                                                               pour 1 ≤ i ≤ r − 1
+                                                                       et gr−1F (g1 ) ∈ Uw,v
+                                                                                         (r)
+                                                                                             }.
+ C’est une sous-variété localement fermée lisse de (G/U)r , sur laquelle le groupe GF agit
+diagonalement par multiplication à gauche. De plus, nous avons un morphisme canonique
+                   ′
+de GF -variétés πw,v : Y ′ (w; v) → X(w; v) induit par la projection (G/U)r → (G/B)r .
+                   CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                       25
+
+  D’autre part, pour (g1 U, . . . , gr U) ∈ Y ′ (w; v) et pour (t1 , . . . , tr ) ∈ Tr , alors
+(g1 t1 U, . . . , gr tr U) ∈ Y ′ (w; v) si et seulement si (t1 , . . . , tr ) ∈ Sw,v .
+Lemme 6.1. L’application canonique Y ′ (w; v)/Sw,v → X(w; v) induite par πw,v
+                                                                          ′
+                                                                              est un
+                 F
+isomorphisme de G -variétés.
+Démonstration. Puisque le morphisme est bijectif et que X(w; v) est lisse, il suffit de
+vérifier que c’est un isomorphisme au-dessus de l’ouvert X(w). Cela résulte alors de la
+remarque 5.2 et de la proposition 5.1 appliquée au groupe G′ = Gr muni de l’isogénie
+                                                                           (1)          (r)
+définie dans la remarque 5.2, avec P = Br , L = H = Tr , n = ẇ, et H′ = Tw,v × · · · Tw,v .
+Il faut noter qu’alors K = Sw,v .
+  Définissons
+(6.2)                                Y(w; v) = Y ′ (w; v)/S◦w,v ,
+                                                                                    ′
+et notons πw,v : Y(w, v) → X(w, v) le morphisme de GF -variétés induit par πw,v     . Le
+                                           ◦
+lemme 6.1 montre que πw,v est un (Sw,v /Sw,v )-torseur.
+  Considérons maintenant une suite y telle que v ≤ y ≤ w. Alors, l’injection canonique
+Y(ẏ) ֒→ Y ′ (w; v) est un morphisme de GF -variétés-TyF : ici, Y(w; v) est vue comme
+une variété-TyF via le morphisme µy : TyF ֒→ Sw,v défini dans le §4.4.3. Puisque
+                                 µy (TyF ) ∩ S◦w,v = µy (Ny (Yw,v )),
+(cf proposition 4.11 (4)), cela induit un morphisme de GF -variétés-(TyF /Ny (Yw,v ))
+                                   Y(ẏ)/Ny (Yw,v ) −→ Y(w; v).
+                                                               −1
+Lemme 6.3. L’image du morphisme Y(ẏ) → Y(w; v) est égale à πw,v (X(y)). Ce mor-
+                                  F              yF
+phisme induit un isomorphisme de G -variétés-(T /Ny (Yw,v ))
+                                                     ∼−1
+                                  Y(ẏ)/Ny (Yw,v ) → πw,v (X(y)).
+Démonstration. L’application Y(ẏ) → X(y) est surjective. Donc, d’après le lemme 6.1,
+l’application
+                                                ∼  ′−1
+                         Y(ẏ) ×µy (TyF ) Sw,v → πw,v  (X(y))
+                                (γ, τ )        7→      γ.τ
+est un isomorphisme de variétés. Le résultat découle alors de ce que
+                                       Sw,v = µy (TyF ) · S◦w,v ,
+ce qui est démontré dans la proposition 4.11 (2).
+
+6.2. Le cas général. Revenons maintenant au cas général : nous ne supposons plus que
+G = Ĝ. Le lecteur aura remarqué que le lemme 6.3 n’est plus nécessairement vrai (nous
+avons utilisé la proposition 4.11 (4), qui n’est pas vraie en général). C’est pourquoi nous
+allons devoir passer par le groupe Ĝ pour définir un bon revêtement de la variété X(w; v).
+26                       CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+   Notons Ŷ ′(w; v) (respectivement Ŝw,v ) la variété (respectivement le groupe diagonal-
+isable) définie (respectivement défini) dans le groupe Ĝ comme l’a été Y ′(w; v) (respec-
+tivement Sw,v ) dans le paragraphe précédent. Nous posons alors :
+(6.4)                         Y(w; v) = Ŷ ′ (w; v)/(Ŝ◦w,v · CF ),
+le groupe CF agissant diagonalement sur (Ĝ/B̂)r par multiplication. Notons πw,v :
+Y(w; v) → X(w; v) le morphisme canonique : c’est un (Ŝw,v /(Ŝ◦w,v · CF ))-torseur.
+   Compte tenu des propositions 5.12 et 5.19 et du lemme 6.3, nous déduisons le résultat
+suivant.
+Théorème 6.5. Le morphisme de GF -variétés
+                                 πw,v : Y(w; v) → X(w; v)
+est un TwF /Nw (Yw,v )-torseur étale. De plus, pour v ≤ y ≤ w, l’application canonique
+                                                             ∼ −1
+Y(ẏ) → Y(w; v) induit un isomorphisme Y(ẏ)/Ny (Yw,v ) → πw,v      (X(y)) de GF -variétés-
+   yF
+(T /Ny (Yw,v )) rendant commutatif le diagramme suivant
+                                   ∼      // π −1 (X(y)) 
+                                                           
+              Y(ẏ)/Ny (Yw,v )                w,v
+                                                                  // Y(w; v)
+                           MMM
+                              MMM
+                                 MMM
+                                    MMM
+(6.6)                                  M                                           πw,v
+                                    πy MMMMM
+                                            MMM
+                                               MM&&                         
+                                                               
+                                                      X(y)           //   X(w; v)
+Remarque 6.7. Dans le diagramme 6.6, le revêtement étale Y(ẏ)/Nx (Yw,v ) → X(y) est
+                                                                    −1
+un TyF /Ny (Yw,v )-torseur, alors que le revêtement étale πw,v : πw,v (X(y)) → X(y) est
+                  wF
+quant à lui un T /Nw (Yw,v )-torseur. Ces descriptions sont compatibles, via l’isomor-
+                                   ∼
+phisme canonique TyF /Ny (Yw,v ) → TwF /Nw (Yw,v ) (cf proposition 4.11).
+6.3. Recollement de recollements. Soient v ≤ x ≤ y ≤ w. La variété X(y; x)
+                                                              −1
+est une sous-variété localement fermée de X(w; v) et πw,v     (X(y; x)) → X(y; x) est un
+  wF
+T /Nw (Yw,v )-torseur étale.
+   D’autre part, πy,x : Y(y; x) → X(y; x) est un TyF /Ny (Yy,x )-torseur étale. D’après
+le corollaire 4.5, on a Yy,x ⊂ Yw,v . Par conséquent, TyF /Ny (Yw,v ) est un quotient de
+TyF /Ny (Yy,x ) et le morphisme canonique Y(y; x)/ Ny (Yw,v )/Ny (Yy,x ) → X(y; x) est
+un TyF /Ny (Yw,v )-torseur étale. Mais d’après la proposition 4.4 (4), on a un isomorphisme
+canonique
+                              TyF /Ny (Yw,v ) ≃ TwF /Nw (Yw,v ).
+   Par conséquent, nous avons construit deux TwF /Nw (Yw,v )-torseurs étales au-dessus de
+X(y; x). Le corollaire suivant montre qu’ils sont en fait isomorphes.
+Corollaire 6.8. Le morphisme canonique Y(y; x) → Y(w; v) induit un isomorphisme
+GF -équivariant de TwF /Nw (Yw,v )-torseurs étales
+                                                      ∼ −1
+                     Y(y; x)/ Ny (Yw,v )/Ny (Yy,x ) → πw,v  (X(y; x))
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                               27
+
+au-dessus de X(y; x).
+
+Démonstration. Le morphisme canonique provient de l’inclusion Y ′ (y; x) ֒→ Y ′ (w; v).
+                                                             −1
+Il est clair que son image est égale à la variété lisse πw,v (X(y; x)). Pour démontrer le
+corollaire 6.8, il suffit de démontrer que le morphisme
+                                                             −1
+                                                      
+                        Y(y; x)/ Ny (Yw,v )/Ny (Yy,x ) −→ πw,v   (X(y; x))
+
+ainsi défini induit un isomorphisme au-dessus d’un ouvert de X(y; x). On peut par exemple
+prendre l’ouvert X(y) de X(y; x). Mais ce fait résulte de la commutativité du diagramme
+du théorème 6.5.
+
+
+  Nous résumons le corollaire 6.8 dans le diagramme commutatif suivant :
+                                                                          
+         Y(y; x)                   //   Y(y; x)/ Ny (Yw,v )/Ny (Yy,x )
+               @@ PPP
+                 @@ PPP
+                   @@ PPP
+                     @@      PPP
+                       @@
+                         @@
+                                 PPP
+                                     PPP                       ∼
+                           @@           PPP
+                             @@             P PPP
+                               @@                P''        
+                                 @@              −1                  
+                            πy,x @
+                                   @@
+                                     @
+                                               π w,v   (X(y;     x))               //   Y(w; v)
+                                       @@
+                                         @@
+                                           @@
+                                             @@
+                                               @@                                               πw,v
+                                                 @@
+                                                     @@
+                                                       @                                 
+                                                                 
+                                                     X(y; x)                  //        X(w; v).
+
+6.4. Remarques. Pour construire le revêtement πw,v : Y(w; v) → X(w; v), il a été
+nécessaire de passer par un groupe Ĝ dont les coracines sont injectives et tel qu’il existe
+un tore central F -stable C de Ĝ tel que G ≃ Ĝ/C. Disons dans ce paragraphe qu’une
+paire (Ĝ, C) vérifiant ces propriétés est sympathique.
+   Le lecteur pourra vérifier que, dans le cas où G = PGL2 (F) et où p 6= 2, alors on
+ne peut effectuer directement la construction dans G. En effet, on obtiendrait ainsi un
+revêtement connexe de Y(s; 1) (ici, s désigne l’unique réflexion simple de W ), alors que
+l’on attend un revêtement non connexe. Il est donc nécessaire de passer par Ĝ = GL2 (F).
+   Soient (Ĝ1 , C1 ) et (Ĝ2 , C2 ) deux paires sympathiques et Ĝ0 le produit fibré de Ĝ1 et
+Ĝ2 au-dessus de G. On note Ŷi (w; v) la variété définie dans Ĝi comme Y(w; v) a été
+définie dans G lorsque les coracines de G sont injectives. La paire (Ĝ0 , C1 × C2 ) est sym-
+                          ∼
+pathique et Ŷi (w; v) → Ŷ0 (w; v)/CFj , où {i, j} = {1, 2}. Cela fournit un isomorphisme
+Ŷ1 (w; v)/CF1 ≃ Ŷ2 (w; v)/CF2 . On en déduit que la variété Y(w; v) ne dépend pas du
+choix de Ĝ, à isomorphisme unique près.
+28                        CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+                               7. Calculs de monodromie
+
+   Nous allons appliquer ici les résultats du paragraphe précédent au calcul des images
+directes supérieures (dans une compactification lisse adaptée) des faisceaux localement
+constants sur les variétés X(w) provenant du revêtement étale Y(ẇ) → X(w). Le résultat
+(le théorème 7.7), généralise [DeLu, lemme 9.13]. Nous obtiendrons comme conséquences
+des résultats sur les foncteurs de Deligne-Lusztig (cf §8.2).
+               Dans toute cette section, nous supposons que Λ est un corps.
+   On fixe dans cette section une suite w d’éléments de S̄.
+   Soient v, x et y des suites d’éléments de S̄ telles que v ≤ x ≤ y ≤ w. Nous noterons
+ w;v
+jy;x  : X(y; x) ֒→ X(w; v) l’injection canonique. Pour simplifier, nous remplacerons,
+lorsque y = x, l’indice ou l’exposant y; x par y. D’autre part, nous posons
+                                          a
+                             X(x) =          X(x′ )
+                                          x′ ≤x
+
+                                  ( = X(x; (1, . . . , 1))       ).
+Si v = (1, . . . , 1), nous remplacerons l’indice ou l’exposant x; v par x. Par exemple, jyx
+désigne l’injection canonique X(y) ֒→ X(x).
+   La compactification de X(x) ainsi construite possède de bonnes propriétés [DeLu,
+lemme 9.11] :
+Lemme 7.1. La variété X(x) S est projective lisse et le complémentaire de X(x) est un
+diviseur à croisements normaux v X(v) où v décrit l’ensemble des suites telles que v ≤ x
+et l(x) − l(v) = 1.
+     Nous noterons
+                         F y;x : D b (ΛTyF /Ny (Yy,x )) → DΛb (X(y; x))
+              Y(y;x)
+le foncteur FTyF /Ny (Yy;x ) défini au §3.2. Nous fixons aussi dans cette section un caractère
+linéaire θ : TwF → Λ× . Si wθ ≤ x ≤ y ≤ w, il résulte de §4.4.2 que θ définit un caractère
+linéaire θy;x du groupe TyF /Ny (Yy,x ) (pour la définition de wθ , voir §4.4.2). Nous noterons
+Fθy;x le faisceau localement constant F y;x (Λθy;x ) sur la variété X(y; x). Compte tenu du
+corollaire 6.8 et de la proposition 4.11 (3), Fθy;x est la restriction de Fθw;wθ à X(y; x). En
+d’autres termes,
+(7.2)                               Fθy;x ≃ (jy;x
+                                              w;wθ ∗ w;wθ
+                                                  ) Fθ    .
+Comme expliqué dans l’introduction de cette section, nous allons calculer ici les fais-
+ceaux Ri (jw
+           w
+             )∗ Fθw . La proposition suivante combine un résultat fondamental de Deligne et
+Lusztig [DeLu, lemme 9.13] et une conséquence immédiate de la construction des variétés
+Y(w; v).
+Proposition 7.3. Soient v, v′ et x des suites d’éléments de S̄ telles que wθ ≤ v ≤ x et
+v′ < v.
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                         29
+
+   (1) Si v est le plus petit élément tel que v′ ≤ v et wθ ≤ v, alors le faisceau Fθx
+se ramifie le long de chaque composante du diviseur X(x; v′) − X(x; v) et le morphisme
+             x;v′          ∼    x;v′
+canonique (jx;v   )! Fθx;v → R(jx;v  )∗ Fθx;v est un isomorphisme.
+   (2) Si wθ ≤ v′ , alors le faisceau Fθx ne se ramifie pas le long du diviseur X(x; v′ ) −
+X(x; v).
+Démonstration. On a
+                                                            [
+                               X(x; v′) − X(x; v) =              X(x′ ; v′ )
+                                                            x′
+
+où v′ ≤ x′ ≤ x, v 6≤ x′ et l(x′ ) = l(x) − 1.
+   Sous l’hypothèse de (1), on a wθ 6≤ x′ . D’après [DeLu, lemme 9.13] (la preuve, faite
+pour des Q̄ℓ -faisceaux reste valable pour des Λ-faisceaux), le faisceau Fθx se ramifie le long
+du diviseur X(x′ ) de X̄(x), i.e., la restriction de (jxx )∗ Fθx à X(x′ ) est nulle. On en déduit
+que Fθx;v se ramifie le long du diviseur X(x′ ; v′ ). Par conséquent, le morphisme canonique
+  x;v′              x;v′                                                           x;v′
+(jx;v  )! Fθx;v → (jx;v  )∗ Fθx;v est un isomorphisme. L’annulation des Ri (jx;v        )∗ Fθx;v pour
+i > 0 résulte de [SGA4 12 , exemple 1.19.1 p.180] (on utilise ici le lemme 7.1 et la propriété
+de Fθx;v d’être modérément ramifié), d’où (1).
+   (2) découle directement de 7.2.
+  Définissons maintenant quelques sous-catégories de DΛb (X(w)). Prenons wθ ≤ y. On
+pose
+
+
+                           A1≤y (θ) = {(jxw )! Fθx | wθ ≤ x ≤ y},
+                           A1<y (θ) = {(jxw )! Fθx | wθ ≤ x < y},
+                                                    ′
+                                                    x;x
+                           A2≤y (θ) = {(jx;x
+                                         w
+                                             ′ )! F θ   | wθ ≤ x′ ≤ x ≤ y},
+                                                    ′
+                                                    x;x
+                           A2<y (θ) = {(jx;x
+                                         w
+                                             ′ )! F θ   | wθ ≤ x′ ≤ x < y},
+                           A3≤y (θ) = {(jx;w
+                                         w
+                                              ) Fθx;wθ | wθ ≤ x ≤ y},
+                                             θ !
+
+                           A3<y (θ) = {(jx;w
+                                         w
+                                              ) Fθx;wθ | wθ ≤ x < y},
+                                             θ !
+
+                           A4≤y (θ) = {R(jxw )∗ Fθx | wθ ≤ x ≤ y},
+                           A4<y (θ) = {R(jxw )∗ Fθx | wθ ≤ x < y},
+                                                     x;x′
+                           A5≤y (θ) = {R(jx;x
+                                          w
+                                              ′ )∗ F θ   | wθ ≤ x′ ≤ x ≤ y},
+                                                     x;x′
+                           A5<y (θ) = {R(jx;x
+                                          w
+                                              ′ )∗ F θ   | wθ ≤ x′ ≤ x < y},
+                           A6≤y (θ) = {R(jx;w
+                                          w
+                                               ) Fθx;wθ | wθ ≤ x ≤ y},
+                                              θ ∗
+
+                     et    A6<y (θ) = {R(jx;w
+                                          w
+                                               ) Fθx;wθ | wθ ≤ x < y}.
+                                              θ ∗
+
+
+Si (i, ∗) ∈ {1, 2, 3, 4, 5, 6}×{≤ y, < y}, nous noterons Ai∗ (θ) la sous-catégorie de DΛb (X(w))
+engendrée par Ai∗ (θ).
+30                            CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Proposition 7.4. Pour ∗ ∈ {≤ y, < y}, on a
+                        A1∗ (θ) = A2∗ (θ) = A3∗ (θ) = A4∗ (θ) = A5∗ (θ) = A6∗ (θ).
+Démonstration. Notons pour commencer que le morphisme canonique
+                                                      ∼
+                                       w
+                                     (jx;w  ) Fθx;wθ → R(jx;w
+                                           θ !
+                                                          w
+                                                               ) Fθx;wθ
+                                                              θ ∗
+
+
+est un isomorphisme (proposition 7.3 (1)), donc A3∗ (θ) = A6∗ (θ).
+   Notons que A1∗ (θ) ⊂ A2∗ (θ) et A3∗ (θ) ⊂ A2∗ (θ).
+   Prenons wθ ≤ v′ ≤ v ≤ x ≤ w avec l(v) = l(v′ ) + 1. Soit x′ ≤ x tel que v′ ≤ x′ , v 6≤ x′
+et l(x′ ) = l(x) − 1. On a X(x; v′) − X(x; v) = X(x′ ; v′ ), d’où on déduit une suite exacte
+                                                             ′                      ′       ′
+(1)                          w
+                       0 → (jx;v )! Fθx;v → (jx;v
+                                              w          x;v
+                                                  ′ )! F θ   → (jxw′ ;v′ )! Fθx ;v → 0.
+                                     ′                                                                     ′′   ′′
+   Par conséquent, (jx;vw           x;v
+                              ′ )! F θ     est dans la sous-catégorie engendrée par les (jxw′′ ;v′′ )! Fθx ;v ,
+où l(x′′ ) − l(v′′ ) < l(x) − l(v′ ) et wθ ≤ v′′ ≤ x′′ ≤ x. Par récurrence, on en déduit que
+A2∗ (θ) ⊂ A1∗ (θ).
+   On déduit aussi de la suite exacte (1) que (jx;v          w
+                                                                  )! Fθx;v est dans la sous-catégorie en-
+                                     ′′ ′′
+gendrée par les (jxw′′ ;v′′ )! Fθx ;v , où v′′ < v et x′′ ≤ x. Par récurrence, on en déduit que
+A2∗ (θ) ⊂ A3∗ (θ).
+   On a donc démontré que A1∗ (θ) = A2∗ (θ) = A3∗ (θ).
+   Le théorème de pureté cohomologique [Mi, chapitre VI, théorème 5.1] fournit un triangle
+distingué
+                                 ′            ′                  ′ x ;v ′   ′
+                           Fθx;v → R(jx;v
+                                      x;v
+                                          )∗ Fθx;v → (jxx;v
+                                                         ′ ;v′ )! Fθ    [−1]
+d’où
+                                     ′                                          ′       ′
+                       w
+                    R(jx;v        x;v
+                           ′ )∗ F θ
+                                           w
+                                      → R(jx;v )∗ Fθx;v → R(jxw′ ;v′ )∗ Fθx ;v [−1]             .
+On prouve alors, comme précédemment, que A4∗ (θ) = A5∗ (θ) = A6∗ (θ).
+Remarque 7.5. Notons que la dualité de Verdier échange les catégories Ai∗ (θ) et Ai∗ (θ−1 ).
+                                                                      w
+Corollaire 7.6. Le cône du morphisme canonique de complexes (jw        )! Fθw −→ R(jw
+                                                                                     w
+                                                                                       )∗ Fθw
+                             i
+est dans la sous-catégorie A<w (θ) pour tout i ∈ {1, 2, 3, 4, 5, 6}.
+Démonstration. D’après la proposition 7.4, ce cône appartient à la catégorie A1≤w (θ).
+D’autre part, son support est contenu dans le complémentaire de X(w) dans X(w), d’où
+le résultat.
+Théorème 7.7. Soit i un entier naturel. Alors
+                                                l(w)−l(v)
+                                       (Fθv )⊕( i ) si v ∈ I(w, θ),
+                                      
+
+              (jvw )∗ Ri (jw
+                           w
+                             )∗ Fθw ≃
+                                   
+
+                                        0                 sinon.
+                                      
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                       31
+                                                 w
+Démonstration. Factorisons l’immersion ouverte jw de la manière suivante
+                                    j1                            j2
+                       X(w)                  //   X(w; wθ )                //   X(w).
+                                                       w
+D’après la proposition 7.4, le support du complexe R(jw )∗ Fθw est contenu dans X(w; wθ ),
+ce qui montre que
+                                   w
+(1)                             R(jw )∗ Fθw ≃ (j2 )! R(j1 )∗ Fθw .
+           ∼
+Mais, Fθw → j1∗ Fθw;wθ , par conséquent, d’après le lemme 12.2,
+                                         ∼
+(2)                        R(j1 )∗ Fθw → (R(j1 )∗ ΛX(w) ) ⊗Λ Fθw;wθ .
+Le théorème 7.7 découle alors immédiatement de (1) et (2), en appliquant les lemmes 7.1
+et 12.7.
+            8. Induction de Deligne-Lusztig et séries rationnelles
+
+  Nous allons appliquer les résultats de la section précédente aux foncteurs de Lusztig.
+Pour cela, nous ferons l’hypothèse suivante.
+
+8.1. Orthogonalité. Soient (w, θ) et (w′ , θ′ ) deux éléments de ∇(T, W, F ).
+  Le résultat suivant généralise [DeLu, théorème 6.2] qui considère le cas Λ = K et la
+conjugaison géométrique.
+Théorème 8.1. Si (w, θ) et (w′ , θ′ ) sont dans deux séries rationnelles différentes, alors
+                                                                       ′
+                         (Rẇ ΛTwF eθ−1 )op ⊗LΛGF Rẇ′ ΛTw F eθ′ = 0.
+Démonstration. Par la formule des coefficients universels, il suffit de démontrer le théorème
+lorsque Λ est un corps, ce que nous supposerons dans la suite. Commençons par démontrer
+la proposition lorsque le centre de G est connexe (lorsque Λ = K, c’est [DeLu, théorème
+6.2]). Dans ce cas, (w, θ) et (w′ , θ′ ) ne sont pas géométriquement conjugués (cf remarque
+4.3).
+   D’après le lemme 3.2 et la proposition 5.7, on a un isomorphisme dans D b (Λ(TwF ×
+  w′ F
+T ))
+                                                     ∼
+           RΓc ((Y(ẇ) × Y ′ (ẇ′ ))/∆(GF )) → RΓc (Y(ẇ))op ⊗LΛGF RΓc (Y(ẇ′)).
+   La preuve est alors similaire à celle de [DeLu, théorème 6.2] : on se ramène à prouver
+l’assertion suivante.
+   Soit X une variété munie d’une action d’un groupe algébrique H contenant TwF ×
+  w′ F                                                                         ′
+T . On suppose le caractère θ−1 × θ′ non trivial sur Q = (TwF × Tw F ) ∩ H◦ . Alors,
+(eθ−1 ⊗Λ eθ′ )RΓc (X) = 0.
+   Démontrons donc cette assertion. D’après [DeLu, proposition 6.4], le groupe connexe
+                                                   wF ×Tw′ F
+H agit trivialement sur Hc∗ (X). Puisque ResT
+   ◦
+                                                 Q           (θ−1 × θ′ ) n’est pas dans le bloc
+principal de ΛQ, on a
+                                                              ′
+                      R Hom•ΛQ (ΛTwF eθ−1 ⊗Λ ΛTw F eθ′ , RΓc (X)) = 0,
+32                          CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+donc
+                                                   ′F                     
+                                   wF ×Tw
+                                                                      w′ F
+        R Hom•Λ(TwF ×Tw′ F ) (IndT
+                                 Q
+                                                           wF
+                                                         ΛT eθ−1 ⊗Λ ΛT eθ′ , RΓc (X)) = 0
+
+et a fortiori
+                                                                                   ′
+                  R Hom•Λ(TwF ×Tw′ F ) (ΛTwF eθ−1 ⊗Λ ΛTw F eθ′ , RΓc (X)) = 0.
+
+  Revenons maintenant à G quelconque. Soit A (respectivement A′ ) l’ensemble des car-
+                                               ′
+actères linéaires de T̃wF (respectivement T̃w F ) étendant θ (respectivement θ′ ).
+  Le complexe
+                                             op                   ′
+                         C = Rẇ (ΛTwF eθ−1 ) ⊗LΛGF Rẇ′ (ΛTw F eθ′ )
+est un facteur direct du complexe
+                            F                               op                F
+                                                                                        w′ F
+                C̃ = IndG̃         wF
+                                                                  ⊗LΛG̃F IndG̃
+                                                                                                  
+                        GF Rẇ (ΛT    eθ−1 )                                GF Rẇ′ (ΛT      eθ′ ) .
+
+De plus, d’après (5.14), on a
+                                       F
+                            IndG̃
+                               GF Rẇ (ΛT
+                                          wF
+                                             eθ−1 ) ≃ R̃ẇ (ΛT̃wF eθ−1 )
+
+                                       F                ′                                ′
+                                            wF
+et                           IndG̃
+                                GF Rẇ′ (ΛT    eθ′ ) ≃ R̃ẇ (ΛT̃w F eθ′ ).
+Mais
+                                                               M
+                                           ΛT̃wF eθ−1 =                  ΛT̃wF eθ̃−1
+                                                                  θ̃∈A
+
+
+                                               ′                               ′
+                                                              M
+et                                         ΛT̃w F eθ′ =                  ΛT̃w F eθ̃′ .
+                                                              θ̃ ′ ∈A′
+
+Par conséquent,
+                            M                                     op                        ′
+                     C̃ ≃              R̃ẇ (ΛT̃wF eθ̃−1 )               ⊗LΛG̃F R̃ẇ′ (ΛT̃w F eθ̃′ ).
+                             θ̃∈A
+                            θ̃ ′ ∈A′
+
+Puisque (w, θ) et (w′ , θ′ ) ne sont pas dans la même série rationnelle, les paires (w, θ̃) et
+(w′ , θ̃′ ) ne sont pas géométriquement conjuguées dans G̃ pour tous θ̃ ∈ A et θ̃′ ∈ A′ . On
+a alors C̃ = 0 d’après la première partie de la preuve, ce qui implique que C = 0.
+Corollaire 8.2. Si (w, θ) et (w′ , θ′ ) appartiennent à deux séries rationnelles différentes
+de ∇(T, W, F ), alors
+                                       (Rẇ Λθ−1 )op ⊗LΛGF Rẇ′ Λθ′ = 0.
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                        33
+
+8.2. Profondeur. Dans toute cette section §8.2, nous supposerons que Λ est un corps.
+  En appliquant le foncteur RΓ(X(w), −) à l’énoncé du corollaire 7.6, on obtient :
+Théorème 8.3. Soit w ∈ Σ(S̄) et θ un caractère linéaire de TwF . Alors, le cône du
+morphisme canonique Rẇ Λθ → Sẇ Λθ est dans la sous-catégorie triangulée de D b (ΛGF )
+engendrée par les complexes Rẋ Λθx où x ∈ I(w, θ) et x < w.
+Corollaire 8.4. Soit w ∈ Σ(S̄) et θ un caractère linéaire de TwF . Alors, le cône du
+morphisme canonique Rẇ Λθ → Sẇ Λθ est dans la sous-catégorie triangulée de D b (ΛGF )
+engendrée par les complexes Rẋ Λθ′ où (x, θ′ ) ≡W (w, θ) et x < w.
+Démonstration. Le corollaire découle du théorème 8.3 et du corollaire 4.6.
+Corollaire 8.5. Si (w, θ) et (w′ , θ′ ) appartiennent à deux séries rationnelles différentes
+de ∇(T, W, F ), alors
+                                                          ′
+                      R Hom•ΛGF Sẇ ΛTwF eθ , Sẇ′ ΛTw F eθ′ = 0.
+                                                              
+
+Démonstration. La proposition 5.4 permet de se ramener au cas où w, w′ ∈ Σ(S̄).
+  On a un isomorphisme
+                                      ′                                      ′
+      R Hom•ΛGF Sẇ ΛTwF eθ , Sẇ′ ΛTw F eθ′ ≃ (Sẇ ΛTwF eθ )∗ ⊗LΛGF Sẇ′ ΛTw F eθ′ .
+                                            
+
+D’après (5.11), on a
+                          (Sẇ ΛTwF eθ )∗ ≃ (Rẇ ΛTwF eθ−1 )op [2l(w)].
+                                                                                    ′
+Le corollaire 8.5 résulte alors du théorème 8.1 et du fait que Sẇ′ ΛTw F eθ′ est dans la
+catégorie engendrée par les Rẋ ΛTxF eθ1 , où (x, θ1 ) appartient à la même série rationnelle
+que (w′, θ′ ) (corollaire 8.4).
+  On a un accouplement parfait
+              <, > : K(ΛGF ) × K(ΛGF -proj) −→          Z
+                           ([M], [P ])      7−→ dim(HomΛGF (P, M)).
+  D’après [DeLu, proposition 7.5], on a
+                                     X           |GF |p′
+(8.6)                |W | · [ΛGF ] =     (−1)l(w) wF [R(ẇ) ΛTwF ].
+                                     w∈W
+                                                 |T |
+
+En appliquant (5.11), on obtient
+                                          X                |GF |p′
+(8.7)                   |W | · [ΛGF ] =         (−1)l(w)           [S(ẇ) ΛTwF ].
+                                          w∈W
+                                                           |TwF |
+                                    F
+Par conséquent, si M est un ΛG -module simple, il existe ((ẇ), θ) ∈ ∇(T, W, F ) tel que
+                                  < [M], [S(ẇ) ΛTwF eθ ] >6= 0.
+  On a donc :
+34                       CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Lemme 8.8. Si M est un ΛGF -module simple, il existe (w, θ) ∈ ∇(T, W, F ) tel que
+                              R Hom•ΛGF (Sẇ ΛTwF eθ , M) 6= 0.
+Remarque 8.9. Il serait souhaitable de trouver une preuve plus directe de ce lemme.
+Proposition 8.10. Si M est un ΛGF -module simple et si w est une suite d’éléments de
+W avec l(w) minimal telle que
+                               R Hom•ΛGF (Sẇ ΛTwF , M) 6= 0,
+alors la cohomologie du complexe R Hom•ΛGF (Sẇ ΛTwF , M) est concentrée en degré −l(w).
+Démonstration. La proposition 5.4 permet de se ramener au cas où w ∈ Σ(S̄). D’après
+(5.11), on a
+                R HomΛGF (Sẇ ΛTwF , M) ≃ (Rẇ ΛTwF )op ⊗LΛGF M[2l(w)].
+Cela montre que, si v < w, alors
+                                 (Rv̇ ΛTvF )op ⊗LΛGF M = 0.
+Donc, pour tout caractère linéaire θ : TvF → Λ× , on a
+                                   (Rv̇ Λθ )op ⊗LΛGF M = 0.
+Mais, d’après le théorème 8.3, le cône du morphisme canonique Rẇ ΛTwF → Sẇ ΛTwF
+est dans la sous-catégorie engendrée par les Rv̇ Λθ où v < w et θ est un caractère linéaire
+de TvF . Par suite, le morphisme
+                     (Rẇ ΛTwF )op ⊗LΛGF M −→ (Sẇ ΛTwF )op ⊗LΛGF M
+est un isomorphisme. La preuve de la proposition 8.10 est alors complétée par le lemme
+12.6 et la proposition 5.7.
+Remarque 8.11. Comme nous l’a fait remarquer Marc Cabanes, on peut en fait démontrer
+directement que R Hom•ΛGF (Sẇ ΛTwF , (M ∗ )op ) 6= 0. En effet,
+             R Hom•ΛGF (Sẇ ΛTwF , (M ∗ )op ) ≃ R Hom•ΛGF ((Sẇ ΛTwF )∗ )op , M)
+car Sẇ ΛTwF est parfait. Maintenant, la dualité de Poincaré fournit
+               R Hom•ΛGF ((Sẇ ΛTwF )∗ )op , M) ≃ R Hom•ΛGF (Rẇ ΛTwF ), M)
+d’où le résultat annoncé. Par conséquent, l’application du lemme 12.6 se fait dans un cas
+où M et (M ∗ )op vérifient les hypothèses. Le résultat d’Haastert (cf remarque 12.4) suffit
+alors.
+  La proposition suivante fournit plusieurs caractérisations d’un élément w de longueur
+minimale :
+Proposition 8.12. Soit M un ΛGF -module simple et soit (w, θ) ∈ ∇(T, W, F ). Les
+propriétés suivantes sont équivalentes :
+   (a) (w, θ) est de longueur minimale tel que < [M], [Rẇ ΛTwF eθ ] >6= 0 ;
+   (b) (w, θ) est de longueur minimale tel que R Hom•ΛGF (Rẇ ΛTwF eθ , M) 6= 0 ;
+                CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                    35
+
+  (c) (w, θ) est de longueur minimale    tel que   R Hom•ΛGF (M, Rẇ ΛTwF eθ ) 6= 0 ;
+  (d) (w, θ) est de longueur minimale    tel que   R Hom•ΛGF (Sẇ ΛTwF eθ , M) 6= 0 ;
+  (e) (w, θ) est de longueur minimale    tel que   R Hom•ΛGF (M, Sẇ ΛTwF eθ ) 6= 0 ;
+  (f) Un énoncé parmi (a), (b), (c),   (d) ou    (e) en remplaçant eθ par eθ−1 et M par
+(M ∗ )op .
+Démonstration. D’après le corollaire 8.4, le cône du morphisme canonique Rẇ ΛTwF eθ →
+                                                                     ′
+Sẇ ΛTwF eθ est dans la sous-catégorie engendrée par les Rẇ ΛTw F avec w′ < w. Ceci
+démontre l’équivalence de (b) et (d) et de (c) et (e).
+  Soit C un complexe borné de ΛGF -modules projectifs, sans facteur direct non nul
+homotope à 0. Alors, R Hom• (C, M) 6= 0 si et seulement si R Hom• (M, C) 6= 0, si et
+seulement si une enveloppe projective de M est facteur direct d’une des composantes de
+C. Cette remarque démontre l’équivalence entre (b) et (c) et entre (d) et (e).
+   L’équivalence entre (a) et (d) résulte de la proposition 8.10. L’équivalence avec les
+énoncés de (f) résulte de (5.11).
+Remarque 8.13. Il n’est pas difficile de voir que si w vérifie les propriétés de la propo-
+sition, alors σ(w) est dans σ(W ) et son image dans W est de longueur minimale dans sa
+classe de F -conjugaison (car [Rẇ ΛTwF eθ ] ne dépend que de la classe de F -conjugaison
+de l’image de w dans W ). Il est sans doute vrai que l’image de w dans W est dans une
+F -classe de conjugaison de W ne dépendant que de M. C’est un résultat connu lorsque
+Λ = K [DiMiRo]. La preuve, qui requiert l’étude des valeurs propres de l’endomorphisme
+de Frobenius sur le cohomologie, ne semble pas s’étendre à Λ = k.
+
+                            9. Engendrement de ΛGF -parf
+9.1. Engendrement de catégories de complexes parfaits. Soit A une algèbre libre
+de type fini sur un anneau local complet O, d’idéal maximal m et de corps résiduel Ō.
+  Soit E un ensemble fini de complexes parfaits de A, muni d’une relation de préordre
+partiel.
+Lemme 9.1. Supposons que pour tout A-module simple M, il existe C ∈ E tel que
+R Hom•Db (A⊗O Ō) (C ⊗LO Ō, M) 6= 0 et que si C est minimal avec cette propriété, alors
+la cohomologie du complexe R Hom•Db (A⊗O Ō) (C ⊗LO Ō, M) est concentrée en degré 0.
+   Alors, A-parf est engendrée par E.
+Démonstration. Nous noterons C̄ = C ⊗LO Ō pour C un complexe de A-modules. Soit
+C ∈ E. On note S(≤ C) (respectivement S(< C)) l’ensemble des classes d’isomorphisme
+de A-modules simples M tels qu’il existe C ′ ∈ E tel que C ′ ≤ C (respectivement C ′ < C)
+et R Hom• (C̄ ′ , M) 6= 0.
+   Quitte à remplacer les éléments de E par des complexes quasi-isomorphes, on peut
+supposer, et on le fera, que ce sont des complexes bornés de modules projectifs sans
+facteurs directs non nuls homotopes à 0. Alors, pour C ∈ E et pour M simple, on a
+R Hom• (C̄, M[i]) 6= 0 si et seulement si une enveloppe projective PM de M est facteur
+36                       CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+direct de C −i . Lorsque ces conditions équivalentes sont vérifiées, on a M ∈ S(≤ C).
+Lorsqu’en plus i 6= 0, alors M ∈ S(< C).
+   Soit hEi la sous-catégorie de K b (A-proj) engendrée par E.
+  Considérons l’assertion suivante :
+     (⋆C ) Pour M ∈ S(≤ C), alors PM est dans hEi.
+ Notons que le lemme 9.1 découle immédiatement de (⋆C ) pour tout C. Nous allons
+montrer (⋆C ) par récurrence sur C.
+   Soit C un complexe minimal. Alors, R Hom• (C̄, M[i]) = 0 pour tout module simple
+M et tout entier non nul i. Par conséquent, C n’a qu’un terme non nul, C 0 , qui est un
+A-module projectif de type fini. Pour M un A-module simple, alors Hom(C 0 , M) 6= 0 si
+et seulement si PM est facteur direct de C 0 . On en déduit immédiatement (⋆C ).
+   Prenons maintenant C ∈ E tel que (⋆C ′ ) est vraie pour tout C ′ < C. Les facteurs
+directs indécomposables de C i sont de la forme PM avec M ∈ S(< C) pour i 6= 0, donc
+il sont dans hEi. On en déduit donc que C 0 est dans hEi. Par conséquent, PM est dans
+hEi pour M ∈ S(C), ce qui montre (⋆C ).
+     On se donne maintenant une relation d’équivalence ∼ sur E.
+Proposition 9.2. On garde les hypothèses du lemme 9.1 et on suppose en plus que
+R Hom• (C ⊗LO Ō, C ′ ⊗LO Ō) = 0 pour tous C, C ′ ∈ E avec C 6∼ C ′ .
+   Soit hXi la sous-catégorie de A-parf engendrée par X ∈ E/ ∼. Alors, on a une
+décomposition                                 M
+                                    A-parf =        hXi.
+                                               X∈E/∼
+  Par conséquent, pour X ∈ E/ ∼, il existe un idempotent central eX de A tel que hXi =
+AeX -parf et on a une décomposition de l’unité en somme d’idempotents orthogonaux
+                                           X⊥
+                                      1=         eX .
+                                            X∈E/∼
+                              ′
+Démonstration. Pour C et C deux complexes parfaits de A-modules, le morphisme canon-
+                           ∼
+ique R Hom• (C, C ′)⊗LO Ō → R Hom• (C⊗LO Ō, C ′ ⊗LO Ō) est un isomorphisme. Par conséquent,
+la nullité de R Hom• (C, C ′ ) équivaut à celle de R Hom• (C ⊗LO Ō, C ′ ⊗LO Ō).
+   D’après le lemme 9.1, la réunion des hXi, où X ∈ E/ ∼, engendre A-parf. Puisque ces
+sous-catégories sont deux à deux orthogonales, la catégorie qu’elles engendrent est leur
+somme directe.
+9.2. Décomposition en séries. Nous allons démontrer que la catégorie ΛGF -parf est
+engendrée par les complexes (Rẇ ΛTwF )w∈Σ(W ) et obtenir une décomposition de cette
+catégorie paramétrée par les séries rationnelles. Pour cela, il nous suffira d’appliquer la
+proposition 9.2, la vérification des hypothèses résultant du travail effectué dans le §8.
+  Si X est une série rationnelle de ∇(T, W, F ), nous noterons Xmin l’ensemble des couples
+(w, θ) où w ∈ W et θ est un caractère linéaire de TwF vérifiant la propriété suivante : il
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                        37
+
+existe un ΛGF -module simple M tel que ((ẇ), θ) est un élément de longueur minimale de
+∇(T, W, F ) vérifiant
+                             R Hom•ΛGF (Sẇ ΛTwF eθ , M) 6= 0.
+  Il résulte de la remarque 8.13 que si (w, θ) ∈ Xmin , alors w est de longueur minimale
+dans sa classe de F -conjugaison.
+Théorème A. Soit X une série rationnelle dans ∇(T, W, F ). Alors, il existe un idempo-
+                     F    F
+tent central eX = eG
+                   X de ΛG tel que chacune des familles suivantes engendre la catégorie
+    F
+ΛG eX -parf :
+   – {Rẇ ΛTwF eθ }(w,θ)∈X
+   – {Sẇ ΛTwF eθ }(w,θ)∈X
+   – {R(ẇ) ΛTwF eθ }(w,θ)∈Xmin
+   – {S(ẇ) ΛTwF eθ }(w,θ)∈Xmin
+  On a une décomposition de 1 en somme d’idempotents centraux deux à deux orthogonaux
+                                         X⊥
+                                 1=               eX .
+                                        X ∈∇(T,W,F )/ ≡W
+
+
+Démonstration. Soit E l’ensemble des complexes S(ẇ) ΛTwF eθ [l(w)], où (w, θ) ∈ Xmin et
+X décrit les séries rationnelles. On pose (w, θ) ≤ (w ′ , θ′ ) si w ≤ w ′ .
+  D’après le lemme 8.8 et la proposition 8.12, pour tout ΛGF -module simple M, il existe
+C ∈ E tel que R Hom• (C, M) 6= 0. D’après la proposition 8.10, si C est de longueur
+minimale avec cette propriété, alors R Hom• (C, M) est concentré en degré 0.
+  On introduit la relation d’équivalence sur E donnée par (w, θ) ∼ (w ′, θ′ ) si ((w), θ) et
+((w ′ ), θ′ ) sont rationnellement conjugués. Alors, R Hom• (C, C ′ ) = 0 si C 6∼ C ′ d’après le
+corollaire 8.5.
+  Il résulte alors de la proposition 9.2 que {S(ẇ) ΛTwF eθ }(w,θ)∈Xmin engendre ΛGF eX -parf.
+On montre de même que {Sẇ ΛTwF eθ }(w,θ)∈X engendre ΛGF eX -parf.
+  L’isomorphisme (5.11) (dualité de Poincaré) montre les assertions concernant les com-
+plexes R(ẇ) ΛTwF eθ et Rw ΛTwF eθ .
+Remarque 9.3. Considérons tout d’abord le cas où Λ = K. La catégorie KGF -mod
+étant semi-simple, la catégorie KGF -parf est équivalente à la catégorie des KGF -modules
+gradués.
+   Pour X ∈ ∇K (T, W, F )/ ≡W , on note E(GF , X ) l’ensemble des caractères irréductibles
+χ de GF tels qu’il existe (w, θ) ∈ X avec < χ, K Rẇ θ >6= 0. Il résulte du théorème A que
+                                              a
+                            IrrK GF =                     E(GF , X )
+                                        X ∈∇K (T,W,F )/ ≡W
+
+et que                                           X
+                                       eX =                 eχ ,
+                                              χ∈E(GF ,X )
+38                       CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+où eχ désigne l’unique idempotent primitif central de KGF tel que χ(eχ ) 6= 0. On retrouve
+ainsi la décomposition de [DeLu].
+                                                                                 ∼
+   Le morphisme canonique R → k induit une bijection ∇R (T, W, F ) → ∇k (T, W, F ), X 7→
+X , compatible avec les séries rationnelles. Pour X ∈ ∇R (T, W, F )/ ≡W , l’image de
+eX ∈ RGF dans kGF est eX .
+   Par ailleurs, nous avons une application surjective ∇K (T, W, F ) → ∇k (T, W, F ) qui
+est obtenue par passage au quotient R → k (en effet, un caractère linéaire TwF → K × est
+à valeurs dans R× ). Elle induit une application surjective ∇K (T, W, F ) → ∇R (T, W, F )
+en composant avec la bijection décrite précédemment, d’où finalement une application
+surjective entre séries rationnelles ∇K (T, W, F )/ ≡W → ∇R (T, W, F )/ ≡W , X 7→ Xℓ′ .
+Cette notation rappelle que cette application envoie un couple(w, θ) sur le couple (w, θℓ′ ),
+où θℓ′ désigne la ℓ′ -partie du caractère linéaire θ. Fixons une série rationnelle X0 ∈
+∇R (T, W, F )/ ≡W et posons
+                                                a
+                                Eℓ (GF , X0 ) =       E(GF , X ).
+                                                    Xℓ′ =X0
+
+On a alors                         X                      X
+                          eX0 =             eX =                    eχ ∈ RGF .
+                                  Xℓ′ =X0          χ∈Eℓ (GF ,X0 )
+Nous retrouvons la compatibilité des séries avec les blocs établie par Broué et Michel
+[BrMi, théorème 2.2].
+
+                               10. Foncteurs de Lusztig
+10.1. Définition. Fixons une partie I de ∆. Nous notons WI le sous-groupe de W en-
+gendré par la famille (sα )α∈I , PI le sous-groupe parabolique BWI B de G, VI le radical
+unipotent de PI et LI le complément de Levi de VI dans PI contenant T. Le groupe de
+Weyl de LI relatif à T est alors égal à WI . Nous notons aussi BI le sous-groupe de Borel
+de LI égal à B ∩ LI et UI son radical unipotent. Avec ces notations, on a F ?I = ?φ(I) si
+? désigne l’une des lettres B, L, P, U, V ou W .
+    Fixons maintenant un élément v de W tel que vφ(I) = I. Alors, v̇F normalise LI et on
+pose
+                        YI,v = {gVI ∈ G/VI | g −1 F g ∈ VI v̇ F VI }.
+Le groupe fini GF agit par multiplication à gauche sur la variété YI,v . De même, le groupe
+Lv̇F                                                                                 F
+  I agit par multiplication à droite. Munie de ces deux actions, YI,v est une G -variété-
+Lv̇F
+  I   de dimension l(v). Elle est régulière en tant que variété-Lv̇F
+                                                                      I . On définit alors un
+foncteur entre catégories dérivées
+                       RI,v : D b (ΛLv̇F
+                                     I ) −→       D b (ΛGF )
+                                   C     7−→ RΓc (YI,v ) ⊗LΛLv̇F C.
+                                                                           I
+
+                                                   GF
+Avec les notations du §3.2, on a RI,v = R          Lv̇F
+                                                          (YI,v ). Posons maintenant
+                                                    I
+
+                        XI,v = {gPI ∈ G/PI | g −1 F g ∈ PI v̇ F PI }.
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                                      39
+
+Alors, d’après la proposition 5.1 appliquée à P = PI , H = L = LI , n = v̇ et H′ = 1,
+l’application naturelle
+                                  πI,v : YI,v −→ XI,v
+                                         gVI 7−→ gPI
+induit un isomorphisme de GF -variétés
+                                                         ∼
+                                             YI,v /Lv̇F
+                                                    I → XI,v .
+
+  Pour finir, nous posons
+                           XI,v = {gPI ∈ G/PI | g −1 F g ∈ PI v̇ F PI }
+et nous notons jI,v l’immersion ouverte canonique
+                                            jI,v : XI,v −→ XI,v .
+C’est un morphisme de GF -variétés, où GF agit sur XI,v par multiplication à gauche.
+De plus, XI,v est une variété projective. Nous noterons FI,v : D b (ΛLv̇F    b
+                                                                        I ) → DΛ (XI,v ) le
+                Y
+foncteur noté FLv̇FI,v dans le §3.2.
+                   I
+
+10.2. Transitivité et séries rationnelles. On fixe une décomposition réduite v =
+s1 · · · sr (si ∈ S et r = l(v)) et on pose v = (s1 , . . . , sr ).
+   Soit w = (w1 , . . . , wn ) une suite finie d’éléments de WI . On a des isomorphisme de
+  F
+G -variétés-TwvF (cf [Lu1, lemme 3] et (5.5))
+
+                                     ∼                                         ∼
+(10.1)    YI,v ×Lv̇F
+                 I
+                     Y LI ,v̇F (ẇ) →        Y G,F (ẇ1 , . . . , ẇn−1, ẇn v̇) →            Y G,F (ẇv̇)
+     (gVI ), (h1 UI , . . . , hn UI ) 7→                 (gh1 U, . . . , ghn U)
+                                                         (g1 U, . . . , gn U) ←      (g1 U, . . . , gn+r U).
+Par conséquent, d’après (3.4), on a
+                                                   LI ,v̇F
+(10.2)                                     RI,v ◦ Rẇ      ≃ RG,F
+                                                              ẇv̇ .
+
+
+  Si (w, θ) ∈ ∇(T, WI , v̇F ), alors (wv, θ) ∈ ∇(T, W, F ). De plus, si (w, θ) ≡WI ,vF
+(w′ , θ′ ), alors (wv, θ) ≡W,F (w′ v, θ′ ). Par suite, si X est une série rationnelle dans
+∇(T, WI , vF ), il existe une unique série rationnelle X G contenant (wv, θ) pour tout
+(w, θ) ∈ X . Le théorème suivant (classique pour Λ = K) montre que les foncteurs de
+Lusztig préservent les séries rationnelles.
+Théorème 10.3. Soit X une série rationnelle dans ∇(T, WI , v̇F ) et soit M dans
+           Lv̇F                                F GF
+D b (ΛLv̇F                               b
+       I eX ). Alors, RI,v (M) est dans D (ΛG eX G ).
+            I
+
+
+
+Démonstration. Par la formule des coefficients universels, on peut supposer, et nous le
+ferons, que Λ est un corps.
+                                                               Lv̇F
+   Il suffit en outre de considérer le cas où M = ΛLv̇F  I eX . Mais, d’après le théorème
+                                                                I
+
+             v̇F
+            LI                                                             LI ,v̇F
+A, ΛLv̇FI eX     est dans la sous-catégorie engendrée par les complexes Rẇ      ΛTwvF eθ où
+40                          CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+                                                                     LI ,v̇F
+(w, θ) ∈ X . Cela montre qu’il suffit de considérer le cas où M = Rẇ      ΛTwvF eθ : alors,
+              G,F
+RI,v (M) ≃ Rẇv̇ ΛTwvF eθ d’après (10.2). La conclusion provient alors du théorème A.
+
+10.3. Equivalence de Morita. Commençons par une définition. Le couple (w, θ) ∈
+∇(T, WI , v̇F ) est dit (G, I)-régulier (respectivement (G, I)-super régulier) s’il vérifie la
+propriété suivante :
+     (R)        Si α ∈ Φ est telle que θ ◦ Nwv (α∨ ) = 1, alors α ∈ ΦI .
+(respectivement
+     (SR)       Si x ∈ W est tel que x(θ ◦ Nwv ) = θ ◦ Nwv , alors x ∈ WI .)
+Lemme 10.4. Un couple (G, I)-super régulier est (G, I)-régulier.
+Démonstration. Soient (w, θ) un couple (G, I)-super régulier et α ∈ Φ tel que θ◦Nwv (α∨ ) =
+1. Pour tout λ ∈ Y (T), on a (sα − 1)(λ) ∈ Zα∨ , donc θ ◦ Nwv ((sα − 1)(λ)) = 1, ce qui
+montre que sα (θ ◦ Nwv ) = θ ◦ Nwv . D’après (SR), on a alors sα ∈ WI , donc α ∈ ΦI .
+Remarque 10.5. Soient (w, θ) et (w′ , θ′ ) deux couples de ∇(T, WI , v̇F ) qui sont géomé-
+triquement conjugués. Alors, le couple (w, θ) est (G, I)-régulier (respectivement (G, I)-
+super régulier) si et seulement si le couple (w′, θ′ ) l’est. En effet, par définition de la
+conjugaison géométrique, θ ◦ Nwv et θ′ ◦ Nw′ v sont conjugués sous WI .
+   Une série rationnelle X dans ∇(T, WI , v̇F ) est dite (G, I)-régulière (respectivement
+(G, I)-super régulière) si un de ses représentants l’est. Compte tenu de la remarque 10.5,
+X est (G, I)-régulière (respectivement (G, I)-super régulière) si et seulement si tous ses
+représentants le sont.
+   La propriété des couples réguliers qui va nous être utile par la suite est contenue dans
+le lemme suivant.
+Lemme 10.6. Soit (w, θ) ∈ ∇(T, WI , v̇F ) un couple (G, I)-régulier avec w ∈ Σ(I ∪{1}).
+Alors, (wv)θ = wθ v.
+Démonstration. Notons tout d’abord que (wv)θ est calculé dans (G, F ), alors que wθ l’est
+dans (L, v̇F ). Remarquons ensuite que (wv)θ ≤ wθ v. Écrivons w = (t1 , . . . , tn ) et soit
+                                                                                             ∨
+i un entier naturel tel que 1 ≤ i ≤ r. Il s’agit de démontrer que θ(Nwv (βwv,n+i                 )) 6= 1.
+                                                                     ∨
+D’après la propriété (R), il suffit de démontrer que βwv,n+i 6∈ ΦI . Notons α la racine
+                          ∨
+αwv,n+i = αv,i . Alors, βwv,n+i   = t1 . . . tn s1 . . . si−1 (α∨ ). Mais, t1 . . . tn ∈ WI , donc on est
+ramené à prouver l’assertion suivante :
+                                         s1 . . . si−1 (α∨ ) 6∈ ΦI .
+  Puisque (s1 , . . . , sr ) est une décomposition réduite de v, alors s1 . . . si−1 (α∨) est une
+coracine positive dont l’image par v −1 est négative. Or, par hypothèse sur v, v −1 (I) =
+φ(I) ⊂ ∆. Donc v −1 (ΦI ∩ Φ+ ) ⊂ Φ+ . Cela complète la preuve du lemme 10.6.
+     Nous arrivons maintenant au résultat principal de ce travail :
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                                           41
+
+Théorème 10.7. Soit X une série rationnelle (G, I)-régulière dans ∇(T, WI , vF ). Alors,
+le morphisme canonique
+                                                  Lv̇F ∼                                              Lv̇F
+                         (jI,v )! FI,v ΛLv̇F
+                                         I eX
+                                             I
+                                               → R(jI,v )∗ FI,v ΛLv̇F
+                                                                  I eX
+                                                                      I
+
+
+est un isomorphisme.
+Démonstration. Notons ici i : XI,v − XI,v −→ XI,v l’immersion fermée canonique. Il s’agit
+de démontrer que
+                                                       Lv̇F
+                                                           
+(1)                           i∗ R(jI,v )∗ FI,v ΛLv̇F
+                                                  I   eX
+                                                        I
+                                                              = 0.
+La formule des coefficients universels montre qu’il suffit de prouver (1) lorsque Λ est un
+                                                                                      v̇F
+                                                                                v̇F LI
+corps, ce que nous supposerons. D’après le théorème A, le ΛLv̇FI -module ΛLI eX        est
+                                 v̇F                                   LI ,v̇F wvF
+dans la sous-catégorie de ΛLI -parf engendrée par les complexes Sẇ ΛT            eθ pour
+(w, θ) ∈ X . Par suite, il suffit de démontrer que
+                                                        LI ,v̇F
+(2)                                 i∗ R(jI,v )∗ FI,v (Sẇ      ΛTwvF eθ ) = 0
+pour tout (w, θ) ∈ X avec w ∈ Σ(I ∪ {1}).
+  Fixons un élément (w, θ) ∈ X avec w ∈ Σ(I ∪ {1}). On a un diagramme commutatif
+                                                            a
+                  YI,v × Y LI ,v̇F (ẇ)                                   //        YI,v ×Lv̇F
+                                                                                           I
+                                                                                               Y LI ,v̇F (ẇ)
+                           b                                                                         b′
+                                                                                              
+                                                            a′
+                  YI,v × XLI ,v̇F (w)                                          //   YI,v ×Lv̇F
+                                                                                           I
+                                                                                               XLI ,v̇F (w)
+                                       OOO                                       n
+                                          OOO
+                                             O                             nn nnn
+                                           c OOOO                         n
+                                                                       nnn c′
+                                                 O''             nvv nn
+                                                       XI,v
+où les flèches horizontales sont les passages au quotient par Lv̇F I , les flèches verticales
+                                  wvF
+les passages au quotient par T         et les flèches diagonales proviennent du morphisme
+structurel XLI ,v̇F (w) → Spec F.
+                                     b
+   On a des isomorphismes dans DΛT      wvF (XI,v )
+
+
+                R(c′ b′ )∗ Λ ≃ ((Rc′∗ R(b′ a)∗ Λ) ⊗LΛLv̇F Λ                                          (lemme 3.2)
+                                                                  I
+
+                           ≃ (Rc∗ Rb∗ Λ) ⊗LΛLv̇F Λ,
+                                                        I
+
+ce qui montre que
+(3)                    R(c′ b′ )∗ Λ ≃ FI,v (ΛLv̇F  L
+                                              I ) ⊗ΛLv̇F RΓ(Y
+                                                              LI ,v̇F
+                                                                      (w)).
+                                                                      I
+
+  Via l’isomorphisme (10.1), le morphisme c′ devient
+                                     τ:      XG,F (wv)           −→ XI,v
+                                           (g1 B, . . . , gn B) 7−→ g1 PI
+et après application de − ⊗LΛTwvF ΛTwvF eθ , l’isomorphisme (3) devient
+                                                      LI ,v̇F
+                        Rτ∗ F wv (ΛTwvF eθ ) ≃ FI,v (Sẇ      ΛTwvF eθ ).
+42                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+     Considérons maintenant le diagramme commutatif suivant :
+                                                       wv
+                                                      jwv
+                                XG,F (wv)                      //   XG,F (wv)
+
+                                    τ                                             τ̄
+
+
+                                                    jI,v
+                                                                             
+                                   XI,v                              //   XI,v ,
+
+où τ̄ : XG,F (wv) → XI,v , (g1 B, . . . , gn B) 7→ g1 PI est un morphisme projectif. Pour
+démontrer (2), il suffit, en utilisant le théorème de changement de base propre, de démontrer
+que la restriction du complexe R(jwv    wv
+                                            )∗ F wv (ΛTwvF eθ ) à XG,F (wv) − τ̄ −1 (XI,v ) est nulle.
+                               −1
+               G,F
+Notons i1 : X (wv) − τ̄ (XI,v ) ֒→ XG,F (wv) l’immersion fermée canonique. Il nous
+suffit de démontrer que
+(4)                                          i∗1 R(jwv
+                                                    wv
+                                                       )∗ Fθwv = 0.
+On a                                                         a
+                           XG,F (wv) − τ̄ (XI,v ) =                       XG,F (w′ v′ ).
+                                                             w′ ≤w
+                                                             v′ <v
+
+Mais le fait que X soit (G, I)-régulière implique que (wv)θ est égal à wθ v (lemme 10.6).
+Le résultat découle alors du théorème 7.7.
+Remarque 10.8. Le lecteur intéressé obtiendra sans difficulté une version sans hypothèse
+de régularité du théorème 10.7 qui généralise le corollaire 7.6.
+Corollaire 10.9. Soit X une série (G, I)-régulière dans ∇(T, WI , v̇F ). Alors,
+                       Lv̇F
+Hci (XI,v , FI,v ΛLv̇F
+                   I eX ) est un Λ-module libre, nul pour i 6= l(v).
+                        I
+
+
+
+Démonstration. Par la formule des coefficients universels, il suffit de démontrer l’annula-
+tion dans le cas où Λ est un corps.
+   Par application du foncteur R(πXI,v )∗ à l’isomorphisme du théorème 10.7, on obtient
+que le morphisme canonique
+                                                  Lv̇F ∼                                   Lv̇F
+                       R(πXI,v )! FI,v ΛLv̇F
+                                         I eX
+                                             I
+                                               → R(πXI,v )∗ FI,v ΛLv̇F
+                                                                   I eX
+                                                                       I
+
+
+
+est un isomorphisme et le lemme 12.6 (joint au lemme 3.2) fournit la conclusion.
+Remarque 10.10. Si la série X est régulière, alors la série X −1 = {(w, θ−1 )|(w, θ) ∈ X }
+est encore régulière. On en déduit alors, comme dans la remarque 8.11, que l’utilisation
+du lemme 12.6 se fait dans le cas particulier où M et (M ∗ )op vérifient les hypothèses.
+
+  Comme l’a montré Broué [Br, pp. 61–62], le théorème 10.7, qui est de nature géométrique,
+admet pour conséquence le théorème algébrique suivant (nous reprenons la preuve de [Br,
+théorème 3.3]). Lorsque Λ = K et q est plus grand que le nombre de Coxeter de G, ce
+                 CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                                      43
+
+résultat est dû à Lusztig [Lu2, Proposition 6.6]. Pour le cas général où Λ = K, seule la
+concentration en un degré (non déterminé) de la cohomologie était connue.
+Théorème B. Soit X une série (G, I)-super régulière dans ∇(T, WI , v̇F ). Alors, RI,v
+                                                                          Lv̇F                 F
+induit une équivalence de Morita entre les Λ-algèbres ΛLv̇F
+                                                          I eX
+                                                              I
+                                                                et ΛGF eG
+                                                                        XG.
+                                                Lv̇F                             Lv̇F
+  Plus précisément, le complexe RI,v ΛLv̇F
+                                           I eX
+                                                I
+                                                   de (ΛGF , ΛLv̇F
+                                                                I eX )-bimodules n’a de la
+                                                                    I
+
+
+cohomologie qu’en degré r = l(v) et son r-ième bimodule de cohomologie induit l’équivalence
+de Morita décrite.
+
+Démonstration. Pour montrer l’équivalence de Morita, il suffit de considérer le cas où Λ =
+                                                                                           Lv̇F
+R. D’après le lemme 10.4 et le corollaire 10.9, le bimodule M = Hcr (XI,v , FI,v RLv̇F
+                                                                                      I eX )
+                                                                                            I
+
+                                                                                                                   Lv̇F
+est le seul groupe de cohomologie non nul du complexe parfait de RGF -modules RI,v RLv̇F
+                                                                                     I eX ,
+                                                                                         I
+
+                                                                                                           Lv̇F
+donc il est projectif comme RGF -module. De même, il est projectif comme RLv̇F     I eX -
+                                                                                        I
+
+
+module à droite.
+  Soit MK = K ⊗R M. D’après [Lu1, théorème 8], la (G, I)-super régularité de X montre
+que
+                                                       Lv̇F
+                             MK∗ ⊗KGF MK ≃ KLv̇F   I eX .
+                                                        I
+
+                  F                                       F               F
+Puisque KGF eG                            F G       F G
+             X G est facteur direct du (KG eX G , KG eX G )-bimodule MK ⊗KLv̇F
+                                                                           I
+                                                                               MK∗ ,
+                                                                                        Lv̇F                 F
+on en déduit que MK induit une équivalence de Morita entre KLv̇F    I eX
+                                                                            I
+                                                                                                   et KGF eG
+                                                                                                           XG.
+L’équivalence de Morita sur R résulte maintenant de [Br, théorème 2.4].
+Remarque 10.11. Le théorème précédent montre la coı̈ncidence des matrices de décompo-
+sition. Cette propriété avait été conjecturée par Hiß [Hi, p.342].
+Remarque 10.12. D’après [Lu1, proposition 12], on a dim MK ⊗KLv̇F
+                                                               I
+                                                                   V = n dim V ,
+                  Lv̇F                                 |GF |p′
+pour tout KLv̇F
+            I eX -module simple V , où n =
+                I
+                                                       |Lv̇F
+                                                                .   On déduit alors du théorème B que
+                                                         I | p′
+        F                                                                                           Lv̇F
+ΛGF eG                                                           2      v̇F
+     X G est isomorphe à une algèbre de matrices de dimension n sur ΛLI eX .
+                                                                            I
+
+
+
+                           11. Changement de point de vue
+  Nous avons pris le parti, pour la commodité des preuves, de travailler systématiquement
+avec des sous-groupes de Levi standards, quitte à modifier l’isogénie F . Le but de cette
+partie est de traduire les résultats principaux qui précèdent en ne s’intéressant qu’aux sous-
+groupes de Levi et aux tores maximaux F -stables. Ceci permet d’alléger les notations et
+certains lecteurs y retrouveront un cadre plus familier.
+  Nous nous bornerons à énoncer les analogues des théorèmes A, 10.3, 10.7 et B.
+11.1. Notations. Soit P un sous-groupe parabolique de G de radical unipotent V, avec
+un complément de Levi F -stable L. Nous posons
+                           G
+                          YV = {gV ∈ G/V | g −1 F (g) ∈ V · F V}
+                                            −1          F
+et                        XG
+                           P = {gP ∈ G/P | g F (g) ∈ P · P}.
+44                        CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Alors, YV  G
+             est une GF -variété-LF (pour les actions par multiplication à gauche et à droite),
+                 F
+XG                                                        G       G
+  P est une G -variété et le morphisme étale πV : YV → XP induit un isomorphisme de
+             G    F    G
+variétés YV /L ≃ XP (cf (5.3) et §11.2). Nous définissons alors les foncteurs
+                                            b   F      b   F
+                                  RG
+                                   L ⊂ P : D (ΛL ) −→ D (ΛG )
+
+
+
+et                                SLG⊂ P : D b (ΛLF ) −→ D b (ΛGF )
+
+comme au §3.2.
+  Pour finir, posons
+                              G
+                           XP = {gP ∈ G/P | g −1F (g) ∈ P · F P}
+                          G
+et notons jPG : XG
+                 P ֒→ XP l’immersion ouverte canonique.
+
+
+11.2. Rapport avec les groupes Lv̇F                                                              G
+                                           I . Nous expliquons ici le lien entre les variétés YV
+et les variétés YI,v définies précédemment. Soit I l’unique partie de ∆ telle que P soit
+conjugué à PI . Il existe alors un élément x1 ∈ G tel que x1 (LI , PI ) = (L, P). Posons
+v1 = x−1
+       1 F (x1 ). Puisque L est F -stable, on a
+                                                  v1 F
+                                                       LI = LI . Par conséquent, il existe a ∈ LI
+tel que av1 F (T, BI ) = (T, BI ). Notons v l’image de av1 ∈ NG (T) dans W . Nous choisissons
+a de sorte que av1 = v̇. Par le théorème de Lang, on trouve b ∈ LI tel que b−1 v1 F b = a.
+   Posons maintenant x = x1 b. Alors x−1 F (x) = b−1 v1 F (b) = av1 = v̇. De plus v̇F stabilise
+BI , donc vφ(I) = I. D’autre part, x(LI , PI ) = (L, P) et l’application
+
+                                          LI −→   L
+                                          g 7−→ xgx−1
+                                   ∼
+induit un isomorphisme Lv̇F  F
+                        I → L , que nous noterons aussi par la lettre x. De plus,
+x
+  VI = V.
+   Les applications
+                                          G
+                                         YV −→ YI,v
+                                         gV 7−→ gxVI ,
+
+                                         XG
+                                          P −→  XI,v
+                                         gP 7−→ gxPI
+
+                                           G
+et                                       XP −→ XI,v
+                                         gP 7−→ gxPI
+
+sont des isomorphismes, de GF -variétés-LF pour le premier, de GF -variétés pour le second
+et le troisième. Ici, YI,v est vue comme une variété-LF via l’isomorphisme x−1 . De plus,
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                           45
+
+le diagramme correspondant
+                                        G                    ∼               YI,v
+                                       YV                          //
+
+
+                                     πV                                             πI,v
+
+                                                                             
+                                                             ∼               XI,v
+                                       XG
+                                        P
+                                        
+                                                                        //
+                                                                                   _
+                                                     _
+
+
+                                     jPG                                            jI,v
+
+                                                                             
+                                        G                    ∼
+                                       XP                               //   XI,v
+est commutatif.
+   Ces isomorphismes permettent de faire le lien entre tous les objets définis précédemment.
+Par exemple, on a un diagramme commutatif
+                                             x∗          // D b (ΛLv̇F )
+                       D b (ΛLF )             ∼                    I
+                                     NNN
+                                                                            ppp
+(11.1)                                  NNN
+                                           NNN                          pppp
+                                                                  wwppp R
+                                      G                                p
+                                    RL ⊂ P N&&                                          I,v
+                                                         D b (ΛGF ).
+qui montre que l’on peut jongler entre les divers foncteurs de Lusztig.
+Remarque 11.2. Il est facile de montrer que, si (I ′ , v ′ ) est un autre couple vérifiant les
+propriétés suivantes :
+   (1) I ′ ⊂ ∆, v ′ ∈ W ,
+   (2) v ′ φ(I ′) = I ′ ,
+                                      ′
+   (3) il existe x′ ∈ G tel que x (LI ′ , PI ′ ) = (L, P) et x′−1 F x′ = v̇ ′ ,
+alors (I, v) = (I ′ , v ′ ). On dira que le couple (I, v) est associé au couple (L, P).
+11.3. Séries rationnelles. Notons ∇(G, F ) l’ensemble des triplets (T′ , B′ , θ′ ), où T′
+est un tore maximal F -stable de G, B′ est un sous-groupe de Borel de G contenant
+T′ et θ′ : T′F → Λ× un caractère linéaire d’ordre inversible dans Λ. Le choix de ı et 
+                                                                                                    ∗
+fournit une partition de ∇(G, F ) en séries rationnelles, i.e., selon les classes de G∗F -
+                                    ∗F ∗                 ∗
+conjugaison d’éléments de Gsem,Λ         (on note G∗F
+                                                      sem,Λ l’ensemble des éléments semi-simples
+      ∗F ∗
+de G        d’ordre inversible dans Λ). Nous noterons ∇(G, F, (s)G∗F ∗ ) la série rationnelle
+                     ∗F ∗
+associée à s ∈ Gsem,Λ    .
+          ′   ′ ′
+   Si (T , B , θ ) ∈ ∇(L, F ), alors il existe un unique élément w ∈ WI tel que (∅, wv) soit
+associé à (T′ , B′ V). Il existe un élément y ∈ G tel que y (T, B) = (T′ , B′ V) et y −1 F y = ẇv̇
+                                                                                        ∼
+et, comme dans le paragraphe précédent, y induit un isomorphisme T′F → TwvF . On
+note θ le caractère linéaire de TwvF correspondant à θ′ via y. Alors, ((w), θ) est dans
+∇(T, WI , v̇F ) et il est défini de manière unique par le triplet (T′ , B′ , θ′ ).
+46                          CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+     Nous avons donc construit une application
+                                  ψL ⊂ P : ∇(L, F ) −→ ∇(T, WI , vF ).
+Lorsque L = G (auquel cas I = ∆ et v = 1), nous la noterons simplement ψ. Cette
+application conserve les séries rationnelles. Mieux, si X est une série rationnelle dans
+∇(T, W, F ) et si ((ẇ), θ) ∈ X , alors il existe (T′ , B′ , θ′ ) ∈ ∇(G, F ) tel que ψ(T′ , B′ , θ′ ) =
+((ẇ), θ). On a alors
+                                    ′        ′F    ∼             wF
+                               RG T′ ⊂ B′ ΛT eθ ′ → Rẇ ΛT          eθ .
+Cette discussion montre que le théorème A devient :
+                                           ∗F  ∗                                                F       F
+Théorème A’. Pour (s)G∗F ∗ ∈ Gsem,Λ              / ∼, il existe un idempotent central es = eG   s = eG
+                                                                                                       Λ,s
+                                                   ′F
+de ΛGF tel que la famille (RG          ′
+                                     T ⊂B   ′ ΛT      e )  ′  ′
+                                                       θ (T ,B ,θ)∈∇(G,F,(s)G∗F ∗ ) (respectivement
+(STG′ ⊂ B′ ΛT′F eθ )(T′ ,B′ ,θ)∈∇(G,F,(s)G∗F ∗ ) ) engendre ΛGF es -parf.
+  On a une décomposition de 1 en somme d’idempotents centraux deux à deux orthogonaux
+                                                         X⊥
+                                           1=                       es .
+                                                              ∗F  ∗
+                                                   (s)G∗F ∗ ∈Gsem,Λ /∼
+
+
+
+                     ∗F         ∗F  ∗                ∗                         ∗
+Remarque 11.3. On a Gsem,R = Gsem,k . Pour s ∈ G∗F
+                                                 sem,R , la remarque 9.3 montre que
+                                       X
+                          eR,s =                eK,t .
+                                                                      ∗
+                                                                  ∗F /∼
+                                                     (t)G∗F ∗ ∈Gsem
+                                                    (tℓ′ )G∗F ∗ =(s)G∗F ∗
+                              ∗
+De plus, si (t)G∗F ∗ ∈ G∗F
+                        sem / ∼, alors
+                                                             X
+                                            eK,t =                          eχ ,
+                                                     χ∈E(GF ,(t)G∗F ∗ )
+
+où E(GF , (t)G∗F ∗ ) est la série de Lusztig rationnelle associée à (t)G∗F ∗ .
+     Le théorème 10.3 devient quant à lui :
+                           ∗F           ∗                                          F                         F
+Théorème 11.4. Soit s ∈ Lsem,Λ et soit M ∈ D b (ΛLF eLs ). Alors, RG            b   F G
+                                                                     L ⊂ P (M) ∈ D (ΛG es ).
+
+11.4. Equivalence de Morita. Pour finir la traduction et obtenir des résultats équivalents
+aux théorèmes 10.7 et B, nous devons voir ce que deviennent les définitions de séries
+régulières et super-régulières à travers l’application ψ définie au paragraphe précédent.
+                                                   ∗
+   Fixons un élément semi-simple s ∈ G∗F                            ′   ′ ′
+                                                sem,Λ et un triplet (T , B , θ ) ∈ ∇(G, F, (s)G∗F ).
+                                                                                                 ∗
+            ′∗                        ∗              ∗            ′
+Notons T un tore maximal F -stable de G dual de T .
+                                                                                    ∗
+   Puisque (T′ , B′, θ′ ) ∈ ∇(G, F, (s)G∗F ∗ ), on peut supposer que s ∈ T′∗F . Alors il existe
+λ ∈ Y (T′∗ ) = X(T′ ) tel que s = NF ∗d /F ∗ (λ(ζ)). On a alors, pour tout µ ∈ Y (T′ ) =
+X(T′∗ ),
+(11.5)                    θ′ (NF d /F (µ(ζ))) = κ(ζ hλ,NF d /F (µ)i ) = κ(µ(s)).
+                  CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                          47
+
+   Fixons maintenant un sous-groupe de Levi F ∗ -stable L∗ d’un sous-groupe parabolique
+                                                 ∗
+de G∗ dual de L et supposons que s ∈ L∗F      sem,Λ . La série ∇(L, F, (s)L∗F ) est dite (G, L)-
+                                                                              ∗
+
+régulière (respectivement (G, L)-super-régulière) si ψL ⊂ P (∇(L, F, (s)L∗F ∗ )) est contenue
+dans une série (G, I)-régulière (respectivement (G, I)-super-régulière) de ∇(T, WI , v̇F ).
+Lemme 11.6. Avec les notations ci-dessus, ∇(L, F, (s)L∗F ∗ ) est (G, L)-régulière (respec-
+                                                       ◦          ∗
+tivement (G, L)-super-régulière) si et seulement si CG ∗ (s) ⊂ L (respectivement si et seule-
+
+ment si CG∗ (s) ⊂ L∗ ).
+Démonstration. L’égalité 11.5 montre qu’une coracine de α∨ de G relative à T′ vérifie
+θ′ (NF d /F (α∨ (ζ))) = 1 si et seulement si elle vérifie α∨ (s) = 1 (ici, Y (T′ ) a été identifié
+avec X(T′∗ )). Donc ∇(L, F, (s)L∗F ∗ ) est (G, L)-régulière si et seulement si CG    ◦          ∗
+                                                                                         ∗ (s) ⊂ L .
+                                                                                ′     ′
+    D’autre part, la même égalité 11.5 montre qu’un élément w ∈ NG (T )/T stabilise le
+caractère θ′ si et seulement si son correspondant w ∗ dans NG∗ (T′∗ )/T′∗ stabilise s. Donc
+∇(L, F, (s)L∗F ∗ ) est (G, L)-super-régulière si et seulement si CG∗ (s) ⊂ L∗ .
+   Avant d’énoncer un équivalent du théorème 10.7, nous avons besoin de quelques no-
+                      ∗
+tations. Si s ∈ L∗F                       L                                     G
+                   sem,Λ , nous noterons Fs le système local sur la variété XP associé au
+                       F
+ΛLF -module ΛLF eLs . Il résulte alors immédiatement du lemme 11.6 que le théorème 10.7
+est équivalent au théorème suivant :
+                                     ∗
+Théorème 11.7. Soit s ∈ L∗F                 ◦         ∗
+                                  sem,Λ . Si CG∗ (s) ⊂ L , alors le morphisme canonique de com-
+                   ∼
+plexes (jPG )! FsL → R(jPG )∗ FsL est un isomorphisme.
+  De même, d’après le lemme 11.6, le théorème B est équivalent au théorème suivant,
+conjecturé par Broué [Br, p.61] :
+                                 ∗
+Théorème B’. Soit s ∈ L∗F                          ∗                      G
+                            sem,Λ tel que CG∗ (s) ⊂ L . Alors, le foncteur RL ⊂ P induit une
+                                                    F             F
+équivalence de Morita entre les Λ-algèbres ΛLF eLs et ΛGF eG  s .
+                                      G      F LF
+   Plus précisément, le complexe RL ⊂ P ΛL es n’a de la cohomologie qu’en degré r =
+dim V −dim V ∩ F V et son r-ième bimodule de cohomologie induit l’équivalence de Morita
+décrite.
+                                                                                      ∗
+11.5. Décomposition de Jordan. Rappelons tout d’abord que si s ∈ G∗F     sem,Λ est central,
+alors il existe un caractère linéaire ŝ de G tel que l’automorphisme d’algèbre de ΛGF
+                                               F
+
+donné par g 7→ ŝ(g)g se restreint en un isomorphisme
+                                               F   ∼         F
+(#)G                                     ΛGF eG
+                                              s → ΛGF eG
+                                                       1 .
+                                                       ∗
+    Revenons au cas d’un élément général s ∈ G∗F                  ∗
+                                                     sem,Λ . On note L (s) le sous-groupe de Levi
+minimal de G∗ contenant CG∗ (s) (il est F ∗ -stable). On note L(s) un sous-groupe de Levi
+F -stable de G dual de L∗ (s). Le théorème B’ fournit une équivalence de Morita entre
+          L(s)F            F
+ΛL(s)F es       et ΛGF eGs . Ceci ramène l’étude des blocs, à équivalence de Morita près, à
+l’étude de blocs associés à un élément semi-simple quasi-isolé (ie, à un élément s ∈ G∗sem
+tel que CG∗ (s) n’est contenu dans aucun sous-groupe de Levi strict). Pour un groupe à
+centre connexe, un élément semi-simple quasi-isolé du dual est un élément isolé (ie, un
+élément s ∈ G∗sem tel que CG  ◦
+                                  ∗ (s) n’est contenu dans aucun sous-groupe de Levi strict).
+48                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+Théorème 11.8. Si CG∗ (s) est un sous-groupe de Levi de G∗ , alors pour tout sous-groupe
+parabolique P(s) de G de complément de Levi L(s), le foncteur RG L(s) ⊂ P(s) (ŝ ⊗Λ −) induit
+                                             L(s)F            F
+une équivalence de Morita entre ΛL(s)F e1           et ΛGF eG
+                                                             s .
+
+   Deux raisons font que CG∗ (s) n’est pas nécessairement un sous-groupe de Levi de G∗ .
+D’abord, CG∗ (s) peut ne pas être connexe (cela ne peut être arriver que si Z(G) n’est
+                                        ◦
+pas connexe). Ensuite, le groupe CG       ∗ (s) peut aussi ne pas être un sous-groupe de Levi de
+  ∗
+G (cela ne peut arriver que si l’ordre de s est divisible par un nombre premier mauvais
+pour G).
+   Plus précisément, soit π1 (respectivement π2 ) l’ensemble des nombres premiers qui
+divisent |Z(G)/Z(G)◦| (respectivement qui sont mauvais pour G). On pose π = π1 ∪ π2 .
+Si s est un π ′ -élément, alors CG∗ (s) est un sous-groupe de Levi de G∗ et le théorème 11.8
+s’applique.
+   Pour un groupe de type A à centre connexe (par exemple un groupe linéaire ou unitaire),
+alors π = ∅ : on a démontré la décomposition de Jordan des blocs.
+   Pour un groupe de type B, C ou D, alors π = {2}. On a en particulier une décomposition
+de Jordan des blocs pour ℓ = 2 et Λ = R/ln .
+Remarque 11.9. On ne dispose pas de construction (géométrique) d’un foncteur qui
+pourrait induire une équivalence fournissant une décomposition de Jordan générale.
+                   12. Appendice : quelques lemmes géométriques
+   Nous rassemblons ici plusieurs résultats géométriques utiles dans le reste du texte.
+Plus précisément, nous donnons quelques propriétés des foncteurs entre catégories de Λ-
+faisceaux constructibles (images directes ou inverses, à support propre ou non). La plupart
+de ces propriétés est bien connue (formules d’adjonction, de Künneth, diviseurs lisses à
+croisements normaux). Nous avons tout de même inclus une preuve lorsque nous n’avons
+pas trouvé de référence satisfaisante. Les lemmes 12.3 et 12.6, qui semblent être nouveaux,
+sont une variation sur un thème classique.
+12.1. Autour de la formule de Künneth. Soit f : X1 → X2 un morphisme de variétés
+algébriques, soit A une Λ-algèbre finie et soit X1 (respectivement X2 ) un objet de DAb op (X1 )
+(respectivement de DAb (X2 )). Le lemme suivant est un cas particulier de la formule de
+Künneth (cf par exemple [Mi, chapitre VI, remarque 8.14]).
+                                                              ∼
+Lemme 12.1. Le morphisme canonique (Rf! X1 ) ⊗LA X2 → Rf! (X1 ⊗LA f ∗ X2 ) est un quasi-
+isomorphisme bifonctoriel.
+     Le lemme qui suit est lui aussi classique.
+Lemme 12.2. Si X2 est à cohomologie localement constante, alors le morphisme canon-
+                      ∼
+ique (Rf∗ X1 ) ⊗LA X2 → Rf∗ (X1 ⊗LA f ∗ X2 ) est un quasi-isomorphisme bifonctoriel.
+Démonstration. Il suffit de démontrer le lemme pour Λ = R/ln avec n > 0. Il suffit
+aussi de traiter le cas où X2 est un faisceau. Le faisceau X2 est localement constant et
+l’isomorphisme est de nature locale, donc on peut supposer, en utilisant le théorème de
+                CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                          49
+
+changement de base lisse [Mi, chapitre VI, théorème VI.4.1] pour le morphisme f , qu’il
+est constant. Dans ce cas, le lemme 12.2 est clair.
+
+12.2. Quasi-affinité. Soit X une variété et F un faisceau constructible sur X. Soit D le
+foncteur de dualité de Verdier, D = RHom• (−, πX  !
+                                                     Λ).
+  Considérons le morphisme canonique de complexes canF : R(πX )! F → R(πX )∗ F . Le
+lemme suivant montre quel parti on peut tirer du fait que ce morphisme est un isomor-
+phisme.
+Lemme 12.3. Supposons que X est quasi-affine, purement de dimension d, que Λ est un
+corps et que D(F ) a ses faisceaux de cohomologie nuls en dehors du degré −2d.
+  Si canF est un isomorphisme, alors, canH−2d D(F ) est un isomorphisme et Hci (X, F ) = 0
+pour i 6= d.
+Démonstration. Soit j : X → Y une immersion ouverte avec Y affine. On a un diagramme
+commutatif, où les flèches sont les morphismes canoniques
+                                                    canF
+                      R(πY )! j! F                                          //   R(πY )∗ Rj∗ F
+                                    OOO                              nn77
+                                       OOO
+                                          OOO                   nnnnn
+                                             OO''             nn
+                                                           nnn
+                                              R(πY )∗ j! F
+
+Puisque Y est affine, on a H i (Y, j! F ) = 0 pour i 6∈ [0 . . . d], donc Hci (X, F ) = 0 pour
+i 6∈ [0 . . . d].
+                                                            !
+    On a (dualité de Verdier=adjonction entre R(πX )! et πX   )
+                                     Hci (X, G) ≃ H 2d−i (X, F )∗
+où G = H−2d D(F ). Par conséquent, la proposition résultera de ce que canG est un iso-
+morphisme.
+   Nous allons déduire ceci d’un résultat plus général. Soit f : X1 → X2 un morphisme
+de variétés. Soit Ci ∈ DΛb (Xi ).
+   Nous allons maintenant rappeler une construction classique, qui s’effectue en étudiant
+séparément le cas où f est propre et le cas où f est une immersion ouverte (cf [KaScha,
+exercice III.9 (iii)] pour le cas de la topologie classique).
+   On a un diagramme commutatif
+
+                   Rf! RHom• (C1 , f ! C2 )                     //        RHom• (Rf∗ C1 , C2)
+
+                                                                                      
+                              •           !                                         •
+                   Rf∗ RHom (C1 , f C2 )              ≃
+                                                                     //   RHom (Rf! C1 , C2 )
+où les flèches verticales proviennent des morphismes canoniques Rf! → Rf∗ , la seconde
+flèche horizontale provient de l’adjonction entre Rf! et f ! .
+50                         CÉDRIC BONNAFÉ ET RAPHAËL ROUQUIER
+
+     On déduit du diagramme précédent un diagramme commutatif
+                                                   ≃
+                             R(πX )! D(F )             //        (R(πX )∗ F )∗
+                             canD(F )                                       can∗F
+                                                                     
+                             R(πX )∗ D(F )         ≃
+                                                            //   (R(πX )! F )∗
+     Par conséquent, canD(F ) est un isomorphisme, donc canG aussi.
+Remarque 12.4. Dans [Ha], Haastert démontre ce résultat en supposant que canD(F )
+est un isomorphisme.
+Remarque 12.5. Si, dans le lemme 12.3, on suppose que X est affine et non pas seule-
+ment quasi-affine, alors la conclusion est bien connue.
+     Passons maintenant à l’application qui nous est utile.
+     Soit G un groupe fini agissant sur X.
+Lemme 12.6. Supposons la variété X quasi-affine, lisse, purement de dimension d, et
+supposons que Λ est un corps. Supposons de plus que les stabilisateurs de points de X
+dans G sont d’ordre inversible dans Λ.
+   Soit M un ΛG-module tel que le morphisme canonique RΓc (X)⊗LΛG M → RΓ(X)⊗LΛG M
+est un isomorphisme. Alors, le complexe RΓc (X) ⊗LΛG M n’a de l’homologie qu’en degré
+d.
+Démonstration. Soit π : X → X/G le morphisme quotient et F = π∗ ΛX ⊗ΛG MX/G .
+D’après le lemme 3.2, le morphisme canF est un isomorphisme.
+  Un calcul simple utilisant les adjonctions entre π∗ et π ! et entre ⊗ et Hom fournit
+                   D(F ) ≃ D(π∗ ΛX ⊗LΛG MX/G ) ≃ π∗ D(ΛX) ⊗LΛG (M ∗ )op
+                                                                     X/G .
+
+Puisque X est lisse, on a D(ΛX) ≃ ΛX [2d]. L’hypothèse sur les stabilisateurs de points de
+X permet d’appliquer le lemme 3.2 et donc de conclure que
+                                D(F ) ≃ π∗ ΛX ⊗ΛG (M ∗ )op
+                                                        X/G [2d].
+
+     Puisque X/G est quasi-affine, le lemme 12.3 fournit le résultat.
+12.3. Diviseurs à croisements normaux. Soit X une variété lisse et soit X un ouvert
+de X. Nous noterons i : X ֒→ X l’immersion ouverte canonique. Nous supposons que le
+complémentaire de X dans X est une réunion finie
+                                       [
+                                           Di ,
+                                             i∈I
+où les Di sont des diviseurs lisses à croisements normaux.
+                                                T         S
+   Par ailleurs, si J ⊂ I, nous noterons XJ = ( i∈J Di )−( i∈I\J Di ). Selon les conventions
+                              T
+usuelles, X∅ = X et XI = i∈I Di . Notons iJ : XJ ֒→ X l’immersion localement fermée
+canonique.
+   Le résultat suivant est classique (cf par exemple [SGA4 21 , (1.3.3.2) p. 255]) :
+                     CATÉGORIES DÉRIVÉES ET VARIÉTÉS DE DELIGNE-LUSZTIG                               51
+
+Lemme 12.7. Si J ⊂ I et si n ∈ N, alors
+                                                            ⊕(|J |)
+                                            i∗J Rn i∗ ΛX ≃ ΛXJ n .
+
+                                               Références
+[Bo]         C. Bonnafé, Mackey formula in type A, Proc. London Math. Soc. 80 (2000), 545-574.
+[Br]         M. Broué, Isométries de caractères et équivalences de Morita ou dérivées, Publ. Math.
+             I.H.E.S. 71 (1990), 45-63.
+[BrMi]       M. Broué et J. Michel, Blocs et séries de Lusztig dans un groupe réductif fini, J. Reine
+             Angew. Math. 395 (1989), 56-67.
+[DeLu]       P. Deligne et G. Lusztig, Representations of reductive groups over finite fields, Ann. of
+             Math. 103 (1976), 103-161.
+[DiMi]       F. Digne et J. Michel, Representations of finite groups of Lie type, London Math. Soc.
+             Student Texts 21, Cambridge University Press, 1991.
+[DiMiRo] F. Digne, J. Michel et R. Rouquier, Cohomologie de certaines variétés de Deligne-Lusztig
+         attachées à des éléments réguliers, en préparation.
+[Ha]         B. Haastert, Die quasiaffinität der Deligne-Lusztig Varietäten, J. of Alg. 102 (1986), 186-193.
+[Hi]         G. Hiß, On the decomposition numbers of G2 (q), J. of Alg. 120 (1989), 339-360.
+[KaScha] M. Kashiwara et P. Schapira, “Sheaves on manifolds”, Springer Verlag, 1990.
+[Lu1]        G. Lusztig, On the finiteness of the number of unipotent classes, Invent. Math. 34 (1976),
+             201-213.
+[Lu2]        G. Lusztig, Green functions and character sheaves, Ann. of Math. 131 (1990), 355-408.
+[Mi]         J.S. Milne, Étale cohomology, Princeton University Press, 1980.
+[SGA4 21 ]   P. Deligne et al., “SGA4 21 Cohomologie étale”, Springer Lecture Notes in Math. 569, 1977.
+[Ti]         J. Tits, Normalisateurs de tores. I. Groupes de Coxeter étendus, J. Algebra 4 (1966), 96-116.
+
+  Cédric Bonnafé : Université de Franche-Comté, Département de Mathématiques (CNRS
+UMR 6623), 16 Route de Gray, 25000 Besançon, FRANCE.
+E-mail : bonnafe@math.univ-fcomte.fr
+
+  Raphaël Rouquier : UFR de Mathématiques et Institut de Mathématiques de Jussieu
+(CNRS UMR 7586), Université Paris 7, 2 place Jussieu, 75251 Paris Cedex 05, FRANCE.
+E-mail : rouquier@math.jussieu.fr
+

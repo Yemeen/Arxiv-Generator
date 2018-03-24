@@ -1,0 +1,1322 @@
+                                                  HOROSPHERICAL MODEL FOR HOLOMORPHIC DISCRETE SERIES AND
+arXiv:math/0411564v1 [math.RT] 25 Nov 2004
+
+
+
+
+                                                             HOROSPHERICAL CAUCHY TRANSFORM
+
+                                                                    SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+
+
+                                                                                                Introduction
+                                             For some homogeneous spaces the method of horospheres delivers an effective way to decompose repre-
+                                             sentations in irreducible ones. For Riemannian symmetric spaces Y = G/K horospheres are orbits of
+                                             maximal unipotent subgroups of G. They are parameterized by points of the horospherical homogeneous
+                                             space ΞR = G/M N where N is a fixed maximal unipotent subgroup and M = ZK (A) as usual. The
+                                             horospherical transform maps sufficiently regular functions on Y to the corresponding average along the
+                                             horospheres. The crucial point is, that the abelian group A acts on Ξ and that this action commutes
+                                             with the action of G. The decomposition of the natural representation of G in L2 (Ξ) in irreducible ones
+                                             reduces to the decomposition relative to A. In this way we obtain all unitary spherical representations
+                                             on Y (with constant multiplicity), except the complementary series. The computation of the Plancherel
+                                             measure on Y is equivalent to the inversion of the horospherical transform.
+                                                The method of horospheres works for several other types of homogeneous spaces, including complex
+                                             semisimple Lie groups (considered as symmetric spaces) but it has very serious restrictions: discrete series
+                                             representations lie in the kernel of the horospherical transform, as well as all representations induced
+                                             from parabolic subgroups that are not minimal. In short, the kernel is the orthocomplement of the
+                                             most continuous part of the spectrum. The simplest example when the horospherical transform can
+                                             not be inverted is for the group SL(2, R). In [4, 5, 6] a modification of the method of horospheres
+                                             was suggested: complex horospherical transform (the horospherical Cauchy-Radon transform). For a
+                                             homogeneous space X we consider the complexification XC and instead of real horospheres on X we
+                                             consider complex horospheres on XC without real points (they do not intersect X). The integration along
+                                             a real horosphere is equivalent to the integration of a δ-function on X with support on this horosphere. In
+                                             the complex version we replace this δ-function by a Cauchy type kernel with singularities on the complex
+                                             horosphere without real point. In [4, 5] it is shown that such a complex horospherical transform has
+                                             no kernel for SL(2; R) and that it reproduces the Plancherel formula; in [6] it is shown for all compact
+                                             symmetric spaces.
+                                                The objective of this paper is to show that the complex horospherical transform has no kernel on the
+                                             holomorphic discrete series. Holomorphic discrete series exist for affine symmetric spaces X = G/H of
+                                             Hermitian type; G is here a group of Hermitian type [7, 21] . The corresponding part of L2 (X) can
+                                             be realized as boundary values of Hardy space H2 (D+ ) in a Stein tube D+ ⊂ XC with edge X [11].
+                                             Our aim is to define a complex horospherical transform which has no kernel on holomorphic H-spherical
+                                             representations.
+
+                                                 1991 Mathematics Subject Classification. 22E46.
+                                                 Key words and phrases. Semisimple Lie groups, symmetric spaces, horospheres, horospherical transform, Cauchy kernel,
+                                             Hardy spaces.
+                                                 The first author was supported by the Louisiana Board of Regents grant Visiting Experts in Mathematics. The last two
+                                             authors were supported by the Research in Pairs program of the Mathematisches Forschungsinstitut, Oberwolfach. The
+                                             last author was supported by NSF grant DMS-0139783 and DMS-0402068.
+                                                                                                        1
+2                       SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+   The first step is a construction of the space that is going to be the image of the complex horospherical
+transform. For that, we consider those complex horospheres in the Stein symmetric space XC = GC /HC
+that are parameterized by points of the complex horospherical space Ξ = GC /MC NC . In Ξ we then
+consider an orbit Ξ+ of G × T+ where T+ is an abelian semigroup in the complex torus TC = AT with
+the compact torus T as the edge. The space O(Ξ+ ) of holomorphic functions on Ξ+ is the Fréchet model
+of the holomorphic discrete series. More exactly, if we decompose this representation with respect to
+the compact torus T we obtain G-modules which are lowest weight modules (if they are irreducible); we
+obtain all such modules with multiplicity one. Using the abelian semigroup T+ we can define a Hardy
+type space H2 (Ξ+ ) with spectrum ”almost all” of the holomorphic discrete series.
+   The next step is a geometrical background for the construction of the horospherical transform. Firstly,
+we prove that the horospheres E(ξ) parameterized by points ξ ∈ Ξ+ do not intersect X. We construct
+a simple Cauchy type kernel which has no singularities on X and the edge of its singularities coincides
+with E(ξ). Using this kernel we define the horospherical Cauchy transform from L1 (X) to O(Ξ+ ) which
+can be extended on L2 (X). The horospherical transform decomposed under T yields the holomorphic
+spherical Fourier transform.
+   The last step is the inversion of the horospherical Cauchy transform. We give the Radon type inversion
+formula using results from [14] for the holomorphic discrete series. Let us remark that for X = SL(2, R)
+the inversion formula was obtained in [4, 5] with tools from integral geometry on quadrics. This method
+automatically extends on any symmetric spaces of Hermitian type of rank 1, i.e., the hyperboloids of
+signature (2, n). Let us also pay attention to the complete similarity of formulas of this paper and
+formulas in [6] for compact symmetric spaces. It confirms the view that finite-dimensional spherical
+representations are similar to representations of holomorphic discrete series.
+
+                               1. Symmetric spaces of Hermitian type
+The objective of this section is to set up a standard choice of terminology that will be used throughout
+the text.
+  Let us fix some conventions upfront. For a real Lie algebra g let us denote by gC = g ⊗R C its
+complexification. Likewise, if not stated otherwise, for a connected Lie group G we write GC for its
+universal complexification. If ϕ : G → H is a homomorphism of connected Lie groups, then we will also
+denote by ϕ
+      • the derived homomorphism dϕ(1) : Lie(G) → Lie(H),
+      • the extension of ϕ to a holomorphic homomorphism GC → HC .
+    Let G be a connected semisimple Lie group with Lie algebra g. We assume that G ⊂ GC and that GC
+is simply connected. Let τ : G → G be a non-trivial involution and write H, resp. HC , for the τ -fixed
+points in G, resp. GC . The object of concern is the affine symmetric space X = G/H. We observe that
+X is contained in its complexification XC = GC /HC as a totally real submanifold. Write x0 = HC for the
+base point in XC .
+    Let h be the Lie algebra of H and note that g = h + q with τ |q = −idq . The symmetric pair (g, h) is
+called irreducible if g does not contain any τ -invariant ideals except the trivial ones, {0} and g. In that
+case, either g is simple or g = g1 × g1 with g1 simple and τ (x, x′ ) = (x′ , x). We say that X is irreducible,
+if (g, h) is irreducible. From now on we will assume, that X is irreducible.
+    Fix a Cartan involution θ : G → G commuting with τ . Denote by K < G the subgroup of θ-fixed
+points and write Y = G/K for the associated Riemannian symmetric space. Write k for the Lie algebra
+of K. Then g = k + s with θ|s = −ids . Notice that the universal complexification KC of K naturally
+identifies with the θ-fixed points in GC .
+    We will assume that G is a Lie group of Hermitian type, i.e. Y is Riemannian symmetric space of
+Hermitian type. The assumption can be phrased algebraically: z(k) 6= {0} with z(k) the center of k.
+                             HOROSPHERICAL MODEL FOR DISCRETE SERIES                                      3
+
+
+   We assume that τ induces an anti-holomorphic involution on Y and then call X an affine symmetric
+space of Hermitian type.
+Remark 1.1. (a) Our assumptions on G and τ can be phrased algebraically, namely:
+(A)                                          z(k) ∩ q 6= {0} .
+Let us mention that another way to formulate (A) is to say that q admits an H-invariant regular elliptic
+cone, i.e. X is compactly causal [10].
+(b) Symmetric spaces of Hermitian type resemble compact symmetric spaces on an analytical level.
+Combined they form the class of symmetric spaces which admit lowest weight modules in their L2 -
+spectrum (holomorphic discrete series).
+
+  Since X is irreducible, it follows that z(k) ∩ q = iRZ0 is one dimensional. It is possible to normalize
+Z0 in such a way that the spectrum of ad(Z0 ) is {−1, 0, 1}. The zero-eigenspace is kC . We denote the
++1-eigenspace in sC by s+ , and the −1-eigenspace by s− .
+  Let t be a maximal abelian subspace in q containing iZ0 . Then t is contained in k ∩ q. Set a = it and
+note that aC = tC .
+  Let ∆ be the set of roots of tC in gC ,
+                         ∆n = {α ∈ ∆ | gα
+                                        C ⊆ sC } = {α ∈ ∆ | α(Z0 ) ∈ {−1, 1}}
+
+and
+                            ∆k = {α ∈ ∆ | gα   C ⊆ kC } = {α ∈ ∆ | α(Z0 ) = 0} .
+              ˙
+Then ∆ = ∆k ∪∆n . The elements of ∆n are called non-compact roots, and the elements in ∆k are called
+compact roots. We choose an ordering in it∗ such that α(Z0 ) > 0 implies that α ∈ ∆+    +
+                                                                                   n ⊆ ∆ . Let W be
+the Weyl group of ∆ and Wk the subgroup generated by the reflections coming from the compact roots.
+As s(Z0 ) = Z0 for all s ∈ Wk , it follows that ∆+n is Wk -invariant.
+
+1.1. Polyhedrons, cones and the minimal tubes. Set A = exp(a), AC = exp(aC ), T = exp(t) and
+TC = exp(tC ). We note that
+                                          AC = TC = T A ≃ T × A .
+                                                        −α
+   For α ∈ ∆ let α̌ ∈ a be its coroot, i.e. α̌ ∈ [gα
+                                                   C , gC ] ∩ a and α(α̌) = 2. Then
+                                                      X
+(1.1)                                          Ω=          R>0 · α̌
+                                                 α∈∆+
+                                                    n
+
+defines a Wk -invariant open convex cone in a = it which contains Z0 . Often one refers to Ω as the minimal
+cone (it is denoted cmin in [10]). Let us remark that one can characterize Ω as the smallest Wk -invariant
+open convex cone in a which contains a long non-compact coroot, i.e.
+(1.2)                          Ω = co (Wk (R>0 · α̌))      (α long in ∆+
+                                                                       n).
+
+Here co(·) denotes the convex hull of (·).
+  We set A+ = exp(Ω) and note that A+ ⊂ A is an open semigroup. Moreover
+                                      T+ = T exp(Ω) = T A+ ⊂ TC
+defines a semigroup and complex polyhedron with edge T . We also use the notation A− = exp(−Ω) and
+T− = T A− .
+   Define G-invariant subsets of XC by
+                                         D± = GA± · x0 ⊂ XC .
+According to [18] D+ and D− are Stein domains in XC with X = G·x0 as Shilov boundary. Subsequently
+we will refer to D+ and D− as minimal tube in XC with edge X.
+4                      SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+1.2. Minimal θτ -stable parabolics. Denote by g 7→ g the complex conjugation in GC with respect to
+the real form G. Let                M                    M
+                             n+
+                              C =       kα
+                                         C  and n−  C =      k−α
+                                                              C .
+                                        α∈∆+
+                                           k                      α∈∆+
+                                                                     k
+
+Set                                                 M
+                                      nC = n+
+                                            C ⊕           gα    +    +
+                                                           C = nC ⊕ s ,
+                                                   α∈∆+
+                                                      n
+
+                                   mC = {U ∈ hC | (∀V ∈ t) [U, V ] = 0} ,
+and
+                                          p C = m C ⊕ t C ⊕ nC .
+Notice, that mC is contained in kC , as Z0 ∈ tC . The Lie algebra pC is a minimal θτ -stable parabolic
+subalgebra of gC . Define subgroups of GC by MC = ZHC (tC ) ⊂ KC , and NC = exp(nC ).
+   Note that TC = AC . Then the prescription
+                                        PC = MC AC NC = MC TC NC
+defines a minimal θτ -stable parabolic subgroup of GC whose Lie algebra is pC . Write Γ = MC ∩AC = M ∩T
+and observe that Γ is a finite 2-group. The isomorphic map
+                                (MC ×Γ AC ) × NC → PC , ([m, a], n) 7→ man
+yields the structural decomposition of PC .
+   We denote by t ⊆ c a τ -stable Cartan subalgebra of g contained in k. Then c = t ⊕ ch , where ch = c ∩ h.
+Denote by Σ the set of roots of cC in gC . Similarly we set Σn , the set of non-compact roots, Σk , the set
+of compact roots. We choose a positive system Σ+ such that Σ+ |t \{0} = ∆+ .
+   Define tori in G by C = exp c and Ch = exp ch . We note that C = T Ch ≃ T ×Γ Ch .
+
+                  2. Complex Horospheres I: Definition and basic properties
+  The objective of this section is to discuss (generic) horospheres on the complex symmetric space
+XC = GC /HC . We will show that the space of horospheres is GC -isomorphic to the homogeneous space
+Ξ = GC /MC NC . Further we will introduce a G-invariant subdomain Ξ+ ⊂ Ξ which will be a central
+object for the rest of this paper.
+  Set
+                                            Ξ = GC /MC NC
+and write ξ0 = MC NC for the base point of Ξ. Usually we express elements ξ ∈ Ξ as ξ = g · ξ0 for g ∈ GC .
+  Consider the double fibration
+(2.1)                                               GC /MC
+                                                         II
+                                              π1   xxx     II π2
+                                                             II
+                                                  x
+                                               xxx             II
+                                                                 I$
+                                            x|x
+                                        Ξ                             XC .
+By a horosphere in XC we understand a subset of the form
+(2.2)                                 E(ξ) = π2 (π1−1 (ξ))      (ξ ∈ Ξ) .
+For ξ = g · ξ0 we record that
+                                   E(ξ) = gMC NC · x0 = gNC · x0 ⊂ XC
+(use MC ⊂ HC ).
+   Similarly, for z ∈ XC we set
+(2.3)                                        S(z) = π1 (π2−1 (z)) .
+                               HOROSPHERICAL MODEL FOR DISCRETE SERIES                                      5
+
+
+If z = g · x0 for g ∈ GC , then notice S(z) = gHC · ξ0 . Moreover, for z ∈ XC and ξ ∈ Ξ one has the
+incidence relations
+(2.4)                      z ∈ E(ξ) ⇐⇒ π1−1 (ξ) ∩ π2−1 (z) 6= ∅ ⇐⇒ ξ ∈ S(z) .
+  The space of horospheres on XC shall be denoted by Hor(XC ), i.e.
+                                         Hor(XC ) = {E(ξ) | ξ ∈ Ξ} .
+Our first objective is to show that Ξ parameterizes Hor(XC ):
+Proposition 2.1. The map
+                                        E : Ξ → Hor(XC ), ξ 7→ E(ξ)
+is a GC -equivariant bijection.
+Proof. Surjectivity and GC -equivariance are clear by definition. It remains to establish injectivity. For
+             E(ξ )
+that write GC 0 for the stabilizer of E(ξ0 ) in GC . By GC -equivariance it is enough to show that
+  E(ξ )
+GC 0 ⊆ MC NC . Assume that g · E(ξ0 ) = E(ξ0 ). Then gNC ⊆ NC HC . In particular, g = nh ∈ NC HC .
+      E(ξ )                      E(ξ )                        E(ξ )
+As GC 0 is a group, and n ∈ GC 0 , it follows, that h ∈ GC 0 . By Lemma 2.2 from below it follows
+that h ∈ MC . Hence g = h(h−1 nh) ∈ MC NC , as MC normalizes NC .                                       
+Lemma 2.2. Assume that h ∈ HC is such that h · E(ξ0 ) = E(ξ0 ). Then h ∈ MC .
+Proof. Identify the tangent space Tx0 (GC /HC ) with gC /hC . Then, as (hNC h−1 ) · x0 = NC · x0 , it follows
+that
+                                        Ad(h)(nC ⊕ hC ) = nC ⊕ hC .
+Thus, if U ∈ nC , there exists Z ∈ nC and L ∈ hC such that Ad(h)U = Z + L. Applying (1 − τ ) this
+equality, we get Ad(h)(U − τ (U )) = Z − τ (Z). As qC = (1 − τ )(nC ) ⊕ tC , and this sum is orthogonal with
+respect to Killing form, it follows that Ad(h)tC = tC . In particular, h ∈ NHC (tC ).
+    We recall the Riemannian dual X r = Gr /K r of X = G/H which corresponds to the Lie algebras
+g = kr + sr with kr = (h ∩ k) + i(h ∩ s) and sr = i(q ∩ k) + (q ∩ s). Notice that a is maximal abelian in sr .
+ r
+
+    To continue with the proof, we observe that NHC (tC ) = NK r (a)MC . Thus we may assume that
+h ∈ NK r (a). Write σr for the complex conjugation in GC with respect to the real form Gr . Then taking
+σ r fixed points in hNC ∈ NC HC yields hN r ∈ N r K r with N r = Gr ∩ NC . Thus the situation is reduced
+to the Riemannian case where it follows from [9], p.78.                                                    
+  It is crucial to observe that there is a TC -action on Ξ which commutes with the left GC -action:
+Proposition 2.3. Let ξ = g · ξ0 ∈ Ξ, g ∈ GC . For t ∈ TC the prescription
+(2.5)                                            ξ · t = gt · ξ0
+defines an element of Ξ. In particular,
+(2.6)                                     TC × Ξ → Ξ, (t, ξ) 7→ ξ · t
+defines an action of TC on Ξ, which commutes with the natural action of G on Ξ.
+Proof. As TC normalizes MC NC it follows that (2.5) is defined. Finally, (2.5) implies that (2.6). defines
+a left-action of TC .                                                                                   
+  It is obvious that the map
+(2.7)                             (GC × TC ) × Ξ → Ξ, ((g, t), ξ) 7→ g · ξ · t
+is a holomorphic action of the complex group GC × TC on the homogeneous space Ξ.
+   The remainder of this section will be devoted to the definition and basic discussion of an important
+G × T -invariant subset Ξ+ of Ξ.
+6                       SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+    We recall from Subsection 1.1 the polydisc T+ = T A+ and define
+                                         Ξ+ = GT+ · ξ0 = GA+ · ξ0 .
+We record that Ξ+ is a (G × T )-invariant subset of Ξ.
+   The set GPC is open in GC and G ∩ PC = M T . Hence G/M T can be viewed as an open, complex
+submanifold of the flag manifold F = GC /PC . We write F+ = GPC /PC for the image of G/M T in F and
+call F+ the flag domain. Although obvious we emphasize that F+ is G-homogeneous.
+   Notice G/M T is the base space of the holomorphic fiber bundle G/M ×T T+ → G/M T with fiber
+T+ /Γ. There is a natural action of G × T on G/M ×T T+ given by
+
+                 (G × T ) × (G/M ×T T+ ) → G/M ×T T+ , ((g, t), [xM, a]) 7→ [gxM, at] .
+    The next lemma gives us basic structural information on Ξ+ .
+Lemma 2.4. The set Ξ+ is open in Ξ = GC /MC NC . Moreover, the mapping
+                                  Φ : G/M ×T T+ → Ξ, [gM, t] 7→ gt · ξ0
+is a G × T -equivariant biholomorphism onto Ξ+ .
+Proof. Clearly, Φ is a defined G × T -equivariant map with im Φ = Ξ+ . By the definition of the complex
+structure of G/M T the holomorphicity of the map is clear, too. Let us show that Φ is injective. For that
+assume that g1 t1 · ξ0 = g2 t2 · ξ0 , gj ∈ G, tj ∈ T+ . By G-equivariance we may assume that g2 = 1. Then
+g1 ∈ G ∩ PC = M T and w.lo.g. we may assume that g1 ∈ M . Consequently, as TC ∩ MC NC = Γ, we
+obtain t1 ∈ t2 Γ, i.e. [M, t1 ] = [M, t2 ]. Hence Φ is injective.
+   A standard computation yields that dΦ is an immersion and a simple dimension count shows that
+dim G/M T + dim T+ = dim Ξ. In particular, Φ is a submersion and im Φ = Ξ+ is open, concluding the
+proof of the lemma.                                                                                     
+
+2.1. Fiberings. To conclude this section we mention three natural fibrations in relation to Ξ+ and F+ .
+   Write S + = exp(s+ ) and recall that the map
+                                 Y = G/K → GC /KC S + , gK 7→ gKC S +
+is a G-equivariant open embedding. Henceforth Y will be understood as an open subset of the flag
+manifold GC /KC S + .
+Lemma 2.5. The following assertions hold:
+      (i) The natural map
+                                        Ξ+ → F+ , zMC NC 7→ zPC
+          is a holomorphic fibration with fiber T+ /Γ.
+     (ii) The natural map
+                                           F+ → Y, gM T 7→ gK
+           is a holomorphic fibration with fiber the flag variety K/M T .
+     (iii) The natural map
+                                           Ξ+ → Y, gt · ξ0 7→ gK
+          is a holomorphic fibration with fiber K/M ×T T+ .
+Proof. (i) follows from G ∩ PC = M T and (ii) is obvious. Finally (iii) is a consequence (i) and (ii).   
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                            7
+
+
+                                3. The G × T -Fréchet module O(Ξ+ )
+   The natural action of G×T on Ξ+ gives rise to a representation of G×T on the Fréchet space O(Ξ+ ) of
+holomorphic functions on Ξ+ . We will decompose O(Ξ+ ) with respect to this action. By the compactness
+of T , it is clear that O(Ξ+ ) decomposes discretely under T . It turns out that each T -isotypical component
+is the section module of a holomorphic line bundle over the flag domain F+ and that all such section
+modules arise in this manner.
+   In the second part of this section we turn our attention to G×T -invariant Hilbert spaces of holomorphic
+functions on Ξ+ . By definition these are unitary G × T -modules H with continuous G × T -equivariant
+embeddings into O(Ξ+ ). There are many interesting examples such as weighted Bergman and weighted
+Hardy spaces. We will discuss the Hardy space H2 (Ξ+ ) on Ξ+ with constant weight and show that
+H2 (Ξ+ ) constitutes a natural model for the the H-spherical holomorphic discrete series of G.
+3.1. The decomposition of O(Ξ+ ). In Section 2 we exhibited a natural action of G × T on Ξ+ , namely
+
+(3.1)                           (G × T ) × Ξ+ → Ξ+ , ((g, t), ξ) 7→ g · ξ · t .
+We recall that O(Ξ+ ) becomes a Fréchet space when endowed with the topology of compact convergence.
+Remark 3.1. Finite dimensional representation theory of GC shows that Ξ (and hence Ξ+ ) is holomor-
+phically separable. In particular O(Ξ+ ) 6= {0}.
+  Denote by GL(O(Ξ+ )) the group of bounded invertible operators on O(Ξ+ ).
+  The action (3.1) induces a continuous representation of G × T on O(Ξ+ ):
+
+                   L ⊗ R : G × T → GL(O(Ξ+ )), ((L ⊗ R)(g, t)f ) (ξ) = f (g −1 · ξ · t−1 ) ,
+(g, t) ∈ G × T , f ∈ O(Ξ+ ), and ξ ∈ Ξ+ .
+   We first decompose O(Ξ+ ) under the action of the compact torus T . Denote by Td          /Γ the character
+group of T /Γ, i.e. Td/Γ = Homcont (T /Γ, S1 ). In the sequel we identify Td
+                                                                           /Γ with the lattice
+
+                             Λ = {λ ∈ a∗ | ∀U ∈ (exp |t )−1 (Γ) λ(U ) ∈ 2πiZ} .
+Explicitly, to λ ∈ Λ one associates the character χλ (tΓ) = eλ(log t) . Often we will write tλ for χλ (tΓ).
+  The assumption that GC is simply connected allows an uncomplicated description of the lattice Λ.
+                    n                            o
+                                         hλ,αi
+Lemma 3.2. Λ = λ ∈ a∗ | (∀α ∈ ∆) hα,αi         ∈Z .
+                                              hλ,αi
+Proof. ′′ ⊆′′ : Let λ ∈ Λ. We first show that hα,αi ∈ Z for all α ∈ ∆k . For that observe that the compact
+symmetric space K/H ∩ K embeds into G/H via the natural map
+                                   K/H ∩ K → G/H, k(H ∩ K) 7→ kH .
+                                         hλ,αi                                                   ′′
+Thus [8], Ch. V, Th. 4.1, yields that    hα,αi   ∈ Z for all α ∈ ∆k . To complete the proof of        ⊆′′ we still
+                 hλ,αi
+have to verify       ∈ Z for all α ∈ ∆n . Fix α ∈ ∆n . Standard structure theory implies that there is an
+                 hα,αi                                                           
+                                                                              i 0
+embedding of symmetric Lie algebras (su(1, 1), so(1, 1)) → (g, h) such that         ∈ su(1, 1) is mapped
+                                                                              0 −i
+to iα̌ ∈ t. As GC is simply connected, we thus obtain an immersive map SU(1, 1)/SO(1, 1) → G/H. In
+            hλ,αi
+particular, hα,αi ∈ Z must hold.
+  ′′                     hλ,αi
+      ⊇′′ : Suppose that hα,αi ∈ Z holds for all α. Recall the extension t ⊆ c of t to a compact Cartan
+subalgebra of g. In the sequel we consider λ as an element of c∗ which is trivial on c ∩ h. On p. 537 in [8],
+it is shown that λ is analytically integral for C = exp c (again this needs that GC is simply connected).
+8                      SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+In particular λ defines an element χλ ∈ T̂ . It remains to show that χλ |Γ = 1. As M = ZH∩K (a) and
+Γ = M ∩ T , this reduces to an assertion on the compact symmetric space K/H ∩ K, where it follows
+from [8], Ch. V, Th. 4.1.                                                                         
+
+    For each λ ∈ Λ define the λ-isotypical component of O(Ξ+ ) by
+
+
+(3.2)                       O(Ξ+ )λ = {f ∈ O(Ξ+ ) | (∀t ∈ T ) R(t)f = tλ f } .
+As (R, O(Ξ+ )) is a continuous representation of the compact torus T on a Fréchet space, the Peter-Weyl
+theorem yields
+                                                    M
+(3.3)                                    O(Ξ+ ) =      O(Ξ+ )λ
+                                                     λ∈Λ
+
+  Each O(Ξ+ )λ is a G-module for the representation L. In order to describe them explicitly we recall
+some facts on holomorphic line bundles.
+  For λ ∈ Λ we write Cλ for C when considered as a M T -module with trivial M -action and T acting
+by χλ . Recall that G/M T inherits a complex manifold structure through its identification with the flag
+domain F+ . In particular, to each λ ∈ Λ one associates the holomorphic line bundle
+(3.4)                                      Lλ = G ×MT C−λ .
+Write O(Lλ ) for its G-module of holomorphic sections, i.e. O(Lλ ) consists of smooth functions f : G → C
+such that
+        • f (gmt) = t−λ f (g) for g ∈ G, t ∈ T and m ∈ m.
+        • G/M T → Lλ , gM T 7→ [gM T, f (g)] is holomorphic.
+    The restriction of Lλ to the flag variety K/M T yields the holomorphic line bundle
+                                           Kλ = K ×MT C−λ
+over K/M T . Write Λ0 for the   ∆−
+                                 k -dominant   elements of Λ, i.e.
+
+                                                                  	
+(3.5)                            Λ0 = λ ∈ Λ | (∀α ∈ ∆+
+                                                     k ) hλ, αi ≤ 0 .
+
+  According to Bott [1], Vλ = O(Kλ ) is of finite dimension, and non-trivial if and only if λ ∈ Λ0 . By
+Lλ = G ×MT C−λ ≃ G ×K (K ×MT C−λ ) we retrieve the standard isomorphism
+                                         O(Lλ ) ≃ O(G ×K Vλ ) .
+In particular,
+(3.6)                               O(Lλ ) 6= {0}     ⇐⇒      λ ∈ Λ0 .
+   We remind the reader that the T -weight spectrum of πλ is contained in λ + Z≥0 [∆+ ]. In particular,
+O(Lλ ), if irreducible, is a lowest weight module for G with respect to the positive system ∆+ and lowest
+weight λ.
+   Finally we establish the connection between O(Ξ+ )λ and O(Lλ ). For that let us denote by Ξ0 the
+pre-image of F+ in Ξ, i.e.
+                                              Ξ0 = GTC · ξ0 .
+Notice that Ξ+ ⊂ Ξ0 . Holomorphicity and T -equivariance yield O(Ξ+ )λ = O(Ξ0 )λ . Likewise holds for
+O(Lλ ). Thus holomorphic extension and restriction gives a natural G-isomorphism O(Ξ+ )λ ≃ O(Lλ ).
+  We summarize our discussion.
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                      9
+
+
+Proposition 3.3. The G × T -Fréchet module O(Ξ+ ) decomposes as
+                                              M
+                                     O(Ξ+ ) =      O(Ξ+ )λ .
+                                                           λ∈Λ0
+
+Moreover, holomorphic extension and restriction canonically identifies O(Ξ+ )λ with the section module
+O(Lλ ).
+  We conclude this subsection with some comments on unitarization of the section modules O(Lλ ).
+Remark 3.4. Let λ ∈ Λ0 and let us denote by O(Lλ )K−fin the (g, K)-module of K-finite sections of
+O(Lλ ). Let us assume that O(Lλ )K−fin is irreducible. Then O(Lλ )K−fin identifies with the generalized
+Verma module N (λ) = U(gC ) ⊗U (kC +s− ) Vλ and the Shapovalov form on N (λ) gives rise to the (up to
+scalar unique) contravariant Hermitian form on O(Lλ )K−fin . We say that O(Lλ )K−fin is unitarizable
+if the Shapovalov form is positive definite. Another way to formulate it is that there exists a unitary
+lowest weight representation (πλ , Hλ ) such that the (g, K)-module of K-finite vectors HλK−fin is (g, K)-
+isomorphic to O(Lλ )K−fin . In this situation O(Lλ ) is then naturally G-isomorphic to the hyperfunction
+vectors Hλ−ω of πλ .
+    We want to emphasize that not all λ ∈ Λ0 correspond to unitarizable modules O(Lλ )K−fin (a necessary
+condition is λ|Ω ≥ 0 and we refer to [3] for more precise information). However, we want to stress that
+O(Lλ )K−fin is automatically unitarizable if λ|Ω is sufficiently positive (for example if condition (3.12)
+below is satisfied).
+3.2. The Hardy space on Ξ+ . The objective of this section is to introduce the Hardy space on Ξ+ and
+to prove some of its basic properties.
+   We begin with some measure theoretic preliminaries. The groups GC and MC NC are unimodular, and
+hence Ξ = GC /MC NC carries a GC -invariant measure µ.
+   Recall that M is a compact subgroup of G and denote by dm a normalized Haar measure on M .
+Further we let dg and d(gM ) denote left G-invariant measures on G, resp. G/M , normalized subject to
+the condition                   Z             Z   Z
+                                   f (g) dg =         f (gm) dm d(gM )
+                                  G                 G/M        M
+for all f ∈ L1 (G).
+   Notice that the stabilizer in G of any point ξ ∈ T+ · ξ0 ⊂ Ξ+ is the compact subgroup M . In particular
+one has
+                                   Z                       Z
+(3.7)                                     f (g · ξ) dg =           f (g · ξ) d(gM )
+                                      G                     G/M
+for all ξ ∈ T+ · ξ0 and integrable functions f on Ξ+ .
+   Write k·k2 for the L2 -norm on L2 (G). Let us remark that the representation (R, O(Ξ+ )) of T naturally
+extends to a representation of the semigroup t ∈ T− ∪T , also denoted by R. Furthermore if f ∈ O(Ξ+ ) and
+t ∈ T− then we can define the restriction of R(t)f to G by R(t)f |G : G → C by R(t)f |G (g) = f (gt−1 · ξ0 ).
+The Hardy norm of f ∈ O(Ξ+ ) is defined by
+                                          Z
+(3.8)                        kf k2 = sup     |f (gt · ξ0 )|2 dg = sup kR(t)f |G k22 .
+                                      t∈T+    G                         t∈T−
+
+Let
+(3.9)                              H2 (Ξ+ ) = {f ∈ O(Ξ+ ) | kf k < ∞} .
+Obviously
+(3.10)                                 kR(t)f k ≤ kf k             for all t ∈ T−
+10                            SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+and hence T− acts on H2 (Ξ+ ) by contractions. Note, that R(t)f |G is right M -invariant, and, by the
+definition of the Hardy space norm R(t)f |G ∈ L2 (G/M ) ⊆ L2 (G).
+Lemma 3.5. The space H2 (Ξ+ ) is a Hilbert space. Furthermore, the following holds:
+    (i) For ξ ∈ Ξ+ the point evaluation map evξ : H2 (Ξ+ ) ∋ f 7→ f (ξ) ∈ C is continuous.
+   (ii) The boundary value map β : H2 (Ξ+ ) → L2 (G/M ) ⊆ L2 (G)
+                                               β(f ) =     lim     R(t)f |G
+                                                         T− ∋t→e
+
+             is an isometry into L2 (G/M ).
+Proof. The proof follows a standard procedure and will be more a sketch. We refer to [11], in particular
+the proof of Theorem 2.2, for a detailed discussion of the underlying methods.
+   Let ξ ∈ Ξ+ . Then there exist relatively compact open sets UG ⊆ G and UT ⊆ T+ such that ξ ∈
+UG UT · ξ0 . Thus, there is a constant c > 0 such that the Bergman-type estimate
+                                     Z
+                                               |f (ξ)|2 dµ(ξ) ≤ c · kf k2
+                                           UG UT ·ξ0
+
+holds for all f ∈ H (Ξ+ ). This implies that H2 (Ξ+ ) is complete, and that point evaluations are continu-
+                      2
+
+ous.
+   Write C+ = {z ∈ C | Im(z) > 0} for the upper half plane and fix Z ∈ iΩ. We notice that the map
+T− ∋ t 7→ R(t)f |G ∈ L2 (G) is well defined and holomorphic. Hence
+                              Lf : C+ → L2 (G/M ); Lf (z) = R(exp(zZ))f |G ∈ L2 (G/M )
+defines a holomorphic function on C+ .
+   By Lemma 2.3 in [11] it follows, that limz→0 Lf (z) exists, and is monotonically increasing as s ց 0
+along each line segment exp(siZ), or, because of the right invariance of dg, on each t exp(siZ), t ∈ T . As
+in [11], one shows, that this limit is independent of Z. Thus, we get a boundary value map β : H2 (Ξ+ ) →
+L2 (G/M ), defined by
+                                             β(f ) = lim R(t)f |G .
+                                                          t→e
+By the definition of the Hardy space norm, we obviously have
+                                                   kβ(f )k2 ≤ kf k .
+But, as the norm kR(exp(sZ))f k2 is monotonically increasing for s ց 0, it follows that
+                                              kR(exp(sZ))f k2 ≤ kβ(f )k
+for all s ∈ R+ . Thus
+                                                kR(t)f |G k ≤ kβ(f )k .
+It follows, that β : H (Ξ+ ) → L (G) is an isometry, and hence H2 (Ξ+ ) is a Hilbert space.
+                          2           2
+                                                                                                         
+   Clearly L ⊗ R defines a unitary representation of G × T on H2 (Ξ+ ). We are going to decompose
+     2
+H (Ξ+ ) with respect to this action. As before we begin with the decomposition under T . For λ ∈ Λ the
+λ-isotypical component of H2 (Ξ+ ) is given by H2 (Ξ+ )λ = H2 (Ξ+ ) ∩ O(Ξ+ )λ . The Peter-Weyl theorem
+yields the orthogonal decomposition
+                                                           M
+(3.11)                                        H2 (Ξ+ ) =          H2 (Ξ+ )λ
+                                                           λ∈Λ0
+         2
+of H (Ξ+ ) in G-modules.
+   We draw our attention to the unitary G-modules H2 (Ξ+ )λ inside of O(Ξ+ )λ .
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                  11
+
+
+  Suppose that H2 (Ξ+ )λ 6= {0}. Then O(Lλ ) 6= {0} and the restriction mapping
+                                            H2 (Ξ+ )λ → O(Lλ )
+gives a G-equivariant embedding. Moreover β(H2 (Ξ+ )λ ) ⊂ L2 (G). Thus H2 (Ξ+ )λ is a module of the
+holomorphic discrete series of G. In terms of λ this means that λ satisfies the Harish-Chandra condition
+[7]
+(3.12)                               hλ − ρ(c), αi > 0       (∀α ∈ Σ+
+                                                                    n),
+                 P
+where ρ(c) = 12 α∈Σ+ α.
+   Write Λsd for the set of all λ ∈ Λ0 which satisfy (3.12).
+   Conversely, let λ ∈ Λsd and write Hλ for a corresponding unitary lowest weight module with lowest
+weight λ. Denote by vλ ∈ Hλ a normalized lowest weight vector and write d(λ) for the formal dimension
+(see [7] or (5.13) below). It is then straightforward that
+                                                        p                          
+                        Hλ → H2 (Ξ+ ), v 7→ gt · ξ0 7→ d(λ) · t−λ hπλ (g −1 )v, vλ i
+
+defines a G-equivariant isometric embedding. Hence H2 (Ξ+ )λ ≃ Hλ 6= {0}.
+   Summarizing our discussion we obtain the Plancherel decomposition for H2 (Ξ+ ).
+Proposition 3.6. As a G-module the Hardy space decomposes as
+                                                 M
+                                     H2 (Ξ+ ) ≃     Hλ .
+                                                         λ∈Λsd
+
+Remark 3.7. (a) The set Λsd describes the set of all H-spherical unitary lowest weight representations
+(up to equivalence) whose matrix coefficients are square integrable on G, i.e. Λsd is the spectrum of the
+H-spherical holomorphic discrete series of G.
+(b) Later we well mainly deal with the spectrum Λ2 of the holomorphic discrete series on X. One has
+                                                 Λ2 ⊆ Λsd
+with equality precisely for the equal rank cases [20, 21].
+
+                4. Complex Horospheres II: Horospheres with no real points
+We continue our discussion of complex horospheres from Section 2. We will introduce the notion of
+horosphere without real points and investigate Ξ+ with respect to this property. In addition we will
+prove some dual statements for the minimal tubes D± .
+Definition 4.1. We say that the complex horosphere E(ξ) ⊂ XC has no real points if E(ξ) ∩ X = ∅. We
+denote by Ξnr ⊂ Ξ the subset of those ξ which correspond to horospheres with no real points.
+Lemma 4.2. The set Ξnr is a G-invariant subset of Ξ.
+Proof. Let ξ ∈ Ξnr and g ∈ G. Assume, that x ∈ E(g · ξ) ∩ X. Then g −1 x ∈ E(ξ) ∩ X, contradicting the
+assumption that E(ξ) has no real points.                                                            
+
+   Recall the open G-invariant subset Ξ+ = GA+ · ξ0 ⊂ Ξ. In the sequel it will be useful to consider with
+Ξ+ its pre-image Ξ  e + in GC , i.e.
+                                            Ξe + = GA+ MC NC .
+                 e + is a left G and right MC NC invariant open subset of GC .
+It is clear that Ξ
+   Next we draw our attention to the Zariski open subset NC AC HC of GC . Our objective is to study Ξ e+
+in relation to NC AC HC .
+12                       SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+Remark 4.3. Notice that Ξ  e −1 ⊂ NC AC HC is equivalent to G ⊂ NC AC HC . However the latter is true
+                             +
+only for rank X = 1, i.e. dim t = 1. In general, G ∩ NC AC HC is an open and dense subset of G (cf.
+Theorem 4.5 below).
+     There is a right HC and left NC -invariant holomorphic middle-projection
+                                       aH : NC AC HC → AC /Γ, z 7→ aH (x)
+In particular, for each λ ∈ Λ we obtain natural (NC , HC )-invariant holomorphic maps
+                                         NC AC HC → C, x 7→ aH (x)λ .
+The holomorphic function NC AC · x0 → AC /Γ induced by aH shall also be denoted by aH .
+  The function aH enables us to give a useful geometric description of horospheres.
+Lemma 4.4. Let ξ = g · ξ0 ∈ Ξ for g ∈ GC . Then
+                  E(ξ)   =   {z ∈ XC | g −1 z ∈ NC AC · x0 , aH (g −1 z) = Γ}
+                         =   {z ∈ XC | g −1 z ∈ NC AC · x0 , aH (g −1 z)λ = 1   for all λ ∈ Λ}
+Proof. ′′ ⊆′′ : If z ∈ E(ξ), then z = gn · xo for some n ∈ NC . Thus g −1 z = n · ξ0 ∈ NC AC · x0 and
+aH (g −1 z) = aH (n · x0 ) = Γ.
+  ′′
+     ⊇′′ : Conversely, let z ∈ XC be such that g −1 z ∈ NC AC · x0 and aH (g −1 z) = Γ. ¿From the first
+condition follows that g −1 z = na · x0 for some n ∈ NC and a ∈ AC ; the second condition implies a ∈ Γ.
+Thus z ∈ g · ξ0 , as was to be shown.                                                                 
+     We define a subset of Λ0 by
+(4.1)                     Λ≥0      = {λ ∈ Λ0 | λ|Ω ≥ 0}
+                                                                            	
+(4.2)                              =   λ ∈ Λ | λ|Ω ≥ 0, (∀α ∈ ∆+
+                                                               k ) hλ, αi ≤ 0 .
+The following theorem is the main geometric result of the paper.
+Theorem 4.5. The following assertions hold:
+    (i) G ∩ NC AC HC is open and dense in G.
+   (ii) Let λ ∈ Λ≥0 . Then the function aλH |G∩NC AC HC extends to a continuous function on G and
+                                            |aH (g)λ | ≤ 1   (g ∈ G).
+Proof. The approach to prove this theorem lies in the use of the structural decomposition
+(4.3)                                              G = KAq H
+where Aq = exp(aq ) with aq ⊆ s ∩ q a maximal abelian subspace.LThere is a natural way to construct
+a flat aq out of the weight space decomposition gC = aC + mC + α∈∆ gα          C . It will be briefly reviewed.
+                                                                                                            γ
+Let γ1 , . . . , γr ∈ ∆+n be a maximal set of long  strongly orthogonal roots.  Then one can find Zj ∈ gCj ,
+j = 1, . . . , r, such that
+                                                 M r
+(4.4)                                       aq =      R(Zj − τ (Zj ))
+                                                   j=1
+
+is a maximal abelian subspace of s ∩ q; further
+(4.5)                                            Aq ⊂ S + A− HC
+(see [10], p. 210-211 for all that).
+   (i) As S + ⊆ NC , we obtain from (4.3) and (4.5) that
+                                                G ⊂ NC KA− HC .
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                   13
+
+
+Hence it is sufficient to show that
+
+(4.6)                    KA− ∩ NC+ AC (HC ∩ KC )      is open and dense in KA−
+    To continue, we first have to recall some facts related to the Iwasawa decomposition of KC . Write
+Ne + for a maximal C-stable unipotent subgroup of KC containing N + and set A        e = exp(ic). Then
+   C                                                                      C
+         e + e
+KC = NC AK is an Iwasawa decomposition of KC . We recall that Ω and hence A− is Wk -invariant. Thus
+Kostant’s non-linear convexity theorem (cf. [8], Ch. IV, Th. 10.5) implies that KA− ⊂ ÑC+ A− K. As
+Ne + ⊂ N + MC and A ⊆ A     e ⊆ AMC , we thus get KA− ⊂ N + A− MC K. In particular, in order to establish
+   C       C                                                C
+(4.6) it is enough to verify that K ∩ NC+ AC (HC ∩ KC ) is dense in K. But this is known (for example it
+follows from Lemme 2.1 in [2]).
+    (ii) In the proof of (i) we have seen that G ⊂ NC MC A− KHC . Thus we only have to show that aλH can
+be defined as a holomorphic function on KC with |aH (ak)λ | ≤ 1 for all k ∈ K and a ∈ A− . For that let
+(τλ , Vλ ) denote the holomorphic (HC ∩ KC )-spherical representation of KC with lowest weight λ. Write
+(·, ·) for a K-invariant inner product on Vλ . Let vλ be a normalized lowest weight vector and vH be the
+spherical vector with (vH , vλ ) = 1. Then for all x ∈ NC+ AC (HC ∩ KC ) ⊂ KC we have
+                                        (πλ (x)vH , vλ ) = aH (x)λ .
+As the left hand side has a holomorphic extension to KC , the same holds for aλH . Finally, for a ∈ A− and
+k ∈ K we have
+                                         aH (ak)λ = aλ aH (k)λ .
+Observe that aλ ≤ 1 as λ ∈ Λ≥0 and that |aH (k)λ | ≤ 1 for all k ∈ K by Lemma 2.3 in [2]. This completes
+the proof of (ii).                                                                                       
+  Theorem 4.5 features interesting and important corollaries.
+Corollary 4.6. Let λ ∈ Λ≥0 be such that λ|Ω > 0. Then aλH |Ξe −1 ∩NC AC HC extends to a holomorphic
+                                                               +
+            e −1 with
+function on Ξ +
+                                 |aH (x)λ | < 1       e −1 ) .
+                                                 (x ∈ Ξ +
+
+Corollary 4.7. Ξ+ ⊆ Ξnr , i.e. E(ξ) ∩ X = ∅ for all ξ ∈ Ξ+ .
+                                                                                e + ∩ HC 6= ∅ ⇐⇒
+Proof. Suppose that there exists ξ ∈ Ξ+ such that E(ξ) ∩ X 6= ∅. In other words Ξ
+e −1
+Ξ+ ∩ HC 6= ∅ ; a contradiction to the previous corollary.                                       
+Remark 4.8. (Monotonicity/Convexity) Theorem 4.5 (ii) has a natural interpretation in terms of con-
+vexity/monotonicity. Write pra = ℑ log aH and note that pra : NC AC HC → a is a well defined continuous
+map. Theorem 4.5 (ii) is then equivalent to the inclusion
+                                                         M
+(4.7)                           pra (G ∩ NC AC HC ) ⊆          R≥0 · α̌ .
+                                                               +
+                                                        α∈∆−
+                                                           n ∪∆k
+
+
+4.1. Dual statements for the minimal tubes. Recall from Subsection 1.1 the minimal tubes D± =
+GA± · x0 in XC with edge X.
+   It follows from Neeb’s non-linear convexity theorem [17] that
+(4.8)                                     GA− ⊆ NC MC A− G .
+This fact combined with Theorem 4.5 yields
+                                                                              
+                                                                 M
+(4.9)                   GA− HC ∩ NC AC HC ⊆ NC T A− exp                R≥0 · α̌ HC .
+                                                                 α∈∆+
+                                                                    k
+14                       SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+We have shown:
+Corollary 4.9. Let λ ∈ Λ≥0 be such that λ|Ω > 0. Then, aλH |D− ∩NC AC ·x0 extends to a holomorphic
+function on D− such that
+                                 |aH (x)λ | < 1  (x ∈ D− ) .
+   We recall the definition of the orbits S(z) ⊂ Ξ for z ∈ XC (cf. equation 2.3). The convexity inclusion
+(4.9) delivers the dual statement to Corollary 4.7:
+Corollary 4.10. S(z) ∩ G/M = ∅ for all z ∈ D− .
+Proof. Let z = ga · x0 for g ∈ G and a ∈ A− . Suppose that S(z) ∩ G/M 6= ∅. As S(z) = gaHC · ξ0 , this
+is equivalent to aHC NC ∩ G 6= ∅. In other words Ga ∩ NC HC 6= ∅; a contradiction to (4.9).         
+
+Remark 4.11. Note that (4.8) is equivalent to A+ G ⊆ GA+ MC NC . This inclusion exhibits interesting
+additional structure of Ξ+ ; it implies
+
+
+(4.10)                                         Ξ+ = GA+ G · ξ0 .
+
+Remark 4.12. (Generalization to other cones) Let Ω̃ be a Wk -invariant convex open sharp cone in a
+containing Ω. A particular interesting example is the maximal cone (denoted by cmax in [10]). In this
+context we would like to mention that the results in this section remain true for Ω replaced by Ω̃, the
+obvious adjustment of Λ≥0 understood.
+
+                               5. The horospherical Cauchy transform
+Our geometric results from Section 4 enable us to define a natural horospherical Cauchy kernel on Ξ+ .
+The kernel gives rise to the horospherical Cauchy transform L1 (X) → O(Ξ+ ). The main result is a
+geometric inversion formula for the horospherical Cauchy transform for functions in the holomorphic
+discrete series on X.
+
+5.1. The horospherical Cauchy kernel. In this subsection we define the horospherical Cauchy kernel
+and the corresponding horospherical Cauchy transform. We will introduce the holomorphic spherical
+Fourier transform and relate it the horospherical Cauchy transform.
+   To begin with we have to recall some features of the root system ∆. Let us denote by
+                                               Π = {α1 , . . . , αm }
+                                                        −
+a basis of ∆ corresponding to the positive system ∆+
+                                                   n ∪ ∆k . As Spec ad(Z0 ) = {−1, 0, 1}, it follows that
+exactly one member of Π is non-compact, say αm . Define weights ω1 , . . . , ωm ∈ a∗ by
+
+                                       hωi , αj i
+                                                  = δij     (1 ≤ i, j ≤ n) .
+                                       hαj , αj i
+Set
+                               Λ>0 = Z≥0 · ω1 + . . . + Z≥0 · ωm−1 + Z>0 · ωm .
+Recall the definition of Λ≥0 from (4.1).
+Lemma 5.1. The following assertions hold:
+       (i) ωi |Ω > 0 for all 1 ≤ i ≤ n. In particular, λ|Ω > 0 for all λ ∈ Λ>0 .
+      (ii) Λ≥0 = Z≥0 · ω1 + . . . + Z≥0 · ωm . In particular, Λ>0 ⊂ Λ≥0 .
+                                HOROSPHERICAL MODEL FOR DISCRETE SERIES                                       15
+
+                                    P
+Proof. (i) Fix x ∈ Ω. Then x = α∈∆+      n
+                                            kα α̌ with kα > 0. Now each α ∈ ∆+   n can be uniquely expressed
+                                 −
+as α = αm + γ with γ ∈ Z≥0 [∆k ]. Moreover if α = β is the highest root, then γ ∈ Z>0 [α1 , . . . , αn−1 ]. As
+kβ > 0, the assertion follows.
+   (ii) Set Λ′≥0 = Z≥0 · ω1 + . . . + Z≥0 · ωm . We first show that Λ′≥0 ⊆ Λ≥0 . For that let λ ∈ Λ′≥0 , say
+     Pm                                                                                        hλ,αi
+λ = i=1 ki ωi with ki ∈ Z≥0 . As α1 , . . . , αn−1 constitutes a basis of ∆−
+                                                                           k , it follows that hα,αi ∈ Z≤0 for
+all α ∈ ∆+                                             ′
+          k . Furthermore, λ|Ω ≥ 0 by (i). Hence Λ≥0 ⊆ Λ≥0 .
+                                    ′
+                                                                          Pm
+   Finally we establish Λ≥0 ⊆ Λ≥0 . For that fix λ ∈ Λ≥0 . Then λ = i=1 ki ωi with some real numbers
+                                                                                   hλ,αi
+ki . We have to show that ki ∈ Z≥0 . Now λ ∈ Λ≥0 means in particular that          hα,αi   ∈ Z≤0 for all α ∈ ∆+
+                                                                                                              k.
+        hλ,αi i
+Hence hα  i ,αi i
+                  ∈ Z≥0 for all 1 ≤ i ≤ n − 1. It remains to show that hαhλ,αmi
+                                                                          m ,αm i
+                                                                                  ∈ Z≥0 . Integrality is clear.
+Also since R≥0 · αˇm constitutes a boundary ray of the cone Ω, non-negativity follows.                       
+  Define the horospherical Cauchy kernel on Ξ+ as the function
+                                                   m−1
+                                                   Y
+                                         1                  1
+                       K(ξ) =                    ·                            (ξ ∈ Ξ+ ) .
+                                aH (ξ −1 )−ωm − 1 j=1 1 − aH (ξ −1 )ωj
+
+In view of Corollary 4.6 and Lemma 5.1(i), the function K is holomorphic, left H-invariant and bounded
+on subsets of the form GU · ξ0 for U ⊂ A+ compact.
+   This allows us to define for a function f ∈ L1 (X) its horospherical Cauchy transform by
+                                        Z
+                                fb(ξ) =    f (x) · K(x−1 ξ) dx   (ξ ∈ Ξ+ ) .
+                                          X
+We notice that the horospherical Cauchy transform is a G-equivariant continuous map
+                                         L1 (X) → O(Ξ+ ), f 7→ fb.
+Remark 5.2. (a) The horospherical Cauchy kernel K is tied to the geometry of the minimal cone Ω:
+there is no larger WK -invariant open convex cone Ω̃ such that K would be holomorphic on G exp(Ω̃) · ξ0
+(this follows from Lemma 5.1 and (1.2)). In this context we wish to point the difference to the results of
+Section 4 which are valid for a wider class of convex cones (cf. Remark 4.12).
+(b) For each λ ∈ Λ0 and ξ ∈ Ξ+ consider the complex hypersurface
+                                  L(λ, ξ) = {z ∈ XC | aH (ξ −1 z)λ − 1 = 0}
+in XC . Their intersection is E(ξ) and they do not intersect X. The singular set of the horospherical
+Cauchy kernel is the union of the m hypersurfaces L(ωi , λ) and the edge of this set is just E(ξ). It means
+that if f is boundary value of a holomorphic function on D+ then fb is a residue on E(ξ).
+   The horospherical Cauchy transform can be decomposed in its constituents associated to the elements
+λ ∈ Λ>0 . More precisely, for λ ∈ Λ>0 and f ∈ L1 (X) let us define fbλ ∈ O(Ξ+ ) by
+                                             Z
+                                    b
+                                    fλ (ξ) =   f (x) · aH (ξ −1 x)λ dx .
+                                                X
+
+We will call the map λ 7→ fbλ ∈ O(Ξ+ ) the spherical holomorphic Fourier transform of f .
+Lemma 5.3. The following assertions hold:
+   (i) Let U ⊂ A+ be a compact subset. The series
+                                   X
+                                        aH (ξ −1 )λ          (ξ ∈ Ξ+ )
+                                        λ∈Λ>0
+
+         converges uniformly on GU · ξ0 ⊂ Ξ+ .
+16                     SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+     (ii) For all ξ ∈ Ξ+ one has
+                                               X
+                                                      aH (ξ −1 )λ = K(ξ) .
+                                              λ∈Λ>0
+
+Proof. Uniform convergence on GU · ξ0 is immediate from Corollary 4.6 and Lemma 5.1. Summing up
+the geometric series one obtains
+                    X                                 ∞
+                                                      X         ∞
+                                                                X
+                                   −1 λ
+                           aH (ξ     )    =                            aH (ξ −1 )k1 ω1 +...+km ωm
+                   λ∈Λ>0                       k1 =...=km−1 =0 km =1
+                                                                        m−1
+                                                                           Y
+                                                          1                           1
+                                          =                         − 1  ·                −1 )ωj
+                                                   1 − aH (ξ −1 )ωm        j=1
+                                                                               1 − a H (ξ
+
+                                                                  m−1
+                                                                  Y
+                                                        1                  1
+                                          =                     ·
+                                               aH (ξ −1 )−ωm − 1 j=1 1 − aH (ξ −1 )ωj
+                                          = K(ξ)
+                                                                                                        
+
+   We conclude from Lemma 5.3 that the horospherical Cauchy transform of a function f ∈ L1 (X) can
+be decomposed as
+                                               X
+                                          fb =      fbλ
+                                                          λ∈Λ>0
+
+with the right hand side converging uniformly on compacta.
+Remark 5.4. We wish to point out that the horospherical Cauchy kernel is a product of geometrical
+and not functional analytic reasoning. We emphasize that in general not all parameters λ ∈ Λ>0 in the
+decomposition of the horospherical Cauchy kernel correspond to unitarizable lowest weight modules (see
+Remark 5.6 below for a more detailed discussion).
+5.2. Holomorphic Fourier transform on lowest weight representations. The objective of this
+subsection is to give a more detailed discussion of the holomorphic Fourier transform for functions f ∈
+L2 (X) which are contained in lowest weight module.
+   To begin with we collect some material on spherical unitary lowest weight representations. A reasonable
+source might be the overview article [16].
+   Let (πλ , Hλ ) be a non-trivial H-spherical unitary lowest weight representation of G. As before we
+denote by vλ a normalized lowest weight vector. Write vH for the unique H-fixed distribution vector
+which satisfies hvλ , vH i = 1.
+   We record the fundamental identity
+
+
+(5.1)                                aH (x)λ = hπλ (x)vH , vλ i          (x ∈ X) ,
+which allows us to link our geometric discussion in Section 4 with representation theory.
+Remark 5.5. It follows from Corollary 4.9 that aλH admits a holomorphic extension to the minimal
+tube D− . Traditionally this fact was explained via (5.1) in the context of holomorphic extension of
+unitary lowest weight modules (see [18]). We wish to point out that Corollary 4.9 asserts more, namely
+that aλH |D− is bounded by 1. In addition Corollary 4.9 is more geometric, i.e. not restricted to unitary
+parameters λ.
+                               HOROSPHERICAL MODEL FOR DISCRETE SERIES                                    17
+
+
+  Pairing the G-module of smooth vectors Hλ∞ with vH yields the G-equivariant embedding
+
+                                                                           
+(5.2)                        ι : Hλ∞ → C ∞ (X), v 7→ x 7→ hπλ (x−1 )v, vH i .
+
+We say that πλ is X-square
+                     p      integrable if there exists a constant ds (λ) > 0, the spherical formal dimension
+(cf. [14]), such that ds (λ) · ι extends to an isometric map Hλ → L2 (X).
+   X-square integrable parameters λ are characterized by the condition [21]
+
+(5.3)                                 hλ − ρ, αi > 0      for all α ∈ ∆+
+                                                                       n .
+           P
+Here ρ = 12 α∈∆+ mα α with mα = dimC gα    C.
+  Likewise we say πλ is X-integrable if ι(HλK−fin ) ⊂ L1 (X). Integrability is described by the inequality
+
+(5.4)                                hλ − 2ρ, αi > 0       for all α ∈ ∆+
+                                                                        n .
+
+   The set of parameters λ ∈ Λ>0 which satisfy condition (5.4), resp. (5.3), shall be denoted by Λ1 , resp.
+Λ2 . Note that Λ1 ⊂ Λ2 .
+
+Remark 5.6. We will discuss the lattice Λ>0 with regard to Λ1 and Λ2 . One recognizes a strong
+dependence on the multiplicities mα which Pn we will exemplify for three basic cases below. Recall that
+elements λ ∈ Λ>0 are described by λ = i=1 λi ωi with λi ∈ Z≥0 and λm > 0. In addition let us keep in
+mind that conditions (5.3) and (5.4) are equivalent to hλ − ρ, αm i > 0, resp. hλ − 2ρ, αm i >P0.
+                                                                                                m
+   The equal rank case: In this situation one has t = c and mα = 1 for all α. Thus ρ = 21 i=1 ωi and
+                   Pm          1                                                 1
+therefore λ − ρ = i=1 (λi − 2 )ωi . In particular hλ − ρ, αm i = hαm , αm i(λm − 2 ) and thus Λ>0 ⊂ Λ2 as
+λm ≥ 1 for elements λ ∈ Λ>0 .                                              P
+   The group case: In this situation one has mα = 2 for all α and so ρ = ni=1 ωi . Accordingly we obtain
+hλ − ρ, αm i = hαm , αm i(λm − 1). It follows that Λ>0 parameterizes the holomorphic discrete series and
+their limits; in particular Λ2 ⊂ Λ>0 .                                                         
+   The rank one case: Here one has Λ>0 = Z>0 · ω and ρ = m2α α. Thus Λ2 = (Z>0 + m2α )ω and
+Λ2 ⊂ Λ>0 with equality precisely for mα = 1, i.e. g = sl(2, R).
+
+  For λ ∈ Λ2 we set L2 (X)λ = ι(Hλ ).
+
+Lemma 5.7. Let λ, µ ∈ Λ2 . Fix v ∈ Hλ and define f (x) = hπλ (x−1 )v, vH i ∈ L2 (X)λ . Then for all
+ξ ∈ Ξ+ , the function
+                                        X → C, x 7→ f (x)aH (ξ −1 x)µ
+is integrable and
+                                Z
+                                                               δλµ
+(5.5)                                f (x)aH (ξ −1 x)µ dx =          hv, πλ (ξ)vλ i .
+                                 X                            ds (λ)
+Here
+                    πλ (ξ)vλ = a−λ πλ (g)vλ ∈ Hλ        for ξ = ga · ξ0 , g ∈ G and a ∈ A+ .
+
+Proof. Fix ξ ∈ Ξ+ . Holomorphic extension of (5.1) yields
+
+                                       aH (ξ −1 g)µ = hπλ (g)vH , πλ (ξ)vλ i
+
+for all g ∈ G and ξ ∈ Ξ+ . It follows that x 7→ aH (ξ −1 x)µ is square integrable on X. Thus x 7→
+f (x)aH (ξ −1 x)µ is integrable. Finally we apply Schur-orthogonality (cf. [14], Prop. 3.2) and obtain
+18                      SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+
+                 Z                                             Z
+                                                                                                µ
+                      f (x)aH (ξ −1 x)µ dx             =               hπλ (x−1 )v, vH
+                                                                                     λ
+                                                                                       ihπµ (x)vH , πµ (ξ)vµ i dx
+                  X                                             X
+                                                               Z
+                                                                                                              µ
+                                                       =               hπλ (x−1 )v, vH
+                                                                                     λ
+                                                                                       ihπµ (x−1 )πµ (ξ)vµ , vH i dx
+                                                                X
+                                                                δµλ
+                                                       =              hv, πλ (ξ)vλ i .
+                                                               ds (λ)
+                                                                                                                       
+  For λ ∈ Λ1 let us write L1 (X)λ for the closure of ι(HλK−fin ) in L1 (X). The next lemma can be
+understood as an L1 -version of Schur-orthogonality for the Cauchy-transform.
+Lemma 5.8. Let λ ∈ Λ1 . Then
+                                               fb = fbλ                for all f ∈ L1 (X)λ .
+
+Proof. Fix f ∈ L1 (X)λ . We have to show that fbµ = 0 for all µ ∈ Λ>0 \{λ}. For µ ∈ Λ2 this is a
+consequence of Lemma 5.7. Therefore, we may assume that µ ∈ Λ>0 \Λ2 . It means that condition (5.3)
+is violated which we will express as
+(5.6)                                                      hµ − ρ, αm i ≤ 0 .
+     We now show that
+                                       Z
+                           fbµ (ξ) =           f (x)aH (ξ −1 x)µ dx = 0                  for all ξ ∈ Ξ+ .
+                                           X
+
+Equation above has boundary values on G/M ⊂ ∂Ξ+ and it will be sufficient to prove that
+                                 Z
+                       b
+                      fµ (gM ) =    f (x)aH (g −1 x)µ dx = 0 for all g ∈ G .
+                                               X
+We compute
+                                                           Z
+                               fbµ (gM ) =                      f (x)aH (g −1 x)µ dx
+                                                           X
+                                                           Z
+                                                   =    f (gx)aH (x)µ dx
+                                                     ZX Z
+                                                   =        f (tgx)aH (tx)µ dx dt
+                                                      T X
+                                                     Z Z                 
+                                                   =          t f (tgx) dt aH (x)µ dx .
+                                                               µ
+                                                           X            T
+                                                           R       µ
+To arrive at a contradiction, suppose that T t f (tgx) dt 6= 0. This can only happen if µ belongs to the
+T -weight spectrum of πλ . Now the T -weights of πλ are contained in λ + Z≥0 [∆+ ]. Thus µ = λ + γ for
+some γ ∈ ∆+ . But then
+                                  hµ − ρ, αm i = hλ − ρ, αm i + hγ, αm i .
+Observe that both summands on the right hand side are positive, the desired contradiction to (5.6)                     
+
+Remark 5.9. (Analytic continuation) Let λ ∈ Λ1 and f ∈ L1 (X)λ ∩L2 (X)λ . Write f (x) = hπλ (x−1 )v, vH i
+for some v ∈ Hλ . Then Lemma 5.7 and Lemma 5.8 imply
+                                                                     1
+(5.7)                                              fb(ξ) =                hv, πλ (ξ)vλ i .
+                                                                   ds (λ)
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                    19
+
+
+Clearly, the right hand side makes sense for all v ∈ Hλ and all X-square integrable parameters λ ∈ Λ2 .
+We now explain how passing to parameters λ ∈ Λ2 in (5.7) has a natural explanation in terms of analytic
+continuation. For that let G̃ denote the universal cover of G. Write Λ̃1 , Λ̃2 for the sets of G̃-integral
+parameters which satisfy (5.4), resp. (5.3). Clearly Λ1,2 ⊂ Λ̃1,2 . The effect of passing to the universal
+cover is that the parameter spaces involved become continuous in the central variable, i.e. there exists
+constants 0 < c2 < c1 such that
+                      Λ̃1 |RZ0 =]c1 , ∞[·(αm |RZ0 )   and Λ̃2 |RZ0 =]c2 , ∞[·(αm |RZ0 ) .
+By the concrete formula for ds (λ) from [14], Th. 4.15, we know that λ 7→ ds (λ) is a meromorphic
+function on a∗C which is positive on Λ̃2 . Now familiar techniques show that that the assignment Λ̃2 ∋
+λ 7→ ds1(λ) hv, πλ (ξ)vλ i ∈ C becomes analytic in the central variable (the Shapovalov form is polynomial
+in λ and in [13] it is explained how to make consistent analytic choices for v and vλ in dependence of the
+central coordinate of λ).
+   Motivated by Remark 5.9 we define the horospherical Cauchy transform for functions f ∈ L2 (X)λ ,
+λ ∈ Λ2 by
+                                             fb = fbλ .
+
+5.3. Hyperfunctions and generalized matrix coefficients. In order to discuss the horospherical
+Cauchy transform and its inverse in a more comprehensive way we need some results on the analytic
+continuation of generalized matrix coefficients of lowest weight representations. Proofs of the facts cited
+below can be found in [15].
+   Let (π, H) be a unitary lowest weight representation of G. Write Hω and H−ω for the associated
+G-modules of analytic, resp. hyperfunction vectors. The nature of the T -spectrum of π shows that π|T
+extends holomorphically to T− . Moreover the so obtained self adjoint operators π(a), a ∈ A− , are of
+trace class and strongly mollifying, i.e
+(5.8)                                  π(a)H−ω ⊂ Hω            (a ∈ A− ) .
+   Assume that π is H-spherical and denote by vH the (up to scalar) unique H-fixed distribution vec-
+tor. Let v ∈ H−ω be a hyperfunction vector. We wish to interpret the generalized matrix coefficient
+f (x) = hπ(x−1 )v, vH i as a generalized function on X = G/H. It follows essentially from (5.8) that the
+prescription
+(5.9)                 f˜(ga · x0 ) = hπ(g −1 )π(a−1 )v, vH i     for g ∈ G and a ∈ A+ .
+defines a holomorphic function on D+ = GA+ · x0 . The minimal tube D+ has X as edge and this allows
+us to interpret f as the boundary value of f˜. Henceforth we will identify f with the holomorphic function
+f˜.
+    Suppose that H ⊂ L2 (X), i.e. π = πλ with λ ∈ Λ2 and H = L2 (X)λ . We now show how the
+horospherical Cauchy transform restricted to L2 (X)λ can be extended to L2 (X)−ω    λ  ⊂ O(D+ ). In other
+words for ξ ∈ Ξ+ we wish to give meaning to
+                                           Z
+                                fb(ξ) =        f (x)aH (ξ −1 x)λ dx
+                                             X
+                                           Z
+                                      =        hπ(x−1 )v, vH iaH (ξ −1 x)λ dx
+                                              X
+
+as a holomorphic function on Ξ+ . Express ξ as ξ = ga · ξ0 with g ∈ G and a ∈ A+ . By the usual
+holomorphic change of variables one obtains that
+20                    SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+
+                                    Z
+                        fb(ξ)   =        f (x)aH (a−1 g −1 x)λ dx
+                                    X
+                                    Z
+                                =        hπ(x−1 )π(g −1 )π(a−1 )v, vH iaH (x)λ d(x) .
+                                    X
+Now the last expression is well defined by (5.8). Of course one has
+                                              1
+(5.10)                              fb(ξ) =        hπ(a−1 )π(g −1 )v, vλ i
+                                            ds (λ)
+by the same argument as in Lemma 5.7. Thus we have shown that the horospherical Cauchy transform
+on L2 (X)λ extends to a G-equivariant continuous map
+                                            L2 (X)−ω
+                                                  λ → O(Ξ+ )λ .
+  We conclude this section with a conjecture related to the holomorphic intertwining of O(D+ ) and
+O(Ξ+ ). It can be seen as a holomorphic analogue of Helgason’s conjecture (actually a theorem ny [12]).
+  In order to state the conjecture some new terminology is needed. Let us call a holomorphic function
+f on Ξ+ bounded away from the boundary if its restriction to gT+ a is bounded for all choices of g ∈ G
+and a ∈ A+ . We denote by Ob.a.b. (Ξ+ ) the space of all holomorphic function on Ξ+ which are bounded
+away from the boundary. Note that Ob.a.b.(Ξ+ ) is a closed G-subspace of the Fréchet space O(Ξ+ ).
+Conjecture 1. Let D(X) be the algebra of G-invariant differential operators on X. Naturally we can
+view D(X) as holomorphic differential operators on XC . Write O(D+ )λ for the common holomorphic
+D(X)-eigenfunctions on D+ with infinitesimal character λ − ρ. Let λ ∈ Λ2 . We conjecture
+(5.11)                                   Ob.a.b. (D+ )λ = L2 (X)−ω
+                                                                λ  .
+Notice that the inclusion ′′ ⊃′′ is clear by (5.8).
+   We have already remarked that O(Ξ+ )λ ≃ Hλ−ω [15]. Hence our conjectured equality means that the
+horospherical Cauchy transform induces an intertwining isomorphism Ob.a.b. (D+ )λ → O(Ξ+ )λ .
+   It is also interesting problem to formulate (and prove) the conjecture for other parameters.
+Remark 5.10. We illustrate Conjecture 1 for the one-sheeted hyperboloid X = Sl(2, R)/SO(1, 1). Fix
+λ ∈ 2Z>0 = Λ2 and denote by Hλ , resp. H−λ , the lowest (resp. highest) weight module of G = Sl(2, R)
+with lowest (resp. highest) weight λ, resp. −λ. Denote by Vλ−2 the finite dimensional G-module of
+highest weight λ − 2. Write C ∞ (X)λ for the D(X)-eigenspace with eigenvalue λ − 1. Then
+                                        C ∞ (X)λ ≃ Hλ∞ ⊕ H−λ
+                                                          ∞
+                                                             ⊕ Vλ−2
+                         ∞
+Now, the functions of H±λ   extend holomorphically to D± but not beyond, while the functions of Vλ−2
+extend holomorphically to all of XC . One deduces that O(D+ )λ = Hλ−ω ⊕ Vλ−2 . Finally, the holomorphic
+functions in Vλ−2 grow exponentially at infinity and hence are not bounded away from the boundary.
+Thus Ob.a.b. (D+ )λ = L2 (X)−ω
+                            λ   as conjectured.
+5.4. Inversion of the horospherical Cauchy transform. To begin with we first have to explain
+certain facts on incidence geometry between the Shilov boundary X of D+ and the boundary piece G/M
+of Ξ+ .
+   We keep in mind that we realized G/M in the boundary of Ξ+ by G/M ≃ G · ξ0 ⊂ ∂Ξ+ .
+   Recall the orbits S(z) ⊂ Ξ from 2.3. For a point x ∈ X we define the real form of S(x) by
+
+                                          SR (x) = S(x) ∩ G/M .
+In view of the incidence relation (2.4), one has
+                       SR (x) = {ξ ∈ G/M | ξ ∈ S(x)} = {ξ ∈ G/M | x ∈ E(ξ)} .
+                                HOROSPHERICAL MODEL FOR DISCRETE SERIES                                  21
+
+
+Lemma 5.11. Let x = g · x0 ∈ X, g ∈ G. Then
+                                           SR (x) = gH · ξ0 ≃ H/M .
+Proof. First notice that for x = g · x0 with g ∈ G one has SR (x) = g · SR (x0 ). Hence it suffices to show
+that
+                                          SR (x0 ) = H · ξ0 ≃ H/M .
+Let ξ ∈ SR (x0 ) and write ξ = y · ξ0 for some y ∈ G. We have to show that y ∈ H and that y is uniquely
+determined modulo M . First observe that ξ ∈ S(x0 ) means yNC ⊂ HC NC and so y ∈ HC NC ∩ G. Now
+HC NC ∩ G = H implies y ∈ H. Finally, uniqueness modulo M is immediate from Lemma 2.2.                    
+   It is possible to view the boundary orbits SR (x) as certain limits. For z = ga · x0 ∈ D+ we define
+                                          SR (z) = gaH · ξ0 ≃ H/M .
+We note that SR (z) ⊂ Ξ+ by (4.10). Furthermore there is the obvious limit relation
+                                          lim SR (ga · ξ) = SR (g · x0 ) .
+                                          a→1
+                                         a∈A+
+
+
+   Write dz (ξ) for the measure on SR (z) which is induced from a Haar measure d(hM ) on H/M via the
+identification SR (z) ≃ H/M . Define the space of fiber integrable holomorphic functions on Ξ+ by
+                                                    Z
+               Of.i. (Ξ+ ) = {φ ∈ O(Ξ+ ) | D+ ∋ z →       |φ(ξ)| dz (ξ) is locally bounded} .
+                                                           SR (z)
+   For a function φ ∈ Of.i. (Ξ+ ) we define its inverse horospherical transform φ∨ ∈ O(D+ ) by
+                                           Z
+                                  φ∨ (z) =        φ(ξ) dz (ξ)   (z ∈ D+ ) .
+                                                SR (z)
+
+We note that
+                                        Of.i. (Ξ+ ) → O(D+ ), φ 7→ φ∨
+is a G-equivariant continuous map.
+   Finally, we define a subset Λc ⊂ Λ2 of large parameters by
+
+                           Λc = {λ ∈ Λ2 | (∀α ∈ ∆+n ) (λ − ρ)(α̌) > 2 − mα } .
+   The inversion formula for the horospherical Cauchy transform is based on the following key result.
+Lemma 5.12. Let λ ∈ Λc . Let f ∈ L2 (X)−ω                 b
+                                         λ ⊂ O(D+ ). Then f ∈ Of.i (Ξ+ ) and
+                                         Z
+(5.12)                    f (z) = d(λ) ·     fb(ξ) dz (ξ)  (z ∈ D+ ) .
+                                                  SR (z)
+
+In other words, f = d(λ) · (fb)∨ .
+Proof. Let f (ga · ξ0 ) = hπλ (a−1 )πλ (g −1 )v, vH i for some v ∈ Hλ−ω . Then by (5.10)
+                                                  1
+                                           fb(ξ) =     hv, πλ (ξ)vλ i .
+                                                ds (λ)
+As λ ∈ Λc , [14], Th. 2.16 and Th. 3.6, imply that
+                                   Z
+                                                               ds (λ)
+                                          πλ (h)vλ d(hM ) =             · vH
+                                    H/M                         d(λ)
+with the left hand side understood as convergent Hλ−ω -valued integral.
+   Thus with z = ga · x0 one obtains that
+22                      SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+
+                  Z                          Z
+                                                      1
+                            fb(ξ) dz (ξ) =                 hπλ (a−1 )πλ (g −1 )v, πλ (h)vλ i d(hM )
+                   SR (z)                     H/M   ds (λ)
+                                              1
+                                        =         · f (z) ,
+                                             d(λ)
+completing the proof of the lemma.                                                                          
+                                                                                 R
+Remark 5.13. If λ ∈ Λ2 \Λc and 0 6= f ∈ L2 (X)−ω                               b
+                                                  λ , then the integral SR (z) f (ξ) dz (ξ) does not converge.
+However, using the results from [14] it can be shown that the identity (5.12) can be analytically continued
+(cf. Remark 5.9) to all λ ∈ Λ2 . Henceforth we understand (5.12) as an identity valid for all λ ∈ Λ2 .
+   The formal dimension d(λ) is a polynomial in λ, explicitly given by [7]
+                                                 Y
+(5.13)                                d(λ) = c ·    hλ − ρ(c), αi
+                                                       α∈Σ+
+
+with c ∈ R a constant depending on the normalization of measures.
+   The right action of T on Ξ+ induces an identification of U(tC ) with G-invariant differential operators
+on Ξ+ . As usual we identify U(tC ) with polynomial functions on tC . In this way d(λ) corresponds to
+a G-invariant differential operator L on Ξ+ which acts along the fibers of Ξ+ → F+ and has constant
+coefficients in logarithmic coordinates. In particular,
+                                        Lφ = d(λ) · φ         (φ ∈ O(Ξ+ )λ ) .
+Combining this fact with equation (5.12) we obtain the main result of this paper.
+                         P
+Theorem 5.14. Let f ∈ λ∈Λ2 L2 (X)−ω    λ ⊂ O(D+ ). Then
+
+                                                    f = (Lfb)∨ .
+
+                            6. The example of the hyperboloid of one sheet
+This section is devoted to the discussion of the case G = Sl(2, R) and H = SO(1, 1). Notice that
+G/H ≃ SOe (2, 1)/SOe (1, 1). For what follows it is inconsequential to assume that G = SOe (2, 1) and
+H = SOe (1, 1) although the universal complexification of G = SOe (2, 1) is not simply connected.
+  The map
+                                                              
+                                                               1
+                                      G/H → R3 , gH 7→ g · 0
+                                                               0
+identifies X = G/H with the one sheeted hyperboloid
+                               X = {x = (x1 , x2 , x3 )T ∈ R3 | x21 + x22 − x23 = 1} .
+The base point x0 becomes (1, 0, 0)T . Let us define a complex bilinear pairing on C3 by
+                                                                        
+                                                               z1          w1
+                  hz, wi = z1 w1 + z2 w2 − z3 w3     for z = z2  , w = w2  ∈ C3 .
+                                                               z3          w3
+If we set ∆(z) = hz, zi for z ∈ C3 , then X = {x ∈ R3 | ∆(x) = 1}. Further one has GC = SO(2, 1; C) ≃
+SO(3, C) and HC = SO(1, 1; C) ≃ SO(2, C). Clearly
+                                     XC = GC /HC = {z ∈ C3 | ∆(z) = 1} .
+                              HOROSPHERICAL MODEL FOR DISCRETE SERIES                                 23
+
+
+  Our choice of T will be                                              
+                                       cos θ          sin θ    0         
+                               T = K = − sin θ        cos θ    0 | θ ∈ R .
+                                                                         
+                                           0             0      1
+In particular a = RU0 where                                     
+                                               0 i              0
+                                        U0 = −i 0              0
+                                               0 0              0
+and ∆ = ∆n = {α, −α} with α(U0 ) = 1. If we demand α           to be the positive root, then
+                                          2          2                   
+                                    1 − z2          i z2      iz           
+                               NC =  i z                         
+                                          2               2
+                                                   1 + z2      z    | z ∈ C   .
+                                        2                                  
+                                       iz              z       1
+The homogeneous space GC /MC NC naturally identifies with the isotropic vectors Ξ = {ζ ∈ C3 \{0} |
+∆(ζ) = 0} via the GC -equivariant map
+                                                                        
+                                                                         1
+                      GC /MC NC → Ξ, gMC NC 7→ g · ζ0    where ζ0 = −i .
+                                                                         0
+The correspondence between elements of ζ ∈ Ξ and horospheres on XC is explicitly given by
+                                  ζ ↔ E(ζ) = {z ∈ XC | hz, ζi = 1} .
+Elements ζ ∈ Ξ can be expressed as ζ = ξ + iη with ξ, η ∈ R3 \{0} subject to
+                                  ∆(ξ) = ∆(η)         and       hξ, ηi = 0 .
+A simple computation yields
+
+                               Ξ+ = {ζ = ξ + iη ∈ Ξ | ∆(ξ) = ∆(η) > 1}
+and
+                               D+ = {z = x + iy ∈ XC | ∆(x) > 1} .
+  Next we compute the kernel function.
+Lemma 6.1. For all z ∈ XC and ζ ∈ Ξ one has
+                                         aH (ζ −1 z)−α = hz, ζi .
+Proof. We first show that
+(6.1)                            aH (g)−α = hg · x0 , ζ0 i       (g ∈ GC ) .
+Observe that both sides are holomorphic functions on GC which are left NC and right HC -invariant.
+Thus it is enough to test with elements a ∈ AC . Then aH (a)−α = a−α . On the other hand for a =
+
+   cos θ sin θ 0
+− sin θ cos θ 0 with θ ∈ C we specifically obtain
+     0       0    1
+                                                    
+                                             cos θ      1
+                         ha · x0 , ζ0 i = h− sin θ , −ii = cos θ + i sin θ = a−α .
+                                               0        0
+This proves (6.1).
+   It is now easy to prove the asserted statement of the lemma. For that write ζ = g · ζ0 and z = y · x0
+for g, y ∈ GC . Then (6.1) implies
+24                                SIMON GINDIKIN, BERNHARD KRÖTZ, AND GESTUR ÓLAFSSON
+
+
+
+
+                            aH (ζ −1 z)−α = aH (g −1 y)−α = hg −1 y · x0 , ζ0 i = hy · x0 , g · ζ0 i = hz, ζi .
+                                                                                                                       
+     We observe that Λ>0 = Λ2 = Z>0 · α. Hence Lemma 6.1 implies that the horospherical Cauchy kernel
+is
+                                                        11
+                                      K(ζ) =                         (ζ ∈ Ξ+ ) .
+                                                                     =
+                                 aH         −1     (ζ −1 )−α
+                                                    hζ, x0 i − 1
+   The horospherical Cauchy transform for f ∈ L1 (X) is given by
+                                        Z
+                                              f (x)
+                                fb(ζ) =               dx       (ζ ∈ Ξ+ )
+                                         X hζ, xi − 1
+with dx the invariant measure on the hyperboloid X. Finally, we will discuss inversion. Let the inner
+product on a be normalized such that hα, αi = 1 and identify R with a∗ by means of the bijection
+R ∋ λ 7→ λα ∈ a∗ . Then Λ>0 = Z>0 and d(λ) = λ − 12 . An easy calculation gives
+                                                               3
+                                                               X           ∂    1
+                                                        L=           ζj       −   .
+                                                               j=1
+                                                                          ∂ζj   2
+          P
+For f ∈       λ>0   L   2
+                            (X)λ−ω   ⊂ O(D+ ) the inversion formula reads
+                                                                                            
+                                              Z ∞         z1 − i zr2 cosh t − i z1rz3 sinh t
+                                      f (z) =     (Lf ) z2 + i zr1 cosh t − i z2rz3 sinh t dt,
+                                               −∞                   z3 − ir sinh t
+              p
+where r =      z12 + z22 .
+
+                                                               References
+ [1] R. Bott: Homogeneous vector bundles. Ann. of Math. (2) 66 (1957), 203–248.
+ [2] J.-L. Clerc: Fonctions sphériques des espaces symétriques compacts. Trans. Amer. Math. Soc. 306 (1988), 421–431.
+ [3] Enright, T. J., R. Howe, and N. Wallach: A classification of unitary highest weight modules. In Proc. “Representation
+     theory of reductive groups” (Park City, UT, 1982), pp. 97-149; Progr. Math. 40 (1983), 97–143.
+ [4] S. Gindikin: Integral Geometry on SL(2; R). Math. Res. Lett. 7(2000), no. 4, 417–432.
+ [5]         : An analytic separation of series of representations for SL(2; R). Mosc. Math. J. 2 (2002), no. 4, 635–645,
+     804–805.
+ [6]         : Horospherical Cauchy-Radon Transform on Compact Symmetric Spaces. Preprint 2004.
+ [7] Harish-Chandra: Representations of semisimple Lie groups. VI. Integrable and square-integrable representations. Amer.
+     J. Math. 78 (1956), 564–62.
+ [8] S. Helgason: Groups and Geometric Analysis. Academic Press, 1984.
+ [9]         : Geometric Analysis on Symmetric Spaces, Math. Surveys and Monographs 39, Amer. Math. Soc., 1994.
+[10] J. Hilgert, G. Ólafsson: Causal Symmetric Spaces, Geometry and Harmonic Analsysis. Acad. Press. 1996.
+[11] J. Hilgert, G. Ólafsson, and B. Ørsted: Hardy spaces on affine symmetric spaces. J. Reine Angew. Math. 415 (1991),
+     189–218.
+[12] M. Kashiwara, A. Kowata, K. Minemura, K. Okamoto, T. Oshima, and M. Tanaka: Eigenfunctions of invariant
+     differential operators on a symmetric space. Ann. of Math. (2) 107 (1978), no. 1, 1–39.
+[13] B. Krötz: Norm estimates for unitarizable highest weight modules. Ann. Inst. Fourier (Grenoble) 49 (1999), no. 4,
+     1241–1264.
+[14] B. Krötz: Formal Dimension For Semisimple Symmetric Spaces. Compositio Math. 125 (2001), 155-191.
+[15] B. Krötz, K.-H. Neeb, and G. Ólafsson: Spherical representations and mixed symmetric spaces. Represent. Theory 1
+     (1997), 424–461.
+[16] B. Krötz, and G. Ólafsson: The c-function for non-compactly causal symmetric spaces and its relations to harmonic
+     analysis and representation theory. Lie groups and symmetric spaces, 171–194, Amer. Math. Soc. Transl. Ser. 2, 210,
+     Amer. Math. Soc., 2003.
+[17] K.-H. Neeb: A convexity theorem for semisimple symmetric spaces. Pacific J. Math. 162 (1994), no. 2, 305–349.
+                                 HOROSPHERICAL MODEL FOR DISCRETE SERIES                                              25
+
+
+[18]         : On the complex geometry of invariant domains in complexified symmetric spaces. Ann. Inst. Fourier (Greno-
+     ble) 49 (1999), no. 1, 177–225.
+[19]         : Holomorphy and convexity in Lie theory. de Gruyter Expositions in Mathematics, 28. Walter de Gruyter &
+     Co., Berlin.
+[20] G. Ólafsson and B. Ørsted: The holomorphic discrete series for affine symmetric spaces. J. Funct. Anal. 81 (1988),
+     126–159.
+[21]         : The holomorphic discrete series of an affine symmetric space and representations with reproducing kernels.
+     Trans. Amer. Math. Soc. 326 (1991), 385–405.
+
+   Department of Mathematics, Rutgers University, New Brunswick, NJ 08903, USA
+   E-mail address: gindikin@math.rutgers.edu
+
+   Research Institute for Mathematical Sciences, Kyoto University, Kyoto 606-8502, Japan
+   E-mail address: kroetz@kurims.kyoto-u.ac.jp
+
+   Department of Mathematics, Louisiana State University, Baton Rouge, LA 70803, USA
+   E-mail address: olafsson@math.lsu.edu
+

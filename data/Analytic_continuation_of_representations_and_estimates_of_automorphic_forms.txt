@@ -1,0 +1,1123 @@
+                                                                   Annals of Mathematics, 150 (1999), 329–352
+
+
+
+
+                                              Analytic continuation of representations
+                                               and estimates of automorphic forms
+                                                              By Joseph Bernstein and Andre Reznikov
+arXiv:math/9907202v1 [math.RT] 1 Jul 1999
+
+
+
+
+                                                                             0. Introduction
+
+                                                 0.1. Analytic vectors and their analytic continuation. Let G be a Lie
+                                            group and (π, G, V ) a continuous representation of G in a topological vector
+                                            space V . A vector v ∈ V is called analytic if the function ξv : g 7→ π(g)v is
+                                            a real analytic function on G with values in V . This means that there exists
+                                            a neighborhood U of G in its complexification GC such that ξv extends to a
+                                            holomorphic function on U . In other words, for each element g ∈ U we can
+                                            unambiguously define the vector π(g)v as ξv (g), i.e., we can extend the action
+                                            of G to a somewhat larger set. In this paper we will show that the possibility
+                                            of such an extension sometimes allows one to prove some highly nontrivial
+                                            estimates.
+                                                 Unless otherwise stated, G = SL(2, R), so GC = SL(2, C). We consider a
+                                            typical representation of G, i.e., a representation of the principal series. Namely,
+                                            fix λ ∈ C and consider the space Dλ of smooth homogeneous functions of degree
+                                            λ − 1 on R2 \ 0, i.e., Dλ = {φ ∈ C ∞ (R2 \ 0) : φ(ax, ay) = |a|λ−1 φ(x, y)}; we
+                                            denote by (πλ , G, Dλ ) the natural representation of G in the space Dλ .
+                                                 Restriction to S 1 gives an isomorphism Dλ ≃ Ceven     ∞ (S 1 ), and for basis
+
+                                            vectors of Dλ one can take the vectors ek = exp(2ikθ). If λ = it, then    R (πλ , D λ)
+                                                                                                              2    1          2
+                                            is a unitary representation of G with the invariant norm ||φ|| = 2π S 1 |φ| dθ.
+                                                 Consider the vector v = e0 ∈ Dλ . We claim that v is an analytic vector and
+                                            we want to exhibit a large set of elements g ∈ GC for which the expression π(g)v
+                                                                                                                      λ−1
+                                            makes sense. The vector v is represented by the function (x2 + y 2 ) 2 ∈ Dλ .
+                                            For any a > 0 consider the diagonal matrix ga = diag(a−1 , a). Then
+                                                                                                             λ−1
+                                                                 ξv (ga ) = πλ (ga )v = (a2 x2 + a−2 y 2 )    2    .
+
+                                                  This last expression makes sense as a vector in Dλ for any complex a such
+                                            that |arg(a)| < π4 (since in this case Re (a2 x2 + a−2 y 2 ) > 0). Hence, we see
+                                            that the function ξv extends analytically to the subset I = {ga : |arg(a)|
+                                            < π4 } ⊂ SL(2, C).
+                                                  The same argument shows that the function ξv extends analytically to
+                                            the domain U = SL(2, R) · I · KC ⊂ SL(2, C) (open in the usual topology),
+330                 JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+where K = SO(2, R) and KC = SO(2, C) ≃ C∗ ; thus, for any g ∈ U we
+unambiguously define the vector π(g)v.
+     As g approaches the boundary of U , the vector π(g)v ∈ Dλ has very
+specific asymptotic behavior that we will use in order to obtain information
+about this vector.
+
+      0.2. Triple products. Let us describe an application of the principle of
+analytic continuation to a problem in the theory of automorphic functions.
+Namely, we will show how to apply the principle in order to settle a conjecture
+of Peter Sarnak on triple products. As a corollary of our result we will get a
+new bound on Fourier coefficients of cusp forms.
+      Recall the setting. Let H be the upper half-plane with the hyperbolic
+metric of constant curvature −1. We consider the natural action of the group
+G = SL(2, R) on H and identify H with G/K by means of this action.
+      Fix a lattice Γ ⊂ G and consider the Riemann surface Y = Γ \ H. In
+this paper we will discuss both cocompact and noncocompact lattices of finite
+covolume. For simplicity of exposition, in most of the paper we will only discuss
+the cocompact case. Then in Section 4 we will describe how to overcome the
+extra difficulties in case of noncocompact lattices.
+      The Laplace-Beltrami operator ∆ acts on the space of functions on Y.
+When Y is compact it has discrete spectrum; we denote by µ0 < µ1 ≤ . . .
+its eigenvalues on Y and by φi the corresponding eigenfunctions. (We assume
+that φi are L2 normalized: ||φi || = 1.) These functions φi are usually called
+automorphic functions or Maass forms (see [B]).
+      To state the problem about triple products, fix one automorphic function,
+φ, and consider the function φ2 on Y . Since φ2 is not an eigenfunction, it is
+not an automorphic function. Since φ2 ∈ L2 (Y ), we may consider its spectral
+decomposition in the basis {φi }:
+                                       X
+                                  φ2 =     ci φi .
+
+Here
+R      the coefficients are given by the triple product integrals: ci = hφ2 , φi i =
+  X φ · φ · φi dx. Later we will explain why these triple products are of interest
+and how they are related to the theory of Rankin-Selberg L-functions (see also
+[S], which was our starting point).
+                                                                   √
+     Claim. The coefficients ci decay exponentially as exp(− π2 µi ).
+                                                                               1−λ2
+     More precisely, let us introduce new parameters λi such that µi = 4 i
+(the meaning of this parametrization will become clear in subsection 0.3).
+Introduce new (normalized) coefficients bi = |ci |2 exp( π2 |λi |). The main result
+of the paper is the proof of the following theorem which settles a conjecture of
+P. Sarnak (see [S]):
+                              ANALYTIC CONTINUATION                                331
+
+     Theorem. There exists a constant C > 0 such that
+                   X
+                         bi ≤ C · (ln T )3 as T → ∞ .
+                        |λi |≤T
+
+
+     Corollary. There exists a constant C > 0 such that
+               Z           
+                φ2 · φi dx ≤ C(ln µi ) 32 · exp(− π √µi ).
+                           
+               
+                 X
+                                                   2
+
+      Remarks. 1. The bound in the theorem is essentially sharp. Namely,
+                                                                   P∞         −ε|λi | ≥
+our method gives the following lower bound on the average:            i=1 bi e
+c| ln ε|.
+      For a single triple product we cannot do better than the bound in the
+corollary.
+      For congruence subgroups we can speculate about the true “size” of these
+triple products. It is known (see 0.6) that in certain cases the ci are equal (up to
+an explicit factor) to the value of the triple Garrett L-function at 21 . For these
+L-functions, the Lindelöf conjecture predicts bi ≪ |λi |−2+ε . This is consistent
+with our bound together with the Weyl law: the number of eigenfunctions with
+|λi | ≤ T is proportional to T 2 .
+     2. We will prove similar results for nonuniform lattices (see §4).
+     3. This type of question has been considered before. The first result on ex-
+ponential decay of the coefficients ci for a holomorphic cusp form φ was proven
+by A. Good ([G]) for the general (i.e., nonarithmetic) nonuniform lattices Γ
+thanks to a special feature of holomorphic Poincaré series. Recently, M. Jutila
+([J]) extended these results to the nonholomorphic case (Maass forms), but
+only for the group SL(2, Z), using Kuznetsov’s formula and nontrivial arith-
+metic information (Weil’s bounds on Kloosterman’s sums and deep results of
+Iwaniec). In particular, all these methods work only for nonuniform lattices.
+     In [S], P. Sarnak introduced a new method to estimate the triple products
+based on analytic continuation of certain matrix coefficients of the function
+φ; this method works for uniform lattices as well. Being partly based on the
+theory of spherical harmonics, it led to a weaker bound (by a power of T ).
+     Our method, in addition to the analytic continuation, uses more sophis-
+ticated representation theory, in particular, an idea of G-invariant norms on
+representations and gives the optimal result (possibly, up to a power of loga-
+rithm).
+    4. Our method gives a more general result than Theorem 0.2. We can
+obtain similar logarithmic bounds for any polynomial expression in any finite
+number of automorphic functions φk instead of φ2 , as above.
+332                 JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+     5. One can ask the same question about growth of triple products for
+polynomial expressions in automorphic functions of nonzero weight. In this
+case the decay is also exponential with the same exponent as in Claim 0.2, but
+the bound in the analogue of Theorem 0.2 is a power of T and not logarithmic
+as above.
+
+     The main interest in triple products and their bounds stems from their
+relation to the theory of automorphic L-functions. We will discuss this relation
+in 0.6. We also show in 0.7 that Theorem 0.2 implies a new bound on the
+Fourier coefficients of automorphic functions in the case of nonuniform lattices.
+
+      0.3. Automorphic representations. To explain our method, we first recall
+the relation of automorphic functions to automorphic representations of G.
+      For a given lattice Γ in G we denote by X the quotient space X = Γ \ G.
+The group G acts on X, hence, on the space of functions on X. We can identify
+H with G/K. Then the Riemann surface Y = Γ \ H is identified with X/K.
+This induces an isometric embedding L2 (Y ) ⊂ L2 (X), the image consisting of
+all K-invariant functions.
+      For any eigenfunction φ of the Laplace operator ∆ on Y we consider the
+closed G-invariant subspace Lφ ⊂ L2 (X) generated by φ under the G-action.
+It is known that (π, L) = (πφ , Lφ ) is an irreducible unitary representation of
+G (see [G6]).
+      Conversely, fix an irreducible unitary representation (π, L) of the group
+G and a K-fixed unit vector v0 ∈ L. Then any G-morphism ν : L → L2 (X)
+defines an eigenfunction φ = ν(v0 ) of ∆ on Y ; if ν is an isometric embedding,
+then ||φ|| = 1. Thus, the eigenfunctions φ correspond to the tuples (π, L, v0 , ν).
+      Usually it is more convenient to work with smooth vectors. Let V =
+  ∞
+L be the subspace of smooth vectors in L. Then ν gives a morphism
+ν : V → (L2 (X))∞ ⊂ C ∞ (X). If X is compact, then MorG (L, L2 (X)) ≃
+MorG (V, C ∞ (X)).       Thus, the eigenfunctions correspond to the tuples
+(π, V, v0 , ν : V → C ∞ (X)).
+      All irreducible unitary representations of G with K-fixed vector are clas-
+sified: these are representations of the principal and complementary series and
+the trivial representation. For simplicity, consider representations of the prin-
+cipal series only. In this case the representation (π, V ) in the space of smooth
+vectors is isomorphic to the representation (πλ , Dλ ) for some λ = it (see 0.1).
+                                                                              2
+The eigenvalue of the corresponding automorphic function equals µ = 1−λ      4 .
+
+       0.4. The method. We describe here the idea behind the proof of Theorem
+0.2.
+    Let Li ⊂ L2 (X) be the space corresponding to the automorphic function
+φi as above (see 0.3). Let pri : L2 (X) → Li be the orthogonal projection.
+                             ANALYTIC CONTINUATION                                333
+
+Since the function φ2 is K-invariant and there is at most one K-fixed vector
+in each irreducible representation of SL(2, R), we have pri (φ2 ) = ci φi .
+     Since the G-action commutes with the multiplication of functions on X,
+
+                   pri ((π(g)φ)2 ) = pri (π(g)(φ2 )) = ci πi (g)φi .
+
+     By the principle of analytic continuation, the same identity holds for the
+complex points g ∈ U (see 0.1). Since all the spaces Li are orthogonal, we get
+the following basic relation for the complex points g:
+                                       X
+(0.4.1)               ||(π(g)φ)2 ||2 =   |ci |2 ||πi (g)φi ||2 .
+                                          i
+
+Here || · || = || · ||L2 denotes the L2 -norm in L2 (X).
+     It is important that in (0.4.1) we deal with complex points g and for such g
+the operators π(g) are nonunitary. As a result, relation (0.4.1) gives nontrivial
+information.
+     Now, consider the behavior of the function (π(g)φ)2 near the boundary
+of U . Take ε > 0 and an element gε ∈ U which is approximately at the
+distance ε from the boundary of U . For example, set gε = diag(a−1    ε , aε ) for
+aε = exp(( π4 − ε)i).
+     With shorthand notation, vε = π(gε )e0 and φε = ν(vε ), formula (0.4.1)
+becomes
+                                           X
+(0.4.2)                        ||φ2ε ||2 =   |ci |2 ||φi,ε ||2 .
+
+    Our goal is to give an upper bound on the left-hand side of (0.4.2) and a
+lower bound of each of the ||φi,ε ||2 as i → ∞ and ε → 0. The latter problem is
+simpler since it is invariantly defined in terms of representation theory; thus it
+can be computed in any model of the representation πi (e.g., in Dλi ). A direct
+computation gives
+                                        π
+                  ||φi,ε ||2 ≥ c · exp(( − ε)|λi |) for some c > 0.
+                                        2
+     On the other hand, we will prove the bound kφ2ε k ≪ |ln ε|3 . These two
+bounds easily imply Theorem 0.2 (see 2.3).
+     The last bound follows from the bound |φε (x)| ≤ C| ln ε| which holds
+pointwise on X and which we consider to be our main achievement in this
+paper. Its proof is based on the use of invariant norms which we now explain.
+
+    0.5. Invariant norms. The most difficult part of the proof is that of the
+                                                                                   1
+pointwise bound |φε | ≤ C| ln ε|. Note that the L2 -norm of φε is of order | ln ε| 2 ;
+hence, the pointwise bound only differs from it by a power of logarithm.
+    In order to obtain such a bound, we use invariant (non-Hermitian!) norms
+on the representation π. Namely, as we have explained, any automorphic
+334                JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+function gives rise to an embedding ν : Dλ → C ∞ (X). We consider the
+supremum norm Nsup on Dλ induced by ν:
+
+                             Nsup (v) = sup |ν(v)(x)|.
+                                         x∈X
+
+For a discussion of Lp -norms on X see Appendix A.
+     From the Sobolev restriction theorem on X (for more details see Appendix
+B), it follows that Nsup is bounded by some Sobolev norm S = Sk on the space
+Dλ . Hence, the main properties of the norm Nsup are: it is G-invariant and
+Nsup ≤ S.
+     We will show that there exists a maximal norm S G on the space Dλ satis-
+fying these two conditions. This norm is defined in terms of the representation
+πλ only and it is independent of the automorphic form picture.
+     We then use the model Dλ of πλ in order to prove the bound S G (vε ) ≤
+C| ln ε|. The proof uses the standard method of dyadic decomposition from
+harmonic analysis; it is based on the observation that, in Dλ , the vector vε is
+represented by a function which is roughly homogeneous.
+     As a result we get a pointwise bound
+
+(0.5)         sup |φε | = Nsup (vε ) ≤ S G (vε ) ≤ C| ln ε| as   ε → 0.
+
+     Remark. A new feature of our method, which seems to be absent in the
+classical approaches to automorphic forms, is the essential use of representation
+theory.
+     First of all, in order to study the automorphic function φ that lives on the
+space Y , we pass to a bigger space, X, and work directly with the representa-
+tion (π, G, V ) ⊂ C ∞ (X) which corresponds to φ.
+     In some classical approaches, the space V is actually also present, albeit
+very implicitly. And when present, it appears only as a collection of vectors
+π(h)φ created from the automorphic function φ by operators π(h) correspond-
+ing to various functions (or distributions) h on G. Though, in principle, one
+can show that such functions exhaust V , in most cases it is very difficult to
+work with such an implicit description.
+     In this paper we directly use the space V in order to prove Theorem 0.2.
+For example, the central technical result is the pointwise bound of the function
+u = φε ∈ V . This bound is proven in Section 5 by means of dyadic decom-
+position. The idea of the method is to break the function u into the sum of
+“pieces” ui ∈ V which we can move to a better position (for more detail see
+§§5.2).
+     We describe these ui using the explicit model Dλ of V . We do not know
+how to realize the ui ’s in the form π(h)φ. So we do not see how to prove this
+crucial estimate without using the space V as a whole.
+                               ANALYTIC CONTINUATION                          335
+
+     0.6. Relation to L-functions. The main interest in triple products and
+their bounds stems from their relation to the theory of automorphic L-func-
+tions. A particular case of these triple products is the scalar product of φ2 with
+the Eisenstein series E(s). This is the original example of Rankin and Selberg
+of the L-function associated to two cusp forms (see [B]). Namely, L(φ ⊗ φ, s) =
+g(s)hφ2 , E(s)i, where g(s) is an explicit factor.
+     M. Harris and S. Kudla ([HK]) discovered that such triple products are
+related to the special value at s = 12 of L(φ⊗φ⊗φi , s). This gives further reason
+for the study of such triple products, at least when φ and φi are holomorphic
+cusp forms for a congruence subgroup of a division algebra.
+
+     0.7. Bounds on Fourier coefficients of cusp forms. As we mentioned
+above, our result implies certain bounds for the Rankin-Selberg L-functions
+on the critical line. This, in turn, has implication for the classical problem of
+obtaining bounds of the Fourier coefficients of cusp forms.
+     Recall the setting (see [Se], [G], [S]). Let Γ be a nonuniform lattice in
+SL(2, R), which can be nonarithmetic (the standard example of a nonuniform
+lattice is Γ =SL(2, Z)).
+     Let 10 11 be a generator of its unipotent subgroup. Let φ be a cusp form
+                          2
+with eigenvalue µ = 1−λ 4 . We have then the following Fourier decomposition
+(see [B]):
+                                 X        1
+                     φ(x + iy) =     an y 2 K λ (2π|n|y)e2πinx ,
+                                                2
+                                    n6=0
+
+where K λ is the K-Bessel function.
+         2
+     In order to study the coefficients an , Rankin and Selberg introduced the
+                        2
+series L(s) = n>0 |anns| , the Rankin-Selberg L-function (we assume that φ is
+              P
+
+real valued; hence, an = a−n ). The significance of this Dirichlet series is that
+it has an integral representation and as a result a spectral interpretation (as
+well as an analytic continuation!) which we will use.
+     Let E(s) be the Eisenstein series associated to the cusp at ∞. The series
+E(s) is unitary for Re(s) = 1/2 and
+                                      2π s Γ(s)
+                  L(s) =                                  hφ2 , E(s)i ;
+                           Γ(s/2)2 Γ(s/2 + it)Γ(s/2 − it)
+hence, our method gives an upper bound for L(s). Namely, taking into ac-
+count the asymptotic behavior of the Γ-function we obtain, for example, the
+following:
+                    R T +1                              3
+     Corollary 1. T        |L( 12 + iτ )|dτ ≪ T (ln T ) 2 .
+
+         The Lindelöf conjecture for L(s) is stronger:         it asserts a bound
+|L( 12   + iT )| ≪ T ε .
+336                JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+    Corollary 1 implies, in turn, a bound on the coefficients an themselves via
+standard methods of analytic number theory (for details, see [G], [P]):
+                               1
+      Corollary 2. |an | ≪ n 3 +ε for any ε > 0.
+                                         1
+     Remarks. 1. The bound |an | ≤ cn 2 is due to Hecke and follows from the
+fact that the function φ is bounded (sometimes this is called the standard or
+convexity bound).
+     The Peterson-Ramanujan Conjecture is the assertion that |an | ≪ nε for
+the congruence subgroups.
+                                                                      5
+     The best-known bound for the congruence subgroups is n 28 +ε due to
+Bump-Duke-Hoffstein-Iwaniec ([B-I]).
+     For nonarithmetic subgroups, however, there was no improvement over
+the Hecke bound before [S] appeared. It was even suspected that the Hecke
+bound might be of true order for nonarithmetic subgroups.
+     Recently for the general lattice, Sarnak [S] gave the first improvement
+over the Hecke bound (he treated SL(2, C), while the SL(2, R)-case was done
+in [P]). Sarnak also suggested that the Peterson-Ramanujan Conjecture might
+be true in this general setting. It was his idea to use the analytic continuation
+which led us to think about the problem.
+     2. The main point of Corollary 2 is that it holds without any assumption
+on the arithmeticity of Γ.
+     We would like to add that, even theoretically, the triple product method
+cannot give the Peterson-Ramanujan Conjecture; indeed, even Lindelöf’s con-
+                                                   1
+jecture for L(s) above implies only that |an | ≪ n 4 +ε .
+
+      The results of this paper where announced in [BR].
+
+     Acknowledgments. We would like to thank Peter Sarnak for turning our
+attention to the problem, for fruitful discussions and for initiating our coopera-
+tion. We would also like to thank Stephen Semmes for enlightening discussions.
+     We would like to thank the Binational Science Foundation. Most of the
+work on this paper was done in a framework of a joint project with P. Sarnak
+supported by BSF grant No. 94-00312/2.
+     The second author would like to thank several institutions for providing
+him with a (temporary) roof while this work was done.
+
+
+               1. Analytic continuation of representations
+
+     1.1. Let G be a Lie group, (π, G, V ) its representation and v an analytic
+vector in V . Then we can find a left G-invariant domain U ⊂ GC containing
+G such that the function ξv : G → V given by g 7→ π(g)v has an extension
+                           ANALYTIC CONTINUATION                             337
+
+to U as a univalued holomorphic function. For the elements g ∈ U we define
+the vector π(g)v to be the value of the extended function of ξv at g.
+     One should be careful with the choice of U since the vector π(g)v depends
+on this choice. However, having fixed U , we see that the action of G on v can
+be unambiguously extended to this somewhat larger set U ⊃ G. We will see
+that in many situations there is a natural choice of U which works for many
+vectors v.
+     It is clear that with an appropriate choice of domains of definition the
+extended operators π(g) have the usual properties:
+
+ (i) π(gh) = π(g)π(h); π(g−1 ) = π(g)−1 ;
+(ii) If ν : (π, V ) → (τ, L) is a morphism of representations, then τ (g) ◦ ν =
+     ν ◦ π(g);
+(iii) If (ω, V ⊗ L) is the tensor product of representations (π, V ) and (τ, L),
+      then ω(g) = π(g) ⊗ τ (g). If (π ∗ , V ∗ ) is the dual representation, then
+      π ∗ (g) = π(g)∗ .
+(iv) If (π̄, V̄ ) is the complex conjugate representation, then π(g) = π̄(ḡ). In
+     particular, given a G-invariant positive definite scalar product on V we
+     formally get π(g)+ = π(ḡ)−1 .
+
+      1.2. Geometry of the domain U for SL(2, R). (See also Appendix C.) We
+consider representations of the principal series of the group G = SL(2, R).
+Namely, for any λ ∈ C we consider the representation (πλ , G, Dλ ); see 0.1.
+      In such a realization, the K-fixed vector is the function v(x, y) = (x2 +
+     λ−1
+y 2 ) 2 . For convenience, we denote x2 + y 2 by Q(x, y) and will view it as a
+quadratic form on C2 . Then the action of G on v is given by
+
+(1.2)                 (π(g)v)(x, y) = (g(Q)(x, y))(λ−1)/2 .
+
+     Let U be the open subset of GC consisting of matrices g such that the
+quadratic form g(Q) on R2 has a positive definite real part. Since the function
+z 7→ z (λ−1)/2 is a well-defined holomorphic function in the right half-plane
+Re z > 0, we see that formula (1.2) makes sense for all g ∈ U .
+     This gives us a holomorphic function on U with values in Dλ . We will
+see that U is connected, so this function is the holomorphic extension of the
+function ξv to the domain U . We will also show that for most λ the domain U
+is the maximal domain of holomorphicity for the function ξv .
+     Observe that U is left G-invariant and right KC -invariant, where KC =
+SO(2, C) ≃ C∗ ⊂ SL(2, C). Let us identify GC /KC with the variety Q of
+unimodular quadratic forms on C2 via g 7→ g(Q). By definition, U is the
+preimage of the open subdomain Q+ ⊂ Q consisting of all quadratic forms
+whose real part is positive definite.
+338                  JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+    For every λ we have constructed a holomorphic G-equivariant function v :
+Q+ → Dλ such that R 7→ vR = R(λ−1)/2 , R ∈ Q+ . The analytic continuation
+π(g)v is given by π(g)v = vg(Q) .
+
+     Remarks. 1. Note that all K-finite matrix coefficients hπ(g)e0 , en i have
+an analytic extension to a much larger domain: {diag(z, z −1 ) : |arg(z)| < π2 }.
+Observe a curious phenomenon: each matrix coefficient of the function π(g)e0
+is holomorphic in this larger domain, but the function itself admits analytic
+continuation to U only.
+     For groups of higher rank the situation is much more intriguing and we
+hope to return to it elsewhere.
+    2. The same proof can be applied to any K-finite vector v ∈ Dλ ; it shows
+that for every such vector the function ξv = π(g)v has an extension to the
+same domain U ⊂ SL(2, C).
+
+
+                 2. Triple products. Proof of Theorem 0.2
+
+     Recall (see 0.2 and 0.4) that we fix an automorphic function φ and consider
+the function φ2 ∈ L2 (Y ) ⊂ L2 (X). Let {φi } be the orthonormal eigenbasis
+                               1−λ2
+of the space L2 (Y ), ∆φi = 4 i φi . We set ci = hφ2 , φi i , bi = |ci |2 exp( π2 |λi |).
+Let Li ⊂ L2 (X) be the subspace corresponding to φi . We denote by
+pri : L2 (X) → Li the orthogonal projection and by L⊥ the orthogonal com-
+plement to the sum of all subspaces Li in L2 (X).
+     2.1. Proof of (0.4.1). Observe that the Plancherel formula gives us (0.4.1)
+with an additional term on the right-hand side. The term is equal to
+||π(g)(ψ)||2 , where ψ is the orthogonal projection of the function φ2 onto L⊥ .
+Since L⊥ does not have K-invariant vectors, ψ = 0.
+     2.2. Estimates of kφε k. Choose a family of elements gε tending to the
+boundary of U . Consider the corresponding vectors vε = π(gε )v ∈ Dλ , vi,ε =
+π(gε )vi ∈ Dλi and the corresponding functions φε , φi,ε on X. Observe that all
+our formulas are given not in terms of the element gε (see 0.4) but in terms of
+the corresponding quadratic form Qε = gε (Q) ∈ Q+ (see 1.2). So it is easier
+for us to describe the forms Qε without specifying elements gε .
+     In our method, the quadratic forms Qε lying within the same G-orbit lead
+to the same estimates; in particular, we can take the diagonal elements gε
+described in 0.4. Computationally, however, it is easier to work with another
+system of quadratic
+            √        forms, namely with the forms Qε (x, y) = a(x−iεy)(εx+iy),
+where i = −1 and a > 0 is a (bounded as ε → 0) normalization constant
+which makes det Qε = 1.
+                                 ANALYTIC CONTINUATION                                 339
+
+     We will see in Appendix C that, modulo the G-action, the forms R ∈
+Q+ depend only on one parameter, so the specific choice of the family Qε is
+inconsequential.
+     We can rewrite formula (0.4.2) as
+                                     X
+(2.1)                    ||φ2ε ||2 =   |ci |2 ||φi,ε ||2 .
+
+    Proposition. Let (π, G, L) be an irreducible unitary representation of
+SL(2, R) and v ∈ L a unit K-fixed vector. Consider gε and vε = π(gε )v as
+above. Then
+
+(1) ||vε ||2 ≤ C| ln(ε)| as ε → 0.
+(2) There exists c > 0 such that if π ≃ πλ is a representation of the principal
+    series, then ||vε ||2 > c exp(( π2 − 6ε)|λ|) for any λ and ε < 0.1.
+(3) Fix an isometric G-equivariant embedding ν : L → L2 (X) and set φε =
+    ν(vε ) ∈ C ∞ (X). Then supx∈X |φε (x)| ≤ C| ln ε| as ε → 0.
+
+     2.3. Proof of Theorem 0.2. From Proposition 2.2 it follows immediately
+that we have:
+               sup |φε (x)| ≤ C| ln ε| and ||φε ||2 = ||vε ||2 ≤ C| ln(ε)|.
+               x∈X
+
+    Therefore, ||φ2ε ||2 ≤ ||φε ||2 · sup |φε |2 ≤ C| ln(ε)|3 . Hence, formula (2.1)
+implies
+                           X                      X           π             X
+  C| ln(ε)|3 ≥ ||φ2ε ||2 =    |ci |2 ||φi,ε ||2 ≥   |ci |2 e( 2 −6ε)|λi | =   bi e−6ε|λi | .
+                             i                    i                        i
+
+Set ε = 1/T and collect the terms with |λi | ≤ T , and the desired bound results.
+
+
+
+
+     3. Invariant norms and estimates of automorphic functions
+
+     In this section we prove the upper bound (3) from Proposition 2.
+
+     3.1. Let (π, G, L) be a unitary representation and ν : L → L2 (X) a con-
+tinuous G-equivariant morphism. Then ν maps the subspace of smooth vectors
+V = L∞ ⊂ L into C ∞ (X). Given a vector v ∈ V , we would like to describe
+an effective method for obtaining a pointwise bound for the function φ = ν(v).
+In other words, consider the supremum norm Nsup on V defined in 0.5. We
+would like to find bounds for Nsup in terms of π.
+     Observe that the L2 -norm of φ is bounded by kνk · kvk, where kνk is the
+operator norm. So let us assume that ||ν|| ≤ 1.
+340                 JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+    First, we will describe some weak bounds of Nsup in terms of Sobolev
+norms on V ; these bounds easily follow from the Sobolev restriction lemma.
+Then we will improve these bounds using the G-invariance of Nsup .
+    For convenience we recall the notion of Sobolev norms.
+     3.2. Sobolev norms. Let (π, V ) be a smooth representation of a Lie group
+G and || · || be a G-invariant Hermitian norm on V . For every nonnegative
+integer k define the Sobolev norm Sk on V as follows. Fix a basis X1 , . . . , Xn
+of the Lie algebra g = Lie(G) and define the norm Sk by Sk (v)2 = ||Xα v||2 ,
+                                                                   P
+
+where the sum runs over all monomials Xα = Xi1 Xi2 · · · Xil of degree ≤ k.
+       Remarks. 1. If we start with an arbitrary norm || · || on V , we get another
+system of norms, also called Sobolev norms. If the norm || · || is Hermitian,
+then all Sobolev norms are also Hermitian ones.
+       Our definition depends on the choice of basis Xi but different choices lead
+to equivalent norms.
+       2. Since the norm || · || is G-invariant, the representation (π, V ) is contin-
+uous with respect to the norm Sk for any k, with continuity constants inde-
+pendent of the representation π. Namely, for every g ∈ G we have Sk (π(g)v) ≤
+||g||kad Sk (v), where || · ||ad is the norm in the adjoint representation of G.
+       3. One can actually define Sobolev norm Ss for every s ∈ R as follows.
+The operator ∆ = − Xi2 : V → V is an essentially self-adjoint operator on
+                           P
+
+V . We can define the Sobolev norm Ss on V to be Ss (v) = ||(∆ + 1)s/2 v||.
+     Example. Let (π, V = Dλ ) be the unitary representation of the principal
+series of G = SL(2, R) and || · || the standard invariant Hermitian norm; V can
+                      ∞ (S 1 ) and e = e (θ) = e2ikθ , k ∈ Z, is a basis consisting
+be identified with Ceven             k     k
+of K-finite vectors. For a smooth vector v we define its Fourier coefficients as
+ak = hv, ek i.
+     It is easy to check that in this realization the Sobolev norm Ss is the norm
+induced by the quadratic form Qs (v) = n |an |2 (1+ µ + 2n2 )s (here we started
+                                            P
+
+with any basis of g orthonormal with respect to the standard scalar product).
+     3.3. Sobolev estimate. Let (π, G, L) be a unitary representation of G =
+SL(2, R) and V ⊂ L the subspace of smooth vectors. Suppose that X = Γ\G
+is compact. Then any morphism of G-modules ν : V → C ∞ (X) defines the
+supremum norm Nsup on V .
+    Lemma 3.1. Suppose that ||ν|| ≤ 1 with respect to the L2 -norm. Then
+Nsup ≤ CS2 , where the constant C only depends on the geometry of X.
+    The proof of the lemma easily follows from the Sobolev restriction lemma.
+We will present it in Appendix B together with a similar result for noncocom-
+pact lattices.
+                           ANALYTIC CONTINUATION                             341
+
+    Remark. In [BR] we showed that the same bound Nsup ≪ Ss holds for any
+s > 1/2, which is less trivial since it goes beyond the restriction theorem. For
+our present purposes, however, the elementary result of the lemma is enough.
+
+     3.4. Invariant (semi-)norms. The bound which we proved in Lemma 3.1
+is rather weak. For example, it gives a bound on Nsup (vε ) which is a power
+of ε−1 (even if we use optimal constant s = 1/2; see Remark 3.3). We are
+able to significantly improve this bound using the fact that the norm Nsup is
+G-invariant.
+     Let us state some elementary general result about invariant (semi-)norms.
+Let G be an arbitrary group acting on some linear space V .
+
+    Claim. For any seminorm N on V there exists a unique seminorm N G on
+V satisfying the following conditions:
+
+(1) N G is G-invariant;
+(2) N G ≤ N ;
+(3) N G is the maximal seminorm satisfying conditions (1) and (2).
+We will prove this claim in Appendix A.
+   The passage from N to N G has the following obvious properties:
+(1) If N1 ≤ CN2 , then N1G ≤ CN2G ;
+(2) If N is G-invariant, then N = N G .
+
+     We apply this general construction to our situation, when the space V
+is the smooth part of some unitary representation (π, G, L) of G = SL(2, R).
+Consider the Sobolev norm S = S2 on V and construct the corresponding
+invariant seminorm S G . If ν : L → L2 (X) is a morphism of representations,
+then ν(V ) ⊂ C ∞ (X) and we can define the norm Nsup on V as in 0.5. This
+norm is G-invariant and Nsup ≤ CS. Hence, Nsup ≤ CS G ; in particular,
+Nsup (vε ) ≤ CS G (vε ).
+     The norm S G , however, is defined in terms of the representation π only.
+It does not depend on the embedding ν. In particular, we can estimate the
+norm S G (vε ) by computations in Dλ . The main result in this direction is the
+following proposition which implies inequality (3) in Proposition 2.
+
+     Proposition. Let (π, G, L) be a unitary irreducible representation and
+v ∈ L a unit K-fixed vector. For k ≥ 0, consider the Sobolev norm S = Sk on
+the space V of smooth vectors in L and denote by S G its invariant part.
+     Then there exists a constant C > 0 such that S G (vε ) ≤ C| ln(ε)| as ε → 0.
+
+    We will prove this proposition in Section 5.
+342                      JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+                                   4. Noncocompact Γ
+
+      4.1. Cuspidal representations. In order to prove the crucial bound,
+|φε | ≤ C| ln ε|, we have used the norm Nsup induced by the supremum norm
+on X via the embedding ν and the fact that an appropriate Sobolev norm ma-
+jorizes it. From this, the proof of the bound and Theorem 0.2 immediately
+follow. We will explain now how to find such a Sobolev norm in the case of a
+noncocompact lattice Γ.
+      If X is noncompact, it is not clear why a supremum norm exists on the
+space of smooth vectors of π. Actually, there is no such norm for a general
+automorphic representation since a general automorphic function does not need
+to decay at infinity. However, if π is cuspidal, then its smooth vectors decay at
+infinity and the supremum norm is well defined. A simple proposition below
+(proven in Appendix B) shows that there is an appropriate Sobolev norm which
+majors Nsup in this case as in the cocompact case. This suffices to prove the
+bound |φε | ≤ C| ln ε|, hence, the analog of Theorem 0.2.
+     Proposition. Let (π, G, L) be a unitary representation of the group G =
+SL(2, R) and ν : L → L2 (X) a bounded morphism of representations whose
+image lies in the cuspidal part of L2 (X). Consider the space V = L∞ of
+smooth vectors in L and introduce the norm Nsup on V as in 0.5. Then there
+exists a constant C such that Nsup ≤ CS3 , where S3 is the third Sobolev norm
+on V .
+     4.2. We state now the version of Theorem 0.2 for a noncocompact lattice Γ
+(for notations see [B]). Denote by {αj }j=1,... ,k the set of cusps and by Ej (s) the
+corresponding Eisenstein series; let {φi } be the basis for the discrete spectrum
+(cusp forms and residual eigenfunctions). Let φ be a cusp form and denote, as
+before, bi = |hφ2 , φi i|2 exp( π2 |λi |) and bj (t) = |hφ2 , Ej ( 21 + it)i|2 exp( π2 |t|).
+      Theorem. There exists a constant C such that
+             X         XZ
+                 bi +            bj (t)dt ≤ C(ln T )3 as T → ∞.
+               |λi |≤T         j    |t|≤T
+
+
+
+                   5. Some computations in the model Dλ
+
+     This section is devoted to the proof of Propositions 2 and 3.4. Our proof
+is based on explicit computations in the model Dλ of the representation π.
+     Since π is a unitary representation with a K-fixed vector, it is either a
+representation of the principal series, or a representation of the complementary
+series (or the trivial representation). In 5.1 and 5.2 we consider representations
+of the principal series. In 5.5 we treat the complementary series.
+                           ANALYTIC CONTINUATION                              343
+
+     5.1. Proof of statements (1) and (2) of Proposition 2. What we claim in
+(1) and (2) is independent of the realization of πλ . We chose the realization of
+πλ in Dλ . By definition, the element gε is chosen so that vε = π(gε )v is given
+                   λ−1
+by the function Qε 2 , where Qε (x, y) = a(x − iεy)(εx + iy).
+    For computations we will use two models of the representation Dλ :
+    Circle model. Realization of Dλ as the space of smooth functions on S 1 ,
+described in 0.1.
+    Line model. In this model, to every vector v ∈ Dλ we assign the function
+u on the line given by u(x) = v(x, 1).
+    The line model is convenient to describe the action of the Borel subgroup.
+
+    Lemma. (1) π( 10 1b )u(x) = u(x − b).
+                          
+
+(2) π( a0 a−1
+           0
+                )u(x) = |a|λ−1 u(a−2 x).
+              
+
+(3) For λ = it the scalar product in Dλ is given, up to a factor, by the stan-
+            2                                                             2
+      R L2 -product in the space of functions on the line, namely, ||v|| =
+    dard
+    1
+    π   |u| dx.
+
+      Denote by qε the restriction of the quadratic form Qε on the line {(x, 1)};
+i.e., qε (x) = a(x − iε)(εx + i) = a(ε(x2 + 1) + ix(1 − ε2 )). Thus, the vector
+                                               (λ−1)/2
+vε ∈ Dλ correspondsRto the function uε = qε            , and we have to estimate
+                    2       2
+the integral ||vε || = |uε | dx.
+     Let m(X) = |q(x)| and a(x) = arg(q(x)) be the modulus and the argument
+of the function q. Then for λ = it we have |uε (x)|2 = m(x)−1 exp(2ta(x)).
+
+      Proof of (1) in Proposition 2. Since t is fixed, the function exp(2ta(x)) is
+ uniformly bounded, while the function m(x)−1 is bounded by ε−1 for |x| ≤ ε,
+                           −1          −1 −2               −1
+Rby |1/x| 2for ε ≤ |x| ≤ ε and by ε x for |x| > ε , which implies that
+   |uε (x)| dx ≤ C| ln ε|.
+
+    Proof of (2) in Proposition 2. We can assume that t > 0. Clearly, on the
+segment [1, 2] we have, uniform in ε < 0.1, bounds |m(x)| < 3 and a(x) >
+π/4 − 3ε. This implies that ||vε ||2 ≥ c exp(π/2 − 6ε).
+
+     Remark. There is another way to compute the norm ||vε ||, based on the
+theory of spherical functions. Namely, for every λ ∈ C we consider the spher-
+ical function Sλ on G equal to the matrix coefficient of the K-fixed vector
+v ∈ Dλ , Sλ (g) = hπ(g)v, vi. This function is well-known: it is determined by
+its restriction to the diagonal subgroup and on this subgroup it is essentially
+given by the Legendre function. In particular, this function has an analytic
+continuation to some domain which contains all diagonal matrices diag(a−1 , a)
+with |arg(a)| < π/2.
+344                 JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+      We can compute the norm ||π(g)v|| using spherical functions as follows.
+For g ∈ U we write ||π(g)v||2 = hπ(g)v, π(g)vi = hπ(g′ g)v, vi = Sλ (g′ g), where
+g′ = ḡ−1 (see 1.1). In particular, if g = diag(a−1 , a), where a ∈ C such that
+||a|| = 1 and |arg(a)| < π/4, then we have ||π(g)v||2 = Sλ (g2 ).
+
+     5.2. Proof of Proposition 3.4. We work with a fixed λ as ε → 0. Denote
+the norm SkG on the space Dλ by N . We want to estimate N (vε ).
+
+    Step 1. The vector vε is realized as the function Qλ−1 ε   . Consider this
+function in a circle model. We can choose a partition of unit αi on the circle
+and replace the function vε with a function αvε , where α is a smooth function
+with small support on the circle.
+     If α is supported far from the x- and the y-axes, then the family of func-
+tions αvε is uniformly bounded with respect to the norm Sk , hence, with respect
+to the norm N . The case of a function α supported near the x-axis can be
+reduced to the case of the y-axis by the change of coordinates (x 7→ y, y 7→ −x).
+     Thus, it suffices to estimate N (αvε ), where α is a smooth function sup-
+ported near the y-axis.
+    Step 2. Let us pass to the line model of the representation Dλ . Here one
+should be a little careful since the standard Sobolev norm S k on the space
+F of functions on the line does not agree with the Sobolev norm S k on the
+space Dλ . However, on the subspace F′ of functions supported on the segment
+[−2, 2] these two norms are comparable, and so on this subspace we will pass
+from one of these norms to another without changing notations.
+
+      In the line model our vector αvε is represented by the function uε given by
+uε (x) = αaκ (x − iε)κ (εx + i)κ , where κ = (λ − 1)/2. We see that as ε → 0 the
+structure of the function uε is mainly determined by the factor (x − iε)κ which
+is roughly homogeneous in x. We estimate the norm N (uε ) using the fact that
+the norm N itself is homogeneous with respect to dilations. We will do this
+using the, standard in harmonic analysis, method of dyadic decomposition.
+Let us describe this method informally for λ = 0.
+      In this case, the function u = uε on [0, 1] is, more or less, equal to (x −
+iε) −1/2 . In other words, uε is just a branch of the function x−1/2 slightly
+smoothed at the origin.
+      The only a priori estimate of the norm N we know is N ≤ Sk . However,
+one can easily see that the value Sk (u) is too big. What we can do is to break
+the segment I = [0, 1] into smaller segments I1 = [1/2, 1], I2 = [1/4, 1/2], . . . , Il
+(plus some small segment at the origin) and to break our function u into the
+sum of functions ui approximately supported on these segments.
+      Now let us estimate, separately, the norms N (ui ). The operator π(g)
+with a suitable diagonal matrix g moves ui into the function u′i with support
+                            ANALYTIC CONTINUATION                                345
+
+on [1, 2]. This transformation does not affect the norm N , since N is invariant,
+but it tremendously decreases the Sobolev norm Sk . This yields a much better
+estimate: N (ui ) = N (u′i ) ≤ Sk (u′i ).
+     To get a better bound, we move the function ui as far to the right as
+possible. On the other hand, we cannot move it beyond the point 2 since there
+we lose control of the Sobolev norm Sk ; this explains, in particular, why we
+have to break the function u into pieces: each piece must be scaled differently.
+     Let us formulate a general statement about functions on the line that sums
+up the results one can prove using this method.
+     5.3. Dyadic decomposition. Let F be the space of smooth functions with
+compact support on the line. For every t > 0 consider the dilation operator
+ht : F → F, where ht (f )(x) = f (t−1 x).
+     Suppose on F we have a homogeneous norm N of degree r; i.e., N (ht f ) =
+t−r N (f ). Assume also that for functions supported on the segment [−2, 2] we
+have the estimate N (f ) ≤ Sk (f ), where Sk is the kth Sobolev norm.
+     To estimate the values N (uε ) for some family of functions uε ∈ F as ε → 0,
+we assume that the family uε is “roughly homogeneous.” This means that
+uε = τε fε ∈ F, where fε is a family of smooth functions on the line such that
+ftε = tκ ht (fε ); i.e., ftε (tx) = tκ fε (x) (we say that this family is homogeneous
+of degree κ) and τε ∈ F is a family of truncation multipliers.
+     Proposition. Let N be a norm homogeneous of degree r on the space
+F = Cc∞ (R). Let uε ∈ F be a family of functions described above. Assume
+that:
+(1) There exists a constant S = Sf which bounds the Sobolev norm Sk on the
+    segments [−2, −1] and [1, 2] for all functions fε with 0 < ε < 1 and also
+    bounds the Sobolev norm Sk of the function f1 on the segment [−2, 2];
+(2) The truncation family τε is uniformly bounded in Cck [−1, 1]; i.e., all these
+    functions are supported on the segment [−1, 1] and for all ε ≤ 1 all their
+    derivatives up to order k are bounded by some constant Ctr .
+                                      R1
+    Then N (uε ) ≤ CCtr Sf (εRe κ−r + ε tRe κ−r · dt/t).
+    In other words, N (uε ) ≪ 1 if Re κ > r, N (uε ) ≪ εRe κ−r if Re κ < r and
+N (uε ) ≪ | ln ε| if Re κ = r.
+     We can apply this proposition to our situation. Namely, consider the
+family of functions fε (x) = (x + iε)κ , where κ = (λ − 1)/2. Identify the space
+F = Cc∞ (R) with a subspace in Dλ using the line model of Dλ (see 5.1). Then
+the formulas for the action of the diagonal group on F from Lemma 5.1 show
+that the G-invariant norm N on Dλ considered as a norm on F is homogeneous
+of degree r = −1/2.
+346                     JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+     It is easy to check that the family of functions uε (for some τε ) satisfies
+the conditions of Proposition 5.3 with κ = (λ − 1)/2. Thus, Re κ = −1/2 and
+Proposition 5.3 shows that N (uε ) ≤ C| ln ε|, which proves Proposition 3.4.
+     5.4. Proof of Proposition 5.3. Let us formalize the proof outlined in 5.2.
+Technically, it is a little easier to break u into an integral, rather than a sum,
+of components. That is what we are going to do.
+     Fix a smooth function γ ∈ F equal to 1 on [−1, 1] and supported on
+[−2, 2]. Then γuε = uε .
+                                                                        d
+     Consider two families of functions in F: γt = ht (γ) and δt = t dt   γt .
+     They have the following properties:
+ (i) γ1 is supported on [−2, 2]; δ1 is supported on [−2, −1] ∪ [1, 2];
+ (ii) ht (γ1 ) = γt , ht (δ1 ) = δt ;
+                  R1
+(iii) γ1 − γa = a δt · dt/t.
+     Fix an ε ≤ 1 and consider two families of functions
+                                                      R 1 in F: gt = γt uε and
+ct = δt uε . Then we can express uε = g1 as g1 = gε + ε ct · dt/t. Hence, the
+following claim (with Ctr , Sf described in the statement of Proposition 5.3)
+implies the bound on the norm N (uε ):
+      Claim. There exists C which only depends on k and such that
+(1) N (ct ) ≤ CCtr Sf tRe κ−r for all t such that ε ≤ t ≤ 1;
+(2) N (gε ) ≤ CCtr Sf εRe κ−r .
+      Proof. (1) Set a = t−1 . Then we have N (ct ) = t−r N (ha (ct )) and ha (ct ) =
+ha (δt )ha (τε )ha (fε ) = δ1 ha (τε )faε · tκ . Observe that the function ha (ct ) is sup-
+ported on [−2, −1] ∪ [1, 2], where all the derivatives of δ1 ha (τε ) up to the order
+k are uniformly bounded by CCtr , while the Sk -norm of all functions faε is
+bounded by Sf . This implies that N (ha (ct )) ≤ Sk (ha (ct )) ≤ CCtr Sf tRe κ .
+Hence, N (ct ) ≤ CCtr Sf tRe κ−r .
+      Claim (2) is similarly proved with the help of the dilation h−1      ε .
+
+     5.5. The complementary series. We describe modifications in the proofs
+in 5.1 and 5.2 needed to treat the complementary series.
+     Let (π, G, V ) be a representation of the complementary series. We will
+realize it as a representation (πλ , Dλ ) for some λ such that −1 < λ < 0 (see
+formulas in [G5]).
+     We can use the line model     of the space Dλ as in 5.1 but with the scalar
+product given by ||f ||2 = |x − x′ |−λ−1 f (x)f (x′ )dxdx′ . As in 5.1, we have
+                              R
+
+to estimate ||uε ||2 , where uε = (qε )(λ−1)/2 . In this case the main contribution
+comes from a neighborhood of 0 and direct computations show that ||uε ||2 ≤
+C| ln ε|.
+                             ANALYTIC CONTINUATION                                 347
+
+     Proof in 5.2 is even easier. Indeed, the invariant norm N on Dλ becomes
+a homogeneous of degree (λ − 1)/2 norm N on the space F of functions on
+the line. We have to estimate the value of this norm on a function uε , roughly
+homogeneous of degree κ = (λ − 1)/2. Proposition 5.3 implies that N (uε ) ≤
+C| ln ε|.
+
+                         Appendix A. Invariant norms
+
+     A.1. Fix a complex vector space V . A seminorm on V is a function
+N : V → R+ such that N (v1 + v2 ) ≤ N (v1 ) + N (v2 ) and N (av) = |a|N (v).
+     The set N of all seminorms on V is a partially ordered set with respect
+to the relation ≤, where N ≤ N ′ whenever N (v) ≤ N ′ (v) for all v ∈ V .
+
+     Lemma. The partially ordered set (N , ≤) is inductive, i.e., any nonempty
+family of seminorms Nu has the exact lower bound N = inf Nu .
+                                                    P
+     Proof. Define N by setting N (v) = inf( Nui (vi )), where the sum runs
+over all finite collections v1 , . . . , vk ∈ V and Nu1 , . . . , Nuk ∈ N which satisfy
+P
+   vi = v.
+     It is easy to check that N is a seminorm bounded by each seminorm Nu .
+If M is a seminorm such that M ≤ Nu for all Nu , then, clearly, M ≤ N . The
+uniqueness of N is obvious.
+
+    Geometrically it is clear that the seminorm N is defined by the unit ball
+which is the convex hull of the unit balls of the seminorms Nu .
+
+    A.2. Construction of invariant seminorms. Suppose an arbitrary group
+G acts on a complex vector space V . Then G acts on the set of seminorms
+on V by g(N )(v) = N (g−1 v). For every seminorm N on V we define a new
+seminorm: N G = inf g(N ). From the definition one can immediately deduce
+                   g∈G
+that:
+
+ (i) N G is an invariant seminorm.
+(ii) If M is any invariant seminorm bounded by N , then M ≤ N G .
+
+     Remark. Let us apply this construction to a representation (π, G, V ) of
+the unitary principal series of the group G = SL(2, R).
+     For any s ∈ R, consider the corresponding Sobolev norm Ss and construct
+the invariant seminorm SsG . One can easily show that for s < 0 the seminorm
+SsG vanishes. For s ≥ 0 the norm Ss is bounded below by an invariant unitary
+norm || · ||. This implies that || · || ≤ SsG ; hence, SsG is a norm.
+     One can show that for all s > 1/2 the norms SsG are equivalent to the
+same norm, B. This norm is distinguished by the condition that it is the
+maximal G-invariant norm on V (i.e., any G-invariant norm N is bounded by
+348                JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+CB for some constant C). If we realize V as the space of functions on the
+                                                                   1/2
+circle (see 0.1), then B becomes equivalent to the Besov norm B1,1 (here 1/2
+stands for derivative of order 1/2, one 1 stands for the L1 -norm and another
+1 is the weight index in the Besov norm). This equivalence can be shown by
+standard methods of harmonic analysis, like in [A], where similar questions are
+discussed.
+     In particular, this shows that for any cuspidal representation we have a
+bound on the supremum norm of the form Nsup ≪ B.
+     For 0 ≤ s ≤ 1/2 the norms SsG are all distinct. It is interesting to inves-
+tigate the nature of these norms. We think that in the circle model they are
+close to Besov norms, namely SsG ∼ Bq,q s with 1/q − s = 1/2.
+
+     The embedding ν : V → C ∞ (X) defines a family of G-invariant norms Np
+on the space V corresponding to Lp -norms on X. We can use Proposition 4.1
+and the Besov norm B described above to give some bounds for these norms
+in terms of the representation (π, G, V ) only.
+     Namely, consider a representation of the principal series. Realize the space
+V in the circle model. Then we have the required bounds at two points:
+
+ (i) N2 coincides with the L2 -norm on S 1 , the latter being the Besov norm
+      0 .
+     B2,2
+                                           1/2
+(ii) N∞ is bounded by the norm B = B1,1 .
+
+    Using interpolation theory for Banach norms we conclude that for inter-
+mediate p, 2 ≤ p ≤ ∞, there exists a bound Np ≪ Bq,q s , where 1/q + 1/p = 1,
+
+1/q − s = 1/2.
+    It is interesting to give similar bounds for norms Np for 1 ≤ p < 2.
+
+              Appendix B. Estimates using Sobolev norms
+
+      B.1. Sobolev inequalities. We start with the standard Sobolev lemma:
+
+     Lemma. Let B be the unit ball in Rn . Consider the space V of smooth
+functions on B with the L2 -norm || · ||, and introduce Sobolev norms Sk on V
+as in subsection 3.2, i.e., Sk (f )2 =   ||∂α (f )||2 , where the sum runs over all
+                                       P
+
+monomials in partial derivatives ∂α = ∂i1 , . . . , ∂il of order ≤ k. Then for any
+k > n/2 there exists a constant C such that |f (0)| ≤ CSk (f ) for f ∈ V .
+
+     This lemma holds (though its formulation is more cumbersome) for any
+Sobolev norm Ss with s > n/2.
+     In this paper we actually need this lemma only for k ≥ n. In this case the
+estimate is elementary and can be proven by induction using direct integration.
+     From the Sobolev lemma we immediately deduce its version for any Lie
+group G. Namely, suppose G is an n-dimensional Lie group. We fix some
+                           ANALYTIC CONTINUATION                            349
+
+basis Xi of the Lie algebra g of the group G and use it to construct a left-
+invariant metric and a left-invariant measure on G. Fix a symmetric compact
+neighborhood B of the unit e ∈ G; we will call B the unit ball.
+     Consider the space V of smooth functions on B, introduce the L2 -norm
+with respect to the left-invariant measure on G and define Sobolev norms on
+V using derivatives Xi ∈ g corresponding to the right G-action.
+      Corollary. Let k > n/2. Then there exists a constant C such that
+|f (e)| ≤ CSk (f ), for any f ∈ V .
+     Though this reformulation seems to be quite trivial, it is in fact rather
+strong, since it gives some estimates which are uniform with respect to the left
+G-action.
+      B.2. Sobolev inequalities for homogeneous spaces. Let X = Γ\G be a
+homogeneous space. We consider a measure on X induced by a left G-invariant
+Haar measure on G and introduce the L2 -norm and Sobolev norms in the
+space V of smooth functions on X. We would like to describe Sobolev type
+inequalities which are uniform on X.
+      We will call a function w on the space X a weight if it is a positive
+measurable function and for every g ∈ G there exists a constant C(g) such
+that w(xg) ≤ C(g)w(x) for all x ∈ X; we also assume that the function C(g)
+is locally bounded.
+      Fix a ball B ⊂ G as above. For every point x ∈ X we consider the
+map px : B → X given by g 7→ xg. This map induces the morphism of Hilbert
+spaces p∗x : L2 (X) → L2 (B) and we denote by w(x) the norm of this morphism.
+(One can show that w(x)2 is the maximal cardinality of the fibers of the map
+px .) It is easy to see that w is a weight on X. It depends on the choice of the
+unit ball B but for different balls these functions are comparable.
+      Now the Sobolev inequality for G (Corollary B.1) immediately implies
+    Proposition. For k > n/2 there exists a constant C such that for any
+f ∈ V and x ∈ X, |f (x)| ≤ Cw(x)Sk (f ).
+    If X is compact, then the weight function w(x) is bounded; thus the
+proposition implies Lemma 3.3.
+    If X is not compact, then in order to get a bound on sup |f (x)| we need
+an additional information, e.g., that f is cuspidal.
+     B.3. Sobolev estimates in the cuspidal case. Let G be a Lie group, Γ ⊂ G
+a lattice in G and X = Γ\G. We fix a basis in g = Lie(G) and use it to
+construct a left-invariant metric on G and the induced metric on X.
+     Recall the notion of the cuspidal function on X. A unipotent subgroup
+U ⊂ G is cuspidal if U is nontrivial and ΓU = Γ ∩ U is a cocompact subgroup
+350                JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+in U . Geometrically this means that the left orbits of U in G become compact
+when mapped to X; these compact sets are called horocycles.
+     A smooth function f on X is called cuspidal if the integral of f over any
+horocycle vanishes. Important here is the G-invariance of the space of cuspidal
+functions on X; in particular, this space is g-invariant.
+     For every point x ∈ X, define d(x) as the infimum of 1 and the diameters
+of all horocycles through x. Roughly speaking, d measures how close point x
+is to a cusp.
+     The following lemma shows that we can improve estimates for a cuspidal
+function if we know estimates for its derivatives.
+
+      Lemma. Suppose f is a smooth cuspidal function on X such that f and
+all its derivatives Xi f are bounded by a weight w. Then for some constant C
+independent of f , the function f is bounded by a weight w′ = Cwd.
+
+     Proof. Let x ∈ X. If d(x) ≥ 0.1, there is nothing to prove. So suppose
+d(x) < 0.1; i.e., there exists an horocycle H passing through x and diam(H) ≤
+2d(x) < 0.2. By hypothesis, all the derivatives of f at all points of H are
+bounded by Cw(x). This means that the gradient of f is bounded by C ′ w(x)
+at all points of H.
+     We can assume that the function f is real. Then the condition that its
+integral over H vanishes implies that f vanishes at least at one of the points
+of H. Combined with the estimate |grad(f )| ≤ C ′ w(x) and the fact that
+diam(H) ≤ 2d(x) this implies the desired estimate |f (x)| ≤ 2C ′ w(x)d(x).
+
+     Proof of Proposition 4.1. Let us come back to the case G = SL(2, R),
+X = Γ\G.
+     Let f be a cuspidal function on X. It follows from the estimate in B.2 that
+f and its derivatives are bounded by Cw(x)S3 (f ) with the weight w introduced
+in B.2. Hence, |f | ≤ Cw(x)d(x)S3 (f ) by Lemma B.3. In order to finish the
+proof, it suffices to show that the function wd is bounded on X. This result
+easily follows from the theory of Siegel domains. Let us recall this theory.
+     Fix a cuspidal unipotent subgroup U , set ΓU = Γ ∩ U and consider the
+homogeneous space XU = ΓU \G. Let p : XU → X be the natural projection.
+     Let A be the Cartan group of G. It is canonically isomorphic to R∗ ; we
+define the function h : A → R by h(a) = ln(|a|). Using Iwasawa decomposition
+we can canonically extend h to a left U -invariant and right K-invariant function
+on G. This latter function defines the function h : XU → R.
+     A Siegel domain ST is an open subdomain of XU defined as the preimage
+  −1
+h (T, ∞). Fix one Siegel domain S = ST and consider the map p : S → X.
+It is easy to see that for the unit ball B ⊂ G the domain S′ = S · B is
+contained in another Siegel domain, ST ′ . By the theory of Siegel domains the
+                            ANALYTIC CONTINUATION                                351
+
+cardinality of the fibers of the map p : S′ → X is finite and bounded; hence,
+the operator p∗ : L2 (X) → L2 (S′ ) is bounded. By the definition of w this
+implies that w(p(x)) ≤ Cw(x) for any x ∈ S. Also, obviously, d(p(x)) ≤ d(x)
+for any x ∈ S.
+     By reduction theory the space X can be covered by a compact set and
+the union of images of a finite collection of Siegel domains. Hence, in order to
+check that the function dw is bounded on X, it suffices to check the bound on
+each Siegel domain.
+     Direct computations on the Siegel domain ST show that for x ∈ ST ⊂ XU
+we have d(x) ≤ C exp(−h(x)) and w(x) ≤ C exp(h(x)/2), which shows that
+the function dw is bounded on ST .
+
+          Appendix C. The geometry of domain U ⊂ SL(2, C)
+
+       In the 2-dimensional case there is a convenient way to describe the variety
+Q of unimodular quadratic forms; see 1.2. Namely, fix a skew-symmetric form
+h·, ·i on C2 . Then for any pair of noncollinear vectors a, b ∈ C2 set Qa,b (x) =
+ha,xihb,xi                                                                         1
+   ha,bi . Note that this form only depends on the images of a and b in P ,
+i.e., we can define the unimodular quadratic form Qa,b for any pair of distinct
+points of P1 . It is easy to see that this identification defines a natural SL(2, C)-
+equivariant isomorphism of algebraic varieties P1 × P1 \ {diagonal} and Q.
+
+      Lemma. (1) Identify C with an open subset of P1 , z 7→ (z, 1). (In partic-
+ular, this realizes H as an open G-invariant subset of P1 .) Then the morphism
+(a, b) 7→ Qa,b identifies the domain H × H̄ with the subdomain Q+ ⊂ Q.
+    (2) Let I(Q) = {diag(z −1 , z) : | arg z| < π4 } ⊂ GC . Then U = SL(2, R) · I ·
+SO(2, C).
+
+     Proof. If P is a diagonal unimodular quadratic form on C2 , then it is easy
+to see that P ∈ Q+ if and only if P is of the form g(Q) for some g ∈ I. This
+shows that I ⊂ U and, hence, G · I · KC ⊂ U .
+     In order to prove the opposite inclusion it suffices to show that Q+ =
+G · I(Q). Consider any form P ∈ Q+ . Since the form Re P is positive definite,
+we can find a basis of R2 in which the real and imaginary parts of P are simul-
+taneously diagonalized. This implies that the orbit G(P ) contains a diagonal
+quadratic form P ′ . As we saw, P ′ is of the form h(Q) for some h ∈ I. This
+proves heading (2).
+     The form Q corresponds to the point (i, −i) ∈ H × H̄. Hence, for h ∈ I
+the point (hi, −hi) ∈ H × H̄ corresponds to the quadratic form h(Q) which lies
+in Q+ ; thus, the subset I(Q) lies in both H × H̄ and Q+ .
+     Since Q+ and H × H̄ are G-invariant, to show that they coincide, it suffices
+to show that each of them is generated by I(Q) under the G-action.
+352                     JOSEPH BERNSTEIN AND ANDRE REZNIKOV
+
+
+     For Q+ this fact was already proven in heading (2). In order to prove it
+for H × H̄, observe that the only G-invariant of the pair (a, b) ∈ H × H̄ is the
+hyperbolic distance d(a, b̄). Since, in I(Q), arbitrary distances can be realized,
+I(Q) generates H × H̄ as a G-set.
+
+
+        Tel Aviv University, Ramat Aviv, Israel
+        E-mail address: bernstei@math.tau.ac.il
+
+     Ben Gurion University, Beer Sheva and Weizmann Institute of Science, Rehovot,
+Israel
+     E-mail address: reznik@wisdom.weizmann.ac.il
+
+
+                                          References
+
+[A]        J. Arazy, S. Fisher, and J. Peetre, Möbius invariant spaces of analystic functions,
+           in Complex Analysis I, LNM 1275, 10–22, Springer-Verlag, New York (1987).
+[B]        D. Bump, Automorphic Forms and Representations, Cambridge University Press,
+           Cambridge (1997).
+[B-I]      D. Bump, W. Duke, J. Hoffstein, and H. Iwaniec, An estimate for the Hecke eigen-
+           values of Maass forms, IMRN, no. 4 (1992), 75–81.
+[BR]       J. Bernstein and A. Reznikov, Sobolev norms of automorphic functionals, C.R.
+           Acad. Sci. Paris Sér. I Math. 327 (1998), 111–116.
+[HK]       M. Harris and S. Kudla, The central critical value of a triple product L-function,
+           Ann. of Math. 133 (1991), 605–672.
+[G5]       I. Gelfand, M. Graev, and N. Vilenkin, Generalized Functions, Vol. 5, Academic
+           Press, New York (1966).
+[G6]       I. Gelfand, M. Graev, and I. Piatetski-Shapiro, Generalized Functions, Vol. 6, Saun-
+           ders, Philadelphia (1967).
+[G]        A. Good, Cusp forms and eigenfunctions of the Laplacian, Math. Ann. 255 (1981),
+           523–548.
+[J]        M. Jutila, The additive divisor problem and its analogs for Fourier coefficients of
+           cusp forms. I, Math. Z. 223 (1996), 435–461.
+[P]        Y. Petridis, On squares of eigenfunctions for the hyperbolicplane and a new bound
+           on certain L-series, IMRN, no. 3 (1995), 111–127.
+[S]        P. Sarnak, Integrals of products of eigenfunctions, IMRN, no. 6 (1994), 251–260.
+[Se]       A. Selberg, On the estimation of Fourier coefficients, in Collected Works, Springer-
+           Verlag, New York (1989), 506–520.
+
+                                  (Received August 20, 1998)
+

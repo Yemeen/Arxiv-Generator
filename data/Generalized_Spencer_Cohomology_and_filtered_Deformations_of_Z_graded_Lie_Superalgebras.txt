@@ -1,0 +1,2184 @@
+                                              c 1998 International Press
+                                              
+                                              Adv. Theor. Math. Phys. 2 (1998) 1141-1182
+arXiv:math/9805039v3 [math.RT] 30 Mar 1999
+
+
+
+
+                                               Generalized Spencer Cohomology
+                                             and Filtered Deformations of Z-graded
+                                                       Lie Superalgebras
+                                                                 a Shun-Jen    Cheng∗ and b Victor G. Kac†
+
+                                                                          a Departmentof Mathematics,
+                                                                        National Cheng-Kung University
+                                                                                 Tainan,Taiwan
+                                                                         chengsj@mail.ncku.edu.tw
+                                                                          b Departmentof Mathematics,
+                                                                                     MIT,
+                                                                              Cambridge, MA 02139
+                                                                               kac@math.mit.edu
+
+                                                                                     Abstract
+
+
+                                                        In this paper we introduce generalized Spencer cohomology for finite
+                                                    depth Z-graded Lie (super)algebras. We develop a method of finding fil-
+                                                    tered deformations of such Z-graded Lie (super)algebras based on t his co-
+                                                    homology. As an application we determine all simple filtered deformations
+                                                    of certain Z-graded Lie superalgebras classified in [K3], thus completing the
+                                                    last step in the classification of simple infinite-dimensional linearly compact
+                                                    Lie superalg ebras.
+
+
+
+
+                                                ∗
+                                                     partially supported by NSC grant 87-2115-M006-005 of the ROC
+                                                †
+                                                    partially supported by NSF grant DMS-9622870
+                                                    e-print archive: http://xxx.lanl.gov/abs/math.RT/9805039
+1142                       GENERALIZED SPENCER COHOMOLOGY ...
+
+
+0. Introduction.
+
+     Spencer cohomology of a Z-graded Lie algebra g = ⊕j≥−1 gj of depth 1
+is an important tool for the study of deformations of geometric structures
+on a manifold [S], [GS], [SS], [KN]. It works best, however, when the cor-
+responding transitive pseudogroup of transformations is irreducible, i.e. ad-
+mits no invariant differential systems, integrable or not. In the primitive
+(but reducible) case, i.e. when there are no integrable differential systems,
+it is natural to pick a minimal invariant (non-integrable) differential system,
+which leads to Z-graded Lie algebras of depth h ≥ 1 [W]: g = ⊕j≥−hgj . This
+brings us to the generalized Spencer cohomology (Section 1).
+
+     The present paper is a part of the program of classification, up to formal
+equivalence, of simple infinite-dimensional Lie superalgebras of vector fields
+on a finite-dimensional supermanifold [K3]. Like in the Lie algebra case,
+an important ingredient in this classification is the description of all simple
+filtered deformations of a given graded Lie superalgebras cf. [SS], [KN], [W],
+[G].
+
+     Let L be a linearly compact Lie (super)algebra, that is a complete topo-
+logical Lie (super)algebra, which admits a fundamental system of neigh-
+borhoods of 0 consisting of subspaces of finite codimension. (The formal
+completion of a Lie (super)algebra o f vector fields on a finite-dimensional
+(super)manifold X at a neighborhood of a point of X is of this kind.) Pro-
+vided that L is simple (i.e. has no non-trivial closed ideals), one can construct
+a filtration of L by open (and hence closed) subspac es
+
+                  L = L−h ⊃ L−h+1 ⊃ · · · ⊃ L0 ⊃ L1 ⊃ · · · ,
+
+such that the associated graded Lie (super)algebra GrL = ⊕∞    j=−h gj , gj =
+Lj /Lj+1 , of depth h has the properties [W]:
+(G0) dimgj < ∞,
+(G1) g−j = gj−1 , for j ≥ 1,
+(G2) if a ∈ gj , j ≥ 0, then [a, g−1 ] = 0 implies that a = 0,
+(G3) the representation of g0 on g−1 is irreducible.
+
+    In the Lie algebra case such a filtration is unique, provided that dimL =
+∞ [G], and it is not too hard to classify all Z-graded Lie algebras satisfying
+properties (G0)–(G3) (see [K1] or [G]). However, in the Lie superalgebra
+case there ar e many such filtrations and it is all but impossible to classify
+all Z-graded Lie superalgebras satisfying (G0)–(G3). The basic idea of [K3]
+is to choose a “maximally even” L0 ; then the representation of g0 on g−1
+satisfies much more s evere restrictions than (G3) (cf. [G]), which makes it
+possible to classify such Z-graded Lie superalgebras.
+S. CHENG, V. KAC                                                             1143
+
+
+    The next step is to describe, for each Z-graded Lie (super)algebra g of
+the obtained list, all simple filtered deformations of g, i.e. all simple linearly
+compact Lie (super)algebras L such that GrL ∼    = g. Of course, if g is a simple
+Z-graded Lie (super)algebra, then its completion ḡ in topology defined by the
+fundamental system g(k) = ⊕i≥k gi , k ∈ Z+ , is a simple filtered deformation,
+called the trivial filtered deformation. It is easy to show (cf. Corollary 2.2)
+that if g0 contains a non-zero central element, then g has only a trivial
+deformation.
+
+     In the Lie algebra case the only remaining examples are the two series
+of Z-graded Lie algebras of depth 1, which consist of divergence free and
+Hamiltonian vector fields with polynomial coefficients. In these two cases
+one can either use the classi cal Spencer cohomology as in [SS], [KN], or
+some more “pedestrian” arguments, as in [W], [K2], [K3], to show that all
+filtered deformations are trivial.
+
+   However, in the Lie superalgebra case there are many more cases of
+Z-graded Lie superalgebras, and only for some of them the “pedestrian”
+arguments work (cf. [K3]). Also, we do not have at our disposal a Serre
+type vanishing theorem for Spencer coho mology as in the Lie algebra case
+(cf. [KN]). Moreover, there are several series of Z-graded Lie superalgebras
+of depth h ≥ 2 to which the classical Spencer cohomology is not applicable.
+
+    The aim of the present paper is to show how to resolve these difficulties.
+In Section 1 we introduce generalized Spencer cohomology, which is applica-
+ble to graded Lie superalgebras of arbitrary depth h. In Section 2 we show
+that filtered deforma tions are described by the invariant Spencer 2-cocycles,
+provided that g is an almost full prolongation. We introduce the latter notion
+since, unlike in the Lie algebra case, not all Z-graded algebras in question are
+full prolongations (mea ning that the first Spencer cohomology is trivial),
+but all, except for one of them, happen to be almost full prolongations.
+
+    After describing in Section 3 all examples of Z-graded Lie superalgebras
+determination of whose filtered deformations was left out in [K3], we apply to
+them in Section 4 the techniques developed in Section 2. We find that, unlike
+in the Lie algebra ca se, there are three series of Z-graded Lie superalgebras
+that do admit a (unique) non-trivial filtered deformation (Theorems 5.1 and
+5.2), and the rest do not (Theorems 4.1–4.4). Note that one of these filtered
+deformations was discovered by Kotchetk off [Ko], and that the two filtered
+deformations discovered in this paper are isomorphic.
+
+   We would like to thank Yuri Kotchetkoff for very useful correspondence.
+
+   All vector spaces, algebras and tensor products in this paper are consid-
+1144                                 GENERALIZED SPENCER COHOMOLOGY ...
+
+
+ered over the field C of complex numbers.
+
+
+
+1. Generalized Spencer cohomology.
+
+   Let g = ⊕∞    j=−h gj be a Lie superalgebra with a Z-gradation (compatible
+with its Z2 -gradation) of finite depth h, where h is a positive integer. We
+have [gi , gj ] ⊂ gi+j , and we shall always assume that dim Gj < ∞ for all
+j ≥ −h.
+
+   Set g− = ⊕−1 j=−h gj . Obviously g− is a (finite-dimensional) subalgebra of
+g and hence g− acts on g via the adjoint representation, so that we may
+consider H ∗ (g− ; g), the cohomology groups of g− with coefficients in it s
+adjoint representation in g. Recall (see e.g. [F]) that the space of cochains is
+                                     C ∗ (g− ; g) = Λ∗ (g− ) ⊗ g,
+where the exterior product Λ∗ is understood in the usual super sense. The
+space of the j-cochains (j ∈ Z+ ) is then
+               C j (g− ; g) = ⊕−1≥i1 ≥i2 ≥···≥ij ≥−h (g∗i1 ∧ · · · ∧ g∗ij ) ⊗ g,
+on which the coboundary operator d acts as (p + q = j + 1)
+
+
+          (dc)(x1 , · · · , xp , y1 , · · · , yq ) =
+              X
+                     (−1)s+t−1 c([xs , xt ], x1 , · · · , x̂s , · · · , x̂t , · · · , xp , y1 , · · · , yq )
+          1≤s<t≤p
+            Xp Xq
+          +             (−1)s−1 c(x1 , · · · , x̂s , · · · , xp , [xs , yt ], y1 , · · · , ŷt , · · · , yq ))
+              s=1 t=1
+                X
+          +              c([ys , yt ], x1 , · · · , xp , y1 , · · · , ŷs , · · · , ŷt , · · · , yq )
+              1≤s<t≤q
+              Xp
+          +       (−1)s [xs , c(x1 , · · · , x̂s , · · · , xp , y1 , · · · , yq )]
+              s=1
+                          X
+                          q
+          +(−1)p−1             [ys , c(x1 , · · · , xp , y1 , · · · , ŷs , · · · , yq )],
+                          s=1
+
+where x1 , · · · , xp ∈ (g− )0̄ and y1 , · · · , yq ∈ (g− )1̄ . We have then H ∗ (g− ; g) =
+Kerd/Imd.
+
+   Note that C j (g− ; g) is Z-graded by letting deggi = −degg∗i = i. This
+gradation induces a Z-gradation on H j (g− ; g):
+                                 H j (g− ; g) = ⊕l∈Z H l,j (g− ; g),
+S. CHENG, V. KAC                                                              1145
+
+
+where H l,j (g− ; g) denotes the l-th graded component of H j (g− ; g).
+
+    We will call the vector space H l,j (g− ; g) the (l, j)-th (generalized) Spencer
+cohomology group of the Z-graded Lie superalgebra g and we will call ele-
+ments in Kerd (respectively Imd) Spencer cocycles (respectivel y Spencer
+coboundaries). In this paper only those H l,j (g− ; g), for which l ≥ 0 will play
+a role. This definition is a generalization of the classical Spencer cohomology
+defined for h = 1. We would like to point out that the classical Sp encer
+cohomology H p,q (cf. [Sp]) would in our definition correspond to H p+q−1,q .
+
+    From the definition it is obvious that H ∗,0 is the subspace of
+g− -invariants in g so that we have
+
+                              H k,0 (g− ; g) = (gk )g− .
+The Lie superalgebra g is called transitive if H k,0 (g− ; g) = 0 for all k ≥ 0,
+i.e. g is transitive if the conditions [g− , a] = 0 and a ∈ ⊕j≥0 gj imply that
+a = 0.
+
+Remark 1.1. The transitivity property is equivalent to (G2), provided that
+(G1) holds (see Introduction).
+
+    A linear map α : g− → g is called a derivation of g− into g if for all
+x, y ∈ g− we have α([x, y]) = [α(x), y] + (−1)p(α)p(x) [x, α(y)]. Evidently,
+the space of all derivations derC (g− , g) is Z-graded so that we may write
+derC (g− , g) = ⊕l∈Z derC (g− , g)l . Furthermore every element of g itself defines
+a derivation of g− into g. It follows from the definition that H ∗,1 (g− ; g) =
+derC (g− , g)/g so that
+                          H l,1 (g− ; g) = derC (g− , g)l /gl .
+
+    Let g≤0 denote the subalgebra g− ⊕ g0 of g. We will say that g is a full
+prolongation of g≤0 of degree k, if g contains all derivations of g− into g of
+degree ≥ k. This is equivalent to saying that H l,1 (g− ; g) = 0, for l ≥ k. Note
+that a full prolongation of g≤0 of degree 1 is uniquely determined (since in
+this case gj is just derC (g− , g)j , for j ≥ 1); in this case we shall call g the
+full prolongation of g≤0 .
+
+Remark 1.2. For most cases the notion of full prolongation is adequate for
+the study of filtered deformations. However, in some cases, full prolongation
+is too strong an assumption, and should be replaced by a weaker notion,
+which we shall call an almost full prolongation. We shall take this up in the
+next section after introducing filtered deformations, which turn out to be
+closely related to H ∗,2 (g− ; g).
+1146                        GENERALIZED SPENCER COHOMOLOGY ...
+
+
+2. Preliminaries on filtered deformations.
+
+    Let L be a filtered Lie superalgebra of finite depth h, where h is a positive
+integer. This means that L is a Lie superalgebra with a sequence of subspaces
+(compatible with the Z2 -gradation of L)
+           L = L−h ⊃ L−h+1 ⊃ · · · L−1 ⊃ L0 ⊃ L1 · · · ⊃ Ln ⊃ · · · ,
+such that [Li , Lj ] ⊂ Li+j . We shall assume in this paper that dimC Lj /Lj+1 <
+∞, for all j. The filtration in a natural way induces a topology on L. The
+condition [Li , Lj ] ⊂ Li+j makes L into a topological Lie superalgebra. We
+will say that L is complete, if L is complete with respect to this topology.
+In this paper we shall always deal with complete filtered Lie superalgebras.
+Let g = ⊕∞ j=−h gj , where gj = Lj /Lj+1 , be i ts associated graded Lie super-
+algebra. We let g(j) = ⊕i≥j gi . This defines a filtration on g. The completion
+of g with respect to the topology induced by this filtration will be denoted
+by ḡ.
+
+    For each j ≥ −h we may choose a subspace Vj of Lj so that Vj ⊕Lj+1 = Lj
+as vector spaces. We may identify Vj with gj so that in the vector space
+     Q         Q
+ḡ = j gj = j Vj = L we may define two Lie brackets. Namely, [·, ·],
+which is the Lie bracket of the Lie superalgebra ḡ, and [·, ·]1 , which is the
+Lie bracket of the Lie superalgebra L. We have for x, y ∈ g = ⊕j gj :
+                                              X
+                         [x, y]1 = [x, y] +          µi (x, y),             (2.1)
+                                              i≥1
+
+where µi : g ∧ g → g is an even super-skewsymmetric bilinear map such that
+µi (gj ∧ gs ) ⊂ gj+s+i for each i = 1, 2, · · ·. Note that for each ǫ ∈ C∗ the map
+ϕǫ : ḡ → ḡ, d efined by ϕǫ (x) = ǫj x, if x ∈ gj , is a continuous automorphism
+of the Lie superalgebra ḡ, provided that ǫ 6= 0. Applying ϕǫ , with ǫ 6= 0,
+to both sides of (2.1) and dividing by an appropriate power of ǫ, we obtain,
+letting [x, y]ǫ = ϕǫ ([x, y]1 ):
+                                              X
+                         [x, y]ǫ = [x, y] +         µi (x, y)ǫi .           (2.2)
+                                              i≥1
+
+The bracket [x, y]ǫ defines a Lie superalgebra structure on the space ḡ. If
+ǫ 6= 0, the obtained Lie superalgebra, which we denote by ḡǫ , is isomorphic
+to ḡ1 . If ǫ = 0, it is isomorphic t o ḡ. We will sometimes call [·, ·]ǫ the
+deformed bracket of [·, ·], and ḡǫ with a deformed bracket (or L) a filtered
+deformation of g. A filtered deformation is said to be a trivial deformat ion,
+if it is isomorphic to ḡ.
+
+    We have associated to a filtered deformation ḡǫ ∼        = L of g a sequence
+of bilinear maps µi : g ∧ g → g, i = 1, 2, · · ·. We shall call the sequence
+{µ1 , µ2 , · · ·} a defining sequence of this filtered d eformation.
+S. CHENG, V. KAC                                                                          1147
+
+
+Remark 2.1. Of course, a different choice of the subspaces Vj gives rise to a
+different defining sequence in general. Hence a filtered deformation may be
+represented by different defining sequences. Thus we may study a filtered
+deformation by analyzing the effect of a different choice of the subspaces Vj
+on the resulting defining sequence. Clearly, a filtered deformation is trivial if
+and only if we may choose the subspaces Vj in such a way that the resulting
+defining sequence cons ists of zero maps.
+
+    Let x, y and z be homogeneous (both in the Z- and Z2 -grading) elements
+of g. The Jacobi identity in ḡǫ gives
+
+ [x, [y, z]ǫ ]ǫ = [[x, y]ǫ , z]ǫ + p(x, y)[y, [x, z]ǫ ]ǫ ,   where p(x, y) = (−1)p(x)p(y) .
+
+Substituting (2.2) into this expression gives an identity in power series in ǫ
+with coefficients in g. We collect the coefficient of ǫk and obtain the following
+identity in g:
+                                               X
+         [x, µk (y, z)] + µk (x, [y, z]) +             µi (x, µj (y, z))
+                                             1≤i,j<k
+                                               X
+  = µk ([x, y], z) + [µk (x, y), z] +                  µi (µj (x, y), z) + p(x, y)[y, µk (x, z)]
+                                             1≤i,j<k
+                                              X
+  + p(x, y)µk (y, [x, z]) + p(x, y)                   µi (y, µj (x, z)).                  (2.3)
+                                            1≤i,j<k
+
+
+Proposition 2.1. The first non-zero term µk in (2.2) is an even 2-cocycle
+of g with coefficients in the adjoint representation.
+
+Proof.     Since µi = 0 for all i < k, from (2.3) we get
+
+[x, µk (y, z)] + µk (x, [y, z]) = µk ([x, y], z) + [µk (x, y), z]
+                                    + p(x, y)[y, µk (x, z)]
+                                    + p(x, y)µk (y, [x, z]).                              (2.4)
+
+But this precisely means that µk is a 2-cocycle.
+
+    We rewrite (2.4) as
+
+                  µk (x, [y, z]) − [µk (x, y), z] − p(x, y)[y, µk (x, z)] =
+
+                   µk ([x, y], z) + p(x, y)µk (y, [x, z]) − [x, µk (y, z)].
+The right hand side above is precisely
+
+                                          x · µk (y, z),
+1148                            GENERALIZED SPENCER COHOMOLOGY ...
+
+
+while the left hand side is −dfxk (y, z), where fxk : g → g is given by fxk (y) =
+µk (x, y) and d is the coboundary operator. Thus it follows from the proof of
+Proposition 2.1 that (2.3) may be rewritten as
+                                           X                                X
+x · µk (y, z) + dfx (y, z) = −                      µi (x, µj (y, z)) +             µi (µj (x, y), z)
+                                        1≤i,j<k                           1≤i,j<k
+                                                    X
+                              + p(x, y)                  µi (y, µj (x, z)),                        (2.5)
+                                              1≤i,j<k
+
+Of course (2.3) can also be rewritten as
+                         X                                  X
+dµk (x, y, z) = −                   µi (x, µj (y, z)) +             µi (µj (x, y), z)
+                       1≤i,j<k                            1≤i,j<k
+                                X
+                + p(x, y)                µi (y, µj (x, z)).                                        (2.6)
+                              1≤i,j<k
+
+
+   Here is the key observation (due to Kobayashi and Nagano [KN] in the
+case h = 1):
+
+Proposition 2.2. The first non-zero term µk in (2.2) restricted to g− defines
+an even g0 -invariant element in H k,2 (g− ; g).
+
+Proof. By Proposition 2.1 µk |g− ×g− is a 2-cocycle. Now (2.5) with x ∈ g0
+and y, z ∈ g− means precisely that it is g0 -invariant in H ∗ (g− ; g) (since its
+right-hand side is zero).
+
+
+Remark 2.2. Proposition 2.2 also follows from Proposition 2.1 as follows:
+µk defines a g-invariant element of H ∗ (g− ; g), hence it is g0 -invariant in
+H ∗ (g− ; g), when restricted to g− .
+
+
+Proposition 2.3. Let ḡǫ and ḡ′ǫ be two filtered deformations given by
+defining sequences {µ1 , µ2 , · · ·} and {µ′1 , µ′2 , · · ·}, respectively. Suppose that
+(µk − µ′k )|g− ×g− is a Spencer coboundary for some k ≥ 1. Then ḡ′ǫ has a
+defining sequence {µ′′1 , µ′′2 , · · ·} such that µ′′i = µ′i , for i < k, and µ′′k |g− ×g− =
+µk |g− ×g− . (In other words, one can c hange the defining sequence of ḡ′ǫ such
+that its first k − 1 terms are unchanged, and its k-th term becomes the k-th
+term of the defining sequence of ḡǫ when restricted to g− .)
+
+Proof.    We have for x, y ∈ g−
+                              X                                             X
+         [x, y]ǫ = [x, y] +         µi (x, y)ǫi ,     [x, y]′ǫ = [x, y] +         µ′i (x, y)ǫi .
+                              i≥1                                           i≥1
+S. CHENG, V. KAC                                                                               1149
+
+
+By assumption µk − µ′k is a Spencer coboundary, hence there exists an f :
+g− → g such that df = µk − µ′k . We define an injective map ρk : g− → g via
+
+                          ρk (x) = x + f (x)ǫk ,         ∀x ∈ g− .
+
+A simple calculation shows that
+                                        X                                    X
+   [ρk (x), ρk (y)]′ǫ = ρk ([x, y]) +         µ′i (x, y)ǫi + µk (x, y)ǫk +         µ′′i (x, y)ǫi .
+                                        i<k                                  i>k
+
+But now obviously ρk (g− ) + g(0) = g. Thus replacing g− by ρk (g− ) in ḡ′ǫ ,
+which correspond to a new choice of Vj , for j < 0, we obtain a defining
+sequence with the desired property.
+
+    Combining Propositions 2.2 and 2.3 we obtain
+
+Corollary 2.1. Let ḡǫ be a filtered deformation of a graded Lie superalgebra
+g with defining sequence {µ1 , µ2 , · · ·}. Suppose that H j,2 (g− ; g) has no non-
+trivial even g0 -invariant vectors for any j ≥ 1. Then ḡǫ has a defining
+sequence {µ′1 , µ′2 , · · ·} such that µ′j |g− ×g− is identically zero for all j ≥ 1.
+
+Proof.      Since µ1 |g− ×g− is a Spencer coboundary by Proposition 2.1, the
+filtered deformation ḡǫ has a defining sequence such that {µ′1 , µ′2 , · · ·}, where
+µ′1 |g− ×g− = 0 by Proposition 2.3. Now mu′2 |g− ×g− is a Spencer cobound-
+ary, hence ḡǫ has a defining sequence {µ′1 , µ′′2 , · · ·}, such that µ′′2 |g− ×g− = 0.
+Repeating this procedure, we may make µ′′′   3 |g− ×g− = 0 as well, etc. Since ḡǫ
+is complete, we may take the limit.
+
+    Let g = ⊕∞   j=−h gj be a Z-graded Lie superalgebra. Suppose that ḡǫ is
+a filtered deformation of g with defining sequence {0, · · · , 0, µk , µk+1 , · · ·}.
+Let a be a maximal reductive subalgebra of g0̄ and suppose that either a is
+semisimple or has a 1-dimensional center Cc, where adc acts on gj as the
+scalar j for each j ∈ Z. By Proposition 2.1, µk |a×a is a 2-cocycle of a with
+coefficients in the a-module gk . Due to our assumptions on a, by Whitehead’s
+second lemma µk |a×a is a coboundary. As in the proof of Corollary 2.1 we
+may find a defining sequence {0, · · · , 0, µ′k , µ′k+1 , · · ·} for ḡǫ such that µ′j |a×a
+is identically zero for all j. Thus we may assume that
+
+                              [a, b]ǫ = [a, b],      ∀a, b ∈ a.
+
+
+    Note that µk : g0 ⊗ gj → gj+k induces a map νk |a : a → g∗j ⊗ gj+k .
+It is easy to show, using the Jacobi identity and the fact that µk |a×a is
+identically zero, that νk |a is a 1- cocycle of a with coefficients in g∗j ⊗ gj+k . If
+1150                             GENERALIZED SPENCER COHOMOLOGY ...
+
+
+a is semisimple, then by Whitehead’s first lemma νk |a is a coboundary. If a
+has a non-zero center, then it acts non-trivially on g∗j ⊗ gj+k and hence νk | A
+is a coboundary as well. Arguing as before, we may assume that for all j
+                         [a, x]ǫ = [a, x],      ∀a ∈ a, ∀x ∈ gj .
+
+    Now let x ∈ gs and y ∈ gl . Taking bracket in ḡǫ of an element a ∈ a with
+[x, y]ǫ we obtain
+                                                      X
+                                                      ∞
+                 [a, [x, y]ǫ ]ǫ = [a, [x, y]]ǫ +            [a, µi (x, y)]ǫ ǫi
+                                                      i=k
+                                                     X
+                                                     ∞
+                                  = [a, [x, y]] +          [a, µi (x, y)]ǫi .
+                                                     i=k
+
+
+     On the other hand, by Jacobi identity in ḡǫ the same quantity is equal
+to
+             [[a, x]ǫ , y]ǫ + [x, [a, y]ǫ ]ǫ
+         = [[a, x], y]ǫ + [x, [a, y]]ǫ
+                           X
+                           ∞                                        X
+                                                                    ∞
+         = [a, x], y] +          µi ([a, x], y)ǫi + [x, [a, y]] +         µi (x, [a, y])ǫi .
+                           i=k                                      i=k
+
+Comparing the coefficients of ǫi we obtain
+                     [a, µi (x, y)] = µi ([a, x], y) + µi (x, [a, y]),
+which means precisely that the map µi |gs ×gt : gs ⊗ gt → gs+t+i is a homo-
+morphism of a-modules for every i ≥ k and s, t ≥ −h. We thus have proved
+the following proposition:
+
+Proposition 2.4. Let g = ⊕∞     j=−h gj be a Z-graded Lie superalgebra and let
+a ⊂ g0 be a maximal reductive subalgebra of g0̄ . Suppose that either a is
+semisimple or the center of a is Cc, where adc acts on gj as j, for every j ∈ Z.
+Then every filtered deformation of g has a defining sequence {µ1 , µ2 , · · ·} such
+that µi (a, g) = 0 and µi : gs ⊗ gt → gs+t+i is a homomorphism of a-modules
+, for i = 1, 2, · · ·.
+
+    In other words, Proposition 2.4 says that in every filtered deformation L
+of g one can choose a subalgebra a′ ⊂ L0 which maps isomorphically to a un-
+der the map L0 → g0 and one can choose a subspace Vj in Lj complementar
+y to Lj+1 for each j ≥ −h such that a′ ⊂ V0 and [a′ , Vj ] ⊂ Vj . From this we
+obtain immediately the following (well-known) corollary, which takes care of
+the case when a has a non-trivial center.
+S. CHENG, V. KAC                                                                    1151
+
+
+Corollary 2.2. Let g = ⊕∞   j=−h gj be a graded Lie superalgebra of depth h.
+Suppose that g0 contains an element c such that adc|gj = j. Then g has no
+non-trivial filtered deformations.
+
+    From now on we shall assume that g is transitive.
+
+Proposition 2.5. Let g = ⊕∞        j=−h gj be a transitive graded Lie superalgebra.
+Suppose that {µ1 , µ2 , · · ·} is a defining sequence of a filtered deformation ḡǫ
+of g. Then µi is completely det ermined by its restriction to g− × g.
+
+Proof.    Let a, b ∈ g0 and x ∈ g− . We have
+                                           X
+                                           ∞
+         [x, [a, b]ǫ ]ǫ = [x, [a, b]]ǫ +         [x, µi (a, b)]ǫ ǫi
+                                           i=1
+                      = [x, [a, b]] + [x, µ1 (a, b)]ǫ + µ1 (x, [a, b])ǫ + o(ǫ2 ).
+
+
+    Now obviously
+
+  [x, [a, b]ǫ ]ǫ = [[x, a]ǫ , b]ǫ + p(x, a)[a, [x, b]ǫ ]ǫ
+                 = [[x, a], b] + p(x, a)[a, [x, b]] + µ1 ([x, a], b)ǫ + [µ1 (x, a), b]ǫ
+                 + p(x, a)[a, µ1 (x, b)]ǫ + p(x, a)µ1 (a, [x, b])ǫ + o(ǫ2 ).
+
+Hence
+
+[x, µ1 (a, b)] + µ1 (x, [a, b]) = µ1 ([x, a], b) + [µ1 (x, a), b]
+                                + p(x, a)[a, µ1 (x, b)] + p(x, a)µ1 (a, [x, b]). (2.7)
+
+By assumption µ1 |g− ×g is known. Hence the only term in (2.7) that is not
+determined is µ1 (a, b). However, since g is transitive, µ1 (a, b) is uniquely
+determined by (2.7). Thus µ1 |g0 ×g0 is determined by µ1 |g− ×g .
+
+     Now suppose that a ∈ g0 and b ∈ gk . We will argue inductively. Suppose
+that µ1 |g− ×g , µ1 |g0 ×g0 , · · · , µ1 |g0 ×gk−1 are uniquely determined. From (2.7)
+again we see that the only term that is not deter mined is µ1 (a, b). By
+transitivity again µ1 (a, b) must be uniquely determined. Hence µ1 |g− ×g and
+µ1 |g0 ×g are uniquely determined.
+
+    Now suppose that a, b ∈ g1 . Again from (2.7) and transitivity we see that
+µ1 (a, b) is uniquely determined. Similarly µ1 |g1 ×g is uniquely determined.
+Proceeding this way we see that µ1 is uniquely determined by µ1 |g− × g.
+
+    Now µ2 satisfies equation (2.7) up to a function depending only on µ1
+by (2.3). Since µ1 is already uniquely determined, we may proceed as before
+1152                            GENERALIZED SPENCER COHOMOLOGY ...
+
+
+to show that µ2 is uniquely determined by µ2 |g− ×g and µ1 . Similarl y µ3
+satisfies equation (2.7) up to a function depending on µ1 and µ2 . Hence µ3
+is uniquely determined by µ3 |g− ×g , µ1 and µ2 etc. This completes the proof.
+
+
+
+Proposition 2.6. Let g = ⊕∞      j=−h gj be a transitive graded Lie superalgebra
+such that {µ1 , µ2 , · · ·} and {µ′1 , µ′2 , · · ·} define two filtered deformations of
+g. Suppose that µi |g− ×g = µ′i |g− ×g for i < k and µk |g− ×g− = µ′k |g− ×g− for
+some k ≥ 1. Assume that g is a full prolongation of g≤0 of degree k. Then
+ḡ′ǫ has a defining sequence {µ′′1 , µ′′2 , · · ·} such that µ′′i = µi , for i = 1, · · · , k.
+Furthermore µ′′i |g− ×g− =µ′i |g− ×g− for all i. (In other words ḡǫ and ḡ′ǫ have
+defining sequences that coincide up to the k-th term an d coincide when
+restricted to g− × g− .)
+
+Proof. Let a ∈ g0 and x ∈ g− . By Proposition 2.5 it follows that µi = µ′i
+for i < k. Now from this, the fact that (µk − µ′k )|g− ×g− is identically zero
+and (2.5) it is easy to see that the map fak : g− → g defined by
+
+                       fak (x) := µk (a, x) − µ′k (a, x),            x ∈ g−
+
+is a Spencer 1-cocycle. Hence by hypothesis there exists an element va ∈ g
+such that fak (x) = [va , x], for all x ∈ g− . Now set ρk0 (a) = a − va ǫk , for all
+a ∈ g0 . It follows that
+                                       X
+          [ρk0 (a), x]′ǫ = [a, x] +          µ′i (a, x)ǫi
+                                       i<k
+                                               X
+                        + µk (a, x)ǫ +  k
+                                                     µ′′i (a, x)ǫi , ∀a ∈ g0 , ∀x ∈ g− .
+                                               i>k
+
+
+
+   Next let b ∈ g1 and x ∈ g− . Using the fact that (µk − µ′k ), restricted to
+g− × g− and g− × g0 , is identically zero, that µi = µ′i for i < k and (2.5) we
+may again show analogously that the map fbk : g− → g given by
+
+                       fbk (x) := µk (b, x) − µ′k (b, x),            x ∈ g−
+
+defines a Spencer 1-cocycle. In a completely analogous fashion we define the
+map ρk1 : g1 → g such that
+                                     X
+         [ρk1 (b), x]′ǫ = [b, x] +         µ′i (b, x)ǫi
+                                     i<k
+                                             X
+                       + µk (b, x)ǫ + k
+                                                   µ′′i (b, x)ǫi ,    ∀b ∈ g1 , ∀x ∈ g− .
+                                             i>k
+S. CHENG, V. KAC                                                                    1153
+
+
+      Now ρkj , for j ≥ 2, are defined analogously. The sequence above, call
+it {µ′′1 , µ′′2 , · · ·}, of course is a defining sequence for ḡ′ . We have µi = µ′′i
+for i < k and µk |g− ×g = µ′′k |g− ×g . App lying Proposition 2.5 again we
+have µk = µ′′k . Also since the subspace V− remains unchanged, obviously
+µ′′i |g− ×g− = µ′i |g− ×g− .
+
+    The following is an important remark.
+
+Remark 2.3. In the proof of Proposition 2.6 the only place where full pro-
+longation is used is to find elements va , which then allows us to define ρki .
+Now we may assume that µj |a × g = 0 for all j, where a is the maximal
+reductive subalgebra of (g0 )0̄ , as explained earlier. Using this it is easy to
+verify that ρki is an injective a-homomorphism. Hence the map a → va is
+an a-homomorphism. In particular, if H l,1 (g− ; g) is a direct sum of irre-
+ducible a-modules that are not isomorphic to those irreducible a-modules
+that appear in the decomposition of g(k) , then we may always find such va ’s.
+Therefore the assumption of full prolongation of degree k may be repl aced
+by the weaker assumption of
+                      Homa (H l,1 (g− ; g), g(1) ) = 0,   ∀l ≥ k,
+and the conclusion of Proposition 2.5 remains valid. We will say that g is an
+almost full prolongation of g≤0 if Homa (H l,1 (g− ; g), g(1) ) = 0 for all l ≥ 1.
+
+    Combining Remark 2.3 with Proposition 2.6 we have proved
+
+Theorem 2.1. Let g = ⊕∞             j=−h gj be a transitive graded Lie superalge-
+                         ′
+bra. Let ḡǫ and ḡǫ be two filtered deformations of g with defining se-
+quences {µ1 , µ2 , · · ·} and {µ′1 , µ′2 , · · ·}, respectively. Suppose that µi |g− ×g− =
+µ′i |g− ×g− , for all i ≥ 1. If furthermore g is an almost full prolongation of
+g≤0 , then ḡǫ ∼= ḡ′ǫ .
+
+   The next two corollaries generalize two results of Kobayashi and Nagano
+[KN].
+
+Corollary 2.3. Let g = ⊕∞  j=−h gj be a transitive graded Lie superalgebra.
+                 l,2
+Suppose that H (g− ; g)0̄ contains no non-trivial g0 -invariant vectors and
+that g is an almost full prolongation of g≤0 . Then g has no non-trivial
+filtered deformations.
+
+Proof. Let ḡǫ correspond to {µ1 , µ2 , · · ·}. By Propositions 2.2 and 2.3 we
+may assume that µi |g− ×g− = 0. But then Theorem 2.1 tells us that ḡǫ is
+isomorphic to the trivial deformation. d
+1154                           GENERALIZED SPENCER COHOMOLOGY ...
+
+
+Corollary 2.4. Let L = L−h ⊃ · · · ⊃ L−1 ⊃ L0 ⊃ L1 ⊃ · · · be a filtered
+deformation of a transitive graded Lie superalgebra g = ⊕∞j=−h gj . Suppose
+that g is an almost full prolongation o f g≤0 . If there exists a Z-graded
+subalgebra V− = ⊕j<0 Vj of L isomorphic to g− such that V− + L0 = L, then
+L∼= ḡ.
+
+Proof. The existence of the subalgebra V− means that there exists a defining
+sequence {µ1 , µ2 , · · ·} of L such that µi |g− ×g− = 0 for all i. But since it is
+an almost full prolongation, Theorem 2.1 tells us that µi = 0 for all i.
+
+Corollary 2.5. Let g be a transitive graded Lie superalgebra. Let ḡǫ and
+ḡ′ǫ be two filtered deformations given by {µ1 , µ2 , · · ·} and {µ′1 , µ′2 , · · ·}, re-
+spectively. Suppose that µi |g− ×g− = µ′i |g− ×g− for i = 1, · · · , k − 1 and
+H l,2 (g− ; g)0̄ contains no g0 -invariant vectors for l ≥ k. If furthermore g is an
+almost full prolongation of g≤0 , then ḡǫ ∼  = ḡ′ǫ .
+
+Proof. By Proposition 2.6 we may assume that µi = µ′i for i = 1, · · · , k − 1.
+By formulas (2.5) and (2.6) it follows that (µk − µ′k )|g− ×g− is a g0 -invariant
+Spencer cocycle. Hence by Proposition 2.6 again we may assume that µk =
+µ′k . Proceeding this way we show that µi = µ′i for all i ≥ k.
+
+Proposition 2.7. [G] Let g be a transitive Z-graded Lie superalgebra such
+that g−2 contains a central element of g of parity δ. If H 1 (g0 ; g−1 )δ = 0,
+then g has no filtered deformation L such tha t L0 is a maximal subalgebra.
+
+Proof.     Let 1 denote this central element. Suppose that {µ1 , µ2 · · ·} is a
+defining sequence of a deformation ḡǫ = L of g. We will show that there
+exists a defining sequence {µ′1 , µ′2 · · ·} of L such that µ′1 (1, g0 ) = 0. From
+this it follows that 1 normalizes g(0) and hence L0 is not maximal.
+
+    For a, b ∈ g0 we have by Jacobi identity
+                    [1, [a, b]ǫ ]ǫ = [[1, a]ǫ , b]ǫ + p(1, a)[a, [1, b]ǫ ]ǫ .
+Collecting the coefficient of ǫ we get
+                 µ1 (1, [a, b]) = [µ1 (1, a), b] + p(1, a)[a, µ1 (1, b)].
+This means precisely that the map c : g0 → g−1 given by c(a) = µ1 (1, a) is
+a 1-cocycle of g0 with coefficients in g−1 . By assumption c is a coboundary,
+and hence we may add to 1 an element x in g−1 so that
+                           [1 + x, a]ǫ = µ′2 (1, a)ǫ2 + o(ǫ3 ).
+This choice of V−2 gives the required defining sequence.
+S. CHENG, V. KAC                                                                 1155
+
+
+Lemma 2.1. Let ĝ = g + C1 be a transitive Z-graded Lie superalgebra,
+which is a central extension of a Z-graded Lie superalgebra by adding a
+central element 1 in degree −2 such that [g−1 , g−1 ] = C1. Then ĝ i s the full
+prolongation of ĝ≤0 , provided that g is the full prolongation of g≤0 .
+
+Proof.   Let α : g−1 + C1 → ĝ be a derivation of degree ≥ 1. Thus α :
+g−1 + C1 → g. It suffices to show that α(1) = 0. Let x ∈ g−1 . Then 0 =
+α([x, 1]) = [α(x), 1] + p(α, x)[x, α(1)] = p(α, x)[x, α(1)]. Thus by transitivity
+α(1) = λ1, λ ∈ C. But then λ = 0, since α is of positive degree.
+
+
+
+3. Examples of Z-graded Lie superalgebras.
+
+    In this section we will recall the definitions and list some properties of
+those Z-graded Lie superalgebras whose filtered deformations we are inter-
+ested in. Some of their properties are well-known and can be found in [S].
+
+      Let Λ(n) be the Grassmann superalgebra in the n odd indeterminates
+ξ1 , ξ2 , · · · , ξn . Let x1 , x2 , · · · , xm be m even indeterminates. Set Λ(m, n) =
+C[x1 , · · · , xm ] ⊗ Λ(n). Then Λ(m, n) is an associative commutative superal-
+gebra. Let W (m, n) be the Lie superalgebra of derivations of Λ(m, n). Then
+W (m, n) consists of elements of the form [K1]:
+                               X
+                               m
+                                           ∂   X
+                                               n
+                                                    ∂
+                                     fi      +   gi   ,
+                               i=1
+                                          ∂xi i=1 ∂ξi
+                                ∂
+where fi , gi ∈ Λ(m, n) and ∂x    i
+                                    (respectively ∂ξ∂ i ) is the even (respectively
+                                                ∂                      ∂
+odd) derivation uniquely determined by ∂x         i
+                                                    (xj ) = δij and ∂x   i
+                                                                           (ξj ) = 0
+                ∂                   ∂
+(respectively ∂ξi (xj ) = 0 and ∂ξi (ξj ) = δij ). To each vector field D =
+Pm        ∂    Pn        ∂
+  i=1 fi ∂xi +   i=1 gi ∂ξi we may associate its divergence by
+
+                                 X
+                                 m
+                                   ∂fi              X
+                                                    n
+                                                                       ∂gi
+                       divD =                   +         (−1)p(gi )       .
+                                 i=1
+                                          ∂xi       i=1
+                                                                       ∂ξi
+
+   Let Ω(m, n) be the superalgebra of differential forms over Λ(m, n) [K1].
+Consider the following differential form:
+                                  X
+                                  n
+                             ω=           dxi dξi ∈ Ω(n, n).
+                                  i=1
+
+Define the odd Hamiltonian superalgebra [L]
+                      HO(n, n) := {D ∈ W (n, n)|Dω = 0}.
+1156                           GENERALIZED SPENCER COHOMOLOGY ...
+
+
+The Lie superalgebra HO(n, n) is simple if and only if n ≥ 2.
+
+    The Lie superalgebra HO(n, n) contains the subalgebra of divergence
+free vector fields
+
+                  SHO′ (n, n) := {D ∈ HO(n, n)|divD = 0}.
+
+The derived algebra of SHO ′ (n, n) is an ideal of codimension 1, denoted by
+SHO(n, n), provided that n ≥ 2. SHO(n, n) is simple if and only if n ≥ 3.
+
+   In Λ(n, n) we can define the Buttin bracket by
+                               X
+                               n
+                                 ∂f ∂g                           ∂f ∂g
+                   [f, g] :=         (             + (−1)p(f )           ),
+                               i=1
+                                         ∂xi ∂ξi                 ∂ξi ∂xi
+
+which makes Λ(n, n), with reversed parity, into a Lie superalgebra. It con-
+tains a one-dimensional center consisting of constant functions. The map
+Λ(n, n) → HO(n, n) given by
+                           X
+                           n
+                             ∂f ∂                            ∂f ∂
+                      f→         (             + (−1)p(f )           ),
+                           i=1
+                                     ∂xi dξi                 ∂ξi ∂xi
+
+is a surjective homomorphism of Lie superalgebras with kernel consisting
+of constant functions. Hence we may (and will) identify HO(n, n) with
+Λ(n, n)/C1 with reversed parity. In this identification we have:
+
+                 SHO′ (n, n) = {f ∈ Λ(n, n)/C1| ∆(f ) = 0},
+            P         2
+where ∆ = ni=1 ∂x∂i ∂ξi is the odd Laplace operator, and SHO(n, n) is iden-
+tified with the subspace consisting of elements not containing the monomial
+ξ1 ξ2 · · · ξn .
+
+    By putting degxi = 1 and degξi = 1 for i = 1, 2, · · · , n the Lie superal-
+gebras HO(n, n), SHO′ (n, n) and SHO(n, n) become Z-graded Lie super-
+algebras of depth 1. Since [xi , ξj ] = δij 1 we obtain, by adding C1 to degree
+−2, non-trivial central extensions of HO(n, n), SHO′ (n, n) and SHO(n, n),
+             ˆ
+denoted by HO(n,   n), SHOˆ ′ (n, n) and SHO(n,
+                                              ˆ     n), respectively.
+
+     The 0-th graded components of HO(n, n) and HO(n,       ˆ       n) have a basis
+consisting of vectors of the form {xi xj }, {xi ξj } and {ξi ξj }i6=j for i, j =
+1, 2, · · · , n. This is the Z-graded finite-dimensional Lie superalgebra P̃ (n) =
+P̃ (n)−1 + P̃ (n)0 + P̃ (n)1 (cf. [K1]), where P̃ (n)0 ∼= gln , P̃ (n)−1 ∼
+                                                                         = Λ2 (Cn∗ )
+and P̃ (n)1 ∼    = S 2 (Cn ), where Cn stands for the standard representation of
+gln . Their −1-st graded components have a basis consisting of {xi } and {ξi },
+i = 1, 2, · · · , n. Evidently the span of {xi } as a gln -module is isomorphic to
+Cn , while the span of {ξi } is isomorphic to Cn∗ .
+S. CHENG, V. KAC                                                                  1157
+
+
+    The 0-th graded components of SHO(n, n), SHO ′ (n, n), SHO(n,       ˆ     n) and
+       ′
+SHOˆ (n, n) have a basis consisting of vectors of the form {xi xj }, {xi ξj }i6=j ,
+{xi ξi − xi+1 ξi+1 }i<n and {ξi ξj }i6=j for i, j = 1, 2, · · · , n. This is the Z-
+graded subalgebra P (n) of P̃ (n) (cf. [K1]), where P (n)0 ∼     = sln and P (n)−1 ∼
+                                                                                   =
+Λ (C ) and P (n)1 ∼
+  2   n∗
+                      =  S 2 (C  n ),  where C n stands for the standard  representa-
+tion of sln . Similarly, their −1-st graded components have a basis consisting
+of {xi } and {ξi }, i = 1, 2, · · · , n with the span of {xi } isomorphic to Cn and
+the span of {ξi } isomorphic to Cn∗ .
+
+     It can be shown that HO(n, n) and SHO′ (n, n) are full prolongations of
+Pn                            Pn
+   i=1 (Cxi +Cξi )⊕P̃ (n) and  i=1 (Cxi +Cξi )⊕P (n), respectively [CK]. Thus it
+                                ˆ
+follows from Lemma 2.1 that HO(n,              ˆ ′ (n, n) are full prolongations
+                                      n) and SHO
+         Pn                               Pn
+of C1⊕ i=1 (Cxi + Cξi )⊕ P̃ (n) and C1⊕ i=1 (Cxi + Cξi )⊕P (n), respectively,
+as well. Consequently, in the case of SHO(n, n) and SHO(n,   ˆ       n) the only
+obstruction to being a full prolongation lies in degree n − 2. More precisely
+we have (l ∈ Z+ )
+
+     H l,1 (SHO(n, n)−1 ; SHO(n, n)) = 0, l 6= n − 2,
+             ˆ
+     H l,1 (SHO(n,         ˆ
+                   n)− ; SHO(n, n)) = 0, l 6= n − 2,
+     H n−2,1 (SHO(n, n)−1 ; SHO(n, n)) = Cξ1 ξ2 · · · ξn ,
+               ˆ
+     H n−2,1 (SHO(n,         ˆ
+                     n)− ; SHO(n, n)) = Cξ1 ξ2 · · · ξn .                         (3.1)
+                             P
+Let us denote the vector ni=1 xi ξi in HO(n, n)0 by Φ. Other Lie superalge-
+bras that arise in the classification in [K3], and hence whose filtered deforma-
+tions we also need to consider are the following four series: SHO(n, n) + CΦ,
+                       ˆ
+SHO′ (n, n) + CΦ, SHO(n,       n) + CΦ and SHO  ˆ ′ (n, n) + CΦ.
+
+   Let x1 , x2 , · · · , xn be n even indeterminates and ξ1 , ξ2 , · · · , ξn , ξn+1 = τ
+be n + 1 odd indeterminates. Define the odd contact form to be
+                               X
+                               n
+                    Ω = dτ +         (ξi dxi + xi dξi ) ∈ Ω(n, n + 1).
+                               i=1
+
+The odd contact superalgebra KO(n, n + 1) is the following subalgebra of
+W (n, n + 1) [ALS]:
+
+                KO(n, n + 1) = {D ∈ W (n, n + 1)|DΩ = fD Ω},
+
+for some fD ∈ C[τ, x1 , · · · , xn , ξ1 , · · · , ξn ]. The Lie superalgebra KO(n, n+1)
+can be realized as follows. We may define the odd contact bracket on the
+space Λ(n, n + 1) by
+
+                    ∂g            ∂f         Xn
+                                                 ∂f ∂g               ∂f ∂g
+[f, g] = (2 − E)f      + (−1)p(f ) (2 − E)g − (          + (−1)p(f )         ),
+                    ∂τ            ∂τ         i=1
+                                                 ∂xi ∂ξi             ∂ξi ∂xi
+1158                         GENERALIZED SPENCER COHOMOLOGY ...
+
+             P
+where E = ni=1 ( ∂x∂
+                     i
+                       + ∂ξ∂ i ) is the Euler operator. Reversing parity, Λ(n, n +
+1) with this bracket becomes a Lie superalgebra and the map Λ(n, n + 1) →
+KO(n, n + 1), given by
+
+
+
+                     ∂             ∂f   Xn
+                                              ∂f ∂                ∂f ∂
+     f → (2 − E)f       − (−1)p(f ) E −     (         + (−1)p(f )         ),
+                     ∂τ            ∂τ   i=1
+                                              ∂xi dξi             ∂ξi ∂xi
+
+is a isomorphism of Lie superalgebras. Hence we may (and will) identify the
+Lie superalgebra KO(n, n + 1) with Λ(n, n + 1) with reversed parity.
+                                                    ∂
+   For β ∈ C we let divβ = 2(−1)p(f ) (∆ + (E − nβ) ∂τ ), where ∆ is the odd
+Laplace operator. We set [Ko]
+
+              SKO ′ (n, n + 1; β) = {f ∈ Λ(n, n + 1)| divβ f = 0}.
+
+This is a subalgebra of KO(n, n+1) and is simple if and only if n ≥ 2 and β 6=
+1, n−2                                                                  ′
+    n . Let SKO(n, n+1; β) denote the derived algebra of SKO (n, n+1; β).
+Then SKO(n, n+1; β) is simple for n ≥ 2 and it coincides with SKO′ (n, n+
+1; β) unless β = 1 or β = n−2     n . The Lie superalgebra SKO(n, n + 1; 1)
+(respectively SKO(n, n + 1; n−2    n )) consists of elements not containing the
+monomial τ ξ1 ξ2 · · · ξn (respectivel y ξ1 ξ2 · · · ξn ). Note that SKO(n, n + 1; n1 )
+is the subalgebra of KO(n, n + 1) consisting of divergence free vector fields.
+
+    By setting degτ = 2 and degxi = degξi = 1 for all i, KO(n, n + 1) and
+hence SKO(n, n + 1; β) and SKO ′ (n, n + 1; β) (since divβ is homogeneous
+with respect to this gradation) become Z-graded Lie superalgebras. They
+are all of depth 2. In the case of KO(n, n+1) the 0-th graded component has
+a non-trivial center, namely Cτ , and hence by Corollary 2.2, KO(n, n + 1)
+has no non-trivial filtered deformations.
+
+     Now consider SKO(n, n + 1; β) and SKO ′ (n, n + 1; β). The 0-th graded
+component is spanned by the vectors {xi xj }, {xi ξj }, {ξi ξj }i6=j and τ + βΦ,
+                                     P
+where i, j = 1, 2, · · · , n and Φ = ni=1 xi ξi . This is the Lie superalgebra
+P̃ (n) = P (n) + C(τ + βΦ). The −2-nd graded component is spanned by
+C1, on which τ + βΦ acts as the scalar −2. The −1-st graded component is
+spanned by the vectors {xi } and {ξi } for i = 1, · · · , n. With respect to P (n)
+                                                            P
+this is the standard representation, and τ +βΦ acts on ni=1 Cxi (respectively
+Pn
+   i=1 Cξi ) as the scalar −1 + β (respectively −1 − β). It can be shown that
+SKO′ (n, n + 1; β) are full prolongations for all β [CK]. Hence we have:
+S. CHENG, V. KAC                                                                          1159
+
+
+
+
+     H l,1 (SKO(n, n + 1; 1)−1 ; SKO(n, n + 1; 1)) = 0, l 6= n,            (3.2)
+                          n−2                        n−2
+     H l,1 (SKO(n, n + 1;        )−1 ; SKO(n, n + 1;      )) = 0, l 6= n − 2,
+                            n                          n
+     H n,1 (SKO(n, n + 1; 1)−1 ; SKO(n, n + 1; 1)) = Cτ ξ1 ξ2 · · · ξn ,
+                             n−2                        n−2
+     H n−2,1 (SKO(n, n + 1;         )−1 ; SKO(n, n + 1;      )) = Cξ1 ξ2 · · · ξn .
+                                n                        n
+
+    Let p1 , p2 , · · · , pn , q1 , q2 , · · · , qn be 2n even and ξ1 , ξ2 , · · · , ξm be m odd
+variables. Consider the differential form
+                                 X
+                                 n                  X
+                                                    m
+                       σ=               dpi dqi +          dξi dξi ∈ Ω(2n, m).
+                                 i=1                 i=1
+
+Define the Hamiltonian superalgebra to be [K1]
+
+                         H(2n, m) = {D ∈ W (2n, m)|Dσ = 0}.
+
+It is a simple Lie superalgebra for n ≥ 1 and m ≥ 0.
+
+    Let Λ(2n, m) = C[p1 , · · · , pn , q1 , · · · , qn ] ⊗ Λ(m). For f, g ∈ Λ(2n, m) we
+define the Poisson bracket
+                         X
+                         n
+                           ∂f ∂g                   ∂f ∂g                 Xm
+                                                                             ∂f ∂g
+              [f, g] =           (             −           ) − (−1)p(f )             .
+                         i=1
+                                     ∂pi ∂qi       ∂qi ∂pi               i=1
+                                                                             ∂ξi ∂ξi
+
+As before Λ(2n, m) with this Poisson bracket is a Lie superalgebra. The map
+                       X
+                       n
+                         ∂f ∂                  ∂f ∂                  Xm
+                                                                         ∂f ∂
+                f→           (             −           ) − (−1)p(f )
+                       i=1
+                                 ∂pi ∂qi       ∂qi ∂pi               i=1
+                                                                         ∂ξi ∂ξi
+
+defines a surjective homomorphism of Lie superalgebras from Λ(2n, m) onto
+H(2n, m). The kernel of this map consists of constant functions so that
+we may (and will) identify H(2n, m) with Λ(2n, m)/C1. By putting degpi =
+degqi = 1 and degξj = 1 for i = 1, · · · , n and j = 1, · · · , m H(2n, m) becomes
+a Z-graded Lie superalgebra of depth 1.
+
+    The 0-th graded component of H(2n, m) is the Lie superalgebra spo(2n, m).
+Now spo(2n, m)0̄ has a basis consisting of vectors of the form {pi pj , pi qj , qi qj }
+for i, j = 1, · · · , n and {ξi ξj }i6=j for i, j = 1, · · · , m and hence is isomorphic to
+the Lie algebra sp2n ⊕ som . spo(2n, m)1̄ has a basis consisting of vectors of
+the form {pi ξj , qi ξj } for i = 1, · · · , n and j = 1, · · · , m. Its span is isomorphic
+to the sp2n ⊕ som -m odule C2n ⊗ Cm , where C2n and Cm are the respective
+standard representations of sp2n and som . H(2n, m)−1 has a basis consisting
+1160                        GENERALIZED SPENCER COHOMOLOGY ...
+
+
+of vectors of the form {pi , qi } and {ξj }, i = 1, · · · , n and j = 1, · · · , m. E
+vidently the span of {pi , qi } is isomorphic to C2n , while the span of {ξj } is
+isomorphic to Cm . It is the standard representation of spo(2n, m), denoted
+by C2n|m .
+
+   Finally H(2n, m) is the full prolongation of the pair C2n|m ⊕ spo(2n, m)
+[CK].
+
+
+
+
+4. Calculations of Spencer 2-cocycles and triviality of filtered
+deformations of SHO(n, n), HO(n, n), H(2m, n) and SKO(n, n +
+1; β), β 6= n+2
+             n .
+
+
+    In this section we will apply the results obtained in Section 2 and start
+our investigations of filtered deformations of those graded Lie superalgebras
+discussed in Section 3. Due to Proposition 2.2 our first step should be to
+find g0 -invariant Spenc er 2-cocycles. However, because of lack of complete
+reducibility of g0 -modules in general, we will restrict ourselves to the even
+part a = (g0 )0̄ of g0 , for which we do have complete reducibility (in all our
+examples). So our task w ill be first to look for all a-invariant vectors on
+the level of 2-cochains and then determine which of those vectors indeed
+satisfy the 2-cocycle condition. To find a-invariant 2-cochains we will first
+need the a-module structure of gj and then use this to find all the trivial
+a-modules that appear in Λ2 (g∗− ) ⊗ gj . So our first task will be to determine
+the a-module structure of gj for every j.
+
+    Consider the Lie superalgebra g = SHO ′ (n, n), for n ≥ 3. As usual we
+will write gj for its j-th graded component. Here a = sln and we denote by
+   P                                                        P
+R( i ki πi ) the irreducible sln -module with highest weight i ki πi , where πi
+is the i-th fundamental weight of sln . Below we will list the structure of gj
+as sln -modules and also include explicitly a highest weight vector.
+
+
+
+            g−1     : {R(π1 ), x1 }, {R(πn−1 ), ξn }
+             g0     : {R(2π1 ), x21 },
+                    {R(π1 + πn−1 ), x1 ξn },
+                    {R(πn−2 ), ξn ξn−1 }
+             g1     : {R(3π1 ), x31 }, {R(2π1 + πn−1 ), x21 ξn },
+                    {R(π1 + πn−2 ), x1 ξn ξn−1 },
+                    {R(πn−3 ), ξn ξn−1 ξn−2 }
+S. CHENG, V. KAC                                                                            1161
+
+                           ..
+                            .
+           gn−2      : {R(nπ1 ), xn1 }, {R((n − 1)π1 + πn−1 ), x1n−1 ξn },
+                     {R((n − 2)π1 + πn−2 ), x1n−2 ξn ξn−1 }, · · · ,
+                     {R(2π1 ), x1 ξn · · · ξ2 }, {R(0), ξn ξn−1 · · · ξ1 }
+           gn−1      : {R((n + 1)π1 ), xn+1
+                                        1   }, {R(nπ1 + πn−1 ), xn1 ξn },
+                     {R((n − 1)π1 + πn−2 ), x1n−1 ξn ξn−1 }, · · · ,
+                     {R(3π1 ), x21 ξn · · · ξ2 }
+                         ..
+                          .
+
+Note that the structure as an sln -module of SHO(n, n) is exactly the same
+except that the component {R(0), ξn ξn−1 · · · ξ1 } is removed in gn−2 .
+
+     For i = 1, · · · , n let fi , θi ∈ g∗−1 be such that fi (xj ) = δij , fi (ξj ) = 0,
+θi (xj ) = 0 and θi (ξj ) = δij . Note that since the map Λ(n, n) → HO(n, n) is
+odd (see Section 3), we have to rever se parity in Λ(n, n) in order to get the
+correct parity. Hence p(fi ) = 1̄ and p(θi ) = 0̄. Evidently the span of {fi }
+is the sln -module R(πn−1 ) with highest weight vector fn , while the span of
+{θi } is R(π1 ) with highest weight vector θ1 . So using our notation Λ2 (g∗−1 )
+consists of the following irreducible components with highest weight vectors:
+
+                                                                                X
+                                                                                n
+    {R(2πn−1 ), fn2 }, {R(π1      + πn−1 ), θ1 fn }, {R(π2 ), θ1 θ2 }, {R(0),         fi θi }.
+                                                                                i=1
+
+So to find trivial sln -modules in Λ2 (g∗−1 ) ⊗ gj we need to find modules in the
+table above that are contragredient to these modules in Λ2 (g∗−1 ).
+
+    Let g = SHO(n, n) or g = SHO′ (n, n) n ≥ 3. In the case when n = 3
+g−1 ∼
+    = R(π1 )⊕R(π2 ).PHence there exits a trivial sl3 -module in Λ2 (g∗−1 )⊗ g−1 ,
+given by the vector 3i=1 θi∗ ⊗ xi , where θi∗ stands for the Hodge dual of θi .
+However this vector is odd, hence it cannot give a deformation. For n > 3
+there are no trivial sln -modules in Λ2 (g∗−1 ) ⊗ g−1 .
+
+   Now for n ≥ 3 we have the following linearly independent sln -invariant
+vectors in Λ2 (g∗−1 ) ⊗ g0 :
+                        X
+               c1 =             f i f j ⊗ xi xj ,
+                         i,j
+                          X
+                        1 n−1
+               c2 =           (fi θi − fi+1 θi+1 ) ⊗ (xi ξi − xi+1 ξi+1 )
+                        2 i=1
+                        X
+                    +           f i θ j ⊗ xi ξ j ,
+                        i6=j
+1162                          GENERALIZED SPENCER COHOMOLOGY ...
+
+                       X
+              c3 =           θ i θ j ⊗ ξi ξj .
+                       i<j
+
+
+
+   But c1 , c2 , c3 are all odd vectors, hence they cannot give deformations.
+
+   In Λ2 (g∗−1 )⊗gn−2 we have the following sln -invariant vector in SHO(n, n):
+                                          X
+                                  c1 =            fi fj ⊗ xi ξj∗ ,
+                                            i,j
+
+where ξj∗ again denotes the Hodge dual of ξj . However,
+
+                       dc1 (ξ1 , x1 , x1 ) = −[ξ1 , x1 ξ1∗ ] 6= 0.
+
+Hence c1 is not a cocycle. In the case of SHO′ (n, n) there is an additional
+sln -invariant vector in Λ2 (g∗−1 ) ⊗ gn−2 that is not proportional to c1 , namely
+
+                                     X
+                                     n
+                             c2 =           f i θ i ⊗ ξ1 ξ2 · · · ξn .
+                                      i=1
+
+It is subject to direct verification that c1 + c2 is an even Spencer cocycle for
+n even. For n odd, obviously c1 and c2 are both odd. We summarize the
+above computation.
+
+Proposition 4.1.
+
+           H l,2 (SHO(n, n)−1 ; SHO(n, n))sl
+                                          0̄
+                                             n
+                                               = 0,                      n ≥ 3,
+           H l,2 (SHO′ (n, n)−1 ; SHO ′ (n, n))sl
+                                               0̄
+                                                  n
+                                                    = 0,                  n ≥ 3, l 6= n,
+                       ′                          ′
+           H (SHO (n, n)−1 ; SHO (n, n))sl
+             n,2
+                                              0̄
+                                                 n
+                                                                = C,      n ≥ 3, n even,
+           H n,2 (SHO′ (n, n)−1 ; SHO′ (n, n))sl
+                                              0̄
+                                                 n
+                                                                = 0,      n ≥ 3, n odd.
+
+
+    From the structure of SHO(n, n) as an sln -module given in the above
+table, we see that the trivial sln -module doesn’t appear in the decomposi-
+tion of SHO(n, n), for n ≥ 3. Hence by (3.1) SHO(n, n) is an almost full
+prolongation and so by Corol lary 2.3 we obtain
+
+Theorem 4.1. SHO(n, n) has no non-trivial filtered deformations for n ≥
+3.
+
+   Next consider the case of SHO′ (2, 2). In this case the maximal reductive
+subalgebra of g0 is sl2 . Denoting by R(k) the irreducible sl2 -module of
+S. CHENG, V. KAC                                                                   1163
+
+
+highest weight k ∈ Z+ , SHO ′ (2, 2) decomposes as an sl2 -module as follows:
+
+               g−1     : {R(1), x1 }, {R(1), ξ2 }
+                 g0    : {R(2), x21 }, {R(2), x1 ξ2 }, {R(0), ξ1 ξ2 }
+                 g1    : {R(3), x31 }, {R(3), x21 ξ2 }
+                             ..
+                              .
+                 gk    : {R((k + 2)), xk+2                k+1
+                                       1 }, {R((k + 2)), x1 ξ2 }
+                             ..
+                              .
+
+   Λ2 (g∗−1 ) ∼
+              = {R(2), f22 } ⊕ {R(2), f2 θ1 } ⊕ {R(0), f1 θ1 + f2 θ2 } ⊕ {R(0), θ1 θ2 }.
+Here as usual fi (xj ) = δij and θi (ξj ) = δij , i, j = 1, 2.
+
+     Thus R(0) can appear in Λ2 (g∗−1 ) ⊗ g only in degree 2, i.e. in Λ2 (g∗−1 ) ⊗
+g0 . The following linearly independent vectors span the even sl2 -invariant
+subspace in Λ2 (g∗−1 ) ⊗ g0 :
+
+            c1 = f1 f2 ⊗ (x1 ξ1 − x2 ξ2 ) − f12 ⊗ x1 ξ2 + f22 ⊗ x2 ξ1 ,
+            c2 = (f1 θ1 − f2 θ2 ) ⊗ x1 x2 − f1 θ2 ⊗ x21 + f2 θ1 ⊗ x22 ,
+            c3 = (f1 θ1 + f2 θ2 ) ⊗ ξ1 ξ2 .
+
+    Compute
+
+                dc1 (ξ1 , ξ2 , x1 ) = 0,
+                dc2 (ξ1 , ξ2 , x1 ) = −[ξ1 , −x21 ] + [ξ2 , x1 x2 ] = −3x1 6= 0,
+                dc3 (ξ1 , ξ2 , x1 ) = [ξ2 , ξ1 ξ2 ] = 0.
+
+Hence any cocycle must be a linear combination of c1 and c3 . Now dc1 (ξ1 , x1 ,
+x1 ) = [ξ1 , x1 ξ2 ] = −ξ2 6= 0. One checks easily that c1 − 2c3 is a Spencer
+cocycle. This calculation also shows that SHO(2, 2) has no non-trivial sl2 -
+invariant Spencer 2-cocyles. Thus we arrive at
+
+Proposition 4.2. Proposition 4.1 holds for SHO ′ (2, 2) and SHO(2, 2) as
+well.
+
+                       ˆ
+    Consider now g = SHO(n,    n). We will now compute H k,2 (g− ; g)sl n
+                                                                          . Let
+                                                                     0̄
+      k,2      sln
+ck ∈ H (g− ; g)0̄ . Recalling that g− = C1 ⊕ g−1 , ck can be written as
+
+                            ck = ck−2,−2 + ck−2,−1 + c−1,−1
+                                                      k     ,
+
+where c−2,−2
+        k    : C1 × C1 → gk−4 , ck−2,−1 : C1 × g−1 → gk−3 and c−1,−1   k     :
+g−1 × g−1 → gk−2 are bilinear maps. It follows from the fact that 1 is central
+1164                         GENERALIZED SPENCER COHOMOLOGY ...
+
+
+and transitivity that c−2,−2 = 0. Hence
+
+                               ck = ck−2,−1 + ck−1,−1 .
+
+Now both c−2,−1
+            k      and c−1,−1
+                         k     are sln -invariant. We have investigated c−1,−1
+                                                                         k
+in our computation Spencer 2-cocycles of SHO(n, n). Now we need to inves-
+tigate c−2,−1
+        k     . From our table of sln -module structure of SHO(n, n) a bove,
+c−2,−1
+ k     can  be  non-zero only for k = 2 and k = n. Let 1∗ denote the dual to
+1. Then we have the following choices for a non-zero c−2,−1
+                                                         k    :
+                                                          P              Pn
+     For k = 2: c−2,−1
+                 2     is a linear combination of ni=1 1∗ fi ⊗xi and            ∗
+                                                                           i=1 1 θi ⊗
+ξi . However, both vectors are odd. So this cannot happen.
+
+    For k = n: c−2,−1
+                n     is a scalar multiple of
+                                       X
+                                       n
+                                c3 =          1∗ fi ⊗ ξi∗ ,
+                                       i=1
+
+where as usual    ξi∗
+                    is the Hodge dual of ξi . In this case we see from our
+previous calculations that cn−1,−1 is a scalar multiple of
+                                      X
+                               c1 =          fi fj ⊗ xi ξj∗ .
+                                       i,j
+
+We know that c1 is not a cocycle. However, it is easy to verify that c1 + c3
+is a non-trivial Spencer cocycle. Thus we have
+
+Proposition 4.3. Let n ≥ 2. Then
+                         ˆ
+                 H l,2 (SHO(n,        ˆ
+                               n)− ; SHO(n, n))sl n
+                                                     = 0, l 6= n.
+                                               0̄
+                   n,2
+                 H (SHO(n,ˆ            ˆ
+                               n)− ; SHO(n,     sl
+                                            n))0̄ = C, n even.
+                                                   n
+
+
+                          ˆ
+                 H n,2 (SHO(n,         ˆ
+                               n)− ; SHO(n, n))sln = 0, n odd.
+                                                           0̄
+
+
+     Now consider g = SHO   ˆ ′ (n, n). In this case the calculations of Spencer
+cocycles is analogous to the case of SHO(n,  ˆ     n). We write an element ck ∈
+                        −2,−1    −1,−1
+   k,2
+H (g− ; g) as ck = ck         + ck     . As before ck−2,−1 is non-zero only for k =
+2, n. When k = 2 this cannot happen as in the case of SHO(n,   ˆ     n). For k = n
+                                                                    P
+we conclude as before that cn   −2,−1  is a scalar multiple of c3 = ni=1 1∗ fi ⊗ ξi∗ .
+However, there are two other linearly independent sln -invariant cochains
+of degree n, as we have seen in the computation of SHO′ (n, n), namely
+       P                            P
+c1 = i,j fi fj ⊗ xi ξj∗ and c2 = ni=1 fi θi ⊗ ξ1 · · · ξn . There are two linearly
+independent cocycles in the span of the se three vectors, namely c1 + c2 and
+c1 + c3 . However, c2 − c3 = db, where b is the Spencer 1-cochain defined by
+b(1) = ξ1 · · · ξn and b(g−1 ) = 0.
+S. CHENG, V. KAC                                                                            1165
+
+
+Proposition 4.4. Let n ≥ 2. Then
+                         ˆ ′ (n, n)− ; SHO
+                 H l,2 (SHO             ˆ ′ (n, n))sln = 0,             l 6= n.
+                                                   0̄
+                                 ′                   ′
+                      n,2
+                 H (SHO  ˆ (n, n)− ; SHOˆ (n, n))sln            = C,     n even.
+                                                   0̄
+                         ˆ ′ (n, n)− ; SHO
+                 H n,2 (SHO             ˆ ′ (n, n))sln          = 0,     n odd.
+                                                   0̄
+
+
+    We will now consider HO(n, n). Here the even part of g0 is gln . First
+we will assume that n 6= 2, 4. As an sln -module HO(n, n) decomposes as
+             P
+follows (Φ = ni=1 xi ξi ):
+     g−1     :        {R(π1 ), x1 }, {R(πn−1 ), ξn }
+      g0     :        {R(2π1 ), x21 }, {R(π1 + πn−1 ), x1 ξn }, {R(0), Φ},
+                      {R(πn−2 ), ξn ξn−1 }
+      g1     :        {R(3π1 ), x31 }, {R(2π1 + πn−1 ), x21 ξn }, {R(π1 ), x1 Φ},
+                      {R(π1 + πn−2 ), x1 ξn ξn−1 }, {R(πn−1 ), ξn Φ},
+                      {R(πn−3 ), ξn ξn−1 ξn−2 }
+      g2     :        {R(4π1 ), x41 }, {R(3π1 + πn−1 ), x31 ξn }, {R(2π1 ), x21 Φ},
+                      {R(2π1 + πn−2 ), x21 ξn ξn−1 }, {R(π1 + πn−1 ), x1 ξn Φ},
+                      {R(π1 + πn−3 ), x1 ξn ξn−1 ξn−2 }, {R(πn−2 ), ξn−1 ξn−2 Φ},
+                      {R(πn−4 ), ξn ξn−1 ξn−2 ξn−3 }
+                          ..
+                           .
+   gn−2      :        {R(nπ1 ), xn1 }, {R((n − 1)π1 + πn−1 ), x1n−1 ξn },
+                      {R((n − 2)π1 ), x1n−2 Φ}, · · · ,
+                      {R(2π1 ), x1 ξn · · · ξ2 }, {R(π2 ), ξn · · · ξ3 Φ},
+                      {R(0), ξn ξn−1 · · · ξ1 }
+   gn−1      :        {R((n + 1)π1 ), xn+1
+                                       1   }, {R(nπ1 + πn−1 ), xn1 ξn },
+                      {R((n − 1)π1 ), x1n−1 Φ}, · · · , {R(3π1 ), x21 ξn · · · ξ2 },
+                      {R(π1 + π2 ), x1 ξn · · · ξ3 Φ}, {R(π1 ), x1 ξn ξn−1 · · · ξ1 }
+      gn     :        {R((n + 2)π1 ), xn+2
+                                       1   },
+                      {R((n + 1)π1 + πn−1 ), xn+1
+                                              1   ξn }, {R(nπ1 ), xn1 Φ}, · · · ,
+                      {R(4π1 ), x31 ξn · · · ξ2 },
+                      {R(2π1 + π2 ), x21 ξn · · · ξ3 Φ}, {R(2π1 ), x21 ξn ξn−1 · · · ξ1 }
+                 ..
+                  .
+
+    Λ2 (g∗−1 ) ∼
+               = {R(2πn−1 ), fn2 } ⊕ {R(π1 + πn−1 ), fn θ1 } ⊕ {R(π2 ), θ1 θ2 } ⊕
+        Pn
+{R(0), i=1 fi θi }, where as before fi and θi are the corresponding dual basis
+to xi and ξi , respectively.
+1166                           GENERALIZED SPENCER COHOMOLOGY ...
+
+
+    For n = 3, there is a gl3 -invariant vector in Λ2 (g∗−1 ) ⊗ g−1 , namely
+Pn     ∗               ∗
+  i=1 θi ⊗ xi , where θi is the Hodge dual to θi . However, this vector is
+odd. For n ≥ 3, there are no non-zero gln -invariant vectors in Λ2 (g∗−1 ) ⊗ g−1
+by inspection of the table above.
+
+     For n ≥ 3 there are four linearly independent sln -invariant cochains in
+Λ2 (g∗−1 )
+         ⊗ g0 . However they are all odd.
+
+    Consider now the sln -invariant cochains in Λ2 (g∗−1 ) ⊗ g2 . They are all
+linear combinations of the following vectors:
+
+
+                      X
+             c1 =            fi fj ⊗ xi xj Φ,
+                       i,j
+                        X
+                      1 n−1
+             c2 =           (fi θi − fi+1 θi+1 ) ⊗ (xi ξi − xi+1 ξi+1 )Φ
+                      2 i=1
+                      X
+                 +           fi θj ⊗ xi ξj Φ,
+                      i6=j
+                      X
+             c3 =            θi θj ⊗ ξi ξj Φ.
+                      i<j
+
+Compute
+
+                dc1 (x1 , x1 , x1 ) = −3[x1 , x21 Φ] = −3x31 6= 0,
+                dc2 (x1 , x1 , x1 ) = 0,
+                dc3 (x1 , x1 , x1 ) = 0,
+                 dc1 (ξ1 , ξ2 , ξ3 ) = 0,
+                 dc2 (ξ1 , ξ2 , ξ3 ) = 0,
+                 dc3 (ξ1 , ξ2 , ξ3 ) 6= 0,
+                dc2 (ξ1 , x1 , x1 ) = [x1 , x1 ξ1 − x2 ξ2 ] = x1 6= 0.
+
+Therefore there are no cocycles in the span of c1 , c2 and c3 . Hence there are
+no gln -invariant Spencer cocycles in Λ2 (g∗−1 ) ⊗ g2 .
+
+    Consider now the sln -invariant cochains in Λ2 (g∗−1 ) ⊗ gn−2 . They are all
+linear combinations of the following vectors:
+                                      X
+                             c1 =         fi fj ⊗ xi ξi∗ ,
+                                      i,j
+                                       Xn
+                             c2 = (          f i θ i ) ⊗ ξ1 ξ2 · · · ξn ,
+                                       i=1
+S. CHENG, V. KAC                                                                          1167
+
+
+It is evident that Φ acts non-trivially on c1 and c2 , hence these vectors are not
+gln -invariant. Hence there are no gln -invariant non-trivial Spencer cocycles
+in Λ2 (g∗−1 ) ⊗ gn−2 .
+
+    Finally there is an sln -invariant cocycle in Λ2 (g∗−1 ) ⊗ gn , namely
+                                        X
+                                   c=          f i f j ⊗ xi xj ξ 1 ξ 2 · · · ξ n .
+                                         i,j
+
+But obviously c is not gln -invariant.
+
+    Next consider HO(4, 4). The sl4 -invariant cochains in Λ2 (g∗−1 ) ⊗ g0 and
+Λ2 (g∗−1 )
+        ⊗ g4 are as in the general case and the same argument applies.
+
+    There are five cochains now in Λ2 (g∗−1 ) ⊗ g2 , namely
+                            X
+                    c1 =           fi fj ⊗ xi xj Φ,
+                             i,j
+
+                             1X 3
+                    c2 =           (fi θi − fi+1 θi+1 ) ⊗ (xi ξi − xi+1 ξi+1 )Φ
+                             2 i=1
+                            X
+                        +          fi θj ⊗ xi ξj Φ,
+                            i6=j
+                            X
+                    c3 =           θi θj ⊗ ξi ξj Φ,
+                            i<j
+                            X
+                    c4 =           fi fj ⊗ xi ξj∗ ,
+                             i,j
+                             X
+                             4
+                    c5 = (          f i θ i ) ⊗ ξ1 ξ2 ξ3 ξ4 .
+                             i=1
+
+
+    (Recall that ξj∗ denotes the Hodge dual as usual.) However, c4 and c5
+are not gl4 -invariant, and we have seen earlier in the general case that there
+is no cocycle in the span of c1 , c2 and c3 .
+
+  Finally consider HO(2, 2).                      In this case the sl2 -module structure of
+HO(2, 2) is as follows:
+
+             g−1     : {R(1), x1 }, {R(1), ξ2 }
+              g0     : {R(2), x21 }, {R(2), x1 ξ2 }, {R(0), Φ}, {R(0), ξ1 ξ2 }
+              g1     : {R(3), x31 }, {R(3), x21 ξ2 }, {R(1), x1 Φ},
+                        {R(1), x1 ξ1 ξ2 }
+              g2     : {R(4), x41 }, {R(4), x31 ξ2 }, {R(2), x21 Φ}, {R(2), x21 ξ1 ξ2 }
+               ..
+                .
+1168                              GENERALIZED SPENCER COHOMOLOGY ...
+
+
+            gk   : {R(k + 2), xk+2              k+1
+                               1 }, {R(k + 2), x1 ξ2 },
+                       {R(k), xk1 Φ}, {R(k), xk1 ξ1 ξ2 }
+                           ..
+                            .
+
+Λ2 (g∗−1 ) ∼
+           = {R(2), f22 } ⊕ {R(2), f2 θ1 } ⊕ {R(0), f1 θ1 + f2 θ2 } ⊕ {R(0), θ1 θ2 }.
+Here as usual fi (xj ) = δij and θi (ξj ) = δij , i, j = 1, 2.
+
+    In Λ2 (g∗−1 ) ⊗ g0 the even sl2 -invariant cochains are in the span of the
+following vectors:
+
+                              c1 = f1 f2 ⊗ (x1 ξ1 − x2 ξ2 )
+                                   − f12 ⊗ x1 ξ2 + f22 ⊗ x2 ξ1 ,
+                              c2 = (f1 θ1 − f2 θ2 ) ⊗ x1 x2
+                                   − f1 θ2 ⊗ x21 + f2 θ1 ⊗ x22 ,
+                              c3 = (f1 θ1 + f2 θ2 ) ⊗ ξ1 ξ2 ,
+                              c4 = θ1 θ2 ⊗ (x1 ξ1 + x2 ξ2 ).
+
+
+   However, none of them is Φ-invariant, as is easily seen.
+
+    In Λ2 (g∗−1 ) ⊗ g2 the even sl2 -invariant cochains are in the span of the
+following vectors:
+                 X
+       c1 =            fi fj ⊗ xi xj Φ,
+                 i,j
+
+       c2 = (f1 θ1 − f2 θ2 ) ⊗ x1 x2 ξ1 ξ2 − f1 θ2 ⊗ x21 ξ1 ξ2 + f2 θ1 ⊗ x22 ξ1 ξ2 .
+
+Compute
+
+                          dc1 (x1 , x1 , x1 ) = −3[x1 , x21 Φ] 6= 0,
+                          dc2 (x1 , x1 , x1 ) = 0,
+                           dc2 (ξ1 , ξ2 , x1 ) = −3x1 ξ1 ξ2 6= 0.
+
+
+   Hence there are no even gl2 -invariant cocycles in Λ2 (g∗−1 ) ⊗ g2 . Thus we
+have proved
+
+Proposition 4.5.
+
+                  H l,2 (HO(n)−1 ; HO(n))gl
+                                         0̄
+                                            n
+                                              = 0,         l ≥ 1; n ≥ 2.
+
+
+    Recall that HO(n, n) is the full prolongation of g≤0 . Hence by Corollary
+2.3 we obtain
+S. CHENG, V. KAC                                                               1169
+
+
+Theorem 4.2. HO(n, n) has no non-trivial filtered deformations for n ≥ 2.
+
+
+                                 ˆ
+Remark 4.1. Let g be either SHO(n,            ˆ ′ (n, n) or HO(n,
+                                        n), SHO               ˆ     n) and let a
+be its maximal reductive subalgebra with respect to which we have decom-
+posed g. For n 6= 3 it is clear from the a-module structure of g that the
+a-module g∗0 ⊗ g−1 has no trivial a-component in its a-module decomposi-
+tion, and hence it has no trivial g0 -subquotient in its g0 -composition series.
+Therefore H 1 (g0 ; g−1 ) = 0. It follows from Proposition 2.7 that g has no
+filtered deformation L such that L0 is a maximal subalgebra. In the case
+when n = 3, the vector 1 and the trivial sln -module in g∗0 ⊗ g−1 have opposite
+parity, and so Proposition 2. 7 takes care of this case as well. In fact it can
+                           ˆ
+be shown directly that HO(n,     n) has no non-trivial filtered deformations at
+all. However the remaining two cases do possess non-trivial filtered defor-
+mations which turn out to be interesting. Thi s is the reason why we have
+                                     ˆ
+calculated Spencer 2-cocycles of SHO(n,              ˆ ′ (n, n) in Propositions
+                                            n) and SHO
+4.3 and 4.4.
+
+  In the next two remarks we will deal with the Lie superalgebras SHO(n, n)
+                          ˆ
++CΦ, SHO ′ (n, n) + CΦ, SHO(n,   n) + CΦ and SHO  ˆ ′ (n, n) + CΦ.
+
+                               ˆ
+Remark 4.2. Let g be either SHO(n,    n) + CΦ or SHO ˆ ′ (n, n) + CΦ. Here
+the maximal reductive subalgebra a of g0 is of course gln = sln + CΦ. As in
+Remark 4.1 it follows from Proposition 2.7 that g has no filtered deforma-
+tion L such that L0 is a maximal subalgebra. Actually one can show that
+   ˆ
+SHO(n,   n) + CΦ has a unique non-trivial (non-simple) filtered deformation,
+            ′
+        ˆ
+while SHO (n, n) + CΦ has no non-trivial filtered deformations at all.
+
+
+Remark 4.3. Let g be either SHO(n, n) + CΦ or SHO ′ (n, n) + CΦ. Our
+computations of Spencer 2-cocycles of HO(n, n), SHO(n, n) and SHO′ (n, n)
+above also show that g has no non-trivial Spencer 2-cocycles. Namely, the
+computation for HO(n, n) shows that all Spencer 2-cocycles of g of degree
+2 are odd and so cannot give rise to filtered deformations. Also it is easy to
+check that the unique non-trivial Spencer 2-cocycle of SHO′ (n, n) of degree
+n cannot be invariant u nder the action of Φ. Thus if {µ1 , µ2 , · · ·} is a defining
+sequence of a filtered deformation gǫ , then we may assume that µi vanishes
+for all i when restricted to g−1 . In particular it follows that [g−1 , g−1 ]ǫ has
+trivial projection onto CΦ. Now for n 6= 3 the trivial sln -module does not
+appear in g0 ⊗ g−1 and hence [g0 , g−1 ]ǫ projects trivially onto CΦ. When
+n = 3, [g0 , g−1 ]ǫ pr ojects trivially onto CΦ due to parity reason. Of course
+[g1 , g−1 ]ǫ projects trivially onto CΦ. Therefore [g, g]ǫ projects trivially onto
+1170                        GENERALIZED SPENCER COHOMOLOGY ...
+
+
+CΦ and hence gǫ cannot be simple. Again here one can determine all non-
+trivial filtered deformations. It turns out that SHO(n, n) + CΦ has a unique
+non-trivial (non-simple) filtered deformation, while SHO′ (n, n) + CΦ has no
+non-trivial filtered deformation at all.
+
+    We shall next consider SKO ′ (n, n + 1; β) and SKO(n, n + 1; β). Here the
+even part of g0 is gln . As an sln -module SKO ′ (n, n+1; β), β 6= 1, decomposes
+                                                                      P
+as follows (as usual we include a highest weight vector and Φ = ni=1 xi ξi ):
+
+ g−2   : {R(0), 1}g−1 : {R(π1 ), x1 }, {R(πn−1 ), ξn }
+  g0   : {R(2π1 ), x21 }, {R(π1 + πn−1 ), x1 ξn },
+          {R(0), τ + βΦ}, {R(πn−2 ), ξn ξn−1 }
+  g1   : {R(3π1 ), x31 }, {R(2π1 + πn−1 ), x21 ξn },
+                           βn − 1
+         {R(π1 ), x1 (τ +         Φ)},
+                            n+1
+         {R(π1 + πn−2 ), x1 ξn ξn−1 },
+                             βn − 1
+         {R(πn−1 ), ξn (τ +         Φ)},
+                              n−1
+         {R(πn−3 ), ξn ξn−1 ξn−2 }
+  g2   : {R(4π1 ), x41 }, {R(3π1 + πn−1 ), x31 ξn },
+                            βn − 2
+         {R(2π1 ), x21 (τ +        Φ)},
+                             n+2
+         {R(2π1 + πn−2 ), x21 ξn ξn−1 },
+                                     βn − 2
+         {R(π1 + πn−1 ), x1 ξn (τ +           Φ)},
+                                         n
+         {R(π1 + πn−3 ), x1 ξn ξn−1 ξn−2 },
+                                    βn − 2
+         {R(πn−2 ), ξn−1 ξn−2 (τ +          Φ)},
+                                     n−2
+         {R(πn−4 ), ξn ξn−1 ξn−2 ξn−3 },
+             ..
+              .,
+gn−2   : {R(nπ1 ), xn1 }, {R((n − 1)π1 + πn−1 ), x1n−1 ξn },
+                                        βn − n + 2
+         {R((n − 2)π1 ), x1n−2 (τ +                Φ)} · · · ,
+                                          2n − 2
+         {R(2π1 ), x1 ξn · · · ξ2 },
+                                    βn − n + 2
+         {R(π2 ), ξn · · · ξ3 (τ +             Φ)},
+                                        2
+         {R(0), ξn ξn−1 · · · ξ1 }
+gn−1   : {R((n + 1)π1 ), xn+1
+                           1   }, {R(nπ1 + πn−1 ), xn1 ξn },
+                                    βn − n + 1
+         {R((n − 1)π1 ), x1n−1 (τ +            Φ)}, · · · ,
+                                      2n − 1
+S. CHENG, V. KAC                                                                              1171
+
+
+          {R(3π1 ), x21 ξn · · · ξ2 },
+                                             βn − n + 1
+          {R(π1 + π2 ), x1 ξn · · · ξ3 (τ +                   Φ)},
+                                                       3
+                                           βn − n + 2
+         {R(π1 ), ξn ξn−1 · · · ξ2 (τ +                    Φ)}
+                                                 1
+  gn   : {R((n + 2)π1 ), xn+2  1    }, {R((n + 1)π1 + πn−1 ), xn+1       1  ξn },
+                                βn   −  n
+         {R(nπ1 ), xn1 (τ +               Φ)}, · · · ,
+                                   2n
+                                                                             βn − n
+         {R(4π1 ), x31 ξn · · · ξ2 }, {R(2π1 + π2 ), x21 ξn · · · ξ3 (τ +              Φ)},
+                                                                                  4
+                                              βn − n
+         {R(2π1 ), x1 ξn ξn−1 · · · ξ2 (τ +               Φ)}
+                                                    2
+gn+1   : {R((n + 3)π1 ), xn+3  1    }, {R((n + 2)π1 + πn−1 ), xn+2       1  ξn },
+                                          βn  −   n   −  1
+         {R((n + 1)π1 ), xn+1  1    (τ +                   Φ)}, · · · , {R(5π1 ), x41 ξn · · · ξ2 },
+                                            2n + 1
+                                                βn − n − 1
+         {R(3π1 + π2 ), x31 ξn · · · ξ3 (τ +                   Φ)},
+                                                        5
+                                              βn − n − 1
+         {R(3π1 ), x21 ξn ξn−1 · · · ξ2 (τ +                  Φ)}
+                                                       3
+             ..
+              .
+
+In the case when β = 1 an extra component {R(0), τ ξn ξn−1 · · · ξ1 } is in-
+cluded in gn . The structure of SKO(n, n + 1; β) is then easily derived from
+(3.2). Λ2 (g∗− ) ∼
+                 = {R(2πn−1 ), fn2 } ⊕ {R(π1 + πn−1 ), fn θ1 } ⊕ {R(π2 ), θ1 θ2 } ⊕
+                                                               P
+{R(πn−1 ), 1 fn } ⊕ {R(π1 ), 1∗ θ1 } ⊕ {R(0), 1∗ 1∗ } ⊕ {R(0), ni=1 fi θi }, where
+             ∗
+
+fi , θi and 1∗ are the corresponding dual basis to xi , ξi and 1, respectively.
+Below we will find gln -invariant 2-cocycles. Just as for HO(n, n) the cases
+n = 2, 4 again need to be considered separately, however, the analysis is c
+ompletely analogous and we will omit these cases. For our calculations below
+we shall need the following lemma, whose proof is straightforward.
+
+Lemma 4.1. Let f be a monomial in C[x1 , · · · , xn , ξ1 , · · · , ξn ] and let λ ∈ C.
+Let o(f ) and e(f ) denote the number of ξi ’s and xi ’s in f , respectively. Then
+
+    (i) [τ + βΦ, (τ + λΦ)f ] = ((1 − β)o(f ) + (1 + β)e(f ))(τ + λΦ)f .
+
+    (ii) [(τ + βΦ), f ] = (−2 + (1 − β)o(f ) + (1 + β)e(f ))f .
+
+   For n = 3 there is an sln -invariant 2-cochain of degree 1. However, as in
+the case of HO(3, 3), this vector is odd.
+
+    The sln -invariant Spencer 2-cochains of degree 2 are all odd, and so are
+excluded.
+1172                           GENERALIZED SPENCER COHOMOLOGY ...
+
+
+   There are six linearly independent sln -invariant Spencer 2-cochains of
+degree 4. They are as follows:
+              X                           βn − 2
+       c1 =          fi fj ⊗ xi xj (τ +          Φ),
+              i,j
+                                          n+2
+              1X n
+                                                                    βn − 2
+       c2 =         (fi θi − fi+1 θi+1 ) ⊗ (xi ξi − xi+1 ξi+1 )(τ +        Φ)
+              2 i=1                                                   n
+              X                           βn − 2
+          +          fi θj ⊗ xi ξj (τ +          Φ),
+              i6=j
+                                            n
+              X                           βn − 2
+       c3 =          θi θj ⊗ ξi ξj (τ +          Φ),
+              i<j
+                                           n−2
+              X
+              n
+                                       βn − 1
+       c4 =          1∗ fi ⊗ xi (τ +          Φ),
+              i=1
+                                        n+1
+              X
+              n
+                                       βn − 1
+       c5 =          1∗ θi ⊗ ξi (τ +          Φ),
+              i=1
+                                        n−1
+               ∗ ∗
+       c6 = 1 1 ⊗ (τ + βΦ).
+
+However, by Lemma 4.1 all these vectors have (τ + βΦ)-eigenvalue 4, and
+hence are not gln -invariant.
+
+   We have three linearly independent sln -invariant vectors of degree n,
+namely
+                                       X
+                            c1 =             fi fj ⊗ xi ξj∗ ,
+                                       i,j
+                                       Xn
+                            c2 =             xi θ i ⊗ ξ 1 ξ 2 · · · ξ n ,
+                                       i=1
+                                       Xn
+                            c3 =             1∗ fi ⊗ ξi∗ ,
+                                       i=1
+
+where as usual ξi∗ is the Hodge dual of ξi . By Lemma 4.1 τ + βΦ acts on
+these vectors as the scalar (1 − β)n and hence they are gln -invariant if and
+only if β = 1. However there are two 1-cochains of degree n , namely
+                                X
+                                n
+                                                         βn − n + 1
+                      b1 =            fi ⊗ ξi∗ (τ +                 Φ),
+                                i=1
+                                                             1
+                      b2 = 1∗ ⊗ ξ1 ξ2 · · · ξn ,
+
+which are gln -invariant if and only if β = 1. It is easy to check that db1
+and db2 are linearly independent and lie in the span of c1 , c2 and c3 . But
+S. CHENG, V. KAC                                                             1173
+
+
+dc2 (ξ1 , x1 , x1 ) = −2ξi∗ 6= 0 and thus there are no non-trivial cocycles in the
+span of c1 , c2 and c3 .
+
+   Of degree n + 2 there are three sln -invariant cochains, namely
+                            X                            βn − n
+                   c1 =            fi fj ⊗ xi ξj∗ (τ +          Φ),
+                             i,j
+                                                           2
+                            X
+                            n
+                                                      βn − n + 1
+                   c2 =            1∗ fi ⊗ ξi∗ (τ +              Φ),
+                            i=1
+                                                          1
+                   c3 = 1∗ 1∗ ⊗ ξ1 ξ2 · · · ξn .
+Note that they are even cochains if and only if n is odd. By Lemma 4.1 they
+are τ + βΦ-invariant if and only if β = n+2
+                                         n . Compute (β = n )
+                                                              n+2
+
+
+                   dc1 (ξ1 , x1 , x1 ) = τ ξi∗ + 3x1 ξ1 ξ2 · · · ξn ,
+                   dc3 (ξ1 , x1 , x1 ) = 0,
+                    dc1 (ξ1 , x1 , 1) = 0,
+                    dc3 (ξ1 , x1 , 1) = ξ1 ξ2 · · · ξn .
+Hence the space of cocycles in the span of c1 , c2 and c3 is at most one. We
+will construct a cocycle of degree n + 2 in the next section.
+
+   For β = 1 there exists an sln -invariant cochain of degree n + 4, namely
+                             c = 1∗ 1∗ ⊗ τ ξ1 ξ2 · · · ξn .
+By Lemma 4.1 its (τ + βΦ)-eigenvalue is 4, hence it is not gln -invariant.
+
+   We summarize our calculations above.
+
+Proposition 4.6 For n ≥ 2
+                                                                         n+2
+    H l,2 (SKO(n, n + 1; β)− ; SKO(n, n + 1; β))gl
+                                                0̄
+                                                   n
+                                                     = 0, ∀l and β 6=        ,
+                                                                          n
+                       n+2                      n + 2 gln
+    H l,2 (SKO(n, n + 1;     )− ; SKO(n, n + 1;        ))0̄ = 0, l 6= n + 2,
+                          n                        n
+                           n+2                      n + 2 gln
+    H n+2,2 (SKO(n, n + 1;       )− ; SKO(n, n + 1;        ))0̄ = C, n odd,
+                            n                         n
+                           n+2                      n + 2 gln
+    H n+2,2 (SKO(n, n + 1;       )− ; SKO(n, n + 1;        ))0̄ = 0, n even.
+                            n                         n
+
+Theorem 4.3. The Lie superalgebras SKO(n, n + 1; β) and SKO ′ (n, n +
+1; β), for β 6= n+2
+                 n or n even, have no non-trivial filtered deformations.
+
+Proof. We shall always assume that β 6= n+2                     ′
+                                          n . We know that SKO (n, n +
+1; β) is a full prolongation, and hence by Proposition 4.6 and Corollary
+1174                          GENERALIZED SPENCER COHOMOLOGY ...
+
+
+2.3, it has no non-trivial filtered deformations. Since SKO(n, n + 1; β) =
+SKO′ (n, n + 1; β) for β 6= 1, n−2
+                                n , we are left to consider two cases.
+
+    Now SKO(n, n + 1; n−2 n )(1) contains no trivial sln -module. Thus it is an
+almost full prolongation by (3.2) and hence Proposition 4.6 and Corollary
+2.3 take care of this case as well.
+
+    Now consider g = SKO(n, n + 1; 1). In this case it is not an almost full
+prolongation. We need to go back to the proof of Proposition 2.6, from which
+and (3.2) it follows that if L is a filtered deformation of g, then L can be
+given a defining seque nce {µ1 , µ2 , · · ·} with the properties that µi |g− ×g = 0
+for i < n, µn (g− , a) = 0 for a ∈ g0 not lying in the trivial sln -component
+and µn (x, τ + Φ) = λ[τ ξ1 ξ2 · · · ξn , x], for all x ∈ g− and for some λ ∈ C.
+Furthermore by Proposition 4.6 we may also assume that µn vanishes when
+restricted to g− . Of course this only makes sense if n is even. Hence we
+may assume that n is an even integer from now on. For a fixed i we let
+b = ξi (τ + Φ) ∈ g1 , lying in the irreducible sln -module R(πn−1 ). We then
+have for x ∈ g− :
+                       [b, x]ǫ = [b, x] + µn (b, x)ǫn + · · · .
+Taking x ∈ g−1 we have µn (b, x) ⊂ gn . But the irreducible sln -modules R(0),
+R(π1 + πn−1 ) and R(πn−2 ) do not appear in gn . Hence µn (b, g−1 ) = 0 by
+Proposition 2.4. Using this fact we compute the Jaco bi identity of the triple
+xi , ξj , ξi (τ + Φ) for i 6= j and derive that λ[τ ξ1 ξ2 · · · ξn , xj ] = 0. Thus λ = 0.
+Therefore µn |g− ×g0 = 0. Now g(1) only has one more trivial sln -component,
+namel y ξ1 ξ2 · · · ξn . However it has parity different from that of τ ξ1 ξ2 · · · ξn .
+Thus we conclude that µn |g− ×g = 0. Now g is a full prolongation of degree
+n + 1, which combined with Proposition 4.6, allows us to a pply Proposition
+2.6 to conclude that L is a trivial filtered deformation.
+
+    We shall now consider the Lie superalgebra g = H(2n, m). Here (g0 )0̄ is
+isomorphic to a = sp2n ⊕ som . With respect to a, g decomposes as follows
+(πi and π̃i are the respective fundamental weights of sp2n and som .):
+
+
+
+   g−1 :         R(π1 ), R(π̃1 )
+       g0 :      R(2π1 ), R(π1 ) ⊗ R(π̃1 ), R(π̃2 )
+                   ..    ..
+                    .     .
+       gk :      R((k + 2)π1 ), R((k + 1)π1 ) ⊗ R(π̃1 ), · · · , R(π̃k+2 )
+  gm−2 :         R(mπ1 ), R((m − 1)π1 ) ⊗ R(π̃1 ), · · · , R(π1 ) ⊗ R(π̃m−1 ), R(0)
+                   ..   ..
+                    .    .
+S. CHENG, V. KAC                                                                    1175
+
+
+     gs :          R((s + 2)π1 ), R((s + 1)π1 ) ⊗ R(π̃1 ), · · · ,
+                   R((s − m + 3)π1 ) ⊗ R(π̃m−1 ), R((s − m + 2)π1 )
+                     ..   ..
+                      .    .
+
+    Continuing using the notation adapted in Section 3, we let dpi , dqi for
+i = 1, · · · , n and dξj for j = 1, · · · , m denote the dual basis to pi , qi and ξj ,
+respectively. Then as sp2n ⊕ som -modules we have
+      Λ2 (g∗−1 ) ∼
+                 = R(π2 ) ⊕ R(0) ⊕ R(π1 ) ⊗ R(π̃1 ) ⊕ R(2π̃1 ) ⊕ R(0),              (4.1)
+                                                                               Pn
+where the two trivial components are spanned by the vectors i=1 dpi dqi and
+Pm      2
+  i=1 dξi , respectively. We need to make some further clarifications of (4.1):
+R(π2 ) = ∅ if n = 1. Also R(2π̃1 ) is understood a s follows: It is irreducible
+of highest weight 2π̃1 only when m ≥ 5. For m = 4 it is isomorphic to
+R(2) ⊗ R̂(2), where so4 ∼         ˆ 2 . For m = 3 it is R(4), where we identify
+                          = sl2 ⊕ sl
+so3 with sl2 . For m = 2 it is isomorphic to C+ ⊕ C− , where√     ξ1 ξ2 acts
+                                                                          √ on
+the one-dimensional spaces C+ and C− as the scalars 2 −1 and −2 −1,
+respectively. For m = 1, it is empty.
+
+    Note that all the modules are self-contragredient. Furthermore R(π2 )
+doesn’t appear in gk for any k. Also R(π̃k ) are all non-isomorphic except for
+R(π̃m−i ) ∼
+          = R(π̃i ). Finally the component R(2 p̃i1 ) in (4.1) is not isomorphic
+to R(π̃k ) in gk for any k. From this it follows that the only sp2n ⊕ som -
+invariant cochains are:
+
+    In Λ2 (g∗−1 ) ⊗ g0 :
+                                X
+                         c0 =         dpi dξj ⊗ pi ξj + dqi dξj ⊗ qi ξj .
+                                i,j
+
+In Λ2 (g∗−1 ) ⊗ gm−2 :
+                                  X
+                                  n
+                      c1 = (            dpi dqi ) ⊗ ξ1 · · · ξm ,
+                                  i=1
+                                  Xm
+                      c2 = (            dξi2 ) ⊗ ξ1 · · · ξm ,
+                                  i=1
+                                 X
+                                 n
+                      c3 =             dpi dξj ⊗ pi ξj∗ + dqi dξj ⊗ qi ξj∗ ,
+                                 i=1
+
+where   ξj∗   as usual stands for the Hodge dual of ξj .
+
+   Suppose that m 6= 2. Now dc0 (p1 , ξ1 , ξ1 ) = 2p1 6= 0. Hence c0 is not a
+cocycle. On the other hand
+                             dc1 (ξ1 , ξ1 , ξ1 ) = 0,
+1176                         GENERALIZED SPENCER COHOMOLOGY ...
+
+
+                       dc2 (ξ1 , ξ1 , ξ1 ) = −3ξ1∗ 6= 0,
+                       dc3 (ξ1 , ξ1 , ξ1 ) = 0,
+                       dc1 (p1 , q1 , ξ1 ) = −ξ1∗ 6= 0.
+
+
+   From this it follows that the space of cocycles in Λ2 (g∗−1 ) ⊗ gm−2 is at
+most 1-dimensional. Let
+                     X
+                     n
+                b=         dpi ⊗ pi ξ1 · · · ξm + dqi ⊗ qi ξ1 · · · ξm .
+                     i=1
+
+It is an sp2n ⊕ som -invariant 1-cochain such that db ∈ Λ2 (g∗−1 ) ⊗ gm−2 and
+db 6= 0. Hence any sp2n ⊕ som -invariant cocycle in Λ2 (g∗−1 ) ⊗ gm−2 must be
+a coboundary.
+
+   Now if m = 2, then all four cochains appear in Λ2 (g∗−1 ) ⊗ g0 . We have
+
+                                 dc0 (ξ1 , ξ1 , ξ1 ) = 0.
+
+Hence every cocycle must be a linear combination of c0 , c1 and c3 . However,
+
+                              dc0 (p1 , ξ1 , ξ1 ) 6= 0,
+                              dc1 (p1 , ξ1 , ξ1 ) = 0,
+                              dc3 (p1 , ξ1 , ξ1 ) = 0.
+
+Thus any cocycle must be a linear combination of c1 and c3 . But we have
+seen from the general case that it must be a coboundary.
+
+Proposition 4.7. For n ≥ 1 and m ≥ 0
+                                              2n ⊕som
+              H l,2 (H(2n, m)−1 ; H(2n, m))sp
+                                           0̄
+                                                      = 0,             ∀l.
+
+
+   By Corollary 2.3, since H(2n, m) is a full prolongation, we arrive at
+
+Theorem 4.4. H(2n, m) has no non-trivial filtered deformations for n ≥ 1
+and m ≥ 0.
+S. CHENG, V. KAC                                                                   1177
+
+
+5. Existence and uniqueness of filtered deformations of
+              ˆ
+SHO′ (n, n), SHO(n, n) and SKO(n, n + 1; n+2
+                                          n ).
+
+    In this section we will construct non-trivial filtered deformations of the
+                     ˆ
+Lie superalgebras SHO(n,    n), SHO′ (n, n) and SHO ˆ ′ (n, n), for n even, and
+for SKO(n, n + 1; n+2n ), for n odd. From Propositions 4.2, 4.3, 4.4 and 4.6
+and Corollary 2.5 it follows that such filtered deformations are necessarily
+unique.
+
+    Let g be either SHO(n,  ˆ        n) or SHOˆ ′ (n, n). As usual we identify g with
+a subalgebra in Λ(n, n) with the odd Poisson bracket. Recall that Λ(n)
+is naturally Z-graded so that we may write Λ(n) = ⊕nj=0 Λ(n)j . We let
+gj = g ∩ (C[x1 , x2 , · · · , xn ] ⊗ Λ(n)j ).
+
+                                                                               ′
+                                                     ˆ
+Lemma 5.1. Let f ∈ gj with j ≥ 1, where g is either SHO(n,      ˆ (n, n)
+                                                           n), SHO
+      ′
+or SHO (n, n). Then [ξ1 ξ2 · · · ξn , f ] = 0.
+
+Proof. Note that we have [gi , gj ] ⊂ gi+j−1 . Hence [ξ1 ξ2 · · · ξn , gj ] ⊂ gn+j−1 .
+In particular if j ≥ 1, [ξ1 ξ2 · · · ξn , gj ] ⊂ gn . But gn = Cξ1 ξ2 · · · ξn or gn =
+0. On the other hand we know that Cξ1 ξ2 · · · ξn doesn’t lie in the derived
+algebra. Thus [ξ1 ξ2 · · · ξn , f ] = 0.
+
+   We define a super-skewsymmetric bilinear map µn : g ∧ g → g of degree
+n as follows:
+                   µn (f, g) = [ξ1 ξ2 · · · ξn , f g] if f, g ∈ g0 ,
+                   µn (f, g) = 0                        otherwise.
+
+                                        ′
+               ˆ
+    In g = SHO(n,     n) or g = SHO ˆ (n, n) we define a new bracket [·, ·]ǫ using
+this µn , i.e. we set
+                            [f, g]ǫ = [f, g] + µn (f, g)ǫn .                 (5.1)
+
+Proposition 5.1. The deformed bracket (5.1) defines a unique non-trivial
+                         ˆ
+filtered deformation of SHO(n,         ˆ ′ (n, n).
+                               n) and SHO
+
+Proof. It suffices to check the [·, ·]ǫ is a Lie bracket. Since [·, ·]ǫ is obviously
+super-skewsymmetric, we only need to verify that the Jacobi identity is
+satisfied.
+               ˆ
+   Let g = SHO(n,   n) or g = SHOˆ ′ (n, n). Recall that [·, ·] is a Poisson
+bracket, which means that we have
+                    [h, f g] = [h, f ]g + (−1)p(h)(p(f )+1) f [h, g].              (5.2)
+1178                             GENERALIZED SPENCER COHOMOLOGY ...
+
+
+Here and below we mean by p(f ) the parity of f as an element of the Lie
+superalgebra. So for example p(xi ) = 1 and p(ξi ) = 0. We remind the reader
+                                  ˆ
+again that the Lie superalgebra HO(n,   n) is isomorphic to the odd Poisson
+superalgebra Λ(n, n) with reversed parity, which accounts for the additional
++1 in (5.2). We need to check
+                    [h, [f, g]ǫ ]ǫ = [[h, f ]ǫ , g]ǫ + p(h, f )[f, [h, g]ǫ ]ǫ .               (5.3)
+By Lemma 5.1 µn (a, µn (b, c)) = 0, for a, b, c ∈ g. Thus the left-hand side of
+(5.3) is
+              [h, [f, g]] + (µn (h, [f, g]) + [h, µn (f, g)])ǫn ,
+while the right hand side of (5.3) is
+           [[h, f ], g] + p(h, f )[f, [h, g]]
+                         + (µn ([h, f ], g) + [µn (h, f ), g]
+                         + p(h, f )µn (f, [h, g]) + p(h, f )[f, µn (h, g)])ǫn .
+
+   Thus (5.3) is equivalent to
+       mun (h, [f, g]) + [h, µn (f, g)] = (5.4)
+       µn ([h, f ], g) + [µn (h, f ), g] + p(h, f )µn (f, [h, g]) + p(h, f )[f, µn (h, g)].
+
+     So we need to verify (5.4) for f, g, h ∈ g. It is easy to see that if one of
+the f , g or h lies in gj , for j ≥ 2, then the left-hand side and the right-hand
+side of (5.4) are zero. Thus we may assume that f, g, h ∈ gj , j = 0, 1. Now
+it is as easy to see that if any two of the f, g, h lie in g1 , then (5.4) gives
+again 0 = 0. Hence we may assume that either f, g, h ∈ g0 or exactly one
+of them lies in g1 and while the other two lie in g0 . We will consider those
+cases separately.
+
+Case 1. f, g, h ∈ g0 . In this case, noting that p(f ) = p(g) = p(h) = 1 and
+[g0 , g0 ] = 0 (5.4) reduces to
+            [h, [ξ1 · · · ξn , f g]] = [[ξ1 · · · ξn , hf ], g] − [f, [ξ1 · · · ξn , hg]].    (5.5)
+Now the left-hand side of (5.5) equals
+                          [h, [ξ1 · · · ξn , f ]g] + [h, f [ξ1 · · · ξn , g]] =
+                          [h, [ξ1 · · · ξn , f ]]g + f [h, [ξ1 · · · ξn , g]].
+The right-hand side of (5.5) is
+              [[ξ1 · · · ξn , h]f, g] + [h[ξ1 · · · ξn , f ], g] − [f, [ξ1 · · · ξn , h]g]
+              −[f, h[ξ1 · · · ξn , g]] = [[ξ1 · · · ξn , h], g]f + h[[ξ1 · · · ξn , f ], g]
+              −[f, [ξ1 · · · ξn , h]]g − h[f, [ξ1 · · · ξn , g]].
+S. CHENG, V. KAC                                                                                     1179
+
+
+Thus we are to show
+
+[h, [ξ1 · · · ξn , f ]]g + f [h, [ξ1 · · · ξn , g]] = [[ξ1 · · · ξn , h], g]f + h[[ξ1 · · · ξn , f ], g]
+                                                    − [f, [ξ1 · · · ξn , h]]g − h[f, [ξ1 · · · ξn , g]].
+                                                                                                     (5.6)
+
+But (5.6) is equivalent to saying that
+
+             −[ξ1 · · · ξn , [f, h]]g − [ξ1 · · · ξn , [h, g]]f = h[ξ1 · · · ξn , [f, g]].           (5.7)
+
+But (5.7) is obviously true, since [g0 , g0 ] = 0.
+
+Case 2. One of the f, g, h is in g1 , while the other two are in g0 . We will
+assume that h ∈ g1 . Other cases are analogous. In this case (5.4) reduces to
+
+              [h, [ξ1 · · · ξn , f g]] = [ξ1 · · · ξn , [h, f ]g] + [ξ1 · · · ξn , f [h, g]].        (5.8)
+
+(5.8) is equivalent to
+
+[h, [ξ1 · · · ξn , f ]g] + [h, f [ξ1 · · · ξn , g]] = [ξ1 · · · ξn , [h, f ]]g + [h, f ][ξ1 · · · ξn , g]
+                                                    + [ξ1 · · · ξn , f ][h, g]
+                                                    + f [ξ1 · · · ξn , [h, g]],
+
+which in term is equivalent to
+
+     [h, [ξ1 · · · ξn , f ]]g + [ξ1 · · · ξn , f ][h, g] + [h, f ][ξ1 · · · ξn , g] + f [h, [ξ1 · · · ξn , g]]
+= [ξ1 · · · ξn , [h, f ]]g + [h, f ][ξ1 · · · ξn , g] + [ξ1 · · · ξn , f ][h, g] + f [ξ1 · · · ξn , [h, g]].
+
+But this is equivalent to saying that
+
+                         f [[ξ1 · · · ξn , h], g] + [[ξ1 · · · ξn , h], f ]g = 0,
+
+which is certainly true, since [ξ1 · · · ξn , h] = 0 by Lemma 5.1.
+
+     Denote these filtered deformations of SHO(n,    ˆ    n) and SHO     ˆ ′ (n, n) by
+   ˆ
+SHO(n,    n)ǫ and SHO   ˆ ′ (n, n)ǫ , respectively. SHO(n,
+                                                      ˆ    n)ǫ is a simple Lie su-
+                               ′
+peralgebra. Now in SHO     ˆ (n, n)ǫ 1 is no longer central. But it is easy to see
+that 1 − ξ1 · · · ξn is central. Dividing by the ideal C(1 − ξ1 · · · ξn ) we obtain a
+filtered deformation of SHO ′ (n, n), which we denote by SHO′ (n, n)ǫ . The
+Lie bracket in SHO′ (n, n)ǫ is given by:
+
+     [f, g]ǫ = [ξ1 · · · ξn , f g],     f, g ∈ g0 ,
+     [xi , ξj ]ǫ = δij ξ1 · · · ξn ,                                                                  (5.9)
+     [f, g]ǫ = [f, g],       otherwise.
+1180                             GENERALIZED SPENCER COHOMOLOGY ...
+
+
+                      ˆ
+    Define a map ρ : SHO(n, n)ǫ → SHO ′ (n, n)ǫ by
+
+                               ρ(f ) = f,            f ∈ g(−1) ,
+                               ρ(1) = ξ1 ξ2 · · · ξn .
+
+It is easy to see that ρ is an isomorphism of Lie superalgebras. We summarize
+our discussion above in the following theorem.
+
+Theorem 5.1. Let n ≥ 2 be a positive even integer.
+
+     (i) SHO′ (n, n)ǫ with bracket given as in (5.9) defines a unique non-trivial
+filtered deformation of SHO′ (n, n). It is a simple filtered Lie superalgebra.
+         ˆ
+   (ii) SHO(n,  n)ǫ with bracket (5.1) defines a unique non-trivial filtered
+                 ˆ
+deformation of SHO(n,  n). It is isomorphic to SHO ′ (n, n)ǫ .
+
+           ˆ ′ (n, n) has no simple filtered deformations.
+    (iii) SHO
+
+    We define a deformed bracket on SKO(n, n+1; n+2
+                                                 n ) as follows (cf. [Ko]):
+
+ [f, g]ǫ = ([τ ξ1 ξ2 · · · ξn , f g] + 2f gξ1 ξ2 · · · ξn )ǫn+2 , f, g ∈ C[x1 , · · · , xn ],
+ [f, g]ǫ = [f, g],        otherwise.                                                      (5.10)
+
+Note that [τ ξ1 ξ2 · · · ξn , f g] + 2f gξ1 ξ2 · · · ξn ∈ SKO(n, n + 1; n+2
+                                                                         n ).
+
+
+Theorem 5.2 The deformed bracket in (5.10) defines a unique non-trivial
+filtered deformation of SKO(n, n + 1; n+2
+                                       n ).
+
+
+Proof.    It remains to show that [·, ·]ǫ is a Lie bracket. Set
+
+  µn+2 (f, g) = [τ ξ1 ξ2 · · · ξn , f g] + 2f gξ1 ξ2 · · · ξn ,      f, g ∈ C[x1 , · · · , xn ],
+  µn+2 (f, g) = 0,           otherwise.
+
+Note that µn+2 (a, µn+2 (b, c)) = 0, for a, b, c ∈ SKO(n, n+1; n+2   n ). Thus [·, ·]ǫ
+is a Lie bracket if and only if µn+2 is a 2-cocycle of SKO(n, n + 1; n+2    n ) with
+coefficients in its adjoint representa tion. Hence for f, g, h ∈ SKO(n, n +
+1; n+2
+     n ) we only need to check identity (5.4). It is easy to verify that unless
+f , g and h belong to the gln -components generated by the highest weight
+vectors xk1 , xk1 ξn and xk1 (τ + βn−k
+                                  n+k Φ) (see the table of SKO(n, n + 1; β) in
+Section 4) (5.4) gives the trivial identity 0 = 0. Also it can be verified
+directly that if two of the f, g, h are not in C[x1 , · · · , xn ], then (5.4) again
+gives the trivial iden tity. Hence we are to consider three cases. Namely
+
+    (1) f, g, h ∈ C[x1 , · · · , xn ].
+S. CHENG, V. KAC                                                                                1181
+
+
+    (2) f, g ∈ C[x1 , · · · , xn ] and h is in the gln -component generated xk1 ξn .
+
+    (3) f, g ∈ C[x1 , · · · , xn ] and h is in the gln -component generated by
+    xk1 (τ + βn−k
+              n+k Φ).
+
+   Even though we don’t have the Poisson bracket at our disposal, we have
+the following useful identity:
+
+   µn+2 (f, g) = [τ ξ1 ξ2 · · · ξn , f ]g + f [τ ξ1 ξ2 · · · ξn , g],   f, g ∈ C[x1 , · · · , xn ].
+
+Note also that [τ ξ1 ξ2 · · · ξn , f ]=0, if f lies in the gln -component generated by
+xk1 ξn and [τ ξ1 ξ2 · · · , ξn , g] + 2gξ1 ξ2 · · · ξn = 0, if g lies in the gln -component
+generated by xk1 (τ + βn−k   n+k Φ). Using these identities the computation is sim-
+ilar to the one given in the proof of Proposition 5.1.
+
+
+
+                                      REFERENCES
+
+
+
+[ALS] Alekseevsky, D.; Leites, D.; Shchepochkina, I.: Examples of simple
+Lie superalgebras of vector fields, C.R. Acad. Bulg. Sci. 33, no. 9 (1980)
+1187–1190 (in Russian).
+
+[CK] Cheng, S.-J.; Kac, V. G.: Structure of some Z-graded Lie Superalgebras
+of Vector Fields, preprint.
+
+[F] Fuchs, D. B.: Cohomology of infinite-dimensional Lie algebras. New York
+and London: Consultants Bureau 1986.
+
+[G] Guillemin, V. W.: Infinite-dimensional primitive Lie algebras, J. Diff.
+Geom. 2 (1970) 257–282.
+
+[K1] Kac, V. G.: Lie superalgebras, Adv. Math. 26 (1977) 8–96.
+
+[K2] Kac, V. G.: Description of filtered Lie algebras associated with graded
+Lie algebras of Cartan type, Math. USSR Izv. 8 (1974) 801–835.
+
+[K3] Kac, V. G.: Classification of infinite-dimensional simple linearly com-
+pact Lie superalgebras, Adv. Math. 139 (1998) 1–55.
+
+[KN] Kobayashi, S.; Nagano, T.: On Filtered Lie Algebras and Geometric
+Structures, IV. J. of Math. and Mech. 15 (1966) 163–175.
+
+[Ko] Kotchetkoff, Yu.: Déformation de superalgébras de Buttin et quantifica-
+tion, C.R. Acad. Sci. Paris 299, ser. I, no. 14 (1984) 643–645.
+1182                      GENERALIZED SPENCER COHOMOLOGY ...
+
+
+[L] Leites, D.: Quantization. Supplement 3. In: F. Berezin, M. Shubin:
+Schrödinger equation, Kluwer, Dodrecht (1991) 483–522.
+
+[R] Rim, D. S.: Deformation of transitive Lie algebras, Ann. of Math.
+83 (1966) 339–357.
+
+[S] Shchepochkina, I.: The five exceptional simple Lie superalgebras of vector
+fields, hep-th/9702121 (1997).
+
+[Sp] Spencer, D. C.: Deformation of structures on manifolds defined by tran-
+sitive continuous pseudogroups, Ann. of Math. 76 (1962) 306–445.
+
+[SS] Singer, I. S.; Sternberg, S.: On the infinite groups of Lie and Cartan I,
+J. Analyse Math. 15 (1965) 1–114.
+
+[W] Weisfeiler, B. Yu.: Infinite-dimensional filtered Lie algebras and their
+connection with graded Lie algebras, Funct. Anal. Appl. 2 (1968) 88–89.
+

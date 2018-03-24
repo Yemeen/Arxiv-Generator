@@ -1,0 +1,3246 @@
+                                               HOMOLOGICAL PROPERTIES OF REPRESENTATIONS OF
+                                              P-ADIC GROUPS RELATED TO GEOMETRY OF THE GROUP
+arXiv:math/0406223v1 [math.RT] 10 Jun 2004
+
+
+
+
+                                                                 AT INFINITY
+
+                                                                          ROMAN BEZRUKAVNIKOV
+
+
+
+                                                      Thesis submitted for the degree “Doctor of Philosophy”
+
+                                                 Submitted to the senate of Tel-Aviv University September 1998.
+
+                                                         This work was carried out under the supervision of
+                                                                      Prof. Joseph Bernstein
+
+                                                                                     Abstract.
+                                                 Let G be a reductive group with compact center over a nonarchimedian local
+                                             field, and let X be its Bruhat-Tits building.
+                                                 The central result of the first part of the work establishes a connection between
+                                             the direct image of an equivariant sheaf on X to the Borel-Serre compactification
+                                             with Jacquet functor. More precisely, we prove that there exists an exact functor
+                                             L on a category of representations of the group, such that the following holds. Let
+                                             F be an equivariant simplicial sheaf on X; then the restriction of the direct image
+                                             of F to the boundary of the Borel-Serre compactification is canonically isomorphic
+                                             to L(Γ(F )) (here Γ stands for global sections). Furthermore, the restriction of L to
+                                             the category of admissible representations is described explicitly in terms of Jacquet
+                                             functor.
+                                                 As an application we obtain a canonical isomorphism between the homological
+                                             duality on the derived category of smooth G-modules, and the composition of the
+                                             Deligne-Lusztig functor with the Grothendieck-Serre duality (the latter comes from
+                                             the action of the Bernstein center on every smooth G-module). (This isomorphism
+                                             was formulated by J. Bernstein; another proof was recently obtained by P. Schnei-
+                                             der).
+
+                                                In the second part I prove a conjecture by D. Kazhdan which expresses the
+                                             Euler characteristic of Yoneda Ext’s between two admissible representations as the
+                                             integral of the product of their characters over the set of elliptic conjugacy classes
+                                             (another proof of this result was recently obtained by P. Schneider).
+
+
+
+
+                                                                                       1
+2                             ROMAN BEZRUKAVNIKOV
+
+
+                               Acknowledgments.
+
+I am glad to express my deepest gratitude to my scientific advisor Prof. Joseph
+Bernstein for his guidance and support, and to my fellow students A. Braverman,
+D. Gaitsgory and E. Sayag for various discussions and explanations. All I know
+about representations of p-adic groups I know from them.
+
+I wish to thank Prof. R. Kottwitz and Prof. M.-F. Vigneras for the interest in the
+work they have expressed, and Prof. P. Deligne for helpful critical comments (in
+particular, for pointing out a gap in the preliminary version of the arguments).
+
+Last but not least, I thank M. Finkelberg and A. Stoyanovskii; besides all the
+mathematics they have taught me during the past ten years, I owe them taking the
+pain of reading the manuscript and pointing out some misprints and expositional
+lapses.
+
+A part of this work was written during the author’s stay at the Institute for Ad-
+vanced Study in Princeton. I wish to thank this institution for the excellent working
+conditions.
+                                                                                      3
+
+
+                                   Introduction
+1. Let F be a non-archimedian local field, and G = G(F ) be the group of F -points
+of a reductive algebraic group G defined over F . We assume for convenience that
+G has compact center.
+   We fix an algebraically closed coefficient field k of characteristic 0. H will denote
+the Hecke algebra of k-valued locally constant compactly supported measures on
+G.
+   The main object of our study is the category M of finitely generated smooth
+representations of G over k [BZ].
+
+2. In chapter 1 the category M is studied using equivariant sheaves on the Bruhat-
+Tits building X of G.
+   For a G-space Y we will denote by ShG (Y ) the category of G-equivariant sheaves
+on X. Let Sh ⊂ ShG (X) be the category of simplicial G-equivariant sheaves of
+finite-dimensional vector-spaces on X. We have the derived functor of sections
+with compact support RΓc : Db (Sh) → Db (M), and Verdier dual functor RΓ :
+Db (Sh) → Db (Mopp ) (where Mopp is the opposite category to M).
+   Consider the imbedding j : X → X of X into its Borel-Serre compactification
+X [BoSer], and the equivariant direct image functor j∗G : Db (Sh) → Db (ShG (X))
+(discussed below). Let i stand for the imbedding i : X − X ֒→ X. The main
+technical result of chapter 1 is existence of a functor L : Mopp → ShG (X − X) such
+that:
+
+   i) We have i∗ ◦ j∗G = L ◦ Γ canonically.
+   ii) L is exact.
+   iii) Let R ⊂ M be the subcategory of admissible representations. Then L|Ropp ∼=R
+is a well-known combinatorially defined functor: for M ∈ R and y ∈ X − X
+the stalk of L(M ) at y is the Jacquet functor rPy (M ) where Py = StabG (y) is a
+parabolic subgroup in G. (The equivalence between R and Ropp used above sends
+a representation ρ ∈ R to its contragradient ρˇ).
+   We remark that construction of L and proof of i) and iii) are rather straightfor-
+ward, while the proof of ii) required some effort.
+
+   To apply this result to representation theory one needs to be able to “localize”
+representations to sheaves on the building. An ideal result in this direction would be
+a one-sided inverse to the functor RΓc . Unfortunately such functor is unavailable at
+present. By the results of [Sch-St1], [Sch-St2] the full subcategory Db (R) ⊂ Db (M)
+lies in the image of RΓc . (And also Db (M) lies in the image of the functor RΓc
+from G-equivariant simplicial sheaves of possibly infinite dimensional vector spaces
+        f where M
+to Db (M),         f is the larger category of all (not necessary finitely generated)
+smooth G-modules).
+   The result of [Sch-St2] is sufficient for our application. By a “general nonsense”
+argument we get another localization type claim sufficient for us (but much less
+explicit, and thus probably less useful than the Schneider-Stuhler’s result). It says
+the following: for any object B ∈ Db (M) and i ∈ Z one can find an object A ∈
+Db (Sh) and a morphism RΓc (A) → B which induces isomorphism on H j for j > i.
+   Using the connection between the Verdier duality on sheaves with the homo-
+logical duality on representations (also observed in Schneider’s work [Schn2]) one
+4                             ROMAN BEZRUKAVNIKOV
+
+
+derives the following statement (which belongs essentially to J. Bernstein and was
+the starting point for this part of the work): there exists a canonical isomorphism
+of functors:
+                                   Dh ∼= DL ◦ DGr
+where DL is the Deligne-Lusztig functor [DL]; Dh is the homological duality Dh :
+M → RHomG (M, Cc∞ (G)); and DGr (M ) is the Grothendieck dual of M as a
+module over the Bernstein center [BD] (for admissible M we have DGr (M ) = Mˇ
+where Mˇ is the contragradient module). (See the main text for detailed definitions).
+    A proof of the latter isomorphism using (co)sheaves on the Borel-Serre compact-
+ification of the Bruhat-Tits building appears also in [Sch-St2].
+
+3. The starting point for Chapter 2 was an attempt to find an “a’priori” proof for
+the following conjecture by Kazhdan (proved recently in [Sch-St2] by making use
+of an explicit resolution of a G-module constructed in [Sch-St2], [Sch-St1]).
+    Let Ell be the set of regular semisimple elliptic conjugacy classes in G. Then
+Ell carries a canonical measure (an analogue of the Weyl integration measure for
+compact Lie groups, see section 4 of chapter 2 for a recollection), which we denote
+by dµ. For an admissible G-module ρ let χρ denote its character, and let us use the
+same notation for the corresponding locally constant function on Ell. By [K] we
+have χρ ∈ L2 (Ell, dµ) provided the base local field F has characteristic 0. Let now
+ρ1 , ρ2 be two admissible representations. Then the conjecture (= Theorem 0.20 of
+chapter 2) says that
+                X                           Z
+                       i         i
+                  (−1) dim Ext (ρ1 , ρ2 ) =      χρ1 (g −1 )χρ2 (g)dµ(g)          (1)
+                                             Ell
+
+   Recall the following construction (see e.g. [Br], §IX.2 or [Vig] §2 and refer-
+ences therein). Let A be a Noetherian associative algebra with 1, having finite
+homological dimension. Then to a pair (M, E) where M is a finitely generated
+A-module, and E ∈ End(M ) one can assosiate an element of A/[A, A], denoted by
+T rH−St (M, E), and called the Hattori-Stallings trace of (M, E). This map enjoys
+the properties:
+   a) T rH−St (M, E1 ◦ E2 ) = T rH−St (N, E2 ◦ E1 ) for two modules M, N as above,
+and E1 ∈ Hom(N, M ), E2 ∈ Hom(M, N );
+   b) T r(A, R(a)) = a mod [A, A] for a ∈ A where R(a) is the right multiplication
+by a ∈ A considered as an endomorphism of the free module;
+   c) additivity on short exact sequences.
+   It is characterized by these properties uniquely.
+   Applying this construction (with slight modifications necessary because H is
+not unital, see 0.21 of chapter 2) to our situation we obtain a map T rH−St :
+{(M, E) | M ∈ M, E ∈ End(M)} → H/[H, H] satisfying above properties a), b),
+c). For M ∈ M the element T rH−St (M, Id) is called a pseudo-coefficient or rank
+function of M; we will denote it by hMi.
+   Recall that for h ∈ H and a regular elliptic element g ∈ G the orbital integral
+Og (h) ∈ k is defined by
+                                      Z
+                                          h
+                            Ox (h) :=       (yxy −1 )dν(y),
+                                          ν
+                                    y∈G
+                                                                                     5
+
+
+where ν is a Haar measure on G; the resulting expression does not depend on the
+choice of ν.
+   A formal argument shows (see section 4 of chapter 2) that (1) is equivalent to
+the equality
+                                 Og−1 (hρi) = χρ (g)                              (2)
+being true for any admissible representation ρ and regular elliptic element g ∈ G.
+   Notice that the latter statement makes sense (and will be proved) without the
+restriction char(F ) = 0 or k = C.                                     R
+   If ρ is cuspidal, and mρ ∈ H is its matrix coefficient normalized by mρ · χρ = 1,
+then hρi = mρ mod [H, H]. Thus (2) generalizes a well-known equality going back
+to Harish-Chandra
+                                 χρ (g) = Og−1 (mρ ).
+   To prove (2) we extend the functional T r(g, ρ) = χρ (g) from admissible to arbi-
+trary smooth representations ρ, and then show (Theorem 3.1) that for a projective
+ρ∼= H⊕n E, where E ∈ M atn (H) is an idempotent we have
+                                                X
+                              T r(g, ρ) = Og−1 (    Eii ).                       (3)
+
+   The intuitive idea behind the definition of T r(g, M) is that for a small open
+compact subgroup K ⊂ G one can find a finite dimensional g-invariant subspace
+M0 ⊂ MK such that the quotient MK /M0 “comes from the parabolic induction”;
+thus it is reasonable to set T r(g, M) = tr(g, M0 ). Realization of this idea exploits
+certain natural (multi)filtration on the Hecke algebra connected with the action of
+H on the principal series (see section 2 of chapter 2).
+   To prove (3) we relate our filtration to the one defined “geometrically” in terms
+of support of a distribution h ∈ H. Here some geometry of G and its asymptotic
+cones (G/U × G/U − )/L at infinity is used.
+6                              ROMAN BEZRUKAVNIKOV
+
+
+              1. Sheaves on the building and representations
+Preliminaries and notations. In both chapters we will abuse the terminology
+by saying “a parabolic/Levi subgroup” instead of “the group of F -points of an F -
+rational parabolic subgroup/Levi subgroup of a proper parabolic subgroup”. By
+rank of a reductive group defined over F we mean its split rank.
+
+0.1. kLis a fixed coefficient field of characteristic 0; for a set S we denote by k[S] the
+space    k. For a topological space Z we write C ∞ (Z) and Cc∞ (Z) for the space
+       S
+of locally constant functions on Z and locally constant functions with compact
+support on Z. If Z is an open subset of a group, we denote by H(Z) the space of
+locally constant measures on Z with compact support; if Z is biinvariant under the
+action of a compact open subgroup K ⊂ G, then H(Z, K) ⊂ H(Z) is the subspace
+of K-biinvariant measures. If Z is a semigroup, then H(Z) and H(Z, K) carry the
+structure of an associative algebra provided by convolution.
+    By W or W Z we will denote the constant sheaf on Z with stalk W ; if ι : Z → X
+is a closed embedding then we will also write W Z instead of ι∗ (W Z ). By Hom we
+denote internal Hom in the category of (G-equivariant) sheaves.
+    For a G-space X let ShG (X) denote the category of G-equivariant sheaves on
+X. Recall that for arbitrary topological group G and a G-space X a G-equivariant
+sheaf is the same as a sheaf F on X equipped with a G-action such that each section
+of F is locally constant. Here a section s ∈ Γ(U, F ) is called locally constant if for
+x ∈ U there exist a neigborhood U ′ of x and a neigborhood V of identity e ∈ G
+such that g(s)|U ′ ∩g(U ′ ) = s|U ′ ∩g(U ′ ) for g ∈ V .
+    For a morphism of G-spaces p : X → Y we have the functor of inverse image
+p∗ : ShG (Y ) → ShG (X) and the adjoint functor pG       ∗ : ShG (X) → ShG (Y ). Note
+that the inverse image commutes with the forgetful functor from equivariant sheaves
+to sheaves while the direct image does not: for F ∈ ShG (X) one can describe
+pG∗ (F ) as the sheaf of locally constant sections of p∗ (F ) (see [Schn1] for a detailed
+discussion).
+    From now on let X denote the (semi-simple) building of G, unless stated other-
+wise. Let X be the Borel-Serre compactification of X [BorSe]; put Y = X − X, and
+denote the imbeddings by j : X ֒→ X and i : Y ֒→ X. Recall that Y is the spherical
+building of G. For a parabolic P ⊂ G we let ∆P ⊂ Y denote the corresponding
+simplex.
+    We will often say polysimplex meaning a polysimplex of the canonical polytri-
+angulation of X (facette in the terminology of [BT1]).
+    Let Sh be the full subcategory of ShG (X) consisting of sheaves of finite dimen-
+sional vector spaces which are constant on every (poly)simplex.
+
+0.2. By a representation we will mean a representation in a vector space over a
+field k; the field will be endowed with discrete topology.
+        f be the category of smooth G-modules; let Mˇ
+    Let M                                             f be the dual category. It will
+                                                 f
+be convenient to use an explicit realization of Mˇ. Namely Mˇ f is identified with the
+category of complete topological vector spaces V having a basis of neighbourhoods
+of 0 consisting of vector subspaces of finite codimension, together with a continuous
+homomorphism π : G → Aut(V ). (The group Aut(V ) is endowed with the topology
+of pointwise convergence.) The antiequivalence ∗ : M    f → Mˇ f sends a G-module
+M to its full linear dual equipped with the pointwise-convergence topology (=
+                                                                                     7
+
+
+the inverse limit topology on M ∗ = lim      ∗
+                                        ←− V , where V runs over the set of finite
+dimensional subspaces in M ). The inverse antiequivalence (also denoted by ∗) sends
+a topological G-module L to the space of continuous linear functionals L → k.
+   Let M ⊂ M  f (respectively R ⊂ M) be the full subcategory of finitely generated
+smooth (respectively admissible) G-modules. Let Mˇ ⊂ Mˇ   f and Rˇ ⊂ Mˇ be the
+dual categories.
+   We have an exact functor Sm : Mˇ   f → M   f sending a module M ∈ Mˇ  f to the
+module of smooth vectors in M . The functor Sm induces an equivalence Rˇf      →R.
+(Of course it does not send the category Mˇ to M.) For M ∈ M we let Mˇ =
+Sm(∗(M )) ∈ M  f be its contragradient.
+   We have left-exact functors Γc : Sh → M and Γ : Sh → Mˇ, where Γ stands for
+global sections, and Γc stands for sections with compact support. The linear topol-
+ogy on the space Γ(X, F ) is the inverse limit topology on Γ(X, F ) = lim Γ(K, F )
+                                                                        ←−K
+where K runs over all compact subsets of X.
+   As we will soon recall, Sh has enough injectives (and projectives). Hence the
+                                          f and RΓc : D∗ (Sh) → D∗ (M) where
+right derived functors RΓ : D∗ (Sh) → D∗ (M)
+∗ = b, + are defined.
+1. Verdier duality for equivariant sheaves and homological duality. Here
+we recall some basic generalities on homological algebra of Sh, including Verdier
+duality and its connection with homological duality on representations. This section
+does not contain new results: Proposition 1.3a) follows from [Schn1], §3 and remark
+before [Schn2], Proposition 2; our 1.3b) is Proposition 4 in [Schn2]. We sketch the
+proof for completeness.
+1.1. Let Sh(X) be the category of sheaves of finite dimensional k-vector spaces on
+X constant on any polysimplex of the canonical polytriangulation. Then Sh(X)
+has enough injectives; the injective generators are the constant sheaves k ∆ on the
+closure of a simplex. From the fact that the stabilizer of any point of X is compact,
+and hence its smooth representations form a semisimple category, it is easy to
+deduce that a sheaf F ∈ Sh is injective iff it is injective as an object of Sh(X).
+For a polysimplex ∆ ⊂ X and a smooth finite dimensional representation   Q R of the
+stabilizer of ∆ let F∆,R ∈ Sh be the G-equivariant sheaf F∆,R :=                k g∆ ⊗
+                                                                    g∈G/Stab(∆)
+                     N
+C ∞ (g · Stab(∆))        R. Obviously F∆,R is injective.
+                  Stab(∆)
+   Let I be the category of injective objects in Sh(X), and IG be the category of
+injective objects in Sh.
+   Let us call a module M ∈ Mˇ (respectively M ∈ M) standard injective (re-
+spectively projective) if it is a direct sum of modules induced (respectively com-
+pactly induced) from smooth finite dimensional representations of open compact
+subgroups.
+Lemma 1.2. a) Sh is of finite homological dimension and has enough injectives.
+Any injective object in Sh is a direct sum of sheaves of the form F∆,R .
+   b) Γ : Sh → Mˇ sends injectives to injectives and Γc : Sh → M sends injectives
+to projectives.
+   c) An injective (respectively projective) object of Mˇ (respectively M) is iso-
+morphic to Γ(F ) (respectively Γc (F )) for F ∈ IG iff it is a standard injective
+(projective).
+8                              ROMAN BEZRUKAVNIKOV
+
+
+    d) If F , G ∈ IG then Hom(F , G) and F ⊗ G are also injective.
+    Proof Clear.
+    We see that any left-exact functor on Sh admits the (right) derived functor.
+Proposition 1.3. a) There exists an object V ∈ Db (Sh) equipped with an isomor-
+phism of functors on Db (Sh)
+                             RΓ ◦ RHom( , V ) ∼
+                                              = ∗ ◦ RΓc                            (4)
+   Isomorphism (4) defines V uniquely up to the unique isomorphism. V is called
+the equivariant dualizing sheaf, and the functor V := RHom( , V ) is called the
+equivariant Verdier duality.
+   b) Let Dh : Db (M) → Db (M) be the homological duality defined by Dh (M ) =
+RHom(M, H). We have a canonical isomorphism:
+                                RΓc ◦ V ∼
+                                        = Dh ◦ RΓc                                 (5)
+
+    Proof a) Obviously HomSh (F , G) = (Γ(Hom(F , G)))G . Using Lemma 1.2b),d)
+we see that RHom(F , G) = RI ◦ RΓ(RHom(F , G)) where I stands for invariants
+I : Mˇ → V ect. So (4) yields an isomorphism of functors Hom( , V ) ∼= H 0 (RI ◦
+∗ ◦ RΓc ); uniqueness of V follows.
+    To show existence we adapt a standard construction of the dualizing sheaf to
+our situation. For a polysimplex ι : ∆ L
+                                       ֒→ X let C∆ be the standard resolution of
+                             i
+ι! (k[dim(∆)]) (so we have C∆   =               k ∆′ ).
+                                  ∆′ ⊂∆;dim(∆′ )=−i
+  We set V(k ∆ ) = C∆ ; this obviously extends to a contravariant functor
+Kom(I) → Kom(I) and defines
+                     Q                                N G∗) → Kom(IG ).
+                             a contravariant functor Kom(I
+(We have V(F∆,R ) =         Cg∆ ⊗ C ∞ (g · Stab(∆))      R .) The induced
+                       g∈G/Stab(∆)                          Stab(∆)
+functor Db (Sh) → Db (Sh) is also denoted by V. One can easily define isomorphism
+of complexes V(F ⊗ G) ∼    = Hom(F , V(G)) for F , G ∈ IG ; the isomorphism of
+bifunctors on Db (Sh) follows. Hence V is corepresented by V = V(k).
+   For F ∈ IG we have a functorial map of complexes Γ(V(F )) → ∗(Γc (F )) which
+is a quasiisomorphism; here the pairing h , i : Γc (F ) × Γ(V(F )) → k is the standard
+Verdier pairing. This yields isomorphism (4).
+   b) The pairing h , i gives a map φ : Γ(V(F )) → HomG (Γc (F ), C ∞ (G)); here
+(φ(y)(x)) (g) = hx, g(y)i. It is clear that φ(Γc (V(F ))) ⊂ HomG (Γc (F ), Cc∞ (G)) ⊂
+HomG (Γc (F ), C ∞ (G)) = Γ(V(F )); more precisely for F ∈ IG we get a functorial
+quasiisomorphism Γc (V(F ))) → HomG (Γc (F ), Cc∞ (G)) which yields (5). (In fact
+for F ∈ IG isomorphisms (4), (5) boil down to well-known equalities
+                              ∗(indG           G   ∗
+                                   K (R)) = IndK (R ),
+
+                      HomG (indG       ∞           G   ∗
+                               K (R), Cc (G)) = indK (R ).)
+    Proposition is proved.
+Remark 1.4. In [Schn2] it is proved that V is actually concentrated in one homo-
+logical degree; we will not use this fact here.
+2. A “localization” type theorem. Let us call a morphism in Db (Sh) h-
+quasiisomorphism (respectively hc-quasiisomorphism) if it induces an isomorphism
+on RΓ (respectively RΓc ).
+                                                                                      9
+
+
+   Let D0 (Mˇ), D0 (M) be the full subcategories in Db (Mˇ), Db (M) respectively
+consisting of objects quasiisomorphic to a finite complex of standard injectives
+(respectively projectives). LDb (Sh), L0 Db (Sh) be the localizations of Db (Sh) re-
+spectively with respect to h-quasiisomorphism and hc-quasiisomorphisms.
+Proposition 2.1. RΓ provides an equivalence between LDb (Sh) and D0 (Mˇ).
+  RΓc provides an equivalence between L0 Db (Sh) and D0 (M).
+  For the proof of the Proposition we need the following
+Lemma 2.2. Assume that F , G ∈ Sh and F is injective; let a morphism φ : Γ(F ) →
+Γ(G) be given. Then there exist a sheaf F ′ ∈ Sh and morphisms s : F ′ → F ,
+φ′ : F ′ → G such that s is an h-quasiisomorphism, and Γ(φ′ ) = φ ◦ Γ(s).
+   Proof: First notice that X × X is a union of poly-simplicial subspaces Xr such
+that pri |Xr is proper for i = 1, 2 and pr1 |Xr has geodesically contractible fibers.
+(To see this let us choose an apartment A ⊂ X, an open simplex ∆ ⊂ A, and exaust
+A by simplicial convex neigborhoods Cr of S   ∆. Then take Xr = G(∆ × Cr ). The
+desired properties of Xr are clear. We have Xr = X × X because G(∆) = X and
+                                                 r
+any two points of X are G-conjugate to two points lying in A.) Let pi = pri |Xr ,
+i = 1, 2. Set Fr = p2∗ p∗1 F .
+    We claim that for large enough r we can take F ′ = Fr .
+    It is clear that if F is injective then Ri p2∗ p∗1 F = 0 for i 6= 0. Hence RΓ(Fr ) =
+RΓ(p∗1 F ) = RΓ(F ) since p1 has contractible fibers. Applying p2∗ to the morphism
+p∗1 F → δ∗ (F ) where δ : X → X × X is the diagonal imbedding we get a map
+Fr → F which induces isomorphism on cohomology.
+    It remains to construct φ′ : Fr → G for large r.
+    For any x ∈ X consider the composition Γ(F ) → Γ(G) → Gx where Gx is the
+stalk of G at x. It is continuous and Gx is discrete; hence it factors through a
+map Γ(F ) → Γ(C, F ) → Gx for some compact C = C(x) ⊂ X. Then clearly the
+same is true for any y lying in one polysimplex with x with the same compact set
+C(y) = C(x).
+    We can take a finite number of polysimplicies ∆i such that G(∪∆i ) = X; and
+then find r such that Xr ⊃ C(xi ) × ∆i for xi ∈ ∆i . Then we see that the map
+Γ(Fr ) = Γ(F ) → Gx factors through Γ(Fr ) → (Fr )x for all x ∈ X, i.e. the
+composition k ⊗ Γ(Fr ) → k ⊗ Γ(G) → G factors through the canonical surjection
+k ⊗ Γ(Fr ) → Fr . The Lemma is proved.
+    Proof of the Proposition. First note that image of RΓ is contained in D0 (Mˇ)
+since an injective sheaf goes to a standard injective module.
+    Lemma 2.2 implies that for F , G ∈ IG the map HomLDb (Sh) (F , G) →
+HomMˇ(RΓF , RΓG) = HomMˇ(ΓF , ΓG) is surjective.
+    It is also injective for the following reason. Consider the commutative square
+                                           s
+                                   F    −−−−→        G
+                                   x                 x
+                                                    
+                                                    
+                                          Γ(s)
+                                 Γ(F ) −−−−→ Γ(G)
+where Γ(s) : Γ(F ) → Γ(G) is the map on global sections induced by s, and Γ(s) is
+the corresponding map of constant sheaves. The left vertical arrow in this diagram
+is surjective for injective F , so we have Γ(s) = 0, F ∈ IG ⇒ s = 0.
+10                            ROMAN BEZRUKAVNIKOV
+
+
+    Thus RΓ induces an isomorphism HomLDb (Sh) (F , G)g       −→HomMˇ(RΓF , RΓG) for
+F , G ∈ IG , and hence for any F , G ∈ Db (Sh).
+    It remains to check that RΓ : LDb (Sh) → D0 (Mˇ) is surjective on isomorphism
+classes of objects. Let C be a finite complex of standard injectives 0 → Ia → ... →
+Ib → 0. We then have some injective sheaves Fi ∈ Sh with Γ(Fi ) ∼       = Ii . We now
+use inductively Lemma 2.2 to construct a complex of sheaves C̃ = 0 → Fa′ → .. →
+Fb′ → 0, where Fi′ = (Fi )ri , H j (Fi′ ) = 0 for j 6= 0 and Γ(C̃) ∼
+                                                                   = C.
+    The first statement is proved, and the second one follows by Verdier duality.
+Remark 2.3. I do not know whether in general D0 (M) = Db (M), i.e. whether
+a localization type theorem stronger (but less explicit) than the one obtained by
+Schneider and Stuhler in [Sch-St1],[Sch-St2] holds. The positive answer to this
+question is equivalent to the claim that the Grothendieck group of M is generated
+by the classes of standard projectives.
+   Notice that the following unpublished result of J. Bernstein agrees with the
+positive answer to this question: the Grothendieck group of M tensored with Q is
+generated by the classes of standard projectives.
+Remark 2.4. Our method also does not answer the question whether D+ (Mˇ) or
+D+ (M) is localization of D+ (Sh). (Any module has infinite right resolution by
+standard injectives; our procedure of constructing a complex of sheaves from such
+a resolution was inductive “moving from right to the left”.)
+3. Main theorem. We start the construction of the functor L promised in the
+introduction.
+   Let Z be a closed subset of X − X.
+   Consider the subspace Γc (X − Z, j∗ (F )) ⊂ Γ(X, F ) and the subspace Γc (X −
+Z, j∗G F ) ⊂ Γ(X, j∗G F ) = Sm(Γ(X, F )). (The latter equality readily follows from
+compactness of X.)
+   We now explain how to recover these subspaces from an object Γ(X, F ) ∈ Mˇ.
+   Fix a point p ∈ X. Let a : G × X → X be the action; set ap (g) = a(g, p). Let FZ
+denote the filter of subsets in G generated by the sets of the form ap−1 (U ), where
+U is a neighborhood of Z.
+   For a module L ∈ Mˇ define LZ = {m ∈ L | limF (g −1 (m)) = 0}, and Lsm      Z =
+Sm(L) ∩ LZ . (Here limF stands for the limit with respect to the filter F.)
+Lemma 3.1. a) The filter F is invariant under right translations on G. It does
+not depend on the choice of a point p ∈ X.
+  b) We have:
+  Γc (X − Z, j∗ (F )) = (Γ(X, F ))Z
+  Γc (X − Z, j∗G (F )) = (Γ(X, F ))sm
+                                   Z
+
+     Proof To prove a) we need the following well-known property of X.
+Fact 3.2. Assume that a sequence of points xn ∈ X has a limit x ∈ X − X. Let
+yn ∈ X be another sequence, such that d(xn , yn ) is bounded. Then yn → x as well.
+   Proof is included since no reference was found. We use Remark 5.5(2) in [BoSer].
+It says the following. Fix an open polysimplex ∆0 ⊂ X, and for any apartment
+A ⊂ X containing ∆0 let ΞA : X → A be the contraction of X to ∆0 [BT1] 2.3.4,
+7.4.19. Recall that an apartment A is an affine space, and let A be its standard
+semisphere compactification (see below); denote by jA the imbedding A ֒→ A. Then
+                                                                                    11
+
+                                             Q                Q
+X is the closure of the image of the map      (jA ◦ ΞA ) : X → A. (The product
+                                             A                   A
+is taken with the Tikhonov topology.) In particular two sequences xn , yn have the
+same limit in X if and only if lim ΞA (xn ) = lim ΞA (yn ) for any A ⊃ ∆0 . However,
+by [BT1] 7.4.20(ii) the map ΞA does not increase distances. Hence the statement
+is reduced to the analogous statement about sequences in the compactified affine
+space A, which is obvious.
+    The statement a) follows from the Fact directly. b) is clear.
+                                         e
+3.3. For M ∈ Mˇ we now define a presheaf L(M)                 e
+                                                on Y by Γ(U, L(M))  :=
+lim Sm(M)/(MZ ∩ Sm(M)) where Z runs over all closed subsets Z ⊂ U . We
+←−Z
+define L(M) to be the associated sheaf.
+   From the definition it is clear that the stalk of L(M) at a point z ∈ Y equals
+Sm(M)/(M{z} ∩ Sm(M)).
+   The desired properties of the functor L follow from the next
+Theorem 3.4. a) Let z ∈ X − X be a point. Then the functor M → Msm          {z} on the
+category Mˇ is exact.
+   b) Let P denote the stabilizer of the point z, then P is a parabolic subgroup in G.
+Let rP be the corresponding Jacquet functor (that is coinvariants with respect to the
+unipotent radical of P ). For any M ∈ Mˇ the subspace Msm      {z} ⊂ Sm(M) contains
+the kernel of the projection Sm(M) → rP (Sm(M)). Furthermore, if M lies in the
+category Rˇ then the sequence
+                     0 → Msm
+                          {z} → Sm(M) → rP (Sm(M)) → 0
+is exact.
+  Proof occupies the rest of this section.
+3.5. We abbreviate F = F{z} . Our first aim is to get a more tractable description
+of F.
+    Fix a Levi decomposition P = L · N , and a maximal split torus T ⊂ L. Let A
+be the center of L, and As be its maximal split subtorus.
+    We have vector spaces a = Hom(F × , A) ⊗ R = (A/Ac ) ⊗ R = (L/Lc ) ⊗ R where
+A ⊂ A is the maximal compact subgroup and Lc ⊂ L is the subgroup generated
+  c
+
+by all compact subgroups; and aT = Hom(F × , T ) ⊗ R = (T /T c ) ⊗ R where T c ⊂ T
+is the maximal compact subgroup. The imbedding a ֒→ aT is obtained from the
+imbedding Hom(F × , A) = Hom(F × , As ) ֒→ Hom(F × , T ).
+    (Here we use the notation H for an algebraic group over F , and H for its group of
+F -points.) We identify Hom(F × , A) and L/Lc with subgroups in a and the groups
+Hom(L, F × ), Hom(A, F × ) with subgroups in the dual space a∗ .
+    We fix a uniformizer p in F × , and get cocompact imbeddings Hom(F × , T ) ֒→ T ,
+Hom(F × , A) ֒→ A, given by ψ 7→ ψ(p). We denote the image of latter imbedding
+by Λ.
+    Let π be the projection L → L/Lc .
+    By Λ+ we denote the set of λ ∈ Λ such that π(λ) ∈ a+ where a+ is the positive
+chamber, a+ = {a ∈ a|r(a) < 0 if r is a root of A in N }.
+    We fix notations and recall some basic facts about the geometry of X (see [BT1],
+[BT2], [L] for more details).
+    Recall that the set of maximal split tori is in bijection with apartments in X.
+Let A be the apartment corresponding to T , and let A ⊂ X be the closure of A.
+12                               ROMAN BEZRUKAVNIKOV
+
+
+   Then A is an affine space with underlying vector space aT . The torus T acts on
+A through T /T c acting on the affine space by translations.
+   The closure A of A in X is the standard semisphere compactification of the affine
+space A. In particular A − A is the set of rays (aT − {0})/R∗+. By our assumption
+the point z lies in A − A and corresponds to a ray ρz ⊂ a ⊂ aT . We have ρz ⊂ a+ .
+   By a cone in a vector space we will mean a convex centered cone.
+Definition 3.6. a) A z-good cone is an open cone C ⊂ a such that ρz ⊂ C.
+   For a z-good cone set ΛC = Λ ∩ π −1 (C ∩ (L/Lc )) and Λ+
+                                                          C = Λ∩π
+                                                                  −1
+                                                                     (C ∩ (L/Lc )).
+   b) A z-good semigroup is an open compactly generated semigroup M ⊂ L such
+that
+    i) M contains ΛC for a z-good cone C.
+    ii) We have L = Λ · M .
+  It is easy to see that an intersection of two z-good semigroups is again a z-good
+semigroup.
+Proposition 3.7. The filter F is generated by the sets
+                                     K ′ · M · a · Kp ,
+where K ′ is an open compact subgroup in G, M is a z-good semigroup, a ∈ Λ and
+p ∈ A.
+     We need some more notations and basic facts about X.
+     Recall that d(·, ·) denotes the canonical metric on X.
+     For x ∈ X denote by Kx the stabilizer of x. It is an open compact subgroup in
+G.
+Lemma 3.8. a) For any points c ∈ X, z ∈ X − X there exists a unique geodesic
+[c, z) connecting c and z. (That is [c, z) is the unique geodesic ray starting at c and
+having z as its limit point in X − X.) For c ∈ A the ray [c, z) coincides with ρz + c.
+    b) Assume that c1 , c2 ∈ X, z ∈ X − X and let cti be the unique point on [ci , z)
+at the distance t from ci for i = 1, 2. Then we have
+                                   d(ct1 , ct2 ) 6 d(c1 , c2 )                           (6)
+   Proof a) follows from [Sch-St2], Proposition on p. 166. More precisely, in loc.
+cit. it is proven that there exists an apartment A containing c and z in its closure,
+and that the ray [c, z)A ⊂ A of direction given by z with vertex at c does not depend
+on the choice of A.
+   This gives existence; to show uniqueness it remains only to check that any geo-
+desic ray ρ lies in some apartment. Let A be any apartment containing the vertex
+c of the ray ρ. By [BT1] 2.3.4 the set Ct := {g ∈ Kc |g(c′t ) ∈ A} is nonempty for all
+t. Each of the sets Ct is closed (and open) since it is a finite union of cosets of an
+open compact subgroup Kc ∩ Kc′t ; also Ct1 ⊂ Ct2 if t1 > t2 because A contains the
+geodesic
+      T connecting any two points of A, [BT1] 7.4.20(iii). Since
+                                                               T     Kc is compact we
+have Ct 6= ∅. Now we can take A′ := g −1 (A) for any g ∈ Ct .
+        t                                                          t
+   Let us prove b). Let x1 = c1 , x2 , . . . , xn = c2 be a sequence of points on [c1 , c2 ]
+such that [c1 , c2 ) = ∪[xi , xi+1 ), and xi , xi+1 lie in the closure of an open polysimplex
+∆i .
+   By [BT1] 7.4.18(ii) there exists an apartment Ai such that Ai ⊃ ∆i , and Ai ∋ z.
+Thus [xi , z), [xi+1 , z) are parallel rays in the affine space Ai , so d(xti , xti+1 ) =
+                                                                                                13
+
+
+d(xi , xi+1 ) for all t. We finally get
+                                n−1
+                                X                         n−1
+                                                          X
+              d(ct1 , ct2 ) 6         d(xtj , xtj+1 ) =         d(xj , xj+1 ) = d(c1 , c2 ).
+                                j=1                       j=1
+
+3.9. For any x ∈ A the action map µ : Kx × A → X is proper, surjective and
+the topology on X is the quotient topology with respect to this map [BoSer], 5.4.1.
+Hence the filter of neighborhoods of z ∈ X − X is generated by images of neigh-
+borhoods of µ−1 (z) in Kx × A.
+   Fix a point x ∈ A which lies inside an open polysimplex ∆0 ⊂ A. Then Kx (z) ∩
+A = {z}. Indeed, if, on the contrary, z 6= k(z) ∈ A for some k ∈ Kx , then
+k ([x, z)) = [x, k(z ′ )) is a ray in A different from [x, z); however, since k fixes the
+neighborhood ∆0 of x in A, the intersection of the two rays with this neighborhood
+coincide, which is impossible.
+   Thus µ−1 (z) = StabKx (z) × {z} = (P ∩ Kx ) × {z}.
+   Let P − = L · N − be the parabolic opposite to P . Since x lies in an open
+polysimplex of A we have the following triangular decomposition:
+                                          Kx = Kx− · Kx0 · Kx+                                 (7)
+where Kx− = Kx ∩ N − , Kx0 = Kx ∩ L, Kx+ = Kx ∩ N + (for P minimal this follows
+from [BT1] 7.1.4(2), and the general case is a corollary).
+   The fundamental system of neighborhoods of Kx ∩ P = Kx0 · Kx+ is formed by
+subgroups of the form O = O− ·Kx0 ·Kx+ where O− is a small open compact subgroup
+in N − .
+   The filter of neighborhoods of z in A is generated by closures of the cones C   e+t
+         e
+where C ⊂ aT is an open cone containing ρz , and t ∈ A is a point.
+   Since Kx and A are compact it follows that the filter of neighborhoods of (Kx ∩
+P ) × {z} is generated by the sets O × (Ce + t) in the above notations. Thus the sets
+    e
+O(C + t) generate the filter of neighborhoods of z in X.
+                                            e t that α| 6 0 if α is a root of T in N ,
+   Further, it is enough to take only such C,
+              e Then we have C  e+t ⊂ C e+x ⊂        S Ce
+and t ∈ x + C.                                            [x, z ′ ). Since Kx+ ⊂ Kx ∩ P ′
+                                                                  z ′ ,Pz ′ ⊆P
+          ′
+for any P ⊂ P we see that              e + t pointwise.
+                                      Kx+
+                                 fixes C
+   Thus the system of neighborhoods of z in X is generated by O(Ce + t) = O− · Kx0 ·
+  + e                  e + t) for O, C,
+                                      e t as above; we will call O(C
+                                                                   e + t) a standard
+Kx (C + t) = O− · Kx0 (C
+neighborhood of z.
+
+3.10. Proof of Proposition 3.7. Fix a z-good semigroup M , an element a ∈ ΛC
+for a z-good cone C, and an open subgroup K ′ ⊂ G. First we want to find a
+neighborhood U of z in X such that a−1        ′                         ′
+                                    p (U ) ⊂ K · M · a · Kp , i.e. U ⊂ K · M · a(p).
+Claim Let πT denote the projection from T to T /T c ⊂ aT . Then the semigroup
+πT (M ∩ T ) contains (T /T c ) ∩ C   e for some open cone C e ⊂ aT containing ρz .
+                                               c         c
+   Proof Notice that πT (M ∩ T ) + A/A = T /T . Moreover, (πT (M ∩ T )) ∩ a
+contains (T /T c) ∩ C = (A/Ac ) ∩ C for a z-good cone C ⊂ a. This yields the claim
+by the following elementary argument.
+   Induction in dim(aT /a) reduces the statement to the situation when dim(aT /a) =
+1; in this case one can argue as follows. ByP      the second sentence of the proof C
+contains a basis v1 , . . . , vr of A/Ac such that   ai vi ∈ ρ for some ai > 0. Let v be
+14                                 ROMAN BEZRUKAVNIKOV
+
+
+an element of πT (M ∩ T ) which does not lie in a, and take v ′ ∈ (−v + (A/Ac )) ∩
+πT (M ∩ T ); denote the Psublattice generated ′by P v, v1 , . . . , vr by Λ′ .
+   The subset {a0 v + ai vi | ai > 0} ∪ {a0 v + ai vi | ai > 0} obviously contains
+an open cone C ′ such that C ′ ⊃ ρ. Any point of Λ′ ∩ C ′ has nonnegative integral
+coordinates with respect to one of the bases (v, v1 , . . . , vr ) or (v ′ , v1 , . . . , vr ), hence
+lies in πT (M ∩ T ).
+   On the other hand, Λ′ is a sublattice of finite index in T /T c; let x1 , . . . , xn ∈
+T /T c be a set of representatives for the Λ′ cosets. By the first sentence of the proof
+we can assume that xi ∈ πT (M ∩ T ).
+   It is clear that for a narrow enough subcone C ⊂ C ′ , C ⊃ ρ, we have y ∈
+C ∩ πT (M ∩ T ), y 6∈ ρ ⇒ y − xi ∈ C ′ for all i. For some i we have y − xi ∈ Λ′ ,
+so y − xi ∈ Λ′ ∩ C ′ ⊂ πT (M ∩ T ), and hence y = xi + (y − xi ) ∈ πT (M ∩ T ). If
+y ∈ (T /T c) ∩ ρ, then y ∈ πT (M ∩ T ) by the second sentence of the proof.
+   We can assume that α|Ce 6 0 if α is a root of T in N .
+    Also we can find b ∈ ΛC such that b + a + p ∈ x + C,  e so that b + a + p + Ce is
+                        +                                               0
+point-wise fixed by Kx . We can furthermore assume that M ⊃ b · Kx .
+    We now take O = O− ·Kx0 ·Kx+ as above such that O− ⊂ K ′ . Then K ′ ·M ·a(p) ⊃
+                e ∩ (T /T c))(p). So U = O− · K 0 (a + b + C
+O · Kx0 · ab · (C
+  −                                                        e + p) = O(a + b + C
+                                                                              e + p)
+                                                  x
+is the desired neighborhood.
+    It remains to show that for any neighborhood U of z in X there exist M, a, K ′
+as above such that K ′ · M · a · Kp ⊂ a−1              ′
+                                         p (U ) i.e. K · M · a(p) ⊂ U . We will do it
+with the help of another auxilary geometric statement.
+    For x ∈ X, r ∈ R write B(c, r) = {y ∈ X|d(y, c) < r} for the ball of radius
+r centered at c. For a point y ∈ A and λ ∈ R>0 we define a sector S(y, λ) by
+S(y, λ) = ∪t∈R>0 B([y, z)t , λt) (notations of 3.8b)).
+
+Lemma 3.11. a) For each neighborhood U of z in X there exists a sector S =
+S(y, λ) such that S ⊂ U .
+   b)Let S ⊂ X be a sector. For any compact set C ⊂ L and a z-good cone C there
+exists a ∈ ΛC such that ag(S) ⊆ S for all g ∈ C.
+
+   Proof a) We can assume that U = O(C + t) is a standard neighborhood.
+   It is obvious that S(q, λ) ∩ A ⊂ U for q ∈ U ∩ A and λ small enough. It
+will be convenient to take q inside of an open polysimplex ∆q of the canonical
+polytriangulation.
+   By [BT1] 2.3.4, 7.4.19 any point s ∈ X is Kq -conjugate to a unique point in A.
+Moreover, by [BT1] 7.4.20 ii), for any k ∈ Kq and x1 , x2 ∈ A we have d(k(x1 ), x2 ) >
+d(x1 , x2 ). Hence S = S(t, λ) ⊂ Kq (S ∩ A).
+   We can insert q instead of x in the triangular decomposition (7). Now for λ small
+enough the cone we have S(q, λ) ∩ A ⊂ a+                     +
+                                             T + q, where aT = {λ ∈ aT |(α, λ) 6 0 if α
+is a root of T in N , which implies that S(q, λ) ∩ A is point-wise fixed by Kq+ (see
+above). So S(q, λ) ⊂ Kq (S ∩ A) = Kq− · Kq0 (S ∩ A). It remains to notice that if
+we take e.g. q = a(x) for appropriate a ∈ ΛC (a should be “deep enough” in a+        T)
+then, besides S(q, λ) ∩ A ⊂ U , we will get Kq− = a(Kx− )a−1 ⊂ O− , Kq0 = Kx0 . Then
+S(q, λ) ⊂ Kq− · Kq0 (S(q, λ) ∩ A) ⊂ O− · Kx0 (S ∩ A) ⊂ U . a) is proven.
+   b) Let C ⊂ L be a compact subset. Then d(x, g(x)) is bounded by a constant d0
+for g ∈ C.
+   Set d1 = supt>0 inf a∈ΛC d(a(x), [x, z)t ). It is clear that d1 < ∞.
+                                                                                              15
+
+
+   Take s ∈ S, g ∈ C; let t0 ∈ R>0 , a ∈ ΛC be such that d(s, [x, z)t0 ) < λt0 ,
+d([x, z)t0 , a(x)) 6 d1 . Then we have
+  d(ag(s), [x, z)t+t0 ) 6 d(ag(s), ag([x, z)t0 )) + d(ag([x, z)t0 ), [x, z)t+t0 ) <
+                                                                  λt0 + d(ag(x), [x, z)t ).
+  Here in the second step we used the inequality d(ag([x, z)t0 ), [x, z)t0 +t )
+6 d(ag(x), [x, z)t ) which is just (6) applied to the case c1 = ag(x), c2 = [x, z)t .
+Note that ag(z) = z because a, g ∈ L, hence ag([x, z)) = [ag(x), z).
+  But
+           d(ag(x), [x, z)t ) 6 d(ag(x), a(x)) + d(a(x), [x, z)t ) 6 d0 + d1 .
+  Thus we get
+                    d(ag(s), [x, z)t+t0 ) 6 λt0 + d0 + d1 < λ(t + t0 ),
+provided λt0 > d0 + d1 . So ag(S) ⊂ S and the Lemma is proven.
+3.12. We are now ready to finish the proof of Proposition 3.7. Assume a neigh-
+borhood U of z in X is given. We are looking for M, a, K ′ as above such that
+K ′ · M · a(p) ⊂ U .
+   Let S = S(y, λ) be a sector contained in U . There exists a z-good cone C ⊂ a
+and a ∈ ΛC such that a + C + p ⊂ S ∩ A.
+   Let C be a compact set generating L as a semigroup. By the previous Lemma
+we can find b ∈ A such that b · C preserves S.
+   We set M to be generated by ΛC , Ky ∩ L and b · C; the element a is chosen so
+that a + C + p ⊂ S ∩ A.
+   We can assume U ∩ X = O(C + t) is a standard neighborhood, and take K ′ = O.
+   Let us check that K ′ · M · a(p) ⊂ U . By the construction ΛC · a(p) ⊂ S ∩ A. Since
+L commutes with Λ, and b · C, Ky ∩ L preserve S we have M · a(p) ⊂ S. Hence
+K ′ · M · a(p) ⊂ K ′ (S) = O(S) ⊂ U .
+   The Proposition is proven.
+3.13. We return to the proof of the Theorem.
+    For an open compact subset C ⊂ G we denote by eC ∈ H the constant measure
+on C of total volume 1. We write · for the convolution of compactly supported
+measures on a group.
+    We can fix a small open compact subgroup K ⊂ Kp which is normal in Kp and
+satisfies the triangular decomposition (7) (see 2.1 of part 2 below for a stronger
+statement).
+    Set: L+ = {g ∈ L|g(K − )g −1 ⊂ K − }. It is readily seen that the semigroup L+
+is z-good.
+    We have a map φ : H(L+ , K 0 ) → H(G, K) sending h to eK · i∗ (h) · eK (here
+i : L+ ֒→ G is the embedding, and i∗ denotes the direct image of a measure). We
+abbreviate H(L+ , K 0 ) to H+ .
+Lemma 3.14. φ is a homomorphism of algebras.
+   Proof see e.g. [Al], Theorem 1 (to apply loc. cit. as stated L+ has to consist
+of semisimple elements, i.e. to be a minimal Levi, and N , N − must be maximal
+unipotent subgroups. However these more restrictive conditions are not used in the
+proof of Theorem 1).
+   Let FH+ be the filter of subspaces in H+ generated by H(a · M, K 0 ) where
+M ⊂ L+ is a z-good semigroup containing K 0 and a ∈ ΛC ⊂ M .
+16                             ROMAN BEZRUKAVNIKOV
+
+
+   The Hecke algebra H(G) acts on every smooth G-module; this action is denoted
+by h : m 7→ h(m). For any h ∈ H(G) we denote by h∗ the image of h under the
+involution g → g −1 .
+Proposition 3.15. a) Fix M ∈ Mˇ. Assume that ∗(M) is generated by its K-
+fixed vectors. Then for f ∈ MK the equality limF g −1 (f ) = 0 is equivalent to
+limFH+ φ(h)∗ (f ) = 0.
+   b) The functor Hz on the category of H+ -modules sending a module M to the
+space {f ∈ M∗ | limFH+ hh(m), f i = 0 for any m ∈ M} (where M∗ is the full linear
+dual, and the basic field is equipped with discrete topology) is exact.
+   Proof a) Assume that limFH+ φ(h)∗ (f ) = 0. Then for any m ∈ ∗(M)K we can
+find a K-invariant z-good semigroup M ⊂ L+ and a ∈ ΛC such that
+                      h ∈ H(a · M, K 0 ) =⇒ hm, φ(h)∗ (f )i = 0                     (8)
+   Hence for any finite set m1 , .., ml ∈ ∗(M)K there is some M, a as above such
+that (8) is satisfied for m ∈ {m1 , .., ml }. Fix m ∈ ∗(M)K and take the finite set to
+be Kp (m) (recall that we assumed that Kp normalizes K, hence preserves ∗(M)K ).
+Then we get M, a such that
+   h ∈ H(a · M ) =⇒ hk(m), φ(h)∗ (f )i = 0 for k ∈ Kp . This means that
+hm, g −1 (f )i = 0 for g ∈ K · M · a · Kp hence limF hm, g −1 (f )i = 0.
+   It remains to notice that {m ∈ ∗(M) | limF hg(m), f i = 0} is a G-submodule in
+∗(M) (because F is right-translation invariant). Thus if ∗(M) is generated by its
+K-fixed vectors, then limF hm, g −1 (f )i = 0 for any m ∈ ∗(M), i.e. limF g −1 (f ) = 0.
+   Conversely, if limF g −1 (f ) = 0 then for any m there is a z-good semigroup
+M ⊂ L+ and a ∈ Λ ∩ L+ such that hm, g −1 (f )i = 0 for g ∈ M · a. We can assume
+that a ∈ ΛC . Any z-good semigroup contains one normalized by K 0 , so we can
+assume also that M is normalized by K 0 . Then M · K 0 is again a z-good semigroup
+and hm, φ(h)∗ (f )i = 0 for h ∈ H(a·M ·K0 ) provided m is K-invariant. a) is proved.
+3.16. To prove b) we need an auxilary definition.
+   The homomorphism π|L+ : L+ → L/Lc defines an L/Lc-grading on H+ .
+Definition 3.17. A z-good subalgebra in H+ is a graded subalgebra
+A = ⊕λ∈L/Lc Aλ in H+ such that
+  i) For some z-good cone C all elements of the form eK 0 ·a belong to A for a ∈ ΛC .
+  ii) The map pr∗ : A → H(L/Λ, K 0 ) is surjective.
+Sublemma 3.18. Let A be a z-good semigroup, C be a z-good cone such that
+eη·K 0 ∈ A for η ∈ ΛC . Then for any h ∈ H(L, K 0 ) there exists ν ∈ ΛC such that
+ν · h ∈ A.
+   Proof We can assume that h is supported
+                                      P           in one Lc -coset λ. By condition ii)
+of the definition we have pr∗ (h) =     pr∗ (hi ), where hi ∈ Aλi . Since H(L/Λ) is
+                     group L/(Lc · A), we can further assume that λi = λ mod Λ.
+graded by the finite P
+Then we get: h = (λ − P     λi )(hi ). Clearly for “large enough” ν ∈ ΛC we have
+ν + λ − λi ∈ ΛC , so (ν)h = (ν + λ − λi )(hi ) ∈ A.
+Lemma 3.19. a) The filter FH+ is generated by the subspaces a · A, where A runs
+over the set of z-good subalgebras and a runs over Λ.
+   b) There exist a set of z-good subalgebras Ai and elements ai ∈ Λ, eai ·K 0 ∈ Ai
+such that:
+                                                                                                17
+
+
+     i) FH+ is generated by ai · Ai
+     ii) Each of the algebras Ai is finite over its center, which has finite type.
+
+    Proof a) It is obvious that if M is a z-good semigroup, then H(M, K 0 ) is a z-good
+subalgebra.
+    On the other hand, let C be a compact set generating Lc as a semigroup. Fix a
+z-good subalgebra A. Since H(C, K 0 ) is finite dimensional Sublemma 3.18 gives a
+coweight ν ∈ ΛC such that (ν) · H(C, K 0 ) ⊂ A.
+    Let M be the semigroup generated by K 0 , C · ν and ΛC . Obviously M is a
+z-good semigroup, and H(M, K 0 ) ⊂ A. This proves a).
+    The proof of b) consists in constructing the Noetherian algebras Ai explicitly.
+    It is known [BD] that H(L, K 0 ) is finite over its center ZL ; and ZL is a finitely
+generated commutative algebra. Let z1 , .., zn be generators ofP            ZL , and h1 , .., hl be
+the generators of H(L, K 0 ) as ZL -module. We have: hi · hj = zij             l         l
+                                                                                 hl for zij  ∈ ZL .
+                                                           c                             +
+    Fix a rational (with respect to the lattice L/L ⊂ a) z-good cone C ⊂ a . Then
+the semigroup ΛC is finitely generated.
+    We can find a ∈ Λ+                                l
+                            C such that a · zi , a · zij and a · hl are supported inside L .
+                                                                                               +
+
+    For such a, C define AC,a to be the subalgebra generated by eη·K 0 for η ∈ ΛC
+                  l
+and a · zi , a · zij , a · hl .
+    Then the subalgebra ZA ⊂ AC,a generated by eη·K 0 for η ∈ ΛC and by a · zi ,
+      l
+a · zij  is central. Also AC,a is finite over ZA ; namely, it is clearly generated by
+a · hl as a ZA -module. Since ZA is a finitely generated commutative algebra, it is
+Noetherian, so the center of AC,a is a finite ZA -module, hence itself is a finitely
+generated commutative algebra.
+    To finish the proof it is enough, in view of a), to check that every z-good subal-
+gebra contains a subalgebra of the form AC,a . For this let A be a z-good algebra,
+and C be a z-good cone such that eλ·K 0 ∈ A for λ ∈ ΛC . Then Sublemma 3.18
+                                                                 l
+guarantees existence of a ∈ ΛC such that a · zi , a · zij          , a · hl ∈ A, i.e. such that
+AC,a ⊂ A.
+    Let us finish the proof of the Proposition.
+    Fix A ∈ {Ai }. We can pick Ai , ai in the Lemma so that Ai ⊂ A.
+    The filter of subspaces in A generated by ai Ai is invariant under both left and
+right multiplication by an element h ∈ A, in the sense that for any i and h ∈ A there
+                                                                                                  ∗
+exists j such that h · ai Ai ⊂ aj Aj , ai Ai · h ⊂ aj Aj . Thus the space lim      −→(A/ai Ai )
+carries a natural A-module structure. Moreover, for any M ∈ M               f we have
+
+  Hz (M) = {f ∈ M∗ | ∀m ∈ M lim
+                             −→ FH+ hh(m), f i = 0} =
+            ∗
+      {f ∈ M | ∀m ∈ M ∃ z -good A, a ∈ Λ ∀h ∈ aA : hh(m), f i = 0 } =
+                 {f ∈ M∗ | ∀m ∈ M ∃i ∀h ∈ ai Ai : hh(m), f i = 0 } =
+                                                                                   ∗
+                                                                       −→(A/ai Ai ) ) (9)
+                                                                Hom(M, lim
+                                                                         ∗
+    So to prove the Proposition we have only to show that lim−→(A/ai Ai ) is an injec-
+tive A-module.
+    It is not hard to see that for fixed i the filter of subspaces in A generated by
+ani Ai , n ∈ Z>0 is also invariant under left and right multiplication by h ∈ A, thus
+                                def
+we have an A-module A∗z,i = −              n    ∗
+                               → n (A/ai Ai ) . n
+                             lim
+                           ∗                            ∗          ∗
+               −→(A/ai Ai ) = lim
+   Notice that lim               −→ i (lim
+                                       −→n
+                                            n (A/ai Ai ) ) = lim
+                                                             −→ i Az,i (in fact we can
+assume that ∀i, n ∃j | Ai = Aj , aj = ai ).
+18                              ROMAN BEZRUKAVNIKOV
+
+
+  Since A is Noetherian the direct limit of injective A-modules is injective. Hence
+we have only to show that A∗z,i is an injective A-module. For any A-module M we
+have
+     Hom(M, A∗z,i ) = {f ∈ M ∗ | ∀m ∈ M ∃n ∈ Z>0 : hf, ani Ai (m)i = 0}
+                                                                      n     ∗
+                                                           −→ n (Ai /ai Ai ) ).
+                                               = HomAi (M, lim                    (10)
+                                             n     ∗
+                                  −→ n (Ai /ai Ai ) is an injective Ai -module.
+   So we need only to show that lim
+   Since Ai is Noetherian, this is equivalent to saying that the functor
+                      n     ∗
+           −→ n (Ai /ai Ai ) ) is exact on the category of finitely generated
+HomAi ( , lim
+Ai -modules.
+                                                                             n ∗
+   On this category the functor coincides with the functor M → lim −→ n (M/a ) , and
+its exactness is guaranteed by the standard Artin-Rees lemma because of 3.19b),
+property ii).
+   The Proposition is proved.
+
+3.20. We are ready at last to finish the proof of Theorem 3.4.
+   Proof of a): The statement is equivalent to saying that the functor M →
+(∗(M ))sm
+        {z} on the category M is exact. Let 0 → M1 → M2 → M3 → 0 be a
+short exact sequence in M. Let K be as above (a compact open subgroup with tri-
+angular decomposition (7)), and assume that Mi is generated by its K-fixed vectors
+for i = 1, 2, 3. Then by Proposition 3.15a):
+                    (∗(Mi ))K            K ∗           ∗
+                            {z} = {f ∈ (Mi ) | lim φ(h) (f ) = 0}.
+                                                FH +
+
+Hence the sequence
+                   0 → (∗(M3 ))K             K             K
+                               {z} → (∗(M2 )){z} → (∗(M1 )){z} → 0
+
+is exact. The statement a) of 3.4 follows.
+
+     To prove b) it is convenient to use the following
+
+Lemma 3.21. Let M ∈ M       f be a module, K as above. For an element m ∈ M K
+the following are equivalent:
+     i) m lies in the kernel of the projection M → rP (M )
+     ii) eKa−1 K (m) = 0 for some a ∈ Λ+ .
+   Proof is well-known; see e.g. [BZ], Lemma 3.22 for the case G = GL(n), or [BR],
+Claim 15.4 for the (absolutely analogous) general case.
+   Now for M ∈ Mˇ assume that m ∈ (M)K lies in the kernel of the projection
+Sm(M) → rP (Sm(M)). Then for some a ∈ Λ+ we have:
+   φ(eaK 0 )∗ (m) = eKa−1 K (m) = 0 =⇒ φ(eaK 0 · H+ )∗ (m) = 0
+   i.e. m ∈ M{z} by Proposition 3.15a).
+   Assume now that M ∈ Rˇ, and m ∈ MK             {z} . For v ∈ ∗(M)K we have
+limFH+ hφ(h)∗ (m), vi = 0 (by Proposition 3.15a)) hence there exists a ∈ Λ+ such
+that heKa−1 K (m), vi = hφ(eaK 0 )∗ (m), vi = 0. Since ∗(M)K is finite dimensional
+we can find one a ∈ Λ+ such that heKa−1 K (m), vi = 0 for all v ∈ ∗(M)K . But
+this means that eKa−1 K (m) = 0. By the last Lemma this finishes the proof of
+Theorem 3.4.
+                                                                                      19
+
+
+Theorem 3.22. For M ∈ M let L(M ) ∈ ShG (Y ) be the unique quotient of the
+constant sheaf M such that for a parabolic P and p ∈ Y with Stab(p) = P (i.e.
+p ∈ ∆P ) the stalk of L(M ) at p is the Jacquet functor rP (M ).
+   The functor L : Mˇ → ShG (Y ) satisfies:
+   i) L ◦ Γ ∼
+            = i∗ ◦ j∗G
+   ii) L is exact
+   iii) We have a functorial surjection L(Sm(M )) → L(M ); it is an isomorphism
+provided M ∈ Rˇ.
+   Proof Property i) follows from the Lemma 3.1. Properties ii) and iii) follow
+from Theorem 3.4.
+
+4. Application to representation theory: dualities. Recall the definition of
+Deligne-Lusztig duality (originally defined in the context of groups over finite field in
+[DL]). For two parabolic subgroups P2 ⊂ P1 ⊂ G we have the canonical morphism
+dP1 ,P2 : iP1 ◦ rP1 → iP2 ◦ rP2 . LFor any M ∈ M define the complex DL(M )
+as follows. Set (DL(M ))i =            iP ◦ rP (M ) where Si is the set of standard
+                                 P ∈Si
+                                                       X
+parabolics of corank i; the differential di :=                  ±dP1 ,P2 (definition of
+                                                  P1 ∈Si ,P2 ∈Si+1
+signs is straightforward and can be found in [DL]). Obviously DL extends to an
+exact functor Kom(M) → Kom(M) and defines a functor on the derived category.
+   We will need the following standard Lemma
+Lemma 4.1. D+ (R) (respectively Db (R)) is equivalent to the full subcategory of
+    f (respectively Db (M))
+D+ (M)                  f consisting of complexes with admissible cohomology.
+
+    Proof Let R̃ ⊂ M f be the full subcategory consisting of direct limits of admissi-
+ble modules. By [BD] H is finite over its center Z which is locally of finite type. Let
+I ⊂ Z be an ideal of finite codimension. Then the module H/I n is admissible for ev-
+                                                                                 n
+ery n, and by the Artin-Rees Lemma the functor M → HomH (M, lim       −→ n (H/I )ˇ) =
+                      n                                                n
+HomZ (M, lim−→ n (Z/I )ˇ) is exact, i.e. the module ȞI := lim
+                                                           −→ n (H/I )ˇ is injective.
+It is clear that any module in R̃ injects into ȞI for some I. Hence by [H], Propo-
+                                                      f D+ (R̃) → D+ (M)
+sition I.4.8 the tautological functors Db (R̃) → Db (M),                     f induce
+equivalences with the full subcategories of objects, whose cohomology lie in R̃.
+    To finish the argument notice that for any complex C ∈ Komb (R̃) (respectively
+C ∈ Kom+ (R̃)) it is easy to represent C as a direct limit of its quasiisomor-
+  ·
+
+phic subcomplexes Ci ∈ Komb (R) (respectively Ci ∈ Kom+ (R)). It follows that
+Db,+ (R) is equivalent to the full subcategory of Db,+ (R̃) whose objects have ad-
+missible cohomology.
+    We are now in the position to prove
+Theorem 4.2. a) There exists a canonical morphism of functors from Db (M) to
+    f
+Db (M)
+                                     DL ◦ ˇ → Dh .                                  (11)
+                                                               f gives an isomor-
+   b) Restriction of (11) to the full subcategory Db (R) ⊂ Db (M)
+                          b
+phism of functors from D (R) to itself
+                                     Dh ∼= DL ◦ ˇ                            (12)
+20                            ROMAN BEZRUKAVNIKOV
+
+
+Remark 4.3. Isomorphism (12), as well as its generalization (16), is due to J. Bern-
+stein (unpublished). An attempt to interpret it through the geometry of X was the
+starting point for this part of the work.
+   Recall that another construction of (12) using compactified building appears in
+[Sch-St2].
+
+Remark 4.4. Theorem 4.2 is the main step in the proof of Zelevinsky’s conjecture
+[Z], which says that the map on the Grothendieck group of the category of admissi-
+ble representations induced by DL sends the class of an irreducible representation
+to the class of an irreducible representation (up to a sign). The conjecture is proved
+in [B], [Sch-St2].
+
+    Proof of the Theorem. For M ∈ M    f denote by DL(M ) ∈ ShG (X) the kernel of
+the canonical surjection M X → L(M ). Then DL is an exact functor from M      f to
+ShG (X).
+    For an object I ∈ IG we have the canonical surjections prI : Sm(Γ(I)) → j∗G (I)
+                                                                         X
+and L(Γ(I)) → L(Γ(I)) = i∗ j∗G (I) (3.22(iii)), which yield a morphism of functors
+s : DL ◦ Sm ◦ Γ(I) → Ker(j∗G (I) → i∗ j∗G (I)) = j! (I).
+    Clearly DL, s extend to a functor (respectively, a morphism of functors) on
+bounded derived categories; we will denote these extensions by the same symbols.
+    According to [Schn1], Lemma 1 for any locally compact G-space Z the category
+ShG (Z) has enough injectives, so the derived functor of a left-exact functor on
+ShG (Z) is defined. Suppose further that Z is compact; then one checks immediately
+that for F ∈ ShG (Z) the G-module Γ(F ) is smooth. Thus in this case we have
+the derived functor RΓ : D+ (ShG (Z)) → M,   f which commutes with the forgetful
+functors F orsh : ShG (Z) → Sh(Z), F ormod : M     f → V ectk . By Corollary 3 in
+[Schn1] the forgetful functor ShG (X) → Sh(X) sends injective equivariant sheaves
+into c-soft sheaves; if Z is compact they are adapted to Γ, hence we have F ormod ◦
+RΓ ∼ = RΓ ◦ F orsh .
+    We will be interested in the case Z = X; then all of the above properties are
+satisfied.
+
+Lemma 4.5. RΓ(DL(M )) is canonically isomorphic to DL(RΓ(M )) for any M ∈
+    f
+Db (M).
+
+   Proof Recall that X − X is the spherical building of G, that is the realization
+of the simplicial topological space, whose space of nondegenerate n-simplices is the
+disjoint union of partial flag varieties G/P , where corank(P ) = n + 1; the structure
+maps come from the canonical projections πP1 ,P2 : G/P1 → G/P2 for P1 ⊂ G/P2 .
+The sheaf L(M ) is the realization of a simplicial sheaf on this space; such a sheaf
+has a canonical resolution by acyclic sheaves.
+   More precisely, for a set s of simple roots (of the system of nonmultipliable roots
+of G) let P(s) denote the corresponding conjugacy class of parabolics (so s isSthe
+set of simple roots which appear in the nilradical of P ∈ P(s)). Let S(s) =
+                                                                               P ∈P(s)
+be the corresponding stratum of X − X, and U (s) be the union of the stars of all
+simplices ∆P , P ∈ s. Then we have U (s1 ∪s2 ) = U (s1 )∩U (s2 ); thus {Us | #(s) = 1}
+form an open covering of X − X, and the corresponding Čech resolution of L(M )
+                                                                                            21
+
+
+has the form
+                 M                                      M
+           0→            js∗ js∗ (L(M )) → · · · →                 js∗ js∗ (L(M )) → 0,   (13)
+                 |s|=1                               |s|=rank(G)
+
+where js denotes the imbedding Us ֒→ X. Hence for any M ∈ M             f the complex
+                    M                                  M
+       0 → MX →          js∗ js∗ (L(M )) → · · · →             js∗ js∗ (L(M )) → 0
+                   |s|=1                           |s|=rank(G)                       (14)
+is a resolution for DL(M ). Moreover, there exists a canonical retraction of Us
+on S(s), hence H i (Us , js∗ (L(M ))) = H i (S(s), L(M )|S(s) ) = 0 for i > 0, and
+H 0 (Us , js∗ (L(M ))) = H 0 (S(s), L(M )|S(s) ) = iG    G                   i
+                                                    P ◦ rP (M ). Of course, H (M X ) = 0
+                  0
+for i > 0 and H (M X ) = M since X is contractible. Thus the terms of the complex
+of global section of (14) are identified with that of DL(M ); it is easy to see that
+the differentials are also the same.
+   It is also evident how to extend the assignment M 7→ (14) to the definition
+of an exact functor ČDL from Kom(M)      f to the complexes of Γ-adapted objects of
+ShG (X), together with a canonical quasiisomorphism DL → ČDL, and a canonical
+isomorphism Γ ◦ ČDL ∼    = DL.
+   We can now construct the morphism (11). For F ∈ Db (Sh) we have functorial
+morphisms
+
+                 1.3a)                           4.5
+                = DL(Sm ◦ RΓ(VF )) ∼
+  DL(RΓc (F )ˇ) ∼                  = RΓ(DL(Sm ◦ RΓ(VF )))
+                                 RΓ(s)                                  1.3b)
+                                  −→ RΓ(j! (VF )) = RΓc (VF ) ∼
+                                                              = Dh (RΓc (F )).            (15)
+   Hence by the second statement of Proposition 2.1 we get the desired morphism
+(11) on the full subcategory D0 (M). a) of the Theorem now follows from the
+evident
+Claim 4.6. a) Let A, B be additive categories, and C be a full subcategory of A.
+Let F1 , F2 : A → B be additive functors, and s : F1 |C → F2 |C be a transformation.
+Assume that every object of A is isomorphic to a direct summand in an object of
+C. Then s extends in a unique way to a transformation of functors F1 → F2 .
+   b) Any object of Db (M) is a direct summand in an object of D0 (M).
+    Proof Take A, A′ ∈ Ob(A) such that A ⊕ A′ ∈ Ob(C). By the definition of a
+morphism of functors we have sA′ ⊕A′′ ◦ (id ⊕ 0) = id ⊕ 0, sA′ ⊕A′′ ◦ (0 ⊕ id) = 0 ⊕ id,
+hence s preserves the direct sum decomposition, i.e. sA⊕A′ = sA ⊕ s′A . If A′′ ∈
+Ob(A) is another object such that A ⊕ A′′ ∈ Ob(C), then considering the morphism
+id ⊕ 0 : A ⊕ A′ → A ⊕ A′′ we see that sA does not depend on the choice of A′ . This
+proves a).
+    To prove b) recall that M has enough projectives and finite homological dimen-
+sion ([BR], Theorem 38, see also e.g. [Vig], Proposition 37), so any object of Db (M)
+is represented by a finite complex of projective modules. Since standard projectives
+form a set of projective generators in M, we can add to such a complex a complex
+with zero differential to get a complex of standard projectives.
+    For part b) of the Theorem we need another
+Lemma 4.7. For I ∈ IG the cohomology H i (X, j∗G (I)) vanish for i > 0.
+22                             ROMAN BEZRUKAVNIKOV
+
+
+Sublemma 4.8. Let ∆ ⊂ X be a polysimplex of the canonical polytriangulation,
+x ∈ ∆ be a point, and R be a smooth finite dimensional representation of Stab(R) =
+Kx . Let ιx be the imbedding ιx : G(x) ֒→ X, where G(x) is the G-orbit of x, and
+set Fx,R = ιx∗ ι∗x (F∆,R ) (notations of 1.1). Consider the canonical arrow F∆,R →
+Fx,R , and the induced morphism f : j∗G (F∆,R ) → j∗G (Fx,R ). Then i∗ (f ) and RΓ(f )
+are isomorphisms.
+    Proof of the Sublemma. Let z ∈ X −X be a point. Let Ki ⊂ G be compact open
+subgroups forming a fundamental system of neighborhoods of 1; then there exists
+a basis {Ui } of the filter of neigborhoods of z such that Ui ∩ X is a Ki -invariant
+closed simplicial subset. Indeed, if A is an apartment containing z in its closure,
+then it is clear that one can find a basis Ci of the filter of neigborhoods of z in A
+such that Ci ∩ A is closed and simplicial; then by 3.9 we get the desired basis of the
+filter setting Ui = Ki (Ci ).                Q                                Q
+    Now we see that Γ(Ui , F∆,R ) ∼  =                Rg−→Γ(Ui , Fx,R ) ∼
+                                                                        =           R.
+                                          ∆′ ∈G(∆),∆′ ⊂Ui                      G(x)∩Ui
+Hence j∗G (F∆,R )|z = −                     Ki
+                        → i Γ(Ui ∩X, F∆,R ) −
+                       lim                     g →j∗G (Fx,R ) = lim                 Ki
+                                                                −→ i Γ(Ui ∩X, Fx,R ) |z
+(here we write ?|z for a stalk of a sheaf ? at a point z). This proves the first
+statement.
+   It implies that f is a surjection of sheaves, and the kernel of f is (noncanonically)
+isomorphic to RG(∆−x) extended by 0 to X. Since Hci (∆ − x) = 0 for all i the latter
+sheaf is acyclic, so we get the second statement.
+   Proof of the Lemma. Fx,R is an injective object in ShG (X); hence j∗G (Fx,R ) is
+an injective object of ShG (X). Hence by [Schn1], Corollary 3 it is a c-soft sheaf;
+since X is compact this implies H >0 (X, j∗G (Fx,R )) = 0. Thus Lemma follows from
+the Sublemma.
+
+4.9. Proof of Theorem 4.2b). To prove b) we must check the following. Suppose
+that F ∈ Db (Sh) is such that RΓc (F ) ∼
+                                       = M1 ⊕ M2 where M1 ∈ Db (R) ⊂ Db (M),
+         b
+M2 ∈ D (M). Then we have RΓ(s) = S1 ⊕ S2 , where Si : DL(Miˇ) → Dh (Mi ) for
+i = 1, 2, and S1 is an isomorphism. We have RΓ(s) = S1 ⊕ S2 for some S1 , S2 by
+Claim 4.6. Now recall that for I ∈ IG the morphism s : DL(I) → j∗G (I) includes
+in a functorial morphism of exact sequences
+     0 −−−−→ DL −−−−→ Sm(Γ(I)) −−−−→                        L(Sm(Γ(I))) −→ 0
+                                                                 
+              s                                                  
+              y          y                                         y
+                                                              3.22
+     0 −−−−→ j! (I) −−−−→       j∗G (I)     −−−−→ i∗ j∗G (I) = L(Sm ◦ Γ(I)) → 0
+                                                                     f
+Thus we have a functorial morphism of distinguished triangles in Db (M)
+
+      DL(Sm ◦ RΓ(F ))       −−−−→ Sm ◦ RΓ(F ) −−−−→ RΓ(L(Sm ◦ RΓ(F )))
+                                                         
+           RΓ(s)                                         
+           y                           y                   y
+     RΓ(j! (F )) = RΓc (F ) −−−−→ RΓ(Rj∗G (F )) −−−−→ RΓ(L(Sm ◦ RΓ(F )))
+The second vertical map is an isomorphism by Lemma 4.7.
+   Also it is clear that decomposition RΓc (F ) ∼
+                                                = M1 ⊕ M2 splits the whole diagram
+into the direct sum of two. The condition M1 ∈ Db (R) implies that the right
+vertical arrow in the first summand is an isomorphism by Theorem 3.22 ii), iii).
+                                                                                  23
+
+
+Hence S1 is also an isomorphism. By Lemma 4.1 the quasiisomorphism (12) in the
+             f yields the corresponding quasiisomorphism in Db (R).
+category Db (M)
+Remark 4.10. We could have used the Schneider-Stuhler “localization” Theorem
+[Sch-St2] instead of our Proposition 2.1 in order to deduce the isomorphism (12)
+from Theorem 3.22.
+4.11. We finish the chapter with a generalization of the last Theorem which con-
+nects homological and Deligne-Lusztig dualities on Db (M) (not only on complexes
+with admissible cohomology).
+   Recall that the Bernstein center Z is by the definition the algebra of endomor-
+phisms of identity functor on M; so it is a commutative algebra acting on every
+module M ∈ M commuting with the G-action. It is known [BD] that Z is an
+infinite product of finitely generated commutative algebras; in fact each factor in
+this decomposition is isomorphic to algebra of functions on an algebraic torus of
+dimension 6 rank(G) invariant under the action of a finite group.
+   We also recall that the strong admissibility Theorem [BD] asserts that for any
+M ∈ M and any open compact subgroup K ⊂ G the space of K-invariants M K
+is a finite Z-module supported on a finite number of components of Spec(Z). If
+M is a G-module, and V is a Z-module then the space HomZ (M, V ) is natu-
+rally a G-module; moreover, from the strong admissiblity Theorem it follows that
+Sm(HomZ (M, V )) ∈ M if M ∈ M and V is locally finitely generated. Since M
+has enough projectives we can derive the bifunctor (M, V ) 7→ Sm(HomZ (M, V ))
+in both arguments to get a bifunctor D− (M)opp × D+ (Z − mod) → D+ (M),
+where Z − mod is the category of locally finitely generated Z-modules. Let D ∈
+Db (Z − mod) be the Grothendieck dualizing complex.
+   We denote by DGr the Grothendieck-Serre duality functor RHom( , D); we have
+DGr : Db (M) → D+ (M)
+   Note that for a finite dimensional module V over a commutative algebra we have
+DGr (V ) ∼= V ∗ canonically. It follows that DGr |Db (R) ∼
+                                                         = ˇ.
+Remark 4.12. The quotient of a smooth variety by an action of a finite group is
+known to be Cohen-Macaulay, hence the dualizing complex D is concentrated in
+one homological dimension. Also, for such a variety the Grothendieck-Serre duality
+functor sends the bounded derived category Db (Coh) into itself, where Coh stands
+for coherent sheaves. It follows that DGr sends Db (M) to itself. We will not use
+these facts below; the latter one follows also from the next Theorem.
+Theorem 4.13. We have a canonical isomorphism of functors on Db (M)
+                               ∼ DL ◦ DGr
+                            Dh =                                               (16)
+   In order to prove the Theorem we need to extend the statement 4.2 to the
+following set-up. Let B be a commutative unital k-algebra of finite type. Let
+MfB be the category of smooth G × B modules, i.e. B-modules equipped with a
+smooth G-action; in other words M   fB is a category of modules over the algebra
+HB := H ⊗ B . The category MB ⊂ M     fB consists of all finitely generated modules.
+                 f
+We also define MˇB to be the category of complete topological G × B modules
+having a basis of neighbourhoods of 0 consisting of B-submodules such that the
+quotient is a finite B-module; the subcategory MˇB ⊂ Mˇ    f B consists of modules
+which are topologically finitely generated.
+24                           ROMAN BEZRUKAVNIKOV
+
+
+   We call a module M ∈ MB or M ∈ MˇB admissible if the space of K-invariants
+in M is a finite B-module for any open compact subgroup K ⊂ G. We denote by
+RB ⊂ MB and RˇB ⊂ MˇB the (full) subcategories of admissible modules.
+Lemma 4.14. The category D+ (RB ) (respectively Db (RB )) is equivalent to the
+                        fB ) (respectively Db (M
+full subcategory of D+ (M                      fB )) consisting of complexes with
+admissible cohomology.
+  Proof is parallel to that of 4.1.
+  For V ∈ B − mod we have a contravariant functor HomB ( , V ) : MB → MˇB .
+We can derive it in both arguments to get a bifunctor D− (MB ) × D+ (B − mod) →
+    f B ).
+D+ (Mˇ
+  We have Deligne-Lusztig functors DL : Db,± (MB ) → Db,± (MB ); the definition
+remains the same.
+Proposition 4.15. For any V ∈ Db (B−mod) there exists a canonical isomorphism
+of functors Db (RB ) → D+ (RB )
+                                       ∼ DL ◦ RHomB ( , V )
+                 RHomG×B ( , H ⊗ V )|R = B
+
+
+   Proof is parallel to the proof of 4.2. The only difference is that one should
+consider G-equivariant sheaves of B-modules instead of G-equivariant sheaves of
+k-vector spaces, and replace the Verdier dualizing sheaf by the tensor product of
+Verdier dualizing sheaf (with coefficients in k) and V ∈ D+ (B − mod).
+4.16. By the definition we have imbedding of a full subcategory I : M ֒→ MZ .
+By the strong admissibility Theorem its image actually lies in RZ . So to finish the
+proof of the Theorem it is enough to prove the following standard fact.
+Proposition 4.17. We have a functorial isomorphism
+            RHomG×Z (I ⊗ Id(M ), N ⊗ D) ∼  = I(RHomG (M, N ))
+where M ∈ D− (M); N is a bounded below complex of finitely generated smooth
+G-bimodules; D ∈ Db (Z − mod) is the dualizing complex. Here both sides lie in
+    fZ ).
+D+ (M
+     Proof We have an isomorphism
+               HomG×Z (I(M ), ?) = HomG (M, HomG×Z (I(H), ?)),
+where the action of G on HomG×Z (I(H), ?) comes from the right G-action on H;
+and also:
+                         HomG×Z (I(H), ?) = HomZ⊗Z (Z, ?)
+where the first of the two Z-actions on ? comes from the G-action on ?, and G acts
+on HomZ⊗Z (Z, ?) via its action on ?. Since HomZ⊗Z (Z, ?) is injective provided ?
+is injective, we get the corresponding isomorphisms of derived functors.
+    We have the standard quasiisomorphism in the derived category of Z-modules
+               RHomZ⊗Z (Z, N ⊗ D) = i! ◦ pr! (N ) ∼
+                                              1    = (pr1 ◦ i)! N ∼
+                                                                  =N
+where i is the diagonal embedding i : Spec(Z) → Spec(Z ⊗Z), pr1 : Spec(Z ⊗Z) →
+Spec(Z) is the projection, and we do not distinguish between a module over a
+commutative algebra and the corresponding quasicoherent sheaf over its spectrum.
+   It is easy to lift this quasiisomorphism to a quasiisomorphism in the category
+of G-bimodules. More precisely, if N lies in the heart of the derived category
+                                                                                 25
+
+
+(i.e. H i (N ) = 0 for i 6= 0; the only case we need N = H satisfies this as-
+sumption) then RHomZ⊗Z (Z, N ⊗ D) has only non-trivial cohomology in de-
+gree 0 isomorphic to N , hence in this case we have a canonical quasiisomorphism
+N ← τ60 (RHomZ⊗Z (Z, N ⊗ D)) → RHomZ⊗Z (Z, N ⊗ D). If N · is any complex
+(of injective modules) and D· is any complex of injective Z-modules quasiisomorphic
+to the dualizing sheaf, then RHomZ⊗Z (Z, N ⊗ D) is represented by the bicomplex
+HomZ⊗Z (Z, N · ⊗ D· ); we can apply the above canonical quasiisomorphism in each
+column of this bicomplex to get the desired quasiisomorphism for any N .
+4.18. Proof of Theorem 4.13. Since I(M ) ∈ RZ for M ∈ M we see using 4.17
+that
+             Dh (M ) = RHomG (M, H) ∼  = RHomG×Z (I(M ), H ⊗ D)
+(more precisely we apply the forgetful functor G × Z − mod → G − mod to the
+isomorphism 4.17 to get the last isomorphism). By 4.15 we have:
+                RHomG×Z (I(M ), H ⊗ D) ∼  = DL(RHomZ (M, D))
+  The Theorem is proved.
+26                              ROMAN BEZRUKAVNIKOV
+
+
+         2. Elliptic pairing and filtrations on the Hecke algebra
+Preliminaries and notations. In this chapter we prove
+Theorem 0.19. The equality (2):
+                                  Og−1 (hρi) = χρ (g)
+holds for any ρ ∈ R, and any elliptic element g ∈ G.
+     and deduce from it
+Theorem 0.20. Assume char(F ) = 0 and k = C. The equality (1):
+           X                              Z
+              (−1)i dim Exti (ρ1 , ρ2 ) =   χρ1 (g −1 )χρ2 (g)dµ(g)
+                                              Ell
+is valid for all ρ1 , ρ2 ∈ R.
+   It will be convenient to allow G to be an arbitrary reductive group (not requiring
+that G has compact center). Notice however that a group with non-compact center
+does not contain elliptic elements (in the terminology we adopt), so the RHS of
+(1) vanishes; it is well-known (see Claim 4.3 below) that so does the LHS. The
+statement of Theorem 0.19 is vacuous for a group with noncompact center.
+0.21. Hattori-Stallings trace for the Hecke algebra. Since the Hecke algebra H is
+not unital, a comment on the definition of the Hattori-Stallings trace appearing in
+the formulation of Theorem 0.19 is required.
+   Recall from [BD] that for a nice open compact subgroup K ⊂ G (see [BD] 2.1b)
+for the definition) the full subcategory MK ⊂ M consisting of modules generated
+by K-fixed vectors is a direct summand in M. Moreover, the functors M 7→ MK
+and M → M ⊗H(G,K) H are mutually inverse equivalences between MK and the
+category of H(G, K)-modules (here H(G, K) is the subalgebra of K-biinvariant
+measures in H).
+   Hence H(G, K) is a Noetherian unital algebra of finite homological dimension,
+so the usual construction of the Hattori-Stallings trace applies to it. Now for any
+                                                          ′
+M ∈ MK , E ∈ EndG (M) and K ′ ⊂ K we have MK = MK ⊗H(G,K) H(G, K ′ ),
+hence the natural map H(G, K)/[, ] → H(G, K ′ )/[, ] induced by the imbedding
+                                                                      ′
+H(G, K) ֒→ H(G, K ′ ) sends T rH−St (MK , E|MK ) to T rH−St (MK , E|MK ′ ). Thus
+                                                 ′
+for small enough K ′ the image of T rH−St (MK , E|MK ′ ) in H/[H, H] does not de-
+pend on K ′ ; this is by the definition the Hattori-Stallings trace of (M, E).
+0.22. A regular elliptic element g ∈ G is fixed throughout the argument.
+   Since g is elliptic it is also compact; we fix a maximal compact subgroup K0
+containing g.
+   Let K ⊂ K0 be a normal subgroup; since g normalizes K it acts on the set of
+double cosets K\G/H for any subgroup H ⊂ G. We say that g is K-elliptic if it
+acts on K\G/P without fixed points for any proper parabolic P ⊂ G. Obviously g
+is K-elliptic for small enough normal open K ⊂ K0 .
+   We say that K is nice if it is nice with respect to some minimal Levi subgroup
+L0 , which is in good position with K0 (see 0.24, 2.1 below).
+   We fix a normal open subgroup K ⊂ K0 , such that g is K-elliptic.
+   From now on we will denote by H the subalgebra H(G, K) ⊂ H(G) of K-
+biinvariant distributions.
+     We will in fact work with the following form of Theorem 0.19
+                                                                                     27
+
+
+Theorem 0.23. One can define for any g ∈ Ell, and any finitely generated H-
+module M a number T r(g, M ) ∈ k so that
+    i) T r(g, M ) is additive on short exact sequences in M .
+   Fix M ∈ M.
+    ii) If M is admissible, and its character χM is constant on the coset K · g, then
+T r(g, MK ) = χM (g) is the character value.
+    iii) Let M be a projective H-module. Then there exists an idempotent E ∈
+M atm (H) such that M is isomorphic to the image of E acting on H⊕m on the
+right.
+   Suppose that K is nice, and the locally constant invariant function
+x → Ox−1 (hMi) defined on the regular elliptic set is (defined and) constant on the
+coset K · g. Then we have
+                                                  X
+                               T r(g, M ) = Og−1 (  Eii ).
+
+   It is immediate to deduce 0.19 from 0.23 (see 3.8).
+   The next three sections are devoted to the construction of T r(g, M ) and verifi-
+cation of the properties i)–iii).
+
+0.24. Notations. Let us choose a minimal parabolic with Levi decomposition P0 =
+L0 · U0 ⊂ G so that L0 is in good relative position with K0 , i.e. the point p of the
+Bruhat-Tits building fixed by K0 lies in the apartment normalized by L0 .
+   A standard parabolic is the one containing P0 ; a standard Levi is the Levi
+subgroup of a standard parabolic containing L0 .
+   The letters P , L, U with indices will be reserved for a standard parabolic, its
+standard Levi, and its unipotent radical respectively, unless stated otherwise.
+   Let W = N m(L0 )/L0 , WL = (N m(L0 ) ∩ L)/L0 and Waf f = N m(L0 )/Lc0 be
+respectively the Weyl group, the Weyl group of L and the affine Weyl group.
+   For an L-module ρ we will sometimes write iG                  G
+                                               L (ρ) instead of iP (ρ) for the parabol-
+ically induced module (of course there is no ambiguity here, because P and L
+determine each other uniquely).
+   Let AL be the center of L, XL be the lattice of coweights of AL . Thus X := XL0
+is the lattice of abstract coweights of G. Set a = X ⊗ R; let a+ ⊂ a (respectively
+a+ ) be the dominant Weyl chamber (respectively its closure). For a subset ? ⊂ a
+we denote the intersection ? ∩ a+ by ?+ .
+   For a standard Levi L let aL ⊂ a denote XL ⊗ R.
+   Fixing a uniformizer p ∈ F × we obtain a canonical imbedding ιL : XL ֒→ AL ,
+χ 7→ χ(p), inducing an imbedding of finite index XL ֒→ L/Lc.
+   For a topological group H we denote by H c the subgroup generated by all com-
+pact subgroups.
+   Consider the composition L/Lc ֒→ (L/Lc) ⊗ R = aL ֒→ a. We identify L/Lc
+with its image under this map.
+
+   By PL we denote the orthogonal projection a → aL .
+   By a root we will mean a nonmultipliable root, and by a coroot the corresponding
+coweight of AL0 . Thus coroots (respectively, roots) form a reduced root system in
+a (respectively a∗ ) (see [BoT], Theorem 7.2). The choice of a minimal parabolic
+P0 determines the basis of simple (co)roots, and the dual basis of fundamental
+(co)weights.
+28                                    ROMAN BEZRUKAVNIKOV
+
+
+  Let Σ+ be the set of positive coroots; for a Levi L let Σ+       +
+                                                            L ⊂ Σ be the set of
+                                        [,]
+positive coroots of the derived group L .
+  If α is a simple coroot, ωα is the dual fundamental weight, and λ1 , λ2 ∈ X then
+we will write λ1 6λ2 meaning (λ1 , ωα ) 6 (λ2 , ωα ). We also write λ6n meaning
+                       α                                                    α
+
+(λ, ωα ) 6 n.
+   The standard partial order 4 on a is defined by λ1 4 λ2 if λ1 6λ2 for all α; as
+                                                                        α
+
+usual we write λ1 ≺ λ2 instead of λL
+                                   1 4 λ2 & λ1 6= λ2 etc.
+  Recall the notation k[S] :=        k. When S is a (semi)group this is the
+                                           s∈S
+(semi)group algebra; for s ∈ S let [s] ∈ k[S] be the delta-function of s.
+   If (Λ, ◭) is a (partially) ordered semigroup, we use the notation Λ◭λ := {µ ∈
+X | µ ◭ λ} for λ ∈ Λ.
+   We have a (Λ, ◭)-filtration on the semigroup algebra k[Λ], defined by k[Λ]◭λ :=
+k[Λ◭λ ].
+   Analogous notations apply when ◭ is a filtration on Λ indexed by another (par-
+tially) ordered semigroup.
+   We use the same symbol for a partial order on a and its restriction to a sublattice.
+   We will say that λ ∈ XL is dominant (or large) enough if (λ, r) ≫ 0 when r is a
+root of U . (The latter condition will be abbreviated as hλ, Σ+ − Σ+ L i ≫ 0.
+
+1. “Spectral” filtration: definition of the trace functional.
+
+1.1. Let ρ be an admissible representation of L. We can form a (non-admissible)
+G-module Πρ := iG              c       G                                      c
+                  L (ρ ⊗ k[L/L ]) = indLc ·U (ρ|Lc ). Then Πρ has also a k[L/L ]-
+action commuting with the G-action, which comes from the action of k[L/Lc] on
+the second multiple of ρ ⊗ k[L/Lc]:
+                                      l(f )(g) = (Id ⊗ l)(f (g))                  (17)
+                 c                          c                       c
+for l ∈ L/L , f : G → ρ ⊗ k[L/L ], f ∈ Πρ . For λ ∈ L/L let [λ]ρ ∈ End(Πρ )
+denote action (17).
+   For an unramified character ψ : L/Lc → k × we have a canonical isomorphism of
+G-modules (but not of L/Lc-modules) Iψ : Πρ −g→Πρ⊗ψ , satisfying
+                                      Iψ (l(m)) = ψ(l)l(Iψ (m))                   (18)
+               c
+for l ∈ L/L , m ∈ Πρ .
+   From (18) it follows that E ∈ End(Πρ ) commutes with λρ for all λ ∈ L/Lc iff
+Iψ ◦ E ◦ Iψ−1 commutes with all [λ]ρ⊗ψ , thus we have a canonical isomorphism
+                                 EndL/Lc (Πρ ) ∼
+                                               = EndL/Lc (Πρ⊗ψ ).                 (19)
+   For any standard Levi L let us choose a set CuspL of cuspidal irreducible repre-
+sentations of L, in such a way that any cuspidal irreducible representation of L is
+isomorphic to a unique representation ρ ⊗ ψ, where ρ ∈ CuspL , and ψ : L/Lc → k
+is an unramified character of L. We can (and will) make this choice in such a way
+that ρ|ιL (XL ) is trivial for ρ ∈ CuspL .
+               K
+   Let CuspS L ⊂ CuspL beKthe S       set of such ρ ∈ CuspL that iG
+                                                                  L (ρ)
+                                                                       K
+                                                                          6= 0; set
+                                             K
+Cusp := CuspL and Cusp := CuspL .
+           L                               L
+                     L
+     Set H̃ :=               Endk[L/Lc ] (ΠK
+                                           ρ ).
+                   ρ∈CuspK
+                                                                                  29
+
+
+  We have [λ]ρ ∈ H̃ for ρ ∈ CuspK
+                                L . For λ ∈ X define [λ] ∈ H̃ by
+                                 X X
+                             λ=              [λ]ρ ,                            (20)
+                                    L ρ∈CuspK
+                                            L
+
+
+                                 P Levi subgroups, such that λ ∈ XL . K
+where L runs over the set of standard
+  We have an imbedding I =            Iρ : H ֒→ H̃, where Iρ : H → End(Πρ ).
+                               ρ∈CuspK
+
+
+1.2. We are going to define an a-multifiltration on H̃. To clarify the idea we first
+carry out the construction under an additional simplifying assumption that the
+maximal compact subgroup K0 containing g is good, i.e. G = K0 · P0 (the general
+case will be treated in the next subsection).
+   If K0 is good, then the k[L/Lc]-module Πρ can be canonically trivialized in the
+following fashion.
+   By the definition the space of the induced representation Πρ is the space of
+functions on G with values in ρ ⊗ k[L/Lc] which transform accordingly under the
+right action of P . Let us say that f ∈ Πρ is constant if f |K0 takes values in
+ρ ⊗ 1 ⊂ ρ ⊗ k[L/Lc]. Then the space of constant elements is a K0 -submodule, and
+generates Πρ freely as a k[L/Lc]-module. We denote the space of constant elements
+in Πρ by (Πρ )0 . For an unramified character ψ of L the isomorphism Iψ sends
+(Πρ )0 to (Πρ⊗ψ )0 , and we have the canonical isomorphism (ΠP,ρ )0 −
+                                                                    g→iGP (ψ ⊗ ρ) =
+Πρ ⊗k[L/Lc ] ψ.
+                                                           L
+   We abbreviate (Πρ )K  0 = i0 (ρ).   So we have H̃ =         Endk[L/Lc ] (ΠK
+                                                                             ρ ) =
+  L                                                       Cusp
+       End(i0 (ρ)) ⊗ k[L/Lc ].
+CuspK
+
+  For a (partial) order ◭ on a we have an (a, ◭)-filtration on H̃ given by H̃◭λ :=
+  L
+       End(i0 (ρ)) ⊗ k[L/Lc]◭λ .
+ρ∈CuspK
+
+1.3. Consider now the case when K0 is an arbitrary maximal compact subgroup.
+   Recall that p is the point of the Bruhat-Tits building X fixed by K0 ; let A ∋ p
+be the apartment corresponding to L0 . Let Wp = K0 ∩ N m(L0 )/Lc0 ⊂ Waf f be the
+                       L                              c              c
+stabilizer of p, and Waf f ⊂ Waf f be the subgroup (L ∩ N m(L0 ))/L0 . The groups
+             c                                                  L
+N m(L0 ), L ∩ N m(L0 ) act on A respectively through Waf f , Waf f .
+   Notice that P c = Lc · U .
+Lemma 1.4. The map w 7→ K0 wP c provides a bijection
+                                      L
+                          Wp \Waf f /Waf f−
+                                          g→K0 \G/P c .                        (21)
+   Proof First notice that since K0 , L0 are in good relative position we have
+K0 ⊃ Lc0 , and obviously Lc0 ⊂ P c , so the expression K0 wP c is meaningful.
+   Let Waf f (L) denote N mL (L0 )/Lc0 .             On the LHS of (21) the
+                      L
+group Waf f (L)/Waf     f  acts from the right.            From the Bruhat de-
+composition L = (P0 ∩ L) · N mL (L0 ) · (P0 ∩ L) we see, using
+the inclusion P0 ∩ L = L0 · (U ∩ L) ⊂ L0 · Lc , that the map
+             L                                     c
+Waf f (L)/Waf  f = N mL (L0 )/N mLc (L0 ) → L/L is an isomorphism.
+                                         c       c
+   On the RHS of (21) the group L/L = P/P acts from the right. The map (21)
+obviously agrees with the action of L/Lc. Moreover, we claim that the action on
+both sides is free. Indeed, the right action of L/Lc = P/P c on G/P c is obviously
+30                             ROMAN BEZRUKAVNIKOV
+
+
+free; since the map G/P c → K0 \G/P c is proper, the stabilizer of any point in
+K0 \G/P c is compact. However L/Lc is a (discrete) free abelian group, so it does
+not contain compact subgroups. The same argument applies to the LHS (with
+“finite-to-one” replacing “proper”).
+   Thus it is enough to prove that the map Wp \Waf f /Waf f (L) → K0 \G/P is an
+isomorphism. This can be reformulated via the Bruhat-Tits building X as follows.
+   Any points x ∈ X, z ∈ X −X lie in the closure of some apartment A. Moreover, if
+x′ ∈ A, z ′ ∈ A−A is another pair of points, such that x′ = g(x), z ′ = g(z), then also
+x′ = w(x), z ′ = w(z) for some element w ∈ WA , where WA = N m(A)/Stab(A) ∼           =
+Waf f .
+   The fact that x and z lie in one apartment follows from [BT1] 7.4.18(ii). To
+check the second statement recall that by Lemma 3.8 of part 1 there exists a unique
+geodesic ray connecting a point in X and a point in X − X. In particular the rays
+[x, z), g ([x, z)) = [x′ , z ′ ) lie in A since there endpoints lie in A. Hence by [BT1]
+7.4.8 there exists w ∈ WA such that g|[x,z) = w|[x,z) . By continuity of the action of
+g, w we get g(z) = w(z).
+                             L                                                   c
+1.5. For x ∈ Wp \Waf f /Waf    f let (G/U )x be the corresponding orbit of K0 × P .
+                        p
+   Let the subgroup Wf ⊂ Aut(A) be generated by reflections in all hyperplanes
+                                                           p
+parallel to root hyperplanes and passing through p; let Waf  f be generated by Waf f
+       p                                    p
+and Wf . Let Λ be the intersection of Waf f with the group of translations; it is
+                                                                 p       p
+obvious that Λ is a lattice in a = X ⊗ R containing X, and Waf     f = Wf ⋉ Λ.
+                                                      L            p   p     L
+   Consider the projection πL : Wp \Waf f /Waf f → Wf \Waf f /Waf              f  =
+    L        PL
+Λ/Waf f   −→ aL ⊂ a;            denote its image by ΛL .          For λ    ∈   ΛL set
+            S
+(G/U )λ =     (G/U )x .
+            πL (x)=λ
+     Now we get a ΛL -grading on Πρ for ρ ∈ CuspL as follows
+                                            M
+              Πρ = Cc (G/U )K ⊗H(Lc ) ρ =      Cc (G/U )Kλ ⊗H(Lc ) ρ.              (22)
+                                              λ∈ΛL
+
+     For λ ∈ a we now set
+                        H̃λ = {h ∈ H̃ | h(ΠK        K
+                                           ρ )ν ⊂ (Πρ )ν+λ },                      (23)
+                                             M
+                                    H̃◭λ =         H̃µ .                           (24)
+                                             µ◭λ
+
+Comparison of the definitions shows that the latter filtration coincides with the one
+introduced in 1.1 when K0 is good.
+1.6. For a (partial) order ◭ on a we have defined an (a, ◭)-filtration on H̃. Let
+H◭λ be the induced filtration on H ⊂ H̃.
+   The next Proposition is the key technical result needed for our definition of the
+trace functional.
+   For a standard Levi L1 , ρ ∈ CuspL1 the space of Πρ is the space of ρ ⊗ k[L1 /Lc1 ]-
+valued functions on G transforming accordingly under the right action of P1 ; for
+L ⊃ L1 and x ∈ K\G/P let mρx ∈ End(ΠK    ρ ) be multiplication by the δ-function of
+                  right KP× P double coset.
+the corresponding P
+   Set also mx =                mρx .
+                   L′ ⊂L ρ∈CuspK′
+                               L
+                                                                                        31
+
+
+Proposition 1.7. Fix a standard Levi L ⊃ L1 , ρ ∈ CuspK  L1 , x ∈ K\G/P and
+a ∈ R>0 . Then for dominant enough λ ∈ XL+ there exists an element hρx,λ ∈ H
+                      P                w(ρ)                    P
+such that I(hρx,λ ) =       [λ]w(ρ) · mx + h′ , where h′ ∈         H̃4λ−a·r .
+                      L2 =w(L1 )⊂L                                   r∈Σ+ −Σ+
+                                                                            L
+
+
+Remark 1.8. The construction of the trace functional will use only the fact I(hρx,λ )−
+   P                 w(ρ)
+          [λ]w(ρ) · mx    ∈ H̃≺λ . The stronger condition stated in the Proposition
+L2 =w(L1 )⊂L
+will play a role only in the proof that the constructed functional satisfies property
+iii) of 0.23.
+    We will deduce the Proposition from the matrix Payley-Wiener Theorem which
+describes the image of the imbedding I (see [BR], §21). Let us first recall its
+contents.
+    If M1 , M2 are two modules over a free abelian group Zn then by
+a rational morphism from M1 to M2 we will mean an element of
+HomF rac(k[Zn ]) M1 ⊗k[Zn ] F rac(k[Zn ]), M2 ⊗k[Zn ] F rac(k[Zn ])                 where
+F rac(?) is the field of fractions of a commutative ring ?.
+    We recall the necessary part of the theory of intertwining operators. Suppose
+that standard Levi L1 , L2 are conjugate, so we have L2 = w(L1 ) for some w ∈ W .
+    Then there exists a canonical rational isomorphism of G-modules Iw = Iwρ :
+Πρ → Πw(ρ) , such that Iw ◦ [λ]ρ = [w(λ)]w(ρ) ◦ Iw for λ ∈ L/Lc satisfying:
+    i) Transitivity: if L2 = w1 (L1 ), L3 = w2 (L2 ) are standard Levi then Iw2 w1 (m) =
+Iw2 ◦ Iw1 (fw1 ,w2 m) for some rational function fw1 ,w2 ∈ F rac(k[L1 /Lc1 ]).
+    ii) Compatibility with induction: if L ⊃ L1 , L2 , L2 = w(L1 ) then for a repre-
+                                                ρ              ρ
+sentation ρ ∈ CuspL1 we have Iwρ = iG                                L              c
+                                            L (Iw,L ), where Iw,L : iL1 (ρ ⊗ k[L1 /L1 ]) →
+ L                c
+iL2 (ρ ⊗ k[L2 /L2 ]) is the intertwining operator between the L-modules.
+                                             ρ
+    We define the rational morphisms Rw         : EndL1 /Lc1 (Πρ ) → EndL2 /Lc2 (Πw(ρ) ) by
+                      −1
+Rw (E) = Iw ◦E ◦Iw . Notice that the operators Rw satisfy the stronger transitivity
+condition:
+                                   Rw1 w2 = Rw1 ◦ Rw2 .
+    Let L1 , L2 be standard Levi subgroups such that L2 = w(L1 ) and ρ1 ∈ CuspL1 ,
+ρ2 ∈ CuspL2 be such that ρ2 = w(ρ1 ) ⊗ ψ for an unramified character ψ. Identify
+                                                                          ρ
+EndL2 /Lc2 (Πw(ρ1 ) ) with EndL2 /Lc2 (Πρ2 ) by means of (19); then Rw      provides a ra-
+tional morphism EndL1 /Lc1 (Πρ1 ) → EndL2 /Lc2 (Πρ2 ). We denote it again by Rw or
+  ρ
+Rw   , this abuse of notation hopefully will not lead to a confusion.
+    For future reference we record the following
+Lemma 1.9. For standard Levi subgroups L2 = w(L1 ) and ρ1 ∈ CuspL1 , ρ2 ∈
+CuspL2 such that ρ2 = w(ρ1 ) ⊗ ψ as above we have Rw ([λ]ρ1 ) = [w(λ)]ρ2 provided
+λ lies in XL1 ⊂ L1 /Lc1 .
+                  ρ1
+   Proof Since Rw    ([λ]ρ1 ) = [w(λ)]w(ρ1 ) we have only to check that [w(λ)]w(ρ1 ) =
+[w(λ)]ρ2 (more precisely, that the two sides agree under (19)). By (18) this reduces
+to ψ(µ) = 1 for µ ∈ XL2 . But this is clear because XL2 acts trivially both on w(ρ1 )
+and on ρ2 ∈ CuspL2 .                                           L
+   There exists also another type of operators acting on          Πρ . Namely, for a
+                                                                Cusp
+given irreducible representation ρ of L there might exist a finite number of unram-
+ified characters ψ such that ψ ⊗ ρ ∼  = ρ. For such ψ the canonical isomorphism
+32                              ROMAN BEZRUKAVNIKOV
+
+
+Iψ : Πρ −
+        g→Πρ⊗ψ induces an automorphism of Πρ . This automorphism is defined
+uniquely up to a constant (we have to choose an isomorphism J : ρ ⊗ ψ −         g→ρ, and
+then get iG
+          L (J) ◦ Iψ : Πρ −
+                          g→Π ρ ); thus  we  have  a  uniquely   defined automorphism Tψ
+of EndL/Lc (Πρ ), Tψ : E 7→ (iG
+                              L (J)  ◦ Iψ ) ◦ E ◦ (i G
+                                                     L (J) ◦ Iψ )−1
+                                                                    .
+     The matrix Payley-Wiener Theorem ([BR], Theorem 33) asserts that
+                      P
+     An element E =       Eρ ∈ H̃ lies in the image of I iff
+                      CuspK
+   i) For any conjugate standard Levi subgroups L2 = w(L1 ) and ρ1 ∈ CuspL1 ,
+ρ2 ∈ CuspL2 such that ρ2 ∼  = w(ρ1 ⊗ ψ) for an unramified character ψ we have
+  ρ1
+Rw   (Eρ1 ) = Eρ2 .
+   ii) Tψ (Eρ ) = Eρ whenever ψ ⊗ ρ ∼
+                                    = ρ.
+
+1.10. We return to the proof of 1.7.
+   For standard Levi subgroups L′ = w(L) and ρ ∈ CuspK    L we will not distinguish
+between Πw (ρ) and Πw(ρ)⊗ψw (ρ) when this is not likely to lead to a confusion. We
+will also abuse notations writing Rw instead of Tψw(ρ) ◦ Rw . Thus Rw : End(Πρ ) →
+End(Πw(ρ) ) is a rational endomorphism of H̃.
+  The plan is to start with mρx · [λ]ρ and then average over the set of intertwining
+operators; we have to take care of the poles of intertwining operators, and also to
+ensure that we really get an element with the desired highest term. It will be not
+hard to see that each summand in the resulting sum is Tψ -invariant.
+Lemma 1.11. If L2 = w(L1 ), L ⊃ L1 , L2 are standard Levi, x ∈ K\G/P , λ ∈
+XL ⊂ XL1 , XL2 then we have Rw (mρx · [λ]ρ ) = mρx · [λ]ρ for any ρ.
+   Proof By 1.9 the action by intertwining operators induces the standard geometric
+action on coweights, thus Rw ([λ]ρ ) = [λ]w(ρ) for λ ∈ XL and w ∈ WL .
+   If we think of Πρ = iG                c       G L               c
+                         L1 (ρ ⊗ k[L1 /L1 ]) = iL iL1 (ρ ⊗ k[L1 /L1 ]) as sections of
+                                                       ρ
+the corresponding sheaf on G/P then the action of mx comes from an action on the
+sheaf; moreover the corresponding endomorphism of a stalk is either identity or 0.
+                                                                          w(ρ)
+From Rw (Id) = Id we conclude by compatibility that it sends mρx to mx .
+                     P
+   For h ∈ H̃, h =        hλ , where hλ ∈ H̃λ , let the support of h be
+                    L,λ∈ΛL
+
+                              supp(h) := {λ ∈ a | hλ 6= 0}.                            (25)
+
+1.12. Consider the following situation. Let L1 6= L2 be two conjugate standard
+Levi lying in a standard Levi L with rank(L) = rank(L1 ) + 1 = rank(L2 ) + 1. Then
+necessary L2 = w0L (L1 ), where w0L ∈ WL is the longest element. Let α be a nonzero
+element of the group XL1 ∩ (aL )⊥ . Notice that α is proportional to PL1 (r) where
+r is the only simple coroot of L which does not lie in ΣL1 .
+Lemma 1.13. a) Components of the divisor of poles of Rw0L have the form [α]ρ =
+const; in other words for some f ∈ k[t] for any h ∈ EndL2 /Lc2 ΠK
+                                                                w L (ρ)
+                                                                        we have
+                                                                             0
+Rw0L (f ([α]ρ )h) ∈ EndL2 /Lc2 ΠK
+                                w0L (ρ)
+                                        ⊂ EndL2 /Lc2 ΠK
+                                                      w0L (ρ)
+                                                              ⊗ F rac(k[L2 /Lc2 ]).
+  b) There exists n0 ∈ Z such that the following holds.                       Suppose that
+h ∈ EndL1 /Lc1 ΠK     ρ   is   such     that Rw0L (h)   is    regular,  i.e.      belongs to
+             K                                        K                         c
+EndL2 /Lc2 ΠwL (ρ) rather than to EndL2 /Lc2 ΠwL (ρ) ⊗ F rac(k[L2 /L2 ]).               Then
+             0                                        0
+ν ∈ supp(Rw0L (h)) ⇒ (w0L )−1 (ν) + nα ∈ supp(h) for some n with |n| 6 n0 .
+                                                                                                    33
+
+
+   Proof a) We can decompose L as an almost direct product of its center AL and
+derived group L[,] , i.e. we have a homomorphism π : AL × L[,] → L with finite
+kernel and cokernel. Obviously for j = 1, 2 the pull-back of the representation
+iL          c
+ Lj (k[Lj /Lj ] ⊗ ρ) under π decomposes as the tensor product of the free module
+                                                     [,]        L
+k[AL /AcL ] with the parabolically induced module iL
+                                                   Lj ∩L[,]
+                                                            (             k[(Lj ∩
+                                                                      Lj /Lcj ·AL ·(L[,] ∩Lj )
+ [,]            [,] c
+L )/(Lj ∩ L ) ] ⊗ ρ|Lj ∩L[,] ). The intertwining              operator Iwρ L ,L also decomposes
+                                                                           0
+          ρ|      [,]               ρ
+as Id ⊗ IwLL,L
+            1 ∩L
+               [,] , hence so does Rw L ,L . Thus the image of the divisor of poles of
+            0                            0
+ ρ                                          c                 c                [,]
+Rw L ,L under the finite covering Spec(k[L/L ]) → Spec(k[AL /AL ]) × Spec(k[(L     ∩
+   0
+L1 )/(L[,] ∩ L1 )c ]) is the product of Spec(k[AL /AcL ]) with a finite subscheme of
+Spec(k[(L[,] ∩ L1 )/(L[,] ∩ L1 )c ]) (notice that (L[,] ∩ L1 )/(L[,] ∩ L1 )c is a free cyclic
+group, so Spec(k[(L[,] ∩ L1 )/(L[,] ∩ L1 )c ]) is the punctured affine line). This finite
+                                                    Qn
+subscheme is necessary killed by the function           ([α]ρ − qj ) for some finite set of
+                                                           j=1
+                                                                                ρ
+elements q1 , ..., qn ∈ k × , hence the same holds for the divisor of poles of Rw L    . a)
+                                                                                  0 ,L
+follows by compatibility of the intertwining operators with induction.
+   Let us prove b). For j = 1, 2 consider the projection prj : K\G/Pjc → K\G/P c.
+                                           L                             L
+For y ∈ K\G/P c denote (ΠK       ρ )y :=        (ΠK        K
+                                                  ρ )x , (Πw L (ρ) )y :=      (ΠK       ) .
+                                                                                w L (ρ) x
+                                                                      0                        0
+                                          π1 (x)=y                                π2 (x)=y
+Notice that     (ΠKis a k[Zα]-submodule for any y ∈ K\G/P .
+                  ρ )y
+                                                                              c
+
+  By a) the intertwining operator Iw0L is a well-defined morphism
+ΠK                      K                      L
+ ρ ⊗k[Zα] k([α]ρ ) → Πw L (ρ) ⊗k[Zw0L (α)] k([w0 (α)]w0L (ρ) ). From compatibility with
+                            0
+induction it follows that Iw0L (ΠK                   K                L
+                                 ρ )y ⊗ k([α]ρ ) ⊂ (Πw L (ρ) )y ⊗ k([w0 (α)]w0L (ρ) ).
+                                                      0
+   Now from the definition it is easy to see that for j = 1, 2 the following diagram
+is commutative:
+                                                 prj
+                                K\G/Pjc −−−−→ K\G/P c
+                                                 
+                                πL j 
+                                     y
+                                                  
+                                               πL y
+
+                                              PLj
+                                   ΛLj       −−−−→          ΛL
+                                                                                  L
+   Hence for µ ∈ ΛL we have k[Zα]-submodule (ΠK
+                                              ρ )µ :=                                     (ΠK
+                                                                                            ρ )λ , and
+                                                                              λ∈P−1
+                                                                                 L
+                                                                                    (µ)
+                                                       L                           1
+
+a k[Z · w0L (α)]-submodule (ΠK      ) :=
+                             w L (ρ) µ
+                                                              (ΠK      ) , so that Iw0L ((ΠK
+                                                                w L (ρ) λ                  ρ )µ ⊗
+                                   0                              0
+                                                  λ∈P−1
+                                                     L
+                                                        (µ)
+                                                       2
+
+k([α]ρ )) ⊂ (ΠK      ) ⊗ k([w0L (α)]w0L (ρ) ).
+              w L (ρ) µ
+                  0
+   It follows that Rw0L ((EndL1 /Lc1 ΠK                     K                L
+                                      ρ )µ ) ⊂ (EndL2 /Lc2 Πw L (ρ) )µ ⊗ k([w0 (α)]w0L (ρ) )
+                                                                          0
+where the [α]ρ (respectively [w0L (α)]w0L (ρ) )-invariant ΛL -grading on EndL1 /Lc1 ΠK  ρ
+(respectively on EndL2 /Lc2 ΠKw0L (ρ)
+                                      ) is induced by the grading on Π K
+                                                                       ρ , ΠK
+                                                                            w0L (ρ)
+                                                                                    as  in
+(23).                                                                          P i
+   Recall the following elementary fact. For a Laurent polynomial P =              ai t ∈
+k[t, t−1 ] set supp(P ) = {n ∈ Z | an 6= 0}. Let f ∈ k(t) be a rational function, and
+set nf = max(ord0 (f ), − ord∞ (f )). Then for P ∈ k[t, t−1 ] we have f P ∈ k[t, t−1 ] ⇒
+supp(f P ) ⊂ [inf(supp(P )) − nf , sup(supp(P )) + nf ].
+34                                ROMAN BEZRUKAVNIKOV
+
+
+   Now notice that for µ ∈ ΛL : P−1               L   −1
+                                       L2 (µ) = w0 (PL1 (µ)), and recall that by Lemma
+                      L              L
+1.9 Rw0L ([α]ρ h) = [w0 (α)]w0L (ρ) Rw0 (h).
+   It is clear that (EndL1 /Lc1 ΠK  ρ )µ is a finite graded k[Zα]-module for µ ∈ ΛL .
+Hence the above elementary fact implies that at least for fixed µ there exists such
+n0 that the condition b) of the Lemma holds for h ∈ (EndL1 /Lc1 ΠK          ρ )µ . But if
+it holds for some h it also holds (with the same n0 ) for h′ = l(h) where l is any
+element of AL /AcL . Since a finite number of components of the ΛL -grading generate
+EndL1 /Lc1 ΠK               c
+            ρ as an AL /AL -module, b) is proved.
+
+1.14. The next statement implies Proposition 1.7.
+   Let us choose such m ∈ Z>0 that PL (mr) ∈ XL for any L and any coroot r. In
+the notations of 1.13 choose α to be PL1 (mr).                     Y
+                                                             ρ
+   Let q1 , . . . , qn ∈ k × be a set of elements such that Rw L ·( ([α]ρ −qi )h) is regular
+                                                                  0
+for any ρ, L1 , L2 , L, w0L as in 1.13, α as above and h ∈ EndL1 /Lc1 (Πρ ) (such a set
+exists by 1.13a)).
+   For λ ∈ L1 /Lc1 denote
+                                           Y        n
+                                                    Y
+                    ρ
+                   Mx,λ = mρx · [λ]ρ                    ([PL1 (mr)]ρ − qi ).                   (26)
+                                         r∈Σ+ −Σ+ i=1
+                                                L
+
+
+Proposition 1.15. Let L2 = w(L1 ) 6= L1 , L ⊃ L1 be standard Levi subgroups,
+ρ ∈ CuspL1 , and x ∈ K\G/P .
+                                                ρ
+   a) For any λ ∈ L1 /Lc1 the element Rw (Mx,λ     ) is regular (i.e. lies in End(Πw(ρ) )
+                                            c
+rather than in End(Πw(ρ) ) ⊗ F rac(k[L
+                                      2 /L
+                                           2 ])).
+                                   ρ                           w(ρ)
+     b) If L2     ⊂     L then Rw Mx,λ                =     Mx,w(λ) .         Moreover,      if the
+                                                            ρ
+integer    m    used    in     the definition of           Mx,λ       is   large   enough,     then
+ w(ρ)                           P
+Mx,w(λ)   − mx [λ]w(ρ) ∈             H̃4λ+2nδL −ar .
+                             r∈Σ+ −Σ+L                        
+                                                           ρ
+     c) If λ ∈ XL is dominant enough and L2 6⊂ L, then Rw Mx,λ   ∈
+      P                            L  1
+                                        P
+            H̃4λ+2nδL −ar , where δ = 2   r.
+r∈Σ+ −Σ+L                                       r∈Σ+ −Σ+
+                                                       L
+
+
+   Proof b) The first statement follows directly from Lemma 1.11 and 1.9. To see
+the second notice that
+              ρ
+                                             X
+  supp(Rw (Mx,λ  − mx [λ]w(ρ) )) = {λ +               ir mr | 0 6 ir 6 n} −
+                                                r∈PL1 (Σ+ −Σ+
+                                                            L
+                                                              )
+                                   X                              [
+                       {λ +                     nmr} ⊂                      a4λ+2nδL −mPL1 (r)
+                              r∈PL1 (Σ+ −Σ+
+                                          L
+                                            )             r∈PL1 (Σ+ −Σ+
+                                                                      L
+                                                                        )
+
+   (Here we used that λ, 2δ L ∈ XL ⊂ XL1 , so PL1 (λ + 2nδ L ) = λ + 2nδ L ). It is
+well-known that PL1 preserves 4 (see e.g. [BW] Lemma 6.4 on p. 139, statement
+2), so the statement is clear.
+   Let us prove a). Recall that the set of standard Levi conjugate to L1 is in
+bijection with chambers into which the root hyperplanes divide aL1 ; the bijection
+sends a chamber C to LC = wC (L1 ), where wC ∈ W is an element such that
+w(C) ∈ a+ (such an element is defined uniquely up to right multiplication by an
+element of WL ; we also have wC (C) = a+                  +
+                                         LC ). Let C+ = aL , C be the chambers
+                                                                                                     35
+
+
+corresponding respectively to L1 , L2 . On the set of chambers we have the length
+function ℓ(C) = #{r ∈ PL1 (Σ+ ) | hr, αi < 0 for α ∈ C} (the latter condition
+will be abbreviated as hr, Ci < 0). We can choose a sequence of chambers C0 =
+C+ , C1 , . . . , Cn = C so that Ci and Ci+1 have a common face of codimension 1,
+and ℓ(Ci ) = ℓ(Ci−1 ) + 1. Let ri ∈ PL1 (Σ+ ) be the (only) element such that
+hri , Ci−1 i > 0, hri , Ci i < 0, and Li = LCi . The sequence C1 , . . . Cn can be chosen
+so as to satisfy the following additional property:
+
+               ri ∈ PL1 (Σ+                 +
+                          L ) =⇒ rj ∈ PL1 (ΣL ) & Lj ⊂ L for all j < i.                         (27)
+
+Indeed, such a sequence can be constructed inductively as follows. Suppose that
+C1 , . . . , Ci are already chosen, and that L1 , . . . , Li ⊂ L, r1 , . . . , ri ∈ PL1 (Σ+
+                                                                                          L ).
+Assume first that there exists a coroot r ∈ ΣL separating Ci from C (i.e. hr, αi ·
+hr, βi < 0 for α ∈ Ci , β ∈ C). Then there exists also a coroot r ∈ Σ+             L which is
+orthogonal to a codimension 1 face of Ci , and separates Ci from C, for otherwise
+all simple roots of L are nonnegative on the cone wCi (C), while some positive root
+of L is negative there, which is impossible. Any (co)root separating Ci from C
+separates also C+ from C; since r ∈ Σ+          L we get hr, C+ i > 0, hr, Ci i > 0. We now
+take ri+1 = PL1 (r) ∈ PL1 (Σ+        L ), and C i+1 to be the chamber neighboring with Ci
+and separated from Ci by r′ . It is clear that Li+1 ⊂ L.
+    If none of the roots separating Ci from C lies in ΣL , we choose the remain-
+ing Ci+1 , . . . , Cn = C arbitrary (keeping only the requirements dim(Ci ∩ Ci+1 ) =
+dim(Ci ) − 1, ℓ(Ci+1 ) = ℓ(Ci ) + 1). Since ri separates Cj from C for j < i we see
+that the resulting sequence of chambers satisfies (27).
+    Fix (C1 , . . . , Cn ) satisfying (27); let l be the smallest integer for which rj 6∈ Σ+
+                                                                                           L.
+We can write:
+
+
+       ρ                                                                                    ρ
+  Rw (Mx,λ ) = (RwC ·w−1        ) ◦ (RwC        −1
+                                              ·wC      ) ◦ . . . (RwC       −1 )
+                                                                          ·wC      ◦ RwCl (Mx,λ )=
+                         Cn−1           n−1      n−2                l+1      l
+                                                                                 wC (ρ)
+          (RwC ·w−1 ) ◦ (RwC ·w−1 ) ◦ · · · ◦ (RwC ·w−1 )(Mx,wlC (λ) ) =
+                 Cn−1          n−1   Cn−2               l+1   Cl         l
+                               Y                                  
+                  RwC ·w−1         ([wCn−1 (mrn )]wCn−1 (ρ) − qj ) ◦ . . .
+                      n   Cn−1
+                                    Y                               
+                    ◦ RwC ·w−1          ([wCl (mrl+1 )]wCl (ρ) − qj )
+                            l+1  Cl
+                                                                                
+                                              Y           Y n
+           [wCl (λ)]wC (ρ) mxwCl (ρ)                         ([mr]wCl (ρ) − qj ) . (28)
+                        l
+                                       r∈PL1 (Σ+ −Σ+
+                                                   L
+                                                     ),r6=ri j=1
+
+
+   Notice that Li−1 , Li generate a standard Levi Li of rank equal to rank(Li ) +
+        −1         i
+1, wCi wC i−1
+              ∈ w0L · WLi−1 and wCi−1 (ri ) is the only simple root of Li which
+is not a root
+            Yof Li−1 . Hence, by the choice of q1 , . . . , qn , each of the operators
+RwC ·w−1      ([wCi−1 (mri )]wCi−1 (ρ) − qj ) is regular, and thus the whole expression
+    i   Ci−1
+
+(28) is regular.
+   Let us prove c). We show that for C1 , . . . , Cn , l as above and i > l
+                 ρ                          ρ
+  µ ∈ supp(wCi (Mx,λ )) ⇒ ∃ν ∈ supp(wCi−1 (Mx,λ )), r ∈ Σ+ − Σ+
+                                                              L : µ 4 ν − ar.
+36                                     ROMAN BEZRUKAVNIKOV
+
+                      −1                  i
+   Recall that wCi−1 wC i
+                          ∈ w0L · WLi ; also the vector α := wCi−1 (ri ) ∈ XLi is
+                                                                            ρ
+orthogonal to XLi . Thus by Lemma 1.13b) there exists ν ∈ supp(wCi−1 (Mx,λ     ))
+                  i                                                            hν,αi
+such that ν = w0L (µ) + N α, where |N | < n0 . Decompose ν as ν = PLi (ν) + hα,αi    α.
+              +
+   Let r̃i ∈ Σ be a coroot such that PL1 (r̃i ) = ri . Then wCi−1 (r̃i ) ≻ 0 ≻ wCi (r̃),
+because (the dual root to) wCi−1 (r̃i ) is positive on wCi−1 (Ci−1 ) ⊂ a+ , while (the
+dual root to) wCi (r̃) is negative on wCi (Ci ) ⊂ a+ .
+   Since the orthogonal projection PL preserves 4, we have:                     α =
+                                i            i
+PLi−1 (wCi−1 (r̃i )) ≻ 0 ≻ w0L (α) = (w0L )−1 (α)PLi (wCi (r̃i )). Moreover, since α
+belongs to a fixed finite subset of a+                                         L
+                                       L1 , there exists b > 0 and r ∈ Σ+ − Σ+ such
+that α < br.
+   To finish the proof it is enough to show that hν, αi ≫ 0 if λ ∈ XL is very
+dominant; in fact it is enough to ensure that
+                                        a       
+                               hν, αi >      + n0 hα, αi,                         (29)
+                                           b
+                          i
+                                                                 i
+                                                        hν,αi
+for then we get µ = (w0L )−1 (ν − N α) = PLi (ν) + hα,αi      − N w0L (α) ≺ PLi (ν) ≺
+           hν,αi
+PLi (ν) + hα,αi  α 4 ν − ar.
+   To check (29) notice that from 1.13b) it follows by induction on i that for w = wCi
+                                                  ρ
+there exists a finite set S such that supp(Rw (Mx,λ  )) is contained in the convex hull
+               ρ
+of w(supp(Mx,λ )) + S for any λ, ρ (where we used the notation A + B = {a + b|a ∈
+A, b ∈ B}). Hence
+
+                 min          ρ
+                                       (hν, αi) 6           min    ρ
+                                                                            (hν, αi) + const .
+          ν∈supp(RwC        (Mx,λ ))                ν∈wCi−1 (supp(Mx,λ ))
+                      i−1
+
+
+Since α = wCi−1 (ri ) we have                   min    ρ
+                                                                hν, αi =        min ρ
+                                                                                            hν, ri i ≫ 0 if
+                                        ν∈wCi−1 (supp(Mx,λ ))               ν∈supp(Mx,λ )
+
+ν ∈ XL is very dominant, because our assumption i > l implies that ri ∈ Σ+ − Σ+
+                                                                              L.
+This proves (29).
+
+1.16. To deduce Proposition 1.7 from 1.15 we take
+                                    X
+                         hρx,λ :=               ρ
+                                          Rw (Mx,λ ).                                                 (30)
+                                              L2 =w(L1 )
+
+
+     From Proposition 1.15 it follows that hρx,λ                      ∈       H̃ and that hρx,λ −
+      P             w(ρ)     P
+           [λ]w(ρ) mx    ∈         H̃4λ+2nδL −ar .                    It is obvious that hρx,λ is
+L2 =w(L1 )⊂L                       r∈Σ+ −Σ+
+                                          L
+invariant underP  all the intertwining operators Rw (more precisely Rw (hρ′ ) = hw(ρ′ )
+where hρx,λ = CuspK hρ′ , hρ′ ∈ End(Πρ′ )). Also it is immediate to check that
+Tψ (mρx ) = mρx , Rw ◦ Tψ ◦ Rw −1
+                                  = Tw(ψ) when Tψ is defined. If ρ ⊗ ψ ∼
+                                                                       = ψ for some
+irreducible representation ρ of a standard Levi L, then ψ|ιL (XL ) = 1, hence for
+λ ∈ XL we have Tψ ([λ]ρ ) = [λ]ρ⊗ψ .
+   This implies that each summand in (30) is invariant under Tψ when the latter
+is defined, provided λ ∈ XL . By the matrix Payley-Wiener Theorem we conclude
+that hρx,λ ∈ I(H). Since 2δ L ∈ XL the coweight λ + 2nδ L runs over the set of very
+dominant elements of XL when λ does. Proposition 1.7 is proved.
+                                                                                       37
+
+
+Corollary 1.17. Set
+                               X                      1
+                 hλx :=                                            hρ .
+                                          #{L′   ⊂ L|L′ ∈ WL (L1 )} x,λ
+                          L1 ⊂L,ρ∈CuspK
+                                      L
+                                      1
+
+
+Then we have
+                                                 X
+                           I(hλx ) − [λ]mx ∈              H̃4λ−a·r
+                                               r∈Σ+ −Σ+
+                                                      L
+
+
+provided λ ∈ XL+ is dominant enough, and the integer m used in (26) is large.
+1.18. We next want to consider associated graded objects, so we have to pass to
+a complete order.
+   Let 6 be any complete order on X strengthening 4. It yields filtrations on H, H̃
+as in 1.1–1.6.
+   We write grH for the associated graded algebra of H, 6, and use the letter I for
+the induced imbedding grH ֒→ grH̃ ∼ = H̃.
+   We have an obvious map K0 → gr0 H.
+Theorem 1.19. a) grH is Noetherian.
+   b) Let M be any finitely generated graded module over grH. Then for all but
+finitely many λ ∈ X we have T r(g, Mλ ) = 0.
+  Proof Let Z be the center of H.
+  The explicit description of Z (Theorem 2.13 of [BD]) implies that the following el-
+ements form a basis in I(grZ) ⊂ grH̃ ∼
+                                     = H̃. For a standard Levi L,Pρ ∈ CuspK   L, λ∈
+(L/Lc)+ such that ψ(λ) = 1 whenever ψ ⊗ ρ ∼  =  ρ denote z ρ
+                                                           λ :=       [λ] w(ρ)⊗ψw(ρ) ,
+                                                                         w(λ)=λ
+where w runs over the set of such w ∈ W/WL for which w(L) is a standard parabolic
+and w(λ) = λ.
+   It follows that for λ ∈ X + we have [λ] ∈ grZ.
+   It is clear that grZ is central in grH, and (as we will soon see) it is of finite type.
+   Thus to prove a) it suffices to show that grH is a finite grZ module. The main
+step is the next:
+Lemma 1.20. There exists λ0 ∈ a such that grHλ 6= 0 ⇒ λ ∈ λ0 + a+ .
+    Proof of the Lemma. Assume the contrary. Then for any N > 0 we can find
+λ ∈ X such that hλ, ri < −N for a simple coroot r, and grHλ 6= 0. Let λ be       Plike
+that, then there exists h ∈ H such that λ ∈ supp(h) ⊂ X6λ . Decompose h = hρ ,
+hρ ∈ End(Πρ ), and fix ρ ∈ CuspK L for which supp(hρ ) ∋ λ. Since hr, λi 6= 0 we have
+r 6∈ ΣL . Let L′ be the standard Levi such that L′ ⊃ L, rank(L′ ) = rank(L) + 1
+                                                hλ,ri
+and r ∈ ΣL′ . Then writing λ = PL′ (λ) + hPL (r),P   L (r)i
+                                                            PL (r) we get by 1.13b) an
+                                                                     ′            ′
+element ν ∈ supp(RwL′ (h)) = supp(h) such that ν = w0L (λ) + N ′ w0L (PL (r)) =
+                       0         ′
+               hλ,ri           ′
+PL′ (λ) + hPL (r),P L (r)i
+                           + N    w0L (PL (r)), where |N ′ | < n0 . We have PL (r) ≻ 0,
+   ′                           ′
+w0L (PL (r)) = PwL′ (L) (w0L (r)) ≺ 0, hence taking N > n0 · hPL (r), PL (r)i we
+                   0
+obtain ν ≻ PL′ (λ) ≻ λ ⇒ ν > λ. This contradicts the condition supp(h) ⊂ a6λ .
+Lemma 1.21. For any L fix λL ∈ XL+ . The subalgebra grZL ⊂ grZ gener-
+ated by [λ] for λ ∈ λL′ + XL+′ , L′ ⊆ L is of finite type. The algebra ZL :=
+38                                    ROMAN BEZRUKAVNIKOV
+
+      L                 L
+                                   k · [λ]ρ ⊂ H̃, where L′ runs over the set of standard Levi,
+L′ ,ρ∈CuspK
+          L′
+             λ∈(L′ /(L′ )c )∩a+
+                              L
+is a finite grZL -module.
+
+   Proof follows from the next easy fact. Fix n ∈ Z>0 and consider the subsemi-
+group in Zm                      I
+             >0 generated by Z>n , where I runs over the subsets of [1, m]. This
+semigroup is finitely generated, and Zm    >0 is the union of a finite number of cosets
+of this semigroup. L
+   It is clear that          grH̃λ is a finite module over ZG . Hence by 1.21 it is also
+                    λ∈λ0 +a+
+                                                   L
+finite over grZG . By 1.20 we have grH ⊂                grH̃λ for some λ0 and by 1.21
+                                                     λ∈λ0 +a+
+grZG is Noetherian, hence gr(H) is finite over grZG . a) is proved. Notice that
+along the way we have shown also that grH is finite over grZ ⊃ grZG .
+   Proof of b). Consider a subalgebra SL ⊂ grH generated by the highest terms of
+the elements hλx (see 1.17), with large λ ∈ XL+ , i.e. by the elements [λ]mx .
+   Notice
+   P      that SL ⊃ grZL (for appropriate choice of coweights λL in 1.21), because
+         [λ]mx = [λ]. Hence grHL is finite over SL , and thus any finite grHL -
+x∈K\G/P
+module is also finite over SL .
+   We prove by induction on corank of L, that for any graded finitely generated
+S-module M we have T r(g, Mλ ) = 0 for all but finitely many λ ∈ XL . The step of
+induction is as follows.
+   Let M be an XL -graded finitely generated SL -module.
+   By the definition SL contains for some λL ∈ XL+ the subalgebra AL [λ0 + XL+ ],
+where
+
+                                                 M
+                                       AL :=             k · mx .                        (31)
+                                               x∈K\G/P
+
+
+
+Hence the proof of the Hilbert Basis Theorem implies that for any graded finitely
+generated SL -module M there exists µ0 and a finite AL -module M0 such that Mµ ∼
+                                                                               =
+M0 for µ ∈ µ0 + XL+ , this isomorphism being compatible with the action. In other
+                                                                     L
+words we have an isomorphism of graded AL [λ0 + XL+ ]-modules              Mµ ∼=
+                                                                                     +
+                                                                              µ∈µ0 +XL
+M0 [µ0 +   XL+ ].
+   Further, for λ ∈ λ0 + XL+ , Mλ ∼ = M0 is the direct sum of the images of idem-
+potents mx ∈ AL , and we have g(Im(mx )) = Im(mg(x) ). We have assumed that g
+acts on K\G/P without fixed points, hence tr(g, Mλ ) = 0.
+   It is obvious
+           L     that Λ − ∪(λ0 + XL+ ) is a finite union of cosets µi + XL+i , Li ⊃ L.
+Then             Mλ is a finitely generated graded module over SLi , because it is
+               +
+        λ∈µi +XL
+                    i   L
+contained in                    Mλ which is finite over grZλ . Hence the statement for M
+                λ∈µi +a+
+                       L    i
+follows from the induction hypothesis. The Theorem is proved.
+   Now for P any finitely generated graded module N over grH we can define
+T r(g, N ) := T r(g, Nλ ) the sum being finite by the last Theorem.
+                λ
+     Let M be a finitely generated H-module.
+                                                                                            39
+
+
+1.22. We can choose an (a, 6)-filtration F on M compatible with 6 so that as-
+sociated graded module grF M is a finite grH-module (such a filtration is called a
+good filtration).
+
+1.23. From now on we assume that the complete order 6 is induced by the lex-
+icographic order under the isomorphism a ∼         = Rr , λ 7→ ((e1 , λ), ..., (er , λ)), where
+(e1 , . . . , er ) is a basis in (X ⊗ Q) , such that (ei , r) > 0 for r ∈ Σ+ .
+                                        ∗
+
+
+Proposition 1.24. a) T r(g, grF M ) does not depend on F .
+  We set T r(g, M ) := T r(g, grF M ). Then T r(g, M ) satisfies:
+  b) 0.23i), and
+  c) 0.23ii).
+   Proof Recall the following:
+Fact 1.25. Let H be an algebra with an increasing Z-filtration bounded below (i.e.
+F6n = 0 for n ≪ 0), such that the associated graded algebra is Noetherian; let M
+be a finite H-module.
+   Let gr(H)-Mod be the category whose objects are finitely generated graded gr(H)-
+modules and morphisms are homomorphisms
+                               P              of modules preserving the degree up
+to a shift (i.e. M or(M, N ) =    M or(M, N )ν where M or(M, N )ν = {φ : M →
+N | φ(Mλ ) ⊂ Nλ+ν ). Then the class of grM in the Grothendieck group K 0 (gr(H)-
+Mod) does not depend on the choice of a good filtration on M .
+   Thus [M ] → [grM ] yields a well-defined homomorphism from K 0 (H-Mod) to
+  0
+K (grH-Mod).
+   Proof : see e.g. [CG] Corollary 2.3.19 on p. 79. (The authors of loc. cit.
+consider the Grothendieck group of the category of finitely generated grH-modules
+without grading; however their argument actually proves the above statement as
+well).
+   We apply 1.25 inductively.
+   Let the sublattice Λ0 ⊂ a be generated by ΛL for all L. It is obvious that the
+set of indices λ for which grHλ 6= 0 is contained in Λ0 .
+   For i ∈ [1, .., n] let Λ(i) be the image of Λ0 in Qi under pri : λ →
+((λ, e1 ), . . . , (λ, ei )); it is convenient to choose ei so that Λ(i) ⊂ Zi . Equip
+Λ(i) with the lexicographic order 6 induced from Zi . We have a Λ(i) -filtration
+  (i)                 S
+F (H) =                       H6λ on H; notice that F (i) is induced by the corresponding
+ 6λ
+             λ,pri (λ)=λ
+Λ(i) -filtration on H̃.
+   Furthermore,L consider the one parameter filtration H̃ given by
+H̃ 6 n =                H̃λ , and the induced filtration on H denoted by the
+  i+1         (λ,ei )6n
+same symbol.
+  It yields a filtration on grF (i) H given by the rule: grF (i) H 6 n =
+                                                                         i+1
+  L                                               (i)            (i)
+     [grF (i) Hλ ] 6 n where [grF (i) Hλ ] 6 n = F (H) ∩ H 6 n /F (H) ∩ H 6 n .
+                  i+1                      i+1
+                                                    6λ           i+1
+                                                                        <λ           i+1
+λ∈X (i)
+   Notice also that this filtration on grF (i) H is induced by the 6 -filtration on
+                                                                             i+1
+
+H̃ ∼
+   = grF (i) (H̃) under the imbedding grF (i) (I).
+   We see that grF (i+1) H = gr 6 [grF (i) H].
+                                  i+1
+40                               ROMAN BEZRUKAVNIKOV
+
+
+   If now a good X-filtration F on an H-module M is given, then again we can form
+                                     (i)     S
+Λ(i) -filtrations F (i) (M ), where F (M ) =       M6λ . Consider the associated
+                                       6λ
+                                                    λ,pri (λ)=λ
+graded grF (i) M ; on grF (i) M we have a one parameter filtration denoted by 6 , and
+                                                                              i+1
+                                     S                        S
+given by [grF (i) Mλ ] 6 n =                   M6λ /                   M6λ .
+                       i+1
+                              pri (λ)=λ,(ei+1 ,λ)6n          pri (λ)<λ,(ei+1 ,λ)6n
+     Obviously, grF (i+1) M = gr 6 [grF (i) M ].
+                                 i+1
+
+     By inverse induction in i we see that 6 is good; hence using 1.25 and induction
+                                              i+1
+
+in i we get the following statement:
+                    (i)
+   The class of grF M in the Grothendieck group of the category of Λ(i) -graded
+  (i)
+grF H-modules, with morphisms preserving grading up to a shift, is independent on
+F.
+   (Actually to make a step of induction we need a variant of 1.25 applicable in
+the situation when H and M have some multi-grading respected by the filtration
+while grH and grM are considered as multi-graded objects with one additional
+index. One may say that what we need is exactly the statement 1.25 but with
+algebras/modules being algebras/modules in the category of multigraded vector
+spaces rather than in the category of vector spaces).
+   a), b) follow from the last italicized statement directly. c) is obvious: if M is an
+admissible representation, and M = MK then for large λ we have:
+     T r(g, M ) = tr(g, F6λ (M )) = tr(g, M ) = tr(δK · g, M) =
+                                                           Z
+                                                                          χM (g ′ g)dg ′ = χM (g)
+                                                                  g′ ∈K
+provided the integrand is constant.
+2. Geometric filtration and asymptotic cones. In 1.24 we have defined a
+functional T r(g, M ) satisfying property i), ii) of Theorem 0.23; it remains to prove
+that it satisfies also property iii). This will be accomplished in the next two sections
+by passing from the “spectral” filtration constructed above to a “geometric” one
+defined in terms of support of a distribution h ∈ H; the latter filtration is directly
+related to orbital integrals.
+   The main results of this section used in further arguments are Theorem 2.7,
+Proposition 2.12, and Theorem 2.15.
+2.1. We can assume that K is nice with respect to L0 (nice in the terminology of
+[BD] 2.1b), i.e. that for any pair of opposite parabolics P = L · U, P − = L · U − ,
+with L ⊃ L0 standard we have K = K + · K 0 · K − where as usual K + = U ∩ K,
+K − = U − ∩ K, K 0 = L ∩ K. (More precisely, the condition that K0 , L0 are in
+good relative position implies that there exists a K0 -stable lattice g ⊂ Lie G such
+that g = (g ∩ Lie U − ) ⊕ (g ∩ Lie L) ⊕ (g ∩ Lie U ); we can take g to be the Lie
+algebra of the O-algebraic group attached to the K0 -fixed point p of the building
+by the Bruhat-Tits theory [BT2]. We then obtain K from pN g for large N as in
+[BD]2.1b)).
+   Fix opposite parabolics P = L · U , P − = L · U − with P, L standard, and set
+CP = (G/U ×G/U − )/L. By H(CP ) we denote the space of K-biinvariant compactly
+supported measures on CP .
+   Consider the imbedding ψ : L ֒→ CP given by ψ : l 7→ (l · U, 1 · U − ) mod L.
+                                                                                           41
+
+
+   Let T ⊆ L0 be the (unique) maximal split torus contained in L0 . For λ ∈ X
+let Tλ ∈ T /T c be the coset of λ. (Recall that we have an imbedding X ֒→ T ,
+χ 7→ χ(p)).
+Proposition 2.2. Let C ⊂ G be a compact K-biinvariant set. For λ ∈ X + such
+that hλ, Σ+ − Σ+
+               L i ≫ 0, and t ∈ Tλ , there exists a unique bijection ΨC,t : K\C · t ·
+C/K → K\C · ψ(t) · C/K which satisfies ΨC,t (K · c1 tc2 · K) = K · c1 ψ(t)c2 · K for
+c1 , c2 ∈ C.
+  Proof We have only to check that
+  K · g1 tg2 · K = K · g1′ tg2′ · K ⇔ K · g1 ψ(t)g2 · K = K · g1′ ψ(t)g2′ · K
+                                                                for g1 , g2 , g1′ , g2′ ∈ C.
+                                                                          T
+  Set C′ = {g1 g2−1 |g1 , g2 ∈ C} ∪ {g2 g1−1 |g1 , g2 ∈ C}, and K ′ :=           gKg −1 for
+                                                                              g∈C′
+g ∈ C. It is clearly enough to verify that
+                   g1 ψ(t)g2 = ψ(t), g1 , g2 ∈ C′ =⇒ g1 tg2 ∈ K ′ · t · K ′              (32)
+
+                   g1 tg2 = t, g1 , g2 ∈ C′ =⇒ g1 ψ(t)g2 ∈ K ′ · ψ(t) · K ′              (33)
+                                                                               −1    −
+If equality in the LHS of (32) holds then we have: g1 = lu, g2 = t ltu where
+u ∈ U , u− ∈ U − , l ∈ L. Since g1 , g2 lie in the compact set C′ , the elements
+l, t−1 lt, u, u− are in some bounded subsets of L, U, U − . Hence the condition
+hλ, Σ+ − Σ+   L i ≫ 0 implies that (tg2 )
+                                         −1
+                                            u(tg2 ) ∈ K, (lt)u− (lt)−1 ∈ K, which yields
+      −1               −1 −1 −1
+g1 tg2 = [(lt)u− (lt) ] t[t ut] ∈ KtK.
+    If equality in the LHS of (33) holds, then g1 = tg2 t−1 ∈ C′ ∩ tC′ t−1 . It is well-
+known that for t ∈ Tµ , hµ, Σ+ − Σ+                      ′
+                                     L i ≫ 0 we have C ∩ tC t
+                                                              ′ −1
+                                                                    ⊂ C− · CL · C+ , where
+C+ , CL are bounded (independently of t) subsets of respectively U and L, and C−
+is an arbitrary small subset of U − ; in particular we can assume C− ⊂ (K ′ )− . Thus
+we have g1 = u− · l · u with u− ∈ K − , l ∈ CL , u ∈ C+ . Then g2 = t−1 g1 t, and we
+can assume t−1 ut ∈ (K ′ )+ . So finally we get (g1 , g2 )(ψ(t)) = (u− , t−1 ut)(ψ(t)) ∈
+K ′ × K ′ (ψ(t)).
+    If t ∈ Tµ where hµ, αi is so large for α ∈ Σ+ − Σ+       L that ΨC′′ ,t is defined for
+                ′′       −1
+t ∈ Tµ and C := {g1 g2 g3 | g1 , g2 , g3 ∈ C}, then obviously ΨC,t and ΨC,t′ agree on
+                            ′
+the intersection CtC ∩ CtS    C whenever this intersection is nonempty.
+                                                               S            Thus we have
+a bijection Ψ : K\(                C · Tλ · C)/K → K\(                  C · ψ(Tλ ) · C)/K.
+                      hλ,Σ+ −Σ+
+                              L
+                                i≫0                        hλ,Σ+ −Σ+
+                                                                   L
+                                                                     i≫0
+
+2.3. The map w 7→ K0 · w · K0 yields a canonical bijection
+                               Wp \Waf f /Wp −
+                                             g→K0 \G/K0 ,
+see [BT1] 7.4.15 (notice that since K0 and L0 are in good relative position we have
+K0 ⊃ Lc0 , so the expression K0 · w · K0 is meaningful).
+   Consider the projection prL : Wp \Waf f /Wp → Wfp \Waf p       p          p
+                                                            f /Wf = Λ/Wf = Λ .
+                                                                                   +
+
+For x ∈ Wp \Waf f /Wp we write Gx for the corresponding double coset in     S G, Hx
+for the space of elements in H supported in Gx , and we set Gλ :=                 Gx ,
+                                                                        prL (x)=λ
+          L
+Hλ :=           Hx .
+       prL (x)=λ
+  (Support of an element h ∈ H appearing here should not be confused with
+support of the corresponding element I(h) ∈ H̃ considered before (see (25)): the
+42                                 ROMAN BEZRUKAVNIKOV
+
+
+first one is an open compact subset of G while the second is a finite subset of X. To
+rule out the very possibility of such confusion we will sometimes refer to the first
+notion as to the geometric support, and to the second one as to the spectral support
+and write respectively suppspec and suppgeom ).
+    Let us choose C to be large enough; more precisely, we require the following. We
+can choose a finite number of elements wi ∈ Waf f , so that for
+                                                             S any w ∈ WS    af f there
+exist i1 , i2 such that wi1 wwi2 ∈ X + . Let us take C to be (K0 · wi ) ∪ (wi K0 ).
+                      S                          S            i              i
+Then we have                  C · Tλ · C ⊃                 Gµ .
+                  hλ,Σ+ −Σ+ i≫0             µ∈a+ ,hµ,Σ+ −Σ+ i≫0
+                         SL                               L
+     Denote (CP )µ :=          Ψ(KgK), H(CP )µ = {f ∈ H(CP ) | supp f ⊂ (CP )µ }.
+                        g∈Gµ
+     Thus we have a bijection
+                    [                                    [
+                                   K\Gµ /K −
+                                           g→                          K\Cµ /K.
+             µ∈a+ ,hµ,Σ+ −Σ+
+                           L
+                             i≫0                 µ∈a+ ,hµ,Σ+ −Σ+
+                                                               L
+                                                                 i≫0
+
+     Let us set
+                        M                                     M
+          P
+         HN =                        Hµ , H(CP )N =                        H(CP )µ ,
+                  hµ,αi>N,α∈Σ+ −Σ+
+                                 L
+                                                       hµ,αi>N,α∈Σ+ −Σ+
+                                                                      L
+
+                                             P
+and use the notation Ψ for the isomorphism HN  −
+                                               g→H(CP )N sending the δ-function
+of a double K-coset x on G to the δ-function of Ψ(x). (Here N ≫ 0).
+Lemma 2.4. Let C ⊂ G be compact. Let N be so large that ΨC·C,t is defined
+for hµ, Σ+ − Σ+
+              L i > N , t ∈ Tµ where C · C = {c1 c2 | c1 , c2 ∈ C}. Then we have
+supp(h) ⊂ C, h′ ∈ HN
+                   P
+                     ⇒ Ψ(h ∗ h′ ), Ψ(h′ ∗ h) are defined and
+                                   Ψ(h ∗ h′ ) = h ∗ Ψ(h′ ),
+                                    Ψ(h′ ∗ h) = Ψ(h′ ) ∗ h
+.
+     Proof follows directly from 2.2.
+Remark 2.5. Asymptotic semigroups. Before going on with the argument let us
+explain the geometric picture standing behind it.
+   Recall from [V1] that for a semisimple algebraic group G there exists a canonical
+way to degenerate G into one of its asymptotic cones C P isomorphic to the affine
+closure of the algebraic variety (G/U × G/U − )/L.
+   More precisely, in [V1] Vinberg constructs the so called universal semigroup G̃
+enjoying the following properties. (He works over an algebraically closed field of
+characteristic 0; his construction carries over immediately to the case of a split
+group over a field of characteristic 0).
+   Let R be the set of simple roots of G; let T ∼   = (A1 )R be the canonical partial
+compactification of the abstract Cartan group of the adjoint group G/A (where A is
+the finite center of G). Notice that T has a natural “coordinate cross” stratification,
+with the set of strata being in bijection with subsets of R, i.e. with conjugacy classes
+of parabolics. For a parabolic P let TP ⊂ T be the corresponding stratum, and let
+eP ∈ TP be the point all of whose coordinates are either 0 or 1 (so the coordinate of
+eP corresponding to a (co)root r ∈ ΣL is 0, and the one corresponding to a (co)root
+in Σ − ΣL is 1).
+                                                                                     43
+
+
+   G̃ is an algebraic semigroup equipped with a flat morphism ℘ : G̃ → T , such that
+the preimage of the open stratum is isomorphic to G ×A T . Further, for x ∈ TP
+the preimage ℘−1 (x) is isomorphic to the algebraic variety (G/U × G/U − )/L.
+   Now the canonical bijection Ψ can be characterized as follows.
+   For any parabolic P there exists an AL -invariant open neighborhood UP of
+℘−1 (eP ), and a continous AL -equivariant projection πP : UP → ℘−1 (eP ), such
+that πP |℘−1 (eP ) = Id, and the following holds.
+   Whenever KgK ⊂ UP and KxK ⊂ UP for g ∈ G and x ∈ CP ′ , where P ′ ⊃ P ,
+we have KxK = Ψ(KgK) ⇔ πP (KxK) = πP (KgK). In other words KxK and
+KgK are close in the topology of G̃.
+   Notice also that the domain of definition of Ψ : K\G/K → K\(CP )/K is a
+neighborhood of the stratum corresponding to P in the DeConcini-Procesi com-
+pactification of G [DCPr].
+   Probably it is possible to work directly with this geometric definition; we however
+found it more economical (though less transparent) to use the techniques employed
+here.
+
+Lemma 2.6. Suppose that l ∈ Lµ , where hµ, Σ+ − Σ+
+                                                 L i ≫ 0. Then Ψ(KlK) =
+Kψ(l)K.
+
+  Proof Obvious.                            S                   L
+  For a partial order ◭ on a we write G◭? =   Gµ , Geom◭? (H) =   Hµ .
+                                                 µ◭?                      µ◭?
+  We are now ready for the proof of the next
+
+Theorem 2.7. For dominant enough λ we have H4µ · Geom4λ (H)                           ⊂
+Geom4λ+µ (H).
+
+Lemma 2.8. For h ∈ H and λ ∈ a+ the following are equivalent:
+  i) h ∈ H4λ .
+                                               ∞       K
+                           S any function f ∈ Cc (G/U ) we have supp(f ) ⊂
+  ii) For any parabolic, and
+(G/U )µ ⇒ supp(h ∗ f ) ⊂      (G/U )ν .
+                           ν4λ+µ
+
+
+  Proof Assume that ii) holds. Recall that for any ρ ∈ CuspK we have ΠK    ρ =
+Cc∞ (G/U )K ⊗H(Lc ) ρ, and the grading on Πρ comes from the grading on the first
+                                               L ∞
+multiple in the RHS, given by Cc∞ (G/U )K =      Cc (G/U )Kµ . ii) ⇒ i) is now
+                                                    µ
+obvious.
+   Conversely, suppose that ii) does not hold, i.e. for some ν 64 λ there exists
+f ∈ Cc∞ (G/U )K such that supp(h ∗ f ) ∩ (G/U )λ+ν 6= ∅. Thus the morphism of free
+H(Lc )-modules Cc∞ (G/U )K           ∞       K
+                              µ → Cc (G/U )µ+ν , f 7→ h∗f |(G/U)µ+ν is nonzero. Hence
+                   c
+(recall that H(L ) is finite over its center) there exists an irreducible representation
+ρ of Lc such that tensoring the latter morphism over H(L) with ρ we still obtain
+a nonzero morphism. Further, ρ is a subquotient in a representation of the form
+iL
+ L1 (ρ1 )|Lc , where ρ1 is a cuspidal representation of a standard Levi L1 ⊂ L. Then
+there exists ν1 ∈ aL1 with PL (ν1 ) = ν such that the morphism Cc∞ (G/U1 )K        µ →
+  ∞           K
+Cc (G/U )µ+ν1 , f 7→ h ∗ f |(G/U)µ+ν1 tensored with ρ1 is nonzero. This means
+that suppspec (Iρ′1 (h)) ∋ ν1 , where ρ′1 ∈ Cusp differs from ρ by twisting with an
+unramified character; so suppspec (h) ∋ ν1 .
+44                               ROMAN BEZRUKAVNIKOV
+
+
+   If i) holds then ν1 4 λ. Since λ ∈ a+ we have P(λ) 4 λ; since PL preserves 4
+(by [BW], Lemma 6.4 on p.139, statement 2) we get λ < PL (λ) < ν. We arrived
+at a contradiction, which proves i) ⇒ ii).
+Lemma 2.9. Let C ⊂ G be a compact set. Suppose that x1 ∈ (CP )µ1 , x2 ∈ (CP )µ2 ,
+where hµ1 , Σ+ − Σ+
+                  L i ≫ 0, and x2 = cx1 for c ∈ C. Identify the left G-orbit on CP
+passing through x1 , x2 with G/U , and suppose that x1 ∈ (G/U )ν1 , x2 ∈ (G/U )ν2 .
+Then ν2 − ν1 = PL (µ2 − µ1 ).
+     Proof We have a map
+                          Waf f ×Waf f (L) Waf f → K0 \CP /K0
+which sends (w1 , w2 ) to K0 ·(w1 , w2 )·K0 (it is immediate to check that it is actually
+well-defined). For x ∈ Waf f ×Waf f (L) Waf f denote the corresponding double coset
+by (CP )x .
+   As in 2.3 we pick a finite set {wi } ∈ Waf f so that for any w ∈ Waf f we have
+wi wwj ∈ X + for some
+                   S      i, j. For hµ, Σ+ − Σ+   L i ≫ 0 Proposition 2.2 implies that
+(CP )(wi µ,wj ) =         Ψ(KgK).
+                 g∈Gwi µwj
+
+    In particular, xi ∈ (CP )wi λi wi′ for i = 1, 2, where λi is such that hλi , Σ+ − Σ+Li ≫
+0, and wi λi wi′ ∈ Wfp · µi · Wfp .
+    Since x1 , x2 lie in one left G-orbit we have (λ2 w2′ )Lc0 ⊂ P − (λ1 w1′ )Lc0 , which is
+possible only if w2′ ∈ Waf f (L)w2 . Thus we can (and will) assume that w1′ = w2′ =
+w′ .
+    Pick x ∈ (CP )w′ ∩ G(x1 ), and identify G/U with the left orbit G(x1 ) = G(x2 )
+by means of the map g 7→ g(x). Then we get xi ∈ (K0 · (wi λi ) · (K0 ∩ L)U )/U ⊂
+(G/U )wi λi , where w is the image of an element w ∈ Waf f under the projection
+Waf f → Wfp \Waf f /Waf    L
+                             f.
+    Thus νi = PL (ν̃i ), where wi λi ∈ Wfp · ν̃i , while Wfp µi Wfp ∋ wi λi w′ . Hence µi ∈
+W (ν̃i + µ′ ), where µ′ is such that w′ ∈ µ′ ·Wfp . Notice that since hµi , Σ+ − Σ+  L i ≫ 0,
+and w′ , µ′ belong to a fixed finite set, we have hν̃i + µ′ , Σ+ − Σ+   L i ≫  0. Since  µi is
+dominant, it follows that µi ∈ WL (ν̃i + µ′ ). In particular PL (µi ) = PL (ν̃i + µ′ ) =
+νi + PL (µ′ ). The Lemma follows.                                            L
+    Proof of Theorem 2.7. Consider the “Rees algebra” Rees(H) :=                  H4λ . The
+                                                                            λ∈X +
+explicit description of the center Z ⊂ H ([BD], Theorem 2.13) readily implies that
+the central subalgebra Rees(Z) ⊂ Rees(H) is of finite type. Further, from Lemma
+1.13b) it is not hard to deduce that there exists λ0 ∈ X + such that for λ ∈ a+ ,
+ρ ∈ CuspK L we have h ∈ H4λ , ν ∈ supp
+                                       spec
+                                            (Iρ (h)) ⇒ w(ν) 4 λ + λ0 whenever w(L)
+is a standard Levi.                 L      L T
+   Thus we have Rees(H) ֒→                         End(Πρ )w(a4λ+λ0 ) . The RHS is a
+                                   L,ρ∈CuspK λ∈a+ w
+                                           L
+finite Rees(Z)-module. Hence the LHS is, thus Rees(H) is a Noetherian graded
+algebra, and in particular is finitely generated.
+   Let hi ∈ H4λi , i = (1, .., n) be the generators. Then it is enough to ensure that
+f ∈ Geom4µ (H) ⇒ hi f ∈ Geom4λi +µ (H).
+   Pick a number N which satisfies the condition of 2.4 with C = ∪supp(hi ) for all
+P.
+   Also let N ′ be such that hi ∈ Geom6N ′ (H) for all i, α.
+                                            α
+                                                                                             45
+
+
+  Suppose that λ ∈ a+ is large enough, µ 4 λ, and h ∈ Hµ .
+  Pick a simple root α. We consider two cases.
+  I. hµ, αi > N . Then let P be the maximal proper parabolic corresponding to α.
+Applying 2.4 we see that hi ∗ h =SΨ−1 (hi ∗ Ψ(h)).
+  We can decompose CP =               (CP )x , where (CP )x is the fiber of the pro-
+                                   x∈P − \G/K
+jection CP → P − \G/K, (g1 U, g2 U − )L 7→ P − g2 K.
+   Let us now write h as the sum of hx , where supp(Ψ(hx )) ∈ (CP )x .
+   We have an isomorphism of G-modules Cc∞ ((CP )x ))K ∼    = Cc∞ (G/U )K∩P . (Here
+the invariants are taken with respect to the right action).
+   Hence applying to each hx 2.8 and 2.9 we obtain:
+            hi ∗ h ∈ Geom6hµ,ωα i+hλi ,ωα i (H) ⊂ Geom6hλ,ωα i+hλi ,ωα i (H).
+                               α                              α
+
+
+   II. If on the other hand hµ, αi 6 N then
+
+                                                    (λ, α) − N
+                                   hλ − µ, ωα i >              ,                           (34)
+                                                      (α, α)
+because the RHS is the distance from λ to the hyperplane {η | hη, ωα i = N }, while
+µ is separated from λ by this hyperplane.
+   If λ is large then the RHS of (34) is greater than N ′ , so in that case
+           hi ∗ h ∈ Geom6hµ,ωα i+N ′ (H) ⊂ Geom6λ (H) ⊂ Geom6λ+λi (H).
+                           α                             α               α
+
+
+  Thus in any case hi ∗ Geom4λ (H) ⊂ Geom4λ+λi (H) provided λ is large.
+  Since hi generate Rees(H) this finishes the proof.
+  To derive an important corollary we need some information on compatibility of
+our filtrations with convolution.
+Lemma 2.10. We have
+                     S 4ν1 (H) ⊆ Geom4ν1 +ν2 (H).
+  a) Geom4ν1 (H) · Geom
+  b) Gλ ((G/U )µ ) ⊂    ((G/U )ν ).
+                        ν4λ+µ
+
+     Proof Recall that we have fixed a minimal Levi subgroup in good relative position
+with K0 . This choice determines an appartment A of the Bruhat-Tits building X
+containing the K0 -fixed point p. Let Ξ : X → A be the contraction centered at an
+open polysimplex, which contains p in its closure. Then an element g ∈ G lies in Gν
+iff the coweight Ξ(g(p)) − p ∈ a is W -conjugate to ν. Now the proof is parallel to
+the usual proof of the fact that Ξ does not increase distances (see [BT1] 7.4.20(ii)).
+     Take now g1 ∈ Gν1 , g2 ∈ Gν2 ; we must check that g1 g2 ∈ Gν where ν satisfies
+ν 4 ν1 + ν2 .
+     Let us break the segment [g1 (p), g1 g2 (p)) into the union [z0 = g1 (p), z1 ), [z1 , z2 ),
+. . . [zn−1 , g1 g2 (p) = zn ), where zi and zi+1 lie in the closure of one open polysimplex
+(loc. cit. 7.4.21).
+     According to [BT1] 7.4.19, 7.4.18(i) the map Ξ restricted to the closure of any
+polysimplex coincides with the action of some g ∈ G, hence we have Ξ(zi ) = xi (zi ),
+Ξ(zi+1 ) = xi (zi+1 ) for some xi ∈ G.
+     On the other hand Ξ([p, g2 (p)]) = g([p, g2 (p)]) for some g ∈ G is a line segment,
+and by the above remark w(Ξ(g2 (p)) − p) = ν2 for some w ∈ W .
+46                                ROMAN BEZRUKAVNIKOV
+
+
+                           P
+                           n−1
+     Then obviously ν2 =         ν i , where ν i = w (Ξ(g2 (zi )) − Ξ(g2 (zi−1 ))) ∈ a+ .
+                           i=0
+   By [BT1] 7.4.8 for points p1 , p2 , p′1 , p′2 ∈ A the elements p1 − p2 and p′1 − p′2 ∈ a
+are W -conjugate provided pi = g(p′i ) for some g ∈ G.
+   Thus we see that Ξ(zi ) − Ξ(zi−1 ) is W -conjugate to Ξ(g2 (zi )) − Ξ(g2 (zi−1 )) =
+gg1 x−1                −1                                        i
+     i (Ξ(zi )) − gg1 xi (Ξ(zi−1 )), and hence also to ν . Let wi ∈ W be such that
+Ξ(zi ) − Ξ(zi−1 ) = wi (ν ). Suppose that g1 g2 ∈ Gν , i.e. w′ (Ξ(g1 g2 (p) − p) = ν for
+                         i
+
+some w′ ∈ W . Then we have
+                                       X                              X
+  ν = w′ (Ξ(g1 g2 (p) − p) = w′ (ν1 +         wi (ν i )) = w′ (ν1 ) +   w′ wi (ν i ) 4
+                                                                         X
+                                                                      ν+      ν i = ν1 + ν2 .
+
+This proves a).
+    To prove b) we reinterpret the condition gU ∈ (G/U )µ as follows. Let Ξ′ : X → A
+be the contraction centered at a “vector chamber” corresponding to P0 . Then
+gU ∈ (G/U )µ if and only if PL (p − Ξ′ (g −1 (p))) = ν.
+    From the definition ([BT1] 7.4.25) it is clear that Ξ′ |∆ = g∆ for any polysimplex
+                                                                                i    +
+for some g∆ ∈ G. Hence repeating the argumentsPused in a) we can find      P λi ∈ a
+                             −1           −1 −1               i
+and wi ∈ W , such that Ξ(g2 (p)) − Ξ(g2 g1 ) = wi (λ ), while λ = λ . Since
+by [BW], Lemma 6.4 on p.139 PL preseves 4 we see that if g1 ∈ Gλ , g2 U ∈ (G/U )µ ,
+g1 g2 ∈ (G/U )µ′ then
+     µ′ = PL (p − Ξ′ (g2−1 (p))) + PL (Ξ(g2−1 (p)) − Ξ(g2−1 g1−1 )) =
+                                                     X                   X
+                                       PL (µ) + PL (     wi (λi )) 4 µ +   λi = µ + λ.
+This proves the Lemma.
+Corollary 2.11. For any λ ∈ X + we have H4λ ⊃ Geom4λ (H).
+     Proof Compare Lemma 2.8 with Lemma 2.10b).
+     The latter statement together with Theorem 2.7 yield the following
+Proposition
+ P          2.12. Fix λ0 in X + , and define filtration F6λ (H) :=
+    Geom4λ0 +µ (H). Then F6 is a good filtration on the free H-module, provided
+µ∈a+
+   6λ
+
+λ0 is large enough.
+  Proof From Theorem 2.7 we see that the filtrations on the algebra and on the
+module are compatible if λ0 is large.
+  It remains to show that for all but finitely many ν we have
+                                X        X
+                      F6λ ⊂                     H6λ1 · F6λ2 .             (35)
+                                   λ2 ∈a+  λ1 ∈a6λ−λ2
+                                        <λ
+
+
+We will in fact show that
+                                 X        X
+                      F6λ ⊂                        Geom4λ1 (H) · F6λ2                       (36)
+                              λ2 ∈a+
+                                   <λ
+                                      λ1 ∈a6λ−λ2
+
+for almost all λ; (36) is stronger than (35) by 2.11.
+   Pick some λ and ν such that Hν ⊂ F6λ (H). We want to check that Hν lies in
+the RHS of (36).
+                                                                                     47
+
+
+   By the definition ν 4 λ′ + λ0 for some λ′ ∈ a+            ′
+                                                    6λ . If λ < λ then Hν does lie in
+the RHS of (36), for it lies in the summand corresponding to λ2 = λ′ , λ1 = 0. So
+assume that λ′ = λ < ν.
+   For any w ∈ Wfp consider the intersection w−1 Waf f w ∩ Λ. It is a sublattice
+of finite index in Λ; in particular there exists some n ∈ Z>0 such that nωα ∈
+w−1 Waf f w ∩ Λ for any w ∈ Wfp and any simple coroot α.
+   For all but finitely many λ there exists a simple coroot α such that (λ, ωα ) > n+1;
+thus we can suppose that λ, α are like that. If ν6n then Hν ⊂ F6λ−ωα , so we can
+                                                   α
+
+take λ1 = 0, λ2 = λ − ωα .
+   It remains to consider the case (ν, ωα ) > n.
+   We have Hν = ⊕Hx , where x runs over double cosets Wp wWp ∈ Wp \Waf f /Wp =
+K0 \G/K0 such that w ∈ Waf f ∩ (Wfp νWfp ).
+   Fix one such w; let us write it down as w = w1 νw2 , wi ∈ Wfp , and consider the
+element y = Wp · (w1 (nωi )w1−1 ) · Wp ∈ Wp \Waf f /Wp .
+   It is obvious that for any three double cosets z1 , z2 , z3 where z1 = Wp · w′ Wp ,
+z2 = Wp · w′′ Wp , z3 = Wp · w′ w′′ Wp ∈ Wp \Waf f /Wp we have Hz1 · Hz2 ⊃ Hz3 .
+   Hence we have Hx ⊂ Hy · Hz , where z = Wfp w1 (ν − nωα )w2 .
+   Since Hz ⊂ Hν−nωα ⊂ H4(λ−nωα )+λ0 ⊂ F6λ−nωα we see that in this case Hν
+lies in the summand of the RHS of (36) corresponding to λ1 = nωi , λ2 = λ − nωi .
+The Proposition is proved.
+Remark 2.13. We will also use the following equivalent description of F6 .
+  For a coweight λ ∈ a let ℘(λ) denote the point of a+ closest to λ. Then
+                                       P
+                               ℘(λ) = aα ωα
+                                       α P
+                               ℘(λ) − λ =    bβ β;                                (37)
+                                              β
+
+where α and β run over nonintersecting sets of simple roots, and aα > 0, bβ > 0;
+moreover for any coweight λ there exists a unique such decomposition (the latter
+statement is the so-called Langlands combinatorial Lemma, see e.g. [BW], Lemma
+6.11 on p.143).
+   It is not hard to see that ℘(µ) is the minimal element in the set {λ ∈ a+ | λ < µ}.
+It follows that
+                                              M
+                               F6λ (H) =             Hµ                           (38)
+                                          ℘(µ−λ0 )6λ
+
+2.14. Another result we will need is the following
+Theorem 2.15. Fix λ1 ∈ a+ . Make the following assumptions:
+    (e1 , rj ) > 0 for all rj ∈ Σ+ ;
+    hλx (notation of 1.17) satisfies the condition of 1.17 with large enough a (the
+bound on a depends on λ1 );
+    µ ∈ a+ is very dominant.
+   Then we have:
+   a) If ν ∈ a+ is such that hν, Σ+ − Σ+L i ≫ 0 then
+
+         ℘(ν − λ0 ) 6 µ + λ1 , h ∈ Hν =⇒ Ψ(hλx h) = ι(λ)mx Ψ(h) + Ψ(h′ ),
+where h′ ∈ F6λ+µ (H).
+  b) Otherwise hλx h ∈ F6λ+µ (H).
+48                              ROMAN BEZRUKAVNIKOV
+
+
+Lemma 2.16.PFor L′ ⊂ L and f ∈ Cc∞ (G/U ′ )K          λ                    ′
+                                           µ we have hx f = ι(λ)mx (f ) + f ,
+       ′          ∞     ′
+where f ∈       Cc (G/U )4µ+λ−a·PL′ (r) .
+             r∈Σ+ −Σ+
+                    L
+
+
+  Proof is similar to the proof of Lemma 2.8. It is enough to prove that for any irre-
+                                             λ             K      ∞         K
+                   P ρL of L the action of hx − ι(λ) on ΠρL = Cc (G/U ) ⊗H(L )
+ducible representation                                                              c
+
+ρL belongs to             End(ΠρL )4λ−ar . The irreducible representation ρL is a
+                 α∈Σ+ −Σ+
+                        L
+
+subquotient in the induced representation iL
+                                           L′ (ρL′ ), where ρL′ is a cuspidal rep-
+resentation of a standard Levi. Then ΠρL = ΠρL′ , and the statement reduces to
+                       P
+IρL′ (hλx ) − [λ]ρL′ ∈      End(ΠKρL′ )4λ−ar , which follows from Proposition 1.7.
+                     α∈Σ+ −Σ+
+                            L
+
+
+
+
+Lemma 2.17. For a weight ν ∈ a+ such that hν, Σ+ − Σ+       L i ≫ 0 we have ℘(ν +
+                                                               (e1 ,λ1 )
+λ1 − a · r − λ0 ) 6 ℘(ν − λ0 ) for r ∈ Σ+ − Σ+
+                                             L , provided a >   (e1 ,α) for any simple
+           +      +
+root α ∈ Σ − ΣL .
+   Proof Let α ∈ Σ+ − Σ+    L be a simple root such α 4 r.
+   If ν satisfies hν, Σ+ − Σ+                                            +  +
+                             L i ≫ 0 then also ℘(ν − λ0 ) + λ1 − aα, Σ − ΣL i ≫ 0.
+                                +
+Since hα, βi 6 0 for β ∈ ΣL it follows that ℘(ν − λ0 ) + λ1 − aα ∈ a+ . From
+the condition of Lemma we get (e1 , ℘(ν − λ0 ) + λ1 − aα) < (e1 , ℘(ν − λ0 )), hence
+℘(ν − λ0 ) + λ1 − aα 6 ℘(ν − λ0 ). The Lemma now follows from (38).
+   Proof of Theorem 2.15 follows the same scheme as the proof of 2.7.
+   Let L′ be minimal among the standard Levi subgroups for which ΨL′ |Gν is
+defined. Under the conditions of a) we have L′ ⊂ L.
+   In the notations of the proof of 2.7, we can assume that Ψ(h) ∈ H(CP ′ )x for
+some x ∈ P − \G/K. Then using Lemma 2.16 together with 2.8, 2.9 we get
+                                            X        X
+                 Ψ(hλx h) − mx ι(λ)Ψ(h) ∈                    H(CP ′ )η ,
+                                         r∈Σ+ −Σ+
+                                                L
+                                                  η4ν+λ−ar
+
+hence
+                                                     [                [
+          suppgeom (hλx h − Ψ−1 (mx ι(λ)Ψ(h))) ⊂                                  Gη .
+                                                   r∈Σ+ −Σ+
+                                                          L
+                                                                 PL′ (η)4ν+λ−ar
+
+  Let, first, η be such that Gη ∩ suppgeom (hλx h − Ψ−1 (mx ι(λ)Ψ(h))) 6= ∅. As we
+have just seen there exists r ∈ Σ+ − Σ+L such that η6ν + λ − ar for any simple
+                                                             α
+
+coroot α ∈ Σ+ − Σ+                                      ′         ′
+                  L′ . By Lemma 2.17 ν + λ − ar 4 λ0 + λ , where λ 6 µ + λ.
+                                      +
+                                 +
+   Thus for a simple coroot α ∈ Σ − ΣL′ we have η6ν + λ − ar6λ0 + λ′ .
+                                                         α                α
+
+   On the other hand, if α is a simple coroot of L′ then hωα , νi is bounded. Since
+λ0 is very dominant we have η6λ0 6λ0 + λ′ .
+                                 α   α
+
+     So η6λ0 + λ for any simple coroot α, i.e. η 4 λ0 + λ′ , which implies hλx h −
+                 ′
+         α
+
+Ψ−1 (mx ι(λ)Ψ(h)) ∈ F6µ+λ (H). a) is proved.
+   Assume now we are in the situation of b). Then for some simple root α ∈ Σ+     L
+the number hν, ωα i is bounded.
+   The condition (e1 , α) > 0 implies that we can find a ∈ R>0 such that λ1 −aα 6 0;
+we can then assume λ < aα. Also we can assume (after possibly increasing λ0 )
+that H4λ · Geom4µ (H) ⊂ Geom4λ+µ holds already for µ < λ0 − aα. By the
+                                                                                            49
+
+
+definition ν 4 λ0 + ζ for some ζ 6 µ + λ1 . But since hωα , νi is bounded we also
+have ν 4 λ0 + ζ − aα. Then we have hλx h ∈ Geom4λ0 +ζ−aα+λ ⊂ F6λ−aα+ζ =
+F6λ+µ+(λ1 −aα) ⊂ F6λ+µ .
+
+3. End of the proof: orbital integrals.
+Theorem 3.1. The functional T r(g, M ) defined above satisfies 0.23iii).
+   We start with recalling the following standard computation.
+   We will say that a subset S ⊂ ΛS+ is large if it contains
+                                                       L     (Λ+ )4λ for large λ.
+                  +
+   For any S ⊂ Λ denote GS = λ∈S Gλ , HS =                Hλ and let prS : H⊕m →
+                                                            λ∈S
+ ⊕m                               ⊕m
+HS  ⊂ H⊕m be the projector along HΛ+ −S .
+
+
+Lemma 3.2. Keep the assumptions of 3.1. Then for any large enough finite set
+S ⊂ Λ+ we have             X
+                     Og−1 (  Eii ) = tr(g ◦ E ◦ prS )
+(the RHS is the well-defined trace of a finite-rank endomorphism of H⊕m .)
+   Proof of the Lemma.     R              We have tr(g ◦ E ◦ prS , H⊕m ) = tr(δg·K ◦ E ◦
+                                                         ⊕m
+prS , k[G/K] ) = g′ ∈K·g tr(g ′ ◦ E ◦ prS
+              ⊕m
+                                                            , k[G/K]⊕m ), where we reused the
+symbol prS to denote also the projector k[G/K]⊕m → k[GS /K]⊕m ⊂ k[G/K]⊕m
+along k[GΛ+ −S /K]⊕m .
+   In k[G/K] we have the standard basis consisting of delta-functions; it gives also
+                                                                                           ⊕m
+a basis in k[G/K]⊕m . We use this basis to “compute” the                           ′
+                                                                     R trace of g ◦ E ◦ prS .
+Precisely, let dg be the Haar measure on G such that K dg = 1; if x ∈ G/K,
+and x(i) = (0, . . . , 0, δx , 0, . . . , 0) is a basis element of H⊕m , then the corresponding
+             | {z }            | {z }
+                i−1            m−i
+                              ⊕m
+diagonal entry of g ′ ◦ E ◦ prS  is equal to
+                           
+                               0 if x 6∈ GS /K
+                                             
+                               Eii  −1 ′ −1                                               (39)
+                                dg x  (g ) x if x ∈ GS /K
+If K · g ∋ g ′ is contained in the regular elliptic set, then for S large enough we have
+Eii    −1 ′ −1
+ dg (x    (g ) x) 6= 0 ⇒ x ∈ GS /K. For such S summation of (39) over x gives
+O(g′ )−1 (Eii ).
+   Altogether we get
+                                        Z
+                              ⊕m
+           tr(g ◦ E ◦ prS , H ) = tr(            g ′ ◦ E ◦ prS , k[G/K]⊕m )dg ′ =
+                                            g′ ∈K·g
+                           Z                   X               X
+                       =             O(g′ )−1 (  Eii ) = Og−1 (  Eii )
+                           g′ ∈K·g
+                                                                   P
+where the last equality follows from the assumption that O(g′ )−1 ( Eii ) is constant
+for g ′ ∈ g · K.
+   We proceed now to the proof of the Theorem.
+                                           S +                  ⊕m
+   Fix very dominant λ0 , and set Sλ =       X4µ+λ0 . Then HS      λ
+                                                                     = F6λ (H)⊕m is
+                                                µ6λ
+a good filtration on the free module of rank m by 2.12.
+   Thus the image of F6λ (H)⊕m under E is a good filtration on M , hence we have
+T r(g, M ) = tr (g, E(F6λ (H)⊕m )) for large λ.
+50                                   ROMAN BEZRUKAVNIKOV
+
+
+     So to prove the Theorem we need only to show that
+                                      ⊕m
+                             tr(g, E(HSλ
+                                         )) = tr(g ◦ E ◦ prSλ , H⊕m ).               (40)
+                                                 ⊕m      ⊕m
+It is convenient to consider the vector space E(HSλ
+                                                    ) + HSλ
+                                                            which is invariant
+under the action of E, prSλ , g. Obviously
+                                ⊕m                   ⊕m      ⊕m
+                       tr(g, E(HSλ
+                                   )) = tr(g ◦ E, E(HSλ
+                                                        ) + HSλ
+                                                                ),
+                                                              ⊕m      ⊕m
+               tr(g ◦ E ◦ prSλ , H⊕m ) = tr(g ◦ E ◦ prSλ , E(HSλ
+                                                                 ) + HSλ
+                                                                         ).
+     Thus the difference of the two sides of (40) coincides with
+                             ⊕m       ⊕m                              ⊕m     ⊕m
+     tr(g ◦E ◦(Id−prSλ ), E(HS λ
+                                 )+HS  λ
+                                         ) = tr(g ◦E ◦prX+ −Sλ , E(HS  λ
+                                                                         )+HS λ
+                                                                                )=
+                                                        ⊕m       ⊕m
+                                                                         ⊕m
+                             tr(g ◦ prX+ −Sλ ◦ E, E(HSλ ) + HSλ ∩ HX + −Sλ ),
+so the Theorem is reduced to the following assertion.
+Proposition 3.3. The   endomorphism g ◦ prX + −Sλ ◦ E of the vector space
+    ⊕m       ⊕m      ⊕m
+ E(HSλ
+       ) + HSλ   ∩ HX −Sλ is traceless for large λ.
+                      +
+
+
+     Denote
+    ⊕m      ⊕m
+                 ⊕m                     ⊕m
+                                                   ⊕m      ⊕m
+                                                                  ⊕m
+ E(HSλ
+       ) + HSλ
+                ∩HX + −S
+                        λ
+                          = prX + −Sλ E(HSλ
+                                            ) −→ E(HS
+                                               g     λ
+                                                       ) + HSλ
+                                                                 /HSλ
+
+by Wλ .       For ν 6 λ let us denote by (Wλ )6ν ⊂ Wλ the              subspace
+            ⊕m            ⊕m            ⊕m                ⊕m       ⊕m      ⊕m
+(E (F6ν (H )) + F6λ (H )) /F6λ (H ) = E (F6ν (H )) + HSλ /HS                λ
+                                                                              .
+   For a number N let λN be the maximal element in the (finite) set XN := {λ ∈
+                              +
+X + | (λ, e1 ) 6 N }. Then X6λ  N
+                                  = XN ; since XN is arbitrary large for N ≫ 0 it
+is enough (in view of 3.2) to prove the Proposition for λ = λN . We write WN , SN
+instead of WλN , SλN .                                   L L
+   Consider the associated graded space grW :=                   (WN )6λ /(WN )<λ .
+                                                                N λ∈XN
+It carries a natural action of grH provided by the obvious maps
+grHµ ⊗ (WN )6λ /(WN )<λ         →   (WN +(e1 ,µ) )6µ+λ /(WN +(e1 ,µ) )<µ+λ which
+are induced by multiplication in H.
+Lemma 3.4. grW is a finitely generated grH-module.
+  Proof It is obvious that gr(WN )λ 6= 0 ⇒ N − n 6 hλ, e1 i 6 N where n is some
+constant (depending on suppgeom (Eij )). Thus grW is a finite sum of modules
+              L
+grW (i) :=          gr(WN )λ , each one of which is a quotient of grF (H⊕m ), so is
+              N −(λ,e1 )=i
+finitely generated.
+   Now by the proof of 1.19b) we can break Λ+0 into a finite union of cosets
+                                     [
+                               Λ+0 =    µi + XL+i                                    (41)
+
+so that λ ∈ µi + XL+i ⇒ grWλ = Mi where Mi is a finite ALi -module (notations of
+(31)).
+   Notice that for λ ∈ a+ the set Sλ − S<λ looks as follows. SupposeP        that λ lies
+strictly inside a+L . Then  S λ −S <λ  =  (λ 0 +℘ −1
+                                                     (λ−λ0 ))∩Λ +
+                                                                  = Λ +
+                                                                        ∩{λ−   ai ri | 0 6
+ai 6 hωi , λ0 i} where ri runs over the set of simple roots of L.
+   In particular we have hλ, Σ+ − Σ+                                      +   +
+                                         L i ≫ 0, ν ∈ Sλ − S<λ ⇒ hν, Σ − ΣL i ≫ 0.
+   Proceeding by induction in dim(aL ) we can choose decomposition (41) so that
+hν, Σ+ − Σ+                                                              +
+            Li i is arbitrary large if ν ∈ Sλ − S<λ where λ ∈ µi + XLi . In particular
+                                                                                     51
+
+
+we can guarantee that GSη −S<η lies in the domain of Ψ : K\G/K → K\(CPi )/K
+for η ∈ µi + XP+i . We shall make this assumption from now on.
+   Then we get a direct sum decomposition:
+                                   M                S −S
+                      ⊕m
+                    HS  η −S<η
+                               =          Ψ−1 C ∞ (CP η <η )⊕m
+                                                            x           (42)
+                                 x∈K\G/P
+
+   So take η ∈ µi + XP+i , and consider the surjection π : HS
+                                                            ⊕m
+                                                             η −S<η
+                                                                    → gr(WN )η ∼
+                                                                               =
+                                                    
+     ⊕m             ⊕m                ⊕m        ⊕m
+E(HSη −S<η )/ E(HSη −S<η ) ∩ (E(HS<η ) + HSN ) .
+                L is an AxLi -module, it also decomposes as a direct sum:
+   Since its target
+gr(WN )η =           gr(WN )η . It is not hard to see that π commutes with the
+             x∈K\G/P
+ALi -action,
+            and hence sends respective summands to respective summands (i.e.
+   −1         S −S
+πΨ        ∞
+        C (CP η <η )x ⊂ gr(WN )xη ).
+                                                           ⊕m
+  Hence for each N, η we can choose a subspace (VN )η ⊂ HS  η −S<η
+                                                                   in such a way
+that:
+   a) π maps (VN )η to gr(WN )η isomorphically.
+                 L  −1 ∞ Sη −S<η ⊕m 
+   b) (VN )η =           Ψ C (CP          )x    ∩ (VN )η .
+               x∈K\G/P
+   c) (VN )η is K0 invariant.
+   d) For µ ∈ XL+i the isomorphism Ψ−1                   ⊕m       ∼ ⊕m
+                                     Pi ◦ ι(µ) ◦ ΨPi : HSη −S<η = HSµ+η −S<µ+η
+sends (VN )η to (V(e1 ,µ)+N )µ+η .
+   Set now
+        L (WN )η = E ((VN )η ). By property a) we have a direct sum decomposition
+WN = (WN )ν .
+        ν
+        ν
+  Let EN  ∈ End ((WN )ν ) denote the corresponding diagonal block of prX + −SN ◦E.
+  To finish the proof we need the following (key)
+
+Lemma 3.5. For N large and any x ∈ P \G/K we have:
+  a) If hν, Σ+ − Σ+L i ≫ 0 then hx,λ · (WN )ν ⊂ (WN +(e1 ,λ) )ν+λ + HSN +(e1 ,λ) .
+  b) hx,λ · (WN )ν ⊂ HSN +(e1 ,λ) otherwise.
+
+   Proof By 2.4 property d) implies that ΨP (WN )ν+λ = ι(λ)ΨP (WN )ν if hν, Σ+ −
+Σ+L i ≫ 0. Also from the definition it is clear that under the same condition on ν
+the space Ψ((VN )ν ), and hence Ψ((WN )ν ) is invariant under the action of mx . So
+a) follows from Theorem 2.15a) (take λ1 to be any coweight satisfying Eij ∈ H6λ1 ).
+   Statement b) follows Theorem 2.15b).
+                  ν
+Corollary 3.6. EN   commutes with the action of AL on (WN )ν −
+                                                             g→gr(WN )ν pro-
+           +   +
+vided hν, Σ − ΣL i ≫ 0.
+
+   Proof Fix x ∈ K\G/P and consider the element hλx ∈ H (see 1.17), where
+λ ∈ XL+ is dominant enough as in 1.17.        P ′
+   We have h′ ∈ (WN )ν ⇒ h′ · E = ENν
+                                      (h′ ) +  hν ′ + h0 where h′ν ′ ∈ (WN )ν ′ and
+                                               ν ′ 6=ν
+h0 ∈ HSN . Multiplying the last equality by hλx on the left and applying 3.5 we get
+the statement.
+   Proof of 3.3. From 3.6 it follows that for large N and anyL ν the endomorphism
+  ν
+EN  preserves the direct sum decomposition (WN )ν =               ((WN )ν )x . Since
+                                                           x∈K\G/P
+52                             ROMAN BEZRUKAVNIKOV
+
+                                                                         ν
+g permutes these summands without fixed P points,ν the endomorphism g ◦ EN is
+traceless. Hence tr(g ◦ prX + −SN ◦ E) = tr(g ◦ EN ) = 0.
+                                             ν
+     Proposition 3.3, and thus also Theorem 3.1 is proved.
+     We can now summarize our results in the following
+Theorem 3.7. Let M be a projective G-module, and let K ⊂ K0 be a normal open
+subgroup, so small that:
+    α) g is K-elliptic, so T r(g, MK ) is defined (see 0.22, 0.23).
+    β) M is generated by its K-fixed vectors.
+    γ) Conditions of 0.23iii) are satisfied for M = MK .
+   Then
+                             T r(g, MK ) = Og−1 (hM)i) .                          (43)
+
+   Proof There exists an idempotent E ∈ M atm (H), such that M is isomorphic to
+                                            ⊕m
+the image of E acting on the right
+                               P on k[G/K] . Since K is nice by the assumption
+(see 0.23iii), we have hMi =      Eii mod [H(G), H(G)], so the statement follows
+                                 i
+from Theorem 3.1.
+
+3.8. Proof of Theorem 0.19. Let 0 → Pn → · · · → P0 → ρ → 0 be a projective
+resolution of ρ. Pick a nice open compact K, such that g is K-elliptic, properties
+β) and γ) of 3.7 hold for M = Pi , and the character χρ is constant on the coset
+g · K. Then by additivity of T r(g, M ) (0.23(i)=1.24(b)) and 3.7 we get T r(g, ρK ) =
+Og−1 (hρi). On the other hand, by 0.23(ii)=1.24(c) we have T r(g, ρK ) = χρ (g). The
+proof is finished.
+
+4. Elliptic pairing. It remains to deduce Theorem 0.20 from 0.19. This argument
+can also be found in [Sch-St2] and is included here for the sake of completeness.
+   We set k = C, char(F ) = 0 till the end of the argument.
+   Recall that the measure dµ on the set Ell of regular semisimple elliptic conjugacy
+classes is characterized by the equality
+                                Z                 Z
+                                   Og (h)dµ(g) = h                               (44)
+                                Ell                 G
+
+being true for all h ∈ H supported inside the set of regular elliptic elements.
+Lemma 4.1. For any M ∈ M and ρ ∈ R we have
+                 X                        Z
+                        i       i
+                    (−1) dim Ext (M, ρ) =   χρ · hMi.
+                                                         G
+
+   Proof Since both sides are additive on short exact sequences in M, it is enough
+to consider the case of projective M. As usual we write M as the image of the right
+action of an idempotent E ∈ M atm (H) on H⊕m . We have
+                                     HomG (H, ρ) ∼
+                                                 = ρ̂,                            (45)
+           def
+where ρ̂ = ←  − K (ρK ). (For ρ ∈ R we have also ρ̂ = ∗(ρˇ)). The right action of
+            lim
+M atn (H) on H⊕n induces an action of M atn (H) on HomG (H⊕n , ρ), m(f )(x) :=
+                                                                                  53
+
+
+f (m(x)). Evidently, this action agrees under (45) with the action of M atn (H) on
+ρ̂⊕n inherited from the action of H on ρ. Thus we have
+
+  dim(HomG (M, ρ)) = dim(HomG (Im(E, H⊕n ), ρ)) = dim(Im(E, ρ̂⊕n )) =
+                                                       Z       X
+                                   ⊕n             ⊕n
+                        dim(Im(E, ρ )) = tr(E, ρ ) =      χρ ·      Eii . (46)
+                                                                 G      i
+
+The Lemma is proved.
+
+Lemma 4.2. Let Φ be an invariant generalized function on G supported on the set
+of regular non-elliptic elements. Then for any admissible representation ρ we have:
+                                   Z
+                                      hρi · Φ = 0.
+                                        G
+
+  Proof By Theorem 0 in [K] it is enough to show that
+                             Z
+                                hρi · χiG
+                                        L
+                                          (ρL ) = 0
+                                    G
+
+for any admissible representation ρL of a proper standard Levi subgroup L. By
+Lemma 4.1 it we have to show that
+                       X
+                           (−1)i dim ExtiG (ρ, iG
+                                                P (ρL )) = 0.
+                            i
+
+By Frobenius adjointness we have ExtiG (ρ, iG        ∼    i   G
+                                            P (ρL )) = ExtL (rL (ρ), ρL ). The Lemma
+now follows from the next
+
+Claim 4.3. [B1] If the center of G is not compact, then for any admissible repre-
+sentations ρ1 , ρ2 ∈ R(G) we have
+                          X
+                             (−1)i dim ExtiG (ρ1 , ρ2 ) = 0.
+                                i
+
+  Proof For any M P ∈ Sm(G) the space Exti (M, ρ2 ) is finite dimensional.
+Thus the map [M] 7→ (−1)i dim ExtiG (M, ρ2 ) is a well-defined homomorphism
+                        i
+K 0 (M(G)) → Z.
+   So we will be done if we show that the class of ρ1 , [ρ1 ] ∈ K 0 (M(G)) vanishes.
+   G/Gc is a free abelian group of rank equal to the split rank of the center of
+G. Hence, if the center of G is not finite, G/Gc is nontrivial, and there exists a
+nontrivial homomorphism G → Z with open kernel. Let us endow k[Z] with the
+structure of a smooth G-module by means of this homomorphism. Consider the
+                                              [n]→[n+1]
+short exact sequence of G-modules: 0 → k[Z]      −→       k[Z] → k → 0. Tensoring it
+with ρ1 we get
+
+                      0 → ρ1 ⊗ k[Z] → ρ1 ⊗ k[Z] → ρ1 → 0.                       (47)
+
+  It is easy to see that ρ1 ⊗ k[Z] is finitely generated provided ρ1 is admissible.
+Thus (47) implies that [ρ1 ] = 0.
+54                               ROMAN BEZRUKAVNIKOV
+
+
+4.4. Proof of 0.20. By Lemma 4.1
+                     X                             Z
+                       (−1)i dim Exti (ρ1 , ρ2 ) =   χρ2 · hρ1 i.
+                                                       G
+By Harish-Chandra’s Theorem on integrability of characters we can rewrite
+                       Z                    Z
+                          χρ2 · hρ1 i = lim   χρ2 · hρ1 i,
+                             G               U    U
+where U runs over an exhausting family of conjugation-invariant subsets of regular
+elements. Each U in this family can be written as a disjoint unionRU = U ell ∪U nonell
+of a subset of the elliptic (respectively, non-elliptic) set. We have U nonell χρ2 ·hρ1 i =
+0, for all U by 4.2, while
+      Z                  Z                               Z
+           χρ2 · hρ1 i =          χρ2 (g)Og (hρ1 i)dµ =          χρ2 (g)χρ1 (g −1 )dµ,
+      U ell              U ell /Ad                         U ell /Ad
+
+where the first equality is (44),Rand the second follows from 0.19. As U ell increases,
+the latter expression tends to Ell χρ1 (g −1 )χρ2 (g)dµ(g). The proof is finished.
+                                                                                                  55
+
+
+                                          References
+[Al]  Allan, N. D. Hecke rings of congruence subgroups, Bull. Am. Math. Soc. 78 (1972), 541–545.
+[BR]  Bernstein, J. Lectures on p-adic groups, notes by C. Rummelhart, Harvard, 1992.
+[B]   Bernstein, unpublished notes.
+[B1]  Bernstein, J. Private communication.
+[BD]  J. Bernstein, redigé par P. Deligne, Le “centre” de Bernstein, in Représentations des groupes
+      réductifs sur un corps local, Hermann, Paris, 1984.
+[BL] Bernstein, J., Lunts, V., Equivariant Sheaves and Functors, LN 1578, Springer Verlag, 1994.
+[BZ] Bernstein, J., Zelevinsky, A., Representations of the group GL(n, F ), where F is a local
+      non-Archimedean field, (Russian) Uspehi Mat. Nauk 31 (1976), no. 3(189), 5–70.
+[Br] Brown, K., Cohomology of groups, Graduate Texts in Math., 87, Springer Verlag, 1982.
+[BoSer] Borel, A., Serre, J-P, Cohomologie d’immeubles et de groupes S-arithmétiques, Topology
+      15 (1976), 211-232.
+[BoT] Borel, A., Tits, J., Groupes réductifs, Publ. Math. IHES 27 (1965), 55-150.
+[BW] Borel, A., Wallach, N. Continuous Cohomology, Discrete Subgroups, and Representations
+      of Reductive Groups, Annals of Math. Studies, Princeton University Press, 1980.
+[BT1] Bruhat, F., Tits J., Groupes réductifs sur un corps local, Publ. Math. IHES 41 (1972),
+      p.5-252.
+[BT2] Bruhat, F.; Tits, J. Groupes réductifs sur un corps local. II, Publ. Math. IHES 60 (1984),
+      197–376.
+[DCPr] De Concini C., Procesi, C., Complete symmetric varieties , in “Invariant Theory” (Gher-
+      ardelli F., Ed.), Lecture Notes in Math., 996, 1-44.
+[CG] Chriss, N., Ginzburg, V., Representation theory and complex geometry, Birkhuser Boston,
+      Inc., Boston, MA, 1997.
+[DL] Deligne, P., Lusztig, G., Duality for representation of reductive group over a finite field, J.
+      Algebra, 74 (1982), 284-291.
+[H] Hartshorne, R. Residues and Duality, LNM 20, Springer Verlag, 1966.
+[K] Kazhdan, D. Cuspidal geometry of p-adic groups, J. Analyse Math. 47 (1986), 1-36.
+[L] Landvogt, E. Compactification of the Bruhat-Tits Building, LNM 1619, Springer Verlag,
+      1996.
+[Sch-St1] Schneider, P., Stuhler U., Resolutions for smooth representations of the general linear
+      group over a local field J. reine angew. Math. 436 (1993), p. 19-32.
+[Sch-St2] Schneider, P., Stuhler U., Representation theory and sheaves on the Bruhat-Tits build-
+      ing, Publ. Math. IHES 85, p.97-191 (1997).
+[Schn1] Schneider, P., Equivariant homology for totally disconnected groups, J. Algebra 203, 50-68
+      (1998).
+[Schn2] Schneider, P., Verdier duality on the building, J. reine angew. Math. 494, pp.205-218
+      (1998).
+[Vig] Vigneras, M.-F., On formal dimensions for reductive p-adic groups, in I.I. Piatetskii-Shapiro
+      Festschrift, Israel Mathematical Conference Proceedings, vol. 2, pp.225–266.
+[V1] Vinberg, E.B. On reductive algebraic semigroups, in Lie groups and Lie algebras, Dynkin’s
+      Seminar, 145-182, AMS Transl. Ser.2, 169.
+[V2] Vinberg, E.B. The asymptotic semigroup of a semisimple Lie group, Semigroups in alge-
+      bra, geometry and analysis (Oberwolfach, 1993), 293–310, de Gruyter Exp. Math., 20, de
+      Gruyter, Berlin, 1995.
+[Z] Zelevinskii A., Induced representations of reductive p-adic groups II, Ann. Sci. ENS 13
+      (1980), 165-210.
+

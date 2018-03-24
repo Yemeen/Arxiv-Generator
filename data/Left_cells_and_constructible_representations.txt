@@ -1,0 +1,1668 @@
+                                               LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS
+arXiv:math/0404510v2 [math.RT] 6 May 2004
+
+
+
+
+                                                                                  MEINOLF GECK
+
+
+                                                    Abstract. We consider the partition of a finite Coxeter group W into left
+                                                    cells with respect to a weight function L. In the equal parameter case, Lusztig
+                                                    has shown that the representations carried by the left cells are precisely the
+                                                    so-called constructible ones. We show that this holds for general L, assuming
+                                                    that the conjectural properties (P1)–(P15) in Lusztig’s book on Hecke alge-
+                                                    bras with unequal parameters hold for W, L. Our proofs use the idea (Gyoja,
+                                                    Rouquier) that left cell representations are projective in the sense of modular
+                                                    representation theory. This also gives partly new proofs for Lusztig’s result in
+                                                    the equal parameter case.
+
+
+
+
+                                                                                1. Introduction
+                                               Let W be a finite Coxeter group and L be a weight function on W , as in [26].
+                                            Thus, L is a function L : W → Z such that L(ww′ ) = L(w) + L(w′ ) whenever
+                                            l(ww′ ) = l(w)+l(w′ ) where l is the length function on W . We assume that L(w) > 0
+                                            for all w 6= 1. The choice of such an L gives rise to a partition of W into left cells;
+                                            each left cell naturally carries a representation of W . These representations play an
+                                            important role, for example, in the representation theory of reductive groups over
+                                            finite or p-adic fields; see [23], [26, Chap. 0]. In the case where L = al for some
+                                            a > 0, the representations carried by the left cells are explicitly known: by Lusztig
+                                            [24], they are precisely the constructible representations which were defined (and
+                                            determined) in [22].
+                                               Let us now consider a general weight function L and let us assume that the
+                                            conjectural properties (P1)–(P15) in [26, Chap. 14] hold; we recall these properties
+                                            and some of their consequences in Section 2. The purpose of this paper is to prove
+                                            that, in this setting, the left cell representations are again the constructible ones,
+                                            as conjectured by Lusztig [26, 22.29]. Our arguments also cover the case of equal
+                                            parameters, so that we obtain partly new proofs for Lusztig’s results in [24].
+                                               The main theme of this paper is to use a generalization of a result of Rouquier [29]
+                                            which shows that left cell representations can be interpreted as projective indecom-
+                                            posable representations in the sense of modular representation theory. Rouquier’s
+                                            original result was concerned with the equal parameter case. The proof of its gen-
+                                            eralisation to arbitrary weight functions relies on (P1)–(P15); see Section 3. In this
+                                            context, a crucial role is played by a general result from [15] which shows that the
+                                            columns of the “decomposition matrix” are linearly independent; see (3.9). This
+                                            result yields, for example, the fact that the representations carried by the various
+                                            left cells of W are linearly independent in the appropriate Grothendieck group; see
+                                            Remark 3.12.
+
+                                              Date: April 2004.
+                                              2000 Mathematics Subject Classification. Primary 20C08 .
+                                                                                           1
+2                                  MEINOLF GECK
+
+
+   See Gyoja [17] where the connection between left cells and modular representa-
+tions first appeared.
+   Further general results on left cells, constructible representations and families
+will be discussed in Sections 4 and 5.
+   In order to deal with type Bm (Section 6), we need a purely combinatorial
+identity about the constructible representations; see Proposition 6.2. We shall give
+here an elementary proof of that identity which uses the fact that the constructible
+representations can be identified with the canonical basis of a certain irreducible
+representation of the Lie algebra sln+1 (C), as shown by Leclerc–Miyachi [20]. (I
+wish to thank Bernard Leclerc for his help with the proof of Proposition 6.2.)
+   Our methods provide new proofs for type Dm and Bm with equal parameters.
+   Finally, in Section 7, we discuss the computation of left cell representations in
+groups of exceptional type. For groups of type E6 , E7 , E8 and F4 with equal
+parameters, we show that Lusztig’s proof in [24], which partly relies on deep results
+about representations of reductive groups over finite fields [23], can be replaced by
+arguments which only rely on (P1)–(P15) and some explicit computations with the
+character tables in [14].
+
+                            2. Lusztig’s conjectures
+   Let (W, S) be a Coxeter system where W is finite; let L : W → Z be a weight
+function such that L(s) > 0 for all s ∈ S. Let A = Z[v, v −1 ] where v is an
+indeterminate. We set vw = v L(w) for all w ∈ W . Let H be the generic Iwahori–
+Hecke algebra corresponding to (W, S) with parameters {vs | s ∈ S}. Thus, H has
+an A-basis {Tw | w ∈ W } and the multiplication is given by the rule
+                     
+                               Tsw             if l(sw) = l(w) + 1,
+             Ts Tw =
+                       Tsw + (vs − vs−1 )Tw    if l(sw) = l(w) − 1,
+where s ∈ S and w ∈ W . Let {cw |Pw ∈ W } be the “new” basis of H defined in [26,
+Theorem 5.2]. We have cw = Tw + y py,w Ty where py,w ∈ v −1 Z[v −1 ] and pyw = 0
+unless y < w in the Bruhat–Chevalley order. Given x, y ∈ W , we can write
+                            X
+                    cx cy =    hx,y,z cz   where hx,y,z ∈ A.
+                             z∈W
+
+We usually work with the elements c†w obtained by applying the unique A-algebra
+involution H → H, h 7→ h† such that Ts† = −Ts−1 for any s ∈ S; see [26, 3.5].
+   We refer to [26, Chap. 8] for the definition of the preorders 6L , 6R , 6LR and the
+corresponding equivalence relations ∼L , ∼R , ∼LR . (See also Remark 2.4 below.)
+The equivalence classes with respect to these relations are called left, right and
+two-sided cells, respectively.
+   Let Γ be a left cell of W . As in [26, 21.1], the A-submodule
+                                             X
+                                    [Γ]A :=      Ac†y
+                                           y∈Γ
+
+of H can be regarded as an H-module by the rule c†x · c†y = z∈Γ hx,y,z c†z where
+                                                                  P
+x ∈ W , y ∈ Γ. By change of scalars (v 7→ 1) this gives rise to an C[W ]-module which
+we simply denote by [Γ]. The representation [Γ] is called a left cell representation
+of W .
+                 LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                               3
+
+
+Conjecture 2.1 (Lusztig [26, 22.29]). Let Γ be a left cell of W . Then [Γ] is a
+constructible representation in the sense of [26, 22.1]. Furthermore, all constructible
+representations arise in this way.
+
+   We recall the definition of constructible representations in (4.1). Conjecture 2.1
+is already known to be true if L = al for some a > 0, see [24] (for W a finite Weyl
+group) and [1] (for W of type H4 ).
+   We will show in Sections 6 and 7 that Conjecture 2.1 is true, if the general
+conjectural properties (P1)–(P15) formulated by Lusztig in [26, Chap. 14] hold.
+This also yields a partly new proof for finite Weyl groups and L = al for some
+a > 0 (where (P1)–(P15) are known to hold; see [26, Chap. 15].) Assuming (P1)–
+(P15), we already know that every constructible representation is of the form [Γ] for
+some left cell Γ; see [26, Lemma 22.2]. So it remains to show that [Γ] is constructible
+for every left cell Γ.
+   To state (P1)–(P15), we have to introduce some further notation.
+   For z ∈ W , there is a unique integer a(z) > 0 such that
+
+                     hx,y,z ∈ v a(z) Z[v −1 ]              for all x, y ∈ W ,
+                                                  −1
+                     hx,y,z 6∈ v   a(z)−1
+                                            Z[v        ]   for some x, y ∈ W ;
+
+see [26, 13.6]. Given x, y, z ∈ W , we define γx,y,z−1 ∈ Z by the condition
+
+                 hx,y,z = γx,y,z−1 v a(z) + strictly smaller powers of v.
+
+Finally, for z ∈ W , we define an integer ∆(z) > 0 and a non-zero integer nz ∈ Z by
+the condition
+
+           p1,z = nz v −∆(z) + strictly smaller powers of v;              see [26, 14.1].
+
+Conjecture 2.2 (Lusztig [26, 14.2]). Let D = {z ∈ W | a(z) = ∆(z)}. Then the
+following properties hold.
+   P1.   For any z ∈ W we have a(z) 6 ∆(z).
+   P2.   If d ∈ D and x, y ∈ W satisfy γx,y,d 6= 0, then x = y −1 .
+   P3.   If y ∈ W , there exists a unique d ∈ D such that γy−1 ,y,d 6= 0.
+   P4.   If z ′ 6LR z then a(z ′ ) > a(z). Hence, if z ′ ∼LR z, then a(z) = a(z ′ ).
+   P5.   If d ∈ D, y ∈ W , γy−1 ,y,d 6= 0, then γy−1 ,y,d = nd = ±1.
+   P6.   If d ∈ D, then d2 = 1.
+   P7.   For any x, y, z ∈ W , we have γx,y,z = γy,z,x .
+   P8.   Let x, y, z ∈ W be such that γx,y,z 6= 0. Then x ∼L y −1 , y ∼L z −1 ,
+         z ∼L x−1 .
+  P9.    If z ′ 6L z and a(z ′ ) = a(z), then z ′ ∼L z.
+ P10.    If z ′ 6R z and a(z ′ ) = a(z), then z ′ ∼R z.
+ P11.    If z ′ 6LR z and a(z ′ ) = a(z), then z ′ ∼LR z.
+ P12.    Let I ⊂ S. If y ∈ WI , then a(y) computed in terms of WI is equal to a(y)
+         computed in terms of W .
+ P13.    Any left cell Γ of W contains a unique element d ∈ D. We have γx−1 ,x,d 6= 0
+         for all x ∈ Γ.
+ P14.    For any z ∈ W , we have z ∼LR z −1 .
+ P15.    Let v ′ be a second indeterminate and let h′x,y,z ∈ Z[v ′ , v ′−1 ] be obtained from
+         hx,y,z by the substitution v 7→ v ′ . If x, x′ , y, w ∈ W satisfy a(w) = a(y),
+4                                       MEINOLF GECK
+
+
+        then
+                      X                               X
+                              h′w,x′ ,y′ hx,y′ ,y =            hx,w,y′ h′y′ ,x′ ,y .
+                     y ′ ∈W                           y ′ ∈W
+
+   By [26, Chap. 15], the above conjectures hold if L = al for some a > 0. We shall
+assume from now on that the above conjectures hold for W, L. Then we can define
+a new algebra J over Z as in [26, Chap. 18]. As a Z-module, J is free with a basis
+{tw | w ∈ W }. The multiplication is defined by
+                                      X
+                              tx ty =     γx,y,z tz−1 .
+                                               z∈W
+
+This
+P multiplication is associative and we have an identity element given by 1J =
+  d∈D nd td . Furthermore, we have a homomorphism of A-algebras φ : H → JA =
+A ⊗Z J given by
+                               X
+                     φ(c†w ) =       hw,d,z n̂z tz (w ∈ W ),
+                                   z∈W,d∈D
+                                   a(z)=a(d)
+
+
+
+where n̂z is defined as follows. For any z ∈ W , we set n̂z = nd where d is the unique
+element of D such that d ∼L z −1 and nd = ±1; see (P5).
+
+Remark 2.3. Let w, z ∈ W and assume that there exists some d ∈ D such that
+a(z) = a(d) and hw,d,z 6= 0. Then we have z 6L d. So (P9) implies that z ∼L d.
+But then (P13) shows that d is the unique element of D in the same left cell as z.
+Thus, we have in fact
+                                      X
+                            φ(c†w ) =   n̂z hw,dz ,z tz
+                                               z∈W
+
+where, for any z ∈ W , we denote by dz the unique element of D in the same left
+cell as z. We have
+
+                 ±v e det(φ) ∈ 1 + vZ[v]
+                                                     P
+                                          where e = w a(w).
+
+Indeed, let w ∈ W . Then, by (P2), (P4), (P5) and (P12), we have
+
+    v a(w) φ(c†w ) = ±tw + vZ[v]-combination of elements tz where a(z) = a(w)
+                        + A-combination of elements tx where a(x) > a(w).
+
+Hence we see that the matrix of φ has a block triangular shape, when we order the
+elements of W according to increasing value of a. Furthermore, inside a diagonal
+block, the coefficients have leading term ±v a(w) on the diagonal and strictly smaller
+leading term off the diagonal.
+
+Remark 2.4. Using J, the relations ∼L , ∼R , ∼LR can be characterized as follows
+(see [26, Prop. 18.4]):
+     • We have x ∼L y if and only if tx ty−1 6= 0.
+     • We have x ∼R y if and only if tx−1 ty 6= 0.
+     • We have x ∼LR y if and only if tx tw ty 6= 0 for some w ∈ W .
+               LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                         5
+
+
+                           3. Cells and idempotents
+   The purpose of this section is to generalize the main result of Rouquier [29] to
+the unequal parameter case, assuming that (P1)–(P15) hold.
+   Let B0 be the set of two-sided cells in W . We set
+                                X
+                          tc =        n d td   for c ∈ B0 .
+                               d∈D∩c
+
+Lemma 3.1. We have 1J = c∈B0 tc . Furthermore, tc tc′ = δcc′ tc for any c, c′ ∈
+                              P
+B0 . Thus, {tc | c ∈ B0 } is a set of mutually orthogonal, central idempotents in J.
+Proof. For c L ∈ B0 , let Jc = htw | w ∈ ciZ . By (P8), Jc is a two-sided
+                                                                     P ideal in J;
+we have J = c∈B0 Jc . This yields a unique decomposition 1J = c∈B0 ec where
+ec ∈ Jc . Here, {ec | c ∈ B0 } Pis a set of mutually orthogonal, central idempotents.
+                                                                           P
+For c ∈ B0 , let us write ec = w∈c ac,w tw where ac,w ∈ Z. Since 1J = d∈D nd td ,
+we conclude that ac,w = nw for w ∈ D ∩ c, and 0 otherwise. Thus, we have ec = tc
+as required.                                                                       
+
+Lemma 3.2. Let Γ be a left cell and let D ∩ Γ = {d}. Then we have nd tw td = tw
+for any w ∈ Γ. Furthermore, we have
+                  Jtd = hty | y ∈ ΓiZ    and     (nd td )2 = nd td .
+Proof. Let y ∈ W . We have ty td = x∈W γy,d,x tx−1 where γy,d,x ∈ Z. If x = y −1
+                                     P
+and y ∈ Γ, then γy,d,x = γx,y,d = nd = ±1 by (P5), (P7), (P12). Now consider any
+x ∈ W and assume that γy,d,x 6= 0. We must show that x = y −1 and y ∈ Γ. Now,
+by (P7), we have γx,y,d = γy,d,x 6= 0. By (P2) and (P8), this implies x = y −1 and
+y ∈ Γ, as required.                                                              
+
+   We shall see that each nd td actually is a primitive idempotent in J. In fact, this
+will even work when we extend scalars from Z to suitable larger rings. In order
+to describe the required conditions on such a larger ring, we recall the following
+constructions.
+3.3. The simple JC -modules. Upon substituting v 7→ 1, the algebra H specialises
+to Z[W ]. Hence, extending scalars from Z to C, we obtain an isomorphism of C-
+algebras
+                    φ1 : C[W ] → JC ,   where JC = C ⊗Z J;
+see [26, 20.1]. Since C[W ] is split semisimple, we can now conclude that JC also is
+split semisimple.
+   Let Irr(W ) be the set of simple C[W ]-modules up to isomorphism. For any C[W ]-
+module E, we denote the corresponding JC -module by E♠ . Thus, E♠ coincides with
+E as an C-vectorspace and the action of a ∈ JR on E♠ is the same as the action of
+φ−1
+ 1 (a) on E; see [26, 20.2]. Then we have
+
+                           Irr(JC ) = {E♠ | E ∈ Irr(W )},
+where Irr(JC ) is the set of simple JC -modules up to isomorphism. We shall also
+need the fact that JC is a symmetric algebra, with trace form τ : JC → C given
+by τ (tz ) = nz if z ∈ D and τ (tz ) = 0 otherwise. We have τ (tx ty ) = δxy,1 for any
+x, y ∈ W ; see [26, 20.1]. By general results on split semisimple symmetric algebras
+6                                         MEINOLF GECK
+
+
+(see [14, Chap. 7]), we have
+                            X              1
+                 τ (tw ) =                   tr(tw , E♠ )       for all w ∈ W ,
+                                          fE
+                             E∈Irr(W )
+
+where 0 6= fE ∈ C for all E ∈ Irr(W ). By [26, Lemma 20.13], we have in fact
+                                  fE ∈ R          and       fE > 0.
+3.4. The simple HK -modules. Let us extend scalars from A to K = C(v). Then
+we obtain an isomorphism of K-algebras
+           φK : HK → JK               where HK = K ⊗A H and JK = K ⊗Z J;
+see [26, 20.1]. Given a C[W ]-module E, the JC -module structure on E♠ extends
+in a natural way to a JK -module structure on Ev := K ⊗C E♠ . Then we can also
+regard Ev as an HK -module via φK . We have
+                                 Irr(HK ) = {Ev | E ∈ Irr(W )},
+where Irr(HK ) is the set of simple HK -modules up to isomorphism. We have
+tr(Tw , Ev ) ∈ C[v, v −1 ] for all w ∈ W and every C[W ]-module E. This yields the
+following direct relation between E and Ev (see [26, 20.3]):
+                   tr(w, E) = tr(Tw , Ev ) |v=1               for all w ∈ W .
+The above direct relation between Irr(W ) and Irr(HK ) can also be established
+without reference to the algebra J and (P1)–(P15); see [14, 8.1.7 and 9.3.5].
+  Let E ∈ Irr(W ). As in [26, Prop. 20.6], define an integer aE > 0 by the condition
+                         v aE tr(Tw , Ev ) ∈ C[v]        for all w ∈ W ,
+                        aE −1
+                    v           tr(Tw , Ev ) 6∈ C[v]     for some w ∈ W .
+Note that aE depends on the choice of L. Now let
+                      1   X
+             cE :=            tr(Tw , Ev ) tr(Tw−1 , Ev ) ∈ C[v, v −1 ].
+                   dim E
+                                   w∈W
+
+In [14], this is called the Schur element associated to E. Then, by [26, Cor. 20.11],
+we have
+                  cE = fE v −2aE + combination of higher powers of v,
+where fE is the positive real number introduced in (3.3).
+Definition 3.5. By Lemma 3.1, we have a partition
+                                    a
+                         Irr(W ) =      Irr(W, c)
+                                                  c∈B0
+
+where Irr(W, c) = {E ∈ Irr(W ) | tc E♠ 6= 0}. The sets Irr(W, c) may be called the
+“blocks” of Irr(W ). Now fix c ∈ B0 and let R ⊆ C(v) be a notherian subring. We
+say that R is c-adapted if the following condition holds:
+                             n X         nE        o
+(∗c )                  R∩                     nE ∈ Z ⊆ Z.
+                                         fE
+                                     E∈Irr(W,c)
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                         7
+
+
+Example 3.6. Here are some examples of c-adapted rings R.
+  (a) The subring Z ⊆ C(v) clearly satisfies (∗c ) for any c ∈ B0 .
+  (b) Following Rouquier [29], let I+ = {1 + vf | f ∈ Z[v]} and O = {f /g ∈ C(v) |
+f ∈ A, g ∈ I+ }. Then O is a principal ideal domain; see [29, p. 1040]. It is easily
+checked that O satisfies (∗c ) for any c ∈ B0 .
+  (c) Let c ∈ B0 and assume that there is a prime number p such that fE is a
+power of p for any E ∈ Irr(W, c). Let Ap = {f /g ∈ C(v) | f, g ∈ A, g 6∈ pA}. Then
+Ap is a noetherian local ring whose maximal ideal is the principal ideal generated
+by p. It is readily checked that (∗c ) holds for Ap . Rings of this type have been used
+by Gyoja [17] in the study of left cells in the equal parameter case.
+Theorem 3.7 (See Rouquier [29] in the equal parameter case). Let c ∈ B0 and
+R ⊆ C(v) be a c-adapted subring. By extension of scalars, we obtain an R-algebra
+JR = R ⊗Z J. Then the following hold.
+   (a) Let d ∈ D ∩ c. Then nd td is a primitive idempotent in JR .
+   (b) tc is a primitive idempotent in the center of JR .
+Proof. Let K = C(v) and consider JR as a subalgebra of JK = K ⊗Z J. Now, for
+any E ∈ Irr(W ), we can extend the JC -module structure on E♠ in a natural way
+to a JK -module structure on K ⊗C E♠ . The trace form τ also extends to a trace
+form on JK which we denote by the same symbol. Thus, we have
+                       X      1
+             τ (h) =            tr(h, K ⊗C E♠ )    for any h ∈ JK .
+                             fE
+                      E∈Irr(W )
+
+   (a) We begin with the following general remark. Let e ∈ JR be any primitive
+idempotent such that e = etc . We regard e as an element of JK . Now, for E ∈
+Irr(W ), we have eE♠ = 0 unless E ∈ Irr(W, c). Furthermore, the term tr(e, K ⊗C
+E♠ ) is a non-negative integer which is less than or equal to dim E. Since e = etc ,
+there is at least one E ∈ Irr(W, c) such that tr(e, K ⊗C E♠ ) > 0. Now recall from the
+discussion in (3.3) that fE is a positive real number for all E ∈ Irr(W ). Combining
+all these pieces of information, the above formula shows that τ (e) is a positive real
+number.
+   On the other hand, the defining formula for τ and the fact that e lies in JR show
+that τ (e) ∈ R. Hence, using (∗c ), we conclude that
+                                          n X          nE        o
+              τ (e) > 0 and τ (e) ∈ R ∩                     nE ∈ Z ⊆ Z.
+                                                       fE
+                                           E∈Irr(W,c)
+
+In particular, this proves that τ (e) > 1 for any primitive idempotent e ∈ JR such
+that e = etc . Now let d ∈ D. By Lemma 3.2, nd td is an idempotent; furthermore,
+we have τ (nd td ) = 1. Let us write nd td = e1 + · · · + en where ei are orthogonal
+primitive idempotents in JR . (This is possible since R is noetherian.) Since d ∈ c,
+we have ei tc = ei for all i. The above discussion shows that 1 = τ (nd td ) =
+τ (e1 ) + · · · + τ (en ) > n. Thus, we must have n = 1 and so nd td is primitive.
+    (b) Let c ∈ B0 and take some d ∈ D ∩ c. We consider a decomposition 1J =
+e1 + · · ·+ er , where the ei are mutually orthogonal, central primitive
+                                                                       Pidempotents in
+JR . (This exists since R is noetherian.) We have nd td = nd td 1J = i nd td ei . Since
+nd td is a primitive idempotent, there exists a unique j such that nd td ej = nd td and
+nd td ei = 0 for i 6= j. Thus, we have
+                         td ∈ JR ej     where      td ej 6= 0.
+8                                    MEINOLF GECK
+
+
+Now consider any element d′ ∈ D ∩ c. The fact that d, d′ lie in the same two-sided
+cell means that there exists some w ∈ W such that td tw td′ 6= 0; see Remark 2.4.
+Since td tw td′ ∈ JR ej , we also have td tw td′ ej 6= 0 and so td′ ej 6= 0. By the previous
+argument, this implies td′ ∈ JR ej .
+   Thus, we have shown that td′ ∈ JR ej for all d′ ∈ D ∩ c and so tc ∈ JR ej . Since
+ej is a primitive idempotent, we conclude that tc = ej , as required.                     
+
+P Recall †that, given a left cell Γ of W , we have a corresponding H-module [Γ]A =
+   y∈Γ Acy . If R is any (commutative) ring containing A, let HR = R ⊗A H.
+Then the H-module P   structure on [Γ]A extends in a natural way to an HR -module
+structure on [Γ]R := y∈Γ Rc†y .
+Corollary 3.8. Let R ⊆ C(v) be a noetherian subring such that O ⊆ R. Let Γ be a
+left cell of W . Then [Γ]R is a projective HR -module. Furthermore, if Γ is contained
+in c ∈ B0 and R is c-adapted, then [Γ]R is indecomposable.
+Proof. By extension of scalars, we obtain a homomorphism φR : HR → JR of R-
+algebras. By Remark 2.3, det(φ) is invertible in O ⊆ R; hence φR is an isomorphism.
+Now let D ∩ Γ = {d}. By Lemma 3.2, we have
+                                  JR td = hty | y ∈ ΓiR .
+Now, since nd td is an idempotent, JR td is a projective JR -module. Using φR , we
+may also regard JR td as an HR -module. Thus, the action of h ∈ HR on JR td
+is given by h ∗ ty := φ(h)ty (y ∈ Γ). Since φR is an isomorphism, the resulting
+HR -module is projective. Finally, consider the R-linear bijection
+                            θ : JR td → [Γ]R ,     ty 7→ n̂y c†y .
+By a computation analogous to that in [26, 18.10], we obtain
+                                   X
+        c†w ∗ ty = φ(c†w )ty = n̂y   hw,y,u n̂u tu for any w ∈ W , y ∈ Γ.
+                                   u∈Γ
+
+Applying θ yields       ∗ ty ) = c†w · θ(ty ). Thus, θ is an HR -module isomorphism.
+                    θ(c†w
+Consequently, [Γ]R is a projective HR -module.
+  If Γ ⊆ c and R is c-adapted, then nd td is a primitive idempotent by Theorem 3.7
+and so [Γ]R is seen to be indecomposable.                                         
+
+   Note that the statement of Corollary 3.8 only involves the notion of a left cell
+of W . The ring J and the properties (P1)–(P15) are needed in the proof. It would
+be very interesting to find a more elementary proof.
+3.9. Left cells and decomposition numbers. Assume that we have a discrete
+valuation ring R ⊆ C(v) such that O ⊆ R, where O is the ring in Example 3.6(b).
+Assume, furthermore, that
+(0)       HF = F ⊗R HR is split semisimple and Hk = k ⊗R HR is split,
+where F is the field of fractions of R and k is the residue field of R. As pointed
+out in [16, §3], these assumptions imply that the Krull–Schmidt Theorem holds for
+HR -modules which are finitely generated and free over R; furthermore, idempotents
+can be lifted from Hk to HR . (That is, we don’t have to pass to a completion of
+R as is usually done in the modular representation theory of finite groups and
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                         9
+
+
+associative algebras.) Now we are in the general setting of [14, §7.5]. The canonical
+map R → k induces a decomposition map
+                               dR : R0 (HF ) → R0 (Hk )
+between the Grothendieck groups of finite-dimensional representations of HF and
+Hk , respectively. Let DR be the corresponding decomposition matrix. Thus, DR
+has rows labelled by Irr(HF ) and columns labelled by Irr(Hk ). Note that the
+                                                                                 ∼
+extension of scalars from F to K = C(v) induces a natural bijection Irr(HF ) →
+Irr(HK ) (since HF is assumed to be split semisimple). Thus, as in (3.4), we also
+                           ∼
+have a bijection Irr(HF ) → Irr(W ).
+   Now the entries of DR are given as follows. Consider the projective indecom-
+posable HR -modules (PIM’s for short). Every PIM has a unique simple quotient,
+which is a simple Hk -module. In fact, associating to each PIM its simple quotient
+defines a bijection between isomorphism classes of PIM’s and Irr(Hk ). For each
+V ∈ Irr(Hk ), choose a PIM PV with simple quotient V . Thus, {PV | V ∈ Irr(Hk )}
+is the set of all PIM’s of HR , up to isomorphism. By Brauer reciprocity (see [14,
+Theorem 7.5.2]), the coefficients in a fixed column of DR give the expansion of the
+corresponding PIM (viewed as an HF -module by extension of scalars from R to F )
+in terms of the irreducible ones. Thus, we have
+                                         
+(1)                     DR = [Ev : PV ]
+                                           E∈Irr(W ),V ∈Irr(Hk )
+
+where Irr(W ) indexes the rows and Irr(Hk ) indexes the columns. Here, we denote
+by [Ev : PV ] the multiplicity of Ev ∈ Irr(HK ) as a simple component of PV (viewed
+as an HK -module by extension of scalars). Now, since H is a symmetric algebra
+with a “reduction-stable” center in the sense of [14, Def. 7.5.5], we know by a
+general argument (due to Rouquier and the author, see [14, Theorem 7.5.6]) that
+(2)             the columns of DR are linearly independant over Q.
+Now assume, moreover, that R is c-adapted for every two-sided cell c. By Corol-
+lary 3.8, [Γ]R is a PIM. Since W is the union of all left cells, we obtain all PIM’s in
+this way. For each V ∈ Irr(Hk ), choose a left cell ΓV such that [ΓV ]R has simple
+quotient V . Thus, {[ΓV ]R | V ∈ Irr(Hk )} is the set of all PIM’s of HR , up to
+isomorphism. Thus, we finally obtain
+                                        
+(3)                     DR = [E : [ΓV ]]                       .
+                                           E∈Irr(W ),V ∈Irr(Hk )
+
+Here, we denote by [E : [Γ]] the multiplicity of E as a simple component of [Γ];
+note that [Ev : [Γ]K ]] = [E : [Γ]] for any E ∈ Irr(W ) and any left cell Γ (see, for
+example, the argument in [26, 20.5]).
+  The above discussion also shows that, given any left cell Γ, there exists a unique
+V ∈ Irr(Hk ) such that [Γ]R ∼  = [ΓV ]R . Thus, we also have [Γ] ∼= [ΓV ] as C[W ]-
+modules.
+  The above idea of relating left cells and decomposition matrices has already been
+considered by Gyoja [17] in the case of equal parameters.
+3.10. Construction of (F, R, k). We now give a general construction of a discrete
+valuation ring R ⊇ O satisfying the hypotheses in (3.9)(0), where k has character-
+istic p > 0.
+10                                        MEINOLF GECK
+
+
+   Let F0 be a finite extension of Q; let R0 be the ring of algebraic integers in
+F0 . Let p be a prime ideal such that p ∈ p. Then k = R0 /p is a finite field of
+characteristic p. Now we may choose F0 large enough so that k0 ⊗Z J is split.
+(This is clearly possible.) Then Jk = k ⊗Z J also is split where k = k0 (v). Now
+φk : Hk → Jk is an isomorphism (see Remark 2.3). So we conclude that Hk is split.
+On the other hand, HF is split semisimple where F = F0 (v) (see [14, 9.3.5]). We
+now take the ring
+                R = {f /g | f, g ∈ R0 [v, v −1 ], g 6∈ p[v, v −1 ]} ⊇ Ap ⊇ O.
+Then R is a discrete valuation ring with field of fractions F and residue field k.
+The hypotheses in (3.9)(0) are satisfied and we have a decomposition matrix DR .
+Corollary 3.11. Assume that there exists a discrete valuation R as in (3.9) which
+is c-adapted for every c ∈ B0 . Then the set
+             n X                                        o
+                       [E : [Γ]] E  Γ any left cell of W ⊆ Q[Irr(W )]
+                                   
+                E∈Irr(W )
+
+is linearly independent.
+Proof. This is just another way of saying that the columns of the decomposition
+matrix DR are linearly independent.                                           
+
+Remark 3.12. If W is of classical type, then R = A2 satisfies the above hypothesis;
+see Section 6. For groups of exceptional type, a ring R satisfying the hypothesis
+of Corollary 3.11 no longer exists. However, one can just check by an explicit
+computation (using the results in Section 7) that the above statement holds. Thus,
+the statement in Corollary 3.11 is seen to hold for any W, L (assuming (P1)–(P15)).
+
+                4. Constructible representations and families
+   We preserve the set-up of the previous sections. Now we turn to constructible
+representations and families. The definition relies on Lusztig’s notion of truncated
+induction.
+   First recall the definition of the invariants aE for any E ∈ Irr(W ); see (3.4).
+Now, given any C[W ]-module E ′ , we can write uniquely E ′ ∼ = E0′ ⊕ E1′ ⊕ E2′ ⊕ · · ·
+where, for any integer i, we define
+                M
+        Ea′ :=     [E : E ′ ] E (sum over all E ∈ Irr(W ) such that aE = i);
+                 E
+
+here, [E : E ] denotes the multiplicity of E as a simple component of E ′ . Now let
+            ′
+
+I ⊂ S and consider the parabolic subgroup WI ⊂ W . Let E ′ be any C[WI ]-module
+and denote by IndSI (E ′ ) the corresponding C[W ]-module obtained by induction.
+Then, as above, we can write uniquely
+            IndSI (E ′ ) ∼
+                         = E0 ⊕ E1 ⊕ E2 ⊕ · · · ,            where E = IndSI (E ′ ).
+It is shown in [26, 20.15] that if E ′ = Ea′ 6= {0} for some a, then we have
+            IndSI (E ′ ) ∼
+                         = Ea ⊕ Ea+1 ⊕ Ea+2 ⊕ · · · ,                 where Ea 6= {0}.
+In this case, we set   JSI (E ′ )   := Ea . Thus,   JSI (E ′ )   is a C[W ]-module such that
+                            IndSI (E ′ ) ∼
+                                         = JSI (E ′ ) ⊕ higher terms,
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                         11
+
+
+where “higher terms” means a direct sum of simple W -modules with a-invariant
+strictly bigger than a. This is precisely Lusztig’s truncated induction in [26, 20.15].
+
+4.1. Constructible representations and families. Following Lusztig [26, 22.1],
+we define the set Con(W ) of constructible representations of W (with respect to
+the fixed weight function L). This is done by induction on |W |. If W = {1}, then
+Con(W ) consists of the unit representation. If W 6= {1}, then Con(W ) consists of
+the C[W ]-modules of the form JSI (E ′ ) or JSI (E ′ ) ⊗ sgn, for various subsets I $ S
+and various E ′ ∈ Con(WI ).
+   We define a corresponding “decomposition matrix” D as follows. The rows are
+labelled by Irr(W ) and the columns are labelled by Con(W ); the coefficients in a
+fixed column of D give the expansion of the corresponding constructible represen-
+tation in terms of the irreducible ones.
+   The matrix D has been computed explicitly (for all W, L) by Lusztig [22], [26,
+Chap. 22] and Alvis–Lusztig [2] (type H4 ).
+   Following Lusztig [26, 23.1], we define a graph GW as follows. The vertices of
+GW are labelled by Irr(W ). Given E 6= E ′ in Irr(W ), the corresponding vertices
+in GW are joined if E, E ′ both appear as simple components of some constructible
+representation of W . We say that E, E ′ ∈ Irr(W ) belong to the same family if the
+corresponding vertices are in the same connected component of GW .
+   The partition of Irr(W ) and Con(W ) according to families gives rise to a block
+diagonal shape of D, with one block on the diagonal for each family.
+
+Remark 4.2. One may also consider the following set Con′ (W ) of representations
+of W (with respect to the fixed weight function L). The definition of Con′ (W )
+appears, in a slightly refined form, in Malle–Rouquier [27, §2].
+   Again, we proceed by induction on |W |. If W = {1}, then Con′ (W ) consists of
+the unit representation. If W 6= {1}, then Con′ (W ) consists of all C[W ]-modules of
+the form Ei , where E = IndSI (E ′ ), for various subsets I ⊆ S such that |I| = |S| − 1,
+various E ′ ∈ Con′ (WI ) and various i ∈ Z. It is clear that
+                                Con(W ) ⊆ Con′ (W ).
+Note that we certainly do not have Con(W ) = Con′ (W ) in general. For example,
+for W of type E7 , we have 2 · (512a ⊕ 512′a) ∈ Con′ (W ) \ Con(W ) (see the discussion
+in (7.6) below). In Remark 5.4, we shall see that Con′ (W ) ⊆ N[Con(W )]
+
+Theorem 4.3 (Lusztig, Rouquier). Let O ⊆ C(v) be the subring defined in Exam-
+ple 3.6(b). Assume that (P1)–(P15) hold for W, L. Let E, E ′ ∈ Irr(W ). Then the
+following conditions are equivalent.
+    (a) E, E ′ belong to the same family, in the sense of (4.1).
+    (b) E, E ′ belong to the same two-sided cell, that is, there exists some c ∈ B0
+                                     ′
+        such that tc E♠ 6= 0 and tc E♠ 6= 0; see [26, 20.2].
+             ′
+    (c) E, E belong to the same block of HO , that is, there exists a primitive idem-
+        potent e in the center of HO such that eEv 6= 0 and eEv′ 6= 0.
+Furthermore, if E, E ′ belong to the same family, then aE = aE ′ .
+
+Proof. For the equivalence of (a) and (b), see the argument in the proof of [26,
+Prop. 23.3]. The equivalence of (b) and (c) is an immediate consequence of Theo-
+rem 3.7(b). For the statement concerning aE and aE ′ ; see [26, Prop.20.6(c)]. 
+12                                 MEINOLF GECK
+
+
+   The equivalence of (a) and (b) was first proved by Barbasch and Vogan in the
+equal parameter case; see [23, Theorem 5.25]. The equivalence of (b) and (c) has
+been established by Rouquier [29] in the equal parameter case. The important
+point about that equivalence is that the statement in (c) is independent of the
+Kazhdan–Lusztig basis {cw } of H. As such, it applies to a wider class of algebras;
+see Broué–Kim [7] and Malle–Rouquier [27].
+   We now establish some results which will be helpful for the computation of
+the left cell representations. The discussion mainly follows [26]. Note that the
+statements in Lemmas 4.4 and 4.6 (and the corollaries following them) do not
+involve the properties (P1)–(P15): these are only implicit in the proofs. It would
+be very interesting to prove any of those statements by elementary methods.
+Lemma 4.4. Let Γ be a left cell of W . Then all simple components of [Γ] belong to
+a fixed family of Irr(W ). In particular, all simple components of [Γ] have the same
+a-invariant.
+Proof. Let D ∩ Γ = {d}. If E, E ′ are simple components of [Γ], then td acts
+                              ′
+non-trivially on E♠ and on E♠   ; see [26, Prop. 21.4]. Consequently, we also have
+tc E♠ 6= 0 and tc E♠ 6= 0, where c is the two-sided cell containing d. Thus, E, E ′
+                   ′
+
+belong to the same two-sided cell. Now the assertion follows from Theorem 4.3. 
+Lemma 4.5. Let Γ be a left cell of W . Then Γw0 also is a left cell of W , where w0
+is the unique element of maximal length of W . We have [Γw0 ] ∼  = [Γ] ⊗ sgn where
+sgn is the sign representation of W .
+Proof. See [26, Cor. 11.7] and [26, Prop. 21.5]. Here, (P1)–(P15) are not needed. 
+   The following result is an extremely strong condition on the expansion of a left
+cell representation in terms of the irreducible ones.
+Lemma 4.6. Let Γ be a left cell of W . Then we have
+                                  X      1
+                          1=               [E : [Γ]].
+                                        fE
+                                  E∈Irr(W )
+
+Here, [E : [Γ]] denotes the multiplicity of E as a simple component of [Γ].
+Proof. Let Γ ∩ D = {d} and nd = ±1. By [26, 19.2 and 20.1(b)], we have
+                                     X     1
+                      nd = τ (td ) =          tr(td , E♠ ).
+                                          fE
+                                      E∈Irr(W )
+
+On the other hand, by [26, Prop. 21.4], we have nd tr(td , E♠ ) = [E : [Γ]] for every
+E ∈ Irr(W ). This yields the desired assertion.                                    
+Corollary 4.7. Let Γ be a left cell of W . Assume that there exists some E ∈ Irr(W )
+such that [E : [Γ]] 6= 0 and fE = 1. Then [Γ] ∼= E ∈ Irr(W ) and [Γ] is constructible.
+Proof. Let Irr(W ) = {E1 , . . . , Er } where E1 = E. We write [Γ] ∼
+                                                                          Lr
+                                                                       =     i=1 ni Ei
+where ni ∈ Z>0 . Then, by Lemma 4.6, we have
+                               r                r
+                              X   1            X   1
+                         1=          ni = n1 +        ni .
+                                 f
+                              i=1 Ei
+                                                  f
+                                               i=2 Ei
+Now note that n1 = [E : [Γ]] is a positive integer and that fEi > 0 for all i. Hence
+we must have n1 = 1 and ni = 0 for all i > 1.
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                          13
+
+
+   To prove that E ∼= [Γ] is constructible, we argue as follows. By [26, Prop. 22.3],
+there exists some constructible representation E ′ of W which contains a simple
+component isomorphic to E. By [26, Lemma 22.2], there exists a left cell Γ′ such
+E′ ∼
+   = [Γ′ ]. Thus, E is a simple component of [Γ′ ]. By the previous argument, we
+       = [Γ′ ] and so E ∼
+have E ∼                = E ′ , as desired.                                        
+Corollary 4.8. Assume that fE = 1 for all E ∈ Irr(W ). Then [Γ] is irreducible
+and constructible for every left cell Γ.
+Proof. Immediate by Corollary 4.7.                                                     
+Example 4.9. Assume that W is of type Am−1 (m > 2) with generators and
+relations given by the following diagram:
+                            s1        s2                      sm−1
+              Am−1           t         t         q q q         t
+
+All generators are conjugate in W . So every weight function is of the form L = al
+where a > 0. We have fE = 1 for all E ∈ Irr(W ); see [26, 22.4]. Now Corollary 4.8
+shows that [Γ] is irreducible and constructible for every left cell Γ. On the other
+hand, by [26, 22.5], the irreducible representations are precisely the constructible
+ones. The fact that [Γ] is irreducible for every left cell Γ has been already established
+by Kazhdan–Lusztig [19, §5]; for a more detailed and completely elementary proof,
+see Ariki [4].
+Example 4.10. Let W be of type Bm (m > 2), with generators and relations given
+by the following diagram:
+                   t         s1        s2                     sm−1
+       Bm           t        t         t         q q q         t
+
+Let L be a weight function such that
+         L(t) = b > 0      and      L(s1 ) = L(s2 ) = · · · = L(sm−1 ) = a > 0.
+Assume that (P1)–(P15) hold for W, L. As in [26, 22.6], we write b = ar + b′ where
+r, b′ ∈ Z such that r > 0 and 0 6 b′ < a.
+    Assume first that b′ > 0. Then we have fE = 1 for all E ∈ Irr(W ); see [26,
+Prop. 22.14(a)]. So Corollary 4.8 shows that [Γ] ∈ Irr(W ) for all left cells Γ. On
+the other hand, the constructible representations are precisely the irreducible ones
+by [26, Prop. 22.25]. In particular, Conjecture 2.1 holds for W, L if b′ > 0. The
+case where b′ = 0 will be considered in Section 6.
+Remark 4.11. Let W be of type Bm with parameters given as above. Assume
+that b/a is “large”. Then the left cells are explicitly determined by Bonnafé–
+Iancu [6] (without using the assumption that (P1)–(P15) hold); the corresponding
+representations are irreducible and constructible. There is some hope that similar
+arguments might be found to deal with arbitrary values of a and b, as long as a
+does not divide b.
+   Finally,
+      L we present some further conditions on the coefficients in the expansion
+[Γ] ∼
+    = E [E : Γ]] E for a left cell Γ. This will also be needed in the discussion of
+type E8 in (7.7). The desired conditions follow from results in [15] concerning the
+center of H; we shall follow the exposition in [14].
+14                                 MEINOLF GECK
+
+
+4.12. Central characters. Let Z(H) be the center of H. An element z ∈ Z(H)
+acts by a scalar in every simple HK -modules Ev , where E ∈ Irr(W ); we denote
+that scalar by ωE (z). For technical simplicity, let us now assume that W is a Weyl
+group; then Q is a splitting field for W and Q(v) is a splitting field for H; see [14,
+Thoerem 9.3.5]. Consequently, since A is integrally closed in Q(v), we have
+(a)              ωE (z) ∈ A     for any E ∈ Irr(W ) and z ∈ Z(H).
+Now let R ⊆ C(v) be a noetherian subring such that O ⊆ R, where O is the ring
+in Example 3.6(b). Let e ∈ HR be an indempotent and consider the corresponding
+projective HR -module P := HR e. Extending scalars from R to K, we obtain an
+HK -module PK . We denote
+       [E : P ] = [Ev : PK ] := multiplicity of Ev in PK , for any E ∈ Irr(W ).
+Then the argument in the proof of [14, Theorem 7.5.3] shows that
+              X        1
+(b)                      [E : P ] ωE (zC ) ∈ R  for any z ∈ Z(H).
+                      cE
+              E∈Irr(W,c)
+
+This yields rather restrictive conditions on the coefficients [E : P ].
+   By Corollary 3.8, we can apply this, in particular, to the module P = [Γ]R for
+a left cell Γ of W . Note that, for z = 1, we have ωE (1) = 1 for all E and so the
+above condition bears some resemblance to that in Lemma 4.6.
+   In order to be able to use the formula (b), we shall need to compute ωE (z) for
+some elements z ∈ Z(H).
+   Now, by [14, Cor. 8.2.5], there is a distinguished A-basis of Z(H), denoted by
+{zC | C ∈ Cl(W )} where Cl(W ) is the set of conjugacy classes of W . The scalars
+ωE (zC ) are determined by the following identity:
+                                                            if E ∼
+                                                                 = E′,
+                                                    
+                 X                                    cE
+(c)                   vw tr(TwC , Ev ) ωE ′ (zC ) =
+                                                       0    otherwise;
+             C∈Cl(W )
+
+see [14, Exc. 9.5]. Here, wC is an element of minimal length in C ∈ Cl(W ). Note
+that, by [14, Cor. 8.2.6], the value tr(TwC , Ev ) does not depend on the choice of
+wC . The “character tables”
+                                        
+                            tr(TwC , Ev )
+                                         E∈Irr(W ),C∈Cl(W )
+
+are explicitly known for all W, L; see [14]. As explained in the proof of [14,
+Prop. 11.5.13], the identities (c) can be used to compute the scalars ωE (zC ).
+
+
+                5. Induction and restriction of left cells
+   Let I ⊆ S and consider the parabolic subgroup WI . The restriction of L to WI
+is a weight function on WI . Thus, we have a partition of WI into left cells with
+respect to L|WI . We shall now consider the compatibility of the corresponding left
+cell representations with respect to induction and restriction. All the results that
+we are going to present here were already known in the case of equal parameters.
+However, new arguments are needed in the proofs for some of these results in the
+unequal parameter case (most notably Lemmas 5.2, 5.5 and 5.6).
+                 LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                               15
+
+
+Lemma 5.1 (See Barbasch–Vogan [5, Prop. 3.11] in the equal parameter case).
+Let Γ be a left cell of W and I ⊂ S. Then there exist (pairwise different) left cells
+Γ′1 , . . . , Γ′r of WI and positive integers n1 , . . . , nr such that
+
+                            ResSI ([Γ]) ∼
+                                        = n1 [Γ′1 ] ⊕ · · · ⊕ nr [Γ′r ].
+Proof. We follow the proof given by Roichman [28, Theorem 5.2] in the equal
+parameter case.
+   Recall the definition of the relation 6L on W : this is the transitive closure of
+the relation “y ←L w if hs,w,y 6= 0 for some s ∈ S”; see [26, 8.1].
+   We define a relation 6L,I on W as the transitive closure of the relation “y ←L,I w
+if hs,w,y 6= 0 for some s ∈ I”. Let ∼L,I be the corresponding equivalence relation
+on W . The restriction of 6L,I to WI gives precisely the left cells of WI with respect
+to L|WI .
+   Let YI be the set of all w ∈ W such that w has minimal length in the right coset
+WI w. Let u, u′ ∈ WI and x, x′ ∈ YI . Now, if ux ←L,I u′ x′ , then there exists some
+s ∈ I such that hs,u′ x′ ,ux 6= 0. By the formula in [26, Prop. 6.3], we have either
+ux = su′ x′ > u′ x′ or ux < u′ x′ . Thus, we have the implication
+                  ux 6L,I u′ x′        and l(ux) > l(u′ x′ )       ⇒       x = x′ .
+Consequently, we have the implication
+                                ux ∼L,I u′ x′       ⇒     x = x′ .
+This shows that there exist (pairwise different) left cells Γ′1 , . . . , Γ′r of WI and subsets
+R1 , . . . , Rr of YI such that
+                                       [r [
+                                  Γ=            Γ′i y.
+                                             i=1 y∈Ri
+
+Now consider the restriction of the H-module [Γ]A to HI . The formula in [26,
+Lemma 9.10(e)] shows that, for fixed i ∈ {1, . . . , r} and y ∈ Ri , we have
+                         X
+            c†s · c†uy =    hs,u,u′ c†u′ y for any s ∈ I and u ∈ Γ′i .
+                           u′ ∈Γ′i
+
+
+Thus, as an HI -module, we have ResSI ([Γ]A ) ∼   = n1 [Γ′1 ]A ⊕ · · · ⊕ nr [Γ′r ]A , where
+ni = |Ri | for all i. Upon setting v 7→ 1, we obtain the required assertion concerning
+WI -modules.                                                                             
+
+Lemma 5.2 (See Barbasch–Vogan [5, Prop. 3.15] in the equal parameter case).
+Let I ⊂ S and Γ′ be a left cell of WI . Then there exist (pairwise different) left cells
+Γ1 , . . . , Γr of W such that
+
+                               IndSI ([Γ′ ]) ∼
+                                             = [Γ1 ] ⊕ · · · ⊕ [Γr ].
+Proof. Let XI be the set of all x ∈ W such that x has minimal length in the left
+coset xWI . Then, by [11], we have XI Γ′ = Γ1 ∐ · · · ∐ Γr where Γi are left cells of
+W . So we have an HA -module
+
+                                     Ac†xu ∼
+                             X X
+                [XI Γ′ ]A :=               = [Γ1 ]A ⊕ · · · ⊕ [Γr ]A .
+                                     x∈XI u∈Γ′
+16                                        MEINOLF GECK
+
+
+Here, c†w (w ∈ W ) acts by the rule c†w · c†y = z∈XI Γ′ hx,y,z c†z for any y ∈ XI Γ′ . To
+                                               P
+identify this module with an induced module, we set
+          I := hTx c†u | x ∈ XI , u ∈ WI , u 6L,I u′ for some u′ ∈ Γ′ iA ,
+          Î := hTx c†u | x ∈ XI , u ∈ WI \ {Γ′ }, u 6L,I u′ for some u′ ∈ Γ′ iA .
+
+Then Î ⊆ I are left ideals in HA ; see [11, Lemma 2.2]. Thus, I/Î is an HA -module;
+it is free as an A-module with a basis given the residue classes of the elements Tx c†u
+(x ∈ XI , u ∈ Γ′ ). By the definition of IndSI (see [14, §9.1]), we have an isomorphism
+of HA -modules
+                                  ∼
+                     IndSI ([Γ′ ]) −→ I/Î,          Tx ⊗ c†u 7→ Tx c†u + Î.
+On the other hand, by [11, Prop. 3.3], we also have
+           I = hc†xu | x ∈ XI , u ∈ WI , u 6L,I u′ for some u′ ∈ Γ′ iA ,
+           Î = hc†xu | x ∈ XI , u ∈ WI \ {Γ′ }, u 6L,I u′ for some u′ ∈ Γ′ iA .
+
+Thus, I/Î also has an A-basis given by the residue classes of the elements c†xu
+(x ∈ XI , u ∈ Γ′ ). Hence there is an isomorphism of HA -modules
+                                      ∼
+                         [XI Γ′ ]A −→ I/Î,            c†xu 7→ c†xu + Î.
+Upon setting v 7→ 1, we obtain IndSI ([Γ′ ]) ∼
+                                             = [Γ1 ] ⊕ · · · ⊕ [Γr ] as desired.       
+
+Remark 5.3. The proofs of Lemma 5.1 and Lemma 5.2 do not require the assump-
+tion that (P1)–(P15) hold.
+Remark 5.4. We can now clarify the relation between Con(W ) and the set Con′ (W )
+defined in Remark 4.2. (See Malle–Rouquier [27, Prop. 2.5] for the case of equal
+parameters.) Assume that Conjecture 2.1 holds for W, L and all parabolic subgroups
+of W . Then we have:
+    (a) Con′ (W ) ⊆ N[Con(W )] and
+    (b) the regular representation of W is a sum of constructible representations.
+Indeed, using the notation in Remark 4.2, let Ei ∈ Con′ (W ) where E = IndSI (E ′ )
+for some E ′ ∈ Con′ (WI ) (I $ S) and some integer i > 0. By induction, E ′ is a sum
+of constructible representations. Hence, by Conjecture 2.1, E ′ is a sum of left cell
+representations. Using Lemma 4.4 and Lemma 5.2, we conclude that Ei is a sum
+of left cell representations and, hence (via Conjecture 2.1), a sum of constructible
+representations. This proves (a). Now (b) is an easy consequence: we just have to
+note that the regular representation of W (which can be obtained by inducing the
+regular representation of any proper parabolic subgroup) is a sum of representations
+in Con′ (W ).
+Lemma 5.5. Let I ⊂ S and Γ′ be a left cell of WI . Then we have
+                                          JSI ([Γ′ ]) ∼
+                                                      = [Γ],
+where Γ is the left cell of W such that Γ′ ⊆ Γ.
+Proof. See the argument in the proof of Case 1 in [26, Lemma 22.2]. Note that
+this argument is much simpler than one given in [23, 5.28.1] in the case of equal
+parameters, which uses results from Barbasch–Vogan [5].                        
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                           17
+
+
+Lemma 5.6 (See Lusztig [24, §3] in the equal parameter case). Let F ⊆ Irr(W ) be a
+family and assume that there exists a proper subset I ⊂ S and a family F ′ ⊂ Irr(WI )
+                                       ∼
+such that JSI defines a bijection F ′ → F .
+    Let Γ be a left cell of W and assume that all simple components of [Γ] belong to
+F . Then there exists a left cell Γ′ of WI such that [Γ] ∼
+                                                         = JSI ([Γ′ ]). In particular, if
+  ′
+[Γ ] is constructible, then so is [Γ].
+Proof. Let F = {E1 , . . . , Ef }. By assumption, we have F ′ = {E1′ , . . . , Ef′ } where
+Ei ∼
+   = JSI (Ei′ ) for all i. Using [26, Prop. 20.13], we conclude that
+           ResSI (Ei ) ∼
+                       = Ei′ ⊕ combination of E ′ ∈ Irr(WI ) with aE ′ < a
+whereLa = aE1 = · · · = aEf . Now let Γ be a left cell belonging to F ; we have
+[Γ] ∼
+    = i [Ei : [Γ]] Ei . Upon restriction to WI , we obtain
+                            f
+          ResSI ([Γ]) ∼
+                            M
+                      =           [Ei : [Γ]] Ei′ ⊕ combination of E ′ with aE ′ < a.
+                            i=1
+
+On the other hand, by Lemma 5.1, we know that ResSI ([Γ]) is a sum of left cell
+representations of WI . Since all simple components of a left cell representation
+belong to a fixed family, we conclude that
+             f
+                    [Ei : [Γ]] Ei′ ∼
+             M
+                                   = sum of left cell representations of WI .
+              i=1
+
+Applying JSI and using Lemma 5.5, we deduce that
+                    f
+           [Γ] ∼          [Ei : [Γ]] Ei ∼
+                    M
+               =                        = sum of left cell representations of W ,
+                    i=1
+
+where each representation occuring in the sum is obtained by J-induction of a left
+cell representation of WI . Thus, to complete the proof, it is sufficient to show that
+only one left cell representation occurs in the above sum. But this follows from the
+following general statement:
+  Let Γ, Γ1 be left cells and assume that [Γ1 ] ∼
+                                                = [Γ] ⊕ E ′ for some C[W ]-module E ′ .
+                                  ∼
+Then we automatically have [Γ] = [Γ1 ].
+  Indeed, the assumption implies that [E : [Γ]] 6 [E : Γ1 ]] for any E ∈ Irr(W ).
+Hence Lemma 4.6 yields
+                   X       1              X       1
+              1=             [E : [Γ]] 6            [E : [Γ1 ]] = 1.
+                          fE                     fE
+                      E∈Irr(W )                    E∈Irr(W )
+
+Consequently, all the inequalities must be equalities and so [Γ] ∼
+                                                                 = [Γ1 ].               
+
+   Note that the proof of Lemma 5.6 which is given in [24, §3], uses the fact that
+every left cell representation has a unique “special” simple component with multi-
+plicity 1; see the discussion in [23, 5.25]. This argument is no longer available in the
+case of unequal parameters: there are families which do not contain any reasonably
+defined “special” simple module (see, for example, [12, Remark 4.11]).
+18                                   MEINOLF GECK
+
+
+5.7. Cuspidal families. Let F be a family of Irr(W ). Then F ⊗ sgn = {E ⊗ sgn |
+E ∈ F } also is a family. (This is clear by the definitions in (4.1).) As in [23,
+8.1], we say that F is cuspidal if neither F nor F ⊗ sgn satisfies the hypothesis of
+Lemma 5.6 for any proper subset I ⊂ S and any family F ′ of Irr(WI ).
+   Suppose now we want to show that [Γ] is constructible for every left cell Γ of W .
+Proceeding by induction on |S|, we may assume that [Γ′ ] is constructible for every
+left cell Γ′ of a proper parabolic subgroup of W . Then, as explained in [24], it will
+be enough to consider only those left cells Γ for which [Γ] belongs to a cuspidal
+family of Irr(W ).
+   Indeed, let Γ be a left cell such that all simple components of [Γ] belong to
+a family F which is not cuspidal. Then either F itself or F ⊗ sgn satisfies the
+hypothesis of Lemma 5.6 for some proper subset I ⊂ S and some family F ′ of
+Irr(WI ). Assume first that F itself satisfies that hypothesis. Then there exists
+a left cell Γ′ of WI such that [Γ] ∼ = JSI ([Γ′ ]). By induction, [Γ′ ] is constructible,
+hence [Γ] is construcible. Now assume that F ⊗ sgn satisfies that hypothesis. Then
+consider the left cell Γw0 . By Lemma 4.5, all simple components of [Γw0 ] ∼  = [Γ]⊗sgn
+belong to F ⊗ sgn. Hence, as before, we may conclude that [Γw0 ] is constructible.
+Consequently, [Γ] also is constructible.
+
+                                  6. Types Bm and Dm
+   We are now going to prove Conjecture 2.1 for groups of type Bm and Dm , under
+the hypothesis that (P1)–(P15) hold for W, L. A special case in type Bm has been
+already considered in Example 4.10. (For type Am−1 , see Example 4.9.) As far as
+type Dm and Bm with equal parameters are concerned, our proof is different from
+the one given by Lusztig [24].
+6.1. A decomposition matrix in type Bm . Let W be of type Bm (m > 2),
+with generators and relations given by the following diagram:
+                   t         s1        s2                        sm−1
+       Bm           t        t         t         q q q            t
+
+Let L be a weight function such that
+            L(t) = r > 0      and     L(s1 ) = L(s2 ) = · · · = L(sm−1 ) = 1.
+Here, we explicitly allow the case where r = 0, which is related to type Dm ; see
+(6.5). The definition of left cells and constructible representations still makes sense
+in this case; see [26]. Let us assume that (P1)–(P15) hold for W, L. It is known
+that this is the case if r = 1 (equal parameters); see [26, Chap. 15]. In Lemma 6.5,
+we shall show that this also holds if r = 0.
+   Recall that we have a natural parametrisation of Irr(W ) by the set Pm of all
+pairs of partitions (α, β) such that |α| + |β| = m. Let us write
+                           Irr(W ) = {E (α,β) | (α, β) ∈ Pm }.
+By [26, Prop. 22.14], fE is a power of 2 for all E ∈ Irr(W ). So let us consider
+the subring R = A2 ⊆ C(v) defined in Example 3.6(c), where p = 2. The ring
+R is local, with maximal ideal 2R, residue field k = R/2R = F2 (v) and field of
+fractions F = Q(v). As explained in (3.9), the canonical map R → k induces a
+decomposition map
+                            dr,2 : R0 (HF ) → R0 (Hk ).
+                  LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                                 19
+
+
+Note that HF and Hk are split and HF is semisimple; see Dipper–James–Murphy [8,
+§4, §6]. Let Dr,2 be the corresponding decomposition matrix. Since R is c-adapted
+for every two-sided cell c of W , we have
+                                 
+              Dr,2 = [E : [ΓV ]]                  ;     see (3.9)(3).
+                                        E∈Irr(W ),V ∈Irr(Hk )
+
+Note that, by (3.9)(2), the columns of Dr,2 are linearly independent. In fact, by
+Dipper–James–Murphy [8, 6.5], something stronger holds: the rows and columns
+may be ordered so that Dr,2 has a lower triangular shape, with 1 on the diagonal.
+   The discussion in (3.9) also showed that, given any left cell Γ, there exists a
+unique V ∈ Irr(Hk ) such that [Γ] ∼
+                                  = [ΓV ].
+   Now consider the constructible representations of W with respect to a weight
+function L as above. The set Con(W ) and the corresponding “decomposition ma-
+trix” matrix D r are determined by Lusztig [26, 22.24, 22.25 and 22.26] in a purely
+combinatorial way. We shall need the following result.
+Proposition 6.2. Let W be of type Bm (m > 2) and L be a weight function as in
+(6.1). Then there exist rational numbers nP (P ∈ Con(W )) such that the following
+identity holds:
+                           X
+                dim E =           nP [E : P ]  for any E ∈ Irr(W ).
+                           P ∈Con(W )
+
+   The following proof is due to B. Leclerc and reproduced here with his kind
+permission. It requires some standard results about highest weight modules for
+the Lie algebra sln+1 (C); see [20] and the references there. (This proof replaces my
+earlier proof which also used results from [20] but which was much less elementary.)
+Proof. First note that the above identity simply means that the regular represen-
+tation of W can be written as a rational linear combination of constructible repre-
+sentations. To be precise, we have to work here in the appropriate Grothendieck
+group and identify a C[W ]-module Ẽ with
+                            X
+                                  [E : Ẽ] E ∈ Q[Irr(W )].
+                              E∈Irr(W )
+
+To prove the above assertion, we place ourselves in the setting of Leclerc–Miyachi
+[20], where the constructible representations of W are interpreted in terms of canon-
+ical bases. Choose large positive integers k, n. (For example, any k > m and
+n > m − 1 + k + r will do; see [20, 4.1.1].) We consider the simple Lie alge-
+bra g = sln+1 (C), with Chevalley generators ej , hj , fj (1 6 j 6 n). Let V (Λ)
+be the highest weight module of g with highest weight Λ = Λk + Λk+r , where
+Λ1 , . . . , Λn are the fundamental weights1. There is a canonical embedding of g-
+modules Φ : V (Λ) → F (Λ) where F (Λ) = V (Λk+r ) ⊗ V (Λk ). The module F (Λ) has
+a standard basis
+                              S(Λ) = {uS | S ∈ Sy(n, k, r)}
+where Sy(n, k, r) is the set of all symbols of the form
+                                                            
+                               1 6 β1 < · · · < βk+r 6 n + 1
+(1)                       S=                                   ;
+                                 1 6 γ1 < · · · < γk 6 n + 1
+    1Note that, in [20], the quantized versions of these modules are considered. For our purposes,
+it is enough to work with the specialisations at 1.
+20                                     MEINOLF GECK
+
+
+see [20, 2.2]. The action of the Chevalley generator fj on a basis element uS
+is explicitly given by the formulas in [20, 2.1]. One notices that these formulas
+constitute a refinement of the “branching rule” (see [14, 6.1.9]), that is, we have
+(2)                   ind(uS ) = f1 (uS ) + f2 (uS ) + · · · + fn (uS ),
+where ind(uS ) denotes the sum of all uS ′ where S ′ is a symbol as in (1) which can
+be obtained from S by increasing exactly one entry by 1. (This means: we may
+replace some βi by βi + 1 if the new list of coefficients still satisfies the conditions
+in (1); or we may replace some γi by γi + 1 if the new list of coefficients still satisfies
+the conditions in (1).)
+   Let us now turn to the module V (Λ). There is a well-defined symbol S0 such
+that uS0 = Φ(vΛ ) where vΛ is a highest weight vector in V (Λ); see [20, 2.2]. Thus,
+we have
+        Φ(V (Λ)) = hfi1 ◦ · · · ◦ fis (uS0 ) | s > 0, 1 6 i1 , . . . , is 6 niC ⊆ F (Λ).
+A symbol S as in (1) is called standard if βi 6 γi for 1 6 i 6 k. Let SSy(n, k, r)
+be the set of all standard symbols in Sy(n, k, r). By [20, 2.3], this set will label
+the canonical basis (or lower global basis) B(Λ) of V (Λ); see, for example, Jantzen
+[18] for the general theory of canonical bases. In the present situation, we can just
+accept the conditions in [20, 2.4] as a definition, and then [20, Theorem 3] provides
+an explicit construction of B(Λ) = {bS | S ∈ SSy(n, k, r)}. That construction
+proceeds by induction on the “principal degree” d(S) of a symbol S, which is
+defined as
+                                                                
+                         X         X          k+1         k+r+1
+(3)              d(S) =      βi +      γj −           −             .
+                           i        j
+                                                2             2
+
+Given d > 0, let Sy(n, k, r, d) be the set of symbols S as in (1) such that d(S) = d.
+We also write
+                   SSy(n, k, r, d) := Sy(n, k, r, d) ∩ SSy(n, k, r).
+The Leclerc–Miyachi construction shows that, for any S ∈ SSy(n, k, r, d), there
+exists an explicitly known subset C(S) ⊆ Sy(n, k, r, d) such that
+                                          X
+(4)                             Φ(bS ) =       uΣ .
+                                               Σ∈C(S)
+
+Let us set Wd = W (Bd ) for d = 0, 1, 2, . . .. We bring now into play the representa-
+tions of Wd . By [20, 4.1.1], we may naturally label the irreducible representations
+of Wd by the set of symbols in Sy(n, k, r, d). Thus, we write
+                           Irr(Wd ) = {ES | S ∈ Sy(n, k, r, d)}.
+Identifying uS ↔ ES for any S, we may just consider Irr(Wd ) as a subset of F (Λ)
+for any d > 0. With this convention, [20, Theorem 10] states that
+(5)        Con(Wd ) = {Φ(bS ) | S ∈ SSy(n, k, r, d)}            for d = 0, 1, 2, . . ..
+Now we have natural embeddings {1} = W0 ⊂ W1 ⊂ W2 ⊂ · · · . Using our
+identification uS ↔ ES , we see that (2) does yield the “branching rule” for the
+induction of representations from Wd to Wd+1 , that is, we have
+             W
+         IndWdd+1 (ES ) = f1 (ES ) ⊕ · · · ⊕ fn (ES ) for any S ∈ Sy(n, k, r, d).
+                    LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                    21
+
+
+Hence, starting with Irr(W0 ) = {1}, we obtain
+(6)      (f1 + · · · + fn )d (1) = IndW
+                                      W0 (1) = regular representation of Wd .
+                                       d
+
+
+Under the identification uS ↔ ES , the unit representation 1 of W0 corresponds to
+uS0 = Φ(vΛ ). Now, the vector (f1 + · · · + fn )d (vΛ ) lies in the principal degree d
+component of V (Λ) and, hence, can be expressed as a rational linear combination
+of basis elements bS with d(S) = d. Applying Φ and using (5) and (6), we can
+now conclude that the regular representation of Wd is a rational linear combination
+of Con(Wd ), as desired. Taking d = m (which is possible since n, k were chosen
+sufficiently large) yields the desired assertion.                                   
+  Note that, by Remark 4.2(b), the numbers nP are actually seen to be non-
+negative integers, once we have shown that Conjecture 2.1 holds.
+Proposition 6.3. Let W be of type Bm (m > 2), with generators and relations
+given by the diagram in Example 4.10. Let L be a weight function such that L(t) =
+b > 0 and L(si ) = a > 0 for 1 6 i 6 m − 1. Assume that b = ar for some r > 1
+and that (P1)–(P15) hold for W, L. Then [Γ] is constructible for every left cell Γ
+and all construcible representations arise in this way. Thus, Conjecture 2.1 holds
+for W, L.
+Proof. It is easily shown (see, for example, [12, Remark 2.15]) that the left cell
+representations and the constructible representations only depend on r. Thus, we
+may assume without loss of generality that a = 1 and b = r > 1. Now recall the
+description of the decomposition matrix D2,r in (6.1). The representations carried
+by the left cells of W are completely determined by Dr,2 .
+    Now consider the constructible representations of W . Let P ∈ Con(W ). By [26,
+Lemma 22.2], there exists some left cell [Γ] such that P ∼  = [Γ] as C[W ]-modules.
+So we have P ∼  =  [Γ] ∼ [Γ
+                       = V  ] for a unique V ∈ Irr(H k ). Thus, there exists a subset
+C ′ ⊆ Irr(Hk ) such that
+(1)                                   Con(W ) = {[ΓV ] | V ∈ C ′ }.
+Now, by (3.9), the modules [ΓV ]R (V ∈ Irr(Hk )) are precisely the PIM’s of HR (up
+to isomorphism). So we have an isomorphism of HR -modules
+                          HR ∼
+                                   M
+                              =          (dim V ) [ΓV ]R
+                                            V ∈Irr(Hk )
+
+where HR is regarded as an HR -module via left multiplication. Extending scalars
+from R to K and considering the multiplicities of simple modules, we find
+                                              X
+        dim E = [E : C[W ]] = [Ev : HK ] =           (dim V ) [Ev : [ΓV ]K ]
+                                                          V ∈Irr(Hk )
+                           X
+                    =                 (dim V ) [E : [Γ]] for any E ∈ Irr(W ).
+                        V ∈Irr(Hk )
+
+Using now (1) and Proposition 6.2, we obtain the identity
+        X                            X
+(2)           (dim V ) [E : [ΓV ]] =   nV [E : [ΓV ]] for any E ∈ Irr(W ),
+      V ∈Irr(Hk )                              V ∈C ′
+
+where nV are certain rational numbers. By (6.1), the coefficients [E : [ΓV ]] occur-
+ring in the above identity are the entries of Dr,2 . Now, by (3.9)(2), the columns of
+Dr,2 are linearly independent over Q. Thus, we can compare coefficients in (2). In
+22                                     MEINOLF GECK
+
+
+particular, every summand on the left hand side must also occur on the right hand
+side and so C ′ = Irr(Hk ). This shows that all representations carried by the left
+cells are constructible, as desired.                                             
+Remark 6.4. Let W be of type Bm and L be a weight function as in Proposition 6.3,
+that is, we have b = ra for some r > 1.
+   (a) The above result shows that the decomposition matrix Dr,2 in (6.1) coincides
+(up to a permutation of the columns) with the “decomposition matrix” D r giving
+the expansion of the constructible representations in terms of the irreducible ones.
+Thus, we obtain a new proof of [20, Theorem 16], assuming that (P1)–(P15) hold.
+The proof in [loc. cit.] uses the deep results of Ariki [3].
+   (b) Table II in [21, p. 35] shows that L arises (in the sense explained by Lusztig
+[26, Chap. 0]) in the representation theory of finite classical groups. Hence, there
+is some hope that the geometric realization of H in [26, Chap. 27] will lead to a
+proof of (P1)–(P15) in this case.
+6.5. Type Dm . Let W1 be a Coxeter group of type Dm (m > 3) with generators
+and relations given by the following diagram:
+                 u  t
+                    ❍
+                       ❍❍ s2            s3                      sm−1
+        Dm                  ❍
+                            ✟ t          t        q  q q          t
+                       ✟✟
+                s1 ✟t
+Let ω : W1 → W1 be the automorphism such that ω(u) = s1 , ω(s1 ) = u and
+ω(si ) = si for i > 1. Then the semidirect product W = W1 ⋊ hωi can be naturally
+identified with a Coxeter group of type Bm , with generators {ω, s1 , s2 , . . . , sm−1 }.
+Regarding ω as an element of W , we have the relation ωw = ω(w)ω for all w ∈ W1 .
+In particular, we have u = ωs1 ω.
+   Given any C[W1 ]-module E, we can define a new C[W1 ]-module structure on E
+by composing the original action with the automorphism ω. We denote that new
+C[W1 ]-module by ω E.
+   Recall that Irr(W ) = {E (α,β) | (α, β) ∈ Pm } see (6.1). For (α, β) ∈ Pm , we
+denote by E [α,β] the restriction of E (α,β) to W1 . Then we have
+                        E [α,β] ∼
+                                = E [β,α] ∈ Irr(W1 )     if α 6= β,
+                          E [α,α] ∼
+                                  = E [α,+] ⊕ E [α,−]            if α = β,
+where E  [α,±]
+              ∈ Irr(W1 ) and E        [α,+]
+                                              6∼
+                                               = E   [α,−]   ∼
+                                                             =   ω
+                                                                     E [α,+] . This yields (see [14,
+Chap. 5] for more details):
+                     Irr(W1 ) = {E [α,β] | α 6= β} ∪ {E [α,±] | 2|α| = m}.
+Let L : W → Z be the weight function such that
+             L(ω) = 0         and       L(s1 ) = L(s2 ) = · · · = L(sm−1 ) = 1.
+Let L1 be the restriction of L to W1 . Then L1 is just the usual length function on
+W1 ; see, for example, [14, Lemma 1.4.12].
+  Let H be the Iwahori–Hecke algebra associated with W, L. Let H1 be the A-
+subspace of H spanned by all Tw1 with w1 ∈ W1 . Then H1 is nothing but the
+Iwahori–Hecke algebra associated with W1 , L1 . Note Tω2 = T1 since L(ω) = 0. We
+have
+            Tw1 Tω = Tw1 ω and Tω Tw1 = Tω(w1 ) Tω for any w1 ∈ W1 .
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                          23
+
+
+In the following discussion, it will be understood that a left cell of W1 is defined
+with respect to L1 and a left cell of W is defined with respect to L.
+Lemma 6.6. In the setting of (6.5), (P1)–(P15) hold for W, L. Let Γ1 be a left
+cell of W1 . Then ω(Γ1 ) also a left cell of W1 and
+                                   Γ := Γ1 ∪ ω(Γ1 )ω
+is a left cell of W . Furthermore, we have isomorphisms of C[W ]-modules
+                             ∼ [Γ1 ] ⊕ [ω(Γ1 )] and [ω(Γ1 )] ∼
+                  ResW ([Γ]) =                               = ω [Γ1 ].
+                    W1
+
+Proof. We consider the Kazhdan–Lusztig basis {cw | w ∈ W } of H (defined with
+respect to W, L). Note that the construction of that basis in [26, Chap. 5] works
+for weightP  functions with arbitrary integer values (even negative ones). We have
+cw = Tw + y<w py,w Ty , where py,w ∈ v −1 Z[v −1 ]. Let y, w ∈ W and write y = y1 ω i ,
+w = w1 ω j where y1 , w1 ∈ W1 and i, j ∈ {0, 1}. Then we have py,w = 0 if i 6= j
+and py,w = py1 ,w1 if i = j, where py1 ,w1 is the polynomial defined with respect
+to W1 , L1 ; see the remarks in [25, §3] and [9, §2]. Thus, {cw1 | w1 ∈ W1 } is the
+Kazhdan–Lusztig basis of H1 (with respect to L1 ). We have cω = Tω and
+             cw1 cω = cw1 ω    and cω cw1 = cω(w1 ) cω    for any w1 ∈ W1 .
+Furthermore, let a(z) (z ∈ W ) be defined with respect to L, and let a1 (z1 ) (z1 ∈ W1 )
+be defined with respect to L1 . Then we have
+                   a(w1 ω) = a(w1 ) = a1 (w)        for any w1 ∈ W .
+Now (P1)–(P15) hold for W1 , L1 ; see [26, Chap. 15]. The above relations imply
+that (P1)–(P15) also hold for W, L; see [25, §3] where this is worked out explicitly.
+The above relations also show that
+(1)                   D = D1 = {z ∈ W | a(z) = ∆(z)} ⊆ W1 .
+Let J be the Z-algebra with basis {tw | w ∈ W } defined with respect to W, L. Then
+we have t2ω = t1 and
+(2)           tw1 tω = tw1 ω   and tω tw1 = tω(w1 ) tω    for all w1 ∈ W1 .
+Let J1 be the Z-submodule of J spanned by all elements tw1 for w1 ∈ W1 . Then
+J1 is nothing but the Z-algebra defined with respect to W1 , L1 . Furthermore, the
+A-algebra homomorphism φ : H → JA restricts to the homomorphism φ1 : H1 →
+(J1 )A defined with respect to W1 , L1 . These remarks allow us to switch back and
+forth between left cells of W1 and left cells of W . For example, the characterisation
+of ∼L in Remark 2.4 shows that
+(3a)            every left cell of W1 is contained in a left cell of W ;
+(3b)            if Γ1 is a left cell of W1 , then so is ω(Γ1 ).
+Now let Γ1 be a left cell of W1 . By (3b), we know that ω(Γ1 ) is a left cell of W1 . By
+(3a), we have Γ1 ⊆ Γ where Γ is a left cell of W . First we claim that Γ ∩ W1 = Γ1 .
+To see this, let us fix an element z ∈ Γ1 . Now let y ∈ Γ ∩ W1 . Since z, y ∈ Γ, we
+have ty tz−1 6= 0 inside J, by Remark 2.4. Since z, y ∈ W1 , we also have ty tz−1 6= 0
+inside J1 and so y ∈ Γ1 (again using Remark 2.4). Thus, the above claim is proved.
+Now let y ∈ Γ and assume that y 6∈ W1 . Let us write y = y1 ω where y1 ∈ W1 . Since
+y ∈ Γ, we have tz ty−1 6= 0 inside J. Using (2), we also have tz tω(y1 )−1 6= 0 inside
+J1 and so ω(y1 ) ∈ Γ1 . Thus, we have shown that Γ = Γ1 ∪ ω(Γ1 )ω, as desired.
+24                                    MEINOLF GECK
+
+
+   Finally, consider the statement concerning the left cell representations. Let JCΓ :=
+hty | y ∈ ΓiC ⊆ JC . By Lemma 3.2, we have JCΓ = JC td where D ∩ Γ = {d}. By [26,
+Lemma 21.2], we have
+                             ∼ [Γ]♠
+                          JΓ =          (as C[W ]-modules).
+                           C
+
+A similar statement holds for Γ1 ⊆ W1 . Hence, we can translate the desired asser-
+tion about the restriction of [Γ] from W to W1 to a statement about the restriction
+of JCΓ from JC to (J1 )C . Now, the decomposition Γ = Γ1 ∪ ω(Γ1 )ω yields that
+                                          ω(Γ )
+                 (JCΓ ) ∼
+                        = (J1 )ΓC1 ⊕ (J1 )C 1     (as C-vectorspaces).
+But then (2) shows that this is an isomorphism of (J1 )C -modules. Furthermore, for
+                                            ω(Γ )
+any w ∈ W1 , the action of any tw on (J1 )C 1 will be the same as the action of
+tω(w) = tω tw tω on (J1 )ΓC1 , as required.                                      
+Proposition 6.7. Let W1 be of type Dm , as in (6.5), and let L1 be the weight
+function on W1 given by the length. By [26, Chap. 15], (P1)–(P15) hold for W, L1 .
+Then [Γ1 ] is constructible for every left cell [Γ1 ], and all constructible representa-
+tions arise in this way. Thus, Conjecture 2.1 holds for W1 , L1 .
+Proof. By [26, Lemma 22.2], we already know that every constructible representa-
+tion is of the form [Γ1 ] for some left cell Γ1 . Conversely, let Γ1 be a left cell of W1 .
+We must show that [Γ1 ] is constructible. For this purpose, we place ourselves in
+the setting of Lemma 6.6.
+   Assume first that [Γ1 ] has a simple component E1 with fE1 = 1. Then Corol-
+lary 4.8 shows that [Γ1 ] is irreducible and constructible. Now assume that [Γ1 ] has
+no simple component E1 with fE1 = 1. Using the formulas for fE in [26, 22.14],
+we see that all simple components of [Γ1 ] must be of the form E [α,β] with α 6= β.
+Thus, by Lemma 6.6, we have [ω(Γ1 )] ∼    = ω [Γ1 ] ∼
+                                                    = [Γ1 ] and so
+                                  Res ([Γ]) ∼
+                                      W
+                                       W1       = 2[Γ1 ].
+Now, the argument in the proof of Proposition 6.3 also works in the present sit-
+uation, where L(ω) = 0 and L(si ) = 1 for all i. Hence, [Γ] is a constructible
+representation of W . Now [26, 22.26] (see also Leclerc–Miyachi [20, Theorem 13])
+shows that ResWW1 ([Γ]) is twice a constructible representation of W1 . Hence [Γ1 ] is
+constructible as desired.                                                           
+
+                                7. Exceptional types
+   We are now going to indicate proofs of Conjecture 2.1 for groups of exceptional
+type. If W is of type E6 , E7 , E8 and F4 with equal parameters, Lusztig’s proof
+[24] requires some sophisticated results from the representation theory of reductive
+groups over finite field, see [23, Chap. 12]. We will show here that these arguments
+can be replaced by more elementary ones, involving some explicit computations
+with the character tables in [14].
+7.1. Type I2 (m). Let W be of type I2 (m) (m > 3), that is, we have W = hs1 , s2 i
+where s21 = s22 = (s1 s2 )m = 1. A weight function L is specified by L(s1 ) = a > 0
+and L(s2 ) = b > 0 where a = b if m is odd.
+   The irreducible representations of W are given as follows. We have the unit
+representation 1W and sgn. If m is even, there are two further 1-dimensional rep-
+resentations, which we denote by sgn1 and sgn2 . They are characterised by the
+                    LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                                     25
+
+
+condition that s1 acts as −1 in sgn2 and s2 acts as −1 in sgn. All other irre-
+ducible representations have dimension 2; see [14, 5.3.4] for an explicit description
+of these representations. We denote by τ the direct sum of all the 2-dimensional
+representations.
+   For any k > 0, write 1k = s1 s2 s1 · · · (k factors) and 2k = s2 s1 s2 · · · (k factors).
+Then the following hold:
+     (i) If m is odd, then the left cells are
+           {10 },     {2m },     {21 , 12 , 23 , . . . , 1m−1 },   {11 , 22 , 13 , . . . , 2m−1 }.
+         The left cell representations are 1W , sgn, τ , τ , respectively.
+    (ii) If m is even and a = b, then the left cells are
+           {10 },     {2m },     {21 , 12 , 23 , . . . , 2m−1 },   {11 , 22 , 13 , . . . , 1m−1 }.
+         The representations are 1W , sgn, sgn1 ⊕ τ , sgn2 ⊕ τ , respectively.
+   (iii) If m is even and b > a, then the left cells are
+                           {10 },        {11 },         {2m−1 },         {2m },
+                      {21 , 12 , 23 , . . . , 2m−2 },   {22 , 13 , 24 , . . . , 1m−1 }.
+        The representations are 1W , sgn2 , sgn1 , sgn, τ , τ , respectively.
+The left cells in all of the above cases are determined in [26, Chap. 8] (see also
+[14, Exc. 11.4] for the case a 6= b). These computations do not require any of
+the conditions (P1)–(P15). The representations carried by the left cells are easily
+determined by an explicit computation; see [10, §6] for case (iii). The constructible
+representations are listed in [22, §12] (a = b) and [10, §6] (b > a). In each case, the
+representations carried by the left cells are precisely the constructible ones. Thus,
+Conjecture 2.1 holds for W and any weight function L.
+Example 7.2. Let W be of type H3 , with generators and relations given by the
+following diagram:
+                         s1 5 s2       s3
+                  H3      t     t       t
+All generators of W are conjugate so every weight function on W is of the form
+L = al for some a > 0. We have |W | = 120. Using CHEVIE [13], one can explicitly
+compute the basis {cw } and all polynomials hx,y,z . By inspection, one sees that
+                        pyw ∈ N[v −1 ]            and       hx,y,z ∈ N[v, v −1 ]
+for all x, y, z, w ∈ W . Thus, the arguments in [26, Chap. 15] show that (P1)–(P15)
+hold for W, L.
+   By [26, Lemma 22.2], we already know that each constructible representation
+is of the form [Γ] where Γ is a left cell of W . The constructible representations
+are listed in [22, §12]. This yields the partition of Irr(W ) into families. Using the
+tables for the J-induction in [14, Table D.1], it is readily checked that there are no
+cuspidal families. We can now use the argument in (5.7) to conclude that all left
+cell representations of W are constructible. (Of course, having computed all py,w
+and all hx,y,z , one could also directly compute the left cells and the corresponding
+representations.) Thus, Conjecture 2.1 holds for W .
+7.3. Type H4 . Let W be of type H4 , with generators and relations given by the
+following diagram:
+26                                        MEINOLF GECK
+
+                                     s1   5
+                                              s2       s3       s4
+                       H4             t        t        t        t
+
+All generators of W are conjugate so every weight function on W is of the form
+L = al for some a > 0. The constructible representations are determined by Alvis–
+Lusztig [2]. On the other hand, the left cells and the corresponding representations
+have been explicitly computed by Alvis [1]. By inspection, one sees that the rep-
+resentations carried by the left cells are precisely the constructible ones; see [1,
+Prop. 3.5]. Thus, Conjecture 2.1 holds for W .
+7.4. Type F4 . Let W be of type F4 , with generators and relations given by the
+following diagram:
+                           s1    s2      s3    s4
+                  F4        t     t > t         t
+
+A weight function L on W is specified by two positive integers a := L(s1 ) = L(s2 ) >
+0 and b := L(s3 ) = L(s4 ) > 0; we shall write L = La,b . In [12], the partition of
+W into left cells has been determined for all values of a, b. Let L = La,b and
+L′ = La′ ,b′ be two weight functions on W such that b > a > 0 and b′ > a′ > 0.
+Then L, L′ define the same partition of W into left cells if and only if L, L′ ∈ Li
+for i ∈ {0, 1, 2, 3}, where Li are defined as follows:
+                             L0 = {(c, c, c, c)     | c > 0},
+                             L1 = {(c, c, 2c, 2c) | c > 0},
+                             L2 = {(c, c, d, d)     | 2c > d > c > 0},
+                             L3 = {(c, c, d, d)     | d > 2c > 0}.
+Furthermore, if L, L′ ∈ Li , then the left cells give rise to the same representations
+of W . On the other hand, the constructible representations are determined in [26,
+22.27]2. By inspection, one sees that the left cell representations are precisely the
+constructible ones. Thus, Conjecture 2.1 holds for W and all weight functions L.
+   Note that, by Table II in [21, p. 35], only the weight functions L such that b = a,
+b = 2a or b = 4a arise in the representation theory of finite reductive groups.
+   For the case of equal parameters, let us indicate an argument which does not
+require the explicit computation of all left cells. This will also be a model for the
+discussion of groups of type E6 , E7 and E8 . So let us assume that L = al for some
+a > 0. By [26, Chap. 15], the properties (P1)–(P15) hold for W, L. Hence, by [26,
+Lemma 22.2], we already know that every constructible representation is carried
+by a left cell of W . To prove the converse, it will now be enough to consider only
+those left cells which belong to a cuspidal family of Irr(W ); see (5.7).
+   By [23, 8.1], there is a unique cuspidal family F0 of Irr(W ), the one containing
+the representation 121 , where we use the notation of [23, 4.10] or [14, Table C.3].
+To deal with this family, we consider the parabolic subgroup WI of type B3 , where
+I = S \ {s4 }. By Proposition 6.3, the left cell representations of WI are precisely
+the constructible ones, and these are explicitly given in [26, 22.24].
+   Now let Γ be a left cell of W belonging to F0 . Then, as in the proof of Lemma 5.2,
+there exists a unique left cell Γ′ of WI such that Γ ⊆ XI Γ′ . Then [Γ] is a direct
+
+    2As pointed out in [12, Remark 4.10], there is an error in the list of constructible representations
+in [26, 22.27, Case 1], where b = 2a > 0: the representations denoted 13 ⊕ 21 and 12 ⊕ 22 have to
+be removed from that list.
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                         27
+
+                     Table 1. The cuspidal family in type F4
+
+                            E    fE   P1   P2     P3   P4   P5
+                            12    8   1     .      .    .    .
+                            13    8    .   1       .    .    .
+                            41    8    .    .     1     .    .
+                            43    4   1     .      .   1     .
+                            44    4    .   1       .    .   1
+                            61    3    .    .      .   1    1
+                            62   12   1    1      1     .    .
+                           92     8   2     .     1    1     .
+                            93    8    .   2      1     .   1
+                           121   24   1    1      1    1    1
+                           161    4   1    1      2    1    1
+
+
+summand of IndSI ([Γ′ ]). Let us write
+
+       IndSI ([Γ′ ]) ∼
+                        M
+                     =       mE E ⊕ combination of E ′ ∈ Irr(W ) \ {F0 },
+                       E∈F0
+
+where mE are non-negative integers. Thus, we can conclude that
+           [Γ] ∼
+                 M
+               =     nE E      where 0 6 nE 6 mE for all E ∈ F0 .
+                    E∈F0
+
+Now the idea is to look for arithmetical conditions on the numbers nE so that
+the only remaining possibilities satisfying these conditions correspond to the ex-
+pansion of the constructible representations in F0 . One such condition is given by
+Lemma 4.6: the numbers nE must satisfy
+                                  X 1
+(♦)                                        nE = 1.
+                                       fE
+                                   E∈F0
+
+Inducing all constructible representations from WI to W , we can explicitly deter-
+mine (using CHEVIE [13]) all possible non-zero vectors (mE )E∈F0 as above. They
+are given by the columns labelled by P1 , P2 , P3 , P4 , P5 in Table
+                                                                 P 1. Now, if the vector
+(mE )E∈F0 is given by one of the above columns, we see that E mE /fE = 1. Thus,
+(♦) shows that we must have nE = mE for all E. So [Γ] is given by one of the
+above five columns. Comparison with the table of constructible respresentations in
+[22, p. 223] shows that [Γ] is constructible.
+7.5. Type E6 . Let W be of type E6 , with generators and relations given by the
+following diagram:
+                       s1     s3     s4     s5     s6
+                        t      t      t      t      t
+               E6
+                                           t s2
+
+All generators of W are conjugate so every weight function on W is of the form
+L = al for some a > 0. By [26, Chap. 15], the properties (P1)–(P15) hold for W, L.
+28                                     MEINOLF GECK
+
+
+Hence, by [26, Lemma 22.2], we already know that every constructible representa-
+tion is carried by a left cell of W . To prove the converse, it will now be enough to
+consider only those left cells which belong to a cuspidal family of Irr(W ); see (5.7).
+We shall argue as in (7.4).
+   By [23, 8.1], there is a unique cuspidal family F0 of Irr(W ), the one containing
+the representation 80s , where we use the notation of [23, 4.11] or [14, Table C.4].
+To deal with this family, we consider the parabolic subgroup WI of type D5 , where
+I = S \ {s6 }. By Proposition 6.7, the left cell representations of WI are precisely
+the constructible ones, and these are explicitly given in [26, 22.26]. The possibilities
+for all non-zero vectors (mE )E∈F0 obtained (as above) by inducing all constructible
+representations of WI are given by the following table:
+                                E       fE    P1    P2   P3
+                               10s       3    1      .    .
+                               20s       6     .    1     .
+                               60s       2    1      .   1
+                               80s       6    1     1    1
+                               90s       3     .    2    1
+Checking (♦), we find that (nE )E∈F0 must be equal to one of the vectors (mE )E∈F0 .
+So [Γ] is given by one of the above three columns. Comparison with the table of
+constructible respresentations in [22, p. 223] shows that [Γ] is constructible. Thus,
+Conjecture 7.5 holds for W .
+7.6. Type E7 . Let W be of type E7 , with generators and relations given by the
+following diagram:
+                     s1     s3    s4      s5    s6     s7
+                      t      t      t      t     t      t
+             E7
+                                             t s2
+In order to prove Conjecture 2.1, we argue as in (7.5). It remains to consider the
+cuspidal families. By [23, 8.1], there is a unique cuspidal family F0 of Irr(W ), the
+one containing the representation 512′a , where we use the notation of [23, 4.12] or
+[14, Table C.5]. To deal with this family, we consider the parabolic subgroup WI of
+type E6 . The possibilities for all non-zero vectors (mE )E∈F0 obtained by inducing
+all constructible representations from WI are given by the following table:
+                                E       fE     P1   P2   P3
+                               512a      2     1    2    3
+                               512′a     2     1    2    3
+Now let Γ be a left cell belonging to F0 . Checking (♦), we find the following
+possibilities for the expansion of [Γ]: 512a ⊕ 512′a, 2 · 512a or 2 · 512′a . The first
+is constructible by the table in [22, p. 223]. We must show that the other two
+possibilities do not occur. This can be seen as follows. By Theorem 4.1, the family
+F0 corresponds to a two-sided cell c of W . Since fE = 2 for all E ∈ Irr(F0 ), we
+consider the ring A2 as in Example 3.6. In fact, since we do not yet know if H is split
+over the residue field of A2 (which is just F2 (v)), we work with a ring R ⊇ A2 as in
+(3.10). It is readily checked that R is c-adapted. So Theorem 3.7 shows that ec =
+φ−1
+  R (tc ) is a primitive idempotent in the center of HR . Consider the decomposition
+                LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                           29
+
+
+matrix Dc of the block HR ec . That matrix has only two rows, corresponding to
+512a and 512′a. The columns correspond to the projective indecomposable modules
+in that block. Now we already know that 512a ⊕ 512′a is constructible and, hence, is
+carried by some left cell contained in c. Hence 512a ⊕ 512′a gives one column of Dc ;
+see Corollary 3.8. If [Γ] ∼
+                          = 2 · 512a or 2 · 512′a , then this would give another column
+                  ′ ∼
+of Dc . Since 512a = 512a ⊗ sgn, we would conclude that actually both 2 · 512a and
+2 · 512′a correspond to columns of Dc . Thus, we would deduce that Dc has at least
+three columns and, hence, does not have full rank. Consequently, DR (which is a
+block diagonal matrix where one block is given by Dc ) would not have full rank
+either, contradicting (3.9)(2). This completes the proof of Conjecture 2.1 for W .
+
+                     Table 2. The cuspidal family in type E8
+
+     E    (x, σ) fE P1 P2 P3 P4 P5 P6 P7 P8                      splitting P8
+    70y    1, λ3    30   1    .    .   .    .    .   .   .    . . . . .            .
+   168y   g2′ , ε′   8   .    1    .   .    .    .   .   .    . . . . .            .
+   420y    g5 , 1    5   .    .    1   .    .    .   .   .    . . . . .            .
+   448w    g2 , ε   12   1    .    .  1     .    .   .   .    . . . . .            .
+  1134y g3 , ε      6    .    .    .  1     1    .   .   .    . . . . .            .
+  1344w g4 , 1       4   .    1    1   .    1    .   .   .    . . . . .            .
+  1400y 1, ν ′      24   2    1    .   .    .   1    .   .    . . . . .            .
+  1680y 1, λ2       20   3    .    .  1     .   1    .   .    . . . . .            .
+            ′    ′′
+  2688y g2 , ε       8   .    .    .   .    .   1    1   2 . 2 . 2 .               2
+  3150y g3 , 1       6   .    .    1  1     1    .   1   2 2 . 2 . .               2
+  4200y g2′ , 1      8   .    2    1   .    1   1    1   2 . 2 . 2 .               2
+  4480y     1, 1 120 1        1    1  1     1   1    1   2 2 . 2 . .               2
+  4536y    1, ν     24   3    1    .  1     .   2    1   2 2 . 2 . .               2
+  5670y 1, λ1       30   3    1    .  2     1   2    1   2 2 . 2 . .               2
+  2016w g6 , 1       6   .    .    1   .    .    .   1   2 2 . . 2 2               .
+  5600w g2 , r      6    2    1    .  2     1   2    1   2 . 2 2 . 2               .
+  7168w g2 , 1      12   1    1    1  1     1   2    2   4 2 2 2 2 4               .
+  The notation in the first two columns is taken from Lusztig [23, p. 369].
+  The second column gives the identification with Gyoja’s tables [17, §2.3].
+
+
+7.7. Type E8 . Let W be of type E8 , with generators and relations given by the
+following diagram:
+                    s1     s3    s4      s5    s6     s7     s8
+                     t      t     t       t     t      t      t
+            E8
+                                       t s2
+In order to prove Conjecture 2.1, we argue as in (7.5). It remains to consider the
+cuspidal families. By [23, 8.1], there is a unique cuspidal family F0 of Irr(W ), the
+one containing the representation 4480y , where we use the notation of [23, 4.13] or
+[14, Table C.6]. To deal with this family, we use the parabolic subgroup WI of type
+E7 . The possibilities for all non-zero vectors (mE )E∈F0 cobtained by inducing all
+30                                         MEINOLF GECK
+
+
+constructible representations from WI are given by the columns labelled P1 , . . . , P8
+in Table 2.
+   Checking (♦) yields that P1 , . . . , P7 already give the expansion of a left cell
+representation in terms of the irreducible ones; furthermore, the table in [22, p. 224]
+shows that all these columns give constructible representations of W .
+   Hence, it remains to consider the case where Γ is a left cell such that [Γ] is
+a direct summand of the column labelled P8 in Table 2. We must show that the
+vector (nE )E∈F0 giving the expansion of [Γ] is obtained by dividing all coefficients in
+that column by 2. Now there are many more possibilities for (nE )E∈F0 satisfying
+(♦). So we have to look for further arithmetical conditions on these numbers.
+Another such condition is given by (4.12)(b), where we work over the ring A2 as in
+Example 3.6. The remaining possibilities for the vector (nE )E∈F0 are listed in the
+6 rightmost columns of Table 2. (The central characters in (4.12) can be computed
+using the programs contained in the file hecbloc.g in the contributions directory
+on the CHEVIE homepage [13].)
+   Now we can argue as follows. Consider a ring R ⊇ A2 as in (3.10). Then, by
+(3.9)(2), the columns of the decomposition matrix of HR are linearly independent.
+Assume now, if possible, that [Γ] is given by one of the 6 rightmost columns in
+Table 2. The HR -module [Γ]R is projective (see Corollary 3.8), hence it can be
+written as a direct sum of projective indecomposable HR -modules. (Note that R
+is not c-adapted, where c is the two-sided cell containing Γ; so we don’t know if
+[Γ]R is indecomposable.) Now we already know that there is a left cell Γ7 whose
+expansion in terms of irreducible representations is given by P7 , and [Γ7 ]R is a pro-
+jective HR -module (Corollary 3.8). Since P8 = 2P7 , we conclude (using the linear
+independence of the columns of the decomposition matrix of HR ) that [Γ]R must be
+a sum of projective indecomposable HR -modules which occur in the decomposition
+of [Γ7 ]R as a sum of projective indecomposable HR -modules. We don’t know that
+decomposition of [Γ7 ]R but we can just compute all possible decompositions which
+satisfy the conditions in (4.12)(b). It turns out that the possibilities are precisely
+those given by the table with heading (S5 , S3 × S2 ) (p = 2) of Gyoja [17, p. 321].
+Thus, at least one of the 6 rightmost columns in Table 2 should be expressible as a
+sum of the columns in Gyoja’s table. One easily checks that this impossible. This
+contradiction shows that Conjecture 2.1 holds for W .
+
+
+                                           References
+     [1] D. Alvis, The left cells of the Coxeter group of type H4 , J. Algebra 107 (1987), 160–168.
+     [2] D. Alvis and G. Lusztig, The representations and generic degrees of the Hecke algebra
+         of type H4 , J. Reine Angew. Math. 336 (1982), 201–212; corrections, ibid. 449 (1994),
+         217–218.
+     [3] S. Ariki, On the decomposition numbers of the Hecke algebra of G(m, 1, n), J. Math. Kyoto
+         Univ. 36 (1996), 789–808.
+     [4] S. Ariki, Robinson-Schensted correspondence and left cells. Combinatorial methods in rep-
+         resentation theory (Kyoto, 1998), 1–20, Adv. Stud. Pure Math., 28, Kinokuniya, Tokyo,
+         2000.
+     [5] D. Barbasch and D. Vogan, Primitive ideals and orbital integrals in complex exceptional
+         groups, J. Algebra 80 (1983), 350–382.
+     [6] C. Bonnafé and L. Iancu, Left cells in type Bn with unequal parameters, Represent.
+         Theory 7 (2003), 587–609.
+     [7] M. Broué and S. Kim, Familles de caractères des algèbres de Hecke cyclotomiques, Advances
+         in Math. 172 (2002), 53–136.
+                 LEFT CELLS AND CONSTRUCTIBLE REPRESENTATIONS                                     31
+
+
+ [8] R. Dipper, G. D. James and G. E. Murphy, Hecke algebras of type Bn at roots of unity,
+     Proc. London Math. Soc. 70 (1995), 505–528.
+ [9] M. Geck, On the representation theory of Iwahori-Hecke algebras of extended finite Weyl
+     groups. Represent. Theory 4 (2000), 370–397 (electronic).
+[10] M. Geck, Constructible characters, leading coefficients and left cells for finite Coxeter groups
+     with unequal parameters, Represent. Theory 6 (2002), 1–30 (electronic).
+[11] M. Geck, On the induction of Kazhdan–Lusztig cells, Bull. London Math. Soc. 35 (2003),
+     608–614.
+[12] M. Geck, Computing Kazhdan–Lusztig cells for unequal parameters, preprint (2003), avail-
+     able at http://arXiv.org/math.RT/0312392
+[13] M. Geck, G. Hiss, F. Lübeck, G. Malle, and G. Pfeiffer, CHEVIE—A system for
+     computing and processing generic character tables, Appl. Algebra Engrg. Comm. Comput.
+     7 (1996), 175–210; electronically available at http://www.math.rwth-aachen.de/∼CHEVIE
+[14] M. Geck and G. Pfeiffer, Characters of finite Coxeter groups and Iwahori–Hecke algebras,
+     London Math. Soc. Monographs, New Series 21, Oxford University Press, 2000.
+[15] M. Geck and R. Rouquier, Centers and simple modules for Iwahori–Hecke algebras, Finite
+     reductive groups, related structures and representations (M. Cabanes, ed.), Progress in
+     Math. 141, Birkhäuser, Boston, 1997, pp. 251–272.
+[16] M. Geck and R. Rouquier, Filtrations on projective modules for Iwahori–Hecke algebras,
+     Modular representation theory of finite groups (M. J. Collins, B. J. Parshall and L. L. Scott,
+     eds.), Walter de Gruyter, Berlin, 2001, pp. 211–221,
+[17] A. Gyoja, Cells and modular representations of Hecke algebras, Osaka J. Math. 33 (1996),
+     307–341.
+[18] J. C. Jantzen, Lectures on quantum groups, Graduate Studies in Mathematics, vol. 6,
+     Amer. Math. Soc., Providence, RI, 1996.
+[19] D. Kazhdan and G. Lusztig, Representations of Coxeter groups and Hecke algebras, Invent.
+     Math. 53 (1979), 165–184.
+[20] B. Leclerc and H. Miyachi, Constructible characters and canonical bases, J. Algebra (to
+     appear); available at http://arXiv.org/math.QA/03033385
+[21] G. Lusztig, Representations of finite Chevalley groups, CBMS Regional Conference Series
+     in Mathematics, vol. 39, Amer. Math. Soc., Providence, RI, 1977.
+[22] G. Lusztig, A class of irreducible representations of a finite Weyl group II, Nederl. Akad.
+     Wetensch. Indag. Math. 44 (1982), 219–226.
+[23] G. Lusztig, Characters of reductive groups over a finite field, Annals Math. Studies 107,
+     Princeton University Press, 1984.
+[24] G. Lusztig, Sur les cellules gauches des groupes de Weyl, C. R. Acad. Sci. Paris 302 (1986),
+     5–8.
+[25] G. Lusztig, Leading coefficients of character values of Hecke algebras, Proc. Symp. Pure
+     Math. 47, Amer. Math. Soc., Providence, RI, 1987, pp. 235–262.
+[26] G. Lusztig, Hecke algebras with unequal parameters, CRM Monographs Ser. 18, Amer.
+     Math. Soc., Providence, RI, 2003.
+[27] G. Malle and R. Rouquier, Familles de caractères de groupes de réflexions complexes,
+     Represent. Theory 7 (2003), 610–640 (electronic).
+[28] Y. Roichman, Induction and restriction of Kazhdan–Lusztig cells, Advances in Math. 134
+     (1998), 384–398.
+[29] R. Rouquier, Familles et blocs d’algèbres de Hecke, C. R. Acad. Sci. Paris, Sér. I, 329
+     (1999), 1037–1042.
+
+  Institut Girard Desargues, bat. Jean Braconnier, Université Lyon 1, 21 av Claude
+Bernard, F–69622 Villeurbanne Cedex, France
+  E-mail address: geck@igd.univ-lyon1.fr
+

@@ -1,0 +1,2226 @@
+                                                  A conjecture for q-decomposition matrices of cyclotomic
+                                                                      v-Schur algebras
+arXiv:math/0505379v3 [math.RT] 27 Apr 2006
+
+
+
+
+                                                                                     Xavier YVONNE
+
+                                                                                    November 6, 2017
+
+
+                                                                                          Abstract
+                                                       The Jantzen sum formula for cyclotomic v-Schur algebras yields an identity for some
+                                                   q-analogues of the decomposition matrices of these algebras. We prove a similar identity
+                                                   for matrices of canonical bases of higher-level Fock spaces. We conjecture then that
+                                                   those matrices are actually identical for a suitable choice of parameters. In particular,
+                                                   we conjecture that decomposition matrices of cyclotomic v-Schur algebras are obtained
+                                                   by specializing at q = 1 some transition matrices between the standard basis and the
+                                                   canonical basis of a Fock space.
+
+
+                                             1    Introduction
+                                             In order to study representations of the Ariki-Koike algebra associated to the complex reflec-
+                                             tion group G(l, 1, m), Dipper, James and Mathas introduced in 1998 the cyclotomic v-Schur
+                                             algebra [DJM]. This algebra depends on the two integers l and m and on some deformation
+                                             parameters v, u1 , . . . , ul . When l = 1, the cyclotomic v-Schur algebra coincides with the
+                                             v-Schur algebra of [DJ]. It is an open problem to calculate the decomposition matrix of a
+                                             cyclotomic v-Schur algebra whose parameters are powers of a given n-th root of unity. To
+                                             this aim, James and Mathas proved, for cyclotomic v-Schur algebras, an important formula:
+                                             the Jantzen sum formula [JM]. Given a Jantzen filtration for Weyl modules, one can define a
+                                             q-analogue D(q) of the decomposition matrix; the coefficients of D(q) are graded decompo-
+                                             sition numbers of the composition factors of Weyl modules (see Definition 2.5). The Jantzen
+                                             sum formula is equivalent to the identity D ′ (1) = J ⊳D(1), where J ⊳ is a matrix of ℘-adic
+                                             valuations of factors of some Gram determinants (see Theorem 2.3 and Corollary 2.7).
+                                                 Let ∆(q) be the matrix of the canonical basis of the degree m homogeneous component
+                                             of a Fock representation of level l of Uq (slb n ) [U2]. Uglov provided in [U2] an algorithm for
+                                             computing ∆(q).
+                                                 In view of Ariki’s theorem for Ariki-Koike algebras [A2], it seems natural to conjecture
+                                             that for a suitable choice of parameters, one has D(q) = ∆(q). This would provide an algo-
+                                             rithm for computing decomposition matrices of cyclotomic v-Schur algebras. Varagnolo and
+                                             Vasserot [VV] proved for l = 1 that D(1) = ∆(1). Moreover, Ryom-Hansen showed that
+                                             this conjecture (still for l = 1) is compatible with the Jantzen-Schaper formula [Ry]. Passing
+                                             to higher level l ≥ 1 requires the introduction of an extra parameter sl = (s1 , . . . , sl ) ∈ Zl ,
+
+                                                                                              1
+called multi-charge; this l-tuple parametrizes the Fock space of level l introduced by Uglov.
+We say that sl is m-dominant if for all 1 ≤ d ≤ l − 1, we have sd+1 − sd ≥ m. In this case,
+we conjecture that D(q) = ∆(q). Here, D(q) comes from a Jantzen filtration of the Weyl
+modules of the cyclotomic v-Schur algebra SC = SC,m (ζ; ζ s1 , . . . , ζ sl ) with ζ := exp( 2iπ     n ).
+Note that for any choice of roots of unity ζ r1 , . . . , ζ rl (that is, for any r1 , . . . , rl ∈ Z/nZ)
+and any m we can find an m-dominant multi-charge sl = (s1 , . . . , sl ) such that ζ sd = ζ rd
+(1 ≤ d ≤ l). Therefore, putting q = 1, our conjecture gives an algorithm for calculating the
+decomposition matrix of an arbitrary cyclotomic v-Schur algebra SC = SC,m (ζ; ζ s1 , . . . , ζ sl ).
+Such a conjecture is new even for type Bm (case l = 2).
+    Our conjecture is supported by the following theorem. We define in a combinatorial way
+a matrix J ≺ for any multi-charge sl ; if sl is m-dominant, then our matrix J ≺ coincides with
+the matrix J ⊳ of the Jantzen sum formula. We show then that for any multi-charge sl , we
+have ∆′ (1) = J ≺ ∆(1) (Theorem 2.8).
+    The proof of our theorem relies on a combinatorial expression for the derivative at q = 1
+of the matrix A(q), where A(q) is the matrix of the Fock space involution used for defining
+∆(q). Namely, we show that A′ (1) = 2J ≺ (Theorem 2.11). The coefficients of A(q) are some
+analogues for Fock spaces of Kazhdan-Lusztig R-polynomials Rx,y (q) for Hecke algebras. The
+                            ′ (1) was made in [GJ], in relation with the Kazhdan-Lusztig con-
+classical computation of Rx,y
+jecture for multiplicities of composition factors of Verma modules.
+
+Acknowledgments. I would like to thank Nicolas Jacon and my advisor Bernard Leclerc for
+inspiring discussions about Ariki-Koike algebras. I also would like to thank Bernard Leclerc
+for his assistance and constant advice when I was writing this article. At last, I thank Andrew
+Mathas, Hyohe Miyachi and the referee for their comments.
+
+Notation 1.1 Let N (resp. N∗ ) denote the set of nonnegative (resp. positive) integers, and
+for a, b ∈ R denote by [[a; b]] the discrete interval [a, b] ∩ Z. Throughout this article, we fix
+three integers n, l, m ≥ 1. Let Π be the set of partitions of any integer and Πlm be the set
+of l-multi-partitions of m. The Coxeter group of type Ar−1 (with r ∈ N∗ ) is the symmetric
+group Sr = hσi = (i, i + 1) | 1 ≤ i ≤ r − 1i. Let ℓ be the length function on Sr and ω be the
+unique element of maximal length in Sr .                                                        ⋄
+
+
+
+                         PART A: Statement of results
+
+
+2     Statement of results
+2.1    The Jantzen sum formula
+Definition 2.1 ([AK, BM]) Let R be a principal ideal domain. Let v be an invertible
+element of R and u1 , . . . , ul ∈ R. The Ariki-Koike algebra, denoted by
+
+(1)                               H = HR = HR,m (v; u1 , . . . , ul ),
+
+                                                   2
+is the algebra defined over R with generators T0 , . . . , Tm−1 and relations
+            
+            
+              (T0 − u1 ) · · · (T0 − ul ) = 0,
+            
+            
+                              T0 T1 T0 T1 = T1 T0 T1 T0 ,
+(2)                  (Ti + 1)(Ti − v) = 0                       (1 ≤ i ≤ m − 1),
+            
+            
+            
+                                Ti Ti+1 Ti = Ti+1 Ti Ti+1      (1 ≤ i ≤ m − 2),
+            
+                                      Ti Tj = Tj Ti         (0 ≤ i < j − 1 ≤ m − 2).
+                                                                                             ⋄
+      Following [DJM], let
+
+(3)                                 S = SR = SR,m (v; u1 , . . . , ul )
+
+be the cyclotomic v-Schur algebra associated to H. Dipper, James and Mathas (see [DJM,
+Theorem 6.12]) showed that S is a cellular algebra in the sense of [GL]. Given λl ∈ Πlm ,
+one defines as in [DJM, Definition 6.13] a right S-module W (λl ) which is a free R-module
+of finite rank, called Weyl module. Since S is cellular, W (λl ) is naturally equipped with a
+symmetric bilinear form h·, ·i. Set
+
+(4)                                  L(λl ) := W (λl )/rad W (λl ),
+
+where rad W (λl ) is the radical of the bilinear form h·, ·i. Assume temporarily that R is a
+field. By [DJM, Corollary 6.18], S is a quasi-hereditary algebra, so the theory of cellular al-
+gebras of [GL] shows that {L(λl ) | λl ∈ Πlm } is a complete set of non-isomorphic irreducible
+S-modules (see [DJM, Theorem 6.16]). This implies that R0 (S), the Grothendieck group of
+finitely-generated S-modules, is a free Z-module with basis {[L(λl )] | λl ∈ Πlm }.
+
+    From now on, we assume that R is a local ring, with unique maximal ideal ℘. Let ν℘
+be the corresponding ℘-adic valuation map. Let K be the field of fractions of R and extend
+ν℘ to K in the natural way. Let F = R/℘R be the residue field, so (R, K, F ) is a modular
+system. If M is a right R-module, we denote by MF = M ⊗R F the specialized module and
+denote similarly by MK = M ⊗R K the corresponding module defined over K. We shall use
+this notation for Weyl modules and for S itself.
+
+
+Definition 2.2 ([Jan], see also [AM]) Let M be an R-module equipped with a symmetric
+bilinear form h·, ·i. For all i ∈ N, set
+
+(5)                          M (i) := {u ∈ M | ∀ v ∈ M, ν℘ (hu, vi) ≥ i}.
+
+The Jantzen filtration of M is the sequence
+
+(6)                                MF = MF (0) ⊃ MF (1) ⊃ · · · ,
+
+where MF (i) := (M (i) + ℘M )/℘M .                                                           ⋄
+
+
+                                                    3
+Note that in the definition above, we have in particular MF (1) = rad MF . Moreover, if M is
+free of finite rank (as an R-module), then we have MF (i) = {0} for i large enough.
+
+      The following theorem was proved by James and Mathas (see [JM, Theorem 4.3]).
+
+Theorem 2.3 (the Jantzen sum formula)
+Assume that SK is semisimple. Then in the Grothendieck group R0 (SF ), we have for all
+λl ∈ Πlm :
+                     X                   X
+(7)                      [WF (λl ; i)] =   ν℘ (gλl ,µl ) [WF (µl )].
+                            i>0                   µl ∈Πlm
+
+Here, the gλl ,µl ∈ R are factors of some Gram determinants (see [JM, Definitions 3.1, 3.36
+and Corollary 3.38]).                                                                    
+
+Remark 2.4 The condition of semisimplicity of SK is stated in [JM, Theorem 4.3] in terms
+of the Poincaré polynomial for HR , which is defined in [JM, Definition 3.40].        ⋄
+   James and Mathas [JM] showed that only multi-partitions µl ∈ Πlm such that µl ⊳ λl
+contribute to the right hand-side of Theorem 2.3 (the definition of the dominance ordering
+⊳ is recalled in Definition 3.1). They have given a combinatorial expression of ν℘ (gλl ,µl ) in
+terms of ribbons contained in diagrams of l-multi-partitions. However, this combinatorial
+expression makes sense even if λl does not dominate µl . We will therefore introduce in
+Section 3.4 a matrix J = jλl ,µl λ ,µ ∈Πl whose entries are these combinatorial expressions
+                                    l l     m
+without restriction on the pair (λl , µl ). More precisely, our indexing is chosen so that
+(8)                               jλ† ,µ† = ν℘ (gλl ,µl )   if   µl ⊳ λl ,
+                                    l   l
+
+where the sign † denotes the conjugation of multi-partitions (see (19)). We are forced to use
+conjugates here because the indexation from [JM] for the rows and columns of decomposi-
+tion matrices is not compatible with the indexation from [U2] for the rows and columns of
+transition matrices for Uglov’s canonical bases.
+    Now, let 6 be an arbitrary partial ordering on Πlm and write λl < µl if λl 6 µl and
+                                                      <
+λl 6= µl (λl , µl ∈ Πlm ). Define a matrix J < = jλ    l ,µl λl , µl ∈Πlm
+                                                                          by the formula
+                                    (
+                         <            jλl ,µl if λl < µl
+(9)                     jλ l ,µl
+                                 :=                               (λl , µl ∈ Πlm ).
+                                        0     otherwise
+If we take 6 = E, then we get a matrix J ⊳ whose entries are, up to conjugation of multi-
+partitions, the ν℘ (gλl ,µl )’s of [JM].
+
+   We now derive a matrix identity equivalent to the Jantzen sum formula.
+                                       
+Definition 2.5 Let D(q) = dλl ,µl (q) λ ,µ ∈Πl be the matrix defined by
+                                          l l    m
+                       X                                        
+(10)    dλl ,µl (q) :=    WF (λl ; i)/WF (λl ; i + 1) : LF (µ†l ) q i ∈ N[q]
+                               †            †
+                                                                             (λl , µl ∈ Πlm ).
+                      i≥0
+                                                                                                 ⋄
+
+                                                      4
+Note that dλ† ,µ† (1) is equal to the multiplicity of LF (µl ) as a composition factor of WF (λl ),
+             l  l
+so up to conjugation of multi-partitions (which amounts to reindexing the rows and columns
+of the matrix), D(1) is the usual decomposition matrix of SF .
+                                  
+Lemma 2.6 Let M = mλl ,µl λ ,µ ∈Πl be a matrix with integer entries. Then the following
+                                    l l  m
+statements are equivalent:
+                                                X                    X
+  (i) In R0 (SF ), we have for all λl ∈ Πlm :       [WF (λ†l ; i)] =    mλl ,νl [WF (ν †l )],
+                                                              i>0                       νl ∈Πlm
+
+ (ii) D ′ (1) = M D(1).
+                                      
+Proof. Let λl ∈ Πlm . Since { LF (µ†l )  µl ∈ Πlm } is a Z-basis of R0 (SF ), we have on the
+one hand:
+
+  X                  X X                                  
+        WF (λ†l ; i) =       WF (λ†l ; i) : LF (µ†l ) LF (µ†l )
+  i>0                         i>0 µl ∈Πlm
+                               X X X                                                                   
+                         =                             WF (λ†l ; j) / WF (λ†l ; j + 1) : LF (µ†l ) LF (µ†l )
+                             µl ∈Πlm     i>0 j≥i
+                               X X X                                                                     
+                         =                               WF (λ†l ; j) / WF (λ†l ; j + 1) : LF (µ†l ) LF (µ†l )
+                             µl ∈Πlm     j>0 0<i≤j
+                               X                               
+                         =             d′λl ,µl (1)    LF (µ†l ) .
+                             µl ∈Πlm
+
+   On the other hand, we have
+
+         X                                     X                                                 
+                   mλl ,νl WF (ν †l ) =                       mλl ,νl WF (ν †l ) : LF (µ†l ) LF (µ†l )
+        ν l ∈Πlm                              µl , ν l ∈Πlm
+                                                X  X                                                       
+                                        =                               mλl ,νl WF (ν †l ) : LF (µ†l ) LF (µ†l )
+                                              µl ∈Πlm
+                                                   ν ∈Π             l
+                                                X  lXm                                                   
+                                        =                               mλl ,νl dνl ,µl (1)        LF (µ†l ) .
+                                              µl ∈Πlm     νl ∈Πlm
+
+                  
+since the LF (µ†l ) , µl ∈ Πlm are linearly independent, the lemma follows.                                         
+
+   The Jantzen sum formula as stated in Theorem 2.3, together with (8) and Lemma 2.6,
+implies the following result.
+
+Corollary 2.7 Assume that SK is semisimple. Then with the notation above, we have
+
+(11)                                             D ′ (1) = J ⊳D(1).
+
+                                                                                                                    
+
+                                                               5
+2.2     Statement of theorems
+In this section, we state an important conjecture for computing the decomposition matrix of
+the cyclotomic v-Schur algebra defined over C, with parameters equal to arbitrary powers of
+a primitive n-th root of unity. This conjecture is supported by Theorem 2.8.
+
+2.2.1    Choice of parameters
+Fix (r1 , . . . , rl ) ∈ (Z/nZ)l . We shall define a modular system (R, K, F ) with parameters such
+that the specialized cyclotomic v-Schur algebra SF is SC,m (ζ; ζ r1 , . . . , ζ rl ) with ζ := exp( 2iπ
+                                                                                                     n ).
+
+                                                               b = C[x, x−1 ] be the ring of
+   We first define a modular system (R, K, F ) as follows. Let R
+Laurent polynomials in one indeterminate over the field C. Let
+                            
+                   ξ := exp 2iπ
+                             nl  ∈ C, ℘ := (x − ξ), R := C[x, x−1 ]℘ ,
+(12)
+                            K := C(x) and F := R/℘R ≃ C,
+
+that is, ℘ is the prime ideal in R b spanned by x − ξ with ξ a primitive complex nl-th root of
+                                  b
+unity, R is the localized ring of R at ℘, K is the field of fractions of R and F is the residue field.
+
+    Following [U2], we fix an l-tuple sl in
+
+(13)             L(r1 , . . . , rl ) := {(s1 , . . . , sl ) ∈ Zl | ∀ 1 ≤ d ≤ l, rd = sd mod n}.
+
+Such an l-tuple is called a multi-charge. The multi-charge sl parametrizes a so-called (q-
+deformed) Fock space of level l, denoted by Fq [sl ] (see Section 4.1). Note that for a given
+(r1 , . . . , rl ) ∈ (Z/nZ)l we have an infinite choice of Fock spaces Fq [sl ] such that sl is in
+L(r1 , . . . , rl ).
+
+   We now describe the choice of parameters for the cyclotomic v-Schur algebra S. These
+parameters are similar to those used in [Jac] for Ariki-Koike algebras. They depend on n, l
+and on the multi-charge (s1 , . . . , sl ) ∈ L(r1 , . . . , rl ) that we have fixed. Put
+
+(14)                   v := xl       and        ud := ξ nd xlsd −nd      (1 ≤ d ≤ l).
+
+Note that we have SF = SC,m (ζ; ζ r1 , . . . , ζ rl ) with ζ := exp( 2iπ n ). Note also that the algebra
+SK,m (v; u1 , . . . , ul ) is semisimple. Indeed, specializing x at 1 sends HK,m (v; u1 , . . . , ul ) on the
+semisimple group algebra CG(l, 1, m), so by the Tits deformation argument [A1], the algebra
+HK,m(v; u1 , . . . , ul ) is semisimple and so is SK,m(v; u1 , . . . , ul ). Therefore, the Jantzen sum
+formula (see Theorem 2.3) applies in our case. This leads in particular to the definition of a
+matrix J ⊳ (see Section 3.4).
+
+2.2.2    Main result
+Following [U2], let sl ∈ L(r1 , . . . , rl ) and Fq [sl ] be the corresponding Fock space of level l (see
+Section 4.1). As a vector space, Fq [sl ] has a natural basis {|λl , sl i | λl ∈ Πl } and a canonical
+
+                                                       6
+basis {G(λl , sl ) | λl ∈ Πl } indexed by l-multi-partitions. Let Fq [sl ]m be the subspace of Fq [sl ]
+spanned by the |λl , sl i’s, λl ∈ Πlm . Let A(q) be the matrix of the involution of Fq [sl ]m with
+respect to the standard basis, and let ∆(q) be the transition matrix between the standard
+basis and the canonical basis of Fq [sl ]m (see Sections 4.2 and 4.3). Still following [U2], we
+associate to sl an ordering ≺ (see Definition 3.10). By (9) we get a matrix J ≺ .
+
+Theorem 2.8 Let sl ∈ L(r1 , . . . , rl ). Then with the notation above, we have
+
+(15)                                      ∆′ (1) = J ≺ ∆(1).
+
+                                                                                                    
+
+Example 2.9 Take n = 3, l = 2, sl = (1, 0) and m = 3. Then we have on the one hand
+
+                                                                                     
+                         0 .  . .  . . . . . .                            (1, 1),(1)
+                        0 0  . .  . . . . . .                           (3), ∅
+                                                                  
+                        0 0  0 .  . . . . . .                           ∅, (3) 
+                                                                  
+                        0 0  0 0 .  . . . . .                           (1), (2) 
+                                                                  
+                        0 0  1 0 0  . . . . .                           ∅, (2, 1)
+             J≺   = 
+                    
+                                                                   
+                                                                                        ,
+                        0 1  1 0 0  0 . . . .                           (2), (1) 
+                        0 −1 0 0 1  1 0 . . .                           (1), (1, 1) 
+                                                                  
+                        0 1 −1 0 1 −1 1 0 . .                           ∅, (1, 1, 1)
+                                                                  
+                        0 1 −1 0 0  1 0 0 0 .                           (2, 1), ∅ 
+                         0 −1 0 0 −1 0 1 0 1 0                            (1, 1, 1), ∅
+
+
+where dots over the main diagonal stand for zero entries. The l-multi-partitions of m which
+index the bases of Fq [sl ]m are ordered decreasingly with respect to a total ordering finer than
+≺ and they are displayed in the column located on the right of the matrix J ≺ . On the other
+hand, we compute ∆(q) using Uglov’s algorithm (see [U2]). If we keep the same ordering for
+the rows and the columns of ∆(q), we get the following matrix.
+                                                                                 
+                            1 .     . . .      . . . . .              (1, 1),(1)
+                        0 1 . . .             . . . . .             (3), ∅
+                                                              
+                        0 0 1 . .             .   .  .   .  .       ∅, (3) 
+                                                              
+                        0 0 0 1 .             . . . . .            (1), (2) 
+                       
+                        0 0 q 0 1 . . . . .                         ∅, (2, 1)
+             ∆(q) =    0 q q 0 0 1 . . . . 
+                                                                                    .
+                                                                    (2), (1) 
+                        0 0 q2 0 q q 1 . . .                        (1), (1, 1) 
+                                                              
+                        0 0 0 0 q2 0 q 1 . .                        ∅, (1, 1, 1)
+                                                              
+                        0 q2 0 0 0 q 0 0 1 .                        (2, 1), ∅ 
+                            0 0 0 0 0 q2 q 0 q 1                      (1, 1, 1), ∅
+
+
+It is easy to check that ∆′ (1) = J ≺ ∆(1).                                                          ⋄
+
+                                                  7
+Example 2.10 Take n = 3, l = 2, sl = (4, −3) and m = 3. Write the rows and the columns
+of the following matrices with respect to a total ordering finer than ≺. Then
+
+                                                                                
+                      0 .  .  . . .                 .  . . .         (1, 1),(1)
+                     0 0  .  . . .                 .  . . .        (3), ∅ 
+                                                              
+                     0 1  0  . . .                 .  . . .        (2, 1), ∅
+                                                              
+                     0 1  1 0  . .                 .  . . .        (2), (1) 
+                                                              
+                     0 −1 1 0  0 .                 .  . . .        (1, 1, 1), ∅
+           J≺   = 
+                  
+                                                               
+                                                               
+                     0 0  0 0  0 0                 .  . . .        (1), (2) 
+                     0 −1 0 1  1 0                 0 .  . .        (1), (1,
+                  
+                  
+                                                               
+                                                                            1)
+                     0 0 −1 1  0 0                 0 0 . .         ∅, (3) 
+                     0 0  0 0 −1 0                 1 1 0 .         ∅, (2, 1) 
+                      0 1  0 −1 0 0                 1 −1 1 0         ∅, (1, 1, 1)
+
+   and
+
+                                                                              
+                          1 .  . .      .      . . . . .           (1, 1),(1)
+                         0 1 .  .      .      . . . . .          (3), ∅ 
+                                                           
+                         0 q 1 .       .      . . . . .          (2, 1), ∅
+                                                           
+                         0 q2 q 1      .      . . . . .          (2), (1) 
+                                                           
+                         0 0 q 0       1      . . . . .          (1, 1, 1), ∅
+            ∆(q) = 
+                   
+                                                            
+                                                                                 .
+                         0 0 0 0       0      1 . . . .          (1), (2) 
+                         0 0 q2 q      q      0 1 . . .          (1), (1,
+                   
+                   
+                                                            
+                                                                          1)
+                         0 0 0 q       0      0 0 1 . .          ∅, (3) 
+                         0 0 0 q2      0      0 q q 1 .          ∅, (2, 1) 
+                          0 0 0 0       q      0 q2 0 q 1          ∅, (1, 1, 1)
+
+
+Again, one can check that ∆′ (1) = J ≺ ∆(1).                                               ⋄
+
+   Theorem 2.8 is equivalent to the following:
+
+
+Theorem 2.11 With the notation of Theorem 2.8, we have
+
+(16)                                   A′ (1) = 2J ≺ .
+
+Proof of the equivalence of Theorems 2.8 and 2.11. Since the canonical basis is invariant
+under the      involution, we have ∆(q) = A(q)∆(q −1 ). Taking derivatives at q = 1 yields
+∆ (1) = A (1)∆(1)−A(1)∆′ (1). Since A(1) is the identity matrix, we get 2∆′ (1) = A′ (1)∆(1).
+  ′        ′
+
+As a consequence, Theorem 2.11 implies Theorem 2.8. Since ∆(1) is unitriangular, hence
+invertible, the converse follows.                                                          
+
+
+                                                8
+    We prove Theorem 2.11 in Part C. Our proof is similar to the proof of [Ry] in the level
+one case. However the higher-level case is significantly more complicated and involves the
+discussion of many cases (see Section 7).
+
+2.2.3   A conjecture for the decomposition matrix of S
+Choose the parameters as in Section 2.2.1. Guided by the formal analogy between Theorem
+2.8 on one hand, and the rephrasing of the Jantzen sum formula given in Corollary 2.7 on
+the other hand, we may wonder if for some sl ∈ L(r1 , . . . , rl ), the corresponding matrix
+J ≺ coincides with the matrix J ⊳ coming from the Jantzen sum formula. This leads to the
+following definition and conjecture.
+
+Definition 2.12 Let M ∈ N. We say that sl ∈ L(r1 , . . . , rl ) is M -dominant if for all
+1 ≤ d ≤ l − 1, we have
+
+(17)                                     sd+1 − sd ≥ M.
+
+                                                                                                 ⋄
+The point is that if sl is m-dominant, then we have J ≺ = J ⊳ (see Proposition 5.12).
+
+Conjecture 2.13 Assume that sl ∈ L(r1 , . . . , rl ) is m-dominant. Let D(q) be the q-analogue
+of the decomposition matrix of S defined in Definition 2.5 with our choice of parameters given
+in Section 2.2.1. Then we have
+
+(18)                                      D(q) = ∆(q).
+
+                                                                                                 
+If we put q = 1 in Conjecture 2.13, we thus get an algorithm for computing the decomposition
+matrix of SC,m (ζ; ζ r1 , . . . , ζ rl ) with ζ := exp( 2iπ
+                                                         n ).
+
+Remark 2.14 The assumption of m-dominance is necessary in Conjecture 2.13. Indeed,
+while the decomposition matrix D(1) only depends on the sequence (r1 , . . . , rl ) of the residues
+modulo n of the multi-charge sl , the matrix ∆(1) actually depends on sl itself. For example,
+take n = 3, l = 2 and m = 3. Then the multi-charges (1, 0) and (4, −3) are both in L(1, 0),
+but the corresponding matrices ∆(1) do not have the same number of zero entries (see Ex-
+amples 2.9 and 2.10).                                                                             ⋄
+
+
+Remark 2.15 Conjecture 2.13 suggests that the matrix ∆(1) should not depend of the
+choice of the multi-charge sl ∈ L(r1 , . . . , rl ) provided it is M -dominant for M large enough.
+This statement is proved in [Y, Théorème 4.30]), where an explicit value of M is given.
+However, the fact that we might take M = m here is still conjectural.                            ⋄
+
+
+
+
+                                                9
+Example 2.16 Set n = 3, l = 2, (r1 , r2 ) = (1, 0) and m = 3. Then the specialized cy-
+                                  2iπ   2iπ
+clotomic v-Schur algebra is SC,3 e 3 ; e 3 , 1 . Take sl = (4, −3), so sl ∈ L(r1 , . . . , rl ) is
+m-dominant. According to Conjecture 2.13, we expect D(q) be equal to
+
+                                                                                   
+                           1 .  . .         .   . . . . .               (1, 1),(1)
+                          0 1 .  .         .   . . . . .              (3), ∅ 
+                                                                
+                          0 q 1 .          .   . . . . .              (2, 1), ∅
+                                                                
+                          0 q2 q 1         .   . . . . .              (2), (1) 
+                                                                
+                          0 0 q 0          1   . . . . .              (1, 1, 1), ∅
+              ∆(q) = 
+                     
+                                                                 
+                                                                 
+                          0 0 0 0          0   1 . . . .              (1), (2) 
+                          0 0 q2 q         q   0 1 . . .              (1), (1,
+                     
+                     
+                                                                 
+                                                                               1)
+                          0 0 0 q          0   0 0 1 . .              ∅, (3) 
+                          0 0 0 q2         0   0 q q 1 .              ∅, (2, 1) 
+                           0 0 0 0          q   0 q2 0 q 1              ∅, (1, 1, 1)
+(see Example 2.10).                                                                               ⋄
+    If we no longer assume that sl is m-dominant, then we expect ∆(q) be equal to a q-
+analogue of the decomposition matrix of a quasi-hereditary covering (in the sense of Rouquier,
+see [Ro]) of the Ariki-Koike algebra H. This covering, depending on sl , could come from a
+rational Cherednik algebra through the Knizhnik-Zamolodchikov functor [GGOR]. It should
+be Morita-equivalent to the cyclotomic v-Schur algebra of [DJM] if sl is m-dominant.
+
+
+
+          PART B: Tools for the proof of Theorem 2.11
+
+   The next two sections recall some results about combinatorics of partitions and multi-
+partitions on the one hand and higher-level Fock spaces on the other hand; all of them will
+be used in the proof of Theorem 2.11. However, there are no new results here, so the reader
+familiar with these two topics may skip this part and come back to it later in order to get
+the needed definitions and notation.
+
+
+3     Combinatorics of partitions and multi-partitions
+3.1   Definitions
+We give here all the basic definitions about partitions and multi-partitions that we need
+later; our main reference is [Mac]. Let r ∈ N. A partition of r is a sequence of integers
+λ = (λ1 , λ2 , . . . , λN ) such that λ1 ≥ λ2 ≥ . . . ≥ λN ≥ 0 and λ1 + · · · + λN = r. Each nonzero
+λi is called a part of λ. The sum of all the parts of λ is denoted by |λ|. We identify two
+partitions differing only by a tail of zeroes and write sometimes partitions as sequences of
+
+
+
+                                                10
+integers with an infinite tail of zeroes. The only partition of 0 is denoted by ∅. The conjugate
+of the partition λ is the partition λ† defined by
+
+(19)                                 λ†i := ♯{j | λj ≥ i}              (i ≥ 1);
+
+for example, the conjugate of (4, 3, 3, 2, 1) is (5, 4, 3, 1).
+
+    An N -multi-partition of r is an N -tuple of partitions of integers summing up to r. Let
+λ = (λ(1) , . . . , λ(N ) ) be an N -multi-partition. The conjugate of λ is the multi-partition
+                                                                   (b) (b)
+λ† := (λ(N ) )† , . . . , (λ(1) )† . For 1 ≤ b ≤ N , write λ(b) = (λ1 , λ2 , . . .) the parts of λ(b) . The
+Young diagram of λ is the set
+                                                                                     (b)
+(20)                       {(i, j, b) ∈ N∗ × N∗ × [[1; N ]] | 1 ≤ j ≤ λi },
+
+whose elements are called boxes or nodes of λ. If N = 1, namely, if λ is a partition, we
+drop the third component in the symbol (i, j, b) of a node of λ. From now on we identify an
+N -multi-partition with its Young diagram. We extend the notation |λ| in a natural way for
+multi-partitions and define the dominance ordering on multi-partitions as follows.
+
+Definition 3.1 Let λ and µ be two N -multi-partitions. We say that µ dominates λ and
+write λ E µ if
+
+(21)                                                |λ| = |µ|
+
+and for all k ≥ 0, 1 ≤ b ≤ N , we have
+                             b−1
+                             X               k
+                                             X                 b−1
+                                                               X              k
+                                                                              X
+                                     (i)            (b)               (i)            (b)
+(22)                                |λ | +         λj     ≤          |µ | +         µj .
+                              i=1            j=1               i=1            j=1
+
+Write λ ⊳ µ if λ E µ and λ 6= µ.                                                                         ⋄
+If λ, µ ∈ Π are two partitions, write λ ⊂ µ if the diagram of λ is contained in the diagram of
+µ, and the set-theoretic difference is called a skew diagram; we denote it by µ/λ. A path in
+the skew diagram θ is a sequence of boxes (γ1 , . . . , γN ) ∈ θ N such that for all 1 ≤ i ≤ N −1, γi
+and γi+1 have one common side. We say that θ is connected if given any two boxes γ, γ ′ ∈ θ,
+there exists a path within θ connecting γ to γ ′ . A ribbon is a connected skew diagram that
+contains no 2 × 2 block of boxes. Let ρ be a ribbon. The head (resp. tail) of ρ is the node
+γ = (i, j) ∈ ρ such that j − i is minimal (resp. maximal); we denote this node by hd(ρ) (resp.
+tl(ρ)). If hd(ρ) = (i, j) and tl(ρ) = (i′ , j ′ ), the height of ρ is the integer ht(ρ) := i − i′ ∈ N.
+Finally, the length of ρ is the number of boxes contained in ρ; we denote it by ℓ(ρ).
+
+Example 3.2 On Figure 2 (see Section 3.4), the set of white squares represents the partition
+(4, 1) ; ρ, ρ′ and ρ′′ are three ribbons of respective heights 2, 1 and 0 and of respective lengths
+4, 4 and 3.                                                                                       ⋄
+
+
+
+                                                          11
+   A charged N -multi-partition is an element of ΠN × ZN . If (λ, s) ∈ ΠN × ZN is a charged
+multi-partition and s = (s1 , . . . , sN ), the content of the node γ = (i, j, b) ∈ λ is the integer
+
+(23)                                  cont(γ) := sb + j − i.
+
+If M ∈ N∗ , the residue modulo M of γ is
+
+(24)                         resM (γ) := cont(γ) mod M ∈ Z/M Z.
+
+For all i ∈ Z, set
+
+(25)                        Ni (λ) := ♯{γ ∈ λ | resn (γ) = i mod n} ;
+
+this number depends on the multi-charge s. Define in a similar way Ni (θ) if θ is a skew
+diagram contained in a charged partition.
+
+3.2     The bijection τl , the ordering ≺ and abaci
+Throughout the proof of Theorem 2.11, we need a large amount of notation which we in-
+troduce here. In particular, we have to pass from l-multi-partitions (indexing the bases of
+the Fock space) to partitions (indexing the bases of the q-wedge space – see Section 4.1) and
+conversely. Following [U2], we achieve this using a bijection τl which can be described in
+a combinatorial way (see Definition 3.6). This map is a variant of the bijection associating
+to a partition its l-quotient and its l-core. We construct here τl using abaci; for another
+(equivalent) description of τl and examples, see [U2, Remark 4.2 (ii) and Example 4.3]. The
+bijection τl is used in particular for defining the partial ordering ≺ on Πlm mentioned in
+Section 2.2.2; see Definition 3.10.
+
+3.2.1    Notation
+The Euclidean algorithm shows that any integer k ∈ Z can be written in a unique way as
+
+(26)                            k = c(k) + n(d(k) − 1) + nlm(k),
+
+with c(k) ∈ [[1; n]], d(k) ∈ [[1; l]] and m(k) ∈ Z. Consider the map
+
+(27)                           φ : Z → Z,       k 7→ c(k) + nm(k).
+
+φ enjoys the following obvious properties, which we need later: for all k, k′ ∈ Z, we have
+
+
+(28)                                    φ(k) ≡ c(k) ≡ k     (mod n),
+
+                                                   
+(29)                       k < k ′ , d(k) = d(k ′ ) =⇒ φ(k) < φ(k′ ),
+
+                                                
+(30)                      k ≤ k′ , φ(k) ≥ φ(k′ ) =⇒ m(k) = m(k′ ).
+
+
+                                                12
+    For any r-tuple k = (k1 , . . . , kr ) ∈ Zr , let
+
+(31)                                       c(k) := (c(k1 ), . . . , c(kr )) ∈ Zr ,
+
+and define in a similar way d(k). The group Sr acts on the left on Zr by
+
+(32)            σ.(k1 , . . . , kr ) = (kσ−1 (1) , . . . , kσ−1 (r) )   ((k1 , . . . , kr ) ∈ Zr , σ ∈ Sr ),
+
+and a fundamental domain for this action is B := {(b1 , . . . , br ) ∈ Zr | b1 ≥ · · · ≥ br }. Let
+b(k) denote the element of B that is conjugated to d(k) under the action of Sr , Wk be the
+stabilizer of b(k) (this is a parabolic subgroup of Sr ) and ω(k) be the element of maximal
+length in Wk . Let W k be the set of minimal length representatives in the left cosets Sr /Wk ,
+and v(k) be the element in W k such that d(k) = v(k).b(k).
+
+Example 3.3 Let n = 3, l = 2, r = 4 and k = (12,−5, 2, 17). Then we have:
+
+c(k) = (3, 1, 2, 2), d(k) = (2, 1, 1, 2), b(k) = (2, 2, 1, 1), v(k) = σ3 σ2 , ω(k) = σ1 σ3 .                   ⋄
+
+Remark 3.4 Let k = (k1 , . . . , kr ) ∈ Zr . We can describe the action of v(k)−1 on k as follows.
+Consider k as a word formed by the letters ki and for 1 ≤ d ≤ l, denote by wd the subword
+of k formed by the letters ki such that d(ki ) = d. Then we have v(k)−1 .k = wl · · · w1 .      ⋄
+
+3.2.2    The bijection τl , the ordering ≺ and abaci
+Definition 3.5 A 1-runner abacus is a subset A of Z such that −k ∈ A and k ∈         / A for all
+large enough k ∈ N. In a less formal way, each k ∈ A corresponds to the position of a bead
+on the horizontal abacus A which is full of beads on the left and empty on the right. Let A
+be the set of 1-runner abaci. If N ≥ 1, an N -runner abacus is an N -tuple of 1-runner abaci.
+If A = (A1 , . . . , AN ) ∈ AN is an N -runner abacus, we identify A with the subset
+
+(33)                              {(k, d) | 1 ≤ d ≤ N, k ∈ Ad } ⊂ Z × [[1; N ]].
+
+                                                                                                               ⋄
+   To λ = (λ(1) , . . . , λ(N ) ) ∈ ΠN and s = (s1 , . . . , sN ) ∈ ZN we associate the N -runner
+abacus
+                                               (d)
+(34)                      A(λ, s) := {(λi            + sd + 1 − i, d) | i ≥ 1, 1 ≤ d ≤ N }.
+
+One checks easily that the map
+
+(35)                                    (λ, s) ∈ ΠN × ZN 7→ A(λ, s) ∈ AN
+
+is bijective.
+
+   Recall the definition
+                        of the maps k 7→ d(k) and k 7→ φ(k) from Section 3.2.1. Note that
+k ∈ Z 7→ φ(k), d(k) ∈ Z × [[1; l]] is a bijection.
+
+                                                                13
+                                        = A → Πl × Zl ∼
+Definition 3.6 The bijection τl : Π × Z ∼             = Al is defined in terms of abaci by
+the formula
+                                             	
+(36)              τl (A) := φ(k), d(k)  k ∈ A ∈ Al        (A ∈ A).
+
+                                                                                                     ⋄
+
+Remark 3.7 Let λl ∈ Πl , sl = (s1 , . . . , sl ) ∈ Zl , λ ∈ Π and s ∈ Z satisfying the relation
+(λl , sl ) = τl (λ, s). Then we have s = s1 + · · · + sl .                                    ⋄
+
+Notation 3.8 Let sl = (s1 , . . . , sl ) ∈ Zl and s := s1 + · · · + sl . Write
+                                                              l  s
+(37)                                                      λl ←→ λ
+
+if λ ∈ Π and λl ∈ Πlm are related by (λl , sl ) = τl (λ, s). We drop the sl in the notation if it is
+clearly given by the context.                                                                      ⋄
+
+Example 3.9 Let n = 2, l = 3, m = 5 and sl = (0, 0, −1). Then Figure 1 shows that
+                                                        sl
+                                    (1, 1), (1, 1), (1) ←→  (4, 3, 3, 2, 1).
+
+
+
+                        -8   -7    -6          -4           -2            0    1        3
+                                         -5          -3              -1            2             4
+
+
+
+
+                       -28   -23
+                             -15   -22   -17   -16   -11    -10           -4   1
+                                                                     -5            2    7    8
+
+
+
+
+                       -26
+                       -16   -21
+                             -14   -20   -15   -14   -9     -8            -2   3
+                                                                     -3            4    9    10
+
+
+
+
+                       -24
+                       -16   -19
+                             -14   -18   -13   -12   -7     -6            0
+                                                                     -1        5   6   11   12
+
+
+
+
+                     Figure 1: Computation of the bijection τl using abaci.
+
+                                                                                                     ⋄
+   We now define a partial ordering ≺ on Πlm as follows.
+
+
+
+
+                                                             14
+Definition 3.10 Let sl = (s1 , . . . , sl ) ∈ Zl . Let λl , µl ∈ Πlm and λ, µ ∈ Π be such that
+    sl           sl
+λl ←→  λ and µl ←→  µ. We say that λl precedes µl and write
+
+(38)                                             λl  µ l
+
+if µ dominates λ. In particular, by (21), λ and µ must be partitions of the same integer.
+Note that the ordering  depends on the multi-charge sl that we consider. Write λl ≺ µl if
+λl  µl and λl 6= µl .                                                                  ⋄
+
+3.3    β-numbers and ribbons
+Throughout this section we fix an integer s ∈ Z.
+
+Definition 3.11 Let λ = (λ1 , λ2 , . . .) ∈ Π be a partition with at most r parts. The r-tuple
+
+(39)                  β r (λ) := (λ1 + s, λ2 + s − 1, . . . , λr + s − r + 1) ∈ Zr
+
+is called the r−list of β-numbers associated to (λ, s) or (with a slight abuse of notation) the
+list or sequence of β-numbers associated to λ. The set of integers that form β r (λ) is denoted
+by Br (λ).                                                                                    ⋄
+    With the notation of the definition above, note that β r (λ) is a decreasing sequence of
+integers all greater than (or equal to) s + 1 − r. This sequence depends on the integer s we
+have fixed, but we do not mention it in our notation. Note that a partition λ is completely
+determined by its sequence of β-numbers. If r = |λ|, write more simply
+
+(40)                         β(λ) := β r (λ)        and      B(λ) := Br (λ).
+
+If f is a function defined on Zr , it is convenient to consider f as a function (still denoted by
+f ) defined on the set of partitions of r by the formula
+
+(41)                            f (λ) := f (β(λ))         (λ ∈ Π, |λ| = r).
+
+ For example, we define this way for any partition λ the vectors c(λ), d(λ) and so on. See
+Section 3.2.1 for the corresponding notation.
+
+   In order to prove Theorem 2.11, we have to relate the adding/removal of a ribbon in
+a charged partition and the corresponding β-numbers. Let us recall a classical result on
+β-numbers (see e.g. [Mat1, Lemma 5.26]).
+
+Lemma 3.12 Let ν and κ be two partitions with at most r parts, and let β r (ν) = (α1 , . . . , αr )
+and β r (κ) = (β1 , . . . , βr ) denote the sequences of β-numbers associated to ν and κ respectively.
+Then the following statements are equivalent.
+
+  (i) ν ⊂ κ, and ρ := κ/ν is a ribbon of length h.
+
+ (ii) There exist positive integers b and h such that Br (ν) = {β1 , . . . , βb−1 , βb −h, βb+1 , . . . , βr }.
+
+                                                     15
+In this case, b is the row number of the tail of ρ and h is the length of ρ. Let σ ∈ Sr denote the
+permutation obtained by arranging decreasingly the integers (β1 , . . . , βb−1 , βb −h, βb+1 , . . . , βr ).
+Then we have ℓ(σ) = ht(ρ). Moreover, the content of the head of ρ is
+
+(42)                                        cont(hd(ρ)) = αc = βb − h,
+
+where c is the row number of the head of ρ.
+Proof. The proof of (i) ⇒ (ii) is easy. Conversely, assume that (ii) holds. Then we must
+have βb − h ≥ s + 1 − r, and there must exist b ≤ c ≤ r such that βc > βb − h > βc+1 (if c = r,
+put βc+1 := s − r). Note then that ν is obtained from κ by removing a ribbon ρ, where ρ ⊂ κ
+is the ribbon whose head is located at row c of κ and whose tail is located at row b of κ. ρ is
+actually a ribbon of length h. Moreover, with the notation of the statement of this lemma, we
+have σ.(β1 , . . . , βb−1 , βb − h, βb+1 , . . . , βr ) = (β1 , . . . , βb−1 , βb+1 , . . . , βc , βb − h, βc+1 , . . . , βr ),
+hence σ is a cycle of length c − b = ht(ρ). Finally, the head of ρ has coordinates (c, νc + 1),
+so its content is equal to cont(hd(ρ)) = s + (νc + 1) − c = αc = βb − h.                                                    
+
+
+Example 3.13 Let s = 4, r = 5, κ = (6, 5, 3, 2, 2) and ν = (6, 2, 2, 2, 2). Then the skew
+diagram ρ := κ/ν is a ribbon and we have b = 2, c = 3 and h = 4. Moreover, we have
+β(κ) = (β1 , . . . , β5 ) = (10, 8, 5, 3, 2) and β(ν) = (β1 , β3 , βb − h, β4 , β5 ) = (10, 5, 4, 3, 2). We
+have σ = (2, 3), hence ℓ(σ) = 1 = ht(ρ). The head of ρ has coordinates (3, 3), so its content
+is cont(hd(ρ)) = 4 = βb − h.                                                                              ⋄
+
+Lemma 3.14 Let ν, κ ∈ Π be such that |ν| = |κ| = r and ν 6= κ. Let β(ν) = (α1 , . . . , αr )
+and β(κ) = (β1 , . . . , βr ) denote the sequences of β-numbers associated to ν and κ respectively.
+Set ρ := ν/(ν ∩ κ) and ρ′ := κ/(ν ∩ κ).
+
+                                                                 
+   1) Then, ρ and ρ′ are two ribbons if and only if ♯ B(ν) ∩ B(κ) = r − 2. In this case,
+      denote by
+            . h the common length of ρ and ρ′ ,
+            . y the row number of the tail of ρ′ ,
+            . y ′ the row number of the head of ρ′ ,
+            . x′ the row number of the tail of ρ, and
+            . x the row number of the head of ρ.
+
+       Then we have
+
+       (43)                             {αi | i 6= x′ , y ′ }        =   {βj | j 6= x, y},
+       (44)         cont(hd(ρ)) = βx = αx′ − h                   and       cont(hd(ρ′ )) = αy′ = βy − h.
+
+       Let π ∈ Sr be the permutation obtained by arranging decreasingly the integers forming
+       B(ν). Then we have ℓ(π) = ht(ρ) + ht(ρ′ ).
+
+
+                                                                16
+  2) Assume that the conditions of 1) hold. Then we have the following equivalences, and
+     moreover one of the two following cases occurs:
+
+                                      (i) y ≤ y ′ < x′ ≤ x ⇐⇒ ν ⊳ κ,
+                                     (ii) x′ ≤ x < y ≤ y ′ ⇐⇒ κ ⊳ ν.
+
+Proof. We prove 1) by applying the previous lemma to the pairs of partitions (ν ∩ κ, ν) and
+(ν ∩ κ, κ). Let us prove 2). The inequalities y ≤ y ′ and x′ ≤ x are obvious. Since ρ ∩ ρ′ = ∅,
+one of the two following cases occurs: either y ′ < x′ and then ν ⊳ κ, or x < y and then κ ⊳ ν.
+This proves both implications ⇒, and since one of the two cases occurs, we get the desired
+equivalences.                                                                                
+
+
+3.4    Definition of the matrix J <
+Let R be a local ring, with unique maximal ideal ℘. We define in this section a matrix
+J = Jλl ,µl λ ,µ ∈Πl , with coefficients in R, depending on parameters m, l ∈ N∗ and v,
+                    l l  m
+u1 , . . . , ul ∈ R. This matrix is closely related to the matrix formed by the entries ν℘ (gλl ,µl )
+of [JM] (see (8)). Let λl = (λ(1) , . . . , λ(l) ), µl = (µ(1) , . . . , µ(l) ) ∈ Πlm , and consider the
+following cases.
+
+   • Case (J1 ). Assume that λl 6= µl and that there exist two integers d, d′ ∈ [[1; l]], d 6= d′
+                                                                ′        ′
+     satisfying the following conditions: µ(d) ⊂ λ(d) , λ(d ) ⊂ µ(d ) , λ(b) = µ(b) for all integer
+                                                               ′      ′
+     b ∈ [[1; l]] \ {d, d′ }, and ρ := λ(d) /µ(d) and ρ′ := µ(d ) /λ(d ) are two ribbons of the same
+     length b h. Let hd(ρ) = (i, j, d) denote the head of ρ and hd(ρ′ ) = (i′ , j ′ , d′ ) denote the
+     head of ρ′ . Set
+                                                                ′
+      (45)                               ε := (−1)ht(ρ)+ht(ρ )            and
+
+
+                                                                      ′    ′   ε
+      (46)                              Jλl ,µl := ud v j−i − ud′ v j −i            .
+
+   • Case (J2 ). Assume that λl 6= µl and that there exists d ∈ [[1; l]] such that λ(b) = µ(b)
+     for all b 6= d, and ρ := λ(d) /(λ(d) ∩ µ(d) ) and ρ′ := µ(d) /(λ(d) ∩ µ(d) ) are two ribbons
+     of the same length b     h. By definition of ρ and ρ′ , we have ρ ∩ ρ′ = ∅, whence we get
+     (depending on the relative positions of ρ and ρ′ ) that either λ(d) ⊳ µ(d) or µ(d) ⊳ λ(d) .
+     Assume that λ(d) ⊳ µ(d) . Let ρ′′ ⊂ (λ(d) ∩ µ(d) ) be the ribbon obtained by connecting
+     the tail of ρ to the head of ρ′ , excluding the two latter nodes (see Figure 2). Denote
+     by hd(ρ) = (i, j, d) (resp. hd(ρ′ ) = (i′ , j ′ , d′ ), resp. hd(ρ′′ ) = (i′′ , j ′′ , d′′ )) the head of ρ
+     (resp. ρ′ , resp. ρ′′ ), and finally set
+
+
+                                            ′                             ′′ )+ht(ρ′′ ∪ρ′ )
+      (47)           ε1 := (−1)ht(ρ)+ht(ρ ) ,        ε2 := (−1)ht(ρ∪ρ                         and
+
+                                                     17
+                                                      ′  ′ ε1               ′′ ′′ ε2
+       (48)                 Jλl ,µl := ud (v j−i − v j −i ) . ud (v j−i − v j −i ) .
+
+       If µ(d) ⊳ λ(d) , set Jλl ,µl := Jµl ,λl .
+
+   • Case (J3 ). In all other cases, set
+
+       (49)                                          Jλl ,µl := 1.
+
+
+
+
+                                                11
+                                                00
+                                                00
+                                                11
+                                     00
+                                     11
+                                     00
+                                     11         00
+                                                11                             ρ
+
+                                     00
+                                     11
+                                     00
+                                     11         00
+                                                11
+                                                00
+                                                11
+                                     00
+                                     11
+                                                                               ρ’
+
+                                     00
+                                     11
+                                     00
+                                     1100
+                                       11       00
+                                                11
+                                     00
+                                     1100
+                                       11
+                                     0011
+                                     1100
+                                       00
+                                       110011
+                                         11  00 11
+                                           0011 00
+                                                                               ρ’’
+
+
+                                       00
+                                       11
+                                       0011
+                                       1100
+                                         0011
+                                         1100
+                                           0011
+                                           1100
+                                             00
+                                             11
+                                             00
+                                             110011
+                                               1100
+                                             00
+                                             1100
+                                               11
+                                               0011
+                                             0011
+                                             11  00
+                                                 00
+                                                 11
+ Figure 2: The ribbons ρ, ρ′ and ρ′′ (the nodes of (λ(d) ∩ µ(d) ) − ρ′′ are depicted in white).
+
+                                                            
+   We now define a matrix J = J℘ = jλl ,µl                      λl ,µl ∈Πlm
+                                                                              , with integer coefficients, by the
+formula
+
+(50)                             jλl ,µl := ν℘ (Jλl ,µl )        (λl , µl ∈ Πlm ).
+
+Now, let 6 be an arbitrary partial ordering on Πlm and write λl < µl if λl 6 µl and λl 6= µl
+                                                               <
+(λl , µl ∈ Πlm ). Recall the definition of the matrix J < = jλ   l ,µl λl , µl ∈Πlm
+                                                                                    from (9) ; namely,
+put
+                                  (
+                        <           jλl ,µl if λl < µl
+(51)                   jλl ,µl :=                          (λl , µl ∈ Πlm ).
+                                      0     otherwise
+
+   If we take 6 = E, then we get a matrix J ⊳ whose entries correspond, up to conjugation
+of multi-partitions, to the integers ν℘ (gλl ,µl ) of [JM] (see (8)). Given a multi-charge sl , we
+shall also consider the matrix J ≺ , where the ordering ≺ (depending on sl ) was introduced in
+Definition 3.10. This is the matrix J ≺ of Theorems 2.8 and 2.11. If sl is m-dominant (in the
+sense of Definition 2.12), then the matrices J ≺ and J ⊳ coincide (see Proposition 5.12).
+
+
+
+                                                       18
+4      q-deformed higher-level Fock spaces
+In this section we follow [U2], to which we refer the reader for more details. The vector
+spaces we consider here are over C(q), where q is an indeterminate over C.
+
+4.1    q-wedge products and higher-level Fock spaces
+Let s ∈ Z. Let Λs denote the (semi-infinite) q-wedge space of charge s (this space is denoted
+       ∞
+                                                                                            b n ).
+by Λs+ 2 in [U2]). Λs is an integrable representation of level l of the quantum algebra Uq (sl
+As a vector space, it has a natural basis formed by the so-called ordered q-wedge products.
+These vectors can be written as
+
+(52)                                     uk = uk 1 ∧ uk 2 ∧ · · · ,
+
+where k = (ki )i≥1 is a decreasing sequence of integers such that ki = s + 1 − i for i ≫ 0.
+The basis formed by the ordered wedge products is called standard. More generally, we use
+the non-ordered wedge products; a non-ordered wedge product uk = uk1 ∧ uk2 ∧ · · · ∈ Λs is
+indexed by a sequence of integers (ki ) such that ki = s + 1 − i for i ≫ 0, but we no longer
+require that (ki ) is decreasing. Any non-ordered wedge product can be written as a linear
+combination of ordered wedge products by using the so-called ordering rules, which are given
+in [U2, Proposition 3.16] and in a slightly different form in Proposition 4.4.
+
+   The vectors of the standard basis of Λs can also be indexed by partitions as follows. Let
+uk = uk1 ∧ uk2 ∧ · · · ∈ Λs be an ordered wedge product. For i ≥ 1 set λi := ki − s + i − 1;
+then λ := (λ1 , λ2 , . . .) is a partition. We then write uk = |λ, si. Note that if λ has at most r
+parts, then we have (k1 , . . . , kr ) = β r (λ), which explains the definition of the β-numbers we
+gave in Definition 3.11.
+
+    Let Fq [sl ] be the higher-level Fock space with multi-charge sl = (s1 , . . . , sl ) ∈ Zl [U2]. As
+a vector space, Fq [sl ] has a natural basis {|λl , sl i | λl ∈ Πl } indexed by l-multi-partitions.
+If s = s1 + · · · + sl , then Fq [sl ] can be identified with a subspace of Λs by the embedding
+Fq [sl ] ֒→ Λs , |λl , sl i 7→ |λ, si, where λ is the partition such that λl ↔ λ (see Notation 3.8 for
+the meaning of ↔). We make from now on this identification; in fact, Λs is isomorphic to
+the direct sum of all the Fq [tl ]’s, where tl is any l-tuple of integers summing to s. Thus, the
+vectors of the standard basis of Λs can also be indexed by charged l-multi-partitions.
+
+4.2    The involution
+In order to define the canonical basis of Λs , we equip this space with an involution               .
+
+Definition 4.1 The involution       of Λs is the C-vector space automorphism that maps q to
+q −1 and that acts on the standard basis of Λs as follows [U2, Proposition 3.23 and Remark
+                                                         ∗
+3.24]. Let λ ∈ Π be a partition of r, and k = (ki ) ∈ ZN be such that uk = |λ, si. Then
+
+
+(53)       |λ, si := (−1)κ(d(λ)) q κ(d(λ))−κ(c(λ)) (ukr ∧ · · · ∧ uk1 ) ∧ ukr+1 ∧ ukr+2 ∧ · · · ,
+
+                                                    19
+where for any a = (a1 , . . . , ar ) ∈ Zr , κ(a) is the integer defined by
+
+(54)                        κ(a) := ♯{(i, j) ∈ N2 | 1 ≤ i < j ≤ r, ai = aj },
+
+and c(λ) and d(λ) are defined in Section 3.2.1.                                                                 ⋄
+    We can straighten the non-ordered wedge product in the right-hand side of (53) in order
+to express it as a linear combination of ordered wedge products.
+
+   One checks that          preserves the subspace
+                                             M
+(55)                            Fq [sl ]m :=    C(q) |λl , sl i ⊂ Fq [sl ].
+                                                     λl ∈Πlm
+                                                 
+Definition 4.2 Define a matrix A(q) = aλl ,µl (q) λ ,µ ∈Πl with entries in C(q) by
+                                                                         l    l   m
+
+
+                                             X
+(56)                        |µl , sl i =             aλl ,µl (q) |λl , sl i       (µl ∈ Πlm ).
+                                           λl ∈Πlm
+
+                                                                                                                ⋄
+The matrix A(q) depends on n, l, sl and m. The ordering rules show that A(q) is unitriangular
+with respect to , that is
+
+(57)          aλl ,µl (q) 6= 0 ⇒ λl  µl                  and        aλl ,λl (q) = 1        (λl , µl ∈ Πlm ).
+
+The same rules also imply that A(1) is the identity matrix.
+
+4.3    Uglov’s canonical basis
+Since the matrix A(q) of the involution of Fq [sl ]m is unitriangular, a classical argument can
+be used to prove the following result.
+
+Theorem 4.3 ([U2]) There exists a unique basis {G(λl , sl ) | λl ∈ Πlm } of Fq [sl ]m satisfying
+both following conditions:
+
+  (i) G(λl , sl ) = G(λl , sl ),
+                                    M
+ (ii) G(λl , sl ) − |λl , sl i ∈             q C[q] |µl , sl i.                                                 
+                                   µl ∈Πlm
+
+
+Definition 4.4 The basis {G(λl , sl ) | λl ∈ Πlm } is called the canonical basis of Fq [sl ]m .
+Define a matrix ∆(q) = ∆λl ,µl (q) λ ,µ ∈Πl with entries in C[q] by
+                                                l     l    m
+                                             X
+(58)                      G(µl , sl ) =               ∆λl ,µl (q) |λl , sl i          (µl ∈ Πlm ).
+                                           λl ∈Πlm
+
+                                                                                                                ⋄
+
+                                                                20
+The matrix ∆(q) depends on n, l, sl and m. By Condition (ii) of Theorem 4.3, the matrix
+∆(q) is also unitriangular with respect to . By [U2, Theorem 3.26], the entries of ∆(q)
+can be expressed as Kazhdan-Lusztig polynomials related to parabolic modules of an affine
+Hecke algebra of type Ã, so by [KT], these entries are in N[q].
+
+4.4     Another basis of Λs . Ordering rules.
+The ordering rules (R1 )-(R4 ) from [U2, Proposition 3.16] do not give at q = 1 anticommuting
+relations like uk1 ∧ uk2 = −uk2 ∧ uk1 , because of the signs involved in Rules (R3 ) and (R4 ).
+To fix this, we introduce another basis of Λs that differs from the standard basis only by
+signs. The basis we consider here is actually the basis of ordered wedge products introduced
+in [U1]. Λs is graded by
+(59)                                deg(|λ, si) := |λ|             (λ ∈ Π).
+
+Let uk = uk1 ∧ uk2 ∧ · · · ∈ Λs be a (not necessarily ordered) wedge product of degree r. Set
+
+                              vk = vk 1 ∧ vk 2 ∧ · · ·       := (−1)ℓ(v(k1 ,...,kr )) uk
+(60)
+            and similarly            vk 1 ∧ · · · ∧ v k r    := (−1)ℓ(v(k1 ,...,kr )) uk1 ∧ · · · ∧ ukr ,
+where v(k1 , . . . , kr ) ∈ Sr is defined in Section 3.2.1. (If k = (k1 , . . . , kr ) ∈ Zr , we hope that
+the reader will make easily the difference between the permutation v(k) ∈ Sr and the wedge
+product vk = vk1 ∧ · · · ∧ vkr .) We say that the wedge product vk is ordered if so is uk . It is
+straightforward to see, using the ordering rules for the uk ’s given by [U2, Proposition 3.16],
+that the ordering rules for the vk ’s are given by the following proposition.
+
+Proposition 4.5
+(i) Let k1 ≤ k2 , and γ ∈ [[0;
+                             nl − 1]] (resp. δ ∈ [[0; nl − 1]]) denote the residue of c(k2 ) − c(k1 )
+ resp. of n(d(k2 ) − d(k1 )) modulo nl. Then we have
+(R1 )      vk1 ∧ vk2 = −vk2 ∧ vk1                                                              if γ = δ = 0,
+
+
+          vk 1 ∧ vk 2   = −q −1 vk2 ∧ vk1
+                                         X
+                           −(q −2 − 1)         q −2i+1 vk2 −nli ∧ vk1 +nli
+(R2 )                                                                                          if γ > 0, δ = 0,
+                                         i≥1
+                                         X
+                           +(q −2 − 1)         q −2i vk2 −γ−nli ∧ vk1 +γ+nli
+                                         i≥0
+
+
+         vk1 ∧ vk2 = −qvk2 ∧ vk1
+                                       X
+                          −(q 2 − 1)         q 2i−1 vk2 −nli ∧ vk1 +nli
+(R3 )                                                                                           if γ = 0, δ > 0,
+                                       i≥1
+                                       X
+                          +(q 2 − 1)         q 2i vk2 −δ−nli ∧ vk1 +δ+nli
+                                       i≥0
+
+
+                                                        21
+(R4 )
+  vk 1 ∧ vk 2   = −vk2 ∧ vk1
+
+                                  X q 2i − q −2i
+                   −(q − q −1 )                    vk2 −nli ∧ vk1 +nli
+                                        q + q −1
+                                  i≥1
+                                  X q 2i+1 + q −2i−1
+                   −(q − q −1 )                         vk2 −γ−nli ∧ vk1 +γ+nli
+                                          q + q −1                                     if γ > 0, δ > 0,
+                                  i≥0
+                                  X q 2i+1 + q −2i−1
+                   +(q − q −1 )                         vk2 −δ−nli ∧ vk1 +δ+nli
+                                          q + q −1
+                                  i≥0
+                                  X q 2i+2 − q −2i−2
+                   +(q − q −1 )                         vk2 −γ−δ−nli ∧ vk1 +γ+δ+nli
+                                          q + q −1
+                                  i≥0
+
+
+
+
+where the sums range over the indices i such that the corresponding wedge products are or-
+dered.
+
+(ii) The rules from (i) are valid for any pair of adjacent factors of the q-wedge product
+vk = vk 1 ∧ vk 2 · · · .                                                               
+
+
+    Let us end this section by a useful piece of notation.
+
+
+Notation 4.6 Let ν ∈ Π be a partition of r and σ ∈ Sr . Set
+
+(61)                   uσ.ν := uσ.β(ν)        and similarly          vσ.ν := vσ.β(ν)
+
+(these are wedge products of r factors each). We say that uσ.ν (resp. vσ.ν ) is obtained from
+uν ( resp. vν ) by permutation.                                                             ⋄
+
+
+
+                      PART C: Proof of Theorem 2.11
+
+    We now start the proof of Theorem 2.11. In Section 5, we give a simpler expression for
+the entries of the matrix J ≺ (see Proposition 5.8). In Section 6, we compute the derivative
+at q = 1 of the       involution of Fq [sl ]m in terms of good sequences that we introduce in
+Definition 6.4; the result is given in Proposition 6.8. We compare both expressions in Section
+7 in order to complete the proof. Apart from this, we compare in Section 5.2 the matrices
+J ≺ and J ⊳ when the multi-charge sl is m-dominant.
+
+
+                                                      22
+Notation for Part C From now on, we consider the modular system (R, K, F ) (together
+with the prime ideal ℘) with parameters defined in Section 2.2.1. These parameters depend
+on n, l, m and sl = (s1 , . . . , sl ) ∈ L(r1 , . . . , rl ) that we have fixed. Recall that to sl we
+associated a partial ordering ≺ (see Definition 3.10) and a relation ↔ (see Notation 3.8).
+Finally, put s := s1 + · · · + sl .                                                                 ⋄
+
+
+
+5     Expression of the matrices J ≺ and J ⊳
+5.1     The matrices J and J ≺
+We first give, with our choice of parameters, a simpler expression for J.
+
+Lemma 5.1
+  1) Assume that (λl , µl ) satisfies the conditions (J1 ). Then we have
+                                             ′
+                                (−1)ht(ρ)+ht(ρ ) if resn (hd(ρ)) = resn (hd(ρ′ )),
+     (62)         jλl ,µl =
+                                        0         otherwise.
+
+    2) Assume that (λl , µl ) satisfies the conditions (J2 ). Then we have
+                                                                     ′
+       (63)                                 jλl ,µl = (−1)ht(ρ)+ht(ρ ) ε,
+
+       where
+                      
+                       1 if resn (hd(ρ)) = resn (hd(ρ′ ))               and   b
+                                                                               h 6≡ 0 (mod n),
+       (64)      ε :=   −1 if resn (hd(ρ)) 6= resn (hd(ρ′ ))             and   b
+                                                                               h ≡ 0 (mod n),
+                      
+                        0 otherwise,
+
+       and b
+           h is the common length of ρ and ρ′ .
+Proof. Let us prove 1). With our choice of parameters, we have
+                                                           ′
+                                jλl ,µl = (−1)ht(ρ)+ht(ρ ) ν℘ (Pλl ,µl (x))
+                                        ′    ′
+with Pλl ,µl (x) := ud xl(j−i) − ud′ xl(j −i ) . Note that
+
+                                    Pλl ,µl (x) = ξ a1 xa2 − ξ a3 xa4 ,
+
+where ξ ∈ C is a primitive nl-th root of unity and a1 := dn, a2 := lsd − dn + l(j − i),
+a3 := d′ n and a4 := lsd′ − d′ n + l(j ′ − i′ ). Using the fact that ν℘ (xN ) = 0 for all N ∈ Z and
+xN Pλl ,µl (x) ∈ C[x] for a suitable N ∈ Z, we get
+
+                         ν℘ (Pλl ,µl (x)) ≥ 0,
+
+                         ν℘ (Pλl ,µl (x)) ≥ 1 ⇐⇒ Pλl ,µl (ξ) = 0,
+
+                         ν℘ (Pλl ,µl (x)) ≥ 2 ⇐⇒ Pλl ,µl (ξ) = Pλ′ l ,µl (ξ) = 0.
+
+                                                     23
+A straightforward computation shows that we have ν℘ (Pλl ,µl (x)) ≥ 1 if and only if we have
+l(sd + j − i) ≡ l(sd′ + j ′ − i′ ) (mod nl), that is if and only if resn (hd(ρ)) = resn (hd(ρ′ )).
+Moreover, we have
+                                             
+                                                a1 + a2 ≡ a3 + a4 (mod nl)
+                 ν℘ (Pλl ,µl (x)) ≥ 2 ⇐⇒
+                                                a2 ξ a1 +a2 −1 = a4 ξ a3 +a4 −1
+                                             
+                                                a1 + a2 ≡ a3 + a4 (mod nl)
+                                      ⇐⇒
+                                                a2 = a4
+                                             
+                                                a1 ≡ a3 (mod nl)
+                                      ⇐⇒                                  .
+                                                a2 = a4
+
+But the condition a1 ≡ a3 (mod nl) implies d ≡ d′ (mod l), which is impossible since d and
+d′ are two distinct integers ranging from 1 to l. As a consequence, we have ν℘ (Pλl ,µl (x)) ≤ 1,
+which proves 1). Let us now prove 2). With the notation of (J2 ), we have ε2 = −ε1 , whence
+                                                          ′
+                         jλl ,µl = (−1)ht(ρ)+ht(ρ ) ν℘ (Pλl ,µl (x)),              with
+                                              ′   ′ 
+                            ud xl(j−i) − xl(j −i )
+          Pλl ,µl (x) :=                               
+                           ud xl(j−i) − xl(j ′′ −i′′ )
+                                                                                                 
+                                  ′  ′                                 l cont(hd(ρ′ ))−cont(hd(ρ))
+                             xl((j −i )−(j−i))       −1            x                                 −1
+                       =                                       =                                          .
+                            xl((j ′′ −i′′ )−(j−i))   −1                           xlbh   −1
+In order to complete the proof, we only have to notice that for N ∈ Z, we have ν℘ (xlN −1) = 1
+if nl divides lN , that is if n divides N , and ν℘ (xlN − 1) = 0 otherwise.                 
+
+    We now start analyzing carefully Cases (J1 ) and (J2 ). Proposition 5.3 gives a character-
+ization in terms of λ and µ of the pairs (λl , µl ) that satisfy (J1 ) or (J2 ).
+
+Lemma 5.2 Let λl = (λ(1) , . . . , λ(l) ) ∈ Πlm and µl = (µ(1) , . . . , µ(l) ) ∈ Πlm be two distinct
+multi-partitions, and λ, µ ∈ Π be such that λl ↔ λ and µl ↔ µ. Then the following
+statements are equivalent:
+
+  (i) λ ⊂ µ, and µ/λ is a ribbon,
+ (ii) λl ⊂ µl , and there exists d ∈ [[1; l]] such that µ(d) /λ(d) is a ribbon and λ(b) = µ(b) for
+      all b ∈ [[1; l]] \ {d}.
+
+Proof.     Let us prove (i) ⇒ (ii). By Lemma 3.12, passing from λ to µ amounts, as far
+as abacus diagrams are concerned, to passing from A(λ, s) to A(µ, s) by moving a bead
+located at position k towards the right. As far as the l-runner abacus diagrams A(λl , sl )
+and A(µl , sl ) are concerned, this amounts to moving a bead located at position φ(k) on the
+runner d := d(k) towards the right. This together with Lemma 3.12 applied to (λ(d) , µ(d) )
+proves (ii). The converse is similar.                                                     
+
+   Applying twice the previous lemma and Lemma 3.14 yields the following result.
+
+                                                          24
+Proposition 5.3 Let λl , µl ∈ Πlm be two multi-partitions, and λ, µ ∈ Π be such that λl ↔ λ
+and µl ↔ µ. Assume
+                   that |λ| = |µ| = r. Then (λl , µl ) satisfies (J1 ) or (J2 ) if and only if
+♯ B(λ) ∩ B(µ) = r − 2.                                                                       
+    The following notation will be very useful.
+
+Notation 5.4 Let λl = (λ(1) , . . . , λ(l) ) ∈ Πlm and µl = (µ(1) , . . . , µ(l) ) ∈ Πlm . Denote by λ,
+µ ∈ Π the partitions such that λl ↔ λ and µl ↔ µ. Consider the statement
+                                                                                   
+(65)      λl ≺ µl (i.e. λ ⊳ µ), |λ| = |µ| = r and ♯ B(λ) ∩ B(µ) = r − 2.
+Assume now that (λl , µl ) satisfies (65). In this case, we shall use in the sequel the following
+notation. Let (α1 , . . . , αr ) and (β1 , . . . , βr ) denote the sequences of β-numbers associated to
+λ and µ respectively. By Lemma 3.14 applied to the pair (ν, κ) = (λ, µ), there exist positive
+integers y, y ′ , x′ , x and h such that {αi | i 6= x′ , y ′ } = {βj | j 6= x, y}, αy′ = βy − h and
+αx′ = βx + h. Moreover, by Proposition 5.3, (λl , µl ) satisfies (J1 ) or (J2 ). Let d, d′ ∈ [[1; l]]
+and b h ∈ N∗ denote the integers introduced in the definition of Cases (J1 ) and (J2 ) (in Case
+(J2 ), put d′ := d). Finally,
+                                 denote by γ, resp. δ ∈ [[0; nl − 1]] the residue of c(βy ) − c(βx ),
+resp. n d(βy ) − d(βx ) modulo nl.                                                                    ⋄
+                                                                                 ≺
+Remark 5.5 Proposition 5.3 shows that if (λl , µl ) does not satisfy (65), then jλl ,µ
+                                                                                       = 0. ⋄
+                                                                                             l
+
+
+Remark 5.6 Recall Notation 5.4 and assume that (λl , µl ) satisfies (65). Since λ⊳µ, Lemma
+3.14 implies y ′ < x′ , so we have
+(66)                         βx < βx + h = αx′ < αy′ = βy − h < βy .
+These inequalities, together with {αi | i 6= x′ , y ′ } = {βj | j 6= x, y} and the fact that the βi ’s
+are pairwise distinct, imply:
+(67)                                    {βx , βy } ∩ B(λ) = ∅.
+                                                                                                     ⋄
+  Under assumption (65), the following technical lemma relates some β-numbers of λ(d) ,
+ (d′ )          ′
+λ , µ(d) and µ(d ) on the one hand to some β-numbers of λ and µ on the other hand.
+
+
+Lemma 5.7 Recall Notation 5.4 and assume that (λl , µl ) satisfies (65).
+
+  1) Then, we have
+         (68)              {d(βx ), d(βy )} = {d(βx + h), d(βy − h)} = {d, d′ }.
+
+         Moreover, for all 1 ≤ b ≤ l, we have
+         (69)             ♯{1 ≤ i ≤ r | d(αi ) = b} = ♯{1 ≤ i ≤ r | d(βi ) = b} ;
+         let rb denote this common value.
+
+
+                                                  25
+  2) Assume that (λl , µl ) satisfies (65) and (J1 ). Then we have d(βx ) = d and d(βy ) = d′ .
+     Let
+
+                  β rd (λ(d) ) = (γ1 , . . . , γrd ),                      β rd (µ(d) ) = (δ1 , . . . , δrd ),
+      (70)                  ′                                                        ′
+                  β rd′ (λ(d ) ) = (γ1′ , . . . , γr′ d′ )        and      β rd′ (µ(d ) ) = (δ1′ , . . . , δr′ d′ )
+                                                                                              ′              ′
+      denote the sequences of β-numbers associated to λ(d) , µ(d) , λ(d ) and µ(d ) . Denote by b
+      ( resp. c) the row number of the tail ( resp. head) of ρ, and denote by b′ ( resp. c′ ) the
+      row number of the tail ( resp. head) of ρ′ . By Statement 1), there exist integers k, k′
+      such that
+
+      (71)             {k, k′ } = {βx + h, βy − h},                 d(k) = d       and      d(k ′ ) = d′ .
+
+      Then we have
+                           δc = φ(βx ),         γb = φ(k),          γc′ ′ = φ(k′ ),     δb′ ′ = φ(βy )
+      (72)
+                           and      b
+                                    h = φ(k) − φ(βx ) = φ(βy ) − φ(k′ ).
+
+  3) Assume that (λl , µl ) satisfies (65) and (J2 ). Denote by
+
+      (73)          β rd (λ(d) ) = (γ1 , . . . , γrd )            and       β rd (µ(d) ) = (δ1 , . . . , δrd )
+
+      the sequences of β-numbers associated to λ(d) and µ(d) . Let b ( resp. c) denote the row
+      number of the tail ( resp. head) of ρ, and b′ ( resp. c′ ) denote the row number of the
+      tail ( resp. head) of ρ′ . Then we have λ(d) ⊳ µ(d) and
+
+                   δc = φ(βx ),          γb = φ(βx + h),            γc′ = φ(βy − h),              δb′ = φ(βy )
+      (74)
+                   and      b
+                            h = φ(βx + h) − φ(βx ) = φ(βy ) − φ(βy − h).
+
+Proof.     We pass from µl to λl by removing the ribbon ρ′ and by adding the ribbon ρ.
+This amounts, as far as the abacus diagrams A(µl , sl ) and A(λl , sl ) are concerned, to moving
+two beads (see the proof of Lemma 5.2). Moving these two beads amounts, as far as the
+abacus diagrams A(µ, s) and A(λ, s) are concerned, to moving the beads located at posi-
+tions {βx , βy } towards the positions {βx + h, βy − h}, which proves the first two equalities
+of Statement 1). The last parts of Statement 1) come from this and from the equality
+{αi | i 6= x′ , y ′ } = {βj | j 6= x, y}.
+
+   Let us now prove Statement 2). A careful analysis of the moves of the beads described
+above shows more precisely that the following properties hold:
+
+  (i) {γb , γc′ ′ } = {φ(βx + h), φ(βy − h)}                 and        {δb′ ′ , δc } = {φ(βx ), φ(βy )}.
+
+ (ii) Let K ∈ {βx , βx + h, βy − h, βy }. Then we have φ(K) ∈ {γb , δc } if and only if d(K) = d
+      and φ(K) ∈ {γc′ ′ , δb′ ′ } if and only if d(K) = d′ .
+
+
+                                                             26
+    Let us first prove that d(βx ) = d. Assume that d(βx ) = d′ . By (i) and (ii), we have
+φ(βx ) ∈ {δb′ ′ , δc } ∩ {γc′ ′ , δb′ ′ }. This implies φ(βx ) = δb′ ′ . Indeed, if φ(βx ) 6= δb′ ′ , we must have
+φ(βx ) = δc = γc′ ′ ∈ {φ(βx + h), φ(βy − h)} by (i). Let K ∈ {βx + h, βy − h} be such that
+φ(K) = γc′ ′ = φ(βx ). By (ii), we have d(K) = d(βx ); moreover, we have φ(K) = φ(βx ),
+whence K = βx . This contradicts (66), so φ(βx ) = δb′ ′ . Let K ∈ {βx + h, βy − h} be such that
+d(K) = d′ . By (66) and (29), we have φ(K) > φ(βx ) = δb′ ′ , hence by (ii) we have φ(K) = γc′ ′ .
+                                                                                                       ′    ′
+As a consequence, we have γc′ ′ > δb′ ′ . Moreover, by Lemma 3.12 applied to (λ(d ) , µ(d ) ), we
+have γc′ ′ = δb′ ′ − b h < δb′ ′ , which is absurd. By Statement 1), we thus have d(βx ) = d and
+           ′
+d(βy ) = d . Now let k be the integer defined by (71) and assume that k = βx + h (the proof
+for the case k = βy − h is similar). By (ii) we have {γb , δc } = {φ(βx ), φ(βx + h)}. Moreover,
+by Lemma 3.12 applied to (λ(d) , µ(d) ), we have δc = γb − b                  h < γb . By (66) and (29), we
+therefore have δc = φ(βx ) and γb = φ(βx + h), whence b                  h = γb − δc = φ(βx + h) − φ(βx ). By
+a similar argument, we get γc′ ′ = φ(βy − h), δb′ ′ = φ(βy ) and b            h = φ(βy ) − φ(βy − h).
+
+    Let us now prove 3). Since λ ⊳ µ, by (66) and (29) we have
+
+                                 φ(βx ) < φ(βx + h) < φ(βy − h) < φ(βy ).
+
+Moreover, a careful analysis of the moves of the beads mentioned at the beginning of the
+proof shows that
+
+              {δb′ , δc } = {φ(βx ), φ(βy )}      and        {γb , γc′ } = {φ(βx + h), φ(βy − h)}.
+
+Assume that δc = φ(βy ). Since φ(βy ) > φ(βx + h), φ(βy ) > φ(βy − h) and γb is in the
+set {φ(βx + h), φ(βy − h)}, we must have δc > γb . Moreover, applying Lemma 3.14 to the
+pair (λ(d) , µ(d) ) yields γb = δc + b
+                                     h > δc , which is absurd. We thus have δc = φ(βx ) and
+δb′ = φ(βy ). Since φ(βx ) < φ(βy ), we have δc < δb′ , whence c > b′ . Applying again Lemma
+3.14 shows that λ(d) ⊳ µ(d) and b′ ≤ c′ < b ≤ c. In particular, we have c′ < b, whence
+γb < γc′ . Since φ(βx + h) < φ(βy − h), we have γb = φ(βx + h) and γc′ = φ(βy − h). Lemma
+3.14 then implies that b  h = γb −δc = φ(βx +h)−φ(βx ) and bh = δb′ −γc′ = φ(βy )−φ(βy −h). 
+
+                                                      ≺
+   We are now ready to derive the expressions of the jλl ,µl
+                                                             ’s that we need for proving
+Theorem 2.11.
+
+Proposition 5.8 Recall Notation 5.4.
+
+   1) Assume that (λl , µl ) satisfies (J1 ) and λl ≺ µl . Then we have δ > 0 and
+                                          ′
+               ≺           (−1)ht(ρ)+ht(ρ ) if h ≡ γ (mod nl) or h ≡ δ (mod nl),
+      (75)   jλl ,µl =
+                                   0           otherwise.
+
+   2) Assume that (λl , µl ) satisfies (J2 ) and λl ≺ µl . Then we have δ = 0 and
+                                                                        ′
+       (76)                                     ≺
+                                               jλl ,µl
+                                                       = (−1)ht(ρ)+ht(ρ ) ε,
+
+
+                                                        27
+       where
+                                 
+                                  1 if h ≡ γ (mod nl)          and    h 6≡ 0 (mod nl),
+       (77)                 ε :=   −1 if h 6≡ γ (mod nl)        and    h ≡ 0 (mod nl),
+                                 
+                                   0 otherwise.
+
+Proof. We prove only Statement 1), the proof of Statement 2) being similar. Recall the
+notation from Lemma 5.7. The statement δ > 0 comes from Statement 1) of that lemma.
+                                                        ′       ′
+Applying Lemma 3.12 to the pairs (λ(d) , µ(d) ) and (λ(d ) , µ(d ) ) yields
+
+                   resn (hd(ρ)) = δc mod n          and    resn (hd(ρ′ )) = γc′ ′ mod n.
+
+By Lemma 5.1, it is thus enough to prove the equivalence
+                                                                                          
+               δc ≡ γc′ ′     (mod n) ⇐⇒ h ≡ γ       (mod nl)     or    h≡δ       (mod nl) .
+
+By Statement 1) of Lemma 5.7, one of the two following cases occurs.
+
+   • First case: we have d(βx ) = d(βx + h) and d(βy ) = d(βy − h). By Lemma 5.7 and (28),
+     we have the following equivalences, where congruences stand modulo n:
+
+                        δc ≡ γc′ ′ ⇐⇒ φ(βx ) ≡ φ(βy − h) ⇐⇒ βx ≡ βy − h ⇐⇒ h ≡ γ.
+
+       It remains thus to prove that δc ≡ γc′ ′ (mod n) =⇒ h ≡ γ (mod nl). Assume that
+       δc ≡ γc′ ′ (mod n); we then have h ≡ γ (mod n). This and the equality d(βx ) = d(βx +h)
+       force d(h) = 1, whence h ≡ γ (mod nl).
+
+
+   • Second case: we have d(βx ) = d(βy − h) and d(βy ) = d(βx + h). By arguing as above
+     we prove the equivalence
+
+                                    δc ≡ γc′ ′   (mod n) ⇐⇒ h ≡ 0      (mod n).
+
+       Assume that δc ≡ γc′ ′ (mod n). Then we have h ≡ 0 (mod n), whence
+
+                          d(βy ) = d(βx + h) ≡ d(βx ) + d(h) − 1 (mod l),
+                                                
+       whence n(d(h) − 1) ≡ n d(βy ) − d(βx ) ≡ δ (mod nl) and h ≡ δ (mod nl). As a con-
+       sequence, we have in this case δc ≡ γc′ ′ (mod n) ⇐⇒ h ≡ δ (mod nl), which completes
+       the proof.                                                                        
+                                                                               ≺
+Remark 5.9 Recall Notation 5.4 and assume that (λl , µl ) satisfies (J1 ) and jλl ,µl
+                                                                                      6= 0. Then
+the proof of Proposition 5.8 shows in particular that
+
+(78)                                      φ(βx ) ≡ φ(k′ ) (mod n),
+
+where k′ ∈ Z is defined by (71).                                                               ⋄
+
+                                                      28
+5.2    What happens if the multi-charge sl is m-dominant
+The goal of this section is to show that with our choice of parameters, the matrix J ⊳ is a
+special case of a matrix J ≺ when the multi-charge sl is m-dominant (see Proposition 5.12).
+However, the results we prove here will not be used for the proof of Theorem 2.11.
+
+Lemma 5.10 Let λl , µl ∈ Πlm , and let λ, µ ∈ Π be such that λl ↔ λ and µl ↔ µ. Assume
+that jλl ,µl 6= 0. Then we have, with the notation from (J1 ), (J2 ) and (25) :
+
+
+(79)                     Ni (ρ) = Ni (ρ′ )   (i ∈ Z)    and      |λ| = |µ|.
+
+Proof. Since jλl ,µl is nonzero, Lemma 5.1 shows that at least one of the following cases
+occurs:
+
+   • First case: we have resn (hd(ρ)) = resn (hd(ρ′ )). Note that if ρ is a ribbon, then the
+     integers cont(γ), γ ∈ ρ are pairwise distinct, and the set formed by these numbers is
+     exactly the interval [[cont(hd(ρ)); cont (tl(ρ))]]. Combining this with the assumption
+     resn (hd(ρ)) = resn (hd(ρ′ )) and b
+                                       h = ℓ(ρ) = ℓ(ρ′ ), we get that Ni (ρ) = Ni (ρ′ ) for any
+     i ∈ Z.
+
+   • Second case: we have b   h ≡ 0 (mod n). Then for any i ∈ Z, we have the equalities
+     Ni (ρ) = Ni (ρ′ ) = b
+                         h/n.
+
+  Let us now show that |λ| = |µ|. Let ν l := λl ∩ µl , and let ν ∈ Π be such that ν l ↔ ν.
+We claim that                                                       
+                 h := |λ| − |ν| = (n − 1)l + 1 N0 (ρ) + b  h − N0 (ρ) .
+
+By induction on b h, we can restrict ourselves to the case when b      h = 1, that is ρ contains a
+single node γ. Let r ∈ N be such that λ and ν have at most r parts. By Lemma 3.12, there
+exist α ∈ Br (ν) and β ∈ Br (λ) such that Br (ν) \ {α} = Br (λ) \ {β} and α = β − h. The
+abacus diagrams A(ν, s) and A(λ, s) differ only by the moving of a bead; the same thing holds
+for the diagrams A(ν l , sl ) and A(λl , sl ). By considering the initial and the final positions of
+these two beads, we get
+
+                  φ(β) = φ(α) + b
+                                h = φ(α) + 1           and     d(β) = d(α) = d.
+
+Moreover, by Lemma 3.12 and (28), we have resn (γ) = φ(α) mod n = α mod n. Let
+us now distinguish two cases. If resn (γ) = 0 mod n (i.e. if N0 (ρ) = 1), then we have
+α = n + n(d − 1) + nlm with m ∈ Z, whence φ(β) = φ(α) + 1 = 1 + n(m + 1). Since
+d(β) = d, we get β = 1 + n(d − 1) + nl(m + 1), whence h = β − α = (n − 1)l + 1. Similarly,
+if resn (γ) 6= 0 mod n (i.e. if N0 (ρ) = 0), then we have h = 1. This proves the claimed
+formula. In a similar way we prove that |µ| − |ν| = (n − 1)l + 1 N0 (ρ′ ) + b
+                                                                            h − N0 (ρ′ ) . Since
+               ′
+N0 (ρ) = N0 (ρ ), we do have |λ| = |µ|.                                                       
+
+
+
+
+                                                 29
+Lemma 5.11 Let λl , µl ∈ Πlm , and λ, µ ∈ Π be such that λl ↔ λ and µl ↔ µ. Assume that
+|λ| = |µ|. Consider the following cases:
+
+  1) (λl , µl ) satisfies (J1 ), jλl ,µl 6= 0 and sl is m-dominant,
+
+  2) (λl , µl ) satisfies (J2 ).
+
+   Then in either case, we have: λl ≺ µl ⇐⇒ λl ⊳ µl .
+Proof. In either case, we can apply Proposition 5.3 and then Lemma 3.14 to get that λl ≺ µl
+or µl ≺ λl . It is thus enough to prove that λl ≺ µl ⇒ λl ⊳ µl . Assume from now on that
+λl ≺ µl and (λl , µl ) satisfies either case of Lemma 5.11. Then by Proposition 5.3, (λl , µl )
+satisfies (65) ; therefore (66) holds. Recall Notation 5.4. If (λl , µl ) satisfies (J2 ), then by
+Statement 3) of Lemma 5.7, we have λ(d) ⊳ µ(d) . Moreover, for all b ∈ [[1; l]] \ {d} we have
+λ(b) = µ(b) , whence λl ⊳ µl . Assume now that (λl , µl ) satisfies (J1 ), jλl ,µl 6= 0 and sl is
+                                                                                        
+m-dominant. The key point of the proof is the following. Let ν l = ν (1) , . . . , ν (l) ∈ Πlm be
+such that |ν| = r, where ν is the partition such that ν l ↔ ν. Then under the assumption
+that sl is m-dominant, we have
+                                                      
+(∗)                        d(k) < d(k′ ), k, k′ ∈ B(ν) ⇒ φ(k) ≥ φ(k′ ).
+
+Indeed, let k, k′ ∈ B(ν), b := d(k), b′ := d(k′ ) and N (resp. N ′ ) be the number of parts
+                    ′                                                                      ′
+of ν (b) (resp. ν (b ) ). Since ν l ↔ ν, we have φ(k) ∈ BN (ν (b) ) and φ(k′ ) ∈ BN ′ (ν (b ) ). As
+                                                                                  (b)
+a consequence, there exist i ∈ [[1; N ]], i′ ∈ [[1; N ′ ]] such that φ(k) = sb + νi − i + 1 and
+                  ′
+                (b )
+φ(k′ ) = sb′ + νi′ − i′ + 1. Since sl is m-dominant and b < b′ , we have
+                                              (b)        (b′ )
+ φ(k) − φ(k′ ) = (sb − sb′ ) + (i′ − i) + (νi       − ν i′ )
+                                      (b′ )                                      ′
+                  ≥ sb − sb′ − N − νi′        ≥     sb − sb′ − (|ν (b) | + |ν (b ) |)   ≥   sb − sb′ − |ν l |
+
+                  ≥ 0,
+
+which shows (∗). We now claim that d(βx ) ≥ d(βy ). Assume indeed that d(βx ) < d(βy ).
+Recall that (66) holds. By (∗) applied to (k, k′ ) = (βx , βy ), we have φ(βx ) ≥ φ(βy ). This,
+(66) and (30) imply that m(βx ) = m(βy ), where the map k 7→ m(k) is defined in Section
+3.2.1. Since this map is increasing, we have by (66) :
+
+                         m(βx ) ≤ m(βx + h) ≤ m(βy − h) ≤ m(βy ) = m(βx ),
+                                                                                           ≺
+so equalities hold throughout. Let now k′ ∈ Z be the integer defined by (71). Since jλ       l ,µl
+                                                                                                   6= 0
+                                                                          ′
+by assumption, we can apply Remark 5.9 and get φ(βx ) ≡ φ(k ) (mod n). This together
+with m(βx ) = m(k′ ) forces φ(βx ) = φ(k′ ). Moreover, by Statement 2 of Lemma 5.7, we have
+0<b  h = φ(βy ) − φ(k′ ) ≤ φ(βx ) − φ(k′ ), which is absurd. Therefore we have d(βx ) ≥ d(βy ) as
+claimed. Again by Statement 2) of Lemma 5.7, we have d(βx ) = d and d(βy ) = d′ , whence
+d > d′ . Moreover, we have |µ(d ) | = |λ(d ) | + b   h, |µ(d) | = |λ(d) | − b
+                                       ′        ′
+                                                                            h and µ(b) = λ(b) for all
+b ∈ [[1; l]] \ {d, d′ }. This and the inequality d′ < d imply λl ⊳ µl .                              
+
+
+                                                    30
+Proposition 5.12 Assume that sl is m-dominant. Then we have J ≺ = J ⊳.
+                                                                   ≺
+Proof. Let λl , µl ∈ Πlm . If jλl ,µl = 0, then we have jλ          l ,µl
+                                                                             ⊳
+                                                                          = jλl ,µl
+                                                                                    = 0 and we are done.
+Assume now that jλl ,µl 6= 0. It is enough to prove that λl ≺ µl ⇔ λl ⊳ µl . Note that by
+Lemma 5.10, we have |λ| = |µ|, where λ, µ ∈ Π are such that λl ↔ λ and µl ↔ µ. Moreover,
+since jλl ,µl 6= 0, (λl , µl ) satisfies either (J1 ) or (J2 ). We can therefore apply Lemma 5.11 to
+conclude.                                                                                             
+
+
+Remark 5.13 The reader should be warned that the orderings ≺ and ⊳ do not necessarily
+coincide, even if the multi-charge sl is m-dominant. For example, let n = 2, l = 2, m = 6,
+sl = (3, −3), λl = (2, 1), (1, 1, 1) and µl = (3), (2, 1) . Then we have λl ⊳ µl ; however,
+the partitions λ and µ such that λl ↔ λ and µl ↔ µ are λ = (9, 6, 3, 1, 1, 1, 1, 1, 1, 1) and
+µ = (10, 3, 3, 2, 2, 2, 1, 1, 1), so λl and µl are not comparable with respect to  .       ⋄
+
+
+6      Admissible sequences, good sequences
+In this section we compute the matrix A′ (1). To this aim, we examine in detail the straight-
+ening of the wedge product vk = vk1 ∧ · · · ∧ vkr . If vk is not ordered, there are in general
+several ways to straighten it by applying recursively the rules (R1 )-(R4 ). In the sequel, we
+decide to straighten at each step the first infraction that occurs in vk , that is, the first
+vki ∧ vki+1 with ki ≤ ki+1 . This leads to the notion of admissible sequence that we introduce
+in Definition 6.2. Fix an entry a′λl ,µl (1) of A′ (1). We give in Proposition 6.8 an expression of
+it in terms of admissible sequences. Each sequence having a nonzero contribution is called a
+good sequence. We then show that there exists at most one good sequence (see Propositions
+6.12 and 6.13), and it if exists we compute its length modulo 2 (see Proposition 6.14).
+
+6.1     Definitions
+Definition 6.1 Let k = (k1 , . . . , kr ) and l = (l1 , . . . , lr ) ∈ Zr . We say that the wedge prod-
+ucts vk and vl are adjacent if there exists 1 ≤ i ≤ r−1 (i is then necessarily unique) such that:
+
+
+    (i) ki ≤ ki+1 , and kj > kj+1 for all 1 ≤ j ≤ i − 1,
+
+ (ii) kj = lj for all j ∈ [[1; r]] \ {i, i + 1},
+
+(iii) the wedge product vli ∧ vli+1 appears in the straightening of vki ∧ vki+1 .
+
+    In this case, denote by t ∈ [[1; 4]] the index of the rule (Rt ) applied for the straightening
+of vki ∧ vki+1 and by α(vk , vl ) ∈ Z[q, q −1 ] the coefficient of vli ∧ vli+1 in the resulting linear
+                                                           •
+combination. If (li , li+1 ) = (ki+1 , ki ), then write vk → vl and set m(vk , vl ) := 0. Otherwise,
+          t
+write vk → vl and set m(vk , vl ) := 1; note that t ≥ 2 in this case. In either case, write more
+simply vk → vl .
+
+
+
+                                                   31
+Definition 6.2 The sequence V = (vki )0≤i≤N is called admissible if each vki is a wedge
+product of r factors and if we have
+
+(80)                                      vk 0 → vk 1 → · · · → vk N ;
+
+in this case, N is called the length of the sequence V. Set
+                     N
+                     Y                                                              N
+                                                                                    X
+                                                      −1
+(81)     αV (q) :=         α(vki−1 , vki ) ∈ Z[q, q        ]        and   m(V) :=         m(vki−1 , vki ) ∈ N.
+                     i=1                                                            i=1
+
+   Recall Notation 4.6 and the definition of ω from Notation 1.1. Let λ, µ ∈ Π be two
+partitions of r. We say that the sequence of wedge products V = (vki )0≤i≤N is (λ, µ)-
+admissible if it is an admissible sequence of wedge products (of r factors for each of them)
+such that vkN = vλ and vk0 = vω.µ .                                                        ⋄
+
+Remark 6.3 It is easy to see that if λ 6= µ, then there cannot exist any (λ, µ)-admissible
+sequence V = (vki )0≤i≤N such that m(V) = 0.                                             ⋄
+
+Definition 6.4 A (λ, µ)-admissible sequence V such that m(V) = 1 is called a good sequence
+(with respect to (λ, µ)). Such a sequence can be written as
+                                           •      •             t    •    •
+(82)                                 vω.µ → · · · → u → v → · · · → vλ ,
+
+with t ∈ [[2; 4]].                                                                                               ⋄
+
+Remark 6.5 If a good sequence (with respect to (λ, µ)) exists, then we have
+                                             
+(83)                          ♯ B(λ) ∩ B(µ) = r − 2.
+
+                                                                                                                 ⋄
+
+6.2    Reduction to the good sequences
+Recall the expression of the involution of Fq [sl ]m given in (53). Expressing this involution
+in terms of the vk ’s and then using Definition 6.2 yields the following expression for the
+coefficients of A(q).
+
+Lemma 6.6 Let λl , µl ∈ Πlm and λ, µ ∈ Π be the partitions such that λl ↔ λ and µl ↔ µ.
+Assume that |λ| = |µ|. Then we have
+                                                                   X
+(84)                   aλl ,µl (q) = ε(λl , µl ) q κ(d(µ))−κ(c(µ))   αV (q),
+                                                                              V
+
+where the sum ranges over all (λ, µ)-admissible sequences V, and ε(λl , µl ) is the sign de-
+fined by
+
+(85)                             ε(λl , µl ) := (−1)κ(d(µ))+ℓ(v(ω.µ))+ℓ(v(λ)) .
+
+                                                                                                                 
+
+                                                               32
+Remark 6.7 One should be aware that in general several terms might contribute to this
+sum, so the statement at the beginning of [Ry, Section 4] is not correct. However, we can fix
+the argument from [Ry] by showing first that only good sequences do contribute to a′λl ,µl (1)
+(see Proposition 6.8), and then that there exists at most one good sequence (see Propositions
+6.12 and 6.13).                                                                              ⋄
+
+Proposition 6.8 Let λl , µl ∈ Πlm be two distinct multi-partitions, and λ, µ ∈ Π be such
+that λl ↔ λ and µl ↔ µ. Assume that |λ| = |µ| = r. Then we have
+                                                       X
+(86)                        a′λl ,µl (1) = ε(λl , µl )   α′V (1),
+                                                              V
+
+where the sum ranges over all the good sequences with respect to (λ, µ), and ε(λl , µl ) is the
+sign defined by (85).
+Proof. By Lemma 6.6, we have
+                                                              X
+                                  aλl ,µl (q) = ε(λl , µl )       fV (q),
+                                                              V
+
+where the sum ranges over all the (λ, µ)-admissible sequences V and fV (q) is the Laurent
+polynomial defined by fV (q) := q κ(d(µ))−κ(c(µ)) αV (q). Note that if V is an admissible se-
+quence, then we have m(V) ≥ 1 (because λ 6= µ), and moreover the rules (R1 )-(R4 ) imply
+that
+                              αV (q) ∈ (q 2 − 1)m(V) Z[q, q −1 ].
+As a consequence, if V is a (λ, µ)-admissible sequence such that m(V) ≥ 2, then (q 2 − 1)2
+divides fV (q) in Z[q, q −1 ], whence fV
+                                       ′ (1) = 0. Moreover, if V is a good sequence, then the
+
+previous discussion shows that αV (1) = 0, whence
+                     ′
+                                                  
+                    fV  (1) = κ(d(µ)) − κ(c(µ)) αV (1) + α′V (1) = α′V (1).
+
+                                                                                             
+
+
+6.3    Existence and uniqueness of the good sequence
+We first give (see Proposition 6.12) some sufficient conditions for the existence of a good
+sequence (with respect to a given pair (λ, µ)). In order to do this, we must study the
+sequence of permutations that we apply to the components of wedge products when we go
+through an admissible sequence
+                                           •        •         •
+(87)                                 vk 0 → vk 1 → · · · → vk N ,
+
+where k0 , . . . , kN ∈ Zr and vω.k0 is ordered.
+
+
+
+
+                                                   33
+Notation 6.9 Let σ, τ ∈ Sr . Write
+
+(88)                                                       σ→τ
+
+if there exists 1 ≤ i ≤ r−1 such that σ(i) < σ(i+1), with i minimal for this property, and such
+                                                                         •
+that τ = σi σ. The relation → on Sr is closely related to the relation → on wedge products of
+r factors. Recall that for vk = vk1 ∧· · ·∧vkr and σ ∈ Sr , we have vσ.k = vkσ−1 (1) ∧· · ·∧vkσ−1 (r) .
+                                                                         •
+Then by definition we have σ → τ if and only if vσ−1 .k → vτ −1 .k , where k = (k1 , . . . , kr ) ∈ Zr
+is such that vω.k is ordered (namely, k1 < · · · < kr ).                                             ⋄
+
+
+      Consider now the following reduced expression for the longest element in Sr :
+
+(89)                         ω = (σ1 σ2 · · · σr−1 )(σ1 σ2 · · · σr−2 ) · · · (σ1 σ2 )(σ1 ),
+
+and for 0 ≤ i ≤ r(r−1)
+                   2   let ω[i] denote the right factor of length i in this word (by convention,
+ω[0] = id). For example, for r ≥ 3 we have ω[5] = σ2 σ3 σ1 σ2 σ1 . The sequence (ω[i])0≤i≤ r(r−1)
+                                                                                                                       2
+
+enjoys the following property: if id = σ (0) → σ (1) → · · · → σ (k) with 0 ≤ k ≤ r(r−1)
+                                                                                     2 , then
+ (i)                                                                               r(r−1)
+σ = ω[i] for all 0 ≤ i ≤ k. In particular, we have ω[i − 1] → ω[i] for all 1 ≤ i ≤ 2 .
+
+
+Lemma 6.10 Let i, j ∈ [[1; r]] be such that i < j. Then there exist two integers k ∈ [[1; r − 1]]
+and e ∈ [[0; r(r−1)
+                2   − 1]], determined in a unique way by the following properties: (ω[e])(k) = i,
+(ω[e])(k +1) = j and ω[e+1] = σk ω[e]. Namely, we have k = j −i and e = (j−1)(j−2)2     +(i−1).
+Proof. Left to the reader.                                                                                                  
+
+
+Example 6.11 Take r = 6, i = 2 and j = 5. Then we have
+
+  (1,2,3,4,5,6  → 1,2,3,4,5,6 → 1,2,3,4,5,6 → 1,2,3,4,5,6 → 1,2,3,4,5,6 → 1,2,3,4,5,6 → 1,2,3,4,5,6 → 1,2,3,4,5,6 =ω[e] ,
+   1,2,3,4,5,6 ) (2,1,3,4,5,6 ) (2,3,1,4,5,6 ) (3,2,1,4,5,6 ) (3,2,4,1,5,6 ) (3,4,2,1,5,6 ) (4,3,2,1,5,6 ) (4,3,2,5,1,6 )
+
+
+                     (j−1)(j−2)
+whence e = 7 =           2        + (i − 1) and k = 3 = j − i.                                                              ⋄
+
+Proposition 6.12 Recall Notation 5.4. Assume that (λl , µl ) satisfies (65), (γ, δ) 6= (0, 0)
+and h ≡ η (mod nl), with η ∈ {0, γ, δ, γ + δ}. Then there exists a good sequence with respect
+to (λ, µ).
+Proof. We construct a good sequence
+                                              •        •      t     •        •
+(∗)                                    vω.µ → · · · → u → v → · · · → vλ
+
+as follows.
+
+
+
+
+                                                           34
+                                          •       •
+   • Step 1: construction of vω.µ → · · · → u. We construct this part of Sequence (∗) in
+     terms of the relation → on Sr . Let e and k = x − y be the integers given by Lemma
+     6.10 applied with the integers i := r + 1 − x and j := r + 1 − y. Then we have the
+                                                                     •       •
+     sequence ω[0] → · · · → ω[e], hence the sequence vω[0]−1 .(ω.µ) → · · · → vω[e]−1 .(ω.µ) is
+     admissible. Put u := vω[e]−1 .(ω.µ) = v(ωω[e])−1 .µ .
+
+                                      t
+   • Step 2: construction of u → v. By assumption on e we have
+
+                          u = vm1 ∧ · · · ∧ vmk−1 ∧ vβx ∧ vβy ∧ vmk+2 ∧ · · · ∧ vmr ,
+
+       where the mi ’s are integers in B(µ), and the next step of the straightening of u consists
+       in straightening this wedge product with respect to its k-th and (k + 1)-th components,
+       namely vβx ∧ vβy . Since (γ, δ) 6= (0, 0), this elementary straightening involves Rule
+       (Rt ) with t ∈ [[2; 4]]. Note that by (66), the wedge product vβy −h ∧ vβx +h is ordered.
+       Since h ≡ η (mod nl), Rule (Rt ) shows that this wedge product appears in the linear
+       combination obtained by straightening vβx ∧ vβy . Put
+
+                      v := vm1 ∧ · · · ∧ vmk−1 ∧ vβy −h ∧ vβx +h ∧ vmk+2 ∧ · · · ∧ vmr .
+
+       It is clear that v is obtained from vλ by permutation, and the argument above shows
+                t
+       that u → v, which completes Step 2.
+
+                                      •       •
+   • Step 3: construction of v → · · · → vλ . Set v1 := v. If v1 is not ordered, then the
+     elementary straightening of v1 gives a linear combination of wedge products, and one
+     of them, say v2 , is obtained from v1 by permutation. If we apply this device sufficiently
+     many times, we get eventually an ordered wedge product which is of course vλ . This
+     completes Step 3 and the construction of the good sequence (∗).                         
+
+
+   We now prove the converse of Proposition 6.12.
+
+Proposition 6.13 Recall Notation 5.4 and assume that (λl , µl ) satisfies (65). Assume
+moreover that there exists a good sequence
+                                      •       •       t        •       •
+(90)                    vω.µ = vk0 → · · · → vke → vke+1 → · · · → vkN = vλ
+
+with respect to (λ, µ), with t ∈ [[2; 4]]. Then this sequence is unique, t is also uniquely deter-
+mined and moreover we have (γ, δ) 6= (0, 0) and h ≡ η (mod nl) with η ∈ {0, γ, δ, γ + δ}.
+Proof. By assumption, vke (resp. vke+1 ) is obtained from vµ (resp. vλ ) by permutation. By
+(67), there exist σ ∈ Sr and 1 ≤ k ≤ r − 1 such that
+
+         vke = vσ.µ = vβσ−1 (1) ∧ · · · ∧ vβσ−1(k−1) ∧ vβx ∧ vβy ∧ vβσ−1 (k+2) ∧ · · · ∧ vβσ−1 (r) ,
+
+        vke+1 = vβσ−1 (1) ∧ · · · ∧ vβσ−1 (k−1) ∧ vβy −h ∧ vβx +h ∧ vβσ−1 (k+2) ∧ · · · ∧ vβσ−1 (r) ,
+
+                                                      35
+and vke+1 is obtained from vke by straightening vβx ∧ vβy with the rule (Rt ). Since t ∈ [[2; 4]],
+the last conditions of the statement of this proposition hold. It is not hard to see that k and
+e satisfy the conditions of Lemma 6.10 with i := r + 1 − x and j := r + 1 − y, so k and e are
+                                                                                   •     •
+determined in a unique way. This determines completely the subsequence vk0 → · · · → vke .
+Moreover, t is uniquely determined by considering whether γ and δ are zero or not. The
+expression of vke+1 given at the beginning of the proof shows that this wedge product is also
+determined in a unique way. Let τ ∈ Sr be the unique permutation such that vke+1 = vτ.λ .
+Note that by Condition (i) of Definition 6.1, there exists at most one admissible sequence
+V having a given length and starting at a given wedge product such that m(V) = 0. As a
+                                 •      •
+consequence, the sequence vτ.λ → · · · → vλ , whose length is ℓ(τ ), is in turn determined in a
+unique way.                                                                                    
+
+
+6.4    Computation of the length modulo 2 of the good sequence
+We now deal with the technical part of the proof of Theorem 2.11. The next proposition will
+                                          ≺
+be used to show that if a′λl ,µl (1) and jλl ,µl
+                                                 are nonzero, then both numbers have the same
+signs. This proposition deals with the only cases that we have to consider.
+
+Proposition 6.14 Recall Notation 5.4 and assume that (λl , µl ) satisfies (65). Assume
+moreover that (γ, δ) 6= (0, 0) and h ≡ η (mod nl) with η ∈ {γ, δ}. Let then
+                                        •        •        t       •      •
+(91)                         V = vω.µ → · · · → vk → vl → · · · → vλ
+
+denote the unique good sequence with respect to (λ, µ) (see Propositions 6.12 and 6.13).
+Denote by N the length of this sequence. Then we have
+
+                                                              ′
+(92)                          (−1)N −1 = (−1)ht(ρ)+ht(ρ ) ε(λl , µl ) ε,
+
+
+where ε(λl , µl ) is the sign defined by (85) and ε is the sign defined by
+                                
+                                   1 if δ > 0 and h ≡ δ (mod nl),
+(93)                       ε :=
+                                  −1 otherwise.
+
+Proof. Let σ, τ ∈ Sr be the permutations defined by vσω.µ = vk and vτ −1 .λ = vl . Then we
+have N = ℓ(σ) + 1 + ℓ(τ ), whence (−1)N −1 = ε(σ)ε(τ ). By Lemma 6.10, we can compute
+ℓ(σ) and then ε(σ); it is however not straightforward to compute ℓ(τ ). We compute only ε(τ )
+by writing τ as a product of 7 permutations σ (1) , . . . , σ (7) whose signs are easily computable.
+
+   * Set first
+                                 σ (1) := σ −1        and         v1 := vσ(1) .l ;
+       v1 is thus obtained from vω.µ by replacing βx (located at the (r + 1 − x)-th component)
+       by βy − h, and βy (located at the (r + 1 − y)-th component) by βx + h.
+
+
+                                                     36
+* By Statement 1) of Lemma 5.7, one of the following cases occurs:
+
+     – First case: d(βx ) = d(βy − h) and d(βy ) = d(βx + h),
+     – Second case: d(βx ) = d(βx + h), d(βy ) = d(βy − h) and d(βx ) 6= d(βy ).
+
+  It is easy to see that the first case occurs if and only if δ = 0 or h ≡ δ (mod nl), and
+  that the second case occurs if and only if δ > 0 and h ≡ γ (mod nl). Set
+                                 
+                                               id           if the first case occurs
+                    σ (2)   :=
+                                     (r + 1 − x, r + 1 − y) if the second case occurs
+              and v2 := vσ(2) σ(1) .l ;
+  in the second case, v2 is obtained from v1 by permuting βx + h and βy − h. In either
+  case, σ (2) is constructed in order to have d(σ (2) σ (1) .l) = d(ω.µ) and subsequently
+  v(σ (2) σ (1) .l) = v(ω.µ).
+
+* Set
+              σ (3) := v(σ (2) σ (1) .l)−1 = v(ω.µ)−1         and         v3 := vσ(3) σ(2) σ(1) .l .
+
+  By remark 3.4 applied to σ (2) σ (1) .l, v3 is a wedge product that can be written as
+                                          v3 = vk(l) ∧ · · · ∧ vk(1) ,
+  where each vk(b) , 1 ≤ b ≤ l is a wedge product such that each component vk of vk(b)
+  satisfies d(k) = b. In this case and for the rest of the proof, we say that v3 is block-
+  decomposable and call vk(b) (1 ≤ b ≤ l) the b-th block of v3 .
+
+* Set now
+                    σ (4) := ω(k) = ω(l)            and       v4 := vσ(4) σ(3) σ(2) σ(1) .l ,
+  where ω(k) is defined in Section 3.2.1 (the equality ω(k) = ω(l) comes from Lemma
+  5.7). For 1 ≤ b ≤ l denote by
+                   rb := ♯{1 ≤ i ≤ r | d(αi ) = b} = ♯{1 ≤ i ≤ r | d(βi ) = b}
+  the number of factors of the block vk(b) (the equality of both numbers defining rb comes
+  again from Lemma5.7). Let 1 ≤ b ≤ l. Then σ (4) acts on the b-th block of v3 as the
+  permutation 1,...,r                                                                         ′
+                 rb ,...,1 . Since vµ is ordered, we can see that for all b ∈ [[1; l]] \ {d, d }, the
+                         b
+
+  b-th block of v4 is also ordered.
+
+* Write temporarily v4 = vk1 ∧· · ·∧vkr , and let i (resp. j) ∈ [[1; r]] be such that ki = βy −h
+  (resp. kj = βx + h). Define σ (5) and v5 by
+                    
+               (5)       id   if δ > 0
+             σ :=                             and       v5 := vσ(5) σ(4) σ(3) σ(2) σ(1) .l ;
+                       (i, j) if δ = 0
+
+  we have σ (5) = id if and only if βy − h and βx + h are in the same block of v4 .
+
+
+                                                  37
+    * Let σ (6) ∈ Sr be the permutation that acts separately on each block of v5 by reordering
+      it and set
+                                   v6 := vσ(6) σ(5) σ(4) σ(3) σ(2) σ(1) .l .
+      Let us describe the action of σ (6) more precisely. If δ = 0, then σ (6) acts on the d-th
+      block of v5 as the permutation π from Lemma 3.14, and σ (6) acts trivially on the other
+      blocks. If δ > 0, then σ (6) acts as the product of two permutations σd′ and σd′ ′ , where
+      each σb′ , b ∈ {d, d′ } acts on the b-th block of v5 as the permutation denoted by σ in
+      Lemma 3.12 and σb′ acts trivially on the other blocks. As a consequence, we have in
+      either case
+                                                                  ′
+                                        ε(σ (6) ) = (−1)ht(ρ)+ht(ρ ) .
+
+    * Finally, put
+
+                       σ (7) := v(λ)      and         v7 := vσ(7) σ(6) σ(5) σ(4) σ(3) σ(2) σ(1) .l .
+
+      Note that vλ is ordered, v6 is obtained from vλ by permutation, v6 is block-decomposable
+      and all the blocks of v6 are ordered. By the remark following the definition of σ (3) , we
+      have vv(λ)−1 .λ = v6 , whence v7 = vλ .
+
+   As a consequence,
+                 Q7 we (i)do have τ = σ (7) · · · σ (1) , where the σ (i) ’s are defined above, hence
+(−1)N −1 = ε(σ) i=1 ε(σ ). By considering different cases we see that ε(σ (2) ) ε(σ (5) ) = ε,
+where ε is defined by (93). Moreover, we have
+                                                l
+                                                Y            rb (rb −1)
+                        ε(σ (4) ) = ε(ω(k)) =         (−1)        2       = (−1)κ(d(µ)) .
+                                                b=1
+
+We then have ε(σ (3) ) ε(σ (4) ) ε(σ (7) ) = ε(λl , µl ), whence the result.                           
+
+
+
+7    Proof of Theorem 2.11
+Let λl , µl ∈ Πlm , and λ, µ ∈ Π be the partitions such that λl ↔ λ and µl ↔ µ. We must
+                              ≺
+show that a′λl ,µl (1) = 2jλ   l ,µl
+                                      . If λl 6≺ µl , then a′λl ,µl (1) = 0 by (57); on the other hand,
+             ≺
+we have jλ    l ,µl
+                    = 0 in this case and we are done. Assume from now on that λl ≺ µl . If
+(λl , µl ) does not satisfy (65), then by Remark 6.5 there cannot exist any good sequence with
+respect to (λ, µ), so by Proposition 6.8 we have a′λl ,µl (1) = 0 ; on the other hand, by Remark
+                      ≺
+5.5 we also have jλ    l ,µl
+                             = 0 in this case. Assume now that (λl , µl ) satisfies (65), and recall
+Notation 5.4. By Proposition 5.3, one of the cases (J1 ) or (J2 ) occurs and Proposition 5.8
+                                      ≺
+then gives the expression of jλ        l ,µl
+                                             . Moreover, Propositions 6.12 and 6.13 give necessary and
+sufficient conditions on γ, δ and h for the existence of a good sequence, in which case it is
+unique. Proposition 6.8 and Rules (R2 ) − (R4 ) then give the expression of a′λl ,µl (1). In order
+                                  ≺
+to compare a′λl ,µl (1) and jλ     l ,µl
+                                         , we have to consider 12 cases depending on the value of h
+modulo nl and on whether γ and δ are zero or not. The results are shown in Figure 3. Here
+
+                                                      38
+N is the length of the good sequence if it exists. Theorem 2.11 follows by comparing the last
+two columns of the array and by applying Proposition 6.14 if the corresponding numbers are
+nonzero.                                                                                   
+
+
+                                        Number
+                                                                             a′λl ,µl (1)                                          jλ≺l ,µ l
+               Case                      of good
+                                                                             ε(λl , µl )                                      (−1)ht(ρ)+ht(ρ′ )
+                                        sequences
+            γ=δ=0                          0                                               0                                          0
+          γ > 0, δ = 0,
+ h 6≡ 0 (mod nl), h 6≡ γ (mod nl)          0                                               0                                          0
+                                                                                                                    
+          γ > 0, δ = 0,                                          d 
+                                                        (−1)N −1 dq 
+                                                                      q=1
+                                                                          −(q −2 − 1)q −2i+1
+                h
+           i := nl ∈ N∗                    1                            = 2(−1)N −1                                                  -1
+                                                                                                              
+          γ > 0, δ = 0,                                            d 
+                                                          (−1)N −1 dq 
+                                                                        q=1
+                                                                            (q −2 − 1)q −2i
+
+          i := h−γ
+                nl ∈ N                     1                        = −2(−1)N −1                                                      1
+          γ = 0, δ > 0,
+ h 6≡ 0 (mod nl), h 6≡ δ (mod nl)          0                                               0                                          0
+                                                                                                                
+          γ = 0, δ > 0,                                            d 
+                                                          (−1)N −1 dq 
+                                                                              q=1
+                                                                                               −(q 2 − 1)q 2i−1
+                h
+          i := nl ∈ N∗                     1                        = −2(−1)N −1                                                      1
+                                                                                                          
+          γ = 0, δ > 0,                                              d 
+                                                            (−1)N −1 dq 
+                                                                          q=1
+                                                                              (q 2 − 1)q 2i
+
+          i := h−δ
+                nl ∈ N                     1                            = 2(−1)N −1                                                   1
+          γ > 0, δ > 0,
+  h 6≡ 0 (mod nl), h 6≡ γ (mod nl),        0                                               0                                          0
+ h 6≡ δ (mod nl), h 6≡ γ + δ (mod nl)
+                                                                                                       2i −q−2i 
+           γ > 0, δ > 0,                                       d 
+                                                      (−1)N −1 dq 
+                                                                         q=1
+                                                                                       −(q − q −1 ) q
+                                                                                                         q+q−1
+                 h
+            i := nl ∈ N∗                   1                                       =0                                                 0
+                                                                                                    2i+1 +q−2i−1 
+           γ > 0, δ > 0,                                     d 
+                                                    (−1)N −1 dq 
+                                                                    q=1
+                                                                              −(q − q −1 ) q
+                                                                                                         q+q−1
+
+           i := h−γ
+                 nl ∈ N                    1                        = −2(−1)N −1                                                      1
+                                                                                  2i+1 +q−2i−1                          
+           γ > 0, δ > 0,                                     d 
+                                                    (−1)N −1 dq 
+                                                                  q=1
+                                                                      (q − q −1 ) q
+                                                                                       q+q−1
+
+           i := h−δ
+                 nl ∈ N                    1                            = 2(−1)N −1                                                   1
+                                                                                                   2i+2 −q−2i−2 
+           γ > 0, δ > 0,                                     d 
+                                                    (−1)N −1 dq 
+                                                                        q=1
+                                                                                  (q − q −1 ) q
+                                                                                                        q+q−1
+
+         i := h−γ−δ
+                 nl   ∈N                   1                                       =0                                                 0
+
+
+                Figure 3: List of the cases involved in the proof of Theorem 2.11.
+
+
+
+
+                                                     39
+References
+[A1]     S. Ariki, On the semisimplicity of the Hecke algebra of (Z/rZ) ≀ Sn , J. Algebra
+         169 (1994), 216-225.
+
+[A2]     S. Ariki, On the decomposition numbers of the Hecke algebra of G(m, 1, n), J.
+         Math. Kyoto Univ. 36 (1996), 789-808.
+
+[AK]     S. Ariki, K. Koike, A Hecke algebra of (Z/rZ) ≀ Sn and construction of its irre-
+         ducible representations, Adv. Math. 106 (1994), 216-243.
+
+[AM]     S. Ariki, A. Mathas, The representation type of Hecke algebras of type B, Adv.
+         Math. 181 (2004), 134-159.
+
+[BM]     M. Broué, G. Malle, Zyklotomische Heckealgebren, Société Mathématique de
+         France, Astérisque 212 (1993), 119-189.
+
+[DJ]     R. Dipper, G. James, The q-Schur algebra, Proc. London Math. Soc. (3), 59
+         (1989), 23-50.
+
+[DJM]    R. Dipper, G. James, A. Mathas, Cyclotomic q-Schur algebras, Math. Z., 229
+         (1998), 385-416.
+
+[GJ]     O. Gabber, A. Joseph, Towards the Kazhdan-Lusztig conjecture, Ann. Sci. Éc.
+         Norm. Supér., IV. Sér. 14 (1981), 261-302.
+
+[GGOR] V. Ginzburg, N. Guay, E. Opdam, R. Rouquier, On the category O for ra-
+       tional Cherednik algebras, Inventiones Math. 154 (2003), 617-651.
+
+[GL]     J. J. Graham, G. I. Lehrer, Cellular algebras, Invent. Math. 123 (1996), 1-34.
+
+[Jac]    N. Jacon, On the parametrization of the simple modules for Ariki-Koike algebras,
+         J. Math. Kyoto Univ. 44 (2004), 729-767.
+
+[JM]     G. James, A. Mathas, The Jantzen sum formula for cyclotomic q-Schur algebras,
+         Trans. AMS 352, (2000), 5381-5404.
+
+[Jan]    J. C. Jantzen, Darstellungen halbeinfacher algebraischer Gruppen und zugeordnete
+         kontravariante Formen, Bonn. Math. Schr., 67 (1973).
+
+[KT]     M. Kashiwara, T. Tanisaki, Parabolic Kazhdan-Lusztig polynomials and Schu-
+         bert varieties, J. Algebra 249 (2002), 306-325.
+
+[Mac]    I. G. Macdonald, Symmetric Functions and Hall Polynomials, 2nd ed. Oxford
+         University Press (1995).
+
+[Mat1]   A. Mathas, Iwahori-Hecke Algebras and Schur Algebras of the Symmetric Group,
+         AMS University Lecture Series 15 (1999).
+
+
+
+                                           40
+[Mat2]     A. Mathas, The representation theory of the Ariki-Koike and cyclotomic q-Schur
+           algebras, Adv. Stud. Pure Math. 40 (2004), 261-320.
+
+[Ro]       R. Rouquier, q-Schur algebras and complex reflection groups, I, arXiv
+           math.RT/0509252 (2005).
+
+[Ry]       S. Ryom-Hansen, The Schaper Formula and the Lascoux, Leclerc and Thibon-
+           algorithm, Lett. Math. Phys. 64 (2003), 213-219.
+
+[U1]       D. Uglov, Canonical bases of higher-level q-deformed Fock spaces, arXiv
+           math.QA/9901032 (1999).
+
+[U2]       D. Uglov, Canonical bases of higher-level q-deformed Fock spaces and Kazhdan-
+           Lusztig polynomials, in Physical Combinatorics ed. M. Kashiwara, T. Miwa,
+           Progress in Math. 191, Birkhäuser (2000), arXiv math.QA/9905196 (1999).
+
+[VV]       M. Varagnolo, E. Vasserot, On the decomposition matrices of the quantized
+           Schur algebra, Duke Math. J. 100 (1999), 267-297.
+
+[Y]        X. Yvonne, Bases canoniques d’espaces de Fock de niveau supérieur, Thèse de
+           l’Université de Caen (2005).
+
+
+   Xavier YVONNE, Laboratoire de Mathématiques Nicolas Oresme, Université de Caen, BP 5186,
+14032 Caen Cedex, France.
+
+      E-mail address: xyvonne@math.unicaen.fr
+
+
+
+
+                                                41
+

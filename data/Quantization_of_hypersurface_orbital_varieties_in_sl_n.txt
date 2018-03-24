@@ -1,0 +1,1598 @@
+                                                           Quantization of hypersurface orbital varieties in sln
+arXiv:math/0311467v1 [math.RT] 26 Nov 2003
+
+
+
+
+                                                                                 Anthony Joseph
+                                                                        The Donald Frey Professorial Chair
+                                                                           Department of Mathematics
+                                                                        The Weizmann Institute of Science
+                                                                             Rehovot 76100, Israel
+                                                                                      and
+                                                                      Institut de Mathématiques (UMR 7586)
+                                                                         175 rue du Chevaleret, Plateau 7D
+                                                                           Paris 75013 Cedex, France
+                                                                      e-mail: joseph@wisdom.weizmann.ac.il
+
+                                                                                         and
+
+                                                                                Anna Melnikov
+                                                                            Department of Mathematics
+                                                                                 Haifa University
+                                                                                  Mount Carmel
+                                                                                 Haifa 31905, Israel
+                                                                       e-mail: anna@wisdom.weizmann.ac.il
+
+
+
+
+                                             1. Introduction.
+                                             1.1. Amongst his many great contributions to mathematics, Alexander Kirillov was a
+                                             co-founder of the “orbit method”. This exploits the symplectic structure on coadjoint
+                                             orbits with respect to a Lie algebra g. From a Lagrangian subvariety one attempts to
+                                             construct a representation of g associated to the given orbit. If g is semisimple, the orbit
+
+                                                 Supported in part by the Minerva Foundation, Germany, Grant No. 8466
+
+                                                                                          1
+is nilpotent and one wishes to construct a highest weight module, then this Lagrangian
+subvariety should be a so-called orbital variety. Then “quantization” of the latter leads
+to the required representation [J3].
+     In this paper we consider only the case when g = sln (C). By [M4] all orbital
+varieties can be weakly quantized (though this fails [J3, 1.3] for arbitrary g). It remains
+to show that they can be strongly quantized. This is a rather more delicate question.
+We shall settle this positively for orbital varieties which are of codimension 1 in the
+nilradical of a parabolic. These are called hypersurface orbital varieties.
+1.2.   Let g = n− ⊕ h ⊕ n+ be a triangular decomposition. We identify n− with (n+ )∗
+through the Killing form. Let G be adjoint group of g and B the Borel subgroup
+with Lie algebra b := h ⊕ n+ . For any Lie algebra a, let S(a) (resp. U (a)) denote its
+symmetric (resp. enveloping) algebra. It is well-known that Gn+ is a finite union (of
+so-called nilpotent) orbits classified by Jordan normal form. Let O be such an orbit.
+After Spaltenstein [S] the irreducible components of O ∩ n+ have dimension 1/2 dim O.
+They are called orbital varieties and after Steinberg [St] are classified by the standard
+tableaux whose shape is specified by O. As noted in [J1, 7.3] an orbital variety V can
+be characterized as an irreducible subvariety of n+ for which the ideal I(V) ⊂ S(n− )
+of definition of its closure is stable under the Poisson bracket on g (induced by the Lie
+bracket).
+1.3.     Retain the notation of 1.2. Roughly speaking V can be strongly quantized
+if S(n− )/I(V) can be given the structure of a highest weight module (not necessarily
+simple). Here the choice of highest weight is a crucial and delicate point. Take λ ∈ h∗
+and let V (λ) be a highest weight module with highest weight vector vλ of weight λ. Let
+F be the canonical (degree) filtration on U (n− ) (resp. on S(n− )). We say that V (λ) is
+a strong (resp. weak) quantization of V if gr F Ann U(n− ) vλ = I(V) (resp. if its radical
+equals I(V) ).
+1.4.   In order to exhibit a strong quantization we have to compute I(V) (or at least
+to calculate the formal character of S(n− )/I(V) ). In [J2, Lecture 7] the general form
+that this should take is suggested. Let N be the generic matrix of n− + 1d. Then I(V)
+should take the form gr F < a1 , a2 , · · · , an >, where ai are amongst the minors of N .
+This suggestion derived from an algorithm for Ann U(n− ) V based on the Enright functor
+[J1, 8.4] together with calculations in the thesis of E. Benlolo.
+1.5.   Of course the above does not tackle the difficult question as to which minors
+ai to choose. Recently Benlolo and Sanderson [BS] made an appealing conjecture for
+
+                                            2
+this choice concerning orbital varieties V having codimension 1 in the nilradical m+ of
+a parabolic subalgebra p. Apart from the obvious 1 × 1 minors it follows from Krull’s
+theorem that I(V) is generated by just one element f which can be assumed to be
+an h weight vector. A result in [M3] describes in particular all the orbital varieties of
+codimension 1 in a given m+ . Using this, Benlolo-Sanderson [BS] show that one may
+reduce to the case when f cannot be expressed in terms of the generic matrices of n−
+obtained by deleting the first columns and last rows. Up to this reduction they show
+that m+ is given by blocks of size c1 , c2 , · · · , cl with c1 = cl = c and ci 6= c, ∀ i : 1 < i < l.
+Now let M(t) be the generic matrix of m− + t1d, where m− is the opposed algebra of
+m+ identified with (m+ )∗ and t is an indeterminate. Let M (t) be the (n − c) × (n − c)
+minor of M(t) lying in the bottom left-hand corner. Then M (t) is a polynomial in t.
+They conjecture that f is the coefficient of its lowest degree term. Let β1 be the highest
+root of n+ , β2 the highest root of the subalgebra of n+ obtained by omitting the first
+                                                                    Xc
+row and last column, and so on. They show that f has weight − βi .
+                                                                            i=1
+1.6. One may note that f of 1.5 can also be described as gr F M (1). However as we
+shall see there is a certain computational advantage in retaining t. (Furthermore BS
+compute the lowest power of t in M (t)). One may also replace m− + 1d in the above by
+n− + 1d as long as one includes the obvious 1 × 1 minors in I(V). In this sense M (1)
+only depends on the first column size c. Likewise f = gr F M (1) depends only partially
+on m− . In particular the weight of f only depends on c. Although BS do check their
+conjecture in a number of cases, it is interesting to know if it holds in general since the
+above independence is somewhat surprising. Moreover even the relatively simple case
+of hypersurface varieties has some remarkable structure.
+1.7. Our proof of the BS conjecture involves showing that S(m− )f is semi-prime and
+its zero variety is P stable, where P ⊃ B is the parabolic subgroup with Lie algebra
+p. This holds irrespective of whether ci 6= c, for i 6= 1, l. However we show that f is
+irreducible if and only if this condition holds. This is a delicate point. We shall give
+three proofs. One is based on a careful counting of t powers in multiplying out M (t)
+and a knowledge [M2, M3] of the orbital varieties of codimension 1 in m+ . The second is
+based on a representation theoretic argument combined with [M4] which asserts that the
+associated variety of a highest weight module of integral highest weight is irreducible.
+The third is the least computational and is based on the irreducibility of the associated
+variety of the annihilator of a simple highest weight module.
+1.8. We shall exhibit a strong quantization of V by determining a simple highest weight
+
+                                                  3
+module V (λ) whose formal character ch V (λ) coincides with that of S(m− )/S(m− )f and
+by using the linear independence of the characteristic polynomials of orbital varieties.
+To determine λ and compute ch V (λ), we use the formula of Jantzen [Ja] describing the
+Shapovalov determinants defined with respect to p. Let I be the subset of the set of
+simple roots Π defining p. Assume (α, α) = 2 for any root. Then it suffices to take
+λ ∈ h∗ such that (λ, α) = 0, ∀ α ∈ I, (λ, β1 ) = c − (n − 1) and (λ, γ) 6∈ Z, for any
+proper sum of roots in Π′ := Π \ I. However we also give a choice of integral λ. This is
+more delicate since the condition ci 6= c, ∀ i : 1 ≤ i ≤ k − 1 must be invoked. Combined
+with [M4] it leads to the second proof of the irreducibility of f . The non-integral case
+gives our third proof.
+   We further show that there is a choice of λ such that the annihilator of V (λ) is
+maximal as well as V (λ) being a strong quantization of V.
+1.9.     The truth of BS conjecture has the following remarkable consequence. One may
+specify positive integers s, t such that f is exactly the highest common divisor of the t×t
+minors of M(0)s . There seems to be no elementary proof of this purely combinatorial
+fact.
+
+
+2. Combinatorial Preliminaries and the Benlolo-Sanderson Conjecture
+2.1 The base field is assumed algebraically closed of characteristic zero and can be
+taken to be the complex field C without loss of generality.
+       Recall the notation and the hypotheses of 1.1 and 1.2. Put n = n+ . In particular
+an orbital variety V associated to a nilpotent orbit O is an irreducible component of
+O ∩ n. Let V denote the set of all orbital varieties of g and W the Weyl group for the
+pair (g, h). We describe first the Steinberg map of W onto V. Let R ⊂ h∗ denote the
+set of non-zero roots, R+ the set of positive roots corresponding to n in the triangular
+decomposition of g and Π ⊂ R+ the resulting set of simple roots. Let Xα = Cxα denote
+                                                       L                     L
+the root subspace corresponding to α ∈ R. Then n =         Xα (resp.n− =           Xα ).
+                                                     α∈R +                 α∈−R  +
+                                     L
+     For each w ∈ W set n∩w n :=             Xα . For each closed, irreducible subgroup
+                                   α∈R+ ∩w(R+ )
+H of G let H(n ∩ n) be the set of H conjugates of n ∩w n. It is an irreducible locally
+                    w
+
+closed subvariety. Since there are only finitely many nilpotent orbits in g it follows that
+there exists a unique nilpotent orbit O such that G(n ∩w n) = O. A result of Steinberg
+[St] asserts that Vw := B(n ∩w n) ∩ O is an orbital variety and that the map φ : w 7→ Vw
+is a surjection of W onto V.
+2.2     It is convenient to replace sln by g = gln . This obviously makes no difference.
+
+                                            4
+Note that the adjoint action is just conjugation by G = GLn . Let n be the subalgebra
+of strictly upper-triangular matrices and let n− be the subalgebra of strictly lower-
+triangular matrices. Let B be the (Borel) subgroup of upper-triangular matrices in G.
+All parabolic subgroups we consider further are standard, that is contain B.
+     Let ei,j be the matrix having 1 in the ij−th entry and 0 elsewhere.
+     Take i < j and let αi,j be the root corresponding to ei,j . Set αj,i = −αi,j . We write
+αi,i+1 simply as αi . Then Π = {αi }n−1
+                                    i=1 . Moreover αi,j ∈ R
+                                                            +
+                                                              exactly when i < j. For
+each α ∈ Π, let sα ∈ W be the corresponding reflection and set si = sαi .
+2.3 We represent every element of the symmetric group Sn in word form
+
+                         w = [a1 , a2 , . . . , an ] ,   where ai = w(i).
+
+We identify W with Sn by taking si to be the elementary permutation interchanging
+i, i + 1.
+
+Definition. Given w = [a1 , · · · , an ]. Set pw (i) = j if aj = i, that is pw (i) is the place
+(index) of i in the word form of w.
+
+    One has w(pw (i)) = w(j) = aj = i, that is pw (i) = w−1 (i). On the other hand
+w(αi,j ) = αw(i),w(j) . Set S(w) = {α ∈ R+ | w(α) ∈ −R+ }.
+    This gives the following result.
+
+Lemma. Take i < j. Then αi,j ∈ S(w−1 ) if and only if pw (i) > pw (j).
+
+Remark. In particular αi ∈ S(w−1 ) exactly when i + 1 comes before i in the word
+form of w. This is of course well-known.
+2.4 Let P (n) denote the set of partitions of n. Then λ := {λ1 ≥ λ2 ≥ · · · ≥ λk > 0} ∈
+P (n) defines the sizes λi of the Jordan blocks of some element xλ ∈ n. Set Oλ = Gxλ . Let
+λ∗ = {λ∗1 ≥ λ∗2 ≥ · · · ≥ λ∗l > 0} be the dual partition. By definition λ∗i = ♯{j | λj ≥ i}.
+Then k = λ∗1 , l = λ1 and this notation will be fixed throughout. We view λ as a Young
+diagram Dλ with k rows of length λ1 , . . . , λk .
+                                                                 Pk
+    The rank of a Jordan block of size r is just r − 1 so rk xλ = i=1 (λi − 1) = n − λ∗1 .
+    For all integer i ≥ 1, the Jordan blocks of xiλ are obtained by deleting the first i
+columns of λ. Then
+                  Pi
+ (1) rk xiλ = n − j=1 λ∗j .
+                                       Pk
+(2) Again (cf. [H, §3.8]) dim Oλ = n2 − i=1 (λ∗i )2 .
+2.5 Define a partial order on P (n) as follows. Let λ = (λ1 ≥ λ2 ≥ · · · λk ) and
+µ = (µ1 ≥ µ2 ≥ · · · µk ) be partitions of n which we can assume to correspond to
+
+                                                    5
+diagrams of the same height by adding empty rows. Set λ ≤ µ if
+
+                     i
+                     X            i
+                                  X
+                           λj ≥         µj ,   for   all   i = 1, 2, · · · , k.
+                     j=1          j=1
+
+
+The following result of M. Gerstenhaber (cf. [H, §3.10]) shows that this order corre-
+sponds to inclusion of nilpotent orbit closures:
+
+Theorem. Given two partitions λ and µ of n one has λ ≤ µ if and only if Oµ ⊂ Oλ .
+
+     In our convention λ = (n) is the minimal partition of n and λ = (1, 1, . . . , 1) is the
+maximal one.
+2.6 For a partition λ of n one can fill the boxes of Dλ with n distinct positive integers.
+If the entries increase in rows from left to right and in columns from top to bottom,
+we call such an array a Young tableau. If the numbers in Young tableau form a set of
+integers from 1 to n we call it standard. Let Tn be the set of standard Young tableaux
+of size n.
+     We shall not distinguish between Young and standard tableaux. Indeed if a Young
+tableau has entries t1 < t2 < · · · < tn then it can be identified with the standard tableau
+obtained by replacing ti by i. Similarly the sequence [tw(1) , . . . , tw(n) ] : w ∈ Sn can be
+viewed as a word form of w by replacing ti by i. We call this process standardization.
+Occasionally it can cause confusion; but in such cases adequate warning will be given.
+We may also concatenate word forms so then [a1 , a2 , . . . , an ] can be written as [a′ , a′′ ]
+where a′ = [a1 , a2 , . . . , ai ], a′′ = [ai+1 , . . . , an ].
+     The shape of a Young tableau T is defined to be the Young diagram from which T
+was built. It defines a partition of n which we denote by sh T.
+     Given T ∈ Tn , let σ(T ) denote the conjugate standard tableau obtained by rotation
+about the main diagonal. We remark that sh σ(T ) = (sh T )∗ . Again σ takes a row
+tableau R into a column tableau C and vise-versa.
+     Given any sequence S of strictly increasing integers (for example a row R or column
+C above) let Sb denote the reversed sequence of strictly decreasing integers. For any
+tableau or word form S, let < S > denote the set of entries of S and |S| the cardinality
+of < S > .
+     The Robinson - Schensted correspondence w 7→ (Q(w), R(w)) gives a bijection (see,
+for example [Kn] or [F]) from the symmetric group Sn onto the pairs of standard Young
+tableaux of the same shape. By R. Steinberg [St] for all w, y ∈ Sn one has Vw = Vy
+
+                                                6
+iff Q(w) = Q(y). This parameterizes the set of orbital varieties V by Tn . Moreover
+sh Q(w) = λ if and only if Vw is contained in Oλ .
+      If Q(w) = T we set VT := Vw and TVw := Q(w).
+      We define a partial order on Young tableaux and a partial order on orbital varieties
+analogous to the order on partitions given in 2.5. It is called the geometric order on V
+or on Tn .
+
+Definition. (i) Given distinct V1 , V2 ∈ V. Set V2 > V1 if V2 ⊂ V 1 .
+(ii) Given distinct T1 , T2 ∈ Tn . Set T2 > T1 if VT2 > VT1 .
+
+    In general the problem of the combinatorial description of geometric order is ex-
+tremely difficult. Partial results are described in [M5], which for the case studied below
+gives a complete answer. All that is needed here in 2.17; though a more general result
+is given in [M2].
+2.7    Fix T ∈ Tn with sh T = λ. For all i, j ∈ {1, . . . , n} let Tji denote the ij-th entry
+of T when it is defined.
+
+Definition. For any tableau T
+ (i) Given s = Tji , set rT (s) = i and cT (s) = j.
+(ii) For all 1 ≤ i ≤ λ∗1 = k, set T i = (T1i , · · · , Tλi i ). It is the i−th row of T.
+                                                           λ∗
+(iii) For all j : 1 ≤ j ≤ λ1 = l, set Tj = (Tj1 , . . . , Tj j ). It is the j−th column of T.
+(iv) The hook number of the ij−th entry of T is defined by
+
+                                   h(Tji ) = 1 + (λ∗j − j) + (λi − i).
+
+
+(v) Tji is called a corner entry of T if h(Tji ) = 1.
+(vi) If i ≤ j, then T i,j denotes the subtableau with rows T i , T i+1 , . . . , T j . Otherwise it
+     denotes the empty tableau.
+
+      A row (resp. column) of T is determined by its entries since these must increase
+from left to right (resp. from top to bottom).
+    Let T = (T1 , T2 , . . . , Tl ), S = (S1 , S2 , . . . , Sl′ ) be Young tableaux given by their
+columns. Assume that T, S have no common entries. Then we define (T, S) to be the
+array whose rows are the same as the rows of (T1 , T2 , . . . , Tl , S1 , S2 , . . . , Sl′ ), that is
+r(T,S) (Tji ) = i and r(T,S) (Sji ) = i, and ordered in the increasing order. Of course this
+involves the shuffling of numbered boxes within a row.
+
+                                                  7
+Lemma. (T, S) is a Young tableau.
+
+Proof.
+   The proof is by induction on rows. Suppose that the integers in the first r rows
+have been placed in increasing order and that the resulting array of r rows obtained
+from (T, S) is a Young tableau. Let i1 < i2 < · · · < in be the integers of the r−th row
+and j1 < j2 < · · · < jm : m ≤ n the ordered set of entries of < T r+1 , S r+1 > . Since
+T, S are Young tableaux and their entries are distinct from one another, there exists an
+injective map φ : {1, 2, . . . , m} → {1, 2, . . . , n} such that jt > iφ(t) . Then js > jt > iφ(t)
+for all t = 1, 2, . . . , s. Thus js exceeds s elements of the r−th row. This forces js > is ,
+as required.
+
+
+     If the entries of S all exceed those of T then one only needs to shift numbered boxes
+                                                                
+(to the left). In a similar fashion TS is defined. One has σ TS = (σ(T )σ(S)).
+                               i 
+     Note that T i,i+1 = TTi+1 , for example.
+2.8 Take j ∈ N such that j 6∈< R > . Let ai be the smallest entry of R greater than j
+and set:
+                                (R + j) := (a1 , · · · , ai−1 , j, ai, · · ·)
+
+     Define wr , wc ∈ W by word forms
+                                      ∗
+                    wr (T ) := [T λ1 , · · · , T 1 ],       wc (T ) := [T̂1 , · · · , T̂λ1 ]
+
+Lemma. [M5 or M1, 3.2.2] One has
+
+                                   Q(wr (T )) = Q(wc (T )) = T.
+
+Proof.
+     We give a proof for completion and to clarify the nature of Robinson-Schensted
+correspondence.
+    Let T be a Young tableau and b1 an integer > 0 not belonging to the entries of T.
+The Robinson-Schensted (RS) insertion of b1 into T gives a new Young tableau (T ↓ b1 ).
+This is an inductive procedure in which b1 , b2 , . . . , are defined and bi is inserted into the
+i−th row of T . In detail, write T 1 = (a1 , a2 , . . . , al ). If b1 > al then b1 is inserted into
+T 1 and the process stops, that is
+                                              1               
+                                                 T + b1
+                                 (T ↓ b1 ) =                     .
+                                                    T 2,k
+
+                                                        8
+Otherwise let i be the smallest integer such that b1 < ai . Then (T ↓ b1 )1 is obtained by
+replacing ai by b1 . Set b2 = ai . Then
+                                                                   
+                                                    (T 1 ↓ b1 )1
+                                 (T ↓ b1 ) =                            .
+                                                    (T 2,k ↓ b2 )
+
+    Let w = [a1 , a2 , . . . , an ] be a word form. Then Q(w) is obtained inductively as
+follows. Take Q0 (w) to be the empty tableau and set Qi (w) = (Qi−1 (w) ↓ ai ), ∀i : 1 ≤
+i ≤ n. Then Q(w) = Qn (w).
+    We prove lemma by induction on rows. Let T be a Young tableau and set T 1 =
+(a1 , a2 , . . . , al ). Then ai < ai+1 , ai < Ti2 , ∀i : 1 ≤ i ≤ l (using the convention that
+the undefined entries Tij : j > 2, of T are set equal to ∞). Conversely starting from
+T 2,k and the sequence R = (a1 , a2 , . . . , al ) with the above properties we obtain a Young
+tableau S with S 1 = R, S i = T i , ∀i > 1. One checks that Q([wr (T 2,k ), R]) = S and
+this proves the first part of the lemma. The second obtains via σ.
+
+
+2.9 Let us describe the jeu de taquin (cf. [Sch]) which removes Tji from T. The resulting
+tableau is denoted by T − Tji and is obtained as follows.
+    Consider a row R = (a1 , · · ·). Take j ∈ N such that j > a1 and j 6∈< R > . Let ai
+be the greatest entry of R smaller than j and set:
+
+                           (R ↑ j) := (a1 , · · · , ai−1 , j, ai+1 , · · ·).
+
+One may remark that ((R ↑ j) ↓ ai ) = R.
+    Take some element ai of R and set:
+
+                            (R − ai ) := (a1 , · · · , ai−1 , ai+1 , · · ·)
+
+Similar operations are defined for a column C except that we write (C ← j) for
+σ(σ(C) ↑ j).
+    With these preliminaries we write
+(1) If h(Tji ) = 1, then
+                                                               
+                                                     T 1,i−1
+                                    (T − Tji ) =  (T i − Tji ) 
+                                                    T i+1,m
+
+(2) If h(Tji ) > 1, then
+
+                                                    9
+             i
+     (i) If Tj+1 > Tji+1 or λi = j, set
+                                                                  
+                                                     T 1,i−1
+                                                           i+1
+                                  (T − Tji ) =  (T i ↑ Tj ) 
+                                                (T i+1,m − Tji+1 )
+              i
+     (ii) If Tj+1 < Tji+1 or λ∗j = i, set
+
+                        (T − Tji ) = (T1,j−1 , (Tj ← Tj+1
+                                                      i                  i
+                                                          ), (Tj+1,λ1 − Tj+1 ))
+
+Theorem. [Sch] If T is a Young tableau then so is (T − Tji ).
+2.10 Given w ∈ W, T ∈ Tn , V ∈ V, a standard parabolic subgroup P and a
+standard parabolic subalgebra p. Let pαi be the minimal standard parabolic subalgebra
+including X−αi and let Pαi be the corresponding standard parabolic subgroup. Define
+their τ -invariants to be
+                             τ (w) := Π ∩ S(w−1 ),
+                             τ (T ) := {αi : rT (i + 1) > rT (i)},
+                             τ (P) := {αi : Pαi ⊂ P},
+                             τ (p) := {αi : pαi ⊂ p},
+                             τ (V) := {αi : Pαi (V) = V}.
+Note that P (resp. p) is uniquely determined by its τ -invariant. Let PT = PVT be the
+stabilizer of VT . It is a standard parabolic subgroup of G and we set pT = pVT = Lie PT .
+By say [J, §9] one has
+Lemma. τ (w) = τ (Vw ) = τ (Q(w)) = τ (PVw ) = τ (pVw ).
+2.11 Given I ⊂ Π, let PI denote the unique standard parabolic subgroup of G such
+that τ (PI ) = I. Let MI be the unipotent radical of PI and LI a Levi factor. Let
+pI , mI , lI denote the corresponding Lie algebras. These notation will be conserved
+throughout though the subscripts may sometimes be dropped.
+     Given w ∈ W, let ℓ(w) denote its reduced length. Let WI be the subgroup of W
+generated by the sα : α ∈ I and wI its unique longest element. It is also defined by
+condition S(wI ) = R+ ∩ NI. The following is well known and easy to check.
+Lemma. VI := VwI is the unique orbital variety with closure mI . Moreover if τ (V) ⊃ I,
+then V ⊂ VI = mI .
+Remark. Set OI = GVI . One calls VI the Richardson component (of OI ∩ n) defined
+by I. With respect to the order relation defined in 2.6, VI is the unique minimal orbital
+
+                                              10
+variety with τ −invariant I. In general if n∩y n ⊂ n∩w n then trivially Vy ⊂ B(n ∩w n) =
+V w . By the lemma the converse holds if w = wI , for some I ⊂ Π; but fails in general
+[M5, 4.1.1].
+2.12   Given I ⊂ Π. Write TVI simply as TI . It is obtained by the following rules
+ (i) rTI (1) = 1.
+(ii) Given s : 1 < s ≤ n
+                                         
+                                             1,               if αs−1 6∈ I,
+                             rTI (s) =
+                                             rTI (s − 1) + 1, otherwise.
+
+    A useful way to present TI is as follows. Partition {1, 2, . . . , n} into connected
+subsets Cj := {bj , bj + 1, . . . , bj+1 − 1} by choosing a strictly increasing sequence
+1 = b1 < b2 < · · · < bl+1 = n + 1. Setting I = {αi | i, i + 1 belong to some Cj } defines a
+bijection between the set of all such partitions and the set of subsets of Π. Given I ⊂ Π,
+let {CiI : i = 1, 2, . . . , l} be the corresponding connected subsets which we view as
+columns. (Sometimes we may omit the I superscript.) Then in the notation of 2.7 we
+have TI = (C1I , C2I , . . . , ClI ). Of course this involves some sliding of boxes to the left.
+However there are some advantages in this presentation. For example TI − 1 is obtained
+by simply replacing C1 by C1 − 1 and TI − n is obtained by simply replacing Cl by
+Cl − n. Again one easily checks the
+
+Proposition. For all I ⊂ Π, the word form of wI is given by
+
+                                          b1I , C
+                                    wI = [C     b2I , . . . , C
+                                                              blI ].
+
+     We call CiI the i−th chain of TI and TI = (C1I , C2I , . . . , ClI ) the chain form of TI .
+Example
+Consider I = {α1 , α4 , α5 , α6 , α9 } in sl10 . Then
+
+                                             1   3        4   8   9
+
+                                             2   5    10
+                                  TI =
+                                             6
+
+                                             7
+
+or in chain form TI = (C1 , C2 , C3 , C4 , C5 ) where C1 = {1, 2}, C2 = {3}, C3 =
+{4, 5, 6, 7}, C4 = {8} and C5 = {9, 10}.
+
+                                                     11
+2.13 Given an orbital variety V, set O = GV. It is a nilpotent orbit. Given a nilpotent
+orbit O′ ⊂ O one may try to describe V ∩ O′ . In general it is not even known if this
+intersection is equidimensional. However if V = VI for some I ⊂ Π a complete answer
+given by [S1], [M5 or M1] and 2.11. Set OI = GVI .
+
+Theorem. Let O be a nilpotent orbit in OI = GmI . Then mI ∩ O is the union of
+orbital varieties V in O ∩ n satisfying τ (V) ⊃ I.
+Proof.
+    By [S1, p. 456, last corollary] mI ∩ O is equidimensional.
+    By [M1, 4.1.8 or M5, 3.5.6] it contains at least one orbital variety and so dim V =
+1
+2 dim O, for every irreducible component V of O ∩ mI . Yet V ⊂ O ∩ n, which also has
+dimension 21 dim O. Hence V is an orbital variety associated to O. Then by 2.11 every
+orbital variety V associated to O lies in mI if and only if τ (V) ⊃ I.
+
+
+Remark. By 2.10, αi ∈ τ (VT ) if and only if rT (i + 1) > rT (i). In particular if V > VI
+then for any i one has rTV (i) ≥ rTI (i).
+2.14 Take I ⊂ Π and recall the notation of 2.11. Set BI = B ∩ LI , nI = n ∩ lI
+and W I = {w ∈ W | wI ⊂ R+ }. We have decompositions B = MI ⋊BI , n = nI ⊕
+              ∼
+mI , W I × WI → W. They define projections B → BI , n → nI and W → WI which
+                                            I
+we will denote by πI , or simply by π. Let Vπ(w) be the orbital variety of lI with closure
+BI (nI ∩π(w) nI ).
+
+Proposition. [M1, 4.1.2 or M5, 4.2.2] For all w ∈ W, I ⊂ Π one has πI (V w ) =
+          I
+π(Vw ) = Vπ(w) .
+
+Remark 1. It is clear that πI is inclusion preserving. Thus if Vw , Vy are orbital
+                                       I        I
+varieties of g with V w ⊂ V y , then V π(w) ⊂ V π(y) .
+Remark 2. Suppose a ⊂ n is h stable. Since root subspaces are one-dimensional we
+obtain πI (a) = a ∩ nI . Again MI acts by 1 on n/mI . Then since πI is continuous
+
+                         πI (Ba) ⊂ πI (Ba) ⊂ Ba ∩ nI ⊂ πI (Ba)
+         I
+and so V π(w) = V w ∩ nI .
+    For 1 ≤ i < j ≤ n set [i, j] = {r ∈ N |i ≤ r ≤ j}, Πi,j = {αr | r, r + 1 ∈ [i, j]}
+and πi,j = πΠi,j . Define Tn → Tj−i+1 , through the jeu de taquin applied to the entries
+(taken in any order) of T not lying in [i, j]. By [M1, 2.4.16, 4.1.1 or M5 4.3.3] one has
+
+                                   πi,j (V T ) = V πi,j (T ) .                        (∗)
+
+                                              12
+   2.15 Definition. Let ≥ be an order relation on V. Given VT2 > VT1 We call VT2
+a descendant of VT1 (respectively T2 a descendant of T1 ) if for any orbital variety W
+such that VT2 ≥ W ≥ VT1 one has W = VT2 or W = VT1 . One calls VT2 a geometric
+descendant of VT1 when ≥ is the geometric order.
+
+     If unqualified descendant will mean geometric descendant.
+     The set of descendants of any TI : I ⊂ Π is described explicitly in [M2, 2.6] The
+simplification that results in our case can be understood as follows.
+    Define the Duflo (or weak Bruhat) order on W by y ⊇ w if n∩y n ⊂ n∩w n. Through
+the map w 7→ Q(w) it induces an order relation ⊃ on Tn and hence on V called the
+(induced) Duflo order. Remark 2.11 states just that Vy ⊂ V w if y ⊇ w, but the converse
+can fail unless w = wI . The description of the induced Duflo order on Tn is itself a
+quite non-trivial problem; but the complete solution was given in [M1, 3.3.3, 3.4.5 or
+M5, 3.3.3, 3.4.4]. By the above remark the set of geometric descendants of a Richardson
+component is contained in the set of Duflo descendants in turn described by [M2, 2.6].
+   Present TI as in 2.12, that is we write TI = (C1I , C2I , . . . , ClI ). Set ci = |Ci |. Then
+ςi = Cici is the largest entry of Ci and moreover belongs to TIci .
+     For any 1 ≤ i ≤ l, suppose that there exists j : 1 ≤ j < i such that cj ≥ ci . Take
+the maximal integer i′ : 1 ≤ i′ < i such that ci′ is minimal with the property that
+ci′ ≥ ci . Define                                     
+                                           T 1,ci −1
+                                        T ci − ςi 
+                                                      
+                             TI (i) :=  T ci +1,ci′ 
+                                        ci′ +1        
+                                         T        + ςi
+                                           T ci′ +2,k
+In other words we move ςi from the ci −th to the (ci′ + 1)−th row according to the rules
+of 2.9. In example 2.12 one has c2 = 1 > c1 = 2; c3 = 4 is maximal, c4 = c2 = 1 and
+c5 = c1 = 2. Thus our procedure defines 3 tableaux:
+
+           1   4    8    9                1   3    4   9                1    3    4   8   9
+
+           2   5   10                     2   5    8 10                 2    5
+TI (2) =                     , TI (4) =                    , TI (5) =                         .
+           3   6                          6                             6   10
+
+           7                              7                             7
+
+Lemma. TI (i) is a Young tableau.
+
+Proof.
+
+                                              13
+     Indeed the largest element ςi of the i−th chain is relocated on the i′ −th chain where
+it becomes the largest element since i′ < i. Then the assertion follows from lemma 2.7.
+
+
+2.16     As noted in 2.12 the tableau π1,n−1 (TI ) is obtained from TI by eliminating n
+from Cl . It corresponds to the subset In = I ∩ Π1,n−1 with CiIn = CiI : i < l and
+ClIn = ClI − n. Similarly π2,n (TI ) is obtained from TI by eliminating 1 from C1 and
+corresponds to the subset I1 = I ∩ Π2,n with CiI1 = CiI : i > 1 and C1I1 = C1I − 1.
+
+Lemma. Assume that TI (i) is defined. Then i > 1 and
+ (i) π1,n−1 (TI (i)) = TIn (i), if i < l.
+(ii) π2,n (TI (i)) = TI1 (i), if c1 6= ci or there exists j : 1 < j < i such that cj = ci .
+(iii) π2,n (TI (i)) = TI1 , if c1 = ci and cj 6= ci , ∀j : 1 < j < i.
+
+Proof.
+    (i) is an immediate consequence of ςi < n, for i < l. The hypothesis of (ii) implies
+that TI1 (i) is defined. If in the choice of i′ (as above) one can choose i′ : 1 < i′ < i,
+then both TI (i) and TI1 (i) are obtained by moving ςi from ci −th row to (ci′ + 1)−th
+row, an operation which commutes with replacing C1 by C1 − 1. If necessarily i′ = 1 but
+c1 > ci then ςi goes from ci −th row to (c1 + 1)−th row in forming TI (i), but then goes
+to c1 −th row in forming π2,n (TI (i)). However if c1 > ci this is exactly what happens
+in forming TI1 (i) from TI1 . Hence (ii). Under the hypothesis of (iii), ςi is pushed back
+into ci −th row in forming π2,n (TI (i)) which is hence TI1 .
+
+
+2.17    Retain the conventions of 2.15.
+
+Proposition. Take I ⊂ Π. Assume TI (i) is defined and hence i′ is defined. If ci′ = ci
+then TI (i) is a descendant of TI of codimension 1 and all the descendants of codimension
+1 of TI are so obtained.
+
+Proof.
+     By 2.15, T = TI (i) is a Young tableau and VT ⊂ V I .
+     By 2.4 (2) we have
+
+                               dim VT = dim VI − |ci′ − ci | + 1.                             (∗)
+
+Take ci′ = ci , then VT is a descendant just by dimension considerations.
+    Conversely assume that T > TI with VT of codimension one in mI . It remains to
+show that T = TI (i), for some i.
+
+                                                14
+     By Remark 2.13 we have
+
+                              rT (s) ≥ rTI (s),      for   all s.
+
+On the other hand by 2.4(2) and 2.5, sh T is obtained from sh TI by lowering exactly
+one box by row. Combined with the previous result this means that there is exactly one
+entry, say m of TI which is displaced on passing to T and moreover it appears exactly
+one row below. Suppose αm ∈ τ (TI ). Since τ (T ) ⊃ τ (TI ) by 2.11, it follows by Remark
+2.13, that
+
+      rT (m + 1) ≥ rT (m) + 1 = rTI (m) + 2,         whilst rTI (m + 1) = rTI (m) + 1.
+
+This contradicts rT (m + 1) = rTI (m + 1). Thus, in the previous notation m = ςi , the
+latter being the longest element of some chain Ci of TI of length ci . By the above we
+also have T ci = TIci − m and T ci +1 = TIci +1 + m whilst the remaining rows of T, TI
+must coincide. Finally we must have some i′ < i with ci′ = ci , for otherwise m would
+be strictly less then an entry in T above it. We conclude that T = TI (i), as required.
+
+
+2.18 By 2.17 we conclude that the orbital varieties of codimension 1 in VI are obtained
+by moving ςi from row ci to row (ci +1) wherever |TIci | ≥ |TIci +1 |+2. Indeed if ςi belongs
+to Tj (and here j ≤ i because some sliding of boxes from the chain form of TI may be
+necessary) then the condition ci′ = ci implies that |Tj−1 | = |Tj |.
+     More precisely there are exactly t + 1 := ♯{j | 1 ≤ j ≤ i with cj = ci } columns of
+T , namely Tj , Tj−1 , . . . , Tj−t , having length |Tj |. In addition suppose that i is maximal
+for a given value ci that is cj 6= ci for any j > i. Then there are exactly t choices of s
+such that TI (s) is defined and has the same shape as TI (i).
+     Observe that the partition λI = sh TI is defined by chain lengths namely we have
+λI = {ci : i = 1, 2, . . . , l} appropriately ordered. Fix c ∈ λ∗I and set t+1 = ♯{i | ci = c}.
+ ∗
+
+Suppose t ≥ 1 and let OI (c) be defined through the partition λI (c) obtained from λI
+by replacing the appropriate pair (c, c) in λ∗I by (c + 1, c − 1). Then we may summarize
+the above by
+
+Proposition. Fix I ⊂ Π and c ∈ N+ . Set t = ♯{i | ci = c} − 1. Assume t ≥ 1. Then
+mI ∩OI (c) is a union of t orbital varieties of codimension 1 in mI . Moreover these orbital
+varieties correspond to the standard tableaux TI (i) : ci = c, except for the minimal i
+that is i : ci = c and cj 6= c for all j < i.
+
+                                                15
+    Note that orbital varieties of codimension 1 in the nilpotent radical of a parabolic
+appear exactly when there are repetitions in the dual partition associated to this
+parabolic.
+2.19 Let m− be the opposed algebra of m = m+ identified with m∗ through the Killing
+form. By Krull’s theorem the ideal I(V) of definition of an orbital variety closure V in
+the conclusion of 2.18 is principal in S(m− ) and we denote by fI (i), or simply f, the
+corresponding irreducible generator in S(m− ).
+     The form of fI (i) was conjectured by Benlolo and Sanderson in [BS]. We refer to
+this and their conjecture simply as BS. We prove this conjecture in Sect. 3.
+    As explained in 1.4, 1.5 the general form of fI (i) is gr a for some minor a of a generic
+matrix in mI + Id . They took a suitable minor lying in a bottom left-hand corner. In
+this they needed results similar to [M5] to reduce to the case when I, c are chosen so
+that c = c1 = cl and ci 6= c for 1 < i < l. Then their conjecture is equivalent to saying
+that a is just the (n − c) × (n − c) minor lying in the bottom left-hand corner.
+     The BS reduction can be read off from 2.16 and 2.18 which makes precise the
+result of [M5] which one needs and we believe clarifies their analysis. A key point is
+the knowledge of the orbital varieties of codimension 1 in mI given by 2.17 developed
+from the results of [M5]. We remark that the codimension 1 case is relatively easy and
+barely uses the full power of [M5].
+    For all 1 ≤ i, j ≤ n, set Xi,j = Cei,j . Given w ∈ W, we give the affine
+|R+ | − ℓ(w) dimensional space X(w) a matrix presentation through X(w)i,j = Xi,j ,
+wherever i < j and w(i) < w(j).
+    Let xj,i denote the coordinate function on g defined by
+                                         
+                                           −1, if (r, s) = (i, j),
+                          xj,i (er,s ) =
+                                           0,  otherwise.
+
+Then the Poisson bracket {, } defined on S(g∗ ) through the Lie bracket on g satisfies
+
+                              {xi,j , xr,s } = δj,r xi,s − δs,i xr,j                     (∗)
+
+where δi,j is the Kronecker delta. Setting xi,j = ei,j for i > j identifies m− with m∗ .
+    Given w ∈ W, let M(w) be the matrix with entries
+                                 
+                                   xi,j , if Xj,i ⊂ X(w),
+                      M(w)i,j =
+                                   0,     otherwise.
+
+When w = wI , we set M(w) = MI .
+
+                                               16
+     Assume c1 = cl =: c and let MIc (t) denote the (n − c) × (n − c) minor in the bottom
+left-hand corner of MI + tId , that is
+                                                                                            
+                          xc+1,1     · · · · · · xc+1,c        t         0      ···     0   
+                                                                                            
+                          xc+2,1     ······       ...         ...        t      ···     0   
+                                                                                            
+                          ..              ..       ..          ..        ..      ..     ..  
+                          .                .        .           .         .       .      .  
+              MI (t) := 
+               c                                                                             
+                          xn−c,1     ······       ...         ...        ... ...        t 
+                          .                ..       ..         ..          ..    ..     .. 
+                          ..                .        .          .           .     .      . 
+                         
+                          xn,1       ······     xn,c        xn,c+1       . . . . . . xn,n−c 
+
+Note that there are some zeros in the dot places of the determinant in correspondence
+with the definition of matrix MI .
+Example
+Consider I = {α1 , α4 } in sl5 . In that case c1 = c3 = 2 and
+                                                
+                   0         0       0     0   0                                                   
+                 0          0       0     0   0                         x3,1        x3,2    t 
+                                                                       
+           MI =  x3,1      x3,2     0     0   0              2
+                                                          and MI (t) :=  x4,1        x4,2   x4,3 
+                                                                        x5,1
+                  x4,1      x4,2    x4,3   0   0                                       x5,2   x5,3 
+                  x5,1      x5,2    x5,3   0   0
+
+    Developing MIc (t) in powers of t one obtains
+
+                          MIc (t) = mn−c + mn−c−1 t + · · · + mc tn−2c .
+
+    Set
+                    n                                        k
+                                                             X
+                        ci − c if ci > c
+             di =                        ,           dI =          di ,        l I = n − c − dI
+                        0      otherwise                     i=0
+
+By [BS, lemma 2] the lowest non-zero coefficient is mlI that is the coefficient of tdI .
+The BS conjecture states that fI (l) = mlI .
+    In our example dI = 0 and lI = 3 so that
+
+                mlI = x3,1 x4,2 x5,3 + x3,2 x4,3 x5,1 − x3,1 x4,3 x5,2 − x3,2 x4,1 x5,3 .
+
+    It is clear that mlI = gr MIc (1). We do not need to know the explicit power of t
+which divides MIc (t), though this is used in one of our three proofs of irreducibility. The
+BS conjecture can be expressed as the following theorem which we prove in the next
+section.
+
+                                                     17
+Theorem. Take I ⊂ Π and let TI = (C1 , C2 , . . . , Cl ) be its chain form. Set ci = |Ci |,
+for all i.
+ (i) Assume c1 = cl =: c and cj 6= c, ∀j : 1 < j < l. Then I(V TI (l) ) is generated by
+     {xij : Xij ∈ pI ∩ n− } and mlI .
+(ii) Suppose there exist i < j such that ci = cj and cs 6= ci , ∀s :           i < s < j.
+    Set u =    Ci1 ,
+                 v =        Cjci        ′
+                           and I = I ∩ Πu,v . Then I(V TI (j) ) is generated by
+                            −
+    {xij : Xij ∈ pI ∩ n } and mlI ′ defined with respect to VTI ′ viewed as an or-
+    bital variety in πu,v (n).
+
+    Note that the part (i) of the theorem is a special case of part (ii) and part (ii) will
+be deduced from part (i).
+                                        n
+2.20   Let i be a positive integer <    2   and set
+
+                                                   n−i
+                                                   X
+                                            βi =         αj
+                                                   j=i
+
+
+Take c as in 2.19 and set
+                                                   c
+                                                   X
+                                            γc =         βi .
+                                                   i=1
+
+As noted in [BS, VIII] one may check that MIc (t), and hence mlI has a weight
+−γc . Moreover with respect to the Cartan inner product ( , ) one has (γc , α) = 0,
+∀α ∈ Π \ {αc , αn−c }. In particular
+
+                                   (γc , α) = 0,          ∀α ∈ I.                       (∗).
+
+
+
+3. Proof of the Benlolo-Sanderson conjecture.
+3.1 Let us recall some general facts about ideals of definition of orbital variety closures.
+    Retain the notation of 2.11 and 2.18. Let P be some standard parabolic subgroup
+of G, p = Lie (P) and m its nilradical. Let V be a closed subvariety of m and I (resp. J)
+its ideal of definition in S(m− ) (resp. S(g)). One has J = I + S(g)p and J ∩ S(m− ) = I
+from which one easily checks the
+
+Lemma. The following are equivalent
+ (i) {I, I} ⊂ I and {p, I} ⊂ J.
+(ii) {I, I} ⊂ I and V is P invariant.
+
+                                                   18
+(iii) {J, J} ⊂ J.
+
+3.2 One calls V involutive if any one of the above holds. If V is involutive then so are
+its irreducible components.
+      Suppose V ⊂ m is irreducible. Then GV contains a unique dense orbit O. If in
+addition V is involutive then dim(V ∩ O) ≥ 12 dim O since O is a symplectic variety. Yet
+dim(n ∩ O) = 12 dim O and so V ∩ O must be an irreducible component of n ∩ O hence
+an orbital variety associated to O with closure V.
+3.3 Let Jo be an ideal of S(g) with radical J. Suppose {Jo , Jo } ⊂ Jo . It is generally
+false that this implies {J, J} ⊂ J, so one cannot conclude that the zero variety of Jo is
+involutive. This is a delicate point in general. In the present situation, this difficulty
+can be avoided. Call f ∈ S(m− ) multilinear if its degree in any one of the variables xi,j
+is at most 1. This property passes to the irreducible factors f1 , f2 , . . . , ft and we let
+V(f1 ), . . . , V(ft ) denote their sets of zeros in m. Consider the condition
+
+                                 {p, f } ⊂ S(m− )f + S(g)p.                                (∗)
+
+Proposition. Suppose f ∈ S(m− ) is multilinear. Then
+ (i) S(m− )f is semiprime.
+(ii) S(m− )f + S(g)p is semiprime.
+(iii) If (∗) holds then the V(fi ) are orbital varieties of codimension 1 in m.
+
+Proof.
+     (i) is immediate. (ii) is easily deduced from (i). Finally (iii) follows from (ii) and
+3.1, 3.2.
+
+
+3.4   Our proof of the BS conjecture involves three steps. The first is to show that
+f = mlI satisfies 3.3 (∗). This is rather obvious especially from the quantum viewpoint
+of [J2, Lecture 7]. Nevertheless a delicate point is that MIc (t) itself does not satisfy (∗).
+We may view its zero set as a deformation of V(f ); but which is not itself orbital nor
+P invariant. (Our original motivation for such deformation came from trying to define
+an Enright functor on orbital varieties itself inspired by the algorithm for Ann U(n− ) v
+in [J1, 8.4] based on the Enright functor.) This result is given in 3.11.
+     The second step is to show that f is irreducible. This is a delicate point. However
+we can give three different proofs. The first, given in 3.15, is a fairly explicit but includes
+some computations involving the precise knowledge of MIc . The second, outlined in 4.3,
+uses representation theory. We construct a simple highest weight module L with integral
+
+                                              19
+highest weight which is a strong quantization of V(f ). This is of interest in its own right.
+Then we use the linear independence of the characteristic polynomials of orbital varieties
+and the irreducibility of the associated variety of L which holds [M4] in type A. The
+third method, given in 4.7, is the least computational; but the most sophisticated. Here
+we construct a strong quantization; but not necessary having integral highest weight.
+Then we use the difficult fact that V (Ann L) is the closure of a nilpotent orbit. In type
+A this has the relatively easy proof using mainly that orbit closures are normal [BK].
+Finally we apply 2.18. In all these methods it is crucial to use that ci 6= c, ∀1 < i < l.
+Otherwise V(f ) has exactly t := ♯{i | ci = c} − 1 components. A computational proof
+in some special cases when mlI = MIc (0) was also given in [BS]. Even that is not trivial
+though this case can be viewed as an easy consequence of 2.4 (1) combined with 2.18.
+      Step three is to show that MIc vanishes on X(w) for some w : Q(w) = TI (l). Then
+PI invariance implies V(f ) ⊃ B(n ∩w n). This is shown in 3.8. Since both have codi-
+mension 1 in mI , irreducibility finishes the proof. Notice this does not use involutivity;
+but by 3.1 the latter is equivalent to PI invariance. One may also avoid this last step
+by combining 3.3. and 2.18; but this is less satisfying.
+3.5    Given w ∈ Sn with word form [a1 , a2 , . . . , an ], let w − s ∈ Sn−1 be defined by
+deleting s and standardizing the word form. For any matrix M let Mi,j be the matrix
+obtained from M by deleting the i−th row and j−th column. Recall the definition of
+X(w) given in 2.19.
+
+Lemma. For all w ∈ W, s ∈ {1, 2, . . . , n} one has X(w − s) = X(w)s,s.
+
+Proof.
+      Take 1 ≤ i < j ≤ n. Then w(αi,j ) ∈ R+ if and only if w(i) < w(j) with a similar
+assertion for y = w − s. Yet recalling that we are standardizing w − s we have up to
+standardization
+                                   
+                                     ar ,   if r < w−1 (s),
+                           y(r) =
+                                     ar+1 , if r ≥ w−1 (s),
+
+From this the assertion readily follows.
+
+
+3.6    Suppose T = Q(w). It is generally false that Q(w − s) = T − s, though it is true
+for the canonical elements wr (T ) and wc (T ) defined in 2.8. Here we shall only need to
+describe Q(wr (T ) − s), when s ∈ T k , that is to say when s lies in the last row of T.
+Recall that wr (T ) = [T k , T k−1 , . . . , T 1 ].
+
+                                                      20
+Lemma. One has wr (T ) − Tjk = wr (T − Tjk ) for every entry Tjk of the last row T k of
+T.
+
+Proof.
+   Indeed                                                              
+                                                           T 1,k−1
+                                 (T −   Tjk )   =
+                                                         (T k − Tjk )
+which gives the required assertion.
+
+
+3.7       Fix I    ⊂ Π and s ∈               {1, 2, . . . , n}. Define I ′      ⊂   Π \ {αs−1 } by
+I ′ = {αi | i < s − 1, αi ∈ I} ∪ {αi−1 | i ≥ s, αi ∈ I}. Write TI = (C1I , C2I , . . . , ClI ) as
+in 2.12.
+
+Lemma.
+ (i) wI − s = wI ′ .
+(ii) Q(wI − s) = TI ′ .
+                                                                            ′   ′       ′
+(iii) Suppose s ∈ CjI . Then up to standardization TI ′ = (C1I , C2I , . . . , ClI ) where
+                                                
+                                        ′           CiI ,    if i 6= j,
+                                    CiI     =
+                                                    CjI − s, if i = j.
+
+(iv) If s lies in the last row of TI then TI ′ = (TI − s) after standardization.
+
+Proof.
+      Recall from 2.15 the notation ci := |Ci | and ςi := Cici . One has
+
+                                                         l−1
+                                                         [
+                                            I =Π\              ας i
+                                                         i=1
+
+Then (i) is clear if s 6= ςi for any i. Otherwise αs 6∈ I but also αs−1 6∈ I ′ . Hence (i). (ii)
+follows from (i) by 2.12. (iii) is obtained from 2.12 just by definition of chains. Finally
+(iii) implies (iv) since in that case TI ′ is obtained by eliminating s and sliding the rest
+to the left.
+
+
+3.8 Retain the notation of 2.19 and assume c = c1 = cl . Then TI (l) is defined. Set
+M = MIc (t).
+
+Proposition. Set w = wr (TI (l)). Then MIc (t) vanishes on n∩w n, that is M (X(w)) = 0.
+
+Proof.
+
+                                                     21
+    The proof is by induction on dI defined in 2.19. If dI = 0, then ci ≤ c, ∀1 ≤ i ≤ l
+and so n occurs in the last row of TI . Moreover TI (l) has c + 1 rows with n the unique
+entry in row c + 1. Consequently the word form of w starts with n. By 2.3 this forces
+Xi,n 6⊂ n ∩w n, ∀i < n. Thus the entries xn,i : i = 1, 2, . . . , n − c, of the last row of M
+vanish on X(w) and consequently so does M.
+    Let us assume the assertion holds for dI = d and take dI = d + 1. In particular
+there is some ci > c. Let k be the number of rows of T := TI . Since ci > c this is
+also the number of rows of T ′ := TI (l) and so the word form of w starts with s = T1k ,
+where s 6∈< C1 > . By 2.3 we conclude that Xi,s 6⊂ n ∩w n, for i < s Thus the entries
+xs,i : i < s in MIc (t) vanish on X(w). This leaves t as the only non-zero entry of row
+s. Consequently
+                                M (X(w)) = tM (X(w)s,s)                                  (∗)
+it being understood that n is reduced by 1 in defining the right hand side.
+     By 3.5 one has X(w)s,s = X(w−s) whilst by 3.6 one has X(w−s) = X(wr (T ′ −s)).
+Recall the definition of I ′ from 3.7. By 3.7 (iv), T − s = TI ′ . Then by 2.17 T ′ − s is
+                                                               ′             ′
+a descendant of TI ′ . Moreover dI ′ = dI − 1 = d and C1I = C1I , ClI = ClI up to
+                                   ′        ′
+standardization. In particular |C1I | = |ClI | = c. Set w′ = wr (T ′ − s), M ′ = MIc ′ (t).
+By the above and the induction hypothesis M ′ (X(w′ )) = 0. Then by (∗) and the above
+M (X(w)) = 0.
+
+
+3.9 Retain the notation and hypotheses of 3.8. For 1 ≤ i, j ≤ n, let M i,j denote ij−th
+cofactor of M. Set d = dI and recall that td divides M. The following is clear by row
+expansion of the determinant.
+Lemma. Choose i, j such that Mi,j = xc+i,j ∈ m−
+                                              I
+                                                . Then M i,j is divisible by td .
+3.10 Take f ∈ S(m− ). In computing {xi,j , f } via 2.19 (∗) we obtain two types of
+terms. The first (resp. second) is obtained from the first (resp. second factor on the
+right-hand side. We call them the terms obtained from j (resp. i).
+Lemma. Suppose i ∈ {1, 2, . . . , n − 1} \ {c, n − c}. Then
+
+                            {xi,i+1 , M } ⊂ S(m−
+                                               I )M + S(g)pI .
+
+
+Proof.
+    Let X be matrix with entries Xi,j = xi,j and X the (n − c) × (n − c) minor in the
+bottom left-hand corner of X + tId . Then M − X ∈ S(g)pI . Since pI is a subalgebra it
+is enough to prove the corresponding assertion for X.
+
+                                             22
+    Consider {xi,i+1 , X}.
+ (i) Suppose i > c. Then the sum of terms coming from (i+1) forms a determinant X i+1
+    with the same rows as X except that the entries xi+1,s +δi+1,s t on the (i+1−c)−th
+    row of X are replaced by xi,s . Hence this term equals −tX i+1−c,i .
+(ii) Suppose i < n − c. Then the sum of terms coming from i forms a determinant Xi
+    with the same columns as X except that the entries xs,i + δs,i t on the i−th column
+    of X are replaced by −xs,i+1 . Hence this term equals tX i+1−c,i .
+    If c < i < n − c then terms cancel. If i < c or i > n − c, both terms are zero. This
+proves the lemma.
+
+
+3.11   Let f = mlI .
+
+Lemma. One has {pI , f } ⊂ S(m−
+                              I
+                                )f + S(g)pI .
+
+Proof.
+    By 2.20 (*) f has weight zero with respect to the Cartan sublagebra [lI , lI ] ∩ h
+of the semisimple Lie algebra [lI , lI ]. Since S(g) and S(g)lI are locally finite lI
+modules it follows from the theory of finite dimensional lI modules that it suf-
+fices to show {xi,i+1 , f } ⊂ S(m−   I )f + S(g)pI , for all 1    ≤ i ≤ n − 1 and
+                   −
+{xi+1,i , f } ⊂ S(mI )f + S(g)pI , for all αi ∈ τ (pI ). By 3.10 among all {xi,i+1 , f } it
+remains to consider the cases i = c, n − c. Both are similar and we consider only the
+first. Consider {xc,c+1 , M }. The sum of terms coming from c + 1 all lie in S(g)p. The
+sum of terms coming from c equal to tM 1,c mod S(g)p. Yet M1,c = xc+1,c ∈ m−    I
+                                                                                  so by
+3.9 this expression is divisible by td+1 mod S(g)pI Thus {xc,c+1 , f } = 0 mod S(g)pI .
+    As for {xi+1,i , f } we show that {xi+1,i , M } = 0 exactly in the same manner as in
+3.10. Let us sketch the proof. The cases i < c or i + 1 > n − c are the same so let us
+show this for i + 1 > n − c. In this case the sum of terms coming from i + 1 is zero
+and the sum of terms coming from i forms a determinant M i with the same rows as M
+except that the (i − c)-th row is replaced by the (i − c + 1)-th row so that M i = 0. Now
+if c < i < n − c − 1 then for all s 6= i, i + 1 one has Mi−c,s = 0 iff Mi+1−c,s = 0. As well
+for all s 6= i − c, i + 1 − c one has Ms,i = 0 iff Ms,i+1 = 0 Using this we get exactly as in
+3.10 that the sum of terms coming from i results in −tM i−c,i+1 and the sum of terms
+coming from (i + 1) results in tM i−c,i+1 so that the terms cancel.
+
+
+3.12     We may summarize the consequence of 3.3 (ii), 3.8, 3.11 as follows. Adopt the
+notation and hypotheses of 2.19 (i). In particular set T ′ = TI (l).
+
+                                             23
+Proposition. The zero variety V(mlI ) of mlI in m−
+                                                 I is a union of orbital variety
+closures of codimension 1 one of which is VT ′ .
+
+Remark. We have not yet used that cj 6= c for 1 < j < l. This is needed for irreducibil-
+ity of V(mlI ). This would follow from 2.18 and the irreducibility of GV(mlI ); but we
+only have a direct proof of the latter using representation theory (cf. 4.7).
+3.13 Let us show that (ii) of Theorem 2.19 results from (i). This obtains from the
+following general remark. Take I ⊂ Π and TI = (C1 , . . . , Cl ) be its chain form. Fix
+i, j : 1 ≤ i ≤ j ≤ l and set TI ′ = (Ci , . . . , Cj ). Let T ′ ∈ T|TI ′ | satisfy T ′ > TI ′ and set
+T = (C1 , . . . , Ci−1 , T ′ , Cj+1 , . . . , Cl ). Then T > TI and π(TI ) = TI ′ , π(T ) = T ′ , where
+π = πςi−1 +1,ςj . Again by 2.14 (∗) π(VT ) = VT ′ and by 2.4 (2) the codimension of VT in
+mI equals the codimension of VT ′ in mI ′ = π(mI ). The implication (i) =⇒ (ii) in 2.19
+follows from the
+
+Lemma. With the above hypotheses
+
+                                           I(V T ) = S(m−
+                                                        I
+                                                          )I(V T ′ ).
+
+Proof.
+     From the commuting diagram
+
+                                                          π∗
+                                           S(π(m−I
+                                                   )) ֒→       S(m−I
+                                                                     )
+                                               ↓                 ↓
+                                                          π∗
+                                            R[V T ′ ]     ֒→   R[V T ]
+
+we obtain the inclusion ⊃ . On the other hand
+
+                                      − ∼
+                           S(m−                  −
+                              I )/IS(mI ) = S(π(mI ))/I ⊗ S(ker π),
+
+
+
+so IS(m−
+       I
+         ) is prime. Equality of codimensions finishes the proof.
+
+
+3.14 Let V be a vector space of dimension n < ∞. Let {vi }ni=1 be a basis of V and set
+v0 = vn+1 = 0. Define e, f ∈ End V, by evi = vi−1 , f vi = vi+1 , ∀i. Let r, s be integers
+> 0 and set Anr,s (t) = Det (tes + f r ).
+
+Lemma. For all r, s, n > 0 one has
+                                    
+                    Anr,s (t)   =       ((−1)r+s tr )h    if h(r + s) = n,
+                                        0                 if r + s does not divide n.
+
+                                                         24
+Proof.
+   If r + s > n, then there are only zeros in the n − s + 1-th row, so we can suppose
+r + s ≤ n. Then the first r rows have exactly one entry, namely t. Similarly the first s
+columns have exactly one entry, namely 1. Developing these rows and columns gives
+
+                                 Anr,s (t) = (−1)r+s tr An−r−s
+                                                         r,s   (t),
+
+and hence the required result.
+
+3.15    The irreducibility of mlI is established by induction on n. In view of 3.13 it is
+therefore enough to consider only the situation described in 2.19 (i). Precisely we show
+the
+
+Proposition. Take I ∈ Π and TI = (C1 , C2 , . . . , Cl ) the chain form of TI . Set ci = |Ci |.
+Assume c1 = cl =: c and cj 6= c, ∀j : 1 < j < l. Then mlI is irreducible.
+
+Proof.
+     Otherwise by 2.17, 3.12 and 3.13, there is a subset I ′ of Π obtained from I ex-
+actly as in 2.19 (ii) such that the corresponding f ′ := mlI ′ is an irreducible factor of
+f = mlI . We obtain a contradiction by showing there exists a point x ∈ m such that
+f (x) = (−1)c , f ′ (x) = 0.
+     Set a = |TIc+1,k | and
+
+              < TI1,c >= {p1 , p2 , . . . , pn−a },    < TIc+1,k >= {q1 , q2 , . . . , qa },
+
+written in increasing order. Define x ∈ m by
+                       
+                         1, if r = pi , for i : c < i ≤ n − a and s = pi−c
+                xr,s =
+                         0, otherwise.
+Set M := MIc (t). Let b be an integer 0 < b ≤ n − c and let ∆b denote the set of subsets
+of {c + 1, . . . , n} of cardinality b. Given σ = {r1 , r2 , . . . , rb } ∈ ∆b , let M σ be obtained
+from M by deleting the (ri − c)−th rows and ri −th columns where i = 1, 2, . . . , b. Let
+Moσ be the evaluation of M σ at t = 0. Developing M gives the term (−1)c tb M σ and
+moreover
+                                              X
+                             mn−c−b = (−1)c       Moσ .                               (∗)
+                                                         σ∈∆b
+
+     Recall that lI = n − c − a. For σ ∈ ∆a one has
+                                   
+                            σ        1, if σ = {q1 , q2 , . . . , qa },
+                         Mo (x) =
+                                     0, otherwise.
+
+                                                  25
+     Consequently
+ (i) f (x) = (−1)c .
+                                                                                         ′
+       In the notation of theorem 2.19 (ii) set c′ := ci = cj and M ′ = MIc ′ (t). Then
+(ii) f ′ (x) = 0, if c′ > c.
+     Indeed in this case the last row of M ′ is indexed by the largest integer in Cj . By
+the hypothesis this is an entry of TIc+1,k . Hence even M ′ (x) = 0.
+
+     Define u, v as in theorem 2.19 (ii) and set n′ = v − u + 1. Set
+σ ′ =< TIc+1,k > ∩{u, u + 1, . . . , v} and d′ = |σ ′ |. In the notation of 3.14 we have
+                       ′   ′   ′
+(iii) M ′ (x) = (−1)c td Anc−c′ ,c′ (t), if c′ < c.
+      This is obtained through a development of M ′ similar to that for M and noting that
+                                                         ′   ′     ′                 ′       ′   ′
+Mo′σ (x) = 0 unless σ ⊃ σ ′ , so that M ′ (x) = (−1)c td M ′σ (x) = (−1)c td Anc−c′ ,c′ (t).
+
+     Let us show finally that
+(iv) f ′ (x) = 0, if c′ < c.
+       By 3.14 it suffices to show that h(c − c′ ) + d′ > dI ′ when n′ = hc.
+       Let Cm1 , Cm2 , . . . , Cmr be the chains of length > c′ between Ci and Cj . One has
+         Pr
+dI ′   =    (cms − c′ ) ≤ d′ + r(c − c′ ) and so the assertion holds if r < h. On the other
+         s=1
+hand hc = n′ ≥ (r + 2)c′ + dI ′ . Thus
+
+                       h(c − c′ ) + d′ ≥ (r + 2)c′ + dI ′ > dI ′       if   r ≥ h.
+
+This proves (iv).
+    Finally the hypothesis itself excludes c = c′ and so the proposition follows from (i),
+(ii) and (iv).
+
+Remark. The proof of theorem 2.19 is now complete.
+3.16 Adopt the hypotheses of 2.19 (i). Let r be the number of chains Ci of length > c
+and s + 2c the sum of the lengths of the remaining chains.
+Proposition. The generator fI (l) of I(V TI (l) ) in S(m− ) is the highest common divisor
+of the (non-vanishing) (s + c) × (s + c) minors of Mr+1
+                                                    I .
+
+Proof.
+    Under the hypotheses of 2.19 (i), it follows from 2.18 (in notation of 2.18) that
+mI ∩ OI (c) = VTI (l) . By 2.4 (i) the nilpotent orbit to which an element x belongs is
+determined by {rk xi : i = 1, 2, . . . , n}.
+
+                                                 26
+                                       P
+    Set λ = sh TI . Since n −              j>r+1   λ∗j = s + c, it follows that rk xr+1 = s + c, for all
+x ∈ m ∩ OI .
+    Now sh TI (l) is obtained from λ by lowering a box from c−th to the (c + 1)−th
+row. Under the hypotheses of 2.19 (i) this takes it from the (r + 2)−th to the (r + 1)−th
+column.
+    From the three paragraphs above we conclude that
+
+                           mI ∩ OI (c) = {x ∈ m | rk xr+1 = s + c − 1}
+
+Thus this hypersurface in mI is the set of common zeros of the (s + c) × (s + c) minors
+of Mr+1
+    I . Hence fI (l) is exactly their largest common divisor.
+
+
+3.17 It is of course not too easy to explicitly determine fI (l) through 3.16. Moreover
+these power rank conditions (i.e. 2.4 (i)) are in general insufficient to obtain ideals of
+definition of orbital variety closures. This was already observed by van Leeuwen [vanL,
+§8] and also resulted independently from [M5, §4.3] because otherwise the chain order
+defined in [M5, 4.3.1] would coincide with the geometric order which fails in sl7 as it is
+shown in [M5, 4.3.6].
+   Combining 3.16 and 2.19 (i) (which implies that fI (l) = mlI ) gives a remarkable
+combinatorial fact, namely 3.16, about generic matrices. Here we note that deg mlI =
+(r + 1)c + s whilst the minors in the conclusion of 3.16 have degree (r + 1)(s + c). Thus
+these degrees coincide if and only if rs = 0. Of course when degrees coincide fI (l) is
+proportional to any non-zero (s + c) × (s + c) minor of Mr+1 I . Using this Benlolo and
+Sanderson were able to prove their conjecture, that is Theorem 2.19 (i), under hypothesis
+r = 0 or the hypothesis c = 1 (which forces s = 0). These cases are relatively easy up to
+proving irreducibility for which they developed a special trick. A purely combinatorial
+proof of the case s = 0 already appears to be rather difficult.
+
+4. Strong quantization of hypersurface orbital varieties
+4.1   We begin with a combinatorial lemma. Let ℜ be the real field.
+
+Lemma. Let c, c2 , . . . , cl be positive integers with c = cl . Suppose that the system of
+inequalities for {bi }li=2 defined by
+         Ps       s−1
+                  P
+  1) 1 +     bi ≤       ci + max(c, cs ) : s = 2, . . . , l − 1.
+          i=2       i=2
+            l
+            P             l−1
+                          P
+ 2) 1 +           bi ≤           ci + max(c, cs ) : s = 2, 3, . . . , l − 1.
+          i=s+1          i=s+1
+
+
+                                                       27
+            l
+            P            l
+                         P
+ 3) 1 +           bi =         ci
+            i=2          i=2
+has a solution bi ∈ ℜ, ∀i. Then cs 6= c, ∀s : 2 ≤ s < l. Moreover, if the latter holds one
+can find a solution with bi ∈ N, ∀i.
+Proof.
+   Assume that the system has a solution bi ∈ ℜ, ∀i. Adding 1) and 2) gives
+                                         l
+                                         X            l
+                                                      X
+                                    2+         bi ≤         ci + 2 max(c, cs ) − c − cs
+                                         i=2          i=2
+
+Then in view of 3) we obtain 1 ≤ 2 max(c, cs ) − c − cs , that is c 6= cs for any s : s < k.
+     Conversely equality in 1) and 3) gives
+                      
+                        max(c, c2 ) − 1,                    if i = 2
+                 bi =                                                                                          (∗)
+                        ci−1 + max(c, ci ) − max(c, ci−1 ), if 2 < i ≤ l
+These imply that
+        l
+        X           l
+                    X                                  l−1
+                                                       X
+             bi =         ci − max(c, cs ) =                  ci + max(c, cs ) + ((c + cs ) − 2 max(c, cs ))
+     i=s+1          i=s                               i=s+1
+
+Then 2) holds if and only if c + cs ≤ 2 max(c, cs ) − 1 for all s = 2, . . . , l − 1. Obviously
+this is equivalent to cs 6= c for any s = 2, . . . , l − 1. Note that by (∗) these inequalities
+provide a solution with bi ∈ N for all i.
+
+
+4.2 Recall the notation of 2.7. Given I ⊂ Π let TI = (C1 , . . . , Cl ) be the corresponding
+tableau. Assume that c1 = cl = c. One has Π′ := Π \ I = {αςi : i = 1, 2, . . . , l − 1}.
+For i = 1, 2, . . . , c we set
+                                                              n−1−i
+                                                               X
+                                                      βi =            αj .
+                                                                j=i
+
+Set β = β1 . Recall that the BS element mlI defined in 2.18 has weight wt (mlI ) =
+  Pc
+−    βi .
+  i=1
+     Call ν ∈ h∗ , I−regular if (α, ν + ρ) 6= 0, ∀α ∈ RI . Set w.ν := w(ν + ρ) − ρ. Set
+                           Sν = {(m, γ) ∈ N+ × R+ \ RI+ | (γ ∨ , ν + ρ) = m}
+                           Sνo = {(m, γ) ∈ Sν | sγ .ν + ρ is I regular}
+Take ci 6= c i = 2, 3, . . . , l − 1 in 4.1 and recall our normalization, making (α, α) =
+2, ∀α ∈ R. Define µ ∈ P (Π), by (µ + ρ, α) = 1, for α ∈ I and (µ + ρ, αsi ) = −(bi+1 − 1)
+for i = 1, 2, . . . , l − 1 and where {bi }li=2 are given by the conclusion of 4.1.
+
+                                                               28
+Proposition. Sµo = {(c, β)}.
+
+Proof.
+   One has
+
+X                  l
+                   X            l
+                                X                    l
+                                                     X                  X
+      (µ + ρ, α) =   (ci − 1) =   (ci − 1) + c − 1 =   (bi − 1) + c = −   (µ + ρ, α) + c
+α∈I                      i=1                i=2                       i=2                        α∈Π′
+
+by 4.1 (3) and so
+                                                         X                    X
+                 (µ + ρ, β ∨ ) = (µ + ρ, β) =                  (µ + ρ, α) +          (µ + ρ, α) = c.
+                                                         α∈I                  α∈Π′
+
+Thus (c, β) ∈ Sµ .
+      Observe that if (c′ , γ) ∈ Sµ : γ ∈ R+ \ RI+ , c′ ∈ N, then (c′ , γ) ∈ Sµo means that
+
+                               sγ (µ + ρ) = µ + ρ − (γ ∨ , µ + ρ)γ = µ + ρ − c′ γ
+
+does not vanish on any δ ∈ RI+ . Note that for δ ∈ RI+ and γ ∈ R+ \ RI+ one has
+                                      
+                                        0 if γ − δ 6∈ R+
+                             (δ, γ) =
+                                        1 if γ − δ ∈ R+
+
+Thus vanishing on some δ ∈ RI+ means that γ − δ is a root and (δ, µ + ρ) = c′ or simply
+that γ − δ is a root such that (µ + ρ, γ − δ) = (µ + ρ, γ) − (µ + ρ, δ) = 0.
+    Note that β − δ is a root for δ ∈ RI+ iff δ = α1 + · · · + αi or δ = αn−1 + · · · + αn−i
+where i < c. Thus (µ + ρ, β − δ) > 0 and so (c, β) ∈ Sµo .
+     Consider γ = αi + αi+1 + · · · + αj for i < c and j > n − c. One has (µ + ρ, γ) =
+c − (i − 1) − (n − j − 1) =: c′ . Then unless γ = β one can find δ ∈ RI+ starting at αi or
+ending in αj such that (µ + ρ, γ − δ) = 0. We conclude that (c′ , γ) 6∈ Sµo .
+    Set δi− = α1 + α2 + · · · + αςi−1 for 2 ≤ i ≤ l and δj+ = αςj + αςj +1 + · · · + αn−1 for
+1 ≤ j ≤ l − 1. One has
+                         s−1
+                         X                  s
+                                            X                        s−1
+                                                                     X             s
+                                                                                   X
+  (µ +    ρ, δs− )   =         (ci − 1) +         −(bi − 1) = c +           ci −         bi ≥ c + 1 − max(c, cs )
+                         i=1                i=2                       i=2          i=2
+                          l
+                          X                       l
+                                                  X
+  (µ + ρ, δs+ ) =                (ci − 1) +             −(bi − 1)
+                         i=s+1                  i=s+1
+                          l−1
+                          X             l
+                                        X
+                     =           ci −           bi + c ≥ c − max(c, cs ) + 1
+                         i=s+1          i=s+1
+
+
+                                                            29
+Now consider γs,l = β −δs− with 2 ≤ s ≤ l −1 Then (µ+ρ, γs,l) ≤ max(c, cs ) −1. Thus it
+follows that (c′ , γs,l ) 6∈ Sµo . Indeed if cs > c we can subtract δ = αςs−1 +1 +· · ·+αi for some
+i : ςs−1 + 1 ≤ i < ςs from γs,l so that (µ + ρ, γs,l − δ) = 0 and if cs < c we can subtract
+δ = αn−1 + · · · αi for some i : ςl−1 < i ≤ n − 1 from γs,l so that (µ + ρ, γs,l − δ) = 0. A
+similar assertion holds if replace γs,l by γ = γs,l − (αςs−1 +1 + · · · + αi ) − (αn−1 + · · · αj )
+for any i : ςs−1 + 1 ≤ i < ςs and j : ςl−1 < j ≤ n − 1, that is to say when some of
+these roots have already been subtracted.
+     A similar conclusion holds for γ1,s = β − δs+ with 2 ≤ s ≤ l − 1 and for γ =
+γ1,s − (α1 + · · · + αi ) − (αςs −1 + · · · αj ) for any i : 1 ≤ i < c and j : ςs−1 < j ≤ ςs − 1
+(by the obvious symmetry).
+     Finally consider γi,j = β − δi− − δj+ , with 2 ≤ i < j ≤ l − 1. We have
+
+                       (µ + ρ, γi,j ) ≤ max(c, ci ) + max(c, cj ) − c − 2.
+
+Then a similar conclusion holds in this case also with slightly stronger reason.
+
+
+Remark. One may also check that the inequalities 1) and 2) of 4.1 are necessary for
+the conclusion of the proposition to hold with µ+ρ satisfying (µ+ρ, α) = 1, ∀α ∈ I and
+(µ + ρ, β) = c. Consequently the proposition fails when c = ci , for some i : 1 < i < l.
+                                                                                   Pc
+4.3 Take µ as in 4.2 and recall the definition of βi from 2.20. Recall that γc =      βi .
+                                                                                            i=1
+Then (γc , α) = 0, ∀α ∈ I. Moreover µ + ρ − γc is the unique I dominant element of
+WI (µ + ρ − cβ) = WI (sβ (µ + ρ)).
+    Let {MIi (µ)}∞                                                        o
+                 i=0 be the Jantzen filtration of MI (µ). Given (m, γ) ∈ Sµ , let ω(sγ .µ)
+be the unique Π′ dominant element in WI .(sγ .µ) and sign (sγ .λ) := (−1)l(w) where
+w ∈ WI is the unique element satisfying w.sγ .µ = ω(sγ .µ). The Jantzen sum formula
+combined with 4.2 gives
+
+          ∞
+          X                      X
+                ch MIi (µ) =              sign (sγ .µ)ch MI (ω(sγ .µ)) = ch MI (µ − γc ),         (∗)
+          i=1                         o
+                               (m,γ)∈Sµ
+
+
+by the above noting that sign (sβ .µ) is necessarily positive because there is only this
+term on the right hand side. One may recall that the right hand side of the Jantzen sum
+formula obtains from the zero of the Shapovalov determinants. Then the appearance of
+just one term on the right hand side means that the Shapovalov determinant is non-zero
+on MI (µ)ν : ν > ω(sβ .µ) and vanishes on MI (µ)ω(sβ .µ) .
+
+                                                   30
+    (Equivalently, but more directly by Jantzen [Ja, Satz 2] the Shapovalov determinant
+on the ν weight subspace of MI(µ) takes form
+                            ∞
+                            Y      Y                           ′
+                                              ((γ, µ + ρ) − m)χν (µ−mγ)
+                            m=1 γ∈R+ \R+
+                                          I
+
+
+where
+                                         X
+                             χ′ν (λ) =          (−1)l(w) dim M (w.λ)ν                     (∗)
+                                         w∈WI
+
+This has a zero if and only if some (m, γ) ∈ Sµ and the sum of the corresponding
+exponents is strictly positive. Now by (∗), χ′ν (λ) 6= 0 for some ν if and only if λ + ρ
+is I regular, so we further require (µ, γ) ∈ Sµo . Moreover in this case χ′ν (λ) equals
+sign (λ) dim MI (ω(λ))ν . Since in addition Sµo = {(m, β)} in the present case we must
+have χ′ν (sβ .µ) ≥ 0 for all ν and of course no cancellations occur. Moreover from (∗) we
+obtain                                     
+                                ′            0, if ν > ω(sβ .µ),
+                              χν (sβ .µ) =
+                                             1, if ν = ω(sβ .µ).
+which gives the required assertion.)
+    This forces there to be a highest weight vector in MI (µ) of weight ω(sβ .µ) = µ−γc .
+Since (α, µ) = 0 for all α ∈ I it follows that MI (µ) is a rank 1 free U (m−
+                                                                           I ) module. Again
+
+(α, µ − γc ) = 0, for all α ∈ I. Consequently this highest weight vector must generate
+a submodule of MI (µ) isomorphic to MI (µ − γc ) necessarily contained in the maximal
+submodule MI1 (µ) of MI (µ). By (∗) we then conclude that MI1 (µ) = MI (µ − γc ) and
+so V (µ) = MI (µ)/MI (µ − γc ) is simple.
+     By [M4] the associated variety of V (µ) is irreducible and hence an orbital variety
+V.
+                 Q
+     Set pI =          α. Since
+                α∈R+
+                   I
+
+
+
+                ch V (µ) = (ch MI (µ))(1 − e−γc ) = ch S(m−
+                                                          I
+                                                            )eµ (1 − e−γc ),
+
+it follows that the characteristic polynomial of V is just γc pI .
+     Let fI (l) be the BS element constructed in 2.18 and VTI (l) the corresponding hyper-
+surface orbital variety. By 3.12 the zero variety V(fI (l)) of fI (l) in m−
+                                                                          I
+                                                                            is a union of or-
+bital variety closures of codimension 1, one of which is VTI (l) . Yet wt fI (l) = −γc and so
+the characteristic polynomial of V(fI (l)) is also γc pI . By the linear independence of char-
+acteristic polynomials of orbital varieties [J1] we conclude that V = V(fI (l)) = VTI (l) .
+
+                                                  31
+This proves that fI (l) is irreducible. Finally R[V TI (l) ] = S(m−         −
+                                                                     I )/S(mI )fI (l), so
+
+ch R[V TI (l) ] = ch S(m−
+                        I
+                          )(1 − e−γc ). Comparison with ch V (µ) which is above expres-
+sion up to a shift, shows that V (µ) is a strong quantization of VTI (l) . We have proved
+the
+
+Theorem. Every hypersurface orbital variety in sln admits a strong quantization be-
+ing a simple highest weight module with integral highest weight given by the above
+procedure.
+
+4.4    Let us consider the case where we take equality in 1) of 4.1. Using 3) we obtain
+             s
+             X            s−1
+                          X                                      l
+                                                                 X            l
+                                                                              X
+                   bi =         ci + max(c, cs ) − 1,                  bi =         ci − max(c, cs )
+             i=2          i=2                                  i=s+1          i=s
+
+Then in the notation of 4.2 for 2 ≤ s ≤ l − 1 we obtain equalities
+                                    s−1
+                                    X                  s
+                                                       X
+             (µ +   ρ, δs− )    =         (ci − 1) +         −(bi − 1) = c − max(c, cs ) + 1
+                                    i=1                i=2
+                                    l
+                                    X                    l
+                                                         X
+             (µ + ρ, δs+ ) =                (ci − 1) +           −(bi − 1) = max(c, cs ) − cs
+                                    i=s+1                i=s+1
+
+Consequently (µ + ρ, γs,l) = max(c, cs ) − 1 for 2 ≤ s ≤ l − 1 and (µ + ρ, γ1,s) =
+c + cs − max(c, cs ) for 2 ≤ s < l. Finally for any γs,t with 1 < s < t < l one has
+
+  (µ + ρ, γs,t) =(µ + ρ, γ1,t) − (µ + ρ, δs− ) = c + ct − max(c, ct ) − (c − max(c, cs ) + 1)
+               =(ct − 1) − max(c, ct ) + max(c, cs ).                                                   (∗)
+
+              −
+     Now let γi,j denote γi,j with the (ci − 1) roots of the i-th column and (cj − 1) of
+the j-th column removed that is
+
+                                            −
+                                           γi,j = αςi+1 + · · · + αςj−1 .
+
+Then
+
+                  −
+         (µ + ρ, γ1,t ) = c + ct − max(c, ct ) − (c − 1) − (ct − 1) = 2 − max(c, ct ).
+
+        −
+Yet to γ1,t we can always add either the roots from the first column or from t-th column
+                         −
+to obtain some γ := δ + γ1,t : δ ∈ RI+ . Such γ for which (µ + ρ, γ) is maximum satisfies
+
+                    (µ + ρ, γ) = 2 − max(c, ct ) + max(c, ct ) − 1 = 1 > 0.                            (∗∗)
+
+                                                         32
+Similarly for 2 ≤ s < t ≤ l by (∗) one has
+
+                              −
+                     (µ + ρ, γs,t ) = max(c, cs ) − max(c, ct ) − (cs − 1).
+
+     −
+To γs,t we can add either the roots from the s-th column or from t-th column. Again
+in the best case for such γ one has
+
+                (µ + ρ, γ) = max(cs , ct ) + max(c, cs ) − max(c, ct ) − cs ≥ 0.   (∗ ∗ ∗)
+
+Let us define
+                   Šµ = {(m, β) ∈ −N+ × R+ \ RI+ | (β ∨ , µ + ρ) = m}
+
+and
+                       Šµo = {(m, β) ∈ Šµ | sβ (µ + ρ) is I regular }.
+
+Lemma. With the above choice of µ one has Šµo = ∅.
+
+Proof.
+      As before given γ ∈ Šµ we must find δ ∈ RI+ such that 0 = (δ, sγ (µ + ρ)) =
+(δ, µ + ρ + (µ + ρ, γ)γ). It is enough to show that γ + δ is a root vanishing on µ + ρ.
+For this notice for γ ∈ Šµ we must first have r := (γ, µ + ρ) ∈ −N+ . If for example
+      −
+γ = γs,t  : 1 ≤ s < t ≤ l, then (∗∗), (∗ ∗ ∗) show that there exists δ ∈ RI+ such that
+γ + δ is a root and (γ + δ, µ + ρ) takes all possible integer values from r to an integer
+≥ 0. The general case is similar (and easier).
+
+
+4.5 Let OI be the subcategory of O in which the Levi factor defined by I acts finitely.
+By [JLT, 9.6]
+
+Proposition. Given Šµo = ∅, then MI (µ) is projective in OI .
+
+4.6   Theorem. Define µ as in 4.4. Then Ann V (µ) ∈ Max U (g).
+
+Proof.
+   Since g is of type A the natural map U (g) → F (MI (µ), MI (µ)) is surjective. Set
+F µ = F (MI (µ), MI (µ)) = U (g)/Ann MI (µ). Let P be a maximal ideal of F µ . By [JLT,
+10.9], 4.4 and 4.5 we have
+
+                               P = Ann F µ (MI (µ)/P MI (µ)).
+
+Hence P MI (µ) ( MI (µ). Yet MI (µ − γc ) is the maximal submodule of MI (µ) as a
+U (g) module. This forces P ⊂ Ann V (µ) and hence equality.
+
+                                              33
+4.7      Take c = c1 , c2 , . . . , cl = c. Proceeding as in 4.2 one may rather easily show that
+there exists µ ∈ h∗ satisfying (µ + ρ, α) = 1, for all α ∈ I and such that Sµo = {(c, β)}.
+Then as in 4.3, one checks that V (µ) is a strong quantization of V(fI (l)). Here we do
+not need ci 6= c, for i : 1 < i < l, however the resulting µ will not be integrable,
+nor will the associated variety of V (µ) be irreducible. However it will be contained in
+the associated variety of Ann V (µ) which by Borho-Kraft [BK] is just the closure of a
+nilpotent orbit specifically OTI (l) := GVTI (l) in this case. Consequently the associated
+variety of V (µ) is contained in m ∩ OTI (l) and we recall that the latter is irreducible
+if and only if ci 6= c, for all i : 1 < i < l. This concludes the third proof of the
+irreducibility of the BS elements.
+
+                                    Appendix: Index of Notation
+      Symbols appearing frequently are given below in order of appearance.
+ 1.1 g
+ 1.2 n− , n+ , h, b, G, B, S(·), U (·), O, V, I(V)
+ 1.3 λ, V (λ), F
+ 1.5 m+ , m− , p, M(t), M (t)
+ 1.7 P
+ 2.1 n, V, W, R, R+ , Π, Xα , n ∩w n, Vw
+ 2.2 g, G, n, n− , B, ei,j , αi,j , αi , sα , si
+ 2.3 Sn , [a1 , . . . , an ], pw (i), S(w)
+ 2.4 P (n), λ, λ∗ , k, l, Dλ
+ 2.6 Tn , [a′ , a′′ ], sh T, σ(T ), b·, < · >, | · |, Q(w), Vw , TV , V1 > V2 , T1 > T2
+                                                                  
+ 2.7 Tji , rT (·), cT (·), T i , Tj , h(Tji ), T i,j , (T, S), TS
+ 2.8 (R + j), wr (T ), wc (T ), (T ↓ b)
+ 2.9 (R ↑ j), (R − a), (C ← j), (T − Tji )
+2.10 τ (w), τ (T ), τ (P), τ (p), τ (V), PT , PV , pT , pV
+2.11 I, PI , MI , LI , pI , mI , lI , ℓ(w), WI , wI , VI , OI
+2.12 TI , CiI , (C1I , C2I , . . . , ClI )
+2.14 BI , nI , W I , πI , π, Vπ(w)
+                              I
+                                   , πi,j
+2.15 ci , ςi , TI (i)
+2.16 In , I1
+2.18 λI , OI (c)
+2.19 fI (i), X(w), xi,j , { , }, M(w), c, MIc (t), dI , lI , mlI
+
+                                                34
+ 2.20 βi , γc
+  3.4 f
+  3.5 w − s, Mi,j
+  3.8 M
+  3.9 M i,j
+  4.2 β, Sν , Sνo , µ
+  4.4 Šµ , Šµo
+
+                                       References
+[BK] W. Borho and H. Kraft, Über Bahnen und deren Deformationen bei linearen Ak-
+       tionen reductiver Gruppen, Comment. Math. Helvetici 54 (1979), 61-104.
+ [BS] E. Benlolo and J. Sanderson, On supersurface orbital varieties of sl(N, C), J. Al-
+       gebra 245 (2001), 225–246.
+  [F] W. Fulton, Young tableaux, LMS 35, Cambridge University Press (1997).
+  [H] W. Hesselink, Singularities in the nilpotent scheme of a classical group, Trans. Am.
+      Math. Soc. 222 (1976), 1-32.
+ [Ja] J.C. Jantzen, Kontravariante Formen auf induzierten Darstellungen halbeinfacher
+       Lie-Algebren, Math. Ann. 226 (1977), 53-65.
+ [J1] A. Joseph, On the variety of a highest weight module, J. Algebra 88 (1984), 238-278.
+ [J2] A. Joseph, Orbital varieties, Goldie rank polynomials and unitary highest weight
+      modules, in B. Orsted and H. Schlichtkrull (eds.) Algebraic and Analytic Methods
+       in Representation Theory, Perspectives in Mathematics, Vol.17, Academic Press,
+       London, 1997.
+ [J3] A. Joseph, Orbital varieties of the minimal orbit, Ann. Ec. Norm. Sup. 31 (1998),
+      17-45.
+[JLT] A. Joseph, G. Letzter and D. Todoric On the Kostant-Parthasarathy-Ranga Rao-
+      Varadarajan Determinants, III. Computation of the KPRV Determinants, J. Alge-
+       bra 241 (2001), 67-88.
+[Kn] D. E. Knuth, The art of computer programming, Vol.3, Addison-Wesley (1969),
+       49-72.
+[M1] A. Melnikov, On orbital variety closures in sln . I. Induced Duflo order, preprint
+[M2] A. Melnikov, On orbital variety closures in sln . II. Descendants of a Richardson
+       orbital variety, preprint.
+[M3] A. Melnikov, Robinson-Schensted procedure and combinatorial properties of geo-
+       metric order sl(n), CRAS Paris 315, série I (1992), 709-714.
+
+                                            35
+ [M4] A. Melnikov, Irreducibility of the associated variety of simple highest weight modules
+      in sl(n), CRAS, Paris 316, série I (1993), 53-57.
+ [M5] A. Melnikov, Geometric Interpretation of Robinson-Schensted procedure and related
+      orders on Young tableaux, thesis, Weizmann Institute 1992.
+   [S] N. Spaltenstein, On the fixed point set of a unipotent element on the variety of
+       Borel subgroups, Topology 16 (1977), 203-204.
+  [S1] N.Spaltenstein, The fixed point set of a unipotent transformation on the flag man-
+       ifold, Proc. Konin. Nederl. Akad. 79 (1976), 452-456.
+ [Sch] M. P. Schützenberger, La correspondance de Robinson, LN in Math. 597 (1976),
+       59-113.
+  [St] R. Steinberg, An occurrence of the Robinson-Schensted correspondence, J. Algebra
+       113 (1988), 523-528.
+[vanL] M. A. A. van Leeuwen, The Robinson-Schensted and Schützenberger algorithms,
+      Part II: Geometric interpretations, CWI report AM-R9209 (1992).
+
+
+
+
+                                             36
+

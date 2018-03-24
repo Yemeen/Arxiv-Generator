@@ -1,0 +1,1473 @@
+                                                      BEREZIN KERNELS AND ANALYSIS ON
+arXiv:math/0411294v1 [math.RT] 12 Nov 2004
+
+
+
+
+                                                             MAKAREVICH SPACES
+
+                                                              JACQUES FARAUT, MICHAEL PEVZNER
+
+
+                                                    Dedicated to Gerrit van Dijk on the occasion of his 65-th birthday
+
+                                                    Abstract. Following ideas of van Dijk and Hille we study the
+                                                    link which exists between maximal degenerate representations and
+                                                    Berezin kernels.
+
+                                                       We consider the conformal group Conf(V ) of a simple real Jor-
+                                                    dan algebra V . The maximal degenerate representations πs (s ∈ C)
+                                                    we shall study are induced by a character of a maximal parabolic
+                                                    subgroup P̄ of Conf(V ). These representations πs can be realized
+                                                    on a space Is of smooth functions on V . There is an invariant
+                                                    bilinear form Bs on the space Is . The problem we consider is to
+                                                    diagonalize this bilinear form Bs , with respect to the action of a
+                                                    symmetric subgroup G of the conformal group Conf(V ). This bilin-
+                                                    ear form can be written as an integral involving the Berezin kernel
+                                                    Bν , an invariant kernel on the Riemannian symmetric space G/K,
+                                                    which is a Makarevich symmetric space in the sense of Bertram.
+                                                    Then we can use results by van Dijk and Pevzner who computed
+                                                    the spherical Fourier transform of Bν . From these, one deduces
+                                                    that the Berezin kernel satisfies a remarkable Bernstein identity :
+                                                                           D(ν)Bν = b(ν)Bν+1 ,
+                                                    where D(ν) is an invariant differential operator on G/K and b(ν) is
+                                                    a polynomial. By using this identity we compute a Hua type inte-
+                                                    gral which gives the normalizing factor for an intertwining operator
+                                                    from I−s to Is . Furthermore we obtain the diagonalization of the
+                                                    invariant bilinear form with respect to the action of the maximal
+                                                    compact group U of the conformal group Conf(V ).
+
+
+
+
+                                               2000 Mathematics Subject Classification. 43A35, 22E46.
+                                               Key words and phrases. Berezin Kernel, Spherical Fourier Transform, Conformal
+                                             Groups, Makarevich Spaces.
+                                               First author partially supported by the European Commission (IHP Network
+                                             HARP).
+2                JACQUES FARAUT, MICHAEL PEVZNER
+
+          1. Berezin kernels on Makarevich Spaces
+  In this section we shall introduce the notion of a Berezin kernel on
+a symmetric space of a particular type by mean of Jordan algebraic
+methods.
+
+1.1. Jordan algebras and their conformal groups. A finite di-
+mensional vector space V on R or C is a Jordan algebra if it is endowed
+with a bilinear map (x, y) → xy from V × V into V satisfying the two
+following axioms:
+      • (J1) xy = yx, ∀x, y ∈ V ,
+      • (J2) x(x2 y) = x2 (xy), x, y ∈ V .
+Let L(x) ∈ End(V ) denote for every x ∈ V the linear map defined by
+L(x)y = xy for every y ∈ V .
+   Let r and n denote respectively the rank and the dimension of the
+Jordan algebra V . For a regular element x, the minimal polynomial fx
+is of degree r,
+              fx (λ) = λr − a1 (x)λr−1 + · · · + (−1)r ar (x).
+The coefficient aj is a homogeneous polynomial of degree j, ∆(x) =
+ar (x) is the Jordan polynomial, and tr (x) = a1 (x) is the Jordan trace
+of x. (See [13] p.28 for more details).
+   Define the so-called quadratic representation of V by:
+                  P (x) = 2L(x)2 − L(x2 ),        x ∈ V.
+                                       r
+One checks that ∆(x)2 = det(P (x)) , where P (x) is seen as an endo-
+                                       n
+
+morphism of V .
+   A real Jordan algebra V is said to be semi-simple if the bilinear form
+Tr L(xy) is non degenerate on V , such an algebra is unital. Furthermore
+it is called Euclidean if the above bilinear form is positive definite.
+   An involutive automorphism α of V is called Euclidean if the bilinear
+form Tr L(α(x)y) is positive definite on V . For a semi-simple Jordan
+algebra such a Euclidean involution always exists.
+   Assume from now on that V is a simple real Jordan algebra. Accord-
+ing to the general construction of Kantor-Köcher-Tits one associates
+to V a simple Lie group which can be understood as a group of con-
+formal transformations of the corresponding Jordan algebra (in a sense
+we shall explain).
+   Let us remind this classical construction. The structure group Str(V )
+of V can be defined as the subgroup of GL(V ) of elements g such that
+        BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES             3
+
+there exists a real number χ(g) for which
+(1.1)               ∆(g.x) = χ(g)∆(x),        x ∈ V.
+The map g → χ(g) is a character of Str(V ) which is a reductive Lie
+group.
+   The Jordan algebra V can be identified with the abelian group N
+of its own translations via the map y −→ ny from V to N, where
+ny (x) = x + y, ∀x ∈ V . The conformal group Conf(V ) (or the Kantor-
+Köcher-Tits group) of the Jordan algebra V is the group of rational
+transformations of V generated by translations, elements in Str(V )
+and the inversion map j : x −→ −x−1 . It is a simple Lie group. A
+transformation g ∈ Conf(V ) is conformal in the sense that, at each
+point x, where g is well defined, its differential (Dg)x belongs to the
+structure group Str(V ).
+   The subgroup of all affine conformal transformations P = Str(V )⋉N
+is a maximal parabolic subgroup of Conf(V ). Let σ be the involution
+of Conf(V ) given by
+                  σ(g) = j ◦ g ◦ j,      g ∈ Conf(V ),
+where j ∈ Conf(V ) is the inversion map. We define N = σ(N) and
+P := Str(V ) ⋉ N.
+   From the geometric point of view the subgroup P can be character-
+ized in the following way:
+                   P = {g ∈ Conf(V )′ | g(0) = 0},
+where Conf(V )′ is the subset of Conf(V ) of all conformal transforma-
+tions well defined at 0 ∈ V . It is open and dense in Conf(V ). More-
+over Conf(V )′ = N Str(V )N. The map N × Str(V ) × N −→ Conf(V )′
+is a diffeomorphism. We shall refer to this decomposition as to the
+Gelfand-Naimark decomposition of the conformal group. Furthermore,
+for every transformation g ∈ Conf(V ) which is well defined at x ∈ V ,
+the transformation gnx belongs to Conf(V )′ and its Gelfand-Naimark
+decomposition is given by :
+(1.2)                     gnx = ng.x (Dg)x n̄′ ,
+where (Dg)x ∈ Str(V ) is the differential of the conformal map x → g.x
+at x and n̄′ ∈ N (see [21] Prop. 1.4).
+
+   The flag variety M = Conf(V )/P , which is compact, is the con-
+formal compactification of V . In fact the map x −→ (nx ◦ j)P gives
+rise to an embedding of V into M as an open dense subset, and every
+transformation in Conf(V ) extends to M.
+4                  JACQUES FARAUT, MICHAEL PEVZNER
+
+  The Euclidean involution α of V introduced above also defines an
+involution θ of Conf(V ) by:
+
+(1.3)                       θ(g) = α ◦ j ◦ g ◦ j ◦ α.
+
+It turns out that θ is a Cartan involution of Conf(V ) (see [21] Prop.
+1.1). So the fix points subgroup of θ : U = Conf(V )θ is a maximal
+compact subgroup of Conf(V ).
+   Let us remind that a simple real Jordan algebra is either a real
+form of a simple complex Jordan algebra or a simple complex Jordan
+algebra considered as a real one. We conclude this section with the
+classification of simple Jordan algebras, together with their conformal
+groups and maximal compact subgroups U.
+                Complex         Euclidean      Non Euclidean         Non Euclidean
+                Non split         Split            Split           Non split (m = 2ℓ)
+    V           Symm (C)        Symm (R)            ×              Sym2ℓ (R) ∩ Mℓ (H)
+    Conf(V )     Spm (C)         Spm (R)            ×                   Sp(ℓ, ℓ)
+    U            Sp(m)            U (m)             ×                Sp(ℓ) × Sp(ℓ)
+
+    V            Mm (C)        Hermm (C)           Mm (R)               Mℓ (H)
+    Conf(V )    SL2m (C)        SU (m, m)         SL2m (R)             SL2ℓ (H)
+    U           SU (2m)        S(Um × Um )        SO(2m)               SO2ℓ (H)
+
+    V          Skew2m (C)      Hermm (H)        Skew2m (R)                 ×
+    Conf(V )    SO4m (C)        SO∗ (4m)        SO(2m, 2m)                 ×
+    U           SO(4m)           U (2m)        SO2m × SO2m                 ×
+
+    V           C × Cn−1        R × Rn−1          Rp × Rq                 Rn
+    Conf(V )    SOn+2 (C)       SOo (2, n)    SOo (p + 1, q + 1)     SOo (1, n + 1)
+    U            SOn+2         SO2 × SOn      SOp+1 × SOq+1           SO(n + 1)
+
+    V          Herm(3, O)C     Herm(3, O)       Herm(3, Os )              ×
+    Conf(V )     E7 (C)          E7(−25)           E7(7)                  ×
+    U              E7         E6(6) × SO(2)       SU (8)                  ×
+    Type           IV                I              II                    III
+
+  We shall refer to the Jordan algebras given in the first and forth
+columns as to the non split case, and to those of the second and third
+columns as to the split case.
+
+
+1.2. Makarevich Riemannian Symmetric Spaces. A Makarevich
+symmetric space is a reductive symmetric space which can be realized
+as an open symmetric orbit in the conformal compactification M of a
+simple real Jordan algebra V . We refer the reader to [3, 4] and literature
+        BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                5
+
+cited there for a detailed description. We shall concentrate our inter-
+est on Makarevich symmetric spaces carrying an invariant Riemannian
+metric.
+   Let α be as previously a Euclidean involution of the Jordan algebra
+V and let
+        V0 := {x ∈ V | α(x) = x},    V1 := {x ∈ V | α(x) = −x},
+be the corresponding eigenspaces of α on V . Notice that the set V0 is a
+Euclidean Jordan algebra, whose dimension and rank will be denoted
+by n0 and r0 . This fact implies that the interior Ω0 of the set {x2 | x ∈
+V0 } of ”positive” elements in V0 is a symmetric cone in V0 . Notice that
+r = r0 in the split case and r = 2r0 in the non split case. The Jordan
+algebra W = V0 + iV1 is a Euclidean real form of the complexification
+V C = V + iV . We will denote by Ω the symmetric cone of W . If V is
+a simple Jordan algebra of type I, II, or III, then W is simple, while,
+if V is of type IV, W ≃ V0 × V0 .
+  According to [3] one introduces two groups:
+G := {g ∈ Conf(V ) | (−α)◦g ◦(−α) = g}o, and K := {g ∈ G | g.e = e},
+where the subscript o stands as usually for the connected component of
+the identity transformation and e denotes the identity element of the
+Jordan algebra V . It follows that K is a maximal compact subgroup
+of G. Moreover, the associated Riemannian symmetric space is a real
+tube domain:
+(1.4)                    X := G/K = Ω0 + V1 .
+   The set X is a Riemannian Makarevich symmetric space. We shall
+refer to the previous description as to the tube realization of X .
+
+   Such a Riemannian Makarevich symmetric space can be obtained as
+a real form of a Hermitian symmetric space of tube type. The transform
+                       x 7→ u = (x − e)(x + e)−1 .
+maps the symmetric space X onto a bounded domain D, which is the
+unit ball in V with respect to a so-called spectral norm. Its inverse is
+the Cayley transform
+                 c : u 7→ x = c(u) = (e + u)(e − u)−1 .
+
+  If V is a Euclidean Jordan algebra, then V0 = {0}, and X is a
+symmetric cone. If V has a complex structure, then X is a Hermitian
+symmetric tube.
+6                   JACQUES FARAUT, MICHAEL PEVZNER
+
+  The following table gives the classification of Riemannian Makarevich
+symmetric spaces obtained in this way.
+         Complex          Euclidean            Non Euclidean            Non Euclidean
+                                                   Split              Non split (m = 2ℓ)
+           Cm              Am−1                    Dm                         Cℓ
+    V    Symm (C)         Symm (R)                  ×                 Sym2ℓ (R) ∩ Mℓ (H)
+    G    Sp(m, R)       SL(m, R) × R+               ×                      Sp(ℓ, C)
+    K      Um               SOm                     ×                       Sp(ℓ)
+
+    V     Mm (C)         Hermm (C)                Mm (R)                   Mℓ (H)
+    G    SU (m, m)      SL(m, C) × R+            SO(m, m)                 Sp(ℓ, ℓ)
+    K   S(Um × Um )         SUm                 SOm × SOm               Sp(ℓ) × Sp(ℓ)
+
+    V   Skew2m (C)       Hermm (H)               Skew2m (R)                   ×
+    G    SO∗ (4m)       SL(m, H) × R+            SO(2m, C)                    ×
+    K      U2m             Sp(m)                   SO2m                       ×
+
+    V    C × Cn−1          R × Rn−1                Rp × Rq                   Rn
+    G    SO0 (2, n)   SO0 (1, n − 1) × R+   SO0 (1, p) × SO0 (1, q)       SO0 (1, n)
+    K   SO2 × SOn         SO(n − 1)            SO(p) × SOq                  SOn
+
+    V   Herm(3, O)C      Herm(3, O)             Herm(3, Os )                  ×
+    G     E7(−25)        E6(−26) × R+             SU ∗ (8)                    ×
+    K    E6 × SO2             F4                   Sp(4)                      ×
+
+
+  The second row of this table represents the root system of the pair
+(g, a), where g is the Lie algebra of G, and a is a Cartan subspace.
+
+Example 1. Let V = M(m, R), the space of m × m real matrices,
+be equipped with the Jordan product x ◦ y = 21 (xy + yx). Then the
+Jordan determinant coincides with the usual matrix determinant :
+∆(x) = det
+          x. The structure group Str(V ) is the group S GL(m, R) ×
+GL(m, R) , acting on V by
+                                                   
+                 x 7→ g1 xg2−1 g1 , g2 ∈ GL(m, R) .
+The conformal group Conf(V ) is the group SL(2m, R)/{±I} acting on
+V by
+                                                  
+                                  −1           a b
+            x 7→ (ax + b)(cx + d)     if g =         .
+                                               c d
+   The differential of a conformal transformation g is given by (Dg)x y =
+h1 (x)yh2 (x), where, under the condition that det c 6= 0,
+          h1 (x) = (ac−1 d − b)(cx + d)−1 c, h2 (x) = (cx + d)−1 .
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                7
+                                            
+            −1                         a b
+Since det(ac d − b) det c = det                  = 1 we finally get:
+                                       c d
+                         χ ((Dg)x ) = det(cx + d)−2 .
+The Euclidean involution α on V = M(m, R) is given by the usual
+matrix transposition : α(x) = xT , and
+                  V0 = Symm (R), V1 = Skewm (R).
+Remind that an element g ∈ Conf(V ) belongs to the group G if and
+only if
+                         g ◦ (−α) = (−α) ◦ g.
+If g.x = (ax + b)(cx + d)−1 , the above condition on g to be in G leads
+to
+            (xcT + dT )(−ax + b) = −(xaT + bT )(−cx + d),
+or equivalently,
+                   aT c + cT a = 0,     bT d + dT b = 0,
+and, for every x ∈ V ,
+                     x(aT + dcT b) = (dT a + bT c)x.
+By Schur’s lemma this last condition says that there is λ ∈ R such that
+aT d + cT b = λIdm .
+  Define the matrix                       
+                                  0 Idm
+                        Υ=                   .
+                                Idm 0
+Then the element g belongs to G if and only if g T Υg = λΥ. Since
+det g = 1, it follows that λ2m = 1, and since G is connected, λ = 1.
+   Finally we have shown that G = SOo(Υ)/ ± Id, where SO(Υ) stands
+for the special orthogonal group of the quadratic form defined by the
+matrix Υ which has signature (m, m). Therefore G ≃ SOo (m, m)/±Id.
+
+ The conformal compactification M of V is the Grassmann manifold
+M = Gr(2m, m) of m-dimensional vector subspaces in R2m .
+
+   The corresponding Riemannian Makarevich symmetric space X in
+its tube realization is the set of matrices x ∈ M(m, R) with a positive
+definite symmetric part:
+                               x + xT ≫ 0.
+   Its bounded realization is given by:
+                   D = {x ∈ M(m, R) | kxkop < 1}.
+8                    JACQUES FARAUT, MICHAEL PEVZNER
+
+ Example 2. Let V be the space R×Rn−1 . One writes x = (x0 , x1 ), x0 ∈
+R, x1 ∈ Rn−1 . Then the Jordan product is defined as follows : z = x◦y
+if z0 = x0 y0 − (x1 |y1), z1 = x0 y1 + y0 x1 , where (x1 |y1) is the usual inner
+product on Rn−1 . The Jordan determinant is then given by ∆(x) =
+x20 + kx1 k2 . (This Jordan algebra is actually a Jordan field.)
+   The corresponding structure group is the group Str(V ) = R+ ×O(n),
+and the conformal group Conf(V ) is equal to O(1, n+1). The conformal
+compactification of V is the n-sphere S n .
+   Consider the Euclidian involution α : (x0 , x1 ) 7→ (x0 , −x1 ). The
+corresponding groups G and K are isomorphic respectively to SO0 (1, n)
+and SO(n).
+   The Riemannian symmetric space X is the real hyperbolic space of
+dimension n, realized as a half-space
+                     X = {(x0 , x1 ) ∈ R × Rn−1 | x0 > 0}.
+The bounded realization of this symmetric space is isomorphic to the
+Euclidean ball:
+                     D = {x ∈ Rn | kxk < 1}.
+
+
+
+1.3. Iwasawa decomposition and spherical Fourier Transform.
+According to (1.3) the Cartan involution of the group G is given by
+                        θ(g) = (−j) ◦ g ◦ (−j),         g ∈ G.
+The Lie algebra g, which is an algebra of quadratic vector fields on V ,
+decomposes under dθ into a direct sum of two eigenspaces:
+                                      g = k + p,
+where the Lie algebra k is the Lie algebra of the group K introduced
+above. Let us fix a Jordan frame {c1 , ..., cr0 } in V0 . Then the space a
+of the linear vector fields
+                            r0
+                            X
+                     ξ(x) =    tj L(cj )x (tj ∈ R),
+                                  j=1
+
+is a Cartan subspace in p. The root system of the pair (g, a) is of type
+A, C, or D. We choose the Weyl chamber a+ defined by t1 < · · · < tr0
+in case of type A, or 0 < t1 < · · · < tr0 in ncase of typeoC or D.
+                                                    tj −ti
+   For type A the positive roots are :                     , i < j , for type D :
+n                                o                 n 2                                 o
+  tj −ti          tj +ti                            tj −ti          tj +ti
+     2
+         , i < j,    2
+                         , i =
+                             6 j   and for type C:     2
+                                                           , i < j,    2
+                                                                           , i =
+                                                                               6 j, ti  .
+       BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                  9
+
+  We define A = exp a, and, as usual the nilpotent subgroup N. It can
+be written N = N0 ⋉ N1 , where N0 is a triangular subgroup in Str(V0 ),
+and N1 is the group of translations
+                        x 7→ x + v     with v ∈ V1 .
+  The Iwasawa decomposition can be described as follows: every x ∈ X
+can be uniquely written
+                        x = na · e = n0 a · e + v,
+with a ∈ A, n0 ∈ N0 , v ∈ V1 . One writes
+                       a = exp A(x) with A(x) ∈ a.
+                                 P
+If λ ∈ a∗C , we write, for ξ(x) = j tj L(cj )x,
+                                       r0
+                                       X
+                            hλ, ξi =         λj tj .
+                                       j=1
+
+Then
+                           ehλ,A(x)i = ∆λ (x0 ),
+where ∆λ is the power function of the symmetric cone Ω0 in the Eu-
+clidean Jordan algebra V0 , and x0 denotes the V0 -component of x:
+                    x = x0 + x1 ,    x0 ∈ V0 , x1 ∈ V1 .
+
+  The spherical functions ϕλ for X = G/K are given by
+                             Z
+                                             
+(1.5)               ϕλ (x) =    ∆ρ−λ (k · x)0 dk,
+                                K
+where dk is the normalized Haar measure of K, and ρ is the half-sum
+of the positive roots:
+             1                  1                    1
+    hρ, ξi = Tr(ad ξ)|Lie(N ) = Tr(ad ξ)|Lie(N0) + Tr(ad ξ)|Lie(N1 ) .
+             2                  2                    2
+One obtains ρj = d40 (2j − r0 − 1) + 2r
+                                     n1
+                                        0
+                                          , where the integer d0 is defined
+               d0
+by n0 = r0 + 2 r0 (r0 − 1).
+  The spherical Fourier transform of a K-invariant integrable function
+f on X is defined on ia∗ by
+                Z                      Z
+      F f (λ) =    ϕ−λ (x)f (x)µ(dx) =    ∆ρ+λ (x0 )f (x)µ(dx),
+                   X                            X
+                       −n
+where µ(dx) = ∆(x0 ) dx is a G-invariant measure on X . Here and
+                        r
+
+elsewhere further the measure dx denotes the Euclidean measure asso-
+ciated to the Euclidean structure defined on V by (x | y) = tr(xα(y)).
+10                 JACQUES FARAUT, MICHAEL PEVZNER
+
+1.4. Berezin kernels and the Kantor cross-ratio. The Kantor
+cross ratio of four points of a simple Jordan algebra V is the ratio-
+nal function
+                                     ∆(x1 − x3 ) ∆(x1 − x4 )
+(1.6)         {x1 , x2 , x3 , x4 } =            :            .
+                                     ∆(x2 − x3 ) ∆(x2 − x4 )
+It is invariant under conformal transformations and extends to the
+conformal compactificaion M of V .
+   The invariance by translations is obvious. The invariance under
+Str(V ) comes from the fact that ∆ is semi-invariant under Str(V ). The
+invariance under the inverse j : x 7→ −x−1 follows from the formula
+([13], Lemma X.4.4):
+                                       ∆(y − x)
+                    ∆ j(x) − j(y) =               .
+                                        ∆(x)∆(y)
+  Furthermore it is proved that a local transformation which preserves
+the cross ratio is the restriction of an element of Conf(V) ( cf. [16],
+Theorem 6). Being given the Kantor cross-ratio (1.6) we shall introduce
+the kernel F on X by
+(1.7)            F (x, y) = {x, y, −α(x), −α(y)}
+                                                 
+                            ∆ x + α(x) ∆ y + α(y)
+                          =                      .
+                            ∆ x + α(y) ∆ y + α(x)
+This function is invariant under G and positive. The Berezin kernel
+Bν can be defined for every ν ∈ C as
+                                 
+                            r0
+                               ν   F (x, y)ν in the split case
+(1.8)   Bν (x, y) = F (x, y) r =            ν
+                                   F (x, y) 2 in the non split case
+In virtue of the G-invariance of the kernel Bν the Berezin function
+                                                 rr0 ν
+                                         ∆(x0 ) 
+                   ψν (x) = Bν (x, e) =   2 
+                                         ∆ x+e
+                                            2
+
+is K-invariant. In this formula x0 denotes as before the V0 -component
+of x in the decomposition V = V0 + V1 , x = x0 + x1 .
+                                                              P 0 tj
+   If {c1 , . . . , cr0 } is a Jordan frame of V0 , and if x = rj=1 e cj , then
+                                   r0 
+                                  Y         tj −2ν
+                         ψν (x) =      cosh         .
+                                  j=1
+                                            2
+        BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                       11
+
+Theorem 1.1. Assume ℜν > rn0 −1. Then the function ψν is integrable
+and its spherical Fourier transform is given by
+                                  P (λ, ν)P (−λ, ν)
+(1.9)                F ψν (λ) =                     ,
+                                         Q(ν)
+with
+                         Yro                   
+                                 1                     n
+           P (λ, ν) =        Γ     + ν − δ + λj , δ =
+                         j=1
+                                 2                    2r0
+                              2ro
+                              Y
+                Q(ν) = c            Γ (ν − βj ) .
+                              j=1
+
+where the constant c1 and the real numbes βj ’s depend on the Jordan
+algebra V . In particular, for ν real and λ ∈ ia∗ , λ̄ = −λ and
+                                         |P (λ, ν)|2
+                          F ψν (λ) =                 ≥ 0,
+                                           Q(ν)
+   Remind that the Gindikin Γ-function of a symmetric cone Ω is de-
+fined by                    Z
+                                             n
+                   ΓΩ (ν) =   e−tr(x) ∆(x)ν− r dx.
+                                     Ω
+If the cone Ω is irreducible (the corresponding Euclidean Jordan algebra
+W is simple), then
+                                    Yr                 
+                                n−r                   d
+                  ΓΩ (ν) = (2π) 2       Γ ν − (j − 1)     ,
+                                    j=1
+                                                      2
+
+where the integer d is defined by n = r + d2 r(r − 1).
+  Therefore, for types I and II:
+                             Q(ν) = c2−2rν ΓΩ (2ν).
+For type III:
+                                Q(ν) = cΓΩ (ν).
+For type IV:
+                           ΓΩ (ν) = (ΓΩ0 (ν))2 ,
+notice that in this case the Jordan algebra W is not simple anymore :
+W ≃ V0 × V0 .
+  The above theorem was proved by different methods in [9, 29, 25].
+
+ Let h(z, w) stand for the so-called canonical polynomial defined on
+V × V C by the following conditions (see [13] p.262):
+ C
+
+  1We   denote by c throughout this paper different constants depending only on V .
+12                    JACQUES FARAUT, MICHAEL PEVZNER
+
+  -It is holomorphic in the first variable and anti-holomorphic in the
+second one.
+  -For every g ∈ Str(V C ) one has h(gz, w) = h(z, g ∗ w).
+  -For every x ∈ W one has h(x, x) = ∆(e − x2 ).
+  Recall that the Bergman kernel of the Hermitian symmetric space,
+                                            2n
+whose X is a real form, is given by h(z, w)− r .
+
+  Example 1. For V = M(m, R) the canonical polynomial is given by
+h(x, x) = det(I − xxT ).
+  Example 2. For V = R × Rn−1 the canonical polynomial is given by
+h(x, x) = (1 − kxk2 )2 .
+
+     Remind that the Cayley transform
+                        c : u 7→ c(u) = (e + u)(e − u)−1 ,
+maps the bounded domain D onto the tube X = Ω0 + V1 .
+  Define
+                          F̃ (u, v) = F (c(u), c(v)).
+Since −α(c(u)) = c(α(u−1)) we obtain
+                                                                     
+                         −1       −1      ∆ u − α(u−1) ∆ v − α(v −1 )
+  F̃ (u, v) := {u, v, α(u ), α(v )} =                                .
+                                          ∆ u − α(v −1) ∆ v − α(u−1 )
+Furthermore F̃ (u, 0) = limv→0 F̃ (u, v) = ∆(α(u−1 ) − u)∆(α(u)), and
+one can show that F̃ (u, 0) = h(u, u).
+
+     Define similarly
+                             B̃ν (u, v) = Bν (c(u), c(v)),
+                                 ψ̃ν (u) = ψν (c(u)).
+Then                         
+                                 h(u, u)ν in the split case,
+                     ψ̃ν =               ν
+                                 h(u, u) 2 in the non split case.
+     Consider the integral
+                                       Z
+                                                                n
+                             I(ν) =            ψ̃ν (u)h(u, u)− r du.
+                                           D
+It can be written as               Z
+                                                    r0   n
+                                           h(u, u) r ν− r du.
+                                    D
+                −n
+Since h(u, u)    r   du is an invariant measure on D the last integral equals
+                                 Z
+                       I(ν) = c     ψν (x)µ(dx) = cF ψν (ρ).
+                                       X
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                    13
+
+Therefore we obtain
+Corollary 1.2.
+                                Q( nr )      P (ρ, ν)P (−ρ, ν)
+            I(ν) = vol D       n         n ·                   .
+                         P (ρ, r )P (−ρ, r )       Q(ν)
+   Eventually we may notice that according to the Jordan algebra’s type
+some simplifications in the above formula, due to explicit expressions
+of Γ-factors, are possible, see examples below.
+
+  Example 1. Let V = M(m, R). Then V0 = Symm (R), V1 = Skewm (R),
+the invariant measure on X is given by det(x0 )−m dx0 dx1 , and the
+Berezin function is
+                                       ν
+                       mν     det x0
+            ψν (x) = 4                     , with φν (e) = 1.
+                            det(e + x)2
+Its push-forward to D = {u ∈ V | kukop < 1} equipped with the
+invariant measure det(e − uuT )−m du is given by
+                           ψeν (u) = det(e − uuT )ν .
+  The spherical Fourier transform of ψν is the given by
+                 Z                     ν
+                             det x0
+    F ψν (λ) =                        2
+                                           ∆oρ−λ (x0 )∆o (x0 )−m dx0 dx1
+                  ω +V     det(e + x)
+                  Q0 m 1         m−1                m−1
+                     j=1 Γ(ν − 2 + λj )Γ(ν − 2 − λj )
+             = c                 Q                             .
+                           4−mν m  j=1 Γ(2ν − j + 1)
+
+Notice that in this case
+                                                    1
+           Q(ν) = c4−mν ΓΩ (2ν) = c′ ΓΩ0 (ν)ΓΩ0 (ν + )
+                                                    2
+                      Ym                m
+                                j−1 Y             1 j −1
+                = c′′     Γ(ν −      )     Γ(ν + −       ).
+                      j=1
+                                 2     j=1
+                                                  2    2
+
+Moreover
+                                    ΓΩ0 (ν − m−1
+                                              2
+                                                  )
+                           I(ν) =             1     .
+                                     ΓΩ0 (ν + 2 )
+  Example 2. In the case when V = Rn = R + Rn−1 the Jordan
+determinant is given by ∆(x) = x20 + kx1 k2 and the Berezin function is
+given by
+                                                 ν
+                                     4x0
+                   ψν (x) =                          .
+                              (1 + x0 )2 + kx1 k2
+14                 JACQUES FARAUT, MICHAEL PEVZNER
+
+Its spherical Fourier transform is equal to
+                               Γ(ν + λ − n−1
+                                          2
+                                             )Γ(ν − λ −    n−1
+                                                            2
+                                                               )
+                F ψν (λ) = c                                       .
+                                    Γ(ν)Γ(ν + 21 − n−1
+                                                    2
+                                                       )
+And finally,
+                                     Γ(ν − n + 1)
+                         I(ν) = c                  .
+                                    Γ ν + 21 − n−1
+                                                2
+
+
+
+1.5. A Bernstein identity. An interesting consequence of Theorem
+(1.1) is a Bernstein identity. Let D(ν) be the invariant differential
+operator on X = G/K whose symbol, i.e. its image through the Harish-
+Chandra isomorphism
+                    γ : D(X ) → S(Cr0 ),     D 7→ γD (λ),
+is
+                                Yr0
+                                        1              1
+         γD(ν) (λ) = γν (λ) =       (ν + − δ + λj )(ν + − δ − λj ).
+                                j=1
+                                        2              2
+
+Corollary 1.3. The Berezin kernel (1.8) satisfies the following iden-
+tity:
+                      D(ν)Bν = b(ν)Bν+1 ,
+where b(ν) is the polynomial of degree 2r0 given by:
+                                            2r
+                                Q(ν + 1) Yo
+                      b(ν) =            =     (ν − βj ).
+                                 Q(ν)     j=1
+
+     In the split case (types I and II):
+                      Yr0                            
+                                d             1 d
+              b(ν) =       ν − (j − 1)     ν + − (j − 1) .
+                      j=1
+                                4             2 4
+
+In case when V is of type III (r = 2r0 ),
+                            Y2r0            
+                                      d
+                     b(ν) =       ν − (j − 1) ,
+                            j=1
+                                       2
+
+where the integer d is defined through n = r + d2 r(r − 1).
+  In case when V is complex (type IV):
+                            Yr0              2
+                                     d0
+                    b(ν) =        ν − (j − 1) .
+                            j=1
+                                     2
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                15
+
+   This identity has been established for V complex by Engliš [10], also
+in a slightly different form by Unterberger and Upmeier [25], and has
+been generalized in [11].
+   In general we do not know any explicit expression for the differential
+operator D(ν). However an explicit formula has been obtained in the
+special case of a simple complex Jordan algebra, and for ν = δ [17]:
+                                   ∂  ∂ 
+                             1+ n                       n
+                D (δ) = ∆(y)    r ∆     ∆        ∆(y)1− r ,
+                                    ∂z      ∂ z̄
+where z = x + iy.
+  Observe that, for V = C we get:
+                                           ∂2
+                            D (δ) = y 2
+                                          ∂z∂ z̄
+is nothing but the Laplace-Beltrami operator of the upper hyperbolic
+half-plane.
+
+  Example 1. When V = M(m, R) the Bernstein polynomial and the
+Harish-Chandra symbol are respectively given by
+              Ym                            
+                       j−1           1 j−1
+      b(ν) =       ν−           ν+ −             ,
+              j=1
+                         2           2      2
+              Ym                                       
+                       1                      1
+     γν (λ) =      ν − (m − 1) + λj       ν − (m − 1) − λj .
+              j=1
+                       2                      2
+
+  Example 2. When V = R × Rn−1 the Bernstein polynomial and the
+Harish-Chandra symbol are respectively given by
+                                                        
+             n                            n−1           n−1
+b(ν) = ν ν − + 1 , γν (λ) = ν + λ −               ν −λ−        .
+             2                              2            2
+
+
+
+
+1.6. Hua Integral. Let us introduce the compact dual U/K of the
+symmetric space X = G/K in the complexification X C = GC /K C of
+the symmetric space X .
+  Define u = k + ip and let U be the analytic subgroup of GC with the
+Lie algebra u. The compact symmetric space Y = U/K is isomorphic
+to the conformal compactification M of the Jordan algebra V .
+  The set Y ′ of invertible elements y in V C such that ȳ = y −1 is open
+and dense in Y.
+16                    JACQUES FARAUT, MICHAEL PEVZNER
+
+  For ν = −κ, (κ ∈ N) the function ψ−κ extends as a meromorphic
+                          P
+                          r0
+function on X C . For y =    eiθj cj we have
+                             j=1
+
+                                    Yr0          κ
+                                             2 θj
+                          ψ−κ (y) =      cos         .
+                                    j=1
+                                               2
+
+This shows that this function is well defined on Y for κ ∈ C, and
+bounded for ℜκ ≥ 0.
+  Denote by µo the normalized invariant measure on Y and define
+                             Z
+(1.10)               J(κ) =     ψ−κ (y)µo(dy).
+                                       Y
+
+Theorem 1.4. For ℜκ ≥ 0 the following identity holds:
+                           Q2ro
+                             j=1 Γ(κ + 1 + βj )
+      J(κ) = c Qro          1                  1           .
+                  j=1 Γ(κ + 2 + δ − ρj )Γ(κ + 2 + δ + ρj )
+
+Proof. Assume first that κ ∈ N. The Bernstein identity (1.3) implies
+that
+                       D−κ ψ−κ = b(−κ)ψ−κ+1 ,
+     By integrating this identity on Y we obtain
+                                     Z
+                b(−κ)J(κ + 1) =         D−κ ψ−κ µo (dy)
+                                      Y
+                                     Z
+                                  =     ψ−κ (y)D−κ 1µo (dy),
+                                           Y
+
+since the operator D−κ is self adjoint. The constant term of the differ-
+ential operator D−κ is given by
+                               D−κ 1 = γ−κ (ρ).
+     We finally get
+(1.11)                  γ−κ (ρ)J(κ) = b(−κ)J(κ − 1).
+     On the other hand the sequence
+                              Q2ro
+                                        j=1 Γ(κ + 1 + βj )
+             φ(κ) = Qro                1
+                         j=1 Γ(κ   +   2
+                                         + δ − ρj )Γ(κ + 21   + δ + ρj )
+satisfies the same recursion relation. Indeed,
+                              Q2ro
+                                j=1 (κ + βj )
+         φ(κ) = Qro         1                 1           φ(κ − 1).
+                   j=1 (κ + 2 + δ − ρj )(κ + 2 + δ + ρj )
+       BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                    17
+
+Therefore J(κ) = cφ(κ) and because of the “initial” condition J(0) = 1,
+we finally get
+                                   φ(κ)
+                           J(κ) =       .
+                                   φ(0)
+The functions φ(κ) and J(κ) are holomorphic for ℜκ > 0 and grow
+polynomially :
+                         |φ(κ)| ≤ c1 (1 + |κ|)N1
+                         |J(κ)| ≤ J(0) = 1.
+Indeed, 0 ≤ ψ−κ (y) ≤ 1. Therefore, the Carlson’s theorem implies that
+                                     φ(κ)
+                            J(κ) =        ,
+                                     φ(0)
+for every κ ∈ C such that ℜκ > 0.                                 
+  By writing y ′ = c(iv), J(κ) becomes an integral over iV . One shows
+that                                                 r0
+                 ψ̃−κ (iv) := ψ−κ (c(iv)) = h(v, −v)− r κ .
+Therefore,                     Z
+                                                  r0     n
+                        J(κ) =         h(v, −v)− r κ− r .
+                                   V
+In fact, in this realization an invariant measure µo on Y is given by
+           n
+h(v, −v)− r dv.
+  The above integral has been considered and computed by Hua in
+[15], Chapter II in several special cases.
+
+            2. Berezin kernels and representations
+   Following ideas developed in [6, 7, 14] we shall now give an alterna-
+tive approach to the theory of Berezin kernels considering intertwining
+operators for the maximal degenerate series representations of a con-
+formal group.
+2.1. Maximal degenerate series representations. The character
+χ of the structure group Str(V ) (cf. (1.1)) can be trivially extended
+to the whole parabolic subgroup P by χ(hn̄) := χ(h) for every h ∈
+Str(V ), n̄ ∈ N.
+  For every s ∈ C we define a character χs of P by
+                                                   n
+                            χs (p̄) := |χ( p̄)|s+ 2r .
+                                                 Conf(V)
+    The induced representation πes = IndP              (χs ) of the conformal
+group acts on the space
+  Ies := {f ∈ C ∞ (Conf(V )) | f (hp̄) = χs (p̄)f (h), ∀h ∈ Str(V ), p̄ ∈ P },
+18                JACQUES FARAUT, MICHAEL PEVZNER
+
+by left translations. A pre-Hilbert structure on Ies is given by
+                                 Z
+                             2
+                         kf k =      |f (u)|2 du,
+                                     U
+
+where U is the maximal compact subgroup of Conf(V ) associated with
+the Cartan involution θ, and du is the normalized Haar measure of U.
+   According to the Gelfand-Naimark decomposition a function f ∈ Ies
+is determined by its restriction fV (x) = f (nx ) on N ≃ V . Let Is be
+the subspace of C ∞ (V ) of functions fV with f ∈ Ies . The conformal
+group acts on Is by:
+                                     n
+(2.1)     πs (g)f (x) = |A(g, x)|s+ 2r f (g −1.x), g ∈ Conf(V ), x ∈ V,
+where
+                                              
+                        A(g, x) := χs (Dg −1)x .
+This action is usually called the even maximal degenerated series rep-
+resentation of Conf(V ).
+  One shows that the norm of a function f (nx ) = fV (x) ∈ Is is given
+by:
+                           Z
+                       2
+(2.2)             kf k =       |fV (x)|2 h(x, −x)2ℜs dx,
+                             V
+
+   The formula (2.2) implies that for ℜs = 0 the space Is is contained
+in L2 (V ) and the representation πs extends as a unitary representation
+on L2 (V ).
+
+  In order to address the question of irreducibility and unitarity of
+these representations we refer the reader to [21], [22, 24] and to [27].
+
+  Following the standard procedure we introduce an intertwining op-
+erator between πs and π−s .
+  Consider the map Aes defined on Ies by
+                             Z
+(2.3)             e
+          f −→ (As f )(g) :=   f (gjn)dn, ∀g ∈ Conf(V ),
+                                 N
+
+where dn is a left invariant Haar measure on N. We will see that this
+integral converges for ℜs > 2rn0 .
+
+Proposition 2.1. For every f ∈ Ies the function A  es f belongs to Ie−s and
+the map Aes given by (2.3) intertwines the corresponding representations
+of the conformal group:
+(2.4)     π       es f ) = A
+          e−s (g)(A        es (e
+                               πs (g)f ), ∀f ∈ Ies , g ∈ Conf(V ).
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                       19
+
+  Proof. The map A      es obviously commutes with the left action of
+Conf(V ). We have to check that A      es f transforms in an appropriate
+way under the right action of P . Notice first that A       es f is N right
+invariant. Indeed
+                            Z                  Z
+            es f )(gn̄) =
+           (A                  f (gn̄jn)dn =       f (gjn′jjn)dn
+                            ZN                   N
+
+                         =     f (gjn′′)dn′′ = (Aes f )(g).
+                                    V
+
+For what concerns the action of Str(V ) we have for every f ∈ Ies :
+                        Z               Z
+(2.5)      e
+          (As f )(gℓ) =   f (gℓjn)dn =     f (gj(ℓt)−1 n)dn,
+                              N                            N
+         t
+where h denotes the transformation adjoint to h ∈ Str(V ) with respect
+to the bilinear form Tr L(xy) on V .
+  Indeed, one shows, (see [13]Prop.VIII.2.5) that jℓj = (ℓt )−1 , ∀ℓ ∈
+Str(V ). Thus the equality (2.5) implies that
+                 Z
+  e
+(As f )(gℓ) =        f (gj(ℓt)−1 nℓt (ℓt )−1 )dn
+                   N
+                          Z
+                        n
+             = |det ℓ| r      f (gjn′(ℓt )−1 )dn′
+                             N
+                          n    n
+             = | det ℓ|   r
+                            −s 2r    es f )(g) = χ−s (ℓ)(A
+                                    (A                   es f )(g)            
+
+  Define the map As : Is → I−s by
+                                  es f )V
+                      As (fV ) = (A                      (f ∈ Ies ).
+Proposition 2.2. For every f ∈ Is we have,
+                           Z
+                                           n
+              (As f )(x) =   |∆(x − u)|2s− r f (u)du.
+                                            V
+
+                        es ,
+Proof. By definition of A
+                                        Z
+                  es f )(nx ) =
+                 (A                             f (nx jnv )dv   (f ∈ Ies ).
+                                            V
+
+According to the Gelfand-Naimark decomposition (1.2) for g = nx j we
+have
+        nx jnv = n(nx ◦j).v (D(nx ◦ j))v n̄′ ) = n(x−v−1 ) P (v −1)n̄′ .
+  Thus                              Z
+               (As f ) (x) =                f (x − v −1 )χs (P (v)−1)dv.
+                                        V
+20                     JACQUES FARAUT, MICHAEL PEVZNER
+
+Let u = x − v −1 . The Jacobian of this transformation being equal to
+      2n
+|∆(v)| r , we finally get:
+                         Z
+                                              n
+(2.6)      (As f ) (x) =   f (u)|∆(x − u)|2s− r du.       
+                               V
+
+The bilinear form on Ie−s × Ies defined by
+                                   Z
+                      hf1 , f2 i =   f1 (u)f2 (u)du
+                                              U
+is Conf(V )-invariant. By using the fact that
+                                 Z
+                   hf1 , f2 i = c (f1 )V (x)(f2 )V (x)dx.
+                                          V
+it gives rise to a Conf(V )-invariant bilinear form on Is × Is :
+Proposition 2.3. For ℜs > 2rn0 , the bilinear form Bs ,
+                       Z Z
+                                            n
+       Bs (f1 , f2 ) =      |∆(x − y)|2s− r f1 (x)f2 (y)dxdy,
+                                   V ×V
+is well defined on Is × Is and is Conf(V )-invariant.
+Proof. The invariance follows from the intertwining property of As . It
+can also be shown by a straightforward verification. Indeed, let us recall
+following property of conformal transformations (cf. [12], Lemma 6.6)
+:
+(2.7)
+  ∆(g.x − g.y)2 = A(g, x)A(g, y)∆(x − y)2 , g ∈ Conf(V ), x, y ∈ V.
+Therefore,
+       B (π (g)f1 , πs (g)f2 ) =
+       Z Zs s
+                           n                n                 n
+     =      |∆(x − y)|2s− r |A(g −1 , x)|s+ 2r |A(g −1, y)|s+ 2r f1 (g −1.x)f2 (g −1 .y)dxdy
+        V ×V
+                                                           n                           n
+Denote x = g.x′ , y = g.y ′. Thus dx = A(g, x′) r dx′ and dy = A(g, y ′) r dy ′ .
+Notice that g ·g −1 = Id and therefore (Dg −1)g.x ◦(Dg)x = Id. It implies
+that A(g −1 , g.x)A(g, x) = 1.
+  Taking into account the identity (2.7) we finally get
+       Bs (πs (g)f1 , πs (g)f2) =
+       ZZ
+                              n                 n                   n
+     =     |∆(x′ − y ′ )|2s− r |A(g −1, x′ )|s− 2r |A(g −1, y ′)|s− 2r
+         V ×V
+                        n                 n           n            n
+     · A(g, x′ )−s− 2r A(g, y ′)−s− 2r |A(g, x′ )| r |A(g, y ′)| r f1 (x′ )f2 (y ′)dx′ dy ′
+     = Bs (f1 , f2 ).                                                            
+       BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                   21
+
+   According to the general theory (see for instance [18]) these maximal
+degenerate series representations πs are spherical. We shall determine
+the corresponding U-fixed vector of the representation πs .
+   Using the Iwasawa decomposition of Conf(V ) we write g = uℓ(g)n̄,
+where ℓ(g) ∈ Str(V ), which is defined up to a multiplication by an
+element of U ∩ Str(V ) on the left. Notice by the way that with the
+above notation we have θ(g −1)g = n−1 ℓ(g)2 n̄.
+   Consider nx ∈ N admitting the decomposition nx = uℓ(nx )n̄. There-
+fore
+          ℓ(nx )2 = D(θ(n−x )nx )(0) = P (x−1 + α(x))−1 P (x)−1 .
+Let f o ∈ Ies be a U-invariant function, with f o (e) = 1. Then
+            f o (g) = f o(uℓ(g)n̄) = χs (ℓ(g))f o(u) = χs (ℓ(g)).
+Eventually we get that the U-fixed vector fVo in Is is given by
+                                             n                      n
+        fVo (x) = |∆(x−1 + α(x))∆(x)|−(s+ 2r ) = h(x, −x)−(s+ 2r ) .
+
+  In order to conclude this section we shall discuss conditions under
+which the intertwining operator As is well defined.
+  Let us evaluate As f o at the identity of the conformal group.
+               Z               Z               Z
+                                                               n
+    e   o
+    As f (e) =     o
+                  f (jn)dn =        o
+                                   f (n)dn =      h(x, −x)−(s+ 2r ) dx.
+                 N                N               V
+Notice that the value C(s) of this integral equals
+                                             
+                                   r       n
+                      C(s) = J        (s − ) ,
+                                   r0     2r
+where J(ν) is given by (1.10). For u ∈ U, f o (u) 6= 0. therefore, for
+f ∈ Ies ,
+                            |f (g)| ≤ M|f o (g)|,
+with
+                                         |f (u)|
+                             M = sup 0           .
+                                    u∈U |f (u)|
+Now it is clear that the integral defining As is well defined for ℜs > 2rn0 .
+One shows that the map s → As can be actually extended to whole
+complex plane as a meromorphic function. Because of the intertwining
+property we eventually get:
+                       As ◦ A−s = C(s)C(−s)IdIs .
+  As it has been noticed by several authors [5, 19, 27] for some partic-
+ular values of the parameter s the intertwining operator As turns out
+to be a differential operator, which, furthermore, satisfies a generalized
+Capelli identity. Indeed, the map As may be seen as a convolution
+22                  JACQUES FARAUT, MICHAEL PEVZNER
+                                            n
+operator with the kernel |∆(x − y)|2s− r which has a meromorphic con-
+tinuation with respect to s. One shows that, for 2s − nr = −2ℓ, ℓ ∈ N,
+                                                     
+                                                  ∂ 2ℓ
+this is a differential operator proportional to ∆ ∂x   .
+
+
+2.2. Restriction of πs and Canonical representations. We shall
+study the representations πs when restricted to the subgroup G. The
+representation space Ies can be seen as a line bundle over the conformal
+compactification M.
+   The Makarevich space X is one of the open orbits of G acting on
+M. The space Is (X ) of functions in I(s) = Is (V ) supported in the
+closure X ⊂ V is then invariant. We shall consider the corresponding
+representation Ts of G on Is (X ).
+   The problem is to determine for which values of the parameter s the
+representation Ts of the group G is unitarizable, and then to decompose
+it into irreducible ones. According to an established terminology taking
+its roots in [26] one calls such representations canonical representations
+of the group G.
+   A key observation is the connection between the canonical represen-
+tation Ts and the Berezin kernel. We shall make this link clear.
+     Consider the bilinear form on Is (X ) × Is (X ) given by
+(2.8)                 e α (f1 , f2 ) := Bs (f1 , f2 ◦ (−α)),
+                      B s
+
+where Bs (f1 , f2 ) is the bilinear form on Is (V ) × Is (V ) introduced in
+Proposition (2.3).
+                                   e α is invariant under the action
+Proposition 2.4. The bilinear form B s
+of the group G.
+  The proof uses the invariance property of the cross-ratio, and the
+two following lemmæ.
+Lemma 2.5. For every g ∈ G the following identity holds:
+                           A(g, −α(x)) = A(g, x).
+Proof. By definition the transformation g commutes with −α for every
+g ∈ G: g ◦ (−α) = (−α) ◦ g. Differentiating this equality we have
+                     (Dg)−α(x) ◦ (−α) = (−α) ◦ (Dg)x ,
+or equivalently (Dg)−α(x) = (−α) ◦ (Dg)x ◦ (−α). Notice that for every
+h ∈ Str(V ) one has
+                   (−α) ◦ h ◦ (−α) = α ◦ h ◦ α ∈ Str(V ),
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                23
+
+and on the other hand χ(α ◦ h ◦ α) = χ(h). Since ∆(α(x)) = ∆(x) we
+finally get
+                     ∆(α ◦ h ◦ α(x)) = χ(h)∆(x),
+which implies the statement for h = (Dg)x .            
+Lemma 2.6. Let x be an element in V , then for every g ∈ G the
+following identity holds
+                       ∆((gx)0 ) = A(g, x)∆(x0 ).
+(Recall that the subscript   0   means the V0 -component.)
+  Notice that ∆((gx)0 ) = ∆(g.x − g.(−α(x)) = ∆(g.x + α(g.x)) for
+every g ∈ G. Let us substitute y by −α(x) in (2.7), then
+       ∆(g.x − g.(−α(x)))2 = A(g, x)A(g, −α(x))∆(x + α(x))2 .
+Therefore, according to the lemma (2.5), we have
+                      ∆((gx)0 ) = ±A(g, x)∆(x0 ).
+Since for g = Id the sign in the above equation is positive, and the
+group G being connected it remains positive for every g ∈ G.    
+
+  Let us introduce the multiplication operator on the space Is (X ) by
+                                              n
+                       Ms f (x) = ∆(x0 )s+ 2r f (x).
+These operators intertwine the canonical representation Ts and the left
+regular action L of the group G,
+                Ms ◦ Ts (g) = L(g) ◦ Ms ,         g ∈ G,
+           
+where L(g)f (x) = f (g −1 · x).
+Proposition 2.7. Let us define the bilinear form Bαs on Cc (X )×Cc (X )
+by
+                                                   e α (f1 , f2 ).
+           Bαs (F1 , F1 ) = Bαs (Ms f1 , Ms f2 ) = B s
+Then
+                          ZZ
+           α
+(2.9)    Bs (F1 , F2 ) =     Bν (x, y)F1 (x)F2 (y)µ(dx)µ(dy),
+                        X ×X
+
+where Bν (x, y) is
+                  the Berezin kernel introduced in (1.8) and
+       r       n
+ν = − r0 s − 2r .
+  Therefore the decomposition of the canonical representations reduces
+now to a classical problem in spherical harmonic analysis.
+  Let Λ be the set of parameters λ ∈ a∗C for which the spherical function
+ϕλ given by (1.5) is positive definite. Let ψ be a continuous function of
+24                     JACQUES FARAUT, MICHAEL PEVZNER
+
+positive type on G which is K-biinvariant. By the Bochner-Godement
+theorem there is a unique bounded positive measure m on Λ such that
+                              Z
+                       ψ(x) =     ϕλ (x)m(dλ).
+                                          Λ
+If ψ is integrable, then the measure m is absolutely continuous with
+respect to the Plancherel measure, with a density given by the Fourier
+transform of ψ:
+                                          dλ
+                        m(dλ) = F ψ(λ)         ,
+                                        |c(λ)|
+where c(λ) is the Harish-Chandra c-function of the symmetric space
+X.
+
+  Therefore the problem is :
+  (1) Determine the set W ⊂ R of values ν for which the Berezin kernel
+Bαν (or the corresponding K-biinvariant function ψν ) is of positive type.
+  (2) For ν ∈ W, determine the positive measure mν on Λ such that
+                                Z
+                       ψν (x) =   ϕλ (x)mν (dλ).
+                                          Λ
+  These problems have been solved for hyperbolic spaces by van Dijk,
+Hille, Pasquale [6, 8]. Notice however that only real hyperbolic spaces
+are Makarevich spaces as introduced above.
+  The case G = U(p, q) was studied by Hille, and Neretin [14, 20], and
+the case when G = SO(p, q) by Neretin in [20].
+               n
+     For ν >   r0
+                    − 1 the function ψν is integrable and, for λ ∈ ia∗ :
+
+                                     |P (λ, ν)|2
+                             F ψν (λ) =          ≥ 0.
+                                        Q(ν)
+  It follows that ψν is of positive type, and
+                            Z
+                                        |P (λ, ν)|2 dλ
+                  ψν (x) =       φλ (x)                   .
+                             ia∗           Q(ν) |c(λ)|2
+  According to Helgason we define the Fourier transform of an inte-
+grable function f on X . The Iwasawa decomposition of the group G
+can be written as G = NAK. If k −1 g ∈ N exp(H)K with H ∈ a, one
+writes
+             H = A(x, b), x ∈ gK, b ∈ kM ∈ B = K/M,
+where M is the centralizer of A in K.
+  The Fourier transform of f is the function defined on ia∗ × B by
+                               Z
+                    ˆ
+                   f (λ, b) =     f (x)eh−λ+ρ,A(x,b) idx.
+                                     X
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                25
+
+  We consider fˆ(λ) := fˆ(λ, ·) as an element of the space Hλ ≃ L2 (B)
+which carries a unitary spherical principal series Πλ of G. Then the
+map f 7→ fˆ(λ) intertwines the left regular representation L and Πλ .
+Theorem 2.8. For ν > rn0 − 1, the Berezin form is positive definite.
+Therefore the representation Ts is unitarizable, decomposes multiplicity
+free as a direct integral of spherical principal series Πλ of G, which
+corresponds to the following Plancherel formula :
+                            Z
+                      ¯                    |P (λ, ν)|2 dλ
+                 α
+               Bs (f, f ) =       kfˆ(λ)k2                 ,
+                              ia∗             Q(ν) |c(λ)|2
+where ν = − rr0 (s −   n
+                       2r
+                          )   and f ∈ Cc (X ).
+
+
+2.3. Berezin kernel on the Riemannian Compact Dual. In order
+to study the ”deformation” of the regular representation of the compact
+group U we shall investigate the spherical Fourier transform of the
+Berezin kernels on the compact dual symmetric space Y.
+   The spherical functions of the symmetric space Y = U/K are given
+by
+                         Z
+(2.10)          Φm (x) =     ∆m ((k.x)0 )dk = ϕm−ρ (x),
+                                 K
+where the weights m = (m1 , . . . , mn ) ∈ Zn are given according to
+different cases by following conditions :
+      • If V is a Euclidean Jordan algebra (root system of type A), then
+        m1 ≥ m2 ≥ · · · ≥ mn .
+      • If V is a non Euclidean algebra of split type (root system of
+        type D), them −|m|1 ≥ m2 ≥ · · · ≥ mn .
+      • If V is either a complex or a non Euclidean Jordan algebra of
+        non split type (root system of type C), then 0 ≥ m1 ≥ m2 ≥
+        · · · ≥ mn .
+  The spherical Fourier coefficients of a K-invariant integrable function
+f on Y are given by
+                              Z
+                    a(m) =       f (y)Φm (y)µ0(dy).
+                                         Y
+For ℜκ ≥ 0, the Berezin function ψ−κ is bounded on Y. We will
+determine its spherical Fourier coefficients
+                           Z
+                  aκ (m) =     ψ−κ (y)Φm (y)dµ0(dy).
+                                     Y
+
+Notice that aκ (0) = J(κ).
+26                 JACQUES FARAUT, MICHAEL PEVZNER
+
+Theorem 2.9. The Fourier coefficients of the Berezin kernel function
+ψ−κ are given by
+                     Qn          1                 1
+                       j=1 Γ(κ + 2 + δ − ρj )Γ(κ + 2 + δ + ρj )
+ aκ (m) = J(κ) Qn           1                      1                .
+                 j=1 Γ(κ + 2 + δ − ρj + mj )Γ(κ + 2 + δ + ρj − mj )
+
+     Proof We use the same method as in [28].
+     (a) We show first that the measure on Y given by
+                                  1
+                                      ψ−κ (y)µ0(dy)
+                                 J(κ)
+converges to the Dirac measure δ at the base point e of Y in the sense
+of tight convergence of measures. The proof of this fact is based on the
+following lemma.
+Lemma 2.10. Let K be a compact topological space, and µ a posi-
+tive measure on it such that every non empty open set has a positive
+measure. Let q ≥ 0 be a continuous function on K which attains its
+maximum at only one point x0 . Define, for n ∈ N,
+                              Z
+                         an =    q(x)n µ(dx),
+                                       K
+
+and, for a continuous function ϕ on K,
+                               Z
+                             1
+                   Ln (ϕ) =       ϕ(x)q(x)n µ(dx).
+                             an K
+Then
+                                 lim Ln (ϕ) = ϕ(x0 ).
+                             n→∞
+
+     Proof For 0 < α < M = max q, there exits a constant Cα such that
+                                    an ≥ Cα αn .
+In fact there is a neighborhood V of x0 such that q(x) ≥ α for x ∈ V,
+and
+                             an ≥ µ(V)αn .
+Let W be a neighborhood of x0 . For x ∈ K \ W, q(x) ≥ β < M.
+Choose α such that β < α < M. then
+                  Z                          β n
+                1          n        1
+                       q(x) µ(dx) ≤    µ(K)        ,
+               an K\W               Cα        α
+and                    Z
+                   1
+               lim               q(x)n µ(dx) = 0.        
+              n→∞ an       K\W
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                     27
+
+   The function ψ−κ attains its maximum M = 1 only at y = e. There-
+fore Lemma (2.10) applies. It follows thet, for every m,
+                                1
+                         lim       aκ (m) = 1.
+                        κ→∞ J(κ)
+
+
+  (b) Assume that κ ∈ N. From the Bernstein identity (1.3) it fol-
+lows that the spherical Fourier coefficients aκ (m) satisfy the following
+recursion relation :
+                  γ−κ (ρ − m)aκ (m) = b(−κ)aκ−1 (m).
+Since, for m = 0, γ−κ (ρ)aκ (0) = b(−κ)aκ−1 (0) we obtain
+                   γ−κ (ρ − m) aκ (m)    aκ−1 (m)
+                                       =          .
+                      γ−κ (ρ)   aκ (0)   aκ−1 (0)
+Furthermore, since aκ (0) = J(κ), by (a)
+                                aκ (m)
+                             lim       = 1.
+                            κ→∞ aκ (0)
+
+The sequence given by
+                 Qn            1
+                     j=1 Γ(κ + 2 + δ − ρj )Γ(κ   + 21 + δ + ρj )
+     φ(κ) =   Qn          1                                             ,
+               j=1 Γ(κ + 2 + δ − ρj + mj )Γ(κ    + 12 + δ + ρj − mj )
+satisfies the same recursion relation as aaκκ(m)
+                                              (0)
+                                                  does. Moreover, from the
+asymptotic equivalence
+                                                         
+  Γ(z + a)      a−b      1                             −2
+            ∼z       1 + (b − a)(b + a − 1) + O(z ) , as z → ∞,
+  Γ(z + b)              2z
+it follows that
+                              lim φ(κ) = 1.
+                             κ→∞
+Therefore we have proved the theorem for κ ∈ N.
+(c) By using Carlson’s theorem, as we did in the proof of Theorem
+(1.4), we conclude that the statement is still valid for ℜκ ≥ 0. 
+
+2.4. Restriction of the representation πs to the compact group
+U. The compact symmetric space Y = U/K is also of Makarevich type.
+Indeed,
+             U = {g ∈ Conf(V ) | α ◦ j ◦ g ◦ j ◦ α = g}o.
+From the generalized cross-ratio (1.6) we define the kernel F c (u, v) by
+              F c (u, v) = {u, v, −α(u−1), −α(v −1 )}
+                                                       
+                           ∆ u + α(u−1 ) ∆ v + α(v −1 )
+                         =                             
+                           ∆ u + α(v −1 ) ∆ v + α(u−1 )
+28                     JACQUES FARAUT, MICHAEL PEVZNER
+
+and F c (u, 0) = h(u, −u).
+  Similarly to what we did in Section 2.2 we twist the bilinear form
+Bs by the involution j ◦ α, in other words we replace y by α(y −1), and
+by introducing multiplication operators
+                                                       n
+                               Msc f (x) = h(x, −x)s+ 2r f (x)
+we eventually obtain a U-invariant bilinear form on C ∞ (Y):
+                        ZZ
+          c
+        Bs (F1 , F2 ) =     Bsc (x, y)F1 (x)F2 (y)µ0(dx)µ0 (dy),
+                                   Y×Y
+                                    r0
+where   Bsc (x, y)   = F (x, y) r ν .
+                           c
+
+
+   The spherical dual ÛK is parameterized by the set of weights m =
+(m1 , . . . , mn ) described in the previous section. To such a weight m
+corresponds a (class of) unitary spherical representation Πm on a finite
+dimensional vector space Hm of dimension dm . The highest weight µ
+of Πm is given by
+                                         Xr0
+                              hµ, ξi = −     mj tj ,
+                                                 j=1
+          P
+if ξ(x) =    tj L(cj )x. In the space Hm there is a normalized K-fixed
+vector vm . The Fourier coefficient fˆ(m) of an integrable function f on
+Y is the vector in Hm defined by
+                               Z
+                       ˆ
+                      f (m) =       Πm (g)vm f (g)dg.
+                                         U/K
+
+The map f 7→ fˆ(m) intertwines the left regular representation of U
+and Πm .
+Theorem 2.11. For a κ ∈ N the Berezin form Bcs is positive definite.
+Therefore the restriction of πs to the compact group U decomposes into
+a direct sum of spherical principal series representations Πm of U ac-
+cording to the following Plancherel formula
+                               X
+                  Bc (f, f¯) =
+                           s        dm aκ (m)kfˆ(m)k2 ,
+                                         m∈ÛK
+             r           n
+where κ =    r0
+                (s   −   2r
+                            ),   f ∈ C(U/K).
+   By the first part of the proof of Theorem 2.8, in some sense, the
+canonical representations of the compact dual of G tend to the left
+regular representation when the parameter κ goes through the negative
+integer points. In fact, for f ∈ Cc (Y),
+             Z                                        Z
+         1           c
+   lim             Bκ (x, y)f (x)f (y)µ0(dx)µ0 (dy) =    |f (y)|2µ0 (dy).
+  κ→∞ J(κ) Y×Y                                         Y
+      BEREZIN KERNELS AND ANALYSIS ON MAKAREVICH SPACES                          29
+
+Similarly, in the non compact case, as ν → ∞, the probability measure
+I(ν)−1 ψν (x)µ(dx) converges to the Dirac measure δe at the identity
+element e. It follows that, for f ∈ Cc (X ),
+               Z                                    Z
+           1          α
+    lim             Bν (x, y)f (x)f (y)µ(dx)µ(dy) =     |f (x)|2µ(dx).
+   ν→∞ I(ν) X ×X                                      X
+
+In some sense, as ν → ∞, the canonical representation Tν tends to the
+regular representation of G on L2 (X ).
+   In conclusion we should mention that originally the one parameter
+family of Berezin kernels was introduced in the context of quantization
+of Kählerian symmetric spaces in [2]. The last remark says that the
+Berezin symbolic calculus ”deforms” the usual point-wise multiplica-
+tion of functions. We refer the reader to [1, 25] for more details on
+asymptotics of the Berezin transform.
+
+                                References
+    1. J.Arazy, B.Ørsted, Asymptotic expansions of Berezin transforms. Indiana
+       Univ. Math. J. 49 (2000), no. 1, pp.7–30.
+    2. F.A.Berezin, Quantization, Math. USSR Izvestija, 8, (1974), pp.1109-1165.
+    3. W.Bertram, On some causal and conformal groups, J. Lie Theory 6.2,
+       (1996), pp.215-247.
+    4. W.Bertram, Algebraic Structures of Makarevič spaces. I. Transf. Groups,
+       Vol 3, No1, 1998, pp.3-32.
+    5. B.Blind, Distributions homogènes sur une algèbre de Jordan. Bull. Soc.
+       Math. France, 125, (1997), pp. 493–528.
+    6. G. van Dijk, S.Hille, Maximal degenerate representations, Berezin kernels
+       and canonical representations, in ”Lie Groups and Lie algebras, their rep-
+       resentations, generalizations and applications” (B.Komrakov, G.Litvinov,
+       A.Sossinsky Edt.), Kluwer Academic, Dordrecht, 1997.
+    7. G. van Dijk, V.Molchanov, Tensor products of maximal degenerate series
+       representations of the group SL(n, R), J. Math. Pures Appl., 78, (1999),
+       pp. 99–119.
+    8. G. van Dijk, A.Pasquale, Harmonic analysis on vector bundles over
+       Sp(1, n)/Sp(1) × Sp(n). Enseign. Math. (2) 45 (1999), no. 3-4, pp.219–252.
+    9. G. van Dijk, M.Pevzner, Berezin kernels of tube domains. J. Funct. Anal.,
+       181, (2001), no.2, pp.189–208.
+   10. M.Engliš, A mean value theorem on bounded symmetric domains, Proc.
+       Amer. Math. Soc. 127, pp. 3259–3268.
+   11. J.Faraut, Intégrales de Riesz sur un espace symétrique ordonné. Geometry
+       and analysis on finite- and infinite-dimensional Lie groups (Bȩdlewo, 2000),
+       pp.289–308, Banach Center Publ., 55, Polish Acad. Sci., Warsaw, 2002.
+   12. J.Faraut, S.Gindikin, Pseudo-Hermitian symmetric spaces of tube type.
+       Topics in geometry, Progr.Nonlinear Diff. Equat. Appl., 20 Birkhäuser
+       Boston, 1996, pp. 123–154.
+   13. J. Faraut and A Korányi: Analysis on Symmetric Cones. Oxford Science
+       Publications, 1994.
+30                   JACQUES FARAUT, MICHAEL PEVZNER
+
+     14. S.Hille, Canonical representations, Ph.D Thesis, Leiden Univeristy, 1999.
+     15. L.K.Hua, Harmonic analysis of functions of several complex variables in
+         the classical domains. Translations of Mathematical monographs, 6, AMS,
+         Providence, 1963.
+     16. I.L.Kantor, Non-linear groups of transformations defined by general norms
+         of Jordan algebras. Soviet Math Dokl., 8, (1967), pp.176-180.
+     17. Y.Khlif, In tégrales de Riesz sur un espace symétrique de type Cayley,
+         Thèse de doctorat, Université de Paris VI (2000).
+     18. B.Kostant, On the existence and irreducibility of certain series representa-
+         tions, Proceedings of the summer school on group representations, Bolyai
+         Jonos Math. Soc. Budapest, 1971.
+     19. B.Kostant, S.Sahi, Jordan algebras and Capelli identities. Invent. Math.
+         112, (1993), pp. 657–664.
+     20. Yu.Neretin, Matrix analogues of the B-function, and the Plancherel for-
+         mula for Berezin kernel representations. Sb. Math. 191 (2000), no. 5-6,
+         pp.683–715
+     21. M.Pevzner, Analyse conforme sur les algèbres de Jordan, J. Austral. Math.
+         Soc. 73,(2002), 1–21.
+     22. S.Sahi, Explicit Hilbert spaces for certain unipotent representations, In-
+         vent. math. 110 (1992), pp. 409-418.
+     23. S.Sahi, The Capelli identity and unitary representations, Compositio Math.
+         81 (1992), pp.247-260.
+     24. S.Sahi, Jordan algebras and degenerate principal series J. reine angev.
+         Math 462 (1995), pp. 1–18.
+     25. A.Unterberger, H.Upmeier, The Berezin transform and invariant differen-
+         tial operators. Comm. Math. Phys. 164 (1994), no.3, pp.563–597.
+     26. A.M.Vershik, I.M.Gelfand, M.I.Graev, Representations of the group
+         SL(2, R), where R is a ring of functions. (Russian) Uspehi Mat. Nauk,
+         28 (1973), no.5(173), pp.83–128.
+     27. G.Zhang, Jordan algebras and generalized principal series representations.
+         Math. Ann. 302, (1995), pp. 773–786.
+     28. G.Zhang, Berezin transform on compact Hermitian symmetric spaces,
+         Manuscripta Math. 97 (1998), pp.371-388.
+     29. G.Zhang, Berezin transform on real bounded symmetric domains. Trans.
+         Amer. Math. Soc. 353 (2001), no.9, pp. 3769–3787.
+
+  J.Faraut : Institut de Mathématiques de Jussieu, UMR 7586, Uni-
+versité de Paris 6, Pierre-et-Marie-Curie, Case 247, 4 place Jussieu,
+F-75252 Paris Cedex
+
+  M.Pevzner : Laboratoire de Mathématiques, UMR 6056 CNRS, Uni-
+versité de Reims, Moulin de la Housse, BP 1039, F-51687, Reims
+  E-mail address: faraut@math.jussieu.fr, pevzner@univ-reims.fr
+
